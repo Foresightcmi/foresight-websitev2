@@ -1,16 +1,16 @@
-name: Weekly Blog Post Generator
+name: Monday — Keyword Scout
 
 on:
   schedule:
-    # Runs every Monday at 9:00 AM EST (13:00 UTC)
+    # Every Monday at 9:00 AM EST (13:00 UTC)
     - cron: '0 13 * * 1'
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  generate-blog:
+  discover-keywords:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,19 +24,9 @@ jobs:
       - name: Discover trending keywords
         run: node scripts/discover-keywords.mjs
 
-      - name: Generate blog post
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/generate-blog-post.mjs
-
-      - name: Ping Google Sitemap
+      - name: Commit keyword brief
         run: |
-          curl -s "https://www.google.com/ping?sitemap=https://www.fhinspectionsatl.com/sitemap.xml"
-          echo "Google sitemap pinged successfully"
-
-      - name: Commit and push
-        run: |
-          git config user.name "Foresight Blog Bot"
+          git config user.name "Foresight Keyword Scout"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/posts.json
-          git diff --cached --quiet || (git commit -m "blog: auto-generated weekly post $(date +%Y-%m-%d)" && git push)
+          git add data/keyword-brief.json
+          git diff --cached --quiet || (git commit -m "research: keyword discovery $(date +%Y-%m-%d)" && git push)

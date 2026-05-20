@@ -1,19 +1,16 @@
-name: City Page Refresher
+name: Wednesday — Blog Writer
 
 on:
   schedule:
-    # Spread across 3 days: Tuesday, Thursday, Saturday
-    # Each run refreshes only 3 cities to conserve tokens
-    - cron: '0 15 * * 2'   # Tuesday 11 AM EST
-    - cron: '0 16 * * 4'   # Thursday 12 PM EST
-    - cron: '0 14 * * 6'   # Saturday 10 AM EST
+    # Every Wednesday at 10:00 AM EST (14:00 UTC)
+    - cron: '0 14 * * 3'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  refresh-cities:
+  generate-blog:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,10 +21,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Refresh city pages
+      - name: Generate blog post from keyword brief
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/refresh-city-pages.mjs
+        run: node scripts/generate-blog-post.mjs
 
       - name: Ping Google Sitemap
         run: |
@@ -36,7 +33,7 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name "Foresight City Bot"
+          git config user.name "Foresight Blog Writer"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/cities.json data/refresh-log.json
-          git diff --cached --quiet || (git commit -m "refresh: city updates $(date +%Y-%m-%d)" && git push)
+          git add data/posts.json
+          git diff --cached --quiet || (git commit -m "blog: new post $(date +%Y-%m-%d)" && git push)
