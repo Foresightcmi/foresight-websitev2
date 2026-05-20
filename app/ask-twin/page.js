@@ -6,7 +6,7 @@ export default function AskTwin() {
   const [messages, setMessages] = useState([
     {
       role: 'ai',
-      content: "Well hello there! I'm Foresight AI, your seasoned home inspection guide. Think of me like a friendly, hands-on master builder or the host of a home restoration TV show. I'm here to give you the honest truth about how home systems work, fully grounded in InterNACHI standards. \n\nWhat's on your mind today? Got a suspicious roof, a foundation crack, a pool question, or are you looking at a brand-new build? Let's talk houses!"
+      content: "Well hello there! I'm Foresight AI, your seasoned home inspection and maintenance advisor. \n\nWhat's on your mind today? Got a suspicious roof, a foundation crack, a pool question, or are you looking at a brand-new build? Let's talk houses!"
     }
   ]);
   const [input, setInput] = useState('');
@@ -259,8 +259,8 @@ export default function AskTwin() {
             </div>
             
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }} className="header-badges">
-              <img src="/cmi_logo.png" alt="Certified Master Inspector" style={{ height: '40px', opacity: 0.9, filter: 'brightness(1.1)' }} />
-              <img src="/cpi_logo.jpg" alt="Certified Professional Inspector" style={{ height: '40px', borderRadius: '4px', opacity: 0.9 }} />
+              <img src="/cmi_logo.png" alt="Certified Master Inspector" style={{ height: '40px', opacity: 0.9 }} />
+              <img src="/cpi_logo.png" alt="Certified Professional Inspector" style={{ height: '40px', opacity: 0.9 }} />
             </div>
           </div>
 
