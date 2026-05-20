@@ -105,29 +105,29 @@ export default function Quote() {
     let base = selectedRange.price;
     let extra = 0;
 
-    // Foundation fee (only for single family)
+    // Additional $75 fee for home inspection for each condition: 50+ years old, crawlspace, or unfinished/partial basement
     if (propertyType === 'single-family') {
-      if (foundation === 'basement') extra += 50;
-      if (foundation === 'crawlspace') extra += 25;
-    }
-
-    // Age fee
-    if (ageTier === 'over-50') {
-      extra += 50;
+      if (ageTier === 'over-50') {
+        extra += 75;
+      }
+      if (foundation === 'crawlspace') {
+        extra += 75;
+      }
+      if (foundation === 'basement') {
+        extra += 75;
+      }
     }
 
     // Addons
     if (addons.radon) extra += 175; // Continuous monitor sub-contracted rate
-    if (addons.pool) extra += 125;  // Pool/spa add-on
+    if (addons.pool) extra += 275;  // Pool/spa add-on
     if (addons.lowFlow) extra += 100; // DeKalb low flow compliance
     if (addons.buildfax) extra += 15; // Property permit report
 
-    // Termite / WDO (based on foundation type in GA WDO regulations)
+    // Termite / WDO (slab/basement: $125, crawlspace: $165)
     if (addons.termite) {
-      if (foundation === 'slab') extra += 100;
-      else if (foundation === 'basement') extra += 125;
-      else if (foundation === 'crawlspace') extra += 175;
-      else extra += 100;
+      if (foundation === 'crawlspace') extra += 165;
+      else extra += 125; // Slab or basement (or default/condo)
     }
 
     return { total: base + extra, isCustom: false };
@@ -280,15 +280,15 @@ export default function Quote() {
                 <div className="form-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'slab'} onChange={() => setFoundation('slab')} />
-                    Slab ($0)
+                    Slab
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'basement'} onChange={() => setFoundation('basement')} />
-                    Unfinished/Partial Basement (+$50)
+                    Unfinished/Partial Basement *
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'crawlspace'} onChange={() => setFoundation('crawlspace')} />
-                    Crawlspace (+$25)
+                    Crawlspace *
                   </label>
                 </div>
               </>
@@ -302,11 +302,26 @@ export default function Quote() {
                 value={ageTier}
                 onChange={(e) => setAgeTier(e.target.value)}
               >
-                <option value="under-50">Under 50 Years Old (+$0)</option>
-                <option value="over-50">Home Over 50 Years Old (+$50)</option>
+                <option value="under-50">Under 50 Years Old</option>
+                <option value="over-50">Home 50+ Years Old * (+$75 complexity fee)</option>
                 <option value="86+">Historic 86+ Years Old (Call for Price)</option>
               </select>
             </div>
+
+            {propertyType === 'single-family' && (
+              <div style={{ 
+                background: 'rgba(211, 47, 47, 0.04)', 
+                border: '1px dashed rgba(211, 47, 47, 0.15)', 
+                borderRadius: 'var(--radius-md)', 
+                padding: '0.75rem 1rem', 
+                marginBottom: '2rem',
+                fontSize: '0.825rem', 
+                color: 'var(--color-gray-dark)', 
+                lineHeight: 1.45 
+              }}>
+                ℹ️ <strong>* Additional Complexity Fees:</strong> An additional <strong>$75 fee</strong> is added to the home inspection for each condition present (being 50+ years old, having a crawlspace, or having an unfinished/partial basement). These fees are additive and stack per condition (e.g., a 50+ year old home on a crawlspace adds $150).
+              </div>
+            )}
 
             <h2 style={{ marginTop: '2.5rem', marginBottom: '1.5rem' }}>6. Specialized Services & Add-ons</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -318,7 +333,7 @@ export default function Quote() {
                 />
                 <div>
                   <span style={{ fontWeight: 600, display: 'block' }}>Radon Gas Testing (+ $175)</span>
-                  <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour professional diagnostic monitoring.</span>
+                  <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour professional electronic monitoring (when combined with a home inspection).</span>
                 </div>
               </label>
 
@@ -330,10 +345,10 @@ export default function Quote() {
                 />
                 <div>
                   <span style={{ fontWeight: 600, display: 'block' }}>
-                    Termite & WDO Inspection (+ ${foundation === 'slab' ? 100 : foundation === 'basement' ? 125 : 175})
+                    Termite & WDO Inspection (+ ${propertyType === 'condo' ? 125 : (foundation === 'crawlspace' ? 165 : 125)})
                   </span>
                   <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>
-                    Performed by a licensed professional partner. Generates Official Georgia Wood Infestation Report. Price adjusted based on foundation ({foundation}).
+                    Performed by a licensed professional partner. Generates Official Georgia Wood Infestation Report. Price is $125 on slab/basement and $165 on crawlspace.
                   </span>
                 </div>
               </label>
@@ -345,8 +360,8 @@ export default function Quote() {
                   onChange={() => handleAddonToggle('pool')} 
                 />
                 <div>
-                  <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $125)</span>
-                  <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell check.</span>
+                  <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $275)</span>
+                  <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check.</span>
                 </div>
               </label>
 

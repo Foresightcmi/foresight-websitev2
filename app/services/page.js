@@ -38,7 +38,7 @@ export default function Services() {
     },
     {
       title: 'Pool & Spa Inspections',
-      price: '$125+',
+      price: '$275',
       description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries.',
       details: ['Pump & heater functional test', 'Safety barrier compliance', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
       image: '/images/pool-inspecting.png'
@@ -52,14 +52,14 @@ export default function Services() {
     },
     {
       title: 'Termite & WDO Inspections',
-      price: '$85+',
-      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We partner with licensed pest control specialists to provide an Official Georgia Wood Infestation Report.',
+      price: '$125+',
+      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We partner with licensed pest control specialists to provide an Official Georgia Wood Infestation Report. Starts at $125 on slab/basement, and $165 on crawlspace.',
       details: ['Official GA WDO Report', 'Identify active/past termites', 'Detect powderpost beetles & decay', 'Critical for mortgage approvals']
     },
     {
       title: 'Radon Gas Testing',
-      price: '$125+',
-      description: 'Radon is a cancer-causing, odorless radioactive gas. We use professional 48-hour continuous monitors to ensure your home environment is safe.',
+      price: '$175',
+      description: 'Radon is a cancer-causing, odorless radioactive gas. We use professional 48-hour continuous monitors to ensure your home environment is safe (when combined with a home inspection).',
       details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Crucial indoor air safety profile', 'Water radon testing available']
     }
   ];
@@ -85,9 +85,9 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "365", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new home was built to specifications. Foundation, framing, pre-drywall, and final walkthrough checks." }, "price": "355", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "125", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "85", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "125", "priceCurrency": "USD" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "275", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "175", "priceCurrency": "USD" }
       ]
     }
   };
