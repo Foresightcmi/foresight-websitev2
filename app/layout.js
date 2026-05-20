@@ -168,7 +168,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        <div style={{ background: 'var(--color-red)', color: 'white', padding: '1rem', textAlign: 'center', fontWeight: 'bold', fontSize: '1.2rem', letterSpacing: '0.5px' }}>
+        <div style={{ background: 'var(--color-red)', color: 'white', padding: '0.5rem 1rem', textAlign: 'center', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>
           🛡️ The CMI Advantage: Every Inspection Includes a $10,000 Protection Warranty at No Extra Cost!
         </div>
         <Header />

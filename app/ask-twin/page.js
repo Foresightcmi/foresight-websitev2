@@ -11,14 +11,19 @@ export default function AskTwin() {
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToBottom = (behavior = 'smooth') => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: behavior
+      });
+    }
   };
 
   useEffect(() => {
-    scrollToBottom();
+    scrollToBottom(messages.length <= 1 ? 'auto' : 'smooth');
   }, [messages, isTyping]);
 
   const generateAIResponse = (userText) => {
@@ -166,7 +171,13 @@ export default function AskTwin() {
   };
 
   return (
-    <section className="section bg-dark" style={{ minHeight: 'calc(100vh - 80px)', background: 'radial-gradient(ellipse at top, rgba(211, 47, 47, 0.15), rgba(17, 24, 39, 1))' }}>
+    <section className="bg-dark" style={{ 
+      padding: '2.5rem 0', 
+      minHeight: 'calc(100vh - 120px)', 
+      background: 'radial-gradient(ellipse at top, rgba(211, 47, 47, 0.15), rgba(17, 24, 39, 1))',
+      display: 'flex',
+      alignItems: 'center'
+    }}>
       <div className="container" style={{ maxWidth: '950px' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ 
@@ -199,12 +210,11 @@ export default function AskTwin() {
           </p>
         </div>
 
-        <div className="glass-dark" style={{ 
+        <div className="glass-dark chat-box-container" style={{ 
           borderRadius: 'var(--radius-xl)', 
           overflow: 'hidden', 
           display: 'flex', 
           flexDirection: 'column', 
-          height: '650px',
           boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
         }}>
           {/* Chat Header */}
@@ -255,15 +265,18 @@ export default function AskTwin() {
           </div>
 
           {/* Chat Messages */}
-          <div style={{ 
-            flex: 1, 
-            overflowY: 'auto', 
-            padding: '1.75rem', 
-            display: 'flex', 
-            flexDirection: 'column', 
-            gap: '1.5rem',
-            background: 'linear-gradient(to bottom, rgba(17, 24, 39, 0.2), rgba(17, 24, 39, 0.4))'
-          }}>
+          <div 
+            ref={chatContainerRef}
+            style={{ 
+              flex: 1, 
+              overflowY: 'auto', 
+              padding: '1.75rem', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: '1.5rem',
+              background: 'linear-gradient(to bottom, rgba(17, 24, 39, 0.2), rgba(17, 24, 39, 0.4))'
+            }}
+          >
             {messages.map((msg, index) => (
               <div key={index} style={{ display: 'flex', justifyContent: msg.role === 'user' ? 'flex-end' : 'flex-start' }}>
                 <div style={{ 
@@ -321,7 +334,6 @@ export default function AskTwin() {
                 </div>
               </div>
             )}
-            <div ref={messagesEndRef} />
           </div>
 
           {/* Chat Input */}
@@ -372,7 +384,17 @@ export default function AskTwin() {
           0%, 80%, 100% { transform: scale(0); }
           40% { transform: scale(1); }
         }
-        @media (max-width: 600px) {
+        .chat-box-container {
+          height: 600px;
+          max-height: calc(100vh - 280px);
+          min-height: 480px;
+        }
+        @media (max-width: 768px) {
+          .chat-box-container {
+            height: calc(100vh - 220px) !important;
+            max-height: 500px !important;
+            min-height: 380px !important;
+          }
           .header-badges {
             display: none !important;
           }

@@ -10,7 +10,7 @@ export default function Header() {
     <header className="header glass">
       <div className="container nav-container">
         <Link href="/" className="logo">
-          <Image src="/images/logo.jpg" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '180px', width: 'auto' }} priority />
+          <Image src="/images/logo.jpg" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '70px', width: 'auto' }} priority />
           <span className="sr-only">Foresight Home Inspections</span>
         </Link>
         <button
