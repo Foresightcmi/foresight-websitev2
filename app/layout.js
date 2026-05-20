@@ -135,6 +135,13 @@ export default function RootLayout({ children }) {
       "sameAs": [
         "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
       ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "48"
     }
   };
 
