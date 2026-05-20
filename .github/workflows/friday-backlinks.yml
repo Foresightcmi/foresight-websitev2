@@ -1,0 +1,34 @@
+name: Friday — Backlink Scout
+
+on:
+  schedule:
+    # Every Friday at 11:00 AM EST (15:00 UTC)
+    - cron: '0 15 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scout-backlinks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Scout backlink opportunities
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/scout-backlinks.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "Foresight Backlink Scout"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/backlink-opportunities.json
+          git diff --cached --quiet || (git commit -m "scout: backlink opportunities $(date +%Y-%m-%d)" && git push)
