@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Discover trending keywords
+        run: node scripts/discover-keywords.mjs
+
       - name: Generate blog post
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

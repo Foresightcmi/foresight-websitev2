@@ -150,17 +150,56 @@ async function main() {
     posts = JSON.parse(fs.readFileSync(POSTS_FILE, 'utf8'));
   }
 
-  // Determine which topic to use (rotate based on week number)
-  const weekNumber = Math.floor((Date.now() - new Date('2026-01-01').getTime()) / (7 * 24 * 60 * 60 * 1000));
-  const topicIndex = weekNumber % TOPIC_CATEGORIES.length;
-  const topic = TOPIC_CATEGORIES[topicIndex];
+  // Check for keyword brief from the discovery agent
+  const KEYWORD_BRIEF_FILE = path.join(__dirname, '..', 'data', 'keyword-brief.json');
+  let keywordBrief = null;
+  if (fs.existsSync(KEYWORD_BRIEF_FILE)) {
+    try {
+      keywordBrief = JSON.parse(fs.readFileSync(KEYWORD_BRIEF_FILE, 'utf8'));
+      console.log(`🔍 Keyword brief found: "${keywordBrief.targetKeyword}" (score: ${keywordBrief.score})`);
+      console.log(`   Related: ${keywordBrief.relatedKeywords?.join(', ')}\n`);
+    } catch {
+      console.log('⚠️ Could not parse keyword brief, using topic rotation.\n');
+    }
+  }
 
-  console.log(`📝 Category: ${topic.category}`);
-  console.log(`📌 Topic rotation index: ${topicIndex} (week ${weekNumber})\n`);
+  let topicPrompt;
+  let category;
+
+  if (keywordBrief && keywordBrief.targetKeyword) {
+    // Use keyword-driven content generation
+    category = "Trending Topic";
+    const relatedStr = keywordBrief.relatedKeywords?.length
+      ? `\n\nAlso try to naturally address these related search queries:\n- ${keywordBrief.relatedKeywords.join('\n- ')}`
+      : '';
+
+    topicPrompt = `Write a blog post specifically targeting this search query that people are actively searching for on Google right now: "${keywordBrief.targetKeyword}"
+
+The post MUST:
+1. Use the exact phrase "${keywordBrief.targetKeyword}" in the title and first paragraph
+2. Answer the searcher's intent directly and thoroughly
+3. Provide unique, expert-level value that no competitor would offer
+4. Mention specific Georgia/Atlanta context where relevant
+5. Include practical takeaways the reader can act on immediately${relatedStr}
+
+Write this as if you're the #1 expert answering this exact question. The goal is to rank #1 on Google for "${keywordBrief.targetKeyword}".`;
+
+    console.log(`🎯 Mode: KEYWORD-DRIVEN (targeting real search demand)`);
+  } else {
+    // Fallback to topic rotation
+    const weekNumber = Math.floor((Date.now() - new Date('2026-01-01').getTime()) / (7 * 24 * 60 * 60 * 1000));
+    const topicIndex = weekNumber % TOPIC_CATEGORIES.length;
+    const topic = TOPIC_CATEGORIES[topicIndex];
+    topicPrompt = topic.prompt;
+    category = topic.category;
+    console.log(`📝 Mode: TOPIC ROTATION — ${category}`);
+  }
+
+  console.log(`📌 Category: ${category}\n`);
 
   // Generate the blog post
   console.log('⏳ Generating blog post with Gemini...');
-  const generated = await generateWithGemini(topic.prompt, topic.category);
+  const generated = await generateWithGemini(topicPrompt, category);
 
   console.log(`✅ Generated: "${generated.title}"\n`);
 
@@ -181,9 +220,14 @@ async function main() {
     description: generated.description,
     date: today,
     author: "Christopher Boykin, CMI",
-    category: topic.category,
-    keywords: generated.keywords || [],
+    category,
+    keywords: [
+      ...(generated.keywords || []),
+      ...(keywordBrief?.targetKeyword ? [keywordBrief.targetKeyword] : []),
+      ...(keywordBrief?.relatedKeywords?.slice(0, 3) || []),
+    ],
     content: generated.content,
+    targetKeyword: keywordBrief?.targetKeyword || null,
   };
 
   // Add to posts array (newest first)
@@ -194,6 +238,13 @@ async function main() {
   console.log(`💾 Saved to ${POSTS_FILE}`);
   console.log(`📊 Total posts: ${posts.length}`);
   console.log(`🔗 URL: /blog/${finalSlug}`);
+
+  // Clean up keyword brief after use
+  if (fs.existsSync(KEYWORD_BRIEF_FILE)) {
+    fs.unlinkSync(KEYWORD_BRIEF_FILE);
+    console.log('🧹 Keyword brief consumed and removed');
+  }
+
   console.log('\n✅ Done!');
 }
 
