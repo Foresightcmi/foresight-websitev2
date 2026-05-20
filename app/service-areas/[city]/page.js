@@ -382,7 +382,7 @@ export default async function CityPage({ params }) {
               )}
             </div>
             <div>
-               <Image src="/images/hero.jpg" alt={`Certified home inspection in ${cityName}, GA by Foresight Home Inspections`} width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+               <Image src="/images/hero.png" alt={`Certified home inspection in ${cityName}, GA by Foresight Home Inspections`} width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
             </div>
           </div>
         </div>
