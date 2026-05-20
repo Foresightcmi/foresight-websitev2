@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Services & Pricing | Foresight Home Inspections',
@@ -11,31 +12,43 @@ export default function Services() {
       title: 'Standard Buyer Inspection',
       price: '$315+',
       description: 'Our core comprehensive inspection covering the structure, roof, electrical, plumbing, HVAC, and all major systems. Two expert inspectors on site for maximum thoroughness.',
-      details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', 'InterNACHI Inspection Warranty included']
+      details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', 'InterNACHI Inspection Warranty included'],
+      image: '/images/ac-pic.png'
     },
     {
       title: 'Pre-Listing Seller Inspection',
       price: '$365+',
       description: 'Identify potential issues before putting your home on the market. Streamline negotiations, avoid last-minute surprises, and increase buyer confidence.',
-      details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included']
+      details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
+      image: '/images/crawlspace.png'
     },
     {
       title: 'New Construction Inspections',
       price: '$355+',
       description: 'Ensure your brand-new home was built to correct specifications. We inspect foundations, framing, pre-drywall, and perform final walkthrough checks.',
-      details: ['Phase-by-phase option', 'Pre-drywall framing checks', 'Code-compliance review', 'Identify developer defects']
+      details: ['Phase-by-phase option', 'Pre-drywall framing checks', 'Code-compliance review', 'Identify developer defects'],
+      image: '/images/drone-2.png'
     },
     {
       title: '11-Month Warranty Inspection',
       price: '$335+',
       description: 'Performed just before your 1-year builder warranty expires. Get a professional punch list to have the builder fix issues on their dime, not yours.',
-      details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousand in future repairs', 'Maximum warranty utilization']
+      details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousand in future repairs', 'Maximum warranty utilization'],
+      image: '/images/gas-meter.png'
     },
     {
       title: 'Pool & Spa Inspections',
       price: '$125+',
       description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries.',
-      details: ['Pump & heater functional test', 'Safety barrier compliance', 'Filter and plumbing evaluation', 'Peace of mind for water features']
+      details: ['Pump & heater functional test', 'Safety barrier compliance', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
+      image: '/images/pool-inspecting.png'
+    },
+    {
+      title: 'Sewer Scope Inspections',
+      price: '$175+',
+      description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the home to the municipal connection or septic tank. Highly recommended for older properties.',
+      details: ['Main lateral line sewer inspection', 'High-res video feed provided', 'Locate bellies, roots, and cracks', 'Saves thousands in excavation costs'],
+      image: '/images/sewer-scope.png'
     },
     {
       title: 'Termite & WDO Inspections',
@@ -150,25 +163,39 @@ export default function Services() {
         <div className="container">
           <div className="grid grid-3" style={{ marginBottom: '4rem' }}>
             {services.slice(0, 3).map((s, idx) => (
-              <div key={idx} className={`card ${idx === 0 ? 'card-premium' : ''}`} style={{ display: 'flex', flexDirection: 'column' }}>
-                {idx === 0 && <div className="badge" style={{ alignSelf: 'flex-start', marginBottom: '1rem' }}>Core Service</div>}
-                <h3 style={{ marginBottom: '0.5rem' }}>{s.title}</h3>
-                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--color-red)', margin: '1rem 0' }}>{s.price}</div>
-                <p style={{ color: 'var(--color-gray-dark)', flex: 1, marginBottom: '1.5rem' }}>{s.description}</p>
-                <ul style={{ listStyle: 'none', margin: '0 0 2rem 0', padding: 0 }}>
-                  {s.details.map((d, i) => (
-                    <li key={i} style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <span style={{ color: 'var(--color-red)' }}>✓</span> {d}
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: 'auto' }}>
-                  <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className={`btn ${idx === 0 ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: idx !== 0 ? 'var(--color-red)' : undefined, color: idx !== 0 ? 'var(--color-red)' : undefined }}>
-                    📅 Book Inspection
-                  </a>
-                  <Link href="/quote" className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', opacity: 0.8, fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
-                    Calculate Price
-                  </Link>
+              <div key={idx} className={`card ${idx === 0 ? 'card-premium' : ''}`} style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
+                {s.image && (
+                  <div style={{ position: 'relative', width: '100%', height: '200px' }}>
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                    {idx === 0 && <div className="badge" style={{ position: 'absolute', top: '1rem', left: '1rem', zIndex: 10 }}>Core Service</div>}
+                  </div>
+                )}
+                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  {!s.image && idx === 0 && <div className="badge" style={{ alignSelf: 'flex-start', marginBottom: '1rem' }}>Core Service</div>}
+                  <h3 style={{ marginBottom: '0.5rem' }}>{s.title}</h3>
+                  <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--color-red)', margin: '1rem 0' }}>{s.price}</div>
+                  <p style={{ color: 'var(--color-gray-dark)', flex: 1, marginBottom: '1.5rem' }}>{s.description}</p>
+                  <ul style={{ listStyle: 'none', margin: '0 0 2rem 0', padding: 0 }}>
+                    {s.details.map((d, i) => (
+                      <li key={i} style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span style={{ color: 'var(--color-red)' }}>✓</span> {d}
+                      </li>
+                    ))}
+                  </ul>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: 'auto' }}>
+                    <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className={`btn ${idx === 0 ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: idx !== 0 ? 'var(--color-red)' : undefined, color: idx !== 0 ? 'var(--color-red)' : undefined }}>
+                      📅 Book Inspection
+                    </a>
+                    <Link href="/quote" className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', opacity: 0.8, fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
+                      Calculate Price
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -177,21 +204,32 @@ export default function Services() {
           <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Specialty & Add-on Services</h2>
           <div className="grid grid-2">
             {services.slice(3).map((s, idx) => (
-              <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'row', gap: '2rem', alignItems: 'flex-start' }}>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ marginBottom: '0.5rem' }}>{s.title}</h3>
-                  <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-red)', margin: '0.5rem 0' }}>{s.price}</div>
-                  <p style={{ color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>{s.description}</p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+              <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', alignItems: 'center', padding: '1.5rem', flexWrap: 'wrap' }}>
+                {s.image && (
+                  <div style={{ position: 'relative', width: '110px', height: '110px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      fill
+                      sizes="110px"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
+                <div style={{ flex: 1, minWidth: '240px' }}>
+                  <h3 style={{ marginBottom: '0.25rem' }}>{s.title}</h3>
+                  <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-red)', margin: '0.25rem 0' }}>{s.price}</div>
+                  <p style={{ color: 'var(--color-gray-dark)', marginBottom: '0.75rem', fontSize: '0.95rem', lineHeight: 1.5 }}>{s.description}</p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.25rem' }}>
                     {s.details.map((d, i) => (
-                      <li key={i} style={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <li key={i} style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         <span style={{ color: 'var(--color-red)' }}>✓</span> {d}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', justifyContent: 'center', height: '100%' }}>
-                  <Link href="/quote" className="btn btn-outline" style={{ whiteSpace: 'nowrap' }}>Add to Quote</Link>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, width: '100%', mdWidth: 'auto', marginTop: '1rem' }}>
+                  <Link href="/quote" className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }}>Add to Quote</Link>
                 </div>
               </div>
             ))}

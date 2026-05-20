@@ -381,8 +381,15 @@ export default async function CityPage({ params }) {
                 </ul>
               )}
             </div>
-            <div>
-               <Image src="/images/hero.png" alt={`Certified home inspection in ${cityName}, GA by Foresight Home Inspections`} width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+            <div style={{ position: 'relative', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)', minHeight: '350px', width: '100%' }}>
+              <Image
+                src="/images/roof-1.png"
+                alt={`${cityName} Home Inspection - Roof Inspection by Certified Master Inspector Christopher Boykin`}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             </div>
           </div>
         </div>
