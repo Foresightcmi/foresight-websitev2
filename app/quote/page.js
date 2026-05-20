@@ -135,6 +135,64 @@ export default function Quote() {
 
   const { total, isCustom } = calculateTotal();
 
+  // Calculate potential negotiation leverage dynamically based on inspection details
+  const calculateNegotiatingLeverage = () => {
+    let minLeverage = 2000;
+    let maxLeverage = 6000;
+
+    // Scale by size/price range
+    const currentRanges = getSqftRanges();
+    const selectedRange = currentRanges.find(r => r.value === sqftRange);
+    if (selectedRange && typeof selectedRange.price === 'number') {
+      const multiplier = selectedRange.price / 350;
+      minLeverage = Math.round(minLeverage * multiplier);
+      maxLeverage = Math.round(maxLeverage * multiplier);
+    }
+
+    // Scale by age tier
+    if (ageTier === 'over-50') {
+      minLeverage += 1200;
+      maxLeverage += 3500;
+    } else if (ageTier === '86+') {
+      minLeverage += 2500;
+      maxLeverage += 8000;
+    }
+
+    // Adjust by service type
+    if (serviceType === 'buyer') {
+      minLeverage = Math.round(minLeverage * 1.25);
+      maxLeverage = Math.round(maxLeverage * 1.35);
+    } else if (serviceType === 'new-construction') {
+      minLeverage = Math.round(minLeverage * 0.95);
+      maxLeverage = Math.round(maxLeverage * 1.15);
+    } else if (serviceType === 'warranty') {
+      minLeverage = Math.round(minLeverage * 0.85);
+      maxLeverage = Math.round(maxLeverage * 1.05);
+    }
+
+    // Adjust by add-ons
+    if (addons.radon) {
+      minLeverage += 1500;
+      maxLeverage += 2500;
+    }
+    if (addons.pool) {
+      minLeverage += 2000;
+      maxLeverage += 6000;
+    }
+    if (addons.termite) {
+      minLeverage += 800;
+      maxLeverage += 3000;
+    }
+
+    // Round clean to nearest 100
+    return {
+      min: Math.max(1000, Math.round(minLeverage / 100) * 100),
+      max: Math.max(3000, Math.round(maxLeverage / 100) * 100)
+    };
+  };
+
+  const leverage = calculateNegotiatingLeverage();
+
   const handleAddonToggle = (addon) => {
     setAddons(prev => ({ ...prev, [addon]: !prev[addon] }));
   };
@@ -142,10 +200,29 @@ export default function Quote() {
   return (
     <section className="section bg-gray-light">
       <div className="container">
-        <div className="section-title">
+        <div className="section-title" style={{ marginBottom: '1.5rem' }}>
           <h1>Foresight Pricing Estimator</h1>
           <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0' }}>
             Instant, direct, and completely transparent quotes. Based directly on our registered local service fees.
+          </p>
+        </div>
+
+        <div style={{ 
+          background: 'rgba(211, 47, 47, 0.03)', 
+          border: '1px solid rgba(211, 47, 47, 0.12)', 
+          borderRadius: 'var(--radius-lg)', 
+          padding: '1.25rem 2rem', 
+          marginBottom: '3rem', 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '1.5rem',
+          maxWidth: '900px',
+          margin: '0 auto 3rem',
+          boxShadow: 'var(--shadow-sm)'
+        }} className="savings-banner">
+          <div style={{ fontSize: '2rem' }}>💡</div>
+          <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
+            <strong>The Inspection Pays for Itself:</strong> Getting a professional physical inspection is designed to <strong>save you more money in the long run</strong>. We regularly save our clients thousands of dollars on their home purchases—either by forcing the seller/builder to make critical <strong>upfront repairs</strong> before you close, or by using our master-level report to negotiate substantial closing <strong>repair credits</strong>.
           </p>
         </div>
 
@@ -320,9 +397,66 @@ export default function Quote() {
                 <li>✓ Georgia-certified master level execution</li>
               </ul>
               
-              <div style={{ background: 'rgba(211, 47, 47, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1.5rem', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
+              <div style={{ background: 'rgba(211, 47, 47, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1rem', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
                 <p style={{ color: 'var(--color-white)', fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.4, textAlign: 'center' }}>
                   Don't just get a checklist—get <span style={{ color: 'var(--color-red)' }}>$10,000</span> in real legal and financial protection. Secure your home investment with Foresight Home Inspections.
+                </p>
+              </div>
+
+              <div style={{ 
+                background: 'rgba(16, 185, 129, 0.08)', 
+                padding: '1.25rem', 
+                borderRadius: 'var(--radius-md)', 
+                marginBottom: '1.5rem', 
+                border: '1px solid rgba(16, 185, 129, 0.2)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.6rem'
+              }}>
+                <span style={{ 
+                  color: '#34d399', 
+                  fontSize: '0.85rem', 
+                  fontWeight: '700', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.05em',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  lineHeight: 1
+                }}>
+                  💰 Smart Investment & Savings
+                </span>
+                
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'center', 
+                  background: 'rgba(16, 185, 129, 0.05)',
+                  padding: '0.75rem 1rem',
+                  borderRadius: 'var(--radius-sm)',
+                  border: '1px dashed rgba(16, 185, 129, 0.2)',
+                  margin: '0.25rem 0'
+                }}>
+                  <div>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
+                      Negotiating Leverage
+                    </span>
+                    <strong style={{ fontSize: '1.4rem', color: '#34d399', letterSpacing: '-0.02em' }}>
+                      ${leverage.min.toLocaleString()} - ${leverage.max.toLocaleString()}+
+                    </strong>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
+                      Est. Savings ROI
+                    </span>
+                    <strong style={{ fontSize: '1.15rem', color: '#34d399' }}>
+                      {typeof total === 'number' && total > 0 ? `${Math.round((leverage.min / total) * 100)}%` : '800%+'}
+                    </strong>
+                  </div>
+                </div>
+
+                <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.825rem', fontWeight: 400, lineHeight: 1.5, margin: 0 }}>
+                  Getting us to perform your physical inspection is designed to <strong>save you more money in the long run</strong>. We regularly save our clients thousands of dollars by uncovering hidden defects, giving you the undeniable leverage to secure <strong>upfront repairs</strong> from the seller/builder on their dime, or win heavy <strong>repair credits</strong> at the closing table. The inspection fee is a tiny drop in the bucket compared to what you stand to save!
                 </p>
               </div>
 

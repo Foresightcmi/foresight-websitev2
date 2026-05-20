@@ -11,7 +11,7 @@ export default function Home() {
             <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>
           </h1>
           <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.125rem' }}>
-            At Foresight Home Inspections, LLC, a lead Certified Master Inspector® of InterNACHI will be on site along with another certified inspector. Unparalleled thoroughness, unparalleled peace of mind.
+            At Foresight Home Inspections, LLC, a lead Certified Master Inspector® is paired with another certified inspector. Armed with high-resolution drones, advanced thermal cameras, and electronic moisture diagnostic gear, we bring unparalleled high-tech thoroughness to your inspection.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
@@ -66,6 +66,61 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="section" style={{ background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
+        <div className="container">
+          <div className="section-title" style={{ marginBottom: '4rem' }}>
+            <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800 }}>Our High-Tech Diagnostic Suite</h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
+              We don't just perform a physical walkthrough. Foresight equips every dual-inspector team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '2.5rem' }}>
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>📷</div>
+              <div>
+                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Infrared Thermal Imaging (FLIR)</h3>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
+                  Our professional thermal cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation without damaging any drywall. Included on every inspection at no extra charge.
+                </p>
+              </div>
+            </div>
+
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🛸</div>
+              <div>
+                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>High-Resolution Aerial Drones</h3>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
+                  We utilize specialized camera drones to capture high-resolution imagery of roofs, chimneys, eaves, and gutters that are too steep, tall, or fragile to walk on. We inspect the entire exterior from the safest and most effective angles.
+                </p>
+              </div>
+            </div>
+
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🤖</div>
+              <div>
+                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
+                  An AI assistant trained directly on InterNACHI Standards of Practice and Georgia structural codes. Ask questions about your inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
+                </p>
+              </div>
+            </div>
+
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>⚡</div>
+              <div>
+                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Digital Moisture & Combustible Gas Detectors</h3>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
+                  We employ electronic moisture scanners to trace active leaks through subflooring and walls, plus high-sensitivity combustible gas sniffers to check appliance lines and gas meters for micro-leaks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-gray-light">
         <div className="container">
           <div className="section-title">
