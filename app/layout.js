@@ -1,6 +1,7 @@
 import './globals.css';
 import Script from 'next/script';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from './components/Header';
 
 export const metadata = {
@@ -174,8 +175,8 @@ export default function RootLayout({ children }) {
                 <h3>Foresight Home Inspections</h3>
                 <p>Two sets of expert eyes on every job. Unparalleled thoroughness and accuracy.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                   <img src="/images/cmi_logo.png" alt="CMI" style={{ height: '110px', objectFit: 'contain' }} />
-                   <img src="/images/cpi_logo.jpg" alt="CPI" style={{ height: '110px', objectFit: 'contain' }} />
+                   <Image src="/images/cmi_logo.png" alt="Certified Master Inspector Certification" width={160} height={110} style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
+                   <Image src="/images/cpi_logo.jpg" alt="Certified Professional Inspector Certification" width={160} height={110} style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
                 </div>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <a href="https://facebook.com/fhinspectionsatl" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: 'var(--color-gray-mid)', fontSize: '1.25rem' }}>Facebook</a>

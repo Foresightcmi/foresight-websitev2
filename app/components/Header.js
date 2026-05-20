@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function Header() {
     <header className="header glass">
       <div className="container nav-container">
         <Link href="/" className="logo">
-          <img src="/images/logo.jpg" alt="Foresight Home Inspections" style={{ height: '180px' }} />
+          <Image src="/images/logo.jpg" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '180px', width: 'auto' }} priority />
           <span className="sr-only">Foresight Home Inspections</span>
         </Link>
         <button

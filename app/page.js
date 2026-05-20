@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -21,9 +22,9 @@ export default function Home() {
             </Link>
           </div>
           <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
-             <img src="/images/cmi_logo.png" alt="Certified Master Inspector" style={{ height: '140px', objectFit: 'contain' }} />
-             <img src="/images/cpi_logo.jpg" alt="Certified Professional Inspector" style={{ height: '140px', objectFit: 'contain' }} />
-             <img src="/images/trust_badge.png" alt="Trust Badge" style={{ height: '140px', objectFit: 'contain' }} />
+             <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cpi_logo.jpg" alt="Certified Professional Inspector" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/trust_badge.png" alt="InterNACHI Trust Badge" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
           </div>
         </div>
       </section>
@@ -32,7 +33,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
             <div>
-              <img src="/images/inspector_photo.jpg" alt="Christopher Boykin Inspecting" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+              <Image src="/images/inspector_photo.jpg" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} priority />
             </div>
             <div style={{ padding: '0 2rem' }}>
               <h2 style={{ marginBottom: '1.5rem' }}>Meet Your Inspectors</h2>
