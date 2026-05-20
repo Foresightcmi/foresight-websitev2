@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import Image from 'next/image';
 
-const SITE_URL = 'https://www.foresighthomeinspections.com';
+const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 function loadCities() {
   const filePath = path.join(process.cwd(), 'data', 'cities.json');
@@ -52,10 +53,19 @@ export async function generateMetadata({ params }) {
     title,
     description,
     keywords: [
-      `Home Inspector ${cityName}`,
-      `Best home inspection ${cityName} GA`,
-      `Certified Master Inspector ${county} County`,
+      `home inspector ${cityName} GA`,
+      `best home inspection ${cityName} GA`,
+      `home inspection cost ${cityName}`,
       `home inspection near me ${cityName}`,
+      `certified master inspector ${cityName}`,
+      `new construction inspection ${cityName} GA`,
+      `pre-listing inspection ${cityName}`,
+      `radon testing ${cityName} GA`,
+      `termite inspection ${cityName} GA`,
+      `11 month warranty inspection ${cityName}`,
+      `thermal imaging inspection ${cityName}`,
+      `pool inspection ${cityName} GA`,
+      `home inspector ${county} County GA`,
     ],
     openGraph: {
       title,
@@ -94,7 +104,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
-      a: `Home inspection pricing in ${cityName} starts at $315+ for a standard buyer's inspection and $365+ for a pre-listing seller's inspection. Pricing varies based on the home's square footage, age, and any add-on services such as radon testing, sewer scope, or mold testing. Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+      a: `Home inspection pricing in ${cityName} starts at $315+ for a standard buyer's inspection and $365+ for a pre-listing seller's inspection. New construction inspections start at $355+, and 11-month warranty inspections start at $335+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($175), termite/WDO inspection ($100-$175), or pool evaluation ($125). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
@@ -103,6 +113,22 @@ export default async function CityPage({ params }) {
     {
       q: `Does Foresight Home Inspections offer a warranty in ${cityName}?`,
       a: `Yes! Because Christopher Boykin holds the Certified Master Inspector® designation, every Foresight inspection in ${cityName} comes with the $10,000 Elite Master Inspection Warranty at no additional cost. Coverage includes up to $2,250 each for major appliances, structural components, and major mechanicals (HVAC, electrical, plumbing), plus up to $2,250 for mold remediation and $1,000 for roof leak protection — all with a $0 deductible. The warranty is valid for 90 days from closing or 120 days from the inspection date, whichever comes first.`,
+    },
+    {
+      q: `Do you offer radon testing in ${cityName}, GA?`,
+      a: `Yes — Foresight Home Inspections offers professional radon gas testing in ${cityName} as an add-on service for $175. Radon is the second leading cause of lung cancer in the United States and is completely odorless and invisible. Our testing uses a continuous 48-hour professional diagnostic monitor that provides highly accurate readings. The EPA recommends radon testing for every home purchase, regardless of location. You can add radon testing to any inspection package through our <a href="/quote">instant quote page</a>.`,
+    },
+    {
+      q: `Do you do termite inspections in ${cityName}, GA?`,
+      a: `Yes — we offer Official Georgia Wood Destroying Organism (WDO) inspections in ${cityName} through our licensed pest control partners. Termite and WDO inspections are critical in Georgia's warm, humid climate where subterranean termites are highly active. Pricing starts at $100 for slab foundations, $125 for basements, and $175 for crawlspaces. The inspection produces an Official Georgia Wood Infestation Report, which is often required by lenders at closing.`,
+    },
+    {
+      q: `Do you inspect new construction homes in ${cityName}?`,
+      a: `Absolutely. New construction inspections in ${cityName} start at $355+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our dual-inspector team checks the foundation, framing, electrical, plumbing, HVAC, insulation, grading, and final finishes. We also offer pre-drywall inspections so you can catch structural issues before they're hidden behind walls. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
+    },
+    {
+      q: `What does thermal imaging detect during a home inspection in ${cityName}?`,
+      a: `Thermal imaging (infrared camera technology) is included in every Foresight inspection at no extra charge. In ${cityName} homes, our FLIR thermal cameras detect hidden moisture intrusion behind walls and ceilings, missing or damaged insulation, electrical hotspots that could be fire hazards, HVAC duct leaks, and plumbing leaks beneath floors. These are problems completely invisible to the naked eye that could cost thousands to repair if undiscovered. This advanced technology is a standard part of our dual-inspector approach.`,
     },
   ];
 
@@ -330,7 +356,7 @@ export default async function CityPage({ params }) {
               )}
             </div>
             <div>
-               <img src="/images/hero.jpg" alt={`${cityName} Home Inspection`} style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+               <Image src="/images/hero.jpg" alt={`Certified home inspection in ${cityName}, GA by Foresight Home Inspections`} width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
             </div>
           </div>
         </div>
