@@ -333,7 +333,7 @@ export default function Quote() {
                 className="btn btn-primary" 
                 style={{ width: '100%', fontSize: '1.125rem', padding: '1rem' }}
               >
-                {isCustom ? 'Request Custom Quote' : 'Book Online Instantly'}
+                {isCustom ? '📞 Call 678-480-2110 for Custom Quote' : '📅 Book & Schedule Online Now'}
               </a>
               
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>

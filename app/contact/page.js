@@ -51,6 +51,16 @@ export default function Contact() {
 
       <section className="section bg-gray-light">
         <div className="container">
+          <div style={{ background: 'var(--color-white)', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', marginBottom: '3rem', borderLeft: '4px solid var(--color-red)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+            <div style={{ flex: '1 1 500px' }}>
+              <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>Ready to Book Online?</h2>
+              <p style={{ color: 'var(--color-gray-dark)', margin: 0 }}>Skip the forms and phone calls—schedule your CMI-led dual home inspection instantly using our automated system.</p>
+            </div>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+              📅 Schedule Your Inspection Online
+            </a>
+          </div>
+
           <div className="grid grid-2" style={{ gap: '4rem' }}>
             <div>
               <h2 style={{ marginBottom: '1.5rem' }}>Direct Contact Information</h2>

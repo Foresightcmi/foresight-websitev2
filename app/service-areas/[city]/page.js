@@ -207,8 +207,12 @@ export default async function CityPage({ params }) {
             {introParagraph}
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/quote" className="btn btn-primary">Get an Instant Quote</Link>
-            <a href="tel:6784802110" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>Call 678-480-2110</a>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+              📅 Schedule Your Inspection
+            </a>
+            <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+              Get Instant Quote
+            </Link>
           </div>
         </div>
       </section>
@@ -289,9 +293,14 @@ export default async function CityPage({ params }) {
             <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.125rem', marginBottom: '1.5rem', maxWidth: '700px', margin: '0 auto 1.5rem' }}>
               Getting an inspection isn't just smart—it saves you from financial disasters and gives realtors a powerful tool to negotiate thousands off the asking price.
             </p>
-            <Link href="/quote" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              Secure Your $10,000 Protection Now
-            </Link>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+                📅 Schedule Inspection & Get Warranty
+              </a>
+              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+                See Pricing First
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -445,7 +454,27 @@ export default async function CityPage({ params }) {
       )}
 
       {/* ═══════════════════════════════════════════════════════════════
-          8. ASK FORESIGHT AI CTA
+          8. DEDICATED BOOKING CTA
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
+          <h2 style={{ marginBottom: '1rem' }}>Ready to Schedule Your Inspection in <span style={{ color: 'var(--color-red)' }}>{cityName}</span>?</h2>
+          <p style={{ color: 'var(--color-gray-dark)', marginBottom: '2rem', fontSize: '1.1rem' }}>
+            Book your certified dual-inspector home inspection today. Securing your slot takes less than 5 minutes and includes our comprehensive $10,000 Elite Master warranty.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.2rem', boxShadow: 'var(--shadow-md)' }}>
+              📅 Schedule Your Inspection Online
+            </a>
+            <a href="tel:6784802110" className="btn btn-outline" style={{ padding: '1.25rem 3rem', fontSize: '1.2rem' }}>
+              📞 Call to Book: 678-480-2110
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          9. ASK FORESIGHT AI CTA
       ═══════════════════════════════════════════════════════════════ */}
       <section className="section">
         <div className="container" style={{ textAlign: 'center' }}>

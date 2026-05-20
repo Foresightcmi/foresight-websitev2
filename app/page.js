@@ -14,11 +14,11 @@ export default function Home() {
             At Foresight Home Inspections, LLC, a lead Certified Master Inspector® of InterNACHI will be on site along with another certified inspector. Unparalleled thoroughness, unparalleled peace of mind.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/quote" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+              📅 Schedule Your Inspection
+            </a>
+            <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
               Get Instant Quote
-            </Link>
-            <Link href="/ask-twin" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
-              Ask Foresight AI
             </Link>
           </div>
           <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
@@ -54,9 +54,14 @@ export default function Home() {
                   <span style={{ color: 'var(--color-red)' }}>✓</span> Thermal Imaging & Drone Tech Included
                 </li>
               </ul>
-              <Link href="/ask-twin" className="btn btn-outline" style={{ borderWidth: '2px' }}>
-                Chat with Foresight AI
-              </Link>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  📅 Schedule Now
+                </a>
+                <Link href="/ask-twin" className="btn btn-outline" style={{ borderWidth: '2px' }}>
+                  Ask Foresight AI
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -144,9 +149,14 @@ export default function Home() {
             <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.125rem', marginBottom: '1.5rem', maxWidth: '700px', margin: '0 auto 1.5rem' }}>
               Getting an inspection isn't just smart—it saves you from financial disasters and gives realtors a powerful tool to negotiate thousands off the asking price.
             </p>
-            <Link href="/quote" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              Secure Your $10,000 Protection Now
-            </Link>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+                📅 Schedule & Get Your $10,000 Warranty
+              </a>
+              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+                See Pricing First
+              </Link>
+            </div>
           </div>
         </div>
       </section>
