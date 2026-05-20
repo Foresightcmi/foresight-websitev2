@@ -1,0 +1,39 @@
+name: Monthly City Page Refresher
+
+on:
+  schedule:
+    # Runs on the 1st and 15th of every month at 10:00 AM EST (14:00 UTC)
+    - cron: '0 14 1,15 * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-cities:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Refresh city pages
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/refresh-city-pages.mjs
+
+      - name: Ping Google Sitemap
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://www.fhinspectionsatl.com/sitemap.xml"
+          echo "Google sitemap pinged successfully"
+
+      - name: Commit and push
+        run: |
+          git config user.name "Foresight City Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/cities.json data/refresh-log.json
+          git diff --cached --quiet || (git commit -m "refresh: seasonal city updates $(date +%Y-%m-%d)" && git push)

@@ -1,0 +1,39 @@
+name: Weekly Blog Post Generator
+
+on:
+  schedule:
+    # Runs every Monday at 9:00 AM EST (13:00 UTC)
+    - cron: '0 13 * * 1'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate blog post
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/generate-blog-post.mjs
+
+      - name: Ping Google Sitemap
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://www.fhinspectionsatl.com/sitemap.xml"
+          echo "Google sitemap pinged successfully"
+
+      - name: Commit and push
+        run: |
+          git config user.name "Foresight Blog Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/posts.json
+          git diff --cached --quiet || (git commit -m "blog: auto-generated weekly post $(date +%Y-%m-%d)" && git push)
