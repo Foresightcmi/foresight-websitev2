@@ -2,7 +2,25 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 
-// Dynamically generate routes at build time for high performance SEO
+const SITE_URL = 'https://www.foresighthomeinspections.com';
+
+function loadCities() {
+  const filePath = path.join(process.cwd(), 'data', 'cities.json');
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  return JSON.parse(fileContents);
+}
+
+function toSlug(cityName) {
+  return cityName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+}
+
+function findCity(cities, slug) {
+  return cities.find(c => toSlug(c['City Name']) === slug) || null;
+}
+
+// ---------------------------------------------------------------------------
+// Static params – generates a route for every city in the JSON
+// ---------------------------------------------------------------------------
 export async function generateStaticParams() {
   const filePath = path.join(process.cwd(), 'data', 'cities.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -13,73 +31,165 @@ export async function generateStaticParams() {
   }));
 }
 
+// ---------------------------------------------------------------------------
+// Metadata – SEO titles, descriptions, OpenGraph, canonical
+// ---------------------------------------------------------------------------
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
-  const filePath = path.join(process.cwd(), 'data', 'cities.json');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const cities = JSON.parse(fileContents);
-  
-  const cityNameParam = resolvedParams.city;
-  const cityData = cities.find(c => c['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-') === cityNameParam) || { 'City Name': resolvedParams.city.replace(/-/g, ' '), County: 'Georgia' };
-  
+  const cities = loadCities();
+  const cityData = findCity(cities, resolvedParams.city);
+
+  const cityName = cityData?.['City Name'] || resolvedParams.city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const county = cityData?.County || 'Georgia';
+  const slug = resolvedParams.city;
+
+  const title = cityData?.['Meta Title']
+    || `Best Home Inspector in ${cityName}, GA | Foresight Home Inspections`;
+  const description = cityData?.['Meta Description']
+    || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, dual-inspector services led by a Certified Master Inspector (CMI) for ultimate peace of mind.`;
+
   return {
-    title: `Best Home Inspector in ${cityData['City Name']}, GA | Foresight Home Inspections`,
-    description: `Need a certified home inspector in ${cityData['City Name']}, GA? Foresight Home Inspections provides premium, dual-inspector services led by a Certified Master Inspector (CMI) for ultimate peace of mind.`,
-    keywords: [`Home Inspector ${cityData['City Name']}`, `Best home inspection ${cityData['City Name']} GA`, `Certified Master Inspector ${cityData.County} County`],
+    title,
+    description,
+    keywords: [
+      `Home Inspector ${cityName}`,
+      `Best home inspection ${cityName} GA`,
+      `Certified Master Inspector ${county} County`,
+      `home inspection near me ${cityName}`,
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/service-areas/${slug}`,
+      type: 'website',
+    },
+    alternates: {
+      canonical: `${SITE_URL}/service-areas/${slug}`,
+    },
   };
 }
 
+// ---------------------------------------------------------------------------
+// Page component
+// ---------------------------------------------------------------------------
 export default async function CityPage({ params }) {
   const resolvedParams = await params;
-  const filePath = path.join(process.cwd(), 'data', 'cities.json');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const cities = JSON.parse(fileContents);
-  
-  const cityNameParam = resolvedParams.city;
-  const cityData = cities.find(c => c['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-') === cityNameParam) || { 'City Name': resolvedParams.city.replace(/-/g, ' '), County: 'Georgia' };
-  
-  // Localized JSON-LD Schema
-  const jsonLd = {
+  const cities = loadCities();
+  const cityData = findCity(cities, resolvedParams.city);
+
+  const cityName = cityData?.['City Name'] || resolvedParams.city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const county = cityData?.County || 'Georgia';
+  const zip = cityData?.Zip || '';
+  const slug = resolvedParams.city;
+
+  // ── Intro paragraph ──────────────────────────────────────────────────
+  const introParagraph = cityData?.Intro
+    || `Serving all of ${county} County. When you're buying a home in ${cityName}, you need the absolute best. We provide two certified inspectors on every job for unrivaled accuracy.`;
+
+  // ── FAQ data ─────────────────────────────────────────────────────────
+  const faqs = [
+    {
+      q: `Who is the best home inspector in ${cityName}, GA?`,
+      a: `Christopher Boykin of Foresight Home Inspections is widely regarded as one of the best home inspectors serving ${cityName}, GA. As a Certified Master Inspector (CMI) through InterNACHI — the highest professional designation in the industry — Christopher brings unmatched expertise to every inspection. Foresight sends two certified inspectors on every job, ensuring nothing is missed. Every inspection includes a $10,000 Elite Master Inspection Warranty for total peace of mind.`,
+    },
+    {
+      q: `How much does a home inspection cost in ${cityName}, GA?`,
+      a: `Home inspection pricing in ${cityName} starts at $315+ for a standard buyer's inspection and $365+ for a pre-listing seller's inspection. Pricing varies based on the home's square footage, age, and any add-on services such as radon testing, sewer scope, or mold testing. Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+    },
+    {
+      q: `What should I look for when hiring a home inspector in ${cityName}?`,
+      a: `Look for a Certified Master Inspector (CMI) — the highest credential from InterNACHI. Foresight Home Inspections exceeds this standard with a unique dual-inspector model: two certified inspectors are on every job, so coverage is thorough and nothing slips through the cracks. We also use advanced thermal imaging to detect hidden moisture, insulation gaps, and electrical hotspots. All findings follow InterNACHI Standards of Practice, and our recommendation language complies with industry guidelines.`,
+    },
+    {
+      q: `Does Foresight Home Inspections offer a warranty in ${cityName}?`,
+      a: `Yes! Because Christopher Boykin holds the Certified Master Inspector® designation, every Foresight inspection in ${cityName} comes with the $10,000 Elite Master Inspection Warranty at no additional cost. Coverage includes up to $2,250 each for major appliances, structural components, and major mechanicals (HVAC, electrical, plumbing), plus up to $2,250 for mold remediation and $1,000 for roof leak protection — all with a $0 deductible. The warranty is valid for 90 days from closing or 120 days from the inspection date, whichever comes first.`,
+    },
+  ];
+
+  // ── JSON-LD: Service schema ──────────────────────────────────────────
+  const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Home Inspection",
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
-      "telephone": "678-480-2110"
+      "telephone": "678-480-2110",
     },
     "areaServed": {
       "@type": "City",
-      "name": cityData['City Name'],
+      "name": cityName,
       "containedInPlace": {
         "@type": "State",
-        "name": "Georgia"
-      }
+        "name": "Georgia",
+      },
+    },
+  };
+
+  // ── JSON-LD: LocalBusiness from cities.json ──────────────────────────
+  let localBusinessJsonLd = null;
+  if (cityData?.['JSON-LD Schema']) {
+    try {
+      localBusinessJsonLd = JSON.parse(cityData['JSON-LD Schema']);
+    } catch {
+      // Parsing failed — skip this schema block
     }
+  }
+
+  // ── JSON-LD: FAQPage schema ──────────────────────────────────────────
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a.replace(/<[^>]*>/g, ''),  // strip HTML for schema
+      },
+    })),
   };
 
   return (
     <>
+      {/* ── JSON-LD Schemas ─────────────────────────────────────────── */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      {localBusinessJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      {/* ═══════════════════════════════════════════════════════════════
+          1. HERO
+      ═══════════════════════════════════════════════════════════════ */}
       <section className="hero" style={{ padding: '6rem 0' }}>
         <div className="container hero-content">
           <h1 style={{ marginBottom: '1rem' }}>
             Top-Rated Home Inspection in<br />
-            <span style={{ color: 'var(--color-red)' }}>{cityData['City Name']}, GA</span>
+            <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
           </h1>
           <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem' }}>
-            Serving all of {cityData.County} County. When you're buying a home in {cityData['City Name']}, you need the absolute best. We provide two certified inspectors on every job for unrivaled accuracy.
+            {introParagraph}
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/quote" className="btn btn-primary">Get an Instant Quote</Link>
             <a href="tel:6784802110" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>Call 678-480-2110</a>
           </div>
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════════════════════
+          2. $10,000 WARRANTY SECTION (unchanged)
+      ═══════════════════════════════════════════════════════════════ */}
       <section className="section" style={{ background: 'linear-gradient(135deg, var(--color-dark), #1f2937)', color: 'white' }}>
         <div className="container">
           <div className="section-title">
@@ -146,36 +256,160 @@ export default async function CityPage({ params }) {
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════════════════════
+          3. LOCAL HOUSING RISKS (city-specific)
+      ═══════════════════════════════════════════════════════════════ */}
+      {cityData?.['Local Risks HTML'] && (
+        <section className="section bg-gray-light">
+          <div className="container">
+            <div className="section-title">
+              <h2>Local Housing Risks in <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
+              <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto' }}>
+                Every community has unique housing challenges. Here's what our inspectors commonly find in {cityName} properties.
+              </p>
+            </div>
+            <div
+              className="card card-premium"
+              style={{ maxWidth: '800px', margin: '0 auto' }}
+              dangerouslySetInnerHTML={{ __html: cityData['Local Risks HTML'] }}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════
+          4. SPECIALIZED SERVICES (city-specific)
+      ═══════════════════════════════════════════════════════════════ */}
+      {cityData?.['Services HTML'] && (
+        <section className="section">
+          <div className="container">
+            <div className="section-title">
+              <h2>Our Specialized Services in <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
+              <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto' }}>
+                Tailored inspection services designed for the specific needs of {cityName} homebuyers and sellers.
+              </p>
+            </div>
+            <div
+              className="card"
+              style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}
+              dangerouslySetInnerHTML={{ __html: cityData['Services HTML'] }}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════
+          5. WHY HOMEBUYERS TRUST US (with city-specific benefits)
+      ═══════════════════════════════════════════════════════════════ */}
       <section className="section bg-gray-light">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
             <div className="card card-premium">
-              <h2>Why {cityData['City Name']} Homebuyers Trust Us</h2>
+              <h2>Why {cityName} Homebuyers Trust Us</h2>
               <p style={{ marginBottom: '1.5rem' }}>
-                Houses in {cityData['City Name']} vary from new constructions to historic properties. A standard walkthrough isn't enough. A lead Certified Master Inspector of InterNACHI will be on site along with another certified inspector, bringing thermal imaging and drone technology to every inspection and ensuring your investment is perfectly sound.
+                Houses in {cityName} vary from new constructions to historic properties. A standard walkthrough isn't enough. A lead Certified Master Inspector of InterNACHI will be on site along with another certified inspector, bringing thermal imaging and drone technology to every inspection and ensuring your investment is perfectly sound.
               </p>
-              <ul className="cms-content" style={{ listStyle: 'none', marginBottom: '2rem' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--color-red)' }}>✓</span> Detailed PDF report within 24 hours
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--color-red)' }}>✓</span> Fully licensed & insured in Georgia
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--color-red)' }}>✓</span> Radon, Sewer Scope, & Mold Add-ons
-                </li>
-              </ul>
+              {cityData?.['Benefits HTML'] ? (
+                <div
+                  className="cms-content"
+                  style={{ marginBottom: '2rem' }}
+                  dangerouslySetInnerHTML={{ __html: cityData['Benefits HTML'] }}
+                />
+              ) : (
+                <ul className="cms-content" style={{ listStyle: 'none', marginBottom: '2rem' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>✓</span> Detailed PDF report within 24 hours
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>✓</span> Fully licensed &amp; insured in Georgia
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>✓</span> Radon, Sewer Scope, &amp; Mold Add-ons
+                  </li>
+                </ul>
+              )}
             </div>
             <div>
-               <img src="/images/hero.jpg" alt={`${cityData['City Name']} Home Inspection`} style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+               <img src="/images/hero.jpg" alt={`${cityName} Home Inspection`} style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
             </div>
           </div>
         </div>
       </section>
-      
+
+      {/* ═══════════════════════════════════════════════════════════════
+          6. FAQ ACCORDION
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section">
+        <div className="container">
+          <div className="section-title">
+            <h2>Frequently Asked Questions About Home Inspections in <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
+          </div>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            {faqs.map((faq, i) => (
+              <details
+                key={i}
+                style={{
+                  border: '1px solid var(--color-gray-mid)',
+                  borderRadius: 'var(--radius-md)',
+                  marginBottom: '1rem',
+                  padding: '1.5rem',
+                  background: 'white',
+                }}
+              >
+                <summary
+                  style={{
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    fontSize: '1.1rem',
+                    lineHeight: '1.4',
+                    listStyle: 'none',
+                  }}
+                >
+                  {faq.q}
+                </summary>
+                <div
+                  style={{ marginTop: '1rem', lineHeight: '1.7', color: 'var(--color-gray-dark)' }}
+                  dangerouslySetInnerHTML={{ __html: faq.a }}
+                />
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          7. NEARBY COMMUNITIES
+      ═══════════════════════════════════════════════════════════════ */}
+      {cityData?.['Nearby Cities HTML'] && (
+        <section className="section bg-gray-light">
+          <div className="container" style={{ textAlign: 'center' }}>
+            <div className="section-title">
+              <h2>We Also Serve Communities Near <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
+              <p style={{ color: 'var(--color-gray-dark)', maxWidth: '600px', margin: '0 auto' }}>
+                Foresight Home Inspections proudly serves {cityName} and the surrounding areas across {county} County.
+              </p>
+            </div>
+            <div
+              className="card"
+              style={{
+                maxWidth: '700px',
+                margin: '0 auto',
+                padding: '2rem',
+                fontSize: '1.1rem',
+                lineHeight: '1.8',
+              }}
+              dangerouslySetInnerHTML={{ __html: cityData['Nearby Cities HTML'] }}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════
+          8. ASK FORESIGHT AI CTA
+      ═══════════════════════════════════════════════════════════════ */}
       <section className="section">
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2>Have questions about a home in {cityData['City Name']}?</h2>
+          <h2>Have questions about a home in {cityName}?</h2>
           <p style={{ color: 'var(--color-gray-dark)', marginBottom: '2rem' }}>Chat with Foresight AI, trained on InterNACHI standards.</p>
           <Link href="/ask-twin" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Ask Foresight AI</Link>
         </div>

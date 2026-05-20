@@ -5,6 +5,15 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Service Areas | Foresight Home Inspections',
   description: 'Foresight Home Inspections serves over 160 cities across Georgia. Find a certified master home inspector in your local area.',
+  openGraph: {
+    title: 'Service Areas | Foresight Home Inspections',
+    description: 'Foresight Home Inspections serves over 160 cities across Georgia. Find a certified master home inspector in your local area.',
+    url: 'https://www.fhinspectionsatl.com/service-areas',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.fhinspectionsatl.com/service-areas',
+  },
 };
 
 export default function ServiceAreasDirectory() {
@@ -22,8 +31,27 @@ export default function ServiceAreasDirectory() {
 
   const sortedCounties = Object.keys(citiesByCounty).sort();
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Foresight Home Inspections Service Areas",
+    "description": "All cities served by Foresight Home Inspections across Metro Atlanta, Georgia.",
+    "numberOfItems": cities.length,
+    "itemListElement": cities.map((city, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": `Home Inspections in ${city['City Name']}, GA`,
+      "url": `https://www.fhinspectionsatl.com/service-areas/${city['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+    }))
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
           <h1 style={{ color: 'var(--color-white)' }}>Areas We Serve</h1>

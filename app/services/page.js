@@ -51,8 +51,92 @@ export default function Services() {
     }
   ];
 
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Home Inspection",
+    "provider": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Foresight Home Inspections, LLC",
+      "telephone": "678-480-2110"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Georgia"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Home Inspection Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Inspection", "description": "Comprehensive inspection covering structure, roof, electrical, plumbing, HVAC, and all major systems with two inspectors." }, "price": "315", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "365", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new home was built to specifications. Foundation, framing, pre-drywall, and final walkthrough checks." }, "price": "355", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "125", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "85", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "125", "priceCurrency": "USD" }
+      ]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a home inspection include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Foresight home inspection is a comprehensive evaluation of the property's major systems and components. This includes the structural foundation, roofing, electrical systems, plumbing, HVAC (heating, ventilation, and air conditioning), insulation, windows, doors, interior and exterior surfaces, and built-in appliances. We also perform a complimentary thermal imaging scan to detect hidden moisture intrusion, insulation gaps, and electrical hotspots not visible to the naked eye."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a home inspection take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical home inspection takes between 2 and 3 hours depending on the size, age, and condition of the property. Because Foresight sends two certified inspectors on every appointment, we are able to cover more ground in less time while maintaining thoroughness that exceeds industry standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When do I get my inspection report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will receive your full digital inspection report within 24 hours of the completed inspection. The report includes high-resolution photos, video clips where applicable, and our clear 3-step reporting format: Observation, Implication, and Recommendation—written in plain English so you can negotiate with confidence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer a warranty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every Foresight inspection includes our $10,000 Elite Master Inspection Warranty at no additional cost. This warranty provides coverage for 90 days after closing on items that were inspected, giving you added financial protection and peace of mind during your transition into your new home."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Foresight Home Inspections proudly serves over 163 cities across the Metro Atlanta area and greater Georgia. This includes major areas such as Atlanta, Marietta, Alpharetta, Roswell, Decatur, Kennesaw, and many more. Visit our Service Areas page for a complete list of cities we cover."
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
           <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Inspection Services & Pricing</h1>
@@ -105,6 +189,11 @@ export default function Services() {
               </div>
             ))}
           </div>
+
+          <div style={{ textAlign: 'center', marginTop: '3rem', padding: '2rem', background: 'var(--color-red-light)', borderRadius: 'var(--radius-lg)' }}>
+            <p style={{ fontWeight: 600, fontSize: '1.125rem', marginBottom: '1rem' }}>Proudly serving over 163 cities across Metro Atlanta</p>
+            <Link href="/service-areas" className="btn btn-outline">View All Service Areas</Link>
+          </div>
         </div>
       </section>
 
@@ -125,7 +214,7 @@ export default function Services() {
               <div>
                 <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>🔍 Step 1: The Observation</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
-                  We state exactly what we observed during the inspection in clear, plain language (e.g., *“The water heater's temperature-pressure relief valve is missing a discharge pipe.”*).
+                  We state exactly what we observed during the inspection in clear, plain language (e.g., *"The water heater's temperature-pressure relief valve is missing a discharge pipe."*).
                 </p>
               </div>
             </div>
@@ -137,7 +226,7 @@ export default function Services() {
               <div>
                 <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>💡 Step 2: What This Could Mean</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
-                  We explain the real-world implications, risks, and potential safety or financial consequences (e.g., *“If the water heater ever overheats, super-heated water could release directly onto anyone standing nearby, causing severe burns.”*).
+                  We explain the real-world implications, risks, and potential safety or financial consequences (e.g., *"If the water heater ever overheats, super-heated water could release directly onto anyone standing nearby, causing severe burns."*).
                 </p>
               </div>
             </div>
@@ -149,7 +238,7 @@ export default function Services() {
               <div>
                 <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>🛠️ Step 3: Our Recommendations</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
-                  To stay 100% InterNACHI compliant, our recommendations specify exactly who needs to evaluate the system further and perform repairs as needed, keeping you safe and within standards (e.g., *“Have a licensed plumbing contractor evaluate further and repair as needed.”*).
+                  To stay 100% InterNACHI compliant, our recommendations specify exactly who needs to evaluate the system further and perform repairs as needed, keeping you safe and within standards (e.g., *"Have a licensed plumbing contractor evaluate further and repair as needed."*).
                 </p>
               </div>
             </div>
@@ -160,6 +249,50 @@ export default function Services() {
               Get Your Crystal-Clear Report Now
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section bg-gray-light">
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '0.75rem' }}>Frequently Asked Questions</h2>
+          <p style={{ textAlign: 'center', color: 'var(--color-gray-dark)', marginBottom: '2.5rem' }}>
+            Get answers to the most common questions about our home inspection services.
+          </p>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>What does a home inspection include?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              A Foresight home inspection is a comprehensive evaluation of the property&apos;s major systems and components. This includes the structural foundation, roofing, electrical systems, plumbing, HVAC (heating, ventilation, and air conditioning), insulation, windows, doors, interior and exterior surfaces, and built-in appliances. We also perform a complimentary thermal imaging scan to detect hidden moisture intrusion, insulation gaps, and electrical hotspots not visible to the naked eye.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>How long does a home inspection take?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              A typical home inspection takes between 2 and 3 hours depending on the size, age, and condition of the property. Because Foresight sends two certified inspectors on every appointment, we are able to cover more ground in less time while maintaining thoroughness that exceeds industry standards.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>When do I get my inspection report?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              You will receive your full digital inspection report within 24 hours of the completed inspection. The report includes high-resolution photos, video clips where applicable, and our clear 3-step reporting format: Observation, Implication, and Recommendation—written in plain English so you can negotiate with confidence.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Do you offer a warranty?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              Yes. Every Foresight inspection includes our $10,000 Elite Master Inspection Warranty at no additional cost. This warranty provides coverage for 90 days after closing on items that were inspected, giving you added financial protection and peace of mind during your transition into your new home.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>What areas do you serve?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              Foresight Home Inspections proudly serves over 163 cities across the Metro Atlanta area and greater Georgia. This includes major areas such as Atlanta, Marietta, Alpharetta, Roswell, Decatur, Kennesaw, and many more. Visit our <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Service Areas</Link> page for a complete list of cities we cover.
+            </p>
+          </details>
         </div>
       </section>
     </>
