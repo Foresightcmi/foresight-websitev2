@@ -25,6 +25,7 @@ export default function Header() {
           <ul className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
             <li><Link href="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
             <li><Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
+            <li><Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
             <li><Link href="/quote" onClick={() => setMenuOpen(false)}>Get Quote</Link></li>
             <li><Link href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: 'var(--color-red)', fontWeight: '600' }}>Ask Foresight AI</Link></li>
             <li>
