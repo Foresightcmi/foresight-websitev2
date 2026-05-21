@@ -199,9 +199,9 @@ export default async function CityPage({ params }) {
       ═══════════════════════════════════════════════════════════════ */}
       <section className="hero" style={{ padding: '6rem 0' }}>
         <div className="container hero-content">
-          <div className="slogan-badge">
-            🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
-          </div>
+          <h2 className="slogan-heading">
+            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+          </h2>
           <h1 style={{ marginBottom: '1rem' }}>
             Top-Rated Home Inspection in<br />
             <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>

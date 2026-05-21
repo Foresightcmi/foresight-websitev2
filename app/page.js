@@ -6,9 +6,10 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container hero-content">
-          <div className="slogan-badge">
-            🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
-          </div>
+          <h2 className="slogan-heading">
+            &ldquo;Because hindsight is expensive...<br />
+            <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+          </h2>
           <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
             Certified Home Inspections<br />
             <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>

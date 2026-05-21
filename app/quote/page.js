@@ -201,9 +201,9 @@ export default function Quote() {
     <section className="section bg-gray-light">
       <div className="container">
         <div className="section-title" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-          <div className="slogan-badge-light">
-            🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
-          </div>
+          <h2 className="slogan-heading-light">
+            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+          </h2>
           <h1>Foresight Pricing Estimator</h1>
           <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0' }}>
             Instant, direct, and completely transparent quotes. Based directly on our registered local service fees.

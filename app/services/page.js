@@ -152,9 +152,9 @@ export default function Services() {
 
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
-          <div className="slogan-badge">
-            🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
-          </div>
+          <h2 className="slogan-heading">
+            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+          </h2>
           <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Inspection Services & Pricing</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '0 auto', fontSize: '1.125rem' }}>
             Transparent pricing based on actual square footage. We provide Certified Master Inspector-led inspections with thermal imaging included, plus a full range of specialty assessments.

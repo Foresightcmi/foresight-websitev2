@@ -42,9 +42,9 @@ export default function Contact() {
     <>
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
-          <div className="slogan-badge">
-            🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
-          </div>
+          <h2 className="slogan-heading">
+            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+          </h2>
           <h1 style={{ color: 'var(--color-white)' }}>Contact Foresight</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
             We're ready to provide you with the comprehensive service and peace of mind you deserve.
