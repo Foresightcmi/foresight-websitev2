@@ -6,6 +6,23 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container hero-content">
+          <div style={{
+            display: 'inline-block',
+            background: 'rgba(239, 68, 68, 0.15)',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            color: '#fca5a5',
+            padding: '0.6rem 1.5rem',
+            borderRadius: '9999px',
+            fontWeight: '700',
+            fontSize: '1rem',
+            letterSpacing: '0.03em',
+            marginBottom: '1.75rem',
+            boxShadow: '0 4px 15px rgba(239, 68, 68, 0.15)',
+            textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+            backdropFilter: 'blur(4px)'
+          }}>
+            🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
+          </div>
           <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
             Certified Home Inspections<br />
             <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>

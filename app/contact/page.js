@@ -42,6 +42,23 @@ export default function Contact() {
     <>
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
+          <div style={{
+            display: 'inline-block',
+            background: 'rgba(239, 68, 68, 0.15)',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            color: '#fca5a5',
+            padding: '0.6rem 1.5rem',
+            borderRadius: '9999px',
+            fontWeight: '700',
+            fontSize: '1rem',
+            letterSpacing: '0.03em',
+            marginBottom: '1.75rem',
+            boxShadow: '0 4px 15px rgba(239, 68, 68, 0.15)',
+            textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+            backdropFilter: 'blur(4px)'
+          }}>
+            🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
+          </div>
           <h1 style={{ color: 'var(--color-white)' }}>Contact Foresight</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
             We're ready to provide you with the comprehensive service and peace of mind you deserve.
