@@ -198,27 +198,29 @@ export default async function CityPage({ params }) {
           1. HERO
       ═══════════════════════════════════════════════════════════════ */}
       <section className="hero" style={{ padding: '6rem 0' }}>
-        <div className="container hero-content">
+        <div className="container">
           <h2 className="slogan-heading">
             &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </h2>
-          <h1 style={{ marginBottom: '1rem' }}>
-            Top-Rated Home Inspection in<br />
-            <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
-          </h1>
-          <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem' }}>
-            {introParagraph}
-            <span style={{ display: 'block', marginTop: '1rem', fontSize: '1.05rem', color: 'var(--color-gray-mid)', fontWeight: '500' }}>
-              ⚡ Equipped with high-resolution aerial drones, infrared thermal cameras, and Foresight AI assistance.
-            </span>
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              📅 Schedule Your Inspection
-            </a>
-            <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
-              Get Instant Quote
-            </Link>
+          <div className="hero-content">
+            <h1 style={{ marginBottom: '1rem' }}>
+              Top-Rated Home Inspection in<br />
+              <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
+            </h1>
+            <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem' }}>
+              {introParagraph}
+              <span style={{ display: 'block', marginTop: '1rem', fontSize: '1.05rem', color: 'var(--color-gray-mid)', fontWeight: '500' }}>
+                ⚡ Equipped with high-resolution aerial drones, infrared thermal cameras, and Foresight AI assistance.
+              </span>
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+                📅 Schedule Your Inspection
+              </a>
+              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+                Get Instant Quote
+              </Link>
+            </div>
           </div>
         </div>
       </section>

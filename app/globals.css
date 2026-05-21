@@ -518,16 +518,20 @@ a {
   .section { padding: 4rem 0; }
 }
 
-/* Slogan Heading Styles */
+/* Slogan Heading – sized to fill one line across the screen */
 .slogan-heading {
   font-family: var(--font-heading);
-  font-size: 3.5rem;
+  font-size: clamp(1.15rem, 2.5vw, 2.35rem);
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--color-white);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .slogan-heading .slogan-accent {
@@ -536,21 +540,38 @@ a {
 
 .slogan-heading-light {
   font-family: var(--font-heading);
-  font-size: 3.5rem;
+  font-size: clamp(1.15rem, 2.5vw, 2.35rem);
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--color-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .slogan-heading-light .slogan-accent {
   color: var(--color-red);
 }
 
+/* Scale down h1 when it follows the slogan */
+.slogan-heading + h1,
+.slogan-heading + .hero-content > h1,
+.slogan-heading-light + h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .slogan-heading, .slogan-heading-light {
-    font-size: 2rem;
+    font-size: 1.15rem;
+    white-space: normal;
+  }
+  .slogan-heading + h1,
+  .slogan-heading + .hero-content > h1,
+  .slogan-heading-light + h1 {
+    font-size: 1.5rem;
   }
 }
+
 

@@ -5,30 +5,31 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="container hero-content">
+        <div className="container">
           <h2 className="slogan-heading">
-            &ldquo;Because hindsight is expensive...<br />
-            <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </h2>
-          <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-            Certified Home Inspections<br />
-            <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>
-          </h1>
-          <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.125rem' }}>
-            At Foresight Home Inspections, LLC, a lead Certified Master Inspector® is paired with another certified inspector. Armed with high-resolution drones, advanced thermal cameras, and electronic moisture diagnostic gear, we bring unparalleled high-tech thoroughness to your inspection.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              📅 Schedule Your Inspection
-            </a>
-            <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
-              Get Instant Quote
-            </Link>
-          </div>
-          <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
-             <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/trust_badge.png" alt="InterNACHI Trust Badge" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
+          <div className="hero-content">
+            <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+              Certified Home Inspections<br />
+              <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>
+            </h1>
+            <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.125rem' }}>
+              At Foresight Home Inspections, LLC, a lead Certified Master Inspector® is paired with another certified inspector. Armed with high-resolution drones, advanced thermal cameras, and electronic moisture diagnostic gear, we bring unparalleled high-tech thoroughness to your inspection.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+                📅 Schedule Your Inspection
+              </a>
+              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+                Get Instant Quote
+              </Link>
+            </div>
+            <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
+               <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/trust_badge.png" alt="InterNACHI Trust Badge" width={200} height={140} style={{ height: '140px', width: 'auto', objectFit: 'contain' }} />
+            </div>
           </div>
         </div>
       </section>
