@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
   const title = cityData?.['Meta Title']
     || `Best Home Inspector in ${cityName}, GA | Foresight Home Inspections`;
   const description = cityData?.['Meta Description']
-    || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, dual-inspector services led by a Certified Master Inspector (CMI) for ultimate peace of mind.`;
+    || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, dual-inspector services led by a Certified Master Inspector for ultimate peace of mind.`;
 
   return {
     title,
@@ -100,7 +100,7 @@ export default async function CityPage({ params }) {
   const faqs = [
     {
       q: `Who is the best home inspector in ${cityName}, GA?`,
-      a: `Christopher Boykin of Foresight Home Inspections is widely regarded as one of the best home inspectors serving ${cityName}, GA. As a Certified Master Inspector (CMI) through InterNACHI — the highest professional designation in the industry — Christopher brings unmatched expertise to every inspection. Foresight sends two certified inspectors on every job, ensuring nothing is missed. Every inspection includes a $10,000 Elite Master Inspection Warranty for total peace of mind.`,
+      a: `Christopher Boykin of Foresight Home Inspections is widely regarded as one of the best home inspectors serving ${cityName}, GA. As a Certified Master Inspector through InterNACHI — the highest professional designation in the industry — Christopher brings unmatched expertise to every inspection. Foresight sends two certified inspectors on every job, ensuring nothing is missed. Every inspection includes a $10,000 Elite Master Inspection Warranty for total peace of mind.`,
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
@@ -108,7 +108,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
-      a: `Look for a Certified Master Inspector (CMI) — the highest credential from InterNACHI. Foresight Home Inspections exceeds this standard with a unique dual-inspector model: two certified inspectors are on every job, so coverage is thorough and nothing slips through the cracks. We also use advanced thermal imaging to detect hidden moisture, insulation gaps, and electrical hotspots. All findings follow InterNACHI Standards of Practice, and our recommendation language complies with industry guidelines.`,
+      a: `Look for a Certified Master Inspector — the highest credential from InterNACHI. Foresight Home Inspections exceeds this standard with a unique dual-inspector model: two certified inspectors are on every job, so coverage is thorough and nothing slips through the cracks. We also use advanced thermal imaging to detect hidden moisture, insulation gaps, and electrical hotspots. All findings follow InterNACHI Standards of Practice, and our recommendation language complies with industry guidelines.`,
     },
     {
       q: `Does Foresight Home Inspections offer a warranty in ${cityName}?`,

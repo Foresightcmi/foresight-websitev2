@@ -10,8 +10,8 @@ export const metadata = {
     default: 'Foresight Home Inspections | Certified Master Inspector® | Atlanta GA',
     template: '%s | Foresight Home Inspections',
   },
-  description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® (CMI®) providing premium, thorough home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
-  keywords: ['Home Inspection', 'Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection', 'CMI inspector Georgia', 'home inspection Atlanta GA', 'two inspector home inspection', 'home inspection warranty'],
+  description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium, thorough home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
+  keywords: ['Home Inspection', 'Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two inspector home inspection', 'home inspection warranty'],
   robots: {
     index: true,
     follow: true,
@@ -28,7 +28,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Foresight Home Inspections | Certified Master Inspector® | Atlanta GA',
-    description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® (CMI®) providing premium home inspections across Metro Atlanta with a $10,000 warranty.',
+    description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium home inspections across Metro Atlanta with a $10,000 warranty.',
     url: 'https://www.fhinspectionsatl.com',
     siteName: 'Foresight Home Inspections',
     locale: 'en_US',
@@ -119,7 +119,7 @@ export default function RootLayout({ children }) {
         {
           "@type": "EducationalOccupationalCredential",
           "credentialCategory": "Professional Certification",
-          "name": "Certified Master Inspector (CMI)",
+          "name": "Certified Master Inspector",
           "recognizedBy": {
             "@type": "Organization",
             "name": "InterNACHI",
@@ -169,7 +169,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <div style={{ background: 'var(--color-red)', color: 'white', padding: '0.5rem 1rem', textAlign: 'center', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>
-          🛡️ The CMI Advantage: Every Inspection Includes a $10,000 Protection Warranty at No Extra Cost!
+          🛡️ The Certified Master Inspector Advantage: Every Inspection Includes a $10,000 Protection Warranty at No Extra Cost!
         </div>
         <Header />
 

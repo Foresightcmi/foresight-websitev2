@@ -154,7 +154,7 @@ export default function Services() {
         <div className="container">
           <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Inspection Services & Pricing</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '0 auto', fontSize: '1.125rem' }}>
-            Transparent pricing based on actual square footage. We provide CMI-led inspections with thermal imaging included, plus a full range of specialty assessments.
+            Transparent pricing based on actual square footage. We provide Certified Master Inspector-led inspections with thermal imaging included, plus a full range of specialty assessments.
           </p>
         </div>
       </section>
