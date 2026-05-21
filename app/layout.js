@@ -48,6 +48,9 @@ export const metadata = {
     description: 'Two certified inspectors on every job. $10,000 warranty included. Serving 163+ cities across Metro Atlanta.',
     images: ['/images/logo.jpg'],
   },
+  verification: {
+    google: 'google2daf7fa6e380098a',
+  },
 };
 
 export default function RootLayout({ children }) {
