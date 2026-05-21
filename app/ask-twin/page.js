@@ -392,12 +392,12 @@ export default function AskTwin() {
         }
         .chat-box-container {
           height: 600px;
-          max-height: calc(100vh - 280px);
+          max-height: calc(100vh - 350px);
           min-height: 480px;
         }
         @media (max-width: 768px) {
           .chat-box-container {
-            height: calc(100vh - 220px) !important;
+            height: calc(100vh - 300px) !important;
             max-height: 500px !important;
             min-height: 380px !important;
           }
