@@ -201,20 +201,7 @@ export default function Quote() {
     <section className="section bg-gray-light">
       <div className="container">
         <div className="section-title" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-          <div style={{
-            display: 'inline-block',
-            background: 'rgba(239, 68, 68, 0.15)',
-            border: '1px solid rgba(239, 68, 68, 0.3)',
-            color: 'var(--color-red)',
-            padding: '0.6rem 1.5rem',
-            borderRadius: '9999px',
-            fontWeight: '700',
-            fontSize: '1rem',
-            letterSpacing: '0.03em',
-            marginBottom: '1.75rem',
-            boxShadow: '0 4px 15px rgba(239, 68, 68, 0.08)',
-            backdropFilter: 'blur(4px)'
-          }}>
+          <div className="slogan-badge-light">
             🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
           </div>
           <h1>Foresight Pricing Estimator</h1>

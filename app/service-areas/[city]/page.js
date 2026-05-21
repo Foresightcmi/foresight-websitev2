@@ -199,21 +199,7 @@ export default async function CityPage({ params }) {
       ═══════════════════════════════════════════════════════════════ */}
       <section className="hero" style={{ padding: '6rem 0' }}>
         <div className="container hero-content">
-          <div style={{
-            display: 'inline-block',
-            background: 'rgba(239, 68, 68, 0.15)',
-            border: '1px solid rgba(239, 68, 68, 0.3)',
-            color: '#fca5a5',
-            padding: '0.6rem 1.5rem',
-            borderRadius: '9999px',
-            fontWeight: '700',
-            fontSize: '1rem',
-            letterSpacing: '0.03em',
-            marginBottom: '1.75rem',
-            boxShadow: '0 4px 15px rgba(239, 68, 68, 0.15)',
-            textShadow: '0 1px 2px rgba(0,0,0,0.5)',
-            backdropFilter: 'blur(4px)'
-          }}>
+          <div className="slogan-badge">
             🎯 &quot;Because hindsight is expensive... Choose Foresight!&quot;
           </div>
           <h1 style={{ marginBottom: '1rem' }}>
