@@ -1,0 +1,57 @@
+name: Automated Weekly SEO Pipeline
+
+on:
+  schedule:
+    # Run every Sunday at 2:00 AM UTC (10:00 PM EST Saturday)
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+  run-seo-agents:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        # Fetch full history to push changes back
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Run Keyword Discovery Agent
+      run: node scripts/discover-keywords.mjs
+
+    - name: Run Blog Post Generator Agent
+      run: node scripts/generate-blog-post.mjs
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+    - name: Run City Page Refresher Agent
+      run: node scripts/refresh-city-pages.mjs
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+    - name: Commit and Push Updated Data Files
+      run: |
+        git config --global user.name "Foresight SEO Bot"
+        git config --global user.email "seo-bot@fhinspectionsatl.com"
+        git add data/posts.json data/cities.json data/refresh-log.json
+        # Only commit if there are actual changes
+        if ! git diff --cached --quiet; then
+          git commit -m "chore(seo): automated weekly blog post and city pages refresh [skip ci]"
+          git push
+        else
+          echo "No changes to commit."
+        fi
+
+    - name: Run Search Engine Pinger (IndexNow & Google)
+      run: node scripts/ping-indexnow.mjs

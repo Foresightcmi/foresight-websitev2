@@ -1,0 +1,154 @@
+{
+  "lastScanned": "2026-05-21T22:35:29.517Z",
+  "nap": {
+    "name": "Foresight Home Inspections, LLC",
+    "phone": "678-480-2110",
+    "email": "plsinspectnow@gmail.com",
+    "website": "https://www.fhinspectionsatl.com",
+    "address": "Atlanta, GA",
+    "serviceArea": "Metro Atlanta and surrounding areas",
+    "owner": "Christopher Boykin",
+    "credentials": "Certified Master Inspector (CMI), Certified Professional Inspector (CPI)",
+    "certBody": "InterNACHI",
+    "description": "Premium home inspection services in Metro Atlanta with two certified inspectors on every job. Led by Christopher Boykin, CMI. Every inspection includes thermal imaging, drone technology, and a $10,000 warranty. Serving 163+ cities across Georgia.",
+    "shortDescription": "Certified Master Inspector serving Metro Atlanta. Two inspectors on every job. $10,000 warranty included.",
+    "categories": [
+      "Home Inspector",
+      "Home Inspection Service",
+      "Real Estate Inspection",
+      "Building Inspector"
+    ],
+    "hours": "Monday-Saturday 7:00 AM - 6:00 PM",
+    "socialLinks": {
+      "facebook": "https://facebook.com/fhinspectionsatl",
+      "instagram": "https://www.instagram.com/fhinspectionsatl/",
+      "tiktok": "https://www.tiktok.com/@fhinspectionsatl",
+      "youtube": "https://www.youtube.com/@ForesightHomeInspections-t6r",
+      "linkedin": "https://www.linkedin.com/company/foresight-home-inspections-llc/"
+    }
+  },
+  "citationChecklist": [
+    {
+      "name": "Google Business Profile",
+      "url": "https://business.google.com",
+      "priority": "critical",
+      "status": "claimed"
+    },
+    {
+      "name": "InterNACHI Directory",
+      "url": "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+      "priority": "critical",
+      "status": "active"
+    },
+    {
+      "name": "Yelp",
+      "url": "https://biz.yelp.com",
+      "priority": "high",
+      "status": "check"
+    },
+    {
+      "name": "Facebook Business",
+      "url": "https://facebook.com/fhinspectionsatl",
+      "priority": "high",
+      "status": "active"
+    },
+    {
+      "name": "LinkedIn Company",
+      "url": "https://www.linkedin.com/company/foresight-home-inspections-llc/",
+      "priority": "high",
+      "status": "active"
+    },
+    {
+      "name": "Better Business Bureau",
+      "url": "https://www.bbb.org",
+      "priority": "high",
+      "status": "check"
+    },
+    {
+      "name": "Angi (Angie's List)",
+      "url": "https://www.angi.com",
+      "priority": "high",
+      "status": "check"
+    },
+    {
+      "name": "HomeAdvisor",
+      "url": "https://www.homeadvisor.com",
+      "priority": "high",
+      "status": "check"
+    },
+    {
+      "name": "Thumbtack",
+      "url": "https://www.thumbtack.com",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "Nextdoor Business",
+      "url": "https://business.nextdoor.com",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "Apple Maps",
+      "url": "https://mapsconnect.apple.com",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "Bing Places",
+      "url": "https://www.bingplaces.com",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "Zillow Professional",
+      "url": "https://www.zillow.com/professionals",
+      "priority": "high",
+      "status": "check"
+    },
+    {
+      "name": "Realtor.com",
+      "url": "https://www.realtor.com",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "Porch",
+      "url": "https://porch.com",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "Manta",
+      "url": "https://www.manta.com",
+      "priority": "low",
+      "status": "check"
+    },
+    {
+      "name": "Chamber of Commerce (local)",
+      "url": "https://www.metroatlantachamber.com",
+      "priority": "high",
+      "status": "check"
+    },
+    {
+      "name": "ASHI (if applicable)",
+      "url": "https://www.ashi.org",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "InspectorPages",
+      "url": "https://www.inspectorpages.com",
+      "priority": "medium",
+      "status": "check"
+    },
+    {
+      "name": "Home Inspector Pro Directory",
+      "url": "https://www.homeinspectorpro.com",
+      "priority": "medium",
+      "status": "check"
+    }
+  ],
+  "strategies": [],
+  "opportunities": []
+}
