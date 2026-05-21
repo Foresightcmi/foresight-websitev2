@@ -45,7 +45,7 @@ export default function Services() {
     },
     {
       title: 'Sewer Scope Inspections',
-      price: '$175+',
+      price: '$400',
       description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the home to the municipal connection or septic tank. Highly recommended for older properties.',
       details: ['Main lateral line sewer inspection', 'High-res video feed provided', 'Locate bellies, roots, and cracks', 'Saves thousands in excavation costs'],
       image: '/images/sewer-scope.png'
@@ -58,7 +58,7 @@ export default function Services() {
     },
     {
       title: 'Radon Gas Testing',
-      price: '$175',
+      price: '$175+',
       description: 'Radon is a cancer-causing, odorless radioactive gas. We use professional 48-hour continuous monitors to ensure your home environment is safe (when combined with a home inspection).',
       details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Crucial indoor air safety profile', 'Water radon testing available']
     }

@@ -332,7 +332,7 @@ export default function Quote() {
                   onChange={() => handleAddonToggle('radon')} 
                 />
                 <div>
-                  <span style={{ fontWeight: 600, display: 'block' }}>Radon Gas Testing (+ $175)</span>
+                  <span style={{ fontWeight: 600, display: 'block' }}>Radon Gas Testing (+ $175+)</span>
                   <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour professional electronic monitoring (when combined with a home inspection).</span>
                 </div>
               </label>

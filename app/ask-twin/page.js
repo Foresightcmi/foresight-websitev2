@@ -6,7 +6,7 @@ export default function AskTwin() {
   const [messages, setMessages] = useState([
     {
       role: 'ai',
-      content: "Well hello there! I'm Foresight AI, your seasoned home inspection and maintenance advisor. \n\nWhat's on your mind today? Got a suspicious roof, a foundation crack, a pool question, or are you looking at a brand-new build? Let's talk houses!"
+      content: "Well hello there! I'm Foresight AI, your seasoned home inspection and maintenance advisor. \n\nWhat's on your mind today? Let's talk houses!"
     }
   ]);
   const [input, setInput] = useState('');
@@ -121,9 +121,9 @@ export default function AskTwin() {
       response = "We believe in honest, transparent pricing based on the actual size and age of your home. Standard resale home inspections start at $315, pre-listing seller checks at $365, new builds at $355, and 11-month builder warranty audits at $335.\n\n" +
                  "Here are our updated rates for specialized add-on services:\n" +
                  "- **Termite & WDO Inspection**: Starts at **$125** on a slab or basement, and **$165** on a crawlspace (includes Official GA WDO Report).\n" +
-                 "- **Radon Gas Testing**: **$175** when combined with a home inspection (using professional 48-hour continuous monitors).\n" +
+                 "- **Radon Gas Testing**: **$175+** when combined with a home inspection (using professional 48-hour continuous monitors).\n" +
                  "- **Pool & Spa Inspection**: **$275** for a complete pumps, electrical, filters, and shell integrity evaluation.\n" +
-                 "- **Sewer Scope Inspection**: **$175** to check the main lateral sewer line.\n\n" +
+                 "- **Sewer Scope Inspection**: **$400** to check the main lateral sewer line.\n\n" +
                  "Note: An additional **$75 complexity fee** applies to single-family home inspections for each of the following conditions present: if the property is 50+ years old, has a crawlspace, or has an unfinished/partial basement. These fees stack per condition (e.g., if a home is 50+ years old AND has a crawlspace, the complexity fee is $150).\n\n" +
                  "Adding our high-tech tools (drones, thermal imaging) doesn't cost you a penny extra—it's included in every single package! You can get an exact, instant price tailored to your home on our quote page. Our clients find that the inspection fee is the absolute best money they spend on their purchase, saving them more money in the long run by routinely securing thousands of dollars in negotiations, whether through upfront repairs or closing credits. Let's get you on the schedule!";
     } else {
