@@ -5,12 +5,13 @@
  * Target Workspace Email: inspect@foresightcmi.com
  * 
  * Features:
+ * 0. Programmatic Initial Setup (initialSetup): Creates the folder tree, template doc, and triggers in one click.
  * 1. Webhook Lead Capture (doPost): Saves website checklist signups to a Google Sheet.
  * 2. 3-Part Nurture Sequence: Immediately fires Part 1, and schedules daily cron follow-ups for Parts 2 & 3.
  * 3. HomeGauge Inbox Monitor (monitorInbox): Time-driven scanning of inspect@foresightcmi.com for booking notifications,
  *    auto-creating Google Drive folder structures, copying templates, and sending warm client confirmations.
  * 
- * Brand Slogan: "Hindsight is expensive; choose Foresight to secure your future."
+ * Brand Slogan: "Because hindsight is expensive... Choose Foresight!"
  * Brand Voice: Professional, warm, folksy, Christopher Boykin Certified Master Inspector.
  */
 
@@ -18,6 +19,62 @@
 var ACTIVE_INSPECTIONS_FOLDER_NAME = "Active Inspections";
 var SERVICE_AGREEMENT_TEMPLATE_NAME = "Service Agreement Template";
 var BUSINESS_EMAIL = "inspect@foresightcmi.com";
+
+/**
+ * 0. ONE-CLICK INITIALIZATION ENGINE
+ * Run this function once from the editor to set up folders, templates, and background triggers automatically.
+ */
+function initialSetup() {
+  Logger.log("⚡ Starting Foresight Autonomous Engine Initial Setup...");
+
+  try {
+    // A. Create or verify "Active Inspections" Google Drive Folder
+    var folder = getOrCreateDriveFolder(ACTIVE_INSPECTIONS_FOLDER_NAME);
+    Logger.log("✔ Folder '" + ACTIVE_INSPECTIONS_FOLDER_NAME + "' verified/created.");
+
+    // B. Create or verify "Service Agreement Template" Google Doc in Drive root
+    var templates = DriveApp.getFilesByName(SERVICE_AGREEMENT_TEMPLATE_NAME);
+    if (!templates.hasNext()) {
+      var doc = DocumentApp.create(SERVICE_AGREEMENT_TEMPLATE_NAME);
+      doc.getBody().appendParagraph("FORESIGHT HOME INSPECTIONS, LLC - SERVICE AGREEMENT TEMPLATE\n\n[Please paste your InterNACHI Service Agreement content here]");
+      doc.saveAndClose();
+      Logger.log("✔ Created placeholder Service Agreement Template in your Google Drive.");
+    } else {
+      Logger.log("✔ Service Agreement Template already exists in Google Drive.");
+    }
+
+    // C. Clear existing triggers for these functions to avoid duplicates
+    var triggers = ScriptApp.getProjectTriggers();
+    for (var i = 0; i < triggers.length; i++) {
+      var handler = triggers[i].getHandlerFunction();
+      if (handler === 'monitorInbox' || handler === 'sendNurtureEmails') {
+        ScriptApp.deleteTrigger(triggers[i]);
+        Logger.log("🗑 Cleared duplicate trigger for function: " + handler);
+      }
+    }
+
+    // D. Programmatically build time-driven triggers
+    // 1. Inbox Monitor (HomeGauge bookings) - runs every 10 minutes
+    ScriptApp.newTrigger('monitorInbox')
+             .timeBased()
+             .everyMinutes(10)
+             .create();
+    Logger.log("✔ Created background trigger: monitorInbox (runs every 10 minutes).");
+
+    // 2. Nurture Queue (Day 2 & Day 3 emails) - runs daily between 8 AM and 9 AM
+    ScriptApp.newTrigger('sendNurtureEmails')
+             .timeBased()
+             .everyDays(1)
+             .atHour(8)
+             .create();
+    Logger.log("✔ Created background trigger: sendNurtureEmails (runs daily at 8:00 AM).");
+
+    Logger.log("🎉 Setup Complete! Your Foresight Business Engine is now fully operational.");
+    
+  } catch (error) {
+    Logger.log("❌ Error in initialSetup: " + error.toString());
+  }
+}
 
 /**
  * 1. WEBHOOK ENDPOINT: doPost(e)
@@ -109,7 +166,7 @@ function sendNurtureEmail1(name, email) {
     "<div style=\"font-family: Arial, sans-serif; max-width: 600px; color: #1f2937; line-height: 1.6;\">" +
       "<div style=\"background-color: #d32f2f; color: white; padding: 1.5rem; text-align: center;\">" +
         "<h2 style=\"margin: 0; font-family: Georgia, serif;\">Foresight Home Inspections</h2>" +
-        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... choose Foresight!\"</p>" +
+        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
       "</div>" +
       "<div style=\"padding: 1.5rem;\">" +
         "<p>Well hello there <strong>" + name + "</strong>,</p>" +
@@ -130,7 +187,7 @@ function sendNurtureEmail1(name, email) {
         "<p>If you're already in the middle of a home search and want to get us out there, hop over to our <a href=\"https://www.fhinspectionsatl.com/quote\" style=\"color: #d32f2f; text-decoration: underline; font-weight: bold;\">Instant Quote Calculator</a> to calculate your transparent price and book a spot. Our clients routinely save thousands of dollars at the closing table using our photographic reports!</p>" +
         
         "<p style=\"margin-top: 2rem;\">Take care, and remember:</p>" +
-        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Hindsight is expensive; choose Foresight to secure your future.\"</p>" +
+        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
         "<p>Warmly,</p>" +
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
@@ -155,7 +212,7 @@ function sendNurtureEmail2(name, email) {
     "<div style=\"font-family: Arial, sans-serif; max-width: 600px; color: #1f2937; line-height: 1.6;\">" +
       "<div style=\"background-color: #d32f2f; color: white; padding: 1.5rem; text-align: center;\">" +
         "<h2 style=\"margin: 0; font-family: Georgia, serif;\">Foresight Home Inspections</h2>" +
-        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... choose Foresight!\"</p>" +
+        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
       "</div>" +
       "<div style=\"padding: 1.5rem;\">" +
         "<p>Well hello again <strong>" + name + "</strong>,</p>" +
@@ -176,7 +233,7 @@ function sendNurtureEmail2(name, email) {
         "<p>Remember, a professional home audit isn't an expense—it is designed to save you thousands. If we uncover a $6,000 AC failure or a leaking bathroom wall, we equip you with photographic and video evidence so you can require the seller to correct it before closing, or win significant repair credits.</p>" +
         
         "<p style=\"margin-top: 2rem;\">Keep safe out there, and remember:</p>" +
-        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Hindsight is expensive; choose Foresight to secure your future.\"</p>" +
+        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
         "<p>Warmly,</p>" +
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
@@ -201,7 +258,7 @@ function sendNurtureEmail3(name, email) {
     "<div style=\"font-family: Arial, sans-serif; max-width: 600px; color: #1f2937; line-height: 1.6;\">" +
       "<div style=\"background-color: #d32f2f; color: white; padding: 1.5rem; text-align: center;\">" +
         "<h2 style=\"margin: 0; font-family: Georgia, serif;\">Foresight Home Inspections</h2>" +
-        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... choose Foresight!\"</p>" +
+        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
       "</div>" +
       "<div style=\"padding: 1.5rem;\">" +
         "<p>Well hello there <strong>" + name + "</strong>,</p>" +
@@ -223,7 +280,7 @@ function sendNurtureEmail3(name, email) {
         "<p>📅 Ready to get started? Head over to our <a href=\"https://www.fhinspectionsatl.com/quote\" style=\"color: #d32f2f; text-decoration: underline; font-weight: bold;\">Instant Quote Calculator</a> to calculate your exact fee, or reply directly to this email to ask any questions. We are here to help!</p>" +
         
         "<p style=\"margin-top: 2rem;\">Stay safe, and remember:</p>" +
-        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Hindsight is expensive; choose Foresight to secure your future.\"</p>" +
+        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
         "<p>Warmly,</p>" +
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
@@ -307,7 +364,7 @@ function monitorInbox() {
       var clientName = parseField(emailText, /Client:\s*([^\n\r]+)/i) || 
                        parseField(emailText, /Client Name:\s*([^\n\r]+)/i) || 
                        "Valued Client";
-                       
+                        
       var propertyAddress = parseField(emailText, /Address:\s*([^\n\r]+)/i) || 
                             parseField(emailText, /Property Address:\s*([^\n\r]+)/i) || 
                             parseField(emailText, /Property:\s*([^\n\r]+)/i) || 
@@ -410,7 +467,7 @@ function sendClientWelcomeEmail(clientName, clientEmail, propertyAddress) {
     "<div style=\"font-family: Arial, sans-serif; max-width: 600px; color: #1f2937; line-height: 1.6;\">" +
       "<div style=\"background-color: #d32f2f; color: white; padding: 1.5rem; text-align: center;\">" +
         "<h2 style=\"margin: 0; font-family: Georgia, serif;\">Foresight Home Inspections</h2>" +
-        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... choose Foresight!\"</p>" +
+        "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
       "</div>" +
       "<div style=\"padding: 1.5rem;\">" +
         "<p>Well hello <strong>" + clientName + "</strong>,</p>" +
@@ -423,14 +480,14 @@ function sendClientWelcomeEmail(clientName, clientEmail, propertyAddress) {
             "<li style=\"margin-bottom: 0.5rem;\"><strong>Personal Review</strong>: I review the square footage, age, and foundation type of the property to allocate the perfect inspection window.</li>" +
             "<li style=\"margin-bottom: 0.5rem;\"><strong>Agreement Generation</strong>: I have prepared your electronic <em>Service Agreement</em> inside our secure Google folder. You will receive an email shortly with a link to sign this contract electronically.</li>" +
             "<li><strong>Locking the Schedule</strong>: Once the agreement is signed and your small security deposit is confirmed, your appointment is fully locked on our master calendar.</li>" +
-          "</ol>
+          "</ol>" +
         "</div>" +
         
         "<p>Please sit tight and keep an eye out for our agreement link. There is no manual prep work required on your part—our private system has already automated the setup!</p>" +
         "<p>Should you have any questions or need to add Radon continuous gas testing, Sewer Scope camera line runs, or Termite WDO reviews to your order, feel free to reply directly to this email or give me a ring at 678-480-2110.</p>" +
         
         "<p style=\"margin-top: 2rem;\">Take care, and remember:</p>" +
-        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Hindsight is expensive; choose Foresight to secure your future.\"</p>" +
+        "<p style=\"font-size: 1.1rem; color: #d32f2f; font-weight: bold; font-style: italic;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
         "<p>Warmly,</p>" +
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
