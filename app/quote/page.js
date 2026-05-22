@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function Quote() {
   const [propertyType, setPropertyType] = useState('single-family'); // 'single-family', 'condo'
-  const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str', 'str-municipal'
+  const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str'
   const [sqftRange, setSqftRange] = useState('');
   const [foundation, setFoundation] = useState('slab'); // 'slab', 'basement', 'crawlspace'
   const [ageTier, setAgeTier] = useState('under-50'); // 'under-50', 'over-50', '86+'
@@ -22,9 +22,7 @@ export default function Quote() {
       const params = new URLSearchParams(window.location.search);
       const typeParam = params.get('type');
       const serviceParam = params.get('service');
-      if (typeParam === 'municipal') {
-        setServiceType('str-municipal');
-      } else if (serviceParam === 'str' || typeParam === 'str') {
+      if (serviceParam === 'str' || typeParam === 'str') {
         setServiceType('str');
       }
     }
@@ -91,17 +89,8 @@ export default function Quote() {
         ];
       case 'str':
         return [
-          { label: 'Condo Unit (Base STR Audit)', value: 'str-condo', price: 275 },
-          { label: 'Single-Family Home under 2,500 sq ft (Base STR Audit)', value: 'str-base-sf', price: 325 },
-          { label: 'Home / Estate 2,500 - 5,000 sq ft (Premium STR Audit)', value: 'str-premium-sf', price: 450 },
-          { label: 'Estate over 5,000 sq ft or Multi-Unit (Premium STR Audit)', value: 'str-premium-large', price: 550 },
-          { label: 'Over 10,000 sq ft / Commercial Portfolio', value: 'custom-call', price: 'custom' }
-        ];
-      case 'str-municipal':
-        return [
-          { label: 'Tier 1: Starter / Rural (<100 active rentals)', value: 'str-muni-starter', price: 'municipal-starter' },
-          { label: 'Tier 2: Standard / Suburban (Mid-Range enforcement)', value: 'str-muni-standard', price: 'municipal-standard' },
-          { label: 'Tier 3: Enterprise / High-Density (High tourist volume)', value: 'str-muni-enterprise', price: 'custom' }
+          { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 275 },
+          { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
         ];
       case 'buyer':
       default: // Flyer pricing standard resale pre-purchase
@@ -126,16 +115,6 @@ export default function Quote() {
     const selectedRange = currentRanges.find(r => r.value === sqftRange);
     
     if (!selectedRange) return { total: 0, isCustom: false };
-    
-    if (serviceType === 'str-municipal') {
-      if (selectedRange.value === 'str-muni-starter') {
-        return { total: 'Starter Framework Quote', isCustom: true };
-      }
-      if (selectedRange.value === 'str-muni-standard') {
-        return { total: 'Standard Framework Quote', isCustom: true };
-      }
-      return { total: 'Custom Government Quote', isCustom: true };
-    }
 
     if (selectedRange.price === 'custom' || ageTier === '86+') {
       return { total: 'Custom Quote', isCustom: true };
@@ -307,9 +286,7 @@ export default function Quote() {
 
             <h2 style={{ marginBottom: '1.5rem' }}>3. Finished / Heated Size</h2>
             <div className="form-group">
-              <label className="form-label">
-                {serviceType === 'str-municipal' ? 'Select Framework Scale Tier' : 'Total Heated Square Footage'}
-              </label>
+              <label className="form-label">Total Heated Square Footage</label>
               <select 
                 className="form-control"
                 value={sqftRange}
@@ -332,19 +309,22 @@ export default function Quote() {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.5 
               }}>
-                <strong>📋 DeKalb Ordinance TA-24-1246762 Package Includes:</strong>
-                <ul style={{ paddingLeft: '1.25rem', margin: '0.5rem 0 0 0', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  <li>Smoke detector placement & testing (1 per level + sleeping room).</li>
-                  <li>CO alarm placement & testing (minimum 1 per level).</li>
-                  <li>Fire extinguisher safety check (minimum 1 per level).</li>
-                  <li>Designated off-street parking Site Plan Drawing.</li>
-                  <li>Certified occupancy limit mapping (2 per room + 2, cap of 10).</li>
-                  <li>Digital upload packet for the DeKalb County STR Portal.</li>
+                <strong>📋 Short-Term Rental (STR) Compliance Assist:</strong>
+                <p style={{ margin: '0.25rem 0 0.5rem 0', fontSize: '0.825rem', color: 'var(--color-gray-dark)', lineHeight: 1.4 }}>
+                  Surrounding Atlanta counties require strict compliance. While exact rules vary by county, our service assists hosts by inspecting standard safety benchmarks:
+                </p>
+                <ul style={{ paddingLeft: '1.25rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                  <li>Smoke detector placement & functional testing (each level & sleeping area).</li>
+                  <li>Carbon monoxide alarm placement & testing (minimum 1 per level).</li>
+                  <li>Visible and accessible fire extinguisher safety checks (minimum 1 per level).</li>
+                  <li>Emergency exit route and egress safety evaluations.</li>
+                  <li>Posted local 24-hour agent contact & evacuation map signage checks.</li>
+                  <li>Pre-screening to help you identify county-specific application parameters.</li>
                 </ul>
               </div>
             )}
 
-            {propertyType === 'single-family' && serviceType !== 'str-municipal' && (
+            {propertyType === 'single-family' && (
               <>
                 <h2 style={{ marginBottom: '1.5rem' }}>4. Foundation Details</h2>
                 <div className="form-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -364,51 +344,23 @@ export default function Quote() {
               </>
             )}
 
-            {serviceType === 'str-municipal' && (
-              <div style={{ marginBottom: '2rem' }}>
-                <h2 style={{ marginBottom: '1.5rem' }}>4. Framework Customization Variables</h2>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', background: 'rgba(255,255,255,0.8)', padding: '1.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-mid)' }}>
-                  <div style={{ borderBottom: '1px solid var(--color-gray-mid)', paddingBottom: '1rem' }}>
-                    <strong style={{ display: 'block', fontSize: '0.95rem', marginBottom: '0.25rem' }}>📈 Property & Unit Volume</strong>
-                    <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', margin: 0, lineHeight: 1.4 }}>
-                      Are you managing 50 active STR properties or active portfolios of 5,000+ units? Larger scales adjust DB parsing and tracking costs.
-                    </p>
-                  </div>
-                  <div style={{ borderBottom: '1px solid var(--color-gray-mid)', paddingBottom: '1rem' }}>
-                    <strong style={{ display: 'block', fontSize: '0.95rem', marginBottom: '0.25rem' }}>⚖️ Level of Customization</strong>
-                    <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', margin: 0, lineHeight: 1.4 }}>
-                      Do you need a turnkey out-of-the-box template, or heavy legal custom rewriting to align with pre-existing local charters?
-                    </p>
-                  </div>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '0.95rem', marginBottom: '0.25rem' }}>🔍 Ongoing Scan Monitoring</strong>
-                    <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', margin: 0, lineHeight: 1.4 }}>
-                      Optional weekly/monthly scanning of Airbnb & Vrbo listings to actively flag unregistered operators within your boundaries.
-                    </p>
-                  </div>
-                </div>
+            <>
+              <h2 style={{ marginBottom: '1.5rem' }}>5. Age of Property</h2>
+              <div className="form-group">
+                <label className="form-label">Property Construction Age</label>
+                <select 
+                  className="form-control"
+                  value={ageTier}
+                  onChange={(e) => setAgeTier(e.target.value)}
+                >
+                  <option value="under-50">Under 50 Years Old</option>
+                  <option value="over-50">Home 50+ Years Old * {serviceType !== 'str' && '(+$75 complexity fee)'}</option>
+                  <option value="86+">Historic 86+ Years Old (Call for Price)</option>
+                </select>
               </div>
-            )}
+            </>
 
-            {serviceType !== 'str-municipal' && (
-              <>
-                <h2 style={{ marginBottom: '1.5rem' }}>5. Age of Property</h2>
-                <div className="form-group">
-                  <label className="form-label">Property Construction Age</label>
-                  <select 
-                    className="form-control"
-                    value={ageTier}
-                    onChange={(e) => setAgeTier(e.target.value)}
-                  >
-                    <option value="under-50">Under 50 Years Old</option>
-                    <option value="over-50">Home 50+ Years Old * {serviceType !== 'str' && '(+$75 complexity fee)'}</option>
-                    <option value="86+">Historic 86+ Years Old (Call for Price)</option>
-                  </select>
-                </div>
-              </>
-            )}
-
-            {propertyType === 'single-family' && serviceType !== 'str' && serviceType !== 'str-municipal' && (
+            {propertyType === 'single-family' && serviceType !== 'str' && (
               <div style={{ 
                 background: 'rgba(211, 47, 47, 0.04)', 
                 border: '1px dashed rgba(211, 47, 47, 0.15)', 
@@ -423,82 +375,80 @@ export default function Quote() {
               </div>
             )}
 
-            {serviceType !== 'str-municipal' && (
-              <>
-                <h2 style={{ marginTop: '2.5rem', marginBottom: '1.5rem' }}>6. Specialized Services & Add-ons</h2>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <label className="checkbox-container">
-                    <input 
-                      type="checkbox" 
-                      checked={addons.radon} 
-                      onChange={() => handleAddonToggle('radon')} 
-                    />
-                    <div>
-                      <span style={{ fontWeight: 600, display: 'block' }}>Radon Gas Testing (+ $175+)</span>
-                      <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour professional electronic monitoring (when combined with a home inspection).</span>
-                    </div>
-                  </label>
+            <>
+              <h2 style={{ marginTop: '2.5rem', marginBottom: '1.5rem' }}>6. Specialized Services & Add-ons</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.radon} 
+                    onChange={() => handleAddonToggle('radon')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Radon Gas Testing (+ $175+)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour professional electronic monitoring (when combined with a home inspection).</span>
+                  </div>
+                </label>
 
-                  <label className="checkbox-container">
-                    <input 
-                      type="checkbox" 
-                      checked={addons.termite} 
-                      onChange={() => handleAddonToggle('termite')} 
-                    />
-                    <div>
-                      <span style={{ fontWeight: 600, display: 'block' }}>
-                        Termite & WDO Inspection (+ ${propertyType === 'condo' ? 125 : (foundation === 'crawlspace' ? 165 : 125)})
-                      </span>
-                      <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>
-                        Performed by a licensed professional partner. Generates Official Georgia Wood Infestation Report. Price is $125 on slab/basement and $165 on crawlspace.
-                      </span>
-                    </div>
-                  </label>
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.termite} 
+                    onChange={() => handleAddonToggle('termite')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>
+                      Termite & WDO Inspection (+ ${propertyType === 'condo' ? 125 : (foundation === 'crawlspace' ? 165 : 125)})
+                    </span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>
+                      Performed by a licensed professional partner. Generates Official Georgia Wood Infestation Report. Price is $125 on slab/basement and $165 on crawlspace.
+                    </span>
+                  </div>
+                </label>
 
-                  <label className="checkbox-container">
-                    <input 
-                      type="checkbox" 
-                      checked={addons.pool} 
-                      onChange={() => handleAddonToggle('pool')} 
-                    />
-                    <div>
-                      <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $275)</span>
-                      <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check.</span>
-                    </div>
-                  </label>
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.pool} 
+                    onChange={() => handleAddonToggle('pool')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $275)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check.</span>
+                  </div>
+                </label>
 
-                  <label className="checkbox-container">
-                    <input 
-                      type="checkbox" 
-                      checked={addons.lowFlow} 
-                      onChange={() => handleAddonToggle('lowFlow')} 
-                    />
-                    <div>
-                      <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (+ $100)</span>
-                      <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory compliance check for DeKalb County property transfers (pre-1993 builds).</span>
-                    </div>
-                  </label>
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.lowFlow} 
+                    onChange={() => handleAddonToggle('lowFlow')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (+ $100)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory compliance check for DeKalb County property transfers (pre-1993 builds).</span>
+                  </div>
+                </label>
 
-                  <label className="checkbox-container">
-                    <input 
-                      type="checkbox" 
-                      checked={addons.buildfax} 
-                      onChange={() => handleAddonToggle('buildfax')} 
-                    />
-                    <div>
-                      <span style={{ fontWeight: 600, display: 'block' }}>BuildFax Permit & Improvement Report (+ $15)</span>
-                      <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Detailed records of past building permits, additions, and updates.</span>
-                    </div>
-                  </label>
-                </div>
-              </>
-            )}
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.buildfax} 
+                    onChange={() => handleAddonToggle('buildfax')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>BuildFax Permit & Improvement Report (+ $15)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Detailed records of past building permits, additions, and updates.</span>
+                  </div>
+                </label>
+              </div>
+            </>
           </div>
 
           <div style={{ position: 'sticky', top: '120px' }}>
             <div className="card card-premium" style={{ background: 'var(--color-dark)', color: 'var(--color-white)', boxShadow: 'var(--shadow-xl)' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '1rem', borderBottom: '1px solid var(--color-gray-dark)', paddingBottom: '1rem' }}>
-                {serviceType === 'str-municipal' ? 'Advisory Framework Summary' : 'Estimated Pricing Summary'}
+                Estimated Pricing Summary
               </h3>
               
               <div style={{ fontSize: isCustom ? '1.8rem' : '4rem', fontWeight: 800, color: 'var(--color-red)', marginBottom: '0.5rem', lineHeight: 1 }}>
@@ -506,157 +456,102 @@ export default function Quote() {
               </div>
               
               <p style={{ color: 'var(--color-gray)', marginBottom: '2rem', fontSize: '0.875rem' }}>
-                {serviceType === 'str-municipal' 
-                  ? 'Custom jurisdictional engineering matching local zoning charter rules.' 
-                  : 'Calculated on real Atlanta area inspection schedules. No hidden booking charges.'}
+                Calculated on real Atlanta area inspection schedules. No hidden booking charges.
               </p>
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'var(--color-gray-mid)' }}>
-                {serviceType === 'str-municipal' ? (
-                  <>
-                    <li>✓ Standard Turnkey Ordinance Modular Templates</li>
-                    <li>✓ Custom Local Responder & Parking Modules</li>
-                    <li>✓ 24/7 Hotline & Portal API Integration Available</li>
-                    <li>✓ Certified Master Inspector-led Legal Guidance</li>
-                  </>
-                ) : (
-                  <>
-                    <li>✓ Two trained inspectors on site</li>
-                    <li>✓ Thermal infrared scan included</li>
-                    <li>✓ Digital summary with photos & video</li>
-                    <li>✓ Georgia-certified master level execution</li>
-                  </>
-                )}
+                <li>✓ Two trained inspectors on site</li>
+                <li>✓ Thermal infrared scan included</li>
+                <li>✓ Digital summary with photos & video</li>
+                <li>✓ Georgia-certified master level execution</li>
               </ul>
               
-              {serviceType !== 'str-municipal' && (
-                <div style={{ background: 'rgba(211, 47, 47, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1rem', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
-                  <p style={{ color: 'var(--color-white)', fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.4, textAlign: 'center' }}>
-                    {serviceType === 'str' 
-                      ? 'Confirming your DeKalb STR permit readiness safely. Save yourself from non-refundable government portal fees.' 
-                      : "Don't just get a checklist—get $10,000 in real legal and financial protection. Secure your home investment with Foresight."}
-                  </p>
-                </div>
-              )}
+              <div style={{ background: 'rgba(211, 47, 47, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1rem', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
+                <p style={{ color: 'var(--color-white)', fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.4, textAlign: 'center' }}>
+                  {serviceType === 'str' 
+                    ? 'Verify your short-term rental compliance safety before county spot checks. Schedule online in seconds.' 
+                    : "Don't just get a checklist—get $10,000 in real legal and financial protection. Secure your home investment with Foresight."}
+                </p>
+              </div>
 
-              {serviceType === 'str-municipal' ? (
-                <div style={{ 
-                  background: 'rgba(211, 47, 47, 0.08)', 
-                  padding: '1.25rem', 
-                  borderRadius: 'var(--radius-md)', 
-                  marginBottom: '1.5rem', 
-                  border: '1px solid rgba(211, 47, 47, 0.2)',
+              <div style={{ 
+                background: 'rgba(16, 185, 129, 0.08)', 
+                padding: '1.25rem', 
+                borderRadius: 'var(--radius-md)', 
+                marginBottom: '1.5rem', 
+                border: '1px solid rgba(16, 185, 129, 0.2)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.6rem'
+              }}>
+                <span style={{ 
+                  color: '#34d399', 
+                  fontSize: '0.85rem', 
+                  fontWeight: '700', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.05em',
                   display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.6rem'
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  lineHeight: 1
                 }}>
-                  <span style={{ 
-                    color: '#f87171', 
-                    fontSize: '0.85rem', 
-                    fontWeight: '700', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '0.05em',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    lineHeight: 1
-                  }}>
-                    🏛️ STR Regulatory Framework
-                  </span>
-                  <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.825rem', fontWeight: 400, lineHeight: 1.5, margin: 0 }}>
-                    <strong>Modular Compliance Framework:</strong> Because every county and city features unique zoning charters, density targets, and local hotel tax rates, our software and advisory framework is completely modular. Contact our team today to review your ordinance targets and design an enforcement model that works.
-                  </p>
-                </div>
-              ) : (
+                  💰 Smart Investment & Savings
+                </span>
+                
                 <div style={{ 
-                  background: 'rgba(16, 185, 129, 0.08)', 
-                  padding: '1.25rem', 
-                  borderRadius: 'var(--radius-md)', 
-                  marginBottom: '1.5rem', 
-                  border: '1px solid rgba(16, 185, 129, 0.2)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.6rem'
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'center', 
+                  background: 'rgba(16, 185, 129, 0.05)',
+                  padding: '0.75rem 1rem',
+                  borderRadius: 'var(--radius-sm)',
+                  border: '1px dashed rgba(16, 185, 129, 0.2)',
+                  margin: '0.25rem 0'
                 }}>
-                  <span style={{ 
-                    color: '#34d399', 
-                    fontSize: '0.85rem', 
-                    fontWeight: '700', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '0.05em',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    lineHeight: 1
-                  }}>
-                    💰 Smart Investment & Savings
-                  </span>
-                  
-                  <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center', 
-                    background: 'rgba(16, 185, 129, 0.05)',
-                    padding: '0.75rem 1rem',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px dashed rgba(16, 185, 129, 0.2)',
-                    margin: '0.25rem 0'
-                  }}>
-                    <div>
-                      <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
-                        {serviceType === 'str' ? 'License Fee Risk Saved' : 'Negotiating Leverage'}
-                      </span>
-                      <strong style={{ fontSize: '1.4rem', color: '#34d399', letterSpacing: '-0.02em' }}>
-                        {serviceType === 'str' ? '$175 Pre-Screen' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
-                      </strong>
-                    </div>
-                    <div style={{ textAlign: 'right' }}>
-                      <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
-                        {serviceType === 'str' ? 'Inspection ROI' : 'Est. Savings ROI'}
-                      </span>
-                      <strong style={{ fontSize: '1.15rem', color: '#34d399' }}>
-                        {serviceType === 'str' ? 'Avoid Non-Refundable' : (typeof total === 'number' && total > 0 ? `${Math.round((leverage.min / total) * 100)}%` : '800%+')}
-                      </strong>
-                    </div>
+                  <div>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
+                      {serviceType === 'str' ? 'County Safety Compliance' : 'Negotiating Leverage'}
+                    </span>
+                    <strong style={{ fontSize: '1.4rem', color: '#34d399', letterSpacing: '-0.02em' }}>
+                      {serviceType === 'str' ? 'Starts at $275' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
+                    </strong>
                   </div>
-
-                  <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.825rem', fontWeight: 400, lineHeight: 1.5, margin: 0 }}>
-                    {serviceType === 'str' ? (
-                      <span>
-                        Foresight verifies your property's historic status first to prevent you from losing DeKalb's <strong>$175 non-refundable license fee</strong>, and certifies your physical site assets to secure swift portal approval.
-                      </span>
-                    ) : (
-                      <span>
-                        Getting us to perform your physical inspection is designed to <strong>save you more money in the long run</strong>. We regularly save our clients thousands of dollars by uncovering hidden defects, giving you the undeniable leverage to secure <strong>upfront repairs</strong> from the seller/builder on their dime, or win heavy <strong>repair credits</strong> at the closing table.
-                      </span>
-                    )}
-                  </p>
+                  <div style={{ textAlign: 'right' }}>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>
+                      {serviceType === 'str' ? 'Compliance Assist' : 'Est. Savings ROI'}
+                    </span>
+                    <strong style={{ fontSize: '1.15rem', color: '#34d399' }}>
+                      {serviceType === 'str' ? 'Avoid Shutdowns' : (typeof total === 'number' && total > 0 ? `${Math.round((leverage.min / total) * 100)}%` : '800%+')}
+                    </strong>
+                  </div>
                 </div>
-              )}
 
-              {serviceType === 'str-municipal' ? (
-                <a 
-                  href="tel:6784802110" 
-                  className="btn btn-primary" 
-                  style={{ width: '100%', fontSize: '1.125rem', padding: '1rem', background: 'var(--color-red)', color: 'white', border: 'none', textAlign: 'center', display: 'block' }}
-                >
-                  📞 Contact Gov Advisory Team
-                </a>
-              ) : (
-                <a 
-                  href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn btn-primary" 
-                  style={{ width: '100%', fontSize: '1.125rem', padding: '1rem', textAlign: 'center', display: 'block' }}
-                >
-                  {isCustom ? '📞 Call 678-480-2110 for Custom Quote' : '📅 Book STR Audit Online Now'}
-                </a>
-              )}
+                <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.825rem', fontWeight: 400, lineHeight: 1.5, margin: 0 }}>
+                  {serviceType === 'str' ? (
+                    <span>
+                      Foresight inspects key safety parameters including smoke alarms, carbon monoxide detectors, fire extinguishers, and exit routes, helping ensure you meet your local jurisdiction’s rules.
+                    </span>
+                  ) : (
+                    <span>
+                      Getting us to perform your physical inspection is designed to <strong>save you more money in the long run</strong>. We regularly save our clients thousands of dollars by uncovering hidden defects, giving you the undeniable leverage to secure <strong>upfront repairs</strong> from the seller/builder on their dime, or win heavy <strong>repair credits</strong> at the closing table.
+                    </span>
+                  )}
+                </p>
+              </div>
+
+              <a 
+                href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary" 
+                style={{ width: '100%', fontSize: '1.125rem', padding: '1rem', textAlign: 'center', display: 'block' }}
+              >
+                {isCustom ? '📞 Call 678-480-2110 for Custom Quote' : '📅 Book STR Compliance Assist Now'}
+              </a>
               
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                 <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                  {serviceType === 'str-municipal' ? 'Have questions on modular frameworks?' : 'Need specialized consulting or WDO explanations?'}
+                  Need specialized consulting or WDO explanations?
                 </p>
                 <a href="/ask-twin" style={{ color: 'var(--color-red-light)', fontWeight: 600, fontSize: '0.95rem' }}>
                   Ask Foresight AI →

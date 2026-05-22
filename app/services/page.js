@@ -88,8 +88,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "275", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "175", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Host Compliance Audit", "description": "Turnkey safety, occupancy and parking planning audits mapped to DeKalb County Ordinance TA-24-1246762." }, "price": "275", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "STR Compliance Framework Implementation", "description": "Modular regulatory consulting and software suite for counties, cities and property management portfolios." }, "price": "2500", "priceCurrency": "USD" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Assist", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "275", "priceCurrency": "USD" }
       ]
     }
   };
@@ -248,184 +247,55 @@ export default function Services() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          SHORT-TERM RENTAL (STR) COMPLIANCE SUITE
+          SHORT-TERM RENTAL (STR) COMPLIANCE ASSIST
       ═══════════════════════════════════════════════════════════════ */}
       <section className="section bg-white" style={{ borderBottom: '1px solid var(--color-gray-mid)' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
-            <span className="badge" style={{ marginBottom: '1rem' }}>Ordinance TA-24-1246762 Authority</span>
-            <h2>Short-Term Rental (STR) Compliance Suite</h2>
+            <span className="badge" style={{ marginBottom: '1rem' }}>Metro Atlanta STR Support</span>
+            <h2>Short-Term Rental (STR) Compliance Assist</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '1rem auto 0', fontSize: '1.1rem', lineHeight: 1.6 }}>
-              Whether you are an individual real estate investor navigating local municipal rules or a local government designing balanced regulations, Foresight provides the master-level audits, site planning, and compliance structures to safeguard the community and your investments.
+              Surrounding counties and cities across the Metro Atlanta area (including DeKalb, Fulton, Gwinnett, Cobb, and more) are requiring active compliance inspections for short-term rental operators on Airbnb and Vrbo. Since every county features unique local ordinances, zoning requirements, and safety checklists, Foresight provides standard third-party safety audits starting at our base rate to ensure your property remains active and compliant.
             </p>
           </div>
 
-          {/* Individual Operators vs Municipal Grid */}
-          <div className="grid grid-2" style={{ gap: '3rem', marginBottom: '4rem' }}>
-            {/* Host Audits */}
-            <div className="card card-premium" style={{ borderTop: '5px solid var(--color-red)', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ padding: '1rem 0' }}>
-                <span className="badge" style={{ background: 'var(--color-red-light)', color: 'var(--color-red)', fontWeight: 700 }}>For Airbnb / VRBO Hosts</span>
-                <h3 style={{ marginTop: '1rem', fontSize: '1.75rem', fontWeight: 800 }}>DeKalb County Host Portal Readiness</h3>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.975rem', margin: '1rem 0 2rem', lineHeight: 1.6 }}>
-                  Our professional dual-inspector compliance reviews are meticulously mapped to the strict **DeKalb County Ordinance TA-24-1246762**, keeping you fully licensed and secure against non-compliance shut-downs or heavy local enforcement fines.
-                </p>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
-                  <div style={{ borderBottom: '1px dashed var(--color-gray-mid)', paddingBottom: '1.25rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                      <strong style={{ fontSize: '1.15rem' }}>Base STR Compliance Package</strong>
-                      <span style={{ color: 'var(--color-red)', fontWeight: 800, fontSize: '1.35rem' }}>$275 – $350</span>
-                    </div>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', display: 'block', marginBottom: '0.75rem' }}>
-                      Best for standard condos and single-family homes under 2,500 sq. ft.
-                    </span>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.9rem' }}>
-                      <li>🛡️ <strong>Life-Safety Verification:</strong> Testing & placement verification of smoke detectors (one per level & sleeping area) and CO alarms.</li>
-                      <li>🧯 <strong>Fire Safety Equipment:</strong> Inspection & logging of visible, accessible fire extinguishers (at least one per level).</li>
-                      <li>🚗 <strong>Mandatory Parking Site Plan:</strong> Professional scaled drawing of designated off-street parking spaces.</li>
-                      <li>👥 <strong>Legal Occupancy Mapping:</strong> Certified calculation of property limit (2 per guest room + 2, cap of 10).</li>
-                      <li>📁 <strong>Portal Upload Packet:</strong> Digital PDF with certified calculations, photos, and drawings ready for the DeKalb County STR Portal.</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                      <strong style={{ fontSize: '1.15rem' }}>Premium "Investor-Grade" Audit</strong>
-                      <span style={{ color: 'var(--color-red)', fontWeight: 800, fontSize: '1.35rem' }}>$450+</span>
-                    </div>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', display: 'block', marginBottom: '0.75rem' }}>
-                      Designed for larger estates (5,000+ sq. ft.) or multi-unit investment portfolios.
-                    </span>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.9rem' }}>
-                      <li>✨ Includes everything in the Base Package plus:</li>
-                      <li>🚪 <strong>Egress & Structural Review:</strong> Detailed check of stairs, handrails, and emergency exit routes to prevent spot-check failures.</li>
-                      <li>🪧 <strong>Signage Verification:</strong> Verification of mandatory 24-hour local agent contact info and evacuation maps posted on-site.</li>
-                      <li>🔊 <strong>Noise Ordinance Consultation:</strong> Legal analysis of local 65-decibel daytime limits and nighttime "plainly audible" regulations.</li>
-                    </ul>
-                  </div>
+          <div style={{ maxWidth: '800px', margin: '0 auto 4rem' }}>
+            <div className="card card-premium" style={{ borderTop: '5px solid var(--color-red)', padding: '2.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', borderBottom: '1px solid var(--color-gray-mid)', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
+                <div>
+                  <span className="badge" style={{ background: 'var(--color-red-light)', color: 'var(--color-red)', fontWeight: 700 }}>Host Safety Compliance Check</span>
+                  <h3 style={{ marginTop: '0.5rem', fontSize: '1.75rem', fontWeight: 800 }}>STR Compliance Assist</h3>
                 </div>
-
-                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <Link href="/quote" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
-                    📊 Calculate Host Audit Price
-                  </Link>
-                  <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ width: '100%', textAlign: 'center', color: 'var(--color-red)', borderColor: 'var(--color-red)' }}>
-                    📅 Schedule Host Audit
-                  </a>
+                <div style={{ textAlign: 'right' }}>
+                  <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', display: 'block' }}>Starting at</span>
+                  <strong style={{ color: 'var(--color-red)', fontSize: '2.25rem', fontWeight: 800 }}>$275</strong>
                 </div>
               </div>
-            </div>
 
-            {/* Municipal Frameworks */}
-            <div className="card card-premium" style={{ borderTop: '5px solid var(--color-dark)', display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--color-gray-light)' }}>
-              <div style={{ padding: '1rem 0' }}>
-                <span className="badge" style={{ background: 'var(--color-dark)', color: 'white', fontWeight: 700 }}>For Municipalities & Counties</span>
-                <h3 style={{ marginTop: '1rem', fontSize: '1.75rem', fontWeight: 800 }}>STR Compliance Framework Implementation</h3>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.975rem', margin: '1rem 0 2rem', lineHeight: 1.6 }}>
-                  We consult directly with local governments, county boards, tourist destinations, and enterprise property groups to engineer robust, modular regulatory frameworks that balance community housing needs with sustainable tourism.
-                </p>
+              <p style={{ color: 'var(--color-gray-dark)', fontSize: '1rem', lineHeight: 1.6, marginBottom: '2rem' }}>
+                Every local jurisdiction has slightly different requirements, but they almost all require a certified third-party physical inspection of basic safety systems to secure or renew your operating permit. We assist hosts by thoroughly inspecting and verifying standard county compliance items:
+              </p>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
-                  <div style={{ background: 'white', padding: '1rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <strong style={{ fontSize: '1rem' }}>Tier 1: Starter / Rural Tier</strong>
-                      <span style={{ fontWeight: 700, color: 'var(--color-red)' }}>Low Volume</span>
-                    </div>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '0.25rem' }}>
-                      Target: Counties & startups under 100 active rentals. Standard turnkey ordinance templates, basic onboarding, and standard email support.
-                    </span>
-                  </div>
-
-                  <div style={{ background: 'white', padding: '1rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <strong style={{ fontSize: '1rem' }}>Tier 2: Standard / Suburban Tier</strong>
-                      <span style={{ fontWeight: 700, color: 'var(--color-red)' }}>Mid Volume</span>
-                    </div>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '0.25rem' }}>
-                      Target: Mid-sized counties needing active enforcement. Universal framework, customized local responder/parking modules, tax collection setup advice, and monthly compliance reporting.
-                    </span>
-                  </div>
-
-                  <div style={{ background: 'white', padding: '1rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <strong style={{ fontSize: '1rem' }}>Tier 3: Enterprise / High-Density</strong>
-                      <span style={{ fontWeight: 700, color: 'var(--color-red)' }}>Custom Quote Only</span>
-                    </div>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '0.25rem' }}>
-                      Target: Major tourist destinations, large urban counties, or massive portfolios. Full API integration, active 24/7 hotline management, legal review, and dedicated account support.
-                    </span>
-                  </div>
-                </div>
-
-                <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <div style={{ background: 'rgba(211, 47, 47, 0.04)', border: '1px dashed rgba(211, 47, 47, 0.2)', padding: '1rem', borderRadius: 'var(--radius-md)', fontSize: '0.85rem', color: 'var(--color-gray-dark)', lineHeight: 1.45 }}>
-                    📈 <strong>Cost-Shifting Variables:</strong> Pricing reflects property volume (50 vs. 5,000 units), required level of legal customization (universal template vs. heavy legal rewriting), and optional ongoing monitoring (weekly Airbnb/Vrbo scanning for unregistered listings).
-                  </div>
-                  <Link href="/quote?type=municipal" className="btn btn-outline" style={{ width: '100%', textAlign: 'center', background: 'var(--color-dark)', color: 'white', border: 'none' }}>
-                    📞 Contact Our Advisory Team
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Authority and Promotion Items Block */}
-          <div style={{ background: 'linear-gradient(135deg, rgba(211, 47, 47, 0.03) 0%, rgba(0, 0, 0, 0.01) 100%)', border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '2.5rem 3rem' }}>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '1.5rem', textAlign: 'center' }}>
-              Why Operators & Jurisdictions Choose Foresight
-            </h3>
-            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-dark)', textAlign: 'center', maxWidth: '750px', margin: '0 auto 2.5rem', lineHeight: 1.6 }}>
-              Foresight is led by dual Georgia Certified Master Inspectors. We deliver high-authority compliance certs matching **Ordinance TA-24-1246762** to keep real estate portfolios active and legally sound.
-            </p>
-
-            <div className="grid grid-3" style={{ gap: '2rem' }}>
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                <span style={{ fontSize: '1.75rem', display: 'block', marginBottom: '0.5rem' }}>🗺️</span>
-                <strong style={{ fontSize: '1rem', display: 'block', marginBottom: '0.35rem' }}>Mandatory Site Plan Drawings</strong>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>
-                  We provide the exact scaled designated parking plan layout required by the Business License Division for DeKalb portal approvals.
-                </p>
+              <div className="grid grid-2" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem' }}>
+                  <li>🛡️ <strong>Life-Safety Alarms:</strong> Placement and functional testing of smoke detectors (minimum one per level and inside every sleeping room) and carbon monoxide alarms (minimum one per level).</li>
+                  <li>🧯 <strong>Fire Extinguishers:</strong> Verification and documentation of visible, accessible fire extinguishers (at least one per level).</li>
+                  <li>🚪 <strong>Egress Safety:</strong> Detailed checks of stairs, handrails, guards, and exit routes to ensure clear emergency egress paths.</li>
+                </ul>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem' }}>
+                  <li>🪧 <strong>Local Agent Signage:</strong> Checking that the mandatory 24-hour local contact information and evacuation maps are clearly posted.</li>
+                  <li>🚫 <strong>Historic Exclusions:</strong> Pre-screening checks for localized historic district restrictions to safeguard your non-refundable government portal application fees.</li>
+                  <li>📞 <strong>Custom Pricing:</strong> Pricing starts at **$275** based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
+                </ul>
               </div>
 
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                <span style={{ fontSize: '1.75rem', display: 'block', marginBottom: '0.5rem' }}>🧮</span>
-                <strong style={{ fontSize: '1rem', display: 'block', marginBottom: '0.35rem' }}>Occupancy Certifications</strong>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>
-                  We officially certify guest room parameters and calculate structural caps to shield operators from severe over-occupancy fines.
-                </p>
-              </div>
-
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                <span style={{ fontSize: '1.75rem', display: 'block', marginBottom: '0.5rem' }}>🔑</span>
-                <strong style={{ fontSize: '1rem', display: 'block', marginBottom: '0.35rem' }}>Local Agent Readiness</strong>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>
-                  We verify that the mandatory 24-hour responder agent information is properly posted on-site for guest safety and neighbor compliance.
-                </p>
-              </div>
-
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                <span style={{ fontSize: '1.75rem', display: 'block', marginBottom: '0.5rem' }}>📝</span>
-                <strong style={{ fontSize: '1rem', display: 'block', marginBottom: '0.35rem' }}>Tax Compliance Documentation</strong>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>
-                  We supply critical rental unit files so you are fully prepared to remit the required 8% hotel-motel tax accurately.
-                </p>
-              </div>
-
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                <span style={{ fontSize: '1.75rem', display: 'block', marginBottom: '0.5rem' }}>🚫</span>
-                <strong style={{ fontSize: '1rem', display: 'block', marginBottom: '0.35rem' }}>Historic District Exclusion Check</strong>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>
-                  *Critical Pre-Screen:* We confirm your property is not in a prohibited historic district, saving you DeKalb's $175 non-refundable license application fee.
-                </p>
-              </div>
-
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gray-mid)' }}>
-                <span style={{ fontSize: '1.75rem', display: 'block', marginBottom: '0.5rem' }}>⚖️</span>
-                <strong style={{ fontSize: '1rem', display: 'block', marginBottom: '0.35rem' }}>Universal Compliance Modularity</strong>
-                <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.85rem', lineHeight: 1.5, margin: 0 }}>
-                  Every Georgia city and county has unique zoning and density targets. Our systems are fully modular to adapt to your specific charter rules.
-                </p>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <Link href="/quote" className="btn btn-primary" style={{ padding: '0.75rem 2rem' }}>
+                  📊 Estimate STR Price
+                </Link>
+                <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.75rem 2rem', color: 'var(--color-red)', borderColor: 'var(--color-red)' }}>
+                  📅 Schedule Audit
+                </a>
               </div>
             </div>
           </div>
