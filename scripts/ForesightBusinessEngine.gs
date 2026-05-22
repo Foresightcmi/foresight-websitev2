@@ -28,7 +28,11 @@ function initialSetup() {
   Logger.log("⚡ Starting Foresight Autonomous Engine Initial Setup...");
 
   try {
-    // A. Create or verify "Active Inspections" Google Drive Folder
+    // A. Create or verify "Leads" sheet tab and headers programmatically
+    var leadsSheet = getOrCreateLeadsSheet();
+    Logger.log("✔ Google Sheet database structure ('Leads' tab and headers) created/verified.");
+
+    // B. Create or verify "Active Inspections" Google Drive Folder
     var folder = getOrCreateDriveFolder(ACTIVE_INSPECTIONS_FOLDER_NAME);
     Logger.log("✔ Folder '" + ACTIVE_INSPECTIONS_FOLDER_NAME + "' verified/created.");
 
@@ -473,17 +477,17 @@ function sendClientWelcomeEmail(clientName, clientEmail, propertyAddress) {
         "<p>Well hello <strong>" + clientName + "</strong>,</p>" +
         "<p>I just received your booking notification from our schedule database for the property at <strong>" + propertyAddress + "</strong>. First off, thank you for trusting us with your home! Buying a house is the biggest financial transaction of your life, and I'm glad you chose Foresight to secure your investment.</p>" +
         "<p>I wanted to reach out and let you know that <strong>I am personally reviewing your booking details right now</strong>. As our client, I want you to know we don't treat this like a routine checklist—I'm getting our files organized, setting up your project folder, and preparing our high-tech equipment (our drone cameras and moisture imaging shields) specifically for your home's unique layout.</p>" +
-        "<p><strong>Here is what happens next in our private system:</strong></p>" +
+        "<p><strong>Here is what happens next in our system:</strong></p>" +
         
         "<div style=\"background: #f3f4f6; border-left: 4px solid #d32f2f; padding: 1rem; margin: 1.5rem 0;\">" +
           "<ol style=\"margin: 0; padding-left: 1.25rem;\">" +
             "<li style=\"margin-bottom: 0.5rem;\"><strong>Personal Review</strong>: I review the square footage, age, and foundation type of the property to allocate the perfect inspection window.</li>" +
-            "<li style=\"margin-bottom: 0.5rem;\"><strong>Agreement Generation</strong>: I have prepared your electronic <em>Service Agreement</em> inside our secure Google folder. You will receive an email shortly with a link to sign this contract electronically.</li>" +
-            "<li><strong>Locking the Schedule</strong>: Once the agreement is signed and your small security deposit is confirmed, your appointment is fully locked on our master calendar.</li>" +
+            "<li style=\"margin-bottom: 0.5rem;\"><strong>Agreement Review</strong>: Our office team is preparing your standard Service Agreement. They will reach out to you shortly with signature details to sign.</li>" +
+            "<li><strong>Locking the Schedule</strong>: Once the agreement is signed and your security deposit is confirmed, your appointment is fully locked on our master calendar.</li>" +
           "</ol>" +
         "</div>" +
         
-        "<p>Please sit tight and keep an eye out for our agreement link. There is no manual prep work required on your part—our private system has already automated the setup!</p>" +
+        "<p>Please sit tight and keep an eye out for our office team reaching out with your agreement. We'll make sure everything is completely squared away for your inspection!</p>" +
         "<p>Should you have any questions or need to add Radon continuous gas testing, Sewer Scope camera line runs, or Termite WDO reviews to your order, feel free to reply directly to this email or give me a ring at 678-480-2110.</p>" +
         
         "<p style=\"margin-top: 2rem;\">Take care, and remember:</p>" +

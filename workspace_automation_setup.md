@@ -4,32 +4,34 @@ This guide details how to deploy your Google Workspace automation suite using ou
 
 ---
 
-## 📋 Step 1: Copy the Pre-Configured Google Sheet
+## 📋 Step 1: Create a Blank Google Sheet
 
-Instead of building a spreadsheet and copying code manually, we have packaged everything into a pre-configured spreadsheet template that already contains your Apps Script:
+Since our script is fully automated, it will programmatically build all database tabs, column headers, and color styles for you. All you need is a blank sheet:
 
 1. Log into your Google Workspace account (**`inspect@foresightcmi.com`**).
-2. Click this link to create a copy in your account:
-   👉 **[Copy the Foresight Business Engine Sheet Template](https://docs.google.com/spreadsheets/d/1gqYw5-06sA4_n5p_Gg59y017fT1_2rE3gq9q1rW1f7c/copy)**
-3. When prompted, click the blue **Make a copy** button. 
-4. Rename your copied spreadsheet to exactly: **`Foresight_Engine_Leads`**.
+2. Go to your browser address bar and type **`sheet.new`** (or go to Google Drive and create a new blank Google Sheet).
+3. Name your new spreadsheet exactly: **`Foresight_Engine_Leads`**.
 
 ---
 
 ## ⚡ Step 2: One-Click Initialization
 
-Run our automated setup function once to configure your folders, template agreement, and time-driven background schedules programmatically:
+Run our automated setup function once to configure your database tabs, folders, template agreement, and triggers programmatically:
 
 1. Inside your new spreadsheet, click on **Extensions** in the top menu bar, then select **Apps Script**.
-2. In the toolbar at the top of the editor, make sure the dropdown shows **`initialSetup`** (it should be selected by default).
-3. Click the **▷ Run** button.
-4. **Authorize Permissions**: Google will ask you to authorize access.
+2. Erase any placeholder code that is currently in the editor.
+3. Open the file **`scripts/ForesightBusinessEngine.gs`** in your website project folder, copy its entire contents, and paste it into the Apps Script editor.
+4. Click the **💾 Save** icon (or press `Ctrl + S`).
+5. In the toolbar at the top of the editor, select **`initialSetup`** from the function dropdown.
+6. Click the **▷ Run** button.
+7. **Authorize Permissions**: Google will ask you to authorize access.
    - Click **Review permissions**.
    - Select your `inspect@foresightcmi.com` account.
    - Click **Advanced** (in small text).
    - Click **Go to Foresight Autonomous Engine (unsafe)**.
    - Click **Allow**.
-5. Once the script finishes, check the **Execution log** at the bottom. It will confirm that:
+8. Once the script finishes, check the **Execution log** at the bottom. It will confirm that:
+   - A new **`Leads`** tab was created in your sheet, formatted with bold red headers!
    - The `/Active Inspections/` folder was successfully created in your Google Drive.
    - The `/Service Agreement Template` Google Doc was placed in your Drive.
    - The 10-minute inbox scanner trigger was scheduled.
