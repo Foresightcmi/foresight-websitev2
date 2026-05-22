@@ -3,6 +3,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from './components/Header';
+import WidgetWrapper from './components/WidgetWrapper';
 
 export const metadata = {
   metadataBase: new URL('https://www.fhinspectionsatl.com'),
@@ -177,6 +178,7 @@ export default function RootLayout({ children }) {
         <Header />
 
         <main>{children}</main>
+        <WidgetWrapper />
 
         <footer className="footer">
           <div className="container">

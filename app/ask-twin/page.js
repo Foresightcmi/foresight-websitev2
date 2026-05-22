@@ -2,6 +2,133 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 
+// Glassmorphic Lead Capture Form Component
+function LeadForm({ onSubmitted }) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!name || !email) {
+      setError('Name and Email are required.');
+      return;
+    }
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setSubmitted(true);
+        if (onSubmitted) onSubmitted(name, email);
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Unable to send. Please check your connection.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div style={{
+        padding: '1.5rem',
+        borderRadius: 'var(--radius-lg)',
+        border: '1px solid rgba(16, 185, 129, 0.3)',
+        background: 'rgba(16, 185, 129, 0.05)',
+        width: '100%',
+        maxWidth: '500px',
+        margin: '0.5rem 0',
+        backdropFilter: 'blur(10px)'
+      }}>
+        <h4 style={{ color: '#10b981', margin: '0 0 0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.1rem', fontWeight: 600 }}>
+          🔍 Checklist Request Received!
+        </h4>
+        <p style={{ color: 'white', margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>
+          Thank you, <strong>{name}</strong>! Part 1 of your <strong>"Foresight vs. Hindsight"</strong> checklist is on its way to <strong>{email}</strong>. 
+          <br /><br />
+          <em>"Hindsight is expensive; choose Foresight to secure your future."</em>
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{
+      padding: '1.5rem',
+      borderRadius: 'var(--radius-lg)',
+      border: '1px solid rgba(255, 255, 255, 0.08)',
+      background: 'rgba(255, 255, 255, 0.02)',
+      width: '100%',
+      maxWidth: '500px',
+      margin: '0.5rem 0',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+      backdropFilter: 'blur(10px)'
+    }}>
+      <h4 style={{ color: 'white', margin: '0 0 0.25rem 0', fontSize: '1.15rem', fontWeight: 600 }}>
+        Get the "Foresight vs. Hindsight" Checklist
+      </h4>
+      <p style={{ color: 'var(--color-gray-mid)', margin: '0 0 1.25rem 0', fontSize: '0.875rem', lineHeight: '1.5' }}>
+        Learn how to spot costly structural and system defects before they become your expensive mistakes. Hindsight is expensive; choose Foresight to secure your future.
+      </p>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+        <div>
+          <label style={{ display: 'block', color: 'var(--color-gray-mid)', fontSize: '0.75rem', marginBottom: '0.35rem', fontWeight: 600, letterSpacing: '0.05em' }}>FULL NAME *</label>
+          <input 
+            type="text" 
+            required 
+            value={name} 
+            onChange={e => setName(e.target.value)} 
+            placeholder="John Doe" 
+            style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.2)', color: 'white', fontSize: '0.95rem', outline: 'none' }}
+          />
+        </div>
+        <div>
+          <label style={{ display: 'block', color: 'var(--color-gray-mid)', fontSize: '0.75rem', marginBottom: '0.35rem', fontWeight: 600, letterSpacing: '0.05em' }}>EMAIL ADDRESS *</label>
+          <input 
+            type="email" 
+            required 
+            value={email} 
+            onChange={e => setEmail(e.target.value)} 
+            placeholder="john@example.com" 
+            style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.2)', color: 'white', fontSize: '0.95rem', outline: 'none' }}
+          />
+        </div>
+        <div>
+          <label style={{ display: 'block', color: 'var(--color-gray-mid)', fontSize: '0.75rem', marginBottom: '0.35rem', fontWeight: 600, letterSpacing: '0.05em' }}>PHONE NUMBER (OPTIONAL)</label>
+          <input 
+            type="tel" 
+            value={phone} 
+            onChange={e => setPhone(e.target.value)} 
+            placeholder="(123) 456-7890" 
+            style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.2)', color: 'white', fontSize: '0.95rem', outline: 'none' }}
+          />
+        </div>
+        {error && <p style={{ color: 'var(--color-red)', fontSize: '0.85rem', margin: 0, fontWeight: 500 }}>⚠️ {error}</p>}
+        <button 
+          type="submit" 
+          disabled={loading}
+          className="btn btn-primary" 
+          style={{ width: '100%', padding: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.85rem', fontWeight: 700, marginTop: '0.25rem' }}
+        >
+          {loading ? 'Sending Checklist...' : 'Send Me the Checklist'}
+        </button>
+      </form>
+    </div>
+  );
+}
+
 export default function AskTwin() {
   const [messages, setMessages] = useState([
     {
@@ -12,6 +139,22 @@ export default function AskTwin() {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const chatContainerRef = useRef(null);
+
+  const handleAcceptChecklist = () => {
+    setMessages(prev => [
+      ...prev,
+      { role: 'user', content: 'Yes, please send it!' },
+      { role: 'ai', type: 'lead-form', content: 'Please fill out the form.' }
+    ]);
+  };
+
+  const handleDeclineChecklist = () => {
+    setMessages(prev => [
+      ...prev,
+      { role: 'user', content: 'No, thank you.' },
+      { role: 'ai', content: 'No problem at all! Let me know if you have any other questions about your home.\n\nRemember: "Hindsight is expensive; choose Foresight to secure your future!"' }
+    ]);
+  };
 
   const scrollToBottom = (behavior = 'smooth') => {
     if (chatContainerRef.current) {
@@ -132,7 +275,8 @@ export default function AskTwin() {
                  "Why not hop over to our dynamic quote estimator and see how affordable complete peace of mind can be?";
     }
   
-    return response;
+    const checklistOffer = "\n\nBy the way, I’ve put together a \"Foresight vs. Hindsight\" checklist to help you avoid expensive mistakes. Shall I send that to you?";
+    return response + checklistOffer;
   };
 
   const handleSend = async (e) => {
@@ -283,53 +427,104 @@ export default function AskTwin() {
               background: 'linear-gradient(to bottom, rgba(17, 24, 39, 0.2), rgba(17, 24, 39, 0.4))'
             }}
           >
-            {messages.map((msg, index) => (
-              <div key={index} style={{ display: 'flex', justifyContent: msg.role === 'user' ? 'flex-end' : 'flex-start' }}>
-                <div style={{ 
-                  maxWidth: msg.role === 'user' ? '70%' : '85%', 
-                  padding: '1.15rem 1.4rem', 
-                  borderRadius: 'var(--radius-lg)', 
-                  background: msg.role === 'user' 
-                    ? 'linear-gradient(135deg, var(--color-red) 0%, #991b1b 100%)' 
-                    : 'rgba(255,255,255,0.03)',
-                  color: 'var(--color-white)',
-                  border: msg.role === 'ai' ? '1px solid rgba(255,255,255,0.08)' : 'none',
-                  borderBottomRightRadius: msg.role === 'user' ? '4px' : 'var(--radius-lg)',
-                  borderBottomLeftRadius: msg.role === 'ai' ? '4px' : 'var(--radius-lg)',
-                  lineHeight: '1.65',
-                  whiteSpace: 'pre-wrap',
-                  boxShadow: msg.role === 'user' 
-                    ? '0 10px 20px -5px rgba(211, 47, 47, 0.3)' 
-                    : '0 10px 20px -5px rgba(0, 0, 0, 0.2)'
-                }}>
-                  {msg.content}
-                  
-                  {msg.role === 'ai' && (
+            {messages.map((msg, index) => {
+              if (msg.type === 'lead-form') {
+                return (
+                  <div key={index} style={{ display: 'flex', justifyContent: 'flex-start', margin: '0.5rem 0' }}>
+                    <LeadForm onSubmitted={() => {}} />
+                  </div>
+                );
+              }
+              
+              const isLastMessage = index === messages.length - 1;
+              const containsChecklistOffer = msg.role === 'ai' && msg.content && 
+                msg.content.includes('Foresight vs. Hindsight') && 
+                msg.content.includes('Shall I send that to you?');
+
+              return (
+                <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.role === 'user' ? 'flex-end' : 'flex-start', width: '100%' }}>
+                  <div style={{ display: 'flex', justifyContent: msg.role === 'user' ? 'flex-end' : 'flex-start', width: '100%' }}>
                     <div style={{ 
-                      marginTop: '1.25rem', 
-                      paddingTop: '1.25rem', 
-                      borderTop: '1px solid rgba(255,255,255,0.08)', 
-                      display: 'flex', 
-                      gap: '0.75rem',
-                      flexWrap: 'wrap'
+                      maxWidth: msg.role === 'user' ? '70%' : '85%', 
+                      padding: '1.15rem 1.4rem', 
+                      borderRadius: 'var(--radius-lg)', 
+                      background: msg.role === 'user' 
+                        ? 'linear-gradient(135deg, var(--color-red) 0%, #991b1b 100%)' 
+                        : 'rgba(255,255,255,0.03)',
+                      color: 'var(--color-white)',
+                      border: msg.role === 'ai' ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                      borderBottomRightRadius: msg.role === 'user' ? '4px' : 'var(--radius-lg)',
+                      borderBottomLeftRadius: msg.role === 'ai' ? '4px' : 'var(--radius-lg)',
+                      lineHeight: '1.65',
+                      whiteSpace: 'pre-wrap',
+                      boxShadow: msg.role === 'user' 
+                        ? '0 10px 20px -5px rgba(211, 47, 47, 0.3)' 
+                        : '0 10px 20px -5px rgba(0, 0, 0, 0.2)'
                     }}>
-                      <Link href="/quote" className="btn btn-primary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
-                        Get Instant Quote & Schedule
-                      </Link>
-                      <Link href="/services" className="btn btn-outline" style={{ 
-                        padding: '0.6rem 1.2rem', 
-                        fontSize: '0.85rem', 
-                        border: '1px solid rgba(255,255,255,0.15)', 
-                        color: 'var(--color-white) !important',
-                        background: 'rgba(255,255,255,0.02)'
-                      }}>
-                        Explore Our Services
-                      </Link>
+                      {msg.content}
+                      
+                      {msg.role === 'ai' && !containsChecklistOffer && (
+                        <div style={{ 
+                          marginTop: '1.25rem', 
+                          paddingTop: '1.25rem', 
+                          borderTop: '1px solid rgba(255,255,255,0.08)', 
+                          display: 'flex', 
+                          gap: '0.75rem',
+                          flexWrap: 'wrap'
+                        }}>
+                          <Link href="/quote" className="btn btn-primary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.03em' }}>
+                            Get Instant Quote & Schedule
+                          </Link>
+                          <Link href="/services" className="btn btn-outline" style={{ 
+                            padding: '0.6rem 1.2rem', 
+                            fontSize: '0.85rem', 
+                            border: '1px solid rgba(255,255,255,0.15)', 
+                            color: 'var(--color-white) !important',
+                            background: 'rgba(255,255,255,0.02)'
+                          }}>
+                            Explore Our Services
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {containsChecklistOffer && isLastMessage && (
+                    <div style={{ 
+                      marginTop: '0.75rem', 
+                      display: 'flex', 
+                      gap: '0.75rem', 
+                      alignSelf: 'flex-start',
+                      marginLeft: '0.5rem'
+                    }}>
+                      <button 
+                        onClick={handleAcceptChecklist}
+                        className="btn btn-primary"
+                        style={{ padding: '0.6rem 1.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.03em', fontWeight: 600 }}
+                      >
+                        👍 Yes, send it!
+                      </button>
+                      <button 
+                        onClick={handleDeclineChecklist}
+                        className="btn btn-outline"
+                        style={{ 
+                          padding: '0.6rem 1.5rem', 
+                          fontSize: '0.85rem', 
+                          border: '1px solid rgba(255,255,255,0.15)', 
+                          color: 'var(--color-white) !important',
+                          background: 'rgba(255,255,255,0.02)',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.03em',
+                          fontWeight: 600
+                        }}
+                      >
+                        👎 No, thank you
+                      </button>
                     </div>
                   )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
             
             {isTyping && (
               <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
