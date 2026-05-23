@@ -252,10 +252,10 @@ export default function Services() {
       <section className="section bg-white" style={{ borderBottom: '1px solid var(--color-gray-mid)' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
-            <span className="badge" style={{ marginBottom: '1rem' }}>Metro Atlanta STR Support</span>
+            <span className="badge" style={{ marginBottom: '1rem' }}>Metro Atlanta Short-Term Rental (STR) Support</span>
             <h2>Short-Term Rental (STR) Compliance Assist</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '1rem auto 0', fontSize: '1.1rem', lineHeight: 1.6 }}>
-              Surrounding counties and cities across the Metro Atlanta area (including DeKalb, Fulton, Gwinnett, Cobb, and more) are requiring active compliance inspections for short-term rental operators on Airbnb and Vrbo. Since every county features unique local ordinances, zoning requirements, and safety checklists, Foresight provides standard third-party safety audits starting at our base rate to ensure your property remains active and compliant.
+              Surrounding counties and cities across the Metro Atlanta area (including DeKalb, Fulton, Gwinnett, Cobb, and more) are requiring active compliance inspections for short-term rental (STR) operators on Airbnb and Vrbo. Since every county features unique local ordinances, zoning requirements, and safety checklists, Foresight provides standard third-party safety audits starting at our base rate to ensure your property remains active and compliant.
             </p>
           </div>
 
@@ -264,7 +264,7 @@ export default function Services() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', borderBottom: '1px solid var(--color-gray-mid)', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
                 <div>
                   <span className="badge" style={{ background: 'var(--color-red-light)', color: 'var(--color-red)', fontWeight: 700 }}>Host Safety Compliance Check</span>
-                  <h3 style={{ marginTop: '0.5rem', fontSize: '1.75rem', fontWeight: 800 }}>STR Compliance Assist</h3>
+                  <h3 style={{ marginTop: '0.5rem', fontSize: '1.75rem', fontWeight: 800 }}>Short-Term Rental (STR) Compliance Assist</h3>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', display: 'block' }}>Starting at</span>
@@ -291,7 +291,7 @@ export default function Services() {
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <Link href="/quote" className="btn btn-primary" style={{ padding: '0.75rem 2rem' }}>
-                  📊 Estimate STR Price
+                  📊 Estimate Short-Term Rental (STR) Price
                 </Link>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.75rem 2rem', color: 'var(--color-red)', borderColor: 'var(--color-red)' }}>
                   📅 Schedule Audit
