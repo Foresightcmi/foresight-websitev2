@@ -279,7 +279,6 @@ export default function Quote() {
                 {propertyType === 'single-family' && <option value="new-construction">New Construction Inspection</option>}
                 <option value="seller">Pre-Listing Seller Inspection</option>
                 <option value="warranty">11-Month Warranty Inspection</option>
-                <option value="str">Short-Term Rental (STR) Compliance Assist</option>
               </select>
             </div>
 
@@ -545,7 +544,17 @@ export default function Quote() {
                 className="btn btn-primary" 
                 style={{ width: '100%', fontSize: '1.125rem', padding: '1rem', textAlign: 'center', display: 'block' }}
               >
-                {isCustom ? '📞 Call 678-480-2110 for Custom Quote' : '📅 Book Short-Term Rental (STR) Compliance Assist Now'}
+                {isCustom 
+                  ? '📞 Call 678-480-2110 for Custom Quote' 
+                  : serviceType === 'new-construction'
+                  ? '📅 Book New Construction Inspection Now'
+                  : serviceType === 'seller'
+                  ? '📅 Book Pre-Listing Inspection Now'
+                  : serviceType === 'warranty'
+                  ? '📅 Book Warranty Inspection Now'
+                  : serviceType === 'str'
+                  ? '📅 Book STR Compliance Assist Now'
+                  : '📅 Book Home Inspection Online Now'}
               </a>
               
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
