@@ -41,7 +41,7 @@ export default function Home() {
               <Image src="/images/inspector_photo.jpg" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} priority />
             </div>
             <div style={{ padding: '0 2rem' }}>
-              <h2 style={{ marginBottom: '1.5rem' }}>Meet Your Inspector</h2>
+              <h2 style={{ marginBottom: '1.5rem' }}>Meet Your Lead Inspector</h2>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.125rem' }}>
                 I'm Christopher Boykin, dedicated to protecting your investment. A lead Certified Master Inspector of InterNACHI will be on site along with another certified inspector. Together, we adhere strictly to InterNACHI Standards of Practice, bringing decades of combined experience to your front door.
               </p>
