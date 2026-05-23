@@ -418,6 +418,39 @@ export default function Services() {
           </div>
         </div>
       </section>
+      <section className="section bg-white" style={{ borderBottom: '1px solid var(--color-gray-mid)' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '3.5rem' }}>
+            <span className="badge" style={{ marginBottom: '1rem' }}>Foresight Client & Agent Perks</span>
+            <h2>Added Value & Realtor Conveniences</h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
+              We partner with elite service providers and equip our inspectors with the right tools to make every transaction seamless.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '2.5rem' }}>
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🔑</div>
+              <div>
+                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Active SUPRA Key Access</h3>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
+                  For the ultimate convenience of Metro Atlanta real estate agents, our inspectors carry active **SUPRA key access** to gain entry to the property securely and independently. Realtors do not need to take time out of their busy schedules to drive over and open the home.
+                </p>
+              </div>
+            </div>
+
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🔌</div>
+              <div>
+                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Utilities Plus Utility Concierge</h3>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
+                  We are proud partners of <a href="https://utilities-plus.com/our-services/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'underline' }}>Utilities Plus</a>, a premier Utility Concierge Service. All Foresight clients gain free access to this service to help get utilities (power, gas, water, internet, security) set up fast, easy, and at the best available rates, whether moving across town or across the country!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section bg-gray-light">
         <div className="container" style={{ maxWidth: '800px' }}>

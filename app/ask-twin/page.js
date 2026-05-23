@@ -274,6 +274,13 @@ export default function AskTwin() {
                  "💡 **What This Could Mean**: You face immediate rejection in the local county portal, loss of your non-refundable filing fees, or heavy fines for running an uncertified rental.\n" +
                  "🛠️ **Recommendation**: Have us run a complete dual-inspector compliance audit to verify every safety system and alarm placement before you submit your application.\n\n" +
                  "Since every county has slightly different requirements, contact us today for exact pricing tailored to your property's specific location!";
+    } else if (matchesAny(['realtor', 'realtors', 'agent', 'agents', 'supra', 'utility', 'utilities', 'concierge', 'moving'])) {
+      response = "Well, let's talk about added conveniences! My partner and I always strive to make the home buying and selling process as smooth and stress-free as possible for both buyers and their hard-working real estate agents. We've lined up two fantastic perks specifically for that:\n\n" +
+                 "🔑 **For Realtors: Active SUPRA Access**\n" +
+                 "For the convenience of Metro Atlanta real estate agents, we carry active **SUPRA key access** for secure lockbox entry. That means agents can skip the drive, avoid waiting around on site, and stay focused on their clients. We handle the opening and secure locking procedures independently and professionally.\n\n" +
+                 "🔌 **For Buyers: Free Utilities Plus Concierge**\n" +
+                 "Whether you are moving across town or across the country, all Foresight clients gain complimentary, lifetime access to our premier partner, [Utilities Plus](https://utilities-plus.com/our-services/). This is a free, dedicated Utility Concierge Service that handles setting up all your utilities—water, gas, electricity, fiber internet, security systems—fast, easy, and at the absolute best market rates available! It saves you hours of sitting on hold and ensures you get the best deal.\n\n" +
+                 "We love going the extra mile to save our clients time and money. Booking an inspection with our CMI-led dual-inspector team is the single best way to get complete peace of mind and simplify your move!";
     } else if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
       response = "We believe in honest, transparent pricing based on the actual size and age of your home. Standard resale home inspections start at $315, pre-listing seller checks at $365, new builds at $355, and 11-month builder warranty audits at $335.\n\n" +
                  "Here are our updated rates for specialized add-on services:\n" +
