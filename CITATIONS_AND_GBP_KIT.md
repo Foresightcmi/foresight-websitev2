@@ -11,7 +11,7 @@ Always use this exact text structure so search engine bots can match your profil
 *   **Official Business Name:** `Foresight Home Inspections, LLC`
 *   **Authorized Representative:** `Christopher Boykin`
 *   **Phone Number:** `678-480-2110` (Format exactly as `(678) 480-2110` or `678-480-2110`)
-*   **Primary Email:** `inspect@foresightcmi.com`
+*   **Primary Email:** `plsinspectnow@gmail.com`
 *   **Official Website:** `https://www.fhinspectionsatl.com`
 *   **Target Market Area:** `Atlanta, GA & Metro Atlanta Surrounding Areas`
 *   **Operating Hours:** 
@@ -97,4 +97,4 @@ Use these customized email templates to build high-value partnerships with local
 > 
 > **Christopher Boykin, CMI**  
 > Foresight Home Inspections, LLC  
-> 📞 678-480-2110 | ✉️ inspect@foresightcmi.com  
+> 📞 678-480-2110 | ✉️ plsinspectnow@gmail.com  

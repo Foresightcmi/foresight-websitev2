@@ -2,13 +2,13 @@
  * Foresight Home Inspections, LLC
  * Autonomous Business Engine (Google Apps Script)
  * 
- * Target Workspace Email: inspect@foresightcmi.com
+ * Target Workspace Email: plsinspectnow@gmail.com
  * 
  * Features:
  * 0. Programmatic Initial Setup (initialSetup): Creates the folder tree, template doc, and triggers in one click.
  * 1. Webhook Lead Capture (doPost): Saves website checklist signups to a Google Sheet.
  * 2. 3-Part Nurture Sequence: Immediately fires Part 1, and schedules daily cron follow-ups for Parts 2 & 3.
- * 3. HomeGauge Inbox Monitor (monitorInbox): Time-driven scanning of inspect@foresightcmi.com for booking notifications,
+ * 3. HomeGauge Inbox Monitor (monitorInbox): Time-driven scanning of plsinspectnow@gmail.com for booking notifications,
  *    auto-creating Google Drive folder structures, copying templates, and sending warm client confirmations.
  * 
  * Brand Slogan: "Because hindsight is expensive... Choose Foresight!"
@@ -18,7 +18,7 @@
 // Global Configuration
 var ACTIVE_INSPECTIONS_FOLDER_NAME = "Active Inspections";
 var SERVICE_AGREEMENT_TEMPLATE_NAME = "Service Agreement Template";
-var BUSINESS_EMAIL = "inspect@foresightcmi.com";
+var BUSINESS_EMAIL = "plsinspectnow@gmail.com";
 
 /**
  * 0. ONE-CLICK INITIALIZATION ENGINE
@@ -196,7 +196,7 @@ function sendNurtureEmail1(name, email) {
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
         "Foresight Home Inspections, LLC<br />" +
-        "<a href=\"mailto:inspect@foresightcmi.com\" style=\"color: #1f2937;\">inspect@foresightcmi.com</a> | 678-480-2110</p>" +
+        "<a href=\"mailto:plsinspectnow@gmail.com\" style=\"color: #1f2937;\">plsinspectnow@gmail.com</a> | 678-480-2110</p>" +
       "</div>" +
     "</div>";
     
@@ -242,7 +242,7 @@ function sendNurtureEmail2(name, email) {
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
         "Foresight Home Inspections, LLC<br />" +
-        "<a href=\"mailto:inspect@foresightcmi.com\" style=\"color: #1f2937;\">inspect@foresightcmi.com</a> | 678-480-2110</p>" +
+        "<a href=\"mailto:plsinspectnow@gmail.com\" style=\"color: #1f2937;\">plsinspectnow@gmail.com</a> | 678-480-2110</p>" +
       "</div>" +
     "</div>";
     
@@ -289,7 +289,7 @@ function sendNurtureEmail3(name, email) {
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
         "Foresight Home Inspections, LLC<br />" +
-        "<a href=\"mailto:inspect@foresightcmi.com\" style=\"color: #1f2937;\">inspect@foresightcmi.com</a> | 678-480-2110</p>" +
+        "<a href=\"mailto:plsinspectnow@gmail.com\" style=\"color: #1f2937;\">plsinspectnow@gmail.com</a> | 678-480-2110</p>" +
       "</div>" +
     "</div>";
     
@@ -342,7 +342,7 @@ function sendNurtureEmails() {
 
 /**
  * 4. GMAIL INBOX MONITORING ENGINE: monitorInbox()
- * Run this on a 10-minute time-trigger to scan inspect@foresightcmi.com for HomeGauge bookings.
+ * Run this on a 10-minute time-trigger to scan plsinspectnow@gmail.com for HomeGauge bookings.
  */
 function monitorInbox() {
   try {
@@ -496,7 +496,7 @@ function sendClientWelcomeEmail(clientName, clientEmail, propertyAddress) {
         "<p><strong>Christopher Boykin</strong><br />" +
         "Certified Master Inspector®<br />" +
         "Foresight Home Inspections, LLC<br />" +
-        "<a href=\"mailto:inspect@foresightcmi.com\" style=\"color: #1f2937;\">inspect@foresightcmi.com</a> | 678-480-2110</p>" +
+        "<a href=\"mailto:plsinspectnow@gmail.com\" style=\"color: #1f2937;\">plsinspectnow@gmail.com</a> | 678-480-2110</p>" +
       "</div>" +
     "</div>";
     
