@@ -8,7 +8,7 @@ This guide details how to deploy your Google Workspace automation suite using ou
 
 Since our script is fully automated, it will programmatically build all database tabs, column headers, and color styles for you. All you need is a blank sheet:
 
-1. Log into your Google Workspace account (**`plsinspectnow@gmail.com`**).
+1. Log into your Google Workspace account (**`inspect@foresightcmi.com`**).
 2. Go to your browser address bar and type **`sheet.new`** (or go to Google Drive and create a new blank Google Sheet).
 3. Name your new spreadsheet exactly: **`Foresight_Engine_Leads`**.
 
@@ -26,7 +26,7 @@ Run our automated setup function once to configure your database tabs, folders, 
 6. Click the **▷ Run** button.
 7. **Authorize Permissions**: Google will ask you to authorize access.
    - Click **Review permissions**.
-   - Select your `plsinspectnow@gmail.com` account.
+   - Select your `inspect@foresightcmi.com` account.
    - Click **Advanced** (in small text).
    - Click **Go to Foresight Autonomous Engine (unsafe)**.
    - Click **Allow**.
@@ -47,7 +47,7 @@ To allow the website to forward Captured leads to your spreadsheet, you must pub
 2. Click the gear icon next to "Select type" and select **Web app**.
 3. Configure the settings exactly as follows:
    - **Description**: `Foresight Lead Webhook V2`
-   - **Execute as**: **`Me (plsinspectnow@gmail.com)`** *(Ensures emails send from your Workspace inbox!)*
+   - **Execute as**: **`Me (inspect@foresightcmi.com)`** *(Ensures emails send from your Workspace inbox!)*
    - **Who has access**: **`Anyone`** *(Allows the Next.js server to securely submit lead details.)*
 4. Click **Deploy**.
 5. Copy the generated **Web App URL** from the screen. It will look like:

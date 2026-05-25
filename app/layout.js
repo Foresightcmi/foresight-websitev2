@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
     "image": "https://www.fhinspectionsatl.com/images/logo.jpg",
     "url": "https://www.fhinspectionsatl.com",
     "telephone": "678-480-2110",
-    "email": "plsinspectnow@gmail.com",
+    "email": "inspect@foresightcmi.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -213,7 +213,7 @@ export default function RootLayout({ children }) {
                 <h3>Contact</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
-                  <li><a href="mailto:plsinspectnow@gmail.com">✉️ plsinspectnow@gmail.com</a></li>
+                  <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
                   <li>Atlanta, GA & Surrounding Areas</li>
                 </ul>
               </div>
