@@ -133,7 +133,7 @@ export default function AskTwin() {
   const [messages, setMessages] = useState([
     {
       role: 'ai',
-      content: "Well hello there! I'm Foresight AI, your seasoned home inspection and maintenance advisor. \n\nWhat's on your mind today? Let's talk houses!"
+      content: "I'm Foresight AI, your home inspection and maintenance advisor. What's on your mind today? Let's talk houses!"
     }
   ]);
   const [input, setInput] = useState('');
