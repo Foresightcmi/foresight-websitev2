@@ -36,7 +36,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/logo.jpg',
+        url: '/images/Logopng.png',
         width: 800,
         height: 600,
         alt: 'Foresight Home Inspections Logo',
@@ -47,7 +47,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Foresight Home Inspections | Certified Master Inspector®',
     description: 'Two certified inspectors on every job. $10,000 warranty included. Serving 163+ cities across Metro Atlanta.',
-    images: ['/images/logo.jpg'],
+    images: ['/images/Logopng.png'],
   },
   verification: {
     google: 'google2daf7fa6e380098a',
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "Foresight Home Inspections, LLC",
-    "image": "https://www.fhinspectionsatl.com/images/logo.jpg",
+    "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
     "url": "https://www.fhinspectionsatl.com",
     "telephone": "678-480-2110",
     "email": "inspect@foresightcmi.com",

@@ -79,7 +79,7 @@ export default async function BlogPost({ params }) {
       "url": "https://www.fhinspectionsatl.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.fhinspectionsatl.com/images/logo.jpg"
+        "url": "https://www.fhinspectionsatl.com/images/Logopng.png"
       }
     },
     "mainEntityOfPage": {

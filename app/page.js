@@ -38,7 +38,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
             <div>
-              <Image src="/images/inspector_photo.jpg" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} priority />
+              <Image src="/images/inspector.jpg" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} priority />
             </div>
             <div style={{ padding: '0 2rem' }}>
               <h2 style={{ marginBottom: '1.5rem' }}>Meet Your Lead Inspector</h2>

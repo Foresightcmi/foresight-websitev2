@@ -402,7 +402,7 @@ export default function AskTwin() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <div style={{ position: 'relative' }}>
                 <img 
-                  src="/images/inspector_photo.jpg" 
+                  src="/images/inspector.jpg" 
                   alt="Christopher Boykin" 
                   style={{ width: '54px', height: '54px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--color-red)' }} 
                 />
