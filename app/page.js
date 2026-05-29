@@ -28,7 +28,6 @@ export default function Home() {
             <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center', gap: '3.5rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
                <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
                <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
-               <Image src="/images/trust_badge.png" alt="InterNACHI Trust Badge" width={150} height={105} style={{ height: '105px', width: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
