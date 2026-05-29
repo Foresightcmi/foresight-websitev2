@@ -315,7 +315,7 @@ export default function AskForesightWidget() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{ position: 'relative' }}>
                 <img 
-                  src="/images/inspector.jpg" 
+                  src="/images/Christopher_Boykin.jpg" 
                   alt="Christopher Boykin" 
                   style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover' }} 
                 />
