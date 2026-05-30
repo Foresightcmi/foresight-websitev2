@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import ValueComparison from '../components/ValueComparison';
 
 export default function Quote() {
   const [propertyType, setPropertyType] = useState('single-family'); // 'single-family', 'condo'
@@ -217,7 +218,8 @@ export default function Quote() {
   };
 
   return (
-    <section className="section bg-gray-light">
+    <>
+      <section className="section bg-gray-light">
       <div className="container">
         <div className="section-title" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
           <h2 className="slogan-heading-light">
@@ -570,5 +572,7 @@ export default function Quote() {
         </div>
       </div>
     </section>
+    <ValueComparison />
+    </>
   );
 }

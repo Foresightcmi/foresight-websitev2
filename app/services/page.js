@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import ValueComparison from '../components/ValueComparison';
 
 export const metadata = {
   title: 'Services & Pricing | Foresight Home Inspections',
@@ -482,6 +483,8 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <ValueComparison />
 
       <section className="section bg-gray-light">
         <div className="container" style={{ maxWidth: '800px' }}>
