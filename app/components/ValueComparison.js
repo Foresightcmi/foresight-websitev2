@@ -27,7 +27,7 @@ export default function ValueComparison() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#b91c1c' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✗</span>
-                  <span style={{ fontSize: '0.95rem' }}><strong>One Inspector Working Alone:</strong> Rushes the job in 90 minutes. A single set of eyes is prone to missing structural or attic defects.</span>
+                  <span style={{ fontSize: '0.95rem' }}><strong>One Solo Inspector on Site:</strong> Even companies that advertise having a &ldquo;team&rdquo; of employees only dispatch a <strong>single solo inspector</strong> to do the actual walkthrough of your home, raising the risk of rushed schedules and overlooked details.</span>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#b91c1c' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✗</span>
@@ -65,7 +65,7 @@ export default function ValueComparison() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Two Certified Inspectors on Every Job:</strong> Double the eyes, double the thoroughness. We spend 2.5 to 3.5 hours checking every single mechanical, electrical, and structural system.</span>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Two Certified Inspectors Physically on Site:</strong> We send two certified inspectors working in unison on every single job. One meticulously inspects the exterior and structure, while the other reviews the interior systems and utilities. You get actual dual-coverage, double the thoroughness, and half the timeframe!</span>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
