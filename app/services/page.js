@@ -167,7 +167,7 @@ export default function Services() {
         <div className="container">
           <div className="grid grid-3" style={{ marginBottom: '4rem' }}>
             {services.slice(0, 3).map((s, idx) => (
-              <div key={idx} className={`card ${idx === 0 ? 'card-premium' : ''}`} style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
+              <div key={idx} id={s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')} className={`card ${idx === 0 ? 'card-premium' : ''}`} style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
                 {s.image && (
                   <div style={{ position: 'relative', width: '100%', height: '200px' }}>
                     <Image
@@ -208,7 +208,7 @@ export default function Services() {
           <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Specialty & Add-on Services</h2>
           <div className="grid grid-2">
             {services.slice(3).map((s, idx) => (
-              <div key={idx} className="card" style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', alignItems: 'center', padding: '1.5rem', flexWrap: 'wrap' }}>
+              <div key={idx} id={s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')} className="card" style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', alignItems: 'center', padding: '1.5rem', flexWrap: 'wrap' }}>
                 {s.image && (
                   <div style={{ position: 'relative', width: '110px', height: '110px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                     <Image
