@@ -59,7 +59,7 @@ export default function ValueComparison() {
                 <span style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', background: 'var(--color-red-light)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>Starting at $315</span>
               </div>
               <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.975rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-                Led by Christopher Boykin, a **Certified Master Inspector® (CMI)**—representing the top 2% of elite, highly vetted home inspectors nationwide.
+                Led by Christopher Boykin, a <strong>Certified Master Inspector® (CMI)</strong>—representing the top 2% of elite, highly vetted home inspectors nationwide.
               </p>
               
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -95,7 +95,7 @@ export default function ValueComparison() {
           <div style={{ flex: '1 1 500px' }}>
             <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 700 }}>Why Elite Certifications Matter: InterNACHI & The CMI Board</h4>
             <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
-              The **International Association of Certified Home Inspectors (InterNACHI)** is the world&apos;s leading national inspection organization, enforcing strict, federal-level Standards of Practice and ethical compliance. Christopher Boykin is credentialed as a **Certified Master Inspector®**—the absolute highest professional title awarded. Only home inspectors with proven records, thousands of hours of field expertise, and rigorous ongoing training ever qualify. Accept nothing less than a Certified Master Inspector to safeguard your family and investment.
+              The <strong>International Association of Certified Home Inspectors (InterNACHI)</strong> is the world&apos;s leading national inspection organization, enforcing strict, federal-level Standards of Practice and ethical compliance. Christopher Boykin is credentialed as a <strong>Certified Master Inspector®</strong>—the absolute highest professional title awarded. Only home inspectors with proven records, thousands of hours of field expertise, and rigorous ongoing training ever qualify. Accept nothing less than a Certified Master Inspector to safeguard your family and investment.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>

@@ -89,7 +89,7 @@ export default function Realtors() {
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🔑</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>Active SUPRA Key Access</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                Stop driving across Metro Atlanta just to unlock doors. Foresight carries **active SUPRA key access** for secure lockbox entry. We handle the opening, inspection, and lockup professionally, giving you hours of your day back.
+                Stop driving across Metro Atlanta just to unlock doors. Foresight carries <strong>active SUPRA key access</strong> for secure lockbox entry. We handle the opening, inspection, and lockup professionally, giving you hours of your day back.
               </p>
             </div>
 
@@ -98,7 +98,7 @@ export default function Realtors() {
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>👥</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>2-Inspector Speed & Accuracy</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                Unlike solo operators who can take up to 5 hours, we send **two certified inspectors working in unison** on every job. We get in, inspect with extreme thoroughness, and get out in half the time—reducing seller inconvenience and scheduling headaches.
+                Unlike solo operators who can take up to 5 hours, we send <strong>two certified inspectors working in unison</strong> on every job. We get in, inspect with extreme thoroughness, and get out in half the time—reducing seller inconvenience and scheduling headaches.
               </p>
             </div>
 
@@ -107,7 +107,7 @@ export default function Realtors() {
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🔌</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>Free Utility Concierge Service</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                Help your clients transition seamlessly. Through our partnership with **Utilities Plus**, all Foresight buyers receive complimentary, high-touch utility connection services (water, gas, electric, internet, security) at the best available market rates.
+                Help your clients transition seamlessly. Through our partnership with <strong>Utilities Plus</strong>, all Foresight buyers receive complimentary, high-touch utility connection services (water, gas, electric, internet, security) at the best available market rates.
               </p>
             </div>
 
@@ -116,7 +116,7 @@ export default function Realtors() {
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🛡️</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>$10,000 Client Protection</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                Every inspection led by Christopher Boykin, a Certified Master Inspector®, includes our **$10,000 Elite Master Inspection Warranty** with $0 deductible. It covers mechanicals, structure, major appliances, mold, and roofs, protecting your buyer and your reputation post-closing.
+                Every inspection led by Christopher Boykin, a Certified Master Inspector®, includes our <strong>$10,000 Elite Master Inspection Warranty</strong> with $0 deductible. It covers mechanicals, structure, major appliances, mold, and roofs, protecting your buyer and your reputation post-closing.
               </p>
             </div>
 
@@ -155,13 +155,13 @@ export default function Realtors() {
               </p>
               <ul className="cms-content" style={{ listStyle: 'none', marginBottom: '2rem' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', fontSize: '1.05rem' }}>
-                  <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span> **Buyer Vetting Sheets**: Help clients spot issues before making an offer.
+                  <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span> <strong>Buyer Vetting Sheets</strong>: Help clients spot issues before making an offer.
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', fontSize: '1.05rem' }}>
-                  <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span> **Seller Prep Checklists**: Ensure listing homes are prepared to pass inspection smoothly.
+                  <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span> <strong>Seller Prep Checklists</strong>: Ensure listing homes are prepared to pass inspection smoothly.
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem', fontSize: '1.05rem' }}>
-                  <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span> **Co-Branded PDF Guides**: Professional home maintenance advice custom-branded with your face and info.
+                  <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span> <strong>Co-Branded PDF Guides</strong>: Professional home maintenance advice custom-branded with your face and info.
                 </li>
               </ul>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -257,7 +257,7 @@ export default function Realtors() {
                 How long do your dual inspections take?
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0 }}>
-                Because we send **two fully-certified inspectors to every job**, we complete the physical scanning in approximately 1.5 to 2.5 hours depending on size. This is nearly half the time a standard single inspector requires, helping minimize inconvenience to listing sellers.
+                Because we send <strong>two fully-certified inspectors to every job</strong>, we complete the physical scanning in approximately 1.5 to 2.5 hours depending on size. This is nearly half the time a standard single inspector requires, helping minimize inconvenience to listing sellers.
               </p>
             </div>
 
@@ -275,7 +275,7 @@ export default function Realtors() {
                 What happens if a defect is found after closing?
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0 }}>
-                Every standard buyer inspection we conduct is backed by a complimentary **$10,000 Elite Master Inspection Warranty** with $0 deductible. If a major covered appliance, structural component, major HVAC/plumbing element, or roof leak manifests within 90 days of closing (or 120 days of inspection), your client is financially protected. This dramatically reduces post-closing conflict for the real estate agent!
+                Every standard buyer inspection we conduct is backed by a complimentary <strong>$10,000 Elite Master Inspection Warranty</strong> with $0 deductible. If a major covered appliance, structural component, major HVAC/plumbing element, or roof leak manifests within 90 days of closing (or 120 days of inspection), your client is financially protected. This dramatically reduces post-closing conflict for the real estate agent!
               </p>
             </div>
           </div>

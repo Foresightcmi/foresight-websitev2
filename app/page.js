@@ -231,7 +231,7 @@ export default function Home() {
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Realtor Convenience: Active SUPRA Access</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                  Realtors can skip the drive and stay focused on their clients. Foresight carries active **SUPRA key access** for secure lockbox entry. We handle the opening and locking procedures ourselves, eliminating coordination headaches and saving real estate agents valuable hours on site.
+                  Realtors can skip the drive and stay focused on their clients. Foresight carries active <strong>SUPRA key access</strong> for secure lockbox entry. We handle the opening and locking procedures ourselves, eliminating coordination headaches and saving real estate agents valuable hours on site.
                 </p>
               </div>
             </div>

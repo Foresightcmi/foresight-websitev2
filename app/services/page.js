@@ -315,7 +315,7 @@ export default function Services() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem' }}>
                   <li>🪧 <strong>Local Agent Signage:</strong> Checking that the mandatory 24-hour local contact information and evacuation maps are clearly posted.</li>
                   <li>🚫 <strong>Historic Exclusions:</strong> Pre-screening checks for localized historic district restrictions to safeguard your non-refundable government portal application fees.</li>
-                  <li>📞 <strong>Custom Pricing:</strong> Pricing starts at **$275** based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
+                  <li>📞 <strong>Custom Pricing:</strong> Pricing starts at <strong>$275</strong> based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
                 </ul>
               </div>
 
