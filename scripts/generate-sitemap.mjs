@@ -29,6 +29,7 @@ function main() {
   const staticPages = [
     { loc: '', changefreq: 'weekly', priority: '1.0' },
     { loc: '/services', changefreq: 'monthly', priority: '0.8' },
+    { loc: '/realtors', changefreq: 'monthly', priority: '0.8' },
     { loc: '/quote', changefreq: 'weekly', priority: '0.9' },
     { loc: '/ask-twin', changefreq: 'daily', priority: '0.9' },
     { loc: '/blog', changefreq: 'weekly', priority: '0.7' },

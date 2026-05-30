@@ -521,6 +521,7 @@ export default function RootLayout({ children }) {
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/">Home</Link></li>
                   <li><Link href="/services">Services & Pricing</Link></li>
+                  <li><Link href="/realtors">Realtors VIP Program</Link></li>
                   <li><Link href="/quote">Instant Quote</Link></li>
                   <li><Link href="/ask-twin">Ask Foresight AI Portal</Link></li>
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
