@@ -246,7 +246,8 @@ export default function Quote() {
         }} className="savings-banner">
           <div style={{ fontSize: '2rem' }}>💡</div>
           <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
-            <strong>The Inspection Pays for Itself:</strong> Getting a professional physical inspection is designed to <strong>save you more money in the long run</strong>. We regularly save our clients thousands of dollars on their home purchases—either by forcing the seller/builder to make critical <strong>upfront repairs</strong> before you close, or by using our master-level report to negotiate substantial closing <strong>repair credits</strong>.
+            <strong>The Inspection Pays for Itself:</strong> Getting a professional physical inspection is designed to <strong>save you more money in the long run</strong>. We regularly save our clients thousands of dollars on their home purchases—either by forcing the seller/builder to make critical <strong>upfront repairs</strong> before you close, or by using our master-level report to negotiate substantial closing <strong>repair credits</strong>.<br /><br />
+            <strong>⚡ 100% Instant Transparency:</strong> We believe in saving you time and stress. Unlike other companies that hide pricing behind manual, delayed &ldquo;quote request&rdquo; forms to capture your email, Foresight provides exact, instant flat-rate pricing based directly on our registered local service fees. Calculate your quote below and book online instantly!
           </p>
         </div>
 
