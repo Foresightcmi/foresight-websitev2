@@ -138,7 +138,7 @@ export default function Quote() {
     }
 
     // Addons
-    if (addons.radon) extra += 175; // Continuous monitor sub-contracted rate
+    if (addons.radon) extra += 200; // Continuous monitor sub-contracted rate
     if (addons.pool) extra += 275;  // Pool/spa add-on
     if (addons.lowFlow) extra += 100; // DeKalb low flow compliance
     if (addons.buildfax) extra += 15; // Property permit report
@@ -383,7 +383,7 @@ export default function Quote() {
                     onChange={() => handleAddonToggle('radon')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Radon Gas Testing (+ $175+)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Radon Gas Testing (+ $200+)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour professional electronic monitoring (when combined with a home inspection).</span>
                   </div>
                 </label>

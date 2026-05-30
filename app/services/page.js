@@ -65,7 +65,7 @@ export default function Services() {
     },
     {
       title: 'Radon Gas Testing',
-      price: '$175+',
+      price: '$200+',
       description: 'Radon is a cancer-causing, odorless radioactive gas. We use professional 48-hour continuous monitors to ensure your home environment is safe (when combined with a home inspection).',
       details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Crucial indoor air safety profile', 'Water radon testing available'],
       slug: 'hidden-dangers-of-radon-gas-georgia'
@@ -95,7 +95,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "275", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "175", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "200", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Assist", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "275", "priceCurrency": "USD" }
       ]
     }

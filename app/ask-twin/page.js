@@ -286,7 +286,7 @@ export default function AskTwin() {
                  "Here are our updated rates for specialized add-on services:\n" +
                  "- **Short-Term Rental (STR) Compliance Assist**: Starts at **$275** based on property scale, location, and county rules.\n" +
                  "- **Termite & WDO Inspection**: Starts at **$125** on a slab or basement, and **$165** on a crawlspace (includes Official GA WDO Report).\n" +
-                 "- **Radon Gas Testing**: **$175+** when combined with a home inspection (using professional 48-hour continuous monitors).\n" +
+                 "- **Radon Gas Testing**: **$200+** when combined with a home inspection (using professional 48-hour continuous monitors).\n" +
                  "- **Pool & Spa Inspection**: **$275** for a complete pumps, electrical, filters, and shell integrity evaluation.\n" +
                  "- **Sewer Scope Inspection**: **$400** to check the main lateral sewer line.\n\n" +
                  "Note: An additional **$75 complexity fee** applies to single-family home inspections for each of the following conditions present: if the property is 50+ years old, has a crawlspace, or has an unfinished/partial basement. These fees stack per condition (e.g., if a home is 50+ years old AND has a crawlspace, the complexity fee is $150). Host Short-Term Rental (STR) compliance audits bypass these complexity fees entirely!\n\n" +
