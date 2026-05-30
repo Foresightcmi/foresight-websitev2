@@ -99,9 +99,15 @@ OUTPUT FORMAT (return ONLY valid JSON, no markdown):
   "content": "<p>HTML content here</p><h2>Subheading</h2><p>More content</p>"
 }
 
+GEO/AIO/AEO REQUIREMENTS:
+- **TL;DR Key Takeaway Summary**: The post content MUST begin with a dedicated \`<div class="article-excerpt" data-speakable="true" style="background:var(--color-gray-light); padding:1.25rem; border-left:4px solid var(--color-red); margin-bottom:1.5rem; font-size:1.1rem; font-style:italic;">\` containing a concise 2-3 sentence summary of the article's core answer. This is critical for search engine AI summaries and voice search systems.
+- **FAQ Block**: Include an <h2> or <h3> titled "Frequently Asked Questions" at the bottom of the article. It must contain 3-4 structured Q&A items targeting conversational voice queries (e.g. "How long does a home inspection take in Georgia?"). Use bold \`<strong>\` for questions and direct, complete sentences for answers.
+- **Topical Authority**: Build solid semantic associations. Link to related concepts naturally. Use local SEO rich keywords matching Lithonia, Decatur, or general Metro Atlanta.
+- Do NOT include any unverified Florida/Ontario keywords or content; stay strictly focused on Georgia/Metro Atlanta markets.
+
 REQUIREMENTS:
 - Title must be compelling and include a location keyword (Georgia, Atlanta, Metro Atlanta)
-- Content should be 600-900 words
+- Content should be 600-950 words
 - Use <h2> for subheadings (3-4 subheadings)
 - Use <ul>/<li> for lists
 - Use <strong> for key terms

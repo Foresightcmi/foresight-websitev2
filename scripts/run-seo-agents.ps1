@@ -9,6 +9,10 @@ Write-Host "==================================================" -ForegroundColor
 Write-Host "   Foresight Home Inspections SEO Pipeline Runner  " -ForegroundColor Cyan
 Write-Host "==================================================" -ForegroundColor Cyan
 
+# 0. Pre-Flight SEO Health Check
+Write-Host "`n🛡️ [Step 0/5] Running Pre-Flight SEO & Pricing Health Check..." -ForegroundColor Yellow
+node scripts/seo-health-check.mjs
+
 # 1. Discover keywords
 Write-Host "`n🔍 [Step 1/5] Discovering Trending Keywords..." -ForegroundColor Yellow
 node scripts/discover-keywords.mjs
@@ -20,6 +24,10 @@ node scripts/generate-blog-post.mjs
 # 3. Refresh seasonal city pages
 Write-Host "`n🗺️ [Step 3/5] Updating Seasonal City Landing Pages..." -ForegroundColor Yellow
 node scripts/refresh-city-pages.mjs
+
+# 3b. Post-Generation Health Check
+Write-Host "`n🛡️ [Step 3b/5] Validating Newly Generated Content and Pricing Integrity..." -ForegroundColor Yellow
+node scripts/seo-health-check.mjs
 
 # 4. Rebuild Next.js website
 Write-Host "`n🏗️ [Step 4/5] Rebuilding Website Static Pages..." -ForegroundColor Yellow

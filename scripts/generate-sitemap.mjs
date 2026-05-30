@@ -39,11 +39,18 @@ function main() {
   const nowString = new Date().toISOString();
 
   for (const page of staticPages) {
+    let imgTag = '';
+    if (page.loc === '') {
+      imgTag = `\n    <image:image>\n      <image:loc>${baseUrl}/images/Logopng.png</image:loc>\n      <image:title>Foresight Home Inspections Logo</image:title>\n    </image:image>`;
+    } else if (page.loc === '/services') {
+      imgTag = `\n    <image:image>\n      <image:loc>${baseUrl}/images/ac-pic.png</image:loc>\n      <image:title>Foresight Home Inspections HVAC Inspection</image:title>\n    </image:image>`;
+    }
+
     urls.push(`  <url>
     <loc>${baseUrl}${page.loc}</loc>
     <lastmod>${nowString}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
+    <priority>${page.priority}</priority>${imgTag}
   </url>`);
   }
 
@@ -100,7 +107,8 @@ function main() {
 
   // 4. Compile XML
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.join('\n')}
 </urlset>
 `;

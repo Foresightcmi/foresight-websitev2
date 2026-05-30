@@ -58,6 +58,13 @@ const SEED_QUERIES = [
   "electrical inspection home",
   "plumbing inspection",
   "pool inspection",
+  // Voice search query seeds (AEO)
+  "hey google home inspector",
+  "alexa find home inspection",
+  "siri home inspector Lithonia",
+  "what does a home inspection cost in Georgia",
+  "why should I get a radon test in Atlanta",
+  "who is the best home inspector in Lithonia"
 ];
 
 // Question prefixes to discover "People Also Ask" style queries
@@ -72,6 +79,10 @@ const QUESTION_PREFIXES = [
   "can a home inspector",
   "what happens if",
   "how long does",
+  "how much does",
+  "who is the best",
+  "should I pay for",
+  "is a radon test required in"
 ];
 
 /**
@@ -111,11 +122,16 @@ function scoreKeyword(keyword) {
   if (kw.includes('house')) score += 5;
   
   // Location relevance
-  if (kw.includes('georgia') || kw.includes('atlanta') || kw.includes(' ga')) score += 8;
+  if (kw.includes('georgia') || kw.includes('atlanta') || kw.includes(' ga') || kw.includes('lithonia') || kw.includes('decatur')) score += 8;
   
   // Question format (great for FAQ/AIO)
   if (kw.startsWith('how') || kw.startsWith('what') || kw.startsWith('why') || kw.startsWith('when') || kw.startsWith('do i') || kw.startsWith('should') || kw.startsWith('is it')) score += 7;
   
+  // Voice search and conversational AEO triggers
+  if (kw.includes('hey google') || kw.includes('alexa') || kw.includes('siri') || kw.includes('hey siri')) score += 15;
+  if (kw.startsWith('who is') || kw.startsWith('where is') || kw.startsWith('which is') || kw.startsWith('is there a') || kw.startsWith('can you')) score += 10;
+  if (kw.includes('near me') || kw.includes('nearby') || kw.includes('closest')) score += 8;
+
   // Service terms
   if (kw.includes('radon')) score += 6;
   if (kw.includes('termite')) score += 6;
@@ -136,7 +152,7 @@ function scoreKeyword(keyword) {
   if (kw.includes('checklist')) score += 5;
   if (kw.includes('buy') || kw.includes('buyer')) score += 5;
   
-  // Long-tail bonus (more specific = less competition)
+  // Long-tail bonus (more specific = less competition = great for voice search answer matching)
   const wordCount = kw.split(' ').length;
   if (wordCount >= 4) score += 3;
   if (wordCount >= 6) score += 2;

@@ -84,7 +84,15 @@ export default async function BlogPost({ params }) {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.fhinspectionsatl.com/blog/${post.slug}`
+      "@id": `https://www.fhinspectionsatl.com/blog/${post.slug}`,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.fhinspectionsatl.com/#website"
+      }
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".article-title", ".article-excerpt"]
     },
     "keywords": post.keywords?.join(', ')
   };

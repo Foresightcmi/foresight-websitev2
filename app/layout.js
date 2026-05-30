@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from './components/Header';
 import WidgetWrapper from './components/WidgetWrapper';
+import Breadcrumbs from './components/Breadcrumbs';
 
 export const metadata = {
   metadataBase: new URL('https://www.fhinspectionsatl.com'),
@@ -411,6 +412,21 @@ export default function RootLayout({ children }) {
       "https://www.instagram.com/fhinspectionsatl/",
       "https://www.linkedin.com/company/foresight-home-inspections-llc/"
     ],
+    "knowsAbout": [
+      "Home Inspection",
+      "Thermal Imaging",
+      "Radon Gas Testing",
+      "Sewer Scope Inspection",
+      "Termite and Wood Destroying Organism (WDO) Inspections",
+      "Pool and Spa Inspections",
+      "Pre-Listing Home Inspections",
+      "New Construction Phase Inspections"
+    ],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "International Association of Certified Home Inspectors (InterNACHI)",
+      "url": "https://www.nachi.org"
+    },
     "description": "Premium home inspection services in Atlanta featuring two inspectors on every job, led by a Certified Master Inspector. Includes $10,000 Elite Master Inspection Warranty.",
     "founder": {
       "@type": "Person",
@@ -450,13 +466,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/images/Logopng.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/Logopng.png" />
+        <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-342062426" />
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-F5NKKNS7B7" />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -465,7 +484,7 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-342062426');
+              gtag('config', 'G-F5NKKNS7B7');
             `,
           }}
         />
@@ -473,6 +492,7 @@ export default function RootLayout({ children }) {
           🛡️ The Certified Master Inspector Advantage: Every Inspection Includes a $10,000 Protection Warranty at No Extra Cost!
         </div>
         <Header />
+        <Breadcrumbs />
 
         <main>{children}</main>
         <WidgetWrapper />

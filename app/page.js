@@ -1,9 +1,44 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.fhinspectionsatl.com/#website",
+        "name": "Foresight Home Inspections",
+        "url": "https://www.fhinspectionsatl.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.fhinspectionsatl.com/service-areas?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fhinspectionsatl.com/#webpage",
+        "url": "https://www.fhinspectionsatl.com",
+        "name": "Foresight Home Inspections | Certified Master Inspector® | Atlanta GA",
+        "description": "Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium, thorough home inspections across Metro Atlanta.",
+        "isPartOf": { "@id": "https://www.fhinspectionsatl.com/#website" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".slogan-heading", ".hero-content h1"]
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <Script
+        id="home-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="hero">
         <div className="container">
           <h2 className="slogan-heading">

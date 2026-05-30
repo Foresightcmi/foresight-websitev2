@@ -3,7 +3,17 @@ import Image from 'next/image';
 
 export const metadata = {
   title: 'Services & Pricing | Foresight Home Inspections',
-  description: 'View our comprehensive home inspection services starting at $315. We offer standard buyer inspections, pre-listing inspections, WDO/termite, pool/spa, and radon testing across Atlanta.'
+  description: 'View our comprehensive home inspection services starting at $315. We offer standard buyer inspections, pre-listing inspections, WDO/termite, pool/spa, and radon testing across Atlanta.',
+  keywords: ['home inspection services Atlanta', 'home inspection pricing Georgia', 'radon gas testing cost', 'sewer scope inspection Atlanta', 'termite inspection Atlanta', 'pool and spa inspector Lithonia GA'],
+  alternates: {
+    canonical: 'https://www.fhinspectionsatl.com/services',
+  },
+  openGraph: {
+    title: 'Services & Pricing | Foresight Home Inspections',
+    description: 'Comprehensive home inspection services starting at $315 with two certified inspectors on every job. Servicing Lithonia, Decatur, Atlanta, and surrounding North Georgia.',
+    url: 'https://www.fhinspectionsatl.com/services',
+    type: 'website',
+  },
 };
 
 export default function Services() {
