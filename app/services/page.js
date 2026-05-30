@@ -13,54 +13,62 @@ export default function Services() {
       price: '$315+',
       description: 'Our core comprehensive inspection covering the structure, roof, electrical, plumbing, HVAC, and all major systems. Two expert inspectors on site for maximum thoroughness.',
       details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', 'InterNACHI Inspection Warranty included'],
-      image: '/images/ac-pic.png'
+      image: '/images/ac-pic.png',
+      slug: 'what-does-home-inspector-look-for-buying-house'
     },
     {
       title: 'Pre-Listing Seller Inspection',
       price: '$365+',
       description: 'Identify potential issues before putting your home on the market. Streamline negotiations, avoid last-minute surprises, and increase buyer confidence.',
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
-      image: '/images/crawlspace.png'
+      image: '/images/crawlspace.png',
+      slug: 'pre-listing-seller-inspection-guide'
     },
     {
       title: 'New Construction Inspections',
       price: '$355+',
       description: 'Ensure your brand-new home was built to correct specifications. We inspect foundations, framing, pre-drywall, and perform final walkthrough checks.',
       details: ['Phase-by-phase option', 'Pre-drywall framing checks', 'Code-compliance review', 'Identify developer defects'],
-      image: '/images/drone-2.png'
+      image: '/images/drone-2.png',
+      slug: 'why-you-need-home-inspection-new-build'
     },
     {
       title: '11-Month Warranty Inspection',
       price: '$335+',
       description: 'Performed just before your 1-year builder warranty expires. Get a professional punch list to have the builder fix issues on their dime, not yours.',
       details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousand in future repairs', 'Maximum warranty utilization'],
-      image: '/images/gas-meter.png'
+      image: '/images/gas-meter.png',
+      slug: '11-month-warranty-inspection-guide'
     },
     {
       title: 'Pool & Spa Inspections',
       price: '$275',
       description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries.',
       details: ['Pump & heater functional test', 'Safety barrier compliance', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
-      image: '/images/pool-inspecting.png'
+      image: '/images/pool-inspecting.png',
+      slug: 'pool-and-spa-inspection-guide'
     },
     {
       title: 'Sewer Scope Inspections',
       price: '$400',
       description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the home to the municipal connection or septic tank. Highly recommended for older properties.',
       details: ['Main lateral line sewer inspection', 'High-res video feed provided', 'Locate bellies, roots, and cracks', 'Saves thousands in excavation costs'],
-      image: '/images/sewer-scope.png'
+      image: '/images/sewer-scope.png',
+      slug: 'sewer-scope-inspection-guide'
     },
     {
       title: 'Termite & WDO Inspections',
       price: '$125+',
       description: 'Wood Destroying Organisms can cause catastrophic structural damage. We partner with licensed pest control specialists to provide an Official Georgia Wood Infestation Report. Starts at $125 on slab/basement, and $165 on crawlspace.',
-      details: ['Official GA WDO Report', 'Identify active/past termites', 'Detect powderpost beetles & decay', 'Critical for mortgage approvals']
+      details: ['Official GA WDO Report', 'Identify active/past termites', 'Detect powderpost beetles & decay', 'Critical for mortgage approvals'],
+      slug: 'termite-and-wdo-inspection-guide'
     },
     {
       title: 'Radon Gas Testing',
       price: '$175+',
       description: 'Radon is a cancer-causing, odorless radioactive gas. We use professional 48-hour continuous monitors to ensure your home environment is safe (when combined with a home inspection).',
-      details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Crucial indoor air safety profile', 'Water radon testing available']
+      details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Crucial indoor air safety profile', 'Water radon testing available'],
+      slug: 'hidden-dangers-of-radon-gas-georgia'
     }
   ];
 
@@ -199,6 +207,11 @@ export default function Services() {
                     <Link href="/quote" className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', opacity: 0.8, fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
                       Calculate Price
                     </Link>
+                    {s.slug && (
+                      <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', fontSize: '0.9rem', padding: '0.5rem 1rem', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)' }}>
+                        📖 In-Depth Guide
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -232,8 +245,13 @@ export default function Services() {
                     ))}
                   </ul>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, width: '100%', mdWidth: 'auto', marginTop: '1rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', justifyContent: 'center', flexShrink: 0, width: '100%', mdWidth: 'auto', marginTop: '1rem' }}>
                   <Link href="/quote" className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }}>Add to Quote</Link>
+                  {s.slug && (
+                    <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
+                      📖 Read Guide
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -296,6 +314,9 @@ export default function Services() {
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.75rem 2rem', color: 'var(--color-red)', borderColor: 'var(--color-red)' }}>
                   📅 Schedule Audit
                 </a>
+                <Link href="/blog/metro-atlanta-short-term-rental-str-compliance-assist" className="btn btn-outline" style={{ padding: '0.75rem 2rem' }}>
+                  📖 Read STR Guide
+                </Link>
               </div>
             </div>
           </div>
