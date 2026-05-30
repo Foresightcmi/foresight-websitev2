@@ -75,47 +75,320 @@ export default function RootLayout({ children }) {
       "latitude": 33.749,
       "longitude": -84.388
     },
-    "areaServed": [
-      { "@type": "State", "name": "Georgia" },
-      { "@type": "City", "name": "Atlanta" },
-      { "@type": "City", "name": "Sandy Springs" },
-      { "@type": "City", "name": "Roswell" },
-      { "@type": "City", "name": "Alpharetta" },
-      { "@type": "City", "name": "Marietta" },
-      { "@type": "City", "name": "Decatur" },
-      { "@type": "City", "name": "Dunwoody" },
-      { "@type": "City", "name": "Kennesaw" },
-      { "@type": "City", "name": "Smyrna" },
-      { "@type": "City", "name": "Brookhaven" },
-      { "@type": "City", "name": "Johns Creek" },
-      { "@type": "City", "name": "Peachtree City" },
-      { "@type": "City", "name": "Newnan" },
-      { "@type": "City", "name": "Conyers" },
-      { "@type": "City", "name": "Lithonia" },
-      { "@type": "City", "name": "Stonecrest" },
-      { "@type": "City", "name": "Covington" },
-      { "@type": "City", "name": "Snellville" },
-      { "@type": "City", "name": "Stone Mountain" },
-      { "@type": "City", "name": "Loganville" },
-      { "@type": "City", "name": "Lilburn" },
-      { "@type": "City", "name": "Avondale Estates" },
-      { "@type": "City", "name": "Grayson" },
-      { "@type": "City", "name": "Lawrenceville" },
-      { "@type": "City", "name": "Stockbridge" },
-      { "@type": "City", "name": "McDonough" },
-      { "@type": "City", "name": "Duluth" },
-      { "@type": "City", "name": "Norcross" },
-      { "@type": "City", "name": "Chamblee" },
-      { "@type": "City", "name": "Doraville" },
-      { "@type": "City", "name": "Jonesboro" },
-      { "@type": "City", "name": "Morrow" },
-      { "@type": "City", "name": "Forest Park" },
-      { "@type": "City", "name": "Redan" },
-      { "@type": "City", "name": "Monroe" },
-      { "@type": "City", "name": "Oxford" },
-      { "@type": "City", "name": "Porterdale" },
-      { "@type": "City", "name": "Dacula" }
-    ],
+        "areaServed": [
+        {
+              "@type": "State",
+              "name": "Georgia"
+        },
+        {
+              "@type": "City",
+              "name": "Acworth"
+        },
+        {
+              "@type": "City",
+              "name": "Alpharetta"
+        },
+        {
+              "@type": "City",
+              "name": "Atlanta"
+        },
+        {
+              "@type": "City",
+              "name": "Austell"
+        },
+        {
+              "@type": "City",
+              "name": "Avondale Estates"
+        },
+        {
+              "@type": "City",
+              "name": "Berkeley Lake"
+        },
+        {
+              "@type": "City",
+              "name": "Between"
+        },
+        {
+              "@type": "City",
+              "name": "Brookhaven"
+        },
+        {
+              "@type": "City",
+              "name": "Brooks"
+        },
+        {
+              "@type": "City",
+              "name": "Buford"
+        },
+        {
+              "@type": "City",
+              "name": "Chamblee"
+        },
+        {
+              "@type": "City",
+              "name": "Chattahoochee Hills"
+        },
+        {
+              "@type": "City",
+              "name": "Clarkston"
+        },
+        {
+              "@type": "City",
+              "name": "College Park"
+        },
+        {
+              "@type": "City",
+              "name": "Conyers"
+        },
+        {
+              "@type": "City",
+              "name": "Covington"
+        },
+        {
+              "@type": "City",
+              "name": "Dacula"
+        },
+        {
+              "@type": "City",
+              "name": "Decatur"
+        },
+        {
+              "@type": "City",
+              "name": "Doraville"
+        },
+        {
+              "@type": "City",
+              "name": "Duluth"
+        },
+        {
+              "@type": "City",
+              "name": "Dunwoody"
+        },
+        {
+              "@type": "City",
+              "name": "East Point"
+        },
+        {
+              "@type": "City",
+              "name": "Fairburn"
+        },
+        {
+              "@type": "City",
+              "name": "Fayetteville"
+        },
+        {
+              "@type": "City",
+              "name": "Forest Park"
+        },
+        {
+              "@type": "City",
+              "name": "Good Hope"
+        },
+        {
+              "@type": "City",
+              "name": "Grantville"
+        },
+        {
+              "@type": "City",
+              "name": "Grayson"
+        },
+        {
+              "@type": "City",
+              "name": "Hampton"
+        },
+        {
+              "@type": "City",
+              "name": "Hapeville"
+        },
+        {
+              "@type": "City",
+              "name": "Haralson"
+        },
+        {
+              "@type": "City",
+              "name": "Jersey"
+        },
+        {
+              "@type": "City",
+              "name": "Johns Creek"
+        },
+        {
+              "@type": "City",
+              "name": "Jonesboro"
+        },
+        {
+              "@type": "City",
+              "name": "Kennesaw"
+        },
+        {
+              "@type": "City",
+              "name": "Lawrenceville"
+        },
+        {
+              "@type": "City",
+              "name": "Lilburn"
+        },
+        {
+              "@type": "City",
+              "name": "Lithonia"
+        },
+        {
+              "@type": "City",
+              "name": "Locust Grove"
+        },
+        {
+              "@type": "City",
+              "name": "Loganville"
+        },
+        {
+              "@type": "City",
+              "name": "Mansfield"
+        },
+        {
+              "@type": "City",
+              "name": "Marietta"
+        },
+        {
+              "@type": "City",
+              "name": "McDonough"
+        },
+        {
+              "@type": "City",
+              "name": "Milton"
+        },
+        {
+              "@type": "City",
+              "name": "Monroe"
+        },
+        {
+              "@type": "City",
+              "name": "Moreland"
+        },
+        {
+              "@type": "City",
+              "name": "Morrow"
+        },
+        {
+              "@type": "City",
+              "name": "Mountain Park"
+        },
+        {
+              "@type": "City",
+              "name": "Newborn"
+        },
+        {
+              "@type": "City",
+              "name": "Newnan"
+        },
+        {
+              "@type": "City",
+              "name": "Norcross"
+        },
+        {
+              "@type": "City",
+              "name": "Oxford"
+        },
+        {
+              "@type": "City",
+              "name": "Palmetto"
+        },
+        {
+              "@type": "City",
+              "name": "Peachtree City"
+        },
+        {
+              "@type": "City",
+              "name": "Peachtree Corners"
+        },
+        {
+              "@type": "City",
+              "name": "Pine Lake"
+        },
+        {
+              "@type": "City",
+              "name": "Porterdale"
+        },
+        {
+              "@type": "City",
+              "name": "Powder Springs"
+        },
+        {
+              "@type": "City",
+              "name": "Redan"
+        },
+        {
+              "@type": "City",
+              "name": "Roswell"
+        },
+        {
+              "@type": "City",
+              "name": "Sandy Springs"
+        },
+        {
+              "@type": "City",
+              "name": "Senoia"
+        },
+        {
+              "@type": "City",
+              "name": "Sharpsburg"
+        },
+        {
+              "@type": "City",
+              "name": "Smyrna"
+        },
+        {
+              "@type": "City",
+              "name": "Snellville"
+        },
+        {
+              "@type": "City",
+              "name": "South Fulton"
+        },
+        {
+              "@type": "City",
+              "name": "Stockbridge"
+        },
+        {
+              "@type": "City",
+              "name": "Stone Mountain"
+        },
+        {
+              "@type": "City",
+              "name": "Stonecrest"
+        },
+        {
+              "@type": "City",
+              "name": "Sugar Hill"
+        },
+        {
+              "@type": "City",
+              "name": "Suwanee"
+        },
+        {
+              "@type": "City",
+              "name": "Tucker"
+        },
+        {
+              "@type": "City",
+              "name": "Turin"
+        },
+        {
+              "@type": "City",
+              "name": "Tyrone"
+        },
+        {
+              "@type": "City",
+              "name": "Union City"
+        },
+        {
+              "@type": "City",
+              "name": "Walnut Grove"
+        },
+        {
+              "@type": "City",
+              "name": "Woolsey"
+        }
+  ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
