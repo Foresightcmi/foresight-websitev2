@@ -187,7 +187,9 @@ export default function AskTwin() {
 
       const data = await response.json();
       if (data.response) {
-        setMessages(prev => [...prev, { role: 'ai', content: data.response }]);
+        // Strip any raw asterisks (*) from the AI response to keep plain text perfectly clean in the pre-wrap container
+        const sanitizedContent = data.response.replace(/\*/g, '');
+        setMessages(prev => [...prev, { role: 'ai', content: sanitizedContent }]);
         setIsTyping(false);
       } else {
         throw new Error('No response field in API data');
@@ -197,7 +199,9 @@ export default function AskTwin() {
       // Simulate natural thinking delay for fallback
       setTimeout(() => {
         const aiResponseText = generateAIResponse(userMessage.content);
-        setMessages(prev => [...prev, { role: 'ai', content: aiResponseText }]);
+        // Strip any raw asterisks (*) from the fallback response to keep plain text perfectly clean
+        const sanitizedFallback = aiResponseText.replace(/\*/g, '');
+        setMessages(prev => [...prev, { role: 'ai', content: sanitizedFallback }]);
         setIsTyping(false);
       }, 1000);
     }
