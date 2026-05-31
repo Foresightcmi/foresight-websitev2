@@ -460,8 +460,11 @@ export default function AskTwin() {
               
               const isLastMessage = index === messages.length - 1;
               const containsChecklistOffer = msg.role === 'ai' && msg.content && 
-                msg.content.includes('Foresight vs. Hindsight') && 
-                msg.content.includes('Shall I send that to you?');
+                msg.content.toLowerCase().includes('checklist') && 
+                (msg.content.toLowerCase().includes('shall i send') || 
+                 msg.content.toLowerCase().includes('send that to you') ||
+                 msg.content.toLowerCase().includes('hindsight') ||
+                 msg.content.toLowerCase().includes('foresight vs'));
 
               return (
                 <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.role === 'user' ? 'flex-end' : 'flex-start', width: '100%' }}>
