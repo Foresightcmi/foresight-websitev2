@@ -59,7 +59,7 @@ IMPORTANT RULES OF OPERATION:
 7. Keep responses concise, clean, and write in beautiful plain-text Markdown without excessive technical jargon. Avoid code blocks or internal system notes in your output.`;
 
     // Make the request to the Google Gemini API REST endpoint
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
     const response = await fetch(endpoint, {
       method: 'POST',
