@@ -168,6 +168,9 @@ export default function Realtors() {
                 <Link href="/quote" className="btn btn-outline" style={{ borderWidth: '2px' }}>
                   💰 Try Instant Quote Calculator
                 </Link>
+                <Link href="/seo-guide" className="btn btn-outline" style={{ borderWidth: '2px' }}>
+                  📈 Interactive SEO Priority Planner
+                </Link>
                 <Link href="/ask-twin" className="btn btn-outline" style={{ borderWidth: '2px' }}>
                   🤖 Ask Foresight AI about GA Codes
                 </Link>
