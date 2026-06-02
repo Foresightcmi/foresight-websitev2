@@ -185,12 +185,6 @@ export default function Services() {
 
       <section className="section bg-white" style={{ borderBottom: '1px solid var(--color-gray-mid)' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '2.25rem', fontWeight: 800 }}>How much does a certified home inspection cost in Metro Atlanta?</h2>
-          <div style={{ background: 'var(--color-gray-light)', borderLeft: '4px solid var(--color-red)', padding: '1.25rem', borderRadius: 'var(--radius-sm)', marginBottom: '2rem' }}>
-            <p style={{ margin: 0, fontSize: '1.05rem', color: 'var(--color-dark)', fontWeight: 600, lineHeight: 1.6 }}>
-              Foresight home inspections start at a base rate of $315+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $400, professional 48-hour continuous radon gas testing for $200, pool safety evaluations for $275, and termite (WDO) reports starting at $125.
-            </p>
-          </div>
           
           <div style={{ overflowX: 'auto', border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', background: 'var(--color-white)', boxShadow: 'var(--shadow-sm)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem', textAlign: 'left' }}>
