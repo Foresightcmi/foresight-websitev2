@@ -524,7 +524,6 @@ export default function RootLayout({ children }) {
                   <li><Link href="/realtors">Realtors VIP Program</Link></li>
                   <li><Link href="/quote">Instant Quote</Link></li>
                   <li><Link href="/ask-twin">Ask Foresight AI Portal</Link></li>
-                  <li><Link href="/seo-guide">SEO & Citation Planner</Link></li>
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
                 </ul>
               </div>

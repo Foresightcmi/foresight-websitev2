@@ -183,6 +183,76 @@ export default function Services() {
         </div>
       </section>
 
+      <section className="section bg-white" style={{ borderBottom: '1px solid var(--color-gray-mid)' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '2.25rem', fontWeight: 800 }}>How much does a certified home inspection cost in Metro Atlanta?</h2>
+          <div style={{ background: 'var(--color-gray-light)', borderLeft: '4px solid var(--color-red)', padding: '1.25rem', borderRadius: 'var(--radius-sm)', marginBottom: '2rem' }}>
+            <p style={{ margin: 0, fontSize: '1.05rem', color: 'var(--color-dark)', fontWeight: 600, lineHeight: 1.6 }}>
+              Foresight home inspections start at a base rate of $315+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $400, professional 48-hour continuous radon gas testing for $200, pool safety evaluations for $275, and termite (WDO) reports starting at $125.
+            </p>
+          </div>
+          
+          <div style={{ overflowX: 'auto', border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', background: 'var(--color-white)', boxShadow: 'var(--shadow-sm)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95rem', textAlign: 'left' }}>
+              <thead>
+                <tr style={{ background: 'var(--color-dark)', color: 'var(--color-white)', borderBottom: '2px solid var(--color-red)' }}>
+                  <th style={{ padding: '1rem 1.25rem', fontWeight: 700 }}>Service Program</th>
+                  <th style={{ padding: '1rem 1.25rem', fontWeight: 700 }}>Base Pricing</th>
+                  <th style={{ padding: '1rem 1.25rem', fontWeight: 700 }}>Core Deliverables & Protection</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>Standard Buyer Inspection</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$315+</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>Two inspectors on site, thermal scans, & $10k warranty coverage</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>Pre-Listing Seller Inspection</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$365+</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>Proactive system audit to protect negotiations and closing speed</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>New Construction Phase Audit</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$355+</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>Pre-drywall frame audits, final walkthrough, & structural checks</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>11-Month Warranty Inspection</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$335+</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>Developer repair list before one-year home warranty expiration</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>Sewer Scope Pipeline Scan</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$400</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>HD lateral camera inspection to check for roots, cracks, and bellies</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>Radon Continuous Gas Test</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$200+</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>48-hour continuous digital monitoring for radon gas levels</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>Pool & Spa Mechanical Safety</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$275</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>Pumps, pressure leaks, heaters, filters, and electrical safety scan</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>Termite & WDO Infestation Report</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$125+</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>Official Georgia wood infestation report for mortgage/lender compliance</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-dark)' }}>STR Permit Compliance Assist</td>
+                  <td style={{ padding: '1rem 1.25rem', fontWeight: 700, color: 'var(--color-red)' }}>$275</td>
+                  <td style={{ padding: '1rem 1.25rem', color: 'var(--color-gray-dark)' }}>Airbnb/Vrbo host safety pre-screening compliance audit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-gray-light">
         <div className="container">
           <div className="grid grid-3" style={{ marginBottom: '4rem' }}>
