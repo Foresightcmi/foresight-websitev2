@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 import ValueComparison from './components/ValueComparison';
 import ThermalSlider from './components/ThermalSlider';
+import Testimonials from './components/Testimonials';
 
 export default function Home() {
   const jsonLd = {
@@ -360,6 +361,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* ⚡ FAQ SECTION (AEO/GEO Optimized) ⚡ */}
       <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)' }}>
