@@ -1,78 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
-function AnimatedNumber({ value, duration = 600 }) {
-  const [display, setDisplay] = useState(value);
-  const prevValue = useRef(value);
-  const rafId = useRef(null);
-
-  useEffect(() => {
-    const from = prevValue.current;
-    const to = value;
-    prevValue.current = value;
-    if (from === to) return;
-
-    const startTime = performance.now();
-
-    const animate = (now) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // easeOutQuart
-      const eased = 1 - Math.pow(1 - progress, 4);
-      setDisplay(Math.round(from + (to - from) * eased));
-      if (progress < 1) {
-        rafId.current = requestAnimationFrame(animate);
-      }
-    };
-
-    rafId.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(rafId.current);
-  }, [value, duration]);
-
-  return display.toLocaleString();
-}
-
-function StatCard({ label, value, prefix = '', suffix = '', sublabel, highlight = false }) {
-  return (
-    <div
-      style={{
-        background: highlight ? 'rgba(211,47,47,0.12)' : 'rgba(255,255,255,0.05)',
-        border: highlight ? '1px solid rgba(211,47,47,0.35)' : '1px solid rgba(255,255,255,0.08)',
-        borderTop: '4px solid var(--color-red)',
-        borderRadius: 'var(--radius-lg)',
-        padding: '2rem 1.5rem',
-        textAlign: 'center',
-        transition: 'transform 0.25s ease, box-shadow 0.25s ease',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-4px)';
-        e.currentTarget.style.boxShadow = '0 12px 40px rgba(211,47,47,0.15)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.boxShadow = 'none';
-      }}
-    >
-      <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
-        {label}
-      </p>
-      <p style={{ color: highlight ? 'var(--color-red-light)' : 'var(--color-white)', fontSize: highlight ? '2.75rem' : '2.25rem', fontWeight: 800, margin: '0 0 0.5rem', lineHeight: 1.1 }}>
-        {prefix}<AnimatedNumber value={value} />{suffix}
-      </p>
-      <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.78rem', margin: 0, lineHeight: 1.4 }}>
-        {sublabel}
-      </p>
-    </div>
-  );
-}
 
 export default function Realtors() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [transactions, setTransactions] = useState(4);
-  const [hourlyRate, setHourlyRate] = useState(75);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -207,95 +141,6 @@ export default function Realtors() {
           </div>
         </div>
       </section>
-
-      {/* ROI Calculator Section */}
-      <section className="section bg-dark text-white" style={{ padding: '6rem 0', position: 'relative', overflow: 'hidden' }}>
-        {/* Background radial gradient */}
-        <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(211,47,47,0.08) 0%, transparent 55%)', zIndex: 1, pointerEvents: 'none' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="section-title text-center" style={{ marginBottom: '3.5rem' }}>
-            <span className="badge" style={{ marginBottom: '1rem', background: 'rgba(211,47,47,0.15)', color: 'var(--color-red-light)', fontSize: '0.9rem', padding: '0.5rem 1.25rem' }}>
-              Agent Time Savings Calculator
-            </span>
-            <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>
-              How Much Time & Money Does Foresight{' '}
-              <span style={{ color: 'var(--color-red)' }}>Save Your Agents?</span>
-            </h2>
-            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
-              Enter your transaction volume and hourly rate below to see the real dollar value of partnering with Foresight's dual-inspector, SUPRA-equipped team.
-            </p>
-          </div>
-
-          {/* Calculator Inputs */}
-          <div className="grid grid-2" style={{ gap: '2rem', maxWidth: '700px', margin: '0 auto 3.5rem' }}>
-            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.1)', padding: '2rem', borderRadius: 'var(--radius-lg)' }}>
-              <label style={{ display: 'block', color: 'var(--color-gray-mid)', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.75rem', letterSpacing: '0.03em', textTransform: 'uppercase' }}>
-                Transactions / Month
-              </label>
-              <input
-                type="number"
-                min="1"
-                max="100"
-                value={transactions}
-                onChange={(e) => setTransactions(Math.max(1, parseInt(e.target.value) || 1))}
-                className="form-control"
-                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-white)', fontSize: '2rem', fontWeight: 800, textAlign: 'center', padding: '0.75rem 1rem', borderRadius: 'var(--radius-md)', width: '100%' }}
-              />
-              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem', marginTop: '0.5rem', textAlign: 'center' }}>How many deals do you close each month?</p>
-            </div>
-
-            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.1)', padding: '2rem', borderRadius: 'var(--radius-lg)' }}>
-              <label style={{ display: 'block', color: 'var(--color-gray-mid)', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.75rem', letterSpacing: '0.03em', textTransform: 'uppercase' }}>
-                Your Hourly Rate ($)
-              </label>
-              <div style={{ position: 'relative' }}>
-                <span style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-gray-mid)', fontSize: '1.5rem', fontWeight: 700, pointerEvents: 'none' }}>$</span>
-                <input
-                  type="number"
-                  min="1"
-                  max="1000"
-                  value={hourlyRate}
-                  onChange={(e) => setHourlyRate(Math.max(1, parseInt(e.target.value) || 1))}
-                  className="form-control"
-                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-white)', fontSize: '2rem', fontWeight: 800, textAlign: 'center', padding: '0.75rem 1rem 0.75rem 2.5rem', borderRadius: 'var(--radius-md)', width: '100%' }}
-                />
-              </div>
-              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem', marginTop: '0.5rem', textAlign: 'center' }}>What's your time worth per hour?</p>
-            </div>
-          </div>
-
-          {/* Calculated Output Stats */}
-          {(() => {
-            const hoursSavedPerTx = 3;
-            const hoursSavedMonth = transactions * hoursSavedPerTx;
-            const monthlyDollar = hoursSavedMonth * hourlyRate;
-            const annualDollar = monthlyDollar * 12;
-            const freedTransactions = Math.floor(hoursSavedMonth / 3);
-
-            return (
-              <>
-                <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '1.5rem' }}>
-                  <StatCard label="Hours Saved Per Transaction" value={hoursSavedPerTx} suffix=" hrs" sublabel="1.5 hrs SUPRA + 1.5 hrs dual-inspector speed" />
-                  <StatCard label="Hours Saved Per Month" value={hoursSavedMonth} suffix=" hrs" sublabel={`${transactions} transactions × 3 hours each`} />
-                  <StatCard label="Transactions Freed Up" value={freedTransactions} suffix=" deals" sublabel="Extra deals you could close with reclaimed time" />
-                </div>
-                <div className="grid grid-2" style={{ gap: '1.5rem', maxWidth: '700px', margin: '0 auto 3rem' }}>
-                  <StatCard label="Monthly Dollar Value" value={monthlyDollar} prefix="$" suffix="" sublabel={`${hoursSavedMonth} hrs × $${hourlyRate}/hr`} highlight />
-                  <StatCard label="Annual Dollar Value" value={annualDollar} prefix="$" suffix="" sublabel={`$${monthlyDollar.toLocaleString()}/mo × 12 months`} highlight />
-                </div>
-              </>
-            );
-          })()}
-
-          {/* CTA */}
-          <div style={{ textAlign: 'center' }}>
-            <a href="#partner-form" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              🤝 Join the VIP Partner Program
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Co-Branded Marketing / Quick Quote Integration Section */}
       <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
         <div className="container">
