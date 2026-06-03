@@ -124,10 +124,16 @@ export default function Quote() {
     let base = selectedRange.price;
     let extra = 0;
 
-    // Additional $75 complexity fee if any of these conditions are met: 50+ years old, crawlspace, or unfinished/partial basement (does not stack)
+    // Additional Complexity Fees: $75 is added to the home inspection for each condition present (being 50+ years old, crawlspace, or unfinished/partial basement). These fees are additive and stack.
     // We bypass these complexity fees for Host STR audits to keep pricing flat and transparent
     if (propertyType === 'single-family' && serviceType !== 'str') {
-      if (ageTier === 'over-50' || foundation === 'crawlspace' || foundation === 'basement') {
+      if (ageTier === 'over-50') {
+        extra += 75;
+      }
+      if (foundation === 'crawlspace') {
+        extra += 75;
+      }
+      if (foundation === 'basement') {
         extra += 75;
       }
     }
@@ -366,7 +372,7 @@ export default function Quote() {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.45 
               }}>
-                ℹ️ <strong>* Additional Complexity Fee:</strong> A single flat <strong>$75 fee</strong> is added to the home inspection if any of these conditions are present: the home is 50+ years old, has a crawlspace, or has an unfinished/partial basement. This complexity fee does not stack (e.g., a 50+ year old home on a crawlspace adds a flat $75).
+                ℹ️ <strong>* Additional Complexity Fees:</strong> An additional <strong>$75 fee</strong> is added to the home inspection for each condition present (being 50+ years old, having a crawlspace, or having an unfinished/partial basement). These fees are additive and stack per condition (e.g., a 50+ year old home on a crawlspace adds $150).
               </div>
             )}
 
