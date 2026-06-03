@@ -7,7 +7,7 @@ export default function Quote() {
   const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str'
   const [sqftRange, setSqftRange] = useState('');
   const [foundation, setFoundation] = useState('slab'); // 'slab', 'basement', 'crawlspace'
-  const [ageTier, setAgeTier] = useState('under-10'); // 'under-10', '10-30', 'over-30'
+  const [ageTier, setAgeTier] = useState('under-25'); // 'under-25', '25-49', 'over-50'
   
   const [addons, setAddons] = useState({
     radon: false,
@@ -66,10 +66,14 @@ export default function Quote() {
 
     return [
       { label: 'Under 1,500 sq ft', value: 'sf-under-1500', price: 395 + adjustment },
-      { label: '1,501 - 2,500 sq ft', value: 'sf-1501-2500', price: 495 + adjustment },
-      { label: '2,501 - 3,500 sq ft', value: 'sf-2501-3500', price: 595 + adjustment },
-      { label: '3,001 - 4,500 sq ft', value: 'sf-3501-4500', price: 695 + adjustment },
-      { label: '4,501 - 5,500 sq ft', value: 'sf-4501-5500', price: 825 + adjustment },
+      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 445 + adjustment },
+      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 495 + adjustment },
+      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 545 + adjustment },
+      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 595 + adjustment },
+      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 645 + adjustment },
+      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 695 + adjustment },
+      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 755 + adjustment },
+      { label: '5,001 - 5,500 sq ft', value: 'sf-5001-5500', price: 825 + adjustment },
       { label: '5,501+ sq ft', value: 'custom-call', price: 'custom' }
     ];
   };
@@ -88,18 +92,11 @@ export default function Quote() {
     let base = selectedRange.price;
     let extra = 0;
 
-    // Age surcharges mapping by square footage range value
-    const ageSurcharges = {
-      'sf-under-1500': { 'under-10': 0, '10-30': 30, 'over-30': 60 },
-      'condo-under-1500': { 'under-10': 0, '10-30': 30, 'over-30': 60 },
-      'sf-1501-2500': { 'under-10': 0, '10-30': 40, 'over-30': 85 },
-      'sf-2501-3500': { 'under-10': 0, '10-30': 50, 'over-30': 110 },
-      'sf-3501-4500': { 'under-10': 0, '10-30': 60, 'over-30': 140 },
-      'sf-4501-5500': { 'under-10': 0, '10-30': 75, 'over-30': 180 }
-    };
-
-    if (ageSurcharges[sqftRange] && ageSurcharges[sqftRange][ageTier]) {
-      extra += ageSurcharges[sqftRange][ageTier];
+    // Flat Property Age Surcharges: Under 25 = +$0, 25-49 = +$50, 50+ = +$95
+    if (ageTier === '25-49') {
+      extra += 50;
+    } else if (ageTier === 'over-50') {
+      extra += 95;
     }
 
     // Additional Complexity Fees: $75 is added to the home inspection for each foundation complexity present (crawlspace or unfinished/partial basement). These fees stack.
@@ -116,7 +113,7 @@ export default function Quote() {
     // Addons
     if (addons.radon) extra += 200; // Continuous monitor sub-contracted rate
     if (addons.pool) extra += 135;  // Pool/spa bundled rate
-    if (addons.lowFlow) extra += 100; // DeKalb low flow compliance
+    if (addons.lowFlow) extra += 125; // DeKalb low flow compliance
     if (addons.buildfax) extra += 15; // Property permit report
     if (addons.termite) extra += 110; // Termite/WDO bundled rate
 
@@ -140,12 +137,12 @@ export default function Quote() {
     }
 
     // Scale by age tier
-    if (ageTier === 'over-50') {
-      minLeverage += 1200;
-      maxLeverage += 3500;
-    } else if (ageTier === '86+') {
-      minLeverage += 2500;
-      maxLeverage += 8000;
+    if (ageTier === '25-49') {
+      minLeverage += 1000;
+      maxLeverage += 3000;
+    } else if (ageTier === 'over-50') {
+      minLeverage += 2000;
+      maxLeverage += 6000;
     }
 
     // Adjust by service type
@@ -324,9 +321,9 @@ export default function Quote() {
                   value={ageTier}
                   onChange={(e) => setAgeTier(e.target.value)}
                 >
-                  <option value="under-10">Under 10 Years Old</option>
-                  <option value="10-30">10 – 30 Years Old (Age Surcharge)</option>
-                  <option value="over-30">30+ Years Old (Historical Surcharge)</option>
+                  <option value="under-25">Under 25 Years Old</option>
+                  <option value="25-49">25 – 49 Years Old (+ $50 Age Surcharge)</option>
+                  <option value="over-50">50+ Years Old (+ $95 Historical Surcharge)</option>
                 </select>
               </div>
             </>
@@ -396,7 +393,7 @@ export default function Quote() {
                     onChange={() => handleAddonToggle('lowFlow')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (+ $100)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (+ $125)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory compliance check for DeKalb County property transfers (pre-1993 builds).</span>
                   </div>
                 </label>

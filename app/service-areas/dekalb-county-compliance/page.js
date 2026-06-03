@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: 'Can I get the compliance inspection as a standalone service?',
-    a: 'Yes, the DeKalb County low-flow compliance inspection is available as a standalone service. However, it is most cost-effective when combined with a standard home inspection, where it can be added on for just $100. Contact us for standalone pricing.',
+    a: 'Yes, the DeKalb County low-flow compliance inspection is available as a standalone service. However, it is most cost-effective when combined with a standard home inspection, where it can be added on for just $125. Contact us for standalone pricing.',
   },
   {
     q: 'How long does the compliance inspection take?',
@@ -465,7 +465,7 @@ export default function DeKalbCountyCompliancePage() {
                 marginBottom: '0.5rem',
               }}
             >
-              $100
+              $125
             </div>
             <p
               style={{
