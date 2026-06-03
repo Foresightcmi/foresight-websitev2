@@ -104,7 +104,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
-      a: `Home inspection pricing in ${cityName} starts at $375+ for a standard buyer's inspection and pre-listing seller's inspection. 11-month warranty inspections and new construction final phase walkthrough inspections start at $350+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($125-$165), pool evaluation ($275), or sewer scope inspection ($400). Single-family home inspections have additional complexity fees of $75 added for each condition present (if the home is 50+ years old, has a crawlspace, or has an unfinished basement foundation). These fees are additive and stack per condition (e.g., a 50+ year old home on a crawlspace adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+      a: `Home inspection pricing in ${cityName} starts at $395+ for a standard buyer's inspection and pre-listing seller's inspection. 11-month warranty inspections and new construction final phase walkthrough inspections start at $350+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($110 bundled / $150 standalone), pool evaluation ($135 bundled / $175 standalone), or sewer scope inspection ($400). Single-family home inspections have additional complexity fees of $75 added for each foundation condition present (if the home has a crawlspace or has an unfinished basement foundation). These fees stack per condition (e.g., a home on a crawlspace with an unfinished basement adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
@@ -120,7 +120,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you do termite inspections in ${cityName}, GA?`,
-      a: `Yes — we offer Official Georgia Wood Destroying Organism (WDO) inspections in ${cityName} through our licensed pest control partners. Termite and WDO inspections are critical in Georgia's warm, humid climate where subterranean termites are highly active. Pricing is $125 for slab or basement foundations, and $165 for crawlspaces. The inspection produces an Official Georgia Wood Infestation Report, which is often required by lenders at closing.`,
+      a: `Yes — we offer Official Georgia Wood Destroying Organism (WDO) inspections in ${cityName} through our licensed pest control partners. Termite and WDO inspections are critical in Georgia's warm, humid climate where subterranean termites are highly active. Pricing is $110 when bundled with a home inspection, or $150 for a standalone service. The inspection produces an Official Georgia Wood Infestation Report, which is often required by lenders at closing.`,
     },
     {
       q: `Do you inspect new construction homes in ${cityName}?`,

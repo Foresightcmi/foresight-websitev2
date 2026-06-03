@@ -7,7 +7,7 @@ export default function Quote() {
   const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str'
   const [sqftRange, setSqftRange] = useState('');
   const [foundation, setFoundation] = useState('slab'); // 'slab', 'basement', 'crawlspace'
-  const [ageTier, setAgeTier] = useState('under-50'); // 'under-50', 'over-50', '86+'
+  const [ageTier, setAgeTier] = useState('under-10'); // 'under-10', '10-30', 'over-30'
   
   const [addons, setAddons] = useState({
     radon: false,
@@ -46,11 +46,10 @@ export default function Quote() {
           { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
         ];
       }
-      const premium = 0;
-      const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -25 : 0;
+      const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -45 : 0;
       return [
-        { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 325 + adjustment + premium },
-        { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 375 + adjustment + premium }
+        { label: 'Under 1,500 sq ft', value: 'condo-under-1500', price: 395 + adjustment },
+        { label: '1,501+ sq ft', value: 'custom-call', price: 'custom' }
       ];
     }
 
@@ -63,20 +62,15 @@ export default function Quote() {
     }
 
     // Pre-purchase, Pre-listing, 11-Month Warranty, and New Construction
-    const premium = 0;
-    const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -25 : 0;
+    const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -45 : 0;
 
     return [
-      { label: 'Up to 1,000 sq ft', value: 'sf-up-to-1000', price: 375 + adjustment + premium },
-      { label: '1,001 - 1,500 sq ft', value: 'sf-1001-1500', price: 405 + adjustment + premium },
-      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 445 + adjustment + premium },
-      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 485 + adjustment + premium },
-      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 525 + adjustment + premium },
-      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 575 + adjustment + premium },
-      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 625 + adjustment + premium },
-      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 675 + adjustment + premium },
-      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 755 + adjustment + premium },
-      { label: '5,001+ sq ft', value: 'custom-call', price: 'custom' }
+      { label: 'Under 1,500 sq ft', value: 'sf-under-1500', price: 395 + adjustment },
+      { label: '1,501 - 2,500 sq ft', value: 'sf-1501-2500', price: 495 + adjustment },
+      { label: '2,501 - 3,500 sq ft', value: 'sf-2501-3500', price: 595 + adjustment },
+      { label: '3,001 - 4,500 sq ft', value: 'sf-3501-4500', price: 695 + adjustment },
+      { label: '4,501 - 5,500 sq ft', value: 'sf-4501-5500', price: 825 + adjustment },
+      { label: '5,501+ sq ft', value: 'custom-call', price: 'custom' }
     ];
   };
 
@@ -87,19 +81,30 @@ export default function Quote() {
     
     if (!selectedRange) return { total: 0, isCustom: false };
 
-    if (selectedRange.price === 'custom' || ageTier === '86+') {
+    if (selectedRange.price === 'custom') {
       return { total: 'Custom Quote', isCustom: true };
     }
 
     let base = selectedRange.price;
     let extra = 0;
 
-    // Additional Complexity Fees: $75 is added to the home inspection for each condition present (being 50+ years old, crawlspace, or unfinished/partial basement). These fees are additive and stack.
+    // Age surcharges mapping by square footage range value
+    const ageSurcharges = {
+      'sf-under-1500': { 'under-10': 0, '10-30': 30, 'over-30': 60 },
+      'condo-under-1500': { 'under-10': 0, '10-30': 30, 'over-30': 60 },
+      'sf-1501-2500': { 'under-10': 0, '10-30': 40, 'over-30': 85 },
+      'sf-2501-3500': { 'under-10': 0, '10-30': 50, 'over-30': 110 },
+      'sf-3501-4500': { 'under-10': 0, '10-30': 60, 'over-30': 140 },
+      'sf-4501-5500': { 'under-10': 0, '10-30': 75, 'over-30': 180 }
+    };
+
+    if (ageSurcharges[sqftRange] && ageSurcharges[sqftRange][ageTier]) {
+      extra += ageSurcharges[sqftRange][ageTier];
+    }
+
+    // Additional Complexity Fees: $75 is added to the home inspection for each foundation complexity present (crawlspace or unfinished/partial basement). These fees stack.
     // We bypass these complexity fees for Host STR audits to keep pricing flat and transparent
     if (propertyType === 'single-family' && serviceType !== 'str') {
-      if (ageTier === 'over-50') {
-        extra += 75;
-      }
       if (foundation === 'crawlspace') {
         extra += 75;
       }
@@ -110,15 +115,10 @@ export default function Quote() {
 
     // Addons
     if (addons.radon) extra += 200; // Continuous monitor sub-contracted rate
-    if (addons.pool) extra += 275;  // Pool/spa add-on
+    if (addons.pool) extra += 135;  // Pool/spa bundled rate
     if (addons.lowFlow) extra += 100; // DeKalb low flow compliance
     if (addons.buildfax) extra += 15; // Property permit report
-
-    // Termite / WDO (slab/basement: $125, crawlspace: $165)
-    if (addons.termite) {
-      if (foundation === 'crawlspace') extra += 165;
-      else extra += 125; // Slab or basement (or default/condo)
-    }
+    if (addons.termite) extra += 110; // Termite/WDO bundled rate
 
     return { total: base + extra, isCustom: false };
   };
@@ -324,9 +324,9 @@ export default function Quote() {
                   value={ageTier}
                   onChange={(e) => setAgeTier(e.target.value)}
                 >
-                  <option value="under-50">Under 50 Years Old</option>
-                  <option value="over-50">Home 50+ Years Old * {serviceType !== 'str' && '(+$75 complexity fee)'}</option>
-                  <option value="86+">Historic 86+ Years Old (Call for Price)</option>
+                  <option value="under-10">Under 10 Years Old</option>
+                  <option value="10-30">10 – 30 Years Old (Age Surcharge)</option>
+                  <option value="over-30">30+ Years Old (Historical Surcharge)</option>
                 </select>
               </div>
             </>
@@ -342,7 +342,7 @@ export default function Quote() {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.45 
               }}>
-                ℹ️ <strong>* Additional Complexity Fees:</strong> An additional <strong>$75 fee</strong> is added to the home inspection for each condition present (being 50+ years old, having a crawlspace, or having an unfinished/partial basement). These fees are additive and stack per condition (e.g., a 50+ year old home on a crawlspace adds $150).
+                ℹ️ <strong>* Additional Complexity Fees:</strong> An additional <strong>$75 fee</strong> is added to the home inspection for each foundation condition present (having a crawlspace or an unfinished/partial basement). These fees are additive and stack per condition (e.g., a home on a crawlspace with an unfinished basement adds $150).
               </div>
             )}
 
@@ -369,10 +369,10 @@ export default function Quote() {
                   />
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>
-                      Termite & WDO Inspection (+ ${propertyType === 'condo' ? 125 : (foundation === 'crawlspace' ? 165 : 125)})
+                      Termite & WDO Inspection (+ $110)
                     </span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>
-                      Performed by a licensed professional partner. Generates Official Georgia Wood Infestation Report. Price is $125 on slab/basement and $165 on crawlspace.
+                      Performed by a licensed partner. Generates Official Georgia Wood Infestation Report ($110 bundled / $150 standalone).
                     </span>
                   </div>
                 </label>
@@ -384,8 +384,8 @@ export default function Quote() {
                     onChange={() => handleAddonToggle('pool')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $275)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check.</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $135)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check ($135 bundled / $175 standalone).</span>
                   </div>
                 </label>
 
