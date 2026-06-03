@@ -420,7 +420,7 @@ export default function RootLayout({ children }) {
       "Termite and Wood Destroying Organism (WDO) Inspections",
       "Pool and Spa Inspections",
       "Pre-Listing Home Inspections",
-      "New Construction Phase Inspections"
+      "New Construction Final Walkthrough Inspections"
     ],
     "memberOf": {
       "@type": "Organization",
