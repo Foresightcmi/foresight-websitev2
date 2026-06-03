@@ -40,74 +40,42 @@ export default function Quote() {
   // Available ranges depending on inputs
   const getSqftRanges = () => {
     if (propertyType === 'condo') {
-      if (serviceType === 'seller') {
-        return [
-          { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 350 },
-          { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 375 }
-        ];
-      } else {
-        return [
-          { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 395 },
-          { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 425 }
-        ];
-      }
-    }
-
-    // Single family/townhome
-    switch (serviceType) {
-      case 'seller': // Pre-listing seller dual-inspector
-        return [
-          { label: 'Up to 2,000 sq ft', value: 'seller-up-to-2000', price: 465 },
-          { label: '2,001 - 2,500 sq ft', value: 'seller-2001-2500', price: 485 },
-          { label: '2,501 - 3,000 sq ft', value: 'seller-2501-3000', price: 515 },
-          { label: '3,001 - 3,500 sq ft', value: 'seller-3001-3500', price: 555 },
-          { label: '3,501 - 4,000 sq ft', value: 'seller-3501-4000', price: 595 },
-          { label: '4,001 - 4,500 sq ft', value: 'seller-4001-4500', price: 635 },
-          { label: '4,501 - 5,000 sq ft', value: 'seller-4501-5000', price: 695 },
-          { label: 'Over 5,000 sq ft', value: 'custom-call', price: 'custom' }
-        ];
-      case 'new-construction': // New construction phase checks
-        return [
-          { label: 'Up to 1,800 sq ft', value: 'new-up-to-1800', price: 455 },
-          { label: '1,801 - 2,500 sq ft', value: 'new-1801-2500', price: 485 },
-          { label: '2,501 - 3,000 sq ft', value: 'new-2501-3000', price: 515 },
-          { label: '3,001 - 3,500 sq ft', value: 'new-3001-3500', price: 565 },
-          { label: '3,501 - 4,000 sq ft', value: 'new-3501-4000', price: 615 },
-          { label: '4,001 - 4,500 sq ft', value: 'new-4001-4500', price: 665 },
-          { label: '4,501 - 5,000 sq ft', value: 'new-4501-5000', price: 715 },
-          { label: 'Over 5,000 sq ft', value: 'custom-call', price: 'custom' }
-        ];
-      case 'warranty': // 11-Month Warranty
-        return [
-          { label: 'Up to 2,000 sq ft', value: 'warranty-up-to-2000', price: 435 },
-          { label: '2,001 - 2,500 sq ft', value: 'warranty-2001-2500', price: 465 },
-          { label: '2,501 - 3,000 sq ft', value: 'warranty-2501-3000', price: 495 },
-          { label: '3,001 - 3,500 sq ft', value: 'warranty-3001-3500', price: 545 },
-          { label: '3,501 - 4,000 sq ft', value: 'warranty-3501-4000', price: 585 },
-          { label: '4,001 - 4,500 sq ft', value: 'warranty-4001-4500', price: 635 },
-          { label: '4,501 - 5,000 sq ft', value: 'warranty-4501-5000', price: 685 },
-          { label: 'Over 5,000 sq ft', value: 'custom-call', price: 'custom' }
-        ];
-      case 'str':
+      if (serviceType === 'str') {
         return [
           { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 275 },
           { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
         ];
-      case 'buyer':
-      default: // Elevated premium resale pre-purchase rates
-        return [
-          { label: 'Up to 1,000 sq ft', value: 'sf-up-to-1000', price: 445 },
-          { label: '1,001 - 1,500 sq ft', value: 'sf-1001-1500', price: 475 },
-          { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 525 },
-          { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 575 },
-          { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 625 },
-          { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 695 },
-          { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 765 },
-          { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 835 },
-          { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 950 },
-          { label: '5,001+ sq ft', value: 'custom-call', price: 'custom' }
-        ];
+      }
+      const premium = serviceType === 'new-construction' ? 150 : 0;
+      return [
+        { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 395 + premium },
+        { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 425 + premium }
+      ];
     }
+
+    // Single family/townhome
+    if (serviceType === 'str') {
+      return [
+        { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 275 },
+        { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
+      ];
+    }
+
+    // Pre-purchase, Pre-listing, 11-Month Warranty, and New Construction
+    const premium = serviceType === 'new-construction' ? 150 : 0;
+
+    return [
+      { label: 'Up to 1,000 sq ft', value: 'sf-up-to-1000', price: 445 + premium },
+      { label: '1,001 - 1,500 sq ft', value: 'sf-1001-1500', price: 475 + premium },
+      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 525 + premium },
+      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 575 + premium },
+      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 625 + premium },
+      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 695 + premium },
+      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 765 + premium },
+      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 835 + premium },
+      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 950 + premium },
+      { label: '5,001+ sq ft', value: 'custom-call', price: 'custom' }
+    ];
   };
 
   // Calculations logic
