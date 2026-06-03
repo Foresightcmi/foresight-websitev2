@@ -501,7 +501,7 @@ export default function RootLayout({ children }) {
           <div className="container">
             <div className="footer-grid">
               <div>
-                <h3>Foresight Home Inspections</h3>
+                <h3>Foresight Home Inspections, LLC</h3>
                 <p style={{ fontStyle: 'italic', color: 'var(--color-gray-mid)', marginBottom: '0.75rem', fontWeight: '600', fontSize: '1.05rem' }}>&quot;Because hindsight is expensive... Choose Foresight!&quot;</p>
                 <p>Two sets of expert eyes on every job. Unparalleled thoroughness and accuracy.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -532,7 +532,7 @@ export default function RootLayout({ children }) {
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
                   <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
-                  <li>Atlanta, GA & Surrounding Areas</li>
+                  <li>Atlanta, GA & Surrounding Metro Areas</li>
                 </ul>
               </div>
             </div>
