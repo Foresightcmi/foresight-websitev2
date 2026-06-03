@@ -104,7 +104,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
-      a: `Home inspection pricing in ${cityName} starts at $415+ for a standard buyer's inspection and $465+ for a pre-listing seller's inspection. New construction inspections start at $455+, and 11-month warranty inspections start at $435+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($125-$165), pool evaluation ($275), or sewer scope inspection ($400). Single-family home inspections have additional complexity fees of $75 added for each condition present (if the home is 50+ years old, has a crawlspace, or has an unfinished basement foundation). These fees are additive and stack per condition (e.g., a 50+ year old home on a crawlspace adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+      a: `Home inspection pricing in ${cityName} starts at $375+ for a standard buyer's inspection, pre-listing seller's inspection, and 11-month warranty inspections. New construction inspections start at $525+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($125-$165), pool evaluation ($275), or sewer scope inspection ($400). Single-family home inspections have additional complexity fees of $75 added for each condition present (if the home is 50+ years old, has a crawlspace, or has an unfinished basement foundation). These fees are additive and stack per condition (e.g., a 50+ year old home on a crawlspace adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
@@ -124,7 +124,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you inspect new construction homes in ${cityName}?`,
-      a: `Absolutely. New construction inspections in ${cityName} start at $455+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our dual-inspector team checks the foundation, framing, electrical, plumbing, HVAC, insulation, grading, and final finishes. We also offer pre-drywall inspections so you can catch structural issues before they're hidden behind walls. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
+      a: `Absolutely. New construction inspections in ${cityName} start at $525+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our dual-inspector team checks the foundation, framing, electrical, plumbing, HVAC, insulation, grading, and final finishes. We also offer pre-drywall inspections so you can catch structural issues before they're hidden behind walls. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
     },
     {
       q: `What does thermal imaging detect during a home inspection in ${cityName}?`,

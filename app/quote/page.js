@@ -48,8 +48,8 @@ export default function Quote() {
       }
       const premium = serviceType === 'new-construction' ? 150 : 0;
       return [
-        { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 395 + premium },
-        { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 425 + premium }
+        { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 325 + premium },
+        { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 375 + premium }
       ];
     }
 
@@ -65,15 +65,15 @@ export default function Quote() {
     const premium = serviceType === 'new-construction' ? 150 : 0;
 
     return [
-      { label: 'Up to 1,000 sq ft', value: 'sf-up-to-1000', price: 445 + premium },
-      { label: '1,001 - 1,500 sq ft', value: 'sf-1001-1500', price: 475 + premium },
-      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 525 + premium },
-      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 575 + premium },
-      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 625 + premium },
-      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 695 + premium },
-      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 765 + premium },
-      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 835 + premium },
-      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 950 + premium },
+      { label: 'Up to 1,000 sq ft', value: 'sf-up-to-1000', price: 375 + premium },
+      { label: '1,001 - 1,500 sq ft', value: 'sf-1001-1500', price: 405 + premium },
+      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 445 + premium },
+      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 485 + premium },
+      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 525 + premium },
+      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 575 + premium },
+      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 625 + premium },
+      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 675 + premium },
+      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 755 + premium },
       { label: '5,001+ sq ft', value: 'custom-call', price: 'custom' }
     ];
   };
