@@ -56,7 +56,7 @@ export default function ValueComparison() {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <h3 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--color-white)', fontWeight: 800 }}>The Foresight CMI Standard</h3>
-                <span style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', background: 'var(--color-red-light)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>Starting at $315</span>
+                <span style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', background: 'var(--color-red-light)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>Starting at $415</span>
               </div>
               <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.975rem', marginBottom: '2rem', lineHeight: 1.6 }}>
                 Led by Christopher Boykin, a <strong>Certified Master Inspector® (CMI)</strong>—representing the top 2% of elite, highly vetted home inspectors nationwide.

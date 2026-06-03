@@ -42,50 +42,50 @@ export default function Quote() {
     if (propertyType === 'condo') {
       if (serviceType === 'seller') {
         return [
-          { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 250 },
-          { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 275 }
+          { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 350 },
+          { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 375 }
         ];
       } else {
         return [
-          { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 295 },
-          { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 325 }
+          { label: 'Up to 1,000 sq ft', value: 'condo-up-to-1000', price: 395 },
+          { label: '1,001 - 1,800 sq ft', value: 'condo-1001-1800', price: 425 }
         ];
       }
     }
 
     // Single family/townhome
     switch (serviceType) {
-      case 'seller': // Pre-listing seller page 270+
+      case 'seller': // Pre-listing seller dual-inspector
         return [
-          { label: 'Up to 2,000 sq ft', value: 'seller-up-to-2000', price: 365 },
-          { label: '2,001 - 2,500 sq ft', value: 'seller-2001-2500', price: 385 },
-          { label: '2,501 - 3,000 sq ft', value: 'seller-2501-3000', price: 415 },
-          { label: '3,001 - 3,500 sq ft', value: 'seller-3001-3500', price: 435 },
-          { label: '3,501 - 4,000 sq ft', value: 'seller-3501-4000', price: 465 },
-          { label: '4,001 - 4,500 sq ft', value: 'seller-4001-4500', price: 485 },
-          { label: '4,501 - 5,000 sq ft', value: 'seller-4501-5000', price: 515 },
+          { label: 'Up to 2,000 sq ft', value: 'seller-up-to-2000', price: 465 },
+          { label: '2,001 - 2,500 sq ft', value: 'seller-2001-2500', price: 485 },
+          { label: '2,501 - 3,000 sq ft', value: 'seller-2501-3000', price: 515 },
+          { label: '3,001 - 3,500 sq ft', value: 'seller-3001-3500', price: 555 },
+          { label: '3,501 - 4,000 sq ft', value: 'seller-3501-4000', price: 595 },
+          { label: '4,001 - 4,500 sq ft', value: 'seller-4001-4500', price: 635 },
+          { label: '4,501 - 5,000 sq ft', value: 'seller-4501-5000', price: 695 },
           { label: 'Over 5,000 sq ft', value: 'custom-call', price: 'custom' }
         ];
-      case 'new-construction': // New construction page 155+
+      case 'new-construction': // New construction phase checks
         return [
-          { label: 'Up to 1,800 sq ft', value: 'new-up-to-1800', price: 355 },
-          { label: '1,801 - 2,500 sq ft', value: 'new-1801-2500', price: 385 },
-          { label: '2,501 - 3,000 sq ft', value: 'new-2501-3000', price: 415 },
-          { label: '3,001 - 3,500 sq ft', value: 'new-3001-3500', price: 445 },
-          { label: '3,501 - 4,000 sq ft', value: 'new-3501-4000', price: 475 },
-          { label: '4,001 - 4,500 sq ft', value: 'new-4001-4500', price: 505 },
-          { label: '4,501 - 5,000 sq ft', value: 'new-4501-5000', price: 535 },
+          { label: 'Up to 1,800 sq ft', value: 'new-up-to-1800', price: 455 },
+          { label: '1,801 - 2,500 sq ft', value: 'new-1801-2500', price: 485 },
+          { label: '2,501 - 3,000 sq ft', value: 'new-2501-3000', price: 515 },
+          { label: '3,001 - 3,500 sq ft', value: 'new-3001-3500', price: 565 },
+          { label: '3,501 - 4,000 sq ft', value: 'new-3501-4000', price: 615 },
+          { label: '4,001 - 4,500 sq ft', value: 'new-4001-4500', price: 665 },
+          { label: '4,501 - 5,000 sq ft', value: 'new-4501-5000', price: 715 },
           { label: 'Over 5,000 sq ft', value: 'custom-call', price: 'custom' }
         ];
-      case 'warranty': // 11-Month Warranty page 216+
+      case 'warranty': // 11-Month Warranty
         return [
-          { label: 'Up to 2,000 sq ft', value: 'warranty-up-to-2000', price: 335 },
-          { label: '2,001 - 2,500 sq ft', value: 'warranty-2001-2500', price: 365 },
-          { label: '2,501 - 3,000 sq ft', value: 'warranty-2501-3000', price: 395 },
-          { label: '3,001 - 3,500 sq ft', value: 'warranty-3001-3500', price: 425 },
-          { label: '3,501 - 4,000 sq ft', value: 'warranty-3501-4000', price: 455 },
-          { label: '4,001 - 4,500 sq ft', value: 'warranty-4001-4500', price: 485 },
-          { label: '4,501 - 5,000 sq ft', value: 'warranty-4501-5000', price: 515 },
+          { label: 'Up to 2,000 sq ft', value: 'warranty-up-to-2000', price: 435 },
+          { label: '2,001 - 2,500 sq ft', value: 'warranty-2001-2500', price: 465 },
+          { label: '2,501 - 3,000 sq ft', value: 'warranty-2501-3000', price: 495 },
+          { label: '3,001 - 3,500 sq ft', value: 'warranty-3001-3500', price: 545 },
+          { label: '3,501 - 4,000 sq ft', value: 'warranty-3501-4000', price: 585 },
+          { label: '4,001 - 4,500 sq ft', value: 'warranty-4001-4500', price: 635 },
+          { label: '4,501 - 5,000 sq ft', value: 'warranty-4501-5000', price: 685 },
           { label: 'Over 5,000 sq ft', value: 'custom-call', price: 'custom' }
         ];
       case 'str':
@@ -94,17 +94,17 @@ export default function Quote() {
           { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
         ];
       case 'buyer':
-      default: // Flyer pricing standard resale pre-purchase
+      default: // Elevated premium resale pre-purchase rates
         return [
-          { label: 'Up to 1,000 sq ft', value: 'sf-up-to-1000', price: 345 },
-          { label: '1,001 - 1,500 sq ft', value: 'sf-1001-1500', price: 375 },
-          { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 425 },
-          { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 475 },
-          { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 525 },
-          { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 575 },
-          { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 625 },
-          { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 675 },
-          { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 775 },
+          { label: 'Up to 1,000 sq ft', value: 'sf-up-to-1000', price: 445 },
+          { label: '1,001 - 1,500 sq ft', value: 'sf-1001-1500', price: 475 },
+          { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 525 },
+          { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 575 },
+          { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 625 },
+          { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 695 },
+          { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 765 },
+          { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 835 },
+          { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 950 },
           { label: '5,001+ sq ft', value: 'custom-call', price: 'custom' }
         ];
     }
@@ -460,12 +460,38 @@ export default function Quote() {
                 Calculated on real Atlanta area inspection schedules. No hidden booking charges.
               </p>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem', color: 'var(--color-gray-mid)' }}>
-                <li>✓ Two trained inspectors on site</li>
-                <li>✓ Thermal infrared scan included</li>
-                <li>✓ Digital summary with photos & video</li>
-                <li>✓ Georgia-certified master level execution</li>
-              </ul>
+              <div style={{ borderBottom: '1px solid var(--color-gray-dark)', paddingBottom: '1.25rem', marginBottom: '1.25rem' }}>
+                <h4 style={{ color: 'var(--color-white)', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                  Elite Dual-Inspector Package Includes:
+                </h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>👥 Dual-Inspector Deployment Protocol</span>
+                    <span style={{ fontWeight: 600, color: 'var(--color-white)' }}>Standard</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>🔍 FLIR® Infrared Thermal Imaging</span>
+                    <span style={{ fontWeight: 600, color: '#34d399' }}>
+                      <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$99</span> FREE
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>🛸 High-Resolution Aerial Drone Scan</span>
+                    <span style={{ fontWeight: 600, color: '#34d399' }}>
+                      <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$125</span> FREE
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>🛡️ $10,000 Elite Master Warranty Suite</span>
+                    <span style={{ fontWeight: 600, color: '#34d399' }}>
+                      <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$350</span> FREE
+                    </span>
+                  </div>
+                </div>
+                <div style={{ marginTop: '0.75rem', fontSize: '0.75rem', color: 'var(--color-gray-mid)', textAlign: 'right', fontStyle: 'italic' }}>
+                  🎁 <strong style={{ color: 'white' }}>$574 in premium diagnostic & protection value</strong> included at no extra charge.
+                </div>
+              </div>
               
               <div style={{ background: 'rgba(211, 47, 47, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1rem', border: '1px solid rgba(211, 47, 47, 0.2)' }}>
                 <p style={{ color: 'var(--color-white)', fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.4, textAlign: 'center' }}>
