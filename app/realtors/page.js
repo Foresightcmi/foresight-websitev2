@@ -141,6 +141,83 @@ export default function Realtors() {
           </div>
         </div>
       </section>
+
+      {/* Realtor Testimonials Section */}
+      <section className="section bg-white" style={{ padding: '6rem 0' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
+            <span className="badge" style={{ marginBottom: '1rem', background: 'var(--color-red-light)', color: 'var(--color-red)', fontWeight: 600, padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.875rem' }}>
+              Partner Testimonials
+            </span>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>
+              What Atlanta Real Estate Partners Say
+            </h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
+              Discover how Foresight’s dual-inspector efficiency, SUPRA access, and $10,000 client warranties help local real estate agents save hours of work and protect their deals.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '2rem' }}>
+            {/* Agent Testimonial 1 */}
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ color: '#fbbf24', fontSize: '1.15rem', marginBottom: '1.25rem', letterSpacing: '0.08em' }}>★★★★★</div>
+                <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, fontStyle: 'italic', margin: '0 0 1.5rem 0' }}>
+                  “Foresight is my secret weapon for negotiations. On a recent Sandy Springs transaction, they caught a collapsed clay sewer line. Armed with their highly detailed report and the HomeGauge CRL tool, I put together an amendment in minutes and negotiated a <strong>$24,500 repair credit</strong> for my buyers before closing!”
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid var(--color-gray-mid)', paddingTop: '1.25rem', marginTop: 'auto' }}>
+                <strong style={{ display: 'block', color: 'var(--color-dark)', fontSize: '1.05rem', marginBottom: '0.25rem' }}>
+                  Melissa S.
+                </strong>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-gray-mid)', fontSize: '0.875rem' }}>
+                  <span>Keller Williams Peachtree Rd</span>
+                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>💼 Buyer Agent</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Agent Testimonial 2 */}
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ color: '#fbbf24', fontSize: '1.15rem', marginBottom: '1.25rem', letterSpacing: '0.08em' }}>★★★★★</div>
+                <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, fontStyle: 'italic', margin: '0 0 1.5rem 0' }}>
+                  “The dual-inspector model and active SUPRA lockbox access are massive time savers. I no longer have to spend 4 hours driving out to lock and unlock properties. Foresight enters securely, does a highly thorough sweep in under 2 hours, and sends the report same-day. They save me hours of coordination on every transaction.”
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid var(--color-gray-mid)', paddingTop: '1.25rem', marginTop: 'auto' }}>
+                <strong style={{ display: 'block', color: 'var(--color-dark)', fontSize: '1.05rem', marginBottom: '0.25rem' }}>
+                  Marcus G.
+                </strong>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-gray-mid)', fontSize: '0.875rem' }}>
+                  <span>Compass Atlanta</span>
+                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>🔑 Listing Agent</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Agent Testimonial 3 */}
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ color: '#fbbf24', fontSize: '1.15rem', marginBottom: '1.25rem', letterSpacing: '0.08em' }}>★★★★★</div>
+                <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, fontStyle: 'italic', margin: '0 0 1.5rem 0' }}>
+                  “Having a Certified Master Inspector lead the audit is great, but the complimentary $10,000 warranty is what really shields my buyers. When a water heater failed weeks after closing, the warranty covered it 100%. No stress, no angry buyer phone calls, and zero post-closing agent liability.”
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid var(--color-gray-mid)', paddingTop: '1.25rem', marginTop: 'auto' }}>
+                <strong style={{ display: 'block', color: 'var(--color-dark)', fontSize: '1.05rem', marginBottom: '0.25rem' }}>
+                  Sarah K.
+                </strong>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-gray-mid)', fontSize: '0.875rem' }}>
+                  <span>Harry Norman Realtors</span>
+                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>🛡️ Realtor Partner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Co-Branded Marketing / Quick Quote Integration Section */}
       <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
         <div className="container">
