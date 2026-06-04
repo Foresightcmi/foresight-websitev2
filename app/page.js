@@ -204,7 +204,7 @@ export default function Home() {
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
-                  An AI assistant trained directly on InterNACHI Standards of Practice and Georgia structural codes. Ask questions about your inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
+                  An AI assistant trained directly on InterNACHI Standards of Practice and standard residential construction practices. Ask questions about your inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
                 </p>
               </div>
             </div>

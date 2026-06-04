@@ -42,7 +42,7 @@ export default function Quote() {
     if (propertyType === 'condo') {
       if (serviceType === 'str') {
         return [
-          { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 275 },
+          { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 355 },
           { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
         ];
       }
@@ -56,7 +56,7 @@ export default function Quote() {
     // Single family/townhome
     if (serviceType === 'str') {
       return [
-        { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 275 },
+        { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 355 },
         { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
       ];
     }
@@ -511,7 +511,7 @@ export default function Quote() {
                       {serviceType === 'str' ? 'County Safety Compliance' : 'Negotiating Leverage'}
                     </span>
                     <strong style={{ fontSize: '1.4rem', color: '#34d399', letterSpacing: '-0.02em' }}>
-                      {serviceType === 'str' ? 'Starts at $275' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
+                      {serviceType === 'str' ? 'Starts at $355' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
                     </strong>
                   </div>
                   <div style={{ textAlign: 'right' }}>

@@ -427,7 +427,7 @@ export default function RootLayout({ children }) {
       "Aerial Drone Roof Inspections",
       "Moisture & Combustible Gas Detection",
       "InterNACHI Standards of Practice",
-      "Georgia Structural Codes",
+      "Residential Construction Practices",
       "Radon Gas Testing",
       "Sewer Scope Inspection",
       "Termite and Wood Destroying Organism (WDO) Inspections",

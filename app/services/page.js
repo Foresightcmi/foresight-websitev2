@@ -40,7 +40,7 @@ export default function Services() {
       title: 'New Construction Inspections',
       price: '$375+',
       description: 'Ensure your brand-new home was built to correct specifications. We perform a comprehensive final walkthrough inspection of all major systems.',
-      details: ['Final phase walkthrough audit', 'Structure & systems checks', 'Code-compliance review', 'Identify developer defects'],
+      details: ['Final phase walkthrough audit', 'Structure & systems checks', 'Workmanship quality review', 'Identify developer defects'],
       image: '/images/drone-2.png',
       slug: 'why-you-need-home-inspection-new-build'
     },
@@ -56,7 +56,7 @@ export default function Services() {
       title: 'Pool & Spa Inspections',
       price: '$135+',
       description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries. Price is $175 standalone or $135 when bundled with a home inspection.',
-      details: ['Pump & heater functional test', 'Safety barrier compliance', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
+      details: ['Pump & heater functional test', 'Safety barrier review', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
       image: '/images/pool-inspecting.png',
       slug: 'pool-and-spa-inspection-guide'
     },
@@ -109,7 +109,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "135", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "110", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "200", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Assist", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "275", "priceCurrency": "USD" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Assist", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "355", "priceCurrency": "USD" }
       ]
     }
   };
@@ -301,7 +301,7 @@ export default function Services() {
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', display: 'block' }}>Starting at</span>
-                  <strong style={{ color: 'var(--color-red)', fontSize: '2.25rem', fontWeight: 800 }}>$275</strong>
+                  <strong style={{ color: 'var(--color-red)', fontSize: '2.25rem', fontWeight: 800 }}>$355</strong>
                 </div>
               </div>
 
@@ -318,7 +318,7 @@ export default function Services() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem' }}>
                   <li>🪧 <strong>Local Agent Signage:</strong> Checking that the mandatory 24-hour local contact information and evacuation maps are clearly posted.</li>
                   <li>🚫 <strong>Historic Exclusions:</strong> Pre-screening checks for localized historic district restrictions to safeguard your non-refundable government portal application fees.</li>
-                  <li>📞 <strong>Custom Pricing:</strong> Pricing starts at <strong>$275</strong> based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
+                  <li>📞 <strong>Custom Pricing:</strong> Pricing starts at <strong>$355</strong> based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
                 </ul>
               </div>
 
@@ -377,7 +377,7 @@ export default function Services() {
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
-                  An AI assistant trained directly on InterNACHI Standards of Practice and Georgia structural codes. Ask questions about your inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
+                  An AI assistant trained directly on InterNACHI Standards of Practice and standard residential construction practices. Ask questions about your inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
                 </p>
               </div>
             </div>

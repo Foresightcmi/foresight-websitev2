@@ -249,7 +249,7 @@ export default function Realtors() {
                   📅 Book Client Inspection
                 </a>
                 <Link href="/ask-twin" className="btn btn-outline" style={{ borderWidth: '2px' }}>
-                  🤖 Ask Foresight AI about GA Codes
+                  🤖 Ask Foresight AI about Home Inspections
                 </Link>
               </div>
             </div>

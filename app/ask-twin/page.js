@@ -41,7 +41,7 @@ export default function AskTwin() {
 
     let response = "";
     
-    // Folksy, seasoned expert persona matching InterNACHI & Georgia building codes
+    // Folksy, seasoned expert persona matching InterNACHI & residential construction standards
     if (matchesAny(['report', 'reports', 'sample', 'format', 'structure'])) {
       response = "Now, let's talk about home inspection reports. Many inspectors dump an 80-page PDF on you full of dense, scary technical jargon that leaves you feeling stressed. We don't believe in that. Our reports are clean, simple, and written in plain English, packed with high-resolution photos and video clips.\n\n" +
                  "To keep things perfectly clear and compliant with InterNACHI standards, every single finding follows a simple 3-step structure:\n\n" +
@@ -127,7 +127,7 @@ export default function AskTwin() {
                  "3. 🚪 Emergency Egress: Detailed check of stairs, handrails, guards, and escape routes to guarantee safe emergency exits.\n" +
                  "4. 🪧 Local Contact & Evacuation Signage: Verifying that the mandatory local agent 24-hour contact details and building evacuation maps are posted visibly on-site.\n" +
                  "5. 🚫 Historic Exclusions: Checking for localized historic district restrictions, which can save you from losing non-refundable local filing fees if the property is prohibited.\n\n" +
-                 "Pricing starts at our recommended base price of $275 (perfect for standard condos and single-family homes under 2,500 sq. ft.) and adjusts for larger estates.\n\n" +
+                 "Pricing starts at our recommended base price of $355 (perfect for standard condos and single-family homes under 2,500 sq. ft.) and adjusts for larger estates.\n\n" +
                  "🔍 Observation: Smoke alarms in the second-floor bedrooms were missing, and the posted local 24-hour agent contact info was missing from the front entryway.\n" +
                  "💡 What This Could Mean: You face immediate rejection in the local county portal, loss of your non-refundable filing fees, or heavy fines for running an uncertified rental.\n" +
                  "🛠️ Recommendation: Have us run a complete dual-inspector compliance audit to verify every safety system and alarm placement before you submit your application.\n\n" +
@@ -142,7 +142,7 @@ export default function AskTwin() {
     } else if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
       response = "We believe in honest, transparent pricing based on the actual size and age of your home. Standard resale home inspections and pre-listing seller checks start at $420. 11-month builder warranty audits and new construction final phase walkthrough inspections start at $375.\n\n" +
                  "Here are our rates for specialized add-on services:\n" +
-                 "- Short-Term Rental (STR) Compliance Assist: Starts at $275 based on property scale, location, and county rules.\n" +
+                 "- Short-Term Rental (STR) Compliance Assist: Starts at $355 based on property scale, location, and county rules.\n" +
                  "- Termite & WDO Inspection: $110 when bundled with a home inspection ($150 standalone).\n" +
                  "- Radon Gas Testing: $200+ when combined with a home inspection (using professional 48-hour continuous monitors).\n" +
                  "- Pool & Spa Inspection: $135 when bundled with a home inspection ($175 standalone).\n" +
