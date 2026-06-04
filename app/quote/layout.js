@@ -25,8 +25,8 @@ export default function QuoteLayout({ children }) {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
       "telephone": "678-480-2110",
-      "email": "inspect@foresightcmi.com",
-      "priceRange": "$$",
+      "email": "plsinspectnow@gmail.com",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Atlanta",

@@ -6,7 +6,7 @@ export async function POST(request) {
     
     // In a real production environment, you would use an email service here.
     // Example: Resend, SendGrid, Amazon SES
-    // For now, we simulate a successful email send to inspect@foresightcmi.com
+    // For now, we simulate a successful email send to plsinspectnow@gmail.com
     
     console.log("================ NEW LEAD ================");
     console.log(`Name: ${data.name}`);

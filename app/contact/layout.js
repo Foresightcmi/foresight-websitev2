@@ -3,7 +3,7 @@ import Script from 'next/script';
 export const metadata = {
   title: 'Contact Us | Foresight Home Inspections | Lithonia & Atlanta, GA',
   description: 'Get in touch with Foresight Home Inspections. Schedule your Certified Master Inspector-led dual home inspection, request a quote, or call 678-480-2110.',
-  keywords: ['Contact Foresight Home Inspections', 'schedule home inspection Atlanta', 'book home inspector Lithonia GA', 'home inspection phone number Atlanta', 'inspect@foresightcmi.com'],
+  keywords: ['Contact Foresight Home Inspections', 'schedule home inspection Atlanta', 'book home inspector Lithonia GA', 'home inspection phone number Atlanta', 'plsinspectnow@gmail.com'],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/contact',
   },
@@ -23,8 +23,8 @@ export default function ContactLayout({ children }) {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
       "telephone": "678-480-2110",
-      "email": "inspect@foresightcmi.com",
-      "priceRange": "$$",
+      "email": "plsinspectnow@gmail.com",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Atlanta",

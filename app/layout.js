@@ -58,24 +58,32 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "name": "Foresight Home Inspections, LLC",
-    "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
-    "url": "https://www.fhinspectionsatl.com",
-    "telephone": "678-480-2110",
-    "email": "inspect@foresightcmi.com",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Atlanta",
-      "addressRegion": "GA",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 33.749,
-      "longitude": -84.388
-    },
+    "@graph": [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.fhinspectionsatl.com/#business",
+        "name": "Foresight Home Inspections, LLC",
+        "url": "https://www.fhinspectionsatl.com",
+        "telephone": "+1-678-480-2110",
+        "email": "plsinspectnow@gmail.com",
+        "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
+        "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
+        "additionalType": [
+          "https://en.wikipedia.org/wiki/Home_inspection",
+          "https://www.wikidata.org/wiki/Q5888806"
+        ],
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Atlanta",
+          "addressRegion": "GA",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "33.7490",
+          "longitude": "-84.3880"
+        },
         "areaServed": [
         {
               "@type": "State",
@@ -415,6 +423,11 @@ export default function RootLayout({ children }) {
     "knowsAbout": [
       "Home Inspection",
       "Thermal Imaging",
+      "Infrared Thermal Imaging",
+      "Aerial Drone Roof Inspections",
+      "Moisture & Combustible Gas Detection",
+      "InterNACHI Standards of Practice",
+      "Georgia Structural Codes",
       "Radon Gas Testing",
       "Sewer Scope Inspection",
       "Termite and Wood Destroying Organism (WDO) Inspections",
@@ -453,6 +466,12 @@ export default function RootLayout({ children }) {
         "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
       ]
     },
+    "employee": {
+      "@type": "Person",
+      "name": "Christopher Boykin",
+      "jobTitle": "Certified Master Inspector",
+      "award": "Certified Master Inspector (CMI) Designation - September 2024"
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -460,7 +479,18 @@ export default function RootLayout({ children }) {
       "worstRating": "1",
       "ratingCount": "48"
     }
-  };
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://www.fhinspectionsatl.com/#website",
+    "url": "https://www.fhinspectionsatl.com",
+    "name": "Foresight Home Inspections",
+    "publisher": {
+      "@id": "https://www.fhinspectionsatl.com/#business"
+    }
+  }
+]
+};
 
   return (
     <html lang="en">
@@ -531,7 +561,7 @@ export default function RootLayout({ children }) {
                 <h3>Contact</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
-                  <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
+                  <li><a href="mailto:plsinspectnow@gmail.com">✉️ plsinspectnow@gmail.com</a></li>
                   <li>Atlanta, GA & Surrounding Metro Areas</li>
                 </ul>
               </div>

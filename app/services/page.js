@@ -91,7 +91,8 @@ export default function Services() {
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
-      "telephone": "678-480-2110"
+      "telephone": "+1-678-480-2110",
+      "email": "plsinspectnow@gmail.com"
     },
     "areaServed": {
       "@type": "State",

@@ -80,8 +80,8 @@ export default function Contact() {
               
               <div className="card" style={{ marginBottom: '2rem' }}>
                 <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Email</h3>
-                <a href="mailto:inspect@foresightcmi.com" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-dark)' }}>
-                  inspect@foresightcmi.com
+                <a href="mailto:plsinspectnow@gmail.com" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-dark)' }}>
+                  plsinspectnow@gmail.com
                 </a>
               </div>
               

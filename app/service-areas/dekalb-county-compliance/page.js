@@ -69,12 +69,13 @@ export default function DeKalbCountyCompliancePage() {
   // ── JSON-LD: LocalBusiness ──────────────────────────────────────────
   const localBusinessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'HomeAndConstructionBusiness',
     '@id': `${SITE_URL}/#business`,
     name: 'Foresight Home Inspections, LLC',
     description:
       'Certified low-flow plumbing compliance inspections for property transfers in DeKalb County, GA. Official compliance certificates issued on-site.',
-    telephone: '678-480-2110',
+    telephone: '+1-678-480-2110',
+    email: 'plsinspectnow@gmail.com',
     url: SITE_URL,
     areaServed: {
       '@type': 'AdministrativeArea',
@@ -87,7 +88,7 @@ export default function DeKalbCountyCompliancePage() {
       postalCode: '30058',
       addressCountry: 'US',
     },
-    priceRange: '$$',
+    priceRange: '$$$',
     image: `${SITE_URL}/images/logo.png`,
   };
 

@@ -95,7 +95,7 @@ const CITATION_CHECKLIST = [
 const BUSINESS_NAP = {
   name: "Foresight Home Inspections, LLC",
   phone: "678-480-2110",
-  email: "inspect@foresightcmi.com",
+  email: "plsinspectnow@gmail.com",
   website: "https://www.fhinspectionsatl.com",
   address: "Atlanta, GA",
   serviceArea: "Metro Atlanta and surrounding areas",
