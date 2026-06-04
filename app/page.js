@@ -41,7 +41,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at a base rate of $420+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $400, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $135 (bundled), and official termite (WDO) reports starting at $110 (bundled)."
+              "text": "Foresight home inspections start at a base rate of $420+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $400, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled)."
             }
           },
           {
@@ -384,7 +384,7 @@ export default function Home() {
                 <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
               </summary>
               <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Foresight home inspections start at a base rate of $420+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $400, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $135 (bundled), and official termite (WDO) reports starting at $110 (bundled).
+                Foresight home inspections start at a base rate of $420+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $400, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled).
               </p>
             </details>
 

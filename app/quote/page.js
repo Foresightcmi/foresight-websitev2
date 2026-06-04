@@ -115,7 +115,7 @@ export default function Quote() {
 
     // Addons
     if (addons.radon) extra += 200; // Continuous monitor sub-contracted rate
-    if (addons.pool) extra += 135;  // Pool/spa bundled rate
+    if (addons.pool) extra += 300;  // Pool/spa flat rate
     if (addons.lowFlow) extra += 125; // DeKalb low flow compliance
     if (addons.buildfax) extra += 15; // Property permit report
     if (addons.termite) extra += 110; // Termite/WDO bundled rate
@@ -373,7 +373,7 @@ export default function Quote() {
                       Termite & WDO Inspection (+ $110)
                     </span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>
-                      Performed by a licensed partner. Generates Official Georgia Wood Infestation Report ($110 bundled / $150 standalone).
+                      Generates Official Georgia Wood Infestation Report ($110 bundled / $150 standalone).
                     </span>
                   </div>
                 </label>
@@ -385,8 +385,8 @@ export default function Quote() {
                     onChange={() => handleAddonToggle('pool')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $135)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check ($135 bundled / $175 standalone).</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $300)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check ($300 flat rate).</span>
                   </div>
                 </label>
 

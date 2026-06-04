@@ -54,8 +54,8 @@ export default function Services() {
     },
     {
       title: 'Pool & Spa Inspections',
-      price: '$135+',
-      description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries. Price is $175 standalone or $135 when bundled with a home inspection.',
+      price: '$300',
+      description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries. Price is $300 flat rate.',
       details: ['Pump & heater functional test', 'Safety barrier review', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
       image: '/images/pool-inspecting.png',
       slug: 'pool-and-spa-inspection-guide'
@@ -71,7 +71,7 @@ export default function Services() {
     {
       title: 'Termite & WDO Inspections',
       price: '$110+',
-      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We partner with licensed pest control specialists to provide an Official Georgia Wood Infestation Report. Price is $150 standalone or $110 when bundled with a home inspection.',
+      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We provide an Official Georgia Wood Infestation Report. Price is $150 standalone or $110 when bundled with a home inspection.',
       details: ['Official GA WDO Report', 'Identify active/past termites', 'Detect powderpost beetles & decay', 'Critical for mortgage approvals'],
       slug: 'termite-and-wdo-inspection-guide'
     },
@@ -106,7 +106,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "420", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new home was built to specifications. Final phase walkthrough checks." }, "price": "350", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "350", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "135", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "110", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "200", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Assist", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "355", "priceCurrency": "USD" }
