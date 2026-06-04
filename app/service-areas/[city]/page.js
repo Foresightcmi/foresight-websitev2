@@ -415,40 +415,63 @@ export default async function CityPage({ params }) {
           </div>
 
           <div className="grid grid-2" style={{ gap: '2.5rem' }}>
-            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>📷</div>
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                <Image
+                  src="/images/thermal-1.png"
+                  alt={`Infrared Thermal Imaging (FLIR) camera inspecting home electrical heat profile in ${cityName}`}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
               <div>
-                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Infrared Thermal Imaging (FLIR)</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging (FLIR)</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Our professional thermal cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation without damaging any drywall. Included on every {cityName} inspection at no extra charge.
                 </p>
               </div>
             </div>
 
-            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🛸</div>
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                <Image
+                  src="/images/drone-remote.png"
+                  alt={`High-resolution aerial drone operator remote controller with telemetry screen in ${cityName}`}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
               <div>
-                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>High-Resolution Aerial Drones</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>High-Resolution Aerial Drones</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   We utilize specialized camera drones to capture high-resolution imagery of roofs, chimneys, eaves, and gutters that are too steep, tall, or fragile to walk on. We inspect the entire {cityName} property from the safest and most effective angles.
                 </p>
               </div>
             </div>
 
-            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🤖</div>
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
+                🤖
+              </div>
               <div>
-                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   An AI assistant trained directly on InterNACHI Standards of Practice and standard residential construction practices. Ask questions about your {cityName} inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
                 </p>
               </div>
             </div>
 
-            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>⚡</div>
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                <Image
+                  src="/images/moisture-meter.png"
+                  alt={`Digital moisture detector inspecting building walls in ${cityName}`}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
               <div>
-                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Digital Moisture & Combustible Gas Detectors</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Digital Moisture & Combustible Gas Detectors</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   We employ electronic moisture scanners to trace active leaks through subflooring and walls, plus high-sensitivity combustible gas sniffers to check appliance lines and gas meters for micro-leaks.
                 </p>
