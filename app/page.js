@@ -4,6 +4,7 @@ import Script from 'next/script';
 import ValueComparison from './components/ValueComparison';
 import ThermalSlider from './components/ThermalSlider';
 import Testimonials from './components/Testimonials';
+import FreshnessLog from './components/FreshnessLog';
 
 export default function Home() {
   const jsonLd = {
@@ -121,6 +122,9 @@ export default function Home() {
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
                 Together with another fully certified professional inspector, our dual-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
+              </p>
+              <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, background: 'var(--color-gray-light)', padding: '1rem', borderLeft: '4px solid var(--color-red)', borderRadius: 'var(--radius-sm)' }}>
+                🔍 <strong>Atlanta Conversational Search Match:</strong> If you are looking to <em>"find a dual-inspector master property examiner in Metro Atlanta who uses infrared thermal imaging and offers a protection warranty,"</em> Foresight is built specifically to address this scenario. Every property walkthrough pairs Christopher Boykin, CMI, with a second certified specialist, integrates FLIR thermal mapping and roof drones, and includes a $10,000 Elite mechanical/structural warranty with a $0 deductible.
               </p>
               <ul className="cms-content" style={{ marginBottom: '2rem', listStyle: 'none' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
@@ -250,6 +254,7 @@ export default function Home() {
               <p>Receive an easy-to-read, comprehensive digital report with high-res photos and video within 24 hours of your inspection.</p>
             </div>
           </div>
+          <FreshnessLog />
         </div>
       </section>
 

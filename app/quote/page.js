@@ -46,7 +46,7 @@ export default function Quote() {
           { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
         ];
       }
-      const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -45 : 0;
+      const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -70 : 0;
       return [
         { label: 'Under 1,500 sq ft', value: 'condo-under-1500', price: 420 + adjustment },
         { label: '1,501+ sq ft', value: 'custom-call', price: 'custom' }
@@ -62,7 +62,7 @@ export default function Quote() {
     }
 
     // Pre-purchase, Pre-listing, 11-Month Warranty, and New Construction
-    const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -45 : 0;
+    const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -70 : 0;
 
     return [
       { label: 'Under 1,500 sq ft', value: 'sf-under-1500', price: 420 + adjustment },
