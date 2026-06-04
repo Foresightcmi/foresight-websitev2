@@ -519,7 +519,7 @@ export default function Quote() {
                       {serviceType === 'str' ? 'Compliance Assist' : 'Est. Savings ROI'}
                     </span>
                     <strong style={{ fontSize: '1.15rem', color: '#34d399' }}>
-                      {serviceType === 'str' ? 'Avoid Shutdowns' : (typeof total === 'number' && total > 0 ? `${Math.round((leverage.min / total) * 100)}%` : '800%+')}
+                      {serviceType === 'str' ? 'Avoid Shutdowns' : (typeof total === 'number' && total > 0 ? `${Math.round(((leverage.min - total) / total) * 100)}%` : '700%+')}
                     </strong>
                   </div>
                 </div>
