@@ -1,0 +1,171 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.fhinspectionsatl.com/#localbusiness",
+      "name": "Foresight Home Inspections, LLC",
+      "url": "https://www.fhinspectionsatl.com",
+      "telephone": "+1-678-480-2110",
+      "email": "plsinspectnow@gmail.com",
+      "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
+      "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
+      "priceRange": "$$$",
+      "description": "Premium dual-inspector home inspection services in Metro Atlanta led by Christopher Boykin, Certified Master Inspector (CMI). Includes FLIR thermal imaging, aerial drone scans, and a $10,000 protection warranty.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Atlanta",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.7490",
+        "longitude": "-84.3880"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "08:00",
+          "closes": "19:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+        "https://facebook.com/fhinspectionsatl",
+        "https://www.instagram.com/fhinspectionsatl/",
+        "https://www.tiktok.com/@fhinspectionsatl",
+        "https://www.youtube.com/@ForesightHomeInspections-t6r",
+        "https://www.linkedin.com/company/foresight-home-inspections-llc/"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.fhinspectionsatl.com/#professionalservice",
+      "name": "Foresight Home Inspections, LLC",
+      "url": "https://www.fhinspectionsatl.com",
+      "telephone": "+1-678-480-2110",
+      "email": "plsinspectnow@gmail.com",
+      "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
+      "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Atlanta",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "08:00",
+          "closes": "19:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Home Inspection Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Buyer Home Inspection",
+              "description": "Thorough home inspection by a dual-inspector team, including free FLIR thermal imaging and a $10,000 Elite Master warranty."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "420.00",
+              "priceCurrency": "USD",
+              "unitText": "starting rate"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "New Construction Inspection",
+              "description": "Comprehensive walkthrough inspection of new build structures, systems, and finishes with a workmanship quality review."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "350.00",
+              "priceCurrency": "USD",
+              "unitText": "starting rate"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "11-Month Warranty Inspection",
+              "description": "Structural and mechanical inspection performed before the 1-year builder warranty expires to generate a developer-ready punch list."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "350.00",
+              "priceCurrency": "USD",
+              "unitText": "starting rate"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Short-Term Rental (STR) Compliance Assist",
+              "description": "Safety pre-screening audits (egress, alarms, fire extinguishers) aligned with Metro Atlanta county licensing regulations."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "355.00",
+              "priceCurrency": "USD",
+              "unitText": "starting rate"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pool & Spa Inspection",
+              "description": "Evaluation of residential pools/spas including shell integrity, pumps, heaters, electrical safety, and safety barriers."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "135.00",
+              "priceCurrency": "USD",
+              "unitText": "bundled rate"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Radon Gas Testing",
+              "description": "Continuous 48-hour electronic radon gas diagnostic monitoring in the lowest livable area of the home."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "200.00",
+              "priceCurrency": "USD",
+              "unitText": "flat rate"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
