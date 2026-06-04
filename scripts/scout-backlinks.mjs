@@ -105,7 +105,7 @@ const BUSINESS_NAP = {
   description: "Premium home inspection services in Metro Atlanta with two certified inspectors on every job. Led by Christopher Boykin, CMI. Every inspection includes thermal imaging, drone technology, and a $10,000 warranty. Serving 163+ cities across Georgia.",
   shortDescription: "Certified Master Inspector serving Metro Atlanta. Two inspectors on every job. $10,000 warranty included.",
   categories: ["Home Inspector", "Home Inspection Service", "Real Estate Inspection", "Building Inspector"],
-  hours: "Monday-Saturday 7:00 AM - 6:00 PM",
+  hours: "Mon-Wed: 8:00 AM - 8:00 PM, Thu: 8:00 AM - 7:00 PM, Fri-Sat: 8:00 AM - 8:00 PM, Sun: Closed",
   socialLinks: {
     facebook: "https://facebook.com/fhinspectionsatl",
     instagram: "https://www.instagram.com/fhinspectionsatl/",
