@@ -93,10 +93,13 @@ export default function Quote() {
     let extra = 0;
 
     // Flat Property Age Surcharges: Under 25 = +$0, 25-49 = +$50, 50+ = +$95
-    if (ageTier === '25-49') {
-      extra += 50;
-    } else if (ageTier === 'over-50') {
-      extra += 95;
+    // Bypassed for STR Compliance Assist safety audits to keep pricing flat
+    if (serviceType !== 'str') {
+      if (ageTier === '25-49') {
+        extra += 50;
+      } else if (ageTier === 'over-50') {
+        extra += 95;
+      }
     }
 
     // Additional Complexity Fees: $75 is added to the home inspection for each foundation complexity present (crawlspace or unfinished/partial basement). These fees stack.
@@ -249,6 +252,7 @@ export default function Quote() {
                 {propertyType === 'single-family' && <option value="new-construction">New Construction Inspection</option>}
                 <option value="seller">Pre-Listing Seller Inspection</option>
                 <option value="warranty">11-Month Warranty Inspection</option>
+                <option value="str">Short-Term Rental (STR) Compliance Assist</option>
               </select>
             </div>
 
@@ -322,8 +326,8 @@ export default function Quote() {
                   onChange={(e) => setAgeTier(e.target.value)}
                 >
                   <option value="under-25">Under 25 Years Old</option>
-                  <option value="25-49">25 – 49 Years Old (+ $50 Age Surcharge)</option>
-                  <option value="over-50">50+ Years Old (+ $95 Historical Surcharge)</option>
+                  <option value="25-49">25 – 49 Years Old {serviceType !== 'str' && '(+ $50 Age Surcharge)'}</option>
+                  <option value="over-50">50+ Years Old {serviceType !== 'str' && '(+ $95 Historical Surcharge)'}</option>
                 </select>
               </div>
             </>
