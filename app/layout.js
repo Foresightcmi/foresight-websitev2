@@ -75,10 +75,8 @@ export default function RootLayout({ children }) {
         "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "1816 South Deshon Road",
-          "addressLocality": "Lithonia",
+          "addressLocality": "Atlanta",
           "addressRegion": "GA",
-          "postalCode": "30058",
           "addressCountry": "US"
         },
         "geo": {
@@ -566,9 +564,6 @@ export default function RootLayout({ children }) {
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
                   <li><a href="mailto:plsinspectnow@gmail.com">✉️ plsinspectnow@gmail.com</a></li>
                   <li style={{ marginTop: '0.5rem', lineHeight: '1.4' }}>
-                    <strong>📍 Headquarters:</strong><br />
-                    1816 South Deshon Road<br />
-                    Lithonia, GA 30058<br />
                     <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving Atlanta & Surrounding Metro Areas)</span>
                   </li>
                 </ul>
