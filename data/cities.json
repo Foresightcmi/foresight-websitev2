@@ -12,7 +12,9 @@
     "Zip": "30328",
     "Meta Title": "Home Inspections in Sandy Springs, GA | Foresight Home Inspections",
     "Meta Description": "Professional home inspections in Sandy Springs, GA. Two certified inspectors on every job. Call 678-480-2110 for thorough, reliable service.",
-    "JSON-LD Schema": "{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"name\":\"Foresight Home Inspections, LLC\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Sandy Springs\",\"addressRegion\":\"GA\",\"postalCode\":\"30328\",\"addressCountry\":\"US\"},\"telephone\":\"678-480-2110\"}"
+    "JSON-LD Schema": "{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"name\":\"Foresight Home Inspections, LLC\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Sandy Springs\",\"addressRegion\":\"GA\",\"postalCode\":\"30328\",\"addressCountry\":\"US\"},\"telephone\":\"678-480-2110\"}",
+    "Seasonal Tip": "<strong>June 2026 Update for Sandy Springs:</strong> Georgia summers bring extreme heat and high humidity, which can place significant stress on your home's HVAC system. Homeowners in Sandy Springs should prioritize checking their AC system's temperature split and air filters. It is also important to verify that attic ventilation fans are operating correctly to prevent moisture buildup in the roof decking. Have a licensed HVAC contractor evaluate further and repair as needed.",
+    "Last Refreshed": "2026-06-06"
   },
   {
     "City Name": "Alpharetta",
@@ -27,7 +29,9 @@
     "Zip": "30022",
     "Meta Title": "Home Inspections in Alpharetta, GA | Certified Master Inspector",
     "Meta Description": "Expert home inspections in Alpharetta, GA. Luxury home specialists with two inspectors per job. Schedule today: 678-480-2110.",
-    "JSON-LD Schema": "{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"name\":\"Foresight Home Inspections, LLC\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Alpharetta\",\"addressRegion\":\"GA\",\"postalCode\":\"30022\",\"addressCountry\":\"US\"},\"telephone\":\"678-480-2110\"}"
+    "JSON-LD Schema": "{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"name\":\"Foresight Home Inspections, LLC\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Alpharetta\",\"addressRegion\":\"GA\",\"postalCode\":\"30022\",\"addressCountry\":\"US\"},\"telephone\":\"678-480-2110\"}",
+    "Seasonal Tip": "<strong>June 2026 Update for Alpharetta:</strong> With summer temperatures rising in Alpharetta, clay soils around foundations can contract and shift, potentially leading to structural settlement. Homeowners should ensure proper perimeter watering and keep gutters clear to maintain consistent soil moisture levels. It is also crucial to inspect basement crawlspaces for signs of condensation or mold growth caused by high humidity. Have a licensed foundation or moisture contractor evaluate further and repair as needed.",
+    "Last Refreshed": "2026-06-06"
   },
   {
     "City Name": "Johns Creek",
@@ -42,7 +46,9 @@
     "Zip": "30097",
     "Meta Title": "Johns Creek Home Inspections | Premium Service | Foresight Inspections",
     "Meta Description": "Premium home inspections in Johns Creek, GA. Luxury home specialists with advanced technology. Call 678-480-2110 for expert service.",
-    "JSON-LD Schema": "{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"name\":\"Foresight Home Inspections, LLC\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Johns Creek\",\"addressRegion\":\"GA\",\"postalCode\":\"30097\",\"addressCountry\":\"US\"},\"telephone\":\"678-480-2110\"}"
+    "JSON-LD Schema": "{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"name\":\"Foresight Home Inspections, LLC\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Johns Creek\",\"addressRegion\":\"GA\",\"postalCode\":\"30097\",\"addressCountry\":\"US\"},\"telephone\":\"678-480-2110\"}",
+    "Seasonal Tip": "<strong>June 2026 Update for Johns Creek:</strong> Summer in Johns Creek means increased pest activity, particularly termites and carpenter ants that thrive in warm, damp wood. Homeowners should inspect the exterior perimeter of their homes for any soil-to-wood contact and clear away firewood or mulch piles near foundation walls. Keeping gutters clear prevents roof rot that attracts pests. Have a licensed pest control contractor evaluate further and repair as needed.",
+    "Last Refreshed": "2026-06-06"
   },
   {
     "City Name": "Roswell",

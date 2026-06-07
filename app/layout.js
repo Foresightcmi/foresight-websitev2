@@ -413,6 +413,7 @@ export default function RootLayout({ children }) {
       }
     ],
     "sameAs": [
+      "https://maps.app.goo.gl/R1nk9tbM19aDvXpA8",
       "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
       "https://www.tiktok.com/@fhinspectionsatl",
       "https://www.youtube.com/@ForesightHomeInspections-t6r",
