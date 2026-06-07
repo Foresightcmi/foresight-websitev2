@@ -232,7 +232,7 @@ function sendNurtureEmail2(name, email) {
           "</ul>" +
         "</div>" +
         
-        "<p>During our physical walkthroughs, we run advanced <strong>FLIR thermal imaging cameras</strong> and electronic moisture meters on every wall and ceiling at no extra cost. This allows us to see temperature anomalies and find hidden leaks behind tiles that the naked eye would miss entirely.</p>" +
+        "<p>During our physical inspections, we run advanced <strong>FLIR thermal imaging cameras</strong> and electronic moisture meters on every wall and ceiling at no extra cost. This allows us to see temperature anomalies and find hidden leaks behind tiles that the naked eye would miss entirely.</p>" +
         "<p>Tomorrow, I'm going to send you the final part of our checklist covering mechanical safety systems, including electrical panel dangers and the silent threat of Radon gas.</p>" +
         "<p>Remember, a professional home audit isn't an expense—it is designed to save you thousands. If we uncover a $6,000 AC failure or a leaking bathroom wall, we equip you with photographic and video evidence so you can require the seller to correct it before closing, or win significant repair credits.</p>" +
         

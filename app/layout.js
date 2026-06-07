@@ -13,7 +13,7 @@ export const metadata = {
     template: '%s | Foresight Home Inspections',
   },
   description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium, thorough home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
-  keywords: ['Home Inspection', 'Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two inspector home inspection', 'home inspection warranty'],
+  keywords: ['Home Inspection', 'Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two inspector home inspection', 'home inspection warranty', 'best dual-inspector home inspection in Metro Atlanta', 'thermal imaging home inspector Lithonia GA', '11-month new construction warranty inspection', 'Foresight Home Inspections reviews'],
   robots: {
     index: true,
     follow: true,
@@ -75,14 +75,16 @@ export default function RootLayout({ children }) {
         "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Atlanta",
+          "streetAddress": "1816 South Deshon Road",
+          "addressLocality": "Lithonia",
           "addressRegion": "GA",
+          "postalCode": "30058",
           "addressCountry": "US"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "33.7490",
-          "longitude": "-84.3880"
+          "latitude": "33.7123",
+          "longitude": "-84.1052"
         },
         "areaServed": [
         {
@@ -563,7 +565,12 @@ export default function RootLayout({ children }) {
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
                   <li><a href="mailto:plsinspectnow@gmail.com">✉️ plsinspectnow@gmail.com</a></li>
-                  <li>Atlanta, GA & Surrounding Metro Areas</li>
+                  <li style={{ marginTop: '0.5rem', lineHeight: '1.4' }}>
+                    <strong>📍 Headquarters:</strong><br />
+                    1816 South Deshon Road<br />
+                    Lithonia, GA 30058<br />
+                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving Atlanta & Surrounding Metro Areas)</span>
+                  </li>
                 </ul>
               </div>
             </div>

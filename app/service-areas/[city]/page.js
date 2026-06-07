@@ -177,6 +177,18 @@ export default async function CityPage({ params }) {
     })),
   };
 
+  // ── County Context ─────────────────────────────────────────────────────
+  const getCountyContext = (c) => {
+    switch(c) {
+      case 'Fulton': return "Fulton County requires specific environmental reviews and adheres to strict urban building codes, especially for properties near the BeltLine or historic districts. Our inspections are calibrated to identify common Fulton County compliance hurdles before you close.";
+      case 'DeKalb': return "DeKalb County enforces unique requirements, including the mandatory low-flow plumbing fixture certificate for properties built before 1993. We evaluate these items to ensure your transaction proceeds smoothly without municipal delays.";
+      case 'Gwinnett': return "As one of the fastest-growing areas, Gwinnett County properties range from massive new developments to established 1990s subdivisions. We focus heavily on polybutylene plumbing risks and rapid-build structural issues common in this county.";
+      case 'Cobb': return "Cobb County's varied topography means properties are highly susceptible to foundation settlement and basement moisture intrusion. Our thermal imaging and structural expertise are specifically tailored to Cobb County terrain challenges.";
+      case 'Forsyth': return "Forsyth County features many luxury lakefront properties and large-scale new constructions. We bring advanced drone technology and specialized knowledge of high-end systems required by Forsyth County building standards.";
+      default: return `${c} County properties are subject to local Georgia municipal building codes and environmental conditions. Our certified inspectors are fully trained on local guidelines to ensure your home meets the highest standards of safety and structural integrity.`;
+    }
+  };
+
   return (
     <>
       {/* ── JSON-LD Schemas ─────────────────────────────────────────── */}
@@ -477,6 +489,22 @@ export default async function CityPage({ params }) {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          LOCAL COUNTY COMPLIANCE & REGULATIONS
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section bg-gray-light">
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <div className="section-title">
+            <h2>{county} County Building & Compliance Context</h2>
+          </div>
+          <div style={{ background: 'var(--color-white)', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', borderLeft: '4px solid var(--color-red)' }}>
+            <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'left' }}>
+              <strong>📍 Hyper-Local Expertise:</strong> {getCountyContext(county)}
+            </p>
           </div>
         </div>
       </section>

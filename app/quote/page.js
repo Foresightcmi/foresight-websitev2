@@ -17,6 +17,12 @@ export default function Quote() {
     buildfax: false
   });
 
+  const [leadName, setLeadName] = useState('');
+  const [leadEmail, setLeadEmail] = useState('');
+  const [leadPhone, setLeadPhone] = useState('');
+  const [leadStatus, setLeadStatus] = useState('idle'); // idle, submitting, success, error
+  const [showLeadForm, setShowLeadForm] = useState(false);
+
   // Parse URL parameters for initial states
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -185,6 +191,25 @@ export default function Quote() {
 
   const handleAddonToggle = (addon) => {
     setAddons(prev => ({ ...prev, [addon]: !prev[addon] }));
+  };
+
+  const handleHoldSlot = async (e) => {
+    e.preventDefault();
+    setLeadStatus('submitting');
+    try {
+      const res = await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: leadName, email: leadEmail, phone: leadPhone })
+      });
+      if (res.ok) {
+        setLeadStatus('success');
+      } else {
+        setLeadStatus('error');
+      }
+    } catch (err) {
+      setLeadStatus('error');
+    }
   };
 
   return (
@@ -556,6 +581,35 @@ export default function Quote() {
                   ? '📅 Book STR Compliance Assist Now'
                   : '📅 Book Home Inspection Online Now'}
               </a>
+              
+              <div style={{ marginTop: '1rem' }}>
+                {!showLeadForm && !isCustom && (
+                  <button onClick={() => setShowLeadForm(true)} className="btn btn-outline" style={{ width: '100%', borderColor: 'var(--color-white)', color: 'var(--color-white)', fontSize: '1rem', padding: '0.75rem' }}>
+                    🔒 Hold My Slot & Save This Price
+                  </button>
+                )}
+                {showLeadForm && (
+                  <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '1.25rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255, 255, 255, 0.1)', marginTop: '0.5rem' }}>
+                    {leadStatus === 'success' ? (
+                      <div style={{ color: '#34d399', fontSize: '0.9rem', textAlign: 'center' }}>
+                        <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', fontSize: '1.1rem' }}>✅ Price Locked & Slot Held!</p>
+                        <p style={{ color: 'var(--color-white)', lineHeight: 1.4 }}>We've received your request. Use the Book Online button above to finalize your schedule.</p>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleHoldSlot} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', textAlign: 'left' }}>
+                        <h4 style={{ color: 'var(--color-white)', fontSize: '0.95rem', margin: 0 }}>Secure Your Quote</h4>
+                        <input type="text" placeholder="Your Name" required value={leadName} onChange={e => setLeadName(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
+                        <input type="email" placeholder="Your Email" required value={leadEmail} onChange={e => setLeadEmail(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
+                        <input type="tel" placeholder="Phone Number (Optional)" value={leadPhone} onChange={e => setLeadPhone(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
+                        <button type="submit" disabled={leadStatus === 'submitting'} className="btn btn-primary" style={{ padding: '0.6rem', fontSize: '0.95rem', background: 'var(--color-red-dark)' }}>
+                          {leadStatus === 'submitting' ? 'Saving...' : 'Lock In Price'}
+                        </button>
+                        {leadStatus === 'error' && <p style={{ color: '#fca5a5', fontSize: '0.85rem', margin: 0, textAlign: 'center' }}>An error occurred. Please try again.</p>}
+                      </form>
+                    )}
+                  </div>
+                )}
+              </div>
               
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                 <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>

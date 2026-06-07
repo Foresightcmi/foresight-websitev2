@@ -233,6 +233,46 @@ export default function Services() {
             ))}
           </div>
 
+          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Why Choose Foresight Premium Inspections?</h2>
+          <div style={{ overflowX: 'auto', marginBottom: '4rem', padding: '0 1rem' }}>
+            <table className="comparison-table" style={{ width: '100%', maxWidth: '900px', margin: '0 auto', borderCollapse: 'collapse', background: 'var(--color-white)', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+              <thead>
+                <tr style={{ background: 'var(--color-dark)', color: 'var(--color-white)' }}>
+                  <th style={{ padding: '1.5rem', textAlign: 'left', width: '40%' }}>Feature</th>
+                  <th style={{ padding: '1.5rem', textAlign: 'center', width: '30%', borderLeft: '1px solid var(--color-gray-dark)' }}>Typical Competitor</th>
+                  <th style={{ padding: '1.5rem', textAlign: 'center', width: '30%', background: 'var(--color-red)', color: 'var(--color-white)' }}>Foresight Premium</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid var(--color-gray-light)' }}>
+                  <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Inspectors on Site</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>1</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: 'var(--color-red)', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>2 (Dual-Inspector Model)</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--color-gray-light)' }}>
+                  <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Thermal Imaging Scan</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>Extra Charge ($99+)</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: '#34d399', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>✓ Included Free</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--color-gray-light)' }}>
+                  <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Aerial Drone Roof Scan</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>Rarely Offered</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: '#34d399', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>✓ Included Free</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--color-gray-light)' }}>
+                  <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Post-Inspection Warranty</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>None</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: '#34d399', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>✓ $10,000 Elite Master Warranty</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Lead Inspector Credential</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>Standard Certification</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: 'var(--color-red)', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>Certified Master Inspector®</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Specialty & Add-on Services</h2>
           <div className="grid grid-2">
             {services.slice(3).map((s, idx) => (
