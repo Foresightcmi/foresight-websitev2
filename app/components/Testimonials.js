@@ -24,7 +24,7 @@ export default function Testimonials() {
       rating: 5,
       saving: 'Saved $12,500+',
       tag: '⚡ New Construction Defects',
-      text: '“We hired Foresight for a new construction final walkthrough. Their team caught an improperly wired subpanel, missing attic fire-stops, and high radon levels. The report gave our realtor the exact proof needed to force the builder to install a radon mitigation system and redo the electrical work before closing, saving us over $12,500.”',
+      text: '“We hired Foresight for a new construction final inspection. Their team caught an improperly wired subpanel, missing attic fire-stops, and high radon levels. The report gave our realtor the exact proof needed to force the builder to install a radon mitigation system and redo the electrical work before closing, saving us over $12,500.”',
     },
   ];
 

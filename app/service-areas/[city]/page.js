@@ -104,7 +104,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
-      a: `Home inspection pricing in ${cityName} starts at $420+ for a standard buyer's inspection and pre-listing seller's inspection. 11-month warranty inspections and new construction final phase walkthrough inspections start at $350+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($110 bundled / $150 standalone), pool evaluation ($300 flat rate), or sewer scope inspection ($400). Single-family home inspections have additional complexity fees of $75 added for each foundation condition present (if the home has a crawlspace or has an unfinished basement foundation). These fees stack per condition (e.g., a home on a crawlspace with an unfinished basement adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+      a: `Home inspection pricing in ${cityName} starts at $420+ for a standard buyer's inspection and pre-listing seller's inspection. 11-month warranty inspections and new construction final phase inspections start at $350+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($110 bundled / $150 standalone), pool evaluation ($300 flat rate), or sewer scope inspection ($400). Single-family home inspections have additional complexity fees of $75 added for each foundation condition present (if the home has a crawlspace or has an unfinished basement foundation). These fees stack per condition (e.g., a home on a crawlspace with an unfinished basement adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
@@ -124,7 +124,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you inspect new construction homes in ${cityName}?`,
-      a: `Absolutely. New construction final phase inspections in ${cityName} start at $350+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our dual-inspector team performs a thorough final walkthrough check of the foundation, electrical, plumbing, HVAC, insulation, grading, and all final interior/exterior systems before closing. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
+      a: `Absolutely. New construction final phase inspections in ${cityName} start at $350+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our dual-inspector team performs a thorough final inspection check of the foundation, electrical, plumbing, HVAC, insulation, grading, and all final interior/exterior systems before closing. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
     },
     {
       q: `What does thermal imaging detect during a home inspection in ${cityName}?`,
@@ -365,7 +365,7 @@ export default async function CityPage({ params }) {
             <div className="card card-premium">
               <h2>Why {cityName} Homebuyers Trust Us</h2>
               <p style={{ marginBottom: '1.5rem' }}>
-                Houses in {cityName} vary from new constructions to historic properties. A standard walkthrough isn't enough. A lead Certified Master Inspector of InterNACHI will be on site along with another certified inspector, bringing thermal imaging and drone technology to every inspection and ensuring your investment is perfectly sound.
+                Houses in {cityName} vary from new constructions to historic properties. A standard inspection isn't enough. A lead Certified Master Inspector of InterNACHI will be on site along with another certified inspector, bringing thermal imaging and drone technology to every inspection and ensuring your investment is perfectly sound.
               </p>
               {cityData?.['Benefits HTML'] ? (
                 <div
@@ -410,7 +410,7 @@ export default async function CityPage({ params }) {
             <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
             <h2>Our High-Tech Diagnostic Suite in <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We don't just perform a physical walkthrough. Foresight equips every dual-inspector team in {cityName} with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+              We don't just perform a physical inspection. Foresight equips every dual-inspector team in {cityName} with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
             </p>
           </div>
 

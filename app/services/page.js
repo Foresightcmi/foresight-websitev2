@@ -39,8 +39,8 @@ export default function Services() {
     {
       title: 'New Construction Inspections',
       price: '$350+',
-      description: 'Ensure your brand-new home was built to correct specifications. We perform a comprehensive final walkthrough inspection of all major systems.',
-      details: ['Final phase walkthrough audit', 'Structure & systems checks', 'Workmanship quality review', 'Identify developer defects'],
+      description: 'Ensure your brand-new home was built to correct specifications. We perform a comprehensive final inspection of all major systems.',
+      details: ['Final phase inspection audit', 'Structure & systems checks', 'Workmanship quality review', 'Identify developer defects'],
       image: '/images/drone-2.png',
       slug: 'why-you-need-home-inspection-new-build'
     },
@@ -104,7 +104,7 @@ export default function Services() {
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Inspection", "description": "Comprehensive inspection covering structure, roof, electrical, plumbing, HVAC, and all major systems with two inspectors." }, "price": "420", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "420", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new home was built to specifications. Final phase walkthrough checks." }, "price": "350", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new home was built to specifications. Final phase inspection checks." }, "price": "350", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "350", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "110", "priceCurrency": "USD" },
@@ -347,7 +347,7 @@ export default function Services() {
             <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
             <h2>Our High-Tech Diagnostic Suite</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We don't just perform a physical walkthrough. Foresight equips every dual-inspector team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+              We don't just perform a physical inspection. Foresight equips every dual-inspector team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
             </p>
           </div>
 

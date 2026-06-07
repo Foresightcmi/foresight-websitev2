@@ -47,7 +47,7 @@ export default function ThermalSlider() {
           <span className="badge" style={{ marginBottom: '1rem', background: 'rgba(211,47,47,0.15)', color: 'var(--color-red-light)' }}>See The Unseen</span>
           <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', fontWeight: 800 }}>Standard Visual vs. Foresight Thermal</h2>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Cheap inspectors perform standard visual walkthroughs, signing off on drywalls that &ldquo;look dry.&rdquo; Foresight uses advanced FLIR thermal diagnostics on every job to catch hidden threats before they destroy your equity.
+            Cheap inspectors perform standard visual inspections, signing off on drywalls that &ldquo;look dry.&rdquo; Foresight uses advanced FLIR thermal diagnostics on every job to catch hidden threats before they destroy your equity.
           </p>
         </div>
 

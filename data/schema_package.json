@@ -99,7 +99,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "New Construction Inspection",
-              "description": "Comprehensive walkthrough inspection of new build structures, systems, and finishes with a workmanship quality review."
+              "description": "Comprehensive inspection of new build structures, systems, and finishes with a workmanship quality review."
             },
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
