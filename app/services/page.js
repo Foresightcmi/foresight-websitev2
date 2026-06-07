@@ -262,12 +262,12 @@ export default function Services() {
                 <tr style={{ borderBottom: '1px solid var(--color-gray-light)' }}>
                   <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Post-Inspection Warranty</td>
                   <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>None</td>
-                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: '#34d399', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>✓ $10,000 Elite Master Warranty</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: '#34d399', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}><cite style={{ fontStyle: 'normal' }}>✓ $10,000 Elite Master Warranty</cite></td>
                 </tr>
                 <tr>
                   <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Lead Inspector Credential</td>
                   <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>Standard Certification</td>
-                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: 'var(--color-red)', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>Certified Master Inspector®</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: 'var(--color-red)', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}><cite style={{ fontStyle: 'normal' }}>Certified Master Inspector®</cite></td>
                 </tr>
               </tbody>
             </table>

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request) {
   try {
@@ -50,6 +51,44 @@ export async function POST(request) {
       }
     } else {
       console.log('[FORESIGHT ENGINE] APPS_SCRIPT_WEBHOOK_URL is not set in env variables. Lead preserved in console logs.');
+    }
+
+    // 3. Send Email Notification directly to inbox
+    const emailPass = process.env.EMAIL_PASSWORD;
+    if (emailPass) {
+      console.log('[FORESIGHT ENGINE] Sending email notification...');
+      try {
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: 'plsinspectnow@gmail.com',
+            pass: emailPass,
+          },
+        });
+
+        const mailOptions = {
+          from: 'plsinspectnow@gmail.com',
+          to: 'plsinspectnow@gmail.com', // Sending to yourself
+          subject: '🚨 NEW QUOTE LEAD: Price Locked!',
+          html: `
+            <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+              <h2 style="color: #b91c1c;">New Quote Lead Captured</h2>
+              <p style="font-size: 16px;"><strong>Name:</strong> ${name}</p>
+              <p style="font-size: 16px;"><strong>Email:</strong> ${email}</p>
+              <p style="font-size: 16px;"><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+              <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
+              <p style="font-size: 14px; color: #64748b;"><em>This lead locked in their price via the website Quote Calculator.</em></p>
+            </div>
+          `,
+        };
+
+        await transporter.sendMail(mailOptions);
+        console.log('[FORESIGHT ENGINE] Email notification sent successfully!');
+      } catch (emailError) {
+        console.error('[FORESIGHT ENGINE] Failed to send email notification:', emailError);
+      }
+    } else {
+      console.log('[FORESIGHT ENGINE] EMAIL_PASSWORD is not set. Skipping email notification.');
     }
 
     // Return success to the client

@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
-import ValueComparison from './components/ValueComparison';
-import ThermalSlider from './components/ThermalSlider';
-import Testimonials from './components/Testimonials';
-import FreshnessLog from './components/FreshnessLog';
+import dynamic from 'next/dynamic';
+
+const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
+const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
+const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
+const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: true });
 
 export default function Home() {
   const jsonLd = {

@@ -97,6 +97,20 @@ function doPost(e) {
       var sheet = getOrCreateLeadsSheet();
       var timestamp = new Date();
       
+      // Notify the business owner immediately (NO passwords needed!)
+      MailApp.sendEmail({
+        to: BUSINESS_EMAIL,
+        subject: "🚨 NEW QUOTE LEAD: Price Locked!",
+        htmlBody: "<div style='font-family: Arial, sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;'>" +
+                  "<h2 style='color: #b91c1c;'>New Quote Lead Captured</h2>" +
+                  "<p style='font-size: 16px;'><strong>Name:</strong> " + name + "</p>" +
+                  "<p style='font-size: 16px;'><strong>Email:</strong> " + email + "</p>" +
+                  "<p style='font-size: 16px;'><strong>Phone:</strong> " + (phone || 'Not provided') + "</p>" +
+                  "<hr style='border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;' />" +
+                  "<p style='font-size: 14px; color: #64748b;'><em>This lead locked in their price via the website Quote Calculator.</em></p>" +
+                  "</div>"
+      });
+      
       // Check if lead already exists to prevent duplicate nurture fires
       if (!isDuplicateLead(sheet, email)) {
         sheet.appendRow([timestamp, name, email, phone, 'LEAD_CAPTURED', timestamp]);

@@ -1,7 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
-import ValueComparison from '../components/ValueComparison';
+import dynamic from 'next/dynamic';
 
+const ValueComparison = dynamic(() => import('../components/ValueComparison'), { ssr: true });
 export default function Quote() {
   const [propertyType, setPropertyType] = useState('single-family'); // 'single-family', 'condo'
   const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str'
@@ -216,6 +217,30 @@ export default function Quote() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "potentialAction": {
+              "@type": "QuoteAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.fhinspectionsatl.com/quote?type={propertyType}&service={serviceType}",
+                "actionPlatform": [
+                  "http://schema.org/DesktopWebPlatform",
+                  "http://schema.org/MobileWebPlatform"
+                ]
+              },
+              "result": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "USD"
+              }
+            }
+          })
+        }}
+      />
       <section className="section bg-gray-light">
       <div className="container">
         <div className="section-title" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
