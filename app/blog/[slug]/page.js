@@ -134,6 +134,20 @@ export default async function BlogPost({ params }) {
       {/* Article Body */}
       <section className="section" style={{ paddingTop: '3rem' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
+          
+          {post.tldr && post.tldr.length > 0 && (
+            <div className="ai-summary-box" style={{ background: 'var(--color-gray-light)', padding: '1.5rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)', marginBottom: '2rem' }}>
+              <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span role="img" aria-label="robot">🤖</span> AI Quick Summary
+              </h2>
+              <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', margin: 0, color: 'var(--color-gray-dark)', fontSize: '1.05rem', lineHeight: 1.6 }}>
+                {post.tldr.map((bullet, i) => (
+                  <li key={i} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <article
             className="blog-content"
             style={{
