@@ -13,6 +13,7 @@ export default function Quote() {
     radon: false,
     termite: false,
     pool: false,
+    sewer: false,
     lowFlow: false,
     buildfax: false
   });
@@ -122,6 +123,7 @@ export default function Quote() {
     // Addons
     if (addons.radon) extra += 200; // Continuous monitor sub-contracted rate
     if (addons.pool) extra += 300;  // Pool/spa flat rate
+    if (addons.sewer) extra += 275; // Sewer scope camera inspection
     if (addons.lowFlow) extra += 125; // DeKalb low flow compliance
     if (addons.buildfax) extra += 15; // Property permit report
     if (addons.termite) extra += 110; // Termite/WDO bundled rate
@@ -412,6 +414,18 @@ export default function Quote() {
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Evaluation (+ $300)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, and shell integrity check ($300 flat rate).</span>
+                  </div>
+                </label>
+
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.sewer} 
+                    onChange={() => handleAddonToggle('sewer')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (+ $275)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>High-definition camera inspection of the main sewer line to detect root intrusion or collapses.</span>
                   </div>
                 </label>
 
