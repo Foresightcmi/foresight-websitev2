@@ -48,7 +48,7 @@ export default function Quote() {
       }
       const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -70 : 0;
       return [
-        { label: 'Under 1,500 sq ft', value: 'condo-under-1500', price: 420 + adjustment },
+        { label: 'Under 1,500 sq ft', value: 'condo-under-1500', price: 495 + adjustment },
         { label: '1,501+ sq ft', value: 'custom-call', price: 'custom' }
       ];
     }
@@ -65,15 +65,15 @@ export default function Quote() {
     const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -70 : 0;
 
     return [
-      { label: 'Under 1,500 sq ft', value: 'sf-under-1500', price: 420 + adjustment },
-      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 470 + adjustment },
-      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 520 + adjustment },
-      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 570 + adjustment },
-      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 620 + adjustment },
-      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 670 + adjustment },
-      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 720 + adjustment },
-      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 780 + adjustment },
-      { label: '5,001 - 5,500 sq ft', value: 'sf-5001-5500', price: 850 + adjustment },
+      { label: 'Under 1,500 sq ft', value: 'sf-under-1500', price: 495 + adjustment },
+      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 545 + adjustment },
+      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 595 + adjustment },
+      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 645 + adjustment },
+      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 695 + adjustment },
+      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 745 + adjustment },
+      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 795 + adjustment },
+      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 855 + adjustment },
+      { label: '5,001 - 5,500 sq ft', value: 'sf-5001-5500', price: 925 + adjustment },
       { label: '5,501+ sq ft', value: 'custom-call', price: 'custom' }
     ];
   };

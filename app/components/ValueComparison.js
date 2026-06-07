@@ -56,7 +56,7 @@ export default function ValueComparison() {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <h3 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--color-white)', fontWeight: 800 }}>The Foresight CMI Standard</h3>
-                <span style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', background: 'var(--color-red-light)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>Starting at $420</span>
+                <span style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', background: 'var(--color-red-light)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>Starting at $495</span>
               </div>
               <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.975rem', marginBottom: '2rem', lineHeight: 1.6 }}>
                 Led by Christopher Boykin, a <strong>Certified Master Inspector® (CMI)</strong>—representing the top 2% of elite, highly vetted home inspectors nationwide.
@@ -84,7 +84,7 @@ export default function ValueComparison() {
             
             <div style={{ marginTop: '2.5rem', background: 'rgba(211,47,47,0.15)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)' }}>
               <p style={{ margin: 0, fontSize: '0.875rem', color: '#fca5a5', lineHeight: 1.5 }}>
-                🛡️ <strong>The Intelligent Investment:</strong> Spending $145 more upfront for a standard home dual-inspector audit gives you a 50-page, Master Inspector-vetted negotiation roadmap with photos and video. This regularly saves buyers <strong>$3,000 to $12,000</strong> in pre-closing repair credits!
+                🛡️ <strong>The Intelligent Investment:</strong> Spending $195 more upfront for a standard home dual-inspector audit gives you a 50-page, Master Inspector-vetted negotiation roadmap with photos and video. This regularly saves buyers <strong>$3,000 to $12,000</strong> in pre-closing repair credits!
               </p>
             </div>
           </div>
