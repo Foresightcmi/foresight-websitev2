@@ -7,7 +7,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="header glass">
+    <header className="header" style={{ backgroundColor: 'var(--color-white)' }}>
       <div className="container nav-container">
         <Link href="/" className="logo">
           <Image src="/images/Logopng.png" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '140px', width: 'auto' }} priority />
