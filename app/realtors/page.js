@@ -58,7 +58,7 @@ export default function Realtors() {
             <span style={{ color: 'var(--color-red)' }}>Delight Your Buyers.</span>
           </h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6 }}>
-            Empower your Metro Atlanta transactions with our elite dual-inspector teams. We handle SUPRA lockbox access, provide complimentary utility setups, and back your clients with $10,000 warranties.
+            Empower your Metro Atlanta transactions with our elite two person inspection team teams. We handle SUPRA lockbox access, provide complimentary utility setups, and back your clients with $10,000 warranties.
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#partner-form" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
@@ -94,7 +94,7 @@ export default function Realtors() {
               </p>
             </div>
 
-            {/* Pillar 2: Dual Inspector speed */}
+            {/* Pillar 2: Two Person Inspection Team speed */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>👥</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>2-Inspector Speed & Accuracy</h3>
@@ -153,7 +153,7 @@ export default function Realtors() {
               What Atlanta Real Estate Partners Say
             </h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
-              Discover how Foresight’s dual-inspector efficiency, SUPRA access, and $10,000 client warranties help local real estate agents save hours of work and protect their deals.
+              Discover how Foresight’s two person inspection team efficiency, SUPRA access, and $10,000 client warranties help local real estate agents save hours of work and protect their deals.
             </p>
           </div>
 
@@ -182,7 +182,7 @@ export default function Realtors() {
               <div>
                 <div style={{ color: '#fbbf24', fontSize: '1.15rem', marginBottom: '1.25rem', letterSpacing: '0.08em' }}>★★★★★</div>
                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, fontStyle: 'italic', margin: '0 0 1.5rem 0' }}>
-                  “The dual-inspector model and active SUPRA lockbox access are massive time savers. I no longer have to spend 4 hours driving out to lock and unlock properties. Foresight enters securely, does a highly thorough sweep in under 2 hours, and sends the report same-day. They save me hours of coordination on every transaction.”
+                  “The two person inspection team model and active SUPRA lockbox access are massive time savers. I no longer have to spend 4 hours driving out to lock and unlock properties. Foresight enters securely, does a highly thorough sweep in under 2 hours, and sends the report same-day. They save me hours of coordination on every transaction.”
                 </p>
               </div>
               <div style={{ borderTop: '1px solid var(--color-gray-mid)', paddingTop: '1.25rem', marginTop: 'auto' }}>

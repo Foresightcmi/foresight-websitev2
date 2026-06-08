@@ -84,7 +84,7 @@ export default function ValueComparison() {
             
             <div style={{ marginTop: '2.5rem', background: 'rgba(211,47,47,0.15)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)' }}>
               <p style={{ margin: 0, fontSize: '0.875rem', color: '#fca5a5', lineHeight: 1.5 }}>
-                🛡️ <strong>The Intelligent Investment:</strong> Spending $170 more upfront for a standard home dual-inspector audit gives you a 50-page, Master Inspector-vetted negotiation roadmap with photos and video. This regularly saves buyers <strong>$3,000 to $12,000</strong> in pre-closing repair credits!
+                🛡️ <strong>The Intelligent Investment:</strong> Spending $170 more upfront for a standard home two person inspection team audit gives you a 50-page, Master Inspector-vetted negotiation roadmap with photos and video. This regularly saves buyers <strong>$3,000 to $12,000</strong> in pre-closing repair credits!
               </p>
             </div>
           </div>

@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
   const title = cityData?.['Meta Title']
     || `Best Home Inspector in ${cityName}, GA | Foresight Home Inspections`;
   const description = cityData?.['Meta Description']
-    || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, dual-inspector services led by a Certified Master Inspector for ultimate peace of mind.`;
+    || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, two person inspection team services led by a Certified Master Inspector for ultimate peace of mind.`;
 
   return {
     title,
@@ -108,7 +108,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
-      a: `Look for a Certified Master Inspector — the highest credential from InterNACHI. Foresight Home Inspections exceeds this standard with a unique dual-inspector model: two certified inspectors are on every job, so coverage is thorough and nothing slips through the cracks. We also use advanced thermal imaging to detect hidden moisture, insulation gaps, and electrical hotspots. All findings follow InterNACHI Standards of Practice, and our recommendation language complies with industry guidelines.`,
+      a: `Look for a Certified Master Inspector — the highest credential from InterNACHI. Foresight Home Inspections exceeds this standard with a unique two person inspection team model: two certified inspectors are on every job, so coverage is thorough and nothing slips through the cracks. We also use advanced thermal imaging to detect hidden moisture, insulation gaps, and electrical hotspots. All findings follow InterNACHI Standards of Practice, and our recommendation language complies with industry guidelines.`,
     },
     {
       q: `Does Foresight Home Inspections offer a warranty in ${cityName}?`,
@@ -124,11 +124,11 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you inspect new construction homes in ${cityName}?`,
-      a: `Absolutely. New construction final phase inspections in ${cityName} start at $350+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our dual-inspector team performs a thorough final inspection check of the foundation, electrical, plumbing, HVAC, insulation, grading, and all final interior/exterior systems before closing. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
+      a: `Absolutely. New construction final phase inspections in ${cityName} start at $350+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our two person inspection team team performs a thorough final inspection check of the foundation, electrical, plumbing, HVAC, insulation, grading, and all final interior/exterior systems before closing. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
     },
     {
       q: `What does thermal imaging detect during a home inspection in ${cityName}?`,
-      a: `Thermal imaging (infrared camera technology) is included in every Foresight inspection at no extra charge. In ${cityName} homes, our FLIR thermal cameras detect hidden moisture intrusion behind walls and ceilings, missing or damaged insulation, electrical hotspots that could be fire hazards, HVAC duct leaks, and plumbing leaks beneath floors. These are problems completely invisible to the naked eye that could cost thousands to repair if undiscovered. This advanced technology is a standard part of our dual-inspector approach.`,
+      a: `Thermal imaging (infrared camera technology) is included in every Foresight inspection at no extra charge. In ${cityName} homes, our FLIR thermal cameras detect hidden moisture intrusion behind walls and ceilings, missing or damaged insulation, electrical hotspots that could be fire hazards, HVAC duct leaks, and plumbing leaks beneath floors. These are problems completely invisible to the naked eye that could cost thousands to repair if undiscovered. This advanced technology is a standard part of our two person inspection team approach.`,
     },
   ];
 
@@ -147,9 +147,13 @@ export default async function CityPage({ params }) {
       "@type": "City",
       "name": cityName,
       "containedInPlace": {
-        "@type": "State",
-        "name": "Georgia",
-      },
+        "@type": "AdministrativeArea",
+        "name": `${county} County`,
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Georgia"
+        }
+      }
     },
   };
 
@@ -422,7 +426,7 @@ export default async function CityPage({ params }) {
             <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
             <h2>Our High-Tech Diagnostic Suite in <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We don't just perform a physical inspection. Foresight equips every dual-inspector team in {cityName} with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+              We don't just perform a physical inspection. Foresight equips every two person inspection team team in {cityName} with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
             </p>
           </div>
 
@@ -584,7 +588,7 @@ export default async function CityPage({ params }) {
         <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
           <h2 style={{ marginBottom: '1rem' }}>Ready to Schedule Your Inspection in <span style={{ color: 'var(--color-red)' }}>{cityName}</span>?</h2>
           <p style={{ color: 'var(--color-gray-dark)', marginBottom: '2rem', fontSize: '1.1rem' }}>
-            Book your certified dual-inspector home inspection today. Securing your slot takes less than 5 minutes and includes our comprehensive $10,000 Elite Master warranty.
+            Book your certified two person inspection team home inspection today. Securing your slot takes less than 5 minutes and includes our comprehensive $10,000 Elite Master warranty.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.2rem', boxShadow: 'var(--shadow-md)' }}>
@@ -607,6 +611,21 @@ export default async function CityPage({ params }) {
           <Link href="/ask-twin" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Ask Foresight AI</Link>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          MOBILE STICKY CTA (Leads-First)
+      ═══════════════════════════════════════════════════════════════ */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .mobile-sticky-cta { display: none; }
+        @media (max-width: 768px) {
+          .mobile-sticky-cta { display: flex !important; }
+          body { padding-bottom: 80px; }
+        }
+      `}} />
+      <div className="mobile-sticky-cta" style={{ position: 'fixed', bottom: 0, left: 0, width: '100%', background: 'var(--color-white)', padding: '1rem', boxShadow: '0 -4px 10px rgba(0,0,0,0.1)', gap: '0.5rem', zIndex: 9999 }}>
+        <a href="tel:6784802110" className="btn btn-outline" style={{ flex: 1, textAlign: 'center', padding: '0.75rem', fontSize: '1rem', background: 'var(--color-white)' }}>Call Now</a>
+        <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" className="btn btn-primary" style={{ flex: 1, textAlign: 'center', padding: '0.75rem', fontSize: '1rem' }}>Book Now</a>
+      </div>
     </>
   );
 }

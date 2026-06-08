@@ -497,11 +497,11 @@ export default function Quote() {
 
               <div style={{ borderBottom: '1px solid var(--color-gray-dark)', paddingBottom: '1.25rem', marginBottom: '1.25rem' }}>
                 <h4 style={{ color: 'var(--color-white)', fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
-                  Elite Dual-Inspector Package Includes:
+                  Elite Two Person Inspection Team Package Includes:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: 'var(--color-gray-mid)' }}>👥 Dual-Inspector Deployment Protocol</span>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>👥 Two Person Inspection Team Deployment Protocol</span>
                     <span style={{ fontWeight: 600, color: 'var(--color-white)' }}>Standard</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>

@@ -11,7 +11,7 @@
       "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
       "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
       "priceRange": "$$$",
-      "description": "Premium dual-inspector home inspection services in Metro Atlanta led by Christopher Boykin, Certified Master Inspector (CMI). Includes FLIR thermal imaging, aerial drone scans, and a $10,000 protection warranty.",
+      "description": "Premium two person inspection team home inspection services in Metro Atlanta led by Christopher Boykin, Certified Master Inspector (CMI). Includes FLIR thermal imaging, aerial drone scans, and a $10,000 protection warranty.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Atlanta",
@@ -44,6 +44,35 @@
         "https://www.tiktok.com/@fhinspectionsatl",
         "https://www.youtube.com/@ForesightHomeInspections-t6r",
         "https://www.linkedin.com/company/foresight-home-inspections-llc/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Christopher Boykin",
+        "jobTitle": "Certified Master Inspector"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Atlanta",
+          "sameAs": "https://en.wikipedia.org/wiki/Atlanta"
+        },
+        {
+          "@type": "City",
+          "name": "Decatur",
+          "sameAs": "https://en.wikipedia.org/wiki/Decatur,_Georgia"
+        },
+        {
+          "@type": "City",
+          "name": "Alpharetta",
+          "sameAs": "https://en.wikipedia.org/wiki/Alpharetta,_Georgia"
+        }
+      ],
+      "knowsAbout": [
+        "Home Inspection",
+        "Thermal Imaging",
+        "Sewer Scope Inspection",
+        "Radon Testing",
+        "Termite Inspection"
       ]
     },
     {
@@ -85,7 +114,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Buyer Home Inspection",
-              "description": "Thorough home inspection by a dual-inspector team, including free FLIR thermal imaging and a $10,000 Elite Master warranty."
+              "description": "Thorough home inspection by a two person inspection team, including free FLIR thermal imaging and a $10,000 Elite Master warranty."
             },
             "priceSpecification": {
               "@type": "UnitPriceSpecification",

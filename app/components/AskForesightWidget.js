@@ -159,7 +159,7 @@ export default function AskForesightWidget() {
     let response = "";
     
     if (matchesAny(['report', 'reports', 'sample'])) {
-      response = "Our home inspection reports exceed InterNACHI standards. We write in plain English with high-resolution photos/video. We use a 3-step format: 🔍 Observation, 💡 What This Could Mean, and 🛠️ Recommendations. Getting a dual-inspector audit saves you thousands of dollars by giving you clear evidence to win closing credits or require seller repairs. Hindsight is expensive; choose Foresight!";
+      response = "Our home inspection reports exceed InterNACHI standards. We write in plain English with high-resolution photos/video. We use a 3-step format: 🔍 Observation, 💡 What This Could Mean, and 🛠️ Recommendations. Getting a two person inspection team audit saves you thousands of dollars by giving you clear evidence to win closing credits or require seller repairs. Hindsight is expensive; choose Foresight!";
     } else if (matchesAny(['radon'])) {
       response = "Radon is an invisible radioactive gas from Georgia granite soils. We recommend professional continuous monitoring. 🔍 Observation: Radon above 4.0 pCi/L. 💡 What This Could Mean: Severe health hazard. 🛠️ Recommendation: Certified radon mitigation contractor. We routinely save clients thousands of dollars in negotiations by getting sellers to cover mitigation costs upfront!";
     } else if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest'])) {
@@ -190,7 +190,7 @@ export default function AskForesightWidget() {
     } else if (matchesAny(['price', 'pricing', 'cost', 'quote'])) {
       response = "Standard resale home inspections and pre-listing seller inspections start at $420. 11-month builder warranty audits and new construction final inspections start at $350. Specialized audits: Short-Term Rental (STR) Compliance Assist starts at $355. Add-ons: Termites ($110 bundled / $150 standalone), Radon ($200), Pool ($300), Sewer scope ($400). Note: Additional complexity fees of $75 apply for each foundation complexity present (having a crawlspace or unfinished basement) and stack. These fees are bypassed for STR audits! Drones and thermal imaging are included free!";
     } else {
-      response = "Houses are complex systems—what happens in the attic affects the basement. The absolute best way to save money and protect your investment is to get our dual-inspector team out for a physical, high-tech audit. We regularly save our clients thousands of dollars by providing clear evidence to negotiate seller credits or repairs. The inspection fee pays for itself!";
+      response = "Houses are complex systems—what happens in the attic affects the basement. The absolute best way to save money and protect your investment is to get our two person inspection team team out for a physical, high-tech audit. We regularly save our clients thousands of dollars by providing clear evidence to negotiate seller credits or repairs. The inspection fee pays for itself!";
     }
 
     const checklistOffer = "\n\nBy the way, I’ve put together a \"Foresight vs. Hindsight\" checklist to help you avoid expensive mistakes. Shall I send that to you?";

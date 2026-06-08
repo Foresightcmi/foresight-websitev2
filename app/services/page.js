@@ -247,7 +247,7 @@ export default function Services() {
                 <tr style={{ borderBottom: '1px solid var(--color-gray-light)' }}>
                   <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Inspectors on Site</td>
                   <td style={{ padding: '1rem 1.5rem', textAlign: 'center', color: 'var(--color-gray-dark)', borderLeft: '1px solid var(--color-gray-light)' }}>1</td>
-                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: 'var(--color-red)', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>2 (Dual-Inspector Model)</td>
+                  <td style={{ padding: '1rem 1.5rem', textAlign: 'center', fontWeight: 700, color: 'var(--color-red)', borderLeft: '1px solid var(--color-gray-light)', background: 'rgba(211, 47, 47, 0.05)' }}>2 (Two Person Inspection Team Model)</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid var(--color-gray-light)' }}>
                   <td style={{ padding: '1rem 1.5rem', fontWeight: 600, color: 'var(--color-dark)' }}>Thermal Imaging Scan</td>
@@ -387,7 +387,7 @@ export default function Services() {
             <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
             <h2>Our High-Tech Diagnostic Suite</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We don't just perform a physical inspection. Foresight equips every dual-inspector team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+              We don't just perform a physical inspection. Foresight equips every two person inspection team team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
             </p>
           </div>
 

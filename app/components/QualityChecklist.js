@@ -16,7 +16,7 @@ export default function QualityChecklist() {
       id: 'dual',
       label: 'Two Certified Inspectors On-Site Working in Unison',
       description: 'Double the eyes, double the thoroughness. One focuses on systems/exterior, one on interior/details.',
-      foresight: '✅ YES (Dual-inspector certified team physically on every job)',
+      foresight: '✅ YES (Two Person Inspection Team certified team physically on every job)',
       others: '❌ NO (Solo dispatch model where one person rushes the job)'
     },
     {

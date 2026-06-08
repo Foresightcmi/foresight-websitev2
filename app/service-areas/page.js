@@ -56,7 +56,7 @@ export default function ServiceAreasDirectory() {
         <div className="container">
           <h1 style={{ color: 'var(--color-white)' }}>Areas We Serve</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
-            Proudly providing premium dual-inspector services across Georgia. Find your city below to learn more about our local services.
+            Proudly providing premium two person inspection team services across Georgia. Find your city below to learn more about our local services.
           </p>
         </div>
       </section>

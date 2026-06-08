@@ -8,7 +8,7 @@ export default function Testimonials() {
       rating: 5,
       saving: 'Saved $24,500',
       tag: '🚽 Foundation & Sewer Issues',
-      text: '“Foresight’s dual-inspector team was an absolute game-changer. They found a major structural foundation crack hidden behind basement paneling and a collapsed clay pipe. Their crystal-clear report gave our realtor massive negotiating leverage, and she successfully secured a $24,500 seller repair credit at closing!”',
+      text: '“Foresight’s two person inspection team team was an absolute game-changer. They found a major structural foundation crack hidden behind basement paneling and a collapsed clay pipe. Their crystal-clear report gave our realtor massive negotiating leverage, and she successfully secured a $24,500 seller repair credit at closing!”',
     },
     {
       name: 'David L.',
@@ -39,7 +39,7 @@ export default function Testimonials() {
             How Choosing Foresight Saves <span style={{ color: 'var(--color-red)' }}>Thousands</span>
           </h2>
           <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            A standard home inspection finds basic defects—Foresight’s dual-inspector, high-tech diagnostic sweeps locate hidden major system issues, giving you the leverage to negotiate tens of thousands off your purchase.
+            A standard home inspection finds basic defects—Foresight’s two person inspection team, high-tech diagnostic sweeps locate hidden major system issues, giving you the leverage to negotiate tens of thousands off your purchase.
           </p>
         </div>
 

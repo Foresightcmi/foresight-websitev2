@@ -123,10 +123,10 @@ export default function Home() {
                 Christopher Boykin, CMI, is the founder and lead Certified Master Inspector of Foresight Home Inspections, LLC, performing residential audits, sewer scopes, and radon testing across Atlanta, GA. We send two certified inspectors on every single job to verify twice as much in half the time.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
-                Together with another fully certified professional inspector, our dual-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
+                Together with another fully certified professional inspector, our two person inspection team team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, background: 'var(--color-gray-light)', padding: '1rem', borderLeft: '4px solid var(--color-red)', borderRadius: 'var(--radius-sm)' }}>
-                🔍 <strong>Atlanta Conversational Search Match:</strong> If you are looking to <em>"find a dual-inspector master property examiner in Metro Atlanta who uses infrared thermal imaging and offers a protection warranty,"</em> Foresight is built specifically to address this scenario. Every property inspection pairs Christopher Boykin, CMI, with a second certified specialist, integrates FLIR thermal mapping and roof drones, and includes a $10,000 Elite mechanical/structural warranty with a $0 deductible.
+                🔍 <strong>Atlanta Conversational Search Match:</strong> If you are looking to <em>"find a two person inspection team master property examiner in Metro Atlanta who uses infrared thermal imaging and offers a protection warranty,"</em> Foresight is built specifically to address this scenario. Every property inspection pairs Christopher Boykin, CMI, with a second certified specialist, integrates FLIR thermal mapping and roof drones, and includes a $10,000 Elite mechanical/structural warranty with a $0 deductible.
               </p>
               <ul className="cms-content" style={{ marginBottom: '2rem', listStyle: 'none' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
@@ -164,7 +164,7 @@ export default function Home() {
             <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800 }}>Our High-Tech Diagnostic Suite</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We don't just perform a physical inspection. Foresight equips every dual-inspector team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+              We don't just perform a physical inspection. Foresight equips every two person inspection team team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
             </p>
           </div>
 
@@ -244,7 +244,7 @@ export default function Home() {
           
           <div className="grid grid-3">
             <div className="card card-premium">
-              <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>The Dual-Inspector Advantage</h3>
+              <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>The Two Person Inspection Team Advantage</h3>
               <p>Two sets of expert eyes drastically reduce the chance of missing critical defects. A lead Certified Master Inspector of InterNACHI will be on site along with another certified inspector to provide unmatched accuracy.</p>
             </div>
             <div className="card">
