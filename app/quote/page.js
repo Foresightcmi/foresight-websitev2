@@ -39,9 +39,17 @@ export default function Quote() {
 
   // Calculations logic
   const calculateTotal = () => {
-    let base = Math.round(Number(sqft) * 0.19);
+    let base = 450; // Standard base fee
     
-    // Fallback for custom logic if they enter extremely high numbers, but we'll stick to strict 0.19
+    if (serviceType === 'str') {
+      base = 355; // Keep base for STR compliance
+    } else {
+      const parsedSqft = Number(sqft);
+      if (parsedSqft > 1500) {
+        base += Math.round((parsedSqft - 1500) * 0.14);
+      }
+    }
+    
     let extra = 0;
 
     // Flat Property Age Surcharges: Under 25 = +$0, 25-49 = +$50, 50+ = +$95
@@ -82,8 +90,8 @@ export default function Quote() {
     let minLeverage = 2000;
     let maxLeverage = 6000;
 
-    // Scale by size/price range using the 0.19 rate
-    const multiplier = (Math.max(1000, Number(sqft)) * 0.19) / 350;
+    // Scale by size/price range using the 0.14 rate
+    const multiplier = (Math.max(1000, Number(sqft)) * 0.14) / 350;
     minLeverage = Math.round(minLeverage * multiplier);
     maxLeverage = Math.round(maxLeverage * multiplier);
 
