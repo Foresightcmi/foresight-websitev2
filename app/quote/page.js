@@ -62,10 +62,10 @@ export default function Quote() {
       }
     }
 
-    // Additional Complexity Fees: $75 is added to the home inspection for each foundation complexity present (crawlspace or unfinished/partial basement). These fees stack.
+    // Additional Complexity Fees: $85 for crawlspace, $75 for unfinished/partial basement. These stack.
     if (propertyType === 'single-family' && serviceType !== 'str') {
       if (foundation === 'crawlspace') {
-        extra += 75;
+        extra += 85;
       }
       if (foundation === 'basement') {
         extra += 75;
@@ -342,7 +342,7 @@ export default function Quote() {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.45 
               }}>
-                ℹ️ <strong>* Additional Complexity Fees:</strong> An additional <strong>$75 fee</strong> is added to the home inspection for each foundation condition present (having a crawlspace or an unfinished/partial basement). These fees are additive and stack per condition (e.g., a home on a crawlspace with an unfinished basement adds $150).
+                ℹ️ <strong>* Additional Complexity Fees:</strong> An additional <strong>$85 fee</strong> is added for a crawlspace and <strong>$75</strong> for an unfinished/partial basement. These fees stack if both conditions are present.
               </div>
             )}
 
@@ -447,9 +447,14 @@ export default function Quote() {
                   Elite Two Person Inspection Team Package Includes:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: 'var(--color-gray-mid)' }}>👥 Two Person Inspection Team Deployment Protocol</span>
-                    <span style={{ fontWeight: 600, color: 'var(--color-white)' }}>Standard</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem', marginBottom: '0.5rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <span style={{ color: 'var(--color-white)', fontWeight: 600 }}>👥 Two Person Inspection Team</span>
+                      <span style={{ fontWeight: 600, color: 'var(--color-white)' }}>Standard</span>
+                    </div>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)' }}>
+                      ⚡ <strong>2 Inspectors = 2x Faster:</strong> Completed in 2–2.5 hours instead of 4+ hours, saving you and your agent time.
+                    </span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ color: 'var(--color-gray-mid)' }}>🔍 FLIR® Infrared Thermal Imaging</span>
@@ -470,8 +475,18 @@ export default function Quote() {
                     </span>
                   </div>
                 </div>
-                <div style={{ marginTop: '0.75rem', fontSize: '0.75rem', color: 'var(--color-gray-mid)', textAlign: 'right', fontStyle: 'italic' }}>
-                  🎁 <strong style={{ color: 'white' }}>$574 in premium diagnostic & protection value</strong> included at no extra charge.
+                <div style={{ 
+                  marginTop: '1rem', 
+                  fontSize: '0.85rem', 
+                  color: 'var(--color-white)', 
+                  textAlign: 'center', 
+                  background: 'rgba(211, 47, 47, 0.15)', 
+                  padding: '0.75rem', 
+                  borderRadius: 'var(--radius-sm)', 
+                  border: '1px solid rgba(211, 47, 47, 0.3)',
+                  fontWeight: 600
+                }}>
+                  🎁 $574 in premium diagnostic & protection value included at no extra charge!
                 </div>
               </div>
               
