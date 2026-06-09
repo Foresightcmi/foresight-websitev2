@@ -431,15 +431,15 @@ export default function Quote() {
           <div style={{ position: 'sticky', top: '120px' }}>
             <div className="card card-premium" style={{ background: 'var(--color-dark)', color: 'var(--color-white)', boxShadow: 'var(--shadow-xl)' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '1rem', borderBottom: '1px solid var(--color-gray-dark)', paddingBottom: '1rem' }}>
-                Estimated Pricing Summary
+                Guaranteed Base Price Summary
               </h3>
               
               <div style={{ fontSize: isCustom ? '1.8rem' : '4rem', fontWeight: 800, color: 'var(--color-red)', marginBottom: '0.5rem', lineHeight: 1 }}>
                 {isCustom ? total : `$${total}`}
               </div>
               
-              <p style={{ color: 'var(--color-gray)', marginBottom: '2rem', fontSize: '0.875rem' }}>
-                Calculated on real Atlanta area inspection schedules. No hidden booking charges.
+              <p style={{ color: 'var(--color-gray)', marginBottom: '2rem', fontSize: '0.825rem', lineHeight: 1.4 }}>
+                Calculated on real Atlanta area inspection schedules. Subject to verification of tax assessor records and property complexity upon booking.
               </p>
 
               <div style={{ borderBottom: '1px solid var(--color-gray-dark)', paddingBottom: '1.25rem', marginBottom: '1.25rem' }}>
