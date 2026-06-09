@@ -6,7 +6,7 @@ const ValueComparison = dynamic(() => import('../components/ValueComparison'), {
 export default function Quote() {
   const [propertyType, setPropertyType] = useState('single-family'); // 'single-family', 'condo'
   const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str'
-  const [sqftRange, setSqftRange] = useState('');
+  const [sqft, setSqft] = useState(2000);
   const [foundation, setFoundation] = useState('slab'); // 'slab', 'basement', 'crawlspace'
   const [ageTier, setAgeTier] = useState('under-25'); // 'under-25', '25-49', 'over-50'
   
@@ -37,67 +37,11 @@ export default function Quote() {
     }
   }, []);
 
-  // Reset square footage selection when property type or service type changes
-  useEffect(() => {
-    const ranges = getSqftRanges();
-    if (ranges.length > 0) {
-      setSqftRange(ranges[0].value);
-    }
-  }, [propertyType, serviceType]);
-
-  // Available ranges depending on inputs
-  const getSqftRanges = () => {
-    if (propertyType === 'condo') {
-      if (serviceType === 'str') {
-        return [
-          { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 355 },
-          { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
-        ];
-      }
-      const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -70 : 0;
-      return [
-        { label: 'Under 1,500 sq ft', value: 'condo-under-1500', price: 470 + adjustment },
-        { label: '1,501+ sq ft', value: 'custom-call', price: 'custom' }
-      ];
-    }
-
-    // Single family/townhome
-    if (serviceType === 'str') {
-      return [
-        { label: 'Short-Term Rental (STR) Compliance Assist (Starting Rate)', value: 'str-base', price: 355 },
-        { label: 'Large Estate or Multi-Unit Compliance Assist', value: 'custom-call', price: 'custom' }
-      ];
-    }
-
-    // Pre-purchase, Pre-listing, 11-Month Warranty, and New Construction
-    const adjustment = (serviceType === 'warranty' || serviceType === 'new-construction') ? -70 : 0;
-
-    return [
-      { label: 'Under 1,500 sq ft', value: 'sf-under-1500', price: 470 + adjustment },
-      { label: '1,501 - 2,000 sq ft', value: 'sf-1501-2000', price: 520 + adjustment },
-      { label: '2,001 - 2,500 sq ft', value: 'sf-2001-2500', price: 570 + adjustment },
-      { label: '2,501 - 3,000 sq ft', value: 'sf-2501-3000', price: 620 + adjustment },
-      { label: '3,001 - 3,500 sq ft', value: 'sf-3001-3500', price: 670 + adjustment },
-      { label: '3,501 - 4,000 sq ft', value: 'sf-3501-4000', price: 720 + adjustment },
-      { label: '4,001 - 4,500 sq ft', value: 'sf-4001-4500', price: 770 + adjustment },
-      { label: '4,501 - 5,000 sq ft', value: 'sf-4501-5000', price: 830 + adjustment },
-      { label: '5,001 - 5,500 sq ft', value: 'sf-5001-5500', price: 900 + adjustment },
-      { label: '5,501+ sq ft', value: 'custom-call', price: 'custom' }
-    ];
-  };
-
   // Calculations logic
   const calculateTotal = () => {
-    const currentRanges = getSqftRanges();
-    const selectedRange = currentRanges.find(r => r.value === sqftRange);
+    let base = Math.round(Number(sqft) * 0.19);
     
-    if (!selectedRange) return { total: 0, isCustom: false };
-
-    if (selectedRange.price === 'custom') {
-      return { total: 'Custom Quote', isCustom: true };
-    }
-
-    let base = selectedRange.price;
+    // Fallback for custom logic if they enter extremely high numbers, but we'll stick to strict 0.19
     let extra = 0;
 
     // Flat Property Age Surcharges: Under 25 = +$0, 25-49 = +$50, 50+ = +$95
@@ -111,7 +55,6 @@ export default function Quote() {
     }
 
     // Additional Complexity Fees: $75 is added to the home inspection for each foundation complexity present (crawlspace or unfinished/partial basement). These fees stack.
-    // We bypass these complexity fees for Host STR audits to keep pricing flat and transparent
     if (propertyType === 'single-family' && serviceType !== 'str') {
       if (foundation === 'crawlspace') {
         extra += 75;
@@ -139,14 +82,10 @@ export default function Quote() {
     let minLeverage = 2000;
     let maxLeverage = 6000;
 
-    // Scale by size/price range
-    const currentRanges = getSqftRanges();
-    const selectedRange = currentRanges.find(r => r.value === sqftRange);
-    if (selectedRange && typeof selectedRange.price === 'number') {
-      const multiplier = selectedRange.price / 350;
-      minLeverage = Math.round(minLeverage * multiplier);
-      maxLeverage = Math.round(maxLeverage * multiplier);
-    }
+    // Scale by size/price range using the 0.19 rate
+    const multiplier = (Math.max(1000, Number(sqft)) * 0.19) / 350;
+    minLeverage = Math.round(minLeverage * multiplier);
+    maxLeverage = Math.round(maxLeverage * multiplier);
 
     // Scale by age tier
     if (ageTier === '25-49') {
@@ -311,15 +250,15 @@ export default function Quote() {
             <h2 style={{ marginBottom: '1.5rem' }}>3. Finished / Heated Size</h2>
             <div className="form-group">
               <label className="form-label">Total Heated Square Footage</label>
-              <select 
+              <input 
+                type="number"
+                min="100"
+                step="10"
                 className="form-control"
-                value={sqftRange}
-                onChange={(e) => setSqftRange(e.target.value)}
-              >
-                {getSqftRanges().map((r, i) => (
-                  <option key={i} value={r.value}>{r.label}</option>
-                ))}
-              </select>
+                value={sqft}
+                onChange={(e) => setSqft(e.target.value)}
+                placeholder="e.g. 2000"
+              />
             </div>
 
             {serviceType === 'str' && (
