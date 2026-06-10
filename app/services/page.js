@@ -62,7 +62,7 @@ export default function Services() {
     },
     {
       title: 'Sewer Scope Inspections',
-      price: '$275',
+      price: '$425',
       description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the home to the municipal connection or septic tank. Highly recommended for older properties.',
       details: ['Main lateral line sewer inspection', 'High-res video feed provided', 'Locate bellies, roots, and cracks', 'Saves thousands in excavation costs'],
       image: '/images/sewer-scope.png',
