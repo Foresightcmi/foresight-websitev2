@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
         "name": "Foresight Home Inspections, LLC",
         "url": "https://www.fhinspectionsatl.com",
         "telephone": "+1-678-480-2110",
-        "email": "plsinspectnow@gmail.com",
+        "email": "inspect@foresightcmi.com",
         "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "additionalType": [
@@ -580,7 +580,7 @@ export default function RootLayout({ children }) {
                 <h3>Contact</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
-                  <li><a href="mailto:plsinspectnow@gmail.com">✉️ plsinspectnow@gmail.com</a></li>
+                  <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
                   <li style={{ marginTop: '0.5rem', lineHeight: '1.4' }}>
                     <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving Atlanta & Surrounding Metro Areas)</span>
                   </li>

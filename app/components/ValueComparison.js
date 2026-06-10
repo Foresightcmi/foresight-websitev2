@@ -95,7 +95,7 @@ export default function ValueComparison() {
           <div style={{ flex: '1 1 500px' }}>
             <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 700 }}>Why Elite Certifications Matter: InterNACHI & The CMI Board</h4>
             <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
-              The <strong>International Association of Certified Home Inspectors (InterNACHI)</strong> is the world&apos;s leading national inspection organization, enforcing strict, federal-level Standards of Practice and ethical compliance. Christopher Boykin is credentialed as a <strong>Certified Master Inspector®</strong>—the absolute highest professional title awarded. Only home inspectors with proven records, thousands of hours of field expertise, and rigorous ongoing training ever qualify. Accept nothing less than a Certified Master Inspector to safeguard your family and investment.
+              The <strong>International Association of Certified Home Inspectors (InterNACHI)</strong> is the world&apos;s leading national inspection organization, enforcing strict, federal-level Standards of Practice and ethical compliance. With over 10 years of experience, Christopher Boykin is credentialed as a <strong>Certified Master Inspector®</strong>—the absolute highest professional title awarded. Only home inspectors with proven records, thousands of hours of field expertise, and rigorous ongoing training ever qualify. Accept nothing less than a Certified Master Inspector to safeguard your family and investment.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>

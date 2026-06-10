@@ -141,7 +141,7 @@ export default async function CityPage({ params }) {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
       "telephone": "+1-678-480-2110",
-      "email": "plsinspectnow@gmail.com"
+      "email": "inspect@foresightcmi.com"
     },
     "areaServed": {
       "@type": "City",

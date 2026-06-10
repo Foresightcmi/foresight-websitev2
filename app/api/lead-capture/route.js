@@ -61,14 +61,14 @@ export async function POST(request) {
         const transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'plsinspectnow@gmail.com',
+            user: 'inspect@foresightcmi.com',
             pass: emailPass,
           },
         });
 
         const mailOptions = {
-          from: 'plsinspectnow@gmail.com',
-          to: 'plsinspectnow@gmail.com', // Sending to yourself
+          from: 'inspect@foresightcmi.com',
+          to: 'inspect@foresightcmi.com', // Sending to yourself
           subject: '🚨 NEW QUOTE LEAD: Price Locked!',
           html: `
             <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">

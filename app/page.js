@@ -93,7 +93,7 @@ export default function Home() {
               <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>
             </h1>
             <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.125rem' }}>
-              At Foresight Home Inspections, LLC, a lead Certified Master Inspector® is paired with another certified inspector. Armed with high-resolution drones, advanced thermal cameras, and electronic moisture diagnostic gear, we bring unparalleled high-tech thoroughness to your inspection.
+              Backed by over 10 years of experience, Foresight Home Inspections, LLC pairs a lead Certified Master Inspector® with a second certified inspector on every job. Armed with high-resolution drones, advanced thermal cameras, and electronic moisture diagnostic gear, we bring unparalleled high-tech thoroughness to your inspection.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
@@ -120,7 +120,7 @@ export default function Home() {
             <div style={{ padding: '0 2rem' }}>
               <h2 style={{ marginBottom: '1.5rem' }}>Who is the Certified Master Inspector leading Foresight Home Inspections?</h2>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.125rem', fontWeight: 600, color: 'var(--color-dark)' }}>
-                Christopher Boykin, CMI, is the founder and lead Certified Master Inspector of Foresight Home Inspections, LLC, performing residential audits, sewer scopes, and radon testing across Atlanta, GA. We send two certified inspectors on every single job to verify twice as much in half the time.
+                With over a decade of hands-on experience, Christopher Boykin, CMI, is the founder and lead Certified Master Inspector of Foresight Home Inspections, LLC, performing residential audits, sewer scopes, and radon testing across Atlanta, GA. We send two certified inspectors on every single job to verify twice as much in half the time.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
                 Together with another fully certified professional inspector, our two person inspection team team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
