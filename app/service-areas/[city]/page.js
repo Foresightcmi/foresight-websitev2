@@ -112,7 +112,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Does Foresight Home Inspections offer a warranty in ${cityName}?`,
-      a: `Yes! Because Christopher Boykin holds the Certified Master Inspector® designation, every Foresight inspection in ${cityName} comes with the $10,000 Elite Master Inspection Warranty at no additional cost. Coverage includes up to $2,250 each for major appliances, structural components, and major mechanicals (HVAC, electrical, plumbing), plus up to $2,250 for mold remediation and $1,000 for roof leak protection — all with a $0 deductible. The warranty is valid for the first 3 months only.`,
+      a: `Yes! Because Christopher Boykin holds the Certified Master Inspector® designation, every Foresight inspection in ${cityName} comes with the $10,000 Elite Master Inspection Warranty at no additional cost. Coverage includes up to $2,250 each for major appliances, structural components, and major mechanicals (HVAC, electrical, plumbing), plus up to $2,250 for mold remediation and $1,000 for roof leak protection — all with a $0 deductible. The warranty is valid for 90 days from closing or 120 days from the inspection date, whichever comes first.`,
     },
     {
       q: `Do you offer radon testing in ${cityName}, GA?`,
@@ -275,7 +275,7 @@ export default async function CityPage({ params }) {
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span style={{ color: 'var(--color-red)' }}>✓</span> Elite Terms
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Valid for the first 3 months only.</p>
+              <p style={{ color: 'var(--color-gray-mid)' }}>90 Days from closing or 120 Days from inspection (whichever comes first).</p>
             </div>
             
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>

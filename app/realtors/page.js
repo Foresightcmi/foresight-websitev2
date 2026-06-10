@@ -355,7 +355,7 @@ export default function Realtors() {
                 What happens if a defect is found after closing?
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0 }}>
-                Every standard buyer inspection we conduct is backed by a complimentary <strong>$10,000 Elite Master Inspection Warranty</strong> with $0 deductible. If a major covered appliance, structural component, major HVAC/plumbing element, or roof leak manifests within the first 3 months, your client is financially protected. This dramatically reduces post-closing conflict for the real estate agent!
+                Every standard buyer inspection we conduct is backed by a complimentary <strong>$10,000 Elite Master Inspection Warranty</strong> with $0 deductible. If a major covered appliance, structural component, major HVAC/plumbing element, or roof leak manifests within 90 days of closing (or 120 days of inspection), your client is financially protected. This dramatically reduces post-closing conflict for the real estate agent!
               </p>
             </div>
           </div>
