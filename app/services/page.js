@@ -147,7 +147,7 @@ export default function Services() {
         "name": "Do you offer a warranty?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Every Foresight inspection includes our $10,000 Elite Master Inspection Warranty at no additional cost. This warranty provides coverage for 90 days after closing on items that were inspected, giving you added financial protection and peace of mind during your transition into your new home."
+          "text": "Yes. Every Foresight inspection includes our $10,000 Elite Master Inspection Warranty at no additional cost. This warranty provides coverage for the first 3 months only on items that were inspected, giving you added financial protection and peace of mind during your transition into your new home."
         }
       },
       {
@@ -585,7 +585,7 @@ export default function Services() {
           <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
             <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Do you offer a warranty?</summary>
             <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
-              Yes. Every Foresight inspection includes our $10,000 Elite Master Inspection Warranty at no additional cost. This warranty provides coverage for 90 days after closing on items that were inspected, giving you added financial protection and peace of mind during your transition into your new home.
+              Yes. Every Foresight inspection includes our $10,000 Elite Master Inspection Warranty at no additional cost. This warranty provides coverage for the first 3 months only on items that were inspected, giving you added financial protection and peace of mind during your transition into your new home.
             </p>
           </details>
 

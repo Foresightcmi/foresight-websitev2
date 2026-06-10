@@ -73,7 +73,7 @@ export default function ValueComparison() {
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Free $10,000 Elite Warranty:</strong> Backed by InterNACHI, we stand completely behind our inspections with a 90-day structural/mechanical warranty to protect your closing transaction.</span>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Free $10,000 Elite Warranty:</strong> Backed by InterNACHI, we stand completely behind our inspections with a 3-month structural/mechanical warranty to protect your closing transaction.</span>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>

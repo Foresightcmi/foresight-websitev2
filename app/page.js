@@ -67,7 +67,7 @@ export default function Home() {
             "name": "What is covered under the complimentary $10,000 Foresight warranty?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for 90 days from closing. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs."
+              "text": "Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for the first 3 months only. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs."
             }
           }
         ]
@@ -314,7 +314,7 @@ export default function Home() {
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span style={{ color: 'var(--color-red)' }}>✓</span> Elite Terms
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>90 Days from closing or 120 Days from inspection (whichever comes first).</p>
+              <p style={{ color: 'var(--color-gray-mid)' }}>Valid for the first 3 months only.</p>
             </div>
             
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
@@ -416,7 +416,7 @@ export default function Home() {
                 <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
               </summary>
               <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for 90 days from closing. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs.
+                Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for the first 3 months only. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs.
               </p>
             </details>
           </div>
