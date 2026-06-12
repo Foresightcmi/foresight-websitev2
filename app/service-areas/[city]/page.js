@@ -217,7 +217,7 @@ export default async function CityPage({ params }) {
       <section className="hero" style={{ padding: '6rem 0' }}>
         <div className="container">
           <h2 className="slogan-heading">
-            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+            &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </h2>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1rem' }}>

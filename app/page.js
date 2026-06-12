@@ -85,7 +85,7 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <h2 className="slogan-heading">
-            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+            &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </h2>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>

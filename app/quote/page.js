@@ -192,7 +192,7 @@ export default function Quote() {
       <div className="container">
         <div className="section-title" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
           <h2 className="slogan-heading-light">
-            &ldquo;Because hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
+            &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </h2>
           <h1>Foresight Pricing Estimator</h1>
           <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0' }}>
