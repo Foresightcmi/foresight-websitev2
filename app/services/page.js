@@ -4,7 +4,7 @@ import ValueComparison from '../components/ValueComparison';
 import QualityChecklist from '../components/QualityChecklist';
 
 export const metadata = {
-  title: 'Services & Pricing | Foresight Home Inspections',
+  title: 'Home Inspection Services & Pricing',
   description: 'View our comprehensive home inspection services starting at $420. We offer standard buyer inspections, pre-listing inspections, WDO/termite, pool/spa, and radon testing across Atlanta.',
   keywords: ['home inspection services Atlanta', 'home inspection pricing Georgia', 'radon gas testing cost', 'sewer scope inspection Atlanta', 'termite inspection Atlanta', 'pool and spa inspector Lithonia GA'],
   alternates: {

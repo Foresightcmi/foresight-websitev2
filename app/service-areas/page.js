@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Service Areas | Foresight Home Inspections',
-  description: 'Foresight Home Inspections serves over 160 cities across Georgia. Find a certified master home inspector in your local area.',
+  description: 'Foresight Home Inspections serves over 163 cities across Georgia. Find a certified master home inspector in your local area.',
   openGraph: {
     title: 'Service Areas | Foresight Home Inspections',
-    description: 'Foresight Home Inspections serves over 160 cities across Georgia. Find a certified master home inspector in your local area.',
+    description: 'Foresight Home Inspections serves over 163 cities across Georgia. Find a certified master home inspector in your local area.',
     url: 'https://www.fhinspectionsatl.com/service-areas',
     type: 'website',
   },
@@ -56,7 +56,7 @@ export default function ServiceAreasDirectory() {
         <div className="container">
           <h1 style={{ color: 'var(--color-white)' }}>Areas We Serve</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
-            Proudly providing premium two person inspection team services across Georgia. Find your city below to learn more about our local services.
+            Proudly providing premium two-inspector team services across Georgia. Find your city below to learn more about our local services.
           </p>
         </div>
       </section>

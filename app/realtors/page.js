@@ -15,6 +15,7 @@ export const metadata = {
 const realtorsFaqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  url: 'https://www.fhinspectionsatl.com/realtors',
   mainEntity: [
     {
       '@type': 'Question',

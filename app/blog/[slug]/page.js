@@ -70,6 +70,7 @@ export default async function BlogPost({ params }) {
     "author": {
       "@type": "Person",
       "name": "Christopher Boykin",
+      "honorificSuffix": "CMI",
       "jobTitle": "Certified Master Inspector",
       "sameAs": "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
     },
@@ -89,6 +90,12 @@ export default async function BlogPost({ params }) {
         "@type": "WebSite",
         "@id": "https://www.fhinspectionsatl.com/#website"
       }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.fhinspectionsatl.com/images/Logopng.png",
+      "width": 800,
+      "height": 600
     },
     "speakable": {
       "@type": "SpeakableSpecification",
@@ -118,7 +125,7 @@ export default async function BlogPost({ params }) {
             </Link>
           </div>
           <span className="badge" style={{ marginBottom: '1rem' }}>{post.category}</span>
-          <h1 style={{ color: 'var(--color-white)', fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem' }}>
+          <h1 className="article-title" style={{ color: 'var(--color-white)', fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem' }}>
             {post.title}
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--color-gray-mid)', fontSize: '0.95rem' }}>

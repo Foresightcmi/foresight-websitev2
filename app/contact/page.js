@@ -16,13 +16,17 @@ const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contact Foresight Home Inspections',
-  description: 'Contact page for Foresight Home Inspections, LLC — Certified Master Inspector-led dual home inspections in Metro Atlanta, Georgia.',
   url: 'https://www.fhinspectionsatl.com/contact',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://www.fhinspectionsatl.com/#website',
+  },
+  description: 'Contact page for Foresight Home Inspections, LLC — Certified Master Inspector-led dual home inspections in Metro Atlanta, Georgia.',
   mainEntity: {
     '@type': 'HomeAndConstructionBusiness',
     '@id': 'https://www.fhinspectionsatl.com/#business',
     name: 'Foresight Home Inspections, LLC',
-    telephone: '678-480-2110',
+    telephone: '+1-678-480-2110',
     email: 'inspect@foresightcmi.com',
   },
 };

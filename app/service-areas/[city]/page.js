@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
   const title = cityData?.['Meta Title']
     || `Best Home Inspector in ${cityName}, GA | Foresight Home Inspections`;
   const description = cityData?.['Meta Description']
-    || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, two person inspection team services led by a Certified Master Inspector for ultimate peace of mind.`;
+    || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, two-inspector team services led by a Certified Master Inspector for ultimate peace of mind.`;
 
   return {
     title,
@@ -104,11 +104,11 @@ export default async function CityPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
-      a: `Home inspection pricing in ${cityName} starts at $420+ for a standard buyer's inspection and pre-listing seller's inspection. 11-month warranty inspections and new construction final phase inspections start at $350+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($110 bundled / $150 standalone), pool evaluation ($300 flat rate), or sewer scope inspection ($400). Single-family home inspections have additional complexity fees of $75 added for each foundation condition present (if the home has a crawlspace or has an unfinished basement foundation). These fees stack per condition (e.g., a home on a crawlspace with an unfinished basement adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+      a: `Home inspection pricing in ${cityName} starts at $420+ for a standard buyer's inspection and pre-listing seller's inspection. 11-month warranty inspections and new construction final phase inspections start at $350+. Pricing varies based on the home's square footage, age, foundation type, and any add-on services such as radon testing ($200+), termite/WDO inspection ($110 bundled / $150 standalone), pool evaluation ($300 flat rate), or sewer scope inspection ($425). Single-family home inspections have additional complexity fees of $75 added for each foundation condition present (if the home has a crawlspace or has an unfinished basement foundation). These fees stack per condition (e.g., a home on a crawlspace with an unfinished basement adds $150). Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
-      a: `Look for a Certified Master Inspector — the highest credential from InterNACHI. Foresight Home Inspections exceeds this standard with a unique two person inspection team model: two certified inspectors are on every job, so coverage is thorough and nothing slips through the cracks. We also use advanced thermal imaging to detect hidden moisture, insulation gaps, and electrical hotspots. All findings follow InterNACHI Standards of Practice, and our recommendation language complies with industry guidelines.`,
+      a: `Look for a Certified Master Inspector — the highest credential from InterNACHI. Foresight Home Inspections exceeds this standard with a unique two-inspector team model: two certified inspectors are on every job, so coverage is thorough and nothing slips through the cracks. We also use advanced thermal imaging to detect hidden moisture, insulation gaps, and electrical hotspots. All findings follow InterNACHI Standards of Practice, and our recommendation language complies with industry guidelines.`,
     },
     {
       q: `Does Foresight Home Inspections offer a warranty in ${cityName}?`,
@@ -124,11 +124,11 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you inspect new construction homes in ${cityName}?`,
-      a: `Absolutely. New construction final phase inspections in ${cityName} start at $350+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our two person inspection team team performs a thorough final inspection check of the foundation, electrical, plumbing, HVAC, insulation, grading, and all final interior/exterior systems before closing. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
+      a: `Absolutely. New construction final phase inspections in ${cityName} start at $350+ and are one of our most requested services. Even brand-new homes have issues — municipal code inspectors are often overloaded and can miss details. Our two-inspector team performs a thorough final inspection check of the foundation, electrical, plumbing, HVAC, insulation, grading, and all final interior/exterior systems before closing. Visit our <a href="/quote">quote page</a> for exact pricing based on your home's size.`,
     },
     {
       q: `What does thermal imaging detect during a home inspection in ${cityName}?`,
-      a: `Thermal imaging (infrared camera technology) is included in every Foresight inspection at no extra charge. In ${cityName} homes, our FLIR thermal cameras detect hidden moisture intrusion behind walls and ceilings, missing or damaged insulation, electrical hotspots that could be fire hazards, HVAC duct leaks, and plumbing leaks beneath floors. These are problems completely invisible to the naked eye that could cost thousands to repair if undiscovered. This advanced technology is a standard part of our two person inspection team approach.`,
+      a: `Thermal imaging (infrared camera technology) is included in every Foresight inspection at no extra charge. In ${cityName} homes, our FLIR thermal cameras detect hidden moisture intrusion behind walls and ceilings, missing or damaged insulation, electrical hotspots that could be fire hazards, HVAC duct leaks, and plumbing leaks beneath floors. These are problems completely invisible to the naked eye that could cost thousands to repair if undiscovered. This advanced technology is a standard part of our two-inspector team approach.`,
     },
   ];
 
@@ -136,6 +136,9 @@ export default async function CityPage({ params }) {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `https://www.fhinspectionsatl.com/service-areas/${slug}#service`,
+    "name": `Home Inspection in ${cityName}, GA`,
+    "url": `https://www.fhinspectionsatl.com/service-areas/${slug}`,
     "serviceType": "Home Inspection",
     "provider": {
       "@type": "HomeAndConstructionBusiness",
@@ -426,7 +429,7 @@ export default async function CityPage({ params }) {
             <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
             <h2>Our High-Tech Diagnostic Suite in <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We don't just perform a physical inspection. Foresight equips every two person inspection team team in {cityName} with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+              We don't just perform a physical inspection. Foresight equips every two-inspector team in {cityName} with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
             </p>
           </div>
 
@@ -588,7 +591,7 @@ export default async function CityPage({ params }) {
         <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
           <h2 style={{ marginBottom: '1rem' }}>Ready to Schedule Your Inspection in <span style={{ color: 'var(--color-red)' }}>{cityName}</span>?</h2>
           <p style={{ color: 'var(--color-gray-dark)', marginBottom: '2rem', fontSize: '1.1rem' }}>
-            Book your certified two person inspection team home inspection today. Securing your slot takes less than 5 minutes and includes our comprehensive $10,000 Elite Master warranty.
+            Book your certified two-inspector team home inspection today. Securing your slot takes less than 5 minutes and includes our comprehensive $10,000 Elite Master warranty.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.2rem', boxShadow: 'var(--shadow-md)' }}>

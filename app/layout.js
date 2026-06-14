@@ -75,14 +75,16 @@ export default function RootLayout({ children }) {
         "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Atlanta",
+          "streetAddress": "1816 South Deshon Road",
+          "addressLocality": "Lithonia",
           "addressRegion": "GA",
+          "postalCode": "30058",
           "addressCountry": "US"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "33.7123",
-          "longitude": "-84.1052"
+          "latitude": "33.7275",
+          "longitude": "-84.1444"
         },
         "areaServed": [
         {
@@ -410,10 +412,17 @@ export default function RootLayout({ children }) {
         "dayOfWeek": "Thursday",
         "opens": "08:00",
         "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "17:00",
+        "description": "By appointment only"
       }
     ],
     "sameAs": [
-      "https://maps.app.goo.gl/R1nk9tbM19aDvXpA8",
+      "https://www.google.com/maps/search/Foresight+Home+Inspections+Lithonia+GA",
       "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
       "https://www.tiktok.com/@fhinspectionsatl",
       "https://www.youtube.com/@ForesightHomeInspections-t6r",
@@ -470,13 +479,8 @@ export default function RootLayout({ children }) {
       ],
       "sameAs": [
         "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
-      ]
-    },
-    "employee": {
-      "@type": "Person",
-      "name": "Christopher Boykin",
-      "jobTitle": "Certified Master Inspector",
-      "award": "Certified Master Inspector (CMI) Designation - September 2024"
+      ],
+      "award": "Certified Master Inspector® (CMI) Designation - September 2024"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -512,7 +516,7 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "CreativeWork",
-        "text": "Fact: Every home inspection includes a $10,000 Elite Master warranty at no extra cost."
+        "text": "Fact: Every home inspection includes a $10,000 Elite Master Inspection Warranty at no extra cost."
       }
     ]
   },

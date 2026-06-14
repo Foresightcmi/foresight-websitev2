@@ -8,6 +8,17 @@ const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
 const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
 const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: true });
 
+export const metadata = {
+  title: 'Atlanta Home Inspections | Two Inspectors | CMI-Led',
+  description: 'Two certified inspectors on every job. Led by Christopher Boykin, Certified Master Inspector®. Premium home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
+  alternates: { canonical: 'https://www.fhinspectionsatl.com' },
+  openGraph: {
+    title: 'Foresight Home Inspections | Two Inspectors on Every Job',
+    description: 'Atlanta home inspections led by a Certified Master Inspector®. Two inspectors. $10,000 warranty included. Serving 163+ Metro Atlanta cities.',
+    url: 'https://www.fhinspectionsatl.com',
+  },
+};
+
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -43,7 +54,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at a base rate of $450+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $425, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled)."
+              "text": "Foresight home inspections start at a base rate of $420+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $425, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled)."
             }
           },
           {
@@ -126,7 +137,7 @@ export default function Home() {
                 With over a decade of hands-on experience, Christopher Boykin, CMI, is the founder and lead Certified Master Inspector of Foresight Home Inspections, LLC, performing residential audits, sewer scopes, and radon testing across Atlanta, GA. We send two certified inspectors on every single job to verify twice as much in half the time.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
-                Together with another fully certified professional inspector, our two person inspection team team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
+                Together with another fully certified professional inspector, our two-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, background: 'var(--color-gray-light)', padding: '1rem', borderLeft: '4px solid var(--color-red)', borderRadius: 'var(--radius-sm)' }}>
                 Every inspection integrates FLIR thermal imaging and aerial drone technology, and includes a $10,000 Elite Master Inspection Warranty with a $0 deductible &mdash; backed by the Master Inspector Certification Board.
@@ -167,7 +178,7 @@ export default function Home() {
             <span className="badge" style={{ marginBottom: '1rem' }}>Advanced Equipment</span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800 }}>Our High-Tech Diagnostic Suite</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We don't just perform a physical inspection. Foresight equips every two person inspection team team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
+              We don't just perform a physical inspection. Foresight equips every two-inspector team with state-of-the-art diagnostic technology to see the invisible and protect your home investment.
             </p>
           </div>
 
@@ -389,7 +400,7 @@ export default function Home() {
                 <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
               </summary>
               <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Foresight home inspections start at a base rate of $450+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $425, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled).
+                Foresight home inspections start at a base rate of $420+ depending on the square footage of the property. Add-on services include sewer scope camera inspections for $425, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled).
               </p>
             </details>
 
