@@ -116,11 +116,11 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you offer radon testing in ${cityName}, GA?`,
-      a: `Yes — Foresight Home Inspections offers professional radon gas testing in ${cityName} as an add-on service for $200+. Radon is the second leading cause of lung cancer in the United States and is completely odorless and invisible. Our testing uses a continuous 48-hour professional diagnostic monitor that provides highly accurate readings. The EPA recommends radon testing for every home purchase, regardless of location. You can add radon testing to any inspection package through our <a href="/quote">instant quote page</a>.`,
+      a: `Yes — Foresight Home Inspections offers professional radon gas testing in ${cityName} as an add-on service for $200+. Radon is the second leading cause of lung cancer in the United States, according to the U.S. Environmental Protection Agency (EPA), and is completely odorless and invisible. Our testing uses a continuous 48-hour professional diagnostic monitor that provides highly accurate readings. The EPA recommends radon testing for every home purchase, regardless of location. You can add radon testing to any inspection package through our <a href="/quote">instant quote page</a>.`,
     },
     {
       q: `Do you do termite inspections in ${cityName}, GA?`,
-      a: `Yes — we offer Official Georgia Wood Destroying Organism (WDO) inspections in ${cityName} through our licensed pest control partners. Termite and WDO inspections are critical in Georgia's warm, humid climate where subterranean termites are highly active. Pricing is $110 when bundled with a home inspection, or $150 for a standalone service. The inspection produces an Official Georgia Wood Infestation Report, which is often required by lenders at closing.`,
+      a: `Yes — we offer Official Georgia Wood Destroying Organism (WDO) inspections in ${cityName} through our licensed pest control partners. Termite and WDO inspections are critical in Georgia's warm, humid climate where subterranean termites are highly active. The National Pest Management Association (NPMA) estimates that termites cause over $5 billion in property damage annually in the United States. Pricing is $110 when bundled with a home inspection, or $150 for a standalone service. The inspection produces an Official Georgia Wood Infestation Report, which is often required by lenders at closing.`,
     },
     {
       q: `Do you inspect new construction homes in ${cityName}?`,

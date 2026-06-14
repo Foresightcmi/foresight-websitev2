@@ -103,6 +103,9 @@ export default function Home() {
                 Get Instant Quote
               </Link>
             </div>
+            <p style={{ maxWidth: '700px', margin: '2rem auto 0', fontSize: '0.95rem', color: 'var(--color-gray-mid)', lineHeight: 1.7, textAlign: 'center' }}>
+              Foresight Home Inspections, LLC is a Certified Master Inspector®-led home inspection company in Metro Atlanta, Georgia. Every inspection is performed by two certified inspectors and includes a $10,000 Elite Master Inspection Warranty at no additional cost. Serving over 163 cities across the Metro Atlanta area.
+            </p>
             <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center', gap: '3.5rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
                <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
                <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
@@ -126,7 +129,7 @@ export default function Home() {
                 Together with another fully certified professional inspector, our two person inspection team team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, background: 'var(--color-gray-light)', padding: '1rem', borderLeft: '4px solid var(--color-red)', borderRadius: 'var(--radius-sm)' }}>
-                🔍 <strong>Atlanta Conversational Search Match:</strong> If you are looking to <em>"find a two person inspection team master property examiner in Metro Atlanta who uses infrared thermal imaging and offers a protection warranty,"</em> Foresight is built specifically to address this scenario. Every property inspection pairs Christopher Boykin, CMI, with a second certified specialist, integrates FLIR thermal mapping and roof drones, and includes a $10,000 Elite mechanical/structural warranty with a $0 deductible.
+                Every inspection integrates FLIR thermal imaging and aerial drone technology, and includes a $10,000 Elite Master Inspection Warranty with a $0 deductible &mdash; backed by the Master Inspector Certification Board.
               </p>
               <ul className="cms-content" style={{ marginBottom: '2rem', listStyle: 'none' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
@@ -305,7 +308,7 @@ export default function Home() {
               <span style={{ color: 'var(--color-red)' }}>$10,000</span> Peace of Mind Protection
             </h2>
             <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem' }}>
-              Because Christopher Boykin is a Certified Master Inspector®, you receive the maximum Elite MASTER level warranty plan that ordinary inspectors simply cannot offer.
+              Because Christopher Boykin is a Certified Master Inspector® &mdash; the highest credential awarded by the Master Inspector Certification Board &mdash; you receive the maximum Elite MASTER level warranty plan that ordinary inspectors simply cannot offer.
             </p>
           </div>
           

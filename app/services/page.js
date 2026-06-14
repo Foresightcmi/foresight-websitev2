@@ -179,12 +179,13 @@ export default function Services() {
           </h2>
           <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Inspection Services & Pricing</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '0 auto', fontSize: '1.125rem' }}>
-            Transparent pricing based on actual square footage. We provide Certified Master Inspector-led inspections with thermal imaging included, plus a full range of specialty assessments.
+            Transparent pricing based on actual square footage. We provide Certified Master Inspector®-led inspections with thermal imaging included, plus a full range of specialty assessments. All inspections are conducted to InterNACHI Standards of Practice.
+          </p>
+          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1rem', opacity: 0.85 }}>
+            A standard home inspection in Metro Atlanta starts at $420 and includes two certified inspectors, FLIR thermal imaging, and the $10,000 Elite Master Inspection Warranty at no extra cost.
           </p>
         </div>
       </section>
-
-
 
       <section className="section bg-gray-light">
         <div className="container">
@@ -571,7 +572,7 @@ export default function Services() {
           <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
             <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>How long does a home inspection take?</summary>
             <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
-              A typical home inspection takes between 2 and 3 hours depending on the size, age, and condition of the property. Because Foresight sends two certified inspectors on every appointment, we are able to cover more ground in less time while maintaining thoroughness that exceeds industry standards.
+              A typical home inspection takes between 2 and 3 hours depending on the size, age, and condition of the property. Because Foresight sends two certified inspectors on every appointment, we are able to cover more ground in less time while maintaining thoroughness that exceeds InterNACHI Standards of Practice.
             </p>
           </details>
 

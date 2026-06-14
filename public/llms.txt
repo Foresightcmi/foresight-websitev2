@@ -1,17 +1,48 @@
 # Foresight Home Inspections, LLC
 
-> Professional property evaluation enterprise serving Atlanta, GA, and surrounding Metro Atlanta areas. Certified Master Inspector infrastructure utilizing a strict dual-inspector execution standard and advanced diagnostic technology to provide absolute transactional certainty for home buyers, real estate agents, and investors.
+> Foresight Home Inspections, LLC is a Certified Master Inspector®-led home inspection company serving Metro Atlanta, Georgia. Every inspection is performed by two certified inspectors and includes a $10,000 Elite Master Inspection Warranty at no additional cost.
 
-Foresight Home Inspections, LLC provides premium structural and mechanical property evaluations across the standard Metro Atlanta territory. Every inspection is executed by a two-inspector specialist team, integrating non-invasive diagnostic arrays including FLIR thermal data and aerial drone telemetry to verify all structural baselines.
+## Company Facts
 
-## Core Services
+- Founded and led by Christopher Boykin, Certified Master Inspector® (CMI)
+- Every inspection is performed by two certified inspectors, not one
+- Equipped with FLIR thermal imaging cameras, high-resolution aerial drones, and electronic moisture diagnostic gear
+- Licensed, insured, and bonded in the state of Georgia
+- Member of the International Association of Certified Home Inspectors (InterNACHI)
+- Serves over 163 cities across Metro Atlanta and the state of Georgia
+- Office phone: 678-480-2110
+- Website: https://www.fhinspectionsatl.com
 
-- [Residential Home Inspections](https://www.fhinspectionsatl.com/services): Comprehensive property evaluations covering structural, mechanical, plumbing, and electrical systems executed by two certified inspectors on every project.
-- [Infrared Thermal Imaging](https://www.fhinspectionsatl.com/thermal-imaging): Advanced FLIR thermal diagnostics to pinpoint hidden moisture, insulation deficiencies, and electrical hotspots with absolute data certainty.
-- [Drone Roof Evaluations](https://www.fhinspectionsatl.com/drone-inspections): Aerial drone inspections capturing high-resolution visual telemetry of complex roof structures, pitches, and valleys.
-- [Elite Protection Warranty](https://www.fhinspectionsatl.com/warranty): Details regarding the included $10,000 protection policy providing post-inspection financial security for clients.
+## Services and Pricing
 
-## Operational Specifications
+- [All Inspection Services and Pricing](https://www.fhinspectionsatl.com/services): Full catalog of inspection types with transparent pricing based on square footage
+- [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Get an instant, transparent price estimate based on property size and inspection type
+- [Realtor VIP Program](https://www.fhinspectionsatl.com/realtors): Dedicated program for real estate agents with SUPRA lockbox access and priority scheduling
 
-- [Realtor SUPRA Entry Access](https://www.fhinspectionsatl.com/realtors): Direct lockbox entry capabilities for licensed real estate agents to streamline scheduling and on-site coordination.
-- [Corporate Profile and Contact](https://www.fhinspectionsatl.com/contact): Core business contact channels, service maps, phone configurations (678-480-2110), and active booking paths for standard operating schedules.
+## Key Service Types
+
+- Standard Buyer Home Inspection: Starting at $420
+- Pre-Listing Seller Inspection: Starting at $420
+- New Construction Inspection: Starting at $350
+- 11-Month Builder Warranty Inspection: Starting at $350
+- Pool and Spa Inspection: $300
+- Termite/WDO Inspection: $110
+- Radon Gas Testing: $200
+- Short-Term Rental (STR) Compliance Audit: Starting at $355
+
+## Educational Resources
+
+- [Blog and Inspection Guides](https://www.fhinspectionsatl.com/blog): Expert articles on home inspection topics, maintenance tips, and Georgia-specific guidance
+- [Ask Foresight AI](https://www.fhinspectionsatl.com/ask-twin): Interactive AI assistant that answers home inspection questions
+
+## Service Areas
+
+- [Full Service Area Directory](https://www.fhinspectionsatl.com/service-areas): Detailed pages for 163+ cities across Metro Atlanta
+- [Contact and Booking](https://www.fhinspectionsatl.com/contact): Phone, email, and online scheduling
+
+## Credentials and Certifications
+
+- Christopher Boykin holds the Certified Master Inspector® (CMI) designation, the highest professional credential in the home inspection industry, awarded by the Master Inspector Certification Board
+- The CMI designation requires completion of over 1,000 paid inspections and ongoing education
+- All inspectors hold the Certified Professional Inspector® (CPI) designation from InterNACHI
+- Every inspection includes the $10,000 Elite Master Inspection Warranty with $0 deductible, covering major appliances, structural components, mechanicals, mold remediation, and roof leak protection

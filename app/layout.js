@@ -450,17 +450,22 @@ export default function RootLayout({ children }) {
         {
           "@type": "EducationalOccupationalCredential",
           "credentialCategory": "Professional Certification",
-          "name": "Certified Master Inspector",
+          "name": "Certified Master Inspector® (CMI)",
           "recognizedBy": {
             "@type": "Organization",
-            "name": "InterNACHI",
-            "url": "https://www.nachi.org"
+            "name": "Master Inspector Certification Board",
+            "url": "https://certifiedmasterinspector.org"
           }
         },
         {
           "@type": "EducationalOccupationalCredential",
           "credentialCategory": "Professional Certification",
-          "name": "Certified Professional Inspector (CPI)"
+          "name": "Certified Professional Inspector® (CPI)",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "InterNACHI",
+            "url": "https://www.nachi.org"
+          }
         }
       ],
       "sameAs": [
@@ -478,7 +483,19 @@ export default function RootLayout({ children }) {
       "ratingValue": "4.8",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "48"
+      "ratingCount": "43"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Home Inspection Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Home Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "420", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "420", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "350", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "300" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "200", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite/WDO Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "110" } }
+      ]
     },
     "subjectOf": [
       {
