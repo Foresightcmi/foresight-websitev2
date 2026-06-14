@@ -25,10 +25,10 @@
 
 ## Key Service Types
 
-- Standard Buyer Home Inspection: Starting at $420
-- Pre-Listing Seller Inspection: Starting at $420
-- New Construction Inspection: Starting at $350
-- 11-Month Builder Warranty Inspection: Starting at $350
+- Standard Buyer Home Inspection: Starting at $295 (condos) / $345 (homes)
+- Pre-Listing Seller Inspection: Starting at $250 (condos) / $365 (homes)
+- New Construction Inspection: Starting at $355
+- 11-Month Builder Warranty Inspection: Starting at $335
 - Pool and Spa Inspection: $300
 - Termite/WDO Inspection: $110
 - Radon Gas Testing: $200

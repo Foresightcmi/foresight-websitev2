@@ -39,15 +39,27 @@ export default function QuoteClient() {
 
   // Calculations logic
   const calculateTotal = () => {
-    let base = 450; // Standard base fee
+    let base;
     
     if (serviceType === 'str') {
       base = 355; // Keep base for STR compliance
-    } else {
+    } else if (serviceType === 'condo') {
       const parsedSqft = Number(sqft);
-      if (parsedSqft > 1500) {
-        base += Math.round((parsedSqft - 1500) * 0.14);
-      }
+      if (parsedSqft <= 1000) base = 295;
+      else base = 325; // 1001-1800
+    } else {
+      // Pre-Purchase Buyer Home Inspection tiered pricing from fee schedule
+      const parsedSqft = Number(sqft);
+      if (parsedSqft <= 1000) base = 345;
+      else if (parsedSqft <= 1500) base = 375;
+      else if (parsedSqft <= 2000) base = 410;
+      else if (parsedSqft <= 2500) base = 435;
+      else if (parsedSqft <= 3000) base = 465;
+      else if (parsedSqft <= 3500) base = 485;
+      else if (parsedSqft <= 4000) base = 500;
+      else if (parsedSqft <= 4500) base = 555;
+      else if (parsedSqft <= 5000) base = 595;
+      else base = 635; // 5001-5500+
     }
     
     let extra = 0;
