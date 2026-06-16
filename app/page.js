@@ -95,12 +95,12 @@ export default function Home() {
       />
       <section className="hero">
         <div className="container">
-          <h2 className="slogan-heading">
+          <p className="slogan-heading" style={{ marginBottom: '1rem' }}>
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
-          </h2>
+          </p>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              Certified Home Inspections<br />
+              Atlanta&rsquo;s Certified Home Inspections<br />
               <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>
             </h1>
             <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.125rem' }}>

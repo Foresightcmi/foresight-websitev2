@@ -2,9 +2,24 @@ import './globals.css';
 import Script from 'next/script';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Inter, Outfit } from 'next/font/google';
 import Header from './components/Header';
 import WidgetWrapper from './components/WidgetWrapper';
 import Breadcrumbs from './components/Breadcrumbs';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-outfit',
+});
 
 export const metadata = {
   metadataBase: new URL('https://www.fhinspectionsatl.com'),
@@ -484,7 +499,7 @@ export default function RootLayout({ children }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
+      "ratingValue": "4.9",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "43"
@@ -533,12 +548,15 @@ export default function RootLayout({ children }) {
 };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/images/Logopng.png" type="image/png" />
+        <link rel="icon" href="/images/Logopng.png" type="image/png" sizes="96x96" />
         <link rel="apple-touch-icon" href="/images/Logopng.png" />
         <link rel="manifest" href="/manifest.json" />
+        <meta name="geo.region" content="US-GA" />
+        <meta name="geo.placename" content="Lithonia" />
+        <meta name="geo.position" content="33.7275;-84.1444" />
+        <meta name="ICBM" content="33.7275, -84.1444" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -611,9 +629,10 @@ export default function RootLayout({ children }) {
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/">Home</Link></li>
                   <li><Link href="/services">Services & Pricing</Link></li>
+                  <li><Link href="/blog">Blog & Guides</Link></li>
                   <li><Link href="/realtors">Realtors VIP Program</Link></li>
                   <li><Link href="/quote">Instant Quote</Link></li>
-                  <li><Link href="/ask-twin">Ask Foresight AI Portal</Link></li>
+                  <li><Link href="/contact">Contact Us</Link></li>
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
                 </ul>
               </div>
@@ -623,7 +642,11 @@ export default function RootLayout({ children }) {
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
                   <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
                   <li style={{ marginTop: '0.5rem', lineHeight: '1.4' }}>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving Atlanta & Surrounding Metro Areas)</span>
+                    <span style={{ fontSize: '0.9rem' }}>📍 1816 South Deshon Road</span><br />
+                    <span style={{ fontSize: '0.9rem' }}>Lithonia, GA 30058</span>
+                  </li>
+                  <li style={{ marginTop: '0.25rem', lineHeight: '1.4' }}>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving 163+ Cities Across Metro Atlanta)</span>
                   </li>
                 </ul>
               </div>
