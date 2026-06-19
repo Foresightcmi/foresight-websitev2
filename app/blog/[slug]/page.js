@@ -60,48 +60,74 @@ export default async function BlogPost({ params }) {
     );
   }
 
+  const wordCount = (post.content || '').replace(/<[^>]*>/g, '').split(/\s+/).length;
+
+  const schemaGraph = [
+    {
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.description || post.excerpt,
+      "datePublished": post.date,
+      "dateModified": post.dateModified || post.date,
+      "wordCount": wordCount,
+      "articleSection": post.category || "Home Inspection",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Christopher Boykin",
+        "honorificSuffix": "CMI",
+        "jobTitle": "Certified Master Inspector",
+        "sameAs": "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Foresight Home Inspections, LLC",
+        "url": "https://www.fhinspectionsatl.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fhinspectionsatl.com/images/Logopng.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://www.fhinspectionsatl.com/blog/${post.slug}`,
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.fhinspectionsatl.com/#website"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.fhinspectionsatl.com/images/Logopng.png",
+        "width": 800,
+        "height": 600
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".article-title", ".article-excerpt"]
+      },
+      "keywords": post.keywords?.join(', ')
+    }
+  ];
+
+  // Add FAQPage schema if the post has FAQ data
+  if (post.faq && post.faq.length > 0) {
+    schemaGraph.push({
+      "@type": "FAQPage",
+      "mainEntity": post.faq.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    });
+  }
+
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": post.title,
-    "description": post.description,
-    "datePublished": post.date,
-    "dateModified": post.date,
-    "author": {
-      "@type": "Person",
-      "name": "Christopher Boykin",
-      "honorificSuffix": "CMI",
-      "jobTitle": "Certified Master Inspector",
-      "sameAs": "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Foresight Home Inspections, LLC",
-      "url": "https://www.fhinspectionsatl.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.fhinspectionsatl.com/images/Logopng.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://www.fhinspectionsatl.com/blog/${post.slug}`,
-      "isPartOf": {
-        "@type": "WebSite",
-        "@id": "https://www.fhinspectionsatl.com/#website"
-      }
-    },
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://www.fhinspectionsatl.com/images/Logopng.png",
-      "width": 800,
-      "height": 600
-    },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": [".article-title", ".article-excerpt"]
-    },
-    "keywords": post.keywords?.join(', ')
+    "@graph": schemaGraph
   };
 
   // Find related posts (same category, exclude current)
@@ -141,6 +167,50 @@ export default async function BlogPost({ params }) {
       {/* Article Body */}
       <section className="section" style={{ paddingTop: '3rem' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
+
+          {/* Reading Time + Share */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-gray-light)' }}>
+            <span style={{ color: 'var(--color-gray)', fontSize: '0.9rem' }}>
+              📖 {Math.ceil((post.content || '').replace(/<[^>]*>/g, '').split(/\s+/).length / 230)} min read
+            </span>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+              <span style={{ color: 'var(--color-gray)', fontSize: '0.85rem' }}>Share:</span>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://www.fhinspectionsatl.com/blog/${post.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Facebook"
+                style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem' }}
+              >
+                📘
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?url=https://www.fhinspectionsatl.com/blog/${post.slug}&text=${encodeURIComponent(post.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on X"
+                style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem' }}
+              >
+                🐦
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.fhinspectionsatl.com/blog/${post.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on LinkedIn"
+                style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem' }}
+              >
+                💼
+              </a>
+            </div>
+          </div>
+
+          {/* Article excerpt for search engines */}
+          {post.excerpt && (
+            <p className="article-excerpt" style={{ fontSize: '1.15rem', color: 'var(--color-gray-dark)', fontStyle: 'italic', marginBottom: '2rem', lineHeight: 1.7, borderLeft: '3px solid var(--color-red)', paddingLeft: '1.25rem' }}>
+              {post.excerpt}
+            </p>
+          )}
           
           {post.tldr && post.tldr.length > 0 && (
             <div className="ai-summary-box" style={{ background: 'var(--color-gray-light)', padding: '1.5rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)', marginBottom: '2rem' }}>

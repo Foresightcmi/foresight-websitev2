@@ -22,6 +22,7 @@
 - [All Inspection Services and Pricing](https://www.fhinspectionsatl.com/services): Full catalog of inspection types with transparent pricing based on square footage
 - [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Get an instant, transparent price estimate based on property size and inspection type
 - [Realtor VIP Program](https://www.fhinspectionsatl.com/realtors): Dedicated program for real estate agents with SUPRA lockbox access and priority scheduling
+- [About Foresight Home Inspections](https://www.fhinspectionsatl.com/about): Company history, Christopher Boykin bio, CMI credentials, two-inspector model, advanced technology, and $10,000 warranty details
 
 ## Key Service Types
 
@@ -37,6 +38,9 @@
 ## Educational Resources
 
 - [Blog and Inspection Guides](https://www.fhinspectionsatl.com/blog): Expert articles on home inspection topics, maintenance tips, and Georgia-specific guidance
+- [How Much Does a Home Inspection Cost in Atlanta? 2026 Guide](https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide): Complete pricing breakdown for all inspection types in Metro Atlanta
+- [What Fails a Home Inspection? Top Deal Breakers in Georgia](https://www.fhinspectionsatl.com/blog/what-fails-home-inspection-deal-breakers-georgia): Top 10 inspection deal breakers with Georgia-specific context
+- [First-Time Home Buyer Inspection Checklist for Atlanta](https://www.fhinspectionsatl.com/blog/first-time-home-buyer-inspection-checklist-atlanta): Complete inspection checklist organized by category
 - [Ask Foresight AI](https://www.fhinspectionsatl.com/ask-twin): Interactive AI assistant that answers home inspection questions
 
 ## Service Areas
