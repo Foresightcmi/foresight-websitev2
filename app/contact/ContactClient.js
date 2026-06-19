@@ -89,7 +89,8 @@ export default function ContactClient() {
                 <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Business Hours</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Monday – Saturday: 8:00 AM – 8:00 PM</li>
-                  <li style={{ color: 'var(--color-gray)' }}>(Thursday until 7:00 PM)</li>
+                  <li style={{ marginBottom: '0.5rem', color: 'var(--color-gray)' }}>(Thursday until 7:00 PM)</li>
+                  <li style={{ fontWeight: 500 }}>Sunday: By appointment only</li>
                 </ul>
               </div>
             </div>

@@ -54,11 +54,11 @@ export default function RealtorsClient() {
             Exclusive Realtor Partner Program
           </span>
           <h1 style={{ color: 'var(--color-white)', fontSize: '3.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
-            Close Transactions Faster.<br />
-            <span style={{ color: 'var(--color-red)' }}>Delight Your Buyers.</span>
+            Your Negotiation Asset.<br />
+            <span style={{ color: 'var(--color-red)' }}>Never a Deal Killer.</span>
           </h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6 }}>
-            Empower your Metro Atlanta transactions with our elite two person inspection team teams. We handle SUPRA lockbox access, provide complimentary utility setups, and back your clients with $10,000 warranties.
+            We help your clients win at the negotiating table with clear, detailed inspection reporting that strengthens your position — not undermines it. Backed by SUPRA lockbox access, two-inspector speed, and $10,000 warranties.
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#partner-form" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
@@ -80,7 +80,7 @@ export default function RealtorsClient() {
             <span className="badge" style={{ marginBottom: '1rem' }}>How We Support You</span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800 }}>The Foresight Realtor Advantage</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We know your reputation is on the line with every referral. That is why we provide a friction-free inspection service designed to keep deals together and protect your buyers.
+              We know your reputation is on the line with every referral. Our reports are designed to give your clients leverage at the negotiating table — clearly communicating issues so you can negotiate with confidence, not fear.
             </p>
           </div>
 
@@ -137,6 +137,67 @@ export default function RealtorsClient() {
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
                 We don\'t dispatch rookie solo inspectors. Every job features a certified inspector paired directly with Christopher Boykin, a fully-credentialed Certified Master Inspector®—representing the highest professional standard in North America.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Negotiation Partner Section */}
+      <section className="section" style={{ padding: '6rem 0', background: 'linear-gradient(135deg, var(--color-dark) 0%, #1a1a2e 100%)' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <span className="badge" style={{ marginBottom: '1rem', background: 'rgba(211,47,47,0.15)', color: 'var(--color-red-light)', fontSize: '0.9rem', padding: '0.5rem 1.25rem' }}>
+                Your Negotiation Edge
+              </span>
+              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--color-white)', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+                We Help You Close Deals,<br />
+                <span style={{ color: 'var(--color-red)' }}>Not Kill Them.</span>
+              </h2>
+              <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                Some agents worry that a thorough inspector will scare buyers or blow up a deal. At Foresight, we take the opposite approach. Our reports are written to <strong style={{ color: 'var(--color-white)' }}>clearly communicate issues and potential concerns</strong> in a way that empowers your clients at the negotiating table — not frighten them away from it.
+              </p>
+              <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.1rem', lineHeight: 1.7 }}>
+                When your buyers know exactly what they are dealing with, you can negotiate repair credits, price reductions, or seller concessions from a position of strength. Our detailed reporting and the HomeGauge CRL tool make it easy to build professional repair amendments in minutes. The result? Your clients get a better deal, and your reputation as a <strong style={{ color: 'var(--color-white)' }}>sharp, strategic negotiator</strong> grows with every transaction.
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div className="card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '1.75rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <div style={{ fontSize: '2rem', lineHeight: 1 }}>📋</div>
+                  <div>
+                    <h4 style={{ color: 'var(--color-white)', fontWeight: 700, marginBottom: '0.5rem' }}>Clear, Actionable Reporting</h4>
+                    <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '0.95rem', lineHeight: 1.6 }}>
+                      We categorize findings by severity and explain them in plain language. Your clients understand what matters, what does not, and what gives them negotiating leverage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '1.75rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <div style={{ fontSize: '2rem', lineHeight: 1 }}>💪</div>
+                  <div>
+                    <h4 style={{ color: 'var(--color-white)', fontWeight: 700, marginBottom: '0.5rem' }}>Stronger Negotiation Position</h4>
+                    <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '0.95rem', lineHeight: 1.6 }}>
+                      A well-documented inspection report with thermal imaging evidence and clear cost implications gives your buyers undeniable leverage. Agents who partner with us consistently secure repair credits and price adjustments for their clients.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '1.75rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <div style={{ fontSize: '2rem', lineHeight: 1 }}>🤝</div>
+                  <div>
+                    <h4 style={{ color: 'var(--color-white)', fontWeight: 700, marginBottom: '0.5rem' }}>Your Reputation, Elevated</h4>
+                    <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '0.95rem', lineHeight: 1.6 }}>
+                      When your buyers walk away from closing knowing they negotiated from a position of knowledge, they remember who made that possible. That kind of client loyalty is built on trust — and trust starts with transparency.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
