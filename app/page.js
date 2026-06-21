@@ -9,7 +9,7 @@ const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: t
 const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: true });
 
 export const metadata = {
-  title: 'Atlanta Home Inspections | Two Inspectors | CMI-Led',
+  title: 'Atlanta Home Inspections | Two CMI Inspectors',
   description: 'Two certified inspectors on every job. Led by Christopher Boykin, Certified Master Inspector®. Premium home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
   alternates: { canonical: 'https://www.fhinspectionsatl.com' },
   openGraph: {

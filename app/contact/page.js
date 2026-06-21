@@ -2,7 +2,7 @@ import Script from 'next/script';
 import ContactClient from './ContactClient';
 
 export const metadata = {
-  title: 'Contact Us | Foresight Home Inspections | Lithonia & Atlanta, GA',
+  title: 'Schedule a Home Inspection Atlanta | Contact Foresight',
   description: 'Contact Foresight Home Inspections for expert Certified Master Inspector-led home inspections in Metro Atlanta. Call 678-480-2110 or use our online form to schedule your dual-inspector evaluation.',
   keywords: ['Contact Foresight Home Inspections', 'schedule home inspection Atlanta', 'book home inspector Lithonia GA', 'home inspection phone number Atlanta', 'inspect@foresightcmi.com'],
   alternates: { canonical: 'https://www.fhinspectionsatl.com/contact' },

@@ -24,8 +24,8 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL('https://www.fhinspectionsatl.com'),
   title: {
-    default: 'Foresight Home Inspections | Certified Master Inspector® | Atlanta GA',
-    template: '%s | Foresight Home Inspections',
+    default: 'Atlanta Home Inspections | Certified Master Inspector | Foresight',
+    template: '%s | Foresight',
   },
   description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium, thorough home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
   keywords: ['Home Inspection', 'Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two person inspection team home inspection', 'home inspection warranty', 'best two person inspection team home inspection in Metro Atlanta', 'thermal imaging home inspector Lithonia GA', '11-month new construction warranty inspection', 'Foresight Home Inspections reviews'],
@@ -44,7 +44,7 @@ export const metadata = {
     canonical: 'https://www.fhinspectionsatl.com',
   },
   openGraph: {
-    title: 'Foresight Home Inspections | Certified Master Inspector® | Atlanta GA',
+    title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
     description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium home inspections across Metro Atlanta with a $10,000 warranty.',
     url: 'https://www.fhinspectionsatl.com',
     siteName: 'Foresight Home Inspections',
@@ -61,7 +61,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Foresight Home Inspections | Certified Master Inspector®',
+    title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
     description: 'Two certified inspectors on every job. $10,000 warranty included. Serving 163+ cities across Metro Atlanta.',
     images: ['/images/Logopng.png'],
   },

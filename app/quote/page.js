@@ -1,7 +1,7 @@
 import QuoteClient from './QuoteClient';
 
 export const metadata = {
-  title: 'Instant Quote Calculator',
+  title: 'Home Inspection Quote | Atlanta Pricing Calculator',
   description: 'Get an instant, transparent home inspection quote from Foresight Home Inspections. Pricing based on square footage — includes two certified inspectors and $10,000 warranty. Serving Metro Atlanta.',
   alternates: { canonical: 'https://www.fhinspectionsatl.com/quote' },
   openGraph: {

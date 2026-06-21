@@ -3,10 +3,10 @@ import path from 'path';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Service Areas | Foresight Home Inspections',
+  title: 'Home Inspections in 163+ Metro Atlanta Cities',
   description: 'Foresight Home Inspections serves over 163 cities across Georgia. Find a certified master home inspector in your local area.',
   openGraph: {
-    title: 'Service Areas | Foresight Home Inspections',
+    title: 'Home Inspections in 163+ Metro Atlanta Cities | Foresight',
     description: 'Foresight Home Inspections serves over 163 cities across Georgia. Find a certified master home inspector in your local area.',
     url: 'https://www.fhinspectionsatl.com/service-areas',
     type: 'website',

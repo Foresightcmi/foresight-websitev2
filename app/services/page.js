@@ -4,14 +4,14 @@ import ValueComparison from '../components/ValueComparison';
 import QualityChecklist from '../components/QualityChecklist';
 
 export const metadata = {
-  title: 'Home Inspection Services & Pricing',
+  title: 'Home Inspection Services Atlanta | From $295',
   description: 'View our comprehensive home inspection services starting at $295. We offer standard buyer inspections, pre-listing inspections, WDO/termite, pool/spa, and radon testing across Atlanta.',
   keywords: ['home inspection services Atlanta', 'home inspection pricing Georgia', 'radon gas testing cost', 'sewer scope inspection Atlanta', 'termite inspection Atlanta', 'pool and spa inspector Lithonia GA'],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/services',
   },
   openGraph: {
-    title: 'Services & Pricing | Foresight Home Inspections',
+    title: 'Home Inspection Services & Pricing | Foresight Atlanta',
     description: 'Comprehensive home inspection services starting at $295 with two certified inspectors on every job. Servicing Lithonia, Decatur, Atlanta, and surrounding North Georgia.',
     url: 'https://www.fhinspectionsatl.com/services',
     type: 'website',
@@ -597,6 +597,41 @@ export default function Services() {
             <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>What areas do you serve?</summary>
             <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
               Foresight Home Inspections proudly serves over 163 cities across the Metro Atlanta area and greater Georgia. This includes major areas such as Atlanta, Marietta, Alpharetta, Roswell, Decatur, Kennesaw, and many more. Visit our <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Service Areas</Link> page for a complete list of cities we cover.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Should I attend the home inspection?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              We strongly encourage it. In our experience, buyers who attend their inspection walk away with a dramatically better understanding of their new home. Our inspectors walk you through every finding in real time, explain what is normal wear versus a legitimate concern, and answer your questions on the spot. We have found that buyers who attend feel significantly more confident during negotiations because they have seen the issues firsthand.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Can a house actually fail a home inspection?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              Technically, no. A home inspection is not a pass/fail test. It is an objective evaluation of the property's current condition. In our 1,000+ inspections across Metro Atlanta, we have never written a report that says "this house failed." Instead, we document what we observe, explain the implications, and recommend next steps. This gives you and your agent the information needed to negotiate repairs, credits, or make an informed decision about proceeding with the purchase.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Are home inspection costs part of closing costs?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              The home inspection fee is typically paid directly to the inspection company at the time of service, not through closing. However, it is considered part of your overall home-buying expenses. In Georgia, the buyer is responsible for scheduling and paying for the inspection. Many of our clients view it as the most valuable investment of the entire home-buying process since findings from the inspection frequently lead to repair credits or price reductions that far exceed the inspection cost itself.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>What is not covered in a standard home inspection?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              Per InterNACHI Standards of Practice, a standard home inspection does not include testing for environmental hazards like radon gas, termite/WDO infestation, mold, or lead paint. It also does not include sewer line camera scoping, pool or spa evaluation, or septic system testing. However, Foresight offers all of these as add-on services that can be bundled with your inspection. We recommend radon testing and WDO inspections on virtually every Georgia home purchase due to the region's geological and climate conditions.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Can I see a sample inspection report before booking?</summary>
+            <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              Our inspection reports are delivered through <strong>HomeGauge</strong>, a professional digital reporting platform. Each report includes high-resolution photographs, video clips of specific concerns, detailed descriptions using our Observation-Implication-Recommendation format, and the interactive <strong>Create Request List (CRL)</strong> tool that lets you and your agent build a repair amendment directly from the report. If you would like to see a sample before booking, please <Link href="/contact" style={{ color: 'var(--color-red)', fontWeight: 600 }}>contact us</Link> and we will be happy to share one.
             </p>
           </details>
         </div>
