@@ -95,9 +95,9 @@ export default function Home() {
       />
       <section className="hero">
         <div className="container">
-          <p className="slogan-heading" style={{ marginBottom: '1rem' }}>
+          <h2 className="slogan-heading" style={{ marginBottom: '1rem' }}>
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
-          </p>
+          </h2>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Atlanta&rsquo;s Certified Home Inspections<br />
