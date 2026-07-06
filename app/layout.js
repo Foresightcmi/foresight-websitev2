@@ -552,7 +552,6 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/Logopng.png" type="image/png" sizes="96x96" />
         <link rel="apple-touch-icon" href="/images/Logopng.png" />
-        <link rel="manifest" href="/manifest.json" />
         <meta name="geo.region" content="US-GA" />
         <meta name="geo.placename" content="Lithonia" />
         <meta name="geo.position" content="33.7275;-84.1444" />
