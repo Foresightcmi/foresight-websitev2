@@ -244,6 +244,7 @@ export default async function BlogPost({ params }) {
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/quote" className="btn btn-primary">Get Instant Quote</Link>
               <Link href="/ask-twin" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>Ask Foresight AI</Link>
+              <a href="https://www.google.com/maps/search/Foresight+Home+Inspections+Lithonia+GA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>View Google Profile</a>
             </div>
           </div>
 
