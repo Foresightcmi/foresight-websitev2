@@ -1,45 +1,33 @@
 {
-  "targetKeyword": "roof inspection near me",
+  "targetKeyword": "hvac inspection cost near me",
   "relatedKeywords": [
-    "what is a radon test for home inspection",
-    "how much house inspection",
-    "how much home inspector charge",
-    "is it worth becoming a home inspector",
-    "is it worth being a home inspector"
+    "roof inspection near me",
+    "hvac inspection near me",
+    "thermal imaging home inspection worth it",
+    "can you negotiate after home inspection",
+    "can you fail a home inspection"
   ],
-  "score": 33,
+  "score": 41,
   "allOpportunities": [
+    {
+      "keyword": "hvac inspection cost near me",
+      "score": 41
+    },
     {
       "keyword": "roof inspection near me",
       "score": 33
     },
     {
-      "keyword": "what is a radon test for home inspection",
+      "keyword": "hvac inspection near me",
       "score": 33
     },
     {
-      "keyword": "how much house inspection",
-      "score": 33
-    },
-    {
-      "keyword": "how much home inspector charge",
-      "score": 33
-    },
-    {
-      "keyword": "is it worth becoming a home inspector",
-      "score": 32
-    },
-    {
-      "keyword": "is it worth being a home inspector",
-      "score": 32
-    },
-    {
-      "keyword": "is thermal imaging worth it for a home inspection",
+      "keyword": "thermal imaging home inspection worth it",
       "score": 31
     },
     {
-      "keyword": "is infrared home inspection worth it",
-      "score": 31
+      "keyword": "can you negotiate after home inspection",
+      "score": 30
     },
     {
       "keyword": "can you fail a home inspection",
@@ -66,30 +54,42 @@
       "score": 27
     },
     {
-      "keyword": "how to look for home inspection",
+      "keyword": "what happens if home inspection reveals problems",
       "score": 27
     },
     {
-      "keyword": "what is home inspection for informational purposes only",
+      "keyword": "what happens if home inspection finds issues",
       "score": 27
     },
     {
-      "keyword": "home inspection georgian college",
+      "keyword": "what to do if home inspection is bad",
+      "score": 27
+    },
+    {
+      "keyword": "what to do if home inspection finds problems",
+      "score": 27
+    },
+    {
+      "keyword": "what to do if home inspection goes bad",
+      "score": 27
+    },
+    {
+      "keyword": "what happens if a home inspection comes back poor",
+      "score": 27
+    },
+    {
+      "keyword": "what to do if house inspection fails",
+      "score": 27
+    },
+    {
+      "keyword": "home inspectors atlanta ga",
       "score": 26
     },
     {
-      "keyword": "home inspector georgia requirements",
-      "score": 26
-    },
-    {
-      "keyword": "home inspector georgia salary",
-      "score": 26
-    },
-    {
-      "keyword": "is a radon test required for a home inspection",
+      "keyword": "home inspectors atlanta jobs",
       "score": 26
     }
   ],
-  "discoveredAt": "2026-07-13T15:44:58.417Z",
+  "discoveredAt": "2026-07-19T22:18:41.593Z",
   "source": "google-suggest"
 }
