@@ -12,6 +12,8 @@ export default async function sitemap() {
   const staticPages = [
     { loc: '', changefreq: 'weekly', priority: 1.0 },
     { loc: '/services', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/services/municipal-rehab-inspections', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/samples', changefreq: 'monthly', priority: 0.85 },
     { loc: '/about', changefreq: 'monthly', priority: 0.8 },
     { loc: '/realtors', changefreq: 'monthly', priority: 0.8 },
     { loc: '/quote', changefreq: 'weekly', priority: 0.9 },
