@@ -23,6 +23,21 @@ export default function Header() {
         </button>
         <nav aria-label="Main navigation">
           <ul className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
+            <li>
+              <a href="tel:678-480-2110" className="header-phone-link" onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'phone_call_click', {
+                    event_category: 'conversion',
+                    event_label: 'header_nav',
+                    value: 1,
+                  });
+                }
+                setMenuOpen(false);
+              }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                678-480-2110
+              </a>
+            </li>
             <li><Link href="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
             <li><Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
             <li><Link href="/about" onClick={() => setMenuOpen(false)}>About</Link></li>

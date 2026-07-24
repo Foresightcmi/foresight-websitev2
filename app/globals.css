@@ -608,4 +608,85 @@ a {
   }
 }
 
+/* ═══════════════════════════════════════════
+   STICKY MOBILE CALL BAR
+═══════════════════════════════════════════ */
+.sticky-call-bar {
+  display: none;
+}
 
+@media (max-width: 768px) {
+  .sticky-call-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    gap: 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .sticky-call-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+  }
+
+  .sticky-call-btn:active {
+    filter: brightness(0.9);
+  }
+
+  .sticky-call-btn--call {
+    background: var(--color-red);
+    color: white;
+  }
+
+  .sticky-call-btn--schedule {
+    background: var(--color-dark);
+    color: white;
+  }
+
+  /* Prevent footer from being hidden behind the bar */
+  body {
+    padding-bottom: 60px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   HEADER PHONE LINK
+═══════════════════════════════════════════ */
+.header-phone-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-red);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.header-phone-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header-phone-link {
+    font-size: 1.15rem;
+    padding: 0.5rem 0;
+    justify-content: center;
+  }
+}

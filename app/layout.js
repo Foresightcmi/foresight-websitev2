@@ -6,6 +6,7 @@ import { Inter, Outfit } from 'next/font/google';
 import Header from './components/Header';
 import WidgetWrapper from './components/WidgetWrapper';
 import Breadcrumbs from './components/Breadcrumbs';
+import StickyCallBar from './components/StickyCallBar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -583,6 +584,25 @@ export default function RootLayout({ children }) {
 
         <main>{children}</main>
         <WidgetWrapper />
+        <StickyCallBar />
+        <Script
+          id="ga4-call-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('click', function(e) {
+                var link = e.target.closest('a[href^="tel:"]');
+                if (link && typeof window.gtag === 'function') {
+                  window.gtag('event', 'phone_call_click', {
+                    event_category: 'conversion',
+                    event_label: link.getAttribute('data-call-source') || window.location.pathname,
+                    value: 1
+                  });
+                }
+              });
+            `,
+          }}
+        />
 
         <footer className="footer">
           <div className="container">

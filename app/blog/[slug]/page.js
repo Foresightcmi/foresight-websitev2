@@ -235,16 +235,26 @@ export default async function BlogPost({ params }) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          {/* CTA */}
-          <div className="card card-premium" style={{ marginTop: '3rem', textAlign: 'center', background: 'var(--color-dark)', color: 'var(--color-white)' }}>
-            <h3 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Ready to Protect Your Investment?</h3>
-            <p style={{ color: 'var(--color-gray-mid)', marginBottom: '1.5rem' }}>
-              Get an instant, transparent quote for your home inspection — backed by our $10,000 warranty.
+          {/* Internal Linking: Service Callout */}
+          <div style={{ marginTop: '2.5rem', padding: '1.5rem', background: 'var(--color-gray-light)', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)' }}>
+            <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '1.05rem', lineHeight: 1.7 }}>
+              Need a professional inspection? Foresight Home Inspections sends <strong>two certified inspectors on every job</strong> with FLIR thermal imaging and drone technology. View our <Link href="/services" style={{ color: 'var(--color-red)', fontWeight: 600 }}>full services and transparent pricing</Link>, check <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>163+ service areas</Link>, or see a <Link href="/samples" style={{ color: 'var(--color-red)', fontWeight: 600 }}>sample inspection report</Link>.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/quote" className="btn btn-primary">Get Instant Quote</Link>
-              <Link href="/ask-twin" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>Ask Foresight AI</Link>
-              <a href="https://www.google.com/maps/search/Foresight+Home+Inspections+Lithonia+GA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>View Google Profile</a>
+          </div>
+
+          {/* CTA */}
+          <div className="card card-premium" style={{ marginTop: '2rem', textAlign: 'center', background: 'var(--color-dark)', color: 'var(--color-white)' }}>
+            <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>Ready to Protect Your Investment?</h3>
+            <p style={{ color: 'var(--color-gray-mid)', marginBottom: '0.75rem', fontSize: '1.1rem' }}>
+              Call us directly or get an instant quote — backed by our $10,000 warranty.
+            </p>
+            <a href="tel:678-480-2110" style={{ display: 'inline-block', color: 'var(--color-red)', fontSize: '1.5rem', fontWeight: 800, textDecoration: 'none', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }} data-call-source="blog_post_cta">
+              📞 678-480-2110
+            </a>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Schedule Inspection</a>
+              <Link href="/quote" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>Get Instant Quote</Link>
+              <Link href="/realtors" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>Realtor VIP Program</Link>
             </div>
           </div>
 
