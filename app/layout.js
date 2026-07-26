@@ -102,6 +102,13 @@ export default function RootLayout({ children }) {
           "latitude": "33.7275",
           "longitude": "-84.1444"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "320",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "areaServed": [
         {
               "@type": "State",
@@ -543,6 +550,11 @@ export default function RootLayout({ children }) {
     "name": "Foresight Home Inspections",
     "publisher": {
       "@id": "https://www.fhinspectionsatl.com/#business"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.fhinspectionsatl.com/blog?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   }
 ]
@@ -551,6 +563,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
+        <link rel="preconnect" href="https://schedulenow.homegauge.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="icon" href="/images/Logopng.png" type="image/png" sizes="96x96" />
         <link rel="apple-touch-icon" href="/images/Logopng.png" />
         <meta name="geo.region" content="US-GA" />
@@ -659,6 +673,9 @@ export default function RootLayout({ children }) {
                   <li><Link href="/quote">Instant Quote</Link></li>
                   <li><Link href="/contact">Contact Us</Link></li>
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
+                  <li><Link href="/defects/polybutylene-pipe-inspection">Polybutylene Pipe Inspection</Link></li>
+                  <li><Link href="/defects/foundation-crack-settlement-inspection">Foundation Crack Audit</Link></li>
+                  <li><Link href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                 </ul>
               </div>
               <div>
