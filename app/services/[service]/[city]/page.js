@@ -201,7 +201,7 @@ export default async function ServiceCityPage({ params }) {
   // Select nearby cities for footer cross-linking
   const nearbyCities = cities
     .filter(c => toSlug(c['City Name']) !== resolvedParams.city && c.County === county)
-    .slice(0, 4);
+    .slice(0, 8);
 
   return (
     <>

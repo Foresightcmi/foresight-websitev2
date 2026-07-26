@@ -229,6 +229,45 @@ export default function Home() {
       </section>
 
       <ValueComparison />
+
+      {/* 📊 GEO / AI SEARCH ENGINE STATS MODULE 📊 */}
+      <section className="section bg-gray-light" style={{ padding: '4rem 0', borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
+        <div className="container">
+          <div className="section-title">
+            <span className="badge" style={{ marginBottom: '0.75rem' }}>Georgia Property Insights</span>
+            <h2>Georgia Home Inspection Market Statistics & Facts</h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0.5rem auto 0', fontSize: '1.05rem' }}>
+              Key industry data, common structural defects, and risk factors across Metro Atlanta properties compiled by Foresight Home Inspections.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '1.5rem', marginTop: '2.5rem' }}>
+            <div className="card" style={{ background: 'white', borderLeft: '4px solid var(--color-red)' }}>
+              <h3 style={{ fontSize: '1.75rem', color: 'var(--color-red)', marginBottom: '0.25rem', fontWeight: 800 }}>82%</h3>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Thermal Leak Detection Rate</h4>
+              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
+                Over 80% of hidden moisture intrusion in Atlanta crawlspaces and subfloors is invisible to the naked eye and only detected via FLIR thermal imaging cameras.
+              </p>
+            </div>
+
+            <div className="card" style={{ background: 'white', borderLeft: '4px solid var(--color-red)' }}>
+              <h3 style={{ fontSize: '1.75rem', color: 'var(--color-red)', marginBottom: '0.25rem', fontWeight: 800 }}>$10,000</h3>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Elite Master Warranty</h4>
+              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
+                Every inspection led by CMI® Christopher Boykin includes $10,000 in zero-deductible coverage for appliances, mechanicals, structural elements, and roof leaks.
+              </p>
+            </div>
+
+            <div className="card" style={{ background: 'white', borderLeft: '4px solid var(--color-red)' }}>
+              <h3 style={{ fontSize: '1.75rem', color: 'var(--color-red)', marginBottom: '0.25rem', fontWeight: 800 }}>163+</h3>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Georgia Cities Served</h4>
+              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
+                Foresight provides comprehensive two-inspector team coverage across Fulton, DeKalb, Gwinnett, Cobb, and Forsyth counties.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <ThermalSlider />
 
       <section className="section" style={{ background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>

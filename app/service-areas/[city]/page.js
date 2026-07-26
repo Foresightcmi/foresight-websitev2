@@ -141,10 +141,18 @@ export default async function CityPage({ params }) {
     "url": `https://www.fhinspectionsatl.com/service-areas/${slug}`,
     "serviceType": "Home Inspection",
     "provider": {
-      "@type": "HomeAndConstructionBusiness",
+      "@type": "ProfessionalService",
       "name": "Foresight Home Inspections, LLC",
       "telephone": "+1-678-480-2110",
-      "email": "inspect@foresightcmi.com"
+      "email": "inspect@foresightcmi.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1816 South Deshon Road",
+        "addressLocality": "Lithonia",
+        "addressRegion": "GA",
+        "postalCode": "30058",
+        "addressCountry": "US"
+      }
     },
     "areaServed": {
       "@type": "City",
@@ -512,6 +520,33 @@ export default async function CityPage({ params }) {
             <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'left' }}>
               <strong>📍 Hyper-Local Expertise:</strong> {getCountyContext(county)}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          DYNAMIC GOOGLE MAP LOCAL GEO-SIGNAL
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section" style={{ background: 'var(--color-white)', padding: '3rem 0' }}>
+        <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
+          <h3 style={{ marginBottom: '1rem', fontSize: '1.5rem', color: 'var(--color-dark)' }}>
+            📍 Foresight Home Inspections Coverage Area: <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
+          </h3>
+          <p style={{ color: 'var(--color-gray-dark)', marginBottom: '1.5rem', fontSize: '1rem' }}>
+            We provide fast, same-day scheduling and certified two-inspector team coverage across {cityName} and all surrounding neighborhoods in {county} County.
+          </p>
+          <div style={{ position: 'relative', width: '100%', height: '350px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)', border: '1px solid var(--color-gray-mid)' }}>
+            <iframe
+              title={`Foresight Home Inspections Service Area - ${cityName}, GA`}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyA_placeholder&q=${encodeURIComponent(`Home Inspector ${cityName} GA`)}`}
+              fallbacksrc={`https://maps.google.com/maps?q=${encodeURIComponent(`${cityName}, GA`)}&t=&z=12&ie=UTF8&iwloc=&output=embed`}
+              srcDoc={`<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=${encodeURIComponent(`${cityName}, GA`)}&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>`}
+            />
           </div>
         </div>
       </section>

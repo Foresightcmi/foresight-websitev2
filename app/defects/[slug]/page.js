@@ -146,6 +146,17 @@ export default async function DefectPage({ params }) {
       {/* Identification & Hazards */}
       <section className="section bg-white">
         <div className="container" style={{ maxWidth: '850px' }}>
+          
+          {/* AEO Direct Answer Block for Search Engine AI Overviews */}
+          <div style={{ background: '#f8fafc', padding: '2rem', borderRadius: 'var(--radius-lg)', border: '2px solid #e2e8f0', marginBottom: '2.5rem' }}>
+            <h2 style={{ fontSize: '1.4rem', color: 'var(--color-dark)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              ⚡ Quick Definition: What is {defect.title}?
+            </h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#334155', margin: 0, fontWeight: 500 }}>
+              {defect.summary} In Metro Atlanta residential property inspections, identifying {defect.title.toLowerCase()} early prevents severe structural degradation, water damage, and un-budgeted repair costs before closing.
+            </p>
+          </div>
+
           <div style={{ background: 'var(--color-gray-light)', padding: '2rem', borderRadius: 'var(--radius-lg)', borderLeft: '4px solid var(--color-red)', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
               🔍 How to Identify This Defect in Georgia Homes

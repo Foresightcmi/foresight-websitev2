@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
+import AuthorBio from '../../components/AuthorBio';
 
 function loadPosts() {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
@@ -257,6 +258,9 @@ export default async function BlogPost({ params }) {
               <Link href="/realtors" className="btn btn-outline" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>Realtor VIP Program</Link>
             </div>
           </div>
+
+          {/* E-E-A-T Author Bio */}
+          <AuthorBio />
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
