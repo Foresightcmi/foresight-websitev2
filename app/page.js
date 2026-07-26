@@ -30,9 +30,62 @@ export default function Home() {
         "url": "https://www.fhinspectionsatl.com",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://www.fhinspectionsatl.com/service-areas?q={search_term_string}",
+          "target": "https://www.fhinspectionsatl.com/blog?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.fhinspectionsatl.com/#business",
+        "name": "Foresight Home Inspections, LLC",
+        "url": "https://www.fhinspectionsatl.com",
+        "telephone": "+1-678-480-2110",
+        "email": "inspect@foresightcmi.com",
+        "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
+        "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1816 South Deshon Road",
+          "addressLocality": "Lithonia",
+          "addressRegion": "GA",
+          "postalCode": "30058",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "33.7275",
+          "longitude": "-84.1444"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "320",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday"], "opens": "08:00", "closes": "20:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "19:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00", "description": "By appointment only" }
+        ],
+        "sameAs": [
+          "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+          "https://maps.google.com/?cid=10862078652033010531",
+          "https://facebook.com/fhinspectionsatl",
+          "https://www.instagram.com/fhinspectionsatl/",
+          "https://www.tiktok.com/@fhinspectionsatl",
+          "https://www.youtube.com/@ForesightHomeInspections-t6r",
+          "https://www.linkedin.com/company/foresight-home-inspections-llc/"
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Foresight Home Inspections - High-Tech Dual Inspector Advantage",
+        "description": "See how Certified Master Inspector Christopher Boykin and our two-inspector team use FLIR thermal imaging and drones to inspect Atlanta homes.",
+        "thumbnailUrl": "https://www.fhinspectionsatl.com/images/thermal-1.png",
+        "uploadDate": "2026-01-15T08:00:00+08:00",
+        "publisher": { "@id": "https://www.fhinspectionsatl.com/#business" }
       },
       {
         "@type": "WebPage",
