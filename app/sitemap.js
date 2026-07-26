@@ -101,6 +101,43 @@ export default async function sitemap() {
     }
   }
 
+  // 5. Dynamic Defect Audit Pages
+  const DEFECTS_FILE = path.join(process.cwd(), 'data', 'defects-pseo.json');
+  if (fs.existsSync(DEFECTS_FILE)) {
+    try {
+      const defects = JSON.parse(fs.readFileSync(DEFECTS_FILE, 'utf8'));
+      for (const d of defects) {
+        routes.push({
+          url: `${baseUrl}/defects/${d.slug}`,
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: 0.8,
+        });
+      }
+    } catch (err) {
+      console.error('Error reading defects in sitemap.js:', err);
+    }
+  }
+
+  // 6. Dynamic Comparison Framework Pages
+  const COMPARISONS_FILE = path.join(process.cwd(), 'data', 'comparisons-pseo.json');
+  if (fs.existsSync(COMPARISONS_FILE)) {
+    try {
+      const comparisons = JSON.parse(fs.readFileSync(COMPARISONS_FILE, 'utf8'));
+      for (const c of comparisons) {
+        routes.push({
+          url: `${baseUrl}/compare/${c.slug}`,
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: 0.8,
+        });
+      }
+    } catch (err) {
+      console.error('Error reading comparisons in sitemap.js:', err);
+    }
+  }
+
   return routes;
 }
+
 

@@ -47,6 +47,26 @@ Foresight Home Inspections provides dedicated, high-intent service pages for all
 - [Pool & Spa Inspections by City](https://www.fhinspectionsatl.com/services/pool-inspection/roswell): Comprehensive swimming pool and spa safety evaluations
 - [Pre-Listing Seller Inspections by City](https://www.fhinspectionsatl.com/services/pre-listing-inspection/marietta): Pre-MLS seller property evaluations
 
+## Defect & Red-Flag Inspection Guides (pSEO)
+
+High-intent technical defect resolution guides for homebuyers and realtors:
+- [Polybutylene Pipe Inspection](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-inspection): Identification & risk audit for 1978–1995 Georgia homes
+- [EIFS Synthetic Stucco Moisture Inspection](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection): FLIR thermal & moisture meter audit
+- [Atlanta Red Clay Foundation Crack Inspection](https://www.fhinspectionsatl.com/defects/foundation-crack-settlement-inspection): Structural settlement vs shrinkage evaluation
+- [Aluminum Branch Wiring Safety Inspection](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection): 1960s–70s single-strand aluminum fire hazard evaluation
+- [Federal Pacific & Zinsco Electrical Panel Audit](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection): Hazardous panel failure risks & replacement guide
+- [Crawlspace Wood Rot & Fungus Audit](https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection): Floor joist decay & moisture evaluation
+- [HVAC Heat Exchanger Crack & CO Safety Inspection](https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection): Carbon monoxide hazard detection
+- [Roof Flashing & Chimney Leak Audit](https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection): Drone & thermal camera roof leak tracing
+
+## Comparison & Decision Framework Guides (pSEO)
+
+Buyer decision guides highlighting Foresight's competitive advantages:
+- [Two-Inspector Team vs. Single Inspector](https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector): Why Foresight sends 2 certified inspectors on every job
+- [11-Month Warranty Inspection vs. Builder Walkthrough](https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough): Independent audit before 1-year builder warranty expires
+- [Home Inspection vs. Mortgage Appraisal](https://www.fhinspectionsatl.com/compare/pre-purchase-inspection-vs-bank-appraisal): Key differences between bank valuation and physical inspection
+- [FLIR Thermal Imaging vs. Visual Inspection](https://www.fhinspectionsatl.com/compare/thermal-imaging-vs-standard-visual-inspection): Why visual checks miss concealed moisture & electrical hazards
+
 ## Educational Resources
 
 - [Blog and Inspection Guides](https://www.fhinspectionsatl.com/blog): Expert articles on home inspection topics, maintenance tips, and Georgia-specific guidance
