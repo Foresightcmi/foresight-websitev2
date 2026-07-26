@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import CitySearch from '../components/CitySearch';
 
 export const metadata = {
   title: 'Home Inspections in 163+ Metro Atlanta Cities',
@@ -55,9 +56,20 @@ export default function ServiceAreasDirectory() {
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
           <h1 style={{ color: 'var(--color-white)' }}>Areas We Serve</h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
-            Proudly providing premium two-inspector team services across Georgia. Find your city below to learn more about our local services.
+          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto 2rem', fontSize: '1.125rem' }}>
+            Proudly providing premium two-inspector team services across Georgia. Find your city or ZIP code below to learn more about our local services.
           </p>
+        </div>
+      </section>
+
+      {/* Interactive Instant City/ZIP Search */}
+      <section className="section bg-white" style={{ padding: '3rem 0' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '2rem' }}>
+            <h2>Instant Service Area Finder</h2>
+            <p style={{ color: 'var(--color-gray-dark)' }}>Type your city, county, or ZIP code below to find your dedicated local inspection page.</p>
+          </div>
+          <CitySearch cities={cities} />
         </div>
       </section>
 
