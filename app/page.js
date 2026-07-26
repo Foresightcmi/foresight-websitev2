@@ -7,6 +7,8 @@ const ValueComparison = dynamic(() => import('./components/ValueComparison'), { 
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
 const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
 const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: true });
+const InstantQuoteWidget = dynamic(() => import('./components/InstantQuoteWidget'), { ssr: true });
+const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
   title: 'Atlanta Home Inspections | Two CMI Inspectors',
@@ -175,6 +177,13 @@ export default function Home() {
                <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ⚡ INSTANT PRICE CALCULATOR WIDGET ⚡ */}
+      <section className="section bg-gray-light" style={{ padding: '3rem 0' }}>
+        <div className="container" style={{ maxWidth: '850px' }}>
+          <InstantQuoteWidget />
         </div>
       </section>
 
@@ -425,10 +434,7 @@ export default function Home() {
               Getting an inspection isn't just smart—it saves you from financial disasters and gives realtors a powerful tool to negotiate thousands off the asking price.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                📅 Schedule & Get Your $10,000 Warranty
-              </a>
-              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+                <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
                 See Pricing First
               </Link>
             </div>
@@ -438,57 +444,45 @@ export default function Home() {
 
       <Testimonials />
 
-      {/* ⚡ FAQ SECTION (AEO/GEO Optimized) ⚡ */}
+      {/* ⚡ FAQ SECTION (AEO/GEO Optimized with Real-Time Search) ⚡ */}
       <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '0.75rem', fontSize: '2.25rem', fontWeight: 800 }}>Frequently Asked Questions</h2>
           <p style={{ textAlign: 'center', color: 'var(--color-gray-dark)', marginBottom: '2.5rem' }}>
             Get direct, factual answers to common questions about home inspections in Atlanta.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', background: 'white' }}>
-              <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                How much does a certified home inspection cost in Metro Atlanta?
-                <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
-              </summary>
-              <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $425, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled).
-              </p>
-            </details>
-
-            <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', background: 'white' }}>
-              <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                Why does Foresight send two home inspectors on every job?
-                <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
-              </summary>
-              <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other audits interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours.
-              </p>
-            </details>
-
-            <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', background: 'white' }}>
-              <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                What does Christopher Boykin's Certified Master Inspector® credential mean?
-                <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
-              </summary>
-              <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. CMIs are vetted by the Master Inspector Certification Board, completing at least 1,000 paid inspections or hours of education, maintaining a clean legal record, and adhering to strict InterNACHI Standards of Practice.
-              </p>
-            </details>
-
-            <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', background: 'white' }}>
-              <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                What is covered under the complimentary $10,000 Foresight warranty?
-                <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
-              </summary>
-              <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for 90 days from closing. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs.
-              </p>
-            </details>
-          </div>
+          <FaqSearch
+            faqs={[
+              {
+                q: "How much does a certified home inspection cost in Metro Atlanta?",
+                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $425, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled)."
+              },
+              {
+                q: "Why does Foresight send two home inspectors on every job?",
+                a: "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other audits interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours."
+              },
+              {
+                q: "What does Christopher Boykin's Certified Master Inspector® credential mean?",
+                a: "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. CMIs are vetted by the Master Inspector Certification Board, completing at least 1,000 paid inspections or hours of education, maintaining a clean legal record, and adhering to strict InterNACHI Standards of Practice."
+              },
+              {
+                q: "What is covered under the complimentary $10,000 Foresight warranty?",
+                a: "Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for 90 days from closing. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs."
+              },
+              {
+                q: "What areas does Foresight Home Inspections serve?",
+                a: "Foresight Home Inspections serves over 163 cities across Metro Atlanta, including Lithonia, Decatur, Sandy Springs, Alpharetta, Johns Creek, Roswell, Marietta, Smyrna, Atlanta, and surrounding North Georgia counties."
+              },
+              {
+                q: "How quickly will I receive my home inspection report?",
+                a: "You will receive a comprehensive, high-resolution digital inspection report within 24 hours of your inspection. Our reports include detailed photos, thermal imaging scans, and clear recommendation summaries for easy seller negotiations."
+              }
+            ]}
+          />
         </div>
       </section>
     </>
   );
 }
+
