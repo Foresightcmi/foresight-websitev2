@@ -169,10 +169,7 @@ export default function Home() {
                 Get Instant Quote
               </Link>
             </div>
-            <p style={{ maxWidth: '700px', margin: '2rem auto 0', fontSize: '0.95rem', color: 'var(--color-gray-mid)', lineHeight: 1.7, textAlign: 'center' }}>
-              Foresight Home Inspections, LLC is a Certified Master Inspector®-led home inspection company in Metro Atlanta, Georgia. Every inspection is performed by two certified inspectors and includes a $10,000 Elite Master Inspection Warranty at no additional cost. Serving over 163 cities across the Metro Atlanta area.
-            </p>
-            <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center', gap: '3.5rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
+            <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center', gap: '3.5rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
                <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
                <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
             </div>
