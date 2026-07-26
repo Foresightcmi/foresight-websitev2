@@ -77,6 +77,30 @@ export default async function sitemap() {
       console.error('Error reading posts in sitemap.js:', err);
     }
   }
-  
+
+  // 4. Dynamic pSEO Service x City Pages
+  const SERVICES_PSEO_FILE = path.join(process.cwd(), 'data', 'services-pseo.json');
+  if (fs.existsSync(CITIES_FILE) && fs.existsSync(SERVICES_PSEO_FILE)) {
+    try {
+      const cities = JSON.parse(fs.readFileSync(CITIES_FILE, 'utf8'));
+      const services = JSON.parse(fs.readFileSync(SERVICES_PSEO_FILE, 'utf8'));
+
+      for (const service of services) {
+        for (const city of cities) {
+          const citySlug = city['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          routes.push({
+            url: `${baseUrl}/services/${service.slug}/${citySlug}`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.75,
+          });
+        }
+      }
+    } catch (err) {
+      console.error('Error adding pSEO routes in sitemap.js:', err);
+    }
+  }
+
   return routes;
 }
+

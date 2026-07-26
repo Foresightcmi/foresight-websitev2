@@ -1,0 +1,206 @@
+[
+  {
+    "slug": "radon-testing",
+    "name": "Radon Gas Testing",
+    "metaTitle": "Radon Gas Testing in {city}, GA | Foresight Home Inspections",
+    "metaDescription": "Professional 48-hour continuous monitor radon gas testing in {city}, GA. Certified Master Inspector team providing fast, accurate indoor air quality reports.",
+    "price": "$200+",
+    "priceDetails": "$200 when bundled with a home inspection | $250 standalone",
+    "icon": "☢️",
+    "badge": "EPA Recommended",
+    "heroSub": "Radon is an invisible, odorless radioactive gas and the #1 cause of lung cancer in non-smokers. Protect your family in {city} with continuous electronic monitoring.",
+    "overview": "Radon gas enters {city} homes through cracks in foundation slabs, crawlspaces, and basement walls. Because Georgia sits on granite-rich soil, indoor radon levels can vary significantly even between neighboring homes. Foresight Home Inspections utilizes professional 48-hour continuous radon monitors to measure precise hourly picocuries per liter (pCi/L) levels, giving you clear, actionable data before closing.",
+    "standards": "Our radon testing protocols strictly adhere to U.S. Environmental Protection Agency (EPA) and InterNACHI standards. Action is recommended for any radon level at or above 4.0 pCi/L.",
+    "equipment": "Continuous Radon Monitors (CRM) with 48-hour hourly sampling, tamper detection, and digital reporting.",
+    "faqs": [
+      {
+        "q": "Why is radon testing necessary in {city}, GA?",
+        "a": "North Georgia is designated by the EPA as a moderate-to-high risk zone for elevated indoor radon levels due to underlying granite rock formations. Radon is completely invisible and odorless. Testing is the only way to know if a home in {city} has dangerous levels of radioactive gas."
+      },
+      {
+        "q": "How is radon testing conducted during a home inspection in {city}?",
+        "a": "We place a continuous radon monitor in the lowest liveable level of the home for 48 hours under closed-house conditions. The device logs hourly radon concentrations, temperature, and humidity, producing an automated report immediately at the end of the test period."
+      },
+      {
+        "q": "What happens if radon levels in {city} are high?",
+        "a": "If testing reveals average radon levels at or above 4.0 pCi/L, an active soil depressurization radon mitigation system can be installed by a certified specialist. The inspection report provides the exact evidence needed to negotiate a seller repair credit or mitigation system installation before closing."
+      },
+      {
+        "q": "How much does radon testing cost in {city}, GA?",
+        "a": "Radon testing in {city} costs $200 when bundled with a comprehensive home inspection package, or $250 as a standalone service. Every inspection also includes our $10,000 Elite Master Inspection Warranty."
+      }
+    ],
+    "riskContext": "Radon levels in Georgia can spike unexpectedly during heavy rainfall and winter heating seasons when soil gases are drawn upward into living spaces.",
+    "relatedBlogSlug": "hidden-dangers-of-radon-gas-georgia"
+  },
+  {
+    "slug": "termite-inspection",
+    "name": "Termite & WDO Inspection",
+    "metaTitle": "Official Termite & WDO Inspection in {city}, GA | Georgia Clearance",
+    "metaDescription": "Licensed Georgia Wood Destroying Organism (WDO) termite inspections in {city}, GA. Official clearance report for mortgage lenders and homebuyers.",
+    "price": "$110+",
+    "priceDetails": "$110 when bundled with a home inspection | $150 standalone",
+    "icon": "🐜",
+    "badge": "Official GA WDO Report",
+    "heroSub": "Subterranean termites cause over $5 billion in property damage annually. Get an Official Georgia Wood Infestation Clearance Report in {city}.",
+    "overview": "Georgia's warm, humid climate creates an ideal environment for eastern subterranean termites and wood-decay fungi. In {city}, termite damage can compromise main floor joists, sills, support posts, and roof structures without obvious surface signs. Through our licensed pest control partners, Foresight Home Inspections delivers an Official Georgia Wood Infestation Report (WDO Report) required by FHA, VA, and conventional lenders prior to closing.",
+    "standards": "Inspections cover active termites, past termite activity, evidence of previous chemical treatments, powderpost beetles, carpenter ants, and wood-rot decay fungi following Georgia Structural Pest Control Commission regulations.",
+    "equipment": "High-powered diagnostic flashlights, moisture probes, sounding hammers, and digital thermal cameras.",
+    "faqs": [
+      {
+        "q": "Is a termite inspection required to buy a house in {city}, GA?",
+        "a": "Most mortgage lenders (especially VA and FHA loans) require an Official Georgia Wood Infestation Report before approving loan closing. Even for cash buyers, a termite evaluation in {city} is essential because homeowner's insurance almost never covers termite damage."
+      },
+      {
+        "q": "What does a WDO report cover in {city}?",
+        "a": "The official report checks for four primary wood-destroying organisms: subterranean termites, drywood termites, powderpost beetles, and wood-decaying fungi. It identifies active infestations, previous damage, and conducive conditions like soil-to-wood contact or crawlspace moisture."
+      },
+      {
+        "q": "How much is a termite inspection in {city}, GA?",
+        "a": "An Official Georgia WDO termite inspection in {city} is $110 when bundled with your home inspection, or $150 if scheduled as a standalone evaluation."
+      },
+      {
+        "q": "What if termites or wood damage are found?",
+        "a": "If active termites or structural wood decay are identified in {city}, the report specifies the location and severity. Your realtor can use this official documentation to request a professional treatment and structural repair credit from the seller before closing."
+      }
+    ],
+    "riskContext": "Georgia ranks among the highest termite pressure zones in the nation. Crawlspace homes in {city} with elevated moisture levels are particularly vulnerable to subterranean termite mud tubes.",
+    "relatedBlogSlug": "crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-07-22"
+  },
+  {
+    "slug": "sewer-scope-inspection",
+    "name": "Sewer Scope Inspection",
+    "metaTitle": "Sewer Scope Camera Inspection in {city}, GA | Lateral Line Check",
+    "metaDescription": "High-definition sewer scope camera inspection in {city}, GA. Locate root intrusion, pipe collapses, and bellies before buying. HD video provided.",
+    "price": "$425",
+    "priceDetails": "$425 flat rate | Includes full HD video recording & detailed report",
+    "icon": "🚽",
+    "badge": "HD Video Included",
+    "heroSub": "Replacing a collapsed sewer line can cost $5,000 to $15,000+. Inspect the underground sewer pipe from house to street in {city} before you close.",
+    "overview": "A standard home inspection does not see inside underground pipes buried 4 to 10 feet below ground. In {city}, mature tree roots, clay pipe shifts, cast iron corrosion, and collapsed PVC can cause catastrophic backups shortly after moving in. Foresight Home Inspections inserts a self-leveling HD fiber-optic camera down the main sewer line from the cleanout to the municipal sewer main or septic tank entry, capturing full video footage of the pipe's internal condition.",
+    "standards": "Evaluates pipe material (cast iron, clay, PVC, Orangeburg), joint integrity, slope bellies, root intrusions, cracks, offset joints, and mineral buildup per InterNACHI Standards of Practice.",
+    "equipment": "200-foot rigid push-rod fiber-optic HD camera with self-leveling head, digital distance counter, and wireless video recording transmitter.",
+    "faqs": [
+      {
+        "q": "Why do I need a sewer scope inspection in {city}, GA?",
+        "a": "Underground sewer pipes are completely invisible during a visual walkthrough. In {city}, tree roots frequently penetrate pipe joints, and older cast iron or clay pipes can collapse without warning. Repairing an underground sewer line requires heavy excavation costing $5,000 to $15,000+."
+      },
+      {
+        "q": "Do new construction homes in {city} need sewer scope inspections?",
+        "a": "Yes! Construction crews frequently crush PVC drain lines during grading, drop heavy debris down sewer vents, or fail to connect lateral pipes properly to the main city sewer line in new {city} subdivisions."
+      },
+      {
+        "q": "What do I receive after a sewer scope in {city}?",
+        "a": "You receive a comprehensive written report with exact distance markers for any defects, plus a shareable link to the full HD video recording to share directly with your realtor and plumbers for repair estimates."
+      },
+      {
+        "q": "How much does a sewer camera scope cost in {city}, GA?",
+        "a": "Our sewer scope camera evaluation in {city} is a flat rate of $425, which includes the complete HD video inspection, distance mapping, and report."
+      }
+    ],
+    "riskContext": "Homes built prior to 1985 in {city} often contain aging cast iron or clay tile sewer pipes that are reaching the end of their functional lifespan.",
+    "relatedBlogSlug": "sewer-scope-inspection-guide"
+  },
+  {
+    "slug": "new-construction-inspection",
+    "name": "New Construction Inspection",
+    "metaTitle": "New Construction Home Inspection in {city}, GA | Final Phase",
+    "metaDescription": "Independent new construction final phase home inspection in {city}, GA. Catch builder defects, code oversights, and safety risks before final walkthrough.",
+    "price": "$355+",
+    "priceDetails": "Condos from $355 | Single Family Homes from $395+",
+    "icon": "🏗️",
+    "badge": "Builder Punch-List Ready",
+    "heroSub": "Don't assume a new home is defect-free. Municipal inspectors only spend 15 minutes on site. Our two-inspector team performs a multi-hour audit in {city}.",
+    "overview": "Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in {city} frequently have major concealed defects. From missing attic insulation and improperly wired subpanels to unsealed roof flashings and reversed HVAC ducting, our independent two-inspector team evaluates every system in your new {city} build before final closing.",
+    "standards": "Full multi-system evaluation covering structural framing, roof coverings, electrical subpanels, plumbing roughs, HVAC airflow balance, insulation depth, and exterior drainage against IRC and Georgia Residential Energy Code guidelines.",
+    "equipment": "FLIR thermal imaging, aerial inspection drones, circuit load testers, laser levels, and digital moisture meters.",
+    "faqs": [
+      {
+        "q": "Doesn't the city inspector in {city} inspect my new home?",
+        "a": "Municipal building inspectors in {city} typically conduct brief 10 to 15 minute checks focused strictly on minimum municipal code compliance. They do not evaluate overall build quality, cosmetic defects, thermal insulation voids, or appliance performance. An independent inspection takes 2 to 3 hours with two inspectors."
+      },
+      {
+        "q": "When should a new construction inspection be scheduled in {city}?",
+        "a": "Schedule the final phase inspection 3 to 5 days before your final builder walkthrough. This gives the builder time to complete items on our inspection report before your official closing date."
+      },
+      {
+        "q": "Will the builder fix issues found on Foresight's report in {city}?",
+        "a": "Yes. Our reports are formatted specifically as clear, builder-ready punch lists complete with high-resolution photos, thermal images, and exact technical descriptions that project managers accept without dispute."
+      },
+      {
+        "q": "How much is a new build inspection in {city}, GA?",
+        "a": "New construction final phase inspections in {city} start at $355+ for condos and $395+ for single-family homes, based on square footage. All inspections include thermal imaging and our $10,000 warranty."
+      }
+    ],
+    "riskContext": "Rapid development in {city} often results in unsealed roof penetration flashings, missing attic baffles, and improper grading that directs rainwater toward fresh foundations.",
+    "relatedBlogSlug": "why-you-need-home-inspection-new-build"
+  },
+  {
+    "slug": "pool-inspection",
+    "name": "Pool & Spa Inspection",
+    "metaTitle": "Pool & Spa Inspection in {city}, GA | Certified Pool Specialist",
+    "metaDescription": "Comprehensive swimming pool and spa inspection in {city}, GA. We test pumps, heaters, plumbing, shell integrity, electrical safety, and equipment.",
+    "price": "$300",
+    "priceDetails": "$300 flat rate for residential pools & attached spas",
+    "icon": "🏊‍♂️",
+    "badge": "Electrical & Safety Audit",
+    "heroSub": "Pool repairs can cost thousands in hidden pump, liner, or electrical failures. Protect your backyard oasis in {city} with a specialized pool evaluation.",
+    "overview": "A residential swimming pool in {city} is both a luxury amenity and a complex mechanical facility. Our specialized pool and spa inspection evaluates the structural pool shell, plaster/liner condition, circulation pumps, filtration units, pool heaters, automated valve actuators, GFCI electrical bonding, and safety barrier compliance (fence latches and alarms).",
+    "standards": "Evaluates equipment against APSP (Association of Pool & Spa Professionals) standards, NEC Article 680 electrical safety codes, and local Georgia barrier regulations.",
+    "equipment": "Pressure gauges, electronic GFCI circuit testers, acoustic leak sensors, and telescopic pole camera rigs.",
+    "faqs": [
+      {
+        "q": "What is included in a pool inspection in {city}, GA?",
+        "a": "Our $300 pool inspection covers the pool/spa shell condition, coping and decking, pump and motor operation, filter pressure, heater ignition, salt cell/chlorinator systems, underwater lighting, GFCI ground bonding safety, plumbing leaks, and perimeter safety fencing."
+      },
+      {
+        "q": "Can a general home inspector in {city} inspect a pool?",
+        "a": "Most general home inspectors exclude pools entirely or perform only a cursory visual check. Foresight provides a dedicated, technical pool audit with specialized testing of high-voltage equipment and hydraulic pressure systems."
+      },
+      {
+        "q": "How much does a pool inspection cost in {city}, GA?",
+        "a": "Our pool and spa inspection in {city} is a flat rate of $300 when performed alongside your primary home inspection."
+      },
+      {
+        "q": "What are common pool defects found in {city} homes?",
+        "a": "Common issues in {city} include cracked skimmer throats, unbonded pool light fixtures (an extreme shock hazard), leaking pump seals, malfunctioning gas heaters, and non-compliant self-closing gate latches."
+      }
+    ],
+    "riskContext": "Improperly grounded pool lighting and aging GFCI breakers in older {city} pools pose severe electrical shock risks if not inspected prior to occupancy.",
+    "relatedBlogSlug": "pool-and-spa-inspection-guide"
+  },
+  {
+    "slug": "pre-listing-inspection",
+    "name": "Pre-Listing Seller Inspection",
+    "metaTitle": "Pre-Listing Home Inspection in {city}, GA | Seller Advantage",
+    "metaDescription": "Pre-listing seller home inspection in {city}, GA. Identify repair issues before listing to protect your asking price and eliminate buyer negotiation surprises.",
+    "price": "$250+",
+    "priceDetails": "Condos from $250 | Single Family Homes from $365+",
+    "icon": "📋",
+    "badge": "Maximize Sale Price",
+    "heroSub": "Avoid deal-killing surprises during buyer due diligence. Inspect your {city} home before putting it on the market to sell faster and for top dollar.",
+    "overview": "When a buyer's inspector finds unexpected major defects in {city}, negotiations stall, price concessions skyrocket, or buyers walk away entirely. A Pre-Listing Seller Inspection by Foresight Home Inspections gives you complete transparency into your property's condition before hitting the MLS. You can make targeted repairs on your timeline or reflect known conditions accurately in your seller disclosures.",
+    "standards": "Full InterNACHI standard evaluation covering all structural, mechanical, electrical, plumbing, roof, and HVAC systems with thermal imaging included.",
+    "equipment": "FLIR thermal cameras, aerial drones, moisture detectors, and digital circuit analyzers.",
+    "faqs": [
+      {
+        "q": "Why should I get a pre-listing inspection in {city}, GA?",
+        "a": "A pre-listing inspection allows you to fix minor defects affordably before listing, eliminate aggressive buyer repair demands during due diligence, and provide potential buyers with a clean report that builds massive offer confidence."
+      },
+      {
+        "q": "Will a pre-listing inspection help my house in {city} sell faster?",
+        "a": "Yes. Homes listed with a clean, transparent inspection report in {city} experience fewer contract cancellations, faster closing times, and fewer price re-negotiations."
+      },
+      {
+        "q": "How much is a pre-listing seller inspection in {city}, GA?",
+        "a": "Pre-listing seller inspections start at $250+ for condos and $365+ for single-family homes in {city}, including thermal imaging and full digital reports within 24 hours."
+      },
+      {
+        "q": "Can I share Foresight's pre-listing report with potential buyers in {city}?",
+        "a": "Absolutely! We encourage sellers and realtors to display the report at open houses to demonstrate total transparency and justify your top asking price."
+      }
+    ],
+    "riskContext": "Surprise buyer findings like HVAC heat exchanger cracks or hidden crawlspace rot in {city} can trigger $10,000+ price drop requests just days before closing.",
+    "relatedBlogSlug": "pre-listing-seller-inspection-guide"
+  }
+]
