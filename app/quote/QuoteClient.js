@@ -636,6 +636,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           </div>
         </div>
       </div>
+    </section>
     {showValueComparison && <ValueComparison />}
     </>
   );
