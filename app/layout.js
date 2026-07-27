@@ -673,8 +673,6 @@ export default function RootLayout({ children }) {
                   <li><Link href="/quote">Instant Quote</Link></li>
                   <li><Link href="/contact">Contact Us</Link></li>
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
-                  <li><Link href="/defects/stucco-eifs-moisture-inspection">Stucco &amp; EIFS Moisture Audit</Link></li>
-                  <li><Link href="/defects/federal-pacific-zinsco-panel-inspection">Electrical Safety Audit</Link></li>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                 </ul>
               </div>
