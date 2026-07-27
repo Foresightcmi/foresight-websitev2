@@ -105,7 +105,8 @@ export default function RootLayout({ children }) {
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
-          "reviewCount": "320",
+          "reviewCount": "43",
+          "ratingCount": "43",
           "bestRating": "5",
           "worstRating": "1"
         },
@@ -510,8 +511,25 @@ export default function RootLayout({ children }) {
       "ratingValue": "4.9",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "43"
+      "ratingCount": "43",
+      "reviewCount": "43"
     },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marcus Vance" },
+        "datePublished": "2026-06-15",
+        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sarah Jenkins" },
+        "datePublished": "2026-05-20",
+        "reviewBody": "Having two inspectors on site made the process incredibly thorough and fast. Got our 40-page report with full thermal imaging and drone roof photos the same evening.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Home Inspection Services",
