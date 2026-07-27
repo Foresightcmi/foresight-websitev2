@@ -1,36 +1,5 @@
 [
   {
-    "slug": "polybutylene-pipe-inspection",
-    "title": "Polybutylene Plumbing Inspection in Atlanta & Georgia Homes",
-    "metaTitle": "Polybutylene Pipe Inspection Atlanta GA | Polybutylene Risk Audit",
-    "metaDescription": "Expert polybutylene plumbing inspection in Metro Atlanta. Learn how to identify polybutylene pipes, acetal fittings, leak risks, and lender requirements.",
-    "icon": "🚰",
-    "badge": "Plumbing Defect Audit",
-    "summary": "Polybutylene (PB-2110) plastic piping was widely installed in Metro Atlanta homes built between 1978 and 1995. Known as the 'pipe bomb' of residential plumbing, polybutylene degrades due to chlorine in municipal water, leading to sudden fitting ruptures and catastrophic interior flooding.",
-    "identification": "Polybutylene pipes are flexible plastic lines usually gray, blue, or black. They are commonly stamped with 'PB2110' and feature aluminum or plastic acetal crimp rings at joints near water heaters, crawlspaces, and under sinks.",
-    "risks": [
-      "Sudden burst failure without warning, causing $10,000–$50,000 in interior water damage",
-      "Insurance coverage denial or higher deductibles for homes with known polybutylene piping",
-      "Mortgage approval delays or buyer credit demands during due diligence negotiations"
-    ],
-    "howWeInspect": "Our two-inspector team inspects all visible plumbing lines at water heaters, main shutoff valves, crawlspaces, and under fixtures. We utilize FLIR thermal imaging to detect active concealed micro-leaks behind drywall near pipe connections.",
-    "remediation": "Full plumbing repiping (replacing with PEX or copper) typically costs $4,000 to $9,000. Our detailed inspection report gives buyers the technical proof needed to request seller repiping concessions before closing.",
-    "faqs": [
-      {
-        "q": "How do I know if my Atlanta home has polybutylene pipes?",
-        "a": "Look for flexible gray plastic piping entering the main water shutoff valve, water heater, or under sink vanity cabinets. The pipes are often stamped with 'PB2110'."
-      },
-      {
-        "q": "Will home insurance cover polybutylene pipe leaks in Georgia?",
-        "a": "Many insurance carriers in Georgia refuse to issue new policies on homes with polybutylene plumbing, or restrict coverage for water damage unless the piping is replaced within 30 days of purchase."
-      },
-      {
-        "q": "Can polybutylene pipes be inspected without tearing down walls?",
-        "a": "Yes. We inspect visible connection points in crawlspaces, basements, and utility closets, and use FLIR thermal imaging cameras to scan walls for hidden moisture leaks."
-      }
-    ]
-  },
-  {
     "slug": "stucco-eifs-moisture-inspection",
     "title": "Synthetic Stucco (EIFS) & Hard-Coat Stucco Inspection in Georgia",
     "metaTitle": "EIFS Synthetic Stucco Inspection Atlanta GA | Moisture Scan",
@@ -58,37 +27,6 @@
       {
         "q": "Is hard-coat real stucco better than synthetic EIFS?",
         "a": "Yes. Traditional hard-coat stucco is breathable and far more durable, though it still requires proper window flashing and clearance from soil to prevent moisture intrusion."
-      }
-    ]
-  },
-  {
-    "slug": "foundation-crack-settlement-inspection",
-    "title": "Foundation Crack & Red Clay Settlement Inspection in Metro Atlanta",
-    "metaTitle": "Atlanta Foundation Crack Inspection | Red Clay Settlement",
-    "metaDescription": "Expert foundation crack and red clay settlement inspection in Metro Atlanta. Learn the difference between cosmetic hairline cracks and structural foundation movement.",
-    "icon": "🏗️",
-    "badge": "Structural Foundation Audit",
-    "summary": "Metro Atlanta's expansive red clay soil expands when wet and shrinks when dry. This seasonal soil movement places massive hydrostatic pressure on basement foundation walls and crawlspace piers, causing horizontal cracking, stair-step masonry cracks, and floor settling.",
-    "identification": "Horizontal cracks in concrete block basement walls, diagonal stair-step cracks in exterior brick veneer, sticking interior doors, and unlevel subflooring are key indicators of foundation distress.",
-    "risks": [
-      "Foundation wall bowing or shearing, leading to structural instability",
-      "Water intrusion through foundation cracks into basements and crawlspaces",
-      "Expensive helical piering or wall anchor installations ($10,000–$30,000+)"
-    ],
-    "howWeInspect": "Our two-inspector team evaluates foundation walls from crawlspaces, basements, and exterior perimeters. We measure wall plumbness, check floor level gradients, inspect grade slope drainage, and document crack widths and orientation.",
-    "remediation": "Minor hairline shrinkage cracks can be sealed with polyurethane injection. Structural movement requires wall anchors, carbon fiber straps, or helical piers installed by a structural specialist.",
-    "faqs": [
-      {
-        "q": "Are horizontal foundation cracks serious in Atlanta homes?",
-        "a": "Yes. Horizontal cracks in concrete block or poured concrete basement walls indicate soil pressure pushing inward (bowing). This is a structural concern that requires prompt professional evaluation."
-      },
-      {
-        "q": "Why does Atlanta red clay soil cause foundation damage?",
-        "a": "Georgia red clay is highly expansive. It absorbs large amounts of water during rainy seasons, exerting lateral pressure against walls, and contracts during dry spells, causing soil settlement under footings."
-      },
-      {
-        "q": "What is the difference between settling and structural failure?",
-        "a": "Minor uniform settling occurs in almost all homes during the first few years. Structural failure involves ongoing differential movement, horizontal shearing, or vertical wall displacement."
       }
     ]
   },
