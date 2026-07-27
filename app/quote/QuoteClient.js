@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 const ValueComparison = dynamic(() => import('../components/ValueComparison'), { ssr: true });
-export default function QuoteClient() {
+export default function QuoteClient({ showValueComparison = true }) {
   const [propertyType, setPropertyType] = useState('single-family'); // 'single-family', 'condo'
   const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str'
   const [sqft, setSqft] = useState(2000);
@@ -636,8 +636,7 @@ export default function QuoteClient() {
           </div>
         </div>
       </div>
-    </section>
-    <ValueComparison />
+    {showValueComparison && <ValueComparison />}
     </>
   );
 }

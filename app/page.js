@@ -177,12 +177,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ⚡ INSTANT PRICE CALCULATOR WIDGET ⚡ */}
-      <section className="section bg-gray-light" style={{ padding: '3rem 0' }}>
-        <div className="container" style={{ maxWidth: '850px' }}>
-          <InstantQuoteWidget />
-        </div>
-      </section>
+      {/* ⚡ INSTANT PRICE CALCULATOR ⚡ */}
+      <InstantQuoteWidget />
 
       <section className="section">
         <div className="container">
