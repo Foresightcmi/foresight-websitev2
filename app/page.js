@@ -7,7 +7,6 @@ const ValueComparison = dynamic(() => import('./components/ValueComparison'), { 
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
 const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
 const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: true });
-const InstantQuoteWidget = dynamic(() => import('./components/InstantQuoteWidget'), { ssr: true });
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
@@ -177,8 +176,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ⚡ INSTANT PRICE CALCULATOR ⚡ */}
-      <InstantQuoteWidget />
+      {/* ⚡ INSTANT PRICE CALCULATOR CTA ⚡ */}
+      <section className="section bg-dark text-white" style={{ padding: '3.5rem 0', background: 'linear-gradient(135deg, var(--color-dark), #1f2937)' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
+          <span className="badge" style={{ marginBottom: '1rem', background: 'var(--color-red)', color: 'white', fontWeight: 600 }}>
+            ⚡ 100% Transparent Pricing
+          </span>
+          <h2 style={{ color: 'var(--color-white)', fontSize: '2.25rem', marginBottom: '1rem' }}>
+            Want an Instant Price Quote for Your Home Inspection?
+          </h2>
+          <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.15rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+            Calculate your exact, flat-rate inspection price in seconds based on your property square footage. Includes two certified inspectors and our $10,000 warranty.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/quote" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', boxShadow: 'var(--shadow-md)' }}>
+              📊 Calculate Your Instant Quote Now
+            </Link>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+              📅 Schedule Directly
+            </a>
+          </div>
+        </div>
+      </section>
 
       <section className="section">
         <div className="container">
