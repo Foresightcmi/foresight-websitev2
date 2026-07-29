@@ -135,7 +135,64 @@ export default function RealtorsClient() {
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🏆</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>CMI-Led Dual Inspections</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                We don\'t dispatch rookie solo inspectors. Every job features a certified inspector paired directly with Christopher Boykin, a fully-credentialed Certified Master Inspector®—representing the highest professional standard in North America.
+                We don&apos;t dispatch rookie solo inspectors. Every job features a certified inspector paired directly with Christopher Boykin, a fully-credentialed Certified Master Inspector®—representing the highest professional standard in North America.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 📝 HOMEGAUGE CREATE-REPAIR-LIST (CRL™) FEATURE HIGHLIGHT 📝 */}
+      <section className="section" style={{ background: '#0F172A', color: '#FFFFFF', padding: '5rem 0', borderTop: '1px solid #1E293B', borderBottom: '1px solid #1E293B' }}>
+        <div className="container">
+          <div className="grid grid-2" style={{ gap: '3.5rem', alignItems: 'center' }}>
+            <div>
+              <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
+                ⚡ Agent Efficiency Tool
+              </span>
+              <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.25rem' }}>
+                Build Custom Repair Addendums in Minutes with HomeGauge CRL™
+              </h2>
+              <p style={{ color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                Never waste hours copying and pasting inspection report findings into amendment contracts again. Foresight digital reports include HomeGauge&rsquo;s interactive <strong>Create-Repair-List (CRL™)</strong> tool, built specifically for real estate agents.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: '1.2rem' }}>✓</span>
+                  <p style={{ color: '#CBD5E1', margin: 0, fontSize: '1rem' }}><strong>One-Click Selection:</strong> Select repair items directly from our digital report into your amendment draft.</p>
+                </div>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: '1.2rem' }}>✓</span>
+                  <p style={{ color: '#CBD5E1', margin: 0, fontSize: '1rem' }}><strong>Dollar Amount Customization:</strong> Request seller credit amounts or contractor repairs with exact line items.</p>
+                </div>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <span style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: '1.2rem' }}>✓</span>
+                  <p style={{ color: '#CBD5E1', margin: 0, fontSize: '1rem' }}><strong>Seamless PDF Export:</strong> Generate a polished PDF addendum ready to attach directly to your GAR amendment form.</p>
+                </div>
+              </div>
+              <a href="#partner-form" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
+                🤝 Connect with Foresight Realtor VIP
+              </a>
+            </div>
+
+            <div style={{ background: '#1E293B', border: '2px solid var(--color-gold)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid #334155', paddingBottom: '1rem' }}>
+                <div style={{ fontSize: '2.5rem' }}>📄</div>
+                <div>
+                  <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem' }}>HomeGauge CRL™ Interactive Preview</h3>
+                  <span style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600 }}>Included Standard on Every Foresight Report</span>
+                </div>
+              </div>
+              <div style={{ background: '#0F172A', borderRadius: 'var(--radius-md)', padding: '1.25rem', marginBottom: '1rem', borderLeft: '4px solid var(--color-gold)' }}>
+                <p style={{ color: '#F1F5F9', fontWeight: 600, fontSize: '0.95rem', margin: '0 0 0.25rem 0' }}>Item 3.2: HVAC Condenser Heat Surcharge</p>
+                <p style={{ color: '#94A3B8', fontSize: '0.85rem', margin: 0 }}>Selected for Repair Request &bull; Requested Credit: $1,200</p>
+              </div>
+              <div style={{ background: '#0F172A', borderRadius: 'var(--radius-md)', padding: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid var(--color-gold)' }}>
+                <p style={{ color: '#F1F5F9', fontWeight: 600, fontSize: '0.95rem', margin: '0 0 0.25rem 0' }}>Item 5.1: Main Electrical Panel Grounding Rod</p>
+                <p style={{ color: '#94A3B8', fontSize: '0.85rem', margin: 0 }}>Selected for Contractor Repair Prior to Closing</p>
+              </div>
+              <p style={{ color: '#64748B', fontSize: '0.85rem', margin: 0, textAlign: 'center', fontStyle: 'italic' }}>
+                Agents report saving 45+ minutes per transaction using the Foresight CRL™ addendum tool.
               </p>
             </div>
           </div>
