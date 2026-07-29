@@ -182,13 +182,25 @@ a:hover {
 .btn-outline {
   background: transparent;
   border: 2px solid #334155;
-  color: var(--color-slate-dark) !important;
+  color: var(--color-slate-dark);
 }
 
 .btn-outline:hover {
   background: #0F172A;
   color: #FFFFFF !important;
   border-color: #0F172A;
+}
+
+.btn-outline-light {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #FFFFFF !important;
+}
+
+.btn-outline-light:hover {
+  background: #FFFFFF;
+  color: #0F172A !important;
+  border-color: #FFFFFF;
 }
 
 /* Hero Section */

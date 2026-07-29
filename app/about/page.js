@@ -333,7 +333,7 @@ export default function About() {
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
                 📅 Schedule &amp; Get Your Warranty
               </a>
-              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+              <Link href="/quote" className="btn btn-outline-light" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
                 See Pricing First
               </Link>
             </div>
