@@ -477,6 +477,7 @@ export default function RootLayout({ children }) {
     "description": "Premium home inspection services in Atlanta featuring two inspectors on every job, led by a Certified Master Inspector. Includes $10,000 Elite Master Inspection Warranty.",
     "founder": {
       "@type": "Person",
+      "@id": "https://www.fhinspectionsatl.com/#person-christopher-boykin",
       "name": "Christopher Boykin",
       "jobTitle": "Certified Master Inspector",
       "hasCredential": [
