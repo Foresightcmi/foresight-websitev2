@@ -254,42 +254,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" style={{ background: '#FFFFFF', padding: '5rem 0' }}>
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
             <div>
               <Image src="/images/Christopher_Boykin.jpg" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} priority />
             </div>
-            <div style={{ padding: '0 2rem' }}>
-              <h2 style={{ marginBottom: '1.5rem' }}>Who is the Certified Master Inspector leading Foresight Home Inspections?</h2>
-              <p style={{ marginBottom: '1.5rem', fontSize: '1.125rem', fontWeight: 600, color: 'var(--color-dark)' }}>
-                With over a decade of hands-on experience, Christopher Boykin, CMI, is the founder and lead Certified Master Inspector of Foresight Home Inspections, LLC, performing residential audits, sewer scopes, and radon testing across Atlanta, GA. We send two certified inspectors on every single job to verify twice as much in half the time.
+            <div style={{ padding: '0 1rem' }}>
+              <span className="badge" style={{ background: 'rgba(15, 23, 42, 0.08)', color: '#0F172A', border: '1px solid #0F172A', marginBottom: '1rem', fontWeight: 600 }}>
+                🎖️ Master-Level Leadership
+              </span>
+              <h2 style={{ marginBottom: '1.25rem', color: '#0F172A', fontSize: '2.1rem' }}>Who is the Certified Master Inspector leading Foresight Home Inspections?</h2>
+              <p style={{ marginBottom: '1.25rem', fontSize: '1.1rem', fontWeight: 600, color: '#1E293B', lineHeight: 1.6 }}>
+                With over a decade of hands-on experience, Christopher Boykin, CMI, is the founder and lead Certified Master Inspector of Foresight Home Inspections, LLC, performing residential home inspections, sewer scopes, and radon testing across Metro Atlanta. We send two certified inspectors on every single job to verify twice as much in half the time.
               </p>
-              <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
+              <p style={{ marginBottom: '1.25rem', fontSize: '1rem', color: '#475569', lineHeight: 1.6 }}>
                 Together with another fully certified professional inspector, our two-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
               </p>
-              <p style={{ marginBottom: '1.5rem', fontSize: '1.025rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, background: 'var(--color-gray-light)', padding: '1rem', borderLeft: '4px solid var(--color-red)', borderRadius: 'var(--radius-sm)' }}>
-                Every inspection integrates FLIR thermal imaging and aerial drone technology, and includes a $10,000 Elite Master Inspection Warranty with a $0 deductible &mdash; backed by the Master Inspector Certification Board.
+              <p style={{ marginBottom: '1.5rem', fontSize: '1rem', color: '#1E293B', lineHeight: 1.6, background: '#F8FAFC', padding: '1.25rem', borderLeft: '4px solid var(--color-gold)', borderRadius: 'var(--radius-sm)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
+                Every home inspection integrates FLIR thermal imaging and aerial drone technology, and includes a $10,000 Elite Master Inspection Warranty with a $0 deductible &mdash; backed by the Master Inspector Certification Board.
               </p>
               <ul className="cms-content" style={{ marginBottom: '2rem', listStyle: 'none' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--color-red)' }}>✓</span> InterNACHI Certified Master Inspector
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> InterNACHI Certified Master Inspector
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--color-red)' }}>✓</span> Certified Pool & Spa Inspections
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Certified Pool &amp; Spa Inspections
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--color-red)' }}>✓</span> Termite & Wood Destroying Organism (WDO) Evaluations
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Termite &amp; Wood Destroying Organism (WDO) Evaluations
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--color-red)' }}>✓</span> Thermal Imaging & Drone Tech Included
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Thermal Imaging &amp; Drone Tech Included
                 </li>
               </ul>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                  📅 Schedule Now
+                <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
+                  📅 Schedule Inspection Now
                 </a>
-                <Link href="/ask-twin" className="btn btn-outline" style={{ borderWidth: '2px' }}>
+                <Link href="/ask-twin" className="btn btn-outline" style={{ borderColor: '#0F172A', color: '#0F172A', padding: '0.9rem 2rem' }}>
                   Ask Foresight AI
                 </Link>
               </div>
@@ -301,37 +304,37 @@ export default function Home() {
       <ValueComparison />
 
       {/* 📊 GEO / AI SEARCH ENGINE STATS MODULE 📊 */}
-      <section className="section bg-gray-light" style={{ padding: '4rem 0', borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
+      <section className="section" style={{ padding: '4.5rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container">
           <div className="section-title">
-            <span className="badge" style={{ marginBottom: '0.75rem' }}>Georgia Property Insights</span>
-            <h2>Georgia Home Inspection Market Statistics & Facts</h2>
-            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0.5rem auto 0', fontSize: '1.05rem' }}>
+            <span className="badge" style={{ background: 'rgba(15, 23, 42, 0.08)', color: '#0F172A', border: '1px solid #0F172A', marginBottom: '0.75rem', fontWeight: 600 }}>Georgia Property Insights</span>
+            <h2>Georgia Home Inspection Market Statistics &amp; Facts</h2>
+            <p style={{ color: '#475569', maxWidth: '700px', margin: '0.5rem auto 0', fontSize: '1.05rem' }}>
               Key industry data, common structural defects, and risk factors across Metro Atlanta properties compiled by Foresight Home Inspections.
             </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '1.5rem', marginTop: '2.5rem' }}>
-            <div className="card" style={{ background: 'white', borderLeft: '4px solid var(--color-red)' }}>
-              <h3 style={{ fontSize: '1.75rem', color: 'var(--color-red)', marginBottom: '0.25rem', fontWeight: 800 }}>82%</h3>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Thermal Leak Detection Rate</h4>
-              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
+            <div className="card" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)' }}>
+              <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>82%</h3>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1E293B' }}>Thermal Leak Detection Rate</h4>
+              <p style={{ color: '#475569', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
                 Over 80% of hidden moisture intrusion in Atlanta crawlspaces and subfloors is invisible to the naked eye and only detected via FLIR thermal imaging cameras.
               </p>
             </div>
 
-            <div className="card" style={{ background: 'white', borderLeft: '4px solid var(--color-red)' }}>
-              <h3 style={{ fontSize: '1.75rem', color: 'var(--color-red)', marginBottom: '0.25rem', fontWeight: 800 }}>$10,000</h3>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Elite Master Warranty</h4>
-              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
-                Every inspection led by CMI® Christopher Boykin includes $10,000 in zero-deductible coverage for appliances, mechanicals, structural elements, and roof leaks.
+            <div className="card" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)' }}>
+              <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>$10,000</h3>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1E293B' }}>Elite Master Warranty</h4>
+              <p style={{ color: '#475569', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
+                Every home inspection led by CMI® Christopher Boykin includes $10,000 in zero-deductible coverage for appliances, mechanicals, structural elements, and roof leaks.
               </p>
             </div>
 
-            <div className="card" style={{ background: 'white', borderLeft: '4px solid var(--color-red)' }}>
-              <h3 style={{ fontSize: '1.75rem', color: 'var(--color-red)', marginBottom: '0.25rem', fontWeight: 800 }}>163+</h3>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Georgia Cities Served</h4>
-              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
+            <div className="card" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)' }}>
+              <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>163+</h3>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1E293B' }}>Georgia Cities Served</h4>
+              <p style={{ color: '#475569', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
                 Foresight provides comprehensive two-inspector team coverage across Fulton, DeKalb, Gwinnett, Cobb, and Forsyth counties.
               </p>
             </div>

@@ -7,10 +7,10 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="header" style={{ backgroundColor: 'var(--color-white)' }}>
+    <header className="header" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
       <div className="container nav-container">
         <Link href="/" className="logo">
-          <Image src="/images/Logopng.png" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '140px', width: 'auto' }} priority />
+          <Image src="/images/Logopng.png" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '120px', width: 'auto' }} priority />
           <span className="sr-only">Foresight Home Inspections</span>
         </Link>
         <button
@@ -30,9 +30,9 @@ export default function Header() {
             <li><Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
             <li><Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
             <li><Link href="/quote" onClick={() => setMenuOpen(false)}>Get Quote</Link></li>
-            <li><Link href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: 'var(--color-red)', fontWeight: '600' }}>Ask Foresight AI</Link></li>
+            <li><Link href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: 'var(--color-primary)', fontWeight: '600' }}>Ask Foresight AI</Link></li>
             <li>
-              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" onClick={() => setMenuOpen(false)}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" onClick={() => setMenuOpen(false)}>
                 Schedule Now
               </a>
             </li>
