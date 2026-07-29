@@ -51,7 +51,7 @@ export default function Services() {
       title: 'New Construction Inspections',
       price: '$355+',
       description: 'Ensure your brand-new home was built to correct specifications. We perform a comprehensive final inspection of all major systems.',
-      details: ['Final phase inspection audit', 'Structure & systems checks', 'Workmanship quality review', 'Identify developer defects'],
+      details: ['Final phase inspection evaluation', 'Structure & systems checks', 'Workmanship quality review', 'Identify developer defects'],
       image: '/images/drone-2.png',
       slug: 'why-you-need-home-inspection-new-build'
     },

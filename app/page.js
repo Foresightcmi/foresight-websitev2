@@ -116,7 +116,7 @@ export default function Home() {
             "name": "Why does Foresight send two home inspectors on every job?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other audits interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours."
+              "text": "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other evaluates interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours."
             }
           },
           {
@@ -569,7 +569,7 @@ export default function Home() {
               },
               {
                 q: "Why does Foresight send two home inspectors on every job?",
-                a: "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other audits interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours."
+                a: "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other evaluates interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours."
               },
               {
                 q: "What does Christopher Boykin's Certified Master Inspector® credential mean?",
