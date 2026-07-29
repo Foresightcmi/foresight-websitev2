@@ -147,54 +147,109 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="hero">
+      <section className="hero" style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', color: 'var(--color-white)', padding: '5rem 0' }}>
         <div className="container">
-          <h2 className="slogan-heading" style={{ marginBottom: '1rem' }}>
-            &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
-          </h2>
+          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.4rem 1.25rem', borderRadius: '2rem', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.05em' }}>
+              🏛️ METICULOUS HOME INSPECTIONS FOR ATLANTA'S FINEST HOMES
+            </span>
+          </div>
           <div className="hero-content">
-            <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+            <h1 style={{ marginBottom: '1.5rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)', color: '#FFFFFF', fontSize: '3.25rem', fontWeight: 800 }}>
               Atlanta&rsquo;s Certified Home Inspections<br />
-              <span style={{ color: 'var(--color-red)' }}>Two Inspectors on Every Job.</span>
+              <span style={{ color: 'var(--color-gold)' }}>Two Inspectors on Every Job.</span>
             </h1>
-            <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.125rem' }}>
-              Backed by over 10 years of experience, Foresight Home Inspections, LLC pairs a lead Certified Master Inspector® with a second certified inspector on every job. Armed with high-resolution drones, advanced thermal cameras, and electronic moisture diagnostic gear, we bring unparalleled high-tech thoroughness to your inspection.
+            <p style={{ maxWidth: '750px', margin: '0 auto 2.5rem', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7 }}>
+              Uncompromising thoroughness led by a Certified Master Inspector® (CMI). From entry-level single-family homes to multi-million dollar luxury estates, every home inspection features two certified inspectors, FLIR thermal imaging, aerial drone roof scanning, and our $10,000 warranty protection.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                📅 Schedule Your Inspection
+            <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.125rem', borderRadius: 'var(--radius-md)' }}>
+                📅 Schedule Inspection Now
               </a>
-              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
-                Get Instant Quote
+              <Link href="/quote" className="btn btn-outline" style={{ padding: '1.1rem 2.5rem', fontSize: '1.125rem', borderColor: 'rgba(255,255,255,0.4)', color: 'var(--color-white)', borderRadius: 'var(--radius-md)' }}>
+                📊 Calculate Instant Fee
               </Link>
             </div>
             <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center', gap: '3.5rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
-               <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
-               <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={240} height={180} style={{ height: '180px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={240} height={180} style={{ height: '160px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={240} height={180} style={{ height: '160px', width: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ⚡ INSTANT PRICE CALCULATOR CTA ⚡ */}
-      <section className="section bg-dark text-white" style={{ padding: '3.5rem 0', background: 'linear-gradient(135deg, var(--color-dark), #1f2937)' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
-          <span className="badge" style={{ marginBottom: '1rem', background: 'var(--color-red)', color: 'white', fontWeight: 600 }}>
-            ⚡ 100% Transparent Pricing
-          </span>
-          <h2 style={{ color: 'var(--color-white)', fontSize: '2.25rem', marginBottom: '1rem' }}>
-            Want an Instant Price Quote for Your Home Inspection?
-          </h2>
-          <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.15rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-            Calculate your exact, flat-rate inspection price in seconds based on your property square footage. Includes two certified inspectors and our $10,000 warranty.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/quote" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', boxShadow: 'var(--shadow-md)' }}>
-              📊 Calculate Your Instant Quote Now
-            </Link>
-            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
-              📅 Schedule Directly
-            </a>
+      {/* 🏛️ TIERED SERVICE ARCHITECTURE 🏛️ */}
+      <section className="section" style={{ background: '#0F172A', color: '#FFFFFF', padding: '4.5rem 0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3rem' }}>
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem' }}>
+              🌟 Tailored Inspection Solutions
+            </span>
+            <h2 style={{ color: '#FFFFFF', fontSize: '2.25rem', marginBottom: '1rem' }}>
+              Choose the Home Inspection Tier Right for Your Property
+            </h2>
+            <p style={{ color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.6 }}>
+              Whether purchasing your first home or investing in a luxury estate, our two-inspector team provides unmatched diagnostic precision.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '2rem', alignItems: 'stretch' }}>
+            {/* TIER 1: CORE PROPERTY INSPECTION */}
+            <div style={{ background: '#1E293B', borderRadius: 'var(--radius-lg)', padding: '2.5rem', border: '1px solid #334155', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span className="badge" style={{ background: '#334155', color: '#F1F5F9', marginBottom: '1rem' }}>
+                  🏡 Core Home Inspection Tier
+                </span>
+                <h3 style={{ color: '#FFFFFF', fontSize: '1.75rem', marginBottom: '0.75rem' }}>
+                  Standard Buyer &amp; Seller Home Inspection
+                </h3>
+                <p style={{ color: '#94A3B8', marginBottom: '1.5rem', fontSize: '1rem', lineHeight: 1.6 }}>
+                  Ideal for single-family homes, townhomes, condos, and pre-listing seller inspections across Metro Atlanta.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', color: '#CBD5E1', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <li>✓ <strong>Two Certified Inspectors</strong> on every job</li>
+                  <li>✓ Standard FLIR Thermal Imaging &amp; Moisture Detection</li>
+                  <li>✓ Same-day digital photo report within 24 hours</li>
+                  <li>✓ Compliments of Foresight: <strong>$10,000 Warranty</strong> ($0 deductible)</li>
+                  <li>✓ Full online scheduling &amp; transparent flat-rate calculator</li>
+                </ul>
+              </div>
+              <div>
+                <Link href="/quote" className="btn btn-outline" style={{ width: '100%', textAlign: 'center', borderColor: '#64748B', color: '#FFFFFF', padding: '0.85rem' }}>
+                  Calculate Instant Flat Rate →
+                </Link>
+              </div>
+            </div>
+
+            {/* TIER 2: ESTATE & LUXURY HOME INSPECTION */}
+            <div style={{ background: 'linear-gradient(145deg, #1E293B, #0F172A)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', border: '2px solid var(--color-gold)', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(212, 175, 55, 0.15)' }}>
+              <div style={{ position: 'absolute', top: '-14px', right: '24px', background: 'var(--color-gold)', color: '#0F172A', fontSize: '0.75rem', fontWeight: 800, padding: '0.25rem 0.85rem', borderRadius: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                MOST POPULAR FOR $750K+ HOMES
+              </div>
+              <div>
+                <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem' }}>
+                  🏛️ Estate &amp; Luxury Tier
+                </span>
+                <h3 style={{ color: '#FFFFFF', fontSize: '1.75rem', marginBottom: '0.75rem' }}>
+                  Estate &amp; Luxury Home Inspection
+                </h3>
+                <p style={{ color: '#94A3B8', marginBottom: '1.5rem', fontSize: '1rem', lineHeight: 1.6 }}>
+                  Tailored for high-value estates, custom luxury builds, and complex architectural grounds in Buckhead, Alpharetta, and Milton.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', color: '#F1F5F9', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <li>✓ Lead <strong>Certified Master Inspector® (CMI)</strong> + Senior Inspector</li>
+                  <li>✓ Extended 4+ hour dedicated property evaluation window</li>
+                  <li>✓ Full Aerial Drone Scanning + FLIR Thermal Envelope Diagnostics</li>
+                  <li>✓ Dedicated 1-on-1 post-inspection strategy call with lead CMI</li>
+                  <li>✓ Priority report turnaround &amp; $10,000 Warranty coverage</li>
+                </ul>
+              </div>
+              <div>
+                <Link href="/contact" className="btn btn-gold" style={{ width: '100%', textAlign: 'center', padding: '0.85rem' }}>
+                  Request Estate Consultation →
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
