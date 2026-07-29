@@ -265,6 +265,7 @@ a:hover {
 
 .bg-dark {
   background-color: var(--color-dark) !important;
+  color: #F8FAFC !important;
 }
 
 .text-white {
@@ -273,6 +274,19 @@ a:hover {
 
 .text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white p {
   color: var(--color-white) !important;
+}
+
+/* Accessibility & High-Contrast Safeguards */
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6,
+[style*="background: #0F172A"] h1, [style*="background: #0F172A"] h2, [style*="background: #0F172A"] h3, [style*="background: #0F172A"] h4,
+[style*="background: #1E293B"] h1, [style*="background: #1E293B"] h2, [style*="background: #1E293B"] h3, [style*="background: #1E293B"] h4 {
+  color: #FFFFFF !important;
+}
+
+.bg-dark p, .bg-dark li,
+[style*="background: #0F172A"] p, [style*="background: #0F172A"] li,
+[style*="background: #1E293B"] p, [style*="background: #1E293B"] li {
+  color: #E2E8F0 !important;
 }
 
 /* Footer */

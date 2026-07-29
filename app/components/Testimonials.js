@@ -111,9 +111,9 @@ export default function Testimonials() {
         </div>
 
         {/* Small Trust Badge under reviews */}
-        <div style={{ textAlign: 'center', marginTop: '3.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', color: 'var(--color-gray-dark)', fontSize: '0.95rem' }}>
-          <span style={{ color: '#fbbf24', fontSize: '1.2rem' }}>★★★★★</span>
-          <span>Average rating of <strong>4.9+ stars</strong> across 300+ Google and HomeGauge client audits.</span>
+        <div style={{ textAlign: 'center', marginTop: '3.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', color: '#1E293B', fontSize: '1rem', fontWeight: 500 }}>
+          <span style={{ color: '#D4AF37', fontSize: '1.25rem' }}>★★★★★</span>
+          <span>Average rating of <strong style={{ color: '#0F172A' }}>4.9+ stars</strong> across 43+ verified Google &amp; HomeGauge client inspections.</span>
         </div>
       </div>
     </section>
