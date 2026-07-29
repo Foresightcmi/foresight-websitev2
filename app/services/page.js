@@ -21,6 +21,15 @@ export const metadata = {
 export default function Services() {
   const services = [
     {
+      title: 'Estate & Luxury Home Inspection',
+      price: 'Custom Quote',
+      priceNote: 'Popular for $750k+ Estates & Custom Builds',
+      description: 'Dedicated 4+ hour comprehensive property inspection for luxury estates and complex architectural grounds. Led by a Certified Master Inspector® (CMI) with aerial drone scanning, thermal envelope diagnostics, and 1-on-1 strategy consultation.',
+      details: ['Lead Certified Master Inspector® (CMI) + Senior Inspector', 'Extended 4+ hour dedicated evaluation window', 'Aerial drone roof & grounds scan', 'FLIR thermal imaging & envelope diagnostics', 'Direct 1-on-1 post-report strategy consultation', '$10,000 Warranty protection included'],
+      image: '/images/drone-2.png',
+      slug: 'estate-and-luxury-home-inspection-guide'
+    },
+    {
       title: 'Standard Buyer Inspection',
       price: '$295+',
       priceNote: 'Condos from $295 | Homes from $345',
