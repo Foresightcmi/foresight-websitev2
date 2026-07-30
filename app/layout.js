@@ -536,7 +536,7 @@ export default function RootLayout({ children }) {
       "name": "Home Inspection Services",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Home Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "295", "unitText": "starting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "250", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "295", "unitText": "starting" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "355", "unitText": "starting" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "300" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "200", "unitText": "starting" } },

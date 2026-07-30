@@ -140,14 +140,14 @@ export default function AskTwin() {
                  "Whether you are moving across town or across the country, all Foresight clients gain complimentary, lifetime access to our premier partner, Utilities Plus (https://utilities-plus.com/our-services/). This is a free, dedicated Utility Concierge Service that handles setting up all your utilities—water, gas, electricity, fiber internet, security systems—fast, easy, and at the absolute best market rates available! It saves you hours of sitting on hold and ensures you get the best deal.\n\n" +
                  "We love going the extra mile to save our clients time and money. Booking an inspection with our CMI-led two person inspection team team is the single best way to get complete peace of mind and simplify your move!";
     } else if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
-      response = "We believe in honest, transparent pricing based on the actual size and age of your home. Standard resale home inspections and pre-listing seller checks start at $420. 11-month builder warranty audits and new construction final phase inspections start at $350.\n\n" +
-                 "Here are our rates for specialized add-on services:\n" +
-                 "- Short-Term Rental (STR) Compliance Assist: Starts at $355 based on property scale, location, and county rules.\n" +
+      response = "We believe in 100% honest, transparent pricing based on the actual square footage and age of your home. Standard buyer home inspections and pre-listing seller inspections start at $295 for condos and $345 for single-family homes. 11-month builder warranty inspections start at $335, and new construction final phase inspections start at $355.\n\n" +
+                 "Here are our exact rates for specialized add-on services:\n" +
+                 "- Short-Term Rental (STR) Compliance Assist: Starts at $355 flat rate.\n" +
                  "- Termite & WDO Inspection: $110 when bundled with a home inspection ($150 standalone).\n" +
-                 "- Radon Gas Testing: $200+ when combined with a home inspection (using professional 48-hour continuous monitors).\n" +
+                 "- Radon Gas Testing: $200 when combined with a home inspection (using professional 48-hour continuous monitors).\n" +
                  "- Pool & Spa Inspection: $300 flat rate.\n" +
-                 "- Sewer Scope Inspection: $400 to check the main lateral sewer line.\n\n" +
-                 "Note: Additional complexity fees of $75 apply for each complexity condition present (being 50+ years old, having a crawlspace, or having an unfinished/partial basement). These fees are additive and stack per condition (e.g., a 50+ year old home on a crawlspace adds $150). Host Short-Term Rental (STR) compliance audits bypass these complexity fees entirely!\n\n" +
+                 "- Sewer Scope Camera Inspection: $425 flat rate to check the main lateral sewer line.\n\n" +
+                 "Note: Property age surcharges apply ($50 for 25-49 years, $95 for 50+ years). Foundation complexity fees add $85 for crawlspace and $75 for unfinished/partial basement. Drones and FLIR thermal imaging are included standard on every job!";
                  "Adding our high-tech tools (drones, thermal imaging) doesn't cost you a penny extra—it's included in every single package! You can get an exact, instant price tailored to your home on our quote page. Our clients find that the inspection fee is the absolute best money they spend on their purchase, saving them more money in the long run by routinely securing thousands of dollars in negotiations, whether through upfront repairs or closing credits. Let's get you on the schedule!";
     } else {
       response = "That is an excellent and highly specific home system question! As a Certified Master Inspector, I want to make sure you have the exact framework to evaluate this safely and professionally.\n\n" +

@@ -40,8 +40,8 @@ export default function Services() {
     },
     {
       title: 'Pre-Listing Seller Inspection',
-      price: '$250+',
-      priceNote: 'Condos from $250 | Homes from $365',
+      price: '$295+',
+      priceNote: 'Condos from $295 | Homes from $345',
       description: 'Identify potential issues before putting your home on the market. Streamline negotiations, avoid last-minute surprises, and increase buyer confidence.',
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
       image: '/images/crawlspace.png',
@@ -114,7 +114,7 @@ export default function Services() {
       "name": "Home Inspection Services",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Inspection", "description": "Comprehensive inspection covering structure, roof, electrical, plumbing, HVAC, and all major systems with two inspectors." }, "price": "295", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "250", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "295", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new home was built to specifications. Final phase inspection checks." }, "price": "355", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300", "priceCurrency": "USD" },
