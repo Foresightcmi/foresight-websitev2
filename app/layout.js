@@ -443,8 +443,16 @@ export default function RootLayout({ children }) {
         "opens": "09:00",
         "closes": "17:00",
         "description": "By appointment only"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59",
+        "description": "Online self-scheduling available 24/7 via automated booking system"
       }
     ],
+    "foundingDate": "2019",
     "sameAs": [
       "https://www.google.com/maps/search/Foresight+Home+Inspections+Lithonia+GA",
       "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
@@ -570,11 +578,24 @@ export default function RootLayout({ children }) {
     "publisher": {
       "@id": "https://www.fhinspectionsatl.com/#business"
     },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.fhinspectionsatl.com/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": "https://www.fhinspectionsatl.com/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      {
+        "@type": "ScheduleAction",
+        "name": "Book Online 24/7",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+          "inLanguage": "en-US"
+        },
+        "description": "Instant automated online booking available 24 hours a day, 7 days a week. No phone call required."
+      }
+    ]
   }
 ]
 };
