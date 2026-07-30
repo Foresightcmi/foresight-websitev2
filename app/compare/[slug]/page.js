@@ -111,7 +111,7 @@ export default async function ComparisonPage({ params }) {
 
       {/* Hero Section */}
       <section className="hero" style={{ padding: '4rem 0 4.5rem' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '850px' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: '850px' }}>
           <span className="badge" style={{ marginBottom: '1rem', display: 'inline-block' }}>
             {item.icon} {item.badge}
           </span>
