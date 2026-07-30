@@ -121,7 +121,7 @@ export default async function ComparisonPage({ params }) {
           <h2 style={{ fontSize: '1.35rem', color: 'var(--color-red)', marginBottom: '1.5rem', fontWeight: 600 }}>
             {item.headline}
           </h2>
-          <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: 'rgba(255, 255, 255, 0.9)', marginBottom: '2rem' }}>
             {item.summary}
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
