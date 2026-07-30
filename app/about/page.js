@@ -420,6 +420,24 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
+          UTILITIES PLUS PARTNERSHIP
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section" style={{ background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-mid)' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <div className="card card-premium" style={{ borderTop: '6px solid var(--color-gold)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '4rem 2rem' }}>
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem' }}>Exclusive VIP Partnership</span>
+            <h2 style={{ fontSize: '2.25rem', marginBottom: '1.5rem' }}>Free Utilities Plus Concierge Setup</h2>
+            <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '2rem', maxWidth: '700px' }}>
+              We believe our job doesn't end when the inspection report is delivered. To make your move as seamless as possible, every Foresight client receives a complimentary VIP introduction to the <strong>Utilities Plus Concierge</strong> team. With one quick phone call, they'll find the best local rates and connect your power, water, gas, and high-speed internet. 
+            </p>
+            <Link href="/free-utility-setup" className="btn btn-gold" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
+              Learn About This Free Perk ($150 Value)
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
           COMPANY DETAILS
       ═══════════════════════════════════════════════════════════════ */}
       <section className="section bg-white" style={{ borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>

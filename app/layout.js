@@ -630,6 +630,9 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        <div style={{ background: 'var(--color-gold)', color: '#0F172A', padding: '0.6rem 1rem', textAlign: 'center', fontWeight: '700', fontSize: '0.95rem', letterSpacing: '0.5px' }}>
+          🎁 BONUS: Every inspection includes a FREE VIP Utility & Smart Home Setup Concierge ($150 Value)! ⚡
+        </div>
         <div style={{ background: 'var(--color-red)', color: 'white', padding: '0.5rem 1rem', textAlign: 'center', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>
           🛡️ The Certified Master Inspector Advantage: Every Inspection Includes a $10,000 Protection Warranty at No Extra Cost!
         </div>

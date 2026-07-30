@@ -182,6 +182,10 @@ export default function Home() {
             </Link>
           </div>
 
+          <div style={{ display: 'inline-block', background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.3)', color: '#34d399', padding: '0.5rem 1.25rem', borderRadius: '2rem', fontSize: '0.9rem', fontWeight: 600, marginBottom: '3rem', backdropFilter: 'blur(4px)' }}>
+            ✓ Includes Free Utilities Plus Concierge Setup ($150 Value)
+          </div>
+
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
              <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
              <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
