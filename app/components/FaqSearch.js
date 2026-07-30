@@ -66,10 +66,11 @@ export default function FaqSearch({ faqs }) {
               boxShadow: 'var(--shadow-sm)',
             }}
           >
-            <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.1rem', color: 'var(--color-dark)' }}>
+            <summary className="faq-question" style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.1rem', color: 'var(--color-dark)' }}>
               {faq.q}
             </summary>
             <div
+              className="speakable-answer"
               style={{ marginTop: '0.85rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', fontSize: '1rem' }}
               dangerouslySetInnerHTML={{ __html: faq.a }}
             />

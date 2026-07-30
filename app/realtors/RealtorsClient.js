@@ -97,9 +97,9 @@ export default function RealtorsClient() {
             {/* Pillar 2: Two Person Inspection Team speed */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>👥</div>
-              <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>2-Inspector Speed & Accuracy</h3>
+              <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>The Due Diligence Accelerator</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                Unlike solo operators who can take up to 5 hours, we send <strong>two certified inspectors working in unison</strong> on every job. We get in, inspect with extreme thoroughness, and get out in half the time—reducing seller inconvenience and scheduling headaches.
+                In Atlanta's fast-paced market, tight due diligence windows kill deals. We send <strong>two certified inspectors</strong> to every job to cut on-site time in half and guarantee your clients get their comprehensive report within 24 hours, maximizing your negotiation leverage.
               </p>
             </div>
 

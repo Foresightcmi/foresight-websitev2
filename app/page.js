@@ -275,9 +275,9 @@ export default function Home() {
               <span className="badge" style={{ background: 'rgba(15, 23, 42, 0.08)', color: '#0F172A', border: '1px solid #0F172A', marginBottom: '1rem', fontWeight: 600 }}>
                 🎖️ Master-Level Leadership
               </span>
-              <h2 style={{ marginBottom: '1.25rem', color: '#0F172A', fontSize: '2.1rem' }}>Who is the Certified Master Inspector leading Foresight Home Inspections?</h2>
+              <h2 style={{ marginBottom: '1.25rem', color: '#0F172A', fontSize: '2.1rem' }}>Did you know Georgia does not require a license to be a home inspector?</h2>
               <p style={{ marginBottom: '1.25rem', fontSize: '1.1rem', fontWeight: 600, color: '#1E293B', lineHeight: 1.6 }}>
-                With over a decade of hands-on experience, Christopher Boykin, CMI, is the founder and lead Certified Master Inspector of Foresight Home Inspections, LLC, performing residential home inspections, sewer scopes, and radon testing across Metro Atlanta. We send two certified inspectors on every single job to verify twice as much in half the time.
+                Anyone can legally inspect your home in Georgia. That’s why Foresight is led by Christopher Boykin, a Certified Master Inspector® (CMI)—the top 3% of the industry—so you never have to gamble on your biggest investment.
               </p>
               <p style={{ marginBottom: '1.25rem', fontSize: '1rem', color: '#475569', lineHeight: 1.6 }}>
                 Together with another fully certified professional inspector, our two-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
@@ -440,8 +440,8 @@ export default function Home() {
           
           <div className="grid grid-3">
             <div className="card card-premium">
-              <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>The Two Person Inspection Team Advantage</h3>
-              <p>Two sets of expert eyes drastically reduce the chance of missing critical defects. A lead Certified Master Inspector of InterNACHI will be on site along with another certified inspector to provide unmatched accuracy.</p>
+              <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>The Due Diligence Accelerator (2-Inspector Team)</h3>
+              <p>In Atlanta's fast-paced market, your due diligence window is closing fast. Our two-inspector team cuts on-site time in half and guarantees your comprehensive digital report within 24 hours—giving you the maximum possible time to negotiate repairs or price drops.</p>
             </div>
             <div className="card">
               <h3 style={{ marginBottom: '1rem' }}>Advanced Tech Included</h3>
