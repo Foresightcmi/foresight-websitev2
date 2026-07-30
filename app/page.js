@@ -147,53 +147,44 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="hero" style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', color: 'var(--color-white)', padding: '5rem 0', overflow: 'hidden' }}>
-        <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center', gap: '3.5rem' }}>
-            <div>
-              <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.4rem 1.25rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '1.25rem', display: 'inline-block' }}>
-                🏛️ METICULOUS HOME INSPECTIONS FOR ATLANTA'S FINEST HOMES
-              </span>
-              <h1 style={{ marginBottom: '1.25rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)', color: '#FFFFFF', fontSize: '3rem', fontWeight: 800, lineHeight: 1.15 }}>
-                Atlanta&rsquo;s Certified Home Inspections<br />
-                <span style={{ color: 'var(--color-gold)' }}>Two Inspectors on Every Job.</span>
-              </h1>
-              <p style={{ margin: '0 0 2rem 0', textShadow: '0 1px 4px rgba(0,0,0,0.8)', fontSize: '1.1rem', color: '#E2E8F0', lineHeight: 1.65 }}>
-                Uncompromising thoroughness led by a Certified Master Inspector® (CMI). From entry-level single-family homes to multi-million dollar luxury estates, every home inspection features two certified inspectors, FLIR thermal imaging, aerial drone roof scanning, and our $10,000 warranty protection.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-                <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1rem 2rem', fontSize: '1.05rem', borderRadius: 'var(--radius-md)' }}>
-                  📅 Schedule Inspection Now
-                </a>
-                <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.05rem', borderColor: 'rgba(255,255,255,0.4)', color: 'var(--color-white)', borderRadius: 'var(--radius-md)' }}>
-                  📊 Calculate Instant Fee
-                </Link>
-              </div>
-              <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }}>
-                 <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={180} height={135} style={{ height: '120px', width: 'auto', objectFit: 'contain' }} />
-                 <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={180} height={135} style={{ height: '120px', width: 'auto', objectFit: 'contain' }} />
-              </div>
-            </div>
+      <section className="hero" style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '6rem 0 5rem' }}>
+        {/* Full-bleed background image */}
+        <Image
+          src="/images/luxury-home.jpg"
+          alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
+          fill
+          priority
+          style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
+        />
+        {/* Dark gradient overlay for text readability */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15,23,42,0.82) 0%, rgba(15,23,42,0.68) 40%, rgba(15,23,42,0.85) 100%)', zIndex: 1 }} />
 
-            <div style={{ position: 'relative' }}>
-              <div style={{ position: 'relative', borderRadius: 'var(--radius-xl)', overflow: 'hidden', border: '2px solid rgba(212, 175, 55, 0.4)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
-                <Image
-                  src="/images/luxury-home.jpg"
-                  alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
-                  width={800}
-                  height={450}
-                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
-                  priority
-                />
-                <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.25rem', background: 'rgba(15, 23, 42, 0.88)', backdropFilter: 'blur(10px)', padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-gold)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <span style={{ fontSize: '1.5rem' }}>🎯</span>
-                  <div>
-                    <strong style={{ color: '#FFFFFF', display: 'block', fontSize: '0.95rem' }}>Master Estate Diagnostic Scan</strong>
-                    <span style={{ color: 'var(--color-gold)', fontSize: '0.8rem', fontWeight: 600 }}>FLIR Thermal &amp; Drone Roof Aerial Included</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
+          <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.5rem 1.5rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.06em', marginBottom: '1.75rem', display: 'inline-block', backdropFilter: 'blur(8px)' }}>
+            🏛️ METICULOUS HOME INSPECTIONS FOR ATLANTA&apos;S FINEST HOMES
+          </span>
+
+          <h1 style={{ marginBottom: '1.5rem', color: '#FFFFFF', fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-0.025em', textShadow: '0 2px 20px rgba(0,0,0,0.6)' }}>
+            Atlanta&rsquo;s Certified Home Inspections<br />
+            <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 15px rgba(212,175,55,0.35)' }}>Two Inspectors on Every Job.</span>
+          </h1>
+
+          <p style={{ maxWidth: '720px', margin: '0 auto 2.5rem', fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
+            Uncompromising thoroughness led by a Certified Master Inspector® (CMI). From entry-level single-family homes to multi-million dollar luxury estates, every home inspection features two certified inspectors, FLIR thermal imaging, aerial drone roof scanning, and our $10,000 warranty protection.
+          </p>
+
+          <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
+              📅 Schedule Inspection Now
+            </a>
+            <Link href="/quote" className="btn btn-outline-light" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
+              📊 Calculate Instant Fee
+            </Link>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
+             <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
           </div>
         </div>
       </section>
