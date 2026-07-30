@@ -554,9 +554,9 @@ export default function Services() {
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🔌</div>
               <div>
-                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Utilities Plus Utility Concierge</h3>
+                <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Complimentary Utility Concierge Service</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
-                  We are proud partners of <a href="https://utilities-plus.com/our-services/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'underline' }}>Utilities Plus</a>, a premier Utility Concierge Service. All Foresight clients gain free access to this service to help get utilities (power, gas, water, internet, security) set up fast, easy, and at the best available rates, whether moving across town or across the country!
+                  Moving is stressful enough. That's why every Foresight Home Inspection includes an exclusive partnership with <a href="https://utilities-plus.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'underline' }}>Utilities Plus</a>. Once your inspection is booked and paid for, you'll receive a VIP email introduction to their concierge team. With one phone call, their experts will help you find the best rates and seamlessly set up your electricity, water, gas, internet, and home security at no further charge (with an easy opt-out if you prefer to handle utilities yourself).
                 </p>
               </div>
             </div>

@@ -486,6 +486,12 @@ export default function QuoteClient({ showValueComparison = true }) {
                       <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$350</span> FREE
                     </span>
                   </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>🔌 Utilities Plus Concierge Setup</span>
+                    <span style={{ fontWeight: 600, color: '#34d399' }}>
+                      <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$150</span> FREE
+                    </span>
+                  </div>
                 </div>
                 <div style={{ 
                   marginTop: '1rem', 
@@ -498,7 +504,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   border: '1px solid rgba(211, 47, 47, 0.3)',
                   fontWeight: 600
                 }}>
-                  🎁 $574 in premium diagnostic & protection value included at no extra charge!
+                  🎁 $724 in premium diagnostic & protection value included at no extra charge!
                 </div>
               </div>
               

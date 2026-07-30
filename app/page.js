@@ -592,6 +592,7 @@ export default function Home() {
                   ['FLIR Thermal Imaging', '✅ Included Free', '❌ $150–$300 Extra'],
                   ['Aerial Drone Roof Scan', '✅ Included Free', '❌ Not Offered'],
                   ['Post-Inspection Warranty', '✅ $10,000 ($0 Deductible)', '❌ $0–$2,500'],
+                  ['Utility Setup Concierge', '✅ Included Free (Utilities Plus)', '❌ Not Offered'],
                   ['Online Booking', '✅ 24/7 Instant Self-Scheduling', '❌ Phone/Email Only'],
                   ['AI Maintenance Advisor', '✅ Foresight AI (24/7)', '❌ Not Available'],
                   ['Report Delivery', '✅ Within 24 Hours', '⚠️ 48–72 Hours'],
