@@ -157,6 +157,12 @@ export default function About() {
               <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
                 <Image src="/images/cmi_logo.png" alt="Certified Master Inspector designation logo" width={160} height={120} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
                 <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector designation logo" width={160} height={120} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+                
+                {/* 10+ Years Experience Badge */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'var(--color-dark)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '100px', minWidth: '120px' }}>
+                  <span style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-gold)', lineHeight: 1 }}>10+</span>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center', marginTop: '0.4rem', lineHeight: 1.2 }}>Years Trusted<br/>Experience</span>
+                </div>
               </div>
             </div>
             <div style={{ padding: '0 2rem' }}>

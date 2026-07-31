@@ -189,6 +189,12 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
              <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
              <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             
+             {/* 10+ Years Experience Badge */}
+             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.5)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '130px', minWidth: '140px', backdropFilter: 'blur(8px)' }}>
+                <span style={{ fontSize: '2.75rem', fontWeight: 800, color: 'var(--color-gold)', lineHeight: 1, textShadow: '0 2px 10px rgba(212,175,55,0.3)' }}>10+</span>
+                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center', marginTop: '0.5rem', lineHeight: 1.2 }}>Years Trusted<br/>Experience</span>
+             </div>
           </div>
         </div>
       </section>
