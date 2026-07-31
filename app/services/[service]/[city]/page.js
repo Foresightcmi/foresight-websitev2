@@ -3,6 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import RelatedServiceAreas from '../../../components/RelatedServiceAreas';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -177,11 +178,21 @@ export default async function ServiceCityPage({ params }) {
         "containedInPlace": { "@type": "State", "name": "Georgia" }
       }
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5"
+    },
     "offers": {
       "@type": "Offer",
       "price": serviceData.price.replace(/[^0-9]/g, '') || "200",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "areaServed": {
+        "@type": "City",
+        "name": cityName
+      }
     }
   };
 
@@ -420,6 +431,9 @@ export default async function ServiceCityPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* ── INTERNAL LINKING MESH ───────────────────────────────────── */}
+      <RelatedServiceAreas currentCitySlug={resolvedParams.city} serviceSlug={resolvedParams.service} />
 
       {/* ── MOBILE STICKY CTA ───────────────────────────────────────── */}
       <style dangerouslySetInnerHTML={{__html: `

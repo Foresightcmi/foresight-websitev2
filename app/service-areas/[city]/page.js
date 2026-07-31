@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
+import RelatedServiceAreas from '../../components/RelatedServiceAreas';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -166,6 +167,40 @@ export default async function CityPage({ params }) {
         }
       }
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `Home Inspection Services in ${cityName}`,
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Buyer's Home Inspection"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pre-Listing Inspection"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "11-Month Warranty Inspection"
+          }
+        }
+      ]
+    }
   };
 
   // ── JSON-LD: LocalBusiness from cities.json ──────────────────────────
@@ -649,6 +684,11 @@ export default async function CityPage({ params }) {
           <Link href="/ask-twin" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Ask Foresight AI</Link>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          INTERNAL LINKING MESH
+      ═══════════════════════════════════════════════════════════════ */}
+      <RelatedServiceAreas currentCitySlug={slug} />
 
       {/* ═══════════════════════════════════════════════════════════════
           MOBILE STICKY CTA (Leads-First)

@@ -3,6 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
 import AuthorBio from '../../components/AuthorBio';
+import TableOfContents from '../../components/TableOfContents';
 
 function loadPosts() {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
@@ -225,6 +226,9 @@ export default async function BlogPost({ params }) {
               </ul>
             </div>
           )}
+
+          {/* Table of Contents for Jump Links (SEO) */}
+          <TableOfContents />
 
           <article
             className="blog-content"
