@@ -2,7 +2,7 @@ import Script from 'next/script';
 import QuoteClient from './QuoteClient';
 
 export const metadata = {
-  title: 'Home Inspection Quote & Price Calculator | Atlanta GA | Foresight',
+  title: 'Home Inspection Quote & Price Calculator | Atlanta GA',
   description: 'Calculate instant, transparent home inspection pricing and buyer negotiation leverage in Metro Atlanta. Includes two certified inspectors and $10,000 warranty.',
   keywords: ['home inspection cost calculator Atlanta', 'home inspection price quote Georgia', 'Atlanta home inspector cost', 'instant home inspection quote'],
   alternates: { canonical: 'https://www.fhinspectionsatl.com/quote' },

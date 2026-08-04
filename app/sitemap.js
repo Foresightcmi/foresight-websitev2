@@ -21,7 +21,11 @@ export default async function sitemap() {
     { loc: '/blog', changefreq: 'weekly', priority: 0.7 },
     { loc: '/contact', changefreq: 'monthly', priority: 0.7 },
     { loc: '/service-areas', changefreq: 'monthly', priority: 0.7 },
-    { loc: '/service-areas/dekalb-county-compliance', changefreq: 'monthly', priority: 0.85 }
+    { loc: '/service-areas/dekalb-county-compliance', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/free-utility-setup', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/review', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/privacy', changefreq: 'yearly', priority: 0.3 },
+    { loc: '/terms', changefreq: 'yearly', priority: 0.3 }
   ];
   
   const now = new Date();

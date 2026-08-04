@@ -42,7 +42,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.fhinspectionsatl.com',
+    canonical: './',
   },
   openGraph: {
     title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
@@ -101,14 +101,6 @@ export default function RootLayout({ children }) {
           "@type": "GeoCoordinates",
           "latitude": "33.7275",
           "longitude": "-84.1444"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "43",
-          "ratingCount": "43",
-          "bestRating": "5",
-          "worstRating": "1"
         },
         "areaServed": [
         {
@@ -603,6 +595,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
+        <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://schedulenow.homegauge.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="icon" href="/images/Logopng.png" type="image/png" sizes="96x96" />
