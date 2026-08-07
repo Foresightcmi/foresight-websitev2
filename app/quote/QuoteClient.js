@@ -101,12 +101,12 @@ export default function QuoteClient({ showValueComparison = true }) {
     
     let extra = 0;
 
-    // Flat Property Age Surcharges: Under 25 = +$0, 25-49 = +$50, 50+ = +$75
+    // Tiered Property Age Surcharges: Under 25 = +$0, 25-50 yrs = +$75, 50+ yrs (Historic) = +$125
     if (serviceType !== 'str' && serviceType !== 'drywall') {
-      if (ageTier === '25-49') {
-        extra += 50;
-      } else if (ageTier === 'over-50') {
+      if (ageTier === '25-50') {
         extra += 75;
+      } else if (ageTier === 'over-50') {
+        extra += 125;
       }
     }
 
@@ -376,8 +376,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                   onChange={(e) => setAgeTier(e.target.value)}
                 >
                   <option value="under-25">Under 25 Years Old</option>
-                  <option value="25-49">25 – 49 Years Old {serviceType !== 'str' && serviceType !== 'drywall' && '(+ $50 Age Surcharge)'}</option>
-                  <option value="over-50">50+ Years Old {serviceType !== 'str' && serviceType !== 'drywall' && '(+ $75 Historical Surcharge)'}</option>
+                  <option value="25-50">25 – 50 Years Old {serviceType !== 'str' && serviceType !== 'drywall' && '(+ $75 Older Home Surcharge)'}</option>
+                  <option value="over-50">50+ Years Old (Built before ~1975) {serviceType !== 'str' && serviceType !== 'drywall' && '(+ $125 Vintage/Historic Surcharge)'}</option>
                 </select>
               </div>
             </>

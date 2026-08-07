@@ -149,7 +149,7 @@ export default function AskTwin() {
                  "- Sewer Scope Camera Inspection: $450 flat rate to check the main lateral sewer line.\n" +
                  "- Visual Mold Inspection w/ Air Samples & Lab: $450 flat rate.\n" +
                  "- Indoor Air Quality Testing: $350 flat rate.\n\n" +
-                 "Note: Property age surcharges apply ($50 for 25-49 years, $75 for 50+ years). Foundation complexity fees add $50 for crawlspace and $75 for unfinished/partial basement. Drones and FLIR thermal imaging are included standard on every job!\n\n" +
+                 "Note: Property age surcharges apply ($75 for 25-50 years, $125 for 50+ years historic/vintage homes). Foundation complexity fees add $50 for crawlspace and $75 for unfinished/partial basement. Drones and FLIR thermal imaging are included standard on every job!\n\n" +
                  "Adding our high-tech tools (drones, thermal imaging) doesn't cost you a penny extra—it's included in every single package! You can get an exact, instant price tailored to your home on our quote page. Our clients find that the inspection fee is the absolute best money they spend on their purchase, saving them more money in the long run by routinely securing thousands of dollars in negotiations, whether through upfront repairs or closing credits. Let's get you on the schedule!";
     } else {
       response = "That is an excellent and highly specific home system question! As a Certified Master Inspector, I want to make sure you have the exact framework to evaluate this safely and professionally.\n\n" +
