@@ -7,6 +7,12 @@ import { useState } from 'react';
 export default function RealtorsClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [copied, setCopied] = useState(false);
+  const [activePreset, setActivePreset] = useState({
+    id: 'hvac',
+    label: '❄️ HVAC System',
+    clause: 'Seller agrees to pay a licensed HVAC contractor to evaluate, service, and repair the primary HVAC system, specifically addressing [e.g., low temperature split / failing capacitor], and provide buyer with a paid invoice showing system is in normal working order prior to closing.'
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -195,6 +201,94 @@ export default function RealtorsClient() {
                 Agents report saving 45+ minutes per transaction using the Foresight CRL™ addendum tool.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🚀 ZERO-CLICK AGENT TOOL: INSTANT GAR AMENDMENT REPAIR CLAUSE GENERATOR 🚀 */}
+      <section className="section" style={{ background: '#0F172A', borderBottom: '1px solid #1E293B', padding: '4rem 0' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
+              🛠️ Zero-Click Agent Utility
+            </span>
+            <h2 style={{ color: '#FFFFFF', fontSize: '2.25rem', fontWeight: 800, marginBottom: '1rem' }}>
+              Instant GAR Amendment Repair Clause Generator
+            </h2>
+            <p style={{ color: '#94A3B8', maxWidth: '750px', margin: '0 auto', fontSize: '1.05rem', lineHeight: 1.6 }}>
+              Drafting repair requests during due diligence? Click any preset below to generate copyable, attorney-aligned repair language ready for your Georgia GAR Amendment to Request Repairs.
+            </p>
+          </div>
+
+          {/* Generator Interface */}
+          <div style={{ maxWidth: '900px', margin: '0 auto', background: '#1E293B', borderRadius: 'var(--radius-lg)', padding: '2rem', border: '1px solid #334155', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
+            {/* Presets Bar */}
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+              {[
+                { id: 'hvac', label: '❄️ HVAC System', clause: 'Seller agrees to pay a licensed HVAC contractor to evaluate, service, and repair the primary HVAC system, specifically addressing [e.g., low temperature split / failing capacitor], and provide buyer with a paid invoice showing system is in normal working order prior to closing.' },
+                { id: 'electrical', label: '⚡ Electrical Double Taps', clause: 'Seller agrees to hire a licensed electrician to inspect the main electrical breaker panel, repair any double-tapped breakers, properly bond neutral/ground buses, and provide buyer with a copy of the licensed electrician\'s invoice prior to closing.' },
+                { id: 'moisture', label: '🌊 Crawlspace Moisture', clause: 'Seller agrees to hire a qualified contractor to remedy moisture intrusion identified behind [Location], replace damaged subflooring/drywall, and install a 6-mil vapor barrier over 100% of exposed crawlspace soil prior to closing.' },
+                { id: 'roof', label: '🏠 Roof & Flashing', clause: 'Seller agrees to hire a licensed roofing contractor to repair damaged/missing shingles and reseal pipe boot flashings at [Location], providing buyer with a paid invoice and proof of repair prior to closing.' },
+                { id: 'wdo', label: '🐜 Termite / WDO Treatment', clause: 'Seller agrees to provide an Official Georgia Wood Infestation Inspection Report (WDO) and hire a licensed pest control company to complete liquid soil treatment for subterranean termites, transferring a 1-year renewable warranty to buyer at closing.' }
+              ].map((preset) => (
+                <button
+                  key={preset.id}
+                  onClick={() => {
+                    setActivePreset(preset);
+                    setCopied(false);
+                  }}
+                  style={{
+                    padding: '0.6rem 1.1rem',
+                    borderRadius: '50px',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    border: '1px solid',
+                    borderColor: activePreset.id === preset.id ? 'var(--color-gold)' : '#334155',
+                    background: activePreset.id === preset.id ? 'rgba(212,175,55,0.15)' : '#0F172A',
+                    color: activePreset.id === preset.id ? 'var(--color-gold)' : '#94A3B8',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {preset.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Display Box */}
+            <div style={{ background: '#0F172A', borderRadius: 'var(--radius-md)', padding: '1.5rem', border: '1px solid #334155', position: 'relative' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <span style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>GAR Amendment Repair Clause</span>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(activePreset.clause);
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 2000);
+                  }}
+                  style={{
+                    background: copied ? '#22C55E' : 'var(--color-gold)',
+                    color: '#0F172A',
+                    border: 'none',
+                    padding: '0.4rem 1rem',
+                    borderRadius: 'var(--radius-sm)',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem'
+                  }}
+                >
+                  {copied ? '✅ Copied to Clipboard!' : '📋 Copy Clause'}
+                </button>
+              </div>
+              <p style={{ color: '#F1F5F9', fontSize: '1rem', lineHeight: 1.6, margin: 0, fontFamily: 'monospace' }}>
+                &quot;{activePreset.clause}&quot;
+              </p>
+            </div>
+            <p style={{ color: '#64748B', fontSize: '0.8rem', marginTop: '0.75rem', marginBottom: 0, textAlign: 'center' }}>
+              💡 Free agent tool provided by Foresight Home Inspections. Use freely in your GAR transaction documents.
+            </p>
           </div>
         </div>
       </section>
