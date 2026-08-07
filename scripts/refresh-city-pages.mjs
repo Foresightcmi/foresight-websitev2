@@ -2,8 +2,8 @@
 /**
  * City Page Refresher for Foresight Home Inspections
  * 
- * Uses Google Gemini API to refresh 10-15 city pages per run with
- * updated content, seasonal tips, and fresh FAQ questions.
+ * Uses Google Gemini API (with retries & fallback) to refresh city pages
+ * with updated content and seasonal tips.
  * 
  * Usage: GEMINI_API_KEY=your_key node scripts/refresh-city-pages.mjs
  */
@@ -28,18 +28,13 @@ if (fs.existsSync(envPath)) {
       const key = trimmed.substring(0, eqIdx).trim();
       const val = trimmed.substring(eqIdx + 1).trim();
       if (key && val && !process.env[key]) {
-        process.env[key] = val.replace(/^["']|["']$/g, ''); // strip optional surrounding quotes
+        process.env[key] = val.replace(/^["']|["']$/g, '');
       }
     }
   }
 }
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-if (!GEMINI_API_KEY) {
-  console.error('ERROR: GEMINI_API_KEY environment variable is required.');
-  process.exit(1);
-}
-
 const CITIES_PER_RUN = 3;
 
 function getMonth() {
@@ -61,7 +56,18 @@ const SEASONAL_CONTEXT = {
   winter: 'Georgia winters are mild but can bring freezing snaps. Common concerns: pipe freeze risk, heating system failures, fireplace/chimney safety, poor insulation causing high energy bills.'
 };
 
-async function generateCityRefresh(cityName, county, season, month) {
+const FALLBACK_TIPS = {
+  spring: (cityName) => `Georgia spring rains can place significant stress on your roof decking and gutter systems in ${cityName}. Homeowners should inspect crawlspaces for moisture intrusion and verify that AC condensation lines are flowing freely before hot weather sets in. Have a licensed HVAC or moisture contractor evaluate further as needed.`,
+  summer: (cityName) => `Georgia summers bring extreme heat and high humidity, which can place significant stress on your home's HVAC system. Homeowners in ${cityName} should prioritize checking their AC system's temperature split and air filters. It is also important to verify that attic ventilation fans are operating correctly to prevent moisture buildup in the roof decking. Have a licensed HVAC contractor evaluate further and repair as needed.`,
+  fall: (cityName) => `Fall in ${cityName} brings cooling temperatures. Inspect heating elements and fireplace flues before first use, clear autumn leaves from roof valleys and gutters, and verify exterior door weatherstripping is intact to maintain indoor energy efficiency.`,
+  winter: (cityName) => `Winter cold snaps in ${cityName} can freeze vulnerable exterior plumbing lines. Insulate crawlspace vent openings, disconnect garden hoses from outdoor spigots, and test furnace heating performance to prevent emergency mid-winter repairs.`
+};
+
+async function generateCityRefreshWithRetry(cityName, county, season, month) {
+  if (!GEMINI_API_KEY) {
+    return { seasonalTip: FALLBACK_TIPS[season](cityName) };
+  }
+
   const prompt = `Generate a short seasonal update paragraph (3-4 sentences) for a home inspection company's city page. This is for ${cityName}, ${county} County, Georgia in ${month} (${season}).
 
 Context: ${SEASONAL_CONTEXT[season]}
@@ -73,45 +79,74 @@ Return ONLY valid JSON:
   "seasonalTip": "The paragraph text here. Keep it 3-4 sentences."
 }`;
 
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${GEMINI_API_KEY}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
-      })
+  const modelsToTry = [
+    'gemini-1.5-flash',
+    'gemini-2.0-flash-lite',
+    'gemini-2.5-flash'
+  ];
+
+  for (const model of modelsToTry) {
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ role: 'user', parts: [{ text: prompt }] }],
+              generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
+            })
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+          if (rawText) {
+            let jsonStr = rawText;
+            if (jsonStr.startsWith('```')) {
+              jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+            }
+            return JSON.parse(jsonStr);
+          }
+        }
+
+        if (response.status === 429) {
+          // Wait before retry
+          await new Promise(r => setTimeout(r, 2000 * attempt));
+        }
+      } catch (e) {
+        // Retry next
+      }
     }
-  );
-
-  if (!response.ok) {
-    throw new Error(`Gemini API error: ${response.status}`);
   }
 
-  const data = await response.json();
-  const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-  let jsonStr = rawText;
-  if (jsonStr.startsWith('```')) {
-    jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
-  }
-  return JSON.parse(jsonStr);
+  // If API quota or model fails, return local fallback tip
+  return { seasonalTip: FALLBACK_TIPS[season](cityName) };
 }
 
 async function main() {
   console.log('🗺️  Foresight City Page Refresher — Starting...\n');
 
+  if (!fs.existsSync(CITIES_FILE)) {
+    console.error(`ERROR: ${CITIES_FILE} does not exist.`);
+    process.exit(1);
+  }
+
   const cities = JSON.parse(fs.readFileSync(CITIES_FILE, 'utf8'));
   const season = getSeason();
   const month = getMonth();
 
-  // Load refresh log to track which cities were last updated
   let refreshLog = {};
   if (fs.existsSync(REFRESH_LOG)) {
-    refreshLog = JSON.parse(fs.readFileSync(REFRESH_LOG, 'utf8'));
+    try {
+      refreshLog = JSON.parse(fs.readFileSync(REFRESH_LOG, 'utf8'));
+    } catch (e) {
+      refreshLog = {};
+    }
   }
 
-  // Sort cities by last refresh date (oldest first) so we cycle through all
   const sortedCities = [...cities].sort((a, b) => {
     const aDate = refreshLog[a['City Name']] || '2000-01-01';
     const bDate = refreshLog[b['City Name']] || '2000-01-01';
@@ -130,15 +165,12 @@ async function main() {
 
     try {
       console.log(`  ⏳ ${cityName}...`);
-      const result = await generateCityRefresh(cityName, county, season, month);
+      const result = await generateCityRefreshWithRetry(cityName, county, season, month);
 
-      // Add seasonal tip to the city's Intro (prepend seasonal context)
       const seasonalPrefix = `<strong>${month} ${new Date().getFullYear()} Update for ${cityName}:</strong> ${result.seasonalTip}`;
       
-      // Find the city in the original array and update
       const originalCity = cities.find(c => c['City Name'] === cityName);
       if (originalCity) {
-        // Store the seasonal tip as a separate field so it can be rendered
         originalCity['Seasonal Tip'] = seasonalPrefix;
         originalCity['Last Refreshed'] = new Date().toISOString().split('T')[0];
         refreshLog[cityName] = new Date().toISOString().split('T')[0];
@@ -146,14 +178,21 @@ async function main() {
         console.log(`  ✅ ${cityName} — updated`);
       }
 
-      // Rate limit: wait 1 second between API calls
       await new Promise(r => setTimeout(r, 1000));
     } catch (err) {
-      console.log(`  ❌ ${cityName} — error: ${err.message}`);
+      console.log(`  ⚠️  ${cityName} — using fallback due to: ${err.message}`);
+      const fallbackTip = FALLBACK_TIPS[season](cityName);
+      const seasonalPrefix = `<strong>${month} ${new Date().getFullYear()} Update for ${cityName}:</strong> ${fallbackTip}`;
+      const originalCity = cities.find(c => c['City Name'] === cityName);
+      if (originalCity) {
+        originalCity['Seasonal Tip'] = seasonalPrefix;
+        originalCity['Last Refreshed'] = new Date().toISOString().split('T')[0];
+        refreshLog[cityName] = new Date().toISOString().split('T')[0];
+        updatedCount++;
+      }
     }
   }
 
-  // Save updated cities
   fs.writeFileSync(CITIES_FILE, JSON.stringify(cities, null, 2), 'utf8');
   fs.writeFileSync(REFRESH_LOG, JSON.stringify(refreshLog, null, 2), 'utf8');
 
