@@ -91,7 +91,7 @@ export default function About() {
           "@type": "State",
           "name": "Georgia"
         },
-        "priceRange": "$295 - $425+",
+        "priceRange": "$295 - $890+",
         "description": "Certified Master Inspector-led home inspection company in Metro Atlanta. Two certified inspectors on every job with FLIR thermal imaging, drones, and a $10,000 Elite Master Inspection Warranty included.",
         "memberOf": {
           "@type": "Organization",
