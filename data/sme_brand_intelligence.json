@@ -1,0 +1,31 @@
+{
+  "brandName": "Foresight Home Inspections, LLC",
+  "founder": "Christopher Boykin, CMI",
+  "credentials": "Certified Master Inspector® (CMI) - Master Inspector Certification Board",
+  "primaryAdvantage": "Two Certified Inspectors on Every Inspection (Cuts On-Site Time in Half)",
+  "warrantyProtection": "$10,000 Elite Master Inspection Warranty ($0 Deductible, Covers Structure & Mechanicals)",
+  "technologyStandard": "FLIR Thermal Imaging & Aerial Drone Scans Included Free on Every Inspection",
+  "realtorTools": "Active SUPRA eKEY Access & HomeGauge CRL™ Interactive Repair Addendum Generator",
+  "smeFieldKnowledge": [
+    {
+      "topic": "Georgia Red Clay Soil Foundation Settlement",
+      "smeInsight": "Georgia red clay is highly expansive. During rainy seasons, it swells against foundation walls; during summer droughts, it contracts and leaves voids. This creates stair-step mortar cracks in brick facades and causes crawlspace brick piers to tilt.",
+      "actionableAdvice": "Ensure gutters discharge at least 6 feet away from foundation walls and maintain positive landscaping slope."
+    },
+    {
+      "topic": "Polybutylene Plumbing Blowout Risks",
+      "smeInsight": "Common in 1980s-1990s Metro Atlanta subdivisions (Alpharetta, Sandy Springs, Duluth). Chlorine in municipal water degrades gray polybutylene pipes internally without surface signs until sudden wall blowout.",
+      "actionableAdvice": "Use FLIR thermal cameras to check behind vanities and main shutoffs for micro-leaks before full re-pipe failure."
+    },
+    {
+      "topic": "Federal Pacific & Zinsco Electrical Panel Fire Hazards",
+      "smeInsight": "Widespread in mid-century Metro Atlanta homes (Decatur, East Lake, Smyrna). Stab-Lok breakers fail to trip on electrical overload, creating severe arc flash fire hazards.",
+      "actionableAdvice": "Recommend 100% seller credit or immediate licensed electrician panel replacement prior to closing."
+    },
+    {
+      "topic": "Crawlspace Humidity & Subfloor Mold",
+      "smeInsight": "High humidity in North Georgia causes 80%+ wood moisture saturation in crawlspaces. Floor joists absorb water, causing hardwood flooring to cup and subfloors to rot.",
+      "actionableAdvice": "Install 6-mil minimum vapor barrier covering 100% of exposed crawlspace soil and consider encapsulation."
+    }
+  ]
+}
