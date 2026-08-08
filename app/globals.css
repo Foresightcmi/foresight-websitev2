@@ -743,3 +743,9 @@ a:hover {
     justify-content: center;
   }
 }
+
+@media (min-width: 769px) {
+  .mobile-only-sticky-bar {
+    display: none !important;
+  }
+}

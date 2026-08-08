@@ -257,30 +257,51 @@ export default function RealtorsClient() {
 
             {/* Display Box */}
             <div style={{ background: '#0F172A', borderRadius: 'var(--radius-md)', padding: '1.5rem', border: '1px solid #334155', position: 'relative' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                 <span style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>GAR Amendment Repair Clause</span>
-                <button
-                  onClick={() => {
-                    navigator.clipboard.writeText(activePreset.clause);
-                    setCopied(true);
-                    setTimeout(() => setCopied(false), 2000);
-                  }}
-                  style={{
-                    background: copied ? '#22C55E' : 'var(--color-gold)',
-                    color: '#0F172A',
-                    border: 'none',
-                    padding: '0.4rem 1rem',
-                    borderRadius: 'var(--radius-sm)',
-                    fontWeight: 700,
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem'
-                  }}
-                >
-                  {copied ? '✅ Copied to Clipboard!' : '📋 Copy Clause'}
-                </button>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(activePreset.clause);
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 2000);
+                    }}
+                    style={{
+                      background: copied ? '#22C55E' : 'var(--color-gold)',
+                      color: '#0F172A',
+                      border: 'none',
+                      padding: '0.4rem 1rem',
+                      borderRadius: 'var(--radius-sm)',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.4rem'
+                    }}
+                  >
+                    {copied ? '✅ Copied!' : '📋 Copy Clause'}
+                  </button>
+                  <a
+                    href={`mailto:?subject=${encodeURIComponent(`Foresight GAR Repair Clause - ${activePreset.label}`)}&body=${encodeURIComponent(`GAR Amendment Repair Clause:\n\n"${activePreset.clause}"\n\nGenerated via Foresight Home Inspections Realtor VIP Hub (www.fhinspectionsatl.com/realtors).`)}`}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      color: '#F1F5F9',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      padding: '0.4rem 1rem',
+                      borderRadius: 'var(--radius-sm)',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    ✉️ Email to Me
+                  </a>
+                </div>
               </div>
               <p style={{ color: '#F1F5F9', fontSize: '1rem', lineHeight: 1.6, margin: 0, fontFamily: 'monospace' }}>
                 &quot;{activePreset.clause}&quot;

@@ -174,6 +174,10 @@ export default async function CityPage({ params }) {
       "bestRating": "5",
       "worstRating": "1"
     },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".county-bluf-summary", ".bluf-faq-answer"]
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Home Inspection Services in ${cityName}`,
@@ -552,7 +556,7 @@ export default async function CityPage({ params }) {
             <h2>{county} County Building & Compliance Context</h2>
           </div>
           <div style={{ background: 'var(--color-white)', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', borderLeft: '4px solid var(--color-red)' }}>
-            <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'left' }}>
+            <p className="county-bluf-summary" style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'left' }}>
               <strong>📍 Hyper-Local Expertise:</strong> {getCountyContext(county)}
             </p>
           </div>

@@ -651,7 +651,7 @@ export default function QuoteClient({ showValueComparison = true }) {
               </div>
 
               <a 
-                href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" 
+                href={isCustom ? "tel:678-480-2110" : "https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-primary" 
@@ -671,26 +671,28 @@ export default function QuoteClient({ showValueComparison = true }) {
               </a>
               
               <div style={{ marginTop: '1rem' }}>
-                {!showLeadForm && !isCustom && (
+                {!showLeadForm && (
                   <button onClick={() => setShowLeadForm(true)} className="btn btn-outline" style={{ width: '100%', borderColor: 'var(--color-white)', color: 'var(--color-white)', fontSize: '1rem', padding: '0.75rem' }}>
-                    🔒 Hold My Slot & Save This Price
+                    {isCustom ? '📋 Request Custom Estate Consultation Online' : '🔒 Hold My Slot & Save This Price'}
                   </button>
                 )}
                 {showLeadForm && (
                   <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '1.25rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255, 255, 255, 0.1)', marginTop: '0.5rem' }}>
                     {leadStatus === 'success' ? (
                       <div style={{ color: '#34d399', fontSize: '0.9rem', textAlign: 'center' }}>
-                        <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', fontSize: '1.1rem' }}>✅ Price Locked & Slot Held!</p>
-                        <p style={{ color: 'var(--color-white)', lineHeight: 1.4 }}>We've received your request. Use the Book Online button above to finalize your schedule.</p>
+                        <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', fontSize: '1.1rem' }}>✅ Request Received!</p>
+                        <p style={{ color: 'var(--color-white)', lineHeight: 1.4 }}>Our team will contact you shortly to confirm your custom property details.</p>
                       </div>
                     ) : (
                       <form onSubmit={handleHoldSlot} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', textAlign: 'left' }}>
-                        <h4 style={{ color: 'var(--color-white)', fontSize: '0.95rem', margin: 0 }}>Secure Your Quote</h4>
+                        <h4 style={{ color: 'var(--color-white)', fontSize: '0.95rem', margin: 0 }}>
+                          {isCustom ? 'Request Custom Estate Consultation' : 'Secure Your Quote'}
+                        </h4>
                         <input type="text" placeholder="Your Name" required value={leadName} onChange={e => setLeadName(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
                         <input type="email" placeholder="Your Email" required value={leadEmail} onChange={e => setLeadEmail(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
-                        <input type="tel" placeholder="Phone Number (Optional)" value={leadPhone} onChange={e => setLeadPhone(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
+                        <input type="tel" placeholder="Phone Number" required={isCustom} value={leadPhone} onChange={e => setLeadPhone(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
                         <button type="submit" disabled={leadStatus === 'submitting'} className="btn btn-primary" style={{ padding: '0.6rem', fontSize: '0.95rem', background: 'var(--color-red-dark)' }}>
-                          {leadStatus === 'submitting' ? 'Saving...' : 'Lock In Price'}
+                          {leadStatus === 'submitting' ? 'Submitting...' : isCustom ? 'Submit Custom Consultation Request' : 'Lock In Price'}
                         </button>
                         {leadStatus === 'error' && <p style={{ color: '#fca5a5', fontSize: '0.85rem', margin: 0, textAlign: 'center' }}>An error occurred. Please try again.</p>}
                       </form>
@@ -712,6 +714,39 @@ export default function QuoteClient({ showValueComparison = true }) {
         </div>
       </div>
     </section>
+
+    {/* Mobile Sticky Bottom Price Bar */}
+    <div className="mobile-only-sticky-bar" style={{
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      zIndex: 99,
+      background: 'var(--color-black)',
+      borderTop: '2px solid var(--color-red)',
+      padding: '0.75rem 1rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      boxShadow: '0 -4px 20px rgba(0,0,0,0.5)'
+    }}>
+      <div>
+        <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>Est. Inspection Total</span>
+        <strong style={{ fontSize: isCustom ? '1rem' : '1.35rem', color: 'var(--color-red)', fontWeight: 800 }}>
+          {isCustom ? 'Custom Quote' : `$${total}`}
+        </strong>
+      </div>
+      <a 
+        href={isCustom ? "tel:678-480-2110" : "https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="btn btn-primary" 
+        style={{ padding: '0.6rem 1.25rem', fontSize: '0.9rem', fontWeight: 700 }}
+      >
+        {isCustom ? '📞 Call Now' : '📅 Book Online'}
+      </a>
+    </div>
+
     {showValueComparison && <ValueComparison />}
     </>
   );

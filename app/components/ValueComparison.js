@@ -73,11 +73,35 @@ export default function ValueComparison() {
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Free $10,000 Elite Warranty:</strong> Backed by InterNACHI, we stand completely behind our inspections with a 90-day structural/mechanical warranty to protect your closing transaction.</span>
+                  <div style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}>
+                    <strong style={{ color: '#86efac' }}>Free $10,000 Elite Warranty ($0 Deductible):</strong>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '0.5rem', marginTop: '0.5rem' }}>
+                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Structural</span>
+                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
+                      </div>
+                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Mechanicals</span>
+                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
+                      </div>
+                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Appliances</span>
+                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
+                      </div>
+                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Mold</span>
+                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
+                      </div>
+                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Roof Leak</span>
+                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$1,000</strong>
+                      </div>
+                    </div>
+                  </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
                   <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Certified Master Inspector® (CMI):</strong> Vetted by the CMI Board. CmIs must complete 1,000+ inspections, adhere to strict codes of ethics, and complete rigorous continuing education.</span>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Certified Master Inspector® (CMI):</strong> Vetted by the CMI Board. CMIs must complete 1,000+ inspections, adhere to strict codes of ethics, and complete rigorous continuing education.</span>
                 </li>
               </ul>
             </div>
