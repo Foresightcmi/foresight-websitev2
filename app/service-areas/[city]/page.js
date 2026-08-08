@@ -243,12 +243,42 @@ export default async function CityPage({ params }) {
     }
   };
 
+  // ── JSON-LD: BreadcrumbList schema ──────────────────────────────────
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": `${SITE_URL}/service-areas`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": `${cityName}, GA`,
+        "item": `${SITE_URL}/service-areas/${slug}`
+      }
+    ]
+  };
+
   return (
     <>
       {/* ── JSON-LD Schemas ─────────────────────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {localBusinessJsonLd && (
         <script
