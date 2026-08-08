@@ -45,8 +45,8 @@ export default function QuoteClient({ showValueComparison = true }) {
     let base = 345;
     const parsedSqft = Number(sqft) || 2000;
     
-    // Properties over 4,500 sq ft require a custom estate inspection consultation
-    if (parsedSqft > 4500 && serviceType !== 'str') {
+    // Properties over 4,000 sq ft require a custom estate inspection consultation
+    if (parsedSqft > 4000 && serviceType !== 'str') {
       return { total: 'Call 678-480-2110 for Custom Quote', isCustom: true };
     }
 
@@ -67,32 +67,28 @@ export default function QuoteClient({ showValueComparison = true }) {
       else if (parsedSqft <= 2500) base = 385;
       else if (parsedSqft <= 3000) base = 415;
       else if (parsedSqft <= 3500) base = 425;
-      else if (parsedSqft <= 4000) base = 465;
-      else base = 485; // 4001 - 4500
+      else base = 465; // 3501 - 4000
     } else if (serviceType === 'new-construction') {
       if (parsedSqft <= 1800) base = 375;
       else if (parsedSqft <= 2500) base = 385;
       else if (parsedSqft <= 3000) base = 415;
       else if (parsedSqft <= 3500) base = 445;
-      else if (parsedSqft <= 4000) base = 475;
-      else base = 505; // 4001 - 4500
+      else base = 475; // 3501 - 4000
     } else if (serviceType === 'warranty') {
       if (parsedSqft <= 2000) base = 335;
       else if (parsedSqft <= 2500) base = 365;
       else if (parsedSqft <= 3000) base = 395;
       else if (parsedSqft <= 3500) base = 425;
-      else if (parsedSqft <= 4000) base = 455;
-      else base = 485; // 4001 - 4500
+      else base = 455; // 3501 - 4000
     } else {
-      // Pre-Purchase Buyer Home Inspection tiered pricing from fee schedule (up to 4500 sq ft)
+      // Pre-Purchase Buyer Home Inspection tiered pricing from fee schedule (up to 4000 sq ft)
       if (parsedSqft <= 1000) base = 345;
       else if (parsedSqft <= 1500) base = 375;
       else if (parsedSqft <= 2000) base = 425;
       else if (parsedSqft <= 2500) base = 475;
       else if (parsedSqft <= 3000) base = 525;
       else if (parsedSqft <= 3500) base = 575;
-      else if (parsedSqft <= 4000) base = 625;
-      else base = 675; // 4001 - 4500
+      else base = 625; // 3501 - 4000
     }
     
     let extra = 0;
@@ -306,7 +302,7 @@ export default function QuoteClient({ showValueComparison = true }) {
             <h2 style={{ marginBottom: '1.5rem' }}>3. Finished / Heated Size</h2>
             <div className="form-group">
               <label className="form-label">
-                Total Heated Square Footage {Number(sqft) > 4500 && serviceType !== 'str' && <span style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.85rem' }}>(Over 4,500 sq ft = Custom Estate Quote)</span>}
+                Total Heated Square Footage {Number(sqft) > 4000 && serviceType !== 'str' && <span style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.85rem' }}>(Over 4,000 sq ft = Custom Estate Quote)</span>}
               </label>
               <input 
                 type="number"
