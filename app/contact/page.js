@@ -40,9 +40,8 @@ const contactSchema = {
           addressCountry: 'US',
         },
         openingHoursSpecification: [
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday'], opens: '08:00', closes: '20:00' },
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '08:00', closes: '19:00' },
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '09:00', closes: '17:00', description: 'By appointment only' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '20:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Wednesday', 'Sunday'], opens: '08:00', closes: '20:00', description: 'By appointment only' },
         ],
       },
     },

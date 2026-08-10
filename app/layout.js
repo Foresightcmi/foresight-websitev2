@@ -419,21 +419,15 @@ export default function RootLayout({ children }) {
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday", "Saturday"],
         "opens": "08:00",
         "closes": "20:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Thursday",
+        "dayOfWeek": ["Wednesday", "Sunday"],
         "opens": "08:00",
-        "closes": "19:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "opens": "09:00",
-        "closes": "17:00",
+        "closes": "20:00",
         "description": "By appointment only"
       },
       {
