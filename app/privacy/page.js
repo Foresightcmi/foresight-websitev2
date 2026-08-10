@@ -3,6 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Privacy Policy | Foresight Home Inspections',
   description: 'Privacy Policy for Foresight Home Inspections, LLC in Atlanta, GA.',
+  alternates: { canonical: 'https://www.fhinspectionsatl.com/privacy' },
 };
 
 export default function PrivacyPolicy() {

@@ -42,7 +42,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: './',
+    canonical: 'https://www.fhinspectionsatl.com',
   },
   openGraph: {
     title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
