@@ -13,7 +13,13 @@ const newHoursSpecs = [
   },
   {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Wednesday", "Sunday"],
+    "dayOfWeek": "Wednesday",
+    "opens": "08:00",
+    "closes": "19:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Sunday",
     "opens": "08:00",
     "closes": "20:00",
     "description": "By appointment only"

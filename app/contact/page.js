@@ -41,7 +41,8 @@ const contactSchema = {
         },
         openingHoursSpecification: [
           { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'], opens: '08:00', closes: '20:00' },
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Wednesday', 'Sunday'], opens: '08:00', closes: '20:00', description: 'By appointment only' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '08:00', closes: '19:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '08:00', closes: '20:00', description: 'By appointment only' },
         ],
       },
     },

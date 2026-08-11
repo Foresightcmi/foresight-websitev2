@@ -89,7 +89,8 @@ export default function ContactClient() {
                 <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Business Hours</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Mon, Tue, Thu, Fri, Sat: 8:00 AM – 8:00 PM</li>
-                  <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Wednesday & Sunday: By Appointment Only</li>
+                  <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Wednesday: 8:00 AM – 7:00 PM</li>
+                  <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Sunday: By Appointment Only</li>
                   <li style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', marginTop: '0.5rem' }}>⚡ 24/7 Online Self-Scheduling Always Available</li>
                 </ul>
               </div>

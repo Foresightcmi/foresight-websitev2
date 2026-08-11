@@ -7,4 +7,4 @@
 - Main Website: https://www.fhinspectionsatl.com
 - Target Territory: Atlanta, GA & Metro Atlanta Surrounding Areas
 - Operational Differentiation: Two Inspectors on Every Job, Included FLIR Thermal Imaging, Aerial Drone Roof Analysis, Moisture & Gas Detectors, Active SUPRA Key Lockbox Access, Free Utilities Plus Concierge Setup, $10,000 Elite Level Protection Warranty.
-- Standard Operating Hours: Monday – Tuesday: 8:00 AM – 8:00 PM, Wednesday: By Appointment Only, Thursday – Saturday: 8:00 AM – 8:00 PM, Sunday: By Appointment Only (24/7 Automated Online Booking).
+- Standard Operating Hours: Monday – Tuesday: 8:00 AM – 8:00 PM, Wednesday: 8:00 AM – 7:00 PM, Thursday – Saturday: 8:00 AM – 8:00 PM, Sunday: By Appointment Only (24/7 Automated Online Booking).

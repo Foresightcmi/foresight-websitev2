@@ -16,7 +16,7 @@ Always use this exact text structure so search engine bots can match your profil
 *   **Target Market Area:** `Atlanta, GA & Metro Atlanta Surrounding Areas`
 *   **Operating Hours:** 
     *   Monday – Tuesday: 8:00 AM – 8:00 PM
-    *   Wednesday: By Appointment Only
+    *   Wednesday: 8:00 AM – 7:00 PM
     *   Thursday – Saturday: 8:00 AM – 8:00 PM
     *   Sunday: By Appointment Only (Online Self-Scheduling 24/7)
 
