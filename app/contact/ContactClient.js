@@ -62,7 +62,9 @@ export default function ContactClient() {
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
               📅 Schedule Your Inspection Online
             </a>
-          </d          <div className="grid grid-2" style={{ gap: '4rem' }}>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '4rem' }}>
             <div>
               <h2 style={{ marginBottom: '1.5rem' }}>Direct Contact Information</h2>
               <p style={{ marginBottom: '2rem', fontSize: '1.125rem', color: 'var(--color-gray-dark)' }}>
@@ -150,49 +152,80 @@ export default function ContactClient() {
                  <Link href="/ask-twin" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Chat with our Certified Master Inspector AI Twin →</Link>
               </div>
             </div>
-          </div>       </div>
+          </div>
 
           {/* Google Maps Embed & Location Details — Critical for Local Pack Ranking */}
-          <div style={{ marginTop: '3rem' }}>
-            <h2 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Our Location</h2>
-            <div className="card" style={{ padding: '0.5rem', overflow: 'hidden' }}>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center' }}>
-                <div style={{ flex: '1 1 400px', minHeight: '350px', position: 'relative' }}>
+          <div style={{ marginTop: '4rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Our Headquarters & Service Territory</h2>
+              <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem', maxWidth: '650px', margin: '0 auto' }}>
+                Based in Lithonia, GA — proudly dispatching dual-inspector teams across 163+ cities in Metro Atlanta every day.
+              </p>
+            </div>
+            
+            <div className="card" style={{ padding: '1rem', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--color-gray-light)' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'stretch' }}>
+                <div style={{ flex: '1 1 450px', minHeight: '380px', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.5!2d-84.1444!3d33.7275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQzJzM5LjAiTiA4NMKwMDgnMzkuOCJX!5e0!3m2!1sen!2sus!4v1"
+                    src="https://maps.google.com/maps?q=1816%20South%20Deshon%20Road,%20Lithonia,%20GA%2030058&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     width="100%"
-                    height="350"
-                    style={{ border: 0, borderRadius: 'var(--radius-md)' }}
+                    height="100%"
+                    style={{ border: 0, minHeight: '380px', width: '100%' }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Foresight Home Inspections location in Lithonia GA"
+                    title="Foresight Home Inspections Headquarters in Lithonia GA"
                   ></iframe>
                 </div>
-                <div style={{ flex: '1 1 300px', padding: '1.5rem' }}>
-                  <h3 style={{ color: 'var(--color-red)', marginBottom: '1rem' }}>Foresight Home Inspections, LLC</h3>
-                  <address style={{ fontStyle: 'normal', lineHeight: 1.8, fontSize: '1.05rem' }}>
-                    <strong>📍 1816 South Deshon Road</strong><br />
-                    Lithonia, GA 30058<br /><br />
-                    <a href="tel:678-480-2110" style={{ fontWeight: 600 }}>📞 678-480-2110</a><br />
-                    <a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a>
-                  </address>
-                  <div style={{ marginTop: '1.25rem', padding: '1rem', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', fontSize: '0.95rem', borderLeft: '4px solid var(--color-red)' }}>
-                    <strong>Business Hours:</strong><br />
-                    Mon, Tue, Thu, Fri, Sat: 8 AM – 8 PM<br />
-                    Wednesday: 8 AM – 7 PM<br />
-                    Sunday: By appointment only<br />
-                    <span style={{ fontSize: '0.8rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '0.25rem' }}>⚡ 24/7 Automated Online Booking</span>
+
+                <div style={{ flex: '1 1 320px', padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ display: 'inline-block', background: 'var(--color-red-light)', color: 'var(--color-red)', fontWeight: 700, padding: '0.35rem 0.85rem', borderRadius: 'var(--radius-full)', fontSize: '0.825rem', marginBottom: '1rem' }}>
+                      📍 HEADQUARTERS & DISPATCH
+                    </div>
+                    <h3 style={{ color: 'var(--color-dark)', marginBottom: '0.75rem', fontSize: '1.4rem' }}>Foresight Home Inspections, LLC</h3>
+                    <address style={{ fontStyle: 'normal', lineHeight: 1.8, fontSize: '1.05rem', color: 'var(--color-gray-dark)' }}>
+                      <strong style={{ color: 'var(--color-dark)' }}>1816 South Deshon Road</strong><br />
+                      Lithonia, GA 30058<br /><br />
+                      <a href="tel:678-480-2110" style={{ fontWeight: 700, color: 'var(--color-red)', fontSize: '1.15rem', display: 'inline-block', marginBottom: '0.25rem' }}>
+                        📞 678-480-2110
+                      </a><br />
+                      <a href="mailto:inspect@foresightcmi.com" style={{ color: 'var(--color-dark)', fontWeight: 500 }}>
+                        ✉️ inspect@foresightcmi.com
+                      </a>
+                    </address>
                   </div>
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Foresight+Home+Inspections+1816+South+Deshon+Road+Lithonia+GA+30058"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline"
-                    style={{ width: '100%', marginTop: '1.25rem', padding: '0.65rem', textAlign: 'center', fontSize: '0.95rem' }}
-                  >
-                    📍 Get Directions on Google Maps
-                  </a>
+
+                  <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#f8fafc', borderRadius: 'var(--radius-md)', fontSize: '0.925rem', borderLeft: '4px solid var(--color-red)' }}>
+                    <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.35rem' }}>⏰ Business Hours:</strong>
+                    <div style={{ lineHeight: 1.6, color: 'var(--color-gray-dark)' }}>
+                      Mon, Tue, Thu, Fri, Sat: <strong>8:00 AM – 8:00 PM</strong><br />
+                      Wednesday: <strong>8:00 AM – 7:00 PM</strong><br />
+                      Sunday: <strong>By Appointment Only</strong>
+                    </div>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--color-red)', fontWeight: 600, display: 'block', marginTop: '0.5rem' }}>
+                      ⚡ 24/7 Online Self-Scheduling Always Active
+                    </span>
+                  </div>
+
+                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=1816+South+Deshon+Road+Lithonia+GA+30058"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary"
+                      style={{ flex: '1 1 180px', padding: '0.75rem 1rem', textAlign: 'center', fontSize: '0.925rem' }}
+                    >
+                      📍 Open in Google Maps
+                    </a>
+                    <Link
+                      href="/service-areas"
+                      className="btn btn-outline"
+                      style={{ flex: '1 1 140px', padding: '0.75rem 1rem', textAlign: 'center', fontSize: '0.925rem' }}
+                    >
+                      🏙️ Service Areas
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
