@@ -62,30 +62,31 @@ export default function ContactClient() {
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
               📅 Schedule Your Inspection Online
             </a>
-          </div>
-
-          <div className="grid grid-2" style={{ gap: '4rem' }}>
+          </d          <div className="grid grid-2" style={{ gap: '4rem' }}>
             <div>
               <h2 style={{ marginBottom: '1.5rem' }}>Direct Contact Information</h2>
               <p style={{ marginBottom: '2rem', fontSize: '1.125rem', color: 'var(--color-gray-dark)' }}>
-                Prefer to speak with us directly? You can reach us by phone or email during our business hours.
+                Prefer to speak with us directly? Reach out by phone, email, or schedule instantly online.
               </p>
               
               <div className="card" style={{ marginBottom: '2rem' }}>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Phone</h3>
-                <a href="tel:678-480-2110" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-dark)' }}>
-                  678-480-2110
+                <h3 style={{ marginBottom: '0.75rem', color: 'var(--color-red)' }}>Phone</h3>
+                <a href="tel:678-480-2110" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-dark)', display: 'block', marginBottom: '0.75rem' }}>
+                  📞 678-480-2110
+                </a>
+                <a href="tel:678-480-2110" className="btn btn-outline" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', fontSize: '0.9rem' }}>
+                  Tap to Call Now
                 </a>
               </div>
               
               <div className="card" style={{ marginBottom: '2rem' }}>
-                <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Email</h3>
-                <a href="mailto:inspect@foresightcmi.com" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-dark)' }}>
-                  inspect@foresightcmi.com
+                <h3 style={{ marginBottom: '0.75rem', color: 'var(--color-red)' }}>Email</h3>
+                <a href="mailto:inspect@foresightcmi.com" style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--color-dark)' }}>
+                  ✉️ inspect@foresightcmi.com
                 </a>
               </div>
               
-              <div className="card">
+              <div className="card" style={{ marginBottom: '2rem' }}>
                 <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Business Hours</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Mon, Tue, Thu, Fri, Sat: 8:00 AM – 8:00 PM</li>
@@ -93,6 +94,14 @@ export default function ContactClient() {
                   <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Sunday: By Appointment Only</li>
                   <li style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', marginTop: '0.5rem' }}>⚡ 24/7 Online Self-Scheduling Always Available</li>
                 </ul>
+              </div>
+
+              <div className="card" style={{ background: 'var(--color-dark)', color: 'var(--color-white)', textAlign: 'center', padding: '1.75rem' }}>
+                <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', fontSize: '1.25rem' }}>Need an Instant Price Quote?</h3>
+                <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.95rem', marginBottom: '1.25rem' }}>Calculate exact inspection fees based on square footage, age, and location in seconds.</p>
+                <Link href="/quote" className="btn btn-primary" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
+                  ⚡ Calculate Instant Price Quote
+                </Link>
               </div>
             </div>
 
@@ -107,37 +116,43 @@ export default function ContactClient() {
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <div>
-                    <label className="form-label" htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" className="form-control" required />
+                    <label className="form-label" htmlFor="name">Full Name *</label>
+                    <input type="text" id="name" name="name" className="form-control" placeholder="e.g. Jane Doe" required />
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div>
+                      <label className="form-label" htmlFor="phone">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" className="form-control" placeholder="(678) 000-0000" />
+                    </div>
+                    <div>
+                      <label className="form-label" htmlFor="email">Email Address *</label>
+                      <input type="email" id="email" name="email" className="form-control" placeholder="jane@example.com" required />
+                    </div>
                   </div>
                   <div>
-                    <label className="form-label" htmlFor="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" className="form-control" />
+                    <label className="form-label" htmlFor="address">Property Address / City (Optional)</label>
+                    <input type="text" id="address" name="address" className="form-control" placeholder="e.g. 123 Main St, Atlanta, GA" />
                   </div>
                   <div>
-                    <label className="form-label" htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" className="form-control" required />
-                  </div>
-                  <div>
-                    <label className="form-label" htmlFor="message">Message</label>
-                    <textarea id="message" name="message" className="form-control" rows="5" required></textarea>
+                    <label className="form-label" htmlFor="message">Message / Inspection Questions *</label>
+                    <textarea id="message" name="message" className="form-control" rows="4" placeholder="Tell us about the property, square footage, or any specific questions..." required></textarea>
                   </div>
                   {submitStatus === 'error' && (
                     <p style={{ color: 'var(--color-red)', fontWeight: 500 }}>There was an error sending your message. Please try again or call us directly.</p>
                   )}
                   <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ width: '100%', padding: '1rem', fontSize: '1.125rem', opacity: isSubmitting ? 0.7 : 1 }}>
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Sending...' : '✉️ Send Message'}
                   </button>
                 </form>
               )}
               <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Want an instant answer?</p>
-                 <Link href="/ask-twin" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Chat with our Digital Twin →</Link>
+                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Want an instant AI answer?</p>
+                 <Link href="/ask-twin" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Chat with our Certified Master Inspector AI Twin →</Link>
               </div>
             </div>
-          </div>
+          </div>       </div>
 
-          {/* Google Maps Embed — Critical for Local Pack Ranking */}
+          {/* Google Maps Embed & Location Details — Critical for Local Pack Ranking */}
           <div style={{ marginTop: '3rem' }}>
             <h2 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Our Location</h2>
             <div className="card" style={{ padding: '0.5rem', overflow: 'hidden' }}>
@@ -162,12 +177,22 @@ export default function ContactClient() {
                     <a href="tel:678-480-2110" style={{ fontWeight: 600 }}>📞 678-480-2110</a><br />
                     <a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a>
                   </address>
-                  <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', fontSize: '0.95rem' }}>
+                  <div style={{ marginTop: '1.25rem', padding: '1rem', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', fontSize: '0.95rem', borderLeft: '4px solid var(--color-red)' }}>
                     <strong>Business Hours:</strong><br />
-                    Mon–Wed, Fri–Sat: 8 AM – 8 PM<br />
-                    Thursday: 8 AM – 7 PM<br />
-                    Sunday: By appointment only
+                    Mon, Tue, Thu, Fri, Sat: 8 AM – 8 PM<br />
+                    Wednesday: 8 AM – 7 PM<br />
+                    Sunday: By appointment only<br />
+                    <span style={{ fontSize: '0.8rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '0.25rem' }}>⚡ 24/7 Automated Online Booking</span>
                   </div>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Foresight+Home+Inspections+1816+South+Deshon+Road+Lithonia+GA+30058"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                    style={{ width: '100%', marginTop: '1.25rem', padding: '0.65rem', textAlign: 'center', fontSize: '0.95rem' }}
+                  >
+                    📍 Get Directions on Google Maps
+                  </a>
                 </div>
               </div>
             </div>
