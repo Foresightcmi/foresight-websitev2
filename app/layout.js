@@ -717,10 +717,6 @@ export default function RootLayout({ children }) {
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
                   <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
-                  <li style={{ marginTop: '0.5rem', lineHeight: '1.4' }}>
-                    <span style={{ fontSize: '0.9rem' }}>📍 1816 South Deshon Road</span><br />
-                    <span style={{ fontSize: '0.9rem' }}>Lithonia, GA 30058</span>
-                  </li>
                   <li style={{ marginTop: '0.25rem', lineHeight: '1.4' }}>
                     <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving 163+ Cities Across Metro Atlanta)</span>
                   </li>

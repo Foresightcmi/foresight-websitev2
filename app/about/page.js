@@ -456,8 +456,8 @@ export default function About() {
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📍</div>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.1rem' }}>Headquarters</h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
-                1816 South Deshon Road<br />
-                Lithonia, GA 30058
+                Serving Metro Atlanta, GA<br />
+                and surrounding areas
               </p>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>

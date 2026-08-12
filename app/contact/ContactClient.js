@@ -167,14 +167,14 @@ export default function ContactClient() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'stretch' }}>
                 <div style={{ flex: '1 1 450px', minHeight: '380px', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                   <iframe
-                    src="https://maps.google.com/maps?q=1816%20South%20Deshon%20Road,%20Lithonia,%20GA%2030058&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Atlanta,%20GA&t=&z=10&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0, minHeight: '380px', width: '100%' }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Foresight Home Inspections Headquarters in Lithonia GA"
+                    title="Foresight Home Inspections Service Area"
                   ></iframe>
                 </div>
 
@@ -185,8 +185,8 @@ export default function ContactClient() {
                     </div>
                     <h3 style={{ color: 'var(--color-dark)', marginBottom: '0.75rem', fontSize: '1.4rem' }}>Foresight Home Inspections, LLC</h3>
                     <address style={{ fontStyle: 'normal', lineHeight: 1.8, fontSize: '1.05rem', color: 'var(--color-gray-dark)' }}>
-                      <strong style={{ color: 'var(--color-dark)' }}>1816 South Deshon Road</strong><br />
-                      Lithonia, GA 30058<br /><br />
+                      <strong style={{ color: 'var(--color-dark)' }}>Serving Metro Atlanta</strong><br />
+                      and surrounding areas<br /><br />
                       <a href="tel:678-480-2110" style={{ fontWeight: 700, color: 'var(--color-red)', fontSize: '1.15rem', display: 'inline-block', marginBottom: '0.25rem' }}>
                         📞 678-480-2110
                       </a><br />
@@ -210,7 +210,7 @@ export default function ContactClient() {
 
                   <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                     <a
-                      href="https://www.google.com/maps/search/?api=1&query=1816+South+Deshon+Road+Lithonia+GA+30058"
+                      href="https://www.google.com/maps/search/?api=1&query=Atlanta+GA"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-primary"

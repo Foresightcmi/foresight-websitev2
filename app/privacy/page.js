@@ -48,8 +48,7 @@ export default function PrivacyPolicy() {
           </p>
           <p>
             Foresight Home Inspections, LLC<br />
-            1816 South Deshon Road<br />
-            Lithonia, GA 30058<br />
+            Metro Atlanta, GA<br />
             Phone: 678-480-2110<br />
             Email: inspect@foresightcmi.com
           </p>
