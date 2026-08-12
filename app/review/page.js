@@ -76,7 +76,7 @@ export default function ReviewPage() {
 
         <div style={{ marginBottom: '2.5rem' }}>
           <Link
-            href="https://g.page/r/foresight-home-inspections/review"
+            href="https://search.google.com/local/writereview?placeid=ChIJk_3KQe0H9YgRw8vLCvROjpY"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -126,7 +126,9 @@ export default function ReviewPage() {
             }}
           >
             <Link
-              href="#"
+              href="https://www.homegauge.com/inspector/foresight-home-inspections"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 color: 'var(--color-slate-dark, #0F172A)',
                 backgroundColor: 'var(--color-gray-light, #F8FAFC)',
@@ -141,7 +143,9 @@ export default function ReviewPage() {
               HomeGauge
             </Link>
             <Link
-              href="#"
+              href="https://www.yelp.com/biz/foresight-home-inspections-lithonia"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 color: 'var(--color-slate-dark, #0F172A)',
                 backgroundColor: 'var(--color-gray-light, #F8FAFC)',

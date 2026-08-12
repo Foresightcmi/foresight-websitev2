@@ -2,6 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
+import ProcessSteps from './components/ProcessSteps';
+import LatestPosts from './components/LatestPosts';
+import NewsletterSignup from './components/NewsletterSignup';
 
 const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
@@ -66,8 +69,8 @@ export default function Home() {
           "worstRating": "1"
         },
         "openingHoursSpecification": [
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday"], "opens": "08:00", "closes": "20:00" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "19:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday", "Saturday"], "opens": "08:00", "closes": "20:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "19:00" },
           { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00", "description": "By appointment only" }
         ],
         "sameAs": [
@@ -198,6 +201,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 📋 HOW IT WORKS — 4-Step Process Flow */}
+      <ProcessSteps />
 
       {/* 🏛️ TIERED SERVICE ARCHITECTURE 🏛️ */}
       <section className="section" style={{ background: '#0F172A', color: '#FFFFFF', padding: '4.5rem 0' }}>
@@ -627,6 +633,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 📰 LATEST BLOG POSTS */}
+      <LatestPosts />
+
       {/* ⚡ FAQ SECTION (AEO/GEO Optimized with Real-Time Search) ⚡ */}
       <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
@@ -665,6 +674,9 @@ export default function Home() {
           />
         </div>
       </section>
+
+      {/* 📧 NEWSLETTER SIGNUP / LEAD MAGNET */}
+      <NewsletterSignup />
     </>
   );
 }

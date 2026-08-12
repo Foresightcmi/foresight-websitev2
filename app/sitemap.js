@@ -24,6 +24,7 @@ export default async function sitemap() {
     { loc: '/service-areas/dekalb-county-compliance', changefreq: 'monthly', priority: 0.85 },
     { loc: '/free-utility-setup', changefreq: 'monthly', priority: 0.8 },
     { loc: '/review', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/faq', changefreq: 'monthly', priority: 0.7 },
     { loc: '/privacy', changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', changefreq: 'yearly', priority: 0.3 }
   ];
