@@ -5,12 +5,12 @@ export const metadata = {
   title: 'Frequently Asked Questions | Foresight Home Inspections',
   description: 'Answers to common questions about our Atlanta home inspections, pricing, warranties, process, and more.',
   alternates: {
-    canonical: 'https://foresightinspections.com/faq',
+    canonical: 'https://www.fhinspectionsatl.com/faq',
   },
   openGraph: {
     title: 'Frequently Asked Questions | Foresight Home Inspections',
     description: 'Answers to common questions about our Atlanta home inspections, pricing, warranties, process, and more.',
-    url: 'https://foresightinspections.com/faq',
+    url: 'https://www.fhinspectionsatl.com/faq',
     siteName: 'Foresight Home Inspections',
     locale: 'en_US',
     type: 'website',

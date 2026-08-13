@@ -57,7 +57,11 @@ export default function NewsletterSignup() {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px', margin: '0 auto' }}>
             <input 
               type="text" 
+              id="newsletter-name"
+              name="name"
               placeholder="Your Name" 
+              aria-label="Your Name"
+              autoComplete="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -66,14 +70,18 @@ export default function NewsletterSignup() {
                 padding: '1rem', 
                 backgroundColor: 'rgba(255,255,255,0.1)', 
                 border: '1px solid rgba(255,255,255,0.2)', 
-                borderRadius: 'var(--radius-md)',
+                borderRadius: 'var(--radius-md)', 
                 color: '#FFFFFF',
                 fontSize: '1rem'
               }}
             />
             <input 
               type="email" 
+              id="newsletter-email"
+              name="email"
               placeholder="Your Email Address" 
+              aria-label="Your Email Address"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -82,7 +90,7 @@ export default function NewsletterSignup() {
                 padding: '1rem', 
                 backgroundColor: 'rgba(255,255,255,0.1)', 
                 border: '1px solid rgba(255,255,255,0.2)', 
-                borderRadius: 'var(--radius-md)',
+                borderRadius: 'var(--radius-md)', 
                 color: '#FFFFFF',
                 fontSize: '1rem'
               }}

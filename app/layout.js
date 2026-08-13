@@ -705,6 +705,7 @@ export default function RootLayout({ children }) {
                   <li><Link href="/services">Services & Pricing</Link></li>
                   <li><Link href="/samples">Sample Reports</Link></li>
                   <li><Link href="/blog">Blog & Guides</Link></li>
+                  <li><Link href="/faq">FAQ</Link></li>
                   <li><Link href="/realtors">Realtors VIP Program</Link></li>
                   <li><Link href="/quote">Instant Quote</Link></li>
                   <li><Link href="/contact">Contact Us</Link></li>

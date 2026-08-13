@@ -157,6 +157,7 @@ export default function Home() {
           alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
           fill
           priority
+          sizes="100vw"
           style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
         />
         {/* Dark gradient overlay for text readability */}
