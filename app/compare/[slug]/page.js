@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
@@ -41,6 +42,7 @@ export async function generateMetadata({ params }) {
       description: item.metaDescription,
       url: canonicalUrl,
       type: 'article',
+      ...(item.image ? { images: [{ url: `${SITE_URL}${item.image}`, alt: item.imageAlt || item.title }] } : {}),
     },
     alternates: {
       canonical: canonicalUrl,
@@ -65,6 +67,7 @@ export default async function ComparisonPage({ params }) {
     "headline": item.title,
     "description": item.metaDescription,
     "url": canonicalUrl,
+    ...(item.image ? { "image": `${SITE_URL}${item.image}` } : {}),
     "author": {
       "@type": "Person",
       "name": "Christopher Boykin",
@@ -140,6 +143,45 @@ export default async function ComparisonPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* Featured Visual Inspection In Action Showcase */}
+      {item.image && (
+        <section className="section bg-light" style={{ padding: '4rem 0 3rem', borderBottom: '1px solid var(--color-gray-mid)' }}>
+          <div className="container" style={{ maxWidth: '950px' }}>
+            <div className="grid grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
+              <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 12px 30px rgba(0,0,0,0.12)', border: '1px solid #E2E8F0' }}>
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt || item.title}
+                  width={700}
+                  height={850}
+                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                  priority
+                />
+              </div>
+              <div>
+                <span className="badge" style={{ background: 'rgba(211,47,47,0.1)', color: 'var(--color-red)', marginBottom: '0.75rem', fontSize: '0.85rem' }}>
+                  🔍 Field Verification
+                </span>
+                <h2 style={{ fontSize: '1.85rem', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.25 }}>
+                  Two Trained Experts. Double the Technical Oversight.
+                </h2>
+                <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+                  While one certified inspector audits major mechanicals, electrical panels, and HVAC performance, our second inspector conducts deep structural, roof, and foundation evaluations.
+                </p>
+                <div style={{ padding: '1rem 1.25rem', background: '#FFFFFF', borderRadius: '8px', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                  <strong style={{ color: '#0F172A', display: 'block', marginBottom: '0.25rem' }}>
+                    ✓ No Fatigue, Zero Missed Defects
+                  </strong>
+                  <p style={{ margin: 0, fontSize: '0.92rem', color: '#475569', lineHeight: 1.5 }}>
+                    Cross-checked findings ensure every safety hazard and high-dollar defect is caught before your due diligence period ends.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Comparison Table */}
       <section className="section bg-white">
