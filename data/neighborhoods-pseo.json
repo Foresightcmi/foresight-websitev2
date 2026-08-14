@@ -1,0 +1,472 @@
+[
+  {
+    "slug": "inman-park",
+    "name": "Inman Park",
+    "city": "Atlanta",
+    "county": "Fulton",
+    "type": "Historic District",
+    "tagline": "Victorian & Craftsman Due Diligence Audits in Atlanta's First Planned Suburb",
+    "era": "1890s – 1920s",
+    "intro": "Inman Park is renowned for its grand Queen Anne Victorians, ornate Craftsman bungalows, and tree-lined corridors along the Atlanta BeltLine. While these architectural gems hold tremendous character, purchasing in Inman Park requires specialized diagnostic evaluation of century-old construction systems, early-century additions, and historic district overlay constraints.",
+    "keyDefects": [
+      {
+        "title": "Knob-and-Tube Wiring & Mixed Electrical Eras",
+        "description": "Many historic Inman Park homes still retain active or abandoned knob-and-tube branch wiring buried beneath attic insulation or concealed behind original plaster walls. Our dual-inspector team uses non-destructive electrical circuit tracers and thermal imaging to identify ungrounded circuits and overloaded subpanels."
+      },
+      {
+        "title": "Granite & Brick Pier Foundation Settlement",
+        "description": "Original stone and brick pier foundations common in early 1900s Victorians are vulnerable to mortar deterioration, unlevel beam settling, and inadequate crawlspace ventilation. We perform laser-level elevation scans and joist deflection assessments."
+      },
+      {
+        "title": "Cast Iron Plumbing & Clay Sewer Laterals",
+        "description": "100-year-old subterranean sewer connections in Inman Park frequently suffer from tree root intrusion, internal pipe scaling, and channel bellies. A high-definition fiber-optic sewer scope is essential before closing."
+      },
+      {
+        "title": "Plaster & Lath Wall Moisture Traps",
+        "description": "Dense lath-and-plaster walls can mask slow roof and chimney leaks. Our FLIR infrared thermal cameras scan wall cavities to pinpoint hidden moisture intrusion behind vintage trim and historic chimneys."
+      }
+    ],
+    "recommendedServices": ["sewer-scope-inspection", "radon-testing", "termite-inspection"],
+    "faqs": [
+      {
+        "question": "What are the most common inspection findings in Inman Park historic homes?",
+        "answer": "The most frequent issues in Inman Park include active or dormant knob-and-tube wiring, deteriorating cast iron drain lines, crawlspace joist sag from historic moisture, and ungrounded three-prong electrical outlets installed during unpermitted past renovations."
+      },
+      {
+        "question": "Does Foresight inspect homes with historic preservation restrictions?",
+        "answer": "Yes. Christopher Boykin, CMI, and our team are thoroughly experienced with Inman Park Historic District guidelines, helping buyers understand what modifications require Urban Design Commission (UDC) approval versus standard maintenance repairs."
+      },
+      {
+        "question": "Why is a sewer scope inspection critical in Inman Park?",
+        "answer": "Inman Park's mature canopy of oak and pecan trees creates significant root pressure on original vitrified clay and cast iron sewer laterals connecting to the City of Atlanta main line. Our 200ft camera inspection identifies bellies, fractures, and blockages before you finalize your purchase."
+      },
+      {
+        "question": "How long does a dual-inspector historic audit take in Inman Park?",
+        "answer": "Due to our two-inspector protocol, a complex 3,500 sq ft Victorian is typically completed in 2.0 to 2.5 hours, providing double the technical oversight in half the time of a solo inspector."
+      }
+    ]
+  },
+  {
+    "slug": "grant-park",
+    "name": "Grant Park",
+    "city": "Atlanta",
+    "county": "Fulton",
+    "type": "Historic District",
+    "tagline": "Comprehensive Craftsman & Victorian Bungalow Audits Near Atlanta's Oldest City Park",
+    "era": "1890s – 1930s",
+    "intro": "Grant Park is celebrated for its rich collection of Victorian cottages, Queen Anne residences, and 1920s Craftsman bungalows surrounding the historic 131-acre park. Navigating due diligence in Grant Park demands rigorous inspection of pier-and-beam crawlspaces, aging drainage topography, and vintage mechanical conversions.",
+    "keyDefects": [
+      {
+        "title": "Crawlspace Humidity & Wood-Destroying Fungi",
+        "description": "High groundwater tables and unconditioned vented crawlspaces in Grant Park frequently lead to wood moisture content exceeding 19%, fungal growth on floor joists, and subfloor bounce. We inspect every accessible crawlspace foot with digital moisture meters."
+      },
+      {
+        "title": "Chimney Flashing & Unlined Flues",
+        "description": "Historic brick masonry chimneys in Grant Park often lack modern stainless steel flue liners or have deteriorated step flashing, creating carbon monoxide risks and hidden attic water infiltration."
+      },
+      {
+        "title": "Galvanized Water Supply & Lead Joint Drainage",
+        "description": "Homes that have not undergone complete repipes often contain legacy galvanized steel supply lines with heavy internal rust constriction, reducing water pressure and volume."
+      },
+      {
+        "title": "Subterranean Termite Vulnerability",
+        "description": "Georgia red clay combined with damp crawlspaces creates prime termite habitat. Foresight provides Official Georgia Wood Infestation Clearance Reports (WDO) on every qualifying inspection."
+      }
+    ],
+    "recommendedServices": ["termite-inspection", "sewer-scope-inspection", "radon-testing"],
+    "faqs": [
+      {
+        "question": "Are crawlspace issues common in Grant Park?",
+        "answer": "Yes. Over 65% of Grant Park homes have crawlspace foundations. Common findings include inadequate vapor barriers, missing crawlspace ventilation, wood-destroying insect damage, and uninsulated subflooring."
+      },
+      {
+        "question": "Do your inspectors check unpermitted basement finishes in Grant Park?",
+        "answer": "Yes. We evaluate basement build-outs for proper ceiling height clearance, emergency egress windows, compliant circuit breaker sizing, and adequate HVAC supply/return airflow."
+      },
+      {
+        "question": "Can FLIR thermal imaging detect hidden plumbing leaks in Grant Park bungalows?",
+        "answer": "Absolutely. Our FLIR thermal cameras detect subtle temperature differentials caused by moisture behind tile tub surrounds, beneath toilet seals, and inside ceiling drywall."
+      },
+      {
+        "question": "What is included with Foresight's $10,000 Master Warranty in Grant Park?",
+        "answer": "Every standard home buyer inspection includes $10,000 in aggregate post-closing warranty protection ($0 deductible) covering major appliances, structural framing, HVAC, electrical, plumbing, mold remediation, and roof leak repairs for 90 days from closing."
+      }
+    ]
+  },
+  {
+    "slug": "virginia-highland",
+    "name": "Virginia-Highland",
+    "city": "Atlanta",
+    "county": "Fulton",
+    "type": "Historic & Walkable Enclave",
+    "tagline": "Master-Level Inspections for Craftsman Bungalows & Modern Infill in VaHi",
+    "era": "1920s – 1950s (Plus Modern Infill)",
+    "intro": "Virginia-Highland (VaHi) is one of Atlanta's most coveted Intown neighborhoods, boasting picturesque 1920s bungalows, English vernacular revivals, and high-end modern custom builds. Whether evaluating a century-old bungalow or a multimillion-dollar new build, Foresight's dual-inspector team delivers the precise technical reporting needed to negotiate effectively.",
+    "keyDefects": [
+      {
+        "title": "Aluminum Branch Circuit Wiring in Mid-Century Renovations",
+        "description": "Properties remodeled or expanded between 1965 and 1973 often contain single-strand aluminum wiring, presenting serious overheating and fire hazards at connection points. We inspect all panel terminations."
+      },
+      {
+        "title": "Basement Water Seepage & Red Clay Hydrostatic Pressure",
+        "description": "Sloped lots and dense Georgia red clay create strong lateral hydrostatic pressure against foundation walls, leading to step cracks, efflorescence, and moisture intrusion during seasonal rainfall."
+      },
+      {
+        "title": "Modern Infill Roof Terrace & Envelope Flashing Failures",
+        "description": "New modern builds in VaHi featuring rooftop decks frequently suffer from inadequate membrane flashing and improperly pitched parapet walls that cause premature water damage."
+      },
+      {
+        "title": "Multi-Zone HVAC Duct Balancing",
+        "description": "Multi-story historic home additions often suffer from poorly balanced HVAC airflow, inadequate return duct sizing, and uneven upper-floor climate control."
+      }
+    ],
+    "recommendedServices": ["radon-testing", "sewer-scope-inspection", "new-construction-inspection"],
+    "faqs": [
+      {
+        "question": "Is radon testing recommended in Virginia-Highland?",
+        "answer": "Yes. Fulton County is classified as an EPA Zone 1 radon zone with high average indoor radon concentrations. We deploy 48-hour continuous radon monitors to ensure your indoor air safety."
+      },
+      {
+        "question": "How do you inspect roof decks on modern infill homes in Virginia-Highland?",
+        "answer": "We utilize high-resolution aerial drones and FLIR thermal imaging to inspect flat roofing membranes, scuppers, parapet flashing, and structural ledger attachments that standard ladders cannot safely access."
+      },
+      {
+        "question": "How fast do realtors and buyers receive reports in Virginia-Highland?",
+        "answer": "Guaranteed within 24 hours (usually same evening). This rapid turnaround is essential for navigating competitive 5-day Due Diligence windows in Virginia-Highland."
+      },
+      {
+        "question": "Can I attend the inspection in Virginia-Highland?",
+        "answer": "Yes! We encourage buyers to attend the final 30–45 minutes for a complete verbal walkthrough with Lead Certified Master Inspector Christopher Boykin."
+      }
+    ]
+  },
+  {
+    "slug": "druid-hills",
+    "name": "Druid Hills",
+    "city": "Atlanta",
+    "county": "DeKalb",
+    "type": "Historic Estate District",
+    "tagline": "Elite Architectural & Mechanical Audits in Olmsted-Designed Druid Hills",
+    "era": "1910s – 1950s",
+    "intro": "Designed by legendary landscape architect Frederick Law Olmsted, Druid Hills is distinguished by its expansive parkways, historic stone estates, and stately architecture adjacent to Emory University. Inspecting properties of this scale requires advanced diagnostic equipment, deep understanding of historic materials, and multi-system mechanical expertise.",
+    "keyDefects": [
+      {
+        "title": "Slate & Clay Tile Roof Assembly Vulnerabilities",
+        "description": "Original slate and Spanish tile roofs require non-destructive drone inspection to identify cracked tiles, failing copper valley flashing, and underlying decking rot without walking on fragile historical tiles."
+      },
+      {
+        "title": "Mature Tree Root Damage to Foundations & Utility Lines",
+        "description": "Druid Hills' historic tree canopy introduces massive lateral root pressure against stone foundations and subterranean stormwater/sewer piping."
+      },
+      {
+        "title": "Commercial-Grade Boiler & Multi-Unit Hydronic Systems",
+        "description": "Older estates frequently feature vintage boiler heat, multi-zone radiator loops, or complex retrofitted dual-fuel heat pumps requiring specialized mechanical inspection."
+      },
+      {
+        "title": "DeKalb County Water Conservation Ordinance Compliance",
+        "description": "Druid Hills homes located in unincorporated DeKalb County must meet mandatory low-flow plumbing fixture conservation laws before property title transfer. We provide official compliance certificates."
+      }
+    ],
+    "recommendedServices": ["sewer-scope-inspection", "radon-testing", "pool-inspection"],
+    "faqs": [
+      {
+        "question": "Do you provide DeKalb County Low-Flow Plumbing Certificates in Druid Hills?",
+        "answer": "Yes. We verify fixture flow rates (toilets <=1.6 GPF, showerheads <=2.5 GPM, faucets <=2.2 GPM) and issue official DeKalb County compliance certificates on site."
+      },
+      {
+        "question": "How does Foresight safely inspect high-pitched slate roofs in Druid Hills?",
+        "answer": "We deploy FAA Part 107 certified high-definition aerial drones equipped with 4K optical zoom, capturing crystal-clear imagery of chimney saddles, valleys, and ridge caps without risking roof damage."
+      },
+      {
+        "question": "Can you evaluate estate swimming pools and tennis court drainage?",
+        "answer": "Yes. Our specialty Pool & Spa inspection covers pumps, filtration, chlorinators, heaters, and NEC 680 electrical bonding standards for luxury Druid Hills outdoor living spaces."
+      },
+      {
+        "question": "Why is the two-inspector team advantageous for 4,000+ sq ft estates?",
+        "answer": "On large estates, one certified inspector focuses entirely on exterior envelopes, roofs, and drainage while Lead CMI Christopher Boykin audits interior systems, electrical panels, and thermal diagnostics."
+      }
+    ]
+  },
+  {
+    "slug": "buckhead-tuxedo-park",
+    "name": "Buckhead / Tuxedo Park",
+    "city": "Atlanta",
+    "county": "Fulton",
+    "type": "Luxury Estate Enclave",
+    "tagline": "White-Glove Estate & Architectural Inspections for Buckhead's Premier Residences",
+    "era": "1930s – Present (Custom Estates)",
+    "intro": "Tuxedo Park and the greater Buckhead estate corridor represent the pinnacle of Atlanta luxury real estate. Sprawling multi-acre parcels, 6,000+ sq ft architectural masterworks, smart home automation, and heated resort-style pools require an inspection service that operates at an elite standard. Foresight's Estate Tier delivers complete diagnostic thoroughness with CMI leadership.",
+    "keyDefects": [
+      {
+        "title": "Synthetic Stucco (EIFS) & Hard-Coat Moisture Intrusion",
+        "description": "Many 1980s–2000s Buckhead luxury homes feature synthetic stucco (EIFS) or multi-coat barrier systems. Without proper kick-out flashing and window sealants, trapped moisture can silently rot structural framing. We deploy FLIR thermal diagnostics to identify concealed moisture."
+      },
+      {
+        "title": "Complex Multi-Unit Commercial HVAC Systems",
+        "description": "Estates with 4 to 8 distinct HVAC zones, variable refrigerant flow (VRF) technology, and integrated dehumidification systems require extensive temperature-split testing and static pressure analysis."
+      },
+      {
+        "title": "High-Capacity Electrical Distribution & Subpanel Networks",
+        "description": "400A to 800A service entrances, backup generator transfer switches, and complex subpanels demand comprehensive thermal scanning to detect unbalanced phase loads and loose lug connections."
+      },
+      {
+        "title": "Resort Pools, Spas & Hydraulic Water Features",
+        "description": "Automated pool heaters, salt chlorinators, infinity edge weir walls, and underwater lighting require thorough safety and bonding evaluation according to APSP standards."
+      }
+    ],
+    "recommendedServices": ["pool-inspection", "sewer-scope-inspection", "radon-testing"],
+    "faqs": [
+      {
+        "question": "What is included in Foresight's Estate & Luxury Tier in Buckhead?",
+        "answer": "Our Estate Tier features Lead CMI Christopher Boykin plus a Senior Certified Inspector, a 4+ hour exhaustive evaluation, full aerial drone grounds and roof scans, complete FLIR thermal envelope diagnostics, and a private 1-on-1 buyer strategy call."
+      },
+      {
+        "question": "How do you coordinate SUPRA lockbox access for gated Buckhead estates?",
+        "answer": "Foresight carries active SUPRA eKEY credentials and coordinates seamlessly with listing agents and gate security, saving buyer agents valuable time."
+      },
+      {
+        "question": "Do you offer confidentiality and discretion for high-profile buyers?",
+        "answer": "Yes. We maintain strict client confidentiality protocols and non-disclosure agreements for celebrity, executive, and high-net-worth real estate transactions."
+      },
+      {
+        "question": "Can you inspect backup generators and whole-home automation systems?",
+        "answer": "We inspect automatic transfer switches, generator fuel shutoffs, emergency circuits, and verify primary control functions across estate mechanical infrastructure."
+      }
+    ]
+  },
+  {
+    "slug": "candler-park",
+    "name": "Candler Park",
+    "city": "Atlanta",
+    "county": "Fulton",
+    "type": "Historic & Eclectic Community",
+    "tagline": "Thorough Bungalow & Multi-Era Structural Inspections in Candler Park",
+    "era": "1910s – 1940s",
+    "intro": "Candler Park combines lush tree-shaded streets, golf course greenery, and historic early 20th-century residential architecture. Its tight lot lines, shared driveways, and century-old structural framing make professional due diligence essential for prospective buyers.",
+    "keyDefects": [
+      {
+        "title": "Lot Topography & Foundation Surface Drainage",
+        "description": "Close proximity between neighboring homes in Candler Park often creates shared drainage bottlenecks where roof runoff directs water toward foundation footings, causing red clay erosion."
+      },
+      {
+        "title": "Unpermitted Attic Conversions & Knee-Wall Insulation Gaps",
+        "description": "Historic bungalows converted into 1.5-story homes often suffer from inadequate collar ties, undersized floor joists, and missing thermal barrier knee-wall insulation."
+      },
+      {
+        "title": "Aging Clay & Cast Iron Sewer Lateral Shifts",
+        "description": "Subterranean root intrusion and ground settlement frequently cause offset joints and root choke points in vintage Candler Park sewer lines."
+      },
+      {
+        "title": "Federal Pacific & Zinsco Electrical Panel Hazards",
+        "description": "Mid-century renovations in the neighborhood often installed Stab-Lok breakers that fail to trip during electrical overloads, posing recognized fire hazards."
+      }
+    ],
+    "recommendedServices": ["sewer-scope-inspection", "radon-testing", "termite-inspection"],
+    "faqs": [
+      {
+        "question": "Why is attic framing inspection critical in Candler Park bungalows?",
+        "answer": "Many bungalows have finished second floors where original 2x4 or 2x6 ceiling joists were improperly used as load-bearing floor joists without necessary structural reinforcing."
+      },
+      {
+        "question": "Does Foresight check for Federal Pacific Stab-Lok panels in Candler Park?",
+        "answer": "Yes. We inspect every electrical panel for known hazardous brands (FPE, Zinsco, Challenger) and document safety risks in our 3-step reporting format."
+      },
+      {
+        "question": "How do you inspect shared driveway drainage in Candler Park?",
+        "answer": "We evaluate lot grading, gutter downspout extensions, swales, and foundation waterproofing to ensure stormwater does not compromise crawlspaces or basements."
+      },
+      {
+        "question": "What is Foresight's turnaround time for Candler Park inspection reports?",
+        "answer": "Delivered within 24 hours via HomeGauge with high-resolution photos, FLIR thermal scans, and the Create Request List (CRL) repair amendment tool for fast GAR contract negotiations."
+      }
+    ]
+  },
+  {
+    "slug": "windward-alpharetta",
+    "name": "Windward",
+    "city": "Alpharetta",
+    "county": "Fulton",
+    "type": "Master-Planned Lake & Golf Community",
+    "tagline": "Comprehensive Master Inspections for Windward Lake & Golf Communities",
+    "era": "1980s – 2000s",
+    "intro": "Spanning 3,400 acres around Lake Windward in Alpharetta, the Windward community features master-planned subdivisions, custom golf course homes, and waterfront properties. Navigating home purchases in Windward requires in-depth knowledge of 1990s construction materials, polybutylene plumbing, and multi-zone HVAC efficiency.",
+    "keyDefects": [
+      {
+        "title": "Polybutylene Plumbing Line Risks",
+        "description": "Homes built between 1985 and 1996 in Windward frequently contain grey polybutylene supply piping that is prone to sudden microscopic cracking and catastrophic fitting failure."
+      },
+      {
+        "title": "Synthetic Stucco (EIFS) Envelope Moisture Intrusion",
+        "description": "Large executive homes built in the 1990s often feature synthetic stucco with improper window flashing and missing weep screeds, causing sheathing rot behind exterior walls."
+      },
+      {
+        "title": "Dual HVAC Heat Exchanger Fatigue",
+        "description": "15+ year old gas furnaces in larger two-story homes frequently develop hairline heat exchanger cracks that can leak carbon monoxide into living spaces."
+      },
+      {
+        "title": "Lakefront Bulkhead & Deck Structure Weathering",
+        "description": "Properties on Lake Windward require specialized evaluation of elevated deck ledger boards, joist hangers, and shoreline retaining structures."
+      }
+    ],
+    "recommendedServices": ["radon-testing", "pool-inspection", "termite-inspection"],
+    "faqs": [
+      {
+        "question": "Do Windward homes often have polybutylene piping?",
+        "answer": "Yes. A significant percentage of homes constructed in Windward during the late 1980s and 1990s were plumbed with polybutylene. We inspect all visible main lines and manifold connections."
+      },
+      {
+        "question": "Is radon gas common in Alpharetta / Windward?",
+        "answer": "Yes. North Fulton County sits atop granite formations with elevated radon potential. We recommend 48-hour continuous radon monitoring for all Windward home purchases."
+      },
+      {
+        "question": "How does Foresight inspect high roofs in Windward subdivisions?",
+        "answer": "We utilize FAA-certified aerial drones to inspect multi-gabled roofs, steep architectural shingles, chimney flashing, and gutters safely and completely."
+      },
+      {
+        "question": "Do you inspect swimming pools and hot tubs in Windward?",
+        "answer": "Yes. Our specialty Pool & Spa inspection covers pumps, filters, heaters, safety fences, coping, and NEC 680 electrical bonding."
+      }
+    ]
+  },
+  {
+    "slug": "sugarloaf-country-club",
+    "name": "Sugarloaf Country Club",
+    "city": "Duluth",
+    "county": "Gwinnett",
+    "type": "Gated Golf & Country Club Community",
+    "tagline": "Executive Due Diligence Audits in Gwinnett's Premier TPC Golf Community",
+    "era": "1990s – 2010s",
+    "intro": "Sugarloaf Country Club is Gwinnett County's premier gated luxury development, built around the Greg Norman-designed TPC Sugarloaf golf course. Featuring sprawling custom estates, finished terrace levels, and resort amenities, Sugarloaf purchases require rigorous, CMI-led inspection to protect high-value capital investments.",
+    "keyDefects": [
+      {
+        "title": "Finished Terrace Level Moisture & Hydrostatic Infiltration",
+        "description": "Elaborate walkout basements and theater rooms set into sloped golf course terrain require FLIR thermal scanning to detect sub-slab moisture and hidden wall dampness."
+      },
+      {
+        "title": "Multi-System HVAC Load & Damper Balancing",
+        "description": "Homes with 3 to 6 HVAC units and electronic zoning dampers frequently suffer from stuck bypass dampers, undersized return plenums, and uneven thermal comfort."
+      },
+      {
+        "title": "Heavy Tile & Multi-Layer Architectural Roofing Flashing",
+        "description": "Complex roof geometries with multiple valleys, dormers, and masonry intersections require detailed drone audits to verify kick-out flashing and chimney crickets."
+      },
+      {
+        "title": "Outdoor Living, Outdoor Kitchens & Gas Plumbing",
+        "description": "Custom outdoor kitchens, gas fire pits, and pool heating systems demand careful combustible gas leak detection and GFCI circuit verification."
+      }
+    ],
+    "recommendedServices": ["pool-inspection", "radon-testing", "sewer-scope-inspection"],
+    "faqs": [
+      {
+        "question": "How do your inspectors handle security clearance for Sugarloaf Country Club?",
+        "answer": "We coordinate directly with the Sugarloaf security gate using our active credentials, ensuring zero access delays on inspection day."
+      },
+      {
+        "question": "What diagnostic tools are included on Sugarloaf luxury inspections?",
+        "answer": "FLIR thermal infrared cameras, 4K aerial drones, electronic combustible gas sniffers, digital pinless moisture meters, and continuous radon monitors."
+      },
+      {
+        "question": "Does Foresight inspect luxury outdoor kitchens and cabanas?",
+        "answer": "Yes. We inspect gas supply lines, outdoor refrigeration, GFCI electrical safety, sink plumbing, and drainage systems."
+      },
+      {
+        "question": "What is the warranty coverage for Sugarloaf home inspections?",
+        "answer": "Every standard buyer inspection includes our complimentary $10,000 Elite Master Warranty ($0 deductible) covering structural components, major appliances, HVAC, electrical, plumbing, mold, and roof leaks."
+      }
+    ]
+  },
+  {
+    "slug": "east-cobb-subdivisions",
+    "name": "East Cobb Subdivisions",
+    "city": "Marietta",
+    "county": "Cobb",
+    "type": "Top School District Subdivisions",
+    "tagline": "Family Home & 11-Month Warranty Inspections in Walton, Wheeler & Pope Districts",
+    "era": "1970s – 2000s (Plus New Construction)",
+    "intro": "East Cobb is nationally recognized for its top-ranked high school districts (Walton, Pope, Lassiter, Wheeler) and established swim/tennis neighborhoods. Whether purchasing an established 1980s family home or a modern new construction build, Foresight's dual-inspector team ensures your investment is thoroughly vetted.",
+    "keyDefects": [
+      {
+        "title": "Hardboard (LP) Siding & Exterior Trim Decay",
+        "description": "Many 1980s and 1990s East Cobb homes feature composite or hardboard siding that is susceptible to bottom-edge swelling, water absorption, and fungal rot."
+      },
+      {
+        "title": "Aging Polybutylene Plumbing & Main Line Leaks",
+        "description": "Subdivisions developed across East Cobb in the 1980s and 1990s often contain polybutylene piping from the water meter into the crawlspace or slab manifold."
+      },
+      {
+        "title": "Cobb County Radon Gas Exposure",
+        "description": "Cobb County has documented pockets of elevated indoor radon levels due to underlying granite geological formations. 48-hour testing is strongly recommended."
+      },
+      {
+        "title": "11-Month Builder Warranty Punch List Deficiencies",
+        "description": "New construction homes in East Cobb often develop drywall settlement cracks, uninsulated attic baffles, and HVAC duct leaks before the 1-year builder warranty expires."
+      }
+    ],
+    "recommendedServices": ["radon-testing", "termite-inspection", "new-construction-inspection"],
+    "faqs": [
+      {
+        "question": "Do you perform 11-Month Builder Warranty inspections in East Cobb?",
+        "answer": "Yes. Our 11-Month Warranty inspection provides a comprehensive, photo-documented punch list of builder defects to submit before your 1-year warranty expires."
+      },
+      {
+        "question": "Why is radon testing important for East Cobb basements?",
+        "answer": "Granite bedrock throughout Cobb County produces naturally occurring radon gas that seeps into basements and slab foundations. Our 48-hour monitors deliver lab-certified results."
+      },
+      {
+        "question": "How quickly can you schedule an inspection in East Cobb?",
+        "answer": "With our dual-inspector team, we offer guaranteed 48-hour scheduling windows and 24-hour report delivery to keep your Due Diligence period protected."
+      },
+      {
+        "question": "Do you check crawlspaces under older East Cobb homes?",
+        "answer": "Yes. We enter and thoroughly evaluate every accessible crawlspace for wood moisture, termite activity, duct insulation integrity, and foundation settlement."
+      }
+    ]
+  },
+  {
+    "slug": "peachtree-hills-brookwood-hills",
+    "name": "Peachtree Hills & Brookwood Hills",
+    "city": "Atlanta",
+    "county": "Fulton",
+    "type": "Historic Intown Enclaves",
+    "tagline": "Precision Diagnostic Audits for Vintage Cottages & Historic Enclaves",
+    "era": "1920s – 1950s",
+    "intro": "Nestled between Midtown and Buckhead, Peachtree Hills and Brookwood Hills feature historic tree-canopied streets, brick Tudor cottages, and charming mid-century residences. Due to decades of renovations, additions, and historic infrastructure, due diligence in these enclaves requires meticulous diagnostic evaluation.",
+    "keyDefects": [
+      {
+        "title": "Historic Clay & Cast Iron Sewer Lateral Fractures",
+        "description": "Original sewer lines are vulnerable to root invasion and pipe collapses under heavy mature street trees, making a fiber-optic sewer scope essential."
+      },
+      {
+        "title": "Foundation Transitions Between Original Structure & Modern Additions",
+        "description": "Many cottages have rear master suite or kitchen expansions where differing foundation types (pier-and-beam to slab/crawlspace) experience differential settlement."
+      },
+      {
+        "title": "Undersized Electrical Panels & Hidden Subpanel Overloads",
+        "description": "Additions over the decades frequently overload vintage 100A or 150A main electrical services. We inspect service capacity and subpanel grounding."
+      },
+      {
+        "title": "Original Single-Pane Windows & Envelope Thermal Loss",
+        "description": "Vintage double-hung windows often suffer from broken sash cords, glazing failure, and severe air infiltration detected by our FLIR thermal imaging."
+      }
+    ],
+    "recommendedServices": ["sewer-scope-inspection", "radon-testing", "termite-inspection"],
+    "faqs": [
+      {
+        "question": "Why should I get a sewer scope in Peachtree Hills or Brookwood Hills?",
+        "answer": "Century-old clay sewer pipes beneath mature tree canopies are prime candidates for root intrusions, pipe offsets, and costly sewer replacements ($8,000–$15,000+)."
+      },
+      {
+        "question": "How do you inspect structural additions on historic cottages?",
+        "answer": "We examine the framing transition points, foundation tie-ins, roof valley flashings, and crawlspace crawl points between the original build and later expansions."
+      },
+      {
+        "question": "Does Foresight carry SUPRA key access for Peachtree Hills listings?",
+        "answer": "Yes. Our inspectors carry active MLS SUPRA eKEY access for secure, independent entry."
+      },
+      {
+        "question": "What report tools do realtors receive after the inspection?",
+        "answer": "Realtors receive digital HomeGauge reports with the 1-click Create Request List (CRL) tool and our instant GAR Amendment Repair Clause Generator to expedite negotiations."
+      }
+    ]
+  }
+]

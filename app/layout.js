@@ -703,6 +703,8 @@ export default function RootLayout({ children }) {
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/">Home</Link></li>
                   <li><Link href="/services">Services & Pricing</Link></li>
+                  <li><Link href="/due-diligence">Due Diligence Guarantee</Link></li>
+                  <li><Link href="/neighborhoods">Neighborhood Guides</Link></li>
                   <li><Link href="/samples">Sample Reports</Link></li>
                   <li><Link href="/blog">Blog & Guides</Link></li>
                   <li><Link href="/faq">FAQ</Link></li>

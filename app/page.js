@@ -89,7 +89,33 @@ export default function Home() {
         "description": "See how Certified Master Inspector Christopher Boykin and our two-inspector team use FLIR thermal imaging and drones to inspect Atlanta homes.",
         "thumbnailUrl": "https://www.fhinspectionsatl.com/images/thermal-1.png",
         "uploadDate": "2026-01-15T08:00:00+08:00",
-        "publisher": { "@id": "https://www.fhinspectionsatl.com/#business" }
+        "duration": "PT1M45S",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/nPpvkQ3zxSA",
+        "contentUrl": "https://www.youtube.com/watch?v=nPpvkQ3zxSA",
+        "publisher": { "@id": "https://www.fhinspectionsatl.com/#business" },
+        "hasPart": [
+          {
+            "@type": "Clip",
+            "name": "Two-Inspector On-Site Protocol",
+            "startOffset": 0,
+            "endOffset": 30,
+            "url": "https://www.youtube.com/watch?v=nPpvkQ3zxSA&t=0s"
+          },
+          {
+            "@type": "Clip",
+            "name": "FLIR Thermal Moisture Diagnostics",
+            "startOffset": 30,
+            "endOffset": 65,
+            "url": "https://www.youtube.com/watch?v=nPpvkQ3zxSA&t=30s"
+          },
+          {
+            "@type": "Clip",
+            "name": "Aerial Drone Roof & Chimney Scans",
+            "startOffset": 65,
+            "endOffset": 105,
+            "url": "https://www.youtube.com/watch?v=nPpvkQ3zxSA&t=65s"
+          }
+        ]
       },
       {
         "@type": "WebPage",
@@ -443,6 +469,52 @@ export default function Home() {
                   We employ electronic moisture scanners to trace active leaks through subflooring and walls, plus high-sensitivity combustible gas sniffers to check appliance lines and gas meters for micro-leaks.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🎥 VIDEO SHOWCASE SECTION (Google Video SEO & Visual Proof) 🎥 */}
+      <section className="section bg-dark text-white" style={{ padding: '5rem 0', position: 'relative' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
+            <span className="badge" style={{ background: 'rgba(211,47,47,0.2)', color: 'var(--color-red-light)', marginBottom: '0.75rem', fontSize: '0.85rem' }}>
+              🎥 Field Diagnostics in Action
+            </span>
+            <h2 style={{ color: 'var(--color-white)', fontSize: '2.4rem', fontWeight: 800 }}>
+              See How Our Two-Inspector Team Evaluates Atlanta Homes
+            </h2>
+            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '720px', margin: '0.5rem auto 0', fontSize: '1.05rem' }}>
+              Watch how Certified Master Inspector Christopher Boykin deploys FLIR infrared thermal imaging, aerial drones, and our signature two-inspector protocol on site.
+            </p>
+          </div>
+
+          <div style={{ maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
+            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px' }}>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/nPpvkQ3zxSA"
+                title="Foresight Home Inspections - High-Tech Dual Inspector Advantage in Atlanta GA"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.25rem', flexWrap: 'wrap', gap: '1rem' }}>
+              <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.9rem', color: 'var(--color-gray-mid)' }}>
+                <span>⏱️ <strong>Length:</strong> 1:45</span>
+                <span>🔍 <strong>Tech:</strong> FLIR Thermal + 4K Drones</span>
+                <span>🛡️ <strong>Included:</strong> $10K Master Warranty</span>
+              </div>
+              <a
+                href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+                style={{ padding: '0.6rem 1.5rem', fontSize: '0.95rem', fontWeight: 700 }}
+              >
+                📅 Schedule Now
+              </a>
             </div>
           </div>
         </div>
