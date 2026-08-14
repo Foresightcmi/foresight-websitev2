@@ -86,36 +86,12 @@ export default function Home() {
       {
         "@type": "VideoObject",
         "name": "Foresight Home Inspections - High-Tech Dual Inspector Advantage",
-        "description": "See how Certified Master Inspector Christopher Boykin and our two-inspector team use FLIR thermal imaging and drones to inspect Atlanta homes.",
+        "description": "Certified Master Inspector Christopher Boykin and our two-inspector team demonstrate on-site thermal imaging, drone roof scans, and diagnostic evaluations in Metro Atlanta.",
         "thumbnailUrl": "https://www.fhinspectionsatl.com/images/thermal-1.png",
-        "uploadDate": "2026-01-15T08:00:00+08:00",
-        "duration": "PT1M45S",
-        "embedUrl": "https://www.youtube-nocookie.com/embed/nPpvkQ3zxSA",
-        "contentUrl": "https://www.youtube.com/watch?v=nPpvkQ3zxSA",
-        "publisher": { "@id": "https://www.fhinspectionsatl.com/#business" },
-        "hasPart": [
-          {
-            "@type": "Clip",
-            "name": "Two-Inspector On-Site Protocol",
-            "startOffset": 0,
-            "endOffset": 30,
-            "url": "https://www.youtube.com/watch?v=nPpvkQ3zxSA&t=0s"
-          },
-          {
-            "@type": "Clip",
-            "name": "FLIR Thermal Moisture Diagnostics",
-            "startOffset": 30,
-            "endOffset": 65,
-            "url": "https://www.youtube.com/watch?v=nPpvkQ3zxSA&t=30s"
-          },
-          {
-            "@type": "Clip",
-            "name": "Aerial Drone Roof & Chimney Scans",
-            "startOffset": 65,
-            "endOffset": 105,
-            "url": "https://www.youtube.com/watch?v=nPpvkQ3zxSA&t=65s"
-          }
-        ]
+        "uploadDate": "2026-06-16T12:57:23Z",
+        "duration": "PT1M23S",
+        "contentUrl": "https://www.fhinspectionsatl.com/videos/foresight-inspection-intro.mp4",
+        "publisher": { "@id": "https://www.fhinspectionsatl.com/#business" }
       },
       {
         "@type": "WebPage",
@@ -490,19 +466,21 @@ export default function Home() {
           </div>
 
           <div style={{ maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
-            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px' }}>
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/nPpvkQ3zxSA"
-                title="Foresight Home Inspections - High-Tech Dual Inspector Advantage in Atlanta GA"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
+            <div style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: '12px', background: '#000000' }}>
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/images/thermal-1.png"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px', maxHeight: '520px' }}
+              >
+                <source src="/videos/foresight-inspection-intro.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.25rem', flexWrap: 'wrap', gap: '1rem' }}>
               <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.9rem', color: 'var(--color-gray-mid)' }}>
-                <span>⏱️ <strong>Length:</strong> 1:45</span>
+                <span>⏱️ <strong>Length:</strong> 1:23</span>
                 <span>🔍 <strong>Tech:</strong> FLIR Thermal + 4K Drones</span>
                 <span>🛡️ <strong>Included:</strong> $10K Master Warranty</span>
               </div>
