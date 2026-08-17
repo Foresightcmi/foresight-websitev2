@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Inter, Outfit } from 'next/font/google';
 import Header from './components/Header';
+import GeoTrustBanner from './components/GeoTrustBanner';
 import WidgetWrapper from './components/WidgetWrapper';
 import Breadcrumbs from './components/Breadcrumbs';
 import StickyCallBar from './components/StickyCallBar';
@@ -103,14 +104,33 @@ export default function RootLayout({ children }) {
           "longitude": "-84.1444"
         },
         "areaServed": [
-        {
-              "@type": "State",
-              "name": "Georgia"
-        },
-        {
-              "@type": "City",
-              "name": "Acworth"
-        },
+          {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 33.7490,
+              "longitude": -84.3880
+            },
+            "geoRadius": "80000"
+          },
+          { "@type": "AdministrativeArea", "name": "Fulton County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "DeKalb County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Gwinnett County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Cobb County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Forsyth County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Cherokee County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Henry County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Clayton County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Douglas County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Fayette County, Georgia" },
+          {
+            "@type": "State",
+            "name": "Georgia"
+          },
+          {
+            "@type": "City",
+            "name": "Acworth"
+          },
         {
               "@type": "City",
               "name": "Alpharetta"
@@ -629,6 +649,7 @@ export default function RootLayout({ children }) {
         <div style={{ background: 'var(--color-red)', color: 'white', padding: '0.5rem 1rem', textAlign: 'center', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>
           🛡️ The Certified Master Inspector Advantage: Every Inspection Includes a $10,000 Protection Warranty at No Extra Cost!
         </div>
+        <GeoTrustBanner />
         <Header />
         <Breadcrumbs />
 
