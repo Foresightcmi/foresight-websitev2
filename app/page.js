@@ -13,12 +13,32 @@ const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: t
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
-  title: 'Atlanta Home Inspections | Two CMI Inspectors',
-  description: 'Two certified inspectors on every job. Led by Christopher Boykin, Certified Master Inspector®. Premium home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
+  title: 'Atlanta Home Inspections | Two CMI Inspectors | Foresight',
+  description: 'Two certified inspectors on every job. Led by Christopher Boykin, Certified Master Inspector®. Premium home inspections across Metro Atlanta with FLIR thermal imaging, drones, and a $10,000 Elite Warranty.',
+  keywords: [
+    'home inspection Atlanta GA',
+    'best home inspector Atlanta',
+    'certified master inspector Atlanta',
+    'two inspector team Atlanta',
+    'home inspection cost Atlanta',
+    'radon testing Atlanta GA',
+    'termite inspection Atlanta GA',
+    'pool and spa inspection Atlanta',
+    'sewer scope inspection Atlanta',
+    'thermal imaging home inspection Atlanta',
+    'aerial drone roof inspection Atlanta',
+    '11 month warranty inspection Atlanta',
+    'new construction inspection Atlanta',
+    'pre-listing seller inspection Atlanta',
+    'historic home inspection Atlanta',
+    'due diligence home inspection Georgia',
+    'short term rental STR inspection Atlanta',
+    'crawlspace moisture inspection Atlanta'
+  ],
   alternates: { canonical: 'https://www.fhinspectionsatl.com' },
   openGraph: {
     title: 'Foresight Home Inspections | Two Inspectors on Every Job',
-    description: 'Atlanta home inspections led by a Certified Master Inspector®. Two inspectors. $10,000 warranty included. Serving 163+ Metro Atlanta cities.',
+    description: 'Atlanta home inspections led by a Certified Master Inspector®. Two inspectors. $10,000 warranty included. Serving Metro Atlanta and surrounding North Georgia.',
     url: 'https://www.fhinspectionsatl.com',
   },
 };

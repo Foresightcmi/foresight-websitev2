@@ -6,7 +6,20 @@ import QualityChecklist from '../components/QualityChecklist';
 export const metadata = {
   title: 'Home Inspection Services Atlanta | From $295',
   description: 'View our comprehensive home inspection services starting at $295. We offer standard buyer inspections, pre-listing inspections, WDO/termite, pool/spa, and radon testing across Atlanta.',
-  keywords: ['home inspection services Atlanta', 'home inspection pricing Georgia', 'radon gas testing cost', 'sewer scope inspection Atlanta', 'termite inspection Atlanta', 'pool and spa inspector Lithonia GA'],
+  keywords: [
+    'home inspection services Atlanta',
+    'home inspection pricing Georgia 2026',
+    'radon gas testing cost Atlanta',
+    'sewer scope inspection Atlanta',
+    'termite and WDO inspection Atlanta',
+    'pool and spa inspection Atlanta GA',
+    '11 month warranty inspection cost',
+    'new construction home inspection Atlanta',
+    'pre-listing seller inspection pricing',
+    'luxury estate inspection Atlanta',
+    'commercial and municipal rehab inspection Georgia',
+    'FLIR thermal imaging inspection Atlanta'
+  ],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/services',
   },
