@@ -20,6 +20,8 @@ export default async function sitemap() {
     { loc: '/ask-twin', changefreq: 'monthly', priority: 0.5 },
     { loc: '/blog', changefreq: 'weekly', priority: 0.7 },
     { loc: '/contact', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/due-diligence', changefreq: 'weekly', priority: 0.9 },
+    { loc: '/neighborhoods', changefreq: 'weekly', priority: 0.85 },
     { loc: '/service-areas', changefreq: 'monthly', priority: 0.7 },
     { loc: '/service-areas/dekalb-county-compliance', changefreq: 'monthly', priority: 0.85 },
     { loc: '/free-utility-setup', changefreq: 'monthly', priority: 0.8 },
@@ -139,6 +141,24 @@ export default async function sitemap() {
       }
     } catch (err) {
       console.error('Error reading comparisons in sitemap.js:', err);
+    }
+  }
+
+  // 7. Dynamic Neighborhood & Subdivision Hubs
+  const NEIGHBORHOODS_FILE = path.join(process.cwd(), 'data', 'neighborhoods-pseo.json');
+  if (fs.existsSync(NEIGHBORHOODS_FILE)) {
+    try {
+      const neighborhoods = JSON.parse(fs.readFileSync(NEIGHBORHOODS_FILE, 'utf8'));
+      for (const n of neighborhoods) {
+        routes.push({
+          url: `${baseUrl}/neighborhoods/${n.slug}`,
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: 0.85,
+        });
+      }
+    } catch (err) {
+      console.error('Error reading neighborhoods in sitemap.js:', err);
     }
   }
 

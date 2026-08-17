@@ -337,15 +337,56 @@ export default async function ServiceCityPage({ params }) {
       <section className="section bg-gray-light">
         <div className="container" style={{ maxWidth: '900px' }}>
           <div className="section-title text-center">
-            <h2>{county} County Environment & Local Risks</h2>
+            <h2>{cityName}, {county} County Environmental & Property Analysis</h2>
           </div>
           <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)', borderTop: '4px solid var(--color-red)' }}>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', marginBottom: '1.25rem' }}>
               <strong>📍 Regional Analysis for {cityName}:</strong> {getCountyContext(county, cityName, serviceName)}
             </p>
+            {cityData?.Intro && (
+              <p style={{ fontSize: '1.025rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', marginBottom: '1.25rem' }}>
+                <strong>🏡 Local Neighborhood Overview:</strong> {cityData.Intro}
+              </p>
+            )}
+            {cityData?.['Seasonal Tip'] && (
+              <div style={{ background: 'rgba(211,47,47,0.04)', borderLeft: '4px solid var(--color-gold)', padding: '1rem 1.25rem', borderRadius: '4px', marginBottom: '1.25rem' }}>
+                <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.25rem' }}>
+                  🌤️ Seasonal Inspection Advisory for {cityName}:
+                </strong>
+                <span style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                  {cityData['Seasonal Tip']}
+                </span>
+              </div>
+            )}
             <p style={{ fontSize: '1.025rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', margin: 0 }}>
               <strong>⚠️ Environmental Warning:</strong> {serviceData.riskContext.replace(/{city}/g, cityName)}
             </p>
+          </div>
+
+          {/* Sibling Services in this City */}
+          <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--color-dark)' }}>
+              Complete Inspection Services in {cityName}, GA
+            </h3>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link
+                href={`/service-areas/${resolvedParams.city}`}
+                className="btn btn-outline"
+                style={{ fontSize: '0.875rem', background: 'white', borderColor: 'var(--color-red)', color: 'var(--color-red)' }}
+              >
+                ⭐ Full {cityName} Inspection Hub
+              </Link>
+              {services.filter(s => s.slug !== resolvedParams.service).map(s => (
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}/${resolvedParams.city}`}
+                  className="btn btn-outline"
+                  style={{ fontSize: '0.875rem', background: 'white' }}
+                >
+                  {s.icon} {s.name} in {cityName}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

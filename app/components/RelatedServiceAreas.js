@@ -55,7 +55,7 @@ export default function RelatedServiceAreas({ currentCitySlug, serviceSlug }) {
                   transition: 'background 0.2s, color 0.2s'
                 }}
               >
-                {city['City Name']}, {city['State']}
+                {city['City Name']}, {city['State'] || 'GA'}
               </Link>
             );
           })}

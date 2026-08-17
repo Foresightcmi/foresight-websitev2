@@ -105,7 +105,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
-      a: `Home inspection pricing in ${cityName} starts at $345+ for a standard single-family buyer's inspection ($295 for condos). 11-month warranty inspections start at $335+, pre-listing seller inspections start at $365+, and new construction inspections start at $375+. Pricing varies based on square footage, age, foundation type, and add-on services such as radon testing ($250), termite/WDO inspection ($100 Crawlspace / $125 Slab), pool evaluation ($275 flat rate), or sewer scope inspection ($450). Property age surcharges apply ($75 for 25-50 yrs, $125 for 50+ yrs vintage/historic homes). Complexity fees add $50 for a crawlspace and $75 for an unfinished basement. Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+      a: `Home inspection pricing in ${cityName} starts at $345+ for a standard single-family buyer's inspection ($295 for condos). 11-month warranty inspections start at $335+, pre-listing seller inspections start at $365+, and new construction inspections start at $375+. Pricing varies based on square footage, age, foundation type, and add-on services such as radon testing ($200), termite/WDO inspection ($110+), pool evaluation ($300), or sewer scope inspection ($425). Property age surcharges apply ($75 for 25-50 yrs, $125 for 50+ yrs vintage/historic homes). Complexity fees add $50 for a crawlspace and $75 for an unfinished basement. Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
@@ -117,11 +117,11 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you offer radon testing in ${cityName}, GA?`,
-      a: `Yes — Foresight Home Inspections offers professional radon gas testing in ${cityName} as an add-on service for $250. Radon is the second leading cause of lung cancer in the United States, according to the U.S. Environmental Protection Agency (EPA), and is completely odorless and invisible. Our testing uses a continuous 48-hour professional diagnostic monitor that provides highly accurate readings. The EPA recommends radon testing for every home purchase, regardless of location. You can add radon testing to any inspection package through our <a href="/quote">instant quote page</a>.`,
+      a: `Yes — Foresight Home Inspections offers professional radon gas testing in ${cityName} as an add-on service for $200. Radon is the second leading cause of lung cancer in the United States, according to the U.S. Environmental Protection Agency (EPA), and is completely odorless and invisible. Our testing uses a continuous 48-hour professional diagnostic monitor that provides highly accurate readings. The EPA recommends radon testing for every home purchase, regardless of location. You can add radon testing to any inspection package through our <a href="/quote">instant quote page</a>.`,
     },
     {
       q: `Do you do termite inspections in ${cityName}, GA?`,
-      a: `Yes — we offer Official Georgia Wood Destroying Organism (WDO) inspections in ${cityName} through our licensed pest control partners. Termite and WDO inspections are critical in Georgia's warm, humid climate where subterranean termites are highly active. The National Pest Management Association (NPMA) estimates that termites cause over $5 billion in property damage annually in the United States. Pricing is $100 for crawlspace or $125 for slab. The inspection produces an Official Georgia Wood Infestation Report, which is often required by lenders at closing.`,
+      a: `Yes — we offer Official Georgia Wood Destroying Organism (WDO) inspections in ${cityName} through our licensed pest control partners starting at $110+. Termite and WDO inspections are critical in Georgia's warm, humid climate where subterranean termites are highly active. The National Pest Management Association (NPMA) estimates that termites cause over $5 billion in property damage annually in the United States. The inspection produces an Official Georgia Wood Infestation Report, which is often required by lenders at closing.`,
     },
     {
       q: `Do you inspect new construction homes in ${cityName}?`,
@@ -616,6 +616,53 @@ export default async function CityPage({ params }) {
               fallbacksrc={`https://maps.google.com/maps?q=${encodeURIComponent(`${cityName}, GA`)}&t=&z=12&ie=UTF8&iwloc=&output=embed`}
               srcDoc={`<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=${encodeURIComponent(`${cityName}, GA`)}&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe>`}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          SPECIALIZED SERVICES IN THIS CITY
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section bg-white" style={{ borderTop: '1px solid var(--color-gray-mid)' }}>
+        <div className="container" style={{ maxWidth: '950px' }}>
+          <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem' }}>Specialized Inspections</span>
+            <h2>Specialized Inspection Services in <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span></h2>
+            <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem' }}>
+              Book standalone testing or bundle with your full {cityName} home inspection for comprehensive protection.
+            </p>
+          </div>
+          <div className="grid grid-3" style={{ gap: '1.5rem' }}>
+            <Link href={`/services/home-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏡</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Buyer Home Inspection</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Full 2-inspector buyer evaluation with FLIR thermal scan and same-day report in {cityName}.</p>
+            </Link>
+            <Link href={`/services/radon-testing/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>☢️</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Radon Gas Testing</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Continuous 48-hour electronic radon monitoring in {cityName} for EPA-compliant safety.</p>
+            </Link>
+            <Link href={`/services/termite-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🐜</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Termite & WDO Clearance</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Official Georgia Wood Infestation Report for {cityName} buyers and lender approvals.</p>
+            </Link>
+            <Link href={`/services/11-month-warranty/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏗️</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>11-Month Builder Warranty</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Independent inspection before your {cityName} builder warranty expires.</p>
+            </Link>
+            <Link href={`/services/new-construction/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔨</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>New Construction Phased</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Pre-drywall and final walkthrough audits for newly constructed {cityName} homes.</p>
+            </Link>
+            <Link href={`/services/pool-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏊</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pool & Spa Evaluation</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Safety barrier, pump, filter, heater, and electrical bonding audits in {cityName}.</p>
+            </Link>
           </div>
         </div>
       </section>
