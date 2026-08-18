@@ -89,6 +89,16 @@ export default function RootLayout({ children }) {
           "https://en.wikipedia.org/wiki/Home_inspection",
           "https://www.wikidata.org/wiki/Q5888806"
         ],
+        "sameAs": [
+          "https://facebook.com/fhinspectionsatl",
+          "https://www.instagram.com/fhinspectionsatl/",
+          "https://www.tiktok.com/@fhinspectionsatl",
+          "https://www.youtube.com/@ForesightHomeInspections-t6r",
+          "https://www.linkedin.com/company/foresight-home-inspections-llc/",
+          "https://maps.google.com/?cid=10862078652033010531",
+          "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+          "https://certifiedmasterinspector.org"
+        ],
         "priceRange": "$$$",
         "address": {
           "@type": "PostalAddress",
