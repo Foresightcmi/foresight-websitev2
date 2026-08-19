@@ -111,6 +111,81 @@ export default function SampleReports() {
             </div>
           </div>
 
+          {/* ═══════════════════════════════════════════════════════════════
+              VISUAL DIAGNOSTIC ASSETS & INFOGRAPHICS (Image Link Authority)
+          ═══════════════════════════════════════════════════════════════ */}
+          <div style={{ marginBottom: '4rem' }}>
+            <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
+              <span className="badge" style={{ marginBottom: '0.75rem' }}>Educational Visual Assets</span>
+              <h2>Georgia Due Diligence & Home Inspection Infographics</h2>
+              <p style={{ color: 'var(--color-gray-dark)', maxWidth: '750px', margin: '0.5rem auto 0', fontSize: '1.05rem' }}>
+                Free visual guides and decision frameworks for Georgia homebuyers, realtors, and property investors.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
+              {/* Infographic Card 1 */}
+              <div className="card card-premium" style={{ background: '#FFFFFF', padding: '1.75rem', borderTop: '4px solid var(--color-red)' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📅</div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
+                  Georgia 7-Day Due Diligence Flowchart
+                </h3>
+                <p style={{ fontSize: '0.925rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                  A step-by-step roadmap from contract binding to on-site dual inspection, same-day report review, and submitting the GAR Amendment to Address Concerns.
+                </p>
+                <div style={{ padding: '0.75rem', background: 'var(--color-gray-light)', borderRadius: '6px', fontSize: '0.8rem', color: '#475569' }}>
+                  <strong>Key Takeaway:</strong> Schedule within 48h to preserve at least 3 full days for contractor bids and repair negotiations.
+                </div>
+              </div>
+
+              {/* Infographic Card 2 */}
+              <div className="card card-premium" style={{ background: '#FFFFFF', padding: '1.75rem', borderTop: '4px solid var(--color-gold)' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🌡️</div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
+                  FLIR Thermal Anomaly Delta Guide
+                </h3>
+                <p style={{ fontSize: '0.925rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                  Explains the 5°F to 10°F infrared temperature differential that unmasks hidden moisture leaks behind tile, missing insulation batts, and overloaded circuit breakers.
+                </p>
+                <div style={{ padding: '0.75rem', background: 'var(--color-gray-light)', borderRadius: '6px', fontSize: '0.8rem', color: '#475569' }}>
+                  <strong>Key Takeaway:</strong> Non-invasive detection finds concealed water intrusion without cutting into finished drywall.
+                </div>
+              </div>
+
+              {/* Infographic Card 3 */}
+              <div className="card card-premium" style={{ background: '#FFFFFF', padding: '1.75rem', borderTop: '4px solid var(--color-dark)' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏛️</div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
+                  Atlanta Red Clay Soil & Foundation Matrix
+                </h3>
+                <p style={{ fontSize: '0.925rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                  Diagnoses stair-step brick cracks, hydrostatic crawlspace pressure, and soil shrinkage voids across North Georgia topography.
+                </p>
+                <div style={{ padding: '0.75rem', background: 'var(--color-gray-light)', borderRadius: '6px', fontSize: '0.8rem', color: '#475569' }}>
+                  <strong>Key Takeaway:</strong> Proper 6-foot gutter discharge prevents 85% of soil expansion settlement defects.
+                </div>
+              </div>
+            </div>
+
+            {/* Media Kit & Embed Attribution Box */}
+            <div style={{ background: 'var(--color-dark)', color: '#FFFFFF', padding: '2rem', borderRadius: 'var(--radius-lg)', textAlign: 'left' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
+                <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem' }}>
+                  📢 Realtors & Publishers: Embed Our Inspection Data
+                </h3>
+                <span style={{ fontSize: '0.85rem', background: 'rgba(255,255,255,0.1)', padding: '0.3rem 0.8rem', borderRadius: '50px' }}>
+                  Creative Commons Attribution License
+                </span>
+              </div>
+              <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                Feel free to use our diagnostic data, sample report summaries, and due diligence frameworks on your real estate blog or client guides. Simply provide link attribution back to Foresight Home Inspections.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.5)', padding: '1rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', fontFamily: 'monospace', fontSize: '0.85rem', overflowX: 'auto', color: '#38bdf8' }}>
+                {`<!-- Foresight Home Inspections Attribution Badge -->\n<a href="https://www.fhinspectionsatl.com" target="_blank" rel="noopener">\n  <img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections Atlanta Certified Master Inspector" width="200" height="150" />\n</a>\n<p>Inspection data provided by <a href="https://www.fhinspectionsatl.com">Foresight Home Inspections Atlanta</a></p>`}
+              </div>
+            </div>
+          </div>
+
           <div style={{ background: 'var(--color-white)', padding: '3rem 2rem', borderRadius: 'var(--radius-lg)', textAlign: 'center', boxShadow: 'var(--shadow-md)' }}>
             <h2 style={{ marginBottom: '1rem' }}>Ready to Get Your Detailed Digital Report?</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '600px', margin: '0 auto 2rem', fontSize: '1.05rem' }}>
