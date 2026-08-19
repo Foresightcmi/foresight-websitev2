@@ -180,8 +180,8 @@ export default async function ServiceCityPage({ params }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "48",
+      "ratingValue": "4.9",
+      "reviewCount": "43",
       "bestRating": "5"
     },
     "offers": {

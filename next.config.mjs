@@ -52,6 +52,107 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: '/opengraph-image',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      {
+        source: '/(.*)/opengraph-image',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      // Legacy XML feeds
+      {
+        source: '/blog-feed.xml',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      // Legacy -ga city routes
+      {
+        source: '/service-areas/peoplestown-ga',
+        destination: '/service-areas/atlanta',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/home-park-ga',
+        destination: '/service-areas/atlanta',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/rex-ga',
+        destination: '/service-areas/rex',
+        permanent: true,
+      },
+      // Old dated blog post slugs to canonical
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-08-09',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-05-27',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-08-19',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      // Legacy /post/ URLs to modern /blog/ routes
+      {
+        source: '/post/unveiling-the-hidden-value-the-unknown-marketing-power-of-pre-listing-inspections-for-sellers',
+        destination: '/blog/pre-listing-seller-inspection-guide',
+        permanent: true,
+      },
+      {
+        source: '/post/detailed-inspections-for-new-constructions',
+        destination: '/blog/why-new-construction-needs-inspections',
+        permanent: true,
+      },
+      {
+        source: '/post/pre-sale-home-inspection-tips-for-atlanta-sellers',
+        destination: '/blog/pre-listing-seller-inspection-guide',
+        permanent: true,
+      },
+      {
+        source: '/post/essential-tips-for-reliable-home-inspections',
+        destination: '/blog/first-time-home-buyer-inspection-checklist-atlanta',
+        permanent: true,
+      },
+      {
+        source: '/post/nature-s-touch-bringing-the-outdoors-inside-with-plants-and-greenery',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/post/why-professional-home-inspection-services-matter',
+        destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
+        permanent: true,
+      },
+      {
+        source: '/post/comprehensive-overview-of-home-inspection-services',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/post/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
     ];
   },
 };
