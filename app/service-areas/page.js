@@ -73,6 +73,87 @@ export default function ServiceAreasDirectory() {
         </div>
       </section>
 
+      {/* ── SPECIALIZED SUB-NICHE INSPECTION HUBS ──────────────────── */}
+      <section className="section bg-white" style={{ padding: '0 0 3rem 0', borderBottom: '1px solid var(--color-gray-mid)' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '2rem' }}>
+            <span className="badge" style={{ marginBottom: '0.5rem' }}>Sub-Niche Specialization</span>
+            <h2>Specialized Inspection Services Across Metro Atlanta</h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto' }}>
+              We provide dedicated, certified inspection teams for every major property evaluation category.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '1.5rem' }}>
+            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>☢️</div>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Radon Gas Testing</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
+                48-hour continuous electronic radon monitoring for granite-zone foundations.
+              </p>
+              <Link href="/services/radon-testing/atlanta" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.875rem' }}>
+                View Atlanta Radon Testing &rarr;
+              </Link>
+            </div>
+
+            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-gold)' }}>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🐜</div>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Termite & WDO Clearances</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
+                Official Georgia Wood Infestation Reports for loan closing and pest defense.
+              </p>
+              <Link href="/services/termite-inspection/alpharetta" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.875rem' }}>
+                View Alpharetta Termite Clearances &rarr;
+              </Link>
+            </div>
+
+            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-dark)' }}>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🚽</div>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>HD Sewer Scope Cameras</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
+                Fiber-optic underground lateral pipe evaluations to locate roots and collapses.
+              </p>
+              <Link href="/services/sewer-scope-inspection/decatur" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.875rem' }}>
+                View Decatur Sewer Scopes &rarr;
+              </Link>
+            </div>
+
+            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🏗️</div>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>New Construction Audits</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
+                Independent builder punch-list inspections for pre-drywall and final phase.
+              </p>
+              <Link href="/services/new-construction-inspection/johns-creek" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.875rem' }}>
+                View Johns Creek New Construction &rarr;
+              </Link>
+            </div>
+
+            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-gold)' }}>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🏊‍♂️</div>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Pool & Spa Inspections</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
+                Complete shell, pump, heater, hydraulic, and electrical bonding evaluations.
+              </p>
+              <Link href="/services/pool-inspection/roswell" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.875rem' }}>
+                View Roswell Pool Inspections &rarr;
+              </Link>
+            </div>
+
+            <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-dark)' }}>
+              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>📋</div>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Pre-Listing Seller Audits</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
+                Identify defects before hitting MLS to protect asking price and speed closing.
+              </p>
+              <Link href="/services/pre-listing-inspection/marietta" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.875rem' }}>
+                View Marietta Pre-Listing Audits &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-gray-light">
         <div className="container">
           <div style={{ columnCount: 1, columnGap: '2rem' }}>

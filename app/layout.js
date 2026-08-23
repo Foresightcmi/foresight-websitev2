@@ -8,6 +8,7 @@ import GeoTrustBanner from './components/GeoTrustBanner';
 import WidgetWrapper from './components/WidgetWrapper';
 import Breadcrumbs from './components/Breadcrumbs';
 import StickyCallBar from './components/StickyCallBar';
+import GooglePreferredSource from './components/GooglePreferredSource';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -728,6 +729,7 @@ export default function RootLayout({ children }) {
                     </svg>
                   </a>
                 </div>
+                <GooglePreferredSource variant="footer" />
               </div>
               <div>
                 <h3>Quick Links</h3>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import AuthorBio from '../../components/AuthorBio';
 import TableOfContents from '../../components/TableOfContents';
+import GooglePreferredSource from '../../components/GooglePreferredSource';
 
 function loadPosts() {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
@@ -246,6 +247,9 @@ export default async function BlogPost({ params }) {
               Need a professional inspection? Foresight Home Inspections sends <strong>two certified inspectors on every job</strong> with FLIR thermal imaging and drone technology. View our <Link href="/services" style={{ color: 'var(--color-red)', fontWeight: 600 }}>full services and transparent pricing</Link>, check <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>163+ service areas</Link>, or see a <Link href="/samples" style={{ color: 'var(--color-red)', fontWeight: 600 }}>sample inspection report</Link>.
             </p>
           </div>
+
+          {/* Google Preferred Source 1-Click Ranking Signal Component */}
+          <GooglePreferredSource />
 
           {/* CTA */}
           <div className="card card-premium" style={{ marginTop: '2rem', textAlign: 'center', background: 'var(--color-dark)', color: 'var(--color-white)' }}>

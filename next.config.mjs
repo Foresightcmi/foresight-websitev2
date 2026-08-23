@@ -153,6 +153,36 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      {
+        source: '/category/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/tag/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/author/:slug*',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/feed',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      {
+        source: '/rss',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
