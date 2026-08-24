@@ -746,6 +746,7 @@ export default function RootLayout({ children }) {
                   <li><Link href="/contact">Contact Us</Link></li>
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
+                  <li><Link href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
                 </ul>
               </div>
               <div>
