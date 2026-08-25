@@ -14,12 +14,14 @@ export const metadata = {
 export default function DashboardPage() {
   const postsFilePath = path.join(process.cwd(), 'data', 'posts.json');
   const citiesFilePath = path.join(process.cwd(), 'data', 'cities.json');
+  const countiesFilePath = path.join(process.cwd(), 'data', 'counties-pseo.json');
   const servicesFilePath = path.join(process.cwd(), 'data', 'services-pseo.json');
   const defectsFilePath = path.join(process.cwd(), 'data', 'defects-pseo.json');
   const comparisonsFilePath = path.join(process.cwd(), 'data', 'comparisons-pseo.json');
 
   let posts = [];
   let cities = [];
+  let counties = [];
   let services = [];
   let defects = [];
   let comparisons = [];
@@ -27,6 +29,7 @@ export default function DashboardPage() {
   try {
     posts = JSON.parse(fs.readFileSync(postsFilePath, 'utf8'));
     cities = JSON.parse(fs.readFileSync(citiesFilePath, 'utf8'));
+    counties = JSON.parse(fs.readFileSync(countiesFilePath, 'utf8'));
     services = JSON.parse(fs.readFileSync(servicesFilePath, 'utf8'));
     defects = JSON.parse(fs.readFileSync(defectsFilePath, 'utf8'));
     comparisons = JSON.parse(fs.readFileSync(comparisonsFilePath, 'utf8'));
@@ -34,10 +37,21 @@ export default function DashboardPage() {
     console.error('Error loading data files for dashboard:', e);
   }
 
+  const totalCalculatedRoutes = 
+    19 + // static pages
+    cities.length + // city landing pages
+    counties.length + // county landing pages
+    (cities.length * services.length) + // service silos
+    posts.length + // blog posts
+    defects.length + // defect guides
+    comparisons.length + // comparison guides
+    10; // neighborhood hubs
+
   const inventory = {
-    totalStaticPages: 611,
+    totalStaticPages: totalCalculatedRoutes,
     totalPosts: posts.length,
     totalCities: cities.length,
+    totalCounties: counties.length,
     totalServices: services.length,
     totalSilos: cities.length * services.length,
     totalDefects: defects.length,
@@ -63,36 +77,141 @@ export default function DashboardPage() {
       url: '/quote',
       intent: 'Transactional',
     },
+    // County pSEO
+    {
+      keyword: 'home inspector Fulton County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/fulton-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspection Gwinnett County',
+      category: 'County pSEO',
+      url: '/service-areas/counties/gwinnett-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Cobb County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/cobb-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspection DeKalb County',
+      category: 'County pSEO',
+      url: '/service-areas/counties/dekalb-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Cherokee County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/cherokee-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Forsyth County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/forsyth-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Henry County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/henry-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Fayette County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/fayette-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Douglas County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/douglas-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Paulding County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/paulding-county',
+      intent: 'Regional Hub',
+    },
+    {
+      keyword: 'home inspector Hall County GA',
+      category: 'County pSEO',
+      url: '/service-areas/counties/hall-county',
+      intent: 'Regional Hub',
+    },
+    // City pSEO
     {
       keyword: 'home inspector Sandy Springs GA',
-      category: 'Local pSEO',
+      category: 'Local City pSEO',
       url: '/service-areas/sandy-springs',
       intent: 'High Commercial',
     },
     {
       keyword: 'home inspector Alpharetta GA',
-      category: 'Local pSEO',
+      category: 'Local City pSEO',
       url: '/service-areas/alpharetta',
       intent: 'High Commercial',
     },
     {
       keyword: 'home inspection Johns Creek GA',
-      category: 'Local pSEO',
+      category: 'Local City pSEO',
       url: '/service-areas/johns-creek',
       intent: 'High Commercial',
     },
     {
       keyword: 'home inspector Marietta GA',
-      category: 'Local pSEO',
+      category: 'Local City pSEO',
       url: '/service-areas/marietta',
       intent: 'High Commercial',
     },
     {
       keyword: 'home inspector Decatur GA',
-      category: 'Local pSEO',
+      category: 'Local City pSEO',
       url: '/service-areas/decatur',
       intent: 'High Commercial',
     },
+    {
+      keyword: 'home inspector Woodstock GA',
+      category: 'Local City pSEO',
+      url: '/service-areas/woodstock',
+      intent: 'High Commercial',
+    },
+    {
+      keyword: 'home inspector Cumming GA',
+      category: 'Local City pSEO',
+      url: '/service-areas/cumming',
+      intent: 'High Commercial',
+    },
+    {
+      keyword: 'home inspector Canton GA',
+      category: 'Local City pSEO',
+      url: '/service-areas/canton',
+      intent: 'High Commercial',
+    },
+    {
+      keyword: 'home inspector Douglasville GA',
+      category: 'Local City pSEO',
+      url: '/service-areas/douglasville',
+      intent: 'High Commercial',
+    },
+    {
+      keyword: 'home inspector Dallas GA',
+      category: 'Local City pSEO',
+      url: '/service-areas/dallas',
+      intent: 'High Commercial',
+    },
+    {
+      keyword: 'home inspector Gainesville GA',
+      category: 'Local City pSEO',
+      url: '/service-areas/gainesville',
+      intent: 'High Commercial',
+    },
+    // Sub-Niches
     {
       keyword: 'radon testing Atlanta GA',
       category: 'Sub-Niche Silo',
@@ -118,7 +237,7 @@ export default function DashboardPage() {
       intent: 'Commercial ($335+)',
     },
     {
-      keyword: 'pre drywall inspection Georgia',
+      keyword: 'pre drywall framing inspection Georgia',
       category: 'Pillar Guide',
       url: '/blog/pre-drywall-framing-inspection-georgia-new-construction',
       intent: 'High-Intent',
@@ -140,12 +259,6 @@ export default function DashboardPage() {
       category: 'Specialized Silo',
       url: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide',
       intent: 'Commercial ($355+)',
-    },
-    {
-      keyword: 'DeKalb County housing bond inspection',
-      category: 'Municipal B2G',
-      url: '/blog/pre-rehab-post-rehab-inspections-dekalb',
-      intent: 'B2G Contractor',
     }
   ];
 

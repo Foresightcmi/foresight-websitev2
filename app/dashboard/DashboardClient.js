@@ -1,13 +1,43 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function DashboardClient({ initialKeywords = [], inventory = {} }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [pinInput, setPinInput] = useState('');
+  const [pinError, setPinError] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
   const [activeTab, setActiveTab] = useState('rankings');
   const [searchTerm, setSearchTerm] = useState('');
   const [customQuery, setCustomQuery] = useState('');
   const [queryResults, setQueryResults] = useState(null);
   const [loadingQuery, setLoadingQuery] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const auth = sessionStorage.getItem('foresight_dashboard_auth');
+    if (auth === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  function handleLogin(e) {
+    e.preventDefault();
+    // Default Owner PIN is 2110 (last 4 digits of phone number 678-480-2110)
+    if (pinInput.trim() === '2110' || pinInput.trim() === 'foresight2026') {
+      sessionStorage.setItem('foresight_dashboard_auth', 'true');
+      setIsAuthenticated(true);
+      setPinError(false);
+    } else {
+      setPinError(true);
+    }
+  }
+
+  function handleLogout() {
+    sessionStorage.removeItem('foresight_dashboard_auth');
+    setIsAuthenticated(false);
+  }
 
   const filteredKeywords = initialKeywords.filter(k => 
     k.keyword.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -31,6 +61,69 @@ export default function DashboardClient({ initialKeywords = [], inventory = {} }
     }
   }
 
+  if (!isClient) {
+    return (
+      <div style={{ background: '#0f172a', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8' }}>
+        Loading Command Center...
+      </div>
+    );
+  }
+
+  // 🔒 PIN Protection Gate Screen
+  if (!isAuthenticated) {
+    return (
+      <div style={{ background: '#0f172a', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem' }}>
+        <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '2.5rem', maxWidth: '420px', width: '100%', textAlign: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+          <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🔐</div>
+          <h1 style={{ fontSize: '1.4rem', color: '#ffffff', marginBottom: '0.5rem', fontWeight: 800 }}>
+            Private SEO Command Center
+          </h1>
+          <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.75rem', lineHeight: 1.5 }}>
+            This dashboard is private to the owner. Enter your PIN to view keyword rankings, inventory telemetry, and autonomous loops.
+          </p>
+
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <input
+              type="password"
+              placeholder="Enter Owner PIN (e.g. 2110)"
+              value={pinInput}
+              onChange={(e) => { setPinInput(e.target.value); setPinError(false); }}
+              autoFocus
+              style={{
+                padding: '0.85rem 1rem',
+                borderRadius: 'var(--radius-md)',
+                border: pinError ? '1px solid #ef4444' : '1px solid #475569',
+                background: '#0f172a',
+                color: '#ffffff',
+                fontSize: '1rem',
+                textAlign: 'center',
+                letterSpacing: '0.2em'
+              }}
+            />
+            {pinError && (
+              <p style={{ color: '#f87171', fontSize: '0.85rem', margin: 0 }}>
+                Incorrect PIN. Please try again.
+              </p>
+            )}
+            <button
+              type="submit"
+              className="btn btn-primary"
+              style={{ padding: '0.85rem', fontSize: '1rem', fontWeight: 700 }}
+            >
+              Unlock Dashboard →
+            </button>
+          </form>
+
+          <div style={{ marginTop: '1.5rem', borderTop: '1px solid #334155', paddingTop: '1rem' }}>
+            <Link href="/" style={{ color: '#64748b', fontSize: '0.85rem', textDecoration: 'none' }}>
+              ← Return to Homepage
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{ background: '#0f172a', minHeight: '100vh', color: '#f8fafc', padding: '2rem 1rem' }}>
       <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -40,7 +133,7 @@ export default function DashboardClient({ initialKeywords = [], inventory = {} }
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(34, 197, 94, 0.15)', border: '1px solid rgba(34, 197, 94, 0.4)', padding: '0.25rem 0.75rem', borderRadius: '50px', color: '#4ade80', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', display: 'inline-block' }}></span>
-              Loop Engineering Engine: Active
+              Loop Engineering Engine: Active (Private Session)
             </div>
             <h1 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.25rem)', color: '#ffffff', margin: 0, fontWeight: 800 }}>
               Foresight SEO &amp; Rankings Command Center
@@ -50,7 +143,7 @@ export default function DashboardClient({ initialKeywords = [], inventory = {} }
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
             <a 
               href="https://search.google.com/search-console" 
               target="_blank" 
@@ -58,15 +151,22 @@ export default function DashboardClient({ initialKeywords = [], inventory = {} }
               className="btn btn-outline"
               style={{ borderColor: '#64748b', color: '#f1f5f9', padding: '0.6rem 1.25rem', fontSize: '0.9rem' }}
             >
-              Open Google Search Console ↗
+              Open GSC ↗
             </a>
-            <Link 
-              href="/" 
-              className="btn btn-primary"
-              style={{ padding: '0.6rem 1.25rem', fontSize: '0.9rem' }}
+            <button
+              onClick={handleLogout}
+              style={{
+                background: '#334155',
+                color: '#cbd5e1',
+                border: 'none',
+                padding: '0.6rem 1rem',
+                borderRadius: 'var(--radius-md)',
+                cursor: 'pointer',
+                fontSize: '0.85rem'
+              }}
             >
-              View Live Website
-            </Link>
+              🔒 Lock Dashboard
+            </button>
           </div>
         </div>
 

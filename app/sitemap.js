@@ -162,6 +162,24 @@ export default async function sitemap() {
     }
   }
 
+  // 8. Dynamic County Landing Hubs
+  const COUNTIES_FILE = path.join(process.cwd(), 'data', 'counties-pseo.json');
+  if (fs.existsSync(COUNTIES_FILE)) {
+    try {
+      const counties = JSON.parse(fs.readFileSync(COUNTIES_FILE, 'utf8'));
+      for (const c of counties) {
+        routes.push({
+          url: `${baseUrl}/service-areas/counties/${c.slug}`,
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: 0.85,
+        });
+      }
+    } catch (err) {
+      console.error('Error reading counties in sitemap.js:', err);
+    }
+  }
+
   return routes;
 }
 

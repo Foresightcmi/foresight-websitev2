@@ -158,25 +158,33 @@ export default function ServiceAreasDirectory() {
         <div className="container">
           <div style={{ columnCount: 1, columnGap: '2rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
-              {sortedCounties.map(county => (
-                <div key={county} className="card">
-                  <h3 style={{ borderBottom: '2px solid var(--color-red)', paddingBottom: '0.5rem', marginBottom: '1rem' }}>
-                    {county} County
-                  </h3>
-                  <ul style={{ listStyle: 'none', padding: 0 }}>
-                    {citiesByCounty[county].sort((a, b) => a['City Name'].localeCompare(b['City Name'])).map(city => {
-                      const slug = city['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                      return (
-                        <li key={slug} style={{ marginBottom: '0.5rem' }}>
-                          <Link href={`/service-areas/${slug}`} style={{ color: 'var(--color-dark)', textDecoration: 'none' }}>
-                            {city['City Name']} Home Inspections
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
+              {sortedCounties.map(county => {
+                const countySlug = `${county.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-county`;
+                return (
+                  <div key={county} className="card" style={{ background: '#ffffff', borderRadius: 'var(--radius-lg)', padding: '1.75rem', border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid var(--color-red)', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
+                      <h3 style={{ margin: 0, fontSize: '1.3rem', color: '#0f172a' }}>
+                        {county} County
+                      </h3>
+                      <Link href={`/service-areas/counties/${countySlug}`} style={{ color: 'var(--color-red)', fontSize: '0.85rem', fontWeight: 700, textDecoration: 'none' }}>
+                        County Hub &rarr;
+                      </Link>
+                    </div>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      {citiesByCounty[county].sort((a, b) => a['City Name'].localeCompare(b['City Name'])).map(city => {
+                        const slug = city['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                        return (
+                          <li key={slug}>
+                            <Link href={`/service-areas/${slug}`} style={{ color: '#334155', textDecoration: 'none', fontSize: '0.95rem' }}>
+                              📍 {city['City Name']} Home Inspections
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

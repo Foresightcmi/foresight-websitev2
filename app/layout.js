@@ -119,21 +119,32 @@ export default function RootLayout({ children }) {
             "@type": "GeoCircle",
             "geoMidpoint": {
               "@type": "GeoCoordinates",
-              "latitude": 33.7490,
-              "longitude": -84.3880
+              "latitude": 33.7275,
+              "longitude": -84.1444
             },
-            "geoRadius": "80000"
+            "geoRadius": "80467",
+            "description": "Exact 50-mile service radius centered at 1816 South Deshon Road, Lithonia, GA 30058"
           },
           { "@type": "AdministrativeArea", "name": "Fulton County, Georgia" },
           { "@type": "AdministrativeArea", "name": "DeKalb County, Georgia" },
           { "@type": "AdministrativeArea", "name": "Gwinnett County, Georgia" },
           { "@type": "AdministrativeArea", "name": "Cobb County, Georgia" },
-          { "@type": "AdministrativeArea", "name": "Forsyth County, Georgia" },
           { "@type": "AdministrativeArea", "name": "Cherokee County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Forsyth County, Georgia" },
           { "@type": "AdministrativeArea", "name": "Henry County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Fayette County, Georgia" },
           { "@type": "AdministrativeArea", "name": "Clayton County, Georgia" },
           { "@type": "AdministrativeArea", "name": "Douglas County, Georgia" },
-          { "@type": "AdministrativeArea", "name": "Fayette County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Paulding County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Hall County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Rockdale County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Newton County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Walton County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Coweta County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Barrow County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Bartow County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Carroll County, Georgia" },
+          { "@type": "AdministrativeArea", "name": "Spalding County, Georgia" },
           {
             "@type": "State",
             "name": "Georgia"
@@ -747,7 +758,6 @@ export default function RootLayout({ children }) {
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                   <li><Link href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
-                  <li><Link href="/dashboard" style={{ color: '#fbbf24', fontWeight: 600 }}>📊 SEO Rankings Dashboard</Link></li>
                 </ul>
               </div>
               <div>

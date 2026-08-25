@@ -1,0 +1,302 @@
+[
+  {
+    "slug": "fulton-county",
+    "name": "Fulton County",
+    "seat": "Atlanta",
+    "metaTitle": "Fulton County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Leading two-inspector team home inspections in Fulton County, GA. Serving Atlanta, Sandy Springs, Alpharetta, Roswell, Johns Creek & Milton. $10,000 warranty included.",
+    "intro": "Fulton County is Georgia's most populous county, spanning from the luxury executive estates of Milton and Alpharetta in the north to the vibrant urban core of Atlanta and the expanding communities of South Fulton. Our dual-inspector teams provide comprehensive buyer, seller, and new construction inspections across all Fulton municipalities.",
+    "keyRisks": [
+      "High radon gas concentration zones in North Fulton granite rock formations (Alpharetta, Roswell, Sandy Springs)",
+      "Aging galvanized piping, cast iron sewer lines, and aluminum wiring in historic Atlanta and Mid-Fulton neighborhoods",
+      "Basement foundation moisture intrusion from steep topography and red clay soil expansion"
+    ],
+    "cities": ["Atlanta", "Sandy Springs", "Alpharetta", "Roswell", "Johns Creek", "Milton", "East Point", "College Park", "Union City", "Fairburn", "Palmetto", "Chattahoochee Hills", "Mountain Park", "Hapeville", "South Fulton"],
+    "buildingCodeFocus": "City of Atlanta municipal codes, North Fulton residential IRC amendments, and mandatory historic preservation guidelines."
+  },
+  {
+    "slug": "dekalb-county",
+    "name": "DeKalb County",
+    "seat": "Decatur",
+    "metaTitle": "DeKalb County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Top-rated home inspections in DeKalb County, GA. Serving Decatur, Dunwoody, Brookhaven, Chamblee, Tucker, Stonecrest & Lithonia. Two inspectors on every job.",
+    "intro": "DeKalb County features an eclectic mix of 1950s-1970s mid-century ranch homes, historic bungalows, and rapid modern infill development. Home inspections in DeKalb require specialized expertise in mature tree root sewer intrusion, crawlspace moisture dynamics, and municipal compliance standards.",
+    "keyRisks": [
+      "Severe root intrusion and collapsed clay sewer lateral lines in established neighborhoods (Decatur, Dunwoody, Tucker)",
+      "Unpermitted electrical panel modifications and aging Federal Pacific/Zinsco breaker panels in 1960s-1980s subdivisions",
+      "Crawlspace humidity, sagging floor joists, and foundation settlement on sloping terrain"
+    ],
+    "cities": ["Decatur", "Dunwoody", "Brookhaven", "Chamblee", "Doraville", "Tucker", "Stone Mountain", "Clarkston", "Lithonia", "Stonecrest", "Avondale Estates", "Pine Lake"],
+    "buildingCodeFocus": "DeKalb County $155M Housing Bond rehabilitation compliance, unpermitted renovation audits, and DeKalb Watershed sewer standards."
+  },
+  {
+    "slug": "gwinnett-county",
+    "name": "Gwinnett County",
+    "seat": "Lawrenceville",
+    "metaTitle": "Gwinnett County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Expert home inspections in Gwinnett County, GA. Serving Lawrenceville, Duluth, Suwanee, Buford, Snellville, Grayson & Peachtree Corners. $10,000 warranty.",
+    "intro": "Gwinnett County is one of Georgia's fastest-growing suburban hubs, featuring master-planned communities, high-density residential subdivisions, and extensive new construction. Our certified master inspectors specialize in 11-month warranty audits, pre-drywall framing checks, and pool inspections across Gwinnett.",
+    "keyRisks": [
+      "Builder shortcuts and framing defects in rapid new construction builds (Buford, Dacula, Grayson)",
+      "Deteriorated polybutylene plumbing lines in 1980s-1990s homes (Lawrenceville, Duluth, Snellville)",
+      "Exterior stucco (EIFS) moisture entrapment and window kick-out flashing failures"
+    ],
+    "cities": ["Lawrenceville", "Duluth", "Suwanee", "Buford", "Peachtree Corners", "Norcross", "Snellville", "Grayson", "Lilburn", "Dacula", "Sugar Hill", "Berkeley Lake", "Braselton", "Loganville"],
+    "buildingCodeFocus": "Gwinnett County Department of Planning and Development residential inspection standards and Georgia Energy Code compliance."
+  },
+  {
+    "slug": "cobb-county",
+    "name": "Cobb County",
+    "seat": "Marietta",
+    "metaTitle": "Cobb County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Certified home inspections in Cobb County, GA. Serving Marietta, Smyrna, Kennesaw, Acworth, Vinings & Powder Springs. Two inspectors on every job.",
+    "intro": "Cobb County blends historic antebellum charm in Marietta with thriving suburban corridors in Smyrna, Kennesaw, and East Cobb. With varied topography and homes spanning from the 1890s to contemporary luxury custom builds, Foresight's dual-inspector team delivers rigorous structural and mechanical evaluations.",
+    "keyRisks": [
+      "Foundation wall cracking and differential settling from heavy Cobb County red clay soil",
+      "Aluminum branch wiring and ungrounded electrical outlets in 1960s-1970s East Cobb homes",
+      "HVAC duct condensation and attic mold from intense summer heat cycles"
+    ],
+    "cities": ["Marietta", "Smyrna", "Kennesaw", "Acworth", "Powder Springs", "Austell", "Mableton"],
+    "buildingCodeFocus": "Cobb County Community Development Agency building codes, historic district overlays, and stormwater drainage ordinances."
+  },
+  {
+    "slug": "cherokee-county",
+    "name": "Cherokee County",
+    "seat": "Canton",
+    "metaTitle": "Cherokee County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Leading home inspections in Cherokee County, GA. Serving Woodstock, Canton, Holly Springs, Ball Ground & Waleska. Two certified inspectors per job.",
+    "intro": "Cherokee County is a premier North Atlanta destination experiencing tremendous new home construction and lakefront living near Lake Allatoona. Our inspectors provide specialized evaluations for custom construction, septic systems, well water quality, and crawlspace moisture management.",
+    "keyRisks": [
+      "Radon gas infiltration from North Georgia granite bedrock formations",
+      "Septic tank drain field saturation and high water table issues near Lake Allatoona",
+      "New construction phase 2 pre-drywall framing defects in booming master-planned developments"
+    ],
+    "cities": ["Woodstock", "Canton", "Holly Springs", "Ball Ground", "Waleska"],
+    "buildingCodeFocus": "Cherokee County Building Inspections Department standards and Lake Allatoona watershed environmental guidelines."
+  },
+  {
+    "slug": "forsyth-county",
+    "name": "Forsyth County",
+    "seat": "Cumming",
+    "metaTitle": "Forsyth County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Premier home inspections in Forsyth County, GA. Serving Cumming and Lake Lanier communities. Dual-inspector team, FLIR thermal imaging & $10k warranty.",
+    "intro": "Forsyth County ranks among the wealthiest and fastest-growing counties in the nation, renowned for top-tier schools and luxury estates around Cumming and Lake Lanier. We provide white-glove inspections for luxury properties, lake homes, and extensive new construction.",
+    "keyRisks": [
+      "Elevated radon gas levels in Zone 1 EPA Georgia granite rock corridors",
+      "Dock electrical safety, shoreline retaining wall erosion, and moisture intrusion on Lake Lanier waterfront properties",
+      "HVAC zoning imbalances and complex smart-home automation system conflicts in high-end estates"
+    ],
+    "cities": ["Cumming"],
+    "buildingCodeFocus": "Forsyth County Department of Building and Economic Development residential codes and dock electrical safety rules."
+  },
+  {
+    "slug": "henry-county",
+    "name": "Henry County",
+    "seat": "McDonough",
+    "metaTitle": "Henry County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Thorough home inspections in Henry County, GA. Serving McDonough, Stockbridge, Hampton & Locust Grove. Two inspectors on every job.",
+    "intro": "Henry County is South Metro Atlanta's premier growth engine, offering extensive master-planned communities and family neighborhoods. Our dual-inspector teams systematically audit crawlspaces, roofs, HVAC units, and structural foundations across McDonough and Stockbridge.",
+    "keyRisks": [
+      "Crawlspace humidity, standing water, and wood-destroying fungi in slab/crawlspace transition homes",
+      "Rooftop wind and hail storm damage across open South Atlanta corridors",
+      "Builder punch list oversights in rapid new residential developments"
+    ],
+    "cities": ["McDonough", "Stockbridge", "Hampton", "Locust Grove"],
+    "buildingCodeFocus": "Henry County Building Department codes and South Metro stormwater drainage compliance."
+  },
+  {
+    "slug": "fayette-county",
+    "name": "Fayette County",
+    "seat": "Fayetteville",
+    "metaTitle": "Fayette County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Expert home inspections in Fayette County, GA. Serving Peachtree City, Fayetteville, Tyrone & Brooks. Two inspectors, FLIR thermal scans & $10k warranty.",
+    "intro": "Fayette County is renowned for its planned communities, golf cart paths in Peachtree City, and luxury rural estates in Tyrone and Brooks. We deliver meticulous inspections tailored to custom estates, golf course properties, and established multi-acre homesteads.",
+    "keyRisks": [
+      "Golf ball impact roof shingle bruising and hidden flashing leaks",
+      "Aging private septic systems and drainage fields on multi-acre lots",
+      "Basement moisture intrusion and subterranean termite damage in wooded residential settings"
+    ],
+    "cities": ["Peachtree City", "Fayetteville", "Tyrone", "Brooks", "Woolsey"],
+    "buildingCodeFocus": "Fayette County and Peachtree City planned community architectural guidelines and environmental standards."
+  },
+  {
+    "slug": "clayton-county",
+    "name": "Clayton County",
+    "seat": "Jonesboro",
+    "metaTitle": "Clayton County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Reliable home inspections in Clayton County, GA. Serving Jonesboro, Morrow, Forest Park, Riverdale & Rex. Two certified inspectors per job.",
+    "intro": "Clayton County offers vital residential communities with affordable housing stock and historic neighborhoods in Jonesboro. Our two-inspector teams inspect older electrical panels, HVAC ductwork, and structural foundations to give home buyers total clarity.",
+    "keyRisks": [
+      "Outdated electrical breaker panels and improper DIY electrical wiring modifications",
+      "Aged HVAC heat exchangers producing carbon monoxide risks in older housing inventory",
+      "Undetected plumbing supply line leaks and high moisture readings behind bathroom walls"
+    ],
+    "cities": ["Jonesboro", "Morrow", "Forest Park", "Rex"],
+    "buildingCodeFocus": "Clayton County Community Development building inspections and rental safety compliance standards."
+  },
+  {
+    "slug": "douglas-county",
+    "name": "Douglas County",
+    "seat": "Douglasville",
+    "metaTitle": "Douglas County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Top home inspections in Douglas County, GA. Serving Douglasville, Lithia Springs & Villa Rica. Two inspectors, FLIR thermal imaging & $10k warranty.",
+    "intro": "Douglas County is the anchor of West Metro Atlanta, featuring scenic topography, rolling hills, and booming residential construction. Foresight inspects hillside foundation drainage, crawlspaces, and new construction across Douglasville and Lithia Springs.",
+    "keyRisks": [
+      "Sloping lot drainage issues causing water pooling against foundation retaining walls",
+      "Termite activity and wood rot in dense pine forest residential developments",
+      "HVAC system wear from heavy Georgia summer thermal loads"
+    ],
+    "cities": ["Douglasville", "Lithia Springs", "Villa Rica"],
+    "buildingCodeFocus": "Douglas County Development Services building inspection and hillside erosion control ordinances."
+  },
+  {
+    "slug": "coweta-county",
+    "name": "Coweta County",
+    "seat": "Newnan",
+    "metaTitle": "Coweta County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Certified home inspections in Coweta County, GA. Serving Newnan, Senoia, Sharpsburg, Haralson & Grantville. Two inspectors on every job.",
+    "intro": "Coweta County combines the historic charm of Newnan and Senoia with rapid modern growth. We inspect historic Victorian homes, equestrian estates, and new construction subdivisions across Coweta.",
+    "keyRisks": [
+      "Historic framing settling, unlevel subflooring, and outdated knob-and-tube or cloth wiring",
+      "Crawlspace moisture retention and subfloor fungal growth in older homes",
+      "Roof storm damage and chimney flashing deterioration"
+    ],
+    "cities": ["Newnan", "Senoia", "Sharpsburg", "Haralson", "Turin", "Grantville", "Moreland"],
+    "buildingCodeFocus": "Coweta County Building Department codes and City of Newnan historic preservation ordinances."
+  },
+  {
+    "slug": "paulding-county",
+    "name": "Paulding County",
+    "seat": "Dallas",
+    "metaTitle": "Paulding County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Leading home inspections in Paulding County, GA. Serving Dallas & Hiram. Two certified inspectors per job, FLIR thermal scans & $10,000 warranty.",
+    "intro": "Paulding County is one of Metro Atlanta's fastest-growing residential markets, known for family-friendly subdivisions and new construction. Our inspectors provide rigorous phase 2 framing, pre-drywall, and 11-month builder warranty audits.",
+    "keyRisks": [
+      "Rapid builder framing oversights, missing hurricane ties, and unsealed exterior house wrap",
+      "High humidity crawlspaces with inadequate vapor barrier coverage",
+      "Expansive red clay soil shifting affecting newly poured concrete slab foundations"
+    ],
+    "cities": ["Dallas", "Hiram"],
+    "buildingCodeFocus": "Paulding County Building Inspections Department guidelines and Georgia residential energy codes."
+  },
+  {
+    "slug": "rockdale-county",
+    "name": "Rockdale County",
+    "seat": "Conyers",
+    "metaTitle": "Rockdale County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Professional home inspections in Rockdale County, GA. Serving Conyers and surrounding areas. Two inspectors on every job with $10,000 warranty.",
+    "intro": "Rockdale County offers established neighborhoods and tranquil residential settings around Conyers. Foresight Home Inspections delivers comprehensive dual-inspector audits evaluating structural, electrical, and plumbing safety.",
+    "keyRisks": [
+      "Granite bedrock outcroppings causing elevated radon gas concentrations",
+      "Aging water heaters and deteriorated galvanized piping in established Conyers homes",
+      "Roofing valley debris accumulation causing concealed roof sheathing rot"
+    ],
+    "cities": ["Conyers"],
+    "buildingCodeFocus": "Rockdale County Department of Planning and Development residential building codes."
+  },
+  {
+    "slug": "newton-county",
+    "name": "Newton County",
+    "seat": "Covington",
+    "metaTitle": "Newton County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Certified home inspections in Newton County, GA. Serving Covington, Oxford, Porterdale & Mansfield. Two inspectors on every job.",
+    "intro": "Newton County features picturesque historic architecture in Covington and Oxford alongside expanding new developments. We provide specialized historic home inspections and new construction punch list evaluations.",
+    "keyRisks": [
+      "Historic masonry and mortar joint deterioration in older Covington properties",
+      "Cast iron plumbing corrosion and bellied sewer lines",
+      "Electrical panel overloading and outdated two-prong outlets in pre-1970 homes"
+    ],
+    "cities": ["Covington", "Oxford", "Porterdale", "Mansfield", "Newborn"],
+    "buildingCodeFocus": "Newton County Building and Safety Department codes and Covington Historic Preservation guidelines."
+  },
+  {
+    "slug": "walton-county",
+    "name": "Walton County",
+    "seat": "Monroe",
+    "metaTitle": "Walton County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Expert home inspections in Walton County, GA. Serving Monroe, Loganville, Walnut Grove, Social Circle & Between. Two inspectors on every job.",
+    "intro": "Walton County offers a blend of historic rural living in Monroe and bustling suburban development in Loganville. Our inspectors systematically evaluate custom builds, crawlspaces, and residential properties.",
+    "keyRisks": [
+      "Private well and septic system integrity on rural parcels",
+      "Crawlspace moisture intrusion and missing vapor barriers",
+      "Attic ventilation inadequacies causing premature roof shingle baking"
+    ],
+    "cities": ["Monroe", "Loganville", "Walnut Grove", "Between", "Good Hope", "Jersey"],
+    "buildingCodeFocus": "Walton County Planning and Development Department residential building standards."
+  },
+  {
+    "slug": "hall-county",
+    "name": "Hall County",
+    "seat": "Gainesville",
+    "metaTitle": "Hall County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Premier home inspections in Hall County, GA. Serving Gainesville, Flowery Branch, Oakwood & Braselton. Dual-inspector team & $10k warranty.",
+    "intro": "Hall County anchors North Georgia with major economic growth and scenic Lake Lanier shorelines. We inspect luxury waterfront properties, new construction, and suburban subdivisions across Gainesville and Flowery Branch.",
+    "keyRisks": [
+      "Lakefront shoreline moisture intrusion, dock power safety, and basement hydrostatic pressure",
+      "Radon gas accumulation in North Georgia mountain-adjacent soil zones",
+      "New construction HVAC sizing and thermal envelope insulation gaps"
+    ],
+    "cities": ["Gainesville", "Flowery Branch", "Oakwood", "Braselton"],
+    "buildingCodeFocus": "Hall County Building Inspections Department and Lake Lanier shoreline development standards."
+  },
+  {
+    "slug": "barrow-county",
+    "name": "Barrow County",
+    "seat": "Winder",
+    "metaTitle": "Barrow County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Thorough home inspections in Barrow County, GA. Serving Winder, Auburn, Statham & Bethlehem. Two certified inspectors per job.",
+    "intro": "Barrow County is a key growth corridor along Highway 316 and I-85 between Atlanta and Athens. Foresight provides comprehensive inspections for new construction and established family homes in Winder and Auburn.",
+    "keyRisks": [
+      "Rushed new construction framing, truss bracing, and plumbing rough-in defects",
+      "Expansive red clay soil settlement around slab foundations",
+      "Water heater thermal expansion tank absence and pressure valve discharge piping errors"
+    ],
+    "cities": ["Winder", "Auburn", "Statham", "Bethlehem"],
+    "buildingCodeFocus": "Barrow County Building Department residential codes and Georgia IRC amendments."
+  },
+  {
+    "slug": "bartow-county",
+    "name": "Bartow County",
+    "seat": "Cartersville",
+    "metaTitle": "Bartow County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Top home inspections in Bartow County, GA. Serving Cartersville, Emerson & Adairsville. Two certified inspectors per job with $10,000 warranty.",
+    "intro": "Bartow County offers scenic mountain views and historic neighborhoods in Cartersville. Our two-inspector teams evaluate residential properties for structural stability, electrical safety, and moisture protection.",
+    "keyRisks": [
+      "Limestone geological sinkhole and foundation settling risks in specific Bartow geological pockets",
+      "Radon gas concentrations in mountain valley soil profiles",
+      "Older electrical service panels and ungrounded circuits in downtown Cartersville homes"
+    ],
+    "cities": ["Cartersville", "Emerson", "Adairsville"],
+    "buildingCodeFocus": "Bartow County Community Development building inspection standards."
+  },
+  {
+    "slug": "carroll-county",
+    "name": "Carroll County",
+    "seat": "Carrollton",
+    "metaTitle": "Carroll County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Certified home inspections in Carroll County, GA. Serving Carrollton, Temple, Bowdon & Villa Rica. Two inspectors on every job.",
+    "intro": "Carroll County is the educational and cultural center of West Georgia, featuring university neighborhoods in Carrollton and rural acreages. We inspect historic homes, residential properties, and custom new builds.",
+    "keyRisks": [
+      "Aged crawlspace floor joist fungal decay and inadequate foundation piers",
+      "Outdated septic tanks and drain field saturation on large lots",
+      "Aging residential roofs and chimney flashing water intrusion"
+    ],
+    "cities": ["Carrollton", "Temple", "Bowdon", "Villa Rica"],
+    "buildingCodeFocus": "Carroll County Community Development Department residential building regulations."
+  },
+  {
+    "slug": "spalding-county",
+    "name": "Spalding County",
+    "seat": "Griffin",
+    "metaTitle": "Spalding County Home Inspections | Certified Master Inspector",
+    "metaDescription": "Professional home inspections in Spalding County, GA. Serving Griffin, Sunny Side & Orchard Hill. Two certified inspectors on every job.",
+    "intro": "Spalding County features historic Southern architectural treasures in Griffin alongside expanding suburban subdivisions. Foresight delivers thorough dual-inspector evaluations to protect homebuyers and realtors.",
+    "keyRisks": [
+      "Historic home settlement, wood rot, and outdated cast iron plumbing systems",
+      "Subterranean termite damage in older crawlspaces and foundation sills",
+      "Electrical breaker panels with double-tapped breakers and missing GFCI/AFCI protection"
+    ],
+    "cities": ["Griffin", "Sunny Side", "Orchard Hill"],
+    "buildingCodeFocus": "Spalding County Community Development and City of Griffin historic district codes."
+  }
+]
