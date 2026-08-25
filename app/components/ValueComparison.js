@@ -5,129 +5,114 @@ export default function ValueComparison() {
     <section className="section bg-white" style={{ borderBottom: '1px solid var(--color-gray-mid)', position: 'relative', overflow: 'hidden' }}>
       <div className="container">
         <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
-          <span className="badge" style={{ marginBottom: '1rem', background: 'var(--color-red-light)', color: 'var(--color-red)' }}>Smart Buyer Guide</span>
-          <h2>Not All Home Inspectors Are Created Equal</h2>
-          <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '1rem auto 0', fontSize: '1.1rem', lineHeight: 1.7 }}>
-            When buying a home, saving $50 on a &ldquo;cheap&rdquo; inspection is one of the most expensive mistakes you can make. Discover why elite national certifications and meticulous standards protect your life savings.
+          <span className="badge" style={{ marginBottom: '1rem', background: 'var(--color-red-light)', color: 'var(--color-red)' }}>
+            Competitive Advantage &amp; Value Guide
+          </span>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', color: 'var(--color-dark)', marginBottom: '1rem' }}>
+            Why Metro Atlanta Buyers Choose Foresight Over Competitors
+          </h2>
+          <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.7 }}>
+            See how Foresight&rsquo;s Two-Inspector Master Team compares directly to national corporate franchises and ordinary solo inspectors.
           </p>
         </div>
 
-        <div className="grid grid-2" style={{ gap: '3rem', alignItems: 'stretch', marginBottom: '3.5rem' }}>
-          {/* Card 1: The Cheap Inspector */}
-          <div className="card" style={{ border: '1px solid var(--color-gray-mid)', background: '#fafafa', padding: '2.5rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        {/* 3-Column Comparative Feature Matrix */}
+        <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '3.5rem', alignItems: 'stretch' }}>
+          
+          {/* Column 1: National Corporate Franchises (e.g., AmeriSpec) */}
+          <div className="card" style={{ border: '1px solid #e2e8f0', background: '#f8fafc', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--color-gray-dark)', fontWeight: 700 }}>The &ldquo;Discount&rdquo; Inspector</h3>
-                <span style={{ color: 'var(--color-gray)', fontWeight: 600, fontSize: '0.9rem', background: '#eee', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>Typically $250 - $300</span>
+              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b', fontWeight: 700 }}>Competitor Type A</span>
+              <h3 style={{ fontSize: '1.35rem', margin: '0.5rem 0 1rem', color: '#334155' }}>National Franchises</h3>
+              <div style={{ background: '#e2e8f0', padding: '0.4rem 0.75rem', borderRadius: '50px', display: 'inline-block', fontSize: '0.85rem', color: '#475569', fontWeight: 600, marginBottom: '1.25rem' }}>
+                Typically $450 - $575+
               </div>
-              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.975rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-                Often unlicensed, recently trained, or operating alone as a side gig. They compete strictly on low prices because they lack specialized certifications and advanced equipment.
-              </p>
-              
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#b91c1c' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✗</span>
-                  <span style={{ fontSize: '0.95rem' }}><strong>One Solo Inspector on Site:</strong> Even companies that advertise having a &ldquo;team&rdquo; of employees only dispatch a <strong>single solo inspector</strong> to do the actual inspection of your home, raising the risk of rushed schedules and overlooked details.</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#b91c1c' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✗</span>
-                  <span style={{ fontSize: '0.95rem' }}><strong>No Advanced Tech:</strong> Performs a basic visual-only check. Misses hidden plumbing leaks, electrical panel hotspots, or ceiling moisture behind drywall.</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#b91c1c' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✗</span>
-                  <span style={{ fontSize: '0.95rem' }}><strong>Zero Warranty / Protection:</strong> If they miss a $10,000 foundation settlement issue or mold infestation, you are entirely responsible for the repair bill.</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#b91c1c' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✗</span>
-                  <span style={{ fontSize: '0.95rem' }}><strong>Basic Association Membership:</strong> Lacks vetting by elite national boards. Minimal ongoing educational standards.</span>
-                </li>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.9rem', color: '#64748b' }}>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Single Technician:</strong> Dispatches 1 junior hourly inspector assigned by corporate.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Franchise Markup:</strong> Higher pricing to cover 7-10% corporate royalty fees.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Call Center Friction:</strong> Hidden pricing; must call out-of-state call center for a quote.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Slow Turnaround:</strong> Reports often take 24–48 hours due to corporate review.</li>
               </ul>
             </div>
-            
-            <div style={{ marginTop: '2.5rem', background: '#fee2e2', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid #ef4444' }}>
-              <p style={{ margin: 0, fontSize: '0.875rem', color: '#991b1b', lineHeight: 1.5 }}>
-                ⚠️ <strong>The True Cost:</strong> If they miss a rotting subfloor, a cracked HVAC heat exchanger, or structural roofing issues, you lose your negotiation leverage and inherit thousands in instant, out-of-pocket repair bills.
-              </p>
+            <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', color: '#991b1b' }}>
+              ⚠️ High corporate prices with no guarantee of who inspects your home.
             </div>
           </div>
 
-          {/* Card 2: The Foresight standard */}
-          <div className="card card-premium" style={{ border: '2px solid var(--color-red)', background: 'var(--color-dark)', color: 'white', padding: '2.5rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 'var(--shadow-lg)' }}>
+          {/* Column 2: Solo "Discount" Operators (e.g., At Ease, Superior) */}
+          <div className="card" style={{ border: '1px solid #e2e8f0', background: '#f8fafc', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--color-white)', fontWeight: 800 }}>The Foresight CMI Standard</h3>
-                <span style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', background: 'var(--color-red-light)', padding: '0.25rem 0.75rem', borderRadius: '50px' }}>Starting at $450</span>
+              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b', fontWeight: 700 }}>Competitor Type B</span>
+              <h3 style={{ fontSize: '1.35rem', margin: '0.5rem 0 1rem', color: '#334155' }}>Solo Operators</h3>
+              <div style={{ background: '#e2e8f0', padding: '0.4rem 0.75rem', borderRadius: '50px', display: 'inline-block', fontSize: '0.85rem', color: '#475569', fontWeight: 600, marginBottom: '1.25rem' }}>
+                Typically $325 - $400
               </div>
-              <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.975rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-                Led by Christopher Boykin, a <strong>Certified Master Inspector® (CMI)</strong>—representing the top 2% of elite, highly vetted home inspectors nationwide.
-              </p>
-              
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Two Certified Inspectors Physically on Site:</strong> We send two certified inspectors working in unison on every single job. One meticulously inspects the exterior and structure, while the other reviews the interior systems and utilities. You get actual dual-coverage, double the thoroughness, and half the timeframe!</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Free FLIR Thermal Imaging Scans:</strong> We scan walls, electrical breakers, and pipes to detect temperature anomalies that reveal moisture leaks or electrical hotspots invisibly.</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <div style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}>
-                    <strong style={{ color: '#86efac' }}>Free $10,000 Elite Warranty ($0 Deductible):</strong>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '0.5rem', marginTop: '0.5rem' }}>
-                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Structural</span>
-                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
-                      </div>
-                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Mechanicals</span>
-                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
-                      </div>
-                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Appliances</span>
-                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
-                      </div>
-                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Mold</span>
-                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$2,250</strong>
-                      </div>
-                      <div style={{ background: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.6rem', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ fontSize: '0.7rem', color: '#94a3b8', display: 'block' }}>Roof Leak</span>
-                        <strong style={{ fontSize: '0.85rem', color: '#34d399' }}>$1,000</strong>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: '#86efac' }}>
-                  <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>✓</span>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--color-white)' }}><strong style={{ color: '#86efac' }}>Certified Master Inspector® (CMI):</strong> Vetted by the CMI Board. CMIs must complete 1,000+ inspections, adhere to strict codes of ethics, and complete rigorous continuing education.</span>
-                </li>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.9rem', color: '#64748b' }}>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>One Solo Inspector:</strong> Spends 3.5 to 5 hours on site; higher fatigue risk.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Zero Warranty:</strong> No post-inspection financial warranty if major defects arise.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Thermal Fees:</strong> Charges an extra $75–$150 add-on fee for infrared scans.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Basic Visual Tools:</strong> Limited diagnostic technology and manual booking.</li>
               </ul>
             </div>
-            
-            <div style={{ marginTop: '2.5rem', background: 'rgba(211,47,47,0.15)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)' }}>
-              <p style={{ margin: 0, fontSize: '0.875rem', color: '#fca5a5', lineHeight: 1.5 }}>
-                🛡️ <strong>The Intelligent Investment:</strong> Spending $150 to $200 more upfront for a standard home two person inspection team audit gives you a 50-page, Master Inspector-vetted negotiation roadmap with photos and video. This regularly saves buyers <strong>$3,000 to $12,000</strong> in pre-closing repair credits!
-              </p>
+            <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', color: '#991b1b' }}>
+              ⚠️ Missing a hidden $8,000 defect wipes out any small upfront savings.
             </div>
           </div>
+
+          {/* Column 3: The Foresight CMI Standard */}
+          <div className="card card-premium" style={{ border: '2px solid var(--color-red)', background: 'linear-gradient(145deg, #0f172a, #1e293b)', color: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 12px 30px rgba(220, 38, 38, 0.25)', position: 'relative' }}>
+            <div style={{ position: 'absolute', top: '-12px', right: '20px', background: 'var(--color-red)', color: '#ffffff', fontSize: '0.75rem', fontWeight: 800, padding: '0.25rem 0.85rem', borderRadius: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              ⭐ BEST VALUE IN ATLANTA
+            </div>
+            <div>
+              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#fca5a5', fontWeight: 700 }}>The Foresight Standard</span>
+              <h3 style={{ fontSize: '1.45rem', margin: '0.5rem 0 1rem', color: '#ffffff' }}>Two-Inspector CMI Team</h3>
+              <div style={{ background: 'rgba(239, 68, 68, 0.2)', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '0.4rem 0.75rem', borderRadius: '50px', display: 'inline-block', fontSize: '0.85rem', color: '#fca5a5', fontWeight: 700, marginBottom: '1.25rem' }}>
+                From $295 Condos / $345 Homes
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.92rem', color: '#e2e8f0' }}>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Two Certified Inspectors:</strong> Dual-team on every site (1.5–2.5 hrs + double check).</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>$10,000 Elite Warranty:</strong> $0 deductible covering mechanicals, roof, mold &amp; appliances.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Free FLIR Thermal Imaging:</strong> Advanced infrared moisture/electrical scans included free.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Certified Master Inspector (CMI):</strong> Led by Christopher Boykin (Top 1% nationwide).</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Instant Transparent Pricing:</strong> 5-second quote calculator + same-day digital report.</li>
+              </ul>
+            </div>
+            <div style={{ marginTop: '1.5rem' }}>
+              <Link href="/quote" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', padding: '0.85rem', fontSize: '0.95rem' }}>
+                Calculate Your Instant Quote →
+              </Link>
+            </div>
+          </div>
+
         </div>
 
-        {/* E-E-A-T Respected Organization Context Block */}
-        <div style={{ background: 'var(--color-gray-light)', padding: '2rem', borderRadius: 'var(--radius-lg)', borderLeft: '4px solid var(--color-red)', display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
+        {/* E-E-A-T CMI & InterNACHI Credential Trust Block */}
+        <div style={{ background: 'var(--color-gray-light)', padding: '2.25rem', borderRadius: 'var(--radius-lg)', borderLeft: '5px solid var(--color-red)', display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <div style={{ flex: '1 1 500px' }}>
-            <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 700 }}>Why Elite Certifications Matter: InterNACHI & The CMI Board</h4>
+            <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', fontWeight: 700, color: 'var(--color-dark)' }}>
+              Why Elite Credentials Matter in Georgia Due Diligence
+            </h4>
             <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
-              The <strong>International Association of Certified Home Inspectors (InterNACHI)</strong> is the world&apos;s leading national inspection organization, enforcing strict, federal-level Standards of Practice and ethical compliance. With over 10 years of experience, Christopher Boykin is credentialed as a <strong>Certified Master Inspector®</strong>—the absolute highest professional title awarded. Only home inspectors with proven records, thousands of hours of field expertise, and rigorous ongoing training ever qualify. Accept nothing less than a Certified Master Inspector to safeguard your family and investment.
+              The <strong>International Association of Certified Home Inspectors (InterNACHI)</strong> is the world&apos;s leading national inspection authority. With over a decade of hands-on field experience in Georgia, Christopher Boykin is credentialed as a <strong>Certified Master Inspector® (CMI)</strong>—the highest professional rank awarded in the inspection industry. Combined with our standard two-inspector team, you receive the most thorough, legally robust due diligence defense available in Metro Atlanta.
             </p>
           </div>
-          <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
-            <Link href="/quote" className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
-              ⚖️ Calculate Your Quote
+          <div style={{ display: 'flex', gap: '1rem', flexShrink: 0, flexWrap: 'wrap' }}>
+            <a
+              href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}
+            >
+              📅 Schedule Inspection
+            </a>
+            <Link href="/quote" className="btn btn-outline" style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}>
+              📊 Price Calculator
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );
