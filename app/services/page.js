@@ -45,16 +45,16 @@ export default function Services() {
     {
       title: 'Standard Buyer Inspection',
       price: '$295+',
-      priceNote: 'Condos from $295 | Homes from $345',
+      priceNote: 'Condos from $295 | Single Family from $345',
       description: 'Our core comprehensive inspection covering the structure, roof, electrical, plumbing, HVAC, and all major systems. Two expert inspectors on site for maximum thoroughness.',
-      details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', 'InterNACHI Inspection Warranty included'],
+      details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', '$10,000 Master Warranty included'],
       image: '/images/ac-pic.png',
       slug: 'what-does-home-inspector-look-for-buying-house'
     },
     {
       title: 'Pre-Listing Seller Inspection',
-      price: '$295+',
-      priceNote: 'Condos from $295 | Homes from $345',
+      price: '$365+',
+      priceNote: 'Prevent transaction deal-killers before listing',
       description: 'Identify potential issues before putting your home on the market. Streamline negotiations, avoid last-minute surprises, and increase buyer confidence.',
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
       image: '/images/crawlspace.png',
@@ -62,9 +62,10 @@ export default function Services() {
     },
     {
       title: 'New Construction Inspections',
-      price: '$375+',
-      description: 'Ensure your brand-new home was built to correct specifications. We perform a comprehensive final inspection of all major systems.',
-      details: ['Final phase inspection evaluation', 'Structure & systems checks', 'Workmanship quality review', 'Identify developer defects'],
+      price: '$355 / $375',
+      priceNote: 'Pre-Drywall $355 | Final Move-In $375',
+      description: 'Ensure your brand-new home was built to correct specifications. We perform structural pre-drywall audits and comprehensive final phase inspections.',
+      details: ['Pre-drywall framing audit', 'Final phase move-in check', 'Workmanship quality review', 'Identify developer defects'],
       image: '/images/drone-2.png',
       slug: 'why-you-need-home-inspection-new-build'
     },
@@ -78,7 +79,7 @@ export default function Services() {
     },
     {
       title: 'Pool & Spa Inspections',
-      price: '$275',
+      price: '$300',
       description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries.',
       details: ['Pump & heater functional test', 'Safety barrier review', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
       image: '/images/pool-inspecting.png',
@@ -86,7 +87,7 @@ export default function Services() {
     },
     {
       title: 'Sewer Scope Inspections',
-      price: '$450',
+      price: '$425',
       description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the home to the municipal connection or septic tank. Highly recommended for older properties.',
       details: ['Main lateral line sewer inspection', 'High-res video feed provided', 'Locate bellies, roots, and cracks', 'Saves thousands in excavation costs'],
       image: '/images/sewer-scope.png',
@@ -94,16 +95,16 @@ export default function Services() {
     },
     {
       title: 'Termite & WDO Inspections',
-      price: '$100+',
-      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We provide an Official Georgia Wood Infestation Report. Price is $100 for crawlspace or $125 for slab.',
+      price: '$110+',
+      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We provide an Official Georgia Wood Infestation Report.',
       details: ['Official GA WDO Report', 'Identify active/past termites', 'Detect powderpost beetles & decay', 'Critical for mortgage approvals'],
       slug: 'termite-and-wdo-inspection-guide'
     },
     {
       title: 'Radon Gas Testing',
-      price: '$250',
+      price: '$200',
       description: 'Radon is a cancer-causing, odorless radioactive gas. We use professional 48-hour continuous monitors to ensure your home environment is safe.',
-      details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Crucial indoor air safety profile', 'Water radon testing available'],
+      details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Strict EPA protocol compliance', 'Continuous hourly readings'],
       slug: 'hidden-dangers-of-radon-gas-georgia'
     }
   ];

@@ -111,16 +111,16 @@ export default function RootLayout({ children }) {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "33.7275",
-          "longitude": "-84.1444"
+          "latitude": 33.7258,
+          "longitude": -84.0955
         },
         "areaServed": [
           {
             "@type": "GeoCircle",
             "geoMidpoint": {
               "@type": "GeoCoordinates",
-              "latitude": 33.7275,
-              "longitude": -84.1444
+              "latitude": 33.7258,
+              "longitude": -84.0955
             },
             "geoRadius": "80467",
             "description": "Exact 50-mile service radius centered at 1816 South Deshon Road, Lithonia, GA 30058"

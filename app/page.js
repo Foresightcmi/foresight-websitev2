@@ -78,8 +78,8 @@ export default function Home() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "33.7275",
-          "longitude": "-84.1444"
+          "latitude": 33.7258,
+          "longitude": -84.0955
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -130,18 +130,26 @@ export default function Home() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How much does a certified home inspection cost in Metro Atlanta?",
+            "name": "Why do you send two home inspectors to a property?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $425, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled)."
+              "text": "Our Two-Inspector Standard ensures maximum accuracy and efficiency. By putting two sets of expert eyes on your home, we catch defects solo inspectors miss, while reducing the on-site inspection time from 4+ hours down to roughly 1.5 to 2.5 hours."
             }
           },
           {
             "@type": "Question",
-            "name": "Why does Foresight send two home inspectors on every job?",
+            "name": "What is included in the Foresight $10,000 Inspection Warranty?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other evaluates interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours."
+              "text": "Our $10,000 Elite Master Inspection Warranty is included free with standard inspections. It features a $0 deductible and covers structural issues, sudden failures in appliances and mechanicals, up to $2,250 in mold remediation, and up to $1,000 for roof leak repairs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does a certified home inspection cost in Metro Atlanta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include 48-hour continuous electronic radon testing ($200), fiber-optic sewer scope camera audits ($425), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($110+)."
             }
           },
           {
@@ -149,15 +157,7 @@ export default function Home() {
             "name": "What does Christopher Boykin's Certified Master Inspector® credential mean?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. CMIs are vetted by the Master Inspector Certification Board, completing at least 1,000 paid inspections or hours of education, maintaining a clean legal record, and adhering to strict InterNACHI Standards of Practice."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is covered under the complimentary $10,000 Foresight warranty?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for 90 days from closing. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs."
+              "text": "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. Because Georgia does not require state licensing for home inspectors, Christopher's CMI credential proves thousands of hours of verified field experience, peer-reviewed education, and strict adherence to InterNACHI Standards of Practice."
             }
           }
         ]

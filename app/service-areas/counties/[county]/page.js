@@ -117,8 +117,8 @@ export default async function CountyPage({ params }) {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "33.7275",
-      "longitude": "-84.1444"
+      "latitude": 33.7258,
+      "longitude": -84.0955
     },
     "areaServed": {
       "@type": "AdministrativeArea",

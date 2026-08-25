@@ -246,6 +246,29 @@ export default async function CityPage({ params }) {
 
   const countySlug = `${toSlug(county)}-county`;
 
+  // ── Proximity Calculation from Lithonia HQ (33.7258, -84.0955) ──────
+  let distanceMiles = 18;
+  try {
+    if (localBusinessJsonLd?.geo?.latitude && localBusinessJsonLd?.geo?.longitude) {
+      const lat1 = 33.7258;
+      const lon1 = -84.0955;
+      const lat2 = parseFloat(localBusinessJsonLd.geo.latitude);
+      const lon2 = parseFloat(localBusinessJsonLd.geo.longitude);
+      const R = 3958.8; // Radius of the Earth in miles
+      const dLat = (lat2 - lat1) * (Math.PI / 180);
+      const dLon = (lon2 - lon1) * (Math.PI / 180);
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const d = Math.round(R * c);
+      if (d > 0) distanceMiles = d;
+    }
+  } catch {
+    // fallback
+  }
+
   // ── JSON-LD: BreadcrumbList schema ──────────────────────────────────
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -322,7 +345,7 @@ export default async function CityPage({ params }) {
         <div className="container">
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(239, 68, 68, 0.15)', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '0.35rem 1rem', borderRadius: '50px', color: '#fca5a5', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1.25rem' }}>
             <span>📍</span>
-            <span>{county} County • 50-Mile Fast Response Service Zone</span>
+            <span>{county} County • ~{distanceMiles} miles from Lithonia HQ • 50-Mile Service Footprint</span>
           </div>
 
           <h2 className="slogan-heading">
