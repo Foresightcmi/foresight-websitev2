@@ -3,6 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
 import RelatedServiceAreas from '../../components/RelatedServiceAreas';
+import GooglePreferredSource from '../../components/GooglePreferredSource';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -243,6 +244,8 @@ export default async function CityPage({ params }) {
     }
   };
 
+  const countySlug = `${toSlug(county)}-county`;
+
   // ── JSON-LD: BreadcrumbList schema ──────────────────────────────────
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -263,6 +266,12 @@ export default async function CityPage({ params }) {
       {
         "@type": "ListItem",
         "position": 3,
+        "name": `${county} County`,
+        "item": `${SITE_URL}/service-areas/counties/${countySlug}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
         "name": `${cityName}, GA`,
         "item": `${SITE_URL}/service-areas/${slug}`
       }
@@ -291,11 +300,31 @@ export default async function CityPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
+      {/* ── Visible Breadcrumbs Navigation ─────────────────────────── */}
+      <nav aria-label="Breadcrumb" style={{ background: '#f8fafc', padding: '0.75rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container">
+          <ol style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: 0, padding: 0, fontSize: '0.85rem' }}>
+            <li><Link href="/" style={{ color: 'var(--color-gray-dark)', textDecoration: 'none' }}>Home</Link></li>
+            <li style={{ color: 'var(--color-gray-mid)' }}>/</li>
+            <li><Link href="/service-areas" style={{ color: 'var(--color-gray-dark)', textDecoration: 'none' }}>Service Areas</Link></li>
+            <li style={{ color: 'var(--color-gray-mid)' }}>/</li>
+            <li><Link href={`/service-areas/counties/${countySlug}`} style={{ color: 'var(--color-gray-dark)', textDecoration: 'none' }}>{county} County</Link></li>
+            <li style={{ color: 'var(--color-gray-mid)' }}>/</li>
+            <li style={{ color: 'var(--color-red)', fontWeight: 600 }}>{cityName}</li>
+          </ol>
+        </div>
+      </nav>
+
       {/* ═══════════════════════════════════════════════════════════════
           1. HERO
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="hero" style={{ padding: '6rem 0' }}>
+      <section className="hero" style={{ padding: '5rem 0 4.5rem' }}>
         <div className="container">
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(239, 68, 68, 0.15)', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '0.35rem 1rem', borderRadius: '50px', color: '#fca5a5', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1.25rem' }}>
+            <span>📍</span>
+            <span>{county} County • 50-Mile Fast Response Service Zone</span>
+          </div>
+
           <h2 className="slogan-heading">
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </h2>
@@ -304,19 +333,46 @@ export default async function CityPage({ params }) {
               Top-Rated Home Inspection in<br />
               <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
             </h1>
-            <p style={{ maxWidth: '700px', margin: '0 auto 2.5rem' }}>
+            <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.1rem', lineHeight: 1.7 }}>
               {introParagraph}
-              <span style={{ display: 'block', marginTop: '1rem', fontSize: '1.05rem', color: 'var(--color-gray-mid)', fontWeight: '500' }}>
-                ⚡ Equipped with high-resolution aerial drones, infrared thermal cameras, and Foresight AI assistance.
+              <span style={{ display: 'block', marginTop: '0.75rem', fontSize: '1rem', color: 'var(--color-gray-mid)', fontWeight: '500' }}>
+                ⚡ Certified Master Inspector® leadership, two certified inspectors per job, FLIR thermal imaging &amp; included $10,000 Elite Warranty ($0 deductible).
               </span>
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
+              <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.875rem 2.25rem', fontSize: '1.05rem', fontWeight: 700 }}>
                 📅 Schedule Your Inspection
               </a>
-              <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+              <Link href="/quote" className="btn btn-outline" style={{ padding: '0.875rem 2.25rem', fontSize: '1.05rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
                 Get Instant Quote
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          AEO / GEO DIRECT ANSWER SUMMARY BOX (Machine & AI Digestible)
+      ═══════════════════════════════════════════════════════════════ */}
+      <section style={{ background: '#f8fafc', padding: '2rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container" style={{ maxWidth: '950px' }}>
+          <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span>🛡️</span> Quick Diagnostic Overview: {cityName}, GA Home Inspections
+              </h2>
+              <Link href={`/service-areas/counties/${countySlug}`} style={{ fontSize: '0.85rem', color: 'var(--color-red)', fontWeight: 700, textDecoration: 'none' }}>
+                Explore {county} County Hub &rarr;
+              </Link>
+            </div>
+            <p className="city-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
+              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, cutting on-site time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include free FLIR infrared thermal imaging, roof drone scans, and a <strong>$10,000 Elite Master Warranty with $0 deductible</strong>.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)' }}>
+              <div><strong>👨‍🔧 Team:</strong> 2 Certified Inspectors</div>
+              <div><strong>⏱️ Duration:</strong> 1.5–2.5 Hours</div>
+              <div><strong>📑 Report:</strong> Under 24 Hours</div>
+              <div><strong>🛡️ Warranty:</strong> $10,000 ($0 Deductible)</div>
             </div>
           </div>
         </div>
@@ -326,10 +382,10 @@ export default async function CityPage({ params }) {
           SEASONAL TIP (auto-generated by city refresher bot)
       ═══════════════════════════════════════════════════════════════ */}
       {cityData?.['Seasonal Tip'] && (
-        <section style={{ background: 'var(--color-red-light)', padding: '2rem 0', borderBottom: '2px solid rgba(211, 47, 47, 0.15)' }}>
-          <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+        <section style={{ background: 'var(--color-red-light)', padding: '1.75rem 0', borderBottom: '2px solid rgba(211, 47, 47, 0.15)' }}>
+          <div className="container" style={{ maxWidth: '850px', textAlign: 'center' }}>
             <div
-              style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--color-gray-dark)' }}
+              style={{ fontSize: '1rem', lineHeight: 1.6, color: 'var(--color-gray-dark)' }}
               dangerouslySetInnerHTML={{ __html: cityData['Seasonal Tip'] }}
             />
           </div>
@@ -664,6 +720,81 @@ export default async function CityPage({ params }) {
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Safety barrier, pump, filter, heater, and electrical bonding audits in {cityName}.</p>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          DEFECT & COMPARISON DECISION GUIDES
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section bg-gray-light" style={{ padding: '3.5rem 0', borderTop: '1px solid var(--color-gray-mid)' }}>
+        <div className="container" style={{ maxWidth: '950px' }}>
+          <div className="section-title text-center" style={{ marginBottom: '2rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem' }}>Buyer Decision Guides</span>
+            <h2>Home Inspection Defect &amp; Decision Guides for <span style={{ color: 'var(--color-red)' }}>{cityName}</span></h2>
+            <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem' }}>
+              Explore our in-depth diagnostic guides on common Georgia housing red flags and compare inspection approaches.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
+            <div className="card" style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
+              <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span>🔍</span> Common Red Flag Diagnostics
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                <li>
+                  <Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; Stucco (EIFS) Moisture Intrusion Audit
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/defects/polybutylene-pipe-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; Polybutylene Plumbing Pipe Risk Guide
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/defects/foundation-crack-settlement-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; Georgia Red Clay Foundation Settling Guide
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/defects/federal-pacific-zinsco-panel-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; Federal Pacific &amp; Zinsco Panel Hazards
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="card" style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
+              <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span>⚖️</span> Inspection Decision Frameworks
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                <li>
+                  <Link href="/compare/two-inspector-team-vs-single-inspector" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; Two-Inspector Team vs. Single Solo Inspector
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; 11-Month Warranty Audit vs. Builder Walkthrough
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/compare/thermal-imaging-vs-standard-visual-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; FLIR Thermal Infrared Scans vs. Visual Inspection
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/compare/pre-purchase-inspection-vs-bank-appraisal" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; Home Inspection vs. Bank Mortgage Appraisal
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <GooglePreferredSource />
         </div>
       </section>
 
