@@ -747,6 +747,7 @@ export default function RootLayout({ children }) {
                   <li><Link href="/service-areas">Service Areas Directory</Link></li>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                   <li><Link href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
+                  <li><Link href="/dashboard" style={{ color: '#fbbf24', fontWeight: 600 }}>📊 SEO Rankings Dashboard</Link></li>
                 </ul>
               </div>
               <div>
