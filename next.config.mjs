@@ -77,7 +77,17 @@ const nextConfig = {
       // Legacy XML feeds
       {
         source: '/blog-feed.xml',
-        destination: '/sitemap.xml',
+        destination: '/feed.xml',
+        permanent: true,
+      },
+      {
+        source: '/feed',
+        destination: '/feed.xml',
+        permanent: true,
+      },
+      {
+        source: '/rss',
+        destination: '/feed.xml',
         permanent: true,
       },
       // Legacy -ga city routes

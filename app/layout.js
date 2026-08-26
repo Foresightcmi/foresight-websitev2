@@ -45,6 +45,9 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com',
+    types: {
+      'application/rss+xml': 'https://www.fhinspectionsatl.com/feed.xml',
+    },
   },
   openGraph: {
     title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
