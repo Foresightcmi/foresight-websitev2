@@ -101,9 +101,9 @@ export default function Testimonials() {
                 <strong style={{ display: 'block', color: 'var(--color-dark)', fontSize: '1.1rem', marginBottom: '0.25rem' }}>
                   {r.name}
                 </strong>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--color-gray-mid)', fontSize: '0.9rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#475569', fontSize: '0.9rem' }}>
                   <span>{r.location}</span>
-                  <span style={{ fontWeight: 600, color: 'var(--color-red)', fontSize: '0.85rem' }}>{r.tag}</span>
+                  <span style={{ fontWeight: 700, color: 'var(--color-red)', fontSize: '0.85rem' }}>{r.tag}</span>
                 </div>
               </div>
             </div>
@@ -111,28 +111,28 @@ export default function Testimonials() {
         </div>
 
         {/* Small Trust Badge under reviews */}
-        <div style={{ textAlign: 'center', marginTop: '3.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', color: '#1E293B', fontSize: '1rem', fontWeight: 500 }}>
-          <span style={{ color: '#D4AF37', fontSize: '1.25rem' }}>★★★★★</span>
-          <span>Rated <strong style={{ color: '#0F172A' }}>4.9 out of 5 stars</strong> across 43+ verified Google Reviews. <a href="/review" style={{ color: '#D4AF37', fontWeight: 600, textDecoration: 'underline' }}>Share your experience →</a></span>
+        <div style={{ textAlign: 'center', marginTop: '3.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', color: '#0F172A', fontSize: '1rem', fontWeight: 500 }}>
+          <span style={{ color: '#B45309', fontSize: '1.25rem' }}>★★★★★</span>
+          <span>Rated <strong style={{ color: '#0F172A' }}>4.9 out of 5 stars</strong> across 43+ verified Google Reviews. <a href="/review" style={{ color: '#854D0E', fontWeight: 700, textDecoration: 'underline' }}>Share your experience →</a></span>
         </div>
 
         {/* Review Velocity & Social Proof CTA */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginTop: '2rem', alignItems: 'center' }}>
-          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #E2E8F0', textAlign: 'center' }}>
+          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #CBD5E1', textAlign: 'center' }}>
             <strong style={{ display: 'block', fontSize: '1.5rem', color: '#0F172A' }}>24/7</strong>
-            <span style={{ fontSize: '0.85rem', color: '#64748B' }}>Online Booking</span>
+            <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>Online Booking</span>
           </div>
-          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #E2E8F0', textAlign: 'center' }}>
+          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #CBD5E1', textAlign: 'center' }}>
             <strong style={{ display: 'block', fontSize: '1.5rem', color: '#0F172A' }}>2</strong>
-            <span style={{ fontSize: '0.85rem', color: '#64748B' }}>Inspectors On-Site</span>
+            <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>Inspectors On-Site</span>
           </div>
-          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #E2E8F0', textAlign: 'center' }}>
+          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #CBD5E1', textAlign: 'center' }}>
             <strong style={{ display: 'block', fontSize: '1.5rem', color: '#0F172A' }}>$10K</strong>
-            <span style={{ fontSize: '0.85rem', color: '#64748B' }}>Warranty Included</span>
+            <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>Warranty Included</span>
           </div>
-          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #E2E8F0', textAlign: 'center' }}>
+          <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #CBD5E1', textAlign: 'center' }}>
             <strong style={{ display: 'block', fontSize: '1.5rem', color: '#0F172A' }}>77+</strong>
-            <span style={{ fontSize: '0.85rem', color: '#64748B' }}>Cities Served</span>
+            <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>Cities Served</span>
           </div>
         </div>
       </div>

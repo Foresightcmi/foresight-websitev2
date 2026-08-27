@@ -247,6 +247,7 @@ export default function AskForesightWidget() {
       {!isOpen && (
         <button 
           onClick={() => setIsOpen(true)}
+          aria-label="Ask Foresight AI Digital Twin assistant"
           style={{
             position: 'fixed',
             bottom: '24px',
@@ -257,6 +258,8 @@ export default function AskForesightWidget() {
             border: 'none',
             borderRadius: '9999px',
             padding: '0.85rem 1.5rem',
+            minHeight: '48px',
+            minWidth: '48px',
             fontSize: '0.95rem',
             fontWeight: 700,
             cursor: 'pointer',
@@ -266,8 +269,9 @@ export default function AskForesightWidget() {
             gap: '8px',
             fontFamily: "'Outfit', sans-serif",
             letterSpacing: '0.02em',
-            transition: 'transform 0.2s, box-shadow 0.2s',
-            animation: 'pulse-glow 3s infinite'
+            transition: 'transform 0.2s',
+            animation: 'pulse-glow 3s infinite',
+            willChange: 'transform, opacity'
           }}
           onMouseEnter={e => {
             e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
@@ -480,9 +484,9 @@ export default function AskForesightWidget() {
       {/* Global CSS Styles for Animations */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes pulse-glow {
-          0% { box-shadow: 0 10px 25px -5px rgba(211, 47, 47, 0.4), 0 0 0 0px rgba(211, 47, 47, 0.4); }
-          70% { box-shadow: 0 10px 25px -5px rgba(211, 47, 47, 0.4), 0 0 0 8px rgba(211, 47, 47, 0); }
-          100% { box-shadow: 0 10px 25px -5px rgba(211, 47, 47, 0.4), 0 0 0 0px rgba(211, 47, 47, 0); }
+          0% { transform: scale(1); opacity: 0.95; }
+          50% { transform: scale(1.04); opacity: 1; }
+          100% { transform: scale(1); opacity: 0.95; }
         }
         @keyframes slide-up {
           from { transform: translateY(20px); opacity: 0; }

@@ -641,10 +641,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="preconnect" href="https://schedulenow.homegauge.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="icon" href="/images/Logopng.png" type="image/png" sizes="96x96" />
-        <link rel="apple-touch-icon" href="/images/Logopng.png" />
+        <link rel="icon" href="/images/Logopng.webp" type="image/webp" sizes="96x96" />
+        <link rel="apple-touch-icon" href="/images/Logopng.webp" />
         <meta name="geo.region" content="US-GA" />
         <meta name="geo.placename" content="Lithonia" />
         <meta name="geo.position" content="33.7275;-84.1444" />
@@ -655,10 +653,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-F5NKKNS7B7" />
+        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-F5NKKNS7B7" />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -708,8 +706,8 @@ export default function RootLayout({ children }) {
                 <p style={{ fontStyle: 'italic', color: 'var(--color-gray-mid)', marginBottom: '0.75rem', fontWeight: '600', fontSize: '1.05rem' }}>&quot;Hindsight is expensive... Choose Foresight!&quot;</p>
                 <p>Two sets of expert eyes on every job. Unparalleled thoroughness and accuracy.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                   <Image src="/images/cmi_logo.png" alt="Certified Master Inspector Certification" width={160} height={110} style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
-                   <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector Certification" width={160} height={110} style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
+                    <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector Certification" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
+                    <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector Certification" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
                 </div>
                 <div className="footer-socials">
                   <a href="https://facebook.com/fhinspectionsatl" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer-social-link" title="Facebook">
@@ -766,7 +764,7 @@ export default function RootLayout({ children }) {
               <div>
                 <h3>Contact</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li><a href="tel:678-480-2110">📞 678-480-2110</a></li>
+                  <li><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110">📞 678-480-2110</a></li>
                   <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
                   <li style={{ marginTop: '0.25rem', lineHeight: '1.4' }}>
                     <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving 163+ Cities Across Metro Atlanta)</span>

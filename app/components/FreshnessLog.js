@@ -128,16 +128,16 @@ export default function FreshnessLog() {
       <style jsx global>{`
         @keyframes pulse {
           0% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+            transform: scale(0.9);
+            opacity: 0.7;
           }
-          70% {
-            transform: scale(1);
-            box-shadow: 0 0 0 8px rgba(46, 125, 50, 0);
+          50% {
+            transform: scale(1.15);
+            opacity: 1;
           }
           100% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+            transform: scale(0.9);
+            opacity: 0.7;
           }
         }
         @media (max-width: 768px) {

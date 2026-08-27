@@ -20,41 +20,41 @@ export default function ValueComparison() {
         <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '3.5rem', alignItems: 'stretch' }}>
           
           {/* Column 1: National Corporate Franchises (e.g., AmeriSpec) */}
-          <div className="card" style={{ border: '1px solid #e2e8f0', background: '#f8fafc', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="card" style={{ border: '1px solid #cbd5e1', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b', fontWeight: 700 }}>Competitor Type A</span>
-              <h3 style={{ fontSize: '1.35rem', margin: '0.5rem 0 1rem', color: '#334155' }}>National Franchises</h3>
-              <div style={{ background: '#e2e8f0', padding: '0.4rem 0.75rem', borderRadius: '50px', display: 'inline-block', fontSize: '0.85rem', color: '#475569', fontWeight: 600, marginBottom: '1.25rem' }}>
+              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#334155', fontWeight: 700 }}>Competitor Type A</span>
+              <h3 style={{ fontSize: '1.35rem', margin: '0.5rem 0 1rem', color: '#0f172a' }}>National Franchises</h3>
+              <div style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.4rem 0.75rem', borderRadius: '50px', display: 'inline-block', fontSize: '0.85rem', color: '#0f172a', fontWeight: 700, marginBottom: '1.25rem' }}>
                 Typically $450 - $575+
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.9rem', color: '#64748b' }}>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Single Technician:</strong> Dispatches 1 junior hourly inspector assigned by corporate.</li>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Franchise Markup:</strong> Higher pricing to cover 7-10% corporate royalty fees.</li>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Call Center Friction:</strong> Hidden pricing; must call out-of-state call center for a quote.</li>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Slow Turnaround:</strong> Reports often take 24–48 hours due to corporate review.</li>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.9rem', color: '#1e293b' }}>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>Single Technician:</strong> Dispatches 1 junior hourly inspector assigned by corporate.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>Franchise Markup:</strong> Higher pricing to cover 7-10% corporate royalty fees.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>Call Center Friction:</strong> Hidden pricing; must call out-of-state call center for a quote.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>Slow Turnaround:</strong> Reports often take 24–48 hours due to corporate review.</li>
               </ul>
             </div>
-            <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', color: '#991b1b' }}>
+            <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.85rem', color: '#991b1b', fontWeight: 600 }}>
               ⚠️ High corporate prices with no guarantee of who inspects your home.
             </div>
           </div>
 
           {/* Column 2: Solo "Discount" Operators (e.g., At Ease, Superior) */}
-          <div className="card" style={{ border: '1px solid #e2e8f0', background: '#f8fafc', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="card" style={{ border: '1px solid #cbd5e1', background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b', fontWeight: 700 }}>Competitor Type B</span>
-              <h3 style={{ fontSize: '1.35rem', margin: '0.5rem 0 1rem', color: '#334155' }}>Solo Operators</h3>
-              <div style={{ background: '#e2e8f0', padding: '0.4rem 0.75rem', borderRadius: '50px', display: 'inline-block', fontSize: '0.85rem', color: '#475569', fontWeight: 600, marginBottom: '1.25rem' }}>
+              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#334155', fontWeight: 700 }}>Competitor Type B</span>
+              <h3 style={{ fontSize: '1.35rem', margin: '0.5rem 0 1rem', color: '#0f172a' }}>Solo Operators</h3>
+              <div style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '0.4rem 0.75rem', borderRadius: '50px', display: 'inline-block', fontSize: '0.85rem', color: '#0f172a', fontWeight: 700, marginBottom: '1.25rem' }}>
                 Typically $325 - $400
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.9rem', color: '#64748b' }}>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>One Solo Inspector:</strong> Spends 3.5 to 5 hours on site; higher fatigue risk.</li>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Zero Warranty:</strong> No post-inspection financial warranty if major defects arise.</li>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Thermal Fees:</strong> Charges an extra $75–$150 add-on fee for infrared scans.</li>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#ef4444' }}>✗</span> <strong>Basic Visual Tools:</strong> Limited diagnostic technology and manual booking.</li>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.9rem', color: '#1e293b' }}>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>One Solo Inspector:</strong> Spends 3.5 to 5 hours on site; higher fatigue risk.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>Zero Warranty:</strong> No post-inspection financial warranty if major defects arise.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>Thermal Fees:</strong> Charges an extra $75–$150 add-on fee for infrared scans.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#dc2626' }}>✗</span> <strong>Basic Visual Tools:</strong> Limited diagnostic technology and manual booking.</li>
               </ul>
             </div>
-            <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', color: '#991b1b' }}>
+            <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.85rem', color: '#991b1b', fontWeight: 600 }}>
               ⚠️ Missing a hidden $8,000 defect wipes out any small upfront savings.
             </div>
           </div>

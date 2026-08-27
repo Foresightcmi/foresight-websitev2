@@ -179,7 +179,9 @@ export default function Home() {
           alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
           fill
           priority
+          fetchPriority="high"
           sizes="(max-width: 768px) 100vw, 1920px"
+          quality={75}
           style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
         />
         {/* Dark gradient overlay for text readability */}
@@ -213,8 +215,8 @@ export default function Home() {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
-             <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={140} height={105} sizes="140px" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={140} height={105} sizes="140px" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
              
              {/* 10+ Years Experience Badge */}
              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.5)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '130px', minWidth: '140px', backdropFilter: 'blur(8px)' }}>
@@ -308,7 +310,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
             <div>
-              <Image src="/images/Christopher_Boykin.jpg" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} priority />
+              <Image src="/images/Christopher_Boykin.webp" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} sizes="(max-width: 768px) 100vw, 600px" style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
             </div>
             <div style={{ padding: '0 1rem' }}>
               <span className="badge" style={{ background: 'rgba(15, 23, 42, 0.08)', color: '#0F172A', border: '1px solid #0F172A', marginBottom: '1rem', fontWeight: 600 }}>
@@ -407,9 +409,10 @@ export default function Home() {
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                 <Image
-                  src="/images/thermal-1.png"
+                  src="/images/thermal-1.webp"
                   alt="Infrared Thermal Imaging (FLIR) camera inspecting home electrical heat profile"
                   fill
+                  sizes="90px"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
@@ -424,9 +427,10 @@ export default function Home() {
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                 <Image
-                  src="/images/drone-remote.png"
+                  src="/images/drone-remote.webp"
                   alt="High-resolution aerial drone operator remote controller with telemetry screen"
                   fill
+                  sizes="90px"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
@@ -453,14 +457,15 @@ export default function Home() {
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                 <Image
-                  src="/images/moisture-meter.png"
+                  src="/images/moisture-meter.webp"
                   alt="Digital moisture detector being used to inspect home framing and walls"
                   fill
+                  sizes="90px"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Digital Moisture & Combustible Gas Detectors</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Digital Moisture &amp; Combustible Gas Detectors</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   We employ electronic moisture scanners to trace active leaks through subflooring and walls, plus high-sensitivity combustible gas sniffers to check appliance lines and gas meters for micro-leaks.
                 </p>
@@ -490,11 +495,12 @@ export default function Home() {
               <video
                 controls
                 playsInline
-                preload="metadata"
-                poster="/images/thermal-1.png"
+                preload="none"
+                poster="/images/thermal-1.webp"
                 style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px', maxHeight: '520px' }}
               >
                 <source src="/videos/foresight-inspection-intro.mp4" type="video/mp4" />
+                <track kind="captions" srcLang="en" label="English" default />
                 Your browser does not support the video tag.
               </video>
             </div>

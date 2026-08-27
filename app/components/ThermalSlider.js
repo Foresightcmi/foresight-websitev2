@@ -77,12 +77,11 @@ export default function ThermalSlider() {
           {/* Background Image: The Thermal scan (BLUE moisture leak) */}
           <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
             <Image 
-              src="/images/thermal-ceiling.png" 
+              src="/images/thermal-ceiling.webp" 
               alt="FLIR Thermal infrared scan revealing massive cold blue water moisture leak hidden in the drywall ceiling structure" 
               fill
               sizes="(max-width: 900px) 100vw, 900px"
               style={{ objectFit: 'cover' }}
-              priority
             />
             {/* Label for Background */}
             <span style={{ 
@@ -114,12 +113,11 @@ export default function ThermalSlider() {
             }}
           >
             <Image 
-              src="/images/visual-ceiling.png" 
+              src="/images/visual-ceiling.webp" 
               alt="Drywall ceiling showing dry, clean visual counterpart" 
               fill
               sizes="(max-width: 900px) 100vw, 900px"
               style={{ objectFit: 'cover' }}
-              priority
             />
             {/* Label for Foreground */}
             <span style={{ 

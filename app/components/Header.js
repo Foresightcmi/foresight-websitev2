@@ -30,7 +30,7 @@ export default function Header() {
           <span>No waiting. Instant scheduling anytime.</span>
         </span>
         <span style={{ color: '#475569' }}>|</span>
-        <a href="tel:6784802110" style={{ color: '#E2E8F0', textDecoration: 'none', fontWeight: 600 }}>
+        <a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ color: '#E2E8F0', textDecoration: 'none', fontWeight: 600 }}>
           📞 678-480-2110
         </a>
         <span style={{ color: '#475569' }}>|</span>
@@ -60,7 +60,7 @@ export default function Header() {
               <li><Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
               <li><Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
               <li><Link href="/quote" onClick={() => setMenuOpen(false)}>Get Quote</Link></li>
-              <li><Link href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: 'var(--color-primary)', fontWeight: '600' }}>Ask Foresight AI</Link></li>
+              <li><Link href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: '#854D0E', fontWeight: '700' }}>Ask Foresight AI</Link></li>
               <li>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" onClick={() => setMenuOpen(false)}>
                   Book Online 24/7
