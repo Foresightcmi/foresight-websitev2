@@ -175,11 +175,11 @@ export default function Home() {
       <section className="hero" style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '6rem 0 5rem' }}>
         {/* Full-bleed background image */}
         <Image
-          src="/images/luxury-home.jpg"
+          src="/images/luxury-home.webp"
           alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 1920px"
           style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
         />
         {/* Dark gradient overlay for text readability */}
@@ -213,8 +213,8 @@ export default function Home() {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
-             <Image src="/images/cmi_logo.png" alt="Certified Master Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={200} height={150} style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
              
              {/* 10+ Years Experience Badge */}
              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.5)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '130px', minWidth: '140px', backdropFilter: 'blur(8px)' }}>

@@ -749,3 +749,29 @@ a:hover {
     display: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════
+   ACCESSIBILITY & CORE WEB VITALS ENHANCEMENTS
+═══════════════════════════════════════════ */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  button, 
+  .btn, 
+  .btn-gold, 
+  .sticky-call-btn,
+  .footer-social-link {
+    min-height: 48px;
+    min-width: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+img {
+  content-visibility: auto;
+}

@@ -40,7 +40,7 @@ export default function Header() {
       <header className="header" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
         <div className="container nav-container">
           <Link href="/" className="logo">
-            <Image src="/images/Logopng.png" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '120px', width: 'auto' }} priority />
+            <Image src="/images/Logopng.webp" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '120px', width: 'auto' }} priority />
             <span className="sr-only">Foresight Home Inspections</span>
           </Link>
           <button
