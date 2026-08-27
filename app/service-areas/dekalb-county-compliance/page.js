@@ -89,7 +89,7 @@ export default function DeKalbCountyCompliancePage() {
       addressCountry: 'US',
     },
     priceRange: '$$$',
-    image: `${SITE_URL}/images/logo.png`,
+    image: `${SITE_URL}/images/Logopng.png`,
   };
 
   // ── JSON-LD: FAQPage ────────────────────────────────────────────────

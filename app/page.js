@@ -123,7 +123,7 @@ export default function Home() {
         "isPartOf": { "@id": "https://www.fhinspectionsatl.com/#website" },
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": [".slogan-heading", ".hero-content h1"]
+          "cssSelector": [".slogan-heading", ".hero h1", ".hero p", ".badge"]
         }
       },
       {

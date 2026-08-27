@@ -612,6 +612,10 @@ export default function RootLayout({ children }) {
     "@id": "https://www.fhinspectionsatl.com/#website",
     "url": "https://www.fhinspectionsatl.com",
     "name": "Foresight Home Inspections",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".speakable-answer", "h1", "h2"]
+    },
     "publisher": {
       "@id": "https://www.fhinspectionsatl.com/#business"
     },

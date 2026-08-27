@@ -72,7 +72,7 @@ export default function About() {
         "@id": "https://www.fhinspectionsatl.com/#organization",
         "name": "Foresight Home Inspections, LLC",
         "url": "https://www.fhinspectionsatl.com",
-        "logo": "https://www.fhinspectionsatl.com/images/logo.png",
+        "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "image": "https://www.fhinspectionsatl.com/images/Christopher_Boykin.jpg",
         "telephone": "+1-678-480-2110",
         "email": "inspect@foresightcmi.com",

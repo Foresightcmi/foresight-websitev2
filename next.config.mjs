@@ -192,16 +192,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/feed',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/rss',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
         source: '/home',
         destination: '/',
         permanent: true,
