@@ -44,20 +44,20 @@ export default function GeoTrustBanner() {
   const [geoCity, setGeoCity] = useState(null);
 
   useEffect(() => {
-    // Attempt fast non-blocking IP city detection
+    // Fast non-blocking internal edge geolocation without third-party rate limits
     const fetchLocation = async () => {
       try {
-        const res = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+        const res = await fetch('/api/geo');
         if (res.ok) {
           const data = await res.json();
-          if (data && data.region_code === 'GA' && data.city) {
+          if (data && (data.region === 'GA' || data.country === 'US') && data.city) {
             const rawCity = data.city.toLowerCase().trim();
             const matched = ATLANTA_CITIES[rawCity];
             if (matched) {
               setGeoCity(matched);
               return;
             }
-            // If in Georgia but city isn't in top dictionary, use capitalized name
+            // If in Georgia/Metro Atlanta, format slug
             setGeoCity({
               name: data.city,
               slug: rawCity.replace(/[^a-z0-9]+/g, '-')
