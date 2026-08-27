@@ -8,6 +8,7 @@ import NewsletterSignup from './components/NewsletterSignup';
 
 const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
+const ThreeHomeInspectionScan = dynamic(() => import('./components/ThreeHomeInspectionScan'));
 const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
 const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: true });
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
@@ -393,6 +394,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ThreeHomeInspectionScan />
       <ThermalSlider />
 
       <section className="section" style={{ background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
