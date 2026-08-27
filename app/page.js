@@ -180,8 +180,8 @@ export default function Home() {
           fill
           priority
           fetchPriority="high"
-          sizes="(max-width: 768px) 100vw, 1920px"
-          quality={75}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
+          quality={68}
           style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
         />
         {/* Dark gradient overlay for text readability */}

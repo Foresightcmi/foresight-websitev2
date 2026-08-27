@@ -248,10 +248,9 @@ export default function AskForesightWidget() {
         <button 
           onClick={() => setIsOpen(true)}
           aria-label="Ask Foresight AI Digital Twin assistant"
+          className="ask-foresight-launcher"
           style={{
             position: 'fixed',
-            bottom: '24px',
-            right: '24px',
             zIndex: 9999,
             background: 'linear-gradient(135deg, #d32f2f 0%, #991b1b 100%)',
             color: 'white',
@@ -495,6 +494,16 @@ export default function AskForesightWidget() {
         @keyframes bounce {
           0%, 80%, 100% { transform: scale(0); }
           40% { transform: scale(1); }
+        }
+        .ask-foresight-launcher {
+          bottom: 24px;
+          right: 24px;
+        }
+        @media (max-width: 768px) {
+          .ask-foresight-launcher {
+            bottom: 84px !important;
+            right: 16px !important;
+          }
         }
         @media (max-width: 480px) {
           .glass-chat-widget {
