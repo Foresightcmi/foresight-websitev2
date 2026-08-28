@@ -25,8 +25,10 @@
 - [Stucco & EIFS Moisture Inspections](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection): Synthetic stucco inspection protocol in Georgia.
 - [Federal Pacific & Zinsco Electrical Panels](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection): Safety hazards and breaker failure diagnostics.
 - [Aluminum Wiring Detection](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection): 1960s-1970s branch circuit identification and mitigation.
+- [Polybutylene (Quest) Plumbing Pipes](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection): 1978-1995 Quest PB2110 pipe failure and whole-home repipe guidance.
 - [Two-Inspector Team vs. Single Inspector](https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector): In-depth comparison of dual-inspector accuracy and inspection speed.
 - [11-Month Warranty vs. Builder Walkthrough](https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough): Independent punch list vs. builder inspection.
+- [Independent Inspection vs. County Code Inspector](https://www.fhinspectionsatl.com/compare/new-construction-inspection-vs-county-building-inspector): Why municipal building code officials do not replace an independent CMI audit on Georgia new builds.
 
 ## Authoritative Blog & Guides
 - [Blog Directory](https://www.fhinspectionsatl.com/blog): All 26 educational home inspection articles.

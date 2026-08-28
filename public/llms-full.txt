@@ -141,9 +141,19 @@ Identifies the top 10 most common inspection deal breakers found in Georgia home
 URL: https://www.fhinspectionsatl.com/blog/first-time-home-buyer-inspection-checklist-atlanta
 A complete home inspection checklist designed specifically for first-time home buyers in the Atlanta market. Organized by category including exterior, roof, foundation, plumbing, electrical, HVAC, interior, attic, and crawlspace. Explains what inspectors look for in each area, common issues found in Atlanta-area homes, and what first-time buyers should pay special attention to. Includes tips on preparing for inspection day, understanding the inspection report, and making informed decisions based on findings.
 
-## Georgia Due Diligence Defense System
-URL: https://www.fhinspectionsatl.com/due-diligence
-Foresight's formal speed and protection commitment engineered specifically for Georgia's strict 5-to-10 day Due Diligence contract windows. Guarantees 48-hour inspection scheduling availability, same-day digital report delivery within 24 hours, and a complimentary $10,000 Elite Master Inspection Warranty with $0 deductible.
+## Decision Frameworks & Defect Diagnostic Hubs
+- Two-Inspector Team vs. Single Inspector: https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector
+- 11-Month Warranty vs. Builder Walkthrough: https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough
+- Pre-Purchase Inspection vs. Bank Appraisal: https://www.fhinspectionsatl.com/compare/pre-purchase-inspection-vs-bank-appraisal
+- FLIR Thermal Imaging vs. Standard Visual Inspection: https://www.fhinspectionsatl.com/compare/thermal-imaging-vs-standard-visual-inspection
+- Independent Inspection vs. County Code Inspector: https://www.fhinspectionsatl.com/compare/new-construction-inspection-vs-county-building-inspector
+- Synthetic Stucco (EIFS) Moisture Inspections: https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection
+- Aluminum Branch Circuit Wiring Safety: https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection
+- Federal Pacific & Zinsco Electrical Panel Hazards: https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection
+- Crawlspace Moisture, Wood Rot & Fungus Diagnostics: https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection
+- HVAC Heat Exchanger Crack & CO Safety: https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection
+- Roof Flashing & Chimney Water Intrusion: https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection
+- Polybutylene (Quest) Plumbing Pipe Defects: https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection
 
 ## Neighborhood & Historic District pSEO Hubs
 URL: https://www.fhinspectionsatl.com/neighborhoods

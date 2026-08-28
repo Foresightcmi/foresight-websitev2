@@ -4,7 +4,7 @@
     "title": "Synthetic Stucco (EIFS) & Hard-Coat Stucco Inspection in Georgia",
     "metaTitle": "EIFS Synthetic Stucco Inspection Atlanta GA | Moisture Scan",
     "metaDescription": "Specialized EIFS synthetic stucco and hard-coat stucco inspection in Metro Atlanta. Advanced moisture metering and thermal camera evaluation for hidden wood rot.",
-    "icon": "🧱",
+    "icon": "\ud83e\uddf1",
     "badge": "Stucco & EIFS Audit",
     "summary": "Exterior Insulation and Finish Systems (EIFS), commonly called synthetic stucco, were heavily used on North Georgia homes during the 1980s and 1990s. Unlike traditional hard-coat stucco, barrier EIFS traps moisture behind the synthetic layers, causing severe, hidden wood framing rot.",
     "identification": "Synthetic EIFS feels hollow when tapped lightly and yields slightly when pressed with a thumb. Traditional hard-coat stucco is rock-hard, sounds solid, and is applied over metal lath wire netting.",
@@ -35,7 +35,7 @@
     "title": "Aluminum Branch Circuit Wiring Inspection in Georgia Homes",
     "metaTitle": "Aluminum Wiring Inspection Atlanta GA | Electrical Fire Hazard",
     "metaDescription": "Specialized aluminum branch wiring electrical safety inspection in Metro Atlanta. Identify 1960s-70s aluminum wiring hazards and COPALUM remediation needs.",
-    "icon": "⚡",
+    "icon": "\u26a1",
     "badge": "Electrical Safety Audit",
     "summary": "Homes constructed between 1965 and 1973 in Metro Atlanta frequently contain single-strand aluminum branch circuit wiring. Aluminum expands and contracts significantly more than copper, leading to loose connections at outlets and switches, arching, and extreme fire hazards.",
     "identification": "Single-strand aluminum branch wire is silver-colored and stamped with 'AL' or 'ALUMINUM' on the wire jacket inside electrical panels, outlet boxes, or light fixtures.",
@@ -66,7 +66,7 @@
     "title": "Federal Pacific (FPE) & Zinsco Electrical Panel Inspection",
     "metaTitle": "FPE & Zinsco Electrical Panel Inspection Atlanta GA",
     "metaDescription": "Federal Pacific Stab-Lok and Zinsco electrical panel safety inspection in Metro Atlanta. Identify breaker failure risks and replacement requirements.",
-    "icon": "🔥",
+    "icon": "\ud83d\udd25",
     "badge": "Hazardous Panel Audit",
     "summary": "Federal Pacific Electric (FPE) Stab-Lok panels and Zinsco electrical panels were installed in millions of Metro Atlanta homes from the 1950s through the 1980s. Independent testing shows these breakers frequently fail to trip during electrical overloads, creating severe risk of electrical fires.",
     "identification": "FPE panels have 'Federal Pacific Electric' or 'Stab-Lok' written on the door or breaker handles (often colored orange). Zinsco panels feature bright colored breaker handles (red, blue, green) mounted on bus bars prone to corrosion.",
@@ -97,7 +97,7 @@
     "title": "Crawlspace Moisture, Wood Rot & Fungus Inspection in Georgia",
     "metaTitle": "Atlanta Crawlspace Moisture & Joist Rot Inspection",
     "metaDescription": "Crawlspace moisture, wood decay rot, and standing water inspection in Metro Atlanta. Thermal camera and moisture meter audit for floor framing integrity.",
-    "icon": "🪵",
+    "icon": "\ud83e\udeb5",
     "badge": "Crawlspace Safety Audit",
     "summary": "Over 60% of homes in Metro Atlanta are built over vented crawlspaces. High humidity, standing ground water, and missing vapor barriers create optimal conditions for wood-decay fungi (white/brown rot), decaying floor joists, sills, and subflooring.",
     "identification": "Musty odors inside the home, sagging or spongy floors, high indoor humidity, white cobweb-like fungal growth on joists, and standing water in crawlspace dirt floors.",
@@ -128,7 +128,7 @@
     "title": "HVAC Heat Exchanger Crack & Carbon Monoxide Inspection",
     "metaTitle": "Cracked Heat Exchanger HVAC Inspection Atlanta GA",
     "metaDescription": "HVAC gas furnace heat exchanger crack and carbon monoxide safety inspection in Metro Atlanta. Advanced diagnostic heating system evaluation.",
-    "icon": "🔥",
+    "icon": "\ud83d\udd25",
     "badge": "HVAC Safety Audit",
     "summary": "A cracked heat exchanger in a gas furnace is a severe safety hazard that can vent lethal carbon monoxide (CO) gas directly into your home's indoor air supply. Furnaces older than 12-15 years in Metro Atlanta are highly susceptible to metal fatigue and corrosion cracks.",
     "identification": "Rust flakes inside the burner compartment, flickering yellow burner flames, soot buildup near exhaust flues, or carbon monoxide alarm activation.",
@@ -159,7 +159,7 @@
     "title": "Roof Flashing & Chimney Water Intrusion Inspection in Georgia",
     "metaTitle": "Roof Flashing & Chimney Leak Inspection Atlanta GA",
     "metaDescription": "Aerial drone and thermal imaging roof flashing leak inspection in Metro Atlanta. Identify chimney, valley, and penetration water intrusion.",
-    "icon": "🏠",
+    "icon": "\ud83c\udfe0",
     "badge": "Roof & Envelope Audit",
     "summary": "Over 80% of roof leaks in Metro Atlanta occur not from damaged shingles, but from improperly installed or deteriorated roof flashings around chimneys, valleys, plumbing stack boots, and wall intersections.",
     "identification": "Water stains on ceiling drywall, damp attic insulation, rusted step flashing, cracked rubber pipe boots, and missing kick-out flashings at roof edges.",
@@ -182,6 +182,37 @@
       {
         "q": "Can thermal cameras find roof leaks before ceilings show water spots?",
         "a": "Yes! FLIR thermal cameras detect subtle evaporative cooling temperature drops in damp attic insulation long before water stains bleed through ceiling drywall."
+      }
+    ]
+  },
+  {
+    "slug": "polybutylene-pipe-plumbing-defect-inspection",
+    "title": "Polybutylene (Quest) Pipe Plumbing Defect Inspection in Georgia Homes",
+    "metaTitle": "Polybutylene Pipe Inspection Atlanta GA | Quest Plumbing Hazard",
+    "metaDescription": "Specialized polybutylene plumbing pipe inspection in Metro Atlanta. Identify brittle blue/gray Quest pipes, acetal fitting micro-fractures, and hidden leak risks.",
+    "icon": "\ud83d\udeb0",
+    "badge": "Plumbing Integrity Audit",
+    "summary": "Polybutylene (commonly branded as Quest) is a flexible plastic plumbing pipe installed in millions of American homes built between 1978 and 1995. In Metro Atlanta, chlorine and oxidants in municipal drinking water react with polybutylene resin, causing microscopic structural flaking, brittle joint fractures, and sudden catastrophic water leaks inside walls and crawlspaces.",
+    "identification": "Polybutylene pipes are typically dull gray or blue plastic tubing (1/2-inch to 1-inch diameter) stamped with 'PB2110'. They are connected with gray plastic acetal fittings or copper/brass crimp rings at water heaters, under sinks, and inside crawlspaces.",
+    "risks": [
+      "Sudden pipe rupture and catastrophic interior flooding without prior warning",
+      "Micro-fractures at plastic fittings causing chronic hidden rot inside wall cavities",
+      "Denied homeowner insurance coverage or mandatory whole-home repipe exclusions from top carriers"
+    ],
+    "howWeInspect": "We inspect all visible supply lines at water heaters, main water shut-off valves, laundry boxes, crawlspaces, and beneath plumbing fixtures. We check for pipe stamps (PB2110), assess crimp ring integrity, and use FLIR thermal imaging to verify that no hidden moisture leaks exist behind bathroom and laundry drywall.",
+    "remediation": "Remediation requires a complete whole-home repiping with modern PEX-a (cross-linked polyethylene) or Type L copper tubing, along with drywall restoration and new quarter-turn shut-off valves.",
+    "faqs": [
+      {
+        "q": "Can I get homeowners insurance on a home with polybutylene pipes in Georgia?",
+        "a": "Many major insurance carriers in Georgia will refuse to write a new policy or will add a strict water damage exclusion rider on homes with polybutylene plumbing until the property is repiped."
+      },
+      {
+        "q": "Why do polybutylene pipes fail in Metro Atlanta?",
+        "a": "Chemical disinfectants (such as chlorine and chloramines) in municipal water supplies react with the polybutylene polymer, causing the inner pipe walls to flake, micro-fracture, and fail under standard household water pressure."
+      },
+      {
+        "q": "How can a buyer negotiate when polybutylene pipes are found?",
+        "a": "Our comprehensive inspection report documents the presence of polybutylene piping with photographic evidence, allowing your real estate agent to negotiate a seller credit, price reduction, or complete pre-closing repipe."
       }
     ]
   }

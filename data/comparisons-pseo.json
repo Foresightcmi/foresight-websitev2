@@ -4,19 +4,43 @@
     "title": "Two-Inspector Team vs. Single Inspector | Foresight Advantage",
     "metaTitle": "Two-Inspector Team vs Single Inspector | Foresight Difference",
     "metaDescription": "Discover why a two-inspector team provides 2x coverage, faster reporting, and zero missed defects compared to single-person home inspections in Atlanta.",
-    "icon": "👥",
+    "icon": "\ud83d\udc65",
     "badge": "Decision Framework",
     "image": "/images/two-inspectors-electrical-panel-inspection.jpg",
     "imageAlt": "Two Certified Home Inspectors from Foresight evaluating an electrical service panel with a flashlight and documentation clipboard during an Atlanta home inspection",
     "headline": "Why One Inspector Isn't Enough for Your Biggest Financial Investment",
     "summary": "Think about how exhausting it is to stare at hundreds of tiny details for four hours straight. That's exactly what a solo inspector does, and it's naturally when fatigue sets in and critical defects get overlooked. We send two certified inspectors to every home because two fresh sets of eyes are always better than one tired one.",
     "comparisonTable": [
-      { "feature": "Inspectors On Site", "foresight": "2 Certified Inspectors", "competitors": "1 Solo Inspector" },
-      { "feature": "Time On Site", "foresight": "1.5 to 2.5 Hours (Efficient & Focused)", "competitors": "3.5 to 5 Hours (Fatiguing)" },
-      { "feature": "Coverage & Thoroughness", "foresight": "Cross-checked dual audits", "competitors": "Single-pair of eyes" },
-      { "feature": "Thermal Imaging Included", "foresight": "YES — FLIR Thermal Camera Free", "competitors": "Often $75–$150 Extra" },
-      { "feature": "Warranty Included", "foresight": "YES — $10,000 Elite Master Plan ($0 Deductible)", "competitors": "None or limited 90-day basic" },
-      { "feature": "Report Turnaround", "foresight": "Same-day / Within 24 Hours", "competitors": "24–48 Hours" }
+      {
+        "feature": "Inspectors On Site",
+        "foresight": "2 Certified Inspectors",
+        "competitors": "1 Solo Inspector"
+      },
+      {
+        "feature": "Time On Site",
+        "foresight": "1.5 to 2.5 Hours (Efficient & Focused)",
+        "competitors": "3.5 to 5 Hours (Fatiguing)"
+      },
+      {
+        "feature": "Coverage & Thoroughness",
+        "foresight": "Cross-checked dual audits",
+        "competitors": "Single-pair of eyes"
+      },
+      {
+        "feature": "Thermal Imaging Included",
+        "foresight": "YES \u2014 FLIR Thermal Camera Free",
+        "competitors": "Often $75\u2013$150 Extra"
+      },
+      {
+        "feature": "Warranty Included",
+        "foresight": "YES \u2014 $10,000 Elite Master Plan ($0 Deductible)",
+        "competitors": "None or limited 90-day basic"
+      },
+      {
+        "feature": "Report Turnaround",
+        "foresight": "Same-day / Within 24 Hours",
+        "competitors": "24\u201348 Hours"
+      }
     ],
     "benefits": [
       "Cross-Verification: Two certified inspectors double-check critical attic, foundation, electrical, and roof systems so nothing slips through the cracks.",
@@ -39,16 +63,36 @@
     "title": "11-Month Warranty Inspection vs. Builder 1-Year Walkthrough",
     "metaTitle": "11-Month Warranty Inspection vs Builder Walkthrough",
     "metaDescription": "Understand the difference between an independent 11-month builder warranty inspection and a builder walkthrough in Atlanta. Protect your investment.",
-    "icon": "🏗️",
+    "icon": "\ud83c\udfd7\ufe0f",
     "badge": "New Construction Guide",
     "headline": "Don't Let Your Builder's 1-Year Warranty Expire Without an Independent Audit",
     "summary": "When you buy a brand-new home in Georgia, builders offer a 1-year warranty on workmanship and materials. Near month 11, builders conduct a cosmetic 'walkthrough'. Without an independent Certified Master Inspector audit, major structural, roof, and HVAC defects will remain hidden until you pay for them out of pocket.",
     "comparisonTable": [
-      { "feature": "Inspector Independence", "foresight": "Unbiased, working 100% for YOU", "competitors": "Builder employee / Subcontractor" },
-      { "feature": "Attic & Roof Evaluation", "foresight": "Full attic crawl & aerial drone scan", "competitors": "Visual ground check only" },
-      { "feature": "Thermal Imaging Scan", "foresight": "FLIR scan for missing insulation & leaks", "competitors": "Not performed" },
-      { "feature": "Report Format", "foresight": "Builder-ready technical punch list with photos", "competitors": "Handwritten cosmetic checklist" },
-      { "feature": "Financial Impact", "foresight": "Builder pays 100% of repair costs", "competitors": "You pay after month 12" }
+      {
+        "feature": "Inspector Independence",
+        "foresight": "Unbiased, working 100% for YOU",
+        "competitors": "Builder employee / Subcontractor"
+      },
+      {
+        "feature": "Attic & Roof Evaluation",
+        "foresight": "Full attic crawl & aerial drone scan",
+        "competitors": "Visual ground check only"
+      },
+      {
+        "feature": "Thermal Imaging Scan",
+        "foresight": "FLIR scan for missing insulation & leaks",
+        "competitors": "Not performed"
+      },
+      {
+        "feature": "Report Format",
+        "foresight": "Builder-ready technical punch list with photos",
+        "competitors": "Handwritten cosmetic checklist"
+      },
+      {
+        "feature": "Financial Impact",
+        "foresight": "Builder pays 100% of repair costs",
+        "competitors": "You pay after month 12"
+      }
     ],
     "benefits": [
       "Catches Hidden Settlement & Truss Defects: Identifies roof truss uplift, foundation settling, and unsealed exterior wall flashings before warranty expiration.",
@@ -71,17 +115,41 @@
     "title": "Pre-Purchase Home Inspection vs. Mortgage Bank Appraisal",
     "metaTitle": "Home Inspection vs Bank Appraisal | Key Differences",
     "metaDescription": "Learn the critical differences between a home inspection and a bank appraisal in Metro Atlanta. Know what each evaluates before buying a home.",
-    "icon": "⚖️",
+    "icon": "\u2696\ufe0f",
     "badge": "Homebuyer Education",
     "headline": "An Appraisal Protects the Bank. A Home Inspection Protects YOU.",
     "summary": "Many first-time homebuyers confuse a bank appraisal with a professional home inspection. An appraiser estimates fair market value for the lender in a 20-minute visit. A Certified Master Inspector spends hours evaluating physical condition, safety hazards, and major mechanical systems.",
     "comparisonTable": [
-      { "feature": "Primary Purpose", "foresight": "Evaluate physical condition & safety", "competitors": "Estimate market value for bank loan" },
-      { "feature": "Client Loyalty", "foresight": "Works exclusively for the BUYER", "competitors": "Works for the LENDER" },
-      { "feature": "Depth of Evaluation", "foresight": "Detailed 400+ point system audit", "competitors": "High-level surface walkthrough" },
-      { "feature": "Attic, Crawlspace & Roof", "foresight": "Full physical crawl & drone check", "competitors": "Usually excluded" },
-      { "feature": "Thermal Imaging", "foresight": "Included on every inspection", "competitors": "Never performed" },
-      { "feature": "Report Output", "foresight": "Detailed 40+ page report with photos", "competitors": "1-page valuation summary" }
+      {
+        "feature": "Primary Purpose",
+        "foresight": "Evaluate physical condition & safety",
+        "competitors": "Estimate market value for bank loan"
+      },
+      {
+        "feature": "Client Loyalty",
+        "foresight": "Works exclusively for the BUYER",
+        "competitors": "Works for the LENDER"
+      },
+      {
+        "feature": "Depth of Evaluation",
+        "foresight": "Detailed 400+ point system audit",
+        "competitors": "High-level surface walkthrough"
+      },
+      {
+        "feature": "Attic, Crawlspace & Roof",
+        "foresight": "Full physical crawl & drone check",
+        "competitors": "Usually excluded"
+      },
+      {
+        "feature": "Thermal Imaging",
+        "foresight": "Included on every inspection",
+        "competitors": "Never performed"
+      },
+      {
+        "feature": "Report Output",
+        "foresight": "Detailed 40+ page report with photos",
+        "competitors": "1-page valuation summary"
+      }
     ],
     "benefits": [
       "Uncovers Costly Mechanical Failures: Appraisers don't open electrical panels or test heat exchangers; home inspectors do.",
@@ -104,15 +172,31 @@
     "title": "FLIR Thermal Imaging vs. Standard Visual Home Inspection",
     "metaTitle": "Thermal Imaging vs Visual Inspection | FLIR Advantage",
     "metaDescription": "See why FLIR thermal imaging technology detects hidden moisture, electrical hotspots, and missing insulation that visual inspections miss.",
-    "icon": "📷",
+    "icon": "\ud83d\udcf7",
     "badge": "High-Tech Diagnostics",
     "headline": "Seeing the Invisible: Why Visual Inspections Miss Major Hidden Defects",
     "summary": "A traditional visual home inspection relies strictly on what the human eye can see. FLIR infrared thermal cameras detect temperature differences across surfaces, revealing hidden water leaks behind drywall, missing insulation inside finished ceilings, and dangerous electrical hotspots before they cause damage.",
     "comparisonTable": [
-      { "feature": "Hidden Moisture Detection", "foresight": "FLIR Thermal Camera scans all walls", "competitors": "Visual check for surface stains only" },
-      { "feature": "Electrical Hotspot Detection", "foresight": "Thermal scan of breakers & outlets", "competitors": "Visual check of panel cover" },
-      { "feature": "Insulation Void Checks", "foresight": "Scans finished walls & ceilings", "competitors": "Assumes insulation is present" },
-      { "feature": "Cost to Homebuyer", "foresight": "FREE on every Foresight inspection", "competitors": "Extra $75–$150 fee or unavailable" }
+      {
+        "feature": "Hidden Moisture Detection",
+        "foresight": "FLIR Thermal Camera scans all walls",
+        "competitors": "Visual check for surface stains only"
+      },
+      {
+        "feature": "Electrical Hotspot Detection",
+        "foresight": "Thermal scan of breakers & outlets",
+        "competitors": "Visual check of panel cover"
+      },
+      {
+        "feature": "Insulation Void Checks",
+        "foresight": "Scans finished walls & ceilings",
+        "competitors": "Assumes insulation is present"
+      },
+      {
+        "feature": "Cost to Homebuyer",
+        "foresight": "FREE on every Foresight inspection",
+        "competitors": "Extra $75\u2013$150 fee or unavailable"
+      }
     ],
     "benefits": [
       "Detects Active Plumbing Leaks Behind Drywall: Pinpoints water leaks under shower pans and roof valleys before stains appear.",
@@ -127,6 +211,63 @@
       {
         "q": "Does Foresight charge extra for thermal imaging?",
         "a": "No! We include FLIR thermal imaging scans on every single home inspection at zero extra cost."
+      }
+    ]
+  },
+  {
+    "slug": "new-construction-inspection-vs-county-building-inspector",
+    "title": "Independent Home Inspection vs. City/County Code Inspector | New Construction GA",
+    "metaTitle": "Independent Inspection vs County Code Inspector Atlanta GA",
+    "metaDescription": "Understand why city and county building code inspections do not replace an independent Certified Master Inspector for Georgia new construction homes.",
+    "icon": "\ud83c\udfdb\ufe0f",
+    "badge": "Code vs Quality Audit",
+    "headline": "Why City and County Building Inspectors Do Not Replace an Independent Home Inspection",
+    "summary": "Many buyers assume municipal county inspectors thoroughly audit their new construction home before issuing a Certificate of Occupancy (CO). In reality, county code officials spend only 10 to 15 minutes per home checking bare-minimum life safety codes, completely ignoring HVAC airflow balancing, roof flashing integrity, insulation voids, and structural craftsmanship.",
+    "comparisonTable": [
+      {
+        "feature": "Time On Site",
+        "foresight": "1.5 to 2.5 Hours (Deep Forensic Audit)",
+        "competitors": "10 to 15 Minutes (Rushed Code Check)"
+      },
+      {
+        "feature": "Attic & Roof Crawl",
+        "foresight": "Full attic crawl & aerial drone inspection",
+        "competitors": "Quick head-in-hatch or ground glance"
+      },
+      {
+        "feature": "Thermal Imaging (FLIR)",
+        "foresight": "Included Free \u2014 detects hidden insulation voids & duct leaks",
+        "competitors": "Not performed"
+      },
+      {
+        "feature": "Workmanship & Quality",
+        "foresight": "Complete cosmetic, functional & diagnostic evaluation",
+        "competitors": "Code minimum compliance only"
+      },
+      {
+        "feature": "Accountability",
+        "foresight": "Works 100% for YOU (the buyer)",
+        "competitors": "Municipal government employee"
+      },
+      {
+        "feature": "Detailed Report",
+        "foresight": "Comprehensive PDF with high-res photos & builder punch list",
+        "competitors": "Pass/Fail sign-off card"
+      }
+    ],
+    "benefits": [
+      "Catches Non-Code Quality Defects: Identifies misaligned roof shingles, uninsulated exterior wall cavities, ductwork disconnections, and grading drainage flaws that code officials ignore.",
+      "Protects Your Contract Rights: Provides a detailed, photographic punch list to hold your builder accountable before closing and final escrow disbursement.",
+      "Dual-Inspector Precision: Two certified inspectors double-check every phase (pre-drywall, final walkthrough, 11-month warranty) to ensure your new build is flawless."
+    ],
+    "faqs": [
+      {
+        "q": "Doesn't the county inspector certify that my new home is defect-free?",
+        "a": "No. A Certificate of Occupancy (CO) from the county only verifies that the home meets bare-minimum municipal safety codes. It does not certify quality, energy efficiency, proper HVAC installation, or cosmetic craftsmanship."
+      },
+      {
+        "q": "When should I hire an independent inspector for new construction?",
+        "a": "We recommend a 3-phase inspection: Phase 1 (Pre-Pour Foundation), Phase 2 (Pre-Drywall Framing & Mechanicals), and Phase 3 (Final Pre-Closing Inspection with FLIR Thermal Imaging)."
       }
     ]
   }
