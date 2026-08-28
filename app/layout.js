@@ -647,7 +647,8 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/images/Logopng.webp" type="image/webp" sizes="96x96" />
         <link rel="apple-touch-icon" href="/images/Logopng.webp" />
-        <link rel="preload" as="image" href="/images/luxury-home.webp" type="image/webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/luxury-home-mobile.webp" type="image/webp" media="(max-width: 640px)" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/luxury-home.webp" type="image/webp" media="(min-width: 641px)" fetchPriority="high" />
         <meta name="geo.region" content="US-GA" />
         <meta name="geo.placename" content="Lithonia" />
         <meta name="geo.position" content="33.7275;-84.1444" />
@@ -658,16 +659,33 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-F5NKKNS7B7" />
         <Script
-          id="google-analytics"
-          strategy="lazyOnload"
+          id="google-analytics-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-F5NKKNS7B7');
+              gtag('config', 'G-F5NKKNS7B7', { send_page_view: true });
+              
+              function loadGtag() {
+                if (window.gtagLoaded) return;
+                window.gtagLoaded = true;
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F5NKKNS7B7';
+                script.async = true;
+                document.head.appendChild(script);
+              }
+              
+              if ('requestIdleCallback' in window) {
+                requestIdleCallback(function() { setTimeout(loadGtag, 2500); });
+              } else {
+                setTimeout(loadGtag, 3500);
+              }
+              ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(e) {
+                window.addEventListener(e, loadGtag, { once: true, passive: true });
+              });
             `,
           }}
         />

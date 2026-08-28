@@ -174,16 +174,18 @@ export default function Home() {
       />
       <section className="hero" style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '6rem 0 5rem' }}>
         {/* Full-bleed background image */}
-        <Image
-          src="/images/luxury-home.webp"
-          alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
-          quality={68}
-          style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
-        />
+        <picture>
+          <source media="(max-width: 640px)" srcSet="/images/luxury-home-mobile.webp" type="image/webp" />
+          <source srcSet="/images/luxury-home.webp" type="image/webp" />
+          <img
+            src="/images/luxury-home.webp"
+            alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
+          />
+        </picture>
         {/* Dark gradient overlay for text readability */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15,23,42,0.82) 0%, rgba(15,23,42,0.68) 40%, rgba(15,23,42,0.85) 100%)', zIndex: 1 }} />
 
