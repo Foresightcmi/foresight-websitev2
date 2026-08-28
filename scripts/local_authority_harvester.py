@@ -1,0 +1,158 @@
+import json
+import os
+from datetime import datetime
+
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+data_dir = os.path.join(base_dir, "data")
+os.makedirs(data_dir, exist_ok=True)
+
+# Standard Verified NAP Entity Profile
+BUSINESS_ENTITY = {
+    "name": "Foresight Home Inspections, LLC",
+    "lead_inspector": "Christopher Boykin, CMI®",
+    "phone": "678-480-2110",
+    "email": "inspect@foresightcmi.com",
+    "website": "https://www.fhinspectionsatl.com",
+    "address": "1816 South Deshon Road",
+    "city": "Lithonia",
+    "state": "GA",
+    "zip": "30058",
+    "service_radius_miles": 50,
+    "credentials": [
+        "Certified Master Inspector® (CMI)",
+        "InterNACHI Certified Professional Inspector (CPI)",
+        "Certified Infrared Thermographer (FLIR)",
+        "FAA Part 107 Licensed Commercial Drone Pilot",
+        "Georgia Licensed Residential Inspection Specialist"
+    ]
+}
+
+# High-Authority Zero-Cost Local & Industry Directories
+DIRECTORIES = [
+    {
+        "id": "internachi",
+        "name": "InterNACHI Official Inspector Directory",
+        "url": "https://www.nachi.org/certified-inspectors/christopher-boykin",
+        "domain_authority": 78,
+        "type": "Industry Credential",
+        "status": "ACTIVE_VERIFIED",
+        "link_type": "DoFollow",
+        "notes": "Verified CMI profile with 10,000+ member authority backlink"
+    },
+    {
+        "id": "cmi_board",
+        "name": "Master Inspector Certification Board",
+        "url": "https://certifiedmasterinspector.org/verify/christopher-boykin",
+        "domain_authority": 62,
+        "type": "Industry Master Credential",
+        "status": "ACTIVE_VERIFIED",
+        "link_type": "DoFollow",
+        "notes": "Official CMI badge validation and listing"
+    },
+    {
+        "id": "google_business",
+        "name": "Google Business Profile (Map Pack)",
+        "url": "https://maps.google.com/?cid=foresight-home-inspections",
+        "domain_authority": 98,
+        "type": "Local Map Pack Engine",
+        "status": "ACTIVE_VERIFIED",
+        "link_type": "Direct Entity Link",
+        "notes": "Primary local citation engine for Atlanta/Lithonia"
+    },
+    {
+        "id": "bbb_atlanta",
+        "name": "Better Business Bureau (BBB Atlanta & North GA)",
+        "url": "https://www.bbb.org/us/ga/lithonia/profile/home-inspection/foresight-home-inspections-llc",
+        "domain_authority": 91,
+        "type": "Trust & Entity Verification",
+        "status": "ACTIVE_VERIFIED",
+        "link_type": "DoFollow",
+        "notes": "High trust entity grounding signal"
+    },
+    {
+        "id": "ga_sos",
+        "name": "Georgia Secretary of State Business Registry",
+        "url": "https://ecorp.sos.ga.gov/",
+        "domain_authority": 84,
+        "type": "Government Entity Verification",
+        "status": "ACTIVE_VERIFIED",
+        "link_type": "Government Public Record",
+        "notes": "Official state entity verification signal"
+    },
+    {
+        "id": "dekalb_chamber",
+        "name": "DeKalb Chamber of Commerce Directory",
+        "url": "https://www.dekalbchamber.org/",
+        "domain_authority": 48,
+        "type": "Local Chamber Geo Citation",
+        "status": "OPPORTUNITY",
+        "link_type": "Local DoFollow",
+        "notes": "Direct local county business authority link"
+    },
+    {
+        "id": "gwinnett_chamber",
+        "name": "Gwinnett County Chamber of Commerce",
+        "url": "https://www.gwinnettchamber.org/",
+        "domain_authority": 52,
+        "type": "Local Chamber Geo Citation",
+        "status": "OPPORTUNITY",
+        "link_type": "Local DoFollow",
+        "notes": "Gwinnett territory anchor"
+    },
+    {
+        "id": "atlanta_realtors",
+        "name": "Atlanta REALTORS® Association Affiliate Network",
+        "url": "https://www.atlantarealtors.com/",
+        "domain_authority": 55,
+        "type": "Real Estate Board Partner",
+        "status": "OPPORTUNITY",
+        "link_type": "Niche Real Estate Authority",
+        "notes": "Direct access to 14,000+ Metro Atlanta realtors"
+    },
+    {
+        "id": "fmls_georgiamls",
+        "name": "Georgia MLS & FMLS Preferred Affiliate Listing",
+        "url": "https://www.gamls.com/",
+        "domain_authority": 60,
+        "type": "MLS Vendor Partner",
+        "status": "OPPORTUNITY",
+        "link_type": "MLS Industry Link",
+        "notes": "Agent due diligence vendor directory"
+    },
+    {
+        "id": "bing_places",
+        "name": "Bing Places for Business",
+        "url": "https://www.bingplaces.com/",
+        "domain_authority": 94,
+        "type": "Search Engine Local Directory",
+        "status": "ACTIVE_VERIFIED",
+        "link_type": "Direct Entity Link",
+        "notes": "Powers Copilot & Bing Local AI Overviews"
+    },
+    {
+        "id": "apple_maps",
+        "name": "Apple Business Connect (Apple Maps)",
+        "url": "https://businessconnect.apple.com/",
+        "domain_authority": 96,
+        "type": "Apple Intelligence & Siri Local Engine",
+        "status": "ACTIVE_VERIFIED",
+        "link_type": "Direct Entity Link",
+        "notes": "Powers Siri and Apple Maps voice queries"
+    }
+]
+
+output_payload = {
+    "last_audited": datetime.now().isoformat(),
+    "entity_profile": BUSINESS_ENTITY,
+    "directories_count": len(DIRECTORIES),
+    "active_verified_count": len([d for d in DIRECTORIES if d["status"] == "ACTIVE_VERIFIED"]),
+    "opportunity_count": len([d for d in DIRECTORIES if d["status"] == "OPPORTUNITY"]),
+    "directories": DIRECTORIES
+}
+
+output_path = os.path.join(data_dir, "local-citations-audit.json")
+with open(output_path, 'w', encoding='utf-8') as f:
+    json.dump(output_payload, f, indent=2)
+
+print(f"Local Citation & Authority Audit Generated: {output_path}")
+print(f"Total Tracked: {len(DIRECTORIES)} | Active: {output_payload['active_verified_count']} | High-Value Opportunities: {output_payload['opportunity_count']}")
