@@ -647,6 +647,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/images/Logopng.webp" type="image/webp" sizes="96x96" />
         <link rel="apple-touch-icon" href="/images/Logopng.webp" />
+        <link rel="preload" as="image" href="/images/luxury-home.webp" type="image/webp" fetchPriority="high" />
         <meta name="geo.region" content="US-GA" />
         <meta name="geo.placename" content="Lithonia" />
         <meta name="geo.position" content="33.7275;-84.1444" />
