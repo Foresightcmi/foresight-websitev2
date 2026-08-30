@@ -20,6 +20,9 @@ export default function DashboardPage() {
   const comparisonsFilePath = path.join(process.cwd(), 'data', 'comparisons-pseo.json');
   const neighborhoodsFilePath = path.join(process.cwd(), 'data', 'neighborhoods-pseo.json');
 
+  const citationsFilePath = path.join(process.cwd(), 'data', 'local-citations-audit.json');
+  const realtorFilePath = path.join(process.cwd(), 'data', 'realtor-outreach-campaign.json');
+
   let posts = [];
   let cities = [];
   let counties = [];
@@ -27,6 +30,8 @@ export default function DashboardPage() {
   let defects = [];
   let comparisons = [];
   let neighborhoods = [];
+  let citationsData = null;
+  let realtorData = null;
 
   try {
     posts = JSON.parse(fs.readFileSync(postsFilePath, 'utf8'));
@@ -36,6 +41,12 @@ export default function DashboardPage() {
     defects = JSON.parse(fs.readFileSync(defectsFilePath, 'utf8'));
     comparisons = JSON.parse(fs.readFileSync(comparisonsFilePath, 'utf8'));
     neighborhoods = JSON.parse(fs.readFileSync(neighborhoodsFilePath, 'utf8'));
+    if (fs.existsSync(citationsFilePath)) {
+      citationsData = JSON.parse(fs.readFileSync(citationsFilePath, 'utf8'));
+    }
+    if (fs.existsSync(realtorFilePath)) {
+      realtorData = JSON.parse(fs.readFileSync(realtorFilePath, 'utf8'));
+    }
   } catch (e) {
     console.error('Error loading data files for dashboard:', e);
   }
@@ -148,8 +159,10 @@ export default function DashboardPage() {
     });
   }
 
+  const totalStaticPages = 15 + posts.length + cities.length + counties.length + (cities.length * services.length) + defects.length + comparisons.length + neighborhoods.length;
+
   const inventory = {
-    totalStaticPages: 703,
+    totalStaticPages: totalStaticPages,
     totalPosts: posts.length,
     totalCities: cities.length,
     totalCounties: counties.length,
@@ -165,6 +178,8 @@ export default function DashboardPage() {
     <DashboardClient 
       initialKeywords={allKeywords}
       inventory={inventory}
+      citationsData={citationsData}
+      realtorData={realtorData}
     />
   );
 }
