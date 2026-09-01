@@ -1,137 +1,231 @@
 {
-  "last_audited": "2026-08-28T13:41:04.046955",
+  "last_audited": "2026-08-31T21:33:14.706193",
   "entity_profile": {
-    "name": "Foresight Home Inspections, LLC",
+    "business_name": "Foresight Home Inspections, LLC",
+    "dba_name": "Foresight Home Inspections",
     "lead_inspector": "Christopher Boykin, CMI\u00ae",
     "phone": "678-480-2110",
     "email": "inspect@foresightcmi.com",
     "website": "https://www.fhinspectionsatl.com",
-    "address": "1816 South Deshon Road",
-    "city": "Lithonia",
-    "state": "GA",
-    "zip": "30058",
-    "service_radius_miles": 50,
+    "address_street": "1816 South Deshon Road",
+    "address_city": "Lithonia",
+    "address_state": "GA",
+    "address_zip": "30058",
+    "service_area": "Metro Atlanta (Exact 50-Mile Radius Covering Fulton, DeKalb, Gwinnett, Cobb, Forsyth, Clayton, Cherokee, Henry, Douglas, Fayette, Rockdale, Newton, Paulding, Hall, Coweta, Walton, Barrow, Spalding, Carroll, Bartow Counties)",
+    "primary_category": "Home Inspector",
+    "secondary_categories": [
+      "Building Inspector",
+      "Real Estate Inspection Service",
+      "Environmental Testing Service",
+      "Radon Testing Service",
+      "Commercial Real Estate Inspector"
+    ],
     "credentials": [
-      "Certified Master Inspector\u00ae (CMI)",
+      "Certified Master Inspector\u00ae (CMI) #176873",
       "InterNACHI Certified Professional Inspector (CPI)",
-      "Certified Infrared Thermographer (FLIR)",
+      "Certified Infrared Thermographer (FLIR Building Science)",
       "FAA Part 107 Licensed Commercial Drone Pilot",
-      "Georgia Licensed Residential Inspection Specialist"
-    ]
+      "Georgia Residential & New Construction Inspection Specialist"
+    ],
+    "hours": "Mon-Sat: 8:00 AM - 8:00 PM | Sun: By Appointment Only",
+    "short_description": "Premier Metro Atlanta home inspection company led by Certified Master Inspector\u00ae Christopher Boykin. Two certified inspectors on every job with thermal imaging, drone scans, and $10,000 warranty protection included.",
+    "long_description": "Foresight Home Inspections is Metro Atlanta's premier Certified Master Inspector\u00ae-led home inspection firm. We deploy our signature Two-Inspector Standard to every property, delivering thorough, non-invasive evaluations in half the on-site time. Services include residential pre-purchase home inspections, pre-listing seller inspections, new construction pre-drywall and 11-month warranty checks, continuous radon gas testing, fiber-optic sewer scope video inspections, Georgia WDO/termite reports, pool and spa assessments, and short-term rental (STR) compliance inspections. Every standard inspection is backed by our $10,000 Elite Master Inspection Warranty."
   },
-  "directories_count": 11,
+  "directories_count": 16,
   "active_verified_count": 7,
-  "opportunity_count": 4,
+  "opportunity_count": 9,
   "directories": [
     {
       "id": "internachi",
       "name": "InterNACHI Official Inspector Directory",
+      "category": "Master Credential & Industry",
       "url": "https://www.nachi.org/certified-inspectors/christopher-boykin",
+      "claim_url": "https://www.nachi.org/profile",
       "domain_authority": 78,
-      "type": "Industry Credential",
       "status": "ACTIVE_VERIFIED",
       "link_type": "DoFollow",
+      "impact": "CRITICAL",
       "notes": "Verified CMI profile with 10,000+ member authority backlink"
     },
     {
       "id": "cmi_board",
       "name": "Master Inspector Certification Board",
+      "category": "Master Credential & Industry",
       "url": "https://certifiedmasterinspector.org/verify/christopher-boykin",
+      "claim_url": "https://certifiedmasterinspector.org/members",
       "domain_authority": 62,
-      "type": "Industry Master Credential",
       "status": "ACTIVE_VERIFIED",
       "link_type": "DoFollow",
-      "notes": "Official CMI badge validation and listing"
+      "impact": "CRITICAL",
+      "notes": "Official CMI badge validation and Board listing"
     },
     {
       "id": "google_business",
       "name": "Google Business Profile (Map Pack)",
+      "category": "Search & Voice Engines",
       "url": "https://maps.google.com/?cid=foresight-home-inspections",
+      "claim_url": "https://business.google.com/",
       "domain_authority": 98,
-      "type": "Local Map Pack Engine",
       "status": "ACTIVE_VERIFIED",
       "link_type": "Direct Entity Link",
-      "notes": "Primary local citation engine for Atlanta/Lithonia"
+      "impact": "CRITICAL",
+      "notes": "Primary local Map Pack citation engine for Atlanta/Lithonia"
     },
     {
       "id": "bbb_atlanta",
       "name": "Better Business Bureau (BBB Atlanta & North GA)",
+      "category": "Trust & Entity Verification",
       "url": "https://www.bbb.org/us/ga/lithonia/profile/home-inspection/foresight-home-inspections-llc",
+      "claim_url": "https://www.bbb.org/get-listed",
       "domain_authority": 91,
-      "type": "Trust & Entity Verification",
       "status": "ACTIVE_VERIFIED",
       "link_type": "DoFollow",
-      "notes": "High trust entity grounding signal"
+      "impact": "HIGH",
+      "notes": "Highest-trust commercial entity grounding signal in GA"
     },
     {
       "id": "ga_sos",
-      "name": "Georgia Secretary of State Business Registry",
+      "name": "Georgia Secretary of State Corporate Registry",
+      "category": "Government & Legal",
       "url": "https://ecorp.sos.ga.gov/",
+      "claim_url": "https://ecorp.sos.ga.gov/",
       "domain_authority": 84,
-      "type": "Government Entity Verification",
       "status": "ACTIVE_VERIFIED",
       "link_type": "Government Public Record",
-      "notes": "Official state entity verification signal"
-    },
-    {
-      "id": "dekalb_chamber",
-      "name": "DeKalb Chamber of Commerce Directory",
-      "url": "https://www.dekalbchamber.org/",
-      "domain_authority": 48,
-      "type": "Local Chamber Geo Citation",
-      "status": "OPPORTUNITY",
-      "link_type": "Local DoFollow",
-      "notes": "Direct local county business authority link"
-    },
-    {
-      "id": "gwinnett_chamber",
-      "name": "Gwinnett County Chamber of Commerce",
-      "url": "https://www.gwinnettchamber.org/",
-      "domain_authority": 52,
-      "type": "Local Chamber Geo Citation",
-      "status": "OPPORTUNITY",
-      "link_type": "Local DoFollow",
-      "notes": "Gwinnett territory anchor"
-    },
-    {
-      "id": "atlanta_realtors",
-      "name": "Atlanta REALTORS\u00ae Association Affiliate Network",
-      "url": "https://www.atlantarealtors.com/",
-      "domain_authority": 55,
-      "type": "Real Estate Board Partner",
-      "status": "OPPORTUNITY",
-      "link_type": "Niche Real Estate Authority",
-      "notes": "Direct access to 14,000+ Metro Atlanta realtors"
-    },
-    {
-      "id": "fmls_georgiamls",
-      "name": "Georgia MLS & FMLS Preferred Affiliate Listing",
-      "url": "https://www.gamls.com/",
-      "domain_authority": 60,
-      "type": "MLS Vendor Partner",
-      "status": "OPPORTUNITY",
-      "link_type": "MLS Industry Link",
-      "notes": "Agent due diligence vendor directory"
+      "impact": "CRITICAL",
+      "notes": "Official state legal entity registration verification"
     },
     {
       "id": "bing_places",
       "name": "Bing Places for Business",
+      "category": "Search & Voice Engines",
       "url": "https://www.bingplaces.com/",
+      "claim_url": "https://www.bingplaces.com/",
       "domain_authority": 94,
-      "type": "Search Engine Local Directory",
       "status": "ACTIVE_VERIFIED",
       "link_type": "Direct Entity Link",
-      "notes": "Powers Copilot & Bing Local AI Overviews"
+      "impact": "HIGH",
+      "notes": "Powers Microsoft Copilot & Bing Local AI Overviews"
     },
     {
       "id": "apple_maps",
       "name": "Apple Business Connect (Apple Maps)",
+      "category": "Search & Voice Engines",
       "url": "https://businessconnect.apple.com/",
+      "claim_url": "https://businessconnect.apple.com/",
       "domain_authority": 96,
-      "type": "Apple Intelligence & Siri Local Engine",
       "status": "ACTIVE_VERIFIED",
       "link_type": "Direct Entity Link",
-      "notes": "Powers Siri and Apple Maps voice queries"
+      "impact": "HIGH",
+      "notes": "Powers Siri Voice Search and Apple Maps local results"
+    },
+    {
+      "id": "yelp_atlanta",
+      "name": "Yelp for Business (Atlanta & DeKalb)",
+      "category": "Local Consumer Reviews",
+      "url": "https://biz.yelp.com/claim",
+      "claim_url": "https://biz.yelp.com/claim",
+      "domain_authority": 94,
+      "status": "OPPORTUNITY",
+      "link_type": "DoFollow / Entity",
+      "impact": "HIGH",
+      "notes": "Powers Apple Maps review syndication and Yahoo Local search"
+    },
+    {
+      "id": "nextdoor_atlanta",
+      "name": "Nextdoor for Business (Metro Atlanta Neighborhoods)",
+      "category": "Hyperlocal Community",
+      "url": "https://business.nextdoor.com/en-us/small-business",
+      "claim_url": "https://business.nextdoor.com/en-us/small-business",
+      "domain_authority": 92,
+      "status": "OPPORTUNITY",
+      "link_type": "Hyperlocal Entity",
+      "impact": "HIGH",
+      "notes": "Direct neighborhood trust in Lithonia, Decatur, Buckhead, Alpharetta"
+    },
+    {
+      "id": "dekalb_chamber",
+      "name": "DeKalb Chamber of Commerce Directory",
+      "category": "Local Chamber & Geo Anchor",
+      "url": "https://www.dekalbchamber.org/",
+      "claim_url": "https://www.dekalbchamber.org/join-the-chamber/",
+      "domain_authority": 48,
+      "status": "OPPORTUNITY",
+      "link_type": "Local DoFollow",
+      "impact": "HIGH",
+      "notes": "Direct local county business authority link for headquarters location"
+    },
+    {
+      "id": "gwinnett_chamber",
+      "name": "Gwinnett County Chamber of Commerce",
+      "category": "Local Chamber & Geo Anchor",
+      "url": "https://www.gwinnettchamber.org/",
+      "claim_url": "https://www.gwinnettchamber.org/membership/",
+      "domain_authority": 52,
+      "status": "OPPORTUNITY",
+      "link_type": "Local DoFollow",
+      "impact": "MEDIUM",
+      "notes": "Gwinnett expansion territory anchor"
+    },
+    {
+      "id": "atlanta_realtors",
+      "name": "Atlanta REALTORS\u00ae Association (ARA Affiliate)",
+      "category": "Realtor & Brokerage Networks",
+      "url": "https://www.atlantarealtors.com/",
+      "claim_url": "https://www.atlantarealtors.com/membership/affiliate-membership",
+      "domain_authority": 55,
+      "status": "OPPORTUNITY",
+      "link_type": "Niche Real Estate Authority",
+      "impact": "HIGH",
+      "notes": "Direct access to 14,000+ active Metro Atlanta real estate agents"
+    },
+    {
+      "id": "fmls_georgiamls",
+      "name": "Georgia MLS & FMLS Preferred Vendor Roster",
+      "category": "Realtor & Brokerage Networks",
+      "url": "https://www.gamls.com/",
+      "claim_url": "https://www.gamls.com/",
+      "domain_authority": 60,
+      "status": "OPPORTUNITY",
+      "link_type": "MLS Industry Link",
+      "impact": "HIGH",
+      "notes": "Agent due diligence vendor directory and buyer guide insertion"
+    },
+    {
+      "id": "yellowpages",
+      "name": "YellowPages / The Real Yellow Pages",
+      "category": "National Business Citations",
+      "url": "https://www.yellowpages.com/",
+      "claim_url": "https://adsolutions.yp.com/free-listing-claim",
+      "domain_authority": 89,
+      "status": "OPPORTUNITY",
+      "link_type": "Citation Anchor",
+      "impact": "MEDIUM",
+      "notes": "Major data aggregator signal for voice search engines"
+    },
+    {
+      "id": "alignable",
+      "name": "Alignable Small Business Network (Atlanta)",
+      "category": "B2B Local Referral Network",
+      "url": "https://www.alignable.com/",
+      "claim_url": "https://www.alignable.com/signup",
+      "domain_authority": 83,
+      "status": "OPPORTUNITY",
+      "link_type": "Local Referral Network",
+      "impact": "MEDIUM",
+      "notes": "Network with Atlanta real estate attorneys, lenders, and brokers"
+    },
+    {
+      "id": "manta",
+      "name": "Manta Small Business Directory",
+      "category": "National Business Citations",
+      "url": "https://www.manta.com/",
+      "claim_url": "https://www.manta.com/add-my-company",
+      "domain_authority": 86,
+      "status": "OPPORTUNITY",
+      "link_type": "Citation Anchor",
+      "impact": "MEDIUM",
+      "notes": "High-authority small business citation indexing signal"
     }
   ]
 }

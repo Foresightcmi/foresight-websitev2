@@ -23,7 +23,7 @@ export default function DashboardClient({
   const [customQuery, setCustomQuery] = useState('');
   const [queryResults, setQueryResults] = useState(null);
   const [loadingQuery, setLoadingQuery] = useState(false);
-  const [copiedIndex, setCopiedIndex] = useState(null);
+  const [copiedKey, setCopiedKey] = useState(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -105,10 +105,10 @@ export default function DashboardClient({
     }
   }
 
-  const handleCopyText = (text, index) => {
+  const handleCopyText = (text, key) => {
     navigator.clipboard.writeText(text);
-    setCopiedIndex(index);
-    setTimeout(() => setCopiedIndex(null), 2500);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 2500);
   };
 
   if (!isClient) {
@@ -129,7 +129,7 @@ export default function DashboardClient({
             Private SEO Command Center
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.75rem', lineHeight: 1.5 }}>
-            This dashboard is private to the owner. Enter your PIN to view keyword rankings, local citations, brokerage campaigns, and autonomous loops.
+            This dashboard is private to the owner. Enter your PIN to view keyword rankings, local authority citations, brokerage campaigns, and autonomous loops.
           </p>
 
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -174,6 +174,11 @@ export default function DashboardClient({
     );
   }
 
+  const profile = citationsData?.entity_profile || {};
+  const activeCount = citationsData?.active_verified_count || 7;
+  const totalCount = citationsData?.directories_count || 16;
+  const scorePercent = Math.round((activeCount / totalCount) * 100);
+
   return (
     <div style={{ background: '#0f172a', minHeight: '100vh', color: '#f8fafc', padding: '2rem 1rem' }}>
       <div className="container" style={{ maxWidth: '1380px', margin: '0 auto' }}>
@@ -189,7 +194,7 @@ export default function DashboardClient({
               Foresight SEO &amp; Operations Command Center
             </h1>
             <p style={{ color: '#94a3b8', margin: '0.25rem 0 0', fontSize: '0.95rem' }}>
-              Tracking All {initialKeywords.length} Search Targets across {inventory.totalCounties || 20} Counties &bull; {citationsData?.directories_count || 11} Authority Citations &bull; {realtorData?.total_target_brokerages || 6} Brokerage Campaigns
+              Tracking All {initialKeywords.length} Search Targets across {inventory.totalCounties || 20} Counties &bull; {totalCount} Authority Citations &bull; {realtorData?.total_target_brokerages || 6} Brokerage Campaigns
             </p>
           </div>
 
@@ -246,8 +251,8 @@ export default function DashboardClient({
 
           <div style={{ background: '#1e293b', border: '1px solid #334155', borderTop: '4px solid #10b981', borderRadius: 'var(--radius-lg)', padding: '1.25rem' }}>
             <span style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Local Authority Score</span>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#ffffff', margin: '0.25rem 0' }}>{citationsData?.active_verified_count || 7} / {citationsData?.directories_count || 11}</div>
-            <p style={{ color: '#4ade80', fontSize: '0.8rem', margin: 0 }}>DA 60–98 Tier-1 Citations</p>
+            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#4ade80', margin: '0.25rem 0' }}>{activeCount} / {totalCount}</div>
+            <p style={{ color: '#4ade80', fontSize: '0.8rem', margin: 0 }}>{scorePercent}% Active &bull; {citationsData?.opportunity_count || 9} Pending</p>
           </div>
 
           <div style={{ background: '#1e293b', border: '1px solid #334155', borderTop: '4px solid #f59e0b', borderRadius: 'var(--radius-lg)', padding: '1.25rem' }}>
@@ -268,7 +273,7 @@ export default function DashboardClient({
         <div style={{ display: 'flex', gap: '0.5rem', borderBottom: '1px solid #334155', marginBottom: '2rem', overflowX: 'auto', paddingBottom: '0.25rem' }}>
           {[
             { id: 'rankings', label: `🎯 Search Targets (${initialKeywords.length})` },
-            { id: 'citations', label: `🏛️ Authority Citations (${citationsData?.directories_count || 11})` },
+            { id: 'citations', label: `🏛️ Authority Citations (${activeCount}/${totalCount})` },
             { id: 'realtors', label: `🤝 Brokerage Outreach (${realtorData?.total_target_brokerages || 6})` },
             { id: 'loops', label: '🔄 Autonomous Daemons (4 Crons)' },
             { id: 'inventory', label: `📦 710-Page Matrix` },
@@ -601,106 +606,196 @@ export default function DashboardClient({
 
         {/* TAB 2: LOCAL CITATIONS & AUTHORITY ENGINE */}
         {activeTab === 'citations' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             
-            {/* NAP Grounding Banner */}
+            {/* Progress / Elevation Header */}
             <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
-                <h3 style={{ fontSize: '1.25rem', color: '#ffffff', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span>🏛️</span> Standard Verified NAP &amp; Entity Profile
-                </h3>
-                <span style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#4ade80', border: '1px solid rgba(34, 197, 94, 0.4)', padding: '0.25rem 0.75rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 600 }}>
-                  100% NAP Consistency Grounded
-                </span>
-              </div>
-              
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', background: '#0f172a', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid #334155', marginBottom: '1.5rem' }}>
                 <div>
-                  <span style={{ color: '#94a3b8', fontSize: '0.75rem', textTransform: 'uppercase' }}>Legal Entity Name</span>
-                  <div style={{ color: '#ffffff', fontWeight: 700, fontSize: '0.95rem' }}>Foresight Home Inspections, LLC</div>
+                  <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
+                    🏛️ Local Authority &amp; Tier-1 Citation Ecosystem ({activeCount} of {totalCount} Active)
+                  </h3>
+                  <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
+                    Elevate your domain authority and Google 3-Pack rankings by claiming the {citationsData?.opportunity_count || 9} pending high-DA citations below.
+                  </p>
                 </div>
-                <div>
-                  <span style={{ color: '#94a3b8', fontSize: '0.75rem', textTransform: 'uppercase' }}>Lead Inspector</span>
-                  <div style={{ color: '#ffffff', fontWeight: 700, fontSize: '0.95rem' }}>Christopher Boykin, CMI®</div>
-                </div>
-                <div>
-                  <span style={{ color: '#94a3b8', fontSize: '0.75rem', textTransform: 'uppercase' }}>Verified Phone</span>
-                  <div style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.95rem' }}>678-480-2110</div>
-                </div>
-                <div>
-                  <span style={{ color: '#94a3b8', fontSize: '0.75rem', textTransform: 'uppercase' }}>Operating Center &amp; Radius</span>
-                  <div style={{ color: '#ffffff', fontWeight: 700, fontSize: '0.95rem' }}>Lithonia, GA (Exact 50-Mile Radius)</div>
+                <div style={{ textAlign: 'right' }}>
+                  <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#4ade80' }}>{scorePercent}%</span>
+                  <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Authority Completion</div>
                 </div>
               </div>
 
-              {/* Citations Directory Table */}
-              <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.9rem' }}>
-                  <thead>
-                    <tr style={{ background: '#0f172a', color: '#94a3b8', borderBottom: '1px solid #334155' }}>
-                      <th style={{ padding: '0.85rem 1rem' }}>Authority Network</th>
-                      <th style={{ padding: '0.85rem 1rem' }}>Type</th>
-                      <th style={{ padding: '0.85rem 1rem' }}>DA</th>
-                      <th style={{ padding: '0.85rem 1rem' }}>Status</th>
-                      <th style={{ padding: '0.85rem 1rem' }}>Strategic Impact</th>
-                      <th style={{ padding: '0.85rem 1rem', textAlign: 'right' }}>Action / URL</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {(citationsData?.directories || []).map((d, i) => (
-                      <tr key={i} style={{ borderBottom: '1px solid #334155' }}>
-                        <td style={{ padding: '0.85rem 1rem', color: '#ffffff', fontWeight: 600 }}>
-                          {d.name}
-                        </td>
-                        <td style={{ padding: '0.85rem 1rem', color: '#94a3b8', fontSize: '0.85rem' }}>
-                          {d.type}
-                        </td>
-                        <td style={{ padding: '0.85rem 1rem' }}>
-                          <span style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700 }}>
-                            DA {d.domain_authority}
-                          </span>
-                        </td>
-                        <td style={{ padding: '0.85rem 1rem' }}>
-                          <span style={{
-                            background: d.status === 'ACTIVE_VERIFIED' ? 'rgba(34, 197, 94, 0.15)' : 'rgba(245, 158, 11, 0.15)',
-                            color: d.status === 'ACTIVE_VERIFIED' ? '#4ade80' : '#fbbf24',
-                            padding: '0.2rem 0.5rem',
-                            borderRadius: '4px',
-                            fontSize: '0.75rem',
-                            fontWeight: 600
-                          }}>
-                            {d.status === 'ACTIVE_VERIFIED' ? '✓ Verified Active' : '⚡ Expansion Target'}
-                          </span>
-                        </td>
-                        <td style={{ padding: '0.85rem 1rem', color: '#cbd5e1', fontSize: '0.85rem' }}>
-                          {d.notes}
-                        </td>
-                        <td style={{ padding: '0.85rem 1rem', textAlign: 'right' }}>
-                          <a
-                            href={d.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                              background: '#334155',
-                              color: '#f8fafc',
-                              padding: '0.35rem 0.75rem',
-                              borderRadius: '4px',
-                              textDecoration: 'none',
-                              fontSize: '0.8rem',
-                              fontWeight: 600,
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.35rem'
-                            }}
-                          >
-                            <span>Inspect</span>
-                            <span>↗</span>
-                          </a>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              {/* Progress Bar */}
+              <div style={{ width: '100%', height: '10px', background: '#0f172a', borderRadius: '5px', overflow: 'hidden', border: '1px solid #334155', marginBottom: '1.5rem' }}>
+                <div style={{ width: `${scorePercent}%`, height: '100%', background: 'linear-gradient(90deg, #3b82f6, #10b981)', borderRadius: '5px', transition: 'width 0.5s ease-in-out' }}></div>
+              </div>
+
+              {/* Quick NAP Copy Kit */}
+              <div style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <h4 style={{ color: '#38bdf8', fontSize: '0.95rem', margin: 0, fontWeight: 700 }}>
+                    📋 1-Click Copy-Paste NAP Data Kit (Use for all directory submissions)
+                  </h4>
+                  <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Click any card to copy</span>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.75rem' }}>
+                  
+                  <div 
+                    onClick={() => handleCopyText(profile.business_name || 'Foresight Home Inspections, LLC', 'nap_name')}
+                    style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-sm)', padding: '0.75rem', cursor: 'pointer', transition: 'all 0.2s' }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.75rem' }}>
+                      <span>BUSINESS NAME</span>
+                      <span style={{ color: copiedKey === 'nap_name' ? '#4ade80' : '#38bdf8' }}>{copiedKey === 'nap_name' ? '✓ Copied' : 'Copy'}</span>
+                    </div>
+                    <div style={{ color: '#ffffff', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.25rem' }}>{profile.business_name || 'Foresight Home Inspections, LLC'}</div>
+                  </div>
+
+                  <div 
+                    onClick={() => handleCopyText(profile.phone || '678-480-2110', 'nap_phone')}
+                    style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-sm)', padding: '0.75rem', cursor: 'pointer', transition: 'all 0.2s' }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.75rem' }}>
+                      <span>VERIFIED PHONE</span>
+                      <span style={{ color: copiedKey === 'nap_phone' ? '#4ade80' : '#38bdf8' }}>{copiedKey === 'nap_phone' ? '✓ Copied' : 'Copy'}</span>
+                    </div>
+                    <div style={{ color: '#ffffff', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.25rem' }}>{profile.phone || '678-480-2110'}</div>
+                  </div>
+
+                  <div 
+                    onClick={() => handleCopyText('1816 South Deshon Road, Lithonia, GA 30058', 'nap_address')}
+                    style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-sm)', padding: '0.75rem', cursor: 'pointer', transition: 'all 0.2s' }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.75rem' }}>
+                      <span>VERIFIED ADDRESS</span>
+                      <span style={{ color: copiedKey === 'nap_address' ? '#4ade80' : '#38bdf8' }}>{copiedKey === 'nap_address' ? '✓ Copied' : 'Copy'}</span>
+                    </div>
+                    <div style={{ color: '#ffffff', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.25rem' }}>1816 South Deshon Road, Lithonia, GA 30058</div>
+                  </div>
+
+                  <div 
+                    onClick={() => handleCopyText(profile.website || 'https://www.fhinspectionsatl.com', 'nap_web')}
+                    style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-sm)', padding: '0.75rem', cursor: 'pointer', transition: 'all 0.2s' }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.75rem' }}>
+                      <span>WEBSITE URL</span>
+                      <span style={{ color: copiedKey === 'nap_web' ? '#4ade80' : '#38bdf8' }}>{copiedKey === 'nap_web' ? '✓ Copied' : 'Copy'}</span>
+                    </div>
+                    <div style={{ color: '#38bdf8', fontWeight: 600, fontSize: '0.9rem', marginTop: '0.25rem' }}>{profile.website || 'https://www.fhinspectionsatl.com'}</div>
+                  </div>
+
+                  <div 
+                    onClick={() => handleCopyText(profile.short_description || '', 'nap_short_bio')}
+                    style={{ gridColumn: 'span 2', background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-sm)', padding: '0.75rem', cursor: 'pointer', transition: 'all 0.2s' }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.75rem' }}>
+                      <span>SHORT BIO (FOR DIRECTORIES WITH CHARACTER LIMITS)</span>
+                      <span style={{ color: copiedKey === 'nap_short_bio' ? '#4ade80' : '#38bdf8' }}>{copiedKey === 'nap_short_bio' ? '✓ Copied' : 'Copy'}</span>
+                    </div>
+                    <div style={{ color: '#cbd5e1', fontSize: '0.85rem', marginTop: '0.25rem', lineHeight: 1.4 }}>{profile.short_description}</div>
+                  </div>
+
+                  <div 
+                    onClick={() => handleCopyText(profile.long_description || '', 'nap_long_bio')}
+                    style={{ gridColumn: 'span 2', background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-sm)', padding: '0.75rem', cursor: 'pointer', transition: 'all 0.2s' }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.75rem' }}>
+                      <span>COMPREHENSIVE BIO (FULL SUBMISSION)</span>
+                      <span style={{ color: copiedKey === 'nap_long_bio' ? '#4ade80' : '#38bdf8' }}>{copiedKey === 'nap_long_bio' ? '✓ Copied' : 'Copy'}</span>
+                    </div>
+                    <div style={{ color: '#cbd5e1', fontSize: '0.85rem', marginTop: '0.25rem', lineHeight: 1.4 }}>{profile.long_description}</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            {/* Directory Authority Grid / Matrix */}
+            <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
+              <h3 style={{ fontSize: '1.25rem', color: '#ffffff', marginBottom: '0.5rem' }}>
+                📡 All {totalCount} Tier-1 Authority Citation Profiles &amp; Action Portal
+              </h3>
+              <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+                Below is the full breakdown of verified active listings and direct submission portals for pending high-impact directories.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.25rem' }}>
+                {(citationsData?.directories || []).map((d, i) => (
+                  <div 
+                    key={i} 
+                    style={{ 
+                      background: '#0f172a', 
+                      border: d.status === 'ACTIVE_VERIFIED' ? '1px solid #334155' : '1px solid rgba(245, 158, 11, 0.4)', 
+                      borderRadius: 'var(--radius-md)', 
+                      padding: '1.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    {d.impact === 'CRITICAL' && (
+                      <div style={{ position: 'absolute', top: 0, right: 0, background: '#ef4444', color: '#ffffff', fontSize: '0.65rem', fontWeight: 800, padding: '0.15rem 0.65rem', borderRadius: '0 0 0 6px', letterSpacing: '0.05em' }}>
+                        CRITICAL SIGNAL
+                      </div>
+                    )}
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem', paddingRight: d.impact === 'CRITICAL' ? '4rem' : 0 }}>
+                      <h4 style={{ color: '#ffffff', fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>
+                        {d.name}
+                      </h4>
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
+                      <span style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', padding: '0.15rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700 }}>
+                        DA {d.domain_authority}
+                      </span>
+                      <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>• {d.category}</span>
+                      <span style={{
+                        marginLeft: 'auto',
+                        background: d.status === 'ACTIVE_VERIFIED' ? 'rgba(34, 197, 94, 0.15)' : 'rgba(245, 158, 11, 0.15)',
+                        color: d.status === 'ACTIVE_VERIFIED' ? '#4ade80' : '#fbbf24',
+                        padding: '0.15rem 0.5rem',
+                        borderRadius: '4px',
+                        fontSize: '0.75rem',
+                        fontWeight: 700
+                      }}>
+                        {d.status === 'ACTIVE_VERIFIED' ? '✓ Active Verified' : '⚡ Opportunity (Click to Claim)'}
+                      </span>
+                    </div>
+
+                    <p style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: '0 0 1.25rem', lineHeight: 1.5, flexGrow: 1 }}>
+                      {d.notes}
+                    </p>
+
+                    <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto' }}>
+                      {d.status === 'ACTIVE_VERIFIED' ? (
+                        <a
+                          href={d.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-outline"
+                          style={{ borderColor: '#475569', color: '#f1f5f9', padding: '0.45rem 0.85rem', fontSize: '0.8rem', width: '100%', textAlign: 'center' }}
+                        >
+                          View Live Profile ↗
+                        </a>
+                      ) : (
+                        <a
+                          href={d.claim_url || d.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-primary"
+                          style={{ padding: '0.55rem 0.85rem', fontSize: '0.85rem', width: '100%', textAlign: 'center', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.35rem' }}
+                        >
+                          <span>Claim / Register Listing</span>
+                          <span>↗</span>
+                        </a>
+                      )}
+                    </div>
+
+                  </div>
+                ))}
               </div>
 
             </div>
@@ -748,11 +843,11 @@ export default function DashboardClient({
                     </div>
 
                     <button
-                      onClick={() => handleCopyText(c.outreach_template, idx)}
+                      onClick={() => handleCopyText(c.outreach_template, `broker_${idx}`)}
                       className="btn btn-primary"
                       style={{ padding: '0.6rem 1rem', fontSize: '0.85rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
                     >
-                      <span>{copiedIndex === idx ? '✓ Copied to Clipboard!' : '📋 Copy Outreach Email'}</span>
+                      <span>{copiedKey === `broker_${idx}` ? '✓ Copied to Clipboard!' : '📋 Copy Outreach Email'}</span>
                     </button>
                   </div>
                 ))}
@@ -853,7 +948,7 @@ export default function DashboardClient({
 
               <div style={{ background: '#0f172a', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid #334155' }}>
                 <span style={{ color: '#fbbf24', fontSize: '0.85rem', fontWeight: 600 }}>Pillar Blog Articles</span>
-                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#ffffff', margin: '0.25rem 0' }}>{inventory.totalPosts || 26}</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#ffffff', margin: '0.25rem 0' }}>{inventory.totalPosts || 28}</div>
                 <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>1,500+ word guides</p>
               </div>
 
