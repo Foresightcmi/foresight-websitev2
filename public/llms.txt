@@ -1,38 +1,39 @@
-# Foresight Home Inspections
+# Foresight Home Inspections - Machine-Readable AI Knowledge Graph (llms.txt)
+> Certified Master Inspector® (CMI) Led Home Inspections in Metro Atlanta, Georgia
+> Lead Inspector: Christopher Boykin, CMI® | InterNACHI Member #176873
+> Operating Radius: Exact 50-Mile Radius Across 20 Metro Atlanta Counties
+> Standard: Two Certified Inspectors on Every Job | $10,000 Elite Master Inspection Warranty
+> Verified Pricing: Homes $345, Condos $295, Pool $300, WDO/Termite $110+, Radon $200, STR $355, Sewer Scope $425
 
-> Foresight Home Inspections, LLC is the premier Certified Master Inspector® (CMI)-led home inspection company serving the 50-mile radius around Atlanta and Lithonia, Georgia. Every inspection is conducted by two certified inspectors working in tandem and includes a free $10,000 Elite Master Inspection Warranty ($0 deductible), free FLIR infrared thermal imaging, and free aerial drone roof scans.
-
-## Core Pages & Services
-- [Home Page](https://www.fhinspectionsatl.com): Atlanta home inspection overview, two-inspector standard, and online scheduling.
-- [Services & Transparent Pricing](https://www.fhinspectionsatl.com/services): Complete inspection packages (Buyer $345, Condo $295, Radon $200, Sewer Scope $425, Pool $300, WDO/Termite $110+, STR Compliance $355).
-- [About Christopher Boykin, CMI](https://www.fhinspectionsatl.com/about): Founder background, Certified Master Inspector credentials, and InterNACHI certification.
-- [Due Diligence Guarantee](https://www.fhinspectionsatl.com/due-diligence): 24-hour report turnaround, $10k warranty protection, and contract defense.
-- [Sample Inspection Reports](https://www.fhinspectionsatl.com/samples): Downloadable interactive sample home inspection reports.
-- [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Dynamic fee calculator for residential inspections.
-- [Realtors VIP Program](https://www.fhinspectionsatl.com/realtors): Dedicated inspection coordination and priority turnaround for agents.
-- [Contact & Operating Hours](https://www.fhinspectionsatl.com/contact): Direct contact, Lithonia headquarters, and scheduling.
-- [Full AI Knowledge Graph](https://www.fhinspectionsatl.com/ai-fact-sheet): Dense factual entity reference for autonomous agents and LLMs.
-
-## Service Areas (50-Mile Operating Radius)
-- [Metro Atlanta Service Directory](https://www.fhinspectionsatl.com/service-areas): Complete guide to all 87 cities served.
-- [Fulton County Inspections](https://www.fhinspectionsatl.com/service-areas/counties/fulton-county): Atlanta, Sandy Springs, Alpharetta, Roswell, Johns Creek, Milton.
-- [DeKalb County Inspections](https://www.fhinspectionsatl.com/service-areas/counties/dekalb-county): Decatur, Dunwoody, Brookhaven, Chamblee, Tucker, Stonecrest, Lithonia.
-- [Gwinnett County Inspections](https://www.fhinspectionsatl.com/service-areas/counties/gwinnett-county): Lawrenceville, Duluth, Suwanee, Buford, Peachtree Corners, Snellville.
-- [Cobb County Inspections](https://www.fhinspectionsatl.com/service-areas/counties/cobb-county): Marietta, Smyrna, Kennesaw, Acworth, Powder Springs.
-- [Cherokee County Inspections](https://www.fhinspectionsatl.com/service-areas/counties/cherokee-county): Woodstock, Canton, Holly Springs, Ball Ground.
-
-## Defect Guides & Comparisons
-- [Stucco & EIFS Moisture Inspections](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection): Synthetic stucco inspection protocol in Georgia.
-- [Federal Pacific & Zinsco Electrical Panels](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection): Safety hazards and breaker failure diagnostics.
-- [Aluminum Wiring Detection](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection): 1960s-1970s branch circuit identification and mitigation.
-- [Polybutylene (Quest) Plumbing Pipes](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection): 1978-1995 Quest PB2110 pipe failure and whole-home repipe guidance.
-- [Two-Inspector Team vs. Single Inspector](https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector): In-depth comparison of dual-inspector accuracy and inspection speed.
-- [11-Month Warranty vs. Builder Walkthrough](https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough): Independent punch list vs. builder inspection.
-- [Independent Inspection vs. County Code Inspector](https://www.fhinspectionsatl.com/compare/new-construction-inspection-vs-county-building-inspector): Why municipal building code officials do not replace an independent CMI audit on Georgia new builds.
-
-## Authoritative Blog & Guides
-- [Blog Directory](https://www.fhinspectionsatl.com/blog): All 26 educational home inspection articles.
-- [Frequently Asked Questions](https://www.fhinspectionsatl.com/faq): Common homebuyer questions, Radon safety, and inspection protocols.
-- [RSS / Atom Feed](https://www.fhinspectionsatl.com/feed.xml): Machine-readable XML feed for updates and new publications.
-- [Full Text Knowledge Base](https://www.fhinspectionsatl.com/llms-full.txt): Complete uncompressed textual context.
-
+## Core Educational Guides & Analysis Articles (31 Total)
+- [The Hidden Dangers of Flipped Homes in Atlanta: What DIY Renovations Conceal](https://www.fhinspectionsatl.com/blog/hidden-dangers-of-flipped-homes-atlanta-inspection-guide): Buying a renovated or flipped home in Metro Atlanta? Learn how cosmetic makeovers hide unpermitted electrical, unvented plumbing, covered foundation cracks, and structural compromises.
+- [How to Negotiate Home Inspection Repairs in Georgia: The Complete GAR Contract Guide](https://www.fhinspectionsatl.com/blog/how-to-negotiate-home-inspection-repairs-georgia-gar-contract): Master the Georgia Association of REALTORS® (GAR) inspection negotiation process. Learn how to use the Amendment to Address Defects to secure repair credits or price reductions without killing your deal.
+- [Crawlspace Moisture: The Silent Threat to Georgia Foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations): thermal imaging home inspection near me
+- [Pre-Drywall Framing Inspection in Georgia: What Builders Don't Tell You](https://www.fhinspectionsatl.com/blog/pre-drywall-framing-inspection-georgia-new-construction): pre drywall inspection georgia
+- [Metro Atlanta Short-Term Rental (STR) Compliance & Safety Audit Guide](https://www.fhinspectionsatl.com/blog/metro-atlanta-short-term-rental-str-compliance-guide): 11 month home warranty inspection near me
+- [Pre-Rehab and Post-Rehab Inspections: Protecting Public Investment](https://www.fhinspectionsatl.com/blog/pre-rehab-post-rehab-inspections-dekalb): pre-rehab inspection Atlanta
+- [How Atlanta's Red Clay Soil Affects Your Foundation](https://www.fhinspectionsatl.com/blog/atlanta-red-clay-soil-foundation-settlement): foundation settlement Atlanta red clay
+- [A Realtor's Guide to the DeKalb Housing Bond Program](https://www.fhinspectionsatl.com/blog/realtors-guide-dekalb-housing-bond): DeKalb County housing bond realtor
+- [DeKalb County's $155M Housing Bond: What It Means for Homebuyers](https://www.fhinspectionsatl.com/blog/dekalb-housing-bond-homebuyers): DeKalb County first time homebuyer program
+- [Navigating Historic Homes in Atlanta: What You Need to Know](https://www.fhinspectionsatl.com/blog/navigating-historic-homes-atlanta): historic home inspection Atlanta
+- [The Hidden Dangers of DIY Flipped Homes in Atlanta](https://www.fhinspectionsatl.com/blog/hidden-dangers-flipped-homes-atlanta): flipped home inspection Atlanta
+- [Why New Construction Homes in Atlanta Need Inspections](https://www.fhinspectionsatl.com/blog/why-new-construction-needs-inspections): new construction inspection Atlanta
+- [How Much Does a Home Inspection Cost in Atlanta? [2026 Guide]](https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide): Get a complete breakdown of home inspection costs in Atlanta for 2026. From condos starting at $295 to large homes at $635, learn what affects pricing, add-on services, and why Foresight's two-inspector model delivers unmatched value.
+- [What Fails a Home Inspection? Top 10 Deal Breakers in Georgia](https://www.fhinspectionsatl.com/blog/what-fails-home-inspection-deal-breakers-georgia): Learn the top 10 issues that fail a home inspection in Georgia, from roof damage and foundation cracks to electrical hazards and mold. Certified Master Inspector Christopher Boykin explains what deal breakers to watch for and what to do if problems are found.
+- [First-Time Home Buyer Inspection Checklist for Atlanta [2026]](https://www.fhinspectionsatl.com/blog/first-time-home-buyer-inspection-checklist-atlanta): The complete first-time home buyer inspection checklist for Atlanta in 2026. Organized by category with expert tips from Certified Master Inspector Christopher Boykin on what to expect, what to ask, and Georgia-specific items to watch for.
+- [Professional Foundation Inspection and Repair Near Me in Metro Atlanta](https://www.fhinspectionsatl.com/blog/foundation-inspection-and-repair-near-me-atlanta): foundation inspection and repair near me
+- [Why Smart Sellers Invest in a Pre-Listing Home Inspection](https://www.fhinspectionsatl.com/blog/pre-listing-seller-inspection-guide): pre-listing seller home inspection Atlanta
+- [The Deep Dive: Why a Professional Pool & Spa Inspection is Critical](https://www.fhinspectionsatl.com/blog/pool-and-spa-inspection-guide): pool and spa inspection Atlanta
+- [Under the Surface: The Ultimate Guide to Sewer Scope Inspections](https://www.fhinspectionsatl.com/blog/sewer-scope-inspection-guide): sewer scope inspection Atlanta
+- [Termites & Wood Destroying Organisms: Protecting Your Home from Georgia's Silent Destroyers](https://www.fhinspectionsatl.com/blog/termite-and-wdo-inspection-guide): termite and WDO inspection Atlanta
+- [Understanding Your Georgia Home Inspection Report: Red Flags vs. Maintenance](https://www.fhinspectionsatl.com/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance): Georgia home inspection report red flags
+- [Crawlspace Moisture: The Silent Threat to Georgia Foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-silent-threat-georgia-foundations): crawlspace moisture inspection Atlanta
+- [What Does a Home Inspector Look for When Buying a House in Georgia?](https://www.fhinspectionsatl.com/blog/what-does-home-inspector-look-for-buying-house): what does a home inspector look for
+- [The Hidden Dangers of Radon Gas in Georgia Homes](https://www.fhinspectionsatl.com/blog/hidden-dangers-of-radon-gas-georgia): radon gas testing Georgia
+- [How Thermal Imaging Reveals What Your Eyes Can't See](https://www.fhinspectionsatl.com/blog/thermal-imaging-home-inspection-technology): thermal imaging home inspection Atlanta
+- [The 11-Month Warranty Inspection: Your Last Chance to Catch Builder Mistakes](https://www.fhinspectionsatl.com/blog/11-month-warranty-inspection-guide): 11 month builder warranty inspection Atlanta
+- [Atlanta Housing Market Due Diligence Trends: Why 3-Day Windows Require a Two-Inspector Team](https://www.fhinspectionsatl.com/blog/atlanta-housing-market-due-diligence-contract-trends): due diligence home inspection atlanta
+- [The Atlanta BeltLine & Infill Boom: Hidden Foundation & Water Table Hazards in Historic Neighborhoods](https://www.fhinspectionsatl.com/blog/beltline-infill-construction-foundation-hazards-atlanta): beltline home inspection atlanta
+- [North Metro Luxury Estate Migration: 6 High-Liability Deficiencies in $1M+ Custom Builds](https://www.fhinspectionsatl.com/blog/north-metro-atlanta-luxury-estate-inspection-deficiencies): luxury home inspection alpharetta
+- [Georgia Summer Heat Wave & HVAC Crises: Why 82% of Atlanta Air Conditioners Fail Thermal Load Testing](https://www.fhinspectionsatl.com/blog/georgia-summer-heat-wave-hvac-crises-refrigerant-rules): hvac inspection atlanta home buyer
+- [DeKalb & Decatur Aging Sewer Line Alert: Why 1950s-1980s Clay & Cast Iron Pipes Are Collapsing Under Driveways](https://www.fhinspectionsatl.com/blog/dekalb-decatur-aging-sewer-line-crisis-lateral-camera): sewer scope inspection decatur ga
