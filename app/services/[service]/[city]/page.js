@@ -391,7 +391,73 @@ export default async function ServiceCityPage({ params }) {
         </div>
       </section>
 
-      {/* ── FAQ ACCORDION ───────────────────────────────────────────── */}
+      
+      {/* ── PHYSICAL GEO-TRUST & SERVICE MAP ──────────────────────────── */}
+      <section className="section bg-white" style={{ borderTop: '1px solid var(--color-gray-mid)', padding: '3.5rem 0' }}>
+        <div className="container" style={{ maxWidth: '950px' }}>
+          <div className="section-title text-center" style={{ marginBottom: '2rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem' }}>Local Territory Grounding</span>
+            <h2>{serviceName} in <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span> &amp; {county} County</h2>
+            <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem' }}>
+              Full certified deployment coverage across {cityName} from our Lithonia, GA headquarters.
+            </p>
+          </div>
+
+          <div className="card" style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)', overflow: 'hidden', padding: 0 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 0 }}>
+              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#ecfdf5', color: '#065f46', padding: '0.35rem 0.75rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 600, width: 'fit-content', marginBottom: '1rem' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }}></span>
+                  Certified Local Service
+                </div>
+                <h3 style={{ fontSize: '1.25rem', color: '#0f172a', marginBottom: '1rem' }}>
+                  {cityName} {serviceName} Trust Anchor
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem', color: '#334155' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>📍</span>
+                    <span><strong>Service Area:</strong> {cityName}, {county} County, GA</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>🏢</span>
+                    <span><strong>Operating Base:</strong> 1816 South Deshon Road, Lithonia, GA 30058</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>🔍</span>
+                    <span><strong>Inspector Credential:</strong> Certified Master Inspector® (CMI) Led Team</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>📞</span>
+                    <span><strong>Direct Dispatch Phone:</strong> 678-480-2110</span>
+                  </li>
+                </ul>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Foresight Home Inspections ${serviceName} ${cityName} GA`)}`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
+                    🗺️ View {cityName} Map ↗
+                  </a>
+                  <a href="/quote" className="btn btn-primary" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
+                    ⚡ Instant {serviceName} Quote
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ minHeight: '300px', width: '100%', background: '#e2e8f0', position: 'relative' }}>
+                <iframe
+                  title={`Foresight Home Inspections ${serviceName} - ${cityName}, GA`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '320px' }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(`${cityName}, GA`)}&t=&z=12&ie=UTF8&iwloc=&output=embed`}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{/* ── FAQ ACCORDION ───────────────────────────────────────────── */}
       <section className="section bg-white">
         <div className="container" style={{ maxWidth: '850px' }}>
           <div className="section-title text-center">

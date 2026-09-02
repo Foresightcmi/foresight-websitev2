@@ -24,6 +24,10 @@ export default function DashboardClient({
   const [queryResults, setQueryResults] = useState(null);
   const [loadingQuery, setLoadingQuery] = useState(false);
   const [copiedKey, setCopiedKey] = useState(null);
+  const [reviewClientName, setReviewClientName] = useState('Marcus');
+  const [reviewClientCity, setReviewClientCity] = useState('Alpharetta');
+  const [reviewServiceType, setReviewServiceType] = useState('Home Inspection + Radon');
+
 
   useEffect(() => {
     setIsClient(true);
@@ -274,9 +278,11 @@ export default function DashboardClient({
           {[
             { id: 'rankings', label: `🎯 Search Targets (${initialKeywords.length})` },
             { id: 'citations', label: `🏛️ Authority Citations (${activeCount}/${totalCount})` },
+            { id: 'reviews', label: '⭐ Review Velocity Engine' },
+            { id: 'gbp', label: '📍 GBP Power Matrix' },
             { id: 'realtors', label: `🤝 Brokerage Outreach (${realtorData?.total_target_brokerages || 6})` },
             { id: 'loops', label: '🔄 Autonomous Daemons (4 Crons)' },
-            { id: 'inventory', label: `📦 710-Page Matrix` },
+            { id: 'inventory', label: `📦 713-Page Matrix` },
             { id: 'gsc', label: '⚡ Performance & Telemetry' },
           ].map(tab => (
             <button

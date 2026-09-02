@@ -746,7 +746,75 @@ export default async function CityPage({ params }) {
         </div>
       </section>
 
+      
       {/* ═══════════════════════════════════════════════════════════════
+          PHYSICAL GEO-TRUST & SERVICE AREA MAP (Bodhi Gallo Local SEO Anchor)
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section bg-white" style={{ borderTop: '1px solid var(--color-gray-mid)', padding: '3.5rem 0' }}>
+        <div className="container" style={{ maxWidth: '950px' }}>
+          <div className="section-title text-center" style={{ marginBottom: '2rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem' }}>Local Geographic Grounding</span>
+            <h2>Foresight Home Inspections: <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span> Coverage Zone</h2>
+            <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem' }}>
+              Directly serving {cityName}, {county} County, and all surrounding Metro Atlanta communities within our dedicated 50-mile coverage zone.
+            </p>
+          </div>
+
+          <div className="card" style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)', overflow: 'hidden', padding: 0 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 0 }}>
+              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#ecfdf5', color: '#065f46', padding: '0.35rem 0.75rem', borderRadius: '9999px', fontSize: '0.85rem', fontWeight: 600, width: 'fit-content', marginBottom: '1rem' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }}></span>
+                  Active Metro Service Zone
+                </div>
+                <h3 style={{ fontSize: '1.25rem', color: '#0f172a', marginBottom: '1rem' }}>
+                  {cityName} Dispatch &amp; Physical Entity Details
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem', color: '#334155' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>📍</span>
+                    <span><strong>Service Territory:</strong> {cityName}, {county} County, GA {zip}</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>🏢</span>
+                    <span><strong>Lithonia HQ Distance:</strong> Approx. {distanceMiles} miles (~{Math.round(distanceMiles * 1.35)} min dispatch)</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>⚡</span>
+                    <span><strong>Inspection Standard:</strong> Two Certified Inspectors on every {cityName} property</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-red)' }}>🛡️</span>
+                    <span><strong>Included Warranty:</strong> $10,000 Elite Master 90-day protection ($0 deductible)</span>
+                  </li>
+                </ul>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Foresight Home Inspections ${cityName} GA`)}`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
+                    🗺️ Open in Google Maps ↗
+                  </a>
+                  <a href="tel:6784802110" className="btn btn-primary" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
+                    📞 Call 678-480-2110
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ minHeight: '300px', width: '100%', background: '#e2e8f0', position: 'relative' }}>
+                <iframe
+                  title={`Foresight Home Inspections Service Area - ${cityName}, GA`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '320px' }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(`${cityName}, GA`)}&t=&z=12&ie=UTF8&iwloc=&output=embed`}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{/* ═══════════════════════════════════════════════════════════════
           DEFECT & COMPARISON DECISION GUIDES
       ═══════════════════════════════════════════════════════════════ */}
       <section className="section bg-gray-light" style={{ padding: '3.5rem 0', borderTop: '1px solid var(--color-gray-mid)' }}>
