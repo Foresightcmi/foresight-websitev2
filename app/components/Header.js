@@ -39,7 +39,7 @@ export default function Header() {
 
       <header className="header" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
         <div className="container nav-container">
-          <Link href="/" className="logo">
+          <Link prefetch={false} href="/" className="logo">
             <Image src="/images/Logopng.webp" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '120px', width: 'auto' }} priority />
             <span className="sr-only">Foresight Home Inspections</span>
           </Link>
@@ -53,14 +53,14 @@ export default function Header() {
           </button>
           <nav aria-label="Main navigation">
             <ul className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
-              <li><Link href="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-              <li><Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
-              <li><Link href="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
-              <li><Link href="/realtors" onClick={() => setMenuOpen(false)}>Realtors</Link></li>
-              <li><Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
-              <li><Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-              <li><Link href="/quote" onClick={() => setMenuOpen(false)}>Get Quote</Link></li>
-              <li><Link href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: '#854D0E', fontWeight: '700' }}>Ask Foresight AI</Link></li>
+              <li><Link prefetch={false} href="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+              <li><Link prefetch={false} href="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
+              <li><Link prefetch={false} href="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+              <li><Link prefetch={false} href="/realtors" onClick={() => setMenuOpen(false)}>Realtors</Link></li>
+              <li><Link prefetch={false} href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
+              <li><Link prefetch={false} href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+              <li><Link prefetch={false} href="/quote" onClick={() => setMenuOpen(false)}>Get Quote</Link></li>
+              <li><Link prefetch={false} href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: '#854D0E', fontWeight: '700' }}>Ask Foresight AI</Link></li>
               <li>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" onClick={() => setMenuOpen(false)}>
                   Book Online 24/7

@@ -661,7 +661,7 @@ export default function RootLayout({ children }) {
       <body>
         <Script
           id="google-analytics-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -679,11 +679,11 @@ export default function RootLayout({ children }) {
               }
               
               if ('requestIdleCallback' in window) {
-                requestIdleCallback(function() { setTimeout(loadGtag, 2500); });
+                requestIdleCallback(function() { setTimeout(loadGtag, 6000); });
               } else {
-                setTimeout(loadGtag, 3500);
+                setTimeout(loadGtag, 7000);
               }
-              ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(e) {
+              ['scroll', 'touchstart', 'click'].forEach(function(e) {
                 window.addEventListener(e, loadGtag, { once: true, passive: true });
               });
             `,
@@ -769,19 +769,19 @@ export default function RootLayout({ children }) {
               <div>
                 <h3>Quick Links</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li><Link href="/">Home</Link></li>
-                  <li><Link href="/services">Services & Pricing</Link></li>
-                  <li><Link href="/due-diligence">Due Diligence Guarantee</Link></li>
-                  <li><Link href="/neighborhoods">Neighborhood Guides</Link></li>
-                  <li><Link href="/samples">Sample Reports</Link></li>
-                  <li><Link href="/blog">Blog & Guides</Link></li>
-                  <li><Link href="/faq">FAQ</Link></li>
-                  <li><Link href="/realtors">Realtors VIP Program</Link></li>
-                  <li><Link href="/quote">Instant Quote</Link></li>
-                  <li><Link href="/contact">Contact Us</Link></li>
-                  <li><Link href="/service-areas">Service Areas Directory</Link></li>
-                  <li><Link href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
-                  <li><Link href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
+                  <li><Link prefetch={false} href="/">Home</Link></li>
+                  <li><Link prefetch={false} href="/services">Services & Pricing</Link></li>
+                  <li><Link prefetch={false} href="/due-diligence">Due Diligence Guarantee</Link></li>
+                  <li><Link prefetch={false} href="/neighborhoods">Neighborhood Guides</Link></li>
+                  <li><Link prefetch={false} href="/samples">Sample Reports</Link></li>
+                  <li><Link prefetch={false} href="/blog">Blog & Guides</Link></li>
+                  <li><Link prefetch={false} href="/faq">FAQ</Link></li>
+                  <li><Link prefetch={false} href="/realtors">Realtors VIP Program</Link></li>
+                  <li><Link prefetch={false} href="/quote">Instant Quote</Link></li>
+                  <li><Link prefetch={false} href="/contact">Contact Us</Link></li>
+                  <li><Link prefetch={false} href="/service-areas">Service Areas Directory</Link></li>
+                  <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
+                  <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
                 </ul>
               </div>
               <div>
@@ -797,7 +797,7 @@ export default function RootLayout({ children }) {
             </div>
             <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
               <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Foresight Home Inspections, LLC. All rights reserved. Proudly Black-owned.</p>
-              <Link href="/dashboard" style={{ color: 'var(--color-gray-mid)', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem', opacity: 0.8 }}>
+              <Link prefetch={false} href="/dashboard" style={{ color: 'var(--color-gray-mid)', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem', opacity: 0.8 }}>
                 <span>🔒</span> Owner Command Center
               </Link>
             </div>

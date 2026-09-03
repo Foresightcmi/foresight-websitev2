@@ -69,7 +69,11 @@ export default function GeoTrustBanner() {
       }
     };
 
-    fetchLocation();
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(function() { setTimeout(fetchLocation, 3000); });
+    } else {
+      setTimeout(fetchLocation, 4000);
+    }
   }, []);
 
   return (
@@ -78,6 +82,8 @@ export default function GeoTrustBanner() {
       borderBottom: '1px solid rgba(211, 47, 47, 0.4)',
       color: '#ffffff',
       padding: '0.65rem 1rem',
+      minHeight: '44px',
+      contain: 'layout style',
       fontSize: '0.9rem',
       textAlign: 'center',
       position: 'relative',

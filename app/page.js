@@ -207,7 +207,7 @@ export default function Home() {
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
               📅 Schedule Inspection Now
             </a>
-            <Link href="/quote" className="btn btn-outline-light" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
+            <Link prefetch={false} href="/quote" className="btn btn-outline-light" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
               📊 Calculate Instant Fee
             </Link>
           </div>
@@ -269,7 +269,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <Link href="/quote" className="btn btn-outline" style={{ width: '100%', textAlign: 'center', borderColor: '#64748B', color: '#FFFFFF', padding: '0.85rem' }}>
+                <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ width: '100%', textAlign: 'center', borderColor: '#64748B', color: '#FFFFFF', padding: '0.85rem' }}>
                   Calculate Instant Flat Rate →
                 </Link>
               </div>
@@ -299,7 +299,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <Link href="/contact" className="btn btn-gold" style={{ width: '100%', textAlign: 'center', padding: '0.85rem' }}>
+                <Link prefetch={false} href="/contact" className="btn btn-gold" style={{ width: '100%', textAlign: 'center', padding: '0.85rem' }}>
                   Request Estate Consultation →
                 </Link>
               </div>
@@ -346,7 +346,7 @@ export default function Home() {
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
                   📅 Schedule Inspection Now
                 </a>
-                <Link href="/ask-twin" className="btn btn-outline" style={{ borderColor: '#0F172A', color: '#0F172A', padding: '0.9rem 2rem' }}>
+                <Link prefetch={false} href="/ask-twin" className="btn btn-outline" style={{ borderColor: '#0F172A', color: '#0F172A', padding: '0.9rem 2rem' }}>
                   Ask Foresight AI
                 </Link>
               </div>
@@ -649,7 +649,7 @@ export default function Home() {
               Getting an inspection isn't just smart—it saves you from financial disasters and gives realtors a powerful tool to negotiate thousands off the asking price.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
+                <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
                 See Pricing First
               </Link>
             </div>
