@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 const labelMap = {
   'services': 'Services',
   'service-areas': 'Service Areas',
+  'counties': 'Counties',
   'blog': 'Blog & Guides',
   'about': 'About Us',
   'contact': 'Contact',
@@ -19,7 +20,14 @@ const labelMap = {
   'privacy': 'Privacy Policy',
   'terms': 'Terms of Service',
   'dekalb-county-compliance': 'DeKalb County Compliance',
-  'municipal-rehab-inspections': 'Municipal Rehab Inspections'
+  'municipal-rehab-inspections': 'Municipal Rehab Inspections',
+  'radon-testing': 'Radon Testing',
+  'sewer-scope-inspection': 'Sewer Scope Inspection',
+  'pool-spa-inspection': 'Pool & Spa Inspection',
+  'termite-wdo-inspection': 'Termite & WDO Inspection',
+  '11-month-warranty-inspection': '11-Month Warranty Inspection',
+  'str-short-term-rental-inspection': 'STR Inspection',
+  'home-buyer-inspection': 'Buyer Inspection'
 };
 
 function formatLabel(slug) {
