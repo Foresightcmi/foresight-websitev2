@@ -119,6 +119,22 @@ const nextConfig = {
         destination: '/service-areas/rex',
         permanent: true,
       },
+      // Legacy or mistyped city / county routes
+      {
+        source: '/service-areas/forest-20park',
+        destination: '/service-areas/forest-park',
+        permanent: true,
+      },
+      {
+        source: '/services/:service/forest-20park',
+        destination: '/services/:service/forest-park',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/counties/georgia-county',
+        destination: '/service-areas/counties',
+        permanent: true,
+      },
       // Old dated blog post slugs to canonical
       {
         source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-08-09',

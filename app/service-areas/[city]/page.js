@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import RelatedServiceAreas from '../../components/RelatedServiceAreas';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
 
@@ -42,13 +43,17 @@ export async function generateMetadata({ params }) {
   const cities = loadCities();
   const cityData = findCity(cities, resolvedParams.city);
 
-  const cityName = cityData?.['City Name'] || resolvedParams.city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-  const county = cityData?.County || 'Georgia';
+  if (!cityData) {
+    return { title: 'City Inspection Not Found | Foresight Home Inspections' };
+  }
+
+  const cityName = cityData['City Name'];
+  const county = cityData.County || 'Georgia';
   const slug = resolvedParams.city;
 
-  const title = cityData?.['Meta Title']
+  const title = cityData['Meta Title']
     || `Best Home Inspector in ${cityName}, GA | Foresight Home Inspections`;
-  const description = cityData?.['Meta Description']
+  const description = cityData['Meta Description']
     || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, two-inspector team services led by a Certified Master Inspector for ultimate peace of mind.`;
 
   return {
@@ -89,13 +94,17 @@ export default async function CityPage({ params }) {
   const cities = loadCities();
   const cityData = findCity(cities, resolvedParams.city);
 
-  const cityName = cityData?.['City Name'] || resolvedParams.city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-  const county = cityData?.County || 'Georgia';
-  const zip = cityData?.Zip || '';
+  if (!cityData) {
+    notFound();
+  }
+
+  const cityName = cityData['City Name'];
+  const county = cityData.County || 'Georgia';
+  const zip = cityData.Zip || '';
   const slug = resolvedParams.city;
 
   // ── Intro paragraph ──────────────────────────────────────────────────
-  const introParagraph = cityData?.Intro
+  const introParagraph = cityData.Intro
     || `Serving all of ${county} County. When you're buying a home in ${cityName}, you need the absolute best. We provide two certified inspectors on every job for unrivaled accuracy.`;
 
   // ── FAQ data ─────────────────────────────────────────────────────────
@@ -239,7 +248,22 @@ export default async function CityPage({ params }) {
       case 'DeKalb': return "DeKalb County enforces unique requirements, including the mandatory low-flow plumbing fixture certificate for properties built before 1993. We evaluate these items to ensure your transaction proceeds smoothly without municipal delays.";
       case 'Gwinnett': return "As one of the fastest-growing areas, Gwinnett County properties range from massive new developments to established 1990s subdivisions. We focus heavily on polybutylene plumbing risks and rapid-build structural issues common in this county.";
       case 'Cobb': return "Cobb County's varied topography means properties are highly susceptible to foundation settlement and basement moisture intrusion. Our thermal imaging and structural expertise are specifically tailored to Cobb County terrain challenges.";
+      case 'Cherokee': return "Cherokee County combines rapid residential growth with Lake Allatoona watershed conditions. We conduct thorough radon screenings and pre-drywall framing assessments across Woodstock and Canton.";
       case 'Forsyth': return "Forsyth County features many luxury lakefront properties and large-scale new constructions. We bring advanced drone technology and specialized knowledge of high-end systems required by Forsyth County building standards.";
+      case 'Henry': return "Henry County is South Metro Atlanta's premier growth engine. Our two-inspector teams systematically audit crawlspaces, roofs, HVAC units, and foundation settlement across McDonough and Stockbridge.";
+      case 'Fayette': return "Fayette County is renowned for master-planned golf communities and custom estates. We deliver meticulous inspections evaluating private septic systems, roof integrity, and crawlspace moisture management in Peachtree City and Fayetteville.";
+      case 'Clayton': return "Clayton County properties benefit from thorough checks of mid-century electrical panels, plumbing supply lines, and foundation stability. We help homebuyers in Forest Park, Jonesboro, Morrow, and Rex navigate older housing systems with confidence.";
+      case 'Douglas': return "Douglas County's rolling West Metro terrain requires specialized inspection of hillside lot drainage, retaining walls, and crawlspace moisture across Douglasville and Lithia Springs.";
+      case 'Coweta': return "Coweta County features historic Victorian homes in Newnan alongside modern equestrian estates. We inspect historic framing, electrical updates, and crawlspace humidity across Senoia and Newnan.";
+      case 'Paulding': return "Paulding County is a high-velocity new construction hub. Our inspectors provide rigorous phase framing, pre-drywall checks, and 11-month builder warranty evaluations in Dallas and Hiram.";
+      case 'Rockdale': return "Rockdale County properties around Conyers benefit from comprehensive audits targeting granite bedrock radon risks, aging water heaters, and roof drainage lines.";
+      case 'Newton': return "Newton County blends historic Covington architecture with new developments. We provide specialized historic framing inspections and new construction punch list evaluations.";
+      case 'Walton': return "Walton County blends rural acreages with suburban growth in Monroe and Loganville. We inspect private wells, septic drainage fields, and crawlspace moisture barriers.";
+      case 'Hall': return "Hall County features scenic Lake Lanier shorelines and rapid Gainesville expansion. We inspect lakefront moisture intrusion, dock power safety, and new construction HVAC systems.";
+      case 'Barrow': return "Barrow County along Highway 316 features fast-paced residential construction. We audit framing alignments, foundation grading, and water heating systems in Winder and Auburn.";
+      case 'Bartow': return "Bartow County's geological terrain around Cartersville calls for expert foundation inspections, sinkhole risk assessments, and older electrical panel safety checks.";
+      case 'Carroll': return "Carroll County combines university neighborhoods in Carrollton with rural homesteads. We evaluate crawlspace floor joists, aging roof structures, and private septic systems.";
+      case 'Spalding': return "Spalding County features historic Southern homes in Griffin. Foresight delivers thorough dual-inspector evaluations identifying vintage plumbing, electrical panels, and termite risks.";
       default: return `${c} County properties are subject to local Georgia municipal building codes and environmental conditions. Our certified inspectors are fully trained on local guidelines to ensure your home meets the highest standards of safety and structural integrity.`;
     }
   };
@@ -353,7 +377,8 @@ export default async function CityPage({ params }) {
           </h2>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1rem' }}>
-              Top-Rated Home Inspection in<br />
+              Top-Rated Home Inspection in{' '}
+              <br />
               <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
             </h1>
             <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.1rem', lineHeight: 1.7 }}>
