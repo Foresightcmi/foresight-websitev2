@@ -39,4 +39,4 @@ jobs:
           git config user.name "Foresight City Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/cities.json data/refresh-log.json
-          git diff --cached --quiet || (git commit -m "refresh: city updates $(date +%Y-%m-%d)" && git push)
+          git diff --cached --quiet || (git commit -m "refresh: city updates $(date +%Y-%m-%d) [skip ci]" && git push)

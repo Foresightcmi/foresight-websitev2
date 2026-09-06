@@ -32,4 +32,4 @@ jobs:
           git config user.name "Foresight Backlink Scout"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/backlink-opportunities.json
-          git diff --cached --quiet || (git commit -m "scout: backlink opportunities $(date +%Y-%m-%d)" && git push)
+          git diff --cached --quiet || (git commit -m "scout: backlink opportunities $(date +%Y-%m-%d) [skip ci]" && git push)
