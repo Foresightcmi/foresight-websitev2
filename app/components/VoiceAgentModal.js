@@ -10,7 +10,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [history, setHistory] = useState([
     {
       role: 'assistant',
-      content: "Well hello there! I'm Christopher Boykin, Certified Master Inspector and founder of Foresight Home Inspections. Ask me any question about roofs, foundations, termites, radon, or getting on our schedule!"
+      content: "Well hello there! I am Christopher Boykin, Certified Master Inspector and founder of Foresight Home Inspections. Ask me any question about roofs, foundations, termites, radon, our $10,000 warranty, or why our two-inspector team is the best choice in Atlanta!"
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
@@ -149,7 +149,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       setCallState('idle');
       // Gentle initial voice greeting
       const timer = setTimeout(() => {
-        speakText("Well hello there! I am Christopher Boykin with Foresight Home Inspections. What home system questions can I answer for you today?");
+        speakText("Well hello there! I am Christopher Boykin with Foresight Home Inspections. Ask me about home systems, our two-inspector standard, our $10,000 warranty, or how we save you money at the closing table.");
       }, 500);
       return () => clearTimeout(timer);
     } else {
@@ -672,6 +672,101 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               </button>
             </div>
           )}
+        </div>
+
+        {/* Value Perks Exploration Bar */}
+        <div style={{
+          padding: '6px 1.25rem',
+          background: 'rgba(212, 175, 55, 0.05)',
+          borderTop: '1px solid rgba(212, 175, 55, 0.15)',
+          display: 'flex',
+          gap: '8px',
+          overflowX: 'auto',
+          alignItems: 'center'
+        }}>
+          <span style={{ color: '#D4AF37', fontSize: '0.72rem', whiteSpace: 'nowrap', fontWeight: 700 }}>
+            Why Foresight:
+          </span>
+          <button
+            onClick={() => handleSendQuery("Why do you send two certified inspectors on every inspection?")}
+            style={{
+              padding: '3px 10px',
+              borderRadius: '16px',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              background: 'rgba(255,255,255,0.06)',
+              color: '#f8fafc',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            👥 2-Inspector Standard
+          </button>
+          <button
+            onClick={() => handleSendQuery("What is covered under your complimentary $10,000 Master Protection Warranty?")}
+            style={{
+              padding: '3px 10px',
+              borderRadius: '16px',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              background: 'rgba(255,255,255,0.06)',
+              color: '#f8fafc',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            🛡️ $10k Warranty
+          </button>
+          <button
+            onClick={() => handleSendQuery("Do you include infrared thermal imaging and aerial drone scans?")}
+            style={{
+              padding: '3px 10px',
+              borderRadius: '16px',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              background: 'rgba(255,255,255,0.06)',
+              color: '#f8fafc',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            📷 Free FLIR &amp; Drones
+          </button>
+          <button
+            onClick={() => handleSendQuery("How does your InterNACHI inspection report help me negotiate seller repairs or closing credits?")}
+            style={{
+              padding: '3px 10px',
+              borderRadius: '16px',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              background: 'rgba(255,255,255,0.06)',
+              color: '#f8fafc',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            💰 Negotiation Leverage
+          </button>
+          <button
+            onClick={() => handleSendQuery("What are the official InterNACHI Standards of Practice that you inspect?")}
+            style={{
+              padding: '3px 10px',
+              borderRadius: '16px',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              background: 'rgba(255,255,255,0.06)',
+              color: '#f8fafc',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            📋 InterNACHI SOP
+          </button>
         </div>
 
         {/* 1-Tap Addon Upsell Bar */}
