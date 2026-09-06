@@ -2,8 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import VoiceAgentModal from '../components/VoiceAgentModal';
 
 export default function AskTwin() {
+  const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: 'ai',
@@ -247,6 +249,47 @@ export default function AskTwin() {
           <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
             Seasoned expert answers on roofing, foundations, termites, radon, and pool systems, with full 3-step InterNACHI breakdown.
           </p>
+          <div style={{ marginTop: '1.25rem', display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <button
+              onClick={() => setIsVoiceModalOpen(true)}
+              style={{
+                background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
+                color: '#0F172A',
+                border: 'none',
+                padding: '0.8rem 1.8rem',
+                borderRadius: '9999px',
+                fontSize: '0.95rem',
+                fontWeight: 800,
+                cursor: 'pointer',
+                boxShadow: '0 10px 25px -5px rgba(212, 175, 55, 0.4)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+                transition: 'transform 0.2s',
+                fontFamily: "'Outfit', sans-serif"
+              }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0) scale(1)'}
+            >
+              <span style={{ fontSize: '1.3rem' }}>🎙️</span>
+              <span>Launch Live Voice Consultation</span>
+            </button>
+            <Link
+              href="/quote"
+              className="btn btn-outline"
+              style={{
+                padding: '0.8rem 1.5rem',
+                borderRadius: '9999px',
+                fontSize: '0.9rem',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                color: 'white'
+              }}
+            >
+              Instant Fee Calculator
+            </Link>
+          </div>
         </div>
 
         <div className="glass-dark chat-box-container" style={{ 
@@ -298,6 +341,28 @@ export default function AskTwin() {
             </div>
             
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }} className="header-badges">
+              <button
+                onClick={() => setIsVoiceModalOpen(true)}
+                style={{
+                  background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
+                  color: '#0F172A',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  fontSize: '0.85rem',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.03em',
+                  boxShadow: '0 4px 12px rgba(212, 175, 55, 0.3)'
+                }}
+              >
+                <span>🎙️</span>
+                <span>Voice Call</span>
+              </button>
               <img src="/cmi_logo.png" alt="Certified Master Inspector" style={{ height: '40px', opacity: 0.9 }} />
               <img src="/cpi_logo.png" alt="Certified Professional Inspector" style={{ height: '40px', opacity: 0.9 }} />
             </div>
@@ -417,11 +482,15 @@ export default function AskTwin() {
               </button>
             </form>
             <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--color-gray-mid)', marginTop: '0.75rem' }}>
-              *Foresight AI is an educational twin of Certified Master Inspector Christopher Boykin. Definite system checks require an on-site audit.
+              Foresight AI is an educational twin of Certified Master Inspector Christopher Boykin. Definite system checks require an on-site audit.
             </p>
           </div>
         </div>
       </div>
+
+      {/* Full Voice Agent Overlay Modal */}
+      <VoiceAgentModal isOpen={isVoiceModalOpen} onClose={() => setIsVoiceModalOpen(false)} />
+
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes bounce {
           0%, 80%, 100% { transform: scale(0); }
@@ -438,7 +507,7 @@ export default function AskTwin() {
             max-height: 500px !important;
             min-height: 380px !important;
           }
-          .header-badges {
+          .header-badges img {
             display: none !important;
           }
         }

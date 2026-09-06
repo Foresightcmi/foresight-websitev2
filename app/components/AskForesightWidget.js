@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import VoiceAgentModal from './VoiceAgentModal';
 
 // Inline Glassmorphic Lead Capture Form for Widget
 function WidgetLeadForm({ onSubmitted }) {
@@ -125,6 +126,7 @@ function WidgetLeadForm({ onSubmitted }) {
 
 export default function AskForesightWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVoiceOpen, setIsVoiceOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: 'ai',
@@ -243,45 +245,91 @@ export default function AskForesightWidget() {
 
   return (
     <>
-      {/* Floating Action Button */}
+      {/* Floating Action Button Group */}
       {!isOpen && (
-        <button 
-          onClick={() => setIsOpen(true)}
-          aria-label="Ask Foresight AI Digital Twin assistant"
-          className="ask-foresight-launcher"
+        <div 
+          className="ask-foresight-launcher-group"
           style={{
             position: 'fixed',
             zIndex: 9999,
-            background: 'linear-gradient(135deg, #d32f2f 0%, #991b1b 100%)',
-            color: 'white',
-            border: 'none',
-            borderRadius: '9999px',
-            padding: '0.85rem 1.5rem',
-            minHeight: '48px',
-            minWidth: '48px',
-            fontSize: '0.95rem',
-            fontWeight: 700,
-            cursor: 'pointer',
-            boxShadow: '0 10px 25px -5px rgba(211, 47, 47, 0.4), 0 0 0 1px rgba(255,255,255,0.1)',
+            bottom: '24px',
+            right: '24px',
             display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            fontFamily: "'Outfit', sans-serif",
-            letterSpacing: '0.02em',
-            transition: 'transform 0.2s',
-            animation: 'pulse-glow 3s infinite',
-            willChange: 'transform, opacity'
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.transform = 'translateY(0) scale(1)';
+            gap: '10px',
+            alignItems: 'center'
           }}
         >
-          <span style={{ fontSize: '1.2rem' }}>💬</span>
-          <span>Ask Foresight AI</span>
-        </button>
+          {/* Primary Voice Agent Launcher */}
+          <button
+            onClick={() => setIsVoiceOpen(true)}
+            aria-label="Talk Live to Christopher Boykin Certified Master Inspector"
+            className="ask-foresight-voice-launcher"
+            style={{
+              background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
+              color: '#0F172A',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+              borderRadius: '9999px',
+              padding: '0.85rem 1.4rem',
+              minHeight: '48px',
+              fontSize: '0.92rem',
+              fontWeight: 800,
+              cursor: 'pointer',
+              boxShadow: '0 10px 25px -5px rgba(212, 175, 55, 0.5), 0 0 0 1px rgba(255,255,255,0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontFamily: "'Outfit', sans-serif",
+              letterSpacing: '0.02em',
+              transition: 'transform 0.2s',
+              animation: 'pulse-glow-gold 3s infinite',
+              willChange: 'transform, opacity'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'translateY(-3px) scale(1.03)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+            }}
+          >
+            <span style={{ fontSize: '1.25rem' }}>🎙️</span>
+            <span>Talk Live (Voice)</span>
+          </button>
+
+          {/* Secondary Chat Launcher */}
+          <button 
+            onClick={() => setIsOpen(true)}
+            aria-label="Ask Foresight AI Digital Twin assistant"
+            className="ask-foresight-launcher"
+            style={{
+              background: 'linear-gradient(135deg, #d32f2f 0%, #991b1b 100%)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '9999px',
+              padding: '0.85rem 1.3rem',
+              minHeight: '48px',
+              fontSize: '0.92rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              boxShadow: '0 10px 25px -5px rgba(211, 47, 47, 0.4), 0 0 0 1px rgba(255,255,255,0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontFamily: "'Outfit', sans-serif",
+              letterSpacing: '0.02em',
+              transition: 'transform 0.2s',
+              willChange: 'transform, opacity'
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+            }}
+          >
+            <span style={{ fontSize: '1.2rem' }}>💬</span>
+            <span>Chat</span>
+          </button>
+        </div>
       )}
 
       {/* Expanded Glassmorphic Chat Drawer */}
@@ -329,23 +377,48 @@ export default function AskForesightWidget() {
                 <p style={{ color: '#9ca3af', fontSize: '0.75rem', margin: '1px 0 0 0' }}>Certified Master Inspector</p>
               </div>
             </div>
-            <button 
-              onClick={() => setIsOpen(false)}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: '#9ca3af',
-                fontSize: '1.3rem',
-                cursor: 'pointer',
-                padding: '4px',
-                lineHeight: 1,
-                transition: 'color 0.2s'
-              }}
-              onMouseEnter={e => e.currentTarget.style.color = '#ef4444'}
-              onMouseLeave={e => e.currentTarget.style.color = '#9ca3af'}
-            >
-              ✕
-            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  setIsVoiceOpen(true);
+                }}
+                style={{
+                  background: 'rgba(212, 175, 55, 0.15)',
+                  border: '1px solid rgba(212, 175, 55, 0.3)',
+                  color: '#D4AF37',
+                  padding: '4px 10px',
+                  borderRadius: '6px',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
+                title="Switch to Hands-Free Live Voice Call"
+              >
+                <span>🎙️</span>
+                <span>Voice</span>
+              </button>
+              <button 
+                onClick={() => setIsOpen(false)}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: '#9ca3af',
+                  fontSize: '1.3rem',
+                  cursor: 'pointer',
+                  padding: '4px',
+                  lineHeight: 1,
+                  transition: 'color 0.2s'
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = '#ef4444'}
+                onMouseLeave={e => e.currentTarget.style.color = '#9ca3af'}
+              >
+                ✕
+              </button>
+            </div>
           </div>
 
           {/* Message List */}
@@ -361,6 +434,43 @@ export default function AskForesightWidget() {
               background: 'linear-gradient(to bottom, rgba(17, 24, 39, 0.2), rgba(17, 24, 39, 0.4))'
             }}
           >
+            {/* Top Voice Invitation Banner */}
+            <div 
+              onClick={() => {
+                setIsOpen(false);
+                setIsVoiceOpen(true);
+              }}
+              style={{
+                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%)',
+                border: '1px solid rgba(212, 175, 55, 0.3)',
+                borderRadius: '10px',
+                padding: '10px 14px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                transition: 'background 0.2s'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '1.2rem' }}>🎙️</span>
+                <span style={{ fontSize: '0.8rem', color: '#ffffff', fontWeight: 600 }}>
+                  Hands-Free Voice Consultation
+                </span>
+              </div>
+              <span style={{
+                background: '#D4AF37',
+                color: '#0F172A',
+                fontSize: '0.7rem',
+                fontWeight: 800,
+                padding: '3px 8px',
+                borderRadius: '4px',
+                textTransform: 'uppercase'
+              }}>
+                Talk Live
+              </span>
+            </div>
+
             {messages.map((msg, index) => {
               if (msg.type === 'lead-form') {
                 return (
@@ -480,12 +590,20 @@ export default function AskForesightWidget() {
         </div>
       )}
 
+      {/* Voice Agent Overlay Modal */}
+      <VoiceAgentModal isOpen={isVoiceOpen} onClose={() => setIsVoiceOpen(false)} />
+
       {/* Global CSS Styles for Animations */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes pulse-glow {
           0% { transform: scale(1); opacity: 0.95; }
           50% { transform: scale(1.04); opacity: 1; }
           100% { transform: scale(1); opacity: 0.95; }
+        }
+        @keyframes pulse-glow-gold {
+          0% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4); }
+          50% { transform: scale(1.04); box-shadow: 0 14px 30px -5px rgba(212, 175, 55, 0.7); }
+          100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4); }
         }
         @keyframes slide-up {
           from { transform: translateY(20px); opacity: 0; }
@@ -495,14 +613,27 @@ export default function AskForesightWidget() {
           0%, 80%, 100% { transform: scale(0); }
           40% { transform: scale(1); }
         }
-        .ask-foresight-launcher {
+        .ask-foresight-launcher-group {
           bottom: 24px;
           right: 24px;
         }
         @media (max-width: 768px) {
-          .ask-foresight-launcher {
+          .ask-foresight-launcher-group {
             bottom: 84px !important;
             right: 16px !important;
+            flex-direction: column !important;
+            align-items: flex-end !important;
+            gap: 8px !important;
+          }
+          .ask-foresight-voice-launcher {
+            padding: 0.7rem 1.1rem !important;
+            font-size: 0.85rem !important;
+            min-height: 42px !important;
+          }
+          .ask-foresight-launcher {
+            padding: 0.7rem 1.1rem !important;
+            font-size: 0.85rem !important;
+            min-height: 42px !important;
           }
         }
         @media (max-width: 480px) {
