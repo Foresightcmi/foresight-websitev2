@@ -1,26 +1,36 @@
 import { NextResponse } from 'next/server';
+import { recordLead } from '../../../lib/leads';
 
 export async function POST(request) {
   try {
     const data = await request.json();
-    
-    // In a real production environment, you would use an email service here.
-    // Example: Resend, SendGrid, Amazon SES
-    // For now, we simulate a successful email send to inspect@foresightcmi.com
-    
-    console.log("================ NEW LEAD ================");
-    console.log(`Name: ${data.name}`);
-    console.log(`Phone: ${data.phone}`);
-    console.log(`Email: ${data.email}`);
-    console.log(`Message: ${data.message}`);
-    console.log("==========================================");
+    const { name, phone, email, address, preferredDate, message } = data;
 
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    if (!name || (!email && !phone)) {
+      return NextResponse.json(
+        { success: false, message: 'Name and either email or phone are required.' },
+        { status: 400 }
+      );
+    }
 
-    return NextResponse.json({ success: true, message: 'Message sent successfully.' }, { status: 200 });
+    const result = await recordLead({
+      name,
+      phone: phone || '',
+      email: email || '',
+      address: address || '',
+      preferredDate: preferredDate || '',
+      message: message || '',
+      source: 'Contact Page Form'
+    });
+
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Message received! Our office will contact you within 2 hours to confirm your inquiry.',
+      leadId: result.leadId 
+    }, { status: 200 });
+
   } catch (error) {
     console.error("Error processing contact form:", error);
-    return NextResponse.json({ success: false, message: 'Failed to send message.' }, { status: 500 });
+    return NextResponse.json({ success: false, message: 'Failed to send message. Please call us directly at 678-480-2110.' }, { status: 500 });
   }
 }

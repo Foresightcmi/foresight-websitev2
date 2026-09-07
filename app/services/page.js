@@ -80,31 +80,31 @@ export default function Services() {
     {
       title: 'Pool & Spa Inspections',
       price: '$300',
-      description: 'Specialized evaluation of residential pools and spas. We test pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries.',
-      details: ['Pump & heater functional test', 'Safety barrier review', 'Filter and plumbing evaluation', 'Peace of mind for water features'],
+      description: 'Comprehensive mechanical and safety evaluation of residential swimming pools and spas. We test pumps, filters, heaters, electrical safety, plumbing lines, shell integrity, and safety boundaries.',
+      details: ['Comprehensive pool & spa inspection', 'Pump & heater functional tests', 'Safety barrier & GFCI electrical review', 'Filter and plumbing line evaluation'],
       image: '/images/pool-inspecting.png',
       slug: 'pool-and-spa-inspection-guide'
     },
     {
       title: 'Sewer Scope Inspections',
       price: '$425',
-      description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the home to the municipal connection or septic tank. Highly recommended for older properties.',
-      details: ['Main lateral line sewer inspection', 'High-res video feed provided', 'Locate bellies, roots, and cracks', 'Saves thousands in excavation costs'],
+      description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the cleanout to the municipal street main or septic connection. Highly recommended for older properties.',
+      details: ['High-definition sewer video camera', 'Main lateral line inspection', 'Full digital video recording provided', 'Detects root intrusion, bellies, and cracks'],
       image: '/images/sewer-scope.png',
       slug: 'sewer-scope-inspection-guide'
     },
     {
       title: 'Termite & WDO Inspections',
       price: '$110+',
-      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We provide an Official Georgia Wood Infestation Report.',
-      details: ['Official GA WDO Report', 'Identify active/past termites', 'Detect powderpost beetles & decay', 'Critical for mortgage approvals'],
+      description: 'Wood Destroying Organisms can cause catastrophic structural damage. We deliver the Official Georgia Wood Infestation Inspection Report (GAR compliant) required for real estate closings.',
+      details: ['Official GA WDO Inspection Report', 'Identifies active and past termite activity', 'Checks for wood-boring beetles & fungus', 'Standard requirement for mortgage approvals'],
       slug: 'termite-and-wdo-inspection-guide'
     },
     {
       title: 'Radon Gas Testing',
       price: '$200',
-      description: 'Radon is a cancer-causing, odorless radioactive gas. We use professional 48-hour continuous monitors to ensure your home environment is safe.',
-      details: ['48-hour professional monitoring', 'Precise electronic sensors', 'Strict EPA protocol compliance', 'Continuous hourly readings'],
+      description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
+      details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Precise hourly radon level tracking', 'Strict EPA protocol compliance'],
       slug: 'hidden-dangers-of-radon-gas-georgia'
     }
   ];

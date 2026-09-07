@@ -1,0 +1,25 @@
+[
+  {
+    "id": "lead_1788788518020_09ai1j",
+    "timestamp": "2026-09-07T13:41:58.013Z",
+    "name": "John & Claire Vance",
+    "phone": "404-555-0199",
+    "email": "vance.estates@example.com",
+    "address": "4829 River Valley Manor, Atlanta, GA 30327",
+    "sqft": "8500",
+    "propertyType": "single-family",
+    "serviceType": "buyer",
+    "foundation": "basement",
+    "ageTier": "under-25",
+    "preferredDate": "Friday at 10:00 AM",
+    "addons": [
+      "Pool & Spa Inspection ($300 - 3rd-Party Partner)",
+      "48-Hour Radon Gas Test ($200 - 3rd-Party Partner)",
+      "Sewer Scope Camera ($425 - 3rd-Party Partner)"
+    ],
+    "estimatedTotal": "$1860",
+    "message": "Gate code is 4829. Lockbox is on the side portico door.",
+    "source": "Quote Calculator Online Booking",
+    "status": "tentative_pending_office_confirmation"
+  }
+]

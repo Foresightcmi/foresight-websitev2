@@ -56,10 +56,12 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
   };
 }
 
+import { recordLead } from '../../../lib/leads';
+
 // Lead & appointment persistence helper
 async function persistBooking({ name, phone, email, address, preferredDate, addons = [], estimatedTotal, notes = '' }) {
   console.log('==========================================');
-  console.log('🎙️ [VOICE AGENT] NEW APPOINTMENT SCHEDULED:');
+  console.log('🎙️ [VOICE AGENT] NEW APPOINTMENT REQUESTED:');
   console.log(`👤 Client:    ${name}`);
   console.log(`📞 Phone:     ${phone}`);
   console.log(`✉️ Email:     ${email || 'Not provided'}`);
@@ -69,74 +71,17 @@ async function persistBooking({ name, phone, email, address, preferredDate, addo
   console.log(`💰 Est Total: $${estimatedTotal || 'TBD'}`);
   console.log('==========================================');
 
-  // Forward to Google Apps Script Webhook (Google Sheets)
-  const appsScriptUrl = process.env.APPS_SCRIPT_WEBHOOK_URL;
-  if (appsScriptUrl) {
-    try {
-      await fetch(appsScriptUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'schedule_voice_appointment',
-          name,
-          phone,
-          email: email || '',
-          address: address || '',
-          preferredDate: preferredDate || '',
-          addons: Array.isArray(addons) ? addons.join(', ') : '',
-          estimatedTotal: estimatedTotal || '',
-          notes,
-          source: 'Voice Assistant'
-        }),
-      });
-      console.log('[VOICE AGENT] Appointment saved to Google Sheets via Apps Script.');
-    } catch (err) {
-      console.error('[VOICE AGENT] Apps Script forwarding error:', err);
-    }
-  }
-
-  // Send Email Notification to Christopher
-  const emailPass = process.env.EMAIL_PASSWORD;
-  if (emailPass) {
-    try {
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: 'inspect@foresightcmi.com',
-          pass: emailPass,
-        },
-      });
-
-      const addonListHtml = Array.isArray(addons) && addons.length > 0
-        ? `<ul>${addons.map(a => `<li>${a}</li>`).join('')}</ul>`
-        : '<p>Standard Comprehensive Inspection</p>';
-
-      await transporter.sendMail({
-        from: 'inspect@foresightcmi.com',
-        to: 'inspect@foresightcmi.com',
-        subject: `🚨 [VOICE APPOINTMENT] Inspection Scheduled: ${name} - ${preferredDate || 'ASAP'}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; padding: 24px; border: 2px solid #b91c1c; border-radius: 8px; background: #ffffff;">
-            <h2 style="color: #b91c1c; margin-top: 0;">🎙️ New Inspection Scheduled via Voice Agent</h2>
-            <p><strong>Client Name:</strong> ${name}</p>
-            <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
-            <p><strong>Email:</strong> ${email || 'Not provided'}</p>
-            <p><strong>Inspection Address:</strong> ${address || 'Pending confirmation'}</p>
-            <p><strong>Preferred Date:</strong> ${preferredDate || 'First available slot'}</p>
-            <p><strong>Estimated Total:</strong> $${estimatedTotal || 'Pending exact square footage'}</p>
-            <h3>Selected Add-ons / Scope:</h3>
-            ${addonListHtml}
-            ${notes ? `<p><strong>Notes:</strong> ${notes}</p>` : ''}
-            <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-            <p style="font-size: 13px; color: #64748b;">This appointment was booked hands-free by the Foresight AI Voice Assistant. Sunday bookings require special scheduling approval.</p>
-          </div>
-        `
-      });
-      console.log('[VOICE AGENT] Dispatch email notification sent.');
-    } catch (mailErr) {
-      console.error('[VOICE AGENT] Dispatch email error:', mailErr);
-    }
-  }
+  return await recordLead({
+    name,
+    phone,
+    email: email || '',
+    address: address || '',
+    preferredDate: preferredDate || 'Upcoming Window',
+    addons: Array.isArray(addons) ? addons : [],
+    estimatedTotal: estimatedTotal || '',
+    message: notes || 'Voice booking via Sarah AI Concierge',
+    source: 'Voice Assistant (Sarah)'
+  });
 }
 
 // Studio-Grade Neural Voice Synthesis via EdgeTTS (en-US-JennyNeural)
@@ -212,11 +157,14 @@ CRITICAL RULES FOR NATURAL HUMAN CONVERSATION:
    - Complimentary $10,000 Master Protection Warranty with zero deductible.
    - Free FLIR thermal imaging & free 4K aerial drone roof scans.
    - InterNACHI SOP: We inspect roofing, electrical (testing for Federal Pacific/Zinsco/aluminum wiring), plumbing (polybutylene/TPR), HVAC, and foundations (Georgia red clay hydrostatic pressure).
-5. PRICING & SCHEDULING:
+5. PRICING, SCHEDULING & AUXILIARY SERVICES:
    - Single-family homes start at $345, condos at $295.
+   - Any home size can be scheduled online, from small condos to luxury estates over 5,000 to 10,000 square feet.
+   - Online appointments are tentative requests. Foresight's office contacts the client within 2 hours to verify details and confirm inspector dispatch.
    - Sunday is strictly by appointment only.
    - Standard time slots are morning (9am / 10am) and afternoon (1:30pm).
    - Add-ons: Radon ($200), Termite WDO ($110+), Sewer Scope ($425), Pool/Spa ($300), STR ($355).
+   - SPECIALTY SERVICES: Auxiliary services (Pool, Termite, Radon, Sewer Scope) are coordinated alongside the primary home inspection. Never say that we contract out, outsource, or use third parties. Simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 2 hours.
 6. ABSOLUTE CONTENT RULE: Write in 100% clean plain text. NEVER use asterisks (*) or markdown symbols under any circumstances.`;
 
   const models = ['gemini-3.1-flash-lite', 'gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-flash-latest'];
@@ -459,30 +407,30 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
   // Radon (Instant Audio)
   if (matchesAny(['radon'])) {
     return {
-      text: "Radon is very common in Georgia granite bedrock. We run 48-hour continuous electronic monitoring for 200 dollars. If levels are elevated, we give you the leverage to have the seller install a mitigation system before closing!",
-      preAudio: '/audio/sarah-radon.mp3'
+      text: "Radon is very common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols for 200 dollars, giving you the official data to require a seller mitigation credit before closing.",
+      preAudio: null
     };
   }
 
   // Termite (Instant Audio)
   if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation'])) {
     return {
-      text: "Georgia is prime termite country. We do complete wood-destroying organism inspections for 110 dollars bundled, and provide the official Georgia Wood Infestation Report.",
-      preAudio: '/audio/sarah-termite.mp3'
+      text: "Georgia is prime termite country. We provide complete wood-destroying organism inspections for 110 dollars bundled with your home inspection, delivering the official Georgia Wood Infestation Report.",
+      preAudio: null
     };
   }
 
   // Sewer Scope (Instant Audio)
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
-      text: "Replacing a broken sewer line can cost eight to fifteen thousand dollars! Our high-definition camera inspects the main drain pipe all the way to the municipal connection for 425 dollars. It is especially recommended for homes over 25 years old.",
-      preAudio: '/audio/sarah-sewer.mp3'
+      text: "Replacing a broken underground sewer line can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 425 dollars, inspecting the main lateral line to the municipal street connection.",
+      preAudio: null
     };
   }
 
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
-      text: "We inspect pool pumps, heaters, filtration, and safety GFCI breakers for 300 dollars flat. Catching pool issues early gives you great leverage to negotiate seller credits before closing.",
+      text: "We provide comprehensive pool and spa inspections for 300 dollars flat. We evaluate pumps, heaters, filtration, shell integrity, and safety GFCI bonding to ensure complete peace of mind.",
       preAudio: null
     };
   }
@@ -588,11 +536,12 @@ export async function POST(request) {
       };
 
       await persistBooking(bookingArgs);
-      const speechResponse = `Awesome! I have your inspection reservation initiated right now. Our team will follow up directly at ${clientPhone} to confirm arrival time and lockbox details. Remember that Sunday is by appointment only. We look forward to working with you!`;
+      const speechResponse = `Awesome! I have your tentative inspection request logged. Our office team will follow up directly at ${clientPhone} within two hours to confirm inspector arrival time, access, and schedule any requested auxiliary specialists. Remember that Sunday is by appointment only. We look forward to speaking with you!`;
 
+      const audio = await synthesizeHumanVoice(speechResponse);
       return NextResponse.json({
         response: speechResponse,
-        audio: '/audio/sarah-booked.mp3',
+        audio,
         action: 'scheduled',
         booking: bookingArgs
       });

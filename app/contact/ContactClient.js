@@ -15,6 +15,8 @@ export default function ContactClient() {
       name: e.target.name.value,
       phone: e.target.phone.value,
       email: e.target.email.value,
+      address: e.target.address?.value || '',
+      preferredDate: e.target.preferredDate?.value || '',
       message: e.target.message.value,
     };
 
@@ -57,7 +59,7 @@ export default function ContactClient() {
           <div style={{ background: 'var(--color-white)', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-md)', marginBottom: '3rem', borderLeft: '4px solid var(--color-red)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
             <div style={{ flex: '1 1 500px' }}>
               <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>Ready to Book Online?</h2>
-              <p style={{ color: 'var(--color-gray-dark)', margin: 0 }}>Skip the forms and phone calls—schedule your Certified Master Inspector-led dual home inspection instantly using our automated system.</p>
+              <p style={{ color: 'var(--color-gray-dark)', margin: 0 }}>Skip phone tag—schedule your Certified Master Inspector-led dual home inspection online for any home size across Metro Atlanta.</p>
             </div>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
               📅 Schedule Your Inspection Online
@@ -110,40 +112,65 @@ export default function ContactClient() {
             <div className="card card-premium">
               <h2 style={{ marginBottom: '1.5rem' }}>Send Us a Message</h2>
               {submitStatus === 'success' ? (
-                <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', color: 'var(--color-red-dark)' }}>
-                  <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Message Sent!</h3>
-                  <p>Thank you for reaching out. We will get back to you shortly.</p>
-                  <button onClick={() => setSubmitStatus(null)} className="btn btn-outline" style={{ marginTop: '1.5rem' }}>Send Another</button>
+                <div style={{ padding: '2rem', textAlign: 'center', background: 'rgba(16, 185, 129, 0.08)', border: '2px solid #10b981', borderRadius: 'var(--radius-md)' }}>
+                  <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>✅</div>
+                  <h3 style={{ marginBottom: '0.75rem', color: 'var(--color-dark)', fontSize: '1.4rem' }}>Message &amp; Request Received!</h3>
+                  <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.5, maxWidth: '500px', margin: '0 auto 1.25rem' }}>
+                    Thank you for reaching out to Foresight Home Inspections! Please note that all online submissions are <strong>tentative requests</strong>. Our office will review your message and contact you within <strong>2 hours</strong> by phone or text to confirm schedule availability and address details.
+                  </p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', margin: '0 0 1.5rem 0' }}>
+                    Need immediate confirmation today? Call our dispatch line directly at <a href="tel:678-480-2110" style={{ color: 'var(--color-red)', fontWeight: 700 }}>678-480-2110</a>.
+                  </p>
+                  <button onClick={() => setSubmitStatus(null)} className="btn btn-outline" style={{ display: 'inline-block' }}>Send Another Message</button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   <div>
                     <label className="form-label" htmlFor="name">Full Name *</label>
                     <input type="text" id="name" name="name" className="form-control" placeholder="e.g. Jane Doe" required />
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                     <div>
-                      <label className="form-label" htmlFor="phone">Phone Number</label>
-                      <input type="tel" id="phone" name="phone" className="form-control" placeholder="(678) 000-0000" />
+                      <label className="form-label" htmlFor="phone">Phone Number *</label>
+                      <input type="tel" id="phone" name="phone" className="form-control" placeholder="(678) 000-0000" required />
                     </div>
                     <div>
                       <label className="form-label" htmlFor="email">Email Address *</label>
                       <input type="email" id="email" name="email" className="form-control" placeholder="jane@example.com" required />
                     </div>
                   </div>
-                  <div>
-                    <label className="form-label" htmlFor="address">Property Address / City (Optional)</label>
-                    <input type="text" id="address" name="address" className="form-control" placeholder="e.g. 123 Main St, Atlanta, GA" />
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div>
+                      <label className="form-label" htmlFor="address">Property Address / City (Any Size)</label>
+                      <input type="text" id="address" name="address" className="form-control" placeholder="e.g. 123 Main St, Atlanta, GA" />
+                    </div>
+                    <div>
+                      <label className="form-label" htmlFor="preferredDate">Requested Inspection Date</label>
+                      <input type="text" id="preferredDate" name="preferredDate" className="form-control" placeholder="e.g. Tomorrow 9 AM or Thursday" />
+                    </div>
                   </div>
                   <div>
                     <label className="form-label" htmlFor="message">Message / Inspection Questions *</label>
-                    <textarea id="message" name="message" className="form-control" rows="4" placeholder="Tell us about the property, square footage, or any specific questions..." required></textarea>
+                    <textarea id="message" name="message" className="form-control" rows="4" placeholder="Tell us about the property, square footage, add-ons (Pool, Termite, Radon), or any questions..." required></textarea>
                   </div>
+
+                  <div style={{ 
+                    background: 'rgba(211, 47, 47, 0.05)', 
+                    border: '1px solid rgba(211, 47, 47, 0.2)', 
+                    borderRadius: 'var(--radius-sm)', 
+                    padding: '0.85rem 1rem', 
+                    fontSize: '0.825rem', 
+                    color: 'var(--color-gray-dark)', 
+                    lineHeight: 1.45 
+                  }}>
+                    ℹ️ <strong>Tentative Inquiries &amp; Requests:</strong> All online contact submissions are tentative requests. Our office reviews property details and contacts you within 2 hours to confirm availability and schedule. Sunday is by appointment only. Auxiliary services (Pool, Termite, Radon, Sewer Scope) are scheduled and coordinated alongside your primary inspection.
+                  </div>
+
                   {submitStatus === 'error' && (
-                    <p style={{ color: 'var(--color-red)', fontWeight: 500 }}>There was an error sending your message. Please try again or call us directly.</p>
+                    <p style={{ color: 'var(--color-red)', fontWeight: 500 }}>There was an error sending your message. Please try again or call us directly at 678-480-2110.</p>
                   )}
                   <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ width: '100%', padding: '1rem', fontSize: '1.125rem', opacity: isSubmitting ? 0.7 : 1 }}>
-                    {isSubmitting ? 'Sending...' : '✉️ Send Message'}
+                    {isSubmitting ? 'Sending...' : '✉️ Send Message / Request'}
                   </button>
                 </form>
               )}

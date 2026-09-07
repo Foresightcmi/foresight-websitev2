@@ -9,7 +9,7 @@
     "icon": "☢️",
     "badge": "EPA Recommended",
     "heroSub": "Radon is an invisible, odorless radioactive gas and the #1 cause of lung cancer in non-smokers. Protect your family in {city} with continuous electronic monitoring.",
-    "overview": "Radon gas enters {city} homes through cracks in foundation slabs, crawlspaces, and basement walls. Because Georgia sits on granite-rich soil, indoor radon levels can vary significantly even between neighboring homes. Foresight Home Inspections utilizes professional 48-hour continuous radon monitors to measure precise hourly picocuries per liter (pCi/L) levels, giving you clear, actionable data before closing.",
+    "overview": "Radon gas enters {city} homes through cracks in foundation slabs, crawlspaces, and basement walls. Because Georgia sits on granite-rich soil, indoor radon levels can vary significantly even between neighboring homes. Foresight Home Inspections coordinates professional 48-hour continuous radon monitoring with certified testing specialists to measure precise hourly picocuries per liter (pCi/L) levels, giving you clear, actionable data before closing.",
     "standards": "Our radon testing protocols strictly adhere to U.S. Environmental Protection Agency (EPA) and InterNACHI standards. Action is recommended for any radon level at or above 4.0 pCi/L.",
     "equipment": "Continuous Radon Monitors (CRM) with 48-hour hourly sampling, tamper detection, and digital reporting.",
     "faqs": [
@@ -145,7 +145,7 @@
     "icon": "🏊‍♂️",
     "badge": "Electrical & Safety Audit",
     "heroSub": "Pool repairs can cost thousands in hidden pump, liner, or electrical failures. Protect your backyard oasis in {city} with a specialized pool evaluation.",
-    "overview": "A residential swimming pool in {city} is both a luxury amenity and a complex mechanical facility. Our specialized pool and spa inspection evaluates the structural pool shell, plaster/liner condition, circulation pumps, filtration units, pool heaters, automated valve actuators, GFCI electrical bonding, and safety barrier compliance (fence latches and alarms).",
+    "overview": "A residential swimming pool in {city} is both a luxury amenity and a complex mechanical facility. In partnership with certified pool specialist partners, our specialized pool and spa inspection evaluates the structural pool shell, plaster/liner condition, circulation pumps, filtration units, pool heaters, automated valve actuators, GFCI electrical bonding, and safety barrier compliance (fence latches and alarms).",
     "standards": "Evaluates equipment against APSP (Association of Pool & Spa Professionals) standards, NEC Article 680 electrical safety codes, and local Georgia barrier regulations.",
     "equipment": "Pressure gauges, electronic GFCI circuit testers, acoustic leak sensors, and telescopic pole camera rigs.",
     "faqs": [
@@ -155,7 +155,7 @@
       },
       {
         "q": "Can a general home inspector in {city} inspect a pool?",
-        "a": "Most general home inspectors exclude pools entirely or perform only a cursory visual check. Foresight provides a dedicated, technical pool audit with specialized testing of high-voltage equipment and hydraulic pressure systems."
+        "a": "Most general home inspectors exclude pools entirely or perform only a cursory visual check. Foresight coordinates a dedicated, technical pool audit with certified pool specialist partners for specialized testing of high-voltage equipment and hydraulic pressure systems."
       },
       {
         "q": "How much does a pool inspection cost in {city}, GA?",

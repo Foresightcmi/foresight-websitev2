@@ -22,6 +22,9 @@ export default function QuoteClient({ showValueComparison = true }) {
   const [leadName, setLeadName] = useState('');
   const [leadEmail, setLeadEmail] = useState('');
   const [leadPhone, setLeadPhone] = useState('');
+  const [leadAddress, setLeadAddress] = useState('');
+  const [leadPreferredDate, setLeadPreferredDate] = useState('');
+  const [leadNotes, setLeadNotes] = useState('');
   const [leadStatus, setLeadStatus] = useState('idle'); // idle, submitting, success, error
   const [showLeadForm, setShowLeadForm] = useState(false);
 
@@ -49,7 +52,7 @@ export default function QuoteClient({ showValueComparison = true }) {
       else base = 325; // 1001-1800
     } else {
       // Pre-Purchase Buyer Home Inspection tiered pricing from fee schedule
-      const parsedSqft = Number(sqft);
+      const parsedSqft = Number(sqft) || 2000;
       if (parsedSqft <= 1000) base = 345;
       else if (parsedSqft <= 1500) base = 375;
       else if (parsedSqft <= 2000) base = 410;
@@ -59,7 +62,12 @@ export default function QuoteClient({ showValueComparison = true }) {
       else if (parsedSqft <= 4000) base = 500;
       else if (parsedSqft <= 4500) base = 555;
       else if (parsedSqft <= 5000) base = 595;
-      else base = 635; // 5001-5500+
+      else if (parsedSqft <= 5500) base = 635;
+      else {
+        // Transparent scaling for luxury estates over 5,500 sq ft ($50 per 500 sq ft)
+        const additionalChunks = Math.ceil((parsedSqft - 5500) / 500);
+        base = 635 + (additionalChunks * 50);
+      }
     }
     
     let extra = 0;
@@ -159,10 +167,37 @@ export default function QuoteClient({ showValueComparison = true }) {
     e.preventDefault();
     setLeadStatus('submitting');
     try {
+      const activeAddonNames = Object.keys(addons)
+        .filter(k => addons[k])
+        .map(k => {
+          if (k === 'radon') return '48-Hour Radon Gas Test ($200)';
+          if (k === 'pool') return 'Pool & Spa Inspection ($300)';
+          if (k === 'sewer') return 'Sewer Scope Camera ($425)';
+          if (k === 'termite') return 'Termite / WDO Inspection ($110)';
+          if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance ($125)';
+          if (k === 'buildfax') return 'BuildFax Report ($15)';
+          return k;
+        });
+
       const res = await fetch('/api/lead-capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: leadName, email: leadEmail, phone: leadPhone })
+        body: JSON.stringify({
+          name: leadName,
+          email: leadEmail,
+          phone: leadPhone,
+          address: leadAddress,
+          preferredDate: leadPreferredDate,
+          sqft,
+          propertyType,
+          serviceType,
+          foundation,
+          ageTier,
+          addons: activeAddonNames,
+          estimatedTotal: total,
+          notes: leadNotes,
+          source: 'Quote Calculator Online Booking'
+        })
       });
       if (res.ok) {
         setLeadStatus('success');
@@ -271,7 +306,7 @@ export default function QuoteClient({ showValueComparison = true }) {
             <h2 style={{ marginBottom: '1.5rem' }}>3. Finished / Heated Size</h2>
             <div className="form-group">
               <label className="form-label">
-                Total Heated Square Footage {Number(sqft) > 4000 && serviceType !== 'str' && <span style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.85rem' }}>(Over 4,000 sq ft = Custom Estate Quote)</span>}
+                Total Heated Square Footage {Number(sqft) > 5500 && serviceType !== 'str' && <span style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.85rem' }}>(Luxury Estate Sizing — Transparent Online Estimate &amp; Booking Available)</span>}
               </label>
               <input 
                 type="number"
@@ -362,6 +397,20 @@ export default function QuoteClient({ showValueComparison = true }) {
 
             <>
               <h2 style={{ marginTop: '2.5rem', marginBottom: '1.5rem' }}>6. Specialized Services & Add-ons</h2>
+              
+              <div style={{
+                background: 'rgba(211, 47, 47, 0.04)',
+                border: '1px solid rgba(211, 47, 47, 0.15)',
+                borderRadius: 'var(--radius-md)',
+                padding: '1rem 1.25rem',
+                marginBottom: '1.5rem',
+                fontSize: '0.85rem',
+                color: 'var(--color-gray-dark)',
+                lineHeight: 1.5
+              }}>
+                🗓️ <strong>Specialty Service Scheduling:</strong> Specialized auxiliary inspections (Pool &amp; Spa, Termite/WDO, Radon Gas Testing, and Sewer Scope) are coordinated alongside your main home inspection. When requested, our office coordinates the dedicated equipment and specialized schedules to ensure seamless on-site execution.
+              </div>
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <label className="checkbox-container">
                   <input 
@@ -371,7 +420,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>48-Hour Radon Gas Test (+ $200)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour professional electronic radon monitoring & laboratory report.</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour electronic monitoring following strict EPA protocols.</span>
                   </div>
                 </label>
 
@@ -383,7 +432,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Inspection (+ $300)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pumps, electrical, filters, safety barriers, and shell integrity check.</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pump, filter, heater, electrical safety, and shell integrity evaluation.</span>
                   </div>
                 </label>
 
@@ -395,7 +444,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (+ $425)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>High-definition camera inspection of the main sewer line to detect root intrusion or collapses.</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>High-definition camera inspection of the main lateral sewer line to the municipal connection.</span>
                   </div>
                 </label>
 
@@ -407,7 +456,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>Termite / Wood Destroying Organism (WDO) Inspection (+ $110)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Official Georgia Wood Infestation Inspection Report (GAR compliant).</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Official Georgia Wood Infestation Inspection Report (GAR compliant) for real estate transactions.</span>
                   </div>
                 </label>
 
@@ -579,55 +628,172 @@ export default function QuoteClient({ showValueComparison = true }) {
                 </p>
               </div>
 
-              <a 
-                href={isCustom ? "tel:678-480-2110" : "https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn-primary" 
-                style={{ width: '100%', fontSize: '1.125rem', padding: '1rem', textAlign: 'center', display: 'block' }}
-              >
-                {isCustom 
-                  ? '📞 Call 678-480-2110 for Custom Quote' 
-                  : serviceType === 'new-construction'
-                  ? '📅 Book New Construction Inspection Now'
-                  : serviceType === 'seller'
-                  ? '📅 Book Pre-Listing Inspection Now'
-                  : serviceType === 'warranty'
-                  ? '📅 Book Warranty Inspection Now'
-                  : serviceType === 'str'
-                  ? '📅 Book STR Compliance Assist Now'
-                  : '📅 Book Home Inspection Online Now'}
-              </a>
-              
-              <div style={{ marginTop: '1rem' }}>
-                {!showLeadForm && (
-                  <button onClick={() => setShowLeadForm(true)} className="btn btn-outline" style={{ width: '100%', borderColor: 'var(--color-white)', color: 'var(--color-white)', fontSize: '1rem', padding: '0.75rem' }}>
-                    {isCustom ? '📋 Request Custom Estate Consultation Online' : '🔒 Hold My Slot & Save This Price'}
-                  </button>
-                )}
-                {showLeadForm && (
-                  <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '1.25rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255, 255, 255, 0.1)', marginTop: '0.5rem' }}>
-                    {leadStatus === 'success' ? (
-                      <div style={{ color: '#34d399', fontSize: '0.9rem', textAlign: 'center' }}>
-                        <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', fontSize: '1.1rem' }}>✅ Request Received!</p>
-                        <p style={{ color: 'var(--color-white)', lineHeight: 1.4 }}>Our team will contact you shortly to confirm your custom property details.</p>
+              {/* Primary Direct Action: Book / Request Inspection Online */}
+              <div id="quote-request-form" style={{ marginTop: '1.25rem' }}>
+                <div style={{ 
+                  background: 'rgba(255, 255, 255, 0.05)', 
+                  padding: '1.25rem', 
+                  borderRadius: 'var(--radius-md)', 
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  marginBottom: '1rem'
+                }}>
+                  {leadStatus === 'success' ? (
+                    <div style={{ 
+                      background: 'rgba(16, 185, 129, 0.15)', 
+                      border: '2px solid #10b981', 
+                      borderRadius: 'var(--radius-sm)', 
+                      padding: '1.5rem 1rem', 
+                      textAlign: 'center', 
+                      color: 'var(--color-white)' 
+                    }}>
+                      <div style={{ fontSize: '2.5rem', marginBottom: '0.25rem' }}>✅</div>
+                      <h4 style={{ color: '#34d399', fontSize: '1.2rem', marginBottom: '0.5rem', fontWeight: 800 }}>
+                        Tentative Request Received!
+                      </h4>
+                      <p style={{ fontSize: '0.9rem', color: '#f1f5f9', lineHeight: 1.4, marginBottom: '1rem' }}>
+                        Thank you, <strong>{leadName || 'Valued Client'}</strong>! We have logged your request for <strong>{leadAddress || 'your property'}</strong>.
+                      </p>
+                      <div style={{ 
+                        background: 'rgba(0,0,0,0.4)', 
+                        padding: '0.85rem', 
+                        borderRadius: '4px', 
+                        fontSize: '0.8rem', 
+                        lineHeight: 1.45, 
+                        textAlign: 'left',
+                        color: '#cbd5e1',
+                        marginBottom: '1rem'
+                      }}>
+                        <p style={{ color: '#fef08a', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
+                          ℹ️ Next Steps (Pending Office Confirmation):
+                        </p>
+                        <ul style={{ margin: 0, paddingLeft: '1.1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                          <li><strong>Office Confirmation Call:</strong> Our office reviews county tax records and calls or texts you within 2 hours to confirm inspector arrival time.</li>
+                          <li><strong>Specialty Service Coordination:</strong> Dedicated auxiliary services (Pool, Termite, Radon, Sewer) are coordinated alongside your primary inspection window.</li>
+                          <li><strong>Sunday Inspection:</strong> Strictly by appointment only.</li>
+                        </ul>
                       </div>
-                    ) : (
-                      <form onSubmit={handleHoldSlot} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', textAlign: 'left' }}>
-                        <h4 style={{ color: 'var(--color-white)', fontSize: '0.95rem', margin: 0 }}>
-                          {isCustom ? 'Request Custom Estate Consultation' : 'Secure Your Quote'}
+                      <p style={{ fontSize: '0.8rem', color: 'var(--color-gray-mid)', margin: 0 }}>
+                        Need immediate dispatch? Call Christopher at <a href="tel:678-480-2110" style={{ color: '#34d399', fontWeight: 700 }}>678-480-2110</a>.
+                      </p>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleHoldSlot} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', textAlign: 'left' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <h4 style={{ color: 'var(--color-white)', fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>
+                          📋 Submit Online Inspection Request
                         </h4>
-                        <input type="text" placeholder="Your Name" required value={leadName} onChange={e => setLeadName(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
-                        <input type="email" placeholder="Your Email" required value={leadEmail} onChange={e => setLeadEmail(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
-                        <input type="tel" placeholder="Phone Number" required={isCustom} value={leadPhone} onChange={e => setLeadPhone(e.target.value)} style={{ padding: '0.6rem', borderRadius: '4px', border: 'none', width: '100%' }} />
-                        <button type="submit" disabled={leadStatus === 'submitting'} className="btn btn-primary" style={{ padding: '0.6rem', fontSize: '0.95rem', background: 'var(--color-red-dark)' }}>
-                          {leadStatus === 'submitting' ? 'Submitting...' : isCustom ? 'Submit Custom Consultation Request' : 'Lock In Price'}
-                        </button>
-                        {leadStatus === 'error' && <p style={{ color: '#fca5a5', fontSize: '0.85rem', margin: 0, textAlign: 'center' }}>An error occurred. Please try again.</p>}
-                      </form>
-                    )}
-                  </div>
-                )}
+                        <span style={{ fontSize: '0.75rem', color: '#34d399', fontWeight: 600 }}>Lock In Price</span>
+                      </div>
+                      <p style={{ fontSize: '0.78rem', color: 'var(--color-gray-mid)', margin: 0, lineHeight: 1.35 }}>
+                        Enter your details below to hold your preferred window. No upfront payment required.
+                      </p>
+
+                      <div>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Your Full Name *</label>
+                        <input 
+                          type="text" 
+                          placeholder="e.g. Alex Morgan" 
+                          required 
+                          value={leadName} 
+                          onChange={e => setLeadName(e.target.value)} 
+                          style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
+                        />
+                      </div>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                        <div>
+                          <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Phone Number *</label>
+                          <input 
+                            type="tel" 
+                            placeholder="(678) 000-0000" 
+                            required 
+                            value={leadPhone} 
+                            onChange={e => setLeadPhone(e.target.value)} 
+                            style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
+                          />
+                        </div>
+                        <div>
+                          <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Email Address *</label>
+                          <input 
+                            type="email" 
+                            placeholder="alex@example.com" 
+                            required 
+                            value={leadEmail} 
+                            onChange={e => setLeadEmail(e.target.value)} 
+                            style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Property Address / City *</label>
+                        <input 
+                          type="text" 
+                          placeholder="e.g. 123 Peachtree St, Atlanta, GA" 
+                          required 
+                          value={leadAddress} 
+                          onChange={e => setLeadAddress(e.target.value)} 
+                          style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Preferred Inspection Date &amp; Window</label>
+                        <input 
+                          type="text" 
+                          placeholder="e.g. Tomorrow morning (9-10 AM) or Thursday afternoon" 
+                          value={leadPreferredDate} 
+                          onChange={e => setLeadPreferredDate(e.target.value)} 
+                          style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Special Instructions / Lockbox / Questions (Optional)</label>
+                        <textarea 
+                          rows="2"
+                          placeholder="Any gate codes, SUPRA key access details, or questions..." 
+                          value={leadNotes} 
+                          onChange={e => setLeadNotes(e.target.value)} 
+                          style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff', resize: 'vertical' }} 
+                        />
+                      </div>
+
+                      <div style={{ background: 'rgba(211,47,47,0.12)', padding: '0.6rem 0.8rem', borderRadius: '4px', border: '1px solid rgba(211,47,47,0.25)', fontSize: '0.75rem', color: '#fca5a5', lineHeight: 1.35 }}>
+                        ℹ️ <strong>Tentative Slot Request:</strong> Our office reviews property records and confirms inspector dispatch within 2 hours. Sunday is by appointment only.
+                      </div>
+
+                      <button 
+                        type="submit" 
+                        disabled={leadStatus === 'submitting'} 
+                        className="btn btn-primary" 
+                        style={{ padding: '0.85rem', fontSize: '1.05rem', fontWeight: 700, width: '100%', background: 'var(--color-red)' }}
+                      >
+                        {leadStatus === 'submitting' ? 'Submitting Request...' : `📅 Submit Inspection Request ($${total})`}
+                      </button>
+
+                      {leadStatus === 'error' && (
+                        <p style={{ color: '#fca5a5', fontSize: '0.825rem', margin: 0, textAlign: 'center' }}>
+                          An error occurred while submitting. Please call us directly at 678-480-2110.
+                        </p>
+                      )}
+                    </form>
+                  )}
+                </div>
+
+                <div style={{ textAlign: 'center', margin: '0.75rem 0' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--color-gray-mid)' }}>— OR SCHEDULE VIA HOMESCHEDULER —</span>
+                </div>
+
+                <a 
+                  href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn btn-outline" 
+                  style={{ width: '100%', fontSize: '0.95rem', padding: '0.75rem', textAlign: 'center', display: 'block', borderColor: 'rgba(255,255,255,0.3)', color: 'var(--color-white)' }}
+                >
+                  ⚡ Open HomeGauge Automated Scheduler
+                </a>
               </div>
               
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
@@ -661,18 +827,16 @@ export default function QuoteClient({ showValueComparison = true }) {
     }}>
       <div>
         <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>Est. Inspection Total</span>
-        <strong style={{ fontSize: isCustom ? '1rem' : '1.35rem', color: 'var(--color-red)', fontWeight: 800 }}>
-          {isCustom ? 'Custom Quote' : `$${total}`}
+        <strong style={{ fontSize: '1.35rem', color: 'var(--color-red)', fontWeight: 800 }}>
+          ${total}
         </strong>
       </div>
       <a 
-        href={isCustom ? "tel:678-480-2110" : "https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+        href="#quote-request-form" 
         className="btn btn-primary" 
         style={{ padding: '0.6rem 1.25rem', fontSize: '0.9rem', fontWeight: 700 }}
       >
-        {isCustom ? '📞 Call Now' : '📅 Book Online'}
+        📅 Book / Request Online
       </a>
     </div>
 

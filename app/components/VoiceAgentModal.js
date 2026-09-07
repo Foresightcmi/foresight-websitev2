@@ -33,6 +33,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const processorRef = useRef(null);
   const scheduledAudioTimeRef = useRef(0);
   const activePcmSourcesRef = useRef([]);
+  const isModelTurnActiveRef = useRef(false);
+  const speakingEndTimerRef = useRef(null);
 
   const recognitionRef = useRef(null);
   const synthRef = useRef(null);
@@ -71,6 +73,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       clearTimeout(silenceTimerRef.current);
       silenceTimerRef.current = null;
     }
+    if (speakingEndTimerRef.current) {
+      clearTimeout(speakingEndTimerRef.current);
+      speakingEndTimerRef.current = null;
+    }
 
     // 1. Stop and clear HTML5 Audio element
     if (audioRef.current) {
@@ -97,6 +103,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
 
     isSpeakingRef.current = false;
+    isModelTurnActiveRef.current = false;
   }, []);
 
   // Initialize Audio & Speech Recognition support
@@ -125,6 +132,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
     try {
       haltSpeech();
+      if (recognitionRef.current) {
+        try { recognitionRef.current.abort(); } catch (_) {}
+      }
 
       const audio = new Audio(audioSrc);
       audioRef.current = audio;
@@ -135,13 +145,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       };
 
       audio.onended = () => {
-        isSpeakingRef.current = false;
         audioRef.current = null;
-        if (onEnded) {
-          onEnded();
-        } else {
-          // Default post-speech: brief silence decay then listen
-          setTimeout(() => {
+        // Acoustic decay window before unmuting or starting recognition
+        setTimeout(() => {
+          isSpeakingRef.current = false;
+          if (onEnded) {
+            onEnded();
+          } else {
             if (!isOpenRef.current) return;
             setCallState('listening');
             if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
@@ -150,8 +160,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             if (isHandsFreeRef.current && handleStartListeningRef.current) {
               handleStartListeningRef.current();
             }
-          }, 250);
-        }
+          }
+        }, 350);
       };
 
       audio.onerror = (e) => {
@@ -232,7 +242,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     isMutedRef.current = isMuted;
   }, [isMuted]);
 
-  // Live 24kHz PCM Audio Stream Player (Ultra low-latency gapless queue)
+  // Live 24kHz PCM Audio Stream Player (Jitter-buffered gapless queue)
   const playLivePcmChunk = useCallback((base64Data) => {
     if (isMutedRef.current || !base64Data) return;
     try {
@@ -276,22 +286,45 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       source.connect(ctx.destination);
 
       const now = ctx.currentTime;
+      // 80ms jitter buffer ensures smooth gapless playback between WebSocket chunk deliveries
       if (scheduledAudioTimeRef.current < now) {
-        scheduledAudioTimeRef.current = now + 0.04;
+        scheduledAudioTimeRef.current = now + 0.08;
       }
 
       source.start(scheduledAudioTimeRef.current);
       scheduledAudioTimeRef.current += buffer.duration;
       activePcmSourcesRef.current.push(source);
+
+      // Lock speaking state - do not re-render React repeatedly if already speaking
       isSpeakingRef.current = true;
-      setCallState('speaking');
+      isModelTurnActiveRef.current = true;
+      if (callStateRef.current !== 'speaking') {
+        setCallState('speaking');
+      }
+
+      // Clear any pending transition back to listening since new audio has arrived
+      if (speakingEndTimerRef.current) {
+        clearTimeout(speakingEndTimerRef.current);
+        speakingEndTimerRef.current = null;
+      }
 
       source.onended = () => {
         const idx = activePcmSourcesRef.current.indexOf(source);
         if (idx > -1) activePcmSourcesRef.current.splice(idx, 1);
-        if (activePcmSourcesRef.current.length === 0) {
-          isSpeakingRef.current = false;
-          setCallState('listening');
+
+        // Transition back to listening ONLY when:
+        // 1. Model generation is complete
+        // 2. All active audio buffer sources have finished playing
+        // 3. 350ms acoustic room decay margin has elapsed
+        if (!isModelTurnActiveRef.current && activePcmSourcesRef.current.length === 0) {
+          const remainingMs = Math.max(0, (scheduledAudioTimeRef.current - ctx.currentTime) * 1000);
+          if (speakingEndTimerRef.current) clearTimeout(speakingEndTimerRef.current);
+          speakingEndTimerRef.current = setTimeout(() => {
+            if (activePcmSourcesRef.current.length === 0 && !isModelTurnActiveRef.current) {
+              isSpeakingRef.current = false;
+              setCallState('listening');
+            }
+          }, remainingMs + 350);
         }
       };
     } catch (err) {
@@ -356,8 +389,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       processorRef.current = processor;
 
       processor.onaudioprocess = (e) => {
-        // Drop mic audio if muted or Sarah is currently speaking (prevents speaker echo loop!)
-        if (!ws || ws.readyState !== WebSocket.OPEN || isMutedRef.current || isSpeakingRef.current) return;
+        // Drop mic audio if muted or Sarah is currently speaking or turn is active or speaker audio is echoing!
+        const outCtx = audioOutputCtxRef.current;
+        const isSpeakerAudioPlaying = outCtx && (scheduledAudioTimeRef.current > outCtx.currentTime + 0.35);
+        if (
+          !ws || 
+          ws.readyState !== WebSocket.OPEN || 
+          isMutedRef.current || 
+          isSpeakingRef.current || 
+          isModelTurnActiveRef.current || 
+          isSpeakerAudioPlaying
+        ) {
+          return;
+        }
 
         const float32 = e.inputBuffer.getChannelData(0);
         const int16 = new Int16Array(float32.length);
@@ -417,7 +461,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       ws.onopen = () => {
         console.log('Gemini Live WebSocket open. Sending setup handshake...');
-        const livePrompt = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them to our website, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Never use markdown asterisks.`;
+        const livePrompt = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them warmly, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Specialty services like Pool ($300), Termite ($110), Radon ($200), and Sewer Scope ($425) are coordinated alongside our primary inspection. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 2 hours. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
           setup: {
             model: "models/gemini-3.1-flash-live-preview",
@@ -452,13 +496,34 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           }
 
           if (msg.serverContent) {
+            // Turn completed by Gemini Live
+            if (msg.serverContent.generationComplete || msg.serverContent.turnComplete) {
+              isModelTurnActiveRef.current = false;
+              const outCtx = audioOutputCtxRef.current;
+              const remainingMs = outCtx ? Math.max(0, (scheduledAudioTimeRef.current - outCtx.currentTime) * 1000) : 0;
+              if (speakingEndTimerRef.current) clearTimeout(speakingEndTimerRef.current);
+              speakingEndTimerRef.current = setTimeout(() => {
+                if (activePcmSourcesRef.current.length === 0 && !isModelTurnActiveRef.current) {
+                  isSpeakingRef.current = false;
+                  setCallState('listening');
+                }
+              }, remainingMs + 350);
+            }
+
             if (msg.serverContent.interrupted) {
               console.log('Gemini Live interrupted by user speech!');
               haltSpeech();
+              isModelTurnActiveRef.current = false;
               setCallState('listening');
             }
 
             if (msg.serverContent.modelTurn?.parts) {
+              isModelTurnActiveRef.current = true;
+              isSpeakingRef.current = true;
+              if (callStateRef.current !== 'speaking') {
+                setCallState('speaking');
+              }
+
               for (const part of msg.serverContent.modelTurn.parts) {
                 if (part.inlineData?.data && part.inlineData?.mimeType?.startsWith('audio/pcm')) {
                   playLivePcmChunk(part.inlineData.data);
@@ -563,6 +628,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   // Start speech recognition with instant visual feedback and error recovery
   const handleStartListening = () => {
+    // If Sarah is currently speaking or generating, never start listening
+    if (isSpeakingRef.current || isModelTurnActiveRef.current) {
+      return;
+    }
+
     // 1. Instantly stop ongoing audio
     haltSpeech();
 
@@ -675,6 +745,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
     if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
     haltSpeech();
+    if (recognitionRef.current) {
+      try { recognitionRef.current.abort(); } catch (_) {}
+    }
     setMicError(null);
 
     const userMessage = { role: 'user', content: queryText.trim() };
@@ -1179,18 +1252,18 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                 <span style={{ color: '#34d399', fontWeight: 800, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  ✓ Inspection Slot Reserved!
+                  ✓ Inspection Request Logged!
                 </span>
-                <span style={{ fontSize: '0.75rem', background: '#10b981', color: '#0F172A', padding: '2px 8px', borderRadius: '6px', fontWeight: 700 }}>
-                  Confirmed
+                <span style={{ fontSize: '0.75rem', background: '#f59e0b', color: '#0F172A', padding: '2px 8px', borderRadius: '6px', fontWeight: 700 }}>
+                  Pending Office Confirmation
                 </span>
               </div>
               <p style={{ fontSize: '0.85rem', color: '#e2e8f0', margin: '0 0 10px 0', lineHeight: '1.4' }}>
-                Thank you, <strong>{bookingData.name}</strong>! Christopher Boykin and our two-inspector team have your requested inspection slot logged. Our office will call you at <strong>{bookingData.phone}</strong> to confirm access details.
+                Thank you, <strong>{bookingData.name}</strong>! We have logged your tentative inspection request. Our office will contact you at <strong>{bookingData.phone}</strong> within 2 hours to confirm inspector arrival time, property access, and coordinate any requested specialty add-ons (Pool, Termite, Radon, Sewer Scope).
               </p>
               <div style={{ fontSize: '0.8rem', color: '#94A3B8', display: 'flex', flexDirection: 'column', gap: '4px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '8px' }}>
-                <div>📍 <strong>Address:</strong> {bookingData.address || 'Address on file'}</div>
-                <div>📅 <strong>Preferred Date:</strong> {bookingData.preferredDate || 'Earliest slot'} (Sunday by appt only)</div>
+                <div>📍 <strong>Address:</strong> {bookingData.address || 'Pending confirmation'}</div>
+                <div>📅 <strong>Requested Window:</strong> {bookingData.preferredDate || 'Upcoming Window'} (Sunday by appt only)</div>
                 {bookingData.estimatedTotal && <div>💰 <strong>Estimated Total:</strong> ${bookingData.estimatedTotal}</div>}
               </div>
               <div style={{ marginTop: '12px', display: 'flex', gap: '8px' }}>
