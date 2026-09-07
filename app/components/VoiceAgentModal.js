@@ -19,6 +19,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [typedInput, setTypedInput] = useState('');
   const [selectedAddons, setSelectedAddons] = useState([]);
 
+  const [isHandsFree, setIsHandsFree] = useState(true);
+  const isHandsFreeRef = useRef(true);
+  const isOpenRef = useRef(isOpen);
+
   const recognitionRef = useRef(null);
   const synthRef = useRef(null);
   const audioRef = useRef(null);
@@ -26,10 +30,23 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const conversationLogRef = useRef(null);
   const silenceTimerRef = useRef(null);
   const callStateRef = useRef(callState);
+  const handleStartListeningRef = useRef(null);
 
   useEffect(() => {
     callStateRef.current = callState;
   }, [callState]);
+
+  useEffect(() => {
+    isHandsFreeRef.current = isHandsFree;
+  }, [isHandsFree]);
+
+  useEffect(() => {
+    isOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  useEffect(() => {
+    handleStartListeningRef.current = handleStartListening;
+  });
 
   // Initialize Audio & Speech Recognition support
   useEffect(() => {
@@ -78,12 +95,27 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       audio.onended = () => {
         isSpeakingRef.current = false;
         setCallState('idle');
+        // Hands-Free Phone Loop: Automatically listen after Sarah finishes speaking
+        if (isHandsFreeRef.current && isOpenRef.current && handleStartListeningRef.current) {
+          setTimeout(() => {
+            if (isOpenRef.current && callStateRef.current === 'idle') {
+              handleStartListeningRef.current();
+            }
+          }, 350);
+        }
       };
 
       audio.onerror = (e) => {
         console.warn('Neural audio playback error:', e);
         isSpeakingRef.current = false;
         setCallState('idle');
+        if (isHandsFreeRef.current && isOpenRef.current && handleStartListeningRef.current) {
+          setTimeout(() => {
+            if (isOpenRef.current && callStateRef.current === 'idle') {
+              handleStartListeningRef.current();
+            }
+          }, 350);
+        }
       };
 
       const playPromise = audio.play();
@@ -130,6 +162,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     utterance.onend = () => {
       isSpeakingRef.current = false;
       setCallState('idle');
+      if (isHandsFreeRef.current && isOpenRef.current && handleStartListeningRef.current) {
+        setTimeout(() => {
+          if (isOpenRef.current && callStateRef.current === 'idle') {
+            handleStartListeningRef.current();
+          }
+        }, 350);
+      }
     };
 
     utterance.onerror = () => {
@@ -179,6 +218,18 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       synthRef.current.cancel();
     }
     isSpeakingRef.current = false;
+  };
+
+  // Instant barge-in / toggle helper: interrupts Sarah immediately when speaking, or toggles listen
+  const handleToggleOrInterrupt = () => {
+    if (callState === 'speaking') {
+      haltSpeech();
+      handleStartListening();
+    } else if (callState === 'listening') {
+      handleStopListening();
+    } else {
+      handleStartListening();
+    }
   };
 
   // Start speech recognition with instant visual feedback and error recovery
@@ -326,6 +377,14 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         playNeuralAudio(data.audio);
       } else {
         speakTextFallback(aiReply);
+      }
+
+      if (data.action === 'end_call') {
+        setTimeout(() => {
+          if (isOpenRef.current) {
+            onClose();
+          }
+        }, 4500);
       }
 
     } catch (err) {
@@ -478,6 +537,34 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <button
+              onClick={() => setIsHandsFree(!isHandsFree)}
+              aria-label={isHandsFree ? 'Switch to Push-to-Talk' : 'Switch to Hands-Free Call Mode'}
+              style={{
+                background: isHandsFree ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.08)',
+                border: `1px solid ${isHandsFree ? 'rgba(16, 185, 129, 0.4)' : 'rgba(255, 255, 255, 0.15)'}`,
+                color: isHandsFree ? '#34d399' : '#94A3B8',
+                padding: '6px 10px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}
+              title="Toggle Hands-Free Phone Call mode"
+            >
+              <span style={{
+                width: '7px',
+                height: '7px',
+                borderRadius: '50%',
+                backgroundColor: isHandsFree ? '#10b981' : '#64748b',
+                boxShadow: isHandsFree ? '0 0 8px #10b981' : 'none'
+              }} />
+              {isHandsFree ? 'Hands-Free Call' : 'Push-to-Talk'}
+            </button>
+
+            <button
               onClick={() => {
                 if (!isMuted && synthRef.current) synthRef.current.cancel();
                 setIsMuted(!isMuted);
@@ -487,39 +574,40 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 background: isMuted ? 'rgba(239, 68, 68, 0.2)' : 'rgba(255, 255, 255, 0.08)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 color: isMuted ? '#ef4444' : '#ffffff',
-                padding: '8px 12px',
+                padding: '6px 10px',
                 borderRadius: '8px',
                 cursor: 'pointer',
-                fontSize: '0.85rem',
+                fontSize: '0.8rem',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px'
               }}
             >
-              {isMuted ? '🔇 Muted' : '🔊 Audio On'}
+              {isMuted ? '🔇' : '🔊'}
             </button>
 
             <button
               onClick={onClose}
-              aria-label="Close Voice Assistant"
+              aria-label="End Phone Call"
               style={{
-                background: 'rgba(255, 255, 255, 0.05)',
+                background: '#dc2626',
                 border: 'none',
-                color: '#94A3B8',
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
+                color: '#ffffff',
+                padding: '6px 12px',
+                borderRadius: '8px',
                 cursor: 'pointer',
+                fontSize: '0.8rem',
+                fontWeight: 700,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '1.2rem',
+                gap: '6px',
+                boxShadow: '0 2px 8px rgba(220, 38, 38, 0.4)',
                 transition: 'all 0.2s'
               }}
-              onMouseEnter={e => { e.currentTarget.style.color = '#ef4444'; e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)'; }}
-              onMouseLeave={e => { e.currentTarget.style.color = '#94A3B8'; e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; }}
+              onMouseEnter={e => e.currentTarget.style.background = '#b91c1c'}
+              onMouseLeave={e => e.currentTarget.style.background = '#dc2626'}
             >
-              ✕
+              📞 End Call
             </button>
           </div>
         </div>
@@ -536,8 +624,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           {/* Animated Pulsing Sound Orb */}
           <button 
             type="button"
-            onClick={callState === 'listening' ? handleStopListening : handleStartListening}
-            aria-label={callState === 'listening' ? 'Stop listening' : 'Tap to speak with Sarah'}
+            onClick={handleToggleOrInterrupt}
+            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Sarah' : 'Tap to speak with Sarah'}
             style={{
               width: '96px',
               height: '96px',
@@ -571,7 +659,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 : 'pulseVoiceIdle 3s infinite',
               position: 'relative'
             }}
-            title={callState === 'listening' ? 'Click to Stop' : 'Click to Speak'}
+            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Sarah speaking... Tap to interrupt' : 'Tap to speak'}
           >
             <span style={{ fontSize: '2.2rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.4))' }}>
               {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : callState === 'thinking' ? '⏳' : '🎙️'}
@@ -587,12 +675,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             textAlign: 'center'
           }}>
             {callState === 'listening'
-              ? 'Listening... Speak naturally or tap orb when finished'
+              ? '🟢 Listening... Speak naturally (Hands-Free Call)'
               : callState === 'speaking'
-              ? "Sarah is speaking (tap orb to interrupt)"
+              ? '🗣️ Sarah is speaking (tap orb to interrupt)'
               : callState === 'thinking'
-              ? 'Connecting with Foresight...'
-              : 'Tap the orb to speak with Sarah'}
+              ? 'Checking schedule & options with Foresight...'
+              : 'Tap orb or speak to begin'}
           </p>
 
           {/* Microphone Permission Warning / Helper Banner */}
@@ -1026,11 +1114,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           gap: '10px',
           alignItems: 'center'
         }}>
-          {/* Microphone Push-to-Talk Button */}
+          {/* Microphone Push-to-Talk / Interrupt Button */}
           <button
             type="button"
-            onClick={callState === 'listening' ? handleStopListening : handleStartListening}
-            aria-label={callState === 'listening' ? 'Stop listening' : 'Start speaking with Christopher'}
+            onClick={handleToggleOrInterrupt}
+            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Sarah' : 'Start speaking with Sarah'}
             style={{
               width: '46px',
               height: '46px',
@@ -1039,20 +1127,20 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               outline: 'none',
               touchAction: 'manipulation',
               WebkitTapHighlightColor: 'transparent',
-              background: callState === 'listening' ? '#10b981' : '#9B2C2C',
+              background: callState === 'listening' ? '#10b981' : callState === 'speaking' ? '#ef4444' : '#9B2C2C',
               color: '#ffffff',
               fontSize: '1.2rem',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: callState === 'listening' ? '0 0 15px rgba(16, 185, 129, 0.4)' : '0 4px 12px rgba(155, 44, 44, 0.3)',
+              boxShadow: callState === 'listening' ? '0 0 15px rgba(16, 185, 129, 0.4)' : callState === 'speaking' ? '0 0 15px rgba(239, 68, 68, 0.5)' : '0 4px 12px rgba(155, 44, 44, 0.3)',
               flexShrink: 0,
               transition: 'all 0.2s'
             }}
-            title={callState === 'listening' ? 'Listening... tap to stop' : 'Tap to speak'}
+            title={callState === 'listening' ? 'Listening... tap to stop' : callState === 'speaking' ? 'Speaking... tap to interrupt' : 'Tap to speak'}
           >
-            {callState === 'listening' ? '⏹' : '🎙️'}
+            {callState === 'listening' ? '⏹' : callState === 'speaking' ? '✋' : '🎙️'}
           </button>
 
           {/* Text input fallback */}
@@ -1101,6 +1189,34 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               Send
             </button>
           </form>
+
+          {/* End Call Button */}
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="End Phone Call"
+            title="Hang up call"
+            style={{
+              height: '46px',
+              padding: '0 12px',
+              borderRadius: '12px',
+              border: '1px solid rgba(239, 68, 68, 0.4)',
+              background: 'rgba(239, 68, 68, 0.15)',
+              color: '#fca5a5',
+              fontWeight: 700,
+              fontSize: '0.8rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              cursor: 'pointer',
+              flexShrink: 0,
+              transition: 'all 0.2s'
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#dc2626'; e.currentTarget.style.color = '#ffffff'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(239, 68, 68, 0.15)'; e.currentTarget.style.color = '#fca5a5'; }}
+          >
+            📞 End
+          </button>
         </div>
       </div>
 

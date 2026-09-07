@@ -168,11 +168,143 @@ async function synthesizeHumanVoice(text, voice = 'en-US-JennyNeural') {
   return null;
 }
 
-// Sarah Natural Phone Concierge Knowledge Engine (Instantaneous, Human & Conversational)
-function generateSarahConversationalResponse(userText) {
-  const text = (userText || '').toLowerCase();
+function extractPhoneNumber(rawText) {
+  if (!rawText) return null;
+  // Direct digit match (e.g. 678-480-2110, (678) 480 2110, 6784802110)
+  const directMatch = rawText.match(/(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/);
+  if (directMatch) return directMatch[1];
+
+  // Convert spoken word numbers (e.g. "six seven eight...")
+  const words = rawText.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
+  const wordMap = { zero: '0', oh: '0', one: '1', two: '2', to: '2', too: '2', three: '3', four: '4', for: '4', five: '5', six: '6', seven: '7', eight: '8', ate: '8', nine: '9' };
+  let digits = '';
+  for (const w of words) {
+    if (wordMap[w] !== undefined) digits += wordMap[w];
+    else if (/^\d+$/.test(w)) digits += w;
+    else if (digits.length >= 10) break;
+    else if (digits.length > 0) digits = '';
+  }
+  if (digits.length === 10) {
+    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+  }
+  return null;
+}
+
+// Sarah Natural Phone Concierge Knowledge & Dialogue Engine (Instantaneous & Context-Aware)
+function generateSarahDialogueTurn(messages, lastUserMessage) {
+  const history = messages || [];
+  const text = (lastUserMessage || '').toLowerCase().trim();
+  const lastAssistant = history.filter(m => m.role === 'assistant').pop()?.content || '';
+  const prev = lastAssistant.toLowerCase();
+
   const matchesAny = (keywords) => keywords.some(k => new RegExp(`\\b${k.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i').test(text));
 
+  // 0. Farewell / Hang up detection
+  if (matchesAny(['bye', 'goodbye', 'hang up', 'end call', 'that is all', "that's all", 'have a good day', 'see you', 'thanks bye', 'thank you bye'])) {
+    return {
+      text: "Thank you so much for calling Foresight Home Inspections! Have a wonderful day, and we hope to inspect your home soon!",
+      preAudio: '/audio/sarah-goodbye.mp3',
+      action: 'end_call'
+    };
+  }
+
+  // 1. Time / Scheduling negotiation (e.g. "how about 10 o'clock instead?", "can we do 10?", "10 am", "tomorrow morning")
+  const hasTimeIndicator = 
+    text.includes('10 o') || text.includes('10:00') || text.includes('10am') || text.includes('10 am') || text.includes('10 o\'clock') ||
+    text.includes('9 o') || text.includes('9:00') || text.includes('9am') || text.includes('9 am') ||
+    text.includes('11 o') || text.includes('11:00') || text.includes('11am') || text.includes('11 am') ||
+    text.includes('1pm') || text.includes('1:00') || text.includes('2pm') || text.includes('2:00') ||
+    text.includes('afternoon') || text.includes('morning') ||
+    /(?:how about|can we do|what about|could we do|is|prefer|rather|instead of|at|do you have)\s*(?:a\s*)?(?:1[0-2]|[1-9]|morning|afternoon)/i.test(text);
+
+  const isScheduleContext = 
+    prev.includes('slot') || prev.includes('schedule') || prev.includes('time') || prev.includes('date') || prev.includes('reserve') || prev.includes('appointment') ||
+    text.includes('schedule') || text.includes('book') || text.includes('appointment') || text.includes('reserve');
+
+  if (hasTimeIndicator || (isScheduleContext && /\b(1[0-2]|[1-9])\b/.test(text))) {
+    // Check for Sunday
+    if (text.includes('sunday')) {
+      return {
+        text: "We can definitely do that on Sunday! Just as a reminder, Sunday is by appointment only. What is the address of the home and your name so I can lock that in?",
+        preAudio: '/audio/sarah-sunday.mp3'
+      };
+    }
+
+    // 10 o'clock match
+    if (text.includes('10')) {
+      return {
+        text: "10:00 AM works out perfectly for our two-inspector team! I have that penciled in for you. What is the address of the property and your name?",
+        preAudio: '/audio/sarah-10am.mp3'
+      };
+    }
+
+    // 9 o'clock match
+    if (text.includes('9')) {
+      return {
+        text: "9:00 AM works out great for our two-inspector team! I have that penciled in for you. What is the address of the property and your name?",
+        preAudio: '/audio/sarah-9am.mp3'
+      };
+    }
+
+    // Afternoon match
+    if (text.includes('afternoon') || text.includes('1pm') || text.includes('1:') || text.includes('2pm') || text.includes('2:')) {
+      return {
+        text: "An afternoon slot around 1:30 PM works out great for our two-inspector team! I have that penciled in for you. What is the address of the property and your name?",
+        preAudio: '/audio/sarah-afternoon.mp3'
+      };
+    }
+
+    // Other specific time
+    const timeMatch = text.match(/\b(1[0-2]|[1-9])(?::([0-5][0-9]))?\s*(am|pm)?\b/i);
+    const parsedTime = timeMatch ? `${timeMatch[1]}${timeMatch[2] ? `:${timeMatch[2]}` : ':00'} ${timeMatch[3] ? timeMatch[3].toUpperCase() : 'AM'}` : 'That time';
+    return {
+      text: `${parsedTime} works great for our two-inspector team! I have that slot held for you. What is the address of the home and your name?`,
+      preAudio: null
+    };
+  }
+
+  // 2. Affirmative responses ("yes", "sure", "sounds good", "perfect", "let's do it")
+  if (matchesAny(['yes', 'sure', 'yeah', 'yep', 'sounds good', 'perfect', 'lets do it', "let's do it", 'that works', 'ok', 'okay', 'please'])) {
+    if (prev.includes('schedule') || prev.includes('reserve') || prev.includes('date') || prev.includes('slot')) {
+      return {
+        text: "Awesome! Does a morning slot around 9:00 or 10:00 AM work better for you, or would you prefer afternoon? And what is the address of the home?",
+        preAudio: '/audio/sarah-morning-afternoon.mp3'
+      };
+    }
+  }
+
+  // 3. Polite decline or browsing ("no", "not yet", "just looking", "just shopping")
+  if (matchesAny(['no', 'nope', 'not yet', 'just looking', 'just shopping', 'just checking', 'not right now'])) {
+    return {
+      text: "No problem at all! Feel free to ask me anything about our ten thousand dollar warranty, pricing, or our two-inspector process whenever you are ready. What questions can I answer for you?",
+      preAudio: '/audio/sarah-browsing.mp3'
+    };
+  }
+
+  // 4. Address detection (e.g. "1816 South Deshon Road", "in Lithonia", "123 Main St", "in Alpharetta")
+  const addressRegex = /\b(\d{1,5}\s+[A-Za-z0-9\s]+(?:road|rd|street|st|avenue|ave|drive|dr|lane|ln|way|blvd|circle|ct|court))\b/i;
+  const cityRegex = /\b(?:in\s+)?(lithonia|atlanta|sandy springs|alpharetta|decatur|marietta|conyers|lawrenceville|duluth|roswell|smyrna|cumming|woodstock|kennesaw|buford|peachtree city|dunwoody|brookhaven|johns creek)\b/i;
+  const addressFound = text.match(addressRegex) || text.match(cityRegex);
+
+  if (addressFound && (prev.includes('address') || prev.includes('property') || text.includes('road') || text.includes('street') || text.includes('drive') || text.includes('ave'))) {
+    const rawAddress = addressFound[0].trim();
+    return {
+      text: "Got that property address down! What is your name and the best phone number so our office can send the confirmation and coordinate access?",
+      preAudio: '/audio/sarah-address-confirm.mp3'
+    };
+  }
+
+  // 5. Name introduction ("my name is ...", "i'm ...")
+  const nameIntroMatch = text.match(/(?:my name is|name is|i am|this is|i'm|im)\s+([A-Za-z\s]+?)(?:,|\.|\s+and|\s+my|\s+phone|\s+at|$)/i);
+  if (nameIntroMatch && !prev.includes('phone') && !text.includes('square')) {
+    const clientName = nameIntroMatch[1].trim();
+    return {
+      text: `Great to meet you, ${clientName}! What's the best phone number for you, and what date or time would you prefer for your inspection?`,
+      preAudio: null
+    };
+  }
+
+  // 6. Signature Value Questions (Pre-Rendered Instant Audio)
   if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo'])) {
     return {
       text: "Most companies send one inspector who gets fatigued after four hours. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus our ten thousand dollar warranty. What type of home are you buying?",
@@ -180,6 +312,7 @@ function generateSarahConversationalResponse(userText) {
     };
   }
 
+  // Warranty & Guarantee (Instant Audio)
   if (matchesAny(['warranty', '10000', '10,000', 'guarantee', 'protection'])) {
     return {
       text: "Every full inspection includes our complimentary ten thousand dollar Master Protection Warranty with zero deductible! It covers mechanical systems, structure, appliances, roofs, and mold after closing. Would you like me to check our schedule for your inspection date?",
@@ -187,6 +320,7 @@ function generateSarahConversationalResponse(userText) {
     };
   }
 
+  // Pricing (Instant Audio)
   if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
     return {
       text: "Our single-family inspections start at 345 dollars, and condos start at 295, based on square footage. That includes thermal imaging and aerial drone roof scans at no extra charge! About how many square feet is the house?",
@@ -194,6 +328,7 @@ function generateSarahConversationalResponse(userText) {
     };
   }
 
+  // Radon (Instant Audio)
   if (matchesAny(['radon'])) {
     return {
       text: "Radon is very common in Georgia granite bedrock. We run 48-hour continuous electronic monitoring for 200 dollars. If levels are elevated, we give you the leverage to have the seller install a mitigation system before closing! Should we add radon testing for you?",
@@ -201,6 +336,7 @@ function generateSarahConversationalResponse(userText) {
     };
   }
 
+  // Termite (Instant Audio)
   if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation'])) {
     return {
       text: "Georgia is prime termite country. We do complete wood-destroying organism inspections for 110 dollars bundled, and provide the official Georgia Wood Infestation Report. Would you like me to include termite on your estimate?",
@@ -208,6 +344,7 @@ function generateSarahConversationalResponse(userText) {
     };
   }
 
+  // Sewer Scope (Instant Audio)
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
       text: "Replacing a broken sewer line can cost eight to fifteen thousand dollars! Our high-definition camera inspects the main drain pipe all the way to the municipal connection for 425 dollars. It is especially recommended for homes over 25 years old. What year was the home built?",
@@ -229,6 +366,20 @@ function generateSarahConversationalResponse(userText) {
     };
   }
 
+  if (matchesAny(['how long', 'duration', 'time take', 'hours'])) {
+    return {
+      text: "Because we send two certified inspectors on every single job instead of just one, we finish a complete, highly thorough inspection in just 1.5 to 2.5 hours, saving you half the time of exhausted solo inspectors! What size is the home?",
+      preAudio: null
+    };
+  }
+
+  if (matchesAny(['when report', 'report delivered', 'sample report', 'crl'])) {
+    return {
+      text: "Our detailed digital reports with HD photos, video clips, and our interactive Create Request List tool are delivered within 24 hours, and often the same day! Would you like me to reserve a date for your inspection?",
+      preAudio: null
+    };
+  }
+
   if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
     return {
       text: "We offer complete Short-Term Rental safety compliance inspections for 355 dollars flat to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Are you setting up a rental in Metro Atlanta?",
@@ -243,9 +394,10 @@ function generateSarahConversationalResponse(userText) {
     };
   }
 
+  // General default fallback
   return {
-    text: "Thanks for asking! At Foresight, our two-inspector team led by Certified Master Inspector Christopher Boykin protects your investment with thermal imaging, drone scans, and our ten thousand dollar warranty. What's the address or square footage of the property?",
-    preAudio: null
+    text: "Thanks for asking! At Foresight, our two-inspector team led by Certified Master Inspector Christopher Boykin protects your investment with thermal imaging, drone scans, and our ten thousand dollar warranty. What is the address or square footage of the property?",
+    preAudio: '/audio/sarah-general-fallback.mp3'
   };
 }
 
@@ -255,7 +407,7 @@ export async function POST(request) {
     const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || '';
     const lastUserTextLower = lastUserMessage.toLowerCase();
 
-    // Direct quote calculation intent (e.g., user mentions square footage)
+    // 1. Direct quote calculation intent (e.g., user mentions square footage)
     const sqftMatch = lastUserMessage.match(/(\b\d{3,5}\b)\s*(?:sq|square|sqft|ft)/i) || lastUserMessage.match(/(?:sqft|size|footage)\s*(?:is|of)?\s*(\b\d{3,5}\b)/i);
     if (sqftMatch && !lastUserTextLower.includes('schedule') && !lastUserTextLower.includes('book')) {
       const parsedSqft = parseInt(sqftMatch[1], 10);
@@ -279,7 +431,7 @@ export async function POST(request) {
         };
 
         const quoteResult = calculateQuoteDetails(quoteArgs);
-        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone scans and thermal imaging for free. Would you like me to get you on the schedule?`;
+        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone scans and thermal imaging for free. Would you like a morning slot around 9:00 or 10:00 AM, or afternoon?`;
 
         const audio = await synthesizeHumanVoice(speechResponse);
         return NextResponse.json({
@@ -291,12 +443,11 @@ export async function POST(request) {
       }
     }
 
-    // Direct schedule appointment intent (e.g. user provides phone or name)
-    const phoneMatch = lastUserMessage.match(/(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/);
-    if (phoneMatch && (lastUserTextLower.includes('schedule') || lastUserTextLower.includes('book') || lastUserTextLower.includes('reserve') || lastUserTextLower.includes('name is') || lastUserTextLower.includes('my name'))) {
-      const nameMatch = lastUserMessage.match(/(?:my name is|name is|i am|this is)\s+([A-Za-z\s]+?)(?:,|\.|\s+and|\s+my|\s+phone|\s+at|$)/i);
+    // 2. Direct schedule appointment intent (when caller provides phone number)
+    const clientPhone = extractPhoneNumber(lastUserMessage);
+    if (clientPhone) {
+      const nameMatch = lastUserMessage.match(/(?:my name is|name is|i am|this is|call me)\s+([A-Za-z\s]+?)(?:,|\.|\s+and|\s+my|\s+phone|\s+at|$)/i);
       const clientName = nameMatch ? nameMatch[1].trim() : 'Valued Client';
-      const clientPhone = phoneMatch[1];
 
       const bookingArgs = {
         name: clientName,
@@ -309,85 +460,33 @@ export async function POST(request) {
       };
 
       await persistBooking(bookingArgs);
-      const speechResponse = `Awesome, ${clientName}! I've got your inspection reservation initiated right now. Our team will follow up directly at ${clientPhone} to confirm arrival time and lockbox details. Remember that Sunday is by appointment only. We look forward to working with you!`;
+      const speechResponse = `Awesome! I have your inspection reservation initiated right now. Our team will follow up directly at ${clientPhone} to confirm arrival time and lockbox details. Remember that Sunday is by appointment only. We look forward to working with you!`;
 
-      const audio = await synthesizeHumanVoice(speechResponse);
       return NextResponse.json({
         response: speechResponse,
-        audio,
+        audio: '/audio/sarah-booked.mp3',
         action: 'scheduled',
         booking: bookingArgs
       });
     }
 
-    // Check pre-rendered fast match
-    const fastKnowledge = generateSarahConversationalResponse(lastUserMessage);
-    if (fastKnowledge.preAudio) {
+    // 3. Multi-turn dialogue routing (handles 10 o'clock, appointments, addresses, value queries)
+    const turnResult = generateSarahDialogueTurn(messages, lastUserMessage);
+
+    if (turnResult.preAudio) {
       return NextResponse.json({
-        response: fastKnowledge.text,
-        audio: fastKnowledge.preAudio,
+        response: turnResult.text,
+        audio: turnResult.preAudio,
         action: 'message'
       });
     }
 
-    // Try Gemini API if key is available for dynamic conversation
-    const apiKey = process.env.GEMINI_API_KEY;
-    let replyText = '';
-
-    if (apiKey) {
-      try {
-        const systemInstruction = `You are Sarah, the friendly, articulate customer concierge and phone receptionist at Foresight Home Inspections in Metro Atlanta, Georgia.
-You are speaking live on a phone call with a client.
-Rules:
-1. Speak in a warm, natural, human conversational tone (like an energetic, helpful concierge answering the phone).
-2. Keep your answers brief (2 to 3 sentences maximum per turn). Never give long monologues or lists.
-3. Highlight Foresight advantages: two certified inspectors on every job led by Christopher Boykin (Certified Master Inspector), complimentary $10,000 Master Protection Warranty with $0 deductible, free FLIR infrared thermal imaging and aerial drone scans.
-4. Pricing: Single-family starts at $345, condos at $295. Add-ons: Radon $200, Termite/WDO $110+, Pool $300, Sewer Scope $425, STR $355.
-5. Sunday is by appointment only.
-6. Always conclude with a natural, friendly conversational question.
-7. Do NOT use any asterisks (*) or markdown formatting.`;
-
-        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-
-        const recentMessages = messages.slice(-6).map(msg => ({
-          role: msg.role === 'user' ? 'user' : 'model',
-          parts: [{ text: msg.content.replace(/\*/g, '') }]
-        }));
-
-        if (recentMessages.length === 0) {
-          recentMessages.push({ role: 'user', parts: [{ text: lastUserMessage || 'Hello' }] });
-        }
-
-        const geminiRes = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: recentMessages,
-            systemInstruction: { parts: [{ text: systemInstruction }] },
-            generationConfig: { temperature: 0.7, maxOutputTokens: 200 }
-          })
-        });
-
-        if (geminiRes.ok) {
-          const data = await geminiRes.json();
-          replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-        }
-      } catch (geminiErr) {
-        console.warn('[VOICE] Gemini upstream call bypassed:', geminiErr.message);
-      }
-    }
-
-    // If Gemini was unavailable or quota depleted, use Sarah conversational response
-    if (!replyText || replyText.trim().length === 0) {
-      replyText = fastKnowledge.text;
-    }
-
-    // Clean text and synthesize neural human audio
-    replyText = replyText.replace(/\*/g, '').trim();
-    const audio = await synthesizeHumanVoice(replyText);
+    // Synthesize response with Sarah's neural female voice
+    const cleanReply = turnResult.text.replace(/\*/g, '').trim();
+    const audio = await synthesizeHumanVoice(cleanReply);
 
     return NextResponse.json({
-      response: replyText,
+      response: cleanReply,
       audio,
       action: 'message'
     });
