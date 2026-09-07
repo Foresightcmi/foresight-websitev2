@@ -139,221 +139,225 @@ async function persistBooking({ name, phone, email, address, preferredDate, addo
   }
 }
 
+// Studio-Grade Neural Voice Synthesis via EdgeTTS (en-US-ChristopherNeural)
+async function synthesizeHumanVoice(text) {
+  try {
+    const { EdgeTTS } = await import('edge-tts-universal');
+    const cleanText = (text || '')
+      .replace(/[*#_~`\[\]()<>]/g, ' ')
+      .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
+      .replace(/\$([0-9,]+)/g, '$1 dollars')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!cleanText) return null;
+
+    const tts = new EdgeTTS(cleanText, 'en-US-ChristopherNeural', {
+      rate: '+0%',
+      pitch: '-2Hz'
+    });
+    const result = await tts.synthesize();
+    if (result && result.audio) {
+      const arrayBuffer = await result.audio.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      return `data:audio/mp3;base64,${buffer.toString('base64')}`;
+    }
+  } catch (err) {
+    console.error('[VOICE] Edge TTS synthesis error:', err);
+  }
+  return null;
+}
+
+// Christopher Boykin Expert InterNACHI Knowledge Engine (100% Reliable Fallback)
+function generateChristopherKnowledgeResponse(userText) {
+  const text = (userText || '').toLowerCase();
+  const matchesAny = (keywords) => keywords.some(k => new RegExp(`\\b${k.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i').test(text));
+
+  if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo'])) {
+    return "Why do we send two certified inspectors on every single job? Most companies dispatch a lone inspector who spends four to five exhausting hours on site. Fatigue sets in, and critical defects get missed. At Foresight, we send a dual-inspector team on every single inspection: a lead Certified Master Inspector plus another certified professional inspector. One inspects the roof, exterior, and mechanicals while the other thoroughly checks interior circuits, plumbing fixtures, and attic spaces. You get double the scrutiny in half the time, giving you the strongest due diligence defense in Georgia.";
+  }
+
+  if (matchesAny(['warranty', '10000', '10,000', 'guarantee', 'protection'])) {
+    return "Every full home inspection with Foresight comes with our complimentary ten thousand dollar Master Protection Warranty with a zero-dollar deductible. This policy protects you after closing on mechanical systems, heating and cooling, plumbing, structural components, major appliances, roofs, and mold. While discount solo operators offer zero warranty, we back our Certified Master Inspector findings with real financial protection for complete peace of mind.";
+  }
+
+  if (matchesAny(['thermal', 'flir', 'infrared', 'drone', 'drones', 'camera'])) {
+    return "We include advanced FLIR infrared thermal imaging and high-resolution aerial drone roof scans standard on every single full inspection at zero extra charge. Solo inspectors routinely charge an extra 75 to 150 dollars for thermal cameras or mark steep roofs as Not Inspected. We use thermal imaging to detect hidden wall moisture and hot breaker panels, and aerial drones to inspect every single roof shingle safely and thoroughly.";
+  }
+
+  if (matchesAny(['sop', 'internachi', 'standard', 'standards', 'code of ethics'])) {
+    return "We strictly adhere to and exceed the comprehensive InterNACHI Standards of Practice, covering all ten core home systems: roof, exterior, basement, foundation and crawlspace structure, heating, cooling, plumbing, electrical, fireplace, attic insulation and ventilation, and interior doors and windows. Every finding is structured in our clear 3-step diagnostic format: Observation, What This Could Mean, and Recommendation.";
+  }
+
+  if (matchesAny(['compare', 'competitor', 'competitors', 'franchise', 'franchises', 'best', 'choice', 'why foresight'])) {
+    return "Here is why Metro Atlanta buyers choose Foresight over national franchises and discount solo operators: National franchises charge 450 to 575 dollars or more to cover corporate royalties and dispatch random junior hourly techs. Solo discount operators charge 325 to 400 dollars, but working alone for four hours leads to fatigue, they carry zero warranty, and missing an 8,000 dollar hidden roof leak wipes out any small upfront saving. Foresight gives you two certified inspectors, our ten thousand dollar warranty, and free FLIR thermal and drone scans starting at 345 dollars for single-family homes and 295 dollars for condos. It is objectively the best value and protection in Georgia.";
+  }
+
+  if (matchesAny(['report', 'reports', 'sample', 'crl', 'create request list', 'format', 'structure'])) {
+    return "Our modern cloud inspection reports exceed InterNACHI standards and are delivered within 24 hours, often same day. Packed with high-resolution photos and video clips, we write in plain English with our 3-step format: Observation, What This Could Mean, and Recommendation. Best of all, our interactive Create Request List lets you and your agent check defect items to generate official repair amendment addenda in seconds. Armed with this proof, buyers routinely win thousands of dollars in seller credits or upfront repairs!";
+  }
+
+  if (matchesAny(['radon'])) {
+    return "Radon is an invisible, odorless radioactive gas released from Georgia granite soils. We recommend professional 48-hour continuous electronic monitoring at our flat 200 dollar rate. Under InterNACHI standards: Observation: Radon levels above the EPA action limit of 4.0 picoCuries per liter. What This Could Mean: Severe long-term respiratory health hazard. Recommendation: Certified radon mitigation contractor. Finding radon gives you the leverage to require the seller to install a 1,500 to 2,500 dollar mitigation system on their dime before closing!";
+  }
+
+  if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation'])) {
+    return "Georgia is prime territory for subterranean termites, which can chew through structural floor joists and studs silently. We conduct a complete wood-destroying organism inspection at our 110 dollar bundled rate and provide the Official Georgia Wood Infestation Report. Observation: Active mud tubes. What This Could Mean: Active structural wood damage. Recommendation: Licensed pest control operator. This check saves you thousands in catastrophic framing repairs.";
+  }
+
+  if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
+    return "A swimming pool is a wonderful luxury, but faulty pumps, heaters, or underwater lighting can cost 3,000 to 5,000 dollars to replace or create severe shock hazards. We offer a comprehensive Pool and Spa safety inspection at a 300 dollar flat rate. Observation: Pool light GFCI breaker fails to trip. What This Could Mean: Direct electrocution risk to swimmers. Recommendation: Licensed electrical contractor. Our pool inspection gives you the leverage to get seller repair credits before closing!";
+  }
+
+  if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
+    return "Replacing a collapsed underground sewer line or fixing tree root intrusion costs 8,000 to 15,000 dollars out of pocket. Our high-definition Sewer Scope Camera inspection at a 425 dollar flat rate runs a specialized optic camera from your cleanout all the way to the municipal main, verifying the pipe is free of root intrusion, belly dips, or cracked clay. A vital check for homes over 25 years old!";
+  }
+
+  if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
+    return "Metro Atlanta counties, including DeKalb, Fulton, Gwinnett, and Cobb, enforce strict Short-Term Rental safety regulations for Airbnb and Vrbo hosts. We offer our STR Compliance Assist inspection at 355 dollars flat rate to verify smoke and carbon monoxide alarms, fire extinguishers, safe egress routes, and posted local agent signage before you submit your application.";
+  }
+
+  if (matchesAny(['realtor', 'realtors', 'agent', 'agents', 'supra', 'utility', 'utilities', 'concierge', 'moving'])) {
+    return "We make transactions seamless! For Realtors: Foresight carries active electronic SUPRA key access for secure lockbox entry, so agents don't have to drive out or wait around on site—we handle entry independently! For Buyers: All clients get free lifetime access to Utilities Plus, a premier Utility Concierge that sets up power, water, gas, fiber internet, and security in one quick call at the best available market rates!";
+  }
+
+  if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
+    return "We believe in 100 percent transparent pricing based on square footage. Standard buyer home inspections start at 345 dollars, or 295 dollars for condos. Specialized add-ons include Termite and WDO for 110 dollars, 48-Hour Continuous Radon Gas for 200 dollars, Pool and Spa for 300 dollars, Sewer Scope Camera for 425 dollars, and STR Compliance Assist for 355 dollars. Both FLIR thermal imaging and aerial drone roof scans are included free standard on every job!";
+  }
+
+  return "Houses are complex systems, and what happens in the attic affects the basement. The absolute best way to protect your investment and save money is to have our Certified Master Inspector-led two person inspection team physically audit the home. We include FLIR thermal imaging, aerial drone scans, and our complimentary ten thousand dollar warranty on every job. Armed with our 24-hour Create Request List report, our clients routinely save thousands of dollars in closing credits or upfront seller repairs! What specific system or address can I help you evaluate today?";
+}
+
 export async function POST(request) {
   try {
-    const apiKey = process.env.GEMINI_API_KEY;
-    const body = await request.json();
-    const { messages = [], currentQuote = null } = body;
+    const { messages = [], currentQuote = null } = await request.json();
+    const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || '';
+    const lastUserTextLower = lastUserMessage.toLowerCase();
 
-    const systemInstruction = `You are Christopher Boykin, a seasoned Certified Master Inspector (CMI) and founder of Foresight Home Inspections, LLC in Metro Atlanta.
-Your voice is warm, friendly, folksy, knowledgeable, unhurried, and deeply reassuring, exactly like the master builder host on "Ask This Old House".
-You are speaking out loud through a voice call with a prospective client, homeowner, or real estate agent.
+    // Direct quote calculation intent (e.g., user mentions square footage)
+    const sqftMatch = lastUserMessage.match(/(\b\d{3,5}\b)\s*(?:sq|square|sqft|ft)/i) || lastUserMessage.match(/(?:sqft|size|footage)\s*(?:is|of)?\s*(\b\d{3,5}\b)/i);
+    if (sqftMatch && !lastUserTextLower.includes('schedule') && !lastUserTextLower.includes('book')) {
+      const parsedSqft = parseInt(sqftMatch[1], 10);
+      if (parsedSqft >= 400 && parsedSqft <= 20000) {
+        const isCondo = lastUserTextLower.includes('condo');
+        const isCrawl = lastUserTextLower.includes('crawl');
+        const isBasement = lastUserTextLower.includes('basement');
+        const isOlder = lastUserTextLower.includes('old') || lastUserTextLower.includes('historic') || lastUserTextLower.includes('197') || lastUserTextLower.includes('196');
 
-INTERNACHI STANDARDS OF PRACTICE (SOP) MASTERY:
-You possess comprehensive mastery of all chapters of the official InterNACHI Standards of Practice (SOP):
-1. ROOF: Inspect roof-covering materials, gutters, downspouts, vents, flashing, skylights, chimneys, and roof penetrations. If a roof is steep, high, or delicate, explain that we deploy high-resolution aerial camera drones at no extra charge rather than dangerously walking it or marking it "inaccessible" like other inspectors do.
-2. EXTERIOR: Inspect exterior wall coverings (brick, fiber cement, stone, stucco/EIFS), trim, eaves, soffits, fascias, exterior doors, representative windows, decks, balconies, porches, stoops, handrails, guards, and surface grading/drainage away from the foundation.
-3. BASEMENT, FOUNDATION, CRAWLSPACE & STRUCTURE: Inspect foundation walls, crawlspaces, floor framing, piers, beams, joists, subflooring, ventilation, vapor retarders, sump pumps, and structural movement. Differentiate between normal vertical hairline concrete shrinkage and serious stair-step masonry or horizontal foundation wall cracking caused by Georgia red clay soil pressure.
-4. HEATING & COOLING (HVAC): Inspect heating and cooling equipment using normal operating controls, distribution ducts and registers, air filters, flues, and condensate drain lines (e.g. full overflow pans in attics that threaten ceiling collapse).
-5. PLUMBING: Inspect main water shutoff valve, interior supply piping (copper, PEX, CPVC, and identifying vulnerable polybutylene), drain/waste/vent piping (PVC, cast iron corrosion), fixtures and faucets, functional flow, drainage, water heating equipment (temperature and pressure relief TPR valves, discharge pipes, age), and fuel supply lines.
-6. ELECTRICAL: Inspect service drop, meter base, main service panel, subpanels, circuit breakers, grounding and bonding, wiring methods (copper vs problematic aluminum branch wiring or knob-and-tube), representative switches, receptacles, and test all accessible GFCI and AFCI safety devices.
-7. FIREPLACE: Inspect fireplaces, stoves, hearth extensions, damper doors, and visible flues.
-8. ATTIC, INSULATION & VENTILATION: Inspect attic insulation levels (R-values), vapor retarders, ventilation (soffits, ridge vents, gable vents), and verify bathroom and kitchen exhaust vents vent to the exterior and not into the attic.
-9. DOORS, WINDOWS & INTERIOR: Inspect representative doors and windows, walls, ceilings, floors, stairways, railings, and garage door auto-reverse safety sensors.
-10. INTERNACHI 3-STEP DIAGNOSTIC FORMAT: Whenever discussing a home issue, defect, or concern, ALWAYS deliver your core diagnostic finding in this exact 3-step format:
-    Observation: [State the exact physical condition or symptom observed]
-    What This Could Mean: [Explain the real-world hazard, moisture intrusion, structural rot, or financial cost in plain English. STRICT RULE: NEVER use "What This Means". Always strictly use "What This Could Mean" or "What This Could Imply" for legal liability compliance.]
-    Recommendation: [State the exact qualified licensed trade specialist or contractor needed to evaluate further and perform repairs.]
-
-ALL FORESIGHT WEBSITE BENEFITS & COMPETITIVE ADVANTAGES:
-Know and naturally weave in these distinctive Foresight advantages when relevant:
-- CERTIFIED MASTER INSPECTOR (CMI): Christopher Boykin holds the CMI credential, North America's highest professional designation, representing the top 1 to 2 percent of elite, audit-verified inspectors nationwide.
-- TWO-INSPECTOR CERTIFIED TEAM ON EVERY SITE: We send two certified inspectors on every single job—a lead Certified Master Inspector plus another certified professional inspector. While one focuses on the roof, exterior, and mechanicals, the other methodically checks interior details, fixtures, and electrical circuits. Two sets of certified eyes catch what a rushed or fatigued solo inspector easily misses, and we finish thoroughly in 1.5 to 2.5 hours instead of dragging out for 4 to 5 exhausting hours.
-- COMPLIMENTARY $10,000 MASTER PROTECTION WARRANTY: Every full inspection comes with our complimentary $10,000 policy with a zero-dollar deductible, covering mechanicals (HVAC, plumbing), major appliances, structural components, roofs, and mold after closing for complete peace of mind.
-- COMPLIMENTARY FLIR THERMAL IMAGING SCANS: We include infrared thermal imaging on every electrical panel (to detect dangerous hot spots) and plumbing walls/ceilings (to find hidden leaks behind fresh paint) at zero extra charge. Solo inspectors routinely charge $75 to $150 extra for this or skip it completely.
-- COMPLIMENTARY HIGH-RESOLUTION AERIAL DRONE SCANS: Included standard for steep, tall, or inaccessible roofs at zero extra charge.
-- COMPLIMENTARY UTILITIES PLUS CONCIERGE: Clients get free lifetime VIP access to Utilities Plus, a premier utility concierge that sets up power, water, gas, fiber internet, and home security in one phone call at the best available market rates.
-- ACTIVE MLS SUPRA KEY ACCESS: We carry electronic SUPRA keys so real estate agents do not have to drive out or wait around on-site. We open and secure properties independently and professionally.
-- 24-HOUR DIGITAL REPORTS WITH CREATE REQUEST LIST (CRL): Cloud-based digital reports delivered within 24 hours (often same day) with crisp photos and video clips, written in clear English. The Create Request List tool lets buyers and agents check defect items to generate official repair amendment addenda in minutes.
-
-HOW TO SELL FORESIGHT AS THE BEST CHOICE (CONSULTATIVE, HIGH-TRUST, NEVER PUSHY):
-- The user wants you to sell Foresight as the best choice, exactly like our website does, but in a warm, unhurried, consultative way rather than an aggressive or pushy sales pitch.
-- Use education and contrast rather than high pressure:
-  - Contrast with National Franchises: Explain that corporate franchises charge $450 to $575 or more to cover corporate royalty fees, and dispatch an hourly junior inspector assigned by corporate. With Foresight, you know you get a Certified Master Inspector leading your job with local Atlanta expertise.
-  - Contrast with Discount Solo Operators: Explain that solo inspectors charge $325 to $400, but working alone for 4 hours causes fatigue. They carry no post-inspection warranty, charge extra for thermal cameras, and missing a single hidden $8,000 roof leak or HVAC defect completely wipes out any small upfront saving.
-  - Foresight Value Positioning: Starting at just $345 for single-family homes and $295 for condos, Foresight delivers two certified inspectors, free thermal imaging, free drone scans, a $10,000 warranty, and same-day reports—making it objectively the highest-value, most protective inspection in Georgia.
-- Frame the inspection as an investment that pays for itself: Armed with our photographic report, buyers routinely win thousands of dollars in seller repair credits or required upfront repairs before closing.
-- Be welcoming and low-pressure: Use gentle invitations such as "Whenever you are ready, our team would be honored to protect your investment", "Would you like me to run an exact quote for your home's square footage?", or "If you have a date in mind, I can easily reserve your preferred slot right now." Never pressure or rush the client.
-
-REASONABLE CONTEXTUAL UPSELLING:
-When contextually appropriate, recommend our specialized high-value add-ons:
-- Older homes (over 25 yrs) or lots with mature trees: Sewer Scope Camera Inspection ($425 flat) to check underground lateral lines for tree roots or collapsed pipe.
-- Any home with a basement, crawlspace, or Georgia granite rock: 48-Hour Continuous Radon Gas Testing ($200).
-- Georgia damp climate: Official Georgia Wood Infestation Report / WDO Termite check ($110+).
-- Homes with a swimming pool or spa: Pool and Spa Safety and Mechanical Inspection ($300).
-- Short-Term Rentals in Metro Atlanta (DeKalb, Fulton, Gwinnett): STR Safety Compliance Assist ($355 flat rate).
-- New construction under 1 year old: 11-Month Builder Warranty Inspection ($350+) to force builders to fix issues on their dime before the warranty expires.
-
-SCHEDULE INSPECTIONS:
-When the client wants to book, gather their name, phone number, email, address, and preferred inspection date. Call the 'schedule_inspection' tool immediately once you have their basic info! Sunday is strictly by appointment only.
-
-ABSOLUTE CONTENT RULE: Write in 100% clean plain text. NEVER use asterisks (*) or double-asterisks (**) under any circumstances. No markdown symbols in visible voice output.`;
-
-    // Function definitions for Gemini Tool Calling
-    const tools = [
-      {
-        function_declarations: [
-          {
-            name: 'calculate_quote',
-            description: 'Calculates the official transparent home inspection fee based on property square footage, age, foundation, and add-ons.',
-            parameters: {
-              type: 'OBJECT',
-              properties: {
-                propertyType: { type: 'STRING', enum: ['single-family', 'condo'] },
-                serviceType: { type: 'STRING', enum: ['buyer', 'seller', 'new-construction', 'warranty', 'str'] },
-                sqft: { type: 'NUMBER', description: 'Square footage of the home' },
-                foundation: { type: 'STRING', enum: ['slab', 'crawlspace', 'basement'] },
-                ageTier: { type: 'STRING', enum: ['under-25', '25-49', 'over-50'] },
-                addons: {
-                  type: 'OBJECT',
-                  properties: {
-                    radon: { type: 'BOOLEAN' },
-                    termite: { type: 'BOOLEAN' },
-                    pool: { type: 'BOOLEAN' },
-                    sewer: { type: 'BOOLEAN' },
-                    lowFlow: { type: 'BOOLEAN' },
-                    buildfax: { type: 'BOOLEAN' }
-                  }
-                }
-              },
-              required: ['propertyType', 'sqft']
-            }
-          },
-          {
-            name: 'schedule_inspection',
-            description: 'Books an inspection appointment for the client, records their contact details, and notifies Christopher Boykin to lock the slot.',
-            parameters: {
-              type: 'OBJECT',
-              properties: {
-                name: { type: 'STRING', description: 'Client full name' },
-                phone: { type: 'STRING', description: 'Client phone number' },
-                email: { type: 'STRING', description: 'Client email address' },
-                address: { type: 'STRING', description: 'Property address' },
-                preferredDate: { type: 'STRING', description: 'Preferred date of inspection' },
-                propertyType: { type: 'STRING', description: 'single-family or condo' },
-                addons: { type: 'ARRAY', items: { type: 'STRING' }, description: 'Add-ons selected' },
-                estimatedTotal: { type: 'NUMBER', description: 'Estimated fee if known' },
-                notes: { type: 'STRING', description: 'Special notes or concerns' }
-              },
-              required: ['name', 'phone']
-            }
+        const quoteArgs = {
+          propertyType: isCondo ? 'condo' : 'single-family',
+          sqft: parsedSqft,
+          foundation: isCrawl ? 'crawlspace' : isBasement ? 'basement' : 'slab',
+          ageTier: isOlder ? '25-49' : 'under-25',
+          addons: {
+            radon: lastUserTextLower.includes('radon'),
+            termite: lastUserTextLower.includes('termite') || lastUserTextLower.includes('wdo'),
+            pool: lastUserTextLower.includes('pool'),
+            sewer: lastUserTextLower.includes('sewer')
           }
-        ]
-      }
-    ];
+        };
 
-    // Fallback if no API key is provided
-    if (!apiKey) {
-      console.warn('GEMINI_API_KEY missing in environment. Using fallback voice logic.');
-      return NextResponse.json({
-        response: "Hello there! I'm Christopher Boykin with Foresight Home Inspections. Our live voice engine is currently operating in offline mode, but I can still help you estimate your quote or schedule your inspection! Give us a call directly at 678-480-2110 or tell me your property square footage.",
-        action: 'message'
-      });
-    }
+        const quoteResult = calculateQuoteDetails(quoteArgs);
+        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your comprehensive inspection with our two-person Certified Master Inspector team is ${quoteResult.total} dollars.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} Both thermal imaging and aerial drone scans are included at zero extra charge. Would you like me to reserve a date for you on our schedule?`;
 
-    // Format messages for Gemini API
-    const recentMessages = messages.slice(-10);
-    const contents = recentMessages.map(msg => ({
-      role: msg.role === 'user' ? 'user' : 'model',
-      parts: [{ text: msg.content.replace(/\*/g, '') }]
-    }));
-
-    // If user provided a message that wasn't in contents, add it
-    if (contents.length === 0) {
-      contents.push({
-        role: 'user',
-        parts: [{ text: 'Hello Christopher! What services do you recommend for an Atlanta home?' }]
-      });
-    }
-
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-
-    const geminiRes = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents,
-        systemInstruction: { parts: [{ text: systemInstruction }] },
-        tools,
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 800,
-        }
-      })
-    });
-
-    if (!geminiRes.ok) {
-      const errorText = await geminiRes.text();
-      console.error('Gemini Voice API error:', errorText);
-      return NextResponse.json({
-        response: "I apologize, our connection dipped for a moment. But I am right here with you! Could you please repeat that, or let me know the square footage and address of the home you need inspected?",
-        action: 'retry'
-      }, { status: 200 });
-    }
-
-    const geminiData = await geminiRes.json();
-    const candidate = geminiData.candidates?.[0]?.content?.parts?.[0];
-
-    // Check if Gemini invoked a function call
-    if (candidate && candidate.functionCall) {
-      const { name, args } = candidate.functionCall;
-      console.log(`[VOICE AGENT] Executing Tool: ${name}`, args);
-
-      if (name === 'calculate_quote') {
-        const quoteResult = calculateQuoteDetails(args);
-        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your comprehensive inspection with our two-person Certified Master Inspector team is $${quoteResult.total}.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for $${a.price}`).join(' and ')}.` : ''} Both thermal imaging and aerial drone scans are included at zero extra charge. Would you like me to reserve a date for you on our schedule?`;
-
+        const audio = await synthesizeHumanVoice(speechResponse);
         return NextResponse.json({
-          response: speechResponse.replace(/\*/g, ''),
+          response: speechResponse,
+          audio,
           action: 'quote_calculated',
           quote: quoteResult
         });
       }
+    }
 
-      if (name === 'schedule_inspection') {
-        await persistBooking(args);
-        const speechResponse = `Wonderful, ${args.name}! I have initiated your appointment booking for ${args.preferredDate || 'the upcoming available window'}${args.address ? ` at ${args.address}` : ''}. Our office team will follow up directly at ${args.phone} to finalize the exact arrival time. Remember that Sunday is by appointment only. We look forward to protecting your investment!`;
+    // Direct schedule appointment intent (e.g. user provides phone or name)
+    const phoneMatch = lastUserMessage.match(/(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/);
+    if (phoneMatch && (lastUserTextLower.includes('schedule') || lastUserTextLower.includes('book') || lastUserTextLower.includes('reserve') || lastUserTextLower.includes('name is') || lastUserTextLower.includes('my name'))) {
+      const nameMatch = lastUserMessage.match(/(?:my name is|name is|i am|this is)\s+([A-Za-z\s]+?)(?:,|\.|\s+and|\s+my|\s+phone|\s+at|$)/i);
+      const clientName = nameMatch ? nameMatch[1].trim() : 'Valued Client';
+      const clientPhone = phoneMatch[1];
 
-        return NextResponse.json({
-          response: speechResponse.replace(/\*/g, ''),
-          action: 'scheduled',
-          booking: {
-            name: args.name,
-            phone: args.phone,
-            email: args.email || '',
-            address: args.address || '',
-            preferredDate: args.preferredDate || 'Earliest Available',
-            addons: args.addons || [],
-            estimatedTotal: args.estimatedTotal || null
-          }
+      const bookingArgs = {
+        name: clientName,
+        phone: clientPhone,
+        email: '',
+        address: lastUserMessage.replace(clientPhone, '').replace(clientName, '').trim(),
+        preferredDate: 'Upcoming Window',
+        addons: [],
+        estimatedTotal: currentQuote?.total || null
+      };
+
+      await persistBooking(bookingArgs);
+      const speechResponse = `Wonderful, ${clientName}! I have initiated your appointment booking for your inspection. Our office team will follow up directly at ${clientPhone} to finalize the exact arrival time and access details. Remember that Sunday is by appointment only. We look forward to protecting your investment!`;
+
+      const audio = await synthesizeHumanVoice(speechResponse);
+      return NextResponse.json({
+        response: speechResponse,
+        audio,
+        action: 'scheduled',
+        booking: bookingArgs
+      });
+    }
+
+    // Try Gemini API if key is available
+    const apiKey = process.env.GEMINI_API_KEY;
+    let replyText = '';
+
+    if (apiKey) {
+      try {
+        const systemInstruction = `You are Christopher Boykin, founder and Lead Inspector at Foresight Home Inspections in Metro Atlanta, Georgia. Certified Master Inspector (CMI). Answer naturally, authoritatively, warmly, and consultatively. Do NOT use any asterisks (*) or markdown formatting in your responses.`;
+        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+
+        const recentMessages = messages.slice(-8).map(msg => ({
+          role: msg.role === 'user' ? 'user' : 'model',
+          parts: [{ text: msg.content.replace(/\*/g, '') }]
+        }));
+
+        if (recentMessages.length === 0) {
+          recentMessages.push({ role: 'user', parts: [{ text: lastUserMessage || 'Hello' }] });
+        }
+
+        const geminiRes = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: recentMessages,
+            systemInstruction: { parts: [{ text: systemInstruction }] },
+            generationConfig: { temperature: 0.7, maxOutputTokens: 600 }
+          })
         });
+
+        if (geminiRes.ok) {
+          const data = await geminiRes.json();
+          replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+        }
+      } catch (geminiErr) {
+        console.warn('[VOICE] Gemini upstream call bypassed:', geminiErr.message);
       }
     }
 
-    // Standard text response
-    let responseText = candidate?.text || "I am right here with you! How can Christopher Boykin and Foresight help with your home inspection today?";
-    // Sanitize any asterisks
-    responseText = responseText.replace(/\*/g, '').trim();
+    // If Gemini was unavailable or quota depleted, use Christopher Boykin Knowledge Engine
+    if (!replyText || replyText.trim().length === 0) {
+      replyText = generateChristopherKnowledgeResponse(lastUserMessage);
+    }
+
+    // Clean text and synthesize neural human audio
+    replyText = replyText.replace(/\*/g, '').trim();
+    const audio = await synthesizeHumanVoice(replyText);
 
     return NextResponse.json({
-      response: responseText,
+      response: replyText,
+      audio,
       action: 'message'
     });
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
+    const fallbackText = "Houses are complex systems, and I want to make sure you get the right advice. If you have any questions about foundations, roofs, radon, our two-inspector standard, or our ten thousand dollar warranty, ask me or call us at 678-480-2110!";
+    const audio = await synthesizeHumanVoice(fallbackText);
     return NextResponse.json({
-      response: "Houses are complex systems, and I want to make sure you get the right advice. If you have any questions about foundations, roofs, radon, or booking our two-inspector team, let me know!",
+      response: fallbackText,
+      audio,
       action: 'fallback'
     }, { status: 200 });
   }

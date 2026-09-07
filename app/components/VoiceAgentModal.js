@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 export default function VoiceAgentModal({ isOpen, onClose }) {
   const [callState, setCallState] = useState('idle'); // 'idle' | 'listening' | 'thinking' | 'speaking'
-  const [transcript, setTranscript] = useState('');
   const [interimUserText, setInterimUserText] = useState('');
+  const [micError, setMicError] = useState(null);
   const [history, setHistory] = useState([
     {
       role: 'assistant',
@@ -14,7 +14,6 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
-  const [micSupported, setMicSupported] = useState(true);
   const [bookingData, setBookingData] = useState(null);
   const [calculatedQuote, setCalculatedQuote] = useState(null);
   const [typedInput, setTypedInput] = useState('');
@@ -22,62 +21,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   const recognitionRef = useRef(null);
   const synthRef = useRef(null);
+  const audioRef = useRef(null);
   const isSpeakingRef = useRef(false);
   const conversationLogRef = useRef(null);
 
-  // Initialize Speech Synthesis & Speech Recognition
+  // Initialize Audio & Speech Recognition support
   useEffect(() => {
     if (typeof window === 'undefined') return;
-
-    // Check Speech Recognition support
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRecognition) {
-      setMicSupported(false);
-    } else {
-      try {
-        const recognition = new SpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = true;
-        recognition.lang = 'en-US';
-
-        recognition.onstart = () => {
-          setCallState('listening');
-          setInterimUserText('');
-        };
-
-        recognition.onresult = (event) => {
-          let currentTranscript = '';
-          for (let i = event.resultIndex; i < event.results.length; i++) {
-            currentTranscript += event.results[i][0].transcript;
-          }
-          setInterimUserText(currentTranscript);
-
-          if (event.results[0].isFinal) {
-            const finalSpeech = event.results[0][0].transcript.trim();
-            if (finalSpeech) {
-              handleSendQuery(finalSpeech);
-            }
-          }
-        };
-
-        recognition.onerror = (event) => {
-          console.warn('Speech recognition error:', event.error);
-          if (event.error !== 'no-speech') {
-            setCallState('idle');
-          }
-        };
-
-        recognition.onend = () => {
-          // If not thinking or speaking, revert to idle
-          setCallState((prev) => (prev === 'listening' ? 'idle' : prev));
-        };
-
-        recognitionRef.current = recognition;
-      } catch (e) {
-        console.warn('Could not initialize SpeechRecognition:', e);
-        setMicSupported(false);
-      }
-    }
 
     if (window.speechSynthesis) {
       synthRef.current = window.speechSynthesis;
@@ -87,43 +37,81 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
       if (synthRef.current) {
         synthRef.current.cancel();
       }
     };
   }, []);
 
-  // Auto-scroll transcript container
-  useEffect(() => {
-    if (conversationLogRef.current) {
-      conversationLogRef.current.scrollTop = conversationLogRef.current.scrollHeight;
+  // Play studio-grade human neural voice (en-US-ChristopherNeural)
+  const playNeuralAudio = useCallback((audioSrc) => {
+    if (isMuted || !audioSrc) {
+      setCallState('idle');
+      return;
     }
-  }, [history, interimUserText, callState]);
 
-  // Clean voice speak function with warm natural voice
-  const speakText = useCallback((text) => {
+    try {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+
+      const audio = new Audio(audioSrc);
+      audioRef.current = audio;
+
+      audio.onplay = () => {
+        isSpeakingRef.current = true;
+        setCallState('speaking');
+      };
+
+      audio.onended = () => {
+        isSpeakingRef.current = false;
+        setCallState('idle');
+      };
+
+      audio.onerror = (e) => {
+        console.warn('Neural audio playback error:', e);
+        isSpeakingRef.current = false;
+        setCallState('idle');
+      };
+
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => {
+          console.log('Audio autoplay prevented by browser policy (user tap required):', err);
+          isSpeakingRef.current = false;
+          setCallState('idle');
+        });
+      }
+    } catch (err) {
+      console.warn('Could not play neural audio:', err);
+      setCallState('idle');
+    }
+  }, [isMuted]);
+
+  // Fallback voice speak function
+  const speakTextFallback = useCallback((text) => {
     if (!synthRef.current || isMuted) return;
 
-    // Halt any ongoing speech
     synthRef.current.cancel();
-
-    // Clean any asterisks or symbols
     const cleanText = text.replace(/[*#_~]/g, '').trim();
     const utterance = new SpeechSynthesisUtterance(cleanText);
 
-    // Find best male English voice
     const voices = synthRef.current.getVoices();
     const preferredVoice = voices.find(v => 
-      (v.name.includes('Google US English') || 
-       v.name.includes('David') || 
-       v.name.includes('Daniel') || 
+      (v.name.includes('Natural') || 
        v.name.includes('Guy') ||
-       v.name.includes('Natural')) && v.lang.startsWith('en')
+       v.name.includes('David') || 
+       v.name.includes('Google US English')) && v.lang.startsWith('en')
     ) || voices.find(v => v.lang.startsWith('en'));
 
     if (preferredVoice) utterance.voice = preferredVoice;
-    utterance.rate = 0.98; // Warm conversational tempo
-    utterance.pitch = 0.95; // Confident baritone
+    utterance.rate = 0.98;
+    utterance.pitch = 0.95;
 
     utterance.onstart = () => {
       isSpeakingRef.current = true;
@@ -143,41 +131,120 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     synthRef.current.speak(utterance);
   }, [isMuted]);
 
-  // Speak greeting when modal opens
+  // Auto-scroll transcript container
+  useEffect(() => {
+    if (conversationLogRef.current) {
+      conversationLogRef.current.scrollTop = conversationLogRef.current.scrollHeight;
+    }
+  }, [history, interimUserText, callState]);
+
+  // Play Christopher's human greeting when modal opens
   useEffect(() => {
     if (isOpen) {
       setCallState('idle');
-      // Gentle initial voice greeting
+      setMicError(null);
+      // Play warm, humanized audio greeting
       const timer = setTimeout(() => {
-        speakText("Well hello there! I am Christopher Boykin with Foresight Home Inspections. Ask me about home systems, our two-inspector standard, our $10,000 warranty, or how we save you money at the closing table.");
-      }, 500);
+        playNeuralAudio('/audio/christopher-greeting.mp3');
+      }, 350);
       return () => clearTimeout(timer);
     } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
       if (synthRef.current) synthRef.current.cancel();
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
     }
-  }, [isOpen, speakText]);
+  }, [isOpen, playNeuralAudio]);
 
-  // Start speech recognition
-  const handleStartListening = () => {
+  // Stop current speech or playback immediately
+  const haltSpeech = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
     if (synthRef.current) {
-      synthRef.current.cancel(); // Interrupt Christopher if he is talking
+      synthRef.current.cancel();
+    }
+    isSpeakingRef.current = false;
+  };
+
+  // Start speech recognition with instant visual feedback and error recovery
+  const handleStartListening = () => {
+    // 1. Instantly stop ongoing audio
+    haltSpeech();
+
+    // 2. Instant visual state update (<0ms delay)
+    setCallState('listening');
+    setMicError(null);
+    setInterimUserText('');
+
+    // Optional haptic tap on mobile
+    if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
+      try { window.navigator.vibrate(40); } catch (_) {}
     }
 
-    if (!micSupported || !recognitionRef.current) {
-      alert("Microphone recognition is not available in this browser. Please type your question below.");
+    // 3. Browser speech recognition check
+    const SpeechRecognition = typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition);
+    if (!SpeechRecognition) {
+      setMicError('Speech recognition is not available in this browser. Please type below or tap any question!');
+      setCallState('idle');
       return;
     }
 
     try {
-      recognitionRef.current.start();
+      if (recognitionRef.current) {
+        try { recognitionRef.current.abort(); } catch (_) {}
+      }
+
+      // Fresh instance every time ensures zero state-locking
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = true;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        setCallState('listening');
+      };
+
+      recognition.onresult = (event) => {
+        let currentTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          currentTranscript += event.results[i][0].transcript;
+        }
+        setInterimUserText(currentTranscript);
+
+        if (event.results[0].isFinal) {
+          const finalSpeech = event.results[0][0].transcript.trim();
+          if (finalSpeech) {
+            handleSendQuery(finalSpeech);
+          }
+        }
+      };
+
+      recognition.onerror = (event) => {
+        console.warn('Speech recognition event error:', event.error);
+        if (event.error === 'not-allowed') {
+          setMicError('Microphone access blocked. Click the lock icon in your browser address bar to allow mic access, or type your question below.');
+        } else if (event.error !== 'no-speech') {
+          setMicError(`Microphone note: ${event.error}. You can also type or tap any question.`);
+        }
+        setCallState('idle');
+      };
+
+      recognition.onend = () => {
+        setCallState(prev => (prev === 'listening' ? 'idle' : prev));
+      };
+
+      recognitionRef.current = recognition;
+      recognition.start();
     } catch (err) {
-      // If already started, stop and restart
-      try {
-        recognitionRef.current.stop();
-      } catch (_) {}
+      console.warn('Error starting speech recognition:', err);
+      setMicError('Could not open microphone. Please allow permissions or type below.');
+      setCallState('idle');
     }
   };
 
@@ -189,9 +256,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     setCallState('idle');
   };
 
-  // Send query to voice API route
+  // Send query to voice API route and play humanized neural response
   const handleSendQuery = async (queryText) => {
     if (!queryText || !queryText.trim()) return;
+
+    haltSpeech();
+    setMicError(null);
 
     const userMessage = { role: 'user', content: queryText.trim() };
     const newHistory = [...history, userMessage];
@@ -222,14 +292,18 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         setBookingData(data.booking);
       }
 
-      // Speak response out loud
-      speakText(aiReply);
+      // Play human neural audio from server, or fallback to browser speech
+      if (data.audio) {
+        playNeuralAudio(data.audio);
+      } else {
+        speakTextFallback(aiReply);
+      }
 
     } catch (err) {
       console.error('Voice Assistant Query Error:', err);
       const fallbackReply = "Houses are complex systems, and I want to make sure you get the right advice. If you need an immediate quote or want to book our two-inspector team, call us directly at 678-480-2110!";
       setHistory(prev => [...prev, { role: 'assistant', content: fallbackReply }]);
-      speakText(fallbackReply);
+      speakTextFallback(fallbackReply);
       setCallState('idle');
     }
   };
@@ -426,12 +500,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           background: 'radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%)'
         }}>
           {/* Animated Pulsing Sound Orb */}
-          <div 
+          <button 
+            type="button"
             onClick={callState === 'listening' ? handleStopListening : handleStartListening}
+            aria-label={callState === 'listening' ? 'Stop listening' : 'Tap to speak with Christopher'}
             style={{
               width: '96px',
               height: '96px',
               borderRadius: '50%',
+              border: 'none',
+              outline: 'none',
+              WebkitTapHighlightColor: 'transparent',
+              userSelect: 'none',
+              touchAction: 'manipulation',
               background: callState === 'listening'
                 ? 'radial-gradient(circle, #10b981 0%, #047857 100%)'
                 : callState === 'speaking'
@@ -448,7 +529,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
               animation: callState === 'speaking' 
                 ? 'pulseVoiceSpeaking 1.2s infinite' 
                 : callState === 'listening' 
@@ -461,7 +542,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             <span style={{ fontSize: '2.2rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.4))' }}>
               {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : callState === 'thinking' ? '⏳' : '🎙️'}
             </span>
-          </div>
+          </button>
 
           <p style={{
             marginTop: '12px',
@@ -472,13 +553,51 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             textAlign: 'center'
           }}>
             {callState === 'listening'
-              ? 'Listening... Speak naturally or click orb when finished'
+              ? 'Listening... Speak naturally or tap orb when finished'
               : callState === 'speaking'
               ? "Christopher is speaking (tap orb to interrupt)"
               : callState === 'thinking'
               ? 'Consulting inspection knowledgebase...'
               : 'Tap the orb to speak with Christopher'}
           </p>
+
+          {/* Microphone Permission Warning / Helper Banner */}
+          {micError && (
+            <div style={{
+              background: 'rgba(239, 68, 68, 0.15)',
+              border: '1px solid rgba(239, 68, 68, 0.4)',
+              borderRadius: '10px',
+              padding: '8px 14px',
+              color: '#fca5a5',
+              fontSize: '0.8rem',
+              maxWidth: '92%',
+              textAlign: 'center',
+              marginTop: '6px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '8px',
+              animation: 'fadeIn 0.2s ease'
+            }}>
+              <span>⚠️ {micError}</span>
+              <button 
+                type="button"
+                onClick={() => setMicError(null)}
+                aria-label="Dismiss message"
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  color: '#fca5a5',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                  fontSize: '0.9rem',
+                  padding: '2px 6px'
+                }}
+              >
+                ✕
+              </button>
+            </div>
+          )}
 
           {/* Realtime Interim User Speech Preview */}
           {interimUserText && (
@@ -875,12 +994,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         }}>
           {/* Microphone Push-to-Talk Button */}
           <button
+            type="button"
             onClick={callState === 'listening' ? handleStopListening : handleStartListening}
+            aria-label={callState === 'listening' ? 'Stop listening' : 'Start speaking with Christopher'}
             style={{
               width: '46px',
               height: '46px',
               borderRadius: '12px',
               border: 'none',
+              outline: 'none',
+              touchAction: 'manipulation',
+              WebkitTapHighlightColor: 'transparent',
               background: callState === 'listening' ? '#10b981' : '#9B2C2C',
               color: '#ffffff',
               fontSize: '1.2rem',
@@ -892,7 +1016,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               flexShrink: 0,
               transition: 'all 0.2s'
             }}
-            title={callState === 'listening' ? 'Listening... click to stop' : 'Click to speak'}
+            title={callState === 'listening' ? 'Listening... tap to stop' : 'Tap to speak'}
           >
             {callState === 'listening' ? '⏹' : '🎙️'}
           </button>

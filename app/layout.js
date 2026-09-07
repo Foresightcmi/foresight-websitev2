@@ -44,7 +44,6 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.fhinspectionsatl.com',
     types: {
       'application/rss+xml': 'https://www.fhinspectionsatl.com/feed.xml',
     },
