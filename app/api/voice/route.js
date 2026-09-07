@@ -190,7 +190,65 @@ function extractPhoneNumber(rawText) {
   return null;
 }
 
-// Sarah Natural Phone Concierge Knowledge & Dialogue Engine (Instantaneous & Context-Aware)
+// Dynamic LLM Brain Generation via Google Gemini (Real-Time Cognitive Listening)
+async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote) {
+  if (!apiKey) return null;
+
+  const contents = (messages || []).slice(-8).map(msg => ({
+    role: msg.role === 'user' ? 'user' : 'model',
+    parts: [{ text: msg.content }]
+  }));
+
+  const systemInstruction = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta.
+You are on a live, hands-free telephone call with a homebuyer, seller, or real estate agent.
+
+CRITICAL RULES FOR NATURAL HUMAN CONVERSATION:
+1. TRULY LISTEN AND ANSWER DIRECTLY: You must directly and specifically answer whatever question, concern, or comment the caller just made. Never ignore what they asked. Never give a generic canned pitch.
+2. CONCISE & PUNCHY FOR TELEPHONE: Keep your answers to 2 to 3 natural conversational sentences (maximum 40 words). This is spoken telephone audio, so avoid long essays or lists.
+3. DO NOT INTERROGATE THE CALLER: Do NOT end every response with a canned question like "What is the address or square footage?". Only ask a question if it naturally flows from what the caller asked. If they made a comment, compliment, or observation, acknowledge it warmly without demanding information.
+4. FORESIGHT ADVANTAGES & INTERNACHI SOP:
+   - Led by Certified Master Inspector Christopher Boykin (top 1% in North America).
+   - Two-Inspector Team on every site: Lead CMI + certified inspector. Dual scrutiny in half the time (1.5 to 2.5 hours).
+   - Complimentary $10,000 Master Protection Warranty with zero deductible.
+   - Free FLIR thermal imaging & free 4K aerial drone roof scans.
+   - InterNACHI SOP: We inspect roofing, electrical (testing for Federal Pacific/Zinsco/aluminum wiring), plumbing (polybutylene/TPR), HVAC, and foundations (Georgia red clay hydrostatic pressure).
+5. PRICING & SCHEDULING:
+   - Single-family homes start at $345, condos at $295.
+   - Sunday is strictly by appointment only.
+   - Standard time slots are morning (9am / 10am) and afternoon (1:30pm).
+   - Add-ons: Radon ($200), Termite WDO ($110+), Sewer Scope ($425), Pool/Spa ($300), STR ($355).
+6. ABSOLUTE CONTENT RULE: Write in 100% clean plain text. NEVER use asterisks (*) or markdown symbols under any circumstances.`;
+
+  const models = ['gemini-2.5-flash', 'gemini-3.8-flash', 'gemini-flash-latest'];
+  for (const model of models) {
+    try {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents,
+          systemInstruction: { parts: [{ text: systemInstruction }] },
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 120
+          }
+        })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (reply && reply.trim()) {
+          return reply.replace(/[*#_~]/g, '').trim();
+        }
+      }
+    } catch (err) {
+      console.warn(`[GEMINI VOICE] Model ${model} exception:`, err.message);
+    }
+  }
+  return null;
+}
+
+// Sarah Natural Phone Concierge Knowledge & Dialogue Engine (Context-Aware, Non-Pushy Listening)
 function generateSarahDialogueTurn(messages, lastUserMessage) {
   const history = messages || [];
   const text = (lastUserMessage || '').toLowerCase().trim();
@@ -208,7 +266,79 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
     };
   }
 
-  // 1. Time / Scheduling negotiation (e.g. "how about 10 o'clock instead?", "can we do 10?", "10 am", "tomorrow morning")
+  // 1. Compliments, positive reactions, and gratitude (Acknowledge warmly WITHOUT pushing questions)
+  if (matchesAny(['thank you', 'thanks', 'appreciate it', 'thank you so much', 'thanks for the info'])) {
+    return {
+      text: "You are very welcome! We are always here to help you make informed decisions about your home. Feel free to ask anything else whenever you are ready.",
+      preAudio: null
+    };
+  }
+
+  if (matchesAny(['sounds great', 'that sounds good', 'that sounds great', 'awesome', 'cool', 'nice', 'i like that', 'makes sense', 'good to know', 'great point'])) {
+    return {
+      text: "I am so glad to hear that! We take a lot of pride in doing things the right way and protecting our clients. What other questions can I answer for you about the home?",
+      preAudio: null
+    };
+  }
+
+  // 2. Technical InterNACHI SOP Questions (Truly Listening to Building Science)
+  // Electrical & Panels
+  if (matchesAny(['electrical', 'panel', 'breaker', 'breakers', 'wiring', 'fuse', 'fuses', 'aluminum', 'federal pacific', 'zinsco', 'gfci', 'afci'])) {
+    return {
+      text: "We thoroughly inspect the main service panel, breakers, and wiring methods! We specifically look out for fire-hazard panels like Federal Pacific Stab-Lok and Zinsco, test for ungrounded circuits, and check for single-strand aluminum wiring.",
+      preAudio: null
+    };
+  }
+
+  // Crawlspace, Foundation & Georgia Red Clay
+  if (matchesAny(['crawlspace', 'crawl space', 'foundation', 'red clay', 'settling', 'settlement', 'crack', 'cracks', 'slab', 'pier', 'piers', 'joist', 'joists'])) {
+    return {
+      text: "Georgia red clay expands and contracts dramatically with rain, creating hydrostatic pressure that can crack foundation walls. In crawlspaces, we check piers, framing, subflooring, and ensure the vapor barrier is properly preventing moisture intrusion.",
+      preAudio: null
+    };
+  }
+
+  // Plumbing, Pipes & Water Heaters
+  if (matchesAny(['plumbing', 'pipe', 'pipes', 'leak', 'leaks', 'polybutylene', 'copper', 'cast iron', 'water heater', 'tpr', 'shutoff'])) {
+    return {
+      text: "We test functional flow and drainage throughout the home, inspect the main shutoff, and check water heater TPR safety relief valves. We also specifically check for vulnerable polybutylene supply pipes and corroded cast iron drain lines.",
+      preAudio: null
+    };
+  }
+
+  // HVAC, Air Conditioning & Furnace
+  if (matchesAny(['hvac', 'ac', 'air conditioning', 'furnace', 'heat', 'heating', 'duct', 'ducts', 'filter', 'filters', 'condensate'])) {
+    return {
+      text: "We test both the heating and cooling systems using normal operating controls, evaluate ductwork and filters, and inspect the secondary condensate overflow pan in the attic to make sure safety float switches are in place to prevent ceiling leaks.",
+      preAudio: null
+    };
+  }
+
+  // Mold, Moisture & Infrared Thermal Imaging
+  if (matchesAny(['mold', 'moisture', 'humidity', 'damp', 'water intrusion', 'flir', 'thermal', 'infrared'])) {
+    return {
+      text: "We include complimentary FLIR infrared thermal imaging on every inspection. It detects subtle temperature differentials behind drywall and ceilings, catching hidden plumbing leaks, roof leaks, or insulation gaps before mold can spread.",
+      preAudio: null
+    };
+  }
+
+  // Attending the Walkthrough
+  if (matchesAny(['attend', 'come along', 'be there', 'walkthrough', 'show up', 'can i come', 'can we come', 'meet on site'])) {
+    return {
+      text: "You and your agent are more than welcome to attend! Christopher loves having buyers on site during the summary walkthrough so he can show you all our findings firsthand and answer all your questions.",
+      preAudio: null
+    };
+  }
+
+  // Christopher's Credentials & Certified Master Inspector (CMI)
+  if (matchesAny(['cmi', 'credentials', 'certified master', 'certification', 'license', 'licensed', 'who is christopher', 'experience'])) {
+    return {
+      text: "Christopher Boykin is a Certified Master Inspector, which is North America's highest professional designation, representing the top one to two percent of elite inspectors nationwide. You get peer-reviewed, master-level scrutiny on every job.",
+      preAudio: null
+    };
+  }
+
+  // 3. Time / Scheduling negotiation (e.g. "how about 10 o'clock instead?", "can we do 10?", "10 am", "tomorrow morning")
   const hasTimeIndicator = 
     text.includes('10 o') || text.includes('10:00') || text.includes('10am') || text.includes('10 am') || text.includes('10 o\'clock') ||
     text.includes('9 o') || text.includes('9:00') || text.includes('9am') || text.includes('9 am') ||
@@ -254,17 +384,16 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
       };
     }
 
-    // Other specific time
     const timeMatch = text.match(/\b(1[0-2]|[1-9])(?::([0-5][0-9]))?\s*(am|pm)?\b/i);
     const parsedTime = timeMatch ? `${timeMatch[1]}${timeMatch[2] ? `:${timeMatch[2]}` : ':00'} ${timeMatch[3] ? timeMatch[3].toUpperCase() : 'AM'}` : 'That time';
     return {
-      text: `${parsedTime} works great for our two-inspector team! I have that slot held for you. What is the address of the home and your name?`,
+      text: `${parsedTime} works great for our two-inspector team! What is the address of the home and your name so I can hold that for you?`,
       preAudio: null
     };
   }
 
-  // 2. Affirmative responses ("yes", "sure", "sounds good", "perfect", "let's do it")
-  if (matchesAny(['yes', 'sure', 'yeah', 'yep', 'sounds good', 'perfect', 'lets do it', "let's do it", 'that works', 'ok', 'okay', 'please'])) {
+  // 4. Affirmative responses ("yes", "sure", "sounds good", "perfect", "let's do it")
+  if (matchesAny(['yes', 'sure', 'yeah', 'yep', 'lets do it', "let's do it", 'that works', 'ok', 'okay', 'please'])) {
     if (prev.includes('schedule') || prev.includes('reserve') || prev.includes('date') || prev.includes('slot')) {
       return {
         text: "Awesome! Does a morning slot around 9:00 or 10:00 AM work better for you, or would you prefer afternoon? And what is the address of the home?",
@@ -273,7 +402,7 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
     }
   }
 
-  // 3. Polite decline or browsing ("no", "not yet", "just looking", "just shopping")
+  // 5. Polite decline or browsing ("no", "not yet", "just looking", "just shopping")
   if (matchesAny(['no', 'nope', 'not yet', 'just looking', 'just shopping', 'just checking', 'not right now'])) {
     return {
       text: "No problem at all! Feel free to ask me anything about our ten thousand dollar warranty, pricing, or our two-inspector process whenever you are ready. What questions can I answer for you?",
@@ -281,20 +410,19 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
     };
   }
 
-  // 4. Address detection (e.g. "1816 South Deshon Road", "in Lithonia", "123 Main St", "in Alpharetta")
+  // 6. Address detection (e.g. "1816 South Deshon Road", "in Lithonia", "123 Main St", "in Alpharetta")
   const addressRegex = /\b(\d{1,5}\s+[A-Za-z0-9\s]+(?:road|rd|street|st|avenue|ave|drive|dr|lane|ln|way|blvd|circle|ct|court))\b/i;
   const cityRegex = /\b(?:in\s+)?(lithonia|atlanta|sandy springs|alpharetta|decatur|marietta|conyers|lawrenceville|duluth|roswell|smyrna|cumming|woodstock|kennesaw|buford|peachtree city|dunwoody|brookhaven|johns creek)\b/i;
   const addressFound = text.match(addressRegex) || text.match(cityRegex);
 
   if (addressFound && (prev.includes('address') || prev.includes('property') || text.includes('road') || text.includes('street') || text.includes('drive') || text.includes('ave'))) {
-    const rawAddress = addressFound[0].trim();
     return {
       text: "Got that property address down! What is your name and the best phone number so our office can send the confirmation and coordinate access?",
       preAudio: '/audio/sarah-address-confirm.mp3'
     };
   }
 
-  // 5. Name introduction ("my name is ...", "i'm ...")
+  // 7. Name introduction ("my name is ...", "i'm ...")
   const nameIntroMatch = text.match(/(?:my name is|name is|i am|this is|i'm|im)\s+([A-Za-z\s]+?)(?:,|\.|\s+and|\s+my|\s+phone|\s+at|$)/i);
   if (nameIntroMatch && !prev.includes('phone') && !text.includes('square')) {
     const clientName = nameIntroMatch[1].trim();
@@ -304,10 +432,10 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
     };
   }
 
-  // 6. Signature Value Questions (Pre-Rendered Instant Audio)
-  if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo'])) {
+  // 8. Signature Value Questions (Pre-Rendered Instant Audio)
+  if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo', 'why two'])) {
     return {
-      text: "Most companies send one inspector who gets fatigued after four hours. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus our ten thousand dollar warranty. What type of home are you buying?",
+      text: "Most companies send one inspector who gets fatigued after four hours. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus our ten thousand dollar warranty.",
       preAudio: '/audio/sarah-why-two.mp3'
     };
   }
@@ -315,7 +443,7 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
   // Warranty & Guarantee (Instant Audio)
   if (matchesAny(['warranty', '10000', '10,000', 'guarantee', 'protection'])) {
     return {
-      text: "Every full inspection includes our complimentary ten thousand dollar Master Protection Warranty with zero deductible! It covers mechanical systems, structure, appliances, roofs, and mold after closing. Would you like me to check our schedule for your inspection date?",
+      text: "Every full inspection includes our complimentary ten thousand dollar Master Protection Warranty with zero deductible! It covers mechanical systems, structure, appliances, roofs, and mold after closing.",
       preAudio: '/audio/sarah-warranty.mp3'
     };
   }
@@ -323,7 +451,7 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
   // Pricing (Instant Audio)
   if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
     return {
-      text: "Our single-family inspections start at 345 dollars, and condos start at 295, based on square footage. That includes thermal imaging and aerial drone roof scans at no extra charge! About how many square feet is the house?",
+      text: "Our single-family inspections start at 345 dollars, and condos start at 295, based on square footage. That includes thermal imaging and aerial drone roof scans at no extra charge!",
       preAudio: '/audio/sarah-pricing.mp3'
     };
   }
@@ -331,7 +459,7 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
   // Radon (Instant Audio)
   if (matchesAny(['radon'])) {
     return {
-      text: "Radon is very common in Georgia granite bedrock. We run 48-hour continuous electronic monitoring for 200 dollars. If levels are elevated, we give you the leverage to have the seller install a mitigation system before closing! Should we add radon testing for you?",
+      text: "Radon is very common in Georgia granite bedrock. We run 48-hour continuous electronic monitoring for 200 dollars. If levels are elevated, we give you the leverage to have the seller install a mitigation system before closing!",
       preAudio: '/audio/sarah-radon.mp3'
     };
   }
@@ -339,7 +467,7 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
   // Termite (Instant Audio)
   if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation'])) {
     return {
-      text: "Georgia is prime termite country. We do complete wood-destroying organism inspections for 110 dollars bundled, and provide the official Georgia Wood Infestation Report. Would you like me to include termite on your estimate?",
+      text: "Georgia is prime termite country. We do complete wood-destroying organism inspections for 110 dollars bundled, and provide the official Georgia Wood Infestation Report.",
       preAudio: '/audio/sarah-termite.mp3'
     };
   }
@@ -347,57 +475,57 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
   // Sewer Scope (Instant Audio)
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
-      text: "Replacing a broken sewer line can cost eight to fifteen thousand dollars! Our high-definition camera inspects the main drain pipe all the way to the municipal connection for 425 dollars. It is especially recommended for homes over 25 years old. What year was the home built?",
+      text: "Replacing a broken sewer line can cost eight to fifteen thousand dollars! Our high-definition camera inspects the main drain pipe all the way to the municipal connection for 425 dollars. It is especially recommended for homes over 25 years old.",
       preAudio: '/audio/sarah-sewer.mp3'
     };
   }
 
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
-      text: "We inspect pool pumps, heaters, filtration, and safety GFCI breakers for 300 dollars flat. Catching pool issues early gives you great leverage to negotiate seller credits before closing. Does the home have a pool or hot tub?",
+      text: "We inspect pool pumps, heaters, filtration, and safety GFCI breakers for 300 dollars flat. Catching pool issues early gives you great leverage to negotiate seller credits before closing.",
       preAudio: null
     };
   }
 
   if (matchesAny(['thermal', 'flir', 'infrared', 'drone', 'drones', 'camera'])) {
     return {
-      text: "Yes, absolutely! We include FLIR infrared thermal imaging to catch hidden leaks and aerial drone roof scans standard on every single inspection for free. What area or neighborhood is the home in?",
+      text: "Yes, absolutely! We include FLIR infrared thermal imaging to catch hidden leaks and aerial drone roof scans standard on every single inspection for free.",
       preAudio: null
     };
   }
 
   if (matchesAny(['how long', 'duration', 'time take', 'hours'])) {
     return {
-      text: "Because we send two certified inspectors on every single job instead of just one, we finish a complete, highly thorough inspection in just 1.5 to 2.5 hours, saving you half the time of exhausted solo inspectors! What size is the home?",
+      text: "Because we send two certified inspectors on every single job instead of just one, we finish a complete, highly thorough inspection in just 1.5 to 2.5 hours, saving you half the time of exhausted solo inspectors!",
       preAudio: null
     };
   }
 
   if (matchesAny(['when report', 'report delivered', 'sample report', 'crl'])) {
     return {
-      text: "Our detailed digital reports with HD photos, video clips, and our interactive Create Request List tool are delivered within 24 hours, and often the same day! Would you like me to reserve a date for your inspection?",
+      text: "Our detailed digital reports with HD photos, video clips, and our interactive Create Request List tool are delivered within 24 hours, and often the same day!",
       preAudio: null
     };
   }
 
   if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
     return {
-      text: "We offer complete Short-Term Rental safety compliance inspections for 355 dollars flat to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Are you setting up a rental in Metro Atlanta?",
+      text: "We offer complete Short-Term Rental safety compliance inspections for 355 dollars flat to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors.",
       preAudio: null
     };
   }
 
   if (matchesAny(['realtor', 'realtors', 'agent', 'agents', 'supra', 'utility', 'utilities', 'concierge'])) {
     return {
-      text: "We make it super easy for real estate agents! We have active SUPRA key access so you don't have to wait around on site, plus all our buyers get free lifetime access to Utilities Plus concierge. Can I get the property address for your client?",
+      text: "We make it super easy for real estate agents! We have active SUPRA key access so you don't have to wait around on site, plus all our buyers get free lifetime access to Utilities Plus concierge.",
       preAudio: null
     };
   }
 
-  // General default fallback
+  // Conversational Fallback: Genuinely acknowledging instead of interrogating
   return {
-    text: "Thanks for asking! At Foresight, our two-inspector team led by Certified Master Inspector Christopher Boykin protects your investment with thermal imaging, drone scans, and our ten thousand dollar warranty. What is the address or square footage of the property?",
-    preAudio: '/audio/sarah-general-fallback.mp3'
+    text: "Whether it's evaluating structural stability, electrical safety, or crawlspace moisture, our Certified Master Inspector team is here to give you complete peace of mind. What specific questions or concerns do you have about the house?",
+    preAudio: null
   };
 }
 
@@ -470,14 +598,32 @@ export async function POST(request) {
       });
     }
 
-    // 3. Multi-turn dialogue routing (handles 10 o'clock, appointments, addresses, value queries)
+    // 3. Dynamic Gemini LLM Brain (True Cognitive Listening & Real-Time Intelligence)
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (apiKey) {
+      try {
+        const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote);
+        if (dynamicReply && dynamicReply.trim()) {
+          const audio = await synthesizeHumanVoice(dynamicReply);
+          return NextResponse.json({
+            response: dynamicReply,
+            audio,
+            action: 'message'
+          });
+        }
+      } catch (geminiErr) {
+        console.warn('[VOICE] Gemini brain error, using rich dialogue engine:', geminiErr.message);
+      }
+    }
+
+    // 4. Intelligent Context-Aware Dialogue Engine (Fallback if upstream API is depleted or offline)
     const turnResult = generateSarahDialogueTurn(messages, lastUserMessage);
 
     if (turnResult.preAudio) {
       return NextResponse.json({
         response: turnResult.text,
         audio: turnResult.preAudio,
-        action: 'message'
+        action: turnResult.action || 'message'
       });
     }
 
@@ -488,7 +634,7 @@ export async function POST(request) {
     return NextResponse.json({
       response: cleanReply,
       audio,
-      action: 'message'
+      action: turnResult.action || 'message'
     });
 
   } catch (error) {
