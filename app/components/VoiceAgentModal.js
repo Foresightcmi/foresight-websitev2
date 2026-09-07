@@ -462,7 +462,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       ws.onopen = () => {
         console.log('Gemini Live WebSocket open. Sending setup handshake...');
-        const livePrompt = `You are Marcus, the knowledgeable, warm, and authoritative senior client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them warmly, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 to 45 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Specialty services like Pool ($300), Termite ($110), Radon ($200), and Sewer Scope ($425) are coordinated alongside our primary inspection. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 2 hours. In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Never use markdown asterisks.`;
+        const livePrompt = `You are Marcus, the knowledgeable, warm, and authoritative senior client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them warmly, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 to 45 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295.
+APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, 50% must be paid upon booking, and the remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling or booking is discussed.
+CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($425) for older homes 25+ years, 48-Hour Radon ($200) for crawlspaces/basements/granite belt, Termite WDO letter ($110) for Georgia buyers, Pool & Spa ($300) for pools.
+MANDATORY RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be pushy or aggressive. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g., 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined upsell.
+Specialty services are coordinated alongside our primary inspection under Foresight's standard. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 2 hours. In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
           setup: {
             model: "models/gemini-3.1-flash-live-preview",
@@ -1260,12 +1264,18 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 </span>
               </div>
               <p style={{ fontSize: '0.85rem', color: '#e2e8f0', margin: '0 0 10px 0', lineHeight: '1.4' }}>
-                Thank you, <strong>{bookingData.name}</strong>! We have logged your tentative inspection request. Our office will contact you at <strong>{bookingData.phone}</strong> within 2 hours to confirm inspector arrival time, property access, and coordinate any requested specialty add-ons (Pool, Termite, Radon, Sewer Scope).
+                Thank you, <strong>{bookingData.name}</strong>! We have logged your tentative inspection request. To solidify your appointment on our master calendar, our office will contact you at <strong>{bookingData.phone}</strong> within 2 hours to confirm inspector arrival time, process the 50% deposit, and coordinate any requested specialty add-ons (Pool, Termite, Radon, Sewer Scope). The remaining balance is paid after on-site completion before your report is released.
               </p>
               <div style={{ fontSize: '0.8rem', color: '#94A3B8', display: 'flex', flexDirection: 'column', gap: '4px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '8px' }}>
                 <div>📍 <strong>Address:</strong> {bookingData.address || 'Pending confirmation'}</div>
                 <div>📅 <strong>Requested Window:</strong> {bookingData.preferredDate || 'Upcoming Window'} (Sunday by appt only)</div>
-                {bookingData.estimatedTotal && <div>💰 <strong>Estimated Total:</strong> ${bookingData.estimatedTotal}</div>}
+                {bookingData.estimatedTotal && (
+                  <div>
+                    💰 <strong>Total:</strong> ${bookingData.estimatedTotal} &nbsp;|&nbsp; 
+                    <span style={{ color: '#D4AF37' }}>50% Deposit to Solidify: ${Math.round(bookingData.estimatedTotal / 2)}</span> &nbsp;|&nbsp; 
+                    <span>Balance upon completion: ${bookingData.estimatedTotal - Math.round(bookingData.estimatedTotal / 2)}</span>
+                  </div>
+                )}
               </div>
               <div style={{ marginTop: '12px', display: 'flex', gap: '8px' }}>
                 <a 
@@ -1306,9 +1316,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   ${calculatedQuote.total}
                 </span>
               </div>
-              <p style={{ fontSize: '0.78rem', color: '#94A3B8', margin: '4px 0 8px 0' }}>
+              <p style={{ fontSize: '0.78rem', color: '#94A3B8', margin: '4px 0 6px 0' }}>
                 Based on {calculatedQuote.sqft.toLocaleString()} sq ft {calculatedQuote.propertyType}. Includes two-inspector team, aerial drone, and infrared thermal imaging.
               </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px', fontSize: '0.75rem' }}>
+                <span style={{ background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.3)', color: '#fef08a', padding: '3px 8px', borderRadius: '4px' }}>
+                  🔒 50% Deposit to Solidify: <strong>${Math.round(calculatedQuote.total / 2)}</strong>
+                </span>
+                <span style={{ background: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.1)', color: '#cbd5e1', padding: '3px 8px', borderRadius: '4px' }}>
+                  📋 Balance (Upon Completion): <strong>${calculatedQuote.total - Math.round(calculatedQuote.total / 2)}</strong> (Due before report release)
+                </span>
+              </div>
               <button
                 onClick={() => handleSendQuery(`I would like to reserve my inspection for $${calculatedQuote.total}. My name is `)}
                 style={{

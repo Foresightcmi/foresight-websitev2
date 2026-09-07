@@ -152,25 +152,36 @@ You are speaking live with a visitor browsing Foresight's website. Welcome them 
 
 CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
 1. TRULY LISTEN AND ANSWER DIRECTLY: You must directly, thoroughly, and specifically answer whatever question, concern, or comment the visitor just made. Never ignore what they asked. Never give a vague or evasive answer.
-2. ACTIVE SALES ENCOURAGEMENT (MANDATORY): You are not just a passive textbook. In every single response, after answering the question with building science precision, bridge seamlessly to Foresight's advantages and actively encourage the client to take the next step (e.g., getting an exact square-footage quote, checking availability, or holding a morning or afternoon slot with zero upfront payment).
-3. CONCISE & SPOKEN NATURAL AUDIO: Keep your answers to 2 to 3 punchy, conversational sentences (around 35 to 45 words). This is spoken audio, so avoid long essays, lists, or robotic recitations.
-4. DEEP EXPERTISE IN HOME EVALUATION PROCESS (InterNACHI SOP):
+2. ACTIVE SALES ENCOURAGEMENT (MANDATORY): You are not just a passive textbook. In every single response, after answering the question with building science precision, bridge seamlessly to Foresight's advantages and actively encourage the client to take the next step (e.g., getting an exact square-footage quote, checking date availability, or holding a morning or afternoon inspection slot).
+3. APPOINTMENT SOLIDIFICATION POLICY (50% DEPOSIT / 50% BALANCE):
+   - To solidify all appointments on our master calendar, 50% must be paid upon booking.
+   - The remaining 50% balance is due after on-site completion before the official inspection report is released.
+   - Explain this policy whenever booking, scheduling, deposits, or next steps are discussed.
+4. CIRCUMSTANTIAL & REASONABLE UPSELLS (NEVER PUSHY):
+   - Based on the circumstances of the property, suggest relevant, reasonable add-ons:
+     * Older homes (pre-1990 / 25+ years old): gently suggest a Sewer Scope Camera ($425) to check for clay or cast iron collapse.
+     * Homes with crawlspaces, basements, or in the Atlanta granite belt: suggest 48-Hour Continuous Radon Gas Testing ($200).
+     * Properties in Georgia / buyers with mortgages: mention our bundled Termite/WDO clearance letter ($110).
+     * Homes with pools or spas: suggest Pool & Spa inspection ($300).
+   - CRITICAL RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be aggressive or pushy. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'don't need it', 'not right now', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g. 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat or re-push a declined recommendation.
+5. CONCISE & SPOKEN NATURAL AUDIO: Keep your answers to 2 to 3 punchy, conversational sentences (around 35 to 45 words). This is spoken audio, so avoid long essays, lists, or robotic recitations.
+6. DEEP EXPERTISE IN HOME EVALUATION PROCESS (InterNACHI SOP):
    - Top-to-bottom comprehensive evaluation: roof (4K aerial drone scans for shingles, flashing, chimney crowns), attic (framing, insulation R-value, ventilation), electrical panels (testing for fire hazards like Federal Pacific Stab-Lok, Zinsco, and single-strand aluminum wiring; GFCI/AFCI safety), plumbing (testing functional flow, pressure, TPR valves, polybutylene supply lines, and cast iron drain wear), HVAC (testing heating and AC temperature split differentials, ductwork, and secondary overflow float switches to protect ceilings), and foundation/structure (Georgia red clay hydrostatic pressure, crawlspace moisture, piers, framing, and vapor barrier coverage).
    - Complimentary FLIR infrared thermal imaging standard on every inspection to detect hidden moisture, missing insulation, and electrical hotspots behind walls.
    - Two-Inspector Team on every site: Led by Certified Master Inspector Christopher Boykin (top 1% in North America) paired with a certified inspector. Dual sets of eyes deliver double the scrutiny in half the time (1.5 to 2.5 hours vs 4+ hours for solo inspectors).
    - Complimentary $10,000 Master Protection Warranty with zero deductible covering mechanical, structural, roof, and mold.
    - Full digital report delivered within 24 hours (often same-day) with HD photos, video clips, and the interactive Create Request List (CRL) tool for fast repair addendum negotiations with realtors.
-5. COMPLETE PRICING & SCHEDULING KNOWLEDGE:
+7. COMPLETE PRICING & SCHEDULING KNOWLEDGE:
    - Single-family homes start at $345 (up to 1,000 sq ft), $375 (up to 1,500 sq ft), $410 (up to 2,000 sq ft), $435 (up to 2,500 sq ft), $465 (up to 3,000 sq ft), $485 (up to 3,500 sq ft), $500 (up to 4,000 sq ft), $555 (up to 4,500 sq ft), $595 (up to 5,000 sq ft), $635 (up to 5,500 sq ft), and $50 per 500 sq ft above 5,500.
    - Condos start at $295 (up to 1,000 sq ft) and $325 (1,001-1,800 sq ft).
    - Crawlspace complexity adds $85; basement adds $75.
    - Older homes: 25-49 years adds $50; 50+ years adds $95.
    - Add-ons: Radon Testing $200 (48-hr continuous monitor), Termite WDO $110 (official GA Wood Infestation Report), Pool & Spa $300, Sewer Scope Camera $425, STR Compliance $355, 11-Month Builder Warranty $350.
-   - Any size home can be booked online. Online bookings are tentative requests; our office contacts the client within 2 hours to confirm inspector dispatch.
+   - Any size home can be booked online. Online bookings are tentative requests; our office contacts the client within 2 hours to confirm inspector dispatch and process the 50% deposit.
    - Standard inspection windows: 9:00 AM or 10:00 AM morning, and 1:30 PM afternoon.
    - SUNDAY RULE: Sunday inspections are strictly by appointment only.
    - SPECIALTY SERVICES: Auxiliary services (Radon, Termite, Pool, Sewer Scope) are coordinated alongside our primary inspection under Foresight's quality standard. Never mention third parties, subcontractors, or outsourcing.
-6. ABSOLUTE CLEAN FORMATTING: Write in 100% clean plain English. NEVER use asterisks (*) or markdown symbols under any circumstances.`;
+8. ABSOLUTE CLEAN FORMATTING: Write in 100% clean plain English. NEVER use asterisks (*) or markdown symbols under any circumstances.`;
 
   const models = ['gemini-3.1-flash-lite', 'gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-flash-latest'];
   for (const model of models) {
@@ -362,11 +373,25 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     }
   }
 
-  // 5. Polite decline or browsing ("no", "not yet", "just looking", "just shopping")
-  if (matchesAny(['no', 'nope', 'not yet', 'just looking', 'just shopping', 'just checking', 'not right now'])) {
+  // 5. Gracious decline handler (Accepting "NO" graciously without being pushy)
+  if (matchesAny(['no', 'nope', 'no thanks', 'pass', 'not yet', 'just looking', 'just shopping', 'just checking', 'not right now', 'dont need it', "don't need", 'skip it', 'leave it off', 'no thank you', 'just the basic', 'just the inspection', 'no addon', 'no add on', 'keep it basic'])) {
+    if (prev.includes('radon') || prev.includes('termite') || prev.includes('sewer') || prev.includes('pool') || prev.includes('add') || prev.includes('upsell') || prev.includes('bundle') || prev.includes('suggest') || prev.includes('recommend') || prev.includes('camera') || prev.includes('scope')) {
+      return {
+        text: "Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation with our two-inspector team. What date or time window works best for you?",
+        preAudio: '/audio/marcus-decline-addon.mp3'
+      };
+    }
     return {
       text: "No problem at all! Feel free to ask me anything about our ten thousand dollar warranty, pricing, or our two-inspector process whenever you are ready. What questions can I answer for you?",
       preAudio: '/audio/marcus-browsing.mp3'
+    };
+  }
+
+  // 5b. Payment Policy & Deposit Query (50% Deposit to Solidify)
+  if (matchesAny(['deposit', 'down payment', 'payment policy', 'payment terms', 'when do i pay', 'how do i pay', 'pay upfront', '50 percent', 'half down', 'half upfront'])) {
+    return {
+      text: "To solidify all appointments on our master calendar, a 50 percent deposit is required upon booking, with the remaining 50 percent balance due after our on-site walkthrough before your official report is released. Would you like me to hold our next available window for you?",
+      preAudio: '/audio/marcus-payment-policy.mp3'
     };
   }
 
@@ -416,19 +441,27 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     };
   }
 
-  // Radon (Instant Audio)
-  if (matchesAny(['radon'])) {
+  // Older Homes Contextual Sewer Scope Recommendation
+  if (matchesAny(['older home', 'historic home', 'pre-1990', '1960', '1970', '1980', 'cast iron pipe', 'clay pipe', 'tree roots', 'root intrusion'])) {
     return {
-      text: "Radon is very common across Georgia's granite bedrock. We deploy 48-hour continuous electronic monitors following EPA protocols for 200 dollars, giving you the official evidence to negotiate seller credits before closing. Would you like us to bundle radon testing with your home inspection?",
-      preAudio: null
+      text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 425 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
+      preAudio: '/audio/marcus-upsell-sewer.mp3'
     };
   }
 
-  // Termite (Instant Audio)
-  if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation'])) {
+  // Radon (Contextual Upsell & Info)
+  if (matchesAny(['radon'])) {
     return {
-      text: "Georgia is notorious termite country. We provide complete wood-destroying organism inspections for 110 dollars bundled with your home inspection, delivering the official Georgia Wood Infestation Report for your lender. Can I add that to your inspection estimate?",
-      preAudio: null
+      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 200 dollars. Would you like to add that to your estimate, or keep it as is?",
+      preAudio: '/audio/marcus-upsell-radon.mp3'
+    };
+  }
+
+  // Termite (Contextual Upsell & Info)
+  if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation', 'wood destroying'])) {
+    return {
+      text: "Because Georgia is in the termite belt and most lenders require an official clearance letter, we can bundle your official Georgia termite letter for just 110 dollars. Would you like that included, or do you already have that covered?",
+      preAudio: '/audio/marcus-upsell-termite.mp3'
     };
   }
 
@@ -519,7 +552,8 @@ export async function POST(request) {
         };
 
         const quoteResult = calculateQuoteDetails(quoteArgs);
-        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone scans and thermal imaging for free. Would you like a morning slot around 9:00 or 10:00 AM, or afternoon?`;
+        const deposit = Math.round(quoteResult.total / 2);
+        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, a 50 percent deposit of ${deposit} dollars is paid upon booking, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
 
         const audio = await synthesizeHumanVoice(speechResponse);
         return NextResponse.json({
@@ -548,7 +582,7 @@ export async function POST(request) {
       };
 
       await persistBooking(bookingArgs);
-      const speechResponse = `Awesome! I have your tentative inspection request logged. Our office team will follow up directly at ${clientPhone} within two hours to confirm inspector arrival time, access, and schedule any requested auxiliary specialists. Remember that Sunday is by appointment only. We look forward to speaking with you!`;
+      const speechResponse = `Awesome! I have your inspection request logged. To solidify your appointment on our master calendar, our office team will follow up directly at ${clientPhone} within two hours to confirm inspector arrival time, process the 50 percent deposit, and coordinate any requested auxiliary specialists. The remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
 
       const audio = await synthesizeHumanVoice(speechResponse);
       return NextResponse.json({

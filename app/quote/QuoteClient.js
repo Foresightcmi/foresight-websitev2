@@ -496,6 +496,29 @@ export default function QuoteClient({ showValueComparison = true }) {
               <div style={{ fontSize: isCustom ? '1.8rem' : '4rem', fontWeight: 800, color: 'var(--color-red)', marginBottom: '0.5rem', lineHeight: 1 }}>
                 {isCustom ? total : `$${total}`}
               </div>
+
+              {!isCustom && typeof total === 'number' && (
+                <div style={{
+                  display: 'flex',
+                  gap: '0.75rem',
+                  background: 'rgba(255, 255, 255, 0.06)',
+                  padding: '0.65rem 0.85rem',
+                  borderRadius: 'var(--radius-sm)',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  marginBottom: '1rem',
+                  fontSize: '0.8rem'
+                }}>
+                  <div style={{ flex: 1, borderRight: '1px solid rgba(255, 255, 255, 0.1)', paddingRight: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-gray-mid)', display: 'block', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 600 }}>50% Deposit to Solidify:</span>
+                    <strong style={{ color: '#34d399', fontSize: '1.1rem' }}>${Math.round(total * 0.5)}</strong>
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <span style={{ color: 'var(--color-gray-mid)', display: 'block', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 600 }}>Final 50% (Upon Completion):</span>
+                    <strong style={{ color: '#f8fafc', fontSize: '1.1rem' }}>${total - Math.round(total * 0.5)}</strong>
+                    <span style={{ display: 'block', fontSize: '0.68rem', color: 'var(--color-gray-mid)', marginTop: '2px' }}>Due prior to report release</span>
+                  </div>
+                </div>
+              )}
               
               <p style={{ color: 'var(--color-gray)', marginBottom: '2rem', fontSize: '0.825rem', lineHeight: 1.4 }}>
                 Calculated on real Atlanta area inspection schedules. Subject to verification of tax assessor records and property complexity upon booking.
@@ -668,6 +691,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         </p>
                         <ul style={{ margin: 0, paddingLeft: '1.1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
                           <li><strong>Office Confirmation Call:</strong> Our office reviews county tax records and calls or texts you within 2 hours to confirm inspector arrival time.</li>
+                          <li><strong>50% Deposit to Solidify:</strong> To solidify your appointment on our master calendar, 50% is processed upon booking confirmation, with the remaining 50% balance due upon inspection completion before report release.</li>
                           <li><strong>Specialty Service Coordination:</strong> Dedicated auxiliary services (Pool, Termite, Radon, Sewer) are coordinated alongside your primary inspection window.</li>
                           <li><strong>Sunday Inspection:</strong> Strictly by appointment only.</li>
                         </ul>
@@ -685,7 +709,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         <span style={{ fontSize: '0.75rem', color: '#34d399', fontWeight: 600 }}>Lock In Price</span>
                       </div>
                       <p style={{ fontSize: '0.78rem', color: 'var(--color-gray-mid)', margin: 0, lineHeight: 1.35 }}>
-                        Enter your details below to hold your preferred window. No upfront payment required.
+                        Enter your details below to request your preferred window. To solidify all appointments on our calendar, 50% is due upon booking, and the remaining 50% balance is due upon inspection completion before your report is released.
                       </p>
 
                       <div>
