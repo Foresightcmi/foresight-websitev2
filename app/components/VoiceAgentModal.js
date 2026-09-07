@@ -40,6 +40,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const isSpeakingRef = useRef(false);
   const conversationLogRef = useRef(null);
   const silenceTimerRef = useRef(null);
+  const greetingTimerRef = useRef(null);
+  const hasGreetedRef = useRef(false);
   const callStateRef = useRef(callState);
   const handleStartListeningRef = useRef(null);
 
@@ -59,6 +61,44 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     handleStartListeningRef.current = handleStartListening;
   });
 
+  // Master audio halt: instantly stops all audio playback across HTML5 Audio, Gemini Live PCM, and Web Speech
+  const haltSpeech = useCallback(() => {
+    if (greetingTimerRef.current) {
+      clearTimeout(greetingTimerRef.current);
+      greetingTimerRef.current = null;
+    }
+    if (silenceTimerRef.current) {
+      clearTimeout(silenceTimerRef.current);
+      silenceTimerRef.current = null;
+    }
+
+    // 1. Stop and clear HTML5 Audio element
+    if (audioRef.current) {
+      try {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        audioRef.current.src = '';
+      } catch (_) {}
+      audioRef.current = null;
+    }
+
+    // 2. Stop all Gemini Live PCM buffer sources
+    if (activePcmSourcesRef.current && activePcmSourcesRef.current.length > 0) {
+      for (const src of activePcmSourcesRef.current) {
+        try { src.stop(); } catch (_) {}
+      }
+      activePcmSourcesRef.current = [];
+    }
+    scheduledAudioTimeRef.current = 0;
+
+    // 3. Cancel browser Web Speech Synthesis
+    if (synthRef.current) {
+      try { synthRef.current.cancel(); } catch (_) {}
+    }
+
+    isSpeakingRef.current = false;
+  }, []);
+
   // Initialize Audio & Speech Recognition support
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -68,32 +108,23 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
 
     return () => {
-      if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+      haltSpeech();
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
-      if (synthRef.current) {
-        synthRef.current.cancel();
-      }
     };
-  }, []);
+  }, [haltSpeech]);
 
   // Play studio-grade human neural voice (en-US-JennyNeural)
-  const playNeuralAudio = useCallback((audioSrc) => {
-    if (isMuted || !audioSrc) {
+  const playNeuralAudio = useCallback((audioSrc, onEnded) => {
+    if (isMutedRef.current || !audioSrc) {
       setCallState('idle');
+      if (onEnded) onEnded();
       return;
     }
 
     try {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
+      haltSpeech();
 
       const audio = new Audio(audioSrc);
       audioRef.current = audio;
@@ -105,28 +136,30 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       audio.onended = () => {
         isSpeakingRef.current = false;
-        setCallState('idle');
-        // Hands-Free Phone Loop: Automatically listen after Sarah finishes speaking
-        if (isHandsFreeRef.current && isOpenRef.current && handleStartListeningRef.current) {
+        audioRef.current = null;
+        if (onEnded) {
+          onEnded();
+        } else {
+          // Default post-speech: brief silence decay then listen
           setTimeout(() => {
-            if (isOpenRef.current && callStateRef.current === 'idle') {
+            if (!isOpenRef.current) return;
+            setCallState('listening');
+            if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
+              return;
+            }
+            if (isHandsFreeRef.current && handleStartListeningRef.current) {
               handleStartListeningRef.current();
             }
-          }, 350);
+          }, 250);
         }
       };
 
       audio.onerror = (e) => {
         console.warn('Neural audio playback error:', e);
         isSpeakingRef.current = false;
+        audioRef.current = null;
         setCallState('idle');
-        if (isHandsFreeRef.current && isOpenRef.current && handleStartListeningRef.current) {
-          setTimeout(() => {
-            if (isOpenRef.current && callStateRef.current === 'idle') {
-              handleStartListeningRef.current();
-            }
-          }, 350);
-        }
+        if (onEnded) onEnded();
       };
 
       const playPromise = audio.play();
@@ -134,14 +167,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         playPromise.catch(err => {
           console.log('Audio autoplay prevented by browser policy (user tap required):', err);
           isSpeakingRef.current = false;
+          audioRef.current = null;
           setCallState('idle');
+          if (onEnded) onEnded();
         });
       }
     } catch (err) {
       console.warn('Could not play neural audio:', err);
+      isSpeakingRef.current = false;
+      audioRef.current = null;
       setCallState('idle');
+      if (onEnded) onEnded();
     }
-  }, [isMuted]);
+  }, [haltSpeech]);
 
   // Fallback voice speak function (Natural Female)
   const speakTextFallback = useCallback((text) => {
@@ -198,6 +236,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const playLivePcmChunk = useCallback((base64Data) => {
     if (isMutedRef.current || !base64Data) return;
     try {
+      // Ensure HTML5 audio greeting/fallback is stopped so they never overlap
+      if (audioRef.current) {
+        try {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+          audioRef.current.src = '';
+        } catch (_) {}
+        audioRef.current = null;
+      }
+      if (synthRef.current) {
+        try { synthRef.current.cancel(); } catch (_) {}
+      }
+
       if (!audioOutputCtxRef.current || audioOutputCtxRef.current.state === 'closed') {
         audioOutputCtxRef.current = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
       }
@@ -250,19 +301,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   // Instant interruption / barge-in cancellation
   const interruptLiveAudio = useCallback(() => {
-    if (activePcmSourcesRef.current && activePcmSourcesRef.current.length > 0) {
-      for (const src of activePcmSourcesRef.current) {
-        try { src.stop(); } catch (_) {}
-      }
-      activePcmSourcesRef.current = [];
-    }
-    scheduledAudioTimeRef.current = 0;
-    isSpeakingRef.current = false;
-  }, []);
+    haltSpeech();
+  }, [haltSpeech]);
 
   // Teardown Live session cleanly
   const stopLiveSession = useCallback(() => {
-    interruptLiveAudio();
+    haltSpeech();
     if (processorRef.current) {
       try { processorRef.current.disconnect(); } catch (_) {}
       processorRef.current = null;
@@ -286,11 +330,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       liveWsRef.current = null;
     }
     setLiveWsConnected(false);
-  }, [interruptLiveAudio]);
+  }, [haltSpeech]);
 
   // Stream raw 16kHz PCM audio from browser microphone to Gemini Live
   const startLiveMicStream = useCallback(async (ws) => {
     try {
+      if (mediaStreamRef.current) return;
+
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: {
           channelCount: 1,
@@ -310,7 +356,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       processorRef.current = processor;
 
       processor.onaudioprocess = (e) => {
-        if (!ws || ws.readyState !== WebSocket.OPEN || isMutedRef.current) return;
+        // Drop mic audio if muted or Sarah is currently speaking (prevents speaker echo loop!)
+        if (!ws || ws.readyState !== WebSocket.OPEN || isMutedRef.current || isSpeakingRef.current) return;
 
         const float32 = e.inputBuffer.getChannelData(0);
         const int16 = new Int16Array(float32.length);
@@ -340,7 +387,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       source.connect(processor);
       processor.connect(audioCtx.destination);
-      setCallState('listening');
+      if (!isSpeakingRef.current) {
+        setCallState('listening');
+      }
     } catch (err) {
       console.warn('Microphone streaming permission or init error:', err);
       setEngineMode('neural');
@@ -349,6 +398,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   // Handshake with Gemini Live WebSocket via ephemeral token
   const initLiveConnection = useCallback(async () => {
+    if (liveWsRef.current && (liveWsRef.current.readyState === WebSocket.OPEN || liveWsRef.current.readyState === WebSocket.CONNECTING)) {
+      return;
+    }
+
     try {
       const res = await fetch('/api/voice/token', { method: 'POST' });
       const data = await res.json();
@@ -401,7 +454,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (msg.serverContent) {
             if (msg.serverContent.interrupted) {
               console.log('Gemini Live interrupted by user speech!');
-              interruptLiveAudio();
+              haltSpeech();
               setCallState('listening');
             }
 
@@ -443,7 +496,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
     }
-  }, [startLiveMicStream, playLivePcmChunk, interruptLiveAudio]);
+  }, [startLiveMicStream, playLivePcmChunk, haltSpeech]);
 
   // Auto-scroll transcript container
   useEffect(() => {
@@ -452,45 +505,49 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [history, interimUserText, callState]);
 
-  // Manage call initiation and teardown
+  // Manage modal open/close lifecycle, greeting lock, and teardown
   useEffect(() => {
     if (isOpen) {
       setCallState('idle');
       setMicError(null);
-      // Attempt to establish real-time Gemini Live session
-      initLiveConnection();
 
-      // Play introductory humanized greeting
-      const timer = setTimeout(() => {
-        playNeuralAudio('/audio/sarah-greeting.mp3');
-      }, 300);
-      return () => clearTimeout(timer);
-    } else {
-      stopLiveSession();
-      if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
+      // Guard: EXACTLY ONE greeting per modal opening session
+      if (!hasGreetedRef.current) {
+        hasGreetedRef.current = true;
+        haltSpeech();
+
+        // 1. Establish Gemini Live connection in parallel
+        initLiveConnection();
+
+        // 2. Play introductory greeting audio exactly once
+        greetingTimerRef.current = setTimeout(() => {
+          if (isOpenRef.current) {
+            playNeuralAudio('/audio/sarah-greeting.mp3', () => {
+              // When greeting ends cleanly:
+              setTimeout(() => {
+                if (!isOpenRef.current) return;
+                setCallState('listening');
+                if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
+                  return; // Live mic processor will now stream visitor voice
+                }
+                if (isHandsFreeRef.current && handleStartListeningRef.current) {
+                  handleStartListeningRef.current();
+                }
+              }, 250);
+            });
+          }
+        }, 150);
       }
-      if (synthRef.current) synthRef.current.cancel();
+    } else {
+      // Modal closed: reset greeting guard and stop all live sessions and audio
+      hasGreetedRef.current = false;
+      haltSpeech();
+      stopLiveSession();
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
     }
-  }, [isOpen, initLiveConnection, playNeuralAudio, stopLiveSession]);
-
-  // Stop current speech or playback immediately
-  const haltSpeech = () => {
-    interruptLiveAudio();
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-    if (synthRef.current) {
-      synthRef.current.cancel();
-    }
-    isSpeakingRef.current = false;
-  };
+  }, [isOpen, haltSpeech, initLiveConnection, playNeuralAudio, stopLiveSession]);
 
   // Instant barge-in / toggle helper: interrupts Sarah immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
@@ -514,12 +571,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     setMicError(null);
     setInterimUserText('');
 
+    // If Gemini Live is connected, it handles user voice natively via PCM stream. Do NOT run browser SpeechRecognition!
+    if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
+      return;
+    }
+
     // Optional haptic tap on mobile
     if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
       try { window.navigator.vibrate(40); } catch (_) {}
     }
 
-    // 3. Browser speech recognition check
+    // 3. Browser speech recognition check (Neural fallback mode only)
     const SpeechRecognition = typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition);
     if (!SpeechRecognition) {
       setMicError('Speech recognition is not available in this browser. Please type below or tap any question!');

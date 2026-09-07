@@ -253,7 +253,7 @@ export default function AskForesightWidget() {
   return (
     <>
       {/* Floating Action Button Group */}
-      {!isOpen && (
+      {!isOpen && !isVoiceOpen && (
         <div 
           className="ask-foresight-launcher-group"
           style={{

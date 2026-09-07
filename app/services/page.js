@@ -504,7 +504,7 @@ export default function Services() {
               <div>
                 <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>🔍 Step 1: The Observation</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
-                  We state exactly what we observed during the inspection in clear, plain language (e.g., *"The water heater's temperature-pressure relief valve is missing a discharge pipe."*).
+                  We state exactly what we observed during the inspection in clear, plain language (e.g., &ldquo;The water heater&apos;s temperature-pressure relief valve is missing a discharge pipe.&rdquo;).
                 </p>
               </div>
             </div>
@@ -516,7 +516,7 @@ export default function Services() {
               <div>
                 <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>💡 Step 2: What This Could Mean</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
-                  We explain the real-world implications, risks, and potential safety or financial consequences (e.g., *"If the water heater ever overheats, super-heated water could release directly onto anyone standing nearby, causing severe burns."*).
+                  We explain the real-world implications, risks, and potential safety or financial consequences (e.g., &ldquo;If the water heater ever overheats, super-heated water could release directly onto anyone standing nearby, causing severe burns.&rdquo;).
                 </p>
               </div>
             </div>
@@ -528,7 +528,7 @@ export default function Services() {
               <div>
                 <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>🛠️ Step 3: Our Recommendations</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
-                  To stay 100% InterNACHI compliant, our recommendations specify exactly who needs to evaluate the system further and perform repairs as needed, keeping you safe and within standards (e.g., *"Have a licensed plumbing contractor evaluate further and repair as needed."*).
+                  To stay 100% InterNACHI compliant, our recommendations specify exactly who needs to evaluate the system further and perform repairs as needed, keeping you safe and within standards (e.g., &ldquo;Have a licensed plumbing contractor evaluate further and repair as needed.&rdquo;).
                 </p>
               </div>
             </div>
@@ -562,7 +562,7 @@ export default function Services() {
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Active SUPRA Key Access</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
-                  For the ultimate convenience of Metro Atlanta real estate agents, our inspectors carry active **SUPRA key access** to gain entry to the property securely and independently. Realtors do not need to take time out of their busy schedules to drive over and open the home.
+                  For the ultimate convenience of Metro Atlanta real estate agents, our inspectors carry active <strong>SUPRA key access</strong> to gain entry to the property securely and independently. Realtors do not need to take time out of their busy schedules to drive over and open the home.
                 </p>
               </div>
             </div>
