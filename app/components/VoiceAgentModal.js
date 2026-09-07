@@ -18,10 +18,21 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [calculatedQuote, setCalculatedQuote] = useState(null);
   const [typedInput, setTypedInput] = useState('');
   const [selectedAddons, setSelectedAddons] = useState([]);
+  const [engineMode, setEngineMode] = useState('detecting'); // 'live' | 'neural'
+  const [liveWsConnected, setLiveWsConnected] = useState(false);
 
   const [isHandsFree, setIsHandsFree] = useState(true);
   const isHandsFreeRef = useRef(true);
   const isOpenRef = useRef(isOpen);
+  const isMutedRef = useRef(isMuted);
+
+  const liveWsRef = useRef(null);
+  const audioInputCtxRef = useRef(null);
+  const audioOutputCtxRef = useRef(null);
+  const mediaStreamRef = useRef(null);
+  const processorRef = useRef(null);
+  const scheduledAudioTimeRef = useRef(0);
+  const activePcmSourcesRef = useRef([]);
 
   const recognitionRef = useRef(null);
   const synthRef = useRef(null);
@@ -179,6 +190,260 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     synthRef.current.speak(utterance);
   }, [isMuted]);
 
+  useEffect(() => {
+    isMutedRef.current = isMuted;
+  }, [isMuted]);
+
+  // Live 24kHz PCM Audio Stream Player (Ultra low-latency gapless queue)
+  const playLivePcmChunk = useCallback((base64Data) => {
+    if (isMutedRef.current || !base64Data) return;
+    try {
+      if (!audioOutputCtxRef.current || audioOutputCtxRef.current.state === 'closed') {
+        audioOutputCtxRef.current = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
+      }
+      const ctx = audioOutputCtxRef.current;
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+
+      const binary = atob(base64Data);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+      }
+      const int16 = new Int16Array(bytes.buffer);
+      const float32 = new Float32Array(int16.length);
+      for (let i = 0; i < int16.length; i++) {
+        float32[i] = int16[i] / 32768.0;
+      }
+
+      const buffer = ctx.createBuffer(1, float32.length, 24000);
+      buffer.getChannelData(0).set(float32);
+
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      source.connect(ctx.destination);
+
+      const now = ctx.currentTime;
+      if (scheduledAudioTimeRef.current < now) {
+        scheduledAudioTimeRef.current = now + 0.04;
+      }
+
+      source.start(scheduledAudioTimeRef.current);
+      scheduledAudioTimeRef.current += buffer.duration;
+      activePcmSourcesRef.current.push(source);
+      isSpeakingRef.current = true;
+      setCallState('speaking');
+
+      source.onended = () => {
+        const idx = activePcmSourcesRef.current.indexOf(source);
+        if (idx > -1) activePcmSourcesRef.current.splice(idx, 1);
+        if (activePcmSourcesRef.current.length === 0) {
+          isSpeakingRef.current = false;
+          setCallState('listening');
+        }
+      };
+    } catch (err) {
+      console.warn('Live PCM chunk playback warning:', err);
+    }
+  }, []);
+
+  // Instant interruption / barge-in cancellation
+  const interruptLiveAudio = useCallback(() => {
+    if (activePcmSourcesRef.current && activePcmSourcesRef.current.length > 0) {
+      for (const src of activePcmSourcesRef.current) {
+        try { src.stop(); } catch (_) {}
+      }
+      activePcmSourcesRef.current = [];
+    }
+    scheduledAudioTimeRef.current = 0;
+    isSpeakingRef.current = false;
+  }, []);
+
+  // Teardown Live session cleanly
+  const stopLiveSession = useCallback(() => {
+    interruptLiveAudio();
+    if (processorRef.current) {
+      try { processorRef.current.disconnect(); } catch (_) {}
+      processorRef.current = null;
+    }
+    if (mediaStreamRef.current) {
+      try {
+        mediaStreamRef.current.getTracks().forEach(t => t.stop());
+      } catch (_) {}
+      mediaStreamRef.current = null;
+    }
+    if (audioInputCtxRef.current) {
+      try { audioInputCtxRef.current.close(); } catch (_) {}
+      audioInputCtxRef.current = null;
+    }
+    if (audioOutputCtxRef.current) {
+      try { audioOutputCtxRef.current.close(); } catch (_) {}
+      audioOutputCtxRef.current = null;
+    }
+    if (liveWsRef.current) {
+      try { liveWsRef.current.close(); } catch (_) {}
+      liveWsRef.current = null;
+    }
+    setLiveWsConnected(false);
+  }, [interruptLiveAudio]);
+
+  // Stream raw 16kHz PCM audio from browser microphone to Gemini Live
+  const startLiveMicStream = useCallback(async (ws) => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          channelCount: 1,
+          sampleRate: 16000,
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true
+        }
+      });
+      mediaStreamRef.current = stream;
+
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
+      audioInputCtxRef.current = audioCtx;
+
+      const source = audioCtx.createMediaStreamSource(stream);
+      const processor = audioCtx.createScriptProcessor(2048, 1, 1);
+      processorRef.current = processor;
+
+      processor.onaudioprocess = (e) => {
+        if (!ws || ws.readyState !== WebSocket.OPEN || isMutedRef.current) return;
+
+        const float32 = e.inputBuffer.getChannelData(0);
+        const int16 = new Int16Array(float32.length);
+        for (let i = 0; i < float32.length; i++) {
+          const s = Math.max(-1, Math.min(1, float32[i]));
+          int16[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+        }
+
+        let binary = '';
+        const bytes = new Uint8Array(int16.buffer);
+        for (let i = 0; i < bytes.byteLength; i++) {
+          binary += String.fromCharCode(bytes[i]);
+        }
+        const base64 = btoa(binary);
+
+        try {
+          ws.send(JSON.stringify({
+            realtimeInput: {
+              audio: {
+                data: base64,
+                mimeType: 'audio/pcm;rate=16000'
+              }
+            }
+          }));
+        } catch (_) {}
+      };
+
+      source.connect(processor);
+      processor.connect(audioCtx.destination);
+      setCallState('listening');
+    } catch (err) {
+      console.warn('Microphone streaming permission or init error:', err);
+      setEngineMode('neural');
+    }
+  }, []);
+
+  // Handshake with Gemini Live WebSocket via ephemeral token
+  const initLiveConnection = useCallback(async () => {
+    try {
+      const res = await fetch('/api/voice/token', { method: 'POST' });
+      const data = await res.json();
+
+      if (data.mode !== 'live' || !data.wsUrl) {
+        console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
+        setEngineMode('neural');
+        return;
+      }
+
+      const ws = new WebSocket(data.wsUrl);
+      liveWsRef.current = ws;
+
+      ws.onopen = () => {
+        console.log('Gemini Live WebSocket open. Sending setup handshake...');
+        const livePrompt = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta. You are on a live, hands-free phone conversation with a homebuyer, seller, or agent. Answer questions directly, naturally, and concisely (maximum 35 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Never use markdown asterisks.`;
+        ws.send(JSON.stringify({
+          setup: {
+            model: "models/gemini-3.1-flash-live-preview",
+            generationConfig: {
+              responseModalities: ["AUDIO"],
+              speechConfig: {
+                voiceConfig: {
+                  prebuiltVoiceConfig: {
+                    voiceName: "Aoede"
+                  }
+                }
+              }
+            },
+            systemInstruction: {
+              parts: [{ text: livePrompt }]
+            },
+            inputAudioTranscription: {},
+            outputAudioTranscription: {}
+          }
+        }));
+      };
+
+      ws.onmessage = (evt) => {
+        try {
+          const msg = JSON.parse(evt.data);
+          if (msg.setupComplete) {
+            console.log('Gemini Live setup complete! Connecting microphone stream...');
+            setLiveWsConnected(true);
+            setEngineMode('live');
+            startLiveMicStream(ws);
+          }
+
+          if (msg.serverContent) {
+            if (msg.serverContent.interrupted) {
+              console.log('Gemini Live interrupted by user speech!');
+              interruptLiveAudio();
+              setCallState('listening');
+            }
+
+            if (msg.serverContent.modelTurn?.parts) {
+              for (const part of msg.serverContent.modelTurn.parts) {
+                if (part.inlineData?.data && part.inlineData?.mimeType?.startsWith('audio/pcm')) {
+                  playLivePcmChunk(part.inlineData.data);
+                }
+                if (part.text) {
+                  setHistory(prev => {
+                    const last = prev[prev.length - 1];
+                    if (last && last.role === 'assistant' && last.live) {
+                      return [...prev.slice(0, -1), { role: 'assistant', content: last.content + part.text, live: true }];
+                    }
+                    return [...prev, { role: 'assistant', content: part.text, live: true }];
+                  });
+                }
+              }
+            }
+          }
+        } catch (e) {
+          console.warn('Error parsing Live message:', e);
+        }
+      };
+
+      ws.onclose = (evt) => {
+        console.log('Gemini Live WebSocket closed (code:', evt.code, 'reason:', evt.reason, '). Engaging Neural Fallback.');
+        setLiveWsConnected(false);
+        setEngineMode('neural');
+      };
+
+      ws.onerror = (err) => {
+        console.warn('Gemini Live WebSocket error, using Neural Fallback:', err);
+        setLiveWsConnected(false);
+        setEngineMode('neural');
+      };
+
+    } catch (err) {
+      console.warn('Could not initialize Gemini Live session:', err);
+      setEngineMode('neural');
+    }
+  }, [startLiveMicStream, playLivePcmChunk, interruptLiveAudio]);
+
   // Auto-scroll transcript container
   useEffect(() => {
     if (conversationLogRef.current) {
@@ -186,16 +451,21 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [history, interimUserText, callState]);
 
-  // Play Sarah's natural human greeting when modal opens
+  // Manage call initiation and teardown
   useEffect(() => {
     if (isOpen) {
       setCallState('idle');
       setMicError(null);
+      // Attempt to establish real-time Gemini Live session
+      initLiveConnection();
+
+      // Play introductory humanized greeting
       const timer = setTimeout(() => {
         playNeuralAudio('/audio/sarah-greeting.mp3');
       }, 300);
       return () => clearTimeout(timer);
     } else {
+      stopLiveSession();
       if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
       if (audioRef.current) {
         audioRef.current.pause();
@@ -206,10 +476,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
     }
-  }, [isOpen, playNeuralAudio]);
+  }, [isOpen, initLiveConnection, playNeuralAudio, stopLiveSession]);
 
   // Stop current speech or playback immediately
   const haltSpeech = () => {
+    interruptLiveAudio();
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -513,17 +784,23 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   Sarah
                 </h3>
                 <span style={{
-                  background: 'rgba(212, 175, 55, 0.15)',
-                  color: '#D4AF37',
-                  border: '1px solid rgba(212, 175, 55, 0.4)',
+                  background: liveWsConnected ? 'rgba(56, 189, 248, 0.15)' : 'rgba(212, 175, 55, 0.15)',
+                  color: liveWsConnected ? '#38bdf8' : '#D4AF37',
+                  border: `1px solid ${liveWsConnected ? 'rgba(56, 189, 248, 0.4)' : 'rgba(212, 175, 55, 0.4)'}`,
                   fontSize: '0.65rem',
                   fontWeight: 800,
                   padding: '2px 8px',
                   borderRadius: '10px',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.05em'
+                  letterSpacing: '0.05em',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px'
                 }}>
-                  Client Concierge
+                  {liveWsConnected && (
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#38bdf8', boxShadow: '0 0 6px #38bdf8' }} />
+                  )}
+                  {liveWsConnected ? 'Gemini Live 3.1' : 'Client Concierge'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
