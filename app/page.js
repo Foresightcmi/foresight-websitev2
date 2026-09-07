@@ -9,7 +9,6 @@ import NewsletterSignup from './components/NewsletterSignup';
 const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
 const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
-const FreshnessLog = dynamic(() => import('./components/FreshnessLog'), { ssr: true });
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
@@ -547,7 +546,6 @@ export default function Home() {
               <p>Receive an easy-to-read, comprehensive digital report with high-res photos and video within 24 hours of your inspection.</p>
             </div>
           </div>
-          <FreshnessLog />
         </div>
       </section>
 
