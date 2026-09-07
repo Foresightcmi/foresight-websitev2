@@ -139,8 +139,8 @@ async function persistBooking({ name, phone, email, address, preferredDate, addo
   }
 }
 
-// Studio-Grade Neural Voice Synthesis via EdgeTTS (en-US-ChristopherNeural)
-async function synthesizeHumanVoice(text) {
+// Studio-Grade Neural Voice Synthesis via EdgeTTS (en-US-JennyNeural)
+async function synthesizeHumanVoice(text, voice = 'en-US-JennyNeural') {
   try {
     const { EdgeTTS } = await import('edge-tts-universal');
     const cleanText = (text || '')
@@ -152,9 +152,9 @@ async function synthesizeHumanVoice(text) {
 
     if (!cleanText) return null;
 
-    const tts = new EdgeTTS(cleanText, 'en-US-ChristopherNeural', {
-      rate: '+0%',
-      pitch: '-2Hz'
+    const tts = new EdgeTTS(cleanText, voice, {
+      rate: '+8%',
+      pitch: '+0Hz'
     });
     const result = await tts.synthesize();
     if (result && result.audio) {
@@ -168,64 +168,85 @@ async function synthesizeHumanVoice(text) {
   return null;
 }
 
-// Christopher Boykin Expert InterNACHI Knowledge Engine (100% Reliable Fallback)
-function generateChristopherKnowledgeResponse(userText) {
+// Sarah Natural Phone Concierge Knowledge Engine (Instantaneous, Human & Conversational)
+function generateSarahConversationalResponse(userText) {
   const text = (userText || '').toLowerCase();
   const matchesAny = (keywords) => keywords.some(k => new RegExp(`\\b${k.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'i').test(text));
 
   if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo'])) {
-    return "Why do we send two certified inspectors on every single job? Most companies dispatch a lone inspector who spends four to five exhausting hours on site. Fatigue sets in, and critical defects get missed. At Foresight, we send a dual-inspector team on every single inspection: a lead Certified Master Inspector plus another certified professional inspector. One inspects the roof, exterior, and mechanicals while the other thoroughly checks interior circuits, plumbing fixtures, and attic spaces. You get double the scrutiny in half the time, giving you the strongest due diligence defense in Georgia.";
+    return {
+      text: "Most companies send one inspector who gets fatigued after four hours. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus our ten thousand dollar warranty. What type of home are you buying?",
+      preAudio: '/audio/sarah-why-two.mp3'
+    };
   }
 
   if (matchesAny(['warranty', '10000', '10,000', 'guarantee', 'protection'])) {
-    return "Every full home inspection with Foresight comes with our complimentary ten thousand dollar Master Protection Warranty with a zero-dollar deductible. This policy protects you after closing on mechanical systems, heating and cooling, plumbing, structural components, major appliances, roofs, and mold. While discount solo operators offer zero warranty, we back our Certified Master Inspector findings with real financial protection for complete peace of mind.";
-  }
-
-  if (matchesAny(['thermal', 'flir', 'infrared', 'drone', 'drones', 'camera'])) {
-    return "We include advanced FLIR infrared thermal imaging and high-resolution aerial drone roof scans standard on every single full inspection at zero extra charge. Solo inspectors routinely charge an extra 75 to 150 dollars for thermal cameras or mark steep roofs as Not Inspected. We use thermal imaging to detect hidden wall moisture and hot breaker panels, and aerial drones to inspect every single roof shingle safely and thoroughly.";
-  }
-
-  if (matchesAny(['sop', 'internachi', 'standard', 'standards', 'code of ethics'])) {
-    return "We strictly adhere to and exceed the comprehensive InterNACHI Standards of Practice, covering all ten core home systems: roof, exterior, basement, foundation and crawlspace structure, heating, cooling, plumbing, electrical, fireplace, attic insulation and ventilation, and interior doors and windows. Every finding is structured in our clear 3-step diagnostic format: Observation, What This Could Mean, and Recommendation.";
-  }
-
-  if (matchesAny(['compare', 'competitor', 'competitors', 'franchise', 'franchises', 'best', 'choice', 'why foresight'])) {
-    return "Here is why Metro Atlanta buyers choose Foresight over national franchises and discount solo operators: National franchises charge 450 to 575 dollars or more to cover corporate royalties and dispatch random junior hourly techs. Solo discount operators charge 325 to 400 dollars, but working alone for four hours leads to fatigue, they carry zero warranty, and missing an 8,000 dollar hidden roof leak wipes out any small upfront saving. Foresight gives you two certified inspectors, our ten thousand dollar warranty, and free FLIR thermal and drone scans starting at 345 dollars for single-family homes and 295 dollars for condos. It is objectively the best value and protection in Georgia.";
-  }
-
-  if (matchesAny(['report', 'reports', 'sample', 'crl', 'create request list', 'format', 'structure'])) {
-    return "Our modern cloud inspection reports exceed InterNACHI standards and are delivered within 24 hours, often same day. Packed with high-resolution photos and video clips, we write in plain English with our 3-step format: Observation, What This Could Mean, and Recommendation. Best of all, our interactive Create Request List lets you and your agent check defect items to generate official repair amendment addenda in seconds. Armed with this proof, buyers routinely win thousands of dollars in seller credits or upfront repairs!";
-  }
-
-  if (matchesAny(['radon'])) {
-    return "Radon is an invisible, odorless radioactive gas released from Georgia granite soils. We recommend professional 48-hour continuous electronic monitoring at our flat 200 dollar rate. Under InterNACHI standards: Observation: Radon levels above the EPA action limit of 4.0 picoCuries per liter. What This Could Mean: Severe long-term respiratory health hazard. Recommendation: Certified radon mitigation contractor. Finding radon gives you the leverage to require the seller to install a 1,500 to 2,500 dollar mitigation system on their dime before closing!";
-  }
-
-  if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation'])) {
-    return "Georgia is prime territory for subterranean termites, which can chew through structural floor joists and studs silently. We conduct a complete wood-destroying organism inspection at our 110 dollar bundled rate and provide the Official Georgia Wood Infestation Report. Observation: Active mud tubes. What This Could Mean: Active structural wood damage. Recommendation: Licensed pest control operator. This check saves you thousands in catastrophic framing repairs.";
-  }
-
-  if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
-    return "A swimming pool is a wonderful luxury, but faulty pumps, heaters, or underwater lighting can cost 3,000 to 5,000 dollars to replace or create severe shock hazards. We offer a comprehensive Pool and Spa safety inspection at a 300 dollar flat rate. Observation: Pool light GFCI breaker fails to trip. What This Could Mean: Direct electrocution risk to swimmers. Recommendation: Licensed electrical contractor. Our pool inspection gives you the leverage to get seller repair credits before closing!";
-  }
-
-  if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
-    return "Replacing a collapsed underground sewer line or fixing tree root intrusion costs 8,000 to 15,000 dollars out of pocket. Our high-definition Sewer Scope Camera inspection at a 425 dollar flat rate runs a specialized optic camera from your cleanout all the way to the municipal main, verifying the pipe is free of root intrusion, belly dips, or cracked clay. A vital check for homes over 25 years old!";
-  }
-
-  if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
-    return "Metro Atlanta counties, including DeKalb, Fulton, Gwinnett, and Cobb, enforce strict Short-Term Rental safety regulations for Airbnb and Vrbo hosts. We offer our STR Compliance Assist inspection at 355 dollars flat rate to verify smoke and carbon monoxide alarms, fire extinguishers, safe egress routes, and posted local agent signage before you submit your application.";
-  }
-
-  if (matchesAny(['realtor', 'realtors', 'agent', 'agents', 'supra', 'utility', 'utilities', 'concierge', 'moving'])) {
-    return "We make transactions seamless! For Realtors: Foresight carries active electronic SUPRA key access for secure lockbox entry, so agents don't have to drive out or wait around on site—we handle entry independently! For Buyers: All clients get free lifetime access to Utilities Plus, a premier Utility Concierge that sets up power, water, gas, fiber internet, and security in one quick call at the best available market rates!";
+    return {
+      text: "Every full inspection includes our complimentary ten thousand dollar Master Protection Warranty with zero deductible! It covers mechanical systems, structure, appliances, roofs, and mold after closing. Would you like me to check our schedule for your inspection date?",
+      preAudio: '/audio/sarah-warranty.mp3'
+    };
   }
 
   if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
-    return "We believe in 100 percent transparent pricing based on square footage. Standard buyer home inspections start at 345 dollars, or 295 dollars for condos. Specialized add-ons include Termite and WDO for 110 dollars, 48-Hour Continuous Radon Gas for 200 dollars, Pool and Spa for 300 dollars, Sewer Scope Camera for 425 dollars, and STR Compliance Assist for 355 dollars. Both FLIR thermal imaging and aerial drone roof scans are included free standard on every job!";
+    return {
+      text: "Our single-family inspections start at 345 dollars, and condos start at 295, based on square footage. That includes thermal imaging and aerial drone roof scans at no extra charge! About how many square feet is the house?",
+      preAudio: '/audio/sarah-pricing.mp3'
+    };
   }
 
-  return "Houses are complex systems, and what happens in the attic affects the basement. The absolute best way to protect your investment and save money is to have our Certified Master Inspector-led two person inspection team physically audit the home. We include FLIR thermal imaging, aerial drone scans, and our complimentary ten thousand dollar warranty on every job. Armed with our 24-hour Create Request List report, our clients routinely save thousands of dollars in closing credits or upfront seller repairs! What specific system or address can I help you evaluate today?";
+  if (matchesAny(['radon'])) {
+    return {
+      text: "Radon is very common in Georgia granite bedrock. We run 48-hour continuous electronic monitoring for 200 dollars. If levels are elevated, we give you the leverage to have the seller install a mitigation system before closing! Should we add radon testing for you?",
+      preAudio: '/audio/sarah-radon.mp3'
+    };
+  }
+
+  if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation'])) {
+    return {
+      text: "Georgia is prime termite country. We do complete wood-destroying organism inspections for 110 dollars bundled, and provide the official Georgia Wood Infestation Report. Would you like me to include termite on your estimate?",
+      preAudio: '/audio/sarah-termite.mp3'
+    };
+  }
+
+  if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
+    return {
+      text: "Replacing a broken sewer line can cost eight to fifteen thousand dollars! Our high-definition camera inspects the main drain pipe all the way to the municipal connection for 425 dollars. It is especially recommended for homes over 25 years old. What year was the home built?",
+      preAudio: '/audio/sarah-sewer.mp3'
+    };
+  }
+
+  if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
+    return {
+      text: "We inspect pool pumps, heaters, filtration, and safety GFCI breakers for 300 dollars flat. Catching pool issues early gives you great leverage to negotiate seller credits before closing. Does the home have a pool or hot tub?",
+      preAudio: null
+    };
+  }
+
+  if (matchesAny(['thermal', 'flir', 'infrared', 'drone', 'drones', 'camera'])) {
+    return {
+      text: "Yes, absolutely! We include FLIR infrared thermal imaging to catch hidden leaks and aerial drone roof scans standard on every single inspection for free. What area or neighborhood is the home in?",
+      preAudio: null
+    };
+  }
+
+  if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
+    return {
+      text: "We offer complete Short-Term Rental safety compliance inspections for 355 dollars flat to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Are you setting up a rental in Metro Atlanta?",
+      preAudio: null
+    };
+  }
+
+  if (matchesAny(['realtor', 'realtors', 'agent', 'agents', 'supra', 'utility', 'utilities', 'concierge'])) {
+    return {
+      text: "We make it super easy for real estate agents! We have active SUPRA key access so you don't have to wait around on site, plus all our buyers get free lifetime access to Utilities Plus concierge. Can I get the property address for your client?",
+      preAudio: null
+    };
+  }
+
+  return {
+    text: "Thanks for asking! At Foresight, our two-inspector team led by Certified Master Inspector Christopher Boykin protects your investment with thermal imaging, drone scans, and our ten thousand dollar warranty. What's the address or square footage of the property?",
+    preAudio: null
+  };
 }
 
 export async function POST(request) {
@@ -258,7 +279,7 @@ export async function POST(request) {
         };
 
         const quoteResult = calculateQuoteDetails(quoteArgs);
-        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your comprehensive inspection with our two-person Certified Master Inspector team is ${quoteResult.total} dollars.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} Both thermal imaging and aerial drone scans are included at zero extra charge. Would you like me to reserve a date for you on our schedule?`;
+        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone scans and thermal imaging for free. Would you like me to get you on the schedule?`;
 
         const audio = await synthesizeHumanVoice(speechResponse);
         return NextResponse.json({
@@ -288,7 +309,7 @@ export async function POST(request) {
       };
 
       await persistBooking(bookingArgs);
-      const speechResponse = `Wonderful, ${clientName}! I have initiated your appointment booking for your inspection. Our office team will follow up directly at ${clientPhone} to finalize the exact arrival time and access details. Remember that Sunday is by appointment only. We look forward to protecting your investment!`;
+      const speechResponse = `Awesome, ${clientName}! I've got your inspection reservation initiated right now. Our team will follow up directly at ${clientPhone} to confirm arrival time and lockbox details. Remember that Sunday is by appointment only. We look forward to working with you!`;
 
       const audio = await synthesizeHumanVoice(speechResponse);
       return NextResponse.json({
@@ -299,16 +320,36 @@ export async function POST(request) {
       });
     }
 
-    // Try Gemini API if key is available
+    // Check pre-rendered fast match
+    const fastKnowledge = generateSarahConversationalResponse(lastUserMessage);
+    if (fastKnowledge.preAudio) {
+      return NextResponse.json({
+        response: fastKnowledge.text,
+        audio: fastKnowledge.preAudio,
+        action: 'message'
+      });
+    }
+
+    // Try Gemini API if key is available for dynamic conversation
     const apiKey = process.env.GEMINI_API_KEY;
     let replyText = '';
 
     if (apiKey) {
       try {
-        const systemInstruction = `You are Christopher Boykin, founder and Lead Inspector at Foresight Home Inspections in Metro Atlanta, Georgia. Certified Master Inspector (CMI). Answer naturally, authoritatively, warmly, and consultatively. Do NOT use any asterisks (*) or markdown formatting in your responses.`;
+        const systemInstruction = `You are Sarah, the friendly, articulate customer concierge and phone receptionist at Foresight Home Inspections in Metro Atlanta, Georgia.
+You are speaking live on a phone call with a client.
+Rules:
+1. Speak in a warm, natural, human conversational tone (like an energetic, helpful concierge answering the phone).
+2. Keep your answers brief (2 to 3 sentences maximum per turn). Never give long monologues or lists.
+3. Highlight Foresight advantages: two certified inspectors on every job led by Christopher Boykin (Certified Master Inspector), complimentary $10,000 Master Protection Warranty with $0 deductible, free FLIR infrared thermal imaging and aerial drone scans.
+4. Pricing: Single-family starts at $345, condos at $295. Add-ons: Radon $200, Termite/WDO $110+, Pool $300, Sewer Scope $425, STR $355.
+5. Sunday is by appointment only.
+6. Always conclude with a natural, friendly conversational question.
+7. Do NOT use any asterisks (*) or markdown formatting.`;
+
         const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
-        const recentMessages = messages.slice(-8).map(msg => ({
+        const recentMessages = messages.slice(-6).map(msg => ({
           role: msg.role === 'user' ? 'user' : 'model',
           parts: [{ text: msg.content.replace(/\*/g, '') }]
         }));
@@ -323,7 +364,7 @@ export async function POST(request) {
           body: JSON.stringify({
             contents: recentMessages,
             systemInstruction: { parts: [{ text: systemInstruction }] },
-            generationConfig: { temperature: 0.7, maxOutputTokens: 600 }
+            generationConfig: { temperature: 0.7, maxOutputTokens: 200 }
           })
         });
 
@@ -336,9 +377,9 @@ export async function POST(request) {
       }
     }
 
-    // If Gemini was unavailable or quota depleted, use Christopher Boykin Knowledge Engine
+    // If Gemini was unavailable or quota depleted, use Sarah conversational response
     if (!replyText || replyText.trim().length === 0) {
-      replyText = generateChristopherKnowledgeResponse(lastUserMessage);
+      replyText = fastKnowledge.text;
     }
 
     // Clean text and synthesize neural human audio
@@ -353,7 +394,7 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
-    const fallbackText = "Houses are complex systems, and I want to make sure you get the right advice. If you have any questions about foundations, roofs, radon, our two-inspector standard, or our ten thousand dollar warranty, ask me or call us at 678-480-2110!";
+    const fallbackText = "Thanks for calling Foresight Home Inspections! We're here to help you inspect with confidence. You can also reach our lead inspector Christopher directly at 678-480-2110. What can I help you with today?";
     const audio = await synthesizeHumanVoice(fallbackText);
     return NextResponse.json({
       response: fallbackText,

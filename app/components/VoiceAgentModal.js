@@ -10,7 +10,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [history, setHistory] = useState([
     {
       role: 'assistant',
-      content: "Well hello there! I am Christopher Boykin, Certified Master Inspector and founder of Foresight Home Inspections. Ask me any question about roofs, foundations, termites, radon, our $10,000 warranty, or why our two-inspector team is the best choice in Atlanta!"
+      content: "Thanks for calling Foresight Home Inspections! This is Sarah, your client concierge. How can I help you today? Ask me about our two-inspector standard, $10,000 warranty, instant pricing, or getting on our schedule!"
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
@@ -24,6 +24,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const audioRef = useRef(null);
   const isSpeakingRef = useRef(false);
   const conversationLogRef = useRef(null);
+  const silenceTimerRef = useRef(null);
+  const callStateRef = useRef(callState);
+
+  useEffect(() => {
+    callStateRef.current = callState;
+  }, [callState]);
 
   // Initialize Audio & Speech Recognition support
   useEffect(() => {
@@ -34,6 +40,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
 
     return () => {
+      if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
@@ -47,7 +54,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     };
   }, []);
 
-  // Play studio-grade human neural voice (en-US-ChristopherNeural)
+  // Play studio-grade human neural voice (en-US-JennyNeural)
   const playNeuralAudio = useCallback((audioSrc) => {
     if (isMuted || !audioSrc) {
       setCallState('idle');
@@ -93,7 +100,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [isMuted]);
 
-  // Fallback voice speak function
+  // Fallback voice speak function (Natural Female)
   const speakTextFallback = useCallback((text) => {
     if (!synthRef.current || isMuted) return;
 
@@ -103,15 +110,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
     const voices = synthRef.current.getVoices();
     const preferredVoice = voices.find(v => 
-      (v.name.includes('Natural') || 
-       v.name.includes('Guy') ||
-       v.name.includes('David') || 
+      (v.name.includes('Jenny') || 
+       v.name.includes('Ava') || 
+       v.name.includes('Natural') || 
+       v.name.includes('Zira') || 
+       v.name.includes('Samantha') || 
        v.name.includes('Google US English')) && v.lang.startsWith('en')
     ) || voices.find(v => v.lang.startsWith('en'));
 
     if (preferredVoice) utterance.voice = preferredVoice;
-    utterance.rate = 0.98;
-    utterance.pitch = 0.95;
+    utterance.rate = 1.05;
+    utterance.pitch = 1.0;
 
     utterance.onstart = () => {
       isSpeakingRef.current = true;
@@ -138,17 +147,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [history, interimUserText, callState]);
 
-  // Play Christopher's human greeting when modal opens
+  // Play Sarah's natural human greeting when modal opens
   useEffect(() => {
     if (isOpen) {
       setCallState('idle');
       setMicError(null);
-      // Play warm, humanized audio greeting
       const timer = setTimeout(() => {
-        playNeuralAudio('/audio/christopher-greeting.mp3');
-      }, 350);
+        playNeuralAudio('/audio/sarah-greeting.mp3');
+      }, 300);
       return () => clearTimeout(timer);
     } else {
+      if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
@@ -215,13 +224,27 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         for (let i = event.resultIndex; i < event.results.length; i++) {
           currentTranscript += event.results[i][0].transcript;
         }
-        setInterimUserText(currentTranscript);
+        const cleanInterim = currentTranscript.trim();
+        setInterimUserText(cleanInterim);
+
+        if (silenceTimerRef.current) {
+          clearTimeout(silenceTimerRef.current);
+        }
 
         if (event.results[0].isFinal) {
-          const finalSpeech = event.results[0][0].transcript.trim();
+          const finalSpeech = cleanInterim;
           if (finalSpeech) {
+            try { recognition.stop(); } catch (_) {}
             handleSendQuery(finalSpeech);
           }
+        } else if (cleanInterim.length > 2) {
+          // Fast conversational silence detection: submit after 850ms of quiet
+          silenceTimerRef.current = setTimeout(() => {
+            if (callStateRef.current === 'listening') {
+              try { recognition.stop(); } catch (_) {}
+              handleSendQuery(cleanInterim);
+            }
+          }, 850);
         }
       };
 
@@ -248,18 +271,24 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   };
 
-  // Stop speech recognition
+  // Stop speech recognition (sends current speech immediately if spoken)
   const handleStopListening = () => {
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
     if (recognitionRef.current) {
       try { recognitionRef.current.stop(); } catch (_) {}
     }
-    setCallState('idle');
+    if (interimUserText && interimUserText.trim().length > 1) {
+      handleSendQuery(interimUserText.trim());
+    } else {
+      setCallState('idle');
+    }
   };
 
   // Send query to voice API route and play humanized neural response
   const handleSendQuery = async (queryText) => {
     if (!queryText || !queryText.trim()) return;
 
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
     haltSpeech();
     setMicError(null);
 
@@ -390,17 +419,22 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <div style={{ position: 'relative' }}>
-              <img 
-                src="/images/Christopher_Boykin.jpg" 
-                alt="Christopher Boykin CMI"
+              <div 
                 style={{
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
-                  objectFit: 'cover',
-                  border: '2px solid #D4AF37'
+                  background: 'linear-gradient(135deg, #D4AF37 0%, #9B2C2C 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '2px solid #D4AF37',
+                  fontSize: '1.4rem',
+                  boxShadow: '0 0 12px rgba(212, 175, 55, 0.4)'
                 }}
-              />
+              >
+                👩‍💼
+              </div>
               <span style={{
                 position: 'absolute',
                 bottom: 0,
@@ -417,7 +451,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  Christopher Boykin
+                  Sarah
                 </h3>
                 <span style={{
                   background: 'rgba(212, 175, 55, 0.15)',
@@ -430,13 +464,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em'
                 }}>
-                  Lead CMI
+                  Client Concierge
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                Foresight AI Voice Assistant &bull; 
+                Foresight Phone Assistant &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
-                  {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening to you...' : callState === 'thinking' ? 'Analyzing...' : 'Ready'}
+                  {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
                 </span>
               </p>
             </div>
@@ -503,7 +537,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           <button 
             type="button"
             onClick={callState === 'listening' ? handleStopListening : handleStartListening}
-            aria-label={callState === 'listening' ? 'Stop listening' : 'Tap to speak with Christopher'}
+            aria-label={callState === 'listening' ? 'Stop listening' : 'Tap to speak with Sarah'}
             style={{
               width: '96px',
               height: '96px',
@@ -555,10 +589,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             {callState === 'listening'
               ? 'Listening... Speak naturally or tap orb when finished'
               : callState === 'speaking'
-              ? "Christopher is speaking (tap orb to interrupt)"
+              ? "Sarah is speaking (tap orb to interrupt)"
               : callState === 'thinking'
-              ? 'Consulting inspection knowledgebase...'
-              : 'Tap the orb to speak with Christopher'}
+              ? 'Connecting with Foresight...'
+              : 'Tap the orb to speak with Sarah'}
           </p>
 
           {/* Microphone Permission Warning / Helper Banner */}
