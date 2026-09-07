@@ -387,9 +387,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         }));
       };
 
-      ws.onmessage = (evt) => {
+      ws.onmessage = async (evt) => {
         try {
-          const msg = JSON.parse(evt.data);
+          const rawText = typeof evt.data === 'string' ? evt.data : (evt.data instanceof Blob ? await evt.data.text() : String(evt.data));
+          const msg = JSON.parse(rawText);
           if (msg.setupComplete) {
             console.log('Gemini Live setup complete! Connecting microphone stream...');
             setLiveWsConnected(true);

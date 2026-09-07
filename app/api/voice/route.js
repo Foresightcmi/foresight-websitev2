@@ -219,7 +219,7 @@ CRITICAL RULES FOR NATURAL HUMAN CONVERSATION:
    - Add-ons: Radon ($200), Termite WDO ($110+), Sewer Scope ($425), Pool/Spa ($300), STR ($355).
 6. ABSOLUTE CONTENT RULE: Write in 100% clean plain text. NEVER use asterisks (*) or markdown symbols under any circumstances.`;
 
-  const models = ['gemini-2.5-flash', 'gemini-3.8-flash', 'gemini-flash-latest'];
+  const models = ['gemini-3.1-flash-lite', 'gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-flash-latest'];
   for (const model of models) {
     try {
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
