@@ -10,7 +10,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [history, setHistory] = useState([
     {
       role: 'assistant',
-      content: "Welcome to Foresight Home Inspections! This is Sarah, your client concierge. How can I help you explore our services today? Feel free to ask about our two-inspector standard, $10,000 warranty, instant pricing, or getting on our schedule!"
+      content: "Welcome to Foresight Home Inspections! This is Marcus, your senior client concierge. Led by Certified Master Inspector Christopher Boykin, our two-inspector team delivers Georgia's highest standard of home evaluations with free thermal imaging, drone roof scans, and a $10,000 warranty. How can I help you protect your investment today? Feel free to ask about our evaluation process, check instant pricing for any property, or reserve your inspection window!"
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
@@ -122,7 +122,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     };
   }, [haltSpeech]);
 
-  // Play studio-grade human neural voice (en-US-JennyNeural)
+  // Play studio-grade human neural voice (en-US-GuyNeural)
   const playNeuralAudio = useCallback((audioSrc, onEnded) => {
     if (isMutedRef.current || !audioSrc) {
       setCallState('idle');
@@ -191,7 +191,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [haltSpeech]);
 
-  // Fallback voice speak function (Natural Female)
+  // Fallback voice speak function (Natural Authoritative Male)
   const speakTextFallback = useCallback((text) => {
     if (!synthRef.current || isMuted) return;
 
@@ -201,17 +201,18 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
     const voices = synthRef.current.getVoices();
     const preferredVoice = voices.find(v => 
-      (v.name.includes('Jenny') || 
-       v.name.includes('Ava') || 
-       v.name.includes('Natural') || 
-       v.name.includes('Zira') || 
-       v.name.includes('Samantha') || 
-       v.name.includes('Google US English')) && v.lang.startsWith('en')
-    ) || voices.find(v => v.lang.startsWith('en'));
+      (v.name.includes('David') || 
+       v.name.includes('Guy') || 
+       v.name.includes('Christopher') || 
+       v.name.includes('Mark') || 
+       v.name.includes('George') ||
+       v.name.includes('Google US English Male') ||
+       v.name.includes('Microsoft David')) && v.lang.startsWith('en')
+    ) || voices.find(v => v.lang.startsWith('en') && (v.name.toLowerCase().includes('male') || (!v.name.toLowerCase().includes('female') && !v.name.toLowerCase().includes('zira') && !v.name.toLowerCase().includes('jenny')))) || voices.find(v => v.lang.startsWith('en'));
 
     if (preferredVoice) utterance.voice = preferredVoice;
-    utterance.rate = 1.05;
-    utterance.pitch = 1.0;
+    utterance.rate = 1.0;
+    utterance.pitch = 0.95;
 
     utterance.onstart = () => {
       isSpeakingRef.current = true;
@@ -389,7 +390,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       processorRef.current = processor;
 
       processor.onaudioprocess = (e) => {
-        // Drop mic audio if muted or Sarah is currently speaking or turn is active or speaker audio is echoing!
+        // Drop mic audio if muted or Marcus is currently speaking or turn is active or speaker audio is echoing!
         const outCtx = audioOutputCtxRef.current;
         const isSpeakerAudioPlaying = outCtx && (scheduledAudioTimeRef.current > outCtx.currentTime + 0.35);
         if (
@@ -461,7 +462,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       ws.onopen = () => {
         console.log('Gemini Live WebSocket open. Sending setup handshake...');
-        const livePrompt = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them warmly, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Specialty services like Pool ($300), Termite ($110), Radon ($200), and Sewer Scope ($425) are coordinated alongside our primary inspection. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 2 hours. Never use markdown asterisks.`;
+        const livePrompt = `You are Marcus, the knowledgeable, warm, and authoritative senior client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them warmly, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 to 45 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Specialty services like Pool ($300), Termite ($110), Radon ($200), and Sewer Scope ($425) are coordinated alongside our primary inspection. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 2 hours. In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
           setup: {
             model: "models/gemini-3.1-flash-live-preview",
@@ -470,7 +471,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
-                    voiceName: "Aoede"
+                    voiceName: "Charon"
                   }
                 }
               }
@@ -587,7 +588,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         // 2. Play introductory greeting audio exactly once
         greetingTimerRef.current = setTimeout(() => {
           if (isOpenRef.current) {
-            playNeuralAudio('/audio/sarah-greeting.mp3', () => {
+            playNeuralAudio('/audio/marcus-greeting.mp3', () => {
               // When greeting ends cleanly:
               setTimeout(() => {
                 if (!isOpenRef.current) return;
@@ -614,7 +615,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [isOpen, haltSpeech, initLiveConnection, playNeuralAudio, stopLiveSession]);
 
-  // Instant barge-in / toggle helper: interrupts Sarah immediately when speaking, or toggles listen
+  // Instant barge-in / toggle helper: interrupts Marcus immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
     if (callState === 'speaking') {
       haltSpeech();
@@ -628,7 +629,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   // Start speech recognition with instant visual feedback and error recovery
   const handleStartListening = () => {
-    // If Sarah is currently speaking or generating, never start listening
+    // If Marcus is currently speaking or generating, never start listening
     if (isSpeakingRef.current || isModelTurnActiveRef.current) {
       return;
     }
@@ -899,7 +900,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   boxShadow: '0 0 12px rgba(212, 175, 55, 0.4)'
                 }}
               >
-                👩‍💼
+                👨‍💼
               </div>
               <span style={{
                 position: 'absolute',
@@ -917,7 +918,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  Sarah
+                  Marcus
                 </h3>
                 <span style={{
                   background: liveWsConnected ? 'rgba(56, 189, 248, 0.15)' : 'rgba(212, 175, 55, 0.15)',
@@ -936,7 +937,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   {liveWsConnected && (
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#38bdf8', boxShadow: '0 0 6px #38bdf8' }} />
                   )}
-                  {liveWsConnected ? 'Gemini Live 3.1' : 'Client Concierge'}
+                  {liveWsConnected ? 'Gemini Live 3.1' : 'Senior Client Concierge'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
@@ -1038,7 +1039,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           <button 
             type="button"
             onClick={handleToggleOrInterrupt}
-            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Sarah' : 'Tap to speak with Sarah'}
+            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Marcus' : 'Tap to speak with Marcus'}
             style={{
               width: '96px',
               height: '96px',
@@ -1072,7 +1073,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 : 'pulseVoiceIdle 3s infinite',
               position: 'relative'
             }}
-            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Sarah speaking... Tap to interrupt' : 'Tap to speak'}
+            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Marcus is speaking... Tap to interrupt' : 'Tap to speak'}
           >
             <span style={{ fontSize: '2.2rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.4))' }}>
               {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : callState === 'thinking' ? '⏳' : '🎙️'}
@@ -1090,7 +1091,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             {callState === 'listening'
               ? '🟢 Listening... Speak naturally (Hands-Free Call)'
               : callState === 'speaking'
-              ? '🗣️ Sarah is speaking (tap orb to interrupt)'
+              ? '🗣️ Marcus is speaking (tap orb to interrupt)'
               : callState === 'thinking'
               ? 'Checking schedule & options with Foresight...'
               : 'Tap orb or speak to begin'}
@@ -1531,7 +1532,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           <button
             type="button"
             onClick={handleToggleOrInterrupt}
-            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Sarah' : 'Start speaking with Sarah'}
+            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Marcus' : 'Start speaking with Marcus'}
             style={{
               width: '46px',
               height: '46px',

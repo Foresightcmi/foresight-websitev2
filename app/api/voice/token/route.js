@@ -45,7 +45,7 @@ export async function POST() {
       mode: 'live',
       token: tokenName,
       model: 'models/gemini-3.1-flash-live-preview',
-      voiceName: 'Aoede',
+      voiceName: 'Charon',
       wsUrl: `wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContentConstrained?access_token=${tokenName}`
     });
   } catch (err) {
