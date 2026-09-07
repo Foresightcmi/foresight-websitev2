@@ -10,7 +10,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [history, setHistory] = useState([
     {
       role: 'assistant',
-      content: "Thanks for calling Foresight Home Inspections! This is Sarah, your client concierge. How can I help you today? Ask me about our two-inspector standard, $10,000 warranty, instant pricing, or getting on our schedule!"
+      content: "Welcome to Foresight Home Inspections! This is Sarah, your client concierge. How can I help you explore our services today? Feel free to ask about our two-inspector standard, $10,000 warranty, instant pricing, or getting on our schedule!"
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
@@ -364,7 +364,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       ws.onopen = () => {
         console.log('Gemini Live WebSocket open. Sending setup handshake...');
-        const livePrompt = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta. You are on a live, hands-free phone conversation with a homebuyer, seller, or agent. Answer questions directly, naturally, and concisely (maximum 35 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Never use markdown asterisks.`;
+        const livePrompt = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them to our website, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
           setup: {
             model: "models/gemini-3.1-flash-live-preview",
@@ -805,7 +805,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                Foresight Phone Assistant &bull; 
+                Foresight Voice Concierge &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
                   {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
                 </span>
@@ -816,7 +816,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <button
               onClick={() => setIsHandsFree(!isHandsFree)}
-              aria-label={isHandsFree ? 'Switch to Push-to-Talk' : 'Switch to Hands-Free Call Mode'}
+              aria-label={isHandsFree ? 'Switch to Push-to-Talk' : 'Switch to Hands-Free Mode'}
               style={{
                 background: isHandsFree ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.08)',
                 border: `1px solid ${isHandsFree ? 'rgba(16, 185, 129, 0.4)' : 'rgba(255, 255, 255, 0.15)'}`,
@@ -830,7 +830,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 alignItems: 'center',
                 gap: '6px'
               }}
-              title="Toggle Hands-Free Phone Call mode"
+              title="Toggle Hands-Free Voice mode"
             >
               <span style={{
                 width: '7px',
@@ -839,7 +839,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 backgroundColor: isHandsFree ? '#10b981' : '#64748b',
                 boxShadow: isHandsFree ? '0 0 8px #10b981' : 'none'
               }} />
-              {isHandsFree ? 'Hands-Free Call' : 'Push-to-Talk'}
+              {isHandsFree ? 'Hands-Free Voice' : 'Push-to-Talk'}
             </button>
 
             <button
@@ -866,7 +866,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
             <button
               onClick={onClose}
-              aria-label="End Phone Call"
+              aria-label="End Conversation"
               style={{
                 background: '#dc2626',
                 border: 'none',
@@ -885,7 +885,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               onMouseEnter={e => e.currentTarget.style.background = '#b91c1c'}
               onMouseLeave={e => e.currentTarget.style.background = '#dc2626'}
             >
-              📞 End Call
+              ✕ Exit
             </button>
           </div>
         </div>
@@ -1468,12 +1468,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             </button>
           </form>
 
-          {/* End Call Button */}
+          {/* End Conversation Button */}
           <button
             type="button"
             onClick={onClose}
-            aria-label="End Phone Call"
-            title="Hang up call"
+            aria-label="End Conversation"
+            title="End conversation"
             style={{
               height: '46px',
               padding: '0 12px',
@@ -1493,7 +1493,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             onMouseEnter={e => { e.currentTarget.style.background = '#dc2626'; e.currentTarget.style.color = '#ffffff'; }}
             onMouseLeave={e => { e.currentTarget.style.background = 'rgba(239, 68, 68, 0.15)'; e.currentTarget.style.color = '#fca5a5'; }}
           >
-            📞 End
+            ✕ End
           </button>
         </div>
       </div>

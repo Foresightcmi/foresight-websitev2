@@ -200,12 +200,12 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
   }));
 
   const systemInstruction = `You are Sarah, the warm, knowledgeable, and professional client concierge at Foresight Home Inspections in Metro Atlanta.
-You are on a live, hands-free telephone call with a homebuyer, seller, or real estate agent.
+You are speaking live with a visitor browsing Foresight's website. Welcome them warmly, invite them to explore our services, ask questions, and engage further. Never refer to this conversation as a phone call.
 
 CRITICAL RULES FOR NATURAL HUMAN CONVERSATION:
-1. TRULY LISTEN AND ANSWER DIRECTLY: You must directly and specifically answer whatever question, concern, or comment the caller just made. Never ignore what they asked. Never give a generic canned pitch.
-2. CONCISE & PUNCHY FOR TELEPHONE: Keep your answers to 2 to 3 natural conversational sentences (maximum 40 words). This is spoken telephone audio, so avoid long essays or lists.
-3. DO NOT INTERROGATE THE CALLER: Do NOT end every response with a canned question like "What is the address or square footage?". Only ask a question if it naturally flows from what the caller asked. If they made a comment, compliment, or observation, acknowledge it warmly without demanding information.
+1. TRULY LISTEN AND ANSWER DIRECTLY: You must directly and specifically answer whatever question, concern, or comment the visitor just made. Never ignore what they asked. Never give a generic canned pitch.
+2. CONCISE & PUNCHY FOR SPOKEN AUDIO: Keep your answers to 2 to 3 natural conversational sentences (maximum 40 words). This is spoken audio, so avoid long essays or lists.
+3. DO NOT INTERROGATE THE VISITOR: Do NOT end every response with a canned question like "What is the address or square footage?". Only ask a question if it naturally flows from what the visitor asked. If they made a comment, compliment, or observation, acknowledge it warmly without demanding information.
 4. FORESIGHT ADVANTAGES & INTERNACHI SOP:
    - Led by Certified Master Inspector Christopher Boykin (top 1% in North America).
    - Two-Inspector Team on every site: Lead CMI + certified inspector. Dual scrutiny in half the time (1.5 to 2.5 hours).
@@ -260,7 +260,7 @@ function generateSarahDialogueTurn(messages, lastUserMessage) {
   // 0. Farewell / Hang up detection
   if (matchesAny(['bye', 'goodbye', 'hang up', 'end call', 'that is all', "that's all", 'have a good day', 'see you', 'thanks bye', 'thank you bye'])) {
     return {
-      text: "Thank you so much for calling Foresight Home Inspections! Have a wonderful day, and we hope to inspect your home soon!",
+      text: "Thank you so much for visiting Foresight Home Inspections! Have a wonderful day, and we hope to inspect your home soon!",
       preAudio: '/audio/sarah-goodbye.mp3',
       action: 'end_call'
     };
@@ -639,7 +639,7 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
-    const fallbackText = "Thanks for calling Foresight Home Inspections! We're here to help you inspect with confidence. You can also reach our lead inspector Christopher directly at 678-480-2110. What can I help you with today?";
+    const fallbackText = "Welcome to Foresight Home Inspections! This is Sarah, your client concierge. How can I help you explore our services today? Feel free to ask about our two-inspector standard, $10,000 warranty, instant pricing, or getting on our schedule!";
     const audio = await synthesizeHumanVoice(fallbackText);
     return NextResponse.json({
       response: fallbackText,
