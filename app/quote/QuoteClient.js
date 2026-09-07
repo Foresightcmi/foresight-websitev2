@@ -511,6 +511,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   <div style={{ flex: 1, borderRight: '1px solid rgba(255, 255, 255, 0.1)', paddingRight: '0.5rem' }}>
                     <span style={{ color: 'var(--color-gray-mid)', display: 'block', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 600 }}>50% Deposit to Solidify:</span>
                     <strong style={{ color: '#34d399', fontSize: '1.1rem' }}>${Math.round(total * 0.5)}</strong>
+                    <span style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', marginTop: '2px' }}>Due with signed agreement after office confirmation</span>
                   </div>
                   <div style={{ flex: 1 }}>
                     <span style={{ color: 'var(--color-gray-mid)', display: 'block', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 600 }}>Final 50% (Upon Completion):</span>
@@ -690,8 +691,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                           ℹ️ Next Steps (Pending Office Confirmation):
                         </p>
                         <ul style={{ margin: 0, paddingLeft: '1.1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                          <li><strong>Office Confirmation Call:</strong> Our office reviews county tax records and calls or texts you within 2 hours to confirm inspector arrival time.</li>
-                          <li><strong>50% Deposit to Solidify:</strong> To solidify your appointment on our master calendar, 50% is processed upon booking confirmation, with the remaining 50% balance due upon inspection completion before report release.</li>
+                          <li><strong>Office Confirmation &amp; Agreements:</strong> Our office reviews county tax records and contacts you within 2 hours with your official appointment confirmation and inspection agreements to sign.</li>
+                          <li><strong>50% Deposit to Solidify:</strong> To solidify your appointment on our master calendar, the 50% deposit along with your signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50% balance is due upon inspection completion before report release.</li>
                           <li><strong>Specialty Service Coordination:</strong> Dedicated auxiliary services (Pool, Termite, Radon, Sewer) are coordinated alongside your primary inspection window.</li>
                           <li><strong>Sunday Inspection:</strong> Strictly by appointment only.</li>
                         </ul>
@@ -709,7 +710,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         <span style={{ fontSize: '0.75rem', color: '#34d399', fontWeight: 600 }}>Lock In Price</span>
                       </div>
                       <p style={{ fontSize: '0.78rem', color: 'var(--color-gray-mid)', margin: 0, lineHeight: 1.35 }}>
-                        Enter your details below to request your preferred window. To solidify all appointments on our calendar, 50% is due upon booking, and the remaining 50% balance is due upon inspection completion before your report is released.
+                        Enter your details below to request your preferred window. To solidify all appointments on our calendar, the 50% deposit along with the signed inspection agreements are completed after our office sends your appointment confirmation. The remaining balance is due upon inspection completion before your report is released.
                       </p>
 
                       <div>

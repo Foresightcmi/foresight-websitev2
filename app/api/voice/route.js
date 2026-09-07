@@ -153,8 +153,8 @@ You are speaking live with a visitor browsing Foresight's website. Welcome them 
 CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
 1. TRULY LISTEN AND ANSWER DIRECTLY: You must directly, thoroughly, and specifically answer whatever question, concern, or comment the visitor just made. Never ignore what they asked. Never give a vague or evasive answer.
 2. ACTIVE SALES ENCOURAGEMENT (MANDATORY): You are not just a passive textbook. In every single response, after answering the question with building science precision, bridge seamlessly to Foresight's advantages and actively encourage the client to take the next step (e.g., getting an exact square-footage quote, checking date availability, or holding a morning or afternoon inspection slot).
-3. APPOINTMENT SOLIDIFICATION POLICY (50% DEPOSIT / 50% BALANCE):
-   - To solidify all appointments on our master calendar, 50% must be paid upon booking.
+3. APPOINTMENT SOLIDIFICATION POLICY (50% DEPOSIT & SIGNED AGREEMENTS AFTER CONFIRMATION):
+   - To solidify all appointments on our master calendar, the 50% deposit along with the signed inspection agreements are completed AFTER our office sends the appointment confirmation.
    - The remaining 50% balance is due after on-site completion before the official inspection report is released.
    - Explain this policy whenever booking, scheduling, deposits, or next steps are discussed.
 4. CIRCUMSTANTIAL & REASONABLE UPSELLS (NEVER PUSHY):
@@ -515,6 +515,22 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     };
   }
 
+  // Payment Policy & 50% Deposit Solidification Intent
+  if (matchesAny(['deposit', 'down payment', 'pay', 'payment', 'solidify', 'agreement', 'agreements', 'terms of payment', 'when do i pay', 'how do i pay', 'upfront'])) {
+    return {
+      text: "To solidify all appointments on our master calendar, a 50 percent deposit along with the signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50 percent balance is due after our on-site walkthrough before your official report is released. Would you like me to hold our next available window for you?",
+      preAudio: '/audio/marcus-payment-policy.mp3'
+    };
+  }
+
+  // Gracious Acceptance of "No" / Declining Add-ons (Zero Pushiness)
+  if (matchesAny(['no thanks', 'no thank you', 'pass', 'just the basic', 'don\'t need it', 'do not need it', 'not right now', 'skip it', 'just the inspection', 'no addon', 'no add-on', 'decline', 'without that', 'leave that off'])) {
+    return {
+      text: "Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation with our two-inspector team. What date or time window works best for you?",
+      preAudio: '/audio/marcus-decline-addon.mp3'
+    };
+  }
+
   // Conversational Fallback: Genuinely acknowledging with active encouragement
   return {
     text: "Whether it is evaluating structural stability, electrical safety, or crawlspace moisture, our Certified Master Inspector team is here to give you complete peace of mind. What is the square footage or address of the home? I would love to calculate your exact rate and hold a slot for you.",
@@ -553,7 +569,7 @@ export async function POST(request) {
 
         const quoteResult = calculateQuoteDetails(quoteArgs);
         const deposit = Math.round(quoteResult.total / 2);
-        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, a 50 percent deposit of ${deposit} dollars is paid upon booking, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
+        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, the 50 percent deposit of ${deposit} dollars along with your signed inspection agreements are completed after our office sends your appointment confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
 
         const audio = await synthesizeHumanVoice(speechResponse);
         return NextResponse.json({
@@ -582,7 +598,7 @@ export async function POST(request) {
       };
 
       await persistBooking(bookingArgs);
-      const speechResponse = `Awesome! I have your inspection request logged. To solidify your appointment on our master calendar, our office team will follow up directly at ${clientPhone} within two hours to confirm inspector arrival time, process the 50 percent deposit, and coordinate any requested auxiliary specialists. The remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
+      const speechResponse = `Awesome! I have your inspection request logged. Our office team will follow up directly at ${clientPhone} within two hours with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
 
       const audio = await synthesizeHumanVoice(speechResponse);
       return NextResponse.json({

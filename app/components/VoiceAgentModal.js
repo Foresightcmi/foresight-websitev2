@@ -463,7 +463,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       ws.onopen = () => {
         console.log('Gemini Live WebSocket open. Sending setup handshake...');
         const livePrompt = `You are Marcus, the knowledgeable, warm, and authoritative senior client concierge at Foresight Home Inspections in Metro Atlanta. You are speaking live with a visitor browsing the Foresight Home Inspections website. Welcome them warmly, invite them to explore our services, ask questions about our two-inspector process or pricing, and help them engage further. Never refer to this conversation as a phone call. Answer questions directly, naturally, and concisely (maximum 35 to 45 words). Truly listen to their building science concerns (InterNACHI SOP, electrical panels, crawlspaces, polybutylene, Georgia red clay, HVAC). Mention Foresight advantages: Two-inspector team, $10,000 warranty, free thermal FLIR & aerial drone scans, CMI Christopher Boykin. Single-family starts at $345, condos at $295.
-APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, 50% must be paid upon booking, and the remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling or booking is discussed.
+APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, the 50% deposit along with the signed inspection agreements are completed AFTER our office sends the appointment confirmation. The remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling, deposits, or booking next steps are discussed.
 CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($425) for older homes 25+ years, 48-Hour Radon ($200) for crawlspaces/basements/granite belt, Termite WDO letter ($110) for Georgia buyers, Pool & Spa ($300) for pools.
 MANDATORY RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be pushy or aggressive. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g., 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined upsell.
 Specialty services are coordinated alongside our primary inspection under Foresight's standard. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 2 hours. In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Never use markdown asterisks.`;
@@ -1264,7 +1264,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
                 </span>
               </div>
               <p style={{ fontSize: '0.85rem', color: '#e2e8f0', margin: '0 0 10px 0', lineHeight: '1.4' }}>
-                Thank you, <strong>{bookingData.name}</strong>! We have logged your tentative inspection request. To solidify your appointment on our master calendar, our office will contact you at <strong>{bookingData.phone}</strong> within 2 hours to confirm inspector arrival time, process the 50% deposit, and coordinate any requested specialty add-ons (Pool, Termite, Radon, Sewer Scope). The remaining balance is paid after on-site completion before your report is released.
+                Thank you, <strong>{bookingData.name}</strong>! We have logged your tentative inspection request. Our office will contact you at <strong>{bookingData.phone}</strong> within 2 hours with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50% deposit along with your signed agreements are submitted after receiving our confirmation. The remaining balance is paid after on-site completion before your report is released.
               </p>
               <div style={{ fontSize: '0.8rem', color: '#94A3B8', display: 'flex', flexDirection: 'column', gap: '4px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '8px' }}>
                 <div>📍 <strong>Address:</strong> {bookingData.address || 'Pending confirmation'}</div>
@@ -1272,7 +1272,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
                 {bookingData.estimatedTotal && (
                   <div>
                     💰 <strong>Total:</strong> ${bookingData.estimatedTotal} &nbsp;|&nbsp; 
-                    <span style={{ color: '#D4AF37' }}>50% Deposit to Solidify: ${Math.round(bookingData.estimatedTotal / 2)}</span> &nbsp;|&nbsp; 
+                    <span style={{ color: '#D4AF37' }}>50% Deposit to Solidify: ${Math.round(bookingData.estimatedTotal / 2)} (with signed agreement)</span> &nbsp;|&nbsp; 
                     <span>Balance upon completion: ${bookingData.estimatedTotal - Math.round(bookingData.estimatedTotal / 2)}</span>
                   </div>
                 )}
@@ -1321,7 +1321,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px', fontSize: '0.75rem' }}>
                 <span style={{ background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.3)', color: '#fef08a', padding: '3px 8px', borderRadius: '4px' }}>
-                  🔒 50% Deposit to Solidify: <strong>${Math.round(calculatedQuote.total / 2)}</strong>
+                  🔒 50% Deposit to Solidify: <strong>${Math.round(calculatedQuote.total / 2)}</strong> (Due with signed agreements after confirmation)
                 </span>
                 <span style={{ background: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.1)', color: '#cbd5e1', padding: '3px 8px', borderRadius: '4px' }}>
                   📋 Balance (Upon Completion): <strong>${calculatedQuote.total - Math.round(calculatedQuote.total / 2)}</strong> (Due before report release)
