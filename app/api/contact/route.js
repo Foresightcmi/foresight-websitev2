@@ -25,7 +25,7 @@ export async function POST(request) {
 
     return NextResponse.json({ 
       success: true, 
-      message: 'Message received! Our office will contact you within 2 hours to confirm your inquiry.',
+      message: 'Message received! Our office will contact you within 20 minutes with your official appointment confirmation and next steps.',
       leadId: result.leadId 
     }, { status: 200 });
 

@@ -116,7 +116,7 @@ export default function ContactClient() {
                   <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>✅</div>
                   <h3 style={{ marginBottom: '0.75rem', color: 'var(--color-dark)', fontSize: '1.4rem' }}>Message &amp; Request Received!</h3>
                   <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.5, maxWidth: '500px', margin: '0 auto 1.25rem' }}>
-                    Thank you for reaching out to Foresight Home Inspections! Please note that all online submissions are <strong>tentative requests</strong>. Our office will review your message and contact you within <strong>2 hours</strong> by phone or text to confirm schedule availability and send your official confirmation with inspection agreements to sign. To solidify all appointments on our master calendar, the 50% deposit along with your signed agreements are submitted after receiving our confirmation (the remaining 50% balance is due upon completion before your report is released).
+                    Thank you for reaching out to Foresight Home Inspections! Please note that all online submissions are <strong>tentative requests</strong>. Our office will review your message and contact you within <strong>20 minutes</strong> by phone or text with your official appointment confirmation and inspection agreements to sign. To solidify all appointments on our master calendar, the 50% deposit along with your signed agreements are submitted after receiving our confirmation (the remaining 50% balance is due upon completion before your report is released).
                   </p>
                   <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', margin: '0 0 1.5rem 0' }}>
                     Need immediate confirmation today? Call our dispatch line directly at <a href="tel:678-480-2110" style={{ color: 'var(--color-red)', fontWeight: 700 }}>678-480-2110</a>.
@@ -163,7 +163,7 @@ export default function ContactClient() {
                     color: 'var(--color-gray-dark)', 
                     lineHeight: 1.45 
                   }}>
-                    ℹ️ <strong>Tentative Inquiries &amp; Requests:</strong> All online contact submissions are tentative requests. Our office reviews property details and contacts you within 2 hours with your official confirmation and inspection agreements to sign. To solidify all appointments on our calendar, the 50% deposit along with your signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50% balance is due upon inspection completion before report release. Sunday is strictly by appointment only. Auxiliary services (Pool, Termite, Radon, Sewer Scope) are scheduled and coordinated alongside your primary inspection.
+                    ℹ️ <strong>Tentative Inquiries &amp; Requests:</strong> All online contact submissions are tentative requests. Our office reviews property details and contacts you within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify all appointments on our calendar, the 50% deposit along with your signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50% balance is due upon inspection completion before report release. Sunday is strictly by appointment only. Auxiliary services (Pool, Termite, Radon, Sewer Scope) are scheduled and coordinated alongside your primary inspection.
                   </div>
 
                   {submitStatus === 'error' && (

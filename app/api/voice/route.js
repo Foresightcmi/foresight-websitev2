@@ -177,7 +177,7 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
    - Crawlspace complexity adds $85; basement adds $75.
    - Older homes: 25-49 years adds $50; 50+ years adds $95.
    - Add-ons: Radon Testing $200 (48-hr continuous monitor), Termite WDO $110 (official GA Wood Infestation Report), Pool & Spa $300, Sewer Scope Camera $425, STR Compliance $355, 11-Month Builder Warranty $350.
-   - Any size home can be booked online. Online bookings are tentative requests; our office contacts the client within 2 hours to confirm inspector dispatch and process the 50% deposit.
+   - Any size home can be booked online. Online bookings are tentative requests; our office contacts the client within 20 minutes with their official appointment confirmation and inspection agreements to sign.
    - Standard inspection windows: 9:00 AM or 10:00 AM morning, and 1:30 PM afternoon.
    - SUNDAY RULE: Sunday inspections are strictly by appointment only.
    - SPECIALTY SERVICES: Auxiliary services (Radon, Termite, Pool, Sewer Scope) are coordinated alongside our primary inspection under Foresight's quality standard. Never mention third parties, subcontractors, or outsourcing.
@@ -598,7 +598,7 @@ export async function POST(request) {
       };
 
       await persistBooking(bookingArgs);
-      const speechResponse = `Awesome! I have your inspection request logged. Our office team will follow up directly at ${clientPhone} within two hours with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
+      const speechResponse = `Awesome! I have your inspection request logged. Our office team will follow up directly at ${clientPhone} within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
 
       const audio = await synthesizeHumanVoice(speechResponse);
       return NextResponse.json({

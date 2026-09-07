@@ -691,7 +691,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                           ℹ️ Next Steps (Pending Office Confirmation):
                         </p>
                         <ul style={{ margin: 0, paddingLeft: '1.1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                          <li><strong>Office Confirmation &amp; Agreements:</strong> Our office reviews county tax records and contacts you within 2 hours with your official appointment confirmation and inspection agreements to sign.</li>
+                          <li><strong>Office Confirmation &amp; Agreements:</strong> Our office reviews county tax records and contacts you within 20 minutes with your official appointment confirmation and inspection agreements to sign.</li>
                           <li><strong>50% Deposit to Solidify:</strong> To solidify your appointment on our master calendar, the 50% deposit along with your signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50% balance is due upon inspection completion before report release.</li>
                           <li><strong>Specialty Service Coordination:</strong> Dedicated auxiliary services (Pool, Termite, Radon, Sewer) are coordinated alongside your primary inspection window.</li>
                           <li><strong>Sunday Inspection:</strong> Strictly by appointment only.</li>
@@ -785,7 +785,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       </div>
 
                       <div style={{ background: 'rgba(211,47,47,0.12)', padding: '0.6rem 0.8rem', borderRadius: '4px', border: '1px solid rgba(211,47,47,0.25)', fontSize: '0.75rem', color: '#fca5a5', lineHeight: 1.35 }}>
-                        ℹ️ <strong>Tentative Slot Request:</strong> Our office reviews property records and confirms inspector dispatch within 2 hours. Sunday is by appointment only.
+                        ℹ️ <strong>Tentative Slot Request:</strong> Our office reviews property records and contacts you within 20 minutes with your official appointment confirmation. Sunday is by appointment only.
                       </div>
 
                       <button 

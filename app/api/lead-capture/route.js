@@ -48,7 +48,7 @@ export async function POST(request) {
 
     return NextResponse.json({
       success: true,
-      message: 'Inspection request received! Our office will contact you within 2 hours to confirm your scheduled time slot.',
+      message: 'Inspection request received! Our office will contact you within 20 minutes with your official appointment confirmation and inspection agreements to sign.',
       leadId: result.leadId
     }, { status: 200 });
 
