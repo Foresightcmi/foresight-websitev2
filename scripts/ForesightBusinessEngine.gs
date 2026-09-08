@@ -172,22 +172,32 @@ function doPost(e) {
 function getOrCreateLeadsSheet() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   if (!ss) {
-    // If running standalone, find or create sheet by name
-    var files = DriveApp.getFilesByName("Foresight_Engine_Leads");
+    // Check for "Business Leads & Booking Engine" first, then fallback to "Foresight_Engine_Leads"
+    var files = DriveApp.getFilesByName("Business Leads & Booking Engine");
+    if (!files.hasNext()) {
+      files = DriveApp.getFilesByName("Foresight_Engine_Leads");
+    }
     if (files.hasNext()) {
       ss = SpreadsheetApp.open(files.next());
     } else {
-      ss = SpreadsheetApp.create("Foresight_Engine_Leads");
+      ss = SpreadsheetApp.create("Business Leads & Booking Engine");
     }
   }
   
   var sheet = ss.getSheetByName("Leads");
   if (!sheet) {
-    sheet = ss.insertSheet("Leads");
-    // Write comprehensive headers
-    sheet.appendRow(["Timestamp", "Name", "Email", "Phone", "Address", "PreferredDate", "ServiceType", "EstimatedTotal", "Status", "Notes", "LastSentDate"]);
-    // Format headers
-    sheet.getRange("A1:K1").setFontWeight("bold").setBackground("#d32f2f").setFontColor("white");
+    // If the active sheet has only 1 tab, check if it's already the leads destination
+    if (ss.getSheets().length === 1 && ss.getSheets()[0].getName() !== "Leads") {
+      sheet = ss.getSheets()[0];
+      sheet.setName("Leads");
+    } else {
+      sheet = ss.insertSheet("Leads");
+    }
+    // Write comprehensive headers if empty
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(["Timestamp", "Name", "Email", "Phone", "Address", "PreferredDate", "ServiceType", "EstimatedTotal", "Status", "Notes", "LastSentDate"]);
+      sheet.getRange("A1:K1").setFontWeight("bold").setBackground("#d32f2f").setFontColor("white");
+    }
   }
   return sheet;
 }
