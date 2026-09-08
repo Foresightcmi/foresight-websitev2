@@ -18,7 +18,7 @@
 // Global Configuration
 var ACTIVE_INSPECTIONS_FOLDER_NAME = "Active Inspections";
 var SERVICE_AGREEMENT_TEMPLATE_NAME = "Service Agreement Template";
-var BUSINESS_EMAIL = "plsinspectnow@gmail.com";
+var BUSINESS_EMAIL = "inspect@foresightcmi.com, plsinspectnow@gmail.com";
 
 /**
  * 0. ONE-CLICK INITIALIZATION ENGINE
@@ -89,34 +89,67 @@ function doPost(e) {
     var payload = JSON.parse(e.postData.contents);
     
     if (payload.action === 'capture_lead') {
-      var name = payload.name;
-      var email = payload.email;
-      var phone = payload.phone || '';
+      var name = payload.name || 'Valued Client';
+      var email = payload.email || 'Not provided';
+      var phone = payload.phone || 'Not provided';
+      var address = payload.address || 'Pending Address';
+      var preferredDate = payload.preferredDate || 'Earliest Available';
+      var sqft = payload.sqft ? (payload.sqft + ' sq ft') : 'Pending';
+      var propertyType = payload.propertyType || 'Standard Property';
+      var serviceType = payload.serviceType || 'Home Inspection';
+      var addons = payload.addons || 'None selected';
+      var estimatedTotal = payload.estimatedTotal || 'TBD';
+      var message = payload.message || payload.notes || 'None';
+      var source = payload.source || 'Website Form';
+      var notes = payload.notes || '';
       
       // Save the lead to our sheet database
       var sheet = getOrCreateLeadsSheet();
       var timestamp = new Date();
       
-      // Notify the business owner immediately (NO passwords needed!)
+      // Notify the business owner immediately (Dual recipient: inspect@foresightcmi.com & plsinspectnow@gmail.com)
+      var emailSubject = "🚨 [NEW LEAD / TENTATIVE REQUEST] " + name + " - " + (address !== 'Pending Address' ? address : preferredDate);
+      var htmlBody = 
+        "<div style='font-family: Arial, sans-serif; padding: 24px; border: 2px solid #b91c1c; border-radius: 8px; background: #ffffff; max-width: 650px;'>" +
+          "<div style='background: #b91c1c; color: #ffffff; padding: 14px 18px; border-radius: 6px 6px 0 0; margin: -24px -24px 20px -24px;'>" +
+            "<h2 style='margin: 0; font-size: 1.25rem; font-family: Georgia, serif;'>🚨 New Tentative Inspection Request</h2>" +
+            "<p style='margin: 4px 0 0; font-size: 0.85rem; opacity: 0.95;'>Source: " + source + " | Status: Pending Office Confirmation</p>" +
+          "</div>" +
+          
+          "<table style='width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 15px;'>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; width: 160px; color: #475569;'>Client Name:</td><td style='padding: 9px 0; font-weight: 600; color: #0f172a;'>" + name + "</td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Phone Number:</td><td style='padding: 9px 0;'><a href='tel:" + phone + "' style='color: #b91c1c; font-weight: bold; text-decoration: none;'>📞 " + phone + "</a></td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Email Address:</td><td style='padding: 9px 0;'><a href='mailto:" + email + "' style='color: #0284c7; text-decoration: none; font-weight: 500;'>✉️ " + email + "</a></td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Property Address:</td><td style='padding: 9px 0; font-weight: 600; color: #0f172a;'>📍 " + address + "</td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Requested Date:</td><td style='padding: 9px 0; color: #b91c1c; font-weight: bold;'>📅 " + preferredDate + "</td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Service & Type:</td><td style='padding: 9px 0;'>" + serviceType + " (" + propertyType + ")</td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Square Footage:</td><td style='padding: 9px 0;'>" + sqft + "</td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Estimated Total:</td><td style='padding: 9px 0; font-weight: bold; color: #047857; font-size: 1.1rem;'>" + estimatedTotal + "</td></tr>" +
+            "<tr style='border-bottom: 1px solid #e2e8f0;'><td style='padding: 9px 0; font-weight: bold; color: #475569;'>Add-on Services:</td><td style='padding: 9px 0;'>" + addons + "</td></tr>" +
+            "<tr><td style='padding: 9px 0; font-weight: bold; vertical-align: top; color: #475569;'>Client Note / Message:</td><td style='padding: 9px 0; background: #f8fafc; padding: 12px; border-radius: 6px; font-size: 14px; line-height: 1.5; color: #334155;'>" + message + "</td></tr>" +
+          "</table>" +
+          
+          "<div style='background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; border-radius: 4px;'>" +
+            "<p style='margin: 0; font-size: 0.875rem; color: #991b1b; line-height: 1.4;'>" +
+              "<strong>Action Required:</strong> Call or text the client within 20 minutes to confirm arrival time, lock in the appointment, and send inspection agreements. (Sunday is strictly by appointment only)." +
+            "</p>" +
+          "</div>" +
+        "</div>";
+
       MailApp.sendEmail({
         to: BUSINESS_EMAIL,
-        subject: "🚨 NEW QUOTE LEAD: Price Locked!",
-        htmlBody: "<div style='font-family: Arial, sans-serif; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;'>" +
-                  "<h2 style='color: #b91c1c;'>New Quote Lead Captured</h2>" +
-                  "<p style='font-size: 16px;'><strong>Name:</strong> " + name + "</p>" +
-                  "<p style='font-size: 16px;'><strong>Email:</strong> " + email + "</p>" +
-                  "<p style='font-size: 16px;'><strong>Phone:</strong> " + (phone || 'Not provided') + "</p>" +
-                  "<hr style='border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;' />" +
-                  "<p style='font-size: 14px; color: #64748b;'><em>This lead locked in their price via the website Quote Calculator.</em></p>" +
-                  "</div>"
+        subject: emailSubject,
+        htmlBody: htmlBody
       });
       
       // Check if lead already exists to prevent duplicate nurture fires
       if (!isDuplicateLead(sheet, email)) {
-        sheet.appendRow([timestamp, name, email, phone, 'LEAD_CAPTURED', timestamp]);
+        sheet.appendRow([timestamp, name, email, phone, address, preferredDate, serviceType, estimatedTotal, 'LEAD_CAPTURED', notes || message, timestamp]);
         
-        // Fire Part 1 Email immediately!
-        sendNurtureEmail1(name, email);
+        // Fire Part 1 Email immediately to the prospective client!
+        if (email && email.indexOf('@') !== -1 && email !== 'Not provided') {
+          sendNurtureEmail1(name, email);
+        }
       }
       
       return ContentService.createTextOutput(JSON.stringify({ success: true, message: 'Lead processed successfully.' }))
@@ -151,10 +184,10 @@ function getOrCreateLeadsSheet() {
   var sheet = ss.getSheetByName("Leads");
   if (!sheet) {
     sheet = ss.insertSheet("Leads");
-    // Write headers
-    sheet.appendRow(["Timestamp", "Name", "Email", "Phone", "Status", "LastSentDate"]);
+    // Write comprehensive headers
+    sheet.appendRow(["Timestamp", "Name", "Email", "Phone", "Address", "PreferredDate", "ServiceType", "EstimatedTotal", "Status", "Notes", "LastSentDate"]);
     // Format headers
-    sheet.getRange("A1:F1").setFontWeight("bold").setBackground("#d32f2f").setFontColor("white");
+    sheet.getRange("A1:K1").setFontWeight("bold").setBackground("#d32f2f").setFontColor("white");
   }
   return sheet;
 }
