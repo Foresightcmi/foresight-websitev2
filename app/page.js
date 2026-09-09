@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import ProcessSteps from './components/ProcessSteps';
 import LatestPosts from './components/LatestPosts';
 import NewsletterSignup from './components/NewsletterSignup';
+import VslTriggerButton from './components/VslTriggerButton';
 
 const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
@@ -202,13 +203,19 @@ export default function Home() {
             Uncompromising thoroughness led by a Certified Master Inspector® (CMI). From entry-level single-family homes to multi-million dollar luxury estates, every home inspection features two certified inspectors, FLIR thermal imaging, aerial drone roof scanning, and our $10,000 warranty protection.
           </p>
 
-          <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
+          <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
               📅 Schedule Inspection Now
             </a>
             <Link prefetch={false} href="/quote" className="btn btn-outline-light" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
               📊 Calculate Instant Fee
             </Link>
+            <VslTriggerButton />
+          </div>
+
+          <div style={{ marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: '#E2E8F0', fontSize: '0.92rem', flexWrap: 'wrap' }}>
+            <span style={{ color: 'var(--color-gold)', letterSpacing: '2px' }}>★★★★★</span>
+            <span>4.9/5 Rating &bull; Google <strong style={{ color: '#FFFFFF' }}>&ldquo;Foresight Home Inspections&rdquo;</strong> to read 40+ verified 5-star reviews</span>
           </div>
 
           <div style={{ display: 'inline-block', background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.3)', color: '#34d399', padding: '0.5rem 1.25rem', borderRadius: '2rem', fontSize: '0.9rem', fontWeight: 600, marginBottom: '3rem', backdropFilter: 'blur(4px)' }}>

@@ -1,5 +1,49 @@
 [
   {
+    "id": "lead_1788912930876_4q8dvb",
+    "timestamp": "2026-09-09T00:15:30.793Z",
+    "name": "CONFIRMED TEST: Christopher Boykin CMI",
+    "phone": "678-480-2110",
+    "email": "inspect@foresightcmi.com",
+    "address": "1816 South Deshon Road, Lithonia, GA 30058",
+    "sqft": "2500",
+    "propertyType": "Single-Family Home",
+    "serviceType": "Dual Master Inspector Pre-Purchase Home Inspection",
+    "foundation": "Crawlspace",
+    "ageTier": "Under 25",
+    "preferredDate": "Monday, Sep 14 at 9:30 AM",
+    "addons": [
+      "48-Hour Radon Gas Continuous Monitor ($200)",
+      "FLIR Thermal Infrared Moisture Scan (Included)"
+    ],
+    "estimatedTotal": "$435",
+    "message": "Lead pipeline verification test - Confirming instant dual-email dispatch and Google Sheets sync.",
+    "source": "Website Lead Verification",
+    "status": "tentative_pending_office_confirmation"
+  },
+  {
+    "id": "lead_1788911395392_j6bj1r",
+    "timestamp": "2026-09-08T23:49:55.383Z",
+    "name": "LIVE TEST LEAD - Delivery Confirmed",
+    "phone": "678-480-2110",
+    "email": "inspect@foresightcmi.com",
+    "address": "1816 South Deshon Road, Lithonia, GA 30058",
+    "sqft": "3200",
+    "propertyType": "Single-Family Home",
+    "serviceType": "Pre-Purchase Comprehensive Home Inspection",
+    "foundation": "Crawlspace",
+    "ageTier": "Under 25",
+    "preferredDate": "Wednesday at 9:00 AM",
+    "addons": [
+      "48-Hour Radon Gas Continuous Monitor ($200)",
+      "Thermal Infrared Moisture Scan (Included)"
+    ],
+    "estimatedTotal": "$665",
+    "message": "This is an automated live verification test to confirm webhook and email dispatch are 100% operational.",
+    "source": "Website Live Verification",
+    "status": "tentative_pending_office_confirmation"
+  },
+  {
     "id": "lead_1788885410070_0yc0xk",
     "timestamp": "2026-09-08T16:36:50.063Z",
     "name": "Marcus Sterling (Lead Delivery Verification)",
