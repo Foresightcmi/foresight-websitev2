@@ -137,6 +137,36 @@ const nextConfig = {
       },
       // Old dated blog post slugs to canonical
       {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-09',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-06',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-06-14',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-09-02',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-06-10',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/why-new-construction-inspections-are-important',
+        destination: '/blog/why-new-construction-needs-inspections',
+        permanent: true,
+      },
+      {
         source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-08-09',
         destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
         permanent: true,

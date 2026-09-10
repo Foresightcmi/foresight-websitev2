@@ -127,9 +127,9 @@ export default function About() {
       ═══════════════════════════════════════════════════════════════ */}
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
-          <h2 className="slogan-heading">
+          <p className="slogan-heading">
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
-          </h2>
+          </p>
           <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>
             About <span style={{ color: 'var(--color-red)' }}>Foresight Home Inspections</span>
           </h1>

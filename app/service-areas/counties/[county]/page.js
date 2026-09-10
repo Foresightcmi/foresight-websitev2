@@ -101,7 +101,7 @@ export default async function CountyPage({ params }) {
   const countyJsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": `Foresight Home Inspections, LLC - ${county.name}`,
+    "name": "Foresight Home Inspections, LLC",
     "url": canonicalUrl,
     "telephone": "+1-678-480-2110",
     "email": "inspect@foresightcmi.com",
@@ -122,12 +122,21 @@ export default async function CountyPage({ params }) {
     },
     "areaServed": {
       "@type": "AdministrativeArea",
-      "name": `${county.name}, Georgia`
+      "name": `${county.name}, Georgia`,
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Georgia"
+      },
+      "containsPlace": countyCities.map(c => ({
+        "@type": "City",
+        "name": c['City Name'],
+        "url": `https://www.fhinspectionsatl.com/service-areas/${c['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`
+      }))
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "43",
+      "reviewCount": "48",
       "bestRating": "5",
       "worstRating": "1"
     },

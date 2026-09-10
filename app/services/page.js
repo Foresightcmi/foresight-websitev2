@@ -201,15 +201,15 @@ export default function Services() {
 
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
-          <h2 className="slogan-heading">
+          <p className="slogan-heading">
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
-          </h2>
-          <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Inspection Services & Pricing</h1>
+          </p>
+          <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Inspection Services &amp; Pricing</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '0 auto', fontSize: '1.125rem' }}>
             Transparent pricing based on actual square footage. We provide Certified Master Inspector®-led inspections with thermal imaging included, plus a full range of specialty assessments. All inspections are conducted to InterNACHI Standards of Practice.
           </p>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1rem', opacity: 0.85 }}>
-            A standard home inspection in Metro Atlanta starts at $420 and includes two certified inspectors, FLIR thermal imaging, and the $10,000 Elite Master Inspection Warranty at no extra cost.
+            A certified home inspection in Metro Atlanta starts at $345 for single-family homes ($295 for condos) and includes two certified inspectors, FLIR thermal imaging, 4K aerial drone scans, and the $10,000 Elite Master Inspection Warranty at no extra cost.
           </p>
         </div>
       </section>

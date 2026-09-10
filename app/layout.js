@@ -68,7 +68,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
-    description: 'Two certified inspectors on every job. $10,000 warranty included. Serving 163+ cities across Metro Atlanta.',
+    description: 'Two certified inspectors on every job. $10,000 warranty included. Serving 87+ cities across 20 Metro Atlanta counties.',
     images: ['/images/Logopng.png'],
   },
   verification: {
@@ -557,8 +557,8 @@ export default function RootLayout({ children }) {
       "ratingValue": "4.9",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "43",
-      "reviewCount": "43"
+      "ratingCount": "48",
+      "reviewCount": "48"
     },
     "review": [
       {
@@ -768,30 +768,49 @@ export default function RootLayout({ children }) {
                 <GooglePreferredSource variant="footer" />
               </div>
               <div>
-                <h3>Quick Links</h3>
+                <h3>Inspection Services</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li><Link prefetch={false} href="/">Home</Link></li>
-                  <li><Link prefetch={false} href="/services">Services & Pricing</Link></li>
-                  <li><Link prefetch={false} href="/due-diligence">Due Diligence Guarantee</Link></li>
-                  <li><Link prefetch={false} href="/neighborhoods">Neighborhood Guides</Link></li>
-                  <li><Link prefetch={false} href="/samples">Sample Reports</Link></li>
-                  <li><Link prefetch={false} href="/blog">Blog & Guides</Link></li>
-                  <li><Link prefetch={false} href="/faq">FAQ</Link></li>
-                  <li><Link prefetch={false} href="/realtors">Realtors VIP Program</Link></li>
-                  <li><Link prefetch={false} href="/quote">Instant Quote</Link></li>
-                  <li><Link prefetch={false} href="/contact">Contact Us</Link></li>
-                  <li><Link prefetch={false} href="/service-areas">Service Areas Directory</Link></li>
-                  <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
-                  <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
+                  <li><Link prefetch={false} href="/services/buyer-inspection">Buyer Home Inspection</Link></li>
+                  <li><Link prefetch={false} href="/services/radon-testing">Radon Gas Testing ($200)</Link></li>
+                  <li><Link prefetch={false} href="/services/termite-inspection">Termite &amp; WDO ($110+)</Link></li>
+                  <li><Link prefetch={false} href="/services/sewer-scope-inspection">Sewer Scope Camera ($465)</Link></li>
+                  <li><Link prefetch={false} href="/services/new-construction-inspection">New Construction Phased</Link></li>
+                  <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($300)</Link></li>
+                  <li><Link prefetch={false} href="/services/pre-listing-inspection">Pre-Listing Seller Inspection</Link></li>
+                  <li><Link prefetch={false} href="/services">View All Services &amp; Pricing &rarr;</Link></li>
                 </ul>
               </div>
               <div>
-                <h3>Contact</h3>
+                <h3>Top Service Areas</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110">📞 678-480-2110</a></li>
+                  <li><Link prefetch={false} href="/service-areas/atlanta">Atlanta Home Inspection</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/sandy-springs">Sandy Springs, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/alpharetta">Alpharetta, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/marietta">Marietta, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/decatur">Decatur, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/johns-creek">Johns Creek, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/roswell">Roswell, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/lawrenceville">Lawrenceville, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/smyrna">Smyrna, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/cumming">Cumming, GA</Link></li>
+                  <li><Link prefetch={false} href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Explore All 87 Cities &rarr;</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Company &amp; Contact</h3>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <li><Link prefetch={false} href="/quote" style={{ color: 'var(--color-red)', fontWeight: 700 }}>Instant Quote Calculator</Link></li>
+                  <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
+                  <li><Link prefetch={false} href="/due-diligence">Due Diligence Guarantee</Link></li>
+                  <li><Link prefetch={false} href="/samples">Sample Inspection Reports</Link></li>
+                  <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
+                  <li><Link prefetch={false} href="/realtors">Realtors VIP Program</Link></li>
+                  <li><Link prefetch={false} href="/blog">Inspection Knowledge Base</Link></li>
+                  <li><Link prefetch={false} href="/faq">FAQ</Link></li>
+                  <li style={{ marginTop: '0.75rem' }}><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ fontWeight: 700, color: 'var(--color-white)' }}>📞 678-480-2110</a></li>
                   <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
                   <li style={{ marginTop: '0.25rem', lineHeight: '1.4' }}>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving 163+ Cities Across Metro Atlanta)</span>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving 87+ Cities Across 20 Metro Atlanta Counties)</span>
                   </li>
                 </ul>
               </div>

@@ -37,3 +37,23 @@
 - [North Metro Luxury Estate Migration: 6 High-Liability Deficiencies in $1M+ Custom Builds](https://www.fhinspectionsatl.com/blog/north-metro-atlanta-luxury-estate-inspection-deficiencies): luxury home inspection alpharetta
 - [Georgia Summer Heat Wave & HVAC Crises: Why 82% of Atlanta Air Conditioners Fail Thermal Load Testing](https://www.fhinspectionsatl.com/blog/georgia-summer-heat-wave-hvac-crises-refrigerant-rules): hvac inspection atlanta home buyer
 - [DeKalb & Decatur Aging Sewer Line Alert: Why 1950s-1980s Clay & Cast Iron Pipes Are Collapsing Under Driveways](https://www.fhinspectionsatl.com/blog/dekalb-decatur-aging-sewer-line-crisis-lateral-camera): sewer scope inspection decatur ga
+
+## Inspection Comparison & Decision Guides
+- [Two-Inspector Team vs. Single Solo Inspector](https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector): Why dual-inspector teams complete inspections in 1.5-2.5 hours vs 4 hours solo with double accuracy.
+- [11-Month Warranty Audit vs. Builder Walkthrough](https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough): Independent third-party inspection vs cosmetic builder walkthrough.
+- [FLIR Thermal Infrared Scans vs. Standard Visual Inspection](https://www.fhinspectionsatl.com/compare/thermal-imaging-vs-standard-visual-inspection): How FLIR infrared detects invisible moisture leaks and electrical hotspots.
+- [Home Inspection vs. Bank Appraisal](https://www.fhinspectionsatl.com/compare/pre-purchase-inspection-vs-bank-appraisal): Protecting buyer equity vs bank risk assessment.
+- [Sewer Scope Camera vs. Standard Home Inspection](https://www.fhinspectionsatl.com/compare/sewer-scope-vs-standard-home-inspection): Underground lateral piping diagnostics.
+
+## Critical Housing Defect Guides
+- [Stucco (EIFS) Moisture Intrusion](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection)
+- [Polybutylene (Quest) Plumbing Pipes](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection)
+- [Federal Pacific & Zinsco Panels](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection)
+- [Crawlspace Moisture & Joist Rot](https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection)
+- [HVAC Heat Exchanger Cracks & CO](https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection)
+- [Roof Flashing & Chimney Leaks](https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection)
+- [Aluminum Branch Wiring Hazards](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection)
+
+## AI Knowledge Graph & Fact Sheet
+- [AI Fact Sheet & E-E-A-T Vector Grounding](https://www.fhinspectionsatl.com/ai-fact-sheet): Deterministic entity facts for ChatGPT Search, Perplexity, Gemini, and Claude.
+- [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Real-time pricing calculator for single-family homes, condos, and add-on services.

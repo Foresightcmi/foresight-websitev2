@@ -420,7 +420,7 @@ export default async function ServiceCityPage({ params }) {
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
                     <span style={{ color: 'var(--color-red)' }}>🏢</span>
-                    <span><strong>Operating Base:</strong> 1816 South Deshon Road, Lithonia, GA 30058</span>
+                    <span><strong>Operating Base:</strong> Metro Atlanta Headquarters (Lithonia, GA)</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
                     <span style={{ color: 'var(--color-red)' }}>🔍</span>

@@ -103,6 +103,11 @@ export default async function CityPage({ params }) {
   const zip = cityData.Zip || '';
   const slug = resolvedParams.city;
 
+  const coords = {
+    lat: cityData?.Latitude || "33.7490",
+    lng: cityData?.Longitude || "-84.3880"
+  };
+
   // ── Intro paragraph ──────────────────────────────────────────────────
   const introParagraph = cityData.Intro
     || `Serving all of ${county} County. When you're buying a home in ${cityName}, you need the absolute best. We provide two certified inspectors on every job for unrivaled accuracy.`;
@@ -168,6 +173,11 @@ export default async function CityPage({ params }) {
     "areaServed": {
       "@type": "City",
       "name": cityName,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": coords.lat,
+        "longitude": coords.lng
+      },
       "containedInPlace": {
         "@type": "AdministrativeArea",
         "name": `${county} County`,
@@ -179,7 +189,7 @@ export default async function CityPage({ params }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
+      "ratingValue": "4.9",
       "reviewCount": "48",
       "bestRating": "5",
       "worstRating": "1"
@@ -214,6 +224,34 @@ export default async function CityPage({ params }) {
           }
         }
       ]
+    }
+  };
+
+  // ── JSON-LD: Product schema for Google Organic Review Stars ───────────
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `https://www.fhinspectionsatl.com/service-areas/${slug}#package`,
+    "name": `Two-Inspector Home Inspection Package - ${cityName}, GA`,
+    "description": `Two certified inspectors on every job led by a Certified Master Inspector®. Includes complimentary FLIR infrared thermal imaging, 4K roof drone scans, and $10,000 warranty in ${cityName}, GA.`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Foresight Home Inspections"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "345.00",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.fhinspectionsatl.com/quote"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   };
 
@@ -273,11 +311,11 @@ export default async function CityPage({ params }) {
   // ── Proximity Calculation from Lithonia HQ (33.7258, -84.0955) ──────
   let distanceMiles = 18;
   try {
-    if (localBusinessJsonLd?.geo?.latitude && localBusinessJsonLd?.geo?.longitude) {
+    if (coords?.lat && coords?.lng) {
       const lat1 = 33.7258;
       const lon1 = -84.0955;
-      const lat2 = parseFloat(localBusinessJsonLd.geo.latitude);
-      const lon2 = parseFloat(localBusinessJsonLd.geo.longitude);
+      const lat2 = parseFloat(coords.lat);
+      const lon2 = parseFloat(coords.lng);
       const R = 3958.8; // Radius of the Earth in miles
       const dLat = (lat2 - lat1) * (Math.PI / 180);
       const dLon = (lon2 - lon1) * (Math.PI / 180);
@@ -327,10 +365,13 @@ export default async function CityPage({ params }) {
 
   return (
     <>
-      {/* ── JSON-LD Schemas ─────────────────────────────────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -372,9 +413,9 @@ export default async function CityPage({ params }) {
             <span>{county} County • ~{distanceMiles} miles from Lithonia HQ • 50-Mile Service Footprint</span>
           </div>
 
-          <h2 className="slogan-heading">
+          <p className="slogan-heading">
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
-          </h2>
+          </p>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1rem' }}>
               Top-Rated Home Inspection in{' '}
@@ -737,7 +778,7 @@ export default async function CityPage({ params }) {
             </p>
           </div>
           <div className="grid grid-3" style={{ gap: '1.5rem' }}>
-            <Link href={`/services/home-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+            <Link href="/services/buyer-inspection" className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏡</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Buyer Home Inspection</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Full 2-inspector buyer evaluation with FLIR thermal scan and same-day report in {cityName}.</p>
@@ -752,12 +793,12 @@ export default async function CityPage({ params }) {
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Termite & WDO Clearance</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Official Georgia Wood Infestation Report for {cityName} buyers and lender approvals.</p>
             </Link>
-            <Link href={`/services/11-month-warranty/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏗️</div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>11-Month Builder Warranty</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Independent inspection before your {cityName} builder warranty expires.</p>
+            <Link href={`/services/sewer-scope-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🚽</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Sewer Scope Camera</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>HD fiber-optic lateral pipe camera inspection from cleanout to city main in {cityName}.</p>
             </Link>
-            <Link href={`/services/new-construction/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+            <Link href={`/services/new-construction-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔨</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>New Construction Phased</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Pre-drywall and final walkthrough audits for newly constructed {cityName} homes.</p>
@@ -864,13 +905,13 @@ export default async function CityPage({ params }) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/defects/polybutylene-pipe-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                  <Link href="/defects/polybutylene-pipe-plumbing-defect-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
                     &rarr; Polybutylene Plumbing Pipe Risk Guide
                   </Link>
                 </li>
                 <li>
-                  <Link href="/defects/foundation-crack-settlement-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
-                    &rarr; Georgia Red Clay Foundation Settling Guide
+                  <Link href="/defects/crawlspace-fungus-joist-rot-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
+                    &rarr; Crawlspace Moisture &amp; Joist Rot Guide
                   </Link>
                 </li>
                 <li>
