@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
+import ForesightAnthemPlayer from '../components/ForesightAnthemPlayer';
 
 export const metadata = {
   title: 'Certified Master Inspector Atlanta | About Us',
@@ -422,6 +423,30 @@ export default function About() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          OUR ANTHEM & BRAND SONIC IDENTITY
+      ═══════════════════════════════════════════════════════════════ */}
+      <section className="section bg-dark text-white" style={{ padding: '4.5rem 0' }}>
+        <div className="container" style={{ maxWidth: '850px' }}>
+          <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '0.75rem' }}>
+              🎵 Our Sonic Brand Identity
+            </span>
+            <h2 style={{ color: '#ffffff', fontSize: '2.3rem', fontWeight: 800 }}>
+              &ldquo;Hindsight is Expensive. Call Foresight.&rdquo;
+            </h2>
+            <p style={{ color: '#cbd5e1', maxWidth: '650px', margin: '1rem auto 0', fontSize: '1.05rem', lineHeight: 1.6 }}>
+              Listen to the official Foresight theme song. Protecting Georgia homebuyers from expensive surprises before they sign.
+            </p>
+          </div>
+
+          <ForesightAnthemPlayer 
+            title="The Foresight Anthem"
+            subtitle="Featuring the 678-480-2110 Hotline &bull; Two-Inspector Guarantee"
+          />
         </div>
       </section>
 

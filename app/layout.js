@@ -781,6 +781,7 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/service-areas">Service Areas Directory</Link></li>
                   <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                   <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
+                  <li><Link prefetch={false} href="/anthem">Foresight Anthem (Theme Song)</Link></li>
                 </ul>
               </div>
               <div>
