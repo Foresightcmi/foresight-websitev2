@@ -44,7 +44,7 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
   if (addons.radon) { extra += 200; addonBreakdown.push({ name: 'Radon Gas Testing', price: 200 }); }
   if (addons.termite) { extra += 110; addonBreakdown.push({ name: 'Termite / WDO Inspection', price: 110 }); }
   if (addons.pool) { extra += 300; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 300 }); }
-  if (addons.sewer) { extra += 425; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 425 }); }
+  if (addons.sewer) { extra += 465; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 465 }); }
   if (addons.lowFlow) { extra += 125; addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 125 }); }
   if (addons.buildfax) { extra += 15; addonBreakdown.push({ name: 'Permit History Report', price: 15 }); }
 
@@ -168,7 +168,7 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
    - Explain this policy whenever booking, scheduling, deposits, or next steps are discussed.
 4. CIRCUMSTANTIAL & REASONABLE UPSELLS (NEVER PUSHY):
    - Based on the circumstances of the property, suggest relevant, reasonable add-ons:
-     * Older homes (pre-1990 / 25+ years old): gently suggest a Sewer Scope Camera ($425) to check for clay or cast iron collapse.
+     * Older homes (pre-1990 / 25+ years old): gently suggest a Sewer Scope Camera ($465) to check for clay or cast iron collapse.
      * Homes with crawlspaces, basements, or in the Atlanta granite belt: suggest 48-Hour Continuous Radon Gas Testing ($200).
      * Properties in Georgia / buyers with mortgages: mention our bundled Termite/WDO clearance letter ($110).
      * Homes with pools or spas: suggest Pool & Spa inspection ($300).
@@ -185,7 +185,7 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
    - Condos start at $295 (up to 1,000 sq ft) and $325 (1,001-1,800 sq ft).
    - Crawlspace complexity adds $85; basement adds $75.
    - Older homes: 25-49 years adds $50; 50+ years adds $95.
-   - Add-ons: Radon Testing $200 (48-hr continuous monitor), Termite WDO $110 (official GA Wood Infestation Report), Pool & Spa $300, Sewer Scope Camera $425, STR Compliance $355, 11-Month Builder Warranty $350.
+   - Add-ons: Radon Testing $200 (48-hr continuous monitor), Termite WDO $110 (official GA Wood Infestation Report), Pool & Spa $300, Sewer Scope Camera $465, STR Compliance $355, 11-Month Builder Warranty $350.
    - Any size home can be booked online. Online bookings are tentative requests; our office contacts the client within 20 minutes with their official appointment confirmation and inspection agreements to sign.
    - Standard inspection windows: 9:00 AM or 10:00 AM morning, and 1:30 PM afternoon.
    - SUNDAY RULE: Sunday inspections are strictly by appointment only.
@@ -469,7 +469,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Older Homes Contextual Sewer Scope Recommendation
   if (matchesAny(['older home', 'historic home', 'pre-1990', '1960', '1970', '1980', 'cast iron pipe', 'clay pipe', 'tree roots', 'root intrusion'])) {
     return {
-      text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 425 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
+      text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 465 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
       preAudio: '/audio/marcus-upsell-sewer.mp3'
     };
   }
@@ -493,7 +493,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Sewer Scope (Instant Audio)
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
-      text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 425 dollars to inspect the underground line all the way to the municipal main. It is one of the smartest investments you can make during due diligence. Shall I reserve a slot for your sewer scope?",
+      text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 465 dollars to inspect the underground line all the way to the municipal main. It is one of the smartest investments you can make during due diligence. Shall I reserve a slot for your sewer scope?",
       preAudio: null
     };
   }

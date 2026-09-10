@@ -22,7 +22,7 @@ export default function FAQPage() {
     {
       category: 'Pricing & Booking',
       questions: [
-        { q: 'How much does a home inspection cost in Atlanta?', a: 'Start at $295+ condos, $345+ homes. Add-ons: sewer scope $425, radon $200, pool $300, termite $110 bundled.' },
+        { q: 'How much does a home inspection cost in Atlanta?', a: 'Start at $295+ condos, $345+ homes. Add-ons: sewer scope $465, radon $200, pool $300, termite $110 bundled.' },
         { q: 'How do I book an inspection?', a: '24/7 online booking at schedulenow.homegauge.com, or call 678-480-2110.' },
         { q: 'Do you offer flat-rate pricing?', a: 'Yes, transparent flat-rate pricing based on sq ft, property age, and add-ons. Use /quote calculator.' },
         { q: 'What are your business hours?', a: 'Mon, Tue, Thu, Fri, Sat: 8AM-8PM. Wednesday: 8AM-7PM. Sunday: By Appointment. 24/7 online booking.' },
@@ -51,7 +51,7 @@ export default function FAQPage() {
       questions: [
         { q: 'What areas do you serve?', a: '163+ cities across Metro Atlanta including Fulton, DeKalb, Gwinnett, Cobb, Forsyth, Clayton, Henry, and Rockdale counties.' },
         { q: 'Do you inspect luxury and estate homes?', a: 'Yes, our Estate & Luxury Tier includes extended 4+ hour evaluation, CMI-led team, full drone scanning, and a private strategy call.' },
-        { q: 'What add-on services do you offer?', a: 'Sewer scope ($425), radon gas testing ($200), pool/spa ($300), termite/WDO ($110 bundled), and more.' },
+        { q: 'What add-on services do you offer?', a: 'Sewer scope ($465), radon gas testing ($200), pool/spa ($300), termite/WDO ($110 bundled), and more.' },
         { q: 'Do you offer free utility setup?', a: 'Yes, complimentary Utilities Plus concierge sets up all utilities (power, gas, water, internet, security) at best market rates.' },
       ],
     },

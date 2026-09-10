@@ -95,7 +95,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     // Addons
     if (addons.radon) extra += 200; // Continuous monitor sub-contracted rate
     if (addons.pool) extra += 300;  // Pool/spa flat rate
-    if (addons.sewer) extra += 425; // Sewer scope camera inspection
+    if (addons.sewer) extra += 465; // Sewer scope camera inspection
     if (addons.lowFlow) extra += 125; // DeKalb low flow compliance
     if (addons.buildfax) extra += 15; // Property permit report
     if (addons.termite) extra += 110; // Termite/WDO bundled rate
@@ -172,7 +172,7 @@ export default function QuoteClient({ showValueComparison = true }) {
         .map(k => {
           if (k === 'radon') return '48-Hour Radon Gas Test ($200)';
           if (k === 'pool') return 'Pool & Spa Inspection ($300)';
-          if (k === 'sewer') return 'Sewer Scope Camera ($425)';
+          if (k === 'sewer') return 'Sewer Scope Camera ($465)';
           if (k === 'termite') return 'Termite / WDO Inspection ($110)';
           if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance ($125)';
           if (k === 'buildfax') return 'BuildFax Report ($15)';
@@ -443,7 +443,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('sewer')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (+ $425)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (+ $465)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>High-definition camera inspection of the main lateral sewer line to the municipal connection.</span>
                   </div>
                 </label>

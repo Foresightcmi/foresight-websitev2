@@ -25,11 +25,11 @@ const SERVICE_MAP = {
   },
   'sewer-scope-inspection': {
     name: 'Sewer Scope Camera Inspection',
-    price: '$425',
+    price: '$465',
     icon: '🎥',
     headline: 'HD Fiber-Optic Main Drain & Lateral Sewer Scope Camera Audits',
     metaTitle: 'Sewer Scope Camera Inspections | Foresight Atlanta',
-    metaDescription: 'High-definition fiber-optic sewer scope camera inspections across Metro Atlanta. Detect root intrusions, collapsed lines, and pipe offsets. Flat $425.',
+    metaDescription: 'High-definition fiber-optic sewer scope camera inspections across Metro Atlanta. Detect root intrusions, collapsed lines, and pipe offsets. Flat $465.',
     description: 'Replacing a broken underground sewer lateral costs between $5,000 and $25,000 and is not covered by standard homeowners insurance. Foresight pushes a self-leveling HD fiber-optic camera through the entire line to the municipal connection or septic tank, pinpointing root intrusions, crushed pipes, low-pitch bellies, and joint separations.',
     included: [
       'Full 100+ foot self-leveling color video camera push',

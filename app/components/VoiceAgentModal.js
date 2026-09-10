@@ -475,10 +475,10 @@ DEEP INTERNACHI SOP EXPERTISE:
 You know all InterNACHI Standards of Practice chapters: Roof (drone scans), Exterior, Structure/Foundation/Georgia red clay, HVAC (temperature splits, float switches), Plumbing (polybutylene, water heaters, TPR valves), Electrical (fire hazards like Federal Pacific Stab-Lok, Zinsco, aluminum wiring, GFCI/AFCI), Attic & Insulation, and complimentary FLIR thermal imaging on every inspection.
 
 FORESIGHT ADVANTAGES & PRICING:
-Two-inspector team (finishes in 1.5 to 2.5 hours), $10,000 warranty with $0 deductible, free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $300, Termite WDO $110, 48-hr Radon $200, STR $355, Sewer Scope $425.
+Two-inspector team (finishes in 1.5 to 2.5 hours), $10,000 warranty with $0 deductible, free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $300, Termite WDO $110, 48-hr Radon $200, STR $355, Sewer Scope $465.
 
 APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, the 50% deposit along with the signed inspection agreements are completed AFTER our office sends the appointment confirmation. The remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling, deposits, or booking next steps are discussed.
-CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($425) for older homes 25+ years, 48-Hour Radon ($200) for crawlspaces/basements/granite belt, Termite WDO letter ($110) for Georgia buyers, Pool & Spa ($300) for pools.
+CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($465) for older homes 25+ years, 48-Hour Radon ($200) for crawlspaces/basements/granite belt, Termite WDO letter ($110) for Georgia buyers, Pool & Spa ($300) for pools.
 MANDATORY RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be pushy or aggressive. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g., 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined upsell.
 Specialty services are coordinated alongside our primary inspection under Foresight's standard. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 20 minutes with your official appointment confirmation. In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
@@ -1502,7 +1502,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
             + Termite / WDO ($110+)
           </button>
           <button
-            onClick={() => handleToggleAddon('sewer', 'Sewer Scope Camera Inspection', 425)}
+            onClick={() => handleToggleAddon('sewer', 'Sewer Scope Camera Inspection', 465)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -1515,7 +1515,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Sewer Scope ($425)
+            + Sewer Scope ($465)
           </button>
           <button
             onClick={() => handleToggleAddon('pool', 'Pool and Spa Inspection', 300)}

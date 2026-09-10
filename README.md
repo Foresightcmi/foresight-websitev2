@@ -30,7 +30,7 @@ Foresight Home Inspections, LLC is Georgia's premier Certified Master Inspector-
 | **11-Month Builder Warranty Audit** | **$335** | Comprehensive punch list before 1-year builder coverage expires |
 | **New Construction (Phased & Final)** | **$355 / $375** | Pre-drywall framing audit ($355) / Final closing audit ($375) |
 | **Continuous 48-Hour Radon Testing** | **$200** | Professional electronic continuous monitor (EPA compliant) |
-| **HD Sewer Scope Camera Inspection** | **$425** | Fiber-optic underground lateral pipe line inspection |
+| **HD Sewer Scope Camera Inspection** | **$465** | Fiber-optic underground lateral pipe line inspection |
 | **Swimming Pool & Spa Evaluation** | **$300** | Pumps, filters, heaters, hydraulic pressure, electrical bonding |
 | **Termite & WDO Clearance Letter** | **$110+** | Official Georgia Wood Infestation Report for lender closing |
 | **Short-Term Rental (STR) Compliance** | **$355** | Airbnb/Vrbo municipal safety checklist & egress verification |

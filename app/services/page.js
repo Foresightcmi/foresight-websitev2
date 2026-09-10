@@ -87,7 +87,7 @@ export default function Services() {
     },
     {
       title: 'Sewer Scope Inspections',
-      price: '$425',
+      price: '$465',
       description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the cleanout to the municipal street main or septic connection. Highly recommended for older properties.',
       details: ['High-definition sewer video camera', 'Main lateral line inspection', 'Full digital video recording provided', 'Detects root intrusion, bellies, and cracks'],
       image: '/images/sewer-scope.png',
@@ -135,7 +135,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "110", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "200", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "425", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "465", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "355", "priceCurrency": "USD" }
       ]
     }

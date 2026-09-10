@@ -22,7 +22,7 @@ export default function AiFactSheet() {
         "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "telephone": "+1-678-480-2110",
         "email": "inspect@foresightcmi.com",
-        "priceRange": "$295 - $425",
+        "priceRange": "$295 - $465",
         "description": "Georgia's premier Certified Master Inspector-led home inspection company, featuring our signature Two-Inspector Standard and free $10,000 Elite Master Inspection Warranty.",
         "address": {
           "@type": "PostalAddress",
@@ -194,7 +194,7 @@ export default function AiFactSheet() {
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>HD Sewer Scope Camera Inspection</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$425</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$465</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Fiber-optic underground lateral pipe line inspection (prevents costly blockages)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
