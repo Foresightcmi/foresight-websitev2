@@ -6,6 +6,7 @@ import { Inter, Outfit } from 'next/font/google';
 import Header from './components/Header';
 import GeoTrustBanner from './components/GeoTrustBanner';
 import WidgetWrapper from './components/WidgetWrapper';
+import BackgroundAudioPlayer from './components/BackgroundAudioPlayer';
 import Breadcrumbs from './components/Breadcrumbs';
 import StickyCallBar from './components/StickyCallBar';
 import GooglePreferredSource from './components/GooglePreferredSource';
@@ -700,6 +701,7 @@ export default function RootLayout({ children }) {
 
         <main>{children}</main>
         <WidgetWrapper />
+        <BackgroundAudioPlayer />
         <StickyCallBar />
         <Script
           id="ga4-call-tracking"
@@ -781,7 +783,6 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/service-areas">Service Areas Directory</Link></li>
                   <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                   <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
-                  <li><Link prefetch={false} href="/anthem">Foresight Anthem (Theme Song)</Link></li>
                 </ul>
               </div>
               <div>
