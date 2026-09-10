@@ -13,8 +13,8 @@ const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: t
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
-  title: 'Atlanta Home Inspections | Two CMI Inspectors | Foresight',
-  description: 'Two certified inspectors on every job. Led by Christopher Boykin, Certified Master Inspector®. Premium home inspections across Metro Atlanta with FLIR thermal imaging, drones, and a $10,000 Elite Warranty.',
+  title: 'Atlanta Home Inspections | 2-Inspector Team From $345 | Foresight',
+  description: '4.9★ Rated. Two certified inspectors on every site for double the scrutiny in half the time. Free FLIR thermal, drone scans, & $10,000 warranty. Get an instant quote online!',
   keywords: [
     'home inspection Atlanta GA',
     'best home inspector Atlanta',
@@ -67,7 +67,27 @@ export default function Home() {
         "email": "inspect@foresightcmi.com",
         "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
-        "priceRange": "$$$",
+        "priceRange": "$$",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Atlanta Home Inspection Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Single-Family Home Inspection",
+              "price": "345",
+              "priceCurrency": "USD",
+              "description": "Comprehensive two-inspector team evaluation including free FLIR thermal imaging, 4K aerial drone scans, and $10,000 warranty."
+            },
+            {
+              "@type": "Offer",
+              "name": "Condo Inspection",
+              "price": "295",
+              "priceCurrency": "USD",
+              "description": "Thorough condominium interior systems and mechanical evaluation."
+            }
+          ]
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "1816 South Deshon Road",
@@ -91,7 +111,7 @@ export default function Home() {
         "openingHoursSpecification": [
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday", "Saturday"], "opens": "08:00", "closes": "20:00" },
           { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "19:00" },
-          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00", "description": "By appointment only" }
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "20:00", "description": "By appointment only" }
         ],
         "sameAs": [
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",

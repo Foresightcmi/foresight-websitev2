@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Frequently Asked Questions | Foresight Home Inspections',
-  description: 'Answers to common questions about our Atlanta home inspections, pricing, warranties, process, and more.',
+  title: 'Atlanta Home Inspection FAQs & Costs | From $345',
+  description: 'Get direct answers on Atlanta home inspection costs, our InterNACHI 2-inspector process, $10,000 warranty, and Sunday appointments. Pricing from $345!',
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/faq',
   },

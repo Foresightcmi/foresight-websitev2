@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Certified Master Inspector Atlanta | About Us',
-  description: 'Meet Christopher Boykin, CMI — the Certified Master Inspector leading Foresight Home Inspections, LLC. Over a decade of hands-on experience, two inspectors on every job, and a $10,000 Elite Master Inspection Warranty included. Serving 163+ Metro Atlanta cities.',
+  title: 'Meet Christopher Boykin CMI | Certified Master Inspector Atlanta',
+  description: 'Meet Christopher Boykin, Certified Master Inspector® (top 1% in North America) and founder of Foresight Home Inspections. 2-inspector team & $10,000 warranty.',
   keywords: ['certified master inspector Atlanta', 'about Foresight Home Inspections', 'Christopher Boykin CMI', 'home inspector Lithonia GA', 'InterNACHI certified inspector Atlanta'],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/about',

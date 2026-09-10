@@ -2,8 +2,8 @@ import Script from 'next/script';
 import QuoteClient from './QuoteClient';
 
 export const metadata = {
-  title: 'Home Inspection Quote & Price Calculator | Atlanta GA',
-  description: 'Calculate instant, transparent home inspection pricing and buyer negotiation leverage in Metro Atlanta. Includes two certified inspectors and $10,000 warranty.',
+  title: 'Instant Home Inspection Quote Atlanta | Rates From $345',
+  description: 'Calculate your exact Atlanta home inspection quote in 30 seconds. 100% transparent flat rates starting at $345 ($295 condos). 2-inspector team, thermal & drone included!',
   keywords: ['home inspection cost calculator Atlanta', 'home inspection price quote Georgia', 'Atlanta home inspector cost', 'instant home inspection quote'],
   alternates: { canonical: 'https://www.fhinspectionsatl.com/quote' },
   openGraph: {

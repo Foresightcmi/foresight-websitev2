@@ -13,8 +13,8 @@ function loadDefects() {
 }
 
 export const metadata = {
-  title: 'Red-Flag Defect Inspection Guides | Atlanta Home Inspector',
-  description: 'Comprehensive diagnostic guides for high-risk Atlanta property defects: Stucco/EIFS moisture, Aluminum Wiring, Federal Pacific panels, CSST gas piping, and Polybutylene.',
+  title: 'Top Atlanta Property Defects & Red Flags | Diagnostic Guides',
+  description: 'Identify severe Georgia home defects: synthetic stucco moisture, aluminum wiring, Federal Pacific panels & polybutylene pipes before buying. Protect your equity!',
   keywords: [
     'Atlanta home inspection defects',
     'stucco moisture inspection Atlanta',

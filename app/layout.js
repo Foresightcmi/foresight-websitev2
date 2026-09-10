@@ -28,11 +28,11 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL('https://www.fhinspectionsatl.com'),
   title: {
-    default: 'Atlanta Home Inspections | Certified Master Inspector | Foresight',
+    default: 'Atlanta Home Inspections | 2-Inspector Team From $345 | Foresight',
     template: '%s | Foresight',
   },
-  description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium, thorough home inspections across Metro Atlanta with a $10,000 Elite Master Inspection Warranty.',
-  keywords: ['Home Inspection', 'Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two person inspection team home inspection', 'home inspection warranty', 'best two person inspection team home inspection in Metro Atlanta', 'thermal imaging home inspector Lithonia GA', '11-month new construction warranty inspection', 'Foresight Home Inspections reviews'],
+  description: '4.9★ Rated. Two certified inspectors on every job led by a Certified Master Inspector®. Free FLIR thermal, 4K drone scans & $10,000 warranty. From $345. Instant quote online!',
+  keywords: ['Home Inspection Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection cost', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two inspector team home inspection', 'home inspection warranty', 'best home inspector in Metro Atlanta', 'thermal imaging home inspection Atlanta', '11-month new construction warranty inspection', 'Foresight Home Inspections reviews'],
   robots: {
     index: true,
     follow: true,

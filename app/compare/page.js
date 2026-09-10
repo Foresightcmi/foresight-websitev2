@@ -13,8 +13,8 @@ function loadComparisons() {
 }
 
 export const metadata = {
-  title: 'Home Inspection Comparison Guides | Foresight Atlanta',
-  description: 'Expert comparison frameworks for Atlanta homebuyers. Compare two-inspector teams vs solo inspectors, 11-month builder warranties, and pre-purchase inspections vs appraisals.',
+  title: 'Home Inspection Comparison Guides | Team vs Solo Inspector',
+  description: 'Compare two-inspector teams vs solo operators, 11-month builder warranties vs walkthroughs, and home inspections vs appraisals in Atlanta. Choose the best protection!',
   keywords: [
     'two inspector team vs single inspector',
     '11 month warranty vs builder walkthrough',

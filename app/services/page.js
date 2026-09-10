@@ -4,8 +4,8 @@ import ValueComparison from '../components/ValueComparison';
 import QualityChecklist from '../components/QualityChecklist';
 
 export const metadata = {
-  title: 'Home Inspection Services Atlanta | From $295',
-  description: 'View our comprehensive home inspection services starting at $295. We offer standard buyer inspections, pre-listing inspections, WDO/termite, pool/spa, and radon testing across Atlanta.',
+  title: 'Home Inspection Services Atlanta | Pricing From $295',
+  description: 'Compare Atlanta home inspection pricing & services. 2 certified inspectors on every job, free thermal imaging, 4K drone scans & $10,000 warranty. Single-family from $345, condos $295.',
   keywords: [
     'home inspection services Atlanta',
     'home inspection pricing Georgia 2026',
