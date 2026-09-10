@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Script from 'next/script';
+import GooglePreferredSource from '../components/GooglePreferredSource';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -289,6 +290,13 @@ export default function DueDiligencePage() {
                 </p>
               </details>
             ))}
+          </div>
+
+          <div style={{ marginTop: '3rem' }}>
+            <GooglePreferredSource 
+              customTitle="Make Foresight a Preferred Source on Google AI"
+              customText="Need Georgia real estate due diligence guides, repair cost benchmarks, and inspection timelines? Click below to make Foresight a preferred source in your Google AI search results so you always find our certified master inspector data first."
+            />
           </div>
         </div>
       </section>

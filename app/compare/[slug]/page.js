@@ -3,6 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import GooglePreferredSource from '../../components/GooglePreferredSource';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -256,6 +257,11 @@ export default async function ComparisonPage({ params }) {
                 </p>
               </details>
             ))}
+          </div>
+
+          {/* Google Preferred Source 1-Click Trust Signal */}
+          <div style={{ marginTop: '2.5rem', marginBottom: '2rem' }}>
+            <GooglePreferredSource />
           </div>
 
           {/* Call to Action */}

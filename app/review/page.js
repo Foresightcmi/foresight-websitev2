@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import GooglePreferredSource from '../components/GooglePreferredSource';
 
 export const metadata = {
   title: 'Leave a Review | Foresight Home Inspections Atlanta',
@@ -172,6 +173,13 @@ export default function ReviewPage() {
           >
             Your honest feedback helps us improve and helps other Atlanta homebuyers make informed decisions.
           </p>
+        </div>
+
+        <div style={{ marginTop: '2rem', textAlign: 'left' }}>
+          <GooglePreferredSource 
+            customTitle="Make Foresight a Preferred Source on Google AI"
+            customText="Already left a review? Click below to make Foresight a preferred source in your Google AI search results. You will always see our seasonal home maintenance advisories and Atlanta repair cost guides prioritized when you search."
+          />
         </div>
       </div>
     </section>
