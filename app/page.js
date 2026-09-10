@@ -235,6 +235,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 🎵 OFFICIAL FORESIGHT THEME SONG SECTION */}
+      <section style={{ 
+        background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', 
+        borderTop: '2px solid rgba(212,175,55,0.4)', 
+        borderBottom: '2px solid rgba(212,175,55,0.4)', 
+        padding: '2.5rem 1rem', 
+        color: '#FFFFFF' 
+      }}>
+        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid var(--color-gold)', borderRadius: '9999px', padding: '0.4rem 1.2rem', color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
+            <span>🎵</span> Official Foresight Theme Song
+          </div>
+          <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>
+            &ldquo;Hindsight is Expensive. Call Foresight.&rdquo;
+          </h2>
+          <p style={{ color: '#94A3B8', fontSize: '1rem', maxWidth: '600px', margin: '0 auto 1.5rem', lineHeight: 1.5 }}>
+            Listen to our official anthem featuring the 678-480-2110 inspection hotline and our two-inspector guarantee.
+          </p>
+          
+          <div style={{ 
+            background: 'rgba(15, 23, 42, 0.7)', 
+            border: '1px solid rgba(255, 255, 255, 0.12)', 
+            borderRadius: '1rem', 
+            padding: '1.25rem 1.5rem', 
+            boxShadow: '0 10px 25px -5px rgba(0,0,0,0.5)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem'
+          }}>
+            <audio 
+              controls 
+              preload="metadata" 
+              src="/audio/foresight-anthem.mp3" 
+              style={{ width: '100%', maxWidth: '600px', height: '48px', outline: 'none' }}
+            >
+              Your browser does not support the audio element.
+            </audio>
+            
+            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '600px', fontSize: '0.82rem', color: '#94A3B8', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <span>📞 Inspection Hotline: <strong>678-480-2110</strong></span>
+              <span>🛡️ Two Inspectors On Every Job</span>
+              <a href="/audio/foresight-anthem.mp3" download="foresight-anthem.mp3" style={{ color: 'var(--color-gold)', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                ⬇️ Download MP3
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 📋 HOW IT WORKS — 4-Step Process Flow */}
       <ProcessSteps />
 

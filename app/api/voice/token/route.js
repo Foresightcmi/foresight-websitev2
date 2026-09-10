@@ -31,7 +31,7 @@ export async function POST() {
         uses: 1,
         expireTime,
         liveConnectConstraints: {
-          model: 'models/gemini-3.1-flash-live-preview',
+          model: 'models/gemini-2.0-flash-exp',
           config: {
             responseModalities: ['AUDIO']
           }
@@ -44,7 +44,7 @@ export async function POST() {
     return NextResponse.json({
       mode: 'live',
       token: tokenName,
-      model: 'models/gemini-3.1-flash-live-preview',
+      model: 'models/gemini-2.0-flash-exp',
       voiceName: 'Charon',
       wsUrl: `wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContentConstrained?access_token=${tokenName}`
     });

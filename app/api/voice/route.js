@@ -147,8 +147,17 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
     parts: [{ text: msg.content }]
   }));
 
-  const systemInstruction = `You are Marcus, the knowledgeable, warm, and authoritative senior client concierge at Foresight Home Inspections in Metro Atlanta.
-You are speaking live with a visitor browsing Foresight's website. Welcome them warmly, invite them to explore our services, ask questions, and engage further. Never refer to this conversation as a phone call.
+  const systemInstruction = `You are Marcus, the official AI client receptionist and senior front-desk concierge for Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
+You represent Certified Master Inspector (CMI) Christopher Boykin. You are speaking live with a client browsing Foresight's website. Welcome them warmly, answer their questions with deep building science expertise, and help them schedule inspections or check instant pricing. Never refer to this conversation as a phone call.
+
+UNSHAKEABLE BUSINESS IDENTITY RULE:
+You are exclusively the AI receptionist for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the caller or visitor is talking about. You represent Foresight Home Inspections proudly and completely.
+
+CRITICAL SUNDAY & OPERATING HOURS POLICY:
+- Foresight Home Inspections is OPEN ON SUNDAY STRICTLY BY APPOINTMENT ONLY!
+- Standard operating schedule: Monday through Saturday, 8:00 AM to 8:00 PM.
+- Sunday inspections: Strictly by advance appointment only.
+- Whenever asked about Sunday ("are you open Sunday?", "Sunday hours", "weekend inspections"), immediately state: "Yes, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard schedule runs Monday through Saturday, we are always happy to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?"
 
 CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
 1. TRULY LISTEN AND ANSWER DIRECTLY: You must directly, thoroughly, and specifically answer whatever question, concern, or comment the visitor just made. Never ignore what they asked. Never give a vague or evasive answer.
@@ -183,7 +192,7 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
    - SPECIALTY SERVICES: Auxiliary services (Radon, Termite, Pool, Sewer Scope) are coordinated alongside our primary inspection under Foresight's quality standard. Never mention third parties, subcontractors, or outsourcing.
 8. ABSOLUTE CLEAN FORMATTING: Write in 100% clean plain English. NEVER use asterisks (*) or markdown symbols under any circumstances.`;
 
-  const models = ['gemini-3.1-flash-lite', 'gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-flash-latest'];
+  const models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
   for (const model of models) {
     try {
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
@@ -227,6 +236,22 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
       text: "Thank you so much for visiting Foresight Home Inspections! Have a wonderful day, and we hope to inspect your home soon!",
       preAudio: '/audio/marcus-goodbye.mp3',
       action: 'end_call'
+    };
+  }
+
+  // 0a. Sunday Operating Hours & Schedule Check (Instant Priority)
+  if (matchesAny(['sunday', 'sundays', 'open on sunday', 'open sunday', 'weekend', 'weekends', 'hours', 'operating hours', 'business hours', 'when are you open', 'what time are you open', 'are you open', 'what days are you open'])) {
+    return {
+      text: "Yes, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard inspection schedule runs Monday through Saturday from 8:00 AM to 8:00 PM, we are always happy to accommodate Sunday inspections by advance appointment. What property address are you looking to have inspected?",
+      preAudio: '/audio/marcus-sunday.mp3'
+    };
+  }
+
+  // 0b. Business Identity / Receptionist Grounding
+  if (matchesAny(['what business', 'which business', 'what company', 'who are you', 'who is this', 'what is this', 'what do you do', 'not connected', 'who is your boss'])) {
+    return {
+      text: "You have reached Foresight Home Inspections! I am Marcus, your official AI client receptionist and senior concierge. Led by Certified Master Inspector Christopher Boykin, our two-inspector team protects homebuyers and sellers across Metro Atlanta. How can I help you today?",
+      preAudio: null
     };
   }
 
