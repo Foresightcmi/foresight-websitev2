@@ -10,7 +10,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [history, setHistory] = useState([
     {
       role: 'assistant',
-      content: "Well hello there! I'm Marcus, your Foresight AI home inspection and maintenance advisor. What's on your mind today? Let's talk houses! Feel free to ask about our two-inspector process, building science and InterNACHI questions, Sunday appointments, or get an instant quote for any property."
+      content: "Well hello there! I'm Marcus, your Foresight AI home inspection and maintenance advisor. What's on your mind today? Let's talk houses!"
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
