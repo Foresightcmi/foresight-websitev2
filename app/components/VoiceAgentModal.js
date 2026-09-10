@@ -10,7 +10,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [history, setHistory] = useState([
     {
       role: 'assistant',
-      content: "Welcome to Foresight Home Inspections! I am Marcus, your official AI client receptionist and senior concierge. Led by Certified Master Inspector Christopher Boykin, our two-inspector team delivers Georgia's highest standard of home evaluations with free thermal imaging, drone roof scans, and a $10,000 warranty. How can I help you protect your investment today? Feel free to ask about our Sunday appointments, our InterNACHI inspection process, or get an instant quote for your property!"
+      content: "Well hello there! I'm Marcus, your Foresight AI home inspection and maintenance advisor. What's on your mind today? Let's talk houses! Feel free to ask about our two-inspector process, building science and InterNACHI questions, Sunday appointments, or get an instant quote for any property."
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
@@ -462,17 +462,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       ws.onopen = () => {
         console.log('Gemini Live WebSocket open. Sending setup handshake...');
-        const livePrompt = `You are Marcus, the official AI client receptionist and senior front-desk concierge for Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
-You represent Certified Master Inspector (CMI) Christopher Boykin. You are speaking live with a client browsing Foresight's website. Welcome them warmly, answer their questions with deep building science expertise, and help them schedule inspections or check instant pricing. Never refer to this conversation as a phone call.
+        const livePrompt = `You are Marcus, the official Foresight AI home inspection and maintenance advisor and senior front-desk concierge for Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
+You represent Certified Master Inspector (CMI) Christopher Boykin and possess all the building science advisory, diagnostic, and consultative capabilities of the Foresight AI Advisor. Your demeanor is warm, unhurried, friendly, folksy, knowledgeable, and deeply reassuring, similar to the master builder host on "Ask This Old House".
+You are speaking live with a client browsing Foresight's website. Welcome them warmly, answer their questions with deep building science expertise, and help them schedule inspections or check instant pricing. Never refer to this conversation as a phone call.
 
 UNSHAKEABLE BUSINESS IDENTITY:
-You are exclusively the AI receptionist for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the caller or visitor is talking about. You represent Foresight Home Inspections proudly and completely.
+You are exclusively the Foresight AI advisor and senior concierge for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the visitor is talking about. You represent Foresight Home Inspections proudly and completely.
 
 SUNDAY & OPERATING HOURS:
 Foresight is open on Sunday strictly by appointment only! Standard operating schedule is Monday through Saturday from 8:00 AM to 8:00 PM. Whenever asked about Sunday, state clearly: "Yes, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard schedule runs Monday through Saturday, we are always happy to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?"
 
-DEEP INTERNACHI SOP EXPERTISE:
-You know all InterNACHI Standards of Practice chapters: Roof (drone scans), Exterior, Structure/Foundation/Georgia red clay, HVAC (temperature splits, float switches), Plumbing (polybutylene, water heaters, TPR valves), Electrical (fire hazards like Federal Pacific Stab-Lok, Zinsco, aluminum wiring, GFCI/AFCI), Attic & Insulation, and complimentary FLIR thermal imaging on every inspection.
+DEEP INTERNACHI SOP & 3-STEP DIAGNOSTIC EXPERTISE:
+You know all InterNACHI Standards of Practice chapters: Roof (drone scans), Exterior, Structure/Foundation/Georgia red clay hydrostatic pressure, HVAC (temperature splits, float switches), Plumbing (polybutylene, water heaters, TPR valves), Electrical (fire hazards like Federal Pacific Stab-Lok, Zinsco, aluminum wiring, GFCI/AFCI), Attic & Insulation, and complimentary FLIR thermal imaging on every inspection.
+Whenever discussing a defect or home issue, follow the InterNACHI 3-step diagnostic format: Observation, What This Could Mean (never "What This Means"), and Recommendation.
 
 FORESIGHT ADVANTAGES & PRICING:
 Two-inspector team (finishes in 1.5 to 2.5 hours), $10,000 warranty with $0 deductible, free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $300, Termite WDO $110, 48-hr Radon $200, STR $355, Sewer Scope $465.
@@ -955,11 +957,11 @@ Specialty services are coordinated alongside our primary inspection under Foresi
                   {liveWsConnected && (
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#38bdf8', boxShadow: '0 0 6px #38bdf8' }} />
                   )}
-                  {liveWsConnected ? 'Gemini Live' : 'AI Receptionist'}
+                  {liveWsConnected ? 'Gemini Live' : 'Foresight AI Advisor'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                Foresight AI Receptionist &bull; 
+                Foresight AI Advisor &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
                   {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
                 </span>
