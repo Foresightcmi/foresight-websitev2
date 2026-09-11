@@ -188,11 +188,41 @@ export default function Services() {
     ]
   };
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Foresight Home Inspection Services Package",
+    "description": "Comprehensive two-inspector home inspections across Metro Atlanta led by Certified Master Inspector Christopher Boykin. Includes FLIR thermal imaging, aerial drone scans, and $10,000 warranty.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Foresight Home Inspections"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "295.00",
+      "highPrice": "465.00",
+      "priceCurrency": "USD",
+      "offerCount": "10",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.fhinspectionsatl.com/services"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48",
+      "bestRating": "5"
+    }
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <script
         type="application/ld+json"

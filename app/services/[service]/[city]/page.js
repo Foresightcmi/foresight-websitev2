@@ -181,7 +181,7 @@ export default async function ServiceCityPage({ params }) {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "43",
+      "reviewCount": "48",
       "bestRating": "5"
     },
     "offers": {
@@ -193,6 +193,31 @@ export default async function ServiceCityPage({ params }) {
         "@type": "City",
         "name": cityName
       }
+    }
+  };
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${serviceName} Package in ${cityName}, GA`,
+    "description": `Comprehensive ${serviceName.toLowerCase()} in ${cityName}, GA by Certified Master Inspector Christopher Boykin of Foresight Home Inspections. Includes professional testing equipment, full digital report within 24 hours, and $10,000 warranty protection.`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Foresight Home Inspections"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": `${serviceData.price.replace(/[^0-9]/g, '') || "200"}.00`,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": canonicalUrl,
+      "validFrom": "2026-01-01"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48",
+      "bestRating": "5"
     }
   };
 
@@ -224,6 +249,10 @@ export default async function ServiceCityPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -269,6 +298,31 @@ export default async function ServiceCityPage({ params }) {
             >
               📞 Call 678-480-2110
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── AEO / GEO DIRECT ANSWER SUMMARY BOX (AI Overviews & Answer Engines) ── */}
+      <section style={{ background: '#f8fafc', padding: '2rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container" style={{ maxWidth: '950px' }}>
+          <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span>⚡</span> {serviceName} in {cityName}, GA: Quick Facts &amp; Pricing
+              </h2>
+              <span style={{ fontSize: '0.8rem', background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', padding: '0.2rem 0.6rem', borderRadius: '4px', fontWeight: 600 }}>
+                Verified 2026 Standards
+              </span>
+            </div>
+            <p style={{ fontSize: '1rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
+              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Led by Certified Master Inspector® Christopher Boykin with two certified inspectors on every appointment, evaluations include high-tech diagnostic equipment, digital reports delivered within 24 hours, and our included $10,000 Elite Warranty with $0 deductible.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#475569' }}>
+              <div><strong>💵 Price:</strong> {serviceData.price}</div>
+              <div><strong>👥 Inspectors:</strong> 2 Certified on Site</div>
+              <div><strong>⭐ Rating:</strong> 4.9★ (48 Reviews)</div>
+              <div><strong>🛡️ Warranty:</strong> $10,000 Included</div>
+            </div>
           </div>
         </div>
       </section>
