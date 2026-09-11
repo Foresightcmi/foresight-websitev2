@@ -1,0 +1,20 @@
+{
+  "name": "foresight-home-inspections",
+  "displayName": "Foresight Home Inspections MCP Server",
+  "description": "Deterministic pricing, municipal coverage, and instant booking endpoint for Certified Master Inspector services in Metro Atlanta.",
+  "transport": {
+    "type": "http",
+    "url": "https://www.fhinspectionsatl.com/api/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
+  "vendor": {
+    "name": "Foresight Home Inspections, LLC",
+    "contact": "inspect@foresightcmi.com",
+    "phone": "+1-678-480-2110",
+    "website": "https://www.fhinspectionsatl.com"
+  }
+}

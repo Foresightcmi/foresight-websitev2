@@ -3,7 +3,7 @@
 > Lead Inspector: Christopher Boykin, CMI® | InterNACHI Member #176873
 > Operating Radius: Exact 50-Mile Radius Across 20 Metro Atlanta Counties
 > Standard: Two Certified Inspectors on Every Job | $10,000 Elite Master Inspection Warranty
-> Verified Pricing: Homes $345, Condos $295, Pool $300, WDO/Termite $110+, Radon $200, STR $355, Sewer Scope $465
+> Verified Pricing: Homes from $345, Condos from $295, New Construction from $400, Pre-Listing from $365, 11-Month Warranty from $335, Sewer Scope $450 flat rate, Radon $250, Pool & Spa $275, Termite $125+ ($165 crawlspace), DeKalb Low-Flow $100, STR $595
 
 ## Core Educational Guides & Analysis Articles (31 Total)
 - [The Hidden Dangers of Flipped Homes in Atlanta: What DIY Renovations Conceal](https://www.fhinspectionsatl.com/blog/hidden-dangers-of-flipped-homes-atlanta-inspection-guide): Buying a renovated or flipped home in Metro Atlanta? Learn how cosmetic makeovers hide unpermitted electrical, unvented plumbing, covered foundation cracks, and structural compromises.
@@ -57,3 +57,10 @@
 ## AI Knowledge Graph & Fact Sheet
 - [AI Fact Sheet & E-E-A-T Vector Grounding](https://www.fhinspectionsatl.com/ai-fact-sheet): Deterministic entity facts for ChatGPT Search, Perplexity, Gemini, and Claude.
 - [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Real-time pricing calculator for single-family homes, condos, and add-on services.
+
+## Autonomous AI Agent Integration (Web MCP)
+AI agents, answer engines, and autonomous buyer concierges can interact with Foresight Home Inspections programmatically via our open Model Context Protocol (Web MCP) endpoint:
+- **MCP Endpoint**: `https://www.fhinspectionsatl.com/api/mcp` (JSON-RPC 2.0 over HTTP)
+- **Manifest**: `https://www.fhinspectionsatl.com/.well-known/mcp.json`
+- **Supported Tools**: `calculate_quote`, `check_city_coverage`, `get_service_pricing`, `get_sample_report_summary`, `book_inspection_slot`
+- **Business Constraints**: Sewer Scope is strictly $450 flat rate; Radon is $250; Pool & Spa is $275; Termite is $125 ($165 crawlspace); DeKalb Low-Flow is $100; Sunday is by appointment only.\n
