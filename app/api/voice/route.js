@@ -3,49 +3,49 @@ import nodemailer from 'nodemailer';
 import { recordLead } from '../../../lib/leads';
 
 // Calculation helper strictly adhering to Foresight pricing engine
-function calculateQuoteDetails({ propertyType = 'single-family', serviceType = 'buyer', sqft = 2000, foundation = 'slab', ageTier = 'under-25', addons = {} }) {
+function calculateQuoteDetails({ propertyType = 'single-family', serviceType = 'buyer', sqft = 2000, foundation = 'slab', ageTier = 'under-50', addons = {} }) {
   let base = 345;
   const parsedSqft = Number(sqft) || 2000;
 
   if (serviceType === 'str') {
-    base = 355;
+    base = 595;
   } else if (propertyType === 'condo' || serviceType === 'condo') {
     if (parsedSqft <= 1000) base = 295;
     else base = 325;
   } else {
     if (parsedSqft <= 1000) base = 345;
     else if (parsedSqft <= 1500) base = 375;
-    else if (parsedSqft <= 2000) base = 410;
-    else if (parsedSqft <= 2500) base = 435;
-    else if (parsedSqft <= 3000) base = 465;
-    else if (parsedSqft <= 3500) base = 485;
-    else if (parsedSqft <= 4000) base = 500;
-    else if (parsedSqft <= 4500) base = 555;
-    else if (parsedSqft <= 5000) base = 595;
-    else if (parsedSqft <= 5500) base = 635;
-    else {
-      const additionalChunks = Math.ceil((parsedSqft - 5500) / 500);
-      base = 635 + (additionalChunks * 50);
-    }
+    else if (parsedSqft <= 2000) base = 425;
+    else if (parsedSqft <= 2500) base = 475;
+    else if (parsedSqft <= 3000) base = 525;
+    else if (parsedSqft <= 3500) base = 575;
+    else if (parsedSqft <= 4000) base = 625;
+    else if (parsedSqft <= 4500) base = 675;
+    else if (parsedSqft <= 5000) base = 775;
+    else if (parsedSqft <= 5500) base = 875;
+    else base = 985;
   }
 
   let extra = 0;
   if (serviceType !== 'str') {
-    if (ageTier === '25-49') extra += 50;
-    else if (ageTier === 'over-50') extra += 95;
+    if (ageTier === 'over-50') extra += 75;
   }
 
   if (propertyType === 'single-family' && serviceType !== 'str') {
-    if (foundation === 'crawlspace') extra += 85;
-    if (foundation === 'basement') extra += 75;
+    if (foundation === 'crawlspace') extra += 75;
+    if (foundation === 'basement') extra += 250;
   }
 
   const addonBreakdown = [];
-  if (addons.radon) { extra += 200; addonBreakdown.push({ name: 'Radon Gas Testing', price: 200 }); }
-  if (addons.termite) { extra += 110; addonBreakdown.push({ name: 'Termite / WDO Inspection', price: 110 }); }
-  if (addons.pool) { extra += 300; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 300 }); }
-  if (addons.sewer) { extra += 465; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 465 }); }
-  if (addons.lowFlow) { extra += 125; addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 125 }); }
+  if (addons.radon) { extra += 250; addonBreakdown.push({ name: 'Radon Gas Testing', price: 250 }); }
+  if (addons.termite) { 
+    const termitePrice = foundation === 'crawlspace' ? 165 : 125;
+    extra += termitePrice; 
+    addonBreakdown.push({ name: 'Termite / WDO Inspection', price: termitePrice }); 
+  }
+  if (addons.pool) { extra += 275; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 275 }); }
+  if (addons.sewer) { extra += 450; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 450 }); }
+  if (addons.lowFlow) { addonBreakdown.push({ name: 'DeKalb Low Flow Certification (Included FREE)', price: 0 }); }
   if (addons.buildfax) { extra += 15; addonBreakdown.push({ name: 'Permit History Report', price: 15 }); }
 
   const total = base + extra;
@@ -184,10 +184,10 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
    - The remaining 50% balance is due after on-site completion before the official inspection report is released.
    - Explain this policy whenever booking, scheduling, deposits, or next steps are discussed.
 4. CIRCUMSTANTIAL & REASONABLE UPSELLS (NEVER PUSHY):
-   - Older homes (pre-1990 / 25+ years old): Sewer Scope Camera ($465) to check for clay or cast iron collapse.
-   - Homes with crawlspaces, basements, or in the Atlanta granite belt: 48-Hour Continuous Radon Gas Testing ($200).
-   - Properties in Georgia / buyers with mortgages: Termite/WDO clearance letter ($110).
-   - Homes with pools or spas: Pool & Spa inspection ($300).
+   - Older homes (pre-1990 / 25+ years old): Sewer Scope Camera ($450) to check for clay or cast iron collapse.
+   - Homes with crawlspaces, basements, or in the Atlanta granite belt: 48-Hour Continuous Radon Gas Testing ($250).
+   - Properties in Georgia / buyers with mortgages: Termite/WDO clearance letter ($125+).
+   - Homes with pools or spas: Pool & Spa inspection ($275).
    - CRITICAL RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be aggressive or pushy. If the customer declines or says 'no', ALWAYS accept graciously immediately without friction or rebuttal (e.g. 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined recommendation.
 5. CONCISE & SPOKEN NATURAL AUDIO: Keep your answers to 2 to 4 punchy, conversational sentences (around 35 to 55 words).
 6. ALL DISTINCTIVE FORESIGHT WEBSITE BENEFITS & PRICING:
@@ -195,7 +195,7 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
    - Complimentary $10,000 Master Protection Warranty with zero deductible.
    - Complimentary FLIR thermal imaging and 4K aerial drone scans standard on every inspection.
    - 24-hour digital reports with interactive Create Request List (CRL) tool.
-   - Single-family homes start at $345, condos at $295. Add-ons: Pool $300, Termite WDO $110, Radon $200, STR $355, Sewer Scope $465.
+   - Single-family homes start at $345, condos at $295. Add-ons: Pool $275, Termite WDO $125+, Radon $250, STR $595, Sewer Scope $450.
 7. ABSOLUTE CLEAN FORMATTING: Write in 100% clean plain English. NEVER use asterisks (*) or markdown symbols under any circumstances.`;
 
   const models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
@@ -475,7 +475,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Older Homes Contextual Sewer Scope Recommendation
   if (matchesAny(['older home', 'historic home', 'pre-1990', '1960', '1970', '1980', 'cast iron pipe', 'clay pipe', 'tree roots', 'root intrusion'])) {
     return {
-      text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 465 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
+      text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 450 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
       preAudio: '/audio/marcus-upsell-sewer.mp3'
     };
   }
@@ -483,7 +483,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Radon (Contextual Upsell & Info)
   if (matchesAny(['radon'])) {
     return {
-      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 200 dollars. Would you like to add that to your estimate, or keep it as is?",
+      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 250 dollars. Would you like to add that to your estimate, or keep it as is?",
       preAudio: '/audio/marcus-upsell-radon.mp3'
     };
   }
@@ -491,7 +491,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Termite (Contextual Upsell & Info)
   if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation', 'wood destroying'])) {
     return {
-      text: "Because Georgia is in the termite belt and most lenders require an official clearance letter, we can bundle your official Georgia termite letter for just 110 dollars. Would you like that included, or do you already have that covered?",
+      text: "Because Georgia is in the termite belt and most lenders require an official clearance letter, we can bundle your official Georgia termite letter starting at 125 dollars. Would you like that included, or do you already have that covered?",
       preAudio: '/audio/marcus-upsell-termite.mp3'
     };
   }
@@ -499,14 +499,14 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Sewer Scope (Instant Audio)
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
-      text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 465 dollars to inspect the underground line all the way to the municipal main. It is one of the smartest investments you can make during due diligence. Shall I reserve a slot for your sewer scope?",
+      text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 450 dollars to inspect the underground line all the way to the municipal main. It is one of the smartest investments you can make during due diligence. Shall I reserve a slot for your sewer scope?",
       preAudio: null
     };
   }
 
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
-      text: "We provide comprehensive pool and spa inspections for 300 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
+      text: "We provide comprehensive pool and spa inspections for 275 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
       preAudio: null
     };
   }

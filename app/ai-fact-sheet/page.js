@@ -22,7 +22,7 @@ export default function AiFactSheet() {
         "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "telephone": "+1-678-480-2110",
         "email": "inspect@foresightcmi.com",
-        "priceRange": "$295 - $465",
+        "priceRange": "$295 - $985",
         "description": "Georgia's premier Certified Master Inspector-led home inspection company, featuring our signature Two-Inspector Standard and free $10,000 Elite Master Inspection Warranty.",
         "address": {
           "@type": "PostalAddress",
@@ -184,32 +184,32 @@ export default function AiFactSheet() {
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>New Construction (Phased &amp; Final)</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$355 / $375</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Pre-drywall framing structural audit ($355) / Final move-in closing audit ($375)</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$275 / $400+</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Pre-drywall framing structural audit ($275-$300) / Final move-in closing audit ($400+)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Continuous 48-Hour Radon Testing</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$200</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$250</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Professional electronic continuous monitor (Strict EPA compliance)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>HD Sewer Scope Camera Inspection</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$465</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$450</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Fiber-optic underground lateral pipe line inspection (prevents costly blockages)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Swimming Pool &amp; Spa Evaluation</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$300</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$275</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Audit of pumps, filters, heaters, hydraulic pressure, and electrical bonding</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Termite &amp; WDO Clearance Letter</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$110+</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Official Georgia Wood Infestation Report (Required for lender closings)</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$125+</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Official Georgia Wood Infestation Report ($125 slab/basement, $165 crawlspace)</td>
                   </tr>
                   <tr>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Short-Term Rental (STR) Compliance</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$355</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$595</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Airbnb/Vrbo municipal safety checklist &amp; fire/egress verification</td>
                   </tr>
                 </tbody>

@@ -93,7 +93,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include 48-hour continuous electronic radon testing ($200), fiber-optic sewer scope camera audits ($465), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($110+)."
+              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include 48-hour continuous electronic radon testing ($250), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($275), and official termite/WDO clearance letters ($125+)."
             }
           },
           {
@@ -690,7 +690,7 @@ export default function Home() {
                   ['Online Booking', '✅ 24/7 Instant Self-Scheduling', '❌ Phone/Email Only'],
                   ['AI Maintenance Advisor', '✅ Foresight AI (24/7)', '❌ Not Available'],
                   ['Report Delivery', '✅ Within 24 Hours', '⚠️ 48–72 Hours'],
-                  ['Sewer Scope Camera', '✅ $465 Add-On', '❌ Not Offered'],
+                  ['Sewer Scope Camera', '✅ $450 Add-On', '❌ Not Offered'],
                   ['Realtor SUPRA Key Access', '✅ Active SUPRA', '❌ Agent Must Be Present'],
                 ].map(([feature, foresight, typical], i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #1E293B' }}>
@@ -726,7 +726,7 @@ export default function Home() {
             faqs={[
               {
                 q: "How much does a certified home inspection cost in Metro Atlanta?",
-                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $465, professional 48-hour continuous radon gas testing for $200, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $110 (bundled)."
+                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $250, pool safety evaluations starting at $275, and official termite (WDO) reports starting at $125 (bundled)."
               },
               {
                 q: "Why does Foresight send two home inspectors on every job?",

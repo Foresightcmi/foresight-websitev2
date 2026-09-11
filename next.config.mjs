@@ -22,17 +22,17 @@ const nextConfig = {
         source: '/sample-report/(.*)',
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
           },
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://www.fhinspectionsatl.com https://fhinspectionsatl.com http://localhost:3000;",
+            value: 'frame-ancestors *',
           },
         ],
       },
       {
-        source: '/(.*)',
+        source: '/((?!sample-report).*)',
         headers: [
           {
             key: 'X-Frame-Options',

@@ -2,10 +2,10 @@
   {
     "slug": "radon-testing",
     "name": "Radon Gas Testing",
-    "metaTitle": "Radon Gas Testing in {city}, GA | 48-Hr EPA Monitor $200",
-    "metaDescription": "EPA-certified 48-hour continuous radon testing in {city}, GA. Precision hourly pCi/L graph & same-day report. Flat $200 rate. Call 678-480-2110!",
-    "price": "$200+",
-    "priceDetails": "$200 when bundled with a home inspection | $250 standalone",
+    "metaTitle": "Radon Gas Testing in {city}, GA | 48-Hr EPA Monitor $250",
+    "metaDescription": "EPA-certified 48-hour continuous radon testing in {city}, GA. Precision hourly pCi/L graph & same-day report. Flat $250 rate. Call 678-480-2110!",
+    "price": "$250",
+    "priceDetails": "$250 continuous 48-hour electronic monitoring test",
     "icon": "\u2622\ufe0f",
     "badge": "EPA Recommended",
     "heroSub": "Radon is an invisible, odorless radioactive gas and the #1 cause of lung cancer in non-smokers. Protect your family in {city} with continuous electronic monitoring.",
@@ -27,7 +27,7 @@
       },
       {
         "q": "How much does radon testing cost in {city}, GA?",
-        "a": "Radon testing in {city} costs $200 when bundled with a comprehensive home inspection package, or $250 as a standalone service. Every inspection also includes our $10,000 Elite Master Inspection Warranty."
+        "a": "Radon testing in {city} costs $250 flat rate continuous electronic testing. Every inspection also includes our $10,000 Elite Master Inspection Warranty."
       }
     ],
     "riskContext": "Radon levels in Georgia can spike unexpectedly during heavy rainfall and winter heating seasons when soil gases are drawn upward into living spaces.",
@@ -70,10 +70,10 @@
   {
     "slug": "sewer-scope-inspection",
     "name": "Sewer Scope Inspection",
-    "metaTitle": "Sewer Scope Camera Inspection in {city}, GA | HD Audit $465",
-    "metaDescription": "HD fiber-optic sewer scope camera inspection in {city}, GA. Pinpoint root intrusion, pipe bellies & cracks before closing. Flat $465. Video report included.",
-    "price": "$465",
-    "priceDetails": "$465 flat rate inspection with high-definition digital video report",
+    "metaTitle": "Sewer Scope Camera Inspection in {city}, GA | HD Audit $450",
+    "metaDescription": "HD fiber-optic sewer scope camera inspection in {city}, GA. Pinpoint root intrusion, pipe bellies & cracks before closing. Flat $450. Video report included.",
+    "price": "$450",
+    "priceDetails": "$450 flat rate inspection with high-definition digital video report",
     "icon": "\ud83d\udebd",
     "badge": "HD Video Included",
     "heroSub": "Replacing a collapsed sewer line can cost $5,000 to $15,000+. Inspect the underground sewer pipe from house to street in {city} before you close.",
@@ -95,7 +95,7 @@
       },
       {
         "q": "How much does a sewer camera scope cost in {city}, GA?",
-        "a": "Our sewer scope camera evaluation in {city} is a flat rate of $465, which includes the complete HD video inspection, distance mapping, and report."
+        "a": "Our sewer scope camera evaluation in {city} is a flat rate of $450, which includes the complete HD video inspection, distance mapping, and report."
       }
     ],
     "riskContext": "Homes built prior to 1985 in {city} often contain aging cast iron or clay tile sewer pipes that are reaching the end of their functional lifespan.",
@@ -106,8 +106,8 @@
     "name": "New Construction Inspection",
     "metaTitle": "New Construction Inspection in {city}, GA | Phased Audit +",
     "metaDescription": "Independent new construction & 11-month builder warranty inspection in {city}, GA. 2 certified inspectors catch builder defects before closing. Call 678-480-2110!",
-    "price": "$355+",
-    "priceDetails": "Condos from $355 | Single Family Homes from $395+",
+    "price": "$400+",
+    "priceDetails": "New construction inspections from $400+ based on square footage",
     "icon": "\ud83c\udfd7\ufe0f",
     "badge": "Builder Punch-List Ready",
     "heroSub": "Don't assume a new home is defect-free. Municipal inspectors only spend 15 minutes on site. Our two-inspector team performs a multi-hour audit in {city}.",
@@ -129,7 +129,7 @@
       },
       {
         "q": "How much is a new build inspection in {city}, GA?",
-        "a": "New construction final phase inspections in {city} start at $355+ for condos and $395+ for single-family homes, based on square footage. All inspections include thermal imaging and our $10,000 warranty."
+        "a": "New construction final phase inspections in {city} start at $400+ for single-family homes, based on square footage. All inspections include thermal imaging and our $10,000 warranty."
       }
     ],
     "riskContext": "Rapid development in {city} often results in unsealed roof penetration flashings, missing attic baffles, and improper grading that directs rainwater toward fresh foundations.",
@@ -138,10 +138,10 @@
   {
     "slug": "pool-inspection",
     "name": "Pool & Spa Inspection",
-    "metaTitle": "Pool & Spa Inspection in {city}, GA | Certified Safety $300",
-    "metaDescription": "Certified swimming pool & spa inspection in {city}, GA. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300. 24-hour report.",
-    "price": "$300",
-    "priceDetails": "$300 flat rate for residential pools & attached spas",
+    "metaTitle": "Pool & Spa Inspection in {city}, GA | Certified Safety $275",
+    "metaDescription": "Certified swimming pool & spa inspection in {city}, GA. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $275. 24-hour report.",
+    "price": "$275",
+    "priceDetails": "$275 flat rate for residential pools & attached spas",
     "icon": "\ud83c\udfca\u200d\u2642\ufe0f",
     "badge": "Electrical & Safety Audit",
     "heroSub": "Pool repairs can cost thousands in hidden pump, liner, or electrical failures. Protect your backyard oasis in {city} with a specialized pool evaluation.",
@@ -151,7 +151,7 @@
     "faqs": [
       {
         "q": "What is included in a pool inspection in {city}, GA?",
-        "a": "Our $300 pool inspection covers the pool/spa shell condition, coping and decking, pump and motor operation, filter pressure, heater ignition, salt cell/chlorinator systems, underwater lighting, GFCI ground bonding safety, plumbing leaks, and perimeter safety fencing."
+        "a": "Our $275 pool inspection covers the pool/spa shell condition, coping and decking, pump and motor operation, filter pressure, heater ignition, salt cell/chlorinator systems, underwater lighting, GFCI ground bonding safety, plumbing leaks, and perimeter safety fencing."
       },
       {
         "q": "Can a general home inspector in {city} inspect a pool?",
@@ -159,7 +159,7 @@
       },
       {
         "q": "How much does a pool inspection cost in {city}, GA?",
-        "a": "Our pool and spa inspection in {city} is a flat rate of $300 when performed alongside your primary home inspection."
+        "a": "Our pool and spa inspection in {city} is a flat rate of $275 when performed alongside your primary home inspection."
       },
       {
         "q": "What are common pool defects found in {city} homes?",
@@ -174,8 +174,8 @@
     "name": "Pre-Listing Seller Inspection",
     "metaTitle": "Pre-Listing Home Inspection in {city}, GA | Seller Pro +",
     "metaDescription": "Pre-listing seller home inspection in {city}, GA. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. Call today!",
-    "price": "$295+",
-    "priceDetails": "Condos from $295 | Single Family Homes from $345+",
+    "price": "$315+",
+    "priceDetails": "Condos from $315 | Single Family Homes from $365+",
     "icon": "\ud83d\udccb",
     "badge": "Maximize Sale Price",
     "heroSub": "Avoid deal-killing surprises during buyer due diligence. Inspect your {city} home before putting it on the market to sell faster and for top dollar.",
@@ -193,7 +193,7 @@
       },
       {
         "q": "How much is a pre-listing seller inspection in {city}, GA?",
-        "a": "Pre-listing seller inspections start at + for condos and + for single-family homes in {city}, including thermal imaging and full digital reports within 24 hours."
+        "a": "Pre-listing seller inspections start at $315+ for condos and $365+ for single-family homes in {city}, including thermal imaging and full digital reports within 24 hours."
       },
       {
         "q": "Can I share Foresight's pre-listing report with potential buyers in {city}?",

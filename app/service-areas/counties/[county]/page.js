@@ -86,7 +86,7 @@ export default async function CountyPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${county.name}, GA?`,
-      a: `Home inspections in ${county.name} start at $295 for condos/townhomes and $345 for single-family homes. Pre-listing inspections start at $365, and new construction final phase inspections start at $375. Ancillary services include Radon Testing ($200), Sewer Scope Camera ($465), Pool Inspection ($300), and Termite/WDO clearances ($110+). Visit our instant quote calculator for exact flat pricing.`
+      a: `Home inspections in ${county.name} start at $295 for condos/townhomes and $345 for single-family homes. Pre-listing inspections start at $365, and new construction final phase inspections start at $400+. Ancillary services include Radon Testing ($250), Sewer Scope Camera ($450), Pool Inspection ($275), and Termite/WDO clearances ($125+). Visit our instant quote calculator for exact flat pricing.`
     },
     {
       q: `What are the most common home inspection defects found in ${county.name}?`,
@@ -436,7 +436,7 @@ export default async function CountyPage({ params }) {
             <div className="grid grid-3" style={{ gap: '1.25rem' }}>
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
                 <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.5rem' }}>☢️</span>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Radon Gas Testing ($200)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Radon Gas Testing ($250)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   Continuous 48-hour diagnostic monitoring for invisible radon gas in {county.name} granite bedrock zones.
                 </p>
@@ -444,7 +444,7 @@ export default async function CountyPage({ params }) {
 
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
                 <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.5rem' }}>📹</span>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Sewer Scope Camera ($465)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Sewer Scope Camera ($450)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   High-definition camera inspection of main sewer lines to identify tree root breaks and offset joints.
                 </p>
@@ -452,7 +452,7 @@ export default async function CountyPage({ params }) {
 
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
                 <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.5rem' }}>🏊</span>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Pool &amp; Spa Evaluation ($300)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Pool &amp; Spa Evaluation ($275)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   Comprehensive inspection of pool pumps, filters, heaters, GFCI bonding, and coping safety.
                 </p>

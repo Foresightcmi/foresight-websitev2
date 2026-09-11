@@ -16,8 +16,11 @@ export default function QuoteClient({ showValueComparison = true }) {
     pool: false,
     sewer: false,
     lowFlow: false,
-    buildfax: false
+    buildfax: false,
+    airQuality: false,
+    detachedBuilding: false
   });
+  const [discount, setDiscount] = useState('none'); // 'none', 'first-time', 'realtor', 'repeat'
 
   const [leadName, setLeadName] = useState('');
   const [leadEmail, setLeadEmail] = useState('');
@@ -43,64 +46,104 @@ export default function QuoteClient({ showValueComparison = true }) {
   // Calculations logic
   const calculateTotal = () => {
     let base;
-    
+    const parsedSqft = Number(sqft) || 2000;
+
     if (serviceType === 'str') {
-      base = 355; // Keep base for STR compliance
-    } else if (serviceType === 'condo') {
-      const parsedSqft = Number(sqft);
-      if (parsedSqft <= 1000) base = 295;
-      else base = 325; // 1001-1800
+      base = 595; // Official PDF Page 6: SHORT-TERM RENTAL COMPLIANCE INSPECTION $595.00
+    } else if (serviceType === 'drywall') {
+      // Official PDF Page 5: PRE-DRYWALL/FRAMING INSPECTION $275.00 / $300.00
+      base = parsedSqft <= 2500 ? 275 : 300;
+    } else if (propertyType === 'condo') {
+      if (serviceType === 'seller') {
+        // Official PDF Page 4: PRE-LISTING CONDOMINIUM INSPECTION $315.00
+        base = parsedSqft <= 1000 ? 295 : 315;
+      } else {
+        // Official PDF Page 1: PRE-PURCHASE CONDOMINIUM INSPECTION: <=1000 $295, 1001-1800 $325
+        base = parsedSqft <= 1000 ? 295 : 325;
+      }
+    } else if (serviceType === 'new-construction') {
+      // Official PDF Page 3: FORESIGHT NEW CONSTRUCTION INSPECTION SERVICES
+      if (parsedSqft <= 1800) base = 400;
+      else if (parsedSqft <= 2500) base = 455;
+      else if (parsedSqft <= 3000) base = 485;
+      else if (parsedSqft <= 3500) base = 515;
+      else if (parsedSqft <= 4000) base = 545;
+      else if (parsedSqft <= 4500) base = 585;
+      else if (parsedSqft <= 5000) base = 625;
+      else if (parsedSqft <= 7000) base = 935;
+      else base = 985;
+    } else if (serviceType === 'seller') {
+      // Official PDF Page 4: FORESIGHT PRE-LISTING (SELLERS) INSPECTION SERVICES
+      if (parsedSqft <= 2000) base = 365;
+      else if (parsedSqft <= 2500) base = 385;
+      else if (parsedSqft <= 3000) base = 415;
+      else if (parsedSqft <= 3500) base = 425;
+      else if (parsedSqft <= 4000) base = 465;
+      else if (parsedSqft <= 4500) base = 485;
+      else if (parsedSqft <= 5000) base = 515;
+      else base = 575;
+    } else if (serviceType === 'warranty') {
+      // Official PDF Page 4 & 5: FORESIGHT 11TH MONTH WARRANTY INSPECTION SERVICES
+      if (parsedSqft <= 2000) base = 335;
+      else if (parsedSqft <= 2500) base = 365;
+      else if (parsedSqft <= 3000) base = 395;
+      else if (parsedSqft <= 3500) base = 425;
+      else if (parsedSqft <= 4000) base = 455;
+      else if (parsedSqft <= 4500) base = 485;
+      else if (parsedSqft <= 5000) base = 515;
+      else base = 575;
     } else {
-      // Pre-Purchase Buyer Home Inspection tiered pricing from fee schedule
-      const parsedSqft = Number(sqft) || 2000;
+      // Official PDF Page 1 & 2: FORESIGHT PRE-PURCHASE (BUYERS) HOME INSPECTION
       if (parsedSqft <= 1000) base = 345;
       else if (parsedSqft <= 1500) base = 375;
-      else if (parsedSqft <= 2000) base = 410;
-      else if (parsedSqft <= 2500) base = 435;
-      else if (parsedSqft <= 3000) base = 465;
-      else if (parsedSqft <= 3500) base = 485;
-      else if (parsedSqft <= 4000) base = 500;
-      else if (parsedSqft <= 4500) base = 555;
-      else if (parsedSqft <= 5000) base = 595;
-      else if (parsedSqft <= 5500) base = 635;
-      else {
-        // Transparent scaling for luxury estates over 5,500 sq ft ($50 per 500 sq ft)
-        const additionalChunks = Math.ceil((parsedSqft - 5500) / 500);
-        base = 635 + (additionalChunks * 50);
-      }
+      else if (parsedSqft <= 2000) base = 425;
+      else if (parsedSqft <= 2500) base = 475;
+      else if (parsedSqft <= 3000) base = 525;
+      else if (parsedSqft <= 3500) base = 575;
+      else if (parsedSqft <= 4000) base = 625;
+      else if (parsedSqft <= 4500) base = 675;
+      else if (parsedSqft <= 5000) base = 775;
+      else if (parsedSqft <= 5500) base = 875;
+      else base = 985;
     }
     
     let extra = 0;
 
-    // Flat Property Age Surcharges: Under 25 = +$0, 25-49 = +$50, 50+ = +$95
-    // Bypassed for STR Compliance Assist safety audits to keep pricing flat
-    if (serviceType !== 'str') {
-      if (ageTier === '25-49') {
-        extra += 50;
-      } else if (ageTier === 'over-50') {
-        extra += 95;
-      }
+    // Age Surcharge: PDF Page 5: HOMES OVER 50 YEARS OLD $75.00
+    if (serviceType !== 'str' && ageTier === 'over-50') {
+      extra += 75;
     }
 
-    // Additional Complexity Fees: $85 for crawlspace, $75 for unfinished/partial basement. These stack.
+    // Foundation Complexity Fees: PDF Page 5:
+    // Crawlspace = +$75, Unfinished Basement = +$250
     if (propertyType === 'single-family' && serviceType !== 'str') {
       if (foundation === 'crawlspace') {
-        extra += 85;
+        extra += 75;
       }
       if (foundation === 'basement') {
-        extra += 75;
+        extra += 250;
       }
     }
 
-    // Addons
-    if (addons.radon) extra += 200; // Continuous monitor sub-contracted rate
-    if (addons.pool) extra += 300;  // Pool/spa flat rate
-    if (addons.sewer) extra += 465; // Sewer scope camera inspection
-    if (addons.lowFlow) extra += 125; // DeKalb low flow compliance
-    if (addons.buildfax) extra += 15; // Property permit report
-    if (addons.termite) extra += 110; // Termite/WDO bundled rate
+    // Addons from Official Fee Schedule (PDF Pages 2, 5, 6)
+    if (addons.radon) extra += 250; // PDF Page 6: 48 HOUR RADON TEST $250.00
+    if (addons.pool) extra += 275;  // PDF Page 2 & 6: POOL INSPECTION $275.00
+    if (addons.sewer) extra += 450; // PDF Page 6: SEWER SCOPE INSPECTION $450.00
+    if (addons.lowFlow) extra += 0; // PDF Page 6: Low flow included FREE with inspection ($0)
+    if (addons.buildfax) extra += 15; // PDF Page 2: BUILDFAX PROPERTY HISTORY REPORT $15.00
+    if (addons.termite) {
+      // PDF Page 2: WDO/TERMITE ON CRAWLSPACE $165, ON SLAB OR BASEMENT $125
+      extra += (foundation === 'crawlspace' ? 165 : 125);
+    }
+    if (addons.airQuality) extra += 450; // PDF Page 6: INDOOR AIR QUALITY / MOLD TESTING $450.00
+    if (addons.detachedBuilding) extra += 100; // PDF Page 5: ADDITIONAL CHARGE FOR DETACHED BUILDING $100.00
 
-    return { total: base + extra, isCustom: false };
+    // Promotional & Community Discounts (PDF Pages 5, 6, 7)
+    if (discount === 'first-time') extra -= 25; // PDF Page 7: First-Time Homebuyer Discount ($25.00)
+    if (discount === 'realtor') extra -= 50;    // PDF Page 6: RE Agent Discount ($50.00)
+    if (discount === 'repeat') extra -= 50;     // PDF Page 5: Repeat Customer Discount ($50.00)
+
+    return { total: Math.max(0, base + extra), isCustom: false };
   };
 
   const { total, isCustom } = calculateTotal();
@@ -186,14 +229,24 @@ export default function QuoteClient({ showValueComparison = true }) {
       const activeAddonNames = Object.keys(addons)
         .filter(k => addons[k])
         .map(k => {
-          if (k === 'radon') return '48-Hour Radon Gas Test ($200)';
-          if (k === 'pool') return 'Pool & Spa Inspection ($300)';
-          if (k === 'sewer') return 'Sewer Scope Camera ($465)';
-          if (k === 'termite') return 'Termite / WDO Inspection ($110)';
-          if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance ($125)';
+          if (k === 'radon') return '48-Hour Radon Gas Test ($250)';
+          if (k === 'pool') return 'Pool & Spa Inspection ($275)';
+          if (k === 'sewer') return 'Sewer Scope Camera ($450)';
+          if (k === 'termite') return foundation === 'crawlspace' ? 'Termite / WDO Crawlspace ($165)' : 'Termite / WDO Slab/Basement ($125)';
+          if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance (FREE with Home Inspection)';
           if (k === 'buildfax') return 'BuildFax Report ($15)';
+          if (k === 'airQuality') return 'Indoor Air Quality & Mold Lab Testing ($450)';
+          if (k === 'detachedBuilding') return 'Detached Building / Workshop Inspection ($100)';
           return k;
         });
+      if (discount !== 'none') {
+        const discountNames = {
+          'first-time': 'First-Time Homebuyer Discount (-$25)',
+          'realtor': 'RE Agent VIP Partner Discount (-$50)',
+          'repeat': 'Repeat Customer Loyalty Discount (-$50)'
+        };
+        activeAddonNames.push(discountNames[discount]);
+      }
 
       const res = await fetch('/api/lead-capture', {
         method: 'POST',
@@ -398,9 +451,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                   value={ageTier}
                   onChange={(e) => setAgeTier(e.target.value)}
                 >
-                  <option value="under-25">Under 25 Years Old</option>
-                  <option value="25-49">25 – 49 Years Old {serviceType !== 'str' && '(+ $50 Older Home Surcharge)'}</option>
-                  <option value="over-50">50+ Years Old (Built before ~1975) {serviceType !== 'str' && '(+ $95 Vintage/Historic Surcharge)'}</option>
+                  <option value="under-50">Under 50 Years Old ($0 Surcharge)</option>
+                  <option value="over-50">50+ Years Old (Built before ~1975) {serviceType !== 'str' && '(+ $75 Vintage Home Surcharge)'}</option>
                 </select>
               </div>
             </>
@@ -416,7 +468,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.45 
               }}>
-                ℹ️ <strong>* Additional Complexity Fees:</strong> An additional <strong>$85 fee</strong> is added for a crawlspace and <strong>$75</strong> for an unfinished/partial basement. These fees stack if both conditions are present.
+                ℹ️ <strong>* Additional Complexity Fees:</strong> Per our official fee schedule, an additional <strong>$75 fee</strong> is added for a crawlspace inspection, and <strong>$250</strong> for an unfinished/partially finished basement inspection.
               </div>
             )}
 
@@ -440,11 +492,23 @@ export default function QuoteClient({ showValueComparison = true }) {
                 <label className="checkbox-container">
                   <input 
                     type="checkbox" 
+                    checked={addons.sewer} 
+                    onChange={() => handleAddonToggle('sewer')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (+ $450)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>High-definition video camera inspection of the main sewer lateral to city connection or septic tank.</span>
+                  </div>
+                </label>
+
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
                     checked={addons.radon} 
                     onChange={() => handleAddonToggle('radon')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>48-Hour Radon Gas Test (+ $200)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>48-Hour Radon Gas Test (+ $250)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour electronic monitoring following strict EPA protocols.</span>
                   </div>
                 </label>
@@ -456,20 +520,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('pool')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Inspection (+ $300)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pump, filter, heater, electrical safety, and shell integrity evaluation.</span>
-                  </div>
-                </label>
-
-                <label className="checkbox-container">
-                  <input 
-                    type="checkbox" 
-                    checked={addons.sewer} 
-                    onChange={() => handleAddonToggle('sewer')} 
-                  />
-                  <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (+ $465)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>High-definition camera inspection of the main lateral sewer line to the municipal connection.</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Inspection (+ $275)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pump, filter, heater, electrical bonding, and shell safety evaluation.</span>
                   </div>
                 </label>
 
@@ -480,8 +532,34 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('termite')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Termite / Wood Destroying Organism (WDO) Inspection (+ $110)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Official Georgia Wood Infestation Inspection Report (GAR compliant) for real estate transactions.</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>
+                      Termite / WDO Inspection (+ {foundation === 'crawlspace' ? '$165 Crawlspace' : '$125 Slab/Basement'})
+                    </span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Official Georgia Wood Infestation Inspection Report (GAR compliant) performed by licensed partner.</span>
+                  </div>
+                </label>
+
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.airQuality} 
+                    onChange={() => handleAddonToggle('airQuality')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Indoor Air Quality / Mold Lab Testing (+ $450)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>3 air samples using spore trap cassettes with certified laboratory concentration report.</span>
+                  </div>
+                </label>
+
+                <label className="checkbox-container">
+                  <input 
+                    type="checkbox" 
+                    checked={addons.detachedBuilding} 
+                    onChange={() => handleAddonToggle('detachedBuilding')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Detached Building / Workshop Inspection (+ $100)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Inspection of separate workshop, storage garage, or detached structure.</span>
                   </div>
                 </label>
 
@@ -492,8 +570,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('lowFlow')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (+ $125)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory compliance check for DeKalb County property transfers (pre-1993 builds).</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (FREE Included)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory signed Certificate of Compliance for pre-1993 DeKalb property transfers ($100 standalone value).</span>
                   </div>
                 </label>
 
@@ -505,9 +583,24 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>BuildFax Permit & Improvement Report (+ $15)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Detailed records of past building permits, additions, and updates.</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Detailed records of past building permits, additions, renovations, and aging systems.</span>
                   </div>
                 </label>
+
+              <h2 style={{ marginTop: '2.5rem', marginBottom: '1.25rem' }}>7. Available Client Discounts</h2>
+              <div className="form-group">
+                <label className="form-label">Apply an Eligible Promotional or Partner Discount</label>
+                <select 
+                  className="form-control"
+                  value={discount}
+                  onChange={(e) => setDiscount(e.target.value)}
+                >
+                  <option value="none">Standard Pricing ($0 Discount)</option>
+                  <option value="first-time">First-Time Homebuyer Discount (-$25.00)</option>
+                  <option value="realtor">Real Estate Agent VIP Discount (-$50.00)</option>
+                  <option value="repeat">Repeat Customer Loyalty Discount (-$50.00)</option>
+                </select>
+              </div>
               </div>
             </>
           </div>

@@ -484,10 +484,10 @@ You know all InterNACHI Standards of Practice chapters: Roof (drone scans), Exte
 Whenever discussing a defect or home issue, follow the InterNACHI 3-step diagnostic format: Observation, What This Could Mean (never "What This Means"), and Recommendation.
 
 FORESIGHT ADVANTAGES & PRICING:
-Two-inspector team (finishes in 1.5 to 2.5 hours), $10,000 warranty with $0 deductible, free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $300, Termite WDO $110, 48-hr Radon $200, STR $355, Sewer Scope $465.
+Two-inspector team (finishes in 1.5 to 2.5 hours), $10,000 warranty with $0 deductible, free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $275, Termite WDO $125+, 48-hr Radon $250, STR $595, Sewer Scope $450.
 
 APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, the 50% deposit along with the signed inspection agreements are completed AFTER our office sends the appointment confirmation. The remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling, deposits, or booking next steps are discussed.
-CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($465) for older homes 25+ years, 48-Hour Radon ($200) for crawlspaces/basements/granite belt, Termite WDO letter ($110) for Georgia buyers, Pool & Spa ($300) for pools.
+CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($450) for older homes 25+ years, 48-Hour Radon ($250) for crawlspaces/basements/granite belt, Termite WDO letter ($125+) for Georgia buyers, Pool & Spa ($275) for pools.
 MANDATORY RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be pushy or aggressive. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g., 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined upsell.
 Specialty services are coordinated alongside our primary inspection under Foresight's standard. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 20 minutes with your official appointment confirmation. In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
@@ -1479,7 +1479,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
             Quick Add-ons:
           </span>
           <button
-            onClick={() => handleToggleAddon('radon', 'Radon Gas Testing', 200)}
+            onClick={() => handleToggleAddon('radon', '48-Hour Electronic Radon Testing', 250)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -1492,10 +1492,10 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Radon ($200)
+            + Radon ($250)
           </button>
           <button
-            onClick={() => handleToggleAddon('termite', 'Termite / WDO Inspection', 110)}
+            onClick={() => handleToggleAddon('termite', 'Termite / WDO Inspection', 125)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -1508,10 +1508,10 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Termite / WDO ($110+)
+            + Termite / WDO ($125+)
           </button>
           <button
-            onClick={() => handleToggleAddon('sewer', 'Sewer Scope Camera Inspection', 465)}
+            onClick={() => handleToggleAddon('sewer', 'Sewer Scope Camera Inspection', 450)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -1524,10 +1524,10 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Sewer Scope ($465)
+            + Sewer Scope ($450)
           </button>
           <button
-            onClick={() => handleToggleAddon('pool', 'Pool and Spa Inspection', 300)}
+            onClick={() => handleToggleAddon('pool', 'Pool and Spa Inspection', 275)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -1540,10 +1540,10 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Pool/Spa ($300)
+            + Pool ($275)
           </button>
           <button
-            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Audit', 355)}
+            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Audit', 595)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -1556,7 +1556,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + STR Assist ($355)
+            + STR Compliance ($595)
           </button>
         </div>
 

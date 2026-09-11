@@ -9,12 +9,12 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 const SERVICE_MAP = {
   'radon-testing': {
-    name: 'Electronic Radon Testing',
-    price: '$200',
+    name: 'Radon Gas Testing',
+    price: '$250',
     icon: '☢️',
     headline: 'Continuous 48-Hour Electronic Radon Testing Across Metro Atlanta',
-    metaTitle: 'Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $200',
-    metaDescription: 'EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph & same-day report. Flat $200. Call 678-480-2110!',
+    metaTitle: 'Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $250',
+    metaDescription: 'EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph & same-day report. Flat $250. Call 678-480-2110!',
     description: 'Radon is an odorless, invisible radioactive gas that represents the second leading cause of lung cancer in the United States. Northern Georgia geology contains significant granite bedrock with naturally occurring uranium deposits. Foresight uses state-of-the-art continuous electronic radon monitors delivering precision hourly graphs and EPA-compliant action reports.',
     included: [
       '48-hour continuous electronic active monitor placement',
@@ -25,11 +25,11 @@ const SERVICE_MAP = {
   },
   'sewer-scope-inspection': {
     name: 'Sewer Scope Camera Inspection',
-    price: '$465',
+    price: '$450',
     icon: '🎥',
     headline: 'HD Fiber-Optic Main Drain & Lateral Sewer Scope Camera Audits',
-    metaTitle: 'Sewer Scope Camera Inspection Atlanta GA | HD Pipe Audit $465',
-    metaDescription: 'HD fiber-optic sewer scope camera inspection in Metro Atlanta. Detect root intrusions, crushed pipes & blockages before closing. Flat $465. Video report included.',
+    metaTitle: 'Sewer Scope Camera Inspection Atlanta GA | HD Pipe Audit $450',
+    metaDescription: 'HD fiber-optic sewer scope camera inspection in Metro Atlanta. Detect root intrusions, crushed pipes & blockages before closing. Flat $450. Video report included.',
     description: 'Replacing a broken underground sewer lateral costs between $5,000 and $25,000 and is not covered by standard homeowners insurance. Foresight pushes a self-leveling HD fiber-optic camera through the entire line to the municipal connection or septic tank, pinpointing root intrusions, crushed pipes, low-pitch bellies, and joint separations.',
     included: [
       'Full 100+ foot self-leveling color video camera push',
@@ -40,11 +40,11 @@ const SERVICE_MAP = {
   },
   'pool-spa-inspection': {
     name: 'Pool & Spa Inspection',
-    price: '$300',
+    price: '$275',
     icon: '🏊',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
-    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $300',
-    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $275',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $275 rate with 24-hr report.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
       'Pump, filtration, and circulation system pressure testing',
@@ -55,11 +55,11 @@ const SERVICE_MAP = {
   },
   'termite-wdo-inspection': {
     name: 'Termite & WDO Clearance Inspection',
-    price: '$110+',
+    price: '$125+',
     icon: '🐜',
     headline: 'Official Georgia Wood Destroying Organism (WDO) Clearance Letters',
-    metaTitle: 'Official Termite & WDO Inspection Atlanta GA | $110+ Clearance',
-    metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. Bundled rate $110+.',
+    metaTitle: 'Official Termite & WDO Inspection Atlanta GA | $125+ Clearance',
+    metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. From $125+.',
     description: 'Georgia is located in the highest-risk termite zone in North America (Zone 1). Subterranean termites, carpenter ants, and wood-boring beetles cause billions of dollars in structural damage annually. We inspect all crawlspaces, sill plates, foundation perimeters, and framing for active infestations and past damage.',
     included: [
       'Comprehensive crawlspace, basement, and foundation perimeter sweep',
@@ -70,10 +70,10 @@ const SERVICE_MAP = {
   },
   '11-month-warranty-inspection': {
     name: '11-Month Builder Warranty Inspection',
-    price: 'From $345',
+    price: 'From $335',
     icon: '🏗️',
     headline: 'Protect Your New Construction Equity Before the 1-Year Builder Warranty Expires',
-    metaTitle: '11-Month Builder Warranty Inspection Atlanta | Punch List From $350',
+    metaTitle: '11-Month Builder Warranty Inspection Atlanta | Punch List From $335',
     metaDescription: 'Independent 11-month builder warranty inspection in Metro Atlanta. 2 certified inspectors, FLIR thermal scans & builder-ready punch lists before warranty expires.',
     description: 'Most new construction homes include a 1-year builder warranty covering materials and workmanship. Over the first year, homes settle, framing contracts, roof shingles experience storm cycles, and HVAC ductwork can detach. Our two-inspector team provides a comprehensive punch list backed by thermal imaging to submit directly to your builder.',
     included: [
@@ -85,11 +85,11 @@ const SERVICE_MAP = {
   },
   'str-short-term-rental-inspection': {
     name: 'Short-Term Rental (STR) Inspection',
-    price: '$355',
+    price: '$595',
     icon: '🏡',
     headline: 'Safety, Code Compliance & Due Diligence for Airbnb & STR Investments',
-    metaTitle: 'Short-Term Rental STR Inspection Atlanta | Airbnb Permit Assist $355',
-    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. Flat $355.',
+    metaTitle: 'Short-Term Rental STR Inspection Atlanta | Airbnb Permit Assist $595',
+    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. Flat $595.',
     description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, electrical load capacities, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
     included: [
       'Life-safety audit (egress windows, smoke/CO interconnectivity, handrails)',

@@ -801,11 +801,11 @@ export default function RootLayout({ children }) {
                 <h3>Inspection Services</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link prefetch={false} href="/services/buyer-inspection">Buyer Home Inspection</Link></li>
-                  <li><Link prefetch={false} href="/services/radon-testing">Radon Gas Testing ($200)</Link></li>
-                  <li><Link prefetch={false} href="/services/termite-inspection">Termite &amp; WDO ($110+)</Link></li>
-                  <li><Link prefetch={false} href="/services/sewer-scope-inspection">Sewer Scope Camera ($465)</Link></li>
+                  <li><Link prefetch={false} href="/services/radon-testing">Radon Gas Testing ($250)</Link></li>
+                  <li><Link prefetch={false} href="/services/termite-inspection">Termite &amp; WDO ($125+)</Link></li>
+                  <li><Link prefetch={false} href="/services/sewer-scope-inspection">Sewer Scope Camera ($450)</Link></li>
                   <li><Link prefetch={false} href="/services/new-construction-inspection">New Construction Phased</Link></li>
-                  <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($300)</Link></li>
+                  <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($275)</Link></li>
                   <li><Link prefetch={false} href="/services/pre-listing-inspection">Pre-Listing Seller Inspection</Link></li>
                   <li><Link prefetch={false} href="/services">View All Services &amp; Pricing &rarr;</Link></li>
                 </ul>
