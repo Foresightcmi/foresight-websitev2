@@ -129,7 +129,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     if (addons.radon) extra += 250; // PDF Page 6: 48 HOUR RADON TEST $250.00
     if (addons.pool) extra += 275;  // PDF Page 2 & 6: POOL INSPECTION $275.00
     if (addons.sewer) extra += 450; // PDF Page 6: SEWER SCOPE INSPECTION $450.00
-    if (addons.lowFlow) extra += 0; // PDF Page 6: Low flow included FREE with inspection ($0)
+    if (addons.lowFlow) extra += 100; // DeKalb Low-Flow Certificate $100.00
     if (addons.buildfax) extra += 15; // PDF Page 2: BUILDFAX PROPERTY HISTORY REPORT $15.00
     if (addons.termite) {
       // PDF Page 2: WDO/TERMITE ON CRAWLSPACE $165, ON SLAB OR BASEMENT $125
@@ -233,7 +233,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           if (k === 'pool') return 'Pool & Spa Inspection ($275)';
           if (k === 'sewer') return 'Sewer Scope Camera ($450)';
           if (k === 'termite') return foundation === 'crawlspace' ? 'Termite / WDO Crawlspace ($165)' : 'Termite / WDO Slab/Basement ($125)';
-          if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance (FREE with Home Inspection)';
+          if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance ($100)';
           if (k === 'buildfax') return 'BuildFax Report ($15)';
           if (k === 'airQuality') return 'Indoor Air Quality & Mold Lab Testing ($450)';
           if (k === 'detachedBuilding') return 'Detached Building / Workshop Inspection ($100)';
@@ -570,8 +570,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('lowFlow')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (FREE Included)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory signed Certificate of Compliance for pre-1993 DeKalb property transfers ($100 standalone value).</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (+ $100)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory signed Certificate of Compliance for pre-1993 DeKalb property transfers.</span>
                   </div>
                 </label>
 

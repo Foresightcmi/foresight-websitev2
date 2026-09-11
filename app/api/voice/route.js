@@ -45,7 +45,7 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
   }
   if (addons.pool) { extra += 275; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 275 }); }
   if (addons.sewer) { extra += 450; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 450 }); }
-  if (addons.lowFlow) { addonBreakdown.push({ name: 'DeKalb Low Flow Certification (Included FREE)', price: 0 }); }
+  if (addons.lowFlow) { extra += 100; addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 100 }); }
   if (addons.buildfax) { extra += 15; addonBreakdown.push({ name: 'Permit History Report', price: 15 }); }
 
   const total = base + extra;
