@@ -3,7 +3,25 @@ import { recordLead } from '../../../lib/leads';
 import citiesData from '../../../data/cities.json';
 
 // Foresight Official HomeGauge Fee Schedule Calculation Logic
-function calculateQuoteDetails({ propertyType = 'single-family', serviceType = 'buyer', sqft = 2000, foundation = 'slab', ageTier = 'under-50', addons = {} }) {
+function calculateQuoteDetails(input = {}) {
+  const sqft = input.sqft || input.square_feet || input.squareFeet || input.size || 2000;
+  const propertyType = (input.propertyType || input.property_type || 'single-family').toLowerCase();
+  const serviceType = (input.serviceType || input.service_type || 'buyer').toLowerCase();
+  const foundation = (input.foundation || input.foundation_type || input.foundationType || 'slab').toLowerCase();
+  const ageTier = input.ageTier || input.age_tier || (input.year_built && (new Date().getFullYear() - Number(input.year_built) >= 50) ? 'over-50' : 'under-50');
+
+  const rawAddons = input.addons || {};
+  const addons = {
+    radon: Boolean(rawAddons.radon || input.radon || input.has_radon),
+    termite: Boolean(rawAddons.termite || input.termite || input.has_termite || input.wdo),
+    pool: Boolean(rawAddons.pool || input.pool || input.has_pool),
+    sewer: Boolean(rawAddons.sewer || input.sewer || input.has_sewer_scope || input.sewerScope),
+    lowFlow: Boolean(rawAddons.lowFlow || rawAddons.low_flow || input.lowFlow || input.low_flow || input.dekalb_low_flow),
+    buildfax: Boolean(rawAddons.buildfax || input.buildfax),
+    airQuality: Boolean(rawAddons.airQuality || input.airQuality || input.mold),
+    detachedBuilding: Boolean(rawAddons.detachedBuilding || input.detachedBuilding)
+  };
+
   let base = 345;
   const parsedSqft = Number(sqft) || 2000;
 
