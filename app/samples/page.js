@@ -49,6 +49,97 @@ export default function SampleReports() {
 
       <section className="section bg-gray-light">
         <div className="container">
+          {/* 🌟 ACTUAL LIVE SAMPLE REPORT SHOWCASE 🌟 */}
+          <div className="card card-premium" style={{ marginBottom: '3.5rem', padding: '2.5rem', background: '#FFFFFF', borderTop: '4px solid var(--color-gold)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '1.5rem' }}>
+              <div>
+                <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '0.75rem', fontWeight: 700 }}>
+                  🌟 Real Client Report Example
+                </span>
+                <h2 style={{ fontSize: '2rem', fontWeight: 800, margin: '0.25rem 0 0.5rem 0', color: '#0F172A' }}>
+                  Actual Full Foresight Home Inspection Report
+                </h2>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.05rem', maxWidth: '750px', lineHeight: 1.6 }}>
+                  Explore a complete, authentic digital inspection report delivered to a Metro Atlanta client. Features 220+ high-resolution photos, FLIR thermal imaging, crawlspace analysis, and prioritized repair summaries. <em>(Property address and personal client names have been redacted to protect client privacy.)</em>
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a
+                  href="/sample-report/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  style={{ padding: '0.85rem 1.75rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                >
+                  <span>📄</span> Open Full Screen Report
+                </a>
+                <a
+                  href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                  style={{ padding: '0.85rem 1.75rem', fontSize: '1rem', fontWeight: 700, borderColor: 'var(--color-gold)', color: 'var(--color-gold)' }}
+                >
+                  ⚡ Book Inspection
+                </a>
+              </div>
+            </div>
+
+            {/* Feature Badges */}
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem', padding: '1rem', background: '#F8FAFC', borderRadius: '0.75rem', border: '1px solid #E2E8F0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
+                <span>👥</span> Two Certified Inspectors
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
+                <span>📸</span> 220+ Diagnostic Photos
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
+                <span>🌡️</span> FLIR Thermal Scan Included
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
+                <span>📝</span> HomeGauge CRL™ Repair List
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
+                <span>🛡️</span> $10,000 Warranty Backed
+              </div>
+            </div>
+
+            {/* Embedded Live Iframe Preview */}
+            <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', border: '1px solid #CBD5E1', boxShadow: '0 10px 30px rgba(0,0,0,0.15)', background: '#0F172A' }}>
+              <div style={{ background: '#1E293B', padding: '0.75rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444', display: 'inline-block' }}></span>
+                  <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#F59E0B', display: 'inline-block' }}></span>
+                  <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#10B981', display: 'inline-block' }}></span>
+                  <span style={{ color: '#94A3B8', fontSize: '0.85rem', marginLeft: '0.75rem', fontFamily: 'monospace' }}>
+                    https://www.fhinspectionsatl.com/sample-report/index.html
+                  </span>
+                </div>
+                <a
+                  href="/sample-report/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none' }}
+                >
+                  Open in New Window ↗
+                </a>
+              </div>
+              <iframe
+                src="/sample-report/index.html"
+                title="Foresight Home Inspections Official Sample Report"
+                style={{
+                  width: '100%',
+                  height: '680px',
+                  border: 'none',
+                  display: 'block',
+                  backgroundColor: '#ffffff',
+                }}
+                loading="lazy"
+              />
+            </div>
+          </div>
+
           <div className="card card-premium" style={{ marginBottom: '3rem', padding: '2.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '2rem', borderBottom: '1px solid var(--color-gray-mid)', paddingBottom: '1.5rem' }}>
               <div>
