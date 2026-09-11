@@ -40,6 +40,14 @@ export default function RealtorsClient() {
 
       if (response.ok) {
         setSubmitStatus('success');
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+          window.gtag('event', 'realtor_engaged', {
+            event_category: 'lead',
+            event_label: formData.brokerage || 'Independent',
+            brokerage: formData.brokerage,
+            supra_needed: formData.supraNeeded,
+          });
+        }
         e.target.reset();
       } else {
         setSubmitStatus('error');
@@ -264,6 +272,13 @@ export default function RealtorsClient() {
                     onClick={() => {
                       navigator.clipboard.writeText(activePreset.clause);
                       setCopied(true);
+                      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+                        window.gtag('event', 'realtor_gar_clause_copied', {
+                          event_category: 'realtor_tool',
+                          event_label: activePreset.id,
+                          clause_type: activePreset.id,
+                        });
+                      }
                       setTimeout(() => setCopied(false), 2000);
                     }}
                     style={{

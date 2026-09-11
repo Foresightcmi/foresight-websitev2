@@ -704,17 +704,47 @@ export default function RootLayout({ children }) {
         <BackgroundAudioPlayer />
         <StickyCallBar />
         <Script
-          id="ga4-call-tracking"
+          id="ga4-conversion-tracking"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               document.addEventListener('click', function(e) {
-                var link = e.target.closest('a[href^="tel:"]');
-                if (link && typeof window.gtag === 'function') {
+                // 1. Phone Call Clicks
+                var telLink = e.target.closest('a[href^="tel:"]');
+                if (telLink && typeof window.gtag === 'function') {
+                  var source = telLink.getAttribute('data-call-source') || window.location.pathname;
+                  window.gtag('event', 'click_to_call', {
+                    event_category: 'conversion',
+                    event_label: source,
+                    phone_number: '678-480-2110',
+                    page_path: window.location.pathname,
+                    value: 1
+                  });
                   window.gtag('event', 'phone_call_click', {
                     event_category: 'conversion',
-                    event_label: link.getAttribute('data-call-source') || window.location.pathname,
+                    event_label: source,
                     value: 1
+                  });
+                }
+
+                // 2. Schedule & Booking Clicks (HomeGauge)
+                var scheduleLink = e.target.closest('a[href*="schedulenow.homegauge.com"], a[href*="homegauge.com/schedule"], a[href*="homegauge.com/inspector"]');
+                if (scheduleLink && typeof window.gtag === 'function') {
+                  window.gtag('event', 'schedule_click', {
+                    event_category: 'conversion',
+                    event_label: scheduleLink.href,
+                    target_url: scheduleLink.href,
+                    page_path: window.location.pathname
+                  });
+                }
+
+                // 3. Review Link Clicks
+                var reviewLink = e.target.closest('a[href*="search.google.com/local/writereview"], a[href*="cid=10862078652033010531"]');
+                if (reviewLink && typeof window.gtag === 'function') {
+                  window.gtag('event', 'google_review_click', {
+                    event_category: 'social_proof',
+                    platform: 'google',
+                    page_path: window.location.pathname
                   });
                 }
               });

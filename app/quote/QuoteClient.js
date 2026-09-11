@@ -105,6 +105,22 @@ export default function QuoteClient({ showValueComparison = true }) {
 
   const { total, isCustom } = calculateTotal();
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'quote_calculated', {
+          event_category: 'quote_calculator',
+          value: total,
+          currency: 'USD',
+          property_type: propertyType,
+          service_type: serviceType,
+          sqft: Number(sqft) || 2000,
+        });
+      }
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [total, propertyType, serviceType, sqft]);
+
   // Calculate potential negotiation leverage dynamically based on inspection details
   const calculateNegotiatingLeverage = () => {
     let minLeverage = 2000;
@@ -201,6 +217,15 @@ export default function QuoteClient({ showValueComparison = true }) {
       });
       if (res.ok) {
         setLeadStatus('success');
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+          window.gtag('event', 'quote_lead_generated', {
+            event_category: 'conversion',
+            value: total,
+            currency: 'USD',
+            service_type: serviceType,
+            property_type: propertyType,
+          });
+        }
       } else {
         setLeadStatus('error');
       }
