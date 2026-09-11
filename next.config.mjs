@@ -19,11 +19,24 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/sample-report/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' https://www.fhinspectionsatl.com https://fhinspectionsatl.com http://localhost:3000;",
+          },
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           {
             key: 'X-Frame-Options',
-            value: 'DENY',
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',
