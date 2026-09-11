@@ -298,8 +298,9 @@ export default function AskForesightWidget() {
               e.currentTarget.style.transform = 'translateY(0) scale(1)';
             }}
           >
-            <span style={{ fontSize: '1.25rem' }}>🎙️</span>
-            <span>Talk Live (Voice)</span>
+            <span style={{ fontSize: '1.2rem' }}>🎙️</span>
+            <span className="launcher-text-full">Talk Live (Voice)</span>
+            <span className="launcher-text-short" style={{ display: 'none' }}>Talk Live</span>
           </button>
 
           {/* Secondary Chat Launcher */}
@@ -334,7 +335,7 @@ export default function AskForesightWidget() {
             }}
           >
             <span style={{ fontSize: '1.2rem' }}>💬</span>
-            <span>Chat</span>
+            <span className="launcher-chat-text">Chat</span>
           </button>
         </div>
       )}
@@ -626,29 +627,47 @@ export default function AskForesightWidget() {
         }
         @media (max-width: 768px) {
           .ask-foresight-launcher-group {
-            bottom: 84px !important;
-            right: 16px !important;
-            flex-direction: column !important;
-            align-items: flex-end !important;
-            gap: 8px !important;
+            bottom: 68px !important;
+            right: 10px !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 6px !important;
           }
           .ask-foresight-voice-launcher {
-            padding: 0.7rem 1.1rem !important;
-            font-size: 0.85rem !important;
-            min-height: 42px !important;
+            padding: 0.45rem 0.85rem !important;
+            font-size: 0.8rem !important;
+            min-height: 38px !important;
+            border-radius: 9999px !important;
+            box-shadow: 0 4px 15px -3px rgba(212, 175, 55, 0.4) !important;
+          }
+          .ask-foresight-voice-launcher .launcher-text-full {
+            display: none !important;
+          }
+          .ask-foresight-voice-launcher .launcher-text-short {
+            display: inline !important;
           }
           .ask-foresight-launcher {
-            padding: 0.7rem 1.1rem !important;
-            font-size: 0.85rem !important;
-            min-height: 42px !important;
+            padding: 0 !important;
+            width: 38px !important;
+            height: 38px !important;
+            min-height: 38px !important;
+            border-radius: 50% !important;
+            justify-content: center !important;
+            box-shadow: 0 4px 15px -3px rgba(211, 47, 47, 0.4) !important;
           }
-        }
-        @media (max-width: 480px) {
+          .ask-foresight-launcher .launcher-chat-text {
+            display: none !important;
+          }
           .glass-chat-widget {
-            width: calc(100% - 32px) !important;
-            height: calc(100vh - 100px) !important;
-            bottom: 16px !important;
-            right: 16px !important;
+            width: calc(100vw - 20px) !important;
+            max-width: 440px !important;
+            height: calc(100vh - 88px) !important;
+            max-height: 560px !important;
+            bottom: 68px !important;
+            right: 10px !important;
+            left: 10px !important;
+            margin: 0 auto !important;
+            border-radius: 16px !important;
           }
         }
       `}} />

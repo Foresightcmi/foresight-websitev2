@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 export default function BackgroundAudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -8,8 +8,50 @@ export default function BackgroundAudioPlayer() {
   const [isDismissed, setIsDismissed] = useState(false);
   const audioRef = useRef(null);
 
+  const attemptPlay = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    // Check if user explicitly paused during this session
+    if (typeof window !== 'undefined') {
+      const userPaused = sessionStorage.getItem('foresight_bg_audio_paused');
+      if (userPaused === 'true') return;
+    }
+
+    audio.volume = 0.22;
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch(() => {
+          // Autoplay was restricted by browser policy (e.g. Chrome / iOS Safari require gesture).
+          // Listen to the very first user gesture anywhere on the page to start playing immediately.
+          const unlockAndPlay = () => {
+            const stillPaused = sessionStorage.getItem('foresight_bg_audio_paused');
+            if (stillPaused !== 'true' && audio.paused) {
+              audio.volume = 0.22;
+              audio.play()
+                .then(() => setIsPlaying(true))
+                .catch(() => {});
+            }
+            removeInteractionListeners();
+          };
+
+          const interactionEvents = ['click', 'touchstart', 'touchend', 'scroll', 'wheel', 'pointerdown', 'keydown'];
+          const removeInteractionListeners = () => {
+            interactionEvents.forEach(evt => window.removeEventListener(evt, unlockAndPlay));
+          };
+
+          interactionEvents.forEach(evt => {
+            window.addEventListener(evt, unlockAndPlay, { once: true, passive: true });
+          });
+        });
+    }
+  }, []);
+
   useEffect(() => {
-    // Check if dismissed in this session
     if (typeof window !== 'undefined') {
       const dismissed = sessionStorage.getItem('foresight_bg_audio_dismissed');
       if (dismissed === 'true') {
@@ -21,35 +63,34 @@ export default function BackgroundAudioPlayer() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Set gentle background ambient volume (22%)
     audio.volume = 0.22;
 
-    // Try starting playback on first user gesture anywhere on page
-    const handleFirstUserGesture = () => {
-      const userPaused = sessionStorage.getItem('foresight_bg_audio_paused');
-      if (userPaused === 'true') return;
+    // 1. Immediately attempt to play when site is opened
+    attemptPlay();
 
-      if (audio && audio.paused) {
-        audio.play()
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(() => {
-            // Autoplay blocked until direct click on player
-          });
+    // 2. Listen to voice modal coordination events
+    const handlePauseBgMusic = () => {
+      if (audio && !audio.paused) {
+        audio.pause();
+        setIsPlaying(false);
       }
-      window.removeEventListener('click', handleFirstUserGesture);
-      window.removeEventListener('touchstart', handleFirstUserGesture);
     };
 
-    window.addEventListener('click', handleFirstUserGesture, { once: true, passive: true });
-    window.addEventListener('touchstart', handleFirstUserGesture, { once: true, passive: true });
+    const handleResumeBgMusic = () => {
+      const userPaused = sessionStorage.getItem('foresight_bg_audio_paused');
+      if (userPaused !== 'true' && audio && audio.paused) {
+        audio.play().then(() => setIsPlaying(true)).catch(() => {});
+      }
+    };
+
+    window.addEventListener('foresight_pause_bg_music', handlePauseBgMusic);
+    window.addEventListener('foresight_resume_bg_music', handleResumeBgMusic);
 
     return () => {
-      window.removeEventListener('click', handleFirstUserGesture);
-      window.removeEventListener('touchstart', handleFirstUserGesture);
+      window.removeEventListener('foresight_pause_bg_music', handlePauseBgMusic);
+      window.removeEventListener('foresight_resume_bg_music', handleResumeBgMusic);
     };
-  }, []);
+  }, [attemptPlay]);
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -100,8 +141,9 @@ export default function BackgroundAudioPlayer() {
       <audio
         ref={audioRef}
         src="/audio/foresight-anthem.mp3"
-        preload="metadata"
+        preload="auto"
         loop
+        playsInline
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />
@@ -112,16 +154,16 @@ export default function BackgroundAudioPlayer() {
           position: 'fixed',
           bottom: '24px',
           left: '24px',
-          zIndex: 990,
+          zIndex: 9985,
           display: 'inline-flex',
           alignItems: 'center',
           gap: '8px',
-          background: 'rgba(15, 23, 42, 0.92)',
+          background: 'rgba(15, 23, 42, 0.94)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          border: isPlaying ? '1px solid rgba(212, 175, 55, 0.55)' : '1px solid rgba(255, 255, 255, 0.15)',
+          border: isPlaying ? '1px solid rgba(212, 175, 55, 0.6)' : '1px solid rgba(255, 255, 255, 0.15)',
           boxShadow: isPlaying
-            ? '0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.25)'
+            ? '0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.3)'
             : '0 8px 20px -4px rgba(0, 0, 0, 0.4)',
           borderRadius: '9999px',
           padding: '6px 12px 6px 10px',
@@ -166,10 +208,10 @@ export default function BackgroundAudioPlayer() {
         {/* Text Status */}
         <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15, paddingRight: '4px' }}>
           <span style={{ fontWeight: 600, fontSize: '0.8rem', color: isPlaying ? '#f8fafc' : '#cbd5e1' }}>
-            {isPlaying ? 'Foresight Theme' : 'Play Theme'}
+            {isPlaying ? 'Theme Song' : 'Play Theme'}
           </span>
           <span style={{ fontSize: '0.68rem', color: isPlaying ? 'var(--color-gold, #d4af37)' : '#94a3b8' }}>
-            {isPlaying ? 'Background Music' : 'Tap to Listen'}
+            {isPlaying ? 'Playing Ambient' : 'Tap to Listen'}
           </span>
         </div>
 
@@ -189,7 +231,7 @@ export default function BackgroundAudioPlayer() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              opacity: 0.8,
+              opacity: 0.85,
               transition: 'opacity 0.2s ease',
             }}
           >
@@ -214,7 +256,7 @@ export default function BackgroundAudioPlayer() {
           style={{
             background: 'transparent',
             border: 'none',
-            color: '#64748b',
+            color: '#94a3b8',
             padding: '2px 4px',
             marginLeft: '2px',
             cursor: 'pointer',
@@ -223,11 +265,11 @@ export default function BackgroundAudioPlayer() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            opacity: 0.7,
+            opacity: 0.8,
             transition: 'color 0.2s ease',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#94a3b8')}
         >
           &times;
         </button>
@@ -258,10 +300,14 @@ export default function BackgroundAudioPlayer() {
 
         @media (max-width: 768px) {
           .foresight-bg-music-pill {
-            bottom: 84px !important;
-            left: 16px !important;
-            padding: 5px 10px 5px 8px !important;
-            font-size: 0.75rem !important;
+            bottom: 68px !important;
+            left: 10px !important;
+            padding: 5px 8px 5px 8px !important;
+            font-size: 0.72rem !important;
+            max-width: 140px !important;
+          }
+          .foresight-bg-music-pill span {
+            white-space: nowrap;
           }
         }
       ` }} />

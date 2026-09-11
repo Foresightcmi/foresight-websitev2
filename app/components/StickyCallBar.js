@@ -1,6 +1,11 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+
 export default function StickyCallBar() {
+  const pathname = usePathname();
+  if (pathname === '/quote') return null;
+
   return (
     <div className="sticky-call-bar">
       <a

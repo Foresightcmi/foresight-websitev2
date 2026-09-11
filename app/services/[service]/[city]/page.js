@@ -595,19 +595,6 @@ export default async function ServiceCityPage({ params }) {
 
       {/* ── INTERNAL LINKING MESH ───────────────────────────────────── */}
       <RelatedServiceAreas currentCitySlug={resolvedParams.city} serviceSlug={resolvedParams.service} />
-
-      {/* ── MOBILE STICKY CTA ───────────────────────────────────────── */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .mobile-sticky-cta { display: none; }
-        @media (max-width: 768px) {
-          .mobile-sticky-cta { display: flex !important; }
-          body { padding-bottom: 80px; }
-        }
-      `}} />
-      <div className="mobile-sticky-cta" style={{ position: 'fixed', bottom: 0, left: 0, width: '100%', background: 'var(--color-white)', padding: '0.75rem 1rem', boxShadow: '0 -4px 10px rgba(0,0,0,0.1)', gap: '0.5rem', zIndex: 9999 }}>
-        <a href="tel:6784802110" className="btn btn-outline" style={{ flex: 1, textAlign: 'center', padding: '0.75rem', fontSize: '1rem', background: 'var(--color-white)' }}>Call Now</a>
-        <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" className="btn btn-primary" style={{ flex: 1, textAlign: 'center', padding: '0.75rem', fontSize: '1rem' }}>Book Now</a>
-      </div>
     </>
   );
 }

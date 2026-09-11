@@ -57,6 +57,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   useEffect(() => {
     isOpenRef.current = isOpen;
+    if (typeof window !== 'undefined') {
+      if (isOpen) {
+        window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+      } else {
+        window.dispatchEvent(new CustomEvent('foresight_resume_bg_music'));
+      }
+    }
   }, [isOpen]);
 
   useEffect(() => {
