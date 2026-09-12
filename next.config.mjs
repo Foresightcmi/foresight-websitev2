@@ -70,7 +70,25 @@ const nextConfig = {
         ],
       },
       {
-        source: '/:path*.(woff2|woff|ttf|eot|svg|png|jpg|jpeg|webp|avif|ico)',
+        source: '/audio/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/videos/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*.(woff2|woff|ttf|eot|svg|png|jpg|jpeg|webp|avif|ico|mp3|mp4|m4a|wav|webm)',
         headers: [
           {
             key: 'Cache-Control',

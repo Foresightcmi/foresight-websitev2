@@ -141,7 +141,7 @@ export default function BackgroundAudioPlayer() {
       <audio
         ref={audioRef}
         src="/audio/foresight-anthem.mp3"
-        preload="auto"
+        preload="none"
         loop
         playsInline
         onPlay={() => setIsPlaying(true)}
