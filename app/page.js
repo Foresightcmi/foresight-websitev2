@@ -167,8 +167,8 @@ export default function Home() {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
-             <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={140} height={105} sizes="140px" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={140} height={105} sizes="140px" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
              
              {/* 10+ Years Experience Badge */}
              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.5)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '130px', minWidth: '140px', backdropFilter: 'blur(8px)' }}>
