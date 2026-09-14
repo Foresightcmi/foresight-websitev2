@@ -18,7 +18,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [calculatedQuote, setCalculatedQuote] = useState(null);
   const [typedInput, setTypedInput] = useState('');
   const [selectedAddons, setSelectedAddons] = useState([]);
-  const [engineMode, setEngineMode] = useState('detecting'); // 'live' | 'neural'
+  const [engineMode, setEngineMode] = useState('neural'); // 'neural' Christopher Voice Engine
   const [liveWsConnected, setLiveWsConnected] = useState(false);
 
   const [isHandsFree, setIsHandsFree] = useState(true);
@@ -161,9 +161,6 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           } else {
             if (!isOpenRef.current) return;
             setCallState('listening');
-            if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
-              return;
-            }
             if (isHandsFreeRef.current && handleStartListeningRef.current) {
               handleStartListeningRef.current();
             }
@@ -622,10 +619,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         setCallState('thinking');
         haltSpeech();
 
-        // 1. Establish Gemini Live connection in parallel
-        initLiveConnection();
-
-        // 2. Play introductory greeting audio exactly once
+        // Play introductory greeting audio exactly once
         greetingTimerRef.current = setTimeout(() => {
           if (isOpenRef.current) {
             playNeuralAudio('/audio/chris-greeting.mp3', () => {
@@ -633,9 +627,6 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               setTimeout(() => {
                 if (!isOpenRef.current) return;
                 setCallState('listening');
-                if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
-                  return; // Live mic processor will now stream visitor voice
-                }
                 if (isHandsFreeRef.current && handleStartListeningRef.current) {
                   handleStartListeningRef.current();
                 }
@@ -692,11 +683,6 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     setCallState('listening');
     setMicError(null);
     setInterimUserText('');
-
-    // If Gemini Live is connected, it handles user voice natively via PCM stream. Do NOT run browser SpeechRecognition!
-    if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
-      return;
-    }
 
     // Optional haptic tap on mobile
     if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
@@ -972,9 +958,9 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                   Chris
                 </h3>
                 <span style={{
-                  background: liveWsConnected ? 'rgba(56, 189, 248, 0.15)' : 'rgba(212, 175, 55, 0.15)',
-                  color: liveWsConnected ? '#38bdf8' : '#D4AF37',
-                  border: `1px solid ${liveWsConnected ? 'rgba(56, 189, 248, 0.4)' : 'rgba(212, 175, 55, 0.4)'}`,
+                  background: 'rgba(212, 175, 55, 0.15)',
+                  color: '#D4AF37',
+                  border: '1px solid rgba(212, 175, 55, 0.4)',
                   fontSize: '0.65rem',
                   fontWeight: 800,
                   padding: '2px 8px',
@@ -985,10 +971,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                   alignItems: 'center',
                   gap: '4px'
                 }}>
-                  {liveWsConnected && (
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#38bdf8', boxShadow: '0 0 6px #38bdf8' }} />
-                  )}
-                  {liveWsConnected ? 'Gemini Live' : 'Certified Master Inspector'}
+                  Certified Master Inspector
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
