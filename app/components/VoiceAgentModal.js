@@ -7,12 +7,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [callState, setCallState] = useState('idle'); // 'idle' | 'listening' | 'thinking' | 'speaking'
   const [interimUserText, setInterimUserText] = useState('');
   const [micError, setMicError] = useState(null);
-  const [history, setHistory] = useState([
-    {
-      role: 'assistant',
-      content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
-    }
-  ]);
+  const [history, setHistory] = useState([]);
   const [isMuted, setIsMuted] = useState(false);
   const [bookingData, setBookingData] = useState(null);
   const [calculatedQuote, setCalculatedQuote] = useState(null);
@@ -465,6 +460,16 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       if (data.mode !== 'live' || !data.wsUrl) {
         console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
         setEngineMode('neural');
+        setHistory(prev => {
+          if (prev.length === 0) {
+            return [{
+              role: 'assistant',
+              content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+            }];
+          }
+          return prev;
+        });
+        setCallState('idle');
         return;
       }
 
@@ -554,6 +559,13 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             if (msg.serverContent.generationComplete || msg.serverContent.turnComplete) {
               isModelTurnActiveRef.current = false;
               isInterruptedRef.current = false;
+              setHistory(prev => {
+                const last = prev[prev.length - 1];
+                if (last && last.role === 'assistant' && last.streaming) {
+                  return [...prev.slice(0, -1), { ...last, streaming: false }];
+                }
+                return prev;
+              });
               const outCtx = audioOutputCtxRef.current;
               const remainingMs = outCtx ? Math.max(0, (scheduledAudioTimeRef.current - outCtx.currentTime) * 1000) : 0;
               if (speakingEndTimerRef.current) clearTimeout(speakingEndTimerRef.current);
@@ -573,15 +585,19 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               setCallState('listening');
             }
 
-            // Real-time spoken transcript from Gemini
+            // Real-time spoken transcript from Gemini (Single live greeting, no duplicates)
             if (msg.serverContent.outputTranscription?.text) {
               const streamedText = msg.serverContent.outputTranscription.text.replace(/\*/g, '');
               setHistory(prev => {
-                const last = prev[prev.length - 1];
-                if (last && last.role === 'assistant' && last.live) {
-                  return [...prev.slice(0, -1), { role: 'assistant', content: last.content + streamedText, live: true }];
+                // If there is any placeholder greeting, replace it immediately
+                if (prev.length === 1 && (prev[0].isPlaceholder || (prev[0].role === 'assistant' && !prev[0].live))) {
+                  return [{ role: 'assistant', content: streamedText, streaming: true, live: true }];
                 }
-                return [...prev, { role: 'assistant', content: streamedText, live: true }];
+                const last = prev[prev.length - 1];
+                if (last && last.role === 'assistant' && last.streaming) {
+                  return [...prev.slice(0, -1), { ...last, content: last.content + streamedText }];
+                }
+                return [...prev, { role: 'assistant', content: streamedText, streaming: true, live: true }];
               });
             }
 
@@ -590,10 +606,10 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               const userSpokenText = msg.serverContent.inputTranscription.text;
               setHistory(prev => {
                 const last = prev[prev.length - 1];
-                if (last && last.role === 'user' && last.live) {
-                  return [...prev.slice(0, -1), { role: 'user', content: userSpokenText, live: true }];
+                if (last && last.role === 'user' && last.streaming) {
+                  return [...prev.slice(0, -1), { ...last, content: userSpokenText }];
                 }
-                return [...prev, { role: 'user', content: userSpokenText, live: true }];
+                return [...prev, { role: 'user', content: userSpokenText, streaming: true, live: true }];
               });
             }
 
@@ -603,6 +619,13 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               if (callStateRef.current !== 'speaking') {
                 setCallState('speaking');
               }
+              setHistory(prev => {
+                const last = prev[prev.length - 1];
+                if (last && last.role === 'user' && last.streaming) {
+                  return [...prev.slice(0, -1), { ...last, streaming: false }];
+                }
+                return prev;
+              });
 
               for (const part of msg.serverContent.modelTurn.parts) {
                 if (part.inlineData?.data && part.inlineData?.mimeType?.startsWith('audio/pcm')) {
@@ -620,17 +643,47 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         console.log('Gemini Live WebSocket closed (code:', evt.code, 'reason:', evt.reason, '). Engaging Neural Fallback.');
         setLiveWsConnected(false);
         setEngineMode('neural');
+        setHistory(prev => {
+          if (prev.length === 0) {
+            return [{
+              role: 'assistant',
+              content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+            }];
+          }
+          return prev;
+        });
+        setCallState('idle');
       };
 
       ws.onerror = (err) => {
         console.warn('Gemini Live WebSocket error, using Neural Fallback:', err);
         setLiveWsConnected(false);
         setEngineMode('neural');
+        setHistory(prev => {
+          if (prev.length === 0) {
+            return [{
+              role: 'assistant',
+              content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+            }];
+          }
+          return prev;
+        });
+        setCallState('idle');
       };
 
     } catch (err) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
+      setHistory(prev => {
+        if (prev.length === 0) {
+          return [{
+            role: 'assistant',
+            content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+          }];
+        }
+        return prev;
+      });
+      setCallState('idle');
     }
   }, [startLiveMicStream, playLivePcmChunk, haltSpeech]);
 
@@ -648,6 +701,11 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         hasGreetedRef.current = true;
         setCallState('thinking');
         haltSpeech();
+        setHistory([]);
+        setBookingData(null);
+        setCalculatedQuote(null);
+        setInterimUserText('');
+        setMicError(null);
 
         // Connect directly to Gemini Live for genuine real-time bidirectional natural conversation
         initLiveConnection();
@@ -655,6 +713,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     } else {
       // Modal closed: reset greeting guard and stop all live sessions and audio
       hasGreetedRef.current = false;
+      setHistory([]);
       if (greetingTimerRef.current) {
         clearTimeout(greetingTimerRef.current);
         greetingTimerRef.current = null;
@@ -1270,9 +1329,37 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             minHeight: '220px'
           }}
         >
-          {history.map((msg, index) => {
-            const isUser = msg.role === 'user';
-            const internachi = !isUser ? parseInternachi(msg.content) : null;
+          {history.length === 0 ? (
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+              minHeight: '160px',
+              color: '#94a3b8',
+              textAlign: 'center',
+              gap: '12px'
+            }}>
+              <div style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                border: '2px solid rgba(212, 175, 55, 0.25)',
+                borderTopColor: '#D4AF37',
+                animation: 'spin 1s linear infinite'
+              }} />
+              <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1', fontWeight: 600 }}>
+                Connecting with Christopher Boykin (Certified Master Inspector)...
+              </p>
+              <p style={{ margin: 0, fontSize: '0.78rem', color: '#64748b' }}>
+                Ask anything about home systems, InterNACHI SOP, instant pricing, or scheduling
+              </p>
+            </div>
+          ) : (
+            history.map((msg, index) => {
+              const isUser = msg.role === 'user';
+              const internachi = !isUser ? parseInternachi(msg.content) : null;
 
             return (
               <div 
@@ -1341,7 +1428,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                 )}
               </div>
             );
-          })}
+          }))}
 
           {/* Interactive Booking Confirmation Card */}
           {bookingData && (
@@ -1788,6 +1875,10 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
         @keyframes pulseVoiceSpeaking {
           0% { transform: scale(1); box-shadow: 0 0 25px rgba(239, 68, 68, 0.4); }
