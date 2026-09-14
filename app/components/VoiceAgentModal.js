@@ -35,6 +35,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const activePcmSourcesRef = useRef([]);
   const isModelTurnActiveRef = useRef(false);
   const speakingEndTimerRef = useRef(null);
+  const isInterruptedRef = useRef(false);
 
   const recognitionRef = useRef(null);
   const synthRef = useRef(null);
@@ -249,7 +250,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   // Live 24kHz PCM Audio Stream Player (Jitter-buffered gapless queue)
   const playLivePcmChunk = useCallback((base64Data) => {
-    if (isMutedRef.current || !base64Data) return;
+    if (isMutedRef.current || !base64Data || isInterruptedRef.current) return;
     try {
       // Ensure HTML5 audio greeting/fallback is stopped so they never overlap
       if (audioRef.current) {
@@ -388,6 +389,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       const audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
       audioInputCtxRef.current = audioCtx;
+      if (audioCtx.state === 'suspended') {
+        try { await audioCtx.resume(); } catch (_) {}
+      }
 
       const source = audioCtx.createMediaStreamSource(stream);
       const processor = audioCtx.createScriptProcessor(2048, 1, 1);
@@ -399,17 +403,18 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         }
 
         const float32 = e.inputBuffer.getChannelData(0);
-        // While assistant is speaking, suppress quiet room reflections / speaker bleed, but let firm user speech trigger barge-in interruption
+        // While assistant is speaking, suppress quiet silence/fan noise (<0.005), but let normal user speech pass to trigger barge-in interruption
         if (isSpeakingRef.current) {
           let sum = 0;
           for (let i = 0; i < float32.length; i++) {
             sum += float32[i] * float32[i];
           }
           const rms = Math.sqrt(sum / float32.length);
-          if (rms < 0.035) {
+          if (rms < 0.005) {
             return;
           }
         }
+        isInterruptedRef.current = false;
 
         const int16 = new Int16Array(float32.length);
         for (let i = 0; i < float32.length; i++) {
@@ -548,6 +553,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             // Turn completed by Gemini Live
             if (msg.serverContent.generationComplete || msg.serverContent.turnComplete) {
               isModelTurnActiveRef.current = false;
+              isInterruptedRef.current = false;
               const outCtx = audioOutputCtxRef.current;
               const remainingMs = outCtx ? Math.max(0, (scheduledAudioTimeRef.current - outCtx.currentTime) * 1000) : 0;
               if (speakingEndTimerRef.current) clearTimeout(speakingEndTimerRef.current);
@@ -561,6 +567,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
 
             if (msg.serverContent.interrupted) {
               console.log('Gemini Live interrupted by user speech!');
+              isInterruptedRef.current = true;
               haltSpeech();
               isModelTurnActiveRef.current = false;
               setCallState('listening');
@@ -669,9 +676,27 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
 
   // Instant barge-in / toggle helper: interrupts Chris immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
+    if (audioInputCtxRef.current && audioInputCtxRef.current.state === 'suspended') {
+      try { audioInputCtxRef.current.resume(); } catch (_) {}
+    }
+    if (audioOutputCtxRef.current && audioOutputCtxRef.current.state === 'suspended') {
+      try { audioOutputCtxRef.current.resume(); } catch (_) {}
+    }
+
     if (callState === 'speaking') {
       haltSpeech();
-      handleStartListening();
+      isInterruptedRef.current = true;
+      if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
+        try {
+          // Interrupt server generation immediately
+          liveWsRef.current.send(JSON.stringify({
+            realtimeInput: {
+              text: " "
+            }
+          }));
+        } catch (_) {}
+      }
+      setCallState('listening');
     } else if (callState === 'listening') {
       handleStopListening();
     } else {
@@ -681,22 +706,25 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
 
   // Start speech recognition with instant visual feedback and error recovery
   const handleStartListening = () => {
-    // If Chris is currently speaking or generating, never start listening
-    if (isSpeakingRef.current || isModelTurnActiveRef.current) {
-      return;
-    }
-
     // 1. Instantly stop ongoing audio
     haltSpeech();
-
-    // 2. Instant visual state update (<0ms delay)
     setCallState('listening');
     setMicError(null);
     setInterimUserText('');
 
+    if (audioInputCtxRef.current && audioInputCtxRef.current.state === 'suspended') {
+      try { audioInputCtxRef.current.resume(); } catch (_) {}
+    }
+
     // Optional haptic tap on mobile
     if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
       try { window.navigator.vibrate(40); } catch (_) {}
+    }
+
+    // In Gemini Live mode, microphone streams raw 16kHz PCM continuously over WebSocket
+    // Browser SpeechRecognition is strictly for Neural fallback mode
+    if (engineMode === 'live') {
+      return;
     }
 
     // 3. Browser speech recognition check (Neural fallback mode only)
