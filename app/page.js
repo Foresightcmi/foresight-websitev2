@@ -6,6 +6,8 @@ import ProcessSteps from './components/ProcessSteps';
 import LatestPosts from './components/LatestPosts';
 import NewsletterSignup from './components/NewsletterSignup';
 import VslTriggerButton from './components/VslTriggerButton';
+import HomeVideoPlayer from './components/HomeVideoPlayer';
+import ThemeSongPlayer from './components/ThemeSongPlayer';
 
 const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
@@ -196,21 +198,7 @@ export default function Home() {
 
           <div style={{ maxWidth: '980px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
             {/* 9:16 Video Player Container */}
-            <div style={{ maxWidth: '400px', width: '100%', margin: '0 auto', background: 'rgba(255,255,255,0.03)', padding: '0.85rem', borderRadius: '20px', border: '2px solid rgba(212,175,55,0.4)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.7)' }}>
-              <div style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: '14px', background: '#000000', aspectRatio: '9/16' }}>
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/images/home-systems-poster.webp"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }}
-                >
-                  <source src="/videos/foresight-home-systems.mp4" type="video/mp4" />
-                  <track kind="captions" srcLang="en" label="English" default />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+            <HomeVideoPlayer />
 
             {/* Video Feature & Direct-Response Summary */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -281,34 +269,7 @@ export default function Home() {
             Listen to our official anthem featuring the 678-480-2110 inspection hotline and our two-inspector guarantee.
           </p>
           
-          <div style={{ 
-            background: 'rgba(15, 23, 42, 0.7)', 
-            border: '1px solid rgba(255, 255, 255, 0.12)', 
-            borderRadius: '1rem', 
-            padding: '1.25rem 1.5rem', 
-            boxShadow: '0 10px 25px -5px rgba(0,0,0,0.5)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '1rem'
-          }}>
-            <audio 
-              controls 
-              preload="metadata" 
-              src="/audio/foresight-anthem.mp3" 
-              style={{ width: '100%', maxWidth: '600px', height: '48px', outline: 'none' }}
-            >
-              Your browser does not support the audio element.
-            </audio>
-            
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '600px', fontSize: '0.82rem', color: '#94A3B8', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <span>📞 Inspection Hotline: <strong>678-480-2110</strong></span>
-              <span>🛡️ Two Inspectors On Every Job</span>
-              <a href="/audio/foresight-anthem.mp3" download="foresight-anthem.mp3" style={{ color: 'var(--color-gold)', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
-                ⬇️ Download MP3
-              </a>
-            </div>
-          </div>
+          <ThemeSongPlayer />
         </div>
       </section>
 

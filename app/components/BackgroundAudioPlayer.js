@@ -86,9 +86,52 @@ export default function BackgroundAudioPlayer() {
     window.addEventListener('foresight_pause_bg_music', handlePauseBgMusic);
     window.addEventListener('foresight_resume_bg_music', handleResumeBgMusic);
 
+    // 3. Global media conflict prevention (Capture Phase)
+    // If a visitor clicks on any video or plays any video, stop background music instantly.
+    const handleCapturePlay = (e) => {
+      if (e.target && e.target.tagName === 'VIDEO') {
+        if (audio && !audio.paused) {
+          audio.pause();
+          setIsPlaying(false);
+        }
+        // Also ensure all other audio elements on the page are paused
+        document.querySelectorAll('audio').forEach((aud) => {
+          if (aud !== e.target && !aud.paused) {
+            aud.pause();
+          }
+        });
+      } else if (e.target && e.target.tagName === 'AUDIO' && e.target !== audio) {
+        // If inline audio (or any other audio) starts playing, stop this background audio
+        if (audio && !audio.paused) {
+          audio.pause();
+          setIsPlaying(false);
+        }
+      }
+    };
+
+    const handleCaptureClick = (e) => {
+      const isVideo = e.target && (e.target.tagName === 'VIDEO' || e.target.closest('video'));
+      if (isVideo) {
+        if (audio && !audio.paused) {
+          audio.pause();
+          setIsPlaying(false);
+        }
+        document.querySelectorAll('audio').forEach((aud) => {
+          if (!aud.paused) {
+            aud.pause();
+          }
+        });
+      }
+    };
+
+    document.addEventListener('play', handleCapturePlay, true);
+    document.addEventListener('click', handleCaptureClick, true);
+
     return () => {
       window.removeEventListener('foresight_pause_bg_music', handlePauseBgMusic);
       window.removeEventListener('foresight_resume_bg_music', handleResumeBgMusic);
+      document.removeEventListener('play', handleCapturePlay, true);
+      document.removeEventListener('click', handleCaptureClick, true);
     };
   }, [attemptPlay]);
 

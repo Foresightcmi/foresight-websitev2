@@ -5,6 +5,17 @@ import Link from 'next/link';
 
 export default function VslModal({ isOpen, onClose }) {
   useEffect(() => {
+    if (isOpen) {
+      if (typeof document !== 'undefined') {
+        document.querySelectorAll('audio').forEach((audio) => {
+          if (!audio.paused) audio.pause();
+        });
+      }
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+      }
+    }
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
@@ -95,6 +106,22 @@ export default function VslModal({ isOpen, onClose }) {
             autoPlay 
             playsInline
             poster="/images/home-systems-poster.webp"
+            onPlay={() => {
+              if (typeof document !== 'undefined') {
+                document.querySelectorAll('audio').forEach(a => { if (!a.paused) a.pause(); });
+              }
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+              }
+            }}
+            onClick={() => {
+              if (typeof document !== 'undefined') {
+                document.querySelectorAll('audio').forEach(a => { if (!a.paused) a.pause(); });
+              }
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+              }
+            }}
             style={{ width: '100%', height: 'auto', maxHeight: '480px', display: 'block' }}
           >
             <source src="/videos/foresight-home-systems.mp4" type="video/mp4" />
