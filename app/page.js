@@ -15,8 +15,8 @@ const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: t
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
-  title: 'Atlanta Home Inspections from $345 | 2-Inspector Team',
-  description: '4.9★ Atlanta Home Inspections by a 2-Inspector CMI® team from $345. Free FLIR thermal, 4K drones & up to $35,000 in warranty protection. Instant online quote!',
+  title: 'Best Home Inspector Atlanta GA | Inspections from $345',
+  description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
   keywords: [
     'home inspection Atlanta GA',
     'best home inspector Atlanta',

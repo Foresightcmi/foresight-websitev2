@@ -28,10 +28,10 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL('https://www.fhinspectionsatl.com'),
   title: {
-    default: 'Atlanta Home Inspections from $345 | 2-Inspector Team',
+    default: 'Best Home Inspector Atlanta GA | Inspections from $345',
     template: '%s | Foresight',
   },
-  description: '4.9★ Atlanta Home Inspections by a 2-Inspector CMI® team from $345. Free FLIR thermal, 4K drones & up to $35,000 in warranty protection. Instant quote online!',
+  description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
   keywords: ['Home Inspection Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection cost', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two inspector team home inspection', 'home inspection warranty', 'best home inspector in Metro Atlanta', 'thermal imaging home inspection Atlanta', '11-month new construction warranty inspection', 'Foresight Home Inspections reviews'],
   robots: {
     index: true,
