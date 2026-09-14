@@ -394,21 +394,23 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       processorRef.current = processor;
 
       processor.onaudioprocess = (e) => {
-        // Drop mic audio if muted or Marcus is currently speaking or turn is active or speaker audio is echoing!
-        const outCtx = audioOutputCtxRef.current;
-        const isSpeakerAudioPlaying = outCtx && (scheduledAudioTimeRef.current > outCtx.currentTime + 0.35);
-        if (
-          !ws || 
-          ws.readyState !== WebSocket.OPEN || 
-          isMutedRef.current || 
-          isSpeakingRef.current || 
-          isModelTurnActiveRef.current || 
-          isSpeakerAudioPlaying
-        ) {
+        if (!ws || ws.readyState !== WebSocket.OPEN || isMutedRef.current) {
           return;
         }
 
         const float32 = e.inputBuffer.getChannelData(0);
+        // While assistant is speaking, suppress quiet room reflections / speaker bleed, but let firm user speech trigger barge-in interruption
+        if (isSpeakingRef.current) {
+          let sum = 0;
+          for (let i = 0; i < float32.length; i++) {
+            sum += float32[i] * float32[i];
+          }
+          const rms = Math.sqrt(sum / float32.length);
+          if (rms < 0.035) {
+            return;
+          }
+        }
+
         const int16 = new Int16Array(float32.length);
         for (let i = 0; i < float32.length; i++) {
           const s = Math.max(-1, Math.min(1, float32[i]));
@@ -505,13 +507,13 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
 - In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Keep your answers concise, spoken natural English, 2 to 4 sentences. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
           setup: {
-            model: data.model || "models/gemini-2.0-flash-exp",
+            model: data.model || "models/gemini-2.5-flash-native-audio-latest",
             generationConfig: {
               responseModalities: ["AUDIO"],
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
-                    voiceName: "Fenrir"
+                    voiceName: data.voice || "Fenrir"
                   }
                 }
               }
@@ -534,6 +536,12 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             setLiveWsConnected(true);
             setEngineMode('live');
             startLiveMicStream(ws);
+            // Spoken live greeting by Chris
+            ws.send(JSON.stringify({
+              realtimeInput: {
+                text: "The client just opened the voice console. Greet them warmly and concisely as Chris Boykin from Foresight Home Inspections in Atlanta in 1 spoken sentence, and ask how you can help them today."
+              }
+            }));
           }
 
           if (msg.serverContent) {
@@ -558,6 +566,30 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               setCallState('listening');
             }
 
+            // Real-time spoken transcript from Gemini
+            if (msg.serverContent.outputTranscription?.text) {
+              const streamedText = msg.serverContent.outputTranscription.text.replace(/\*/g, '');
+              setHistory(prev => {
+                const last = prev[prev.length - 1];
+                if (last && last.role === 'assistant' && last.live) {
+                  return [...prev.slice(0, -1), { role: 'assistant', content: last.content + streamedText, live: true }];
+                }
+                return [...prev, { role: 'assistant', content: streamedText, live: true }];
+              });
+            }
+
+            // Real-time speech-to-text transcript of user speech
+            if (msg.serverContent.inputTranscription?.text) {
+              const userSpokenText = msg.serverContent.inputTranscription.text;
+              setHistory(prev => {
+                const last = prev[prev.length - 1];
+                if (last && last.role === 'user' && last.live) {
+                  return [...prev.slice(0, -1), { role: 'user', content: userSpokenText, live: true }];
+                }
+                return [...prev, { role: 'user', content: userSpokenText, live: true }];
+              });
+            }
+
             if (msg.serverContent.modelTurn?.parts) {
               isModelTurnActiveRef.current = true;
               isSpeakingRef.current = true;
@@ -568,15 +600,6 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               for (const part of msg.serverContent.modelTurn.parts) {
                 if (part.inlineData?.data && part.inlineData?.mimeType?.startsWith('audio/pcm')) {
                   playLivePcmChunk(part.inlineData.data);
-                }
-                if (part.text) {
-                  setHistory(prev => {
-                    const last = prev[prev.length - 1];
-                    if (last && last.role === 'assistant' && last.live) {
-                      return [...prev.slice(0, -1), { role: 'assistant', content: last.content + part.text, live: true }];
-                    }
-                    return [...prev, { role: 'assistant', content: part.text, live: true }];
-                  });
                 }
               }
             }
@@ -619,21 +642,8 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         setCallState('thinking');
         haltSpeech();
 
-        // Play introductory greeting audio exactly once
-        greetingTimerRef.current = setTimeout(() => {
-          if (isOpenRef.current) {
-            playNeuralAudio('/audio/chris-greeting.mp3', () => {
-              // When greeting ends cleanly:
-              setTimeout(() => {
-                if (!isOpenRef.current) return;
-                setCallState('listening');
-                if (isHandsFreeRef.current && handleStartListeningRef.current) {
-                  handleStartListeningRef.current();
-                }
-              }, 250);
-            });
-          }
-        }, 150);
+        // Connect directly to Gemini Live for genuine real-time bidirectional natural conversation
+        initLiveConnection();
       }
     } else {
       // Modal closed: reset greeting guard and stop all live sessions and audio
@@ -655,7 +665,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         greetingTimerRef.current = null;
       }
     };
-  }, [isOpen, haltSpeech, initLiveConnection, playNeuralAudio, stopLiveSession]);
+  }, [isOpen, haltSpeech, initLiveConnection, stopLiveSession]);
 
   // Instant barge-in / toggle helper: interrupts Chris immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
@@ -788,11 +798,25 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     }
     setMicError(null);
 
-    const userMessage = { role: 'user', content: queryText.trim() };
+    const userMessage = { role: 'user', content: queryText.trim(), live: true };
     const newHistory = [...history, userMessage];
     setHistory(newHistory);
     setInterimUserText('');
     setCallState('thinking');
+
+    // If Gemini Live is connected, stream text directly over the WebSocket for spoken native response!
+    if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
+      try {
+        liveWsRef.current.send(JSON.stringify({
+          realtimeInput: {
+            text: queryText.trim()
+          }
+        }));
+        return;
+      } catch (wsErr) {
+        console.warn('Live WebSocket text dispatch failed, falling back to HTTP:', wsErr);
+      }
+    }
 
     try {
       const res = await fetch('/api/voice', {
@@ -973,6 +997,23 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                 }}>
                   Certified Master Inspector
                 </span>
+                {liveWsConnected && (
+                  <span style={{
+                    background: 'rgba(16, 185, 129, 0.15)',
+                    color: '#34d399',
+                    border: '1px solid rgba(16, 185, 129, 0.4)',
+                    fontSize: '0.65rem',
+                    fontWeight: 700,
+                    padding: '2px 8px',
+                    borderRadius: '10px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
+                    Live Natural AI
+                  </span>
+                )}
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
                 Founder &amp; Certified Master Inspector &bull; 
