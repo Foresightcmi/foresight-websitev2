@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -94,10 +94,10 @@ export default function VslModal({ isOpen, onClose }) {
             controls 
             autoPlay 
             playsInline
-            poster="/images/thermal-1.png"
-            style={{ width: '100%', height: 'auto', maxHeight: '380px', display: 'block' }}
+            poster="/images/home-systems-poster.webp"
+            style={{ width: '100%', height: 'auto', maxHeight: '480px', display: 'block' }}
           >
-            <source src="/videos/foresight-inspection-intro.mp4" type="video/mp4" />
+            <source src="/videos/foresight-home-systems.mp4" type="video/mp4" />
             Your browser does not support HTML5 video.
           </video>
         </div>

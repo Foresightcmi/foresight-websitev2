@@ -49,12 +49,12 @@ export default function Home() {
     "@graph": [
       {
         "@type": "VideoObject",
-        "name": "Foresight Home Inspections - High-Tech Dual Inspector Advantage",
-        "description": "Certified Master Inspector Christopher Boykin and our two-inspector team demonstrate on-site thermal imaging, drone roof scans, and diagnostic evaluations in Metro Atlanta.",
-        "thumbnailUrl": "https://www.fhinspectionsatl.com/images/thermal-1.png",
-        "uploadDate": "2026-06-16T12:57:23Z",
-        "duration": "PT1M18S",
-        "contentUrl": "https://www.fhinspectionsatl.com/videos/foresight-inspection-intro.mp4",
+        "name": "Foresight Home Inspections - Complete Home Systems Diagnostic Commercial",
+        "description": "Certified Master Inspector Christopher Boykin and Foresight Home Inspections demonstrate major home systems evaluations, diagnostic technology, and two-inspector thoroughness across Atlanta.",
+        "thumbnailUrl": "https://www.fhinspectionsatl.com/images/home-systems-poster.webp",
+        "uploadDate": "2026-09-13T22:00:00Z",
+        "duration": "PT1M19S",
+        "contentUrl": "https://www.fhinspectionsatl.com/videos/foresight-home-systems.mp4",
         "publisher": { "@id": "https://www.fhinspectionsatl.com/#business" }
       },
       {
@@ -175,6 +175,89 @@ export default function Home() {
                 <span style={{ fontSize: '2.75rem', fontWeight: 800, color: 'var(--color-gold)', lineHeight: 1, textShadow: '0 2px 10px rgba(212,175,55,0.3)' }}>10+</span>
                 <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center', marginTop: '0.5rem', lineHeight: 1.2 }}>Years Trusted<br/>Experience</span>
              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🎥 VIDEO SHOWCASE SECTION (Home Systems Commercial & Field Proof) 🎥 */}
+      <section className="section bg-dark text-white" style={{ padding: '4.5rem 0', position: 'relative', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
+            <span className="badge" style={{ background: 'rgba(211,47,47,0.2)', color: 'var(--color-red-light)', marginBottom: '0.75rem', fontSize: '0.85rem' }}>
+              🎥 Field Diagnostics In Action
+            </span>
+            <h2 style={{ color: 'var(--color-white)', fontSize: '2.4rem', fontWeight: 800 }}>
+              See How Our Two-Inspector Team Evaluates Atlanta Home Systems
+            </h2>
+            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '720px', margin: '0.5rem auto 0', fontSize: '1.05rem', lineHeight: 1.6 }}>
+              Watch Lead Certified Master Inspector® Christopher Boykin demonstrate our signature two-inspector protocol, major systems inspection, and advanced diagnostic technology in the field.
+            </p>
+          </div>
+
+          <div style={{ maxWidth: '980px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
+            {/* 9:16 Video Player Container */}
+            <div style={{ maxWidth: '400px', width: '100%', margin: '0 auto', background: 'rgba(255,255,255,0.03)', padding: '0.85rem', borderRadius: '20px', border: '2px solid rgba(212,175,55,0.4)', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.7)' }}>
+              <div style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: '14px', background: '#000000', aspectRatio: '9/16' }}>
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/images/home-systems-poster.webp"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '14px' }}
+                >
+                  <source src="/videos/foresight-home-systems.mp4" type="video/mp4" />
+                  <track kind="captions" srcLang="en" label="English" default />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            {/* Video Feature & Direct-Response Summary */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div style={{ background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: 'var(--radius-md)', padding: '1.75rem', backdropFilter: 'blur(8px)' }}>
+                <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  What You Will See In This Field Audit
+                </span>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '1rem 0 0 0', display: 'flex', flexDirection: 'column', gap: '0.9rem', color: '#E2E8F0', fontSize: '0.95rem' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                    <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
+                    <div><strong>Complete Home Systems Evaluation:</strong> Roof, framing, electrical panel, plumbing, and HVAC checked in depth.</div>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                    <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
+                    <div><strong>Two Certified Inspectors:</strong> Lead CMI® on site with senior inspector for double coverage in half the time.</div>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                    <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
+                    <div><strong>Advanced Diagnostic Suite:</strong> Complimentary FLIR thermal imaging and 4K aerial drone roof scans.</div>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                    <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
+                    <div><strong>Up to $35,000 Protection:</strong> $10,000 Master Warranty ($0 deductible) + InterNACHI® $25,000 Honor Guarantee.</div>
+                  </li>
+                </ul>
+              </div>
+
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a
+                  href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-gold"
+                  style={{ padding: '0.9rem 2rem', fontSize: '1rem', flexGrow: 1, textAlign: 'center' }}
+                >
+                  📅 Schedule Your Inspection
+                </a>
+                <Link
+                  prefetch={false}
+                  href="/quote"
+                  className="btn btn-outline-light"
+                  style={{ padding: '0.9rem 2rem', fontSize: '1rem', flexGrow: 1, textAlign: 'center' }}
+                >
+                  📊 Instant Quote
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -477,54 +560,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🎥 VIDEO SHOWCASE SECTION (Google Video SEO & Visual Proof) 🎥 */}
-      <section className="section bg-dark text-white" style={{ padding: '5rem 0', position: 'relative' }}>
-        <div className="container">
-          <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
-            <span className="badge" style={{ background: 'rgba(211,47,47,0.2)', color: 'var(--color-red-light)', marginBottom: '0.75rem', fontSize: '0.85rem' }}>
-              🎥 Field Diagnostics in Action
-            </span>
-            <h2 style={{ color: 'var(--color-white)', fontSize: '2.4rem', fontWeight: 800 }}>
-              See How Our Two-Inspector Team Evaluates Atlanta Homes
-            </h2>
-            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '720px', margin: '0.5rem auto 0', fontSize: '1.05rem' }}>
-              Watch how Certified Master Inspector Christopher Boykin deploys FLIR infrared thermal imaging, aerial drones, and our signature two-inspector protocol on site.
-            </p>
-          </div>
-
-          <div style={{ maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
-            <div style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: '12px', background: '#000000' }}>
-              <video
-                controls
-                playsInline
-                preload="none"
-                poster="/images/thermal-1.webp"
-                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '12px', maxHeight: '520px' }}
-              >
-                <source src="/videos/foresight-inspection-intro.mp4" type="video/mp4" />
-                <track kind="captions" srcLang="en" label="English" default />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.25rem', flexWrap: 'wrap', gap: '1rem' }}>
-              <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.9rem', color: 'var(--color-gray-mid)' }}>
-                <span>⏱️ <strong>Length:</strong> 1:18</span>
-                <span>🔍 <strong>Tech:</strong> FLIR Thermal + 4K Drones</span>
-                <span>🛡️ <strong>Included:</strong> $10K Master Warranty</span>
-              </div>
-              <a
-                href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary"
-                style={{ padding: '0.6rem 1.5rem', fontSize: '0.95rem', fontWeight: 700 }}
-              >
-                📅 Schedule Now
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="section bg-gray-light">
         <div className="container">
