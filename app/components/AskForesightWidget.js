@@ -130,7 +130,7 @@ export default function AskForesightWidget() {
   const [messages, setMessages] = useState([
     {
       role: 'ai',
-      content: "Well hello there! I'm Foresight AI, your home inspection advisor. \n\nWhat home system questions can I answer for you today?"
+      content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. \n\nWhat home system or inspection questions can I answer for you today?"
     }
   ]);
   const [input, setInput] = useState('');

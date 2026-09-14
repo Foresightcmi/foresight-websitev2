@@ -230,9 +230,9 @@ function sendNurtureEmail1(name, email) {
         "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
       "</div>" +
       "<div style=\"padding: 1.5rem;\">" +
-        "<p>Well hello there <strong>" + name + "</strong>,</p>" +
-        "<p>I'm Christopher Boykin, founder and Certified Master Inspector here at Foresight Home Inspections. I'm mighty glad you requested our <strong>\"Foresight vs. Hindsight\" Checklist</strong>. My partner and I have spent decades climbing through attics and crawling through Georgia dirt, and let me tell you—what you don't check now will cost you down the road!</p>" +
-        "<p>In this first part of our checklist, we are focusing on the very foundation and structural bones of your home:</p>" +
+        "<p>Hello <strong>" + name + "</strong>,</p>" +
+        "<p>I'm Christopher Boykin, founder and Certified Master Inspector here at Foresight Home Inspections. Thank you for requesting our <strong>\"Foresight vs. Hindsight\" Checklist</strong>. Our team has spent decades evaluating homes and crawlspaces across Metro Atlanta, and what you don't inspect thoroughly before closing can cost thousands later.</p>" +
+        "<p>In this first part of our checklist, we are focusing on the foundation and structural bones of your home:</p>" +
         
         "<div style=\"background: #f3f4f6; border-left: 4px solid #d32f2f; padding: 1rem; margin: 1.5rem 0;\">" +
           "<h4 style=\"margin: 0 0 0.5rem 0; color: #d32f2f;\">🏡 Part 1 Checklist: Foundation & Structural Bones</h4>" +
@@ -322,7 +322,7 @@ function sendNurtureEmail3(name, email) {
         "<p style=\"margin: 5px 0 0 0; font-style: italic; font-size: 0.95rem;\">\"Because hindsight is expensive... Choose Foresight!\"</p>" +
       "</div>" +
       "<div style=\"padding: 1.5rem;\">" +
-        "<p>Well hello there <strong>" + name + "</strong>,</p>" +
+        "<p>Hello <strong>" + name + "</strong>,</p>" +
         "<p>This is Christopher Boykin, and today we are wrapping up our checklist series by looking at the systems that keep your home alive, running, and safe—your electrical work, HVAC units, and the air your family breathes.</p>" +
         "<p>Here is what you need to check to make sure your home's mechanical shield is fully secure:</p>" +
         

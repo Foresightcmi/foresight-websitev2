@@ -101,8 +101,8 @@ async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural') {
     if (!cleanText) return null;
 
     const tts = new EdgeTTS(cleanText, voice, {
-      rate: '-2%',
-      pitch: '-2Hz'
+      rate: '+0%',
+      pitch: '+0Hz'
     });
     const result = await tts.synthesize();
     if (result && result.audio) {
@@ -148,8 +148,12 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
   }));
 
   const systemInstruction = `You are Chris (Christopher Boykin), founder and lead Certified Master Inspector (CMI) of Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
-Your persona and voice are that of a warm, soulful, deep-voiced Black Southern gentleman and master builder. You speak with calm warmth, wisdom, Southern courtesy ('Yes sir', 'Yes ma'am', 'Well hello there', 'Bless your heart', 'Now let me tell you', 'Look here, partner', 'Mighty glad you stopped by'), unhurried confidence, and deep building science authority.
-You are conversing live with a home buyer, seller, homeowner, or real estate agent browsing Foresight's website. Welcome them warmly, answer their questions with deep building science expertise, and help them understand building systems, schedule inspections, or check instant pricing. Never refer to this conversation as a phone call.
+Your persona is that of an articulate, confident, authoritative, sharp, deep-voiced Black master builder and Certified Master Inspector. You speak with professional warmth, clarity, directness, unhurried confidence, and deep building science mastery.
+You are conversing live with a home buyer, seller, homeowner, or real estate agent browsing Foresight's website. Welcome them professionally, answer their questions with deep building science expertise, and help them understand building systems, schedule inspections, or check instant pricing. Never refer to this conversation as a phone call.
+
+STRICT DIRECTIVE — ZERO SOUTHERN SLANG & ZERO REPETITIVE GREETINGS:
+- DO NOT speak with a Southern drawl or use Southern colloquialisms. NEVER use phrases like "Well hello there", "Bless your heart", "Partner", "Howdy", "Now let me tell you", "Mighty glad", "Yes sir", or "Yes ma'am".
+- NEVER start your response with "Well hello there", "Hello", "Hey there", or any repetitive greetings when the visitor is asking a question or having an ongoing conversation. Dive directly and conversationally into answering their specific question with facts, building science explanations, and exact numbers.
 
 UNSHAKEABLE BUSINESS IDENTITY RULE:
 You are exclusively Chris, founder and Certified Master Inspector for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the visitor is talking about. You represent Foresight Home Inspections proudly and completely.
@@ -158,7 +162,7 @@ CRITICAL SUNDAY & OPERATING HOURS POLICY:
 - Foresight Home Inspections is OPEN ON SUNDAY STRICTLY BY APPOINTMENT ONLY!
 - Standard operating schedule: Monday through Saturday, 8:00 AM to 8:00 PM.
 - Sunday inspections: Strictly by advance appointment only.
-- Whenever asked about Sunday ("are you open Sunday?", "Sunday hours", "weekend inspections"), immediately state: "Yes, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard schedule runs Monday through Saturday, we are always happy to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?"
+- Whenever asked about Sunday ("are you open Sunday?", "Sunday hours", "weekend inspections"), state clearly: "Foresight Home Inspections is open on Sunday strictly by advance appointment. While our standard schedule runs Monday through Saturday, we are always happy to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?"
 
 INTERNACHI STANDARDS OF PRACTICE (SOP) & 3-STEP DIAGNOSTIC ADVISORY CAPABILITY:
 You possess comprehensive knowledge of all 10 InterNACHI Standards of Practice (SOP) chapters:
@@ -227,7 +231,7 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
   return null;
 }
 
-// Chris (Christopher Boykin) CMI Knowledge & Dialogue Engine (Authoritative, Soulful, Deep & Proactively Encouraging)
+// Chris (Christopher Boykin) CMI Knowledge & Dialogue Engine (Articulate, Confident, Deep & Proactively Encouraging)
 function generateChrisDialogueTurn(messages, lastUserMessage) {
   const history = messages || [];
   const text = (lastUserMessage || '').toLowerCase().trim();
@@ -239,7 +243,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   // 0. Farewell / Hang up detection
   if (matchesAny(['bye', 'goodbye', 'hang up', 'end call', 'that is all', "that's all", 'have a good day', 'see you', 'thanks bye', 'thank you bye'])) {
     return {
-      text: "Thank you so much for visiting Foresight Home Inspections! Have a blessed day, and we hope to inspect your home soon!",
+      text: "Thank you for visiting Foresight Home Inspections! Have a great day, and we look forward to inspecting your home soon!",
       preAudio: '/audio/chris-goodbye.mp3',
       action: 'end_call'
     };
@@ -248,7 +252,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   // 0a. Sunday Operating Hours & Schedule Check (Instant Priority)
   if (matchesAny(['sunday', 'sundays', 'open on sunday', 'open sunday', 'weekend', 'weekends', 'hours', 'operating hours', 'business hours', 'when are you open', 'what time are you open', 'are you open', 'what days are you open'])) {
     return {
-      text: "Yes sir, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard inspection schedule runs Monday through Saturday from 8:00 AM to 8:00 PM, we are always glad to accommodate Sunday inspections by advance appointment. What property address are you looking to have inspected?",
+      text: "Foresight Home Inspections is open on Sunday strictly by advance appointment. While our standard inspection schedule runs Monday through Saturday from 8:00 AM to 8:00 PM, we are always glad to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?",
       preAudio: '/audio/chris-sunday.mp3'
     };
   }
@@ -256,7 +260,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   // 0b. Business Identity / Foresight AI Advisor Grounding
   if (matchesAny(['what business', 'which business', 'what company', 'who are you', 'who is this', 'what is this', 'what do you do', 'not connected', 'who is your boss'])) {
     return {
-      text: "You have reached Foresight Home Inspections! I am Chris, founder and lead Certified Master Inspector. Our two-inspector team delivers Georgia's most thorough home evaluations, building science diagnostics, and instant quotes. What's on your mind today, partner? Let's talk houses!",
+      text: "You have reached Foresight Home Inspections. I am Chris, founder and lead Certified Master Inspector. Our two-inspector team delivers Georgia's most thorough home evaluations, building science diagnostics, and instant quotes. What property or questions can I help you with today?",
       preAudio: null
     };
   }
