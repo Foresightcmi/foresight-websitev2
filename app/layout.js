@@ -31,7 +31,7 @@ export const metadata = {
     default: 'Atlanta Home Inspections | 2-Inspector Team From $345 | Foresight',
     template: '%s | Foresight',
   },
-  description: '4.9★ Rated. Two certified inspectors on every job led by a Certified Master Inspector®. Free FLIR thermal, 4K drone scans & $10,000 warranty. From $345. Instant quote online!',
+  description: '4.9★ Rated. Two certified inspectors on every job led by a Certified Master Inspector®. Free FLIR thermal, 4K drone scans & up to $35,000 in warranty & guarantee protection. From $345. Instant quote online!',
   keywords: ['Home Inspection Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection cost', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two inspector team home inspection', 'home inspection warranty', 'best home inspector in Metro Atlanta', 'thermal imaging home inspection Atlanta', '11-month new construction warranty inspection', 'Foresight Home Inspections reviews'],
   robots: {
     index: true,
@@ -51,7 +51,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
-    description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium home inspections across Metro Atlanta with a $10,000 warranty.',
+    description: 'Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium home inspections across Metro Atlanta with up to $35,000 in warranty & guarantee protection.',
     url: 'https://www.fhinspectionsatl.com',
     siteName: 'Foresight Home Inspections',
     locale: 'en_US',
@@ -68,7 +68,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
-    description: 'Two certified inspectors on every job. $10,000 warranty included. Serving 87+ cities across 20 Metro Atlanta counties.',
+    description: 'Two certified inspectors on every job. Up to $35,000 in warranty & InterNACHI® guarantee protection included. Serving 87+ cities across 20 Metro Atlanta counties.',
     images: ['/images/Logopng.png'],
   },
   verification: {
@@ -603,7 +603,7 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "CreativeWork",
-        "text": "Fact: Every home inspection includes a $10,000 Elite Master Inspection Warranty at no extra cost."
+        "text": "Fact: Every home inspection includes up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Inspection Warranty + InterNACHI $25,000 Honor Guarantee) at no extra cost."
       }
     ]
   },
@@ -693,7 +693,7 @@ export default function RootLayout({ children }) {
           🎁 BONUS: Every inspection includes a FREE VIP Utility & Smart Home Setup Concierge ($150 Value)! ⚡
         </div>
         <div style={{ background: 'var(--color-red)', color: 'white', padding: '0.5rem 1rem', textAlign: 'center', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>
-          🛡️ The Certified Master Inspector Advantage: Every Inspection Includes a $10,000 Protection Warranty at No Extra Cost!
+          🛡️ The Certified Master Inspector Advantage: Every Inspection Includes Up to $35,000 in Combined Warranty & Guarantee Protection!
         </div>
         <GeoTrustBanner />
         <Header />

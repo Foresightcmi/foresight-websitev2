@@ -115,7 +115,7 @@ function calculateQuoteDetails(input = {}) {
       'Two Certified Master Inspectors on every property',
       'High-resolution aerial drone roof scan',
       'FLIR infrared thermal imaging scan',
-      '$10,000 Elite Master Inspection Warranty ($0 deductible)',
+      'Up to $35,000 in combined warranty & guarantee protection ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee)',
       'Same-day digital report turnaround with video'
     ]
   };
@@ -213,7 +213,7 @@ async function handleToolCall(name, args) {
       const quote = calculateQuoteDetails(args);
       return {
         quote,
-        summary: `Total estimated fee is $${quote.total}. Includes two-inspector team, aerial drone scan, FLIR thermal scan, and $10,000 warranty. 50% deposit ($${quote.depositRequired}) to solidify booking. Balance ($${quote.balanceDue}) due upon report delivery.`
+        summary: `Total estimated fee is $${quote.total}. Includes two-inspector team, aerial drone scan, FLIR thermal scan, and up to $35,000 in combined warranty and guarantee protection. 50% deposit ($${quote.depositRequired}) to solidify booking. Balance ($${quote.balanceDue}) due upon report delivery.`
       };
     }
     case 'check_city_coverage': {
@@ -264,7 +264,7 @@ async function handleToolCall(name, args) {
           'Detailed crawlspace and structural framing evaluations',
           'Prioritized repair list categorized into Safety Hazards, Major Defects, and Maintenance Items',
           'HomeGauge Create Request List (CRL) integration for rapid real estate repair amendments',
-          'Backing by the $10,000 Elite Master Inspection Warranty ($0 deductible)'
+          'Backing by up to $35,000 in combined warranty & guarantee protection ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee)'
         ],
         privacy: 'Client names and physical address redacted for homeowner privacy.'
       };

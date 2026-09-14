@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 export const metadata = {
   title: 'Atlanta Home Inspection FAQs & Costs | From $345',
-  description: 'Get direct answers on Atlanta home inspection costs, our InterNACHI 2-inspector process, $10,000 warranty, and Sunday appointments. Pricing from $345!',
+  description: 'Get direct answers on Atlanta home inspection costs, our InterNACHI 2-inspector process, up to $35,000 in warranty & guarantee protection, and Sunday appointments. Pricing from $345!',
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/faq',
   },
@@ -41,8 +41,8 @@ export default function FAQPage() {
     {
       category: 'Warranty & Protection',
       questions: [
-        { q: 'What does the $10,000 warranty cover?', a: 'Appliances (up to $2,250), structural ($2,250), mechanicals/HVAC/plumbing/electrical ($2,250), mold remediation, roof leaks ($1,000). $0 deductible. 90 days from closing.' },
-        { q: 'Does the warranty cost extra?', a: 'No, it\'s complimentary with every standard buyer inspection.' },
+        { q: 'What warranties and guarantees are included with an inspection?', a: 'Every standard buyer inspection includes up to $35,000 in combined protection: (1) Our $10,000 Elite Master Inspection Warranty ($0 deductible, 90 days) covering appliances ($2,250), structural ($2,250), HVAC/plumbing/electrical ($2,250), mold remediation ($2,250), and roof leaks ($1,000); and (2) InterNACHI\'s $25,000 Honor Guarantee backing member integrity with up to $25,000 in property replacement.' },
+        { q: 'Do the warranties or guarantees cost extra?', a: 'No, both the $10,000 warranty and the $25,000 InterNACHI Honor Guarantee are complimentary with every standard buyer inspection at zero extra cost.' },
         { q: 'What is a Certified Master Inspector?', a: 'CMI is the highest designation in North America. Christopher Boykin completed 1,000+ inspections, vetted by the Master Inspector Certification Board.' },
       ],
     },

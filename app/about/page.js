@@ -4,14 +4,14 @@ import Script from 'next/script';
 
 export const metadata = {
   title: 'Meet Christopher Boykin CMI | Certified Master Inspector Atlanta',
-  description: 'Meet Christopher Boykin, Certified Master Inspector® (top 1% in North America) and founder of Foresight Home Inspections. 2-inspector team & $10,000 warranty.',
+  description: 'Meet Christopher Boykin, Certified Master Inspector® (top 1% in North America) and founder of Foresight Home Inspections. 2-inspector team & up to $35,000 in warranty & guarantee protection.',
   keywords: ['certified master inspector Atlanta', 'about Foresight Home Inspections', 'Christopher Boykin CMI', 'home inspector Lithonia GA', 'InterNACHI certified inspector Atlanta'],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/about',
   },
   openGraph: {
     title: 'About Foresight Home Inspections | Certified Master Inspector Atlanta',
-    description: 'Christopher Boykin, CMI, founded Foresight Home Inspections with a mission to deliver unparalleled thoroughness. Two inspectors, advanced tech, and a $10,000 warranty on every job.',
+    description: 'Christopher Boykin, CMI, founded Foresight Home Inspections with a mission to deliver unparalleled thoroughness. Two inspectors, advanced tech, and up to $35,000 in warranty & guarantee protection on every job.',
     url: 'https://www.fhinspectionsatl.com/about',
     type: 'website',
   },
@@ -298,46 +298,109 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          $10,000 WARRANTY SECTION
+          UP TO $35,000 COMBINED WARRANTY & GUARANTEE SECTION
       ═══════════════════════════════════════════════════════════════ */}
       <section className="section" style={{ background: 'linear-gradient(135deg, var(--color-dark), #1f2937)', color: 'white' }}>
         <div className="container">
           <div className="section-title">
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.4rem 1.25rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '1rem', display: 'inline-block' }}>
+              🛡️ UNMATCHED CLIENT FINANCIAL PROTECTION
+            </span>
             <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>
-              <span style={{ color: 'var(--color-red)' }}>$10,000</span> Elite Master Inspection Warranty
+              Up to <span style={{ color: 'var(--color-gold)' }}>$35,000</span> in Combined Warranty &amp; Guarantee Protection
             </h2>
-            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem' }}>
-              Because Christopher Boykin holds the Certified Master Inspector designation &mdash; the highest credential awarded by the Master Inspector Certification Board &mdash; every Foresight client receives the maximum Elite MASTER level warranty plan at no additional cost.
+            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '850px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6 }}>
+              Because Christopher Boykin holds the Certified Master Inspector® designation &mdash; the highest credential awarded by the Master Inspector Certification Board &mdash; every Foresight client receives two elite tiers of backing: the <strong>$10,000 Elite Master Inspection Warranty</strong> plus <strong>InterNACHI&rsquo;s $25,000 Honor Guarantee</strong> at zero extra charge.
             </p>
           </div>
 
-          <div className="grid grid-3" style={{ gap: '1.5rem' }}>
+          {/* Pillar 1: $10,000 Elite Master Inspection Warranty */}
+          <div style={{ background: 'rgba(212, 175, 55, 0.08)', border: '1px solid rgba(212, 175, 55, 0.3)', borderRadius: 'var(--radius-lg)', padding: '1.75rem 2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <Image
+                src="/images/internachi_inspection_warranty.webp"
+                alt="InterNACHI Inspection Warranty"
+                width={220}
+                height={95}
+                sizes="220px"
+                style={{ height: '70px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))' }}
+              />
+              <div>
+                <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Pillar 1 &bull; Mechanical, Structural &amp; Appliance Protection</span>
+                <h3 style={{ color: '#FFFFFF', margin: '0.25rem 0 0', fontSize: '1.45rem', fontWeight: 700 }}>$10,000 Elite Master Inspection Warranty ($0 Deductible)</h3>
+              </div>
+            </div>
+            <span style={{ background: 'var(--color-gold)', color: '#0F172A', fontWeight: 700, padding: '0.5rem 1.25rem', borderRadius: '2rem', fontSize: '0.9rem' }}>
+              Included Free
+            </span>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> $10,000 Aggregate
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> $10,000 Aggregate
               </h3>
               <p style={{ color: 'var(--color-gray-mid)' }}>Total coverage limit with exactly $0 deductible. Active for 90 days from closing or 120 days from inspection.</p>
             </div>
 
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Major Systems
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Major Systems &amp; Appliances
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 each for appliances, structural components, and mechanicals (HVAC, electrical, plumbing).</p>
+              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 each for major kitchen appliances (no age limits, washer/dryer included), structural components, and mechanicals (HVAC, electrical, plumbing).</p>
             </div>
 
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Additional Protection
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Mold &amp; Roof Leak Coverage
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for mold remediation and $1,000 for roof leak protection. Backed by the Master Inspector Certification Board.</p>
+              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for mold remediation and $1,000 for roof leak protection. Backed directly by the Master Inspector Certification Board.</p>
+            </div>
+          </div>
+
+          {/* Pillar 2: InterNACHI $25,000 Honor Guarantee */}
+          <div style={{ background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95))', border: '1px solid rgba(212, 175, 55, 0.35)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', backdropFilter: 'blur(8px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
+            <div style={{ textAlign: 'center' }}>
+              <Image
+                src="/images/internachi_honor_guarantee_badge.webp"
+                alt="InterNACHI $25,000 Honor Guarantee"
+                width={360}
+                height={199}
+                sizes="(max-width: 640px) 280px, 360px"
+                style={{ width: '100%', maxWidth: '340px', height: 'auto', margin: '0 auto', filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.5))', borderRadius: '8px' }}
+              />
+              <div style={{ marginTop: '1.25rem' }}>
+                <a
+                  href="http://www.inspectorseek.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-gold"
+                  style={{ fontSize: '0.9rem', padding: '0.65rem 1.5rem', display: 'inline-block' }}
+                >
+                  🔍 Find the Best Inspector in Your Neighborhood
+                </a>
+              </div>
+            </div>
+            <div>
+              <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.5rem' }}>
+                Pillar 2 &bull; InterNACHI® Member Guarantee
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.85rem', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.25 }}>
+                InterNACHI&rsquo;s $25,000 Honor Guarantee
+              </h3>
+              <p style={{ color: '#E2E8F0', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+                InterNACHI® is so certain of the integrity of our members that we back them up with our $25,000 Honor Guarantee.
+              </p>
+              <p style={{ color: '#94A3B8', fontSize: '0.92rem', lineHeight: 1.65, borderLeft: '3px solid var(--color-gold)', paddingLeft: '1rem', margin: 0 }}>
+                InterNACHI® will pay up to $25,000 (USD; maximum collective aggregate) for the cost of replacement of personal property lost (and not recovered, restituted or insured) during an inspection and stolen by an InterNACHI®-certified member who was convicted of or pleaded guilty (or no contest) to any criminal charge resulting from the member&rsquo;s taking of the client&rsquo;s personal property. Claimant agrees that the exclusive venue for any action against InterNACHI® arising out of this Honor Guarantee is the District Court in Boulder County, Colorado. InterNACHI&rsquo;s Honor Guarantee is valid throughout the U.S. and Canada.
+              </p>
             </div>
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                📅 Schedule &amp; Get Your Warranty
+                📅 Schedule &amp; Get Your $35,000 Protection
               </a>
               <Link href="/quote" className="btn btn-outline-light" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
                 See Pricing First

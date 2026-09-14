@@ -6,7 +6,7 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
   title: 'Georgia Due Diligence Defense System | Fast 48-Hour Home Inspections',
-  description: 'Protect your Georgia Due Diligence period. Guaranteed 48-hour inspection scheduling, same-day digital reports in under 24 hours, and $10,000 warranty protection.',
+  description: 'Protect your Georgia Due Diligence period. Guaranteed 48-hour inspection scheduling, same-day digital reports in under 24 hours, and up to $35,000 in combined warranty & guarantee protection.',
   keywords: [
     'Georgia due diligence period home inspection',
     'fast home inspection Atlanta',
@@ -88,7 +88,7 @@ const dueDiligenceServiceSchema = {
     '@type': 'State',
     name: 'Georgia',
   },
-  description: 'Fast-turnaround residential home inspection service designed specifically for Georgia 5-to-10 day due diligence contract deadlines. 48-hour scheduling window guarantee, same-day report delivery, and $10,000 warranty protection.',
+  description: 'Fast-turnaround residential home inspection service designed specifically for Georgia 5-to-10 day due diligence contract deadlines. 48-hour scheduling window guarantee, same-day report delivery, and up to $35,000 in combined warranty & guarantee protection.',
 };
 
 export default function DueDiligencePage() {
@@ -174,13 +174,13 @@ export default function DueDiligencePage() {
             </div>
 
             {/* Pillar 3 */}
-            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2.5rem 2rem', borderRadius: '12px', borderTop: '4px solid var(--color-red)', display: 'flex', flexDirection: 'column' }}>
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2.5rem 2rem', borderRadius: '12px', borderTop: '4px solid var(--color-gold)', display: 'flex', flexDirection: 'column' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>🛡️</div>
               <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.75rem' }}>
-                $10,000 Post-Closing Master Warranty
+                Up to $35,000 Warranty &amp; Guarantee Protection
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '1rem', lineHeight: 1.6, flexGrow: 1 }}>
-                Eliminate closing anxiety. Every standard buyer inspection includes our complimentary $10,000 Elite Master Inspection Warranty ($0 deductible) covering major appliances, structural framing, HVAC, electrical, plumbing, mold, and roof leaks for 90 days from closing.
+                Eliminate closing anxiety. Every standard buyer inspection includes our complimentary $10,000 Elite Master Inspection Warranty ($0 deductible) covering major appliances, structural framing, HVAC, electrical, plumbing, mold, and roof leaks for 90 days from closing, plus InterNACHI&rsquo;s $25,000 Honor Guarantee backing member integrity.
               </p>
             </div>
           </div>

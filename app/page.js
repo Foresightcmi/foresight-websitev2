@@ -14,7 +14,7 @@ const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true })
 
 export const metadata = {
   title: 'Atlanta Home Inspections | 2-Inspector Team From $345 | Foresight',
-  description: '4.9★ Rated. Two certified inspectors on every site for double the scrutiny in half the time. Free FLIR thermal, drone scans, & $10,000 warranty. Get an instant quote online!',
+  description: '4.9★ Rated. Two certified inspectors on every site for double the scrutiny in half the time. Free FLIR thermal, drone scans, & up to $35,000 in warranty & guarantee protection. Get an instant quote online!',
   keywords: [
     'home inspection Atlanta GA',
     'best home inspector Atlanta',
@@ -38,7 +38,7 @@ export const metadata = {
   alternates: { canonical: 'https://www.fhinspectionsatl.com' },
   openGraph: {
     title: 'Foresight Home Inspections | Two Inspectors on Every Job',
-    description: 'Atlanta home inspections led by a Certified Master Inspector®. Two inspectors. $10,000 warranty included. Serving Metro Atlanta and surrounding North Georgia.',
+    description: 'Atlanta home inspections led by a Certified Master Inspector®. Two inspectors. Up to $35,000 in warranty & guarantee protection included. Serving Metro Atlanta and surrounding North Georgia.',
     url: 'https://www.fhinspectionsatl.com',
   },
 };
@@ -82,10 +82,10 @@ export default function Home() {
           },
           {
             "@type": "Question",
-            "name": "What is included in the Foresight $10,000 Inspection Warranty?",
+            "name": "What warranties and guarantees are included with a Foresight inspection?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our $10,000 Elite Master Inspection Warranty is included free with standard inspections. It features a $0 deductible and covers structural issues, sudden failures in appliances and mechanicals, up to $2,250 in mold remediation, and up to $1,000 for roof leak repairs."
+              "text": "Every home inspection includes up to $35,000 in combined warranty and guarantee protection: (1) our $10,000 Elite Master Inspection Warranty ($0 deductible) covering appliances, structural elements, HVAC, plumbing, electrical, mold remediation, and roof leaks; and (2) InterNACHI's $25,000 Honor Guarantee backing member integrity with up to $25,000 for personal property replacement."
             }
           },
           {
@@ -144,7 +144,7 @@ export default function Home() {
           </h1>
 
           <p style={{ maxWidth: '720px', margin: '0 auto 2.5rem', fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
-            Uncompromising thoroughness led by a Certified Master Inspector® (CMI). From entry-level single-family homes to multi-million dollar luxury estates, every home inspection features two certified inspectors, FLIR thermal imaging, aerial drone roof scanning, and our $10,000 warranty protection.
+            Uncompromising thoroughness led by a Certified Master Inspector® (CMI). From entry-level single-family homes to multi-million dollar luxury estates, every home inspection features two certified inspectors, FLIR thermal imaging, aerial drone roof scanning, and up to $35,000 in combined warranty & guarantee protection.
           </p>
 
           <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
@@ -264,7 +264,7 @@ export default function Home() {
                   <li>✓ <strong>Two Certified Inspectors</strong> on every job</li>
                   <li>✓ Standard FLIR Thermal Imaging &amp; Moisture Detection</li>
                   <li>✓ Same-day digital photo report within 24 hours</li>
-                  <li>✓ Compliments of Foresight: <strong>$10,000 Warranty</strong> ($0 deductible)</li>
+                  <li>✓ Compliments of Foresight: <strong>Up to $35,000 Protection</strong> ($10K Warranty + $25K Honor Guarantee)</li>
                   <li>✓ Full online scheduling &amp; transparent flat-rate calculator</li>
                 </ul>
               </div>
@@ -295,7 +295,7 @@ export default function Home() {
                   <li>✓ Extended 4+ hour dedicated property evaluation window</li>
                   <li>✓ Full Aerial Drone Scanning + FLIR Thermal Envelope Diagnostics</li>
                   <li>✓ Dedicated 1-on-1 post-inspection strategy call with lead CMI</li>
-                  <li>✓ Priority report turnaround &amp; $10,000 Warranty coverage</li>
+                  <li>✓ Priority report turnaround &amp; Up to $35,000 Warranty &amp; Guarantee Protection</li>
                 </ul>
               </div>
               <div>
@@ -326,7 +326,7 @@ export default function Home() {
                 Together with another fully certified professional inspector, our two-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1rem', color: '#1E293B', lineHeight: 1.6, background: '#F8FAFC', padding: '1.25rem', borderLeft: '4px solid var(--color-gold)', borderRadius: 'var(--radius-sm)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-                Every home inspection integrates FLIR thermal imaging and aerial drone technology, and includes a $10,000 Elite Master Inspection Warranty with a $0 deductible &mdash; backed by the Master Inspector Certification Board.
+                Every home inspection integrates FLIR thermal imaging and aerial drone technology, and includes up to $35,000 in combined protection &mdash; our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI&rsquo;s $25,000 Honor Guarantee.
               </p>
               <ul className="cms-content" style={{ marginBottom: '2rem', listStyle: 'none' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
@@ -339,7 +339,7 @@ export default function Home() {
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> Termite &amp; Wood Destroying Organism (WDO) Evaluations
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
-                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Thermal Imaging &amp; Drone Tech Included
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Certified Drone Pilot for Aerial Roof Scans
                 </li>
               </ul>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -378,10 +378,10 @@ export default function Home() {
             </div>
 
             <div className="card" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)' }}>
-              <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>$10,000</h3>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1E293B' }}>Elite Master Warranty</h4>
+              <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>$35,000</h3>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1E293B' }}>Warranty &amp; Guarantee</h4>
               <p style={{ color: '#475569', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
-                Every home inspection led by CMI® Christopher Boykin includes $10,000 in zero-deductible coverage for appliances, mechanicals, structural elements, and roof leaks.
+                Every inspection includes up to $35,000 in combined protection: our $10,000 Elite Master Warranty ($0 deductible) plus InterNACHI&rsquo;s $25,000 Honor Guarantee.
               </p>
             </div>
 
@@ -591,55 +591,118 @@ export default function Home() {
       <section className="section" style={{ background: 'linear-gradient(135deg, var(--color-dark), #1f2937)', color: 'white' }}>
         <div className="container">
           <div className="section-title">
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.4rem 1.25rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '1rem', display: 'inline-block' }}>
+              🛡️ UNMATCHED CLIENT FINANCIAL PROTECTION
+            </span>
             <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>
-              <span style={{ color: 'var(--color-red)' }}>$10,000</span> Peace of Mind Protection
+              Up to <span style={{ color: 'var(--color-gold)' }}>$35,000</span> in Combined Warranty & Guarantee Protection
             </h2>
-            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem' }}>
-              Because Christopher Boykin is a Certified Master Inspector® &mdash; the highest credential awarded by the Master Inspector Certification Board &mdash; you receive the maximum Elite MASTER level warranty plan that ordinary inspectors simply cannot offer.
+            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '850px', margin: '0 auto', fontSize: '1.2rem', lineHeight: 1.6 }}>
+              Because Christopher Boykin is a Certified Master Inspector® (CMI) &mdash; the highest credential awarded by the Master Inspector Certification Board &mdash; every Foresight inspection includes two layers of backing: the <strong>$10,000 Elite Master Inspection Warranty</strong> plus <strong>InterNACHI&rsquo;s $25,000 Honor Guarantee</strong>.
             </p>
           </div>
           
-          <div className="grid grid-3" style={{ gap: '1.5rem' }}>
+          {/* Pillar 1 Header */}
+          <div style={{ background: 'rgba(212, 175, 55, 0.08)', border: '1px solid rgba(212, 175, 55, 0.3)', borderRadius: 'var(--radius-lg)', padding: '1.75rem 2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <Image
+                src="/images/internachi_inspection_warranty.webp"
+                alt="InterNACHI Inspection Warranty"
+                width={220}
+                height={95}
+                sizes="220px"
+                style={{ height: '70px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))' }}
+              />
+              <div>
+                <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Pillar 1 &bull; Mechanical, Structural &amp; Appliance Protection</span>
+                <h3 style={{ color: '#FFFFFF', margin: '0.25rem 0 0', fontSize: '1.45rem', fontWeight: 700 }}>$10,000 Elite Master Inspection Warranty ($0 Deductible)</h3>
+              </div>
+            </div>
+            <span style={{ background: 'var(--color-gold)', color: '#0F172A', fontWeight: 700, padding: '0.5rem 1.25rem', borderRadius: '2rem', fontSize: '0.9rem' }}>
+              Included Free
+            </span>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Elite Terms
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Elite Terms
               </h3>
               <p style={{ color: 'var(--color-gray-mid)' }}>90 Days from closing or 120 Days from inspection (whichever comes first).</p>
             </div>
             
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Total Coverage
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Total Coverage
               </h3>
               <p style={{ color: 'var(--color-gray-mid)' }}>$10,000 Aggregate Coverage Limit with exactly $0 Deductible.</p>
             </div>
 
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Appliances
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Appliances
               </h3>
               <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for Major Kitchen Appliances (NO age limits). Washer/Dryer fully included.</p>
             </div>
 
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Structural
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Structural
               </h3>
               <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 coverage for structural components of the home.</p>
             </div>
 
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Mechanicals
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Mechanicals
               </h3>
               <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 coverage for Major Mechanicals (HVAC, Electrical, Plumbing).</p>
             </div>
 
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Additional Protection
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Additional Protection
               </h3>
               <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for Mold Remediation and $1,000 for Roof Leak Protection.</p>
+            </div>
+          </div>
+
+          {/* Pillar 2: InterNACHI $25,000 Honor Guarantee */}
+          <div style={{ background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95))', border: '1px solid rgba(212, 175, 55, 0.35)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', backdropFilter: 'blur(8px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
+            <div style={{ textAlign: 'center' }}>
+              <Image
+                src="/images/internachi_honor_guarantee_badge.webp"
+                alt="InterNACHI $25,000 Honor Guarantee"
+                width={360}
+                height={199}
+                sizes="(max-width: 640px) 280px, 360px"
+                style={{ width: '100%', maxWidth: '340px', height: 'auto', margin: '0 auto', filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.5))', borderRadius: '8px' }}
+              />
+              <div style={{ marginTop: '1.25rem' }}>
+                <a
+                  href="http://www.inspectorseek.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-gold"
+                  style={{ fontSize: '0.9rem', padding: '0.65rem 1.5rem', display: 'inline-block' }}
+                >
+                  🔍 Find the Best Inspector in Your Neighborhood
+                </a>
+              </div>
+            </div>
+            <div>
+              <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.5rem' }}>
+                Pillar 2 &bull; InterNACHI® Member Guarantee
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.85rem', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.25 }}>
+                InterNACHI&rsquo;s $25,000 Honor Guarantee
+              </h3>
+              <p style={{ color: '#E2E8F0', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1rem' }}>
+                InterNACHI® is so certain of the integrity of our members that we back them up with our $25,000 Honor Guarantee.
+              </p>
+              <p style={{ color: '#94A3B8', fontSize: '0.92rem', lineHeight: 1.65, borderLeft: '3px solid var(--color-gold)', paddingLeft: '1rem', margin: 0 }}>
+                InterNACHI® will pay up to $25,000 (USD; maximum collective aggregate) for the cost of replacement of personal property lost (and not recovered, restituted or insured) during an inspection and stolen by an InterNACHI®-certified member who was convicted of or pleaded guilty (or no contest) to any criminal charge resulting from the member&rsquo;s taking of the client&rsquo;s personal property. Claimant agrees that the exclusive venue for any action against InterNACHI® arising out of this Honor Guarantee is the District Court in Boulder County, Colorado. InterNACHI&rsquo;s Honor Guarantee is valid throughout the U.S. and Canada.
+              </p>
             </div>
           </div>
           
@@ -685,7 +748,7 @@ export default function Home() {
                   ['Lead Inspector Credential', '✅ Certified Master Inspector® (CMI)', '❌ Standard Certification'],
                   ['FLIR Thermal Imaging', '✅ Included Free', '❌ $150–$300 Extra'],
                   ['Aerial Drone Roof Scan', '✅ Included Free', '❌ Not Offered'],
-                  ['Post-Inspection Warranty', '✅ $10,000 ($0 Deductible)', '❌ $0–$2,500'],
+                  ['Post-Inspection Warranty & Guarantee', '✅ Up to $35,000 Protection ($10K Warranty + $25K Honor Guarantee)', '❌ $0–$2,500'],
                   ['Utility Setup Concierge', '✅ Included Free (Utilities Plus)', '❌ Not Offered'],
                   ['Online Booking', '✅ 24/7 Instant Self-Scheduling', '❌ Phone/Email Only'],
                   ['AI Maintenance Advisor', '✅ Foresight AI (24/7)', '❌ Not Available'],
@@ -737,8 +800,8 @@ export default function Home() {
                 a: "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. CMIs are vetted by the Master Inspector Certification Board, completing at least 1,000 paid inspections or hours of education, maintaining a clean legal record, and adhering to strict InterNACHI Standards of Practice."
               },
               {
-                q: "What is covered under the complimentary $10,000 Foresight warranty?",
-                a: "Every standard home buyer inspection automatically includes a $10,000 aggregate protection warranty with a $0 deductible, active for 90 days from closing. The warranty covers major appliances (up to $2,250), structural integrity (up to $2,250), HVAC, plumbing, electrical mechanicals (up to $2,250), mold remediation, and roof leak repairs."
+                q: "What is covered under Foresight's up to $35,000 in warranties and guarantees?",
+                a: "Every standard home buyer inspection automatically includes two elite protection tiers: (1) The $10,000 Elite Master Inspection Warranty with $0 deductible active for 90 days post-closing, covering appliances (up to $2,250 with no age limits), structural framing ($2,250), HVAC/electrical/plumbing mechanicals ($2,250), mold remediation ($2,250), and roof leaks ($1,000); and (2) InterNACHI's $25,000 Honor Guarantee, where InterNACHI® backs member integrity by paying up to $25,000 for replacement of personal property. Combined, you receive up to $35,000 in total protection at zero extra cost."
               },
               {
                 q: "What areas does Foresight Home Inspections serve?",

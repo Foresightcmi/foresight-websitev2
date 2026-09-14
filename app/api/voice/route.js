@@ -192,7 +192,7 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
 5. CONCISE & SPOKEN NATURAL AUDIO: Keep your answers to 2 to 4 punchy, conversational sentences (around 35 to 55 words).
 6. ALL DISTINCTIVE FORESIGHT WEBSITE BENEFITS & PRICING:
    - Two-Inspector certified team on every site (finishes in 1.5 to 2.5 hours vs 4+ hours for solo operators).
-   - Complimentary $10,000 Master Protection Warranty with zero deductible.
+   - Complimentary up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty with zero deductible plus InterNACHI $25,000 Honor Guarantee).
    - Complimentary FLIR thermal imaging and 4K aerial drone scans standard on every inspection.
    - 24-hour digital reports with interactive Create Request List (CRL) tool.
    - Single-family homes start at $345, condos at $295. Add-ons: Pool $275, Termite WDO $125+, Radon $250, STR $595, Sewer Scope $450.
@@ -697,7 +697,7 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
-    const fallbackText = "Welcome to Foresight Home Inspections! This is Marcus, your senior client concierge. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, $10,000 warranty, instant pricing, or getting on our schedule!";
+    const fallbackText = "Welcome to Foresight Home Inspections! This is Marcus, your senior client concierge. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!";
     const audio = await synthesizeHumanVoice(fallbackText);
     return NextResponse.json({
       response: fallbackText,
