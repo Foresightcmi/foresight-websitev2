@@ -605,14 +605,16 @@ export default function Home() {
           {/* Pillar 1 Header */}
           <div style={{ background: 'rgba(212, 175, 55, 0.08)', border: '1px solid rgba(212, 175, 55, 0.3)', borderRadius: 'var(--radius-lg)', padding: '1.75rem 2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-              <Image
-                src="/images/internachi_inspection_warranty.webp"
-                alt="InterNACHI Inspection Warranty"
-                width={220}
-                height={95}
-                sizes="220px"
-                style={{ height: '70px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))' }}
-              />
+              <div style={{ background: '#FFFFFF', padding: '0.6rem 1.25rem', borderRadius: '10px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 6px 20px rgba(0,0,0,0.45)', border: '2px solid rgba(212, 175, 55, 0.4)' }}>
+                <Image
+                  src="/images/internachi_inspection_warranty.webp"
+                  alt="InterNACHI Inspection Warranty"
+                  width={200}
+                  height={86}
+                  sizes="200px"
+                  style={{ height: '56px', width: 'auto', objectFit: 'contain' }}
+                />
+              </div>
               <div>
                 <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Pillar 1 &bull; Mechanical, Structural &amp; Appliance Protection</span>
                 <h3 style={{ color: '#FFFFFF', margin: '0.25rem 0 0', fontSize: '1.45rem', fontWeight: 700 }}>$10,000 Elite Master Inspection Warranty ($0 Deductible)</h3>
