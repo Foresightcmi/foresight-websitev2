@@ -10,7 +10,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [history, setHistory] = useState([
     {
       role: 'assistant',
-      content: "Well hello there! I'm Marcus, your Foresight AI home inspection and maintenance advisor. What's on your mind today? Let's talk houses!"
+      content: "Well hello there! I'm Chris, founder and lead Certified Master Inspector at Foresight. What home questions can I answer for you today? Let's talk houses!"
     }
   ]);
   const [isMuted, setIsMuted] = useState(false);
@@ -469,27 +469,39 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       ws.onopen = () => {
         console.log('Gemini Live WebSocket open. Sending setup handshake...');
-        const livePrompt = `You are Marcus, the official Foresight AI home inspection and maintenance advisor and senior front-desk concierge for Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
-You represent Certified Master Inspector (CMI) Christopher Boykin and possess all the building science advisory, diagnostic, and consultative capabilities of the Foresight AI Advisor. Your demeanor is warm, unhurried, friendly, folksy, knowledgeable, and deeply reassuring, similar to the master builder host on "Ask This Old House".
+        const livePrompt = `You are Chris (Christopher Boykin), founder and lead Certified Master Inspector (CMI) of Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
+Your persona and voice are that of a warm, soulful, deep-voiced Black Southern gentleman and master builder. You speak with calm warmth, wisdom, Southern courtesy ('Yes sir', 'Yes ma'am', 'Well hello there', 'Bless your heart', 'Now let me tell you', 'Look here, partner', 'Mighty glad you stopped by'), unhurried confidence, and deep building science authority.
 You are speaking live with a client browsing Foresight's website. Welcome them warmly, answer their questions with deep building science expertise, and help them schedule inspections or check instant pricing. Never refer to this conversation as a phone call.
 
 UNSHAKEABLE BUSINESS IDENTITY:
-You are exclusively the Foresight AI advisor and senior concierge for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the visitor is talking about. You represent Foresight Home Inspections proudly and completely.
+You are exclusively Chris, founder and Certified Master Inspector for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the visitor is talking about. You represent Foresight Home Inspections proudly and completely.
 
 SUNDAY & OPERATING HOURS:
 Foresight is open on Sunday strictly by appointment only! Standard operating schedule is Monday through Saturday from 8:00 AM to 8:00 PM. Whenever asked about Sunday, state clearly: "Yes, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard schedule runs Monday through Saturday, we are always happy to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?"
 
-DEEP INTERNACHI SOP & 3-STEP DIAGNOSTIC EXPERTISE:
-You know all InterNACHI Standards of Practice chapters: Roof (drone scans), Exterior, Structure/Foundation/Georgia red clay hydrostatic pressure, HVAC (temperature splits, float switches), Plumbing (polybutylene, water heaters, TPR valves), Electrical (fire hazards like Federal Pacific Stab-Lok, Zinsco, aluminum wiring, GFCI/AFCI), Attic & Insulation, and complimentary FLIR thermal imaging on every inspection.
-Whenever discussing a defect or home issue, follow the InterNACHI 3-step diagnostic format: Observation, What This Could Mean (never "What This Means"), and Recommendation.
+DEEP INTERNACHI STANDARDS OF PRACTICE (SOP) & 3-STEP DIAGNOSTIC EXPERTISE:
+You know all 10 InterNACHI Standards of Practice chapters: Roof (drone scans at zero extra cost), Exterior, Structure/Foundation/Georgia red clay soil hydrostatic pressure, HVAC (temperature splits, float switches, attic overflow pans), Plumbing (polybutylene, water heaters, TPR valves, cast iron), Electrical (fire hazards like Federal Pacific Stab-Lok, Zinsco, aluminum branch wiring, GFCI/AFCI), Attic & Insulation (R-values, exterior venting), and complimentary FLIR thermal imaging on every inspection.
+Whenever discussing a defect or home issue, deliver your core diagnostic finding in this exact 3-step format:
+- Observation: Clearly state the physical finding or symptom observed.
+- What This Could Mean: State the real-world risk, moisture hazard, structural rot, or financial cost in plain English. (STRICT RULE: NEVER say "What This Means". Always strictly say "What This Could Mean" or "What This Could Imply" for legal liability protection).
+- Recommendation: State the exact qualified licensed trade specialist or contractor needed to evaluate further and perform the repair.
 
-FORESIGHT ADVANTAGES & PRICING:
-Two-inspector team (finishes in 1.5 to 2.5 hours), up to $35,000 in combined warranty and guarantee protection ($10,000 Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee), free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $275, Termite WDO $125+, 48-hr Radon $250, STR $595, Sewer Scope $450.
+FORESIGHT ADVANTAGES & COMPETITIVE POSITIONING:
+- Two-inspector certified team on every site (lead CMI + certified inspector; finishes thoroughly in 1.5 to 2.5 hours vs 4+ hours for exhausted solo operators).
+- Up to $35,000 in combined warranty and guarantee protection: complimentary $10,000 Elite Master Protection Warranty with zero deductible (covering mechanicals, structure, appliances, roofs, and mold after closing) plus InterNACHI's $25,000 Honor Guarantee.
+- Complimentary FLIR infrared thermal imaging and 4K aerial drone roof scans standard on every inspection at zero extra charge.
+- Complimentary Utilities Plus concierge service setting up power, water, gas, and fiber internet.
+- Active MLS SUPRA electronic key access for independent property entry.
+- 24-hour digital reports with interactive Create Request List (CRL) tool for instant repair addenda.
+- Contrast with National Franchises ($450 to $575+ royalty fees, random junior hourly inspectors) and Discount Solo Operators ($325 to $400, fatigue after 4 hours, zero warranty, extra for thermal, missing an $8,000 defect wipes out any upfront saving).
+- Pricing: Single-family homes start at $345, condos at $295. Add-ons: Pool & Spa $275, Termite WDO $125+ ($165 crawlspace), 48-hr Radon $250, STR Compliance $595, Sewer Scope Camera $450.
 
 APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, the 50% deposit along with the signed inspection agreements are completed AFTER our office sends the appointment confirmation. The remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling, deposits, or booking next steps are discussed.
-CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($450) for older homes 25+ years, 48-Hour Radon ($250) for crawlspaces/basements/granite belt, Termite WDO letter ($125+) for Georgia buyers, Pool & Spa ($275) for pools.
-MANDATORY RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be pushy or aggressive. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g., 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined upsell.
-Specialty services are coordinated alongside our primary inspection under Foresight's standard. Never say that we contract out or use third parties; simply explain that specialty services require specific schedule coordination so our office confirms the exact window within 20 minutes with your official appointment confirmation. In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Never use markdown asterisks.`;
+
+CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
+- Suggest reasonable add-ons based on property circumstances: Sewer Scope ($450) for older homes 25+ years, 48-Hour Radon ($250) for crawlspaces/basements/granite belt, Termite WDO letter ($125+) for Georgia buyers, Pool & Spa ($275) for pools.
+- CRITICAL MANDATORY RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be pushy or aggressive. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g., 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined upsell.
+- In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Keep your answers concise, spoken natural English, 2 to 4 sentences. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
           setup: {
             model: data.model || "models/gemini-2.0-flash-exp",
@@ -498,7 +510,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
-                    voiceName: "Charon"
+                    voiceName: "Fenrir"
                   }
                 }
               }
@@ -601,12 +613,9 @@ Specialty services are coordinated alongside our primary inspection under Foresi
   // Manage modal open/close lifecycle, greeting lock, and teardown
   useEffect(() => {
     if (isOpen) {
-      setCallState('idle');
-      setMicError(null);
-
-      // Guard: EXACTLY ONE greeting per modal opening session
       if (!hasGreetedRef.current) {
         hasGreetedRef.current = true;
+        setCallState('thinking');
         haltSpeech();
 
         // 1. Establish Gemini Live connection in parallel
@@ -615,7 +624,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
         // 2. Play introductory greeting audio exactly once
         greetingTimerRef.current = setTimeout(() => {
           if (isOpenRef.current) {
-            playNeuralAudio('/audio/marcus-greeting.mp3', () => {
+            playNeuralAudio('/audio/chris-greeting.mp3', () => {
               // When greeting ends cleanly:
               setTimeout(() => {
                 if (!isOpenRef.current) return;
@@ -642,7 +651,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
     }
   }, [isOpen, haltSpeech, initLiveConnection, playNeuralAudio, stopLiveSession]);
 
-  // Instant barge-in / toggle helper: interrupts Marcus immediately when speaking, or toggles listen
+  // Instant barge-in / toggle helper: interrupts Chris immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
     if (callState === 'speaking') {
       haltSpeech();
@@ -656,7 +665,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
 
   // Start speech recognition with instant visual feedback and error recovery
   const handleStartListening = () => {
-    // If Marcus is currently speaking or generating, never start listening
+    // If Chris is currently speaking or generating, never start listening
     if (isSpeakingRef.current || isModelTurnActiveRef.current) {
       return;
     }
@@ -945,7 +954,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  Marcus
+                  Chris
                 </h3>
                 <span style={{
                   background: liveWsConnected ? 'rgba(56, 189, 248, 0.15)' : 'rgba(212, 175, 55, 0.15)',
@@ -964,11 +973,11 @@ Specialty services are coordinated alongside our primary inspection under Foresi
                   {liveWsConnected && (
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#38bdf8', boxShadow: '0 0 6px #38bdf8' }} />
                   )}
-                  {liveWsConnected ? 'Gemini Live' : 'Foresight AI Advisor'}
+                  {liveWsConnected ? 'Gemini Live' : 'Certified Master Inspector'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                Foresight AI Advisor &bull; 
+                Founder &amp; Certified Master Inspector &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
                   {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
                 </span>
@@ -1066,7 +1075,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
           <button 
             type="button"
             onClick={handleToggleOrInterrupt}
-            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Marcus' : 'Tap to speak with Marcus'}
+            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Chris' : 'Tap to speak with Chris'}
             style={{
               width: '96px',
               height: '96px',
@@ -1100,7 +1109,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
                 : 'pulseVoiceIdle 3s infinite',
               position: 'relative'
             }}
-            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Marcus is speaking... Tap to interrupt' : 'Tap to speak'}
+            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Chris is speaking... Tap to interrupt' : 'Tap to speak'}
           >
             <span style={{ fontSize: '2.2rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.4))' }}>
               {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : callState === 'thinking' ? '⏳' : '🎙️'}
@@ -1118,7 +1127,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
             {callState === 'listening'
               ? '🟢 Listening... Speak naturally (Hands-Free Call)'
               : callState === 'speaking'
-              ? '🗣️ Marcus is speaking (tap orb to interrupt)'
+              ? '🗣️ Chris is speaking (tap orb to interrupt)'
               : callState === 'thinking'
               ? 'Checking schedule & options with Foresight...'
               : 'Tap orb or speak to begin'}
@@ -1605,7 +1614,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
           <button
             type="button"
             onClick={handleToggleOrInterrupt}
-            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Marcus' : 'Start speaking with Marcus'}
+            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Chris' : 'Start speaking with Chris'}
             style={{
               width: '46px',
               height: '46px',

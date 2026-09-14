@@ -82,13 +82,13 @@ async function persistBooking({ name, phone, email, address, preferredDate, addo
     preferredDate: preferredDate || 'Upcoming Window',
     addons: Array.isArray(addons) ? addons : [],
     estimatedTotal: estimatedTotal || '',
-    message: notes || 'Voice booking via Marcus AI Concierge',
-    source: 'Voice Assistant (Marcus)'
+    message: notes || 'Voice booking via Chris (Certified Master Inspector)',
+    source: 'Voice Assistant (Chris)'
   });
 }
 
-// Studio-Grade Neural Voice Synthesis via EdgeTTS (en-US-GuyNeural)
-async function synthesizeHumanVoice(text, voice = 'en-US-GuyNeural') {
+// Studio-Grade Neural Voice Synthesis via EdgeTTS (en-US-ChristopherNeural: Deep, Soulful Black Southern Master Builder)
+async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural') {
   try {
     const { EdgeTTS } = await import('edge-tts-universal');
     const cleanText = (text || '')
@@ -101,8 +101,8 @@ async function synthesizeHumanVoice(text, voice = 'en-US-GuyNeural') {
     if (!cleanText) return null;
 
     const tts = new EdgeTTS(cleanText, voice, {
-      rate: '+8%',
-      pitch: '+0Hz'
+      rate: '-2%',
+      pitch: '-2Hz'
     });
     const result = await tts.synthesize();
     if (result && result.audio) {
@@ -147,12 +147,12 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
     parts: [{ text: msg.content }]
   }));
 
-  const systemInstruction = `You are Marcus, the official Foresight AI home inspection and maintenance advisor and senior client concierge for Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
-You represent Certified Master Inspector (CMI) Christopher Boykin and possess all the building science advisory, diagnostic, and consultative capabilities of the Foresight AI Advisor. Your voice and demeanor are warm, unhurried, friendly, folksy, knowledgeable, and deeply reassuring, similar to the master builder host on "Ask This Old House".
+  const systemInstruction = `You are Chris (Christopher Boykin), founder and lead Certified Master Inspector (CMI) of Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
+Your persona and voice are that of a warm, soulful, deep-voiced Black Southern gentleman and master builder. You speak with calm warmth, wisdom, Southern courtesy ('Yes sir', 'Yes ma'am', 'Well hello there', 'Bless your heart', 'Now let me tell you', 'Look here, partner', 'Mighty glad you stopped by'), unhurried confidence, and deep building science authority.
 You are conversing live with a home buyer, seller, homeowner, or real estate agent browsing Foresight's website. Welcome them warmly, answer their questions with deep building science expertise, and help them understand building systems, schedule inspections, or check instant pricing. Never refer to this conversation as a phone call.
 
 UNSHAKEABLE BUSINESS IDENTITY RULE:
-You are exclusively the Foresight AI home inspection and maintenance advisor for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the visitor is talking about. You represent Foresight Home Inspections proudly and completely.
+You are exclusively Chris, founder and Certified Master Inspector for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the visitor is talking about. You represent Foresight Home Inspections proudly and completely.
 
 CRITICAL SUNDAY & OPERATING HOURS POLICY:
 - Foresight Home Inspections is OPEN ON SUNDAY STRICTLY BY APPOINTMENT ONLY!
@@ -227,8 +227,8 @@ CRITICAL CONVERSATIONAL & SALES EXCELLENCE RULES:
   return null;
 }
 
-// Marcus Natural Senior Concierge Knowledge & Dialogue Engine (Authoritative, Knowledgeable & Proactively Encouraging)
-function generateMarcusDialogueTurn(messages, lastUserMessage) {
+// Chris (Christopher Boykin) CMI Knowledge & Dialogue Engine (Authoritative, Soulful, Deep & Proactively Encouraging)
+function generateChrisDialogueTurn(messages, lastUserMessage) {
   const history = messages || [];
   const text = (lastUserMessage || '').toLowerCase().trim();
   const lastAssistant = history.filter(m => m.role === 'assistant').pop()?.content || '';
@@ -239,8 +239,8 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // 0. Farewell / Hang up detection
   if (matchesAny(['bye', 'goodbye', 'hang up', 'end call', 'that is all', "that's all", 'have a good day', 'see you', 'thanks bye', 'thank you bye'])) {
     return {
-      text: "Thank you so much for visiting Foresight Home Inspections! Have a wonderful day, and we hope to inspect your home soon!",
-      preAudio: '/audio/marcus-goodbye.mp3',
+      text: "Thank you so much for visiting Foresight Home Inspections! Have a blessed day, and we hope to inspect your home soon!",
+      preAudio: '/audio/chris-goodbye.mp3',
       action: 'end_call'
     };
   }
@@ -248,15 +248,15 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // 0a. Sunday Operating Hours & Schedule Check (Instant Priority)
   if (matchesAny(['sunday', 'sundays', 'open on sunday', 'open sunday', 'weekend', 'weekends', 'hours', 'operating hours', 'business hours', 'when are you open', 'what time are you open', 'are you open', 'what days are you open'])) {
     return {
-      text: "Yes, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard inspection schedule runs Monday through Saturday from 8:00 AM to 8:00 PM, we are always happy to accommodate Sunday inspections by advance appointment. What property address are you looking to have inspected?",
-      preAudio: '/audio/marcus-sunday.mp3'
+      text: "Yes sir, Foresight Home Inspections is open on Sunday strictly by appointment only! While our standard inspection schedule runs Monday through Saturday from 8:00 AM to 8:00 PM, we are always glad to accommodate Sunday inspections by advance appointment. What property address are you looking to have inspected?",
+      preAudio: '/audio/chris-sunday.mp3'
     };
   }
 
   // 0b. Business Identity / Foresight AI Advisor Grounding
   if (matchesAny(['what business', 'which business', 'what company', 'who are you', 'who is this', 'what is this', 'what do you do', 'not connected', 'who is your boss'])) {
     return {
-      text: "You have reached Foresight Home Inspections! I am Marcus, your Foresight AI home inspection and maintenance advisor. Led by Certified Master Inspector Christopher Boykin, our two-inspector team delivers Georgia's most thorough home evaluations, building science diagnostics, and instant quotes. What's on your mind today? Let's talk houses!",
+      text: "You have reached Foresight Home Inspections! I am Chris, founder and lead Certified Master Inspector. Our two-inspector team delivers Georgia's most thorough home evaluations, building science diagnostics, and instant quotes. What's on your mind today, partner? Let's talk houses!",
       preAudio: null
     };
   }
@@ -280,7 +280,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['process', 'evaluate', 'evaluation', 'how do you inspect', 'how you inspect', 'what do you inspect', 'what is inspected', 'what do you check', 'sop', 'standard', 'steps', 'procedure', 'how does it work'])) {
     return {
       text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free FLIR thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?",
-      preAudio: '/audio/marcus-process.mp3'
+      preAudio: '/audio/chris-process.mp3'
     };
   }
 
@@ -358,7 +358,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     if (text.includes('sunday')) {
       return {
         text: "We can definitely accommodate you on Sunday! Just as a reminder, Sunday is strictly by appointment only. What is the address of the home and your name so our office can coordinate that for you?",
-        preAudio: '/audio/marcus-sunday.mp3'
+        preAudio: '/audio/chris-sunday.mp3'
       };
     }
 
@@ -366,7 +366,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     if (text.includes('10')) {
       return {
         text: "10:00 AM works out perfectly for our two-inspector team! I have that penciled in for you. What is the address of the property and your name so I can lock that in?",
-        preAudio: '/audio/marcus-10am.mp3'
+        preAudio: '/audio/chris-10am.mp3'
       };
     }
 
@@ -374,7 +374,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     if (text.includes('9')) {
       return {
         text: "9:00 AM works out great for our two-inspector team! I have that penciled in for you. What is the address of the property and your name so I can lock that in?",
-        preAudio: '/audio/marcus-9am.mp3'
+        preAudio: '/audio/chris-9am.mp3'
       };
     }
 
@@ -382,7 +382,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     if (text.includes('afternoon') || text.includes('1pm') || text.includes('1:') || text.includes('2pm') || text.includes('2:')) {
       return {
         text: "An afternoon slot around 1:30 PM works out great for our two-inspector team! I have that penciled in for you. What is the address of the property and your name so I can lock that in?",
-        preAudio: '/audio/marcus-afternoon.mp3'
+        preAudio: '/audio/chris-afternoon.mp3'
       };
     }
 
@@ -399,7 +399,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     if (prev.includes('schedule') || prev.includes('reserve') || prev.includes('date') || prev.includes('slot') || prev.includes('availability')) {
       return {
         text: "Awesome! Does a morning slot around 9:00 or 10:00 AM work better for you, or would you prefer afternoon? What is the address of the home so I can hold that for you?",
-        preAudio: '/audio/marcus-morning-afternoon.mp3'
+        preAudio: '/audio/chris-morning-afternoon.mp3'
       };
     }
   }
@@ -409,12 +409,12 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     if (prev.includes('radon') || prev.includes('termite') || prev.includes('sewer') || prev.includes('pool') || prev.includes('add') || prev.includes('upsell') || prev.includes('bundle') || prev.includes('suggest') || prev.includes('recommend') || prev.includes('camera') || prev.includes('scope')) {
       return {
         text: "Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation with our two-inspector team. What date or time window works best for you?",
-        preAudio: '/audio/marcus-decline-addon.mp3'
+        preAudio: '/audio/chris-decline-addon.mp3'
       };
     }
     return {
-      text: "No problem at all! Feel free to ask me anything about our ten thousand dollar warranty, pricing, or our two-inspector process whenever you are ready. What questions can I answer for you?",
-      preAudio: '/audio/marcus-browsing.mp3'
+      text: "No problem at all! Feel free to ask me anything about our up to 35,000 dollar warranty protection, pricing, or our two-inspector process whenever you are ready. What questions can I answer for you?",
+      preAudio: '/audio/chris-browsing.mp3'
     };
   }
 
@@ -422,7 +422,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['deposit', 'down payment', 'payment policy', 'payment terms', 'when do i pay', 'how do i pay', 'pay upfront', '50 percent', 'half down', 'half upfront'])) {
     return {
       text: "To solidify all appointments on our master calendar, a 50 percent deposit is required upon booking, with the remaining 50 percent balance due after our on-site walkthrough before your official report is released. Would you like me to hold our next available window for you?",
-      preAudio: '/audio/marcus-payment-policy.mp3'
+      preAudio: '/audio/chris-payment-policy.mp3'
     };
   }
 
@@ -434,7 +434,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (addressFound && (prev.includes('address') || prev.includes('property') || text.includes('road') || text.includes('street') || text.includes('drive') || text.includes('ave'))) {
     return {
       text: "Got that property address down! What is your name and the best phone number so our office can send the confirmation and coordinate access?",
-      preAudio: '/audio/marcus-address-confirm.mp3'
+      preAudio: '/audio/chris-address-confirm.mp3'
     };
   }
 
@@ -493,7 +493,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['older home', 'historic home', 'pre-1990', '1960', '1970', '1980', 'cast iron pipe', 'clay pipe', 'tree roots', 'root intrusion'])) {
     return {
       text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 450 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
-      preAudio: '/audio/marcus-upsell-sewer.mp3'
+      preAudio: '/audio/chris-upsell-sewer.mp3'
     };
   }
 
@@ -501,7 +501,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['radon'])) {
     return {
       text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 250 dollars. Would you like to add that to your estimate, or keep it as is?",
-      preAudio: '/audio/marcus-upsell-radon.mp3'
+      preAudio: '/audio/chris-upsell-radon.mp3'
     };
   }
 
@@ -509,7 +509,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation', 'wood destroying'])) {
     return {
       text: "Because Georgia is in the termite belt and most lenders require an official clearance letter, we can bundle your official Georgia termite letter starting at 125 dollars. Would you like that included, or do you already have that covered?",
-      preAudio: '/audio/marcus-upsell-termite.mp3'
+      preAudio: '/audio/chris-upsell-termite.mp3'
     };
   }
 
@@ -551,7 +551,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
 
   if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
     return {
-      text: "We offer complete Short-Term Rental safety compliance inspections for 355 dollars flat to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Can I get that scheduled for your rental?",
+      text: "We offer complete Short-Term Rental safety compliance inspections for 595 dollars flat to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Can I get that scheduled for your rental?",
       preAudio: null
     };
   }
@@ -583,7 +583,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['deposit', 'down payment', 'pay', 'payment', 'solidify', 'agreement', 'agreements', 'terms of payment', 'when do i pay', 'how do i pay', 'upfront'])) {
     return {
       text: "To solidify all appointments on our master calendar, a 50 percent deposit along with the signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50 percent balance is due after our on-site walkthrough before your official report is released. Would you like me to hold our next available window for you?",
-      preAudio: '/audio/marcus-payment-policy.mp3'
+      preAudio: '/audio/chris-payment-policy.mp3'
     };
   }
 
@@ -591,7 +591,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['no thanks', 'no thank you', 'pass', 'just the basic', 'don\'t need it', 'do not need it', 'not right now', 'skip it', 'just the inspection', 'no addon', 'no add-on', 'decline', 'without that', 'leave that off'])) {
     return {
       text: "Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation with our two-inspector team. What date or time window works best for you?",
-      preAudio: '/audio/marcus-decline-addon.mp3'
+      preAudio: '/audio/chris-decline-addon.mp3'
     };
   }
 
@@ -657,7 +657,7 @@ export async function POST(request) {
         name: clientName,
         email,
         phone: clientPhone,
-        message: 'Requested Foresight vs. Hindsight Due Diligence Checklist via Marcus Voice Concierge',
+        message: 'Requested Foresight vs. Hindsight Due Diligence Checklist via Chris Voice Concierge',
         source: 'Voice Assistant (Checklist)'
       });
 
@@ -699,12 +699,12 @@ export async function POST(request) {
       });
     }
 
-    // 3. Dynamic Gemini LLM Brain (True Cognitive Listening & Real-Time Intelligence)
+    // 4. If Gemini Brain key is available, run real-time cognitive reasoning
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey) {
       try {
         const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote);
-        if (dynamicReply && dynamicReply.trim()) {
+        if (dynamicReply) {
           const audio = await synthesizeHumanVoice(dynamicReply);
           return NextResponse.json({
             response: dynamicReply,
@@ -717,8 +717,8 @@ export async function POST(request) {
       }
     }
 
-    // 4. Intelligent Context-Aware Dialogue Engine (Fallback if upstream API is depleted or offline)
-    const turnResult = generateMarcusDialogueTurn(messages, lastUserMessage);
+    // 5. Intelligent Context-Aware Dialogue Engine (Fallback if upstream API is depleted or offline)
+    const turnResult = generateChrisDialogueTurn(messages, lastUserMessage);
 
     if (turnResult.preAudio) {
       return NextResponse.json({
@@ -728,7 +728,7 @@ export async function POST(request) {
       });
     }
 
-    // Synthesize response with Marcus's neural male voice
+    // Synthesize response with Chris's neural voice
     const cleanReply = turnResult.text.replace(/\*/g, '').trim();
     const audio = await synthesizeHumanVoice(cleanReply);
 
@@ -740,7 +740,7 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
-    const fallbackText = "Welcome to Foresight Home Inspections! This is Marcus, your senior client concierge. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!";
+    const fallbackText = "Welcome to Foresight Home Inspections! This is Chris, your Certified Master Inspector. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!";
     const audio = await synthesizeHumanVoice(fallbackText);
     return NextResponse.json({
       response: fallbackText,
