@@ -15,8 +15,8 @@ const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: t
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
-  title: 'Atlanta Home Inspections | 2-Inspector Team From $345 | Foresight',
-  description: '4.9★ Rated. Two certified inspectors on every site for double the scrutiny in half the time. Free FLIR thermal, drone scans, & up to $35,000 in warranty & guarantee protection. Get an instant quote online!',
+  title: 'Atlanta Home Inspections from $345 | 2-Inspector Team',
+  description: '4.9★ Atlanta Home Inspections by a 2-Inspector CMI® team from $345. Free FLIR thermal, 4K drones & up to $35,000 in warranty protection. Instant online quote!',
   keywords: [
     'home inspection Atlanta GA',
     'best home inspector Atlanta',
@@ -808,6 +808,14 @@ export default function Home() {
               {
                 q: "How quickly will I receive my home inspection report?",
                 a: "You will receive a comprehensive, high-resolution digital inspection report within 24 hours of your inspection. Our reports include detailed photos, thermal imaging scans, and clear recommendation summaries for easy seller negotiations."
+              },
+              {
+                q: "When should I schedule a new construction home inspection in Atlanta?",
+                a: "For new construction homes, we recommend 3 critical milestones: pre-pour foundation, pre-drywall framing, and final walk-through before closing. Our 2-inspector team checks builder punch lists against Georgia building standards so structural and electrical defects are repaired on the builder's dime before your final sign-off."
+              },
+              {
+                q: "How do I schedule a certified home inspection near me in Metro Atlanta?",
+                a: "Foresight Home Inspections serves all 87 municipalities across Metro Atlanta with rapid 24-hour report turnaround. Every inspection includes two certified inspectors led by a Certified Master Inspector®, complimentary FLIR thermal imaging, and aerial drone roof scans. You can book online 24/7 or call 678-480-2110."
               }
             ]}
           />

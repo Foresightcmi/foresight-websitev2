@@ -5,7 +5,7 @@ import QualityChecklist from '../components/QualityChecklist';
 
 export const metadata = {
   title: 'Home Inspection Services Atlanta | Pricing From $295',
-  description: 'Compare Atlanta home inspection pricing & services. 2 certified inspectors on every job, free thermal imaging, 4K drone scans & $10,000 warranty. Single-family from $345, condos $295.',
+  description: 'Compare Atlanta home inspection pricing. 2-inspector team, free thermal & 4K drone scans. Homes from $345, condos $295. Up to $35,000 warranty included!',
   keywords: [
     'home inspection services Atlanta',
     'home inspection pricing Georgia 2026',

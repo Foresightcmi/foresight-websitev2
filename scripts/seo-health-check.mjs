@@ -62,10 +62,10 @@ posts.forEach(post => {
   const titleLower = post.title.toLowerCase();
   
   if (contentLower.includes('radon') || titleLower.includes('radon')) {
-    // Radon testing price must be $200
-    const pricingMatch = contentLower.match(/radon\s+(?:gas\s+)?testing[^]{0,60}\$(\d+)/) || titleLower.match(/radon\s+(?:gas\s+)?testing[^]{0,60}\$(\d+)/);
+    // Radon testing price must be $200 or $250
+    const pricingMatch = contentLower.match(/radon\s+(?:gas\s+)?testing[^$]{0,40}\$(\d+)/) || titleLower.match(/radon\s+(?:gas\s+)?testing[^$]{0,40}\$(\d+)/);
     if (pricingMatch && pricingMatch[1] !== '200' && pricingMatch[1] !== '250') {
-      reportIssue(`Blog post "${post.title}" contains suspicious Radon testing pricing: $${pricingMatch[1]} (Expected: $200)`);
+      reportIssue(`Blog post "${post.title}" contains suspicious Radon testing pricing: $${pricingMatch[1]} (Expected: $250)`);
     } else {
       console.log(`✅ Blog Post "${post.title.substring(0, 30)}..." Radon pricing looks correct.`);
     }

@@ -82,45 +82,72 @@ async function main() {
   const refAudioBlob = new Blob([refAudioBuffer], { type: 'audio/wav' });
   const refText = 'Hello. This is a sample of my voice for cloning in Home Inspection AI Studio.';
 
-  for (let i = 0; i < clips.length; i++) {
-    const clip = clips[i];
+  const requestedClipNames = process.argv.slice(2).filter(arg => !arg.startsWith('--'));
+  const forceAll = process.argv.includes('--all');
+  
+  const pendingClips = [
+    'chris-browsing',
+    'chris-payment-policy',
+    'chris-address-confirm',
+    'chris-upsell-sewer',
+    'chris-upsell-radon',
+    'chris-upsell-termite'
+  ];
+
+  const targetClips = forceAll
+    ? clips
+    : requestedClipNames.length > 0
+      ? clips.filter(c => requestedClipNames.includes(c.name))
+      : clips.filter(c => pendingClips.includes(c.name));
+
+  console.log(`🎯 Targeting ${targetClips.length} clips for F5-TTS synthesis:`, targetClips.map(c => c.name).join(', '));
+
+  for (let i = 0; i < targetClips.length; i++) {
+    const clip = targetClips[i];
     const mp3Path = path.resolve(`public/audio/${clip.name}.mp3`);
 
-    console.log(`\n[${i + 1}/${clips.length}] 🎙️ Cloning ${clip.name}...`);
-    try {
-      const result = await client.predict('/predict', {
-        ref_audio: refAudioBlob,
-        ref_text: refText,
-        gen_text: clip.text,
-        remove_silence: true
-      });
+    console.log(`\n[${i + 1}/${targetClips.length}] 🎙️ Cloning ${clip.name}...`);
+    let success = false;
+    for (let attempt = 1; attempt <= 2 && !success; attempt++) {
+      try {
+        if (attempt > 1) console.log(`  🔄 Retry attempt ${attempt} for ${clip.name}...`);
+        const result = await client.predict('/predict', {
+          ref_audio: refAudioBlob,
+          ref_text: refText,
+          gen_text: clip.text,
+          remove_silence: true
+        });
 
-      if (result?.data?.[0]?.url) {
-        const audioUrl = result.data[0].url;
-        const res = await fetch(audioUrl);
-        const arrayBuffer = await res.arrayBuffer();
-        const wavPath = path.resolve(`public/audio/${clip.name}.wav`);
-        fs.writeFileSync(wavPath, Buffer.from(arrayBuffer));
-        console.log(`  ✓ Generated WAV (${(arrayBuffer.byteLength / 1024).toFixed(1)} KB)`);
+        if (result?.data?.[0]?.url) {
+          const audioUrl = result.data[0].url;
+          const res = await fetch(audioUrl);
+          const arrayBuffer = await res.arrayBuffer();
+          const wavPath = path.resolve(`public/audio/${clip.name}.wav`);
+          fs.writeFileSync(wavPath, Buffer.from(arrayBuffer));
+          console.log(`  ✓ Generated WAV (${(arrayBuffer.byteLength / 1024).toFixed(1)} KB)`);
 
-        // Convert WAV to MP3 using ffmpeg
-        execSync(`ffmpeg -y -i "${wavPath}" -b:a 128k "${mp3Path}"`, { stdio: 'ignore' });
-        console.log(`  ✓ Converted & overwrote MP3 in user's cloned voice: ${clip.name}.mp3 (${(fs.statSync(mp3Path).size / 1024).toFixed(1)} KB)`);
-        
-        // Clean up temporary WAV
-        if (fs.existsSync(wavPath)) {
-          fs.unlinkSync(wavPath);
+          // Convert WAV to MP3 using ffmpeg
+          execSync(`ffmpeg -y -i "${wavPath}" -b:a 128k "${mp3Path}"`, { stdio: 'ignore' });
+          console.log(`  ✓ Converted & overwrote MP3 in user's cloned voice: ${clip.name}.mp3 (${(fs.statSync(mp3Path).size / 1024).toFixed(1)} KB)`);
+          
+          // Clean up temporary WAV
+          if (fs.existsSync(wavPath)) {
+            fs.unlinkSync(wavPath);
+          }
+          success = true;
+        } else {
+          console.warn(`  ⚠️ No audio URL in response for ${clip.name}`);
         }
-      } else {
-        console.warn(`  ⚠️ No audio URL in response for ${clip.name}`);
-      }
 
-      // 4-second polite delay between generation calls
-      await new Promise(res => setTimeout(res, 4000));
-    } catch (err) {
-      console.error(`  ❌ Failed ${clip.name}:`, err.message);
-      console.log('  Waiting 15 seconds before continuing...');
-      await new Promise(res => setTimeout(res, 15000));
+        // 4-second polite delay between generation calls
+        await new Promise(res => setTimeout(res, 4000));
+      } catch (err) {
+        console.error(`  ❌ Attempt ${attempt} failed for ${clip.name}:`, err.message);
+        if (attempt < 2) {
+          console.log('  Waiting 15 seconds before retry...');
+          await new Promise(res => setTimeout(res, 15000));
+        }
+      }
     }
   }
   console.log('\n🎉 Authentic voice batch cloning complete!');
