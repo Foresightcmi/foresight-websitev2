@@ -484,7 +484,7 @@ You know all InterNACHI Standards of Practice chapters: Roof (drone scans), Exte
 Whenever discussing a defect or home issue, follow the InterNACHI 3-step diagnostic format: Observation, What This Could Mean (never "What This Means"), and Recommendation.
 
 FORESIGHT ADVANTAGES & PRICING:
-Two-inspector team (finishes in 1.5 to 2.5 hours), $10,000 warranty with $0 deductible, free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $275, Termite WDO $125+, 48-hr Radon $250, STR $595, Sewer Scope $450.
+Two-inspector team (finishes in 1.5 to 2.5 hours), up to $35,000 in combined warranty and guarantee protection ($10,000 Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee), free FLIR thermal imaging & drone scans, 24-hr digital reports with CRL tool. Single-family homes start at $345, condos at $295. Add-ons: Pool $275, Termite WDO $125+, 48-hr Radon $250, STR $595, Sewer Scope $450.
 
 APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, the 50% deposit along with the signed inspection agreements are completed AFTER our office sends the appointment confirmation. The remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling, deposits, or booking next steps are discussed.
 CIRCUMSTANTIAL UPSELLS (NEVER PUSHY): Suggest reasonable add-ons based on property circumstances: Sewer Scope ($450) for older homes 25+ years, 48-Hour Radon ($250) for crawlspaces/basements/granite belt, Termite WDO letter ($125+) for Georgia buyers, Pool & Spa ($275) for pools.
@@ -1400,7 +1400,7 @@ Specialty services are coordinated alongside our primary inspection under Foresi
             👥 2-Inspector Standard
           </button>
           <button
-            onClick={() => handleSendQuery("What is covered under your complimentary $10,000 Master Protection Warranty?")}
+            onClick={() => handleSendQuery("What warranties are included? What is covered under your up to $35,000 warranty and InterNACHI Honor Guarantee?")}
             style={{
               padding: '3px 10px',
               borderRadius: '16px',
@@ -1413,7 +1413,39 @@ Specialty services are coordinated alongside our primary inspection under Foresi
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            🛡️ $10k Warranty
+            🛡️ Up to $35k Warranties
+          </button>
+          <button
+            onClick={() => handleSendQuery("Can you send me your exclusive Foresight vs Hindsight Due Diligence Checklist?")}
+            style={{
+              padding: '3px 10px',
+              borderRadius: '16px',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              background: 'rgba(255,255,255,0.06)',
+              color: '#f8fafc',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            📋 Free Checklist
+          </button>
+          <button
+            onClick={() => handleSendQuery("How does Foresight compare to national franchises and discount solo inspectors in Atlanta?")}
+            style={{
+              padding: '3px 10px',
+              borderRadius: '16px',
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              background: 'rgba(255,255,255,0.06)',
+              color: '#f8fafc',
+              border: '1px solid rgba(255,255,255,0.1)'
+            }}
+          >
+            ⚖️ vs Competitors
           </button>
           <button
             onClick={() => handleSendQuery("Do you include infrared thermal imaging and aerial drone scans?")}

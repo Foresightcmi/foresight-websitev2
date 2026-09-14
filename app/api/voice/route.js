@@ -287,7 +287,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Electrical & Panels
   if (matchesAny(['electrical', 'panel', 'breaker', 'breakers', 'wiring', 'fuse', 'fuses', 'aluminum', 'federal pacific', 'zinsco', 'gfci', 'afci'])) {
     return {
-      text: "We thoroughly inspect the main service panel, subpanels, and branch wiring! We specifically test for fire-hazard panels like Federal Pacific Stab-Lok and Zinsco, test for ungrounded circuits, and check for single-strand aluminum wiring. Our two-inspector team ensures nothing is missed, and every inspection includes our 10,000 dollar warranty. Would you like to schedule an inspection for your property?",
+      text: "We thoroughly inspect the main service panel, subpanels, and branch wiring! We specifically test for fire-hazard panels like Federal Pacific Stab-Lok and Zinsco, test for ungrounded circuits, and check for single-strand aluminum wiring. Our two-inspector team ensures nothing is missed, and every inspection includes up to 35,000 dollars in combined warranty and guarantee protection. Would you like to schedule an inspection for your property?",
       preAudio: null
     };
   }
@@ -335,7 +335,7 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
   // Christopher's Credentials & Certified Master Inspector (CMI)
   if (matchesAny(['cmi', 'credentials', 'certified master', 'certification', 'license', 'licensed', 'who is christopher', 'experience'])) {
     return {
-      text: "Christopher Boykin is a Certified Master Inspector, representing the top one to two percent of elite inspectors in North America. Plus, we send two certified inspectors on every job and back your purchase with a complimentary 10,000 dollar warranty. You get unbeatable peace of mind. Would you like me to hold our next inspection opening for you?",
+      text: "Christopher Boykin is a Certified Master Inspector, representing the top one to two percent of elite inspectors in North America. Plus, we send two certified inspectors on every job and back your purchase with up to 35,000 dollars in combined warranty and guarantee protection, including our 10,000 dollar Master Warranty and InterNACHI's 25,000 dollar Honor Guarantee. You get unbeatable peace of mind. Would you like me to hold our next inspection opening for you?",
       preAudio: null
     };
   }
@@ -448,27 +448,44 @@ function generateMarcusDialogueTurn(messages, lastUserMessage) {
     };
   }
 
-  // 8. Signature Value Questions (Pre-Rendered Instant Audio)
+  // 8. Signature Value Questions
   if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo', 'why two'])) {
     return {
-      text: "Most discount companies send one inspector who gets exhausted after four hours and can easily miss hidden defects. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus our ten thousand dollar warranty. Would you like to check our availability for your inspection?",
-      preAudio: '/audio/marcus-why-two.mp3'
+      text: "Most discount companies send one inspector who gets exhausted after four hours and can easily miss hidden defects. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus up to 35,000 dollars in warranty and guarantee protection. Would you like to check our availability for your inspection?",
+      preAudio: null
     };
   }
 
-  // Warranty & Guarantee (Instant Audio)
-  if (matchesAny(['warranty', '10000', '10,000', 'guarantee', 'protection'])) {
+  // Warranty & Guarantee
+  if (matchesAny(['warranty', '10000', '10,000', '25000', '25,000', '35000', '35,000', 'guarantee', 'honor', 'protection'])) {
     return {
-      text: "Every full home inspection includes our complimentary ten thousand dollar Master Protection Warranty with zero deductible! It covers mechanical systems, structure, appliances, roofs, and mold after closing. Would you like to get your inspection scheduled with our team?",
-      preAudio: '/audio/marcus-warranty.mp3'
+      text: "Every full home inspection includes up to 35,000 dollars in combined warranty and guarantee protection: our complimentary 10,000 dollar Master Protection Warranty with zero deductible covering mechanicals, structure, appliances, roofs, and mold after closing, plus InterNACHI's 25,000 dollar Honor Guarantee. Would you like to get your inspection scheduled with our team?",
+      preAudio: null
     };
   }
 
-  // Pricing (Instant Audio)
+  // Competitor & Franchise Comparison
+  if (matchesAny(['compare', 'competitor', 'competitors', 'franchise', 'franchises', 'bpg', 'home-probe', 'inspect-all', 'pillar to post', 'why foresight', 'why choose you'])) {
+    return {
+      text: "National franchises charge 450 to 575 dollars to pay corporate royalties and dispatch hourly junior techs. Solo discount operators charge 325 to 400, but working alone for 4 hours causes fatigue and they offer zero warranty. Foresight delivers two certified inspectors led by a Certified Master Inspector, up to 35,000 dollars in warranty protection, and free FLIR thermal and drone scans starting from 345 dollars. Would you like to get an instant quote or check our schedule?",
+      preAudio: null
+    };
+  }
+
+  // Foresight vs Hindsight Due Diligence Checklist
+  if (matchesAny(['checklist', 'hindsight checklist', 'foresight checklist', 'guide', 'free download', 'send checklist'])) {
+    return {
+      text: "We have put together our exclusive Foresight vs. Hindsight Due Diligence Checklist to help you avoid expensive home buying pitfalls. What is your email address? I can log your request right now so our office sends it straight to your inbox!",
+      preAudio: null,
+      action: 'offer_checklist'
+    };
+  }
+
+  // Pricing
   if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
     return {
-      text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, 375 for up to 2,000, 405 for up to 2,500, and 440 for up to 3,000 square feet. That includes our two-inspector team, complimentary FLIR thermal imaging, drone scans, and our 10,000 dollar warranty. What is the approximate square footage of the home? I can give you your exact flat rate right now!",
-      preAudio: '/audio/marcus-pricing.mp3'
+      text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, 375 for up to 2,000, 405 for up to 2,500, and 440 for up to 3,000 square feet. That includes our two-inspector team, complimentary FLIR thermal imaging, drone scans, and up to 35,000 dollars in warranty and guarantee protection. What is the approximate square footage of the home? I can give you your exact flat rate right now!",
+      preAudio: null
     };
   }
 
@@ -628,7 +645,33 @@ export async function POST(request) {
       }
     }
 
-    // 2. Direct schedule appointment intent (when caller provides phone number)
+    // 2. Direct email / checklist capture intent
+    const emailMatch = lastUserMessage.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
+    if (emailMatch) {
+      const email = emailMatch[1];
+      const nameMatch = lastUserMessage.match(/(?:my name is|name is|i am|this is|call me)\s+([A-Za-z\s]+?)(?:,|\.|\s+and|\s+my|\s+email|\s+at|$)/i);
+      const clientName = nameMatch ? nameMatch[1].trim() : 'Valued Client';
+      const clientPhone = extractPhoneNumber(lastUserMessage) || '';
+
+      await recordLead({
+        name: clientName,
+        email,
+        phone: clientPhone,
+        message: 'Requested Foresight vs. Hindsight Due Diligence Checklist via Marcus Voice Concierge',
+        source: 'Voice Assistant (Checklist)'
+      });
+
+      const speechResponse = `Thank you, ${clientName}! I have recorded your email as ${email}. Part 1 of our Foresight vs. Hindsight due diligence checklist has been queued for your inbox. What other questions can I answer about your home or our inspection process?`;
+      const audio = await synthesizeHumanVoice(speechResponse);
+      return NextResponse.json({
+        response: speechResponse,
+        audio,
+        action: 'checklist_sent',
+        checklist: { name: clientName, email }
+      });
+    }
+
+    // 3. Direct schedule appointment intent (when caller provides phone number)
     const clientPhone = extractPhoneNumber(lastUserMessage);
     if (clientPhone) {
       const nameMatch = lastUserMessage.match(/(?:my name is|name is|i am|this is|call me)\s+([A-Za-z\s]+?)(?:,|\.|\s+and|\s+my|\s+phone|\s+at|$)/i);
