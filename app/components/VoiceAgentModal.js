@@ -699,16 +699,26 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     if (isOpen) {
       if (!hasGreetedRef.current) {
         hasGreetedRef.current = true;
-        setCallState('thinking');
+        setCallState('speaking');
         haltSpeech();
-        setHistory([]);
         setBookingData(null);
         setCalculatedQuote(null);
         setInterimUserText('');
         setMicError(null);
 
-        // Connect directly to Gemini Live for genuine real-time bidirectional natural conversation
-        initLiveConnection();
+        const greetingText = "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?";
+        setHistory([{
+          role: 'assistant',
+          content: greetingText,
+          live: true
+        }]);
+
+        // Play authentic cloned voice greeting by Christopher Boykin
+        playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
+          if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
+            handleStartListeningRef.current();
+          }
+        });
       }
     } else {
       // Modal closed: reset greeting guard and stop all live sessions and audio
@@ -731,7 +741,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         greetingTimerRef.current = null;
       }
     };
-  }, [isOpen, haltSpeech, initLiveConnection, stopLiveSession]);
+  }, [isOpen, haltSpeech, playNeuralAudio, stopLiveSession]);
 
   // Instant barge-in / toggle helper: interrupts Chris immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
@@ -1084,23 +1094,21 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                 }}>
                   Certified Master Inspector
                 </span>
-                {liveWsConnected && (
-                  <span style={{
-                    background: 'rgba(16, 185, 129, 0.15)',
-                    color: '#34d399',
-                    border: '1px solid rgba(16, 185, 129, 0.4)',
-                    fontSize: '0.65rem',
-                    fontWeight: 700,
-                    padding: '2px 8px',
-                    borderRadius: '10px',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '4px'
-                  }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                    Live Natural AI
-                  </span>
-                )}
+                <span style={{
+                  background: 'rgba(16, 185, 129, 0.15)',
+                  color: '#34d399',
+                  border: '1px solid rgba(16, 185, 129, 0.4)',
+                  fontSize: '0.65rem',
+                  fontWeight: 700,
+                  padding: '2px 8px',
+                  borderRadius: '10px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}>
+                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
+                  {liveWsConnected ? 'Gemini Live' : '🎙️ Authentic Cloned Voice'}
+                </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
                 Founder &amp; Certified Master Inspector &bull; 

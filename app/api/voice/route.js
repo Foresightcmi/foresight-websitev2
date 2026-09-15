@@ -102,8 +102,8 @@ async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural') {
     if (!cleanText) return null;
 
     const tts = new EdgeTTS(cleanText, voice, {
-      rate: '+0%',
-      pitch: '+0Hz'
+      rate: '-3%',
+      pitch: '-10Hz'
     });
     const result = await tts.synthesize();
     if (result && result.audio) {

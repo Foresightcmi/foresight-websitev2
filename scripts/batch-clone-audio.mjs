@@ -69,6 +69,34 @@ const clips = [
   {
     name: 'chris-upsell-termite',
     text: "Because Georgia is in the termite belt and most lenders require an official clearance letter, we can bundle your official Georgia termite letter starting at 125 dollars. Would you like that included, or do you already have that covered?"
+  },
+  {
+    name: 'chris-pricing',
+    text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, and condos start at 295 dollars. Every inspection includes our two-inspector standard, free FLIR thermal imaging, aerial drone scans, and up to 35,000 dollars in warranty protection. What is the approximate square footage of the home you are looking to inspect?"
+  },
+  {
+    name: 'chris-why-two',
+    text: "At Foresight, we send a certified two-inspector team to every inspection: myself as the lead Certified Master Inspector, plus an additional certified inspector. Two sets of eyes catch what solo inspectors miss after four hours of fatigue, and we finish thoroughly in about two hours. Plus, you get your full report within 24 hours. What property can we inspect for you?"
+  },
+  {
+    name: 'chris-warranty',
+    text: "Every full home inspection includes up to 35,000 dollars in combined warranty and guarantee protection: our complimentary 10,000 dollar Master Protection Warranty with zero deductible covering structural, mechanical, appliance, and roof components after closing, plus InterNACHI's 25,000 dollar Honor Guarantee. Would you like to get your inspection scheduled with our team?"
+  },
+  {
+    name: 'chris-competitors',
+    text: "Unlike national franchises that charge 450 to 575 dollars with royalty fees and assign junior inspectors, or discount solo operators who rush or miss major defects, Foresight gives you a dedicated two-inspector team led by a Certified Master Inspector, free FLIR thermal imaging, drone scans, and up to 35,000 dollars in warranties. When is your due diligence deadline?"
+  },
+  {
+    name: 'chris-drone-thermal',
+    text: "Complimentary FLIR infrared thermal imaging and 4K aerial drone roof scans are standard on every full home inspection at zero extra charge. Thermal imaging detects hidden moisture behind walls and plumbing leaks, while drone scans inspect high and steep roofs safely with high-resolution detail. What property are you looking to evaluate?"
+  },
+  {
+    name: 'chris-checklist',
+    text: "I would be glad to share our exclusive Due Diligence Checklist! It covers everything you need before your inspection contingency expires under the Georgia Association of Realtors contract. What email or phone number should I send that to?"
+  },
+  {
+    name: 'chris-booked',
+    text: "Awesome! Your inspection request is logged. Our office will follow up with your confirmation and agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!"
   }
 ];
 
@@ -86,12 +114,13 @@ async function main() {
   const forceAll = process.argv.includes('--all');
   
   const pendingClips = [
-    'chris-browsing',
-    'chris-payment-policy',
-    'chris-address-confirm',
-    'chris-upsell-sewer',
-    'chris-upsell-radon',
-    'chris-upsell-termite'
+    'chris-pricing',
+    'chris-why-two',
+    'chris-warranty',
+    'chris-competitors',
+    'chris-drone-thermal',
+    'chris-checklist',
+    'chris-booked'
   ];
 
   const targetClips = forceAll

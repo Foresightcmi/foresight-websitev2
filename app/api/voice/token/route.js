@@ -47,7 +47,7 @@ export async function POST() {
       mode: 'live',
       wsUrl,
       model: 'models/gemini-2.5-flash-native-audio-latest',
-      voice: 'Fenrir',
+      voice: 'Charon',
       tokenName
     }, { status: 200 });
 
