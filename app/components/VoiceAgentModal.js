@@ -398,18 +398,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         }
 
         const float32 = e.inputBuffer.getChannelData(0);
-        // While assistant is speaking, suppress quiet silence/fan noise (<0.005), but let normal user speech pass to trigger barge-in interruption
+        // While assistant is speaking, suppress quiet silence/fan noise (<0.006), but let normal user speech pass to trigger barge-in interruption
         if (isSpeakingRef.current) {
           let sum = 0;
           for (let i = 0; i < float32.length; i++) {
             sum += float32[i] * float32[i];
           }
           const rms = Math.sqrt(sum / float32.length);
-          if (rms < 0.005) {
+          if (rms < 0.006) {
             return;
           }
         }
-        isInterruptedRef.current = false;
 
         const int16 = new Int16Array(float32.length);
         for (let i = 0; i < float32.length; i++) {
@@ -443,6 +442,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       }
     } catch (err) {
       console.warn('Microphone streaming permission or init error:', err);
+      if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+        setMicError('Microphone access was denied. Tap the lock icon in your address bar to allow microphone access, or type your question below.');
+      } else {
+        setMicError('Microphone could not be opened. You can still type your questions or tap any topic below!');
+      }
       setEngineMode('neural');
     }
   }, []);
@@ -460,16 +464,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       if (data.mode !== 'live' || !data.wsUrl) {
         console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
         setEngineMode('neural');
-        setHistory(prev => {
-          if (prev.length === 0) {
-            return [{
-              role: 'assistant',
-              content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
-            }];
+        const greetingText = "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?";
+        setHistory([{
+          role: 'assistant',
+          content: greetingText
+        }]);
+        setCallState('speaking');
+        playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
+          if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
+            handleStartListeningRef.current();
           }
-          return prev;
         });
-        setCallState('idle');
         return;
       }
 
@@ -523,7 +528,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
-                    voiceName: data.voice || "Fenrir"
+                    voiceName: data.voice || "Charon"
                   }
                 }
               }
@@ -548,8 +553,14 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             startLiveMicStream(ws);
             // Spoken live greeting by Chris
             ws.send(JSON.stringify({
-              realtimeInput: {
-                text: "The client just opened the voice console. Greet them warmly and concisely as Chris Boykin from Foresight Home Inspections in Atlanta in 1 spoken sentence, and ask how you can help them today."
+              clientContent: {
+                turns: [{
+                  role: 'user',
+                  parts: [{
+                    text: "The client just opened the voice console. Greet them warmly and concisely as Chris Boykin from Foresight Home Inspections in Atlanta in 1 spoken sentence, and ask how you can help them today."
+                  }]
+                }],
+                turnComplete: true
               }
             }));
           }
@@ -590,7 +601,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               const streamedText = msg.serverContent.outputTranscription.text.replace(/\*/g, '');
               setHistory(prev => {
                 // If there is any placeholder greeting, replace it immediately
-                if (prev.length === 1 && (prev[0].isPlaceholder || (prev[0].role === 'assistant' && !prev[0].live))) {
+                if (prev.length === 1 && (prev[0].isPlaceholder || prev[0].isConnecting || (prev[0].role === 'assistant' && !prev[0].live))) {
                   return [{ role: 'assistant', content: streamedText, streaming: true, live: true }];
                 }
                 const last = prev[prev.length - 1];
@@ -601,19 +612,27 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               });
             }
 
-            // Real-time speech-to-text transcript of user speech
+            // Low latency interim transcription preview while user is speaking
+            if (msg.serverContent.interimInputTranscription?.text) {
+              setInterimUserText(msg.serverContent.interimInputTranscription.text);
+            }
+
+            // Real-time finalized speech-to-text transcript of user speech
             if (msg.serverContent.inputTranscription?.text) {
               const userSpokenText = msg.serverContent.inputTranscription.text;
+              setInterimUserText('');
               setHistory(prev => {
                 const last = prev[prev.length - 1];
                 if (last && last.role === 'user' && last.streaming) {
-                  return [...prev.slice(0, -1), { ...last, content: userSpokenText }];
+                  return [...prev.slice(0, -1), { ...last, content: userSpokenText, streaming: false }];
                 }
-                return [...prev, { role: 'user', content: userSpokenText, streaming: true, live: true }];
+                return [...prev, { role: 'user', content: userSpokenText, streaming: false, live: true }];
               });
+              setCallState('thinking');
             }
 
             if (msg.serverContent.modelTurn?.parts) {
+              isInterruptedRef.current = false;
               isModelTurnActiveRef.current = true;
               isSpeakingRef.current = true;
               if (callStateRef.current !== 'speaking') {
@@ -674,18 +693,24 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     } catch (err) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
+      const greetingText = "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?";
       setHistory(prev => {
         if (prev.length === 0) {
           return [{
             role: 'assistant',
-            content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+            content: greetingText
           }];
         }
         return prev;
       });
-      setCallState('idle');
+      setCallState('speaking');
+      playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
+        if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
+          handleStartListeningRef.current();
+        }
+      });
     }
-  }, [startLiveMicStream, playLivePcmChunk, haltSpeech]);
+  }, [startLiveMicStream, playLivePcmChunk, haltSpeech, playNeuralAudio]);
 
   // Auto-scroll transcript container
   useEffect(() => {
@@ -699,26 +724,24 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     if (isOpen) {
       if (!hasGreetedRef.current) {
         hasGreetedRef.current = true;
-        setCallState('speaking');
         haltSpeech();
         setBookingData(null);
         setCalculatedQuote(null);
         setInterimUserText('');
         setMicError(null);
+        setHistory([]);
+        setCallState('thinking');
 
-        const greetingText = "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?";
-        setHistory([{
-          role: 'assistant',
-          content: greetingText,
-          live: true
-        }]);
+        // Resume AudioContext instances on user interaction click
+        if (audioOutputCtxRef.current && audioOutputCtxRef.current.state === 'suspended') {
+          try { audioOutputCtxRef.current.resume(); } catch (_) {}
+        }
+        if (audioInputCtxRef.current && audioInputCtxRef.current.state === 'suspended') {
+          try { audioInputCtxRef.current.resume(); } catch (_) {}
+        }
 
-        // Play authentic cloned voice greeting by Christopher Boykin
-        playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
-          if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
-            handleStartListeningRef.current();
-          }
-        });
+        // Initialize Gemini Live WebSocket as primary conversational engine
+        initLiveConnection();
       }
     } else {
       // Modal closed: reset greeting guard and stop all live sessions and audio
@@ -741,7 +764,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         greetingTimerRef.current = null;
       }
     };
-  }, [isOpen, haltSpeech, playNeuralAudio, stopLiveSession]);
+  }, [isOpen, haltSpeech, playNeuralAudio, stopLiveSession, initLiveConnection]);
 
   // Instant barge-in / toggle helper: interrupts Chris immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
@@ -755,21 +778,18 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     if (callState === 'speaking') {
       haltSpeech();
       isInterruptedRef.current = true;
-      if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
-        try {
-          // Interrupt server generation immediately
-          liveWsRef.current.send(JSON.stringify({
-            realtimeInput: {
-              text: " "
-            }
-          }));
-        } catch (_) {}
-      }
       setCallState('listening');
     } else if (callState === 'listening') {
-      handleStopListening();
+      if (engineMode === 'live') {
+        setCallState('idle');
+      } else {
+        handleStopListening();
+      }
     } else {
-      handleStartListening();
+      setCallState('listening');
+      if (engineMode !== 'live') {
+        handleStartListening();
+      }
     }
   };
 
@@ -905,8 +925,12 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
       try {
         liveWsRef.current.send(JSON.stringify({
-          realtimeInput: {
-            text: queryText.trim()
+          clientContent: {
+            turns: [{
+              role: 'user',
+              parts: [{ text: queryText.trim() }]
+            }],
+            turnComplete: true
           }
         }));
         return;
