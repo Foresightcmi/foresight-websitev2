@@ -166,6 +166,37 @@ const nextConfig = {
         destination: '/service-areas/counties',
         permanent: true,
       },
+      // Service slug normalization redirects
+      {
+        source: '/services/pool-spa-inspection',
+        destination: '/services/pool-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/pool-spa-inspection/:city',
+        destination: '/services/pool-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/termite-wdo-inspection',
+        destination: '/services/termite-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/termite-wdo-inspection/:city',
+        destination: '/services/termite-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/home-buyer-inspection',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/home-buyer-inspection/:city',
+        destination: '/service-areas/:city',
+        permanent: true,
+      },
       // Old dated blog post slugs to canonical
       {
         source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-09',

@@ -8,6 +8,38 @@ import GooglePreferredSource from '../../components/GooglePreferredSource';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 const SERVICE_MAP = {
+  'buyer-inspection': {
+    name: 'Standard Buyer & Seller Inspection',
+    price: 'From $345',
+    icon: '🏠',
+    headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
+    metaTitle: 'Buyer & Seller Home Inspection Atlanta | 2 Inspectors From $345',
+    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning & $10,000 warranty.',
+    description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
+    included: [
+      'Two certified inspectors on site for 2x thoroughness in half the time',
+      'FLIR thermal imaging and moisture meter diagnostics included free',
+      'Aerial camera drone roof scanning for high or steep roofs',
+      '$10,000 Master Protection Warranty with $0 deductible included free',
+      'Free Utilities Plus VIP utility setup concierge ($150 value)'
+    ]
+  },
+  'home-buyer-inspection': {
+    name: 'Standard Buyer & Seller Inspection',
+    price: 'From $345',
+    icon: '🏠',
+    headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
+    metaTitle: 'Buyer & Seller Home Inspection Atlanta | 2 Inspectors From $345',
+    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning & $10,000 warranty.',
+    description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
+    included: [
+      'Two certified inspectors on site for 2x thoroughness in half the time',
+      'FLIR thermal imaging and moisture meter diagnostics included free',
+      'Aerial camera drone roof scanning for high or steep roofs',
+      '$10,000 Master Protection Warranty with $0 deductible included free',
+      'Free Utilities Plus VIP utility setup concierge ($150 value)'
+    ]
+  },
   'radon-testing': {
     name: 'Radon Gas Testing',
     price: '$250',
@@ -38,6 +70,21 @@ const SERVICE_MAP = {
       'Evaluation of cast iron, PVC, clay, and Orangeburg piping'
     ]
   },
+  'pool-inspection': {
+    name: 'Pool & Spa Inspection',
+    price: '$275',
+    icon: '🏊',
+    headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $275',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $275 rate with 24-hr report.',
+    description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
+    included: [
+      'Pump, filtration, and circulation system pressure testing',
+      'Pool heater ignition, burner, and heat exchanger evaluation',
+      'Electrical safety, GFCI, and equipotential bonding audit',
+      'Safety barriers, self-latching gates, and anti-entrapment drains'
+    ]
+  },
   'pool-spa-inspection': {
     name: 'Pool & Spa Inspection',
     price: '$275',
@@ -53,6 +100,21 @@ const SERVICE_MAP = {
       'Safety barriers, self-latching gates, and anti-entrapment drains'
     ]
   },
+  'termite-inspection': {
+    name: 'Termite & WDO Clearance Inspection',
+    price: '$125+',
+    icon: '🐜',
+    headline: 'Official Georgia Wood Destroying Organism (WDO) Clearance Letters',
+    metaTitle: 'Official Termite & WDO Inspection Atlanta GA | $125+ Clearance',
+    metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. From $125+.',
+    description: 'Georgia is located in the highest-risk termite zone in North America (Zone 1). Subterranean termites, carpenter ants, and wood-boring beetles cause billions of dollars in structural damage annually. We inspect all crawlspaces, sill plates, foundation perimeters, and framing for active infestations and past damage.',
+    included: [
+      'Comprehensive crawlspace, basement, and foundation perimeter sweep',
+      'Inspection for subterranean termites, carpenter ants, and powderpost beetles',
+      'Identification of wood rot, high-moisture contact, and earth-to-wood conditions',
+      'Official Georgia WDO clearance letter for lenders and mortgage closing'
+    ]
+  },
   'termite-wdo-inspection': {
     name: 'Termite & WDO Clearance Inspection',
     price: '$125+',
@@ -66,6 +128,36 @@ const SERVICE_MAP = {
       'Inspection for subterranean termites, carpenter ants, and powderpost beetles',
       'Identification of wood rot, high-moisture contact, and earth-to-wood conditions',
       'Official Georgia WDO clearance letter for lenders and mortgage closing'
+    ]
+  },
+  'new-construction-inspection': {
+    name: 'New Construction & Phased Inspection',
+    price: 'From $400',
+    icon: '🏗️',
+    headline: 'Independent Phased & Final New Construction Inspections in Metro Atlanta',
+    metaTitle: 'New Construction Inspection Atlanta GA | Phased & Final From $400',
+    metaDescription: 'Independent new construction & pre-drywall home inspections in Metro Atlanta. Two certified inspectors, FLIR thermal scans & builder-ready punch lists. From $400.',
+    description: 'Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in Metro Atlanta frequently have major concealed defects. Municipal code inspectors only spend 15 minutes on site. Our independent two-inspector team evaluates every system before final closing.',
+    included: [
+      'Pre-drywall framing, rough plumbing, electrical and HVAC audit',
+      'Final phase complete mechanical, structural and cosmetic evaluation',
+      'FLIR thermal imaging to verify attic and wall insulation integrity',
+      'Builder-ready digital punch list with photos and technical citations'
+    ]
+  },
+  'pre-listing-inspection': {
+    name: 'Pre-Listing Seller Inspection',
+    price: 'From $295',
+    icon: '📋',
+    headline: 'Sell With Confidence: Pre-Listing Inspections for Atlanta Homeowners',
+    metaTitle: 'Pre-Listing Home Inspection Atlanta GA | Seller Audit From $295',
+    metaDescription: 'Pre-listing seller home inspection in Metro Atlanta. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. From $295.',
+    description: 'When a buyer inspector finds unexpected major defects, negotiations stall or contracts fall through. A Pre-Listing Seller Inspection by Foresight gives you total transparency into your home condition before hitting the MLS, letting you make targeted repairs on your timeline.',
+    included: [
+      'Complete two-inspector evaluation of roof, HVAC, electrical, plumbing & foundation',
+      'FLIR thermal scan to catch hidden moisture or insulation gaps',
+      'Prioritized repair roadmap to eliminate buyer negotiation leverage',
+      'Shareable inspection report to build buyer confidence and justify asking price'
     ]
   },
   '11-month-warranty-inspection': {
@@ -97,22 +189,6 @@ const SERVICE_MAP = {
       'Thermal imaging of electrical panels and HVAC distribution',
       'Municipal STR compliance checklist support'
     ]
-  },
-  'home-buyer-inspection': {
-    name: 'Standard Buyer & Seller Inspection',
-    price: 'From $345',
-    icon: '🏠',
-    headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
-    metaTitle: 'Buyer & Seller Home Inspection Atlanta | 2 Inspectors From $345',
-    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning & $10,000 warranty.',
-    description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
-    included: [
-      'Two certified inspectors on site for 2x thoroughness in half the time',
-      'FLIR thermal imaging and moisture meter diagnostics included free',
-      'Aerial camera drone roof scanning for high or steep roofs',
-      '$10,000 Master Protection Warranty with $0 deductible included free',
-      'Free Utilities Plus VIP utility setup concierge ($150 value)'
-    ]
   }
 };
 
@@ -128,7 +204,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
-  const serviceData = SERVICE_MAP[resolvedParams.service];
+  const canonicalService = resolvedParams.service === 'termite-wdo-inspection' ? 'termite-inspection' :
+                           resolvedParams.service === 'pool-spa-inspection' ? 'pool-inspection' :
+                           resolvedParams.service === 'home-buyer-inspection' ? 'buyer-inspection' :
+                           resolvedParams.service;
+  const serviceData = SERVICE_MAP[canonicalService] || SERVICE_MAP[resolvedParams.service];
   if (!serviceData) {
     return { title: 'Service Not Found | Foresight' };
   }
@@ -136,12 +216,12 @@ export async function generateMetadata({ params }) {
     title: serviceData.metaTitle,
     description: serviceData.metaDescription,
     alternates: {
-      canonical: `${SITE_URL}/services/${resolvedParams.service}`,
+      canonical: `${SITE_URL}/services/${canonicalService}`,
     },
     openGraph: {
       title: serviceData.metaTitle,
       description: serviceData.metaDescription,
-      url: `${SITE_URL}/services/${resolvedParams.service}`,
+      url: `${SITE_URL}/services/${canonicalService}`,
       type: 'website',
     },
   };
@@ -149,7 +229,11 @@ export async function generateMetadata({ params }) {
 
 export default async function ServiceHubPage({ params }) {
   const resolvedParams = await params;
-  const serviceData = SERVICE_MAP[resolvedParams.service];
+  const canonicalService = resolvedParams.service === 'termite-wdo-inspection' ? 'termite-inspection' :
+                           resolvedParams.service === 'pool-spa-inspection' ? 'pool-inspection' :
+                           resolvedParams.service === 'home-buyer-inspection' ? 'buyer-inspection' :
+                           resolvedParams.service;
+  const serviceData = SERVICE_MAP[canonicalService] || SERVICE_MAP[resolvedParams.service];
   if (!serviceData) {
     notFound();
   }
@@ -243,30 +327,46 @@ export default async function ServiceHubPage({ params }) {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem' }}>
-            {cities.map((city) => (
-              <Link
-                key={city.slug}
-                href={`/services/${resolvedParams.service}/${city.slug}`}
-                prefetch={false}
-                style={{
-                  background: '#FFFFFF',
-                  borderRadius: 'var(--radius-sm)',
-                  padding: '1rem 1.25rem',
-                  border: '1px solid #E2E8F0',
-                  textDecoration: 'none',
-                  color: '#0F172A',
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  transition: 'border-color 0.2s, transform 0.2s'
-                }}
-              >
-                <span>{city.name}</span>
-                <span style={{ color: 'var(--color-red)', fontSize: '0.85rem' }}>&rarr;</span>
-              </Link>
-            ))}
+            {cities.map((city) => {
+              const citySlug = city.Slug || city['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+              const cityName = city['City Name'];
+              const pseoServices = [
+                'radon-testing',
+                'termite-inspection',
+                'sewer-scope-inspection',
+                'new-construction-inspection',
+                'pool-inspection',
+                'pre-listing-inspection'
+              ];
+              const href = pseoServices.includes(canonicalService)
+                ? `/services/${canonicalService}/${citySlug}`
+                : `/service-areas/${citySlug}`;
+
+              return (
+                <Link
+                  key={citySlug}
+                  href={href}
+                  prefetch={false}
+                  style={{
+                    background: '#FFFFFF',
+                    borderRadius: 'var(--radius-sm)',
+                    padding: '1rem 1.25rem',
+                    border: '1px solid #E2E8F0',
+                    textDecoration: 'none',
+                    color: '#0F172A',
+                    fontWeight: 600,
+                    fontSize: '0.95rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    transition: 'border-color 0.2s, transform 0.2s'
+                  }}
+                >
+                  <span>{cityName}</span>
+                  <span style={{ color: 'var(--color-red)', fontSize: '0.85rem' }}>&rarr;</span>
+                </Link>
+              );
+            })}
           </div>
 
           <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>

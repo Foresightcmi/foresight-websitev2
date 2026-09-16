@@ -805,8 +805,13 @@ export default async function CityPage({ params }) {
             </Link>
             <Link href={`/services/pool-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏊</div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pool & Spa Evaluation</h3>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pool &amp; Spa Evaluation</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Safety barrier, pump, filter, heater, and electrical bonding audits in {cityName}.</p>
+            </Link>
+            <Link href={`/services/pre-listing-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📋</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pre-Listing Seller Audit</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Uncover repair issues before listing your {cityName} home to protect equity and speed closing.</p>
             </Link>
           </div>
         </div>

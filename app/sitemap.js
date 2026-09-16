@@ -12,6 +12,15 @@ export default async function sitemap() {
   const staticPages = [
     { loc: '', changefreq: 'weekly', priority: 1.0 },
     { loc: '/services', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/services/buyer-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/radon-testing', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/termite-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/sewer-scope-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/new-construction-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/pool-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/pre-listing-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/11-month-warranty-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/str-short-term-rental-inspection', changefreq: 'monthly', priority: 0.85 },
     { loc: '/services/municipal-rehab-inspections', changefreq: 'monthly', priority: 0.85 },
     { loc: '/samples', changefreq: 'monthly', priority: 0.85 },
     { loc: '/about', changefreq: 'monthly', priority: 0.8 },
@@ -19,6 +28,7 @@ export default async function sitemap() {
     { loc: '/quote', changefreq: 'weekly', priority: 0.9 },
     { loc: '/ask-twin', changefreq: 'monthly', priority: 0.5 },
     { loc: '/blog', changefreq: 'weekly', priority: 0.7 },
+    { loc: '/press', changefreq: 'monthly', priority: 0.85 },
     { loc: '/contact', changefreq: 'monthly', priority: 0.7 },
     { loc: '/due-diligence', changefreq: 'weekly', priority: 0.9 },
     { loc: '/neighborhoods', changefreq: 'weekly', priority: 0.85 },
@@ -96,9 +106,10 @@ export default async function sitemap() {
       for (const service of services) {
         for (const city of cities) {
           const citySlug = city['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          const lastMod = city['Last Refreshed'] ? new Date(city['Last Refreshed']) : now;
           routes.push({
             url: `${baseUrl}/services/${service.slug}/${citySlug}`,
-            lastModified: now,
+            lastModified: lastMod,
             changeFrequency: 'monthly',
             priority: 0.75,
           });

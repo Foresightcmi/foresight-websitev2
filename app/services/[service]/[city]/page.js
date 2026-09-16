@@ -23,6 +23,13 @@ function toSlug(text) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
+function normalizeServiceSlug(slug) {
+  if (slug === 'termite-wdo-inspection') return 'termite-inspection';
+  if (slug === 'pool-spa-inspection') return 'pool-inspection';
+  if (slug === 'home-buyer-inspection') return 'buyer-inspection';
+  return slug;
+}
+
 // ---------------------------------------------------------------------------
 // Static params – generates 462 routes (6 services x 77 cities)
 // ---------------------------------------------------------------------------
@@ -50,7 +57,8 @@ export async function generateMetadata({ params }) {
   const services = loadServices();
   const cities = loadCities();
 
-  const serviceData = services.find(s => s.slug === resolvedParams.service);
+  const normalizedService = normalizeServiceSlug(resolvedParams.service);
+  const serviceData = services.find(s => s.slug === normalizedService);
   const cityData = cities.find(c => toSlug(c['City Name']) === resolvedParams.city);
 
   if (!serviceData || !cityData) {
@@ -63,7 +71,7 @@ export async function generateMetadata({ params }) {
 
   const title = serviceData.metaTitle.replace(/{city}/g, cityName);
   const description = serviceData.metaDescription.replace(/{city}/g, cityName);
-  const canonicalUrl = `${SITE_URL}/services/${resolvedParams.service}/${resolvedParams.city}`;
+  const canonicalUrl = `${SITE_URL}/services/${normalizedService}/${resolvedParams.city}`;
 
   return {
     title,
@@ -117,7 +125,8 @@ export default async function ServiceCityPage({ params }) {
   const services = loadServices();
   const cities = loadCities();
 
-  const serviceData = services.find(s => s.slug === resolvedParams.service);
+  const normalizedService = normalizeServiceSlug(resolvedParams.service);
+  const serviceData = services.find(s => s.slug === normalizedService);
   const cityData = cities.find(c => toSlug(c['City Name']) === resolvedParams.city);
 
   if (!serviceData || !cityData) {
@@ -128,7 +137,7 @@ export default async function ServiceCityPage({ params }) {
   const county = cityData.County || 'Georgia';
   const zip = cityData.Zip || '';
   const serviceName = serviceData.name;
-  const canonicalUrl = `${SITE_URL}/services/${resolvedParams.service}/${resolvedParams.city}`;
+  const canonicalUrl = `${SITE_URL}/services/${normalizedService}/${resolvedParams.city}`;
 
   // Process FAQs with city name injected
   const processedFaqs = serviceData.faqs.map(f => ({
@@ -172,6 +181,11 @@ export default async function ServiceCityPage({ params }) {
     "areaServed": {
       "@type": "City",
       "name": cityName,
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": cityData.Latitude || "33.7490",
+        "longitude": cityData.Longitude || "-84.3880"
+      },
       "containedInPlace": {
         "@type": "AdministrativeArea",
         "name": `${county} County`,
@@ -402,14 +416,20 @@ export default async function ServiceCityPage({ params }) {
                 <strong>🏡 Local Neighborhood Overview:</strong> {cityData.Intro}
               </p>
             )}
+            {cityData?.['Local Risks HTML'] && (
+              <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-sm)', padding: '1.25rem', marginBottom: '1.25rem' }}>
+                <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.5rem' }}>
+                  🛡️ Geotechnical &amp; Housing Vulnerabilities in {cityName}:
+                </strong>
+                <div style={{ fontSize: '0.975rem', lineHeight: 1.7, color: 'var(--color-gray-dark)' }} dangerouslySetInnerHTML={{ __html: cityData['Local Risks HTML'] }} />
+              </div>
+            )}
             {cityData?.['Seasonal Tip'] && (
               <div style={{ background: 'rgba(211,47,47,0.04)', borderLeft: '4px solid var(--color-gold)', padding: '1rem 1.25rem', borderRadius: '4px', marginBottom: '1.25rem' }}>
                 <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.25rem' }}>
                   🌤️ Seasonal Inspection Advisory for {cityName}:
                 </strong>
-                <span style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                  {cityData['Seasonal Tip']}
-                </span>
+                <span style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }} dangerouslySetInnerHTML={{ __html: cityData['Seasonal Tip'] }} />
               </div>
             )}
             <p style={{ fontSize: '1.025rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', margin: 0 }}>
