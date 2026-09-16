@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Script from 'next/script';
 import GooglePreferredSource from '../components/GooglePreferredSource';
+import DueDiligenceCalculator from '../components/DueDiligenceCalculator';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -136,6 +137,22 @@ export default function DueDiligencePage() {
               📞 Call for Rush Slot: 678-480-2110
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Georgia Due Diligence Calculator (Semrush Link Magnet) */}
+      <section className="section bg-light" style={{ padding: '4.5rem 0 3.5rem' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold-dark)' }}>
+              🧮 Interactive GAR Contingency Tool
+            </span>
+            <h2 style={{ fontSize: '2.4rem', fontWeight: 800 }}>Calculate Your Due Diligence Deadlines &amp; Risk Profile</h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '750px', margin: '0.75rem auto 0', fontSize: '1.1rem' }}>
+              Select your contract binding date and contingency window to see exact inspection, quote, and amendment deadlines, plus localized Georgia building science risks.
+            </p>
+          </div>
+          <DueDiligenceCalculator />
         </div>
       </section>
 

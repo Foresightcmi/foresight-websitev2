@@ -835,6 +835,7 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/samples">Sample Inspection Reports</Link></li>
                   <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
                   <li><Link prefetch={false} href="/realtors">Realtors VIP Program</Link></li>
+                  <li><Link prefetch={false} href="/press">Press &amp; Media Kit</Link></li>
                   <li><Link prefetch={false} href="/blog">Inspection Knowledge Base</Link></li>
                   <li><Link prefetch={false} href="/faq">FAQ</Link></li>
                   <li style={{ marginTop: '0.75rem' }}><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ fontWeight: 700, color: 'var(--color-white)' }}>📞 678-480-2110</a></li>

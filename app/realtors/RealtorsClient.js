@@ -8,11 +8,25 @@ export default function RealtorsClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [copied, setCopied] = useState(false);
+  const [copiedBadgeId, setCopiedBadgeId] = useState(null);
   const [activePreset, setActivePreset] = useState({
     id: 'hvac',
     label: '❄️ HVAC System',
     clause: 'Seller agrees to pay a licensed HVAC contractor to evaluate, service, and repair the primary HVAC system, specifically addressing [e.g., low temperature split / failing capacitor], and provide buyer with a paid invoice showing system is in normal working order prior to closing.'
   });
+
+  const handleCopyBadge = (id, snippet) => {
+    navigator.clipboard.writeText(snippet);
+    setCopiedBadgeId(id);
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'realtor_badge_copied', {
+        event_category: 'realtor_tool',
+        event_label: id,
+        badge_type: id,
+      });
+    }
+    setTimeout(() => setCopiedBadgeId(null), 2500);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -557,6 +571,134 @@ export default function RealtorsClient() {
                   </button>
                 </form>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔗 REALTOR PARTNER EMBED BADGES & BACKLINK WIDGETS (SEMRUSH 2025 LINK MAGNET) 🔗 */}
+      <section className="section" style={{ background: '#0B1120', color: '#FFFFFF', padding: '5rem 0', borderBottom: '1px solid #1E293B' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '3.5rem' }}>
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
+              🔗 Realtor Partner Digital Assets
+            </span>
+            <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800 }}>
+              Embed Preferred Partner Badges &amp; Due Diligence Tools
+            </h2>
+            <p style={{ color: '#94A3B8', maxWidth: '750px', margin: '1rem auto 0', fontSize: '1.1rem', lineHeight: 1.6 }}>
+              Add Foresight&apos;s Certified Master Inspector credential badges or interactive Due Diligence Calculator to your brokerage website, buyer guide, or recommended vendor page with 1-click HTML snippets.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '2rem' }}>
+            {/* Asset 1: Certified Master Inspector Badge */}
+            <div style={{ background: '#1E293B', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
+              <span style={{ fontSize: '0.8rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                Option 1 &bull; Visual Partner Badge
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem' }}>
+                CMI® Preferred Partner Badge
+              </h3>
+              <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5, flexGrow: 1, marginBottom: '1.5rem' }}>
+                A sleek, trust-building badge for your website&apos;s footer or recommended vendors section showing your partnership with Georgia&apos;s premier dual-inspector team.
+              </p>
+              <div style={{ background: '#0F172A', padding: '1rem', borderRadius: '8px', border: '1px solid #334155', marginBottom: '1.25rem', textAlign: 'center' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1E293B', border: '1px solid var(--color-gold)', padding: '6px 14px', borderRadius: '6px' }}>
+                  <span style={{ fontSize: '1.1rem' }}>🛡️</span>
+                  <div style={{ textAlign: 'left', lineHeight: 1.2 }}>
+                    <div style={{ color: '#FFFFFF', fontSize: '0.75rem', fontWeight: 700 }}>PREFERRED INSPECTION PARTNER</div>
+                    <div style={{ color: 'var(--color-gold)', fontSize: '0.7rem' }}>Foresight CMI® &bull; 4.9★ (48 Reviews)</div>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => handleCopyBadge('badge-cmi', '<a href="https://www.fhinspectionsatl.com" target="_blank" rel="noopener" title="Foresight Home Inspections - Atlanta Certified Master Inspector"><img src="https://www.fhinspectionsatl.com/images/cmi-badge.png" alt="Foresight Home Inspections - Certified Master Inspector Atlanta" width="200" height="70" /></a>')}
+                style={{
+                  background: copiedBadgeId === 'badge-cmi' ? '#22C55E' : 'var(--color-gold)',
+                  color: '#0F172A',
+                  border: 'none',
+                  padding: '0.75rem',
+                  borderRadius: 'var(--radius-sm)',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                  width: '100%',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {copiedBadgeId === 'badge-cmi' ? '✅ HTML Snippet Copied!' : '📋 Copy Badge HTML Snippet'}
+              </button>
+            </div>
+
+            {/* Asset 2: Due Diligence Calculator Widget Link */}
+            <div style={{ background: '#1E293B', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
+              <span style={{ fontSize: '0.8rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                Option 2 &bull; Interactive Buyer Widget
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem' }}>
+                Georgia Due Diligence Tool Card
+              </h3>
+              <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5, flexGrow: 1, marginBottom: '1.5rem' }}>
+                An embeddable utility card for your buyer blog posts or client portal, allowing buyers to calculate contract repair milestones directly.
+              </p>
+              <div style={{ background: '#0F172A', padding: '1rem', borderRadius: '8px', border: '1px solid #334155', marginBottom: '1.25rem' }}>
+                <div style={{ color: '#FFFFFF', fontSize: '0.85rem', fontWeight: 700, marginBottom: '4px' }}>⏱️ Due Diligence Calculator</div>
+                <p style={{ color: '#94A3B8', fontSize: '0.75rem', margin: '0 0 6px 0', lineHeight: 1.3 }}>Calculate inspection deadlines &amp; GAR addendum windows.</p>
+                <span style={{ color: 'var(--color-gold)', fontSize: '0.75rem', fontWeight: 600 }}>Open Free Calculator &rarr;</span>
+              </div>
+              <button
+                onClick={() => handleCopyBadge('badge-widget', '<div style="border:1px solid #e2e8f0;border-radius:8px;padding:16px;max-width:360px;font-family:sans-serif;background:#ffffff;box-shadow:0 2px 8px rgba(0,0,0,0.05);"><h4 style="margin:0 0 8px;font-size:16px;color:#1e293b;">⏱️ Georgia Due Diligence Calculator</h4><p style="margin:0 0 12px;font-size:13px;color:#64748b;line-height:1.4;">Calculate exact inspection deadlines, GAR repair addendum milestones, and age-based risk factors.</p><a href="https://www.fhinspectionsatl.com/due-diligence" target="_blank" rel="noopener" style="display:inline-block;background:#d32f2f;color:#ffffff;text-decoration:none;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:700;">Open Free Calculator &rarr;</a><div style="margin-top:10px;font-size:11px;color:#94a3b8;">Provided by <a href="https://www.fhinspectionsatl.com" target="_blank" rel="noopener" style="color:#d32f2f;text-decoration:none;font-weight:600;">Foresight Home Inspections</a></div></div>')}
+                style={{
+                  background: copiedBadgeId === 'badge-widget' ? '#22C55E' : 'var(--color-gold)',
+                  color: '#0F172A',
+                  border: 'none',
+                  padding: '0.75rem',
+                  borderRadius: 'var(--radius-sm)',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                  width: '100%',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {copiedBadgeId === 'badge-widget' ? '✅ Widget HTML Copied!' : '📋 Copy Widget HTML Snippet'}
+              </button>
+            </div>
+
+            {/* Asset 3: Preferred Vendor Link & Endorsement */}
+            <div style={{ background: '#1E293B', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
+              <span style={{ fontSize: '0.8rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                Option 3 &bull; Preferred Vendor Text
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem' }}>
+                Recommended Vendor Listing
+              </h3>
+              <p style={{ color: '#94A3B8', fontSize: '0.9rem', lineHeight: 1.5, flexGrow: 1, marginBottom: '1.5rem' }}>
+                Pre-formatted, SEO-optimized text recommendation ready to drop into your brokerage&apos;s &quot;Trusted Local Partners&quot; or buyer onboarding emails.
+              </p>
+              <div style={{ background: '#0F172A', padding: '1rem', borderRadius: '8px', border: '1px solid #334155', marginBottom: '1.25rem' }}>
+                <p style={{ color: '#CBD5E1', fontSize: '0.8rem', margin: 0, lineHeight: 1.4, fontStyle: 'italic' }}>
+                  &quot;For dual-inspector thoroughness, guaranteed 48-hour scheduling, and same-day reports, we recommend Foresight Home Inspections...&quot;
+                </p>
+              </div>
+              <button
+                onClick={() => handleCopyBadge('badge-text', '<p>For trusted, dual-inspector home inspections with guaranteed 48-hour booking and same-day digital reports, we recommend <a href="https://www.fhinspectionsatl.com" target="_blank" rel="noopener">Foresight Home Inspections</a>, led by Certified Master Inspector Christopher Boykin (Phone: <a href="tel:6784802110">678-480-2110</a>).</p>')}
+                style={{
+                  background: copiedBadgeId === 'badge-text' ? '#22C55E' : 'var(--color-gold)',
+                  color: '#0F172A',
+                  border: 'none',
+                  padding: '0.75rem',
+                  borderRadius: 'var(--radius-sm)',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                  width: '100%',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {copiedBadgeId === 'badge-text' ? '✅ Text Snippet Copied!' : '📋 Copy Text HTML Snippet'}
+              </button>
             </div>
           </div>
         </div>
