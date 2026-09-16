@@ -36,10 +36,10 @@
   {
     "slug": "termite-inspection",
     "name": "Termite & WDO Inspection",
-    "metaTitle": "Official Termite & WDO Inspection in {city}, GA | $110+",
-    "metaDescription": "Official Georgia Wood Infestation (WDO) clearance letters in {city}, GA for mortgage lenders & buyers. Fast scheduling, licensed inspection. From $110!",
-    "price": "$110+",
-    "priceDetails": "$110 when bundled with a home inspection | $150 standalone",
+    "metaTitle": "Official Termite & WDO Inspection in {city}, GA | $125+",
+    "metaDescription": "Official Georgia Wood Infestation (WDO) clearance letters in {city}, GA for mortgage lenders & buyers. Fast scheduling, licensed inspection. From $125!",
+    "price": "$125+",
+    "priceDetails": "$125 when bundled with a home inspection ($165 crawlspace)",
     "icon": "\ud83d\udc1c",
     "badge": "Official GA WDO Report",
     "heroSub": "Subterranean termites cause over $5 billion in property damage annually. Get an Official Georgia Wood Infestation Clearance Report in {city}.",
@@ -57,7 +57,7 @@
       },
       {
         "q": "How much is a termite inspection in {city}, GA?",
-        "a": "An Official Georgia WDO termite inspection in {city} is $110 when bundled with your home inspection, or $150 if scheduled as a standalone evaluation."
+        "a": "An Official Georgia WDO termite inspection in {city} is $125 ($165 for crawlspace foundations) when bundled with your primary home inspection."
       },
       {
         "q": "What if termites or wood damage are found?",
@@ -174,8 +174,8 @@
     "name": "Pre-Listing Seller Inspection",
     "metaTitle": "Pre-Listing Home Inspection in {city}, GA | Seller Pro +",
     "metaDescription": "Pre-listing seller home inspection in {city}, GA. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. Call today!",
-    "price": "$315+",
-    "priceDetails": "Condos from $315 | Single Family Homes from $365+",
+    "price": "$295+",
+    "priceDetails": "Condos from $295 | Single Family Homes from $365+",
     "icon": "\ud83d\udccb",
     "badge": "Maximize Sale Price",
     "heroSub": "Avoid deal-killing surprises during buyer due diligence. Inspect your {city} home before putting it on the market to sell faster and for top dollar.",
@@ -193,7 +193,7 @@
       },
       {
         "q": "How much is a pre-listing seller inspection in {city}, GA?",
-        "a": "Pre-listing seller inspections start at $315+ for condos and $365+ for single-family homes in {city}, including thermal imaging and full digital reports within 24 hours."
+        "a": "Pre-listing seller inspections start at $295+ for condos and $365+ for single-family homes in {city}, including thermal imaging and full digital reports within 24 hours."
       },
       {
         "q": "Can I share Foresight's pre-listing report with potential buyers in {city}?",

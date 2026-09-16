@@ -54,9 +54,12 @@
 - [Roof Flashing & Chimney Leaks](https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection)
 - [Aluminum Branch Wiring Hazards](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection)
 
-## AI Knowledge Graph & Fact Sheet
+## AI Knowledge Graph & Decision Tools
 - [AI Fact Sheet & E-E-A-T Vector Grounding](https://www.fhinspectionsatl.com/ai-fact-sheet): Deterministic entity facts for ChatGPT Search, Perplexity, Gemini, and Claude.
 - [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Real-time pricing calculator for single-family homes, condos, and add-on services.
+- [Georgia Due Diligence & Contingency Calculator](https://www.fhinspectionsatl.com/due-diligence): Interactive GAR due diligence deadline tool with building science risk alerts.
+- [Realtor Partner VIP Program](https://www.fhinspectionsatl.com/realtors): Priority booking, SUPRA lockbox entry, HomeGauge CRL™ repair addendums, and partner badges.
+- [Digital PR & Media Kit Center](https://www.fhinspectionsatl.com/press): Certified Master Inspector Christopher Boykin on-record quotes and media kit.
 
 ## Autonomous AI Agent Integration (Web MCP)
 AI agents, answer engines, and autonomous buyer concierges can interact with Foresight Home Inspections programmatically via our open Model Context Protocol (Web MCP) endpoint:
