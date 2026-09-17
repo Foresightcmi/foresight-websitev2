@@ -102,6 +102,15 @@ export default function GeoTrustBanner() {
   const [geoCity, setGeoCity] = useState(null);
 
   useEffect(() => {
+    // Check sessionStorage cache first to avoid redundant API hits during multi-page browsing
+    try {
+      const cached = sessionStorage.getItem('foresight_geo_city');
+      if (cached) {
+        setGeoCity(JSON.parse(cached));
+        return;
+      }
+    } catch {}
+
     // Fast non-blocking internal edge geolocation without third-party rate limits
     const fetchLocation = async () => {
       try {
@@ -117,6 +126,9 @@ export default function GeoTrustBanner() {
             const matched = METRO_ATLANTA_50MILE_CITIES[rawCity];
             if (matched) {
               setGeoCity(matched);
+              try {
+                sessionStorage.setItem('foresight_geo_city', JSON.stringify(matched));
+              } catch {}
               return;
             }
           }

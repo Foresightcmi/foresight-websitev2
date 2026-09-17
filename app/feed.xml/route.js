@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-static';
+
 export async function GET() {
   const SITE_URL = 'https://www.fhinspectionsatl.com';
   const postsFilePath = path.join(process.cwd(), 'data', 'posts.json');

@@ -7,6 +7,10 @@ import GooglePreferredSource from '../../components/GooglePreferredSource';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
+
 function loadComparisons() {
   const filePath = path.join(process.cwd(), 'data', 'comparisons-pseo.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');

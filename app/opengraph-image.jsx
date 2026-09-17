@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
+export const dynamic = 'force-static';
 export const alt = 'Foresight Home Inspections Atlanta';
 export const size = {
   width: 1200,
@@ -42,6 +42,7 @@ export default async function Image() {
         >
           <div
             style={{
+              display: 'flex',
               fontSize: '40px',
               color: '#D4AF37',
               textTransform: 'uppercase',
@@ -55,14 +56,18 @@ export default async function Image() {
           
           <div
             style={{
-              fontSize: '72px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              fontSize: '70px',
               fontWeight: 900,
               color: '#FFFFFF',
-              lineHeight: 1.1,
+              lineHeight: 1.15,
               marginBottom: '30px',
             }}
           >
-            Atlanta's Premium<br />Home Inspection Team
+            <span>Atlanta's Premium</span>
+            <span>Home Inspection Team</span>
           </div>
           
           <div
@@ -71,13 +76,13 @@ export default async function Image() {
               gap: '20px',
             }}
           >
-            <div style={{ background: '#D4AF37', color: '#000000', padding: '10px 20px', borderRadius: '40px', fontSize: '24px', fontWeight: 700 }}>
+            <div style={{ display: 'flex', background: '#D4AF37', color: '#000000', padding: '10px 20px', borderRadius: '40px', fontSize: '24px', fontWeight: 700 }}>
               Two Inspectors
             </div>
-            <div style={{ background: '#D4AF37', color: '#000000', padding: '10px 20px', borderRadius: '40px', fontSize: '24px', fontWeight: 700 }}>
+            <div style={{ display: 'flex', background: '#D4AF37', color: '#000000', padding: '10px 20px', borderRadius: '40px', fontSize: '24px', fontWeight: 700 }}>
               $10K Warranty
             </div>
-            <div style={{ background: '#D4AF37', color: '#000000', padding: '10px 20px', borderRadius: '40px', fontSize: '24px', fontWeight: 700 }}>
+            <div style={{ display: 'flex', background: '#D4AF37', color: '#000000', padding: '10px 20px', borderRadius: '40px', fontSize: '24px', fontWeight: 700 }}>
               Certified Master Inspector
             </div>
           </div>

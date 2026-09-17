@@ -2,13 +2,23 @@ import { ImageResponse } from 'next/og';
 import fs from 'fs';
 import path from 'path';
 
-export const runtime = 'nodejs'; // Use nodejs runtime to read local fs
+export const dynamic = 'force-static';
 export const alt = 'Foresight Home Inspections Atlanta - Blog';
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = 'image/png';
+
+export async function generateImageMetadata() {
+  const posts = loadPosts();
+  return posts.map(post => ({
+    id: post.slug,
+    alt: post.title,
+    size: { width: 1200, height: 630 },
+    contentType: 'image/png'
+  }));
+}
 
 function loadPosts() {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');

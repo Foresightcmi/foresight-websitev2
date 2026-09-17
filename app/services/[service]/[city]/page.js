@@ -7,6 +7,10 @@ import RelatedServiceAreas from '../../../components/RelatedServiceAreas';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
+
 function loadServices() {
   const filePath = path.join(process.cwd(), 'data', 'services-pseo.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');

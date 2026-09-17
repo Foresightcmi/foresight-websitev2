@@ -6,6 +6,10 @@ import AuthorBio from '../../components/AuthorBio';
 import TableOfContents from '../../components/TableOfContents';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
 
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
+
 function loadPosts() {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');
