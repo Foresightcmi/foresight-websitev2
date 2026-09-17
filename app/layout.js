@@ -576,16 +576,21 @@ export default function RootLayout({ children }) {
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       }
     ],
+    "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJk_3KQe0H9YgRw8vLCvROjpY",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Home Inspection Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Home Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "295", "unitText": "starting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "295", "unitText": "starting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "355", "unitText": "starting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "300" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "200", "unitText": "starting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite/WDO Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "110" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Single-Family Home Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "345", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Condo and Townhome Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "295", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "365", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Final Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "400", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sewer Scope Camera Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "450" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing (48-Hr Continuous Monitor)" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "250" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "275" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite and WDO Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "125" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) City Compliance Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "595" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DeKalb County Plumbing Low-Flow Compliance Certificate" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "100" } }
       ]
     },
     "subjectOf": [
