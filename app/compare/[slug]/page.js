@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
+import ThermalSlider from '../../components/ThermalSlider';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -184,6 +185,15 @@ export default async function ComparisonPage({ params }) {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Interactive FLIR Thermal Split-Screen Diagnostic Viewer */}
+      {item.slug === 'thermal-imaging-vs-standard-visual-inspection' && (
+        <section className="section" style={{ background: '#0B1120', padding: '4rem 0 3.5rem', borderBottom: '1px solid #1E293B' }}>
+          <div className="container" style={{ maxWidth: '960px' }}>
+            <ThermalSlider />
           </div>
         </section>
       )}

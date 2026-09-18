@@ -200,7 +200,7 @@ export default async function CityPage({ params }) {
     },
     "speakable": {
       "@type": "SpeakableSpecification",
-      "cssSelector": [".county-bluf-summary", ".bluf-faq-answer"]
+      "cssSelector": [".city-bluf-summary", ".county-bluf-summary", ".bluf-faq-answer"]
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
