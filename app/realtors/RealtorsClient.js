@@ -3,17 +3,86 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+const GAR_PRESETS = [
+  {
+    id: 'hvac',
+    label: '❄️ HVAC System',
+    category: 'HVAC System & Mechanicals',
+    repairClause: 'Seller agrees to pay a licensed HVAC contractor to evaluate, service, and repair the primary HVAC system, specifically addressing [e.g., low temperature split / failing capacitor / refrigerant charge], and provide buyer with a paid invoice and proof of completion showing system is in normal working order prior to closing.',
+    defaultCredit: 1850,
+  },
+  {
+    id: 'electrical',
+    label: '⚡ Electrical Panel',
+    category: 'Electrical Service Panel',
+    repairClause: 'Seller agrees to hire a licensed electrician to inspect the main electrical breaker panel, repair any double-tapped breakers, properly bond neutral/ground buses, and provide buyer with a copy of the licensed electrician\'s invoice prior to closing.',
+    defaultCredit: 1200,
+  },
+  {
+    id: 'moisture',
+    label: '🌊 Crawlspace Moisture',
+    category: 'Crawlspace Moisture & Vapor Barrier',
+    repairClause: 'Seller agrees to hire a qualified contractor to remedy moisture intrusion identified in the crawlspace, replace damaged subflooring or framing, and install a continuous 6-mil polyethylene vapor barrier over 100% of exposed crawlspace soil prior to closing.',
+    defaultCredit: 2800,
+  },
+  {
+    id: 'roof',
+    label: '🏠 Roof & Flashing',
+    category: 'Roofing & Flashing Penetrations',
+    repairClause: 'Seller agrees to hire a licensed roofing contractor to replace damaged or missing shingles and reseal all pipe boot and step flashings, providing buyer with a paid invoice and transferrable workmanship warranty prior to closing.',
+    defaultCredit: 1500,
+  },
+  {
+    id: 'wdo',
+    label: '🐜 Termite / WDO',
+    category: 'Termite & Wood Destroying Organisms',
+    repairClause: 'Seller agrees to provide an Official Georgia Wood Infestation Inspection Report (WDO) and hire a licensed pest control company to complete liquid soil treatment for subterranean termites, transferring a 1-year renewable warranty to buyer at closing.',
+    defaultCredit: 1250,
+  },
+  {
+    id: 'plumbing',
+    label: '🚰 Plumbing & PRV',
+    category: 'Plumbing Supply & Pressure Regulating Valve',
+    repairClause: 'Seller agrees to hire a licensed master plumber to repair active supply leaks, replace unapproved piping or damaged shut-off valves, and ensure domestic water pressure is regulated between 50-70 PSI with a paid invoice provided to buyer prior to closing.',
+    defaultCredit: 1600,
+  },
+];
 
 export default function RealtorsClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [copied, setCopied] = useState(false);
   const [copiedBadgeId, setCopiedBadgeId] = useState(null);
-  const [activePreset, setActivePreset] = useState({
-    id: 'hvac',
-    label: '❄️ HVAC System',
-    clause: 'Seller agrees to pay a licensed HVAC contractor to evaluate, service, and repair the primary HVAC system, specifically addressing [e.g., low temperature split / failing capacitor], and provide buyer with a paid invoice showing system is in normal working order prior to closing.'
-  });
+  
+  // GAR Form F404 Interactive Builder State
+  const [requestMode, setRequestMode] = useState('repair'); // 'repair' | 'credit'
+  const [selectedPresetId, setSelectedPresetId] = useState('hvac');
+  const [propertyAddress, setPropertyAddress] = useState('');
+  const [buyerName, setBuyerName] = useState('');
+  const [creditAmount, setCreditAmount] = useState('1850');
+  const [includeHeader, setIncludeHeader] = useState(false);
+  const [copiedClause, setCopiedClause] = useState(false);
+
+  const currentPreset = GAR_PRESETS.find((p) => p.id === selectedPresetId) || GAR_PRESETS[0];
+
+  const generatedClause = (() => {
+    let text = '';
+    if (requestMode === 'repair') {
+      text = currentPreset.repairClause;
+    } else {
+      const formattedAmount = Number(creditAmount || currentPreset.defaultCredit).toLocaleString();
+      text = `In lieu of seller performing repairs identified in the inspection report regarding ${currentPreset.category}, Seller agrees to credit Buyer the sum of $${formattedAmount} at closing towards Buyer's closing costs, prepaids, discount points, or loan origination fees, as approved by Buyer's mortgage lender.`;
+    }
+
+    if (includeHeader && (propertyAddress || buyerName)) {
+      const headerParts = ['GEORGIA ASSOCIATION OF REALTORS® (GAR) FORM F404 AMENDMENT'];
+      if (propertyAddress) headerParts.push(`Property: ${propertyAddress}`);
+      if (buyerName) headerParts.push(`Buyer(s): ${buyerName}`);
+      headerParts.push('Special Stipulation / Amendment Language:');
+      return `${headerParts.join('\n')}\n\n"${text}"`;
+    }
+
+    return text;
+  })();
 
   const handleCopyBadge = (id, snippet) => {
     navigator.clipboard.writeText(snippet);
@@ -227,97 +296,263 @@ export default function RealtorsClient() {
         </div>
       </section>
 
-      {/* 🚀 ZERO-CLICK AGENT TOOL: INSTANT GAR AMENDMENT REPAIR CLAUSE GENERATOR 🚀 */}
-      <section className="section" style={{ background: '#0F172A', borderBottom: '1px solid #1E293B', padding: '4rem 0' }}>
+      {/* 🚀 ZERO-CLICK AGENT TOOL: INSTANT GAR FORM F404 REPAIR & CREDIT BUILDER 🚀 */}
+      <section className="section" style={{ background: '#0F172A', borderBottom: '1px solid #1E293B', padding: '4.5rem 0' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
-              🛠️ Zero-Click Agent Utility
+              🛠️ GAR Form F404 Interactive Builder
             </span>
-            <h2 style={{ color: '#FFFFFF', fontSize: '2.25rem', fontWeight: 800, marginBottom: '1rem' }}>
-              Instant GAR Amendment Repair Clause Generator
+            <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>
+              Georgia REALTOR® Repair &amp; Credit Amendment Builder
             </h2>
-            <p style={{ color: '#94A3B8', maxWidth: '750px', margin: '0 auto', fontSize: '1.05rem', lineHeight: 1.6 }}>
-              Drafting repair requests during due diligence? Click any preset below to generate copyable, attorney-aligned repair language ready for your Georgia GAR Amendment to Request Repairs.
+            <p style={{ color: '#94A3B8', maxWidth: '750px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
+              Drafting repair requests during your due diligence period? Choose whether your client wants certified contractor repairs or a closing cost credit, select the defect category, and generate ready-to-paste GAR Form F404 addendum copy.
             </p>
           </div>
 
           {/* Generator Interface */}
-          <div style={{ maxWidth: '900px', margin: '0 auto', background: '#1E293B', borderRadius: 'var(--radius-lg)', padding: '2rem', border: '1px solid #334155', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
-            {/* Presets Bar */}
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-              {[
-                { id: 'hvac', label: '❄️ HVAC System', clause: 'Seller agrees to pay a licensed HVAC contractor to evaluate, service, and repair the primary HVAC system, specifically addressing [e.g., low temperature split / failing capacitor], and provide buyer with a paid invoice showing system is in normal working order prior to closing.' },
-                { id: 'electrical', label: '⚡ Electrical Double Taps', clause: 'Seller agrees to hire a licensed electrician to inspect the main electrical breaker panel, repair any double-tapped breakers, properly bond neutral/ground buses, and provide buyer with a copy of the licensed electrician\'s invoice prior to closing.' },
-                { id: 'moisture', label: '🌊 Crawlspace Moisture', clause: 'Seller agrees to hire a qualified contractor to remedy moisture intrusion identified behind [Location], replace damaged subflooring/drywall, and install a 6-mil vapor barrier over 100% of exposed crawlspace soil prior to closing.' },
-                { id: 'roof', label: '🏠 Roof & Flashing', clause: 'Seller agrees to hire a licensed roofing contractor to repair damaged/missing shingles and reseal pipe boot flashings at [Location], providing buyer with a paid invoice and proof of repair prior to closing.' },
-                { id: 'wdo', label: '🐜 Termite / WDO Treatment', clause: 'Seller agrees to provide an Official Georgia Wood Infestation Inspection Report (WDO) and hire a licensed pest control company to complete liquid soil treatment for subterranean termites, transferring a 1-year renewable warranty to buyer at closing.' }
-              ].map((preset) => (
+          <div style={{ maxWidth: '960px', margin: '0 auto', background: '#1E293B', borderRadius: 'var(--radius-lg)', padding: '2.5rem', border: '1px solid #334155', boxShadow: '0 12px 40px rgba(0,0,0,0.35)' }}>
+            
+            {/* Step 1: Mode Switcher */}
+            <div style={{ marginBottom: '2rem' }}>
+              <div style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                Step 1: Choose Negotiation Strategy
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
                 <button
-                  key={preset.id}
-                  onClick={() => {
-                    setActivePreset(preset);
-                    setCopied(false);
-                  }}
+                  type="button"
+                  onClick={() => setRequestMode('repair')}
                   style={{
-                    padding: '0.6rem 1.1rem',
-                    borderRadius: '50px',
-                    fontSize: '0.9rem',
-                    fontWeight: 600,
-                    border: '1px solid',
-                    borderColor: activePreset.id === preset.id ? 'var(--color-gold)' : '#334155',
-                    background: activePreset.id === preset.id ? 'rgba(212,175,55,0.15)' : '#0F172A',
-                    color: activePreset.id === preset.id ? 'var(--color-gold)' : '#94A3B8',
+                    padding: '1rem 1.25rem',
+                    borderRadius: 'var(--radius-md)',
+                    border: requestMode === 'repair' ? '2px solid var(--color-gold)' : '1px solid #334155',
+                    background: requestMode === 'repair' ? 'rgba(212, 175, 55, 0.15)' : '#0F172A',
+                    color: requestMode === 'repair' ? '#FFFFFF' : '#94A3B8',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease'
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    gap: '0.25rem',
+                    transition: 'all 0.2s ease',
+                    textAlign: 'left'
                   }}
                 >
-                  {preset.label}
+                  <span style={{ fontWeight: 700, fontSize: '1.05rem', color: requestMode === 'repair' ? 'var(--color-gold)' : '#FFFFFF' }}>
+                    🛠️ Contractor Repair Clause
+                  </span>
+                  <span style={{ fontSize: '0.82rem', color: '#94A3B8' }}>
+                    Requires licensed trade contractor with paid invoice before closing
+                  </span>
                 </button>
-              ))}
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setRequestMode('credit');
+                    if (!creditAmount) setCreditAmount(String(currentPreset.defaultCredit));
+                  }}
+                  style={{
+                    padding: '1rem 1.25rem',
+                    borderRadius: 'var(--radius-md)',
+                    border: requestMode === 'credit' ? '2px solid var(--color-gold)' : '1px solid #334155',
+                    background: requestMode === 'credit' ? 'rgba(212, 175, 55, 0.15)' : '#0F172A',
+                    color: requestMode === 'credit' ? '#FFFFFF' : '#94A3B8',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    gap: '0.25rem',
+                    transition: 'all 0.2s ease',
+                    textAlign: 'left'
+                  }}
+                >
+                  <span style={{ fontWeight: 700, fontSize: '1.05rem', color: requestMode === 'credit' ? 'var(--color-gold)' : '#FFFFFF' }}>
+                    💵 Closing Cost Credit in Lieu of Repairs
+                  </span>
+                  <span style={{ fontSize: '0.82rem', color: '#94A3B8' }}>
+                    Secures buyer credit towards closing costs, rate buydown, or fees
+                  </span>
+                </button>
+              </div>
             </div>
 
-            {/* Display Box */}
-            <div style={{ background: '#0F172A', borderRadius: 'var(--radius-md)', padding: '1.5rem', border: '1px solid #334155', position: 'relative' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                <span style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>GAR Amendment Repair Clause</span>
+            {/* Step 2: Category Selector */}
+            <div style={{ marginBottom: '2rem' }}>
+              <div style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                Step 2: Select Inspection Defect Category
+              </div>
+              <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+                {GAR_PRESETS.map((preset) => (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    onClick={() => {
+                      setSelectedPresetId(preset.id);
+                      if (requestMode === 'credit') {
+                        setCreditAmount(String(preset.defaultCredit));
+                      }
+                    }}
+                    style={{
+                      padding: '0.65rem 1.2rem',
+                      borderRadius: '50px',
+                      fontSize: '0.9rem',
+                      fontWeight: 600,
+                      border: '1px solid',
+                      borderColor: selectedPresetId === preset.id ? 'var(--color-gold)' : '#334155',
+                      background: selectedPresetId === preset.id ? 'rgba(212,175,55,0.2)' : '#0F172A',
+                      color: selectedPresetId === preset.id ? 'var(--color-gold)' : '#94A3B8',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Step 3: Customization Inputs */}
+            <div style={{ background: '#0F172A', borderRadius: 'var(--radius-md)', padding: '1.25rem', border: '1px solid #334155', marginBottom: '2rem' }}>
+              <div style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1rem' }}>
+                Step 3: Customize Transaction Details (Optional)
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+                {requestMode === 'credit' && (
+                  <div>
+                    <label style={{ display: 'block', color: '#E2E8F0', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.35rem' }}>
+                      Credit Amount ($ USD)
+                    </label>
+                    <div style={{ position: 'relative' }}>
+                      <span style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94A3B8', fontWeight: 700 }}>$</span>
+                      <input
+                        type="number"
+                        value={creditAmount}
+                        onChange={(e) => setCreditAmount(e.target.value)}
+                        placeholder="2500"
+                        style={{
+                          width: '100%',
+                          background: '#1E293B',
+                          border: '1px solid #475569',
+                          borderRadius: 'var(--radius-sm)',
+                          padding: '0.55rem 0.75rem 0.55rem 1.75rem',
+                          color: '#FFFFFF',
+                          fontSize: '0.95rem',
+                          fontWeight: 600
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
+                <div>
+                  <label style={{ display: 'block', color: '#E2E8F0', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.35rem' }}>
+                    Property Address
+                  </label>
+                  <input
+                    type="text"
+                    value={propertyAddress}
+                    onChange={(e) => setPropertyAddress(e.target.value)}
+                    placeholder="e.g., 425 Peachtree St NE, Atlanta"
+                    style={{
+                      width: '100%',
+                      background: '#1E293B',
+                      border: '1px solid #475569',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '0.55rem 0.75rem',
+                      color: '#FFFFFF',
+                      fontSize: '0.95rem'
+                    }}
+                  />
+                </div>
+                <div>
+                  <label style={{ display: 'block', color: '#E2E8F0', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.35rem' }}>
+                    Buyer / Client Name
+                  </label>
+                  <input
+                    type="text"
+                    value={buyerName}
+                    onChange={(e) => setBuyerName(e.target.value)}
+                    placeholder="e.g., John &amp; Sarah Smith"
+                    style={{
+                      width: '100%',
+                      background: '#1E293B',
+                      border: '1px solid #475569',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '0.55rem 0.75rem',
+                      color: '#FFFFFF',
+                      fontSize: '0.95rem'
+                    }}
+                  />
+                </div>
+              </div>
+
+              {(propertyAddress || buyerName) && (
+                <div style={{ marginTop: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <input
+                    type="checkbox"
+                    id="includeHeader"
+                    checked={includeHeader}
+                    onChange={(e) => setIncludeHeader(e.target.checked)}
+                    style={{ accentColor: 'var(--color-gold)', width: '16px', height: '16px', cursor: 'pointer' }}
+                  />
+                  <label htmlFor="includeHeader" style={{ color: '#94A3B8', fontSize: '0.85rem', cursor: 'pointer' }}>
+                    Include GAR F404 Document Header block above clause
+                  </label>
+                </div>
+              )}
+            </div>
+
+            {/* Step 4: Display Output Box */}
+            <div style={{ background: '#0B1120', borderRadius: 'var(--radius-md)', padding: '1.75rem', border: '1px solid #334155', position: 'relative' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Generated GAR F404 Clause
+                  </span>
+                  <span style={{ background: requestMode === 'repair' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(34, 197, 94, 0.2)', color: requestMode === 'repair' ? '#60A5FA' : '#4ADE80', fontSize: '0.75rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '4px' }}>
+                    {requestMode === 'repair' ? 'Contractor Repair' : 'Closing Credit'}
+                  </span>
+                </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                   <button
+                    type="button"
                     onClick={() => {
-                      navigator.clipboard.writeText(activePreset.clause);
-                      setCopied(true);
+                      navigator.clipboard.writeText(generatedClause);
+                      setCopiedClause(true);
                       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
                         window.gtag('event', 'realtor_gar_clause_copied', {
                           event_category: 'realtor_tool',
-                          event_label: activePreset.id,
-                          clause_type: activePreset.id,
+                          event_label: `${selectedPresetId}_${requestMode}`,
+                          clause_type: selectedPresetId,
+                          request_mode: requestMode,
                         });
                       }
-                      setTimeout(() => setCopied(false), 2000);
+                      setTimeout(() => setCopiedClause(false), 2200);
                     }}
                     style={{
-                      background: copied ? '#22C55E' : 'var(--color-gold)',
+                      background: copiedClause ? '#22C55E' : 'var(--color-gold)',
                       color: '#0F172A',
                       border: 'none',
-                      padding: '0.4rem 1rem',
+                      padding: '0.5rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       fontWeight: 700,
                       fontSize: '0.85rem',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.4rem'
+                      gap: '0.4rem',
+                      transition: 'all 0.2s ease'
                     }}
                   >
-                    {copied ? '✅ Copied!' : '📋 Copy Clause'}
+                    {copiedClause ? '✅ Copied to Clipboard!' : '📋 Copy Full GAR Clause'}
                   </button>
                   <a
-                    href={`mailto:?subject=${encodeURIComponent(`Foresight GAR Repair Clause - ${activePreset.label}`)}&body=${encodeURIComponent(`GAR Amendment Repair Clause:\n\n"${activePreset.clause}"\n\nGenerated via Foresight Home Inspections Realtor VIP Hub (www.fhinspectionsatl.com/realtors).`)}`}
+                    href={`mailto:?subject=${encodeURIComponent(`GAR F404 Repair Clause - ${currentPreset.label}`)}&body=${encodeURIComponent(`GAR Form F404 Special Stipulation:\n\n${generatedClause}\n\nGenerated via Foresight Home Inspections Realtor VIP Portal (www.fhinspectionsatl.com/realtors).`)}`}
                     style={{
-                      background: 'rgba(255, 255, 255, 0.1)',
+                      background: 'rgba(255, 255, 255, 0.08)',
                       color: '#F1F5F9',
                       border: '1px solid rgba(255, 255, 255, 0.2)',
-                      padding: '0.4rem 1rem',
+                      padding: '0.5rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       fontWeight: 700,
                       fontSize: '0.85rem',
@@ -325,20 +560,25 @@ export default function RealtorsClient() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '0.4rem',
-                      textDecoration: 'none'
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease'
                     }}
                   >
-                    ✉️ Email to Me
+                    ✉️ Email Clause
                   </a>
                 </div>
               </div>
-              <p style={{ color: '#F1F5F9', fontSize: '1rem', lineHeight: 1.6, margin: 0, fontFamily: 'monospace' }}>
-                &quot;{activePreset.clause}&quot;
+
+              <div style={{ background: '#030712', borderRadius: 'var(--radius-sm)', padding: '1.25rem', border: '1px solid #1E293B' }}>
+                <pre style={{ color: '#E2E8F0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word', fontFamily: 'monospace' }}>
+                  {generatedClause}
+                </pre>
+              </div>
+
+              <p style={{ color: '#64748B', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
+                💡 Aligned with Georgia Association of REALTORS® (GAR) Form F404 standards. Certified Master Inspector Christopher Boykin recommends attaching the corresponding Foresight inspection report defect page and contractor estimate to eliminate seller pushback.
               </p>
             </div>
-            <p style={{ color: '#64748B', fontSize: '0.8rem', marginTop: '0.75rem', marginBottom: 0, textAlign: 'center' }}>
-              💡 Free agent tool provided by Foresight Home Inspections. Use freely in your GAR transaction documents.
-            </p>
           </div>
         </div>
       </section>

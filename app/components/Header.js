@@ -37,7 +37,7 @@ export default function Header() {
         <span style={{ color: '#94A3B8' }}>Serving Metro Atlanta &amp; 77+ Cities</span>
       </div>
 
-      <header className="header" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', boxShadow: '0 2px 10px rgba(0,0,0,0.03)' }}>
+      <header className="header glass-header">
         <div className="container nav-container">
           <Link prefetch={false} href="/" className="logo">
             <Image src="/images/Logopng.webp" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '120px', width: 'auto' }} priority />
@@ -59,11 +59,11 @@ export default function Header() {
               <li><Link prefetch={false} href="/realtors" onClick={() => setMenuOpen(false)}>Realtors</Link></li>
               <li><Link prefetch={false} href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
               <li><Link prefetch={false} href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-              <li><Link prefetch={false} href="/quote" onClick={() => setMenuOpen(false)}>Get Quote</Link></li>
+              <li><Link prefetch={false} href="/quote" onClick={() => setMenuOpen(false)}>Get Instant Price</Link></li>
               <li><Link prefetch={false} href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: '#854D0E', fontWeight: '700' }}>Ask Foresight AI</Link></li>
               <li>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" onClick={() => setMenuOpen(false)}>
-                  Book Online 24/7
+                  Schedule Online 24/7
                 </a>
               </li>
             </ul>

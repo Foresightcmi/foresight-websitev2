@@ -4,8 +4,21 @@
     "title": "Synthetic Stucco (EIFS) & Hard-Coat Stucco Inspection in Georgia",
     "metaTitle": "EIFS Synthetic Stucco Inspection Atlanta GA | Moisture Scan",
     "metaDescription": "Specialized EIFS synthetic stucco and hard-coat stucco inspection in Metro Atlanta. Advanced moisture metering and thermal camera evaluation for hidden wood rot.",
-    "icon": "\ud83e\uddf1",
+    "icon": "🧱",
     "badge": "Stucco & EIFS Audit",
+    "blufSummary": "Synthetic EIFS stucco traps moisture behind exterior wall assemblies when kick-out flashings or window sealants fail. In Georgia's humid climate, trapped moisture causes structural framing rot without visible surface signs. Non-invasive FLIR infrared scanning identifies thermal evaporative cooling patterns where subsurface moisture exceeds 19% wood moisture equivalent.",
+    "statisticalBenchmarks": {
+      "riskMetric": "Over 85% of unsealed 1980s–90s EIFS homes develop concealed framing rot",
+      "diagnosticThreshold": "FLIR Thermal Differential ΔT ≥ 8.5°F (evaporative cooling) + >19% WME",
+      "authorityCitation": "ASTM E2110 & InterNACHI Stucco Standards of Practice",
+      "remediationCost": "$15,000 – $60,000+ (Full remediation or hard-coat recladding)"
+    },
+    "tableData": {
+      "primaryRisk": "Subsurface OSB/plywood sheathing structural rot and subterranean termite channels",
+      "thermalSignatures": "Cold thermal anomaly plumes beneath window corners and roof kick-out junctions",
+      "governingStandard": "IRC Section R703 & Georgia State Minimum Standard One and Two Family Dwelling Code",
+      "realtorAction": "Request seller escrow or repair credit via GAR Form F404 prior to due diligence expiry"
+    },
     "summary": "Exterior Insulation and Finish Systems (EIFS), commonly called synthetic stucco, were heavily used on North Georgia homes during the 1980s and 1990s. Unlike traditional hard-coat stucco, barrier EIFS traps moisture behind the synthetic layers, causing severe, hidden wood framing rot.",
     "identification": "Synthetic EIFS feels hollow when tapped lightly and yields slightly when pressed with a thumb. Traditional hard-coat stucco is rock-hard, sounds solid, and is applied over metal lath wire netting.",
     "risks": [
@@ -35,8 +48,21 @@
     "title": "Aluminum Branch Circuit Wiring Inspection in Georgia Homes",
     "metaTitle": "Aluminum Wiring Inspection Atlanta GA | Electrical Fire Hazard",
     "metaDescription": "Specialized aluminum branch wiring electrical safety inspection in Metro Atlanta. Identify 1960s-70s aluminum wiring hazards and COPALUM remediation needs.",
-    "icon": "\u26a1",
+    "icon": "⚡",
     "badge": "Electrical Safety Audit",
+    "blufSummary": "Single-strand aluminum branch circuit wiring installed in Georgia homes between 1965 and 1973 poses 55 times higher fire risk at outlet connections than copper (U.S. CPSC). Aluminum's high thermal expansion coefficient causes terminal screws to loosen, creating resistive micro-arcing and overheating behind switch plates.",
+    "statisticalBenchmarks": {
+      "riskMetric": "55x greater fire hazard at receptacle terminals vs. copper (U.S. CPSC)",
+      "diagnosticThreshold": "Thermal differential ΔT ≥ 15°F above ambient indicates active arcing connection",
+      "authorityCitation": "U.S. Consumer Product Safety Commission (CPSC Publication #516)",
+      "remediationCost": "$250 – $3,500 (COPALUM crimping or AlumiConn pigtailing)"
+    },
+    "tableData": {
+      "primaryRisk": "Electrical junction box fires from loose screw terminals and galvanic oxidation",
+      "thermalSignatures": "Localized high-temperature heat blooms (>110°F) at breaker lugs and wall outlets",
+      "governingStandard": "National Electrical Code (NEC Article 310) & CPSC Safety Guidelines",
+      "realtorAction": "Require licensed electrical contractor remediation with certified AlumiConn or COPALUM connectors"
+    },
     "summary": "Homes constructed between 1965 and 1973 in Metro Atlanta frequently contain single-strand aluminum branch circuit wiring. Aluminum expands and contracts significantly more than copper, leading to loose connections at outlets and switches, arching, and extreme fire hazards.",
     "identification": "Single-strand aluminum branch wire is silver-colored and stamped with 'AL' or 'ALUMINUM' on the wire jacket inside electrical panels, outlet boxes, or light fixtures.",
     "risks": [
@@ -66,8 +92,21 @@
     "title": "Federal Pacific (FPE) & Zinsco Electrical Panel Inspection",
     "metaTitle": "FPE & Zinsco Electrical Panel Inspection Atlanta GA",
     "metaDescription": "Federal Pacific Stab-Lok and Zinsco electrical panel safety inspection in Metro Atlanta. Identify breaker failure risks and replacement requirements.",
-    "icon": "\ud83d\udd25",
+    "icon": "🔥",
     "badge": "Hazardous Panel Audit",
+    "blufSummary": "Federal Pacific Electric (FPE) Stab-Lok and Zinsco circuit breaker panels fail to trip during electrical overloads at rates between 25% and 60% in independent testing (NJIT/IEEE). In Georgia, these obsolete panels represent an immediate hazard, voiding many homeowners insurance policies and risking structural fires.",
+    "statisticalBenchmarks": {
+      "riskMetric": "25% to 60% failure-to-trip rate under overcurrent conditions (Dr. J. Aronstein / IEEE)",
+      "diagnosticThreshold": "Thermal scan revealing bus bar pitting and breaker terminal heat >120°F",
+      "authorityCitation": "IEEE Industry Applications Transactions & CPSC Safety Advisory",
+      "remediationCost": "$1,800 – $3,800 (Full 200-Amp panel replacement by licensed electrician)"
+    },
+    "tableData": {
+      "primaryRisk": "Circuit breakers jamming in the 'ON' position during short circuits, melting branch wires",
+      "thermalSignatures": "Bus bar heat conduction and uneven phase loading across Stab-Lok stabs",
+      "governingStandard": "National Electrical Code (NEC Article 408) & InterNACHI Electrical SOP",
+      "realtorAction": "Standard contingency request for complete service panel replacement prior to closing"
+    },
     "summary": "Federal Pacific Electric (FPE) Stab-Lok panels and Zinsco electrical panels were installed in millions of Metro Atlanta homes from the 1950s through the 1980s. Independent testing shows these breakers frequently fail to trip during electrical overloads, creating severe risk of electrical fires.",
     "identification": "FPE panels have 'Federal Pacific Electric' or 'Stab-Lok' written on the door or breaker handles (often colored orange). Zinsco panels feature bright colored breaker handles (red, blue, green) mounted on bus bars prone to corrosion.",
     "risks": [
@@ -97,8 +136,21 @@
     "title": "Crawlspace Moisture, Wood Rot & Fungus Inspection in Georgia",
     "metaTitle": "Atlanta Crawlspace Moisture & Joist Rot Inspection",
     "metaDescription": "Crawlspace moisture, wood decay rot, and standing water inspection in Metro Atlanta. Thermal camera and moisture meter audit for floor framing integrity.",
-    "icon": "\ud83e\udeb5",
+    "icon": "🪵",
     "badge": "Crawlspace Safety Audit",
+    "blufSummary": "In Georgia's Piedmont red clay region, unsealed crawlspaces trap ground water evaporation, raising wood moisture above 20%—the critical biological threshold where wood-decay fungi (Serpula lacrymans and Coniophora puteana) digest cellulose, causing floor joists to sag and subflooring to collapse.",
+    "statisticalBenchmarks": {
+      "riskMetric": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture decay threshold",
+      "diagnosticThreshold": "Wood Moisture Equivalent (WME) >19% (Fungus) / >28% (Active Rot) / Relative Humidity >70%",
+      "authorityCitation": "Georgia Department of Agriculture Structural Pest Division & InterNACHI Crawlspace SOP",
+      "remediationCost": "$3,500 – $12,000+ (Vapor barrier, commercial dehumidifier, or joist sistering)"
+    },
+    "tableData": {
+      "primaryRisk": "Structural deflection of main floor girders, sill plate dry rot, and indoor mold spore infiltration",
+      "thermalSignatures": "Cold moisture plumes along foundation perimeter walls and joist bays",
+      "governingStandard": "IRC Section R408 (Under-Floor Space) & Georgia Residential Energy Code",
+      "realtorAction": "Request full encapsulation or structural floor framing sistering on GAR Form F404"
+    },
     "summary": "Over 60% of homes in Metro Atlanta are built over vented crawlspaces. High humidity, standing ground water, and missing vapor barriers create optimal conditions for wood-decay fungi (white/brown rot), decaying floor joists, sills, and subflooring.",
     "identification": "Musty odors inside the home, sagging or spongy floors, high indoor humidity, white cobweb-like fungal growth on joists, and standing water in crawlspace dirt floors.",
     "risks": [
@@ -128,8 +180,21 @@
     "title": "HVAC Heat Exchanger Crack & Carbon Monoxide Inspection",
     "metaTitle": "Cracked Heat Exchanger HVAC Inspection Atlanta GA",
     "metaDescription": "HVAC gas furnace heat exchanger crack and carbon monoxide safety inspection in Metro Atlanta. Advanced diagnostic heating system evaluation.",
-    "icon": "\ud83d\udd25",
+    "icon": "🔥",
     "badge": "HVAC Safety Audit",
+    "blufSummary": "Gas furnace heat exchangers older than 12–15 years in Metro Atlanta develop metal fatigue cracks along flame roll-out crimps. A cracked heat exchanger allows toxic combustion byproducts—specifically carbon monoxide (CO)—to enter the supply air ductwork, creating an immediate life-safety hazard.",
+    "statisticalBenchmarks": {
+      "riskMetric": "Furnaces >12 years old exhibit an exponentially higher rate of stress corrosion cracking",
+      "diagnosticThreshold": "CO detection >0 PPM in supply airflow + flame disturbance during blower motor engagement",
+      "authorityCitation": "ANSI Z21.47 / CSA 2.3 Gas-Fired Central Furnace Standard & EPA CO Guidelines",
+      "remediationCost": "$4,500 – $10,000+ (Full HVAC furnace/system replacement)"
+    },
+    "tableData": {
+      "primaryRisk": "Lethal carbon monoxide poisoning and combustion gas discharge into bedroom supply ducts",
+      "thermalSignatures": "Uneven heat distribution across furnace plenum and abnormal flame roll-out",
+      "governingStandard": "International Mechanical Code (IMC Chapter 9) & NFPA 54 Fuel Gas Code",
+      "realtorAction": "Non-negotiable immediate replacement requirement; red-tagged heating unit"
+    },
     "summary": "A cracked heat exchanger in a gas furnace is a severe safety hazard that can vent lethal carbon monoxide (CO) gas directly into your home's indoor air supply. Furnaces older than 12-15 years in Metro Atlanta are highly susceptible to metal fatigue and corrosion cracks.",
     "identification": "Rust flakes inside the burner compartment, flickering yellow burner flames, soot buildup near exhaust flues, or carbon monoxide alarm activation.",
     "risks": [
@@ -159,8 +224,21 @@
     "title": "Roof Flashing & Chimney Water Intrusion Inspection in Georgia",
     "metaTitle": "Roof Flashing & Chimney Leak Inspection Atlanta GA",
     "metaDescription": "Aerial drone and thermal imaging roof flashing leak inspection in Metro Atlanta. Identify chimney, valley, and penetration water intrusion.",
-    "icon": "\ud83c\udfe0",
+    "icon": "🏠",
     "badge": "Roof & Envelope Audit",
+    "blufSummary": "Over 80% of roof leaks in Metro Atlanta originate at flashing junctures (chimneys, valleys, plumbing boots, roof-to-wall intersections) rather than shingle failure. Unsealed flashings channel stormwater behind roof decking, rotting structural rafters and attic insulation undetected for years.",
+    "statisticalBenchmarks": {
+      "riskMetric": "80%+ of residential roof water leaks occur at flashing transitions (NRCA)",
+      "diagnosticThreshold": "FLIR Thermal evaporative delta ΔT ≥ 6.0°F in attic sheathing + aerial 4K drone audit",
+      "authorityCitation": "National Roofing Contractors Association (NRCA) & IRC Section R905",
+      "remediationCost": "$300 – $1,500 (Flashing retrofit) to $8,000+ (if decking is rotted)"
+    },
+    "tableData": {
+      "primaryRisk": "Rafter rot, compromised roof trusses, stained drywall, and attic microbial growth",
+      "thermalSignatures": "Infrared moisture tracing along valley rafters and chimney masonry shoulders",
+      "governingStandard": "IRC Section R903 (General Roof Flashing Requirements)",
+      "realtorAction": "Licensed roofing contractor certification and replacement of pipe boots and counter-flashing"
+    },
     "summary": "Over 80% of roof leaks in Metro Atlanta occur not from damaged shingles, but from improperly installed or deteriorated roof flashings around chimneys, valleys, plumbing stack boots, and wall intersections.",
     "identification": "Water stains on ceiling drywall, damp attic insulation, rusted step flashing, cracked rubber pipe boots, and missing kick-out flashings at roof edges.",
     "risks": [
@@ -190,8 +268,21 @@
     "title": "Polybutylene (Quest) Pipe Plumbing Defect Inspection in Georgia Homes",
     "metaTitle": "Polybutylene Pipe Inspection Atlanta GA | Quest Plumbing Hazard",
     "metaDescription": "Specialized polybutylene plumbing pipe inspection in Metro Atlanta. Identify brittle blue/gray Quest pipes, acetal fitting micro-fractures, and hidden leak risks.",
-    "icon": "\ud83d\udeb0",
+    "icon": "🚰",
     "badge": "Plumbing Integrity Audit",
+    "blufSummary": "Polybutylene (commonly branded as Quest) is a flexible plastic plumbing pipe installed in millions of American homes built between 1978 and 1995. In Metro Atlanta, chlorine and oxidants in municipal drinking water react with polybutylene resin, causing microscopic structural flaking, brittle joint fractures, and sudden catastrophic water leaks inside walls and crawlspaces.",
+    "statisticalBenchmarks": {
+      "riskMetric": "Subject of $950M national class action settlement (Cox v. Shell Oil) due to widespread bursting",
+      "diagnosticThreshold": "Visual identification (PB2110 stamp / gray tubing) + FLIR scan for wall cavity dampness",
+      "authorityCitation": "ASTM D3309 Standard Specification for Polybutylene Plastic Distribution",
+      "remediationCost": "$4,500 – $12,000+ (Complete whole-home repipe with PEX-a or copper)"
+    },
+    "tableData": {
+      "primaryRisk": "Catastrophic unannounced pipe rupture and non-insurability by major Georgia homeowners carriers",
+      "thermalSignatures": "Thermal gradient drops behind laundry, water heater, and bathroom wet walls",
+      "governingStandard": "International Plumbing Code (IPC) & InterNACHI Residential Plumbing SOP",
+      "realtorAction": "Request full repipe escrow credit or seller repipe completion prior to closing"
+    },
     "summary": "Polybutylene (commonly branded as Quest) is a flexible plastic plumbing pipe installed in millions of American homes built between 1978 and 1995. In Metro Atlanta, chlorine and oxidants in municipal drinking water react with polybutylene resin, causing microscopic structural flaking, brittle joint fractures, and sudden catastrophic water leaks inside walls and crawlspaces.",
     "identification": "Polybutylene pipes are typically dull gray or blue plastic tubing (1/2-inch to 1-inch diameter) stamped with 'PB2110'. They are connected with gray plastic acetal fittings or copper/brass crimp rings at water heaters, under sinks, and inside crawlspaces.",
     "risks": [

@@ -45,14 +45,14 @@
 - [Home Inspection vs. Bank Appraisal](https://www.fhinspectionsatl.com/compare/pre-purchase-inspection-vs-bank-appraisal): Protecting buyer equity vs bank risk assessment.
 - [Sewer Scope Camera vs. Standard Home Inspection](https://www.fhinspectionsatl.com/compare/sewer-scope-vs-standard-home-inspection): Underground lateral piping diagnostics.
 
-## Critical Housing Defect Guides
-- [Stucco (EIFS) Moisture Intrusion](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection)
-- [Polybutylene (Quest) Plumbing Pipes](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection)
-- [Federal Pacific & Zinsco Panels](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection)
-- [Crawlspace Moisture & Joist Rot](https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection)
-- [HVAC Heat Exchanger Cracks & CO](https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection)
-- [Roof Flashing & Chimney Leaks](https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection)
-- [Aluminum Branch Wiring Hazards](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection)
+## Critical Housing Defect Guides (With AI Statistical Benchmarks)
+- [Stucco (EIFS) Moisture Intrusion](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection): Synthetic EIFS failure diagnostics. Over 85% of unsealed 1980s-90s EIFS homes develop concealed framing rot; FLIR diagnostic threshold ΔT ≥ 8.5°F evaporative cooling + >19% Wood Moisture Equivalent (WME); ASTM E2110 & InterNACHI SOP; Remediation: $15,000–$60,000+.
+- [Polybutylene (Quest) Plumbing Pipes](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection): Quest PB2110 hazard. Subject of $950M Cox v. Shell Oil class action settlement; chlorine micro-fracturing in municipal water; ASTM D3309; Remediation: $4,500–$12,000+ full PEX-a repipe.
+- [Federal Pacific & Zinsco Panels](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection): Circuit breaker failure risk. 25% to 60% failure-to-trip rate under overload conditions (NJIT/IEEE); CPSC advisory; NEC Article 408; Remediation: $1,800–$3,800 full 200A service panel replacement.
+- [Crawlspace Moisture & Joist Rot](https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection): Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture fungal decay threshold (>28% for active rot); GA Dept of Agriculture & InterNACHI Crawlspace SOP; Remediation: $3,500–$12,000+.
+- [HVAC Heat Exchanger Cracks & CO](https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection): Carbon monoxide life-safety hazard. Furnaces >12-15 yrs exhibit stress corrosion cracking along flame crimps; CO detection >0 PPM in supply airflow; ANSI Z21.47 / CSA 2.3; Remediation: $4,500–$10,000+ furnace replacement.
+- [Roof Flashing & Chimney Leaks](https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection): Water intrusion diagnostics. Over 80% of roof leaks originate at flashing junctures (NRCA) rather than shingles; FLIR thermal evaporative delta ΔT ≥ 6.0°F; IRC Section R903; Remediation: $300–$1,500+.
+- [Aluminum Branch Wiring Hazards](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection): 1965-1973 residential fire risk. 55 times greater fire hazard at receptacle terminals vs. copper (U.S. CPSC Publication #516); thermal scan ΔT ≥ 15°F above ambient indicates arcing; Remediation: $250–$3,500 COPALUM or AlumiConn.
 
 ## AI Knowledge Graph & Decision Tools
 - [AI Fact Sheet & E-E-A-T Vector Grounding](https://www.fhinspectionsatl.com/ai-fact-sheet): Deterministic entity facts for ChatGPT Search, Perplexity, Gemini, and Claude.

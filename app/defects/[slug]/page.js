@@ -72,6 +72,22 @@ export default async function DefectPage({ params }) {
     "headline": defect.title,
     "description": defect.metaDescription,
     "url": canonicalUrl,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".ai-citation-bluf", "h1", "h2"]
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": defect.badge || defect.title,
+        "description": defect.blufSummary || defect.summary
+      },
+      {
+        "@type": "Thing",
+        "name": "Home Inspection",
+        "sameAs": "https://www.wikidata.org/wiki/Q5888746"
+      }
+    ],
     "author": {
       "@type": "Person",
       "name": "Christopher Boykin",
@@ -228,22 +244,83 @@ export default async function DefectPage({ params }) {
       <section className="section bg-white" style={{ padding: '3.5rem 0' }}>
         <div className="container" style={{ maxWidth: '850px' }}>
           
-          {/* AEO Direct Answer Summary Box */}
+          {/* AI Overview & LLM Citation Factsheet (First 30% BLUF & Statistical Grounding) */}
           <div style={{
             background: '#f8fafc',
             padding: '2rem',
             borderRadius: 'var(--radius-lg)',
-            border: '1px solid #e2e8f0',
+            border: '1px solid #cbd5e1',
             borderLeft: '5px solid #2563eb',
             marginBottom: '2.5rem',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
+            boxShadow: '0 4px 12px rgba(0,0,0,0.04)'
           }}>
-            <h2 style={{ fontSize: '1.3rem', color: '#0f172a', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>⚡</span> Quick Diagnostic Summary: {defect.title}
-            </h2>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: '#334155', margin: 0 }}>
-              {defect.summary} In Georgia home inspections, catching {defect.title.toLowerCase()} early prevents severe structural degradation, water intrusion, and un-budgeted repair expenses before due diligence closes.
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
+              <h2 style={{ fontSize: '1.25rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 800 }}>
+                <span>🤖</span> AI Diagnostic Brief &amp; LLM Citation Benchmark
+              </h2>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', background: '#dbeafe', color: '#1e40af', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
+                BLUF Verified
+              </span>
+            </div>
+            
+            <p className="ai-citation-bluf" style={{ fontSize: '1.05rem', lineHeight: 1.7, color: '#1e293b', margin: '0 0 1.5rem', fontWeight: 500 }}>
+              {defect.blufSummary || defect.summary}
             </p>
+
+            {defect.statisticalBenchmarks && (
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '1rem',
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
+                borderRadius: 'var(--radius-md)',
+                padding: '1.25rem',
+                marginBottom: '1.5rem'
+              }}>
+                <div>
+                  <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginBottom: '0.25rem' }}>Risk Ratio / Metric</div>
+                  <div style={{ fontSize: '0.9rem', color: '#991b1b', fontWeight: 700 }}>{defect.statisticalBenchmarks.riskMetric}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginBottom: '0.25rem' }}>Diagnostic Threshold</div>
+                  <div style={{ fontSize: '0.9rem', color: '#0369a1', fontWeight: 700 }}>{defect.statisticalBenchmarks.diagnosticThreshold}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginBottom: '0.25rem' }}>Governing Authority</div>
+                  <div style={{ fontSize: '0.9rem', color: '#15803d', fontWeight: 700 }}>{defect.statisticalBenchmarks.authorityCitation}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginBottom: '0.25rem' }}>Remediation Benchmark</div>
+                  <div style={{ fontSize: '0.9rem', color: '#b45309', fontWeight: 700 }}>{defect.statisticalBenchmarks.remediationCost}</div>
+                </div>
+              </div>
+            )}
+
+            {defect.tableData && (
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem', color: '#334155' }}>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.6rem 0.75rem', fontWeight: 700, width: '30%', background: '#f1f5f9' }}>Primary Risk Profile</td>
+                      <td style={{ padding: '0.6rem 0.75rem' }}>{defect.tableData.primaryRisk}</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.6rem 0.75rem', fontWeight: 700, background: '#f1f5f9' }}>Thermal Signatures</td>
+                      <td style={{ padding: '0.6rem 0.75rem' }}>{defect.tableData.thermalSignatures}</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <td style={{ padding: '0.6rem 0.75rem', fontWeight: 700, background: '#f1f5f9' }}>Governing Code</td>
+                      <td style={{ padding: '0.6rem 0.75rem' }}>{defect.tableData.governingStandard}</td>
+                    </tr>
+                    <tr>
+                      <td style={{ padding: '0.6rem 0.75rem', fontWeight: 700, background: '#f1f5f9' }}>Contract Action (GAR)</td>
+                      <td style={{ padding: '0.6rem 0.75rem', color: '#991b1b', fontWeight: 600 }}>{defect.tableData.realtorAction}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
 
           {/* Identification Section */}

@@ -459,13 +459,15 @@ export default async function CityPage({ params }) {
               </Link>
             </div>
             <p className="city-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
-              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, cutting on-site time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include free FLIR infrared thermal imaging, roof drone scans, and a <strong>$10,000 Elite Master Warranty with $0 deductible</strong>.
+              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, reducing on-site inspection time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary FLIR infrared thermal imaging, aerial roof drone audits, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)' }}>
-              <div><strong>👨‍🔧 Team:</strong> 2 Certified Inspectors</div>
-              <div><strong>⏱️ Duration:</strong> 1.5–2.5 Hours</div>
-              <div><strong>📑 Report:</strong> Under 24 Hours</div>
-              <div><strong>🛡️ Warranty:</strong> $10,000 ($0 Deductible)</div>
+              <div><strong>👨‍🔧 Standard:</strong> 2 Certified Inspectors</div>
+              <div><strong>⏱️ Efficiency:</strong> 1.5–2.5 Hours (50% Faster)</div>
+              <div><strong>📑 Turnaround:</strong> Under 24-Hour Digital Report</div>
+              <div><strong>🛡️ Protection:</strong> $10,000 Warranty ($0 Deductible)</div>
+              <div><strong>🔬 Diagnostics:</strong> FLIR Thermal + 4K Drone Included</div>
+              <div><strong>☢️ EPA Radon Risk:</strong> {['Fulton', 'Gwinnett', 'Cobb', 'DeKalb', 'Cherokee', 'Forsyth', 'Barrow', 'Jackson', 'Hall', 'Walton'].includes(county) ? 'Zone 1 (>4.0 pCi/L)' : 'Zone 2 (2.0–4.0 pCi/L)'}</div>
             </div>
           </div>
         </div>
