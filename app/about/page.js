@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
+import TwoPossibilities from '../components/TwoPossibilities';
 
 export const metadata = {
   title: 'Meet Christopher Boykin CMI | Certified Master Inspector Atlanta',
@@ -231,6 +232,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <TwoPossibilities />
 
       {/* ═══════════════════════════════════════════════════════════════
           ADVANCED TECHNOLOGY

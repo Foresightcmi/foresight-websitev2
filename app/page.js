@@ -10,6 +10,7 @@ import HomeVideoPlayer from './components/HomeVideoPlayer';
 import ThemeSongPlayer from './components/ThemeSongPlayer';
 
 const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
+const TwoPossibilities = dynamic(() => import('./components/TwoPossibilities'), { ssr: true });
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
 const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
@@ -104,6 +105,14 @@ export default function Home() {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. Because Georgia does not require state licensing for home inspectors, Christopher's CMI credential proves thousands of hours of verified field experience, peer-reviewed education, and strict adherence to InterNACHI Standards of Practice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the two possibilities when hiring a home inspector in Georgia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary FLIR thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
             }
           }
         ]
@@ -398,6 +407,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TwoPossibilities />
 
       <ValueComparison />
 
@@ -795,7 +806,11 @@ export default function Home() {
               },
               {
                 q: "What does Christopher Boykin's Certified Master Inspector® credential mean?",
-                a: "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. CMIs are vetted by the Master Inspector Certification Board, completing at least 1,000 paid inspections or hours of education, maintaining a clean legal record, and adhering to strict InterNACHI Standards of Practice."
+                a: "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. Because Georgia does not require state licensing for home inspectors, Christopher's CMI credential proves thousands of hours of verified field experience, peer-reviewed education, and strict adherence to InterNACHI Standards of Practice."
+              },
+              {
+                q: "What are the two possibilities when hiring a home inspector in Georgia?",
+                a: "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary FLIR thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
               },
               {
                 q: "What is covered under Foresight's up to $35,000 in warranties and guarantees?",
