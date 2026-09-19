@@ -1,0 +1,86 @@
+{
+  "lastGenerated": "2026-09-19T08:19:25.015Z",
+  "totalPitchesReady": 5,
+  "dispatches": [
+    {
+      "channel": "Connectively / HARO Real Estate Queries",
+      "category": "National Real Estate & Personal Finance",
+      "topic": "Hidden Hazards in DIY Flipped Homes",
+      "subject": "Pitch: Why Flipped Home Makeovers Conceal Structural & Electrical Hazards (Christopher Boykin, CMI®)",
+      "expertBio": "Christopher Boykin, Certified Master Inspector (CMI®) and founder of Foresight Home Inspections, LLC (Atlanta, GA). Led by fewer than 1% of inspectors in North America.",
+      "soundbite": "Cosmetic flippers excel at quartz countertops and luxury vinyl plank flooring, but our dual-inspector teams routinely find unpermitted electrical double-taps inside breaker panels, non-vented plumbing drains hidden behind shiplap, and fresh coats of drylock paint sealing active structural foundation shears.",
+      "keyStat": "Over 65% of fast-flipped homes exhibit at least one major unpermitted electrical or plumbing compromise.",
+      "citationUrl": "https://www.fhinspectionsatl.com/blog/hidden-dangers-of-flipped-homes-atlanta-inspection-guide",
+      "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
+      "contactInfo": {
+        "phone": "678-480-2110",
+        "email": "inspect@foresightcmi.com"
+      },
+      "status": "READY_FOR_DISPATCH"
+    },
+    {
+      "channel": "Connectively / HARO Real Estate Queries",
+      "category": "National Real Estate & Personal Finance",
+      "topic": "The ROI of Sewer Scope Inspections in Older Neighborhoods",
+      "subject": "Pitch: Why a $450 Sewer Scope Saves Atlanta Home Buyers $15,000+ (Christopher Boykin, CMI®)",
+      "expertBio": "Christopher Boykin, Certified Master Inspector (CMI®) and founder of Foresight Home Inspections, LLC (Atlanta, GA). Led by fewer than 1% of inspectors in North America.",
+      "soundbite": "Standard visual home inspections stop where plumbing lines enter the concrete slab or ground. In established 1950s–1980s neighborhoods, tree root intrusion and heavy clay soil shifting crush aging clay and cast iron laterals. A high-resolution sewer camera is the single highest-ROI diagnostic a buyer can order.",
+      "keyStat": "Underground sewer line excavation and replacement in Metro Atlanta routinely costs between $5,000 and $15,000.",
+      "citationUrl": "https://www.fhinspectionsatl.com/blog/sewer-scope-inspection-guide",
+      "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
+      "contactInfo": {
+        "phone": "678-480-2110",
+        "email": "inspect@foresightcmi.com"
+      },
+      "status": "READY_FOR_DISPATCH"
+    },
+    {
+      "channel": "Atlanta Regional Media (AJC, Atlanta Magazine, Rough Draft Atlanta)",
+      "category": "Hyper-Local Southeastern Building Science",
+      "topic": "Georgia Red Clay Soil & Foundation Settlement Dynamics",
+      "subject": "Story Idea: How Georgia Red Clay Drought-to-Storm Cycles Fracture Suburb Foundations",
+      "expertBio": "Christopher Boykin, Certified Master Inspector (CMI®) and founder of Foresight Home Inspections, LLC (Atlanta, GA). Led by fewer than 1% of inspectors in North America.",
+      "soundbite": "Georgia's expansive kaolinite and illite red clays act like hydraulic sponges. During prolonged summer heat, the soil shrinks away from foundation stem walls. When torrential autumn storms hit, the rapid re-expansion exerts uneven lateral shear force, creating the telltale stair-step brick cracks and binding doors we see across Gwinnett, Fulton, and DeKalb counties.",
+      "keyStat": "A minimum 6-foot downspout extension away from the foundation reduces soil hydrostatic pressure by over 70%.",
+      "citationUrl": "https://www.fhinspectionsatl.com/blog/atlanta-red-clay-soil-foundation-settlement",
+      "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
+      "contactInfo": {
+        "phone": "678-480-2110",
+        "email": "inspect@foresightcmi.com"
+      },
+      "status": "READY_FOR_DISPATCH"
+    },
+    {
+      "channel": "Atlanta Regional Media (AJC, Atlanta Magazine, Rough Draft Atlanta)",
+      "category": "Hyper-Local Southeastern Building Science",
+      "topic": "Radon Gas Penetration in North Georgia's Granite Belt",
+      "subject": "Expert Commentary: Why 1 in 3 North Metro Atlanta Homes Exceed EPA Radon Safety Limits",
+      "expertBio": "Christopher Boykin, Certified Master Inspector (CMI®) and founder of Foresight Home Inspections, LLC (Atlanta, GA). Led by fewer than 1% of inspectors in North America.",
+      "soundbite": "Because the North Metro area sits directly over the Stone Mountain and Piedmont granite geological formations, decaying uranium in the bedrock continually vents odorless radon gas upward into basements, crawlspaces, and concrete slabs. Continuous 48-hour electronic testing is critical before closing.",
+      "keyStat": "The EPA action threshold is 4.0 pCi/L, yet homes across Fulton, Cobb, and Gwinnett regularly test at 6.0 to 14.0 pCi/L.",
+      "citationUrl": "https://www.fhinspectionsatl.com/blog/hidden-dangers-of-radon-gas-georgia",
+      "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
+      "contactInfo": {
+        "phone": "678-480-2110",
+        "email": "inspect@foresightcmi.com"
+      },
+      "status": "READY_FOR_DISPATCH"
+    },
+    {
+      "channel": "Brokerage Intranet & Real Estate Association Resource Portals",
+      "category": "Product-Led Real Estate Tools",
+      "topic": "Free Interactive GAR Form F404 Repair Addendum Generator",
+      "subject": "Free Brokerage Tool: 1-Click GAR F404 Repair Addendum & Due Diligence Deadline Calculator",
+      "expertBio": "Christopher Boykin, Certified Master Inspector (CMI®) and founder of Foresight Home Inspections, LLC (Atlanta, GA). Led by fewer than 1% of inspectors in North America.",
+      "soundbite": "We developed a free interactive tool for Georgia agents that calculates strict O.C.G.A. due diligence contract deadlines and formats official GAR Form F404 repair amendment language in seconds, saving agents 30–45 minutes of manual contract typing per deal.",
+      "keyStat": "Eliminates due diligence contract deadline disputes and streamlines repair negotiations.",
+      "citationUrl": "https://www.fhinspectionsatl.com/due-diligence",
+      "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
+      "contactInfo": {
+        "phone": "678-480-2110",
+        "email": "inspect@foresightcmi.com"
+      },
+      "status": "READY_FOR_DISPATCH"
+    }
+  ]
+}
