@@ -166,7 +166,7 @@ export default function Services() {
         "name": "When do I get my inspection report?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You will receive your full digital inspection report within 24 hours of the completed inspection. The report includes high-resolution photos, video clips where applicable, and our clear 3-step reporting format: Observation, Implication, and Recommendation—written in plain English so you can negotiate with confidence."
+          "text": "Most of the time, you will receive your comprehensive digital report the very same day—and definitely within 24 hours of the completed inspection. The report includes high-resolution photos, video clips where applicable, and our clear 3-step reporting format: Observation, Implication, and Recommendation—written in plain English so you can negotiate with confidence."
         }
       },
       {
@@ -637,7 +637,7 @@ export default function Services() {
           <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
             <summary className="faq-question" style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>When do I get my inspection report?</summary>
             <p className="speakable-answer" style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
-              You will receive your full digital inspection report within 24 hours of the completed inspection. The report includes high-resolution photos, video clips where applicable, and our clear 3-step reporting format: Observation, Implication, and Recommendation—written in plain English so you can negotiate with confidence.
+              Most of the time, you will receive your comprehensive digital report the very same day—and definitely within 24 hours of the completed inspection. The report includes high-resolution photos, video clips where applicable, and our clear 3-step reporting format: Observation, Implication, and Recommendation—written in plain English so you can negotiate with confidence.
             </p>
           </details>
 

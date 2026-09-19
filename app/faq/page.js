@@ -35,7 +35,7 @@ export default function FAQPage() {
         { q: 'What does a home inspection include?', a: 'Roof, structure, foundation, HVAC, electrical, plumbing, appliances, water heater, insulation, ventilation, exterior, drainage. Plus FLIR thermal and drone scans included free.' },
         { q: 'How long does the inspection take?', a: 'Typically 2-3 hours for standard homes thanks to our dual-inspector model.' },
         { q: 'Will I receive photos in the report?', a: 'Yes, HD photos, thermal imaging captures, and drone footage are included.' },
-        { q: 'How quickly do I get my report?', a: 'Within 24 hours of inspection completion.' },
+        { q: 'How quickly do I get my report?', a: 'Most of the time the very same day, and definitely within 24 hours of inspection completion.' },
       ],
     },
     {

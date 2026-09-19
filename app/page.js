@@ -807,7 +807,7 @@ export default function Home() {
               },
               {
                 q: "How quickly will I receive my home inspection report?",
-                a: "You will receive a comprehensive, high-resolution digital inspection report within 24 hours of your inspection. Our reports include detailed photos, thermal imaging scans, and clear recommendation summaries for easy seller negotiations."
+                a: "Most of the time, you will receive your comprehensive digital report the very same day—and definitely within 24 hours of your inspection. Our reports include detailed photos, FLIR thermal imaging scans, and clear recommendation summaries for easy seller negotiations."
               },
               {
                 q: "When should I schedule a new construction home inspection in Atlanta?",
