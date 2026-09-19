@@ -243,6 +243,22 @@ const nextConfig = {
         destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
         permanent: true,
       },
+      // Keyword cannibalization consolidation redirects
+      {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/hidden-dangers-flipped-homes-atlanta',
+        destination: '/blog/hidden-dangers-of-flipped-homes-atlanta-inspection-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
       // Legacy /post/ URLs to modern /blog/ routes
       {
         source: '/post/unveiling-the-hidden-value-the-unknown-marketing-power-of-pre-listing-inspections-for-sellers',
