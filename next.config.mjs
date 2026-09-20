@@ -320,6 +320,113 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      // Legacy common URL aliases and variations
+      {
+        source: '/about-us',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/pricing',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/prices',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/cost',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/schedule',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/schedule-inspection',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/book-now',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/booking',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/faqs',
+        destination: '/faq',
+        permanent: true,
+      },
+      {
+        source: '/reviews',
+        destination: '/review',
+        permanent: true,
+      },
+      {
+        source: '/testimonials',
+        destination: '/review',
+        permanent: true,
+      },
+      {
+        source: '/service-area',
+        destination: '/service-areas',
+        permanent: true,
+      },
+      {
+        source: '/service-area/:city',
+        destination: '/service-areas/:city',
+        permanent: true,
+      },
+      {
+        source: '/our-services',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/service/:slug*',
+        destination: '/services/:slug*',
+        permanent: true,
+      },
+      // Legacy WordPress paths
+      {
+        source: '/wp-content/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-includes/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-admin/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-login.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/sample-page',
+        destination: '/about',
+        permanent: true,
+      },
     ];
   },
 };
