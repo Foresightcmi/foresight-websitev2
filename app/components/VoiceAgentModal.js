@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import { calculateQuoteDetails } from '../../lib/pricing';
+import { CHRIS_SYSTEM_INSTRUCTION, JORDAN_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
 
 export default function VoiceAgentModal({ isOpen, onClose }) {
   const [callState, setCallState] = useState('idle'); // 'idle' | 'listening' | 'thinking' | 'speaking'
@@ -13,8 +15,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [calculatedQuote, setCalculatedQuote] = useState(null);
   const [typedInput, setTypedInput] = useState('');
   const [selectedAddons, setSelectedAddons] = useState([]);
-  const [engineMode, setEngineMode] = useState('neural'); // 'neural' Christopher Voice Engine
+  const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
   const [liveWsConnected, setLiveWsConnected] = useState(false);
+  const [persona, setPersona] = useState('jordan'); // 'jordan' (Sales Concierge) | 'chris' (Master Inspector)
+  const personaRef = useRef('jordan');
 
   const [isHandsFree, setIsHandsFree] = useState(true);
   const isHandsFreeRef = useRef(true);
@@ -392,24 +396,41 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       const processor = audioCtx.createScriptProcessor(2048, 1, 1);
       processorRef.current = processor;
 
+      let consecutiveSpeechFrames = 0;
+
       processor.onaudioprocess = (e) => {
         if (!ws || ws.readyState !== WebSocket.OPEN || isMutedRef.current) {
           return;
         }
 
         const float32 = e.inputBuffer.getChannelData(0);
-        // While assistant is speaking, suppress quiet silence/fan noise (<0.006), but let normal user speech pass to trigger barge-in interruption
+
+        // VAD RMS calculation
+        let sum = 0;
+        for (let i = 0; i < float32.length; i++) {
+          sum += float32[i] * float32[i];
+        }
+        const rms = Math.sqrt(sum / float32.length);
+
+        // While assistant is speaking, client-side barge-in detection:
         if (isSpeakingRef.current) {
-          let sum = 0;
-          for (let i = 0; i < float32.length; i++) {
-            sum += float32[i] * float32[i];
+          if (rms >= 0.012) {
+            consecutiveSpeechFrames++;
+            if (consecutiveSpeechFrames >= 2) {
+              console.log('[Live Barge-In] User interrupted agent. Halting local audio immediately!');
+              haltSpeech();
+              isInterruptedRef.current = true;
+              setCallState('listening');
+            }
+          } else {
+            consecutiveSpeechFrames = 0;
+            return; // Suppress quiet room noise while agent is speaking
           }
-          const rms = Math.sqrt(sum / float32.length);
-          if (rms < 0.006) {
-            return;
-          }
+        } else {
+          consecutiveSpeechFrames = 0;
         }
 
+        // Convert Float32 to 16-bit linear PCM (little-endian)
         const int16 = new Int16Array(float32.length);
         for (let i = 0; i < float32.length; i++) {
           const s = Math.max(-1, Math.min(1, float32[i]));
@@ -435,8 +456,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         } catch (_) {}
       };
 
+      // Connect source to processor, then processor to silenceGain (gain=0) -> prevents microphone acoustic feedback!
+      const silenceGain = audioCtx.createGain();
+      silenceGain.gain.value = 0.0;
       source.connect(processor);
-      processor.connect(audioCtx.destination);
+      processor.connect(silenceGain);
+      silenceGain.connect(audioCtx.destination);
+
       if (!isSpeakingRef.current) {
         setCallState('listening');
       }
@@ -449,28 +475,36 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       }
       setEngineMode('neural');
     }
-  }, []);
+  }, [haltSpeech]);
 
   // Handshake with Gemini Live WebSocket via ephemeral token
-  const initLiveConnection = useCallback(async () => {
+  const initLiveConnection = useCallback(async (targetPersona = null) => {
     if (liveWsRef.current && (liveWsRef.current.readyState === WebSocket.OPEN || liveWsRef.current.readyState === WebSocket.CONNECTING)) {
       return;
     }
 
+    const currentPersona = targetPersona || personaRef.current || 'jordan';
+
     try {
-      const res = await fetch('/api/voice/token', { method: 'POST' });
+      const res = await fetch('/api/voice/token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ persona: currentPersona })
+      });
       const data = await res.json();
 
       if (data.mode !== 'live' || !data.wsUrl) {
         console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
         setEngineMode('neural');
-        const greetingText = "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?";
+        const greetingText = currentPersona === 'chris'
+          ? "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+          : "Hello! I am Jordan, client experience concierge at Foresight Home Inspections. We send two certified inspectors on every job with free thermal imaging. How can I help you check pricing or secure an inspection date today?";
         setHistory([{
           role: 'assistant',
           content: greetingText
         }]);
         setCallState('speaking');
-        playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
+        playNeuralAudio(currentPersona === 'chris' ? '/audio/chris-cloned-greeting.mp3' : null, () => {
           if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
             handleStartListeningRef.current();
           }
@@ -482,53 +516,58 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       liveWsRef.current = ws;
 
       ws.onopen = () => {
-        console.log('Gemini Live WebSocket open. Sending setup handshake...');
-        const livePrompt = `You are Chris (Christopher Boykin), founder and lead Certified Master Inspector (CMI) of Foresight Home Inspections, LLC in Metro Atlanta (Phone: 678-480-2110; Email: inspect@foresightcmi.com).
-Your persona is that of an articulate, confident, authoritative, sharp, deep-voiced Black master builder and Certified Master Inspector. You speak with professional warmth, clarity, directness, unhurried confidence, and deep building science mastery.
-You are speaking live with a client browsing Foresight's website. Welcome them professionally, answer their questions with deep building science expertise, and help them schedule inspections or check instant pricing. Never refer to this conversation as a phone call.
+        console.log(`Gemini 3.1 Live WebSocket open for persona: ${currentPersona}. Sending setup handshake...`);
+        const livePrompt = currentPersona === 'chris' ? CHRIS_SYSTEM_INSTRUCTION : JORDAN_SYSTEM_INSTRUCTION;
 
-STRICT DIRECTIVE — ZERO SOUTHERN SLANG & ZERO REPETITIVE GREETINGS:
-- DO NOT speak with a Southern drawl or use Southern colloquialisms. NEVER use phrases like "Well hello there", "Bless your heart", "Partner", "Howdy", "Now let me tell you", "Mighty glad", "Yes sir", or "Yes ma'am".
-- NEVER start your response with "Well hello there", "Hello", "Hey there", or any repetitive greetings when the visitor is asking a question or having an ongoing conversation. Dive directly and conversationally into answering their specific question with facts, building science explanations, and exact numbers.
+        const liveTools = [{
+          functionDeclarations: [
+            {
+              name: "calculate_quote",
+              description: "Calculates official Foresight inspection fee, itemized breakdown, and buyer leverage.",
+              parameters: {
+                type: "OBJECT",
+                properties: {
+                  sqft: { type: "INTEGER", description: "Exact square footage of the home" },
+                  property_type: { type: "STRING", enum: ["single-family", "condo"], description: "Type of property" },
+                  foundation: { type: "STRING", enum: ["slab", "crawlspace", "basement"], description: "Foundation type" },
+                  age_tier: { type: "STRING", enum: ["under-25", "25-49", "over-50"], description: "Age of the home" },
+                  addons: {
+                    type: "ARRAY",
+                    items: { type: "STRING" },
+                    description: "Addon services: radon ($250), sewer ($450), termite ($125/$165), pool ($275), lowFlow ($100), str ($595)"
+                  }
+                },
+                required: ["sqft"]
+              }
+            },
+            {
+              name: "book_inspection",
+              description: "Records tentative inspection booking into CRM and queues official confirmation.",
+              parameters: {
+                type: "OBJECT",
+                properties: {
+                  client_name: { type: "STRING", description: "Client full name" },
+                  phone: { type: "STRING", description: "Client phone number" },
+                  email: { type: "STRING", description: "Client email address" },
+                  property_address: { type: "STRING", description: "Property address" },
+                  preferred_date: { type: "STRING", description: "Requested inspection date or window" },
+                  estimated_total: { type: "NUMBER", description: "Estimated total inspection fee" }
+                },
+                required: ["client_name", "phone"]
+              }
+            }
+          ]
+        }];
 
-UNSHAKEABLE BUSINESS IDENTITY:
-You are exclusively Chris, founder and Certified Master Inspector for Foresight Home Inspections, LLC. NEVER say you are an ungrounded AI or not connected to a particular business. NEVER ask what business the visitor is talking about. You represent Foresight Home Inspections proudly and completely.
-
-SUNDAY & OPERATING HOURS:
-Foresight is open on Sunday strictly by advance appointment! Standard operating schedule is Monday through Saturday from 8:00 AM to 8:00 PM. Whenever asked about Sunday, state clearly: "Foresight Home Inspections is open on Sunday strictly by advance appointment. While our standard schedule runs Monday through Saturday, we are always happy to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?"
-
-DEEP INTERNACHI STANDARDS OF PRACTICE (SOP) & 3-STEP DIAGNOSTIC EXPERTISE:
-You know all 10 InterNACHI Standards of Practice chapters: Roof (drone scans at zero extra cost), Exterior, Structure/Foundation/Georgia red clay soil hydrostatic pressure, HVAC (temperature splits, float switches, attic overflow pans), Plumbing (polybutylene, water heaters, TPR valves, cast iron), Electrical (fire hazards like Federal Pacific Stab-Lok, Zinsco, aluminum branch wiring, GFCI/AFCI), Attic & Insulation (R-values, exterior venting), and complimentary FLIR thermal imaging on every inspection.
-Whenever discussing a defect or home issue, deliver your core diagnostic finding in this exact 3-step format:
-- Observation: Clearly state the physical finding or symptom observed.
-- What This Could Mean: State the real-world risk, moisture hazard, structural rot, or financial cost in plain English. (STRICT RULE: NEVER say "What This Means". Always strictly say "What This Could Mean" or "What This Could Imply" for legal liability protection).
-- Recommendation: State the exact qualified licensed trade specialist or contractor needed to evaluate further and perform the repair.
-
-FORESIGHT ADVANTAGES & COMPETITIVE POSITIONING:
-- Two-inspector certified team on every site (lead CMI + certified inspector; finishes thoroughly in 1.5 to 2.5 hours vs 4+ hours for exhausted solo operators).
-- Up to $35,000 in combined warranty and guarantee protection: complimentary $10,000 Elite Master Protection Warranty with zero deductible (covering mechanicals, structure, appliances, roofs, and mold after closing) plus InterNACHI's $25,000 Honor Guarantee.
-- Complimentary FLIR infrared thermal imaging and 4K aerial drone roof scans standard on every inspection at zero extra charge.
-- Complimentary Utilities Plus concierge service setting up power, water, gas, and fiber internet.
-- Active MLS SUPRA electronic key access for independent property entry.
-- 24-hour digital reports with interactive Create Request List (CRL) tool for instant repair addenda.
-- Contrast with National Franchises ($450 to $575+ royalty fees, random junior hourly inspectors) and Discount Solo Operators ($325 to $400, fatigue after 4 hours, zero warranty, extra for thermal, missing an $8,000 defect wipes out any upfront saving).
-- Pricing: Single-family homes start at $345, condos at $295. Add-ons: Pool & Spa $275, Termite WDO $125+ ($165 crawlspace), 48-hr Radon $250, STR Compliance $595, Sewer Scope Camera $450.
-
-APPOINTMENT SOLIDIFICATION POLICY: To solidify all appointments on our master calendar, the 50% deposit along with the signed inspection agreements are completed AFTER our office sends the appointment confirmation. The remaining 50% balance is paid after on-site completion before the official inspection report is released. Explain this whenever scheduling, deposits, or booking next steps are discussed.
-
-CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
-- Suggest reasonable add-ons based on property circumstances: Sewer Scope ($450) for older homes 25+ years, 48-Hour Radon ($250) for crawlspaces/basements/granite belt, Termite WDO letter ($125+) for Georgia buyers, Pool & Spa ($275) for pools.
-- CRITICAL MANDATORY RULE — ALWAYS ACCEPT 'NO' GRACIOUSLY: Never be pushy or aggressive. If the customer declines or says 'no' ('no thanks', 'pass', 'just the basic', 'skip it'), ALWAYS accept the answer 'no' graciously immediately without friction or rebuttal (e.g., 'Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation'). Never repeat a declined upsell.
-- In every answer, actively encourage the visitor to reserve their inspection window or check their exact instant quote. Keep your answers concise, spoken natural English, 2 to 4 sentences. Never use markdown asterisks.`;
         ws.send(JSON.stringify({
           setup: {
-            model: data.model || "models/gemini-2.5-flash-native-audio-latest",
+            model: data.model || "models/gemini-3.1-flash-live-preview",
             generationConfig: {
               responseModalities: ["AUDIO"],
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
-                    voiceName: data.voice || "Charon"
+                    voiceName: data.voice || (currentPersona === 'chris' ? "Charon" : "Aoede")
                   }
                 }
               }
@@ -536,6 +575,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             systemInstruction: {
               parts: [{ text: livePrompt }]
             },
+            tools: liveTools,
             inputAudioTranscription: {},
             outputAudioTranscription: {}
           }
@@ -547,17 +587,21 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
           const rawText = typeof evt.data === 'string' ? evt.data : (evt.data instanceof Blob ? await evt.data.text() : String(evt.data));
           const msg = JSON.parse(rawText);
           if (msg.setupComplete) {
-            console.log('Gemini Live setup complete! Connecting microphone stream...');
+            console.log('Gemini 3.1 Live setup complete! Connecting microphone stream...');
             setLiveWsConnected(true);
             setEngineMode('live');
             startLiveMicStream(ws);
-            // Spoken live greeting by Chris
+
+            const greetingPrompt = currentPersona === 'chris'
+              ? "The client just opened the voice console on our website. Greet them warmly and concisely as Chris Boykin, Certified Master Inspector from Foresight Home Inspections in Atlanta in 1 spoken sentence, and ask what inspection questions you can answer for them today."
+              : "The client just opened the voice console on our website. Greet them warmly and enthusiastically as Jordan from Foresight Home Inspections in Atlanta in 1 short spoken sentence, and ask about their property or preferred inspection date.";
+
             ws.send(JSON.stringify({
               clientContent: {
                 turns: [{
                   role: 'user',
                   parts: [{
-                    text: "The client just opened the voice console. Greet them warmly and concisely as Chris Boykin from Foresight Home Inspections in Atlanta in 1 spoken sentence, and ask how you can help them today."
+                    text: greetingPrompt
                   }]
                 }],
                 turnComplete: true
@@ -596,11 +640,10 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
               setCallState('listening');
             }
 
-            // Real-time spoken transcript from Gemini (Single live greeting, no duplicates)
+            // Real-time spoken transcript from Gemini
             if (msg.serverContent.outputTranscription?.text) {
               const streamedText = msg.serverContent.outputTranscription.text.replace(/\*/g, '');
               setHistory(prev => {
-                // If there is any placeholder greeting, replace it immediately
                 if (prev.length === 1 && (prev[0].isPlaceholder || prev[0].isConnecting || (prev[0].role === 'assistant' && !prev[0].live))) {
                   return [{ role: 'assistant', content: streamedText, streaming: true, live: true }];
                 }
@@ -650,6 +693,59 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                 if (part.inlineData?.data && part.inlineData?.mimeType?.startsWith('audio/pcm')) {
                   playLivePcmChunk(part.inlineData.data);
                 }
+
+                // Handle tool / function calls from Gemini Live
+                if (part.functionCall) {
+                  const { name, args, id } = part.functionCall;
+                  console.log('[Gemini Live Tool Call]', name, args);
+                  let toolResult = {};
+                  if (name === 'calculate_quote') {
+                    const q = calculateQuoteDetails({
+                      sqft: args.sqft,
+                      propertyType: args.property_type || 'single-family',
+                      foundation: args.foundation || 'slab',
+                      ageTier: args.age_tier || 'under-25',
+                      addons: (args.addons || []).reduce((acc, a) => { acc[a] = true; return acc; }, {})
+                    });
+                    setCalculatedQuote(q);
+                    toolResult = {
+                      total: q.total,
+                      base: q.base,
+                      extra: q.extra,
+                      deposit: q.deposit,
+                      balanceDue: q.balanceDue,
+                      addonBreakdown: q.addonBreakdown,
+                      summary: `Calculated total fee is $${q.total} with two certified inspectors. 50% deposit to solidify ($${q.deposit}) due after office confirmation.`
+                    };
+                  } else if (name === 'book_inspection') {
+                    const bData = {
+                      name: args.client_name,
+                      phone: args.phone,
+                      email: args.email || '',
+                      address: args.property_address || '',
+                      preferredDate: args.preferred_date || 'Upcoming Window',
+                      estimatedTotal: args.estimated_total || (calculatedQuote ? calculatedQuote.total : null)
+                    };
+                    setBookingData(bData);
+                    toolResult = {
+                      status: 'logged',
+                      message: `Inspection request logged for ${args.client_name} (${args.phone}). Office confirmation and agreements queued.`
+                    };
+                  }
+
+                  try {
+                    ws.send(JSON.stringify({
+                      toolResponse: {
+                        functionResponses: [{
+                          response: { output: toolResult },
+                          id
+                        }]
+                      }
+                    }));
+                  } catch (toolErr) {
+                    console.warn('Failed to send toolResponse over Live WebSocket:', toolErr);
+                  }
+                }
               }
             }
           }
@@ -666,7 +762,9 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+              content: currentPersona === 'chris'
+                ? "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+                : "Hello! I'm Jordan, client concierge at Foresight Home Inspections. How can I help you check instant pricing or book your inspection?"
             }];
           }
           return prev;
@@ -682,7 +780,9 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+              content: currentPersona === 'chris'
+                ? "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+                : "Hello! I'm Jordan, client concierge at Foresight Home Inspections. How can I help you check instant pricing or book your inspection?"
             }];
           }
           return prev;
@@ -693,7 +793,9 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     } catch (err) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
-      const greetingText = "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?";
+      const greetingText = currentPersona === 'chris'
+        ? "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
+        : "Hello! I am Jordan, client experience concierge at Foresight Home Inspections. How can I help you check pricing or schedule today?";
       setHistory(prev => {
         if (prev.length === 0) {
           return [{
@@ -704,13 +806,27 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         return prev;
       });
       setCallState('speaking');
-      playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
+      playNeuralAudio(currentPersona === 'chris' ? '/audio/chris-cloned-greeting.mp3' : null, () => {
         if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
           handleStartListeningRef.current();
         }
       });
     }
-  }, [startLiveMicStream, playLivePcmChunk, haltSpeech, playNeuralAudio]);
+  }, [startLiveMicStream, playLivePcmChunk, haltSpeech, playNeuralAudio, calculatedQuote]);
+
+  // Persona switcher between Jordan (Concierge) and Chris (Master Inspector)
+  const switchPersona = useCallback((newPersona) => {
+    if (newPersona === personaRef.current) return;
+    setPersona(newPersona);
+    personaRef.current = newPersona;
+    stopLiveSession();
+    setHistory([]);
+    setInterimUserText('');
+    setCalculatedQuote(null);
+    setBookingData(null);
+    setCallState('thinking');
+    initLiveConnection(newPersona);
+  }, [stopLiveSession, initLiveConnection]);
 
   // Auto-scroll transcript container
   useEffect(() => {
@@ -925,12 +1041,8 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
     if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
       try {
         liveWsRef.current.send(JSON.stringify({
-          clientContent: {
-            turns: [{
-              role: 'user',
-              parts: [{ text: queryText.trim() }]
-            }],
-            turnComplete: true
+          realtimeInput: {
+            text: queryText.trim()
           }
         }));
         return;
@@ -945,7 +1057,8 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: newHistory,
-          currentQuote: calculatedQuote
+          currentQuote: calculatedQuote,
+          persona: personaRef.current
         })
       });
 
@@ -1098,14 +1211,14 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             </div>
 
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  Chris
+                  {persona === 'chris' ? 'Chris' : 'Jordan'}
                 </h3>
                 <span style={{
-                  background: 'rgba(212, 175, 55, 0.15)',
-                  color: '#D4AF37',
-                  border: '1px solid rgba(212, 175, 55, 0.4)',
+                  background: persona === 'chris' ? 'rgba(212, 175, 55, 0.15)' : 'rgba(16, 185, 129, 0.15)',
+                  color: persona === 'chris' ? '#D4AF37' : '#34d399',
+                  border: `1px solid ${persona === 'chris' ? 'rgba(212, 175, 55, 0.4)' : 'rgba(16, 185, 129, 0.4)'}`,
                   fontSize: '0.65rem',
                   fontWeight: 800,
                   padding: '2px 8px',
@@ -1116,7 +1229,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                   alignItems: 'center',
                   gap: '4px'
                 }}>
-                  Certified Master Inspector
+                  {persona === 'chris' ? 'Certified Master Inspector' : 'Sales Concierge'}
                 </span>
                 <span style={{
                   background: 'rgba(16, 185, 129, 0.15)',
@@ -1131,11 +1244,11 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                   gap: '4px'
                 }}>
                   <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                  {liveWsConnected ? 'Gemini Live' : '🎙️ Authentic Cloned Voice'}
+                  {liveWsConnected ? 'Gemini 3.1 Live' : '🎙️ Authentic Cloned Voice'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                Founder &amp; Certified Master Inspector &bull; 
+                {persona === 'chris' ? 'Founder & Certified Master Inspector' : 'Client Experience Specialist'} &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
                   {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
                 </span>
@@ -1144,6 +1257,51 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {/* Persona Switcher */}
+            <div style={{
+              display: 'inline-flex',
+              backgroundColor: 'rgba(0, 0, 0, 0.45)',
+              borderRadius: '20px',
+              padding: '2px',
+              border: '1px solid rgba(212, 175, 55, 0.35)'
+            }}>
+              <button
+                type="button"
+                onClick={() => switchPersona('jordan')}
+                aria-label="Switch to Jordan Concierge"
+                style={{
+                  padding: '4px 10px',
+                  borderRadius: '16px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  background: persona === 'jordan' ? 'linear-gradient(135deg, #10b981, #059669)' : 'transparent',
+                  color: persona === 'jordan' ? '#ffffff' : '#94A3B8',
+                  transition: 'all 0.2s'
+                }}
+              >
+                🎙️ Jordan
+              </button>
+              <button
+                type="button"
+                onClick={() => switchPersona('chris')}
+                aria-label="Switch to Chris Master Inspector"
+                style={{
+                  padding: '4px 10px',
+                  borderRadius: '16px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  background: persona === 'chris' ? 'linear-gradient(135deg, #D4AF37, #9B2C2C)' : 'transparent',
+                  color: persona === 'chris' ? '#ffffff' : '#94A3B8',
+                  transition: 'all 0.2s'
+                }}
+              >
+                🏗️ Chris
+              </button>
+            </div>
             <button
               onClick={() => setIsHandsFree(!isHandsFree)}
               aria-label={isHandsFree ? 'Switch to Push-to-Talk' : 'Switch to Hands-Free Mode'}
@@ -1233,7 +1391,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
           <button 
             type="button"
             onClick={handleToggleOrInterrupt}
-            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Chris' : 'Tap to speak with Chris'}
+            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? `Interrupt ${persona === 'chris' ? 'Chris' : 'Jordan'}` : `Tap to speak with ${persona === 'chris' ? 'Chris' : 'Jordan'}`}
             style={{
               width: '96px',
               height: '96px',
@@ -1267,7 +1425,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
                 : 'pulseVoiceIdle 3s infinite',
               position: 'relative'
             }}
-            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Chris is speaking... Tap to interrupt' : 'Tap to speak'}
+            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? `${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking... Tap to interrupt` : 'Tap to speak'}
           >
             <span style={{ fontSize: '2.2rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.4))' }}>
               {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : callState === 'thinking' ? '⏳' : '🎙️'}
@@ -1285,7 +1443,7 @@ CIRCUMSTANTIAL UPSELLS & ALWAYS ACCEPT 'NO' GRACIOUSLY:
             {callState === 'listening'
               ? '🟢 Listening... Speak naturally (Hands-Free Call)'
               : callState === 'speaking'
-              ? '🗣️ Chris is speaking (tap orb to interrupt)'
+              ? `🗣️ ${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking (tap orb to interrupt)`
               : callState === 'thinking'
               ? 'Checking schedule & options with Foresight...'
               : 'Tap orb or speak to begin'}

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { recordLead } from '../../../lib/leads';
-import { CHRIS_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../../lib/chris-brain-prompt';
+import { CHRIS_SYSTEM_INSTRUCTION, JORDAN_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../../lib/chris-brain-prompt';
 
 // Calculation helper strictly adhering to Foresight pricing engine
 function calculateQuoteDetails({ propertyType = 'single-family', serviceType = 'buyer', sqft = 2000, foundation = 'slab', ageTier = 'under-50', addons = {} }) {
@@ -140,7 +140,7 @@ function extractPhoneNumber(rawText) {
 }
 
 // Dynamic LLM Brain Generation via Google Gemini (Real-Time Cognitive Listening)
-async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote) {
+async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, persona = 'jordan') {
   if (!apiKey) return null;
 
   const recentMessages = (messages || []).slice(-10);
@@ -149,6 +149,7 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
     parts: [{ text: msg.content }]
   }));
 
+  const systemInstructionText = persona === 'chris' ? CHRIS_SYSTEM_INSTRUCTION : JORDAN_SYSTEM_INSTRUCTION;
   const models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
   for (const model of models) {
     try {
@@ -157,7 +158,7 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents,
-          systemInstruction: { parts: [{ text: CHRIS_SYSTEM_INSTRUCTION }] },
+          systemInstruction: { parts: [{ text: systemInstructionText }] },
           generationConfig: {
             temperature: 0.7,
             maxOutputTokens: 1000
@@ -564,7 +565,8 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
 
 export async function POST(request) {
   try {
-    const { messages = [], currentQuote = null } = await request.json();
+    const { messages = [], currentQuote = null, persona = 'jordan' } = await request.json();
+    const voiceName = persona === 'chris' ? 'en-US-ChristopherNeural' : 'en-US-JennyNeural';
     const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || '';
     const lastUserTextLower = lastUserMessage.toLowerCase();
 
@@ -595,7 +597,7 @@ export async function POST(request) {
         const deposit = Math.round(quoteResult.total / 2);
         const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, the 50 percent deposit of ${deposit} dollars along with your signed inspection agreements are completed after our office sends your appointment confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
 
-        const audio = await synthesizeHumanVoice(speechResponse);
+        const audio = await synthesizeHumanVoice(speechResponse, voiceName);
         return NextResponse.json({
           response: speechResponse,
           audio,
@@ -663,9 +665,9 @@ export async function POST(request) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey) {
       try {
-        const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote);
+        const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, persona);
         if (dynamicReply) {
-          const audio = await synthesizeHumanVoice(dynamicReply);
+          const audio = await synthesizeHumanVoice(dynamicReply, voiceName);
           return NextResponse.json({
             response: dynamicReply,
             audio,
@@ -680,7 +682,7 @@ export async function POST(request) {
     // 5. Intelligent Context-Aware Dialogue Engine (Fallback if upstream API is depleted or offline)
     const turnResult = generateChrisDialogueTurn(messages, lastUserMessage);
 
-    if (turnResult.preAudio) {
+    if (turnResult.preAudio && persona === 'chris') {
       return NextResponse.json({
         response: turnResult.text,
         audio: turnResult.preAudio,
@@ -688,9 +690,9 @@ export async function POST(request) {
       });
     }
 
-    // Synthesize response with Chris's neural voice
+    // Synthesize response with selected neural voice
     const cleanReply = turnResult.text.replace(/\*/g, '').trim();
-    const audio = await synthesizeHumanVoice(cleanReply);
+    const audio = await synthesizeHumanVoice(cleanReply, voiceName);
 
     return NextResponse.json({
       response: cleanReply,
@@ -700,8 +702,10 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
-    const fallbackText = "Welcome to Foresight Home Inspections! This is Chris, your Certified Master Inspector. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!";
-    const audio = await synthesizeHumanVoice(fallbackText);
+    const fallbackText = persona === 'chris'
+      ? "Welcome to Foresight Home Inspections! This is Chris, your Certified Master Inspector. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!"
+      : "Welcome to Foresight Home Inspections! This is Jordan, your client experience concierge. We send two certified inspectors on every job with free thermal imaging and drone scans. How can I help you check pricing or secure an inspection date today?";
+    const audio = await synthesizeHumanVoice(fallbackText, voiceName);
     return NextResponse.json({
       response: fallbackText,
       audio,

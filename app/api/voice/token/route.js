@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-export async function POST() {
+export async function POST(req) {
   try {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
@@ -12,6 +12,16 @@ export async function POST() {
         error: 'GEMINI_API_KEY is not configured on the server.'
       }, { status: 500 });
     }
+
+    let persona = 'jordan';
+    try {
+      const body = await req.json();
+      if (body && body.persona) {
+        persona = String(body.persona).toLowerCase();
+      }
+    } catch (_) {}
+
+    const selectedVoice = persona === 'chris' ? 'Charon' : 'Aoede';
 
     const now = Date.now();
     const expireTime = new Date(now + 30 * 60 * 1000).toISOString();
@@ -46,8 +56,9 @@ export async function POST() {
     return NextResponse.json({
       mode: 'live',
       wsUrl,
-      model: 'models/gemini-2.5-flash-native-audio-latest',
-      voice: 'Charon',
+      model: 'models/gemini-3.1-flash-live-preview',
+      voice: selectedVoice,
+      persona,
       tokenName
     }, { status: 200 });
 
