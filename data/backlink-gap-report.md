@@ -1,6 +1,6 @@
 # 🚀 2025 Backlink Gap & Referring Domain Acquisition Recon
 
-**Generated**: September 16, 2026  
+**Generated**: September 21, 2026  
 **Strategy**: Quality referring domains, link magnet pairing, and Digital PR (Semrush 2025 Playbook).
 
 ---

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T08:57:43.982Z",
+  "generatedAt": "2026-09-21T13:01:39.307Z",
   "framework": "Cody Schneider AI Fanning & GEO Surface Area Model",
   "overallSurfaceAreaScore": "100%",
   "totalSubqueriesFanned": 37,
@@ -223,7 +223,7 @@
         },
         {
           "query": "crawlspace humidity fungal mold Southeast summer",
-          "targetUrl": "/blog/crawlspace-moisture-silent-threat-georgia-foundations",
+          "targetUrl": "/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations",
           "status": "COVERED",
           "coverageType": "Dynamic Blog",
           "surfaceAreaScore": 100
