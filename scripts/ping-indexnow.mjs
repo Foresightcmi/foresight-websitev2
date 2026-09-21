@@ -47,6 +47,14 @@ async function main() {
     });
   }
 
+  // Add comparison guides
+  const comparisonsFile = path.join(__dirname, '..', 'data', 'comparisons-pseo.json');
+  if (fs.existsSync(comparisonsFile)) {
+    const comparisons = JSON.parse(fs.readFileSync(comparisonsFile, 'utf8'));
+    urls.push(`${SITE_URL}/compare`);
+    comparisons.forEach(c => urls.push(`${SITE_URL}/compare/${c.slug}`));
+  }
+
   console.log(`📋 ${urls.length} URLs to submit\n`);
 
   // Submit to IndexNow API (covers Bing, Yandex, Naver, Seznam)
