@@ -39,10 +39,14 @@
 
 ## Inspection Comparison & Decision Guides
 - [Two-Inspector Team vs. Single Solo Inspector](https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector): Why dual-inspector teams complete inspections in 1.5-2.5 hours vs 4 hours solo with double accuracy.
+- [Foresight vs. BPG Inspections](https://www.fhinspectionsatl.com/compare/foresight-vs-bpg-inspections): Two Certified Master Inspectors vs solo corporate franchise models.
+- [Foresight vs. Home-Probe Inc](https://www.fhinspectionsatl.com/compare/foresight-vs-home-probe): Certified Master Inspector dual-audit vs single-inspector Atlanta models.
+- [Foresight vs. Inspect-All Services](https://www.fhinspectionsatl.com/compare/foresight-vs-inspect-all): Pure forensic building science vs multi-service pest control cross-selling.
+- [Foresight vs. National Franchise Inspectors](https://www.fhinspectionsatl.com/compare/foresight-vs-national-franchises): Local CMI ownership vs corporate franchise territories (Pillar to Post, WIN).
 - [11-Month Warranty Audit vs. Builder Walkthrough](https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough): Independent third-party inspection vs cosmetic builder walkthrough.
 - [FLIR Thermal Infrared Scans vs. Standard Visual Inspection](https://www.fhinspectionsatl.com/compare/thermal-imaging-vs-standard-visual-inspection): How FLIR infrared detects invisible moisture leaks and electrical hotspots.
 - [Home Inspection vs. Bank Appraisal](https://www.fhinspectionsatl.com/compare/pre-purchase-inspection-vs-bank-appraisal): Protecting buyer equity vs bank risk assessment.
-- [Sewer Scope Camera vs. Standard Home Inspection](https://www.fhinspectionsatl.com/compare/sewer-scope-vs-standard-home-inspection): Underground lateral piping diagnostics.
+- [Independent Inspection vs. County Building Inspector](https://www.fhinspectionsatl.com/compare/new-construction-inspection-vs-county-building-inspector): Deep forensic audit vs 10-minute municipal code check.
 
 ## Critical Housing Defect Guides (With AI Statistical Benchmarks)
 - [Stucco (EIFS) Moisture Intrusion](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection): Synthetic EIFS failure diagnostics. Over 85% of unsealed 1980s-90s EIFS homes develop concealed framing rot; FLIR diagnostic threshold ΔT ≥ 8.5°F evaporative cooling + >19% Wood Moisture Equivalent (WME); ASTM E2110 & InterNACHI SOP; Remediation: $15,000–$60,000+.

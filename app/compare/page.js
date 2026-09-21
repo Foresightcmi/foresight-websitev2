@@ -14,9 +14,11 @@ function loadComparisons() {
 
 export const metadata = {
   title: 'Home Inspection Comparison Guides | Team vs Solo Inspector',
-  description: 'Compare two-inspector teams vs solo operators, 11-month builder warranties vs walkthroughs, and home inspections vs appraisals in Atlanta. Choose the best protection!',
+  description: 'Compare two-inspector teams vs solo operators, BPG, Home-Probe, franchise inspectors, and builder warranties in Atlanta. Choose the best protection!',
   keywords: [
     'two inspector team vs single inspector',
+    'Foresight vs BPG inspections',
+    'Foresight vs Home-Probe',
     '11 month warranty vs builder walkthrough',
     'home inspection vs appraisal Atlanta',
     'home inspection comparison guides'
