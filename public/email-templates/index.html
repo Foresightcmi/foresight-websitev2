@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foresight Email Dispatch Studio — Premium HTML Outreach</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0B1120; color: #E2E8F0; padding: 24px; min-height: 100vh; }
+    .header-bar { max-width: 1000px; margin: 0 auto 24px; display: flex; justify-content: space-between; align-items: center; background: #1E293B; padding: 18px 24px; border-radius: 12px; border: 1px solid #334155; }
+    .header-title { font-size: 1.25rem; font-weight: 700; color: #FFFFFF; display: flex; align-items: center; gap: 10px; }
+    .actions { display: flex; gap: 12px; }
+    .btn { padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary { background: #D32F2F; color: #FFFFFF; }
+    .btn-primary:hover { background: #B71C1C; }
+    .btn-secondary { background: #334155; color: #F8FAFC; border: 1px solid #475569; }
+    .btn-secondary:hover { background: #475569; }
+    .selector-bar { max-width: 1000px; margin: 0 auto 24px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill { padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; background: #1E293B; color: #94A3B8; border: 1px solid #334155; transition: 0.2s; }
+    .pill.active, .pill:hover { background: #D4AF37; color: #0F172A; border-color: #D4AF37; }
+    .meta-box { max-width: 1000px; margin: 0 auto 24px; background: #1E293B; padding: 16px 20px; border-radius: 8px; border-left: 4px solid #D4AF37; font-size: 0.9rem; line-height: 1.6; }
+    .preview-container { max-width: 700px; margin: 0 auto; background: #F1F5F9; padding: 20px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    #status-toast { position: fixed; bottom: 30px; right: 30px; background: #10B981; color: white; padding: 14px 24px; border-radius: 8px; font-weight: 700; display: none; box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 1000; }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <div class="header-title">
+      <span>✉️</span> Foresight Executive Email Dispatch Studio
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="copyRichHTML()">
+        📋 Copy Formatted Email (for Gmail / Outlook)
+      </button>
+      <button class="btn btn-secondary" onclick="copySubject()">
+        📌 Copy Subject Line
+      </button>
+    </div>
+  </div>
+
+  <div class="selector-bar">
+    <span style="line-height: 32px; font-size: 0.85rem; color: #64748B; font-weight: 600;">TARGET TEMPLATE:</span>
+    <div class="pill active" onclick="loadTarget('kw')">Keller Williams Cityside</div>
+    <div class="pill" onclick="loadTarget('harrynorman')">Harry Norman Buckhead</div>
+    <div class="pill" onclick="loadTarget('ara')">Atlanta REALTORS® Association</div>
+    <div class="pill" onclick="loadTarget('inmanpark')">Inman Park Neighborhood Assn</div>
+    <div class="pill" onclick="loadTarget('roughdraft')">Rough Draft Atlanta (Media)</div>
+  </div>
+
+  <div class="meta-box" id="target-meta">
+    <div><strong>Recipient:</strong> <span id="meta-to">agentservices@kwcityside.com</span></div>
+    <div><strong>Subject:</strong> <span id="meta-subject" style="color: #F8FAFC; font-weight: 700;">Faster Due Diligence Turnarounds: Two-Inspector CMI Team for KW Cityside Buyers</span></div>
+  </div>
+
+  <div class="preview-container">
+    <div id="email-render-target">
+      <!-- Active Render Target -->
+    </div>
+  </div>
+
+  <div id="status-toast">✓ Formatted email copied! Open Gmail/Outlook and press Ctrl+V to paste.</div>
+
+  <script>
+    const targets = {
+      kw: {
+        to: "agentservices@kwcityside.com",
+        subject: "Faster Due Diligence Turnarounds: Two-Inspector CMI Team for KW Cityside Buyers",
+        greeting: "KW Cityside Managing Broker & Agent Services Team",
+        body1: "During tight <strong>5-to-7 day Georgia GAR due diligence periods</strong>, one of the biggest friction points for your agents and buyers is the home inspection bottleneck: waiting 4+ hours on site for a solo inspector, followed by delayed PDF summaries that stall repair negotiations.",
+        body2: "At <strong>Foresight Home Inspections</strong>, we engineered an elite operational model specifically designed to protect your buyers' earnest money and keep your transactions on schedule.",
+        callout: "We would be thrilled to provide your agents with our 1-click Create Request List (CRL) amendment tool or be evaluated for inclusion on your brokerage’s <strong>Preferred Vendor Directory</strong>."
+      },
+      harrynorman: {
+        to: "buckhead@harrynorman.com",
+        subject: "Dual-Inspector Master Audits for Luxury Estates in Buckhead & North Atlanta",
+        greeting: "Harry Norman Buckhead Leadership & Relocation Services",
+        body1: "Large luxury estates throughout Buckhead, Chastain Park, and Sandy Springs present complex mechanical systems—multiple HVAC zones, commercial subpanels, elaborate roof valleys, and extensive sewer laterals—that easily overwhelm a single inspector.",
+        body2: "Foresight Home Inspections deploys an executive two-inspector team led by Certified Master Inspector (CMI®) Christopher Boykin, conducting deep forensic audits with commercial FLIR thermal cameras and flat-rate $450 HD sewer scopes.",
+        callout: "We deliver white-glove, same-day interactive reports with zero disruption to high-net-worth buyers and would be honored to introduce our services to your top-producing luxury associates."
+      },
+      ara: {
+        to: "resources@atlantarealtors.com",
+        subject: "Resource Suggestion: 2026 Metro Atlanta Residential Defect Study for Buyer Due Diligence",
+        greeting: "Atlanta REALTORS® Association Resource Committee",
+        body1: "I was reviewing your buyer due diligence and vendor resource page and noticed that several third-party inspection references lead to outdated checklists or inactive domains.",
+        body2: "As an active Certified Master Inspector (CMI®) serving the greater Atlanta area, our dual-inspector teams recently published an empirical research study based on over 1,000 recent local inspections: <em>The Metro Atlanta Residential Defect Index (2026 Building Science & Due Diligence Report)</em>.",
+        callout: "It provides detailed empirical data on Georgia red clay foundation settlement dynamics, unpermitted double-taps in flipped homes, and clay sewer lateral failures across Fulton, DeKalb, Gwinnett, and Cobb counties."
+      },
+      inmanpark: {
+        to: "resources@inmanpark.org",
+        subject: "Resource for Historic Homeowners: Inman Park 1920s Structural & Electrical Guide",
+        greeting: "Inman Park Historic Preservation & Resources Committee",
+        body1: "In evaluating 1920s Victorians, Craftsman bungalows, and modern BeltLine infill throughout Inman Park, our inspection teams routinely encounter distinct historic building science challenges.",
+        body2: "These include ungrounded knob-and-tube junction splices concealed beneath blown-in attic insulation, sagging heart-pine floor joists over unvented crawlspaces, and crushed original clay sewer laterals.",
+        callout: "We published a dedicated diagnostic guide specifically tailored for Inman Park historic home maintenance and pre-purchase due diligence to assist residents planning renovations or navigating historic purchases."
+      },
+      roughdraft: {
+        to: "news@roughdraftatlanta.com",
+        subject: "Story Pitch: The Hidden Electrical & Foundation Risks Inside North Metro Flipped Homes",
+        greeting: "Rough Draft Atlanta Real Estate & Business Editor",
+        body1: "With home prices pushing North Metro buyers into recently renovated properties across Sandy Springs, Dunwoody, and Brookhaven, buyers are paying record premiums for homes that look brand-new on the surface.",
+        body2: "However, behind the shiplap and quartz countertops, our inspection teams are discovering an alarming pattern: over 65% of fast-flipped homes exhibit unpermitted electrical panel double-taps, non-trapped plumbing vents, and fresh drylock paint applied over active foundation shears.",
+        callout: "Certified Master Inspector Christopher Boykin has compiled field data and thermal imaging case studies illustrating what North Metro buyers must verify before closing, and is available for commentary or interviews."
+      }
+    };
+
+    let currentTarget = 'kw';
+
+    function renderEmail(tKey) {
+      const data = targets[tKey];
+      document.getElementById('meta-to').innerText = data.to;
+      document.getElementById('meta-subject').innerText = data.subject;
+
+      const html = `
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08); border: 1px solid #E2E8F0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+          
+          <!-- Premium Brand Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); padding: 36px 40px 28px; text-align: center; border-bottom: 3px solid #D4AF37;">
+              <a href="https://www.fhinspectionsatl.com" target="_blank" style="text-decoration: none; display: inline-block;">
+                <img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" width="220" style="display: block; margin: 0 auto; max-width: 220px; height: auto;" />
+              </a>
+              <div style="margin-top: 14px;">
+                <span style="display: inline-block; background: rgba(212, 175, 55, 0.15); border: 1px solid #D4AF37; color: #D4AF37; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px;">
+                  ★ Certified Master Inspector® (CMI®) Led
+                </span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Primary Email Content -->
+          <tr>
+            <td style="padding: 40px 40px 30px;">
+
+              <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #0F172A;">
+                <strong>Hi ${data.greeting},</strong>
+              </p>
+
+              <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
+                ${data.body1}
+              </p>
+
+              <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.7; color: #334155;">
+                ${data.body2}
+              </p>
+
+              <!-- Value Proposition Cards Grid -->
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 28px;">
+                
+                <tr>
+                  <td style="padding: 16px 20px; background-color: #F8FAFC; border-left: 4px solid #D32F2F; border-radius: 0 8px 8px 0;">
+                    <strong style="color: #0F172A; font-size: 15px; display: block; margin-bottom: 4px;">
+                      👥 Two Certified Inspectors on Every Home
+                    </strong>
+                    <span style="color: #64748B; font-size: 13.5px; line-height: 1.5; display: block;">
+                      Double the technical oversight in half the time (90–120 minutes vs. 4 hours). Zero inspector fatigue, cross-audited attics/panels, and faster buyer walkthroughs.
+                    </span>
+                  </td>
+                </tr>
+
+                <tr><td height="12"></td></tr>
+
+                <tr>
+                  <td style="padding: 16px 20px; background-color: #F8FAFC; border-left: 4px solid #D4AF37; border-radius: 0 8px 8px 0;">
+                    <strong style="color: #0F172A; font-size: 15px; display: block; margin-bottom: 4px;">
+                      🛡️ $35,000 Complimentary Warranty Stack ($0 Deductible)
+                    </strong>
+                    <span style="color: #64748B; font-size: 13.5px; line-height: 1.5; display: block;">
+                      Every buyer receives 90-day mechanical &amp; structural protection, SewerGuard, MoldSafe, and Platinum roof leak protection at $0 extra cost.
+                    </span>
+                  </td>
+                </tr>
+
+                <tr><td height="12"></td></tr>
+
+                <tr>
+                  <td style="padding: 16px 20px; background-color: #F8FAFC; border-left: 4px solid #0F172A; border-radius: 0 8px 8px 0;">
+                    <strong style="color: #0F172A; font-size: 15px; display: block; margin-bottom: 4px;">
+                      ⚡ Free FLIR Thermal Scans &amp; 1-Click CRL™ Repair Amendments
+                    </strong>
+                    <span style="color: #64748B; font-size: 13.5px; line-height: 1.5; display: block;">
+                      High-resolution infrared scanning included on every audit. Same-day reports feature HomeGauge's Create Request List (CRL) for instant amendment drafting.
+                    </span>
+                  </td>
+                </tr>
+
+              </table>
+
+              <!-- Transparent Pricing Callout Box -->
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 30px; background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%); border: 1px dashed #CBD5E1; border-radius: 12px; padding: 18px 24px;">
+                <tr>
+                  <td>
+                    <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #D32F2F; margin-bottom: 8px;">
+                      Direct, Transparent Pricing (Zero Surprises)
+                    </div>
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 13.5px; color: #334155; line-height: 1.8;">
+                      <tr>
+                        <td>• <strong>Single-Family Homes</strong>: Starting from $345</td>
+                        <td>• <strong>Condominiums</strong>: Starting from $295</td>
+                      </tr>
+                      <tr>
+                        <td>• <strong>Sewer Scope (HD Video)</strong>: Strictly $450 flat</td>
+                        <td>• <strong>Continuous Radon Testing</strong>: Strictly $250</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin: 0 0 28px; font-size: 15px; line-height: 1.7; color: #334155;">
+                ${data.callout}
+              </p>
+
+              <!-- Call to Action Buttons -->
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 36px;">
+                <tr>
+                  <td align="center">
+                    <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td align="center" style="border-radius: 8px; background-color: #D32F2F;">
+                          <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" style="font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 28px; display: inline-block; border-radius: 8px;">
+                            📅 Book / Check Real-Time Availability
+                          </a>
+                        </td>
+                        <td width="16"></td>
+                        <td align="center" style="border-radius: 8px; border: 1px solid #CBD5E1; background-color: #FFFFFF;">
+                          <a href="https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector" target="_blank" style="font-size: 14px; font-weight: 600; color: #0F172A; text-decoration: none; padding: 13px 22px; display: inline-block; border-radius: 8px;">
+                            View Comparison Guide &rarr;
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <hr style="border: 0; border-top: 1px solid #E2E8F0; margin: 30px 0 28px;" />
+
+              <!-- Executive Signature Block -->
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="72" valign="top" style="padding-right: 18px;">
+                    <img src="https://www.fhinspectionsatl.com/images/Christopher_Boykin.jpg" alt="Christopher Boykin, CMI" width="70" height="70" style="border-radius: 50%; display: block; border: 2px solid #D4AF37; object-fit: cover;" />
+                  </td>
+                  <td valign="top">
+                    <div style="font-size: 17px; font-weight: 800; color: #0F172A; line-height: 1.2;">
+                      Christopher Boykin, CMI®
+                    </div>
+                    <div style="font-size: 13px; color: #D32F2F; font-weight: 700; margin-top: 3px; letter-spacing: 0.3px;">
+                      Certified Master Inspector® | Founder &amp; Lead Inspector
+                    </div>
+                    <div style="font-size: 13px; color: #475569; margin-top: 4px; line-height: 1.6;">
+                      <strong>Foresight Home Inspections, LLC</strong><br>
+                      Direct: <a href="tel:6784802110" style="color: #0F172A; text-decoration: none; font-weight: 600;">(678) 480-2110</a> &nbsp;|&nbsp; 
+                      Email: <a href="mailto:inspect@foresightcmi.com" style="color: #D32F2F; text-decoration: none;">inspect@foresightcmi.com</a><br>
+                      Web: <a href="https://www.fhinspectionsatl.com" style="color: #0F172A; text-decoration: none;">www.fhinspectionsatl.com</a> &nbsp;|&nbsp;
+                      <span style="color: #EAB308;">★★★★★</span> <strong style="color: #0F172A;">4.9 Rating</strong> (Verified Reviews)
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Trust & Credential Badges Row -->
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #F1F5F9;">
+                <tr>
+                  <td align="left" style="font-size: 11px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.8px;">
+                    InterNACHI Member #176873 &nbsp;•&nbsp; Master Inspector Certification Board &nbsp;•&nbsp; SUPRA® eKEY Holder
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #F8FAFC; padding: 24px 40px; border-top: 1px solid #E2E8F0; text-align: center; font-size: 12px; color: #94A3B8; line-height: 1.6;">
+              <p style="margin: 0 0 6px;">
+                Foresight Home Inspections, LLC • 1816 South Deshon Road, Lithonia, GA 30058
+              </p>
+              <p style="margin: 0; font-size: 11px;">
+                Serving a 50-mile radius across 20 Metro Atlanta counties. Available Mon–Sat 8AM–8PM, Sun by advance appointment only.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      `;
+
+      document.getElementById('email-render-target').innerHTML = html;
+    }
+
+    function loadTarget(tKey) {
+      currentTarget = tKey;
+      document.querySelectorAll('.pill').forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
+      renderEmail(tKey);
+    }
+
+    function copySubject() {
+      const subj = targets[currentTarget].subject;
+      navigator.clipboard.writeText(subj);
+      showToast("✓ Subject line copied: " + subj);
+    }
+
+    function copyRichHTML() {
+      const container = document.getElementById('email-render-target');
+      
+      // Use clipboard API with text/html for perfect paste into Gmail/Outlook
+      const blob = new Blob([container.innerHTML], { type: 'text/html' });
+      const plainBlob = new Blob([container.innerText], { type: 'text/plain' });
+      
+      const item = new ClipboardItem({
+        'text/html': blob,
+        'text/plain': plainBlob
+      });
+
+      navigator.clipboard.write([item]).then(() => {
+        showToast("✓ Formatted email copied! Open Gmail/Outlook and press Ctrl+V to paste.");
+      }).catch(err => {
+        // Fallback for older browsers
+        const range = document.createRange();
+        range.selectNode(container);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        showToast("✓ Formatted email copied to clipboard!");
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('status-toast');
+      toast.innerText = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3500);
+    }
+
+    // Initial render
+    renderEmail('kw');
+  </script>
+
+</body>
+</html>
