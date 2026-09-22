@@ -1471,11 +1471,30 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   boxShadow: '0 0 12px rgba(212, 175, 55, 0.4)'
                 }}
               >
-                <img 
-                  src={persona === 'chris' ? '/images/Christopher_Boykin.webp' : '/images/cmi_logo.webp'} 
-                  alt={persona === 'chris' ? 'Christopher Boykin, Certified Master Inspector' : 'Jordan Concierge'}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+                {persona === 'chris' ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    poster="/images/Christopher_Boykin.webp"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
+                  >
+                    <source src="/videos/chris-avatar-loop.mp4" type="video/mp4" />
+                    <img 
+                      src="/images/Christopher_Boykin.webp" 
+                      alt="Christopher Boykin, Certified Master Inspector"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </video>
+                ) : (
+                  <img 
+                    src="/images/cmi_logo.webp" 
+                    alt="Jordan Concierge"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                )}
               </div>
               <span style={{
                 position: 'absolute',
@@ -1674,8 +1693,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               onClick={handleToggleOrInterrupt}
               aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? `Interrupt ${persona === 'chris' ? 'Chris' : 'Jordan'}` : `Tap to speak with ${persona === 'chris' ? 'Chris' : 'Jordan'}`}
               style={{
-                width: '104px',
-                height: '104px',
+                width: '116px',
+                height: '116px',
                 borderRadius: '50%',
                 border: callState === 'listening' 
                   ? '3px solid #10b981' 
@@ -1708,17 +1727,49 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               }}
               title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? `${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking... Tap to interrupt` : 'Tap to speak'}
             >
-              <img 
-                src={persona === 'chris' ? '/images/Christopher_Boykin.webp' : '/images/cmi_logo.webp'} 
-                alt={persona === 'chris' ? 'Christopher Boykin, Certified Master Inspector' : 'Jordan Concierge'}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  filter: callState === 'speaking' ? 'brightness(1.05)' : 'none'
-                }}
-              />
+              {persona === 'chris' ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster="/images/Christopher_Boykin.webp"
+                  aria-label="Christopher Boykin, Certified Master Inspector live video avatar"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    pointerEvents: 'none',
+                    filter: callState === 'speaking' ? 'brightness(1.08) contrast(1.04)' : 'brightness(0.96)'
+                  }}
+                >
+                  <source src="/videos/chris-avatar-loop.mp4" type="video/mp4" />
+                  <img 
+                    src="/images/Christopher_Boykin.webp" 
+                    alt="Christopher Boykin, Certified Master Inspector"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '50%',
+                      objectFit: 'cover'
+                    }}
+                  />
+                </video>
+              ) : (
+                <img 
+                  src="/images/cmi_logo.webp" 
+                  alt="Jordan Concierge"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    filter: callState === 'speaking' ? 'brightness(1.05)' : 'none'
+                  }}
+                />
+              )}
             </button>
 
             {/* Certified Master Inspector® Badge Overlay */}

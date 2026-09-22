@@ -329,16 +329,35 @@ export default function AskForesightWidget() {
               onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
             >
-              <img
-                src="/images/Christopher_Boykin.webp"
-                alt="Christopher Boykin, Certified Master Inspector"
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster="/images/Christopher_Boykin.webp"
+                aria-label="Christopher Boykin, Certified Master Inspector video avatar"
                 style={{
                   width: '100%',
                   height: '100%',
                   borderRadius: '50%',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  display: 'block',
+                  pointerEvents: 'none'
                 }}
-              />
+              >
+                <source src="/videos/chris-avatar-loop.mp4" type="video/mp4" />
+                <img
+                  src="/images/Christopher_Boykin.webp"
+                  alt="Christopher Boykin, Certified Master Inspector"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%',
+                    objectFit: 'cover'
+                  }}
+                />
+              </video>
               {/* Green Live indicator badge */}
               <span style={{
                 position: 'absolute',
@@ -434,11 +453,22 @@ export default function AskForesightWidget() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{ position: 'relative' }}>
-                <img 
-                  src="/images/Christopher_Boykin.jpg" 
-                  alt="Christopher Boykin" 
-                  style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover' }} 
-                />
+                <video 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster="/images/Christopher_Boykin.webp"
+                  style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover', display: 'block', pointerEvents: 'none' }} 
+                >
+                  <source src="/videos/chris-avatar-loop.mp4" type="video/mp4" />
+                  <img 
+                    src="/images/Christopher_Boykin.webp" 
+                    alt="Christopher Boykin" 
+                    style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover' }} 
+                  />
+                </video>
                 <div style={{ position: 'absolute', bottom: 0, right: 0, width: '10px', height: '10px', background: '#10b981', border: '1.5px solid #111827', borderRadius: '50%' }}></div>
               </div>
               <div>
