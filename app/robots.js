@@ -30,6 +30,19 @@ export default function robots() {
         userAgent: 'Applebot-Extended',
         allow: '/',
       },
+      {
+        userAgent: [
+          'AhrefsBot',
+          'SemrushBot',
+          'DotBot',
+          'MJ12bot',
+          'PetalBot',
+          'Bytespider',
+          'Amazonbot',
+          'DataForSeoBot'
+        ],
+        disallow: '/',
+      },
     ],
     sitemap: 'https://www.fhinspectionsatl.com/sitemap.xml',
   }
