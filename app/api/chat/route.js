@@ -38,7 +38,7 @@ export async function POST(request) {
 
     // If client requested streaming, stream plain text tokens with sub-second TTFT
     if (stream) {
-      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
 
       const geminiRes = await fetch(endpoint, {
         method: 'POST',
@@ -50,10 +50,7 @@ export async function POST(request) {
           },
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 350,
-            thinkingConfig: {
-              thinkingBudget: 0
-            }
+            maxOutputTokens: 350
           }
         }),
       });
@@ -115,7 +112,7 @@ export async function POST(request) {
     }
 
     // Standard fast non-streaming response (with thinkingBudget: 0 for ~1s latency)
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
 
     const response = await fetch(endpoint, {
       method: 'POST',
@@ -129,10 +126,7 @@ export async function POST(request) {
         },
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 350,
-          thinkingConfig: {
-            thinkingBudget: 0
-          }
+          maxOutputTokens: 350
         }
       }),
     });
