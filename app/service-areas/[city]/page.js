@@ -191,13 +191,6 @@ export default async function CityPage({ params }) {
         }
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "48",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": [".city-bluf-summary", ".county-bluf-summary", ".bluf-faq-answer"]
@@ -238,6 +231,12 @@ export default async function CityPage({ params }) {
     "@id": `https://www.fhinspectionsatl.com/service-areas/${slug}#package`,
     "name": `Two-Inspector Home Inspection Package - ${cityName}, GA`,
     "description": `Two certified inspectors on every job led by a Certified Master Inspector®. Includes complimentary FLIR infrared thermal imaging, 4K roof drone scans, and $10,000 warranty in ${cityName}, GA.`,
+    "image": [
+      `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
+      `${SITE_URL}/images/luxury-home.jpg`,
+      `${SITE_URL}/images/Logopng.png`
+    ],
+    "sku": `FHI-INSPECT-${slug.toUpperCase()}`,
     "brand": {
       "@type": "Brand",
       "name": "Foresight Home Inspections"
@@ -256,7 +255,16 @@ export default async function CityPage({ params }) {
       "reviewCount": "48",
       "bestRating": "5",
       "worstRating": "1"
-    }
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marcus Vance" },
+        "datePublished": "2026-06-15",
+        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
   };
 
   // ── JSON-LD: LocalBusiness from cities.json ──────────────────────────

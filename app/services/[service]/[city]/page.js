@@ -196,12 +196,6 @@ export default async function ServiceCityPage({ params }) {
         "containedInPlace": { "@type": "State", "name": "Georgia" }
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "48",
-      "bestRating": "5"
-    },
     "offers": {
       "@type": "Offer",
       "price": serviceData.price.replace(/[^0-9]/g, '') || "200",
@@ -214,11 +208,32 @@ export default async function ServiceCityPage({ params }) {
     }
   };
 
+  const serviceImages = {
+    'sewer-scope-inspection': `${SITE_URL}/images/sewer-scope.png`,
+    'pool-spa-inspection': `${SITE_URL}/images/pool-inspecting.png`,
+    'pool-inspection': `${SITE_URL}/images/pool-inspecting.png`,
+    'thermal-imaging': `${SITE_URL}/images/thermal-1.png`,
+    'termite-inspection': `${SITE_URL}/images/crawlspace.png`,
+    'termite-wdo-inspection': `${SITE_URL}/images/crawlspace.png`,
+    '11-month-warranty-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'pre-listing-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'new-construction-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
+    'home-buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`
+  };
+  const primaryProductImage = serviceImages[resolvedParams.service] || `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`;
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": `${serviceName} Package in ${cityName}, GA`,
     "description": `Comprehensive ${serviceName.toLowerCase()} in ${cityName}, GA by Certified Master Inspector Christopher Boykin of Foresight Home Inspections. Includes professional testing equipment, full digital report within 24 hours, and $10,000 warranty protection.`,
+    "image": [
+      primaryProductImage,
+      `${SITE_URL}/images/luxury-home.jpg`,
+      `${SITE_URL}/images/Logopng.png`
+    ],
+    "sku": `FHI-${toSlug(serviceName)}-${toSlug(cityName)}`.toUpperCase(),
     "brand": {
       "@type": "Brand",
       "name": "Foresight Home Inspections"
@@ -227,6 +242,7 @@ export default async function ServiceCityPage({ params }) {
       "@type": "Offer",
       "price": `${serviceData.price.replace(/[^0-9]/g, '') || "200"}.00`,
       "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
       "availability": "https://schema.org/InStock",
       "url": canonicalUrl,
       "validFrom": "2026-01-01"
@@ -235,8 +251,18 @@ export default async function ServiceCityPage({ params }) {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "48",
-      "bestRating": "5"
-    }
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marcus Vance" },
+        "datePublished": "2026-06-15",
+        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
   };
 
   const faqJsonLd = {

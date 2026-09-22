@@ -107,6 +107,11 @@ export default async function CountyPage({ params }) {
     "@type": "HomeAndConstructionBusiness",
     "name": "Foresight Home Inspections, LLC",
     "url": canonicalUrl,
+    "image": [
+      "https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg",
+      "https://www.fhinspectionsatl.com/images/luxury-home.jpg",
+      "https://www.fhinspectionsatl.com/images/Logopng.png"
+    ],
     "telephone": "+1-678-480-2110",
     "email": "inspect@foresightcmi.com",
     "priceRange": "$$$",

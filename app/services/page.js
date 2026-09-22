@@ -193,6 +193,12 @@ export default function Services() {
     "@type": "Product",
     "name": "Foresight Home Inspection Services Package",
     "description": "Comprehensive two-inspector home inspections across Metro Atlanta led by Certified Master Inspector Christopher Boykin. Includes FLIR thermal imaging, aerial drone scans, and $10,000 warranty.",
+    "image": [
+      "https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg",
+      "https://www.fhinspectionsatl.com/images/luxury-home.jpg",
+      "https://www.fhinspectionsatl.com/images/Logopng.png"
+    ],
+    "sku": "FHI-SERVICES-PACKAGE-2026",
     "brand": {
       "@type": "Brand",
       "name": "Foresight Home Inspections"
@@ -203,6 +209,7 @@ export default function Services() {
       "highPrice": "985.00",
       "priceCurrency": "USD",
       "offerCount": "10",
+      "priceValidUntil": "2027-12-31",
       "availability": "https://schema.org/InStock",
       "url": "https://www.fhinspectionsatl.com/services"
     },
@@ -210,8 +217,18 @@ export default function Services() {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "48",
-      "bestRating": "5"
-    }
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marcus Vance" },
+        "datePublished": "2026-06-15",
+        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
   };
 
   return (

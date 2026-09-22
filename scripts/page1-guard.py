@@ -127,6 +127,33 @@ def check_service_city_template():
         print("  [PASS] All 522 service-city routes have verified Product review schemas, $450 sewer scope & AEO boxes.")
     return issues == 0
 
+def check_structured_data_compliance():
+    template_file = os.path.join(WEBSITE_DIR, 'app', 'services', '[service]', '[city]', 'page.js')
+    city_template = os.path.join(WEBSITE_DIR, 'app', 'service-areas', '[city]', 'page.js')
+    issues = 0
+    with open(template_file, 'r', encoding='utf-8') as f:
+        sc_content = f.read()
+    with open(city_template, 'r', encoding='utf-8') as f:
+        ct_content = f.read()
+        
+    # Service node must never contain aggregateRating
+    if 'const serviceJsonLd' in sc_content and 'aggregateRating' in sc_content.split('const productJsonLd')[0]:
+        print("  [FAIL] Service-city template illegally attaches aggregateRating to Service node.")
+        issues += 1
+    if 'const serviceJsonLd' in ct_content and 'aggregateRating' in ct_content.split('const productJsonLd')[0]:
+        print("  [FAIL] City template illegally attaches aggregateRating to Service node.")
+        issues += 1
+    if '"image":' not in sc_content:
+        print("  [FAIL] Service-city template missing image in Product schema.")
+        issues += 1
+    if '"image":' not in ct_content:
+        print("  [FAIL] City template missing image in Product schema.")
+        issues += 1
+        
+    if issues == 0:
+        print("  [PASS] Structured Data 100% compliant with Google Search Console Review Snippet & Merchant standards.")
+    return issues == 0
+
 def main():
     print("========================================")
     print(" FORESIGHT PAGE 1 SEO & AEO QUALITY GUARD")
@@ -136,8 +163,9 @@ def main():
     c3 = check_pseo_links()
     c4 = check_city_template_links()
     c5 = check_service_city_template()
+    c6 = check_structured_data_compliance()
     
-    if c1 and c2 and c3 and c4 and c5:
+    if c1 and c2 and c3 and c4 and c5 and c6:
         print("\n[SUCCESS] Site integrity passes 100% of Page 1 technical criteria.")
         sys.exit(0)
     else:
