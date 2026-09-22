@@ -1481,7 +1481,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     poster="/images/Christopher_Boykin.webp"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
                   >
-                    <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
+                    <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
                     <img 
                       src="/images/Christopher_Boykin.webp" 
                       alt="Christopher Boykin, Certified Master Inspector"
@@ -1745,7 +1745,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     filter: callState === 'speaking' ? 'brightness(1.08) contrast(1.04)' : 'brightness(0.96)'
                   }}
                 >
-                  <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
+                  <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
                   <img 
                     src="/images/Christopher_Boykin.webp" 
                     alt="Christopher Boykin, Certified Master Inspector"

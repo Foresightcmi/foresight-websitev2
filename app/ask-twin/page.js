@@ -115,12 +115,10 @@ export default function AskTwin() {
 
       const contentType = response.headers.get('content-type') || '';
       if (contentType.includes('text/plain') && response.body) {
-        setMessages(prev => [...prev, { role: 'ai', content: '' }]);
-        setIsTyping(false);
-
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let accumulated = '';
+        let isFirstChunk = true;
 
         while (true) {
           const { done, value } = await reader.read();
@@ -128,21 +126,24 @@ export default function AskTwin() {
           const chunk = decoder.decode(value, { stream: true });
           if (chunk) {
             accumulated += chunk;
-            setMessages(prev => {
-              const copy = [...prev];
-              copy[copy.length - 1] = { role: 'ai', content: accumulated.replace(/\*/g, '') };
-              return copy;
-            });
+            if (isFirstChunk) {
+              setIsTyping(false);
+              setMessages(prev => [...prev, { role: 'ai', content: accumulated.replace(/\*/g, '') }]);
+              isFirstChunk = false;
+            } else {
+              setMessages(prev => {
+                const copy = [...prev];
+                copy[copy.length - 1] = { role: 'ai', content: accumulated.replace(/\*/g, '') };
+                return copy;
+              });
+            }
           }
         }
 
-        if (!accumulated.trim()) {
+        if (isFirstChunk) {
+          setIsTyping(false);
           const aiResponseText = generateAIResponse(userMessage.content);
-          setMessages(prev => {
-            const copy = [...prev];
-            copy[copy.length - 1] = { role: 'ai', content: aiResponseText.replace(/\*/g, '') };
-            return copy;
-          });
+          setMessages(prev => [...prev, { role: 'ai', content: aiResponseText.replace(/\*/g, '') }]);
         }
       } else {
         const data = await response.json();

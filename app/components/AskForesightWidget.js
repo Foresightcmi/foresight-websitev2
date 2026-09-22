@@ -185,13 +185,10 @@ export default function AskForesightWidget() {
 
       const contentType = response.headers.get('content-type') || '';
       if (contentType.includes('text/plain') && response.body) {
-        // Prepare empty AI message slot to stream tokens directly into
-        setMessages(prev => [...prev, { role: 'ai', content: '' }]);
-        setIsTyping(false);
-
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let accumulated = '';
+        let isFirstChunk = true;
 
         while (true) {
           const { done, value } = await reader.read();
@@ -199,21 +196,25 @@ export default function AskForesightWidget() {
           const chunk = decoder.decode(value, { stream: true });
           if (chunk) {
             accumulated += chunk;
-            setMessages(prev => {
-              const copy = [...prev];
-              copy[copy.length - 1] = { role: 'ai', content: accumulated.replace(/\*/g, '') };
-              return copy;
-            });
+            if (isFirstChunk) {
+              setIsTyping(false);
+              setMessages(prev => [...prev, { role: 'ai', content: accumulated.replace(/\*/g, '') }]);
+              isFirstChunk = false;
+            } else {
+              setMessages(prev => {
+                const copy = [...prev];
+                copy[copy.length - 1] = { role: 'ai', content: accumulated.replace(/\*/g, '') };
+                return copy;
+              });
+            }
           }
         }
 
-        if (!accumulated.trim()) {
+        if (isFirstChunk) {
+          // If we got here and it's still the first chunk, the stream was empty
+          setIsTyping(false);
           const aiResponseText = generateAIResponse(userMessage.content);
-          setMessages(prev => {
-            const copy = [...prev];
-            copy[copy.length - 1] = { role: 'ai', content: aiResponseText.replace(/\*/g, '') };
-            return copy;
-          });
+          setMessages(prev => [...prev, { role: 'ai', content: aiResponseText.replace(/\*/g, '') }]);
         }
       } else {
         const data = await response.json();
@@ -378,7 +379,7 @@ export default function AskForesightWidget() {
                   pointerEvents: 'none'
                 }}
               >
-                <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
+                <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
                 <img
                   src="/images/Christopher_Boykin.webp"
                   alt="Christopher Boykin, Certified Master Inspector"
@@ -494,7 +495,7 @@ export default function AskForesightWidget() {
                   poster="/images/Christopher_Boykin.webp"
                   style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover', display: 'block', pointerEvents: 'none' }} 
                 >
-                  <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
+                  <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
                   <img 
                     src="/images/Christopher_Boykin.webp" 
                     alt="Christopher Boykin" 
