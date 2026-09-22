@@ -346,7 +346,7 @@ export default function AskForesightWidget() {
                   pointerEvents: 'none'
                 }}
               >
-                <source src="/videos/chris-avatar-loop.mp4" type="video/mp4" />
+                <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
                 <img
                   src="/images/Christopher_Boykin.webp"
                   alt="Christopher Boykin, Certified Master Inspector"
@@ -462,7 +462,7 @@ export default function AskForesightWidget() {
                   poster="/images/Christopher_Boykin.webp"
                   style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover', display: 'block', pointerEvents: 'none' }} 
                 >
-                  <source src="/videos/chris-avatar-loop.mp4" type="video/mp4" />
+                  <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
                   <img 
                     src="/images/Christopher_Boykin.webp" 
                     alt="Christopher Boykin" 
