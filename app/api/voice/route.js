@@ -92,14 +92,18 @@ async function persistBooking({ name, phone, email, address, preferredDate, addo
 async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural') {
   try {
     const { EdgeTTS } = await import('edge-tts-universal');
-    const cleanText = (text || '')
+    const rawClean = (text || '')
       .replace(/[*#_~`\[\]()<>]/g, ' ')
       .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
       .replace(/\$([0-9,]+)/g, '$1 dollars')
       .replace(/\s+/g, ' ')
       .trim();
 
-    if (!cleanText) return null;
+    if (!rawClean) return null;
+
+    // Cap voice synthesis to the first 2 sentences for sub-second synthesis latency
+    const sentences = rawClean.match(/[^.!?]+[.!?]+(\s+|$)/g) || [rawClean];
+    const cleanText = sentences.slice(0, 2).join(' ').trim() || rawClean;
 
     const tts = new EdgeTTS(cleanText, voice, {
       rate: '-3%',
@@ -139,18 +143,20 @@ function extractPhoneNumber(rawText) {
   return null;
 }
 
-// Dynamic LLM Brain Generation via Google Gemini (Real-Time Cognitive Listening)
+// Dynamic LLM Brain Generation via Google Gemini (Real-Time Cognitive Listening with thinkingBudget: 0)
 async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, persona = 'jordan') {
   if (!apiKey) return null;
 
-  const recentMessages = (messages || []).slice(-10);
+  const recentMessages = (messages || []).slice(-6);
   const contents = recentMessages.map(msg => ({
     role: msg.role === 'user' ? 'user' : 'model',
     parts: [{ text: msg.content }]
   }));
 
-  const systemInstructionText = persona === 'chris' ? CHRIS_SYSTEM_INSTRUCTION : JORDAN_SYSTEM_INSTRUCTION;
-  const models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
+  const basePrompt = persona === 'chris' ? CHRIS_SYSTEM_INSTRUCTION : JORDAN_SYSTEM_INSTRUCTION;
+  const spokenConstraint = "\n\nCRITICAL CONVERSATIONAL CONSTRAINT: You are speaking aloud over a voice call. Keep your answer direct, authoritative, and concise (1 to 2 short sentences max, under 35 words). Never use lists, bullet points, asterisks, or markdown.";
+
+  const models = ['gemini-2.5-flash', 'gemini-2.0-flash'];
   for (const model of models) {
     try {
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
@@ -158,10 +164,13 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents,
-          systemInstruction: { parts: [{ text: systemInstructionText }] },
+          systemInstruction: { parts: [{ text: basePrompt + spokenConstraint }] },
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 1000
+            maxOutputTokens: 120,
+            thinkingConfig: {
+              thinkingBudget: 0
+            }
           }
         })
       });
@@ -169,7 +178,7 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
         const data = await res.json();
         const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
         if (reply && reply.trim()) {
-          return reply.replace(/[*#_~]/g, '').trim();
+          return reply.replace(/[*#_~`]/g, '').trim();
         }
       }
     } catch (err) {
@@ -661,7 +670,31 @@ export async function POST(request) {
       });
     }
 
-    // 4. If Gemini Brain key is available, run real-time cognitive reasoning
+    // 4. Fast-Path CMI Dialogue Engine (0ms to 250ms latency for all standard domain queries)
+    const turnResult = generateChrisDialogueTurn(messages, lastUserMessage);
+
+    // 4a. If pre-recorded studio audio exists, return INSTANTLY (0ms synthesis!)
+    if (turnResult.preAudio && persona === 'chris') {
+      return NextResponse.json({
+        response: turnResult.text,
+        audio: turnResult.preAudio,
+        action: turnResult.action || 'message'
+      });
+    }
+
+    // 4b. If this matched a specific domain rule (not generic fallback), synthesize and return immediately
+    const isGenericFallback = turnResult.text.startsWith("Whether it is evaluating structural stability");
+    if (!isGenericFallback && persona === 'chris') {
+      const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
+      const audio = await synthesizeHumanVoice(cleanReply, voiceName);
+      return NextResponse.json({
+        response: cleanReply,
+        audio,
+        action: turnResult.action || 'message'
+      });
+    }
+
+    // 5. If query is novel/unmatched, call real-time Gemini Brain with thinkingBudget: 0
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey) {
       try {
@@ -675,23 +708,12 @@ export async function POST(request) {
           });
         }
       } catch (geminiErr) {
-        console.warn('[VOICE] Gemini brain error, using rich dialogue engine:', geminiErr.message);
+        console.warn('[VOICE] Gemini brain error, using rich dialogue engine fallback:', geminiErr.message);
       }
     }
 
-    // 5. Intelligent Context-Aware Dialogue Engine (Fallback if upstream API is depleted or offline)
-    const turnResult = generateChrisDialogueTurn(messages, lastUserMessage);
-
-    if (turnResult.preAudio && persona === 'chris') {
-      return NextResponse.json({
-        response: turnResult.text,
-        audio: turnResult.preAudio,
-        action: turnResult.action || 'message'
-      });
-    }
-
-    // Synthesize response with selected neural voice
-    const cleanReply = turnResult.text.replace(/\*/g, '').trim();
+    // 6. Intelligent Fallback
+    const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
     const audio = await synthesizeHumanVoice(cleanReply, voiceName);
 
     return NextResponse.json({

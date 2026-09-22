@@ -178,25 +178,57 @@ export default function AskForesightWidget() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ messages: updatedMessages }),
+        body: JSON.stringify({ messages: updatedMessages, stream: true }),
       });
 
       if (!response.ok) throw new Error(`API returned status ${response.status}`);
 
-      const data = await response.json();
-      if (data.response) {
-        setMessages(prev => [...prev, { role: 'ai', content: data.response }]);
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('text/plain') && response.body) {
+        // Prepare empty AI message slot to stream tokens directly into
+        setMessages(prev => [...prev, { role: 'ai', content: '' }]);
         setIsTyping(false);
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let accumulated = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value, { stream: true });
+          if (chunk) {
+            accumulated += chunk;
+            setMessages(prev => {
+              const copy = [...prev];
+              copy[copy.length - 1] = { role: 'ai', content: accumulated.replace(/\*/g, '') };
+              return copy;
+            });
+          }
+        }
+
+        if (!accumulated.trim()) {
+          const aiResponseText = generateAIResponse(userMessage.content);
+          setMessages(prev => {
+            const copy = [...prev];
+            copy[copy.length - 1] = { role: 'ai', content: aiResponseText.replace(/\*/g, '') };
+            return copy;
+          });
+        }
       } else {
-        throw new Error('No response field in API data');
+        const data = await response.json();
+        if (data.response) {
+          setMessages(prev => [...prev, { role: 'ai', content: data.response.replace(/\*/g, '') }]);
+          setIsTyping(false);
+        } else {
+          throw new Error('No response field in API data');
+        }
       }
     } catch (error) {
       console.warn('Gemini chat API failed, using fallback database. Error:', error);
-      setTimeout(() => {
-        const aiResponseText = generateAIResponse(userMessage.content);
-        setMessages(prev => [...prev, { role: 'ai', content: aiResponseText }]);
-        setIsTyping(false);
-      }, 800);
+      const aiResponseText = generateAIResponse(userMessage.content);
+      setMessages(prev => [...prev, { role: 'ai', content: aiResponseText.replace(/\*/g, '') }]);
+      setIsTyping(false);
     }
   };
 

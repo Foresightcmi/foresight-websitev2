@@ -106,32 +106,60 @@ export default function AskTwin() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ messages: updatedMessages }),
+        body: JSON.stringify({ messages: updatedMessages, stream: true }),
       });
 
       if (!response.ok) {
         throw new Error(`API returned status ${response.status}`);
       }
 
-      const data = await response.json();
-      if (data.response) {
-        // Strip any raw asterisks (*) from the AI response to keep plain text perfectly clean in the pre-wrap container
-        const sanitizedContent = data.response.replace(/\*/g, '');
-        setMessages(prev => [...prev, { role: 'ai', content: sanitizedContent }]);
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('text/plain') && response.body) {
+        setMessages(prev => [...prev, { role: 'ai', content: '' }]);
         setIsTyping(false);
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let accumulated = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value, { stream: true });
+          if (chunk) {
+            accumulated += chunk;
+            setMessages(prev => {
+              const copy = [...prev];
+              copy[copy.length - 1] = { role: 'ai', content: accumulated.replace(/\*/g, '') };
+              return copy;
+            });
+          }
+        }
+
+        if (!accumulated.trim()) {
+          const aiResponseText = generateAIResponse(userMessage.content);
+          setMessages(prev => {
+            const copy = [...prev];
+            copy[copy.length - 1] = { role: 'ai', content: aiResponseText.replace(/\*/g, '') };
+            return copy;
+          });
+        }
       } else {
-        throw new Error('No response field in API data');
+        const data = await response.json();
+        if (data.response) {
+          const sanitizedContent = data.response.replace(/\*/g, '');
+          setMessages(prev => [...prev, { role: 'ai', content: sanitizedContent }]);
+          setIsTyping(false);
+        } else {
+          throw new Error('No response field in API data');
+        }
       }
     } catch (error) {
       console.warn('Foresight AI chat API call failed. Falling back to local database. Error:', error);
-      // Simulate natural thinking delay for fallback
-      setTimeout(() => {
-        const aiResponseText = generateAIResponse(userMessage.content);
-        // Strip any raw asterisks (*) from the fallback response to keep plain text perfectly clean
-        const sanitizedFallback = aiResponseText.replace(/\*/g, '');
-        setMessages(prev => [...prev, { role: 'ai', content: sanitizedFallback }]);
-        setIsTyping(false);
-      }, 1000);
+      const aiResponseText = generateAIResponse(userMessage.content);
+      const sanitizedFallback = aiResponseText.replace(/\*/g, '');
+      setMessages(prev => [...prev, { role: 'ai', content: sanitizedFallback }]);
+      setIsTyping(false);
     }
   };
 
