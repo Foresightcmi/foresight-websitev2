@@ -128,6 +128,7 @@ function WidgetLeadForm({ onSubmitted }) {
 export default function AskForesightWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVoiceOpen, setIsVoiceOpen] = useState(false);
+  const [isBalloonDismissed, setIsBalloonDismissed] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: 'ai',
@@ -207,7 +208,7 @@ export default function AskForesightWidget() {
 
   return (
     <>
-      {/* Floating Action Button Group */}
+      {/* Floating Action Button Group (CueVue-style AI LiveRep Avatar Bubble + Speech Balloon + Chat) */}
       {!isOpen && !isVoiceOpen && (
         <div 
           className="ask-foresight-launcher-group"
@@ -217,46 +218,152 @@ export default function AskForesightWidget() {
             bottom: '24px',
             right: '24px',
             display: 'flex',
-            gap: '10px',
+            gap: '12px',
             alignItems: 'center'
           }}
         >
-          {/* Primary Voice Agent Launcher */}
-          <button
-            onClick={() => setIsVoiceOpen(true)}
-            aria-label="Talk Live to Christopher Boykin Certified Master Inspector"
-            className="ask-foresight-voice-launcher"
-            style={{
-              background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
-              color: '#0F172A',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '9999px',
-              padding: '0.85rem 1.4rem',
-              minHeight: '48px',
-              fontSize: '0.92rem',
-              fontWeight: 800,
-              cursor: 'pointer',
-              boxShadow: '0 10px 25px -5px rgba(212, 175, 55, 0.5), 0 0 0 1px rgba(255,255,255,0.2)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontFamily: "'Outfit', sans-serif",
-              letterSpacing: '0.02em',
-              transition: 'transform 0.2s',
-              animation: 'pulse-glow-gold 3s infinite',
-              willChange: 'transform, opacity'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-3px) scale(1.03)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0) scale(1)';
-            }}
-          >
-            <span style={{ fontSize: '1.2rem' }}>🎙️</span>
-            <span className="launcher-text-full">Talk Live (Voice)</span>
-            <span className="launcher-text-short" style={{ display: 'none' }}>Talk Live</span>
-          </button>
+          {/* Animated Speech Balloon Invitation */}
+          {!isBalloonDismissed && (
+            <div 
+              className="liverep-speech-balloon"
+              onClick={() => setIsVoiceOpen(true)}
+              style={{
+                position: 'absolute',
+                bottom: '84px',
+                right: '0',
+                background: 'linear-gradient(135deg, rgba(20, 30, 48, 0.98) 0%, rgba(10, 17, 30, 0.98) 100%)',
+                border: '1px solid rgba(212, 175, 55, 0.45)',
+                borderRadius: '16px',
+                padding: '10px 14px',
+                width: '270px',
+                boxShadow: '0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15)',
+                color: '#ffffff',
+                zIndex: 10000,
+                cursor: 'pointer',
+                animation: 'balloonFloat 3s ease-in-out infinite alternate',
+                transition: 'transform 0.2s'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '6px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ fontSize: '0.9rem' }}>👋</span>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#D4AF37', fontFamily: "'Outfit', sans-serif" }}>
+                    Christopher Boykin (CMI®)
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsBalloonDismissed(true);
+                  }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: '#94a3b8',
+                    cursor: 'pointer',
+                    fontSize: '0.75rem',
+                    padding: '0 2px'
+                  }}
+                  aria-label="Dismiss message"
+                >
+                  ✕
+                </button>
+              </div>
+              <p style={{ margin: '4px 0 0 0', fontSize: '0.76rem', color: '#e2e8f0', lineHeight: 1.4 }}>
+                Hi! Tap to speak with me live. I can answer building science questions &amp; auto-calculate your instant quote.
+              </p>
+              <div style={{
+                marginTop: '6px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                background: 'rgba(16, 185, 129, 0.15)',
+                color: '#34d399',
+                padding: '2px 8px',
+                borderRadius: '12px',
+                fontSize: '0.68rem',
+                fontWeight: 700
+              }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
+                Tap to talk live (Hands-Free)
+              </div>
+              {/* Balloon tail pointer */}
+              <div style={{
+                position: 'absolute',
+                bottom: '-7px',
+                right: '30px',
+                width: '12px',
+                height: '12px',
+                background: '#0a111e',
+                borderRight: '1px solid rgba(212, 175, 55, 0.45)',
+                borderBottom: '1px solid rgba(212, 175, 55, 0.45)',
+                transform: 'rotate(45deg)'
+              }} />
+            </div>
+          )}
+
+          {/* Primary LiveRep Circular Avatar Launcher */}
+          <div style={{ position: 'relative' }}>
+            <button
+              onClick={() => setIsVoiceOpen(true)}
+              aria-label="Talk Live to Christopher Boykin Certified Master Inspector"
+              className="ask-foresight-voice-launcher"
+              style={{
+                width: '66px',
+                height: '66px',
+                borderRadius: '50%',
+                padding: '3px',
+                background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
+                border: '2px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.5)',
+                cursor: 'pointer',
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                animation: 'pulseAvatarRing 2.5s infinite',
+                transition: 'transform 0.2s',
+                outline: 'none'
+              }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+            >
+              <img
+                src="/images/Christopher_Boykin.webp"
+                alt="Christopher Boykin, Certified Master Inspector"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                  objectFit: 'cover'
+                }}
+              />
+              {/* Green Live indicator badge */}
+              <span style={{
+                position: 'absolute',
+                bottom: '-3px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                background: '#10b981',
+                color: '#0F172A',
+                fontSize: '0.58rem',
+                fontWeight: 800,
+                padding: '1px 5px',
+                borderRadius: '8px',
+                letterSpacing: '0.04em',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.4)',
+                whiteSpace: 'nowrap',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '3px'
+              }}>
+                <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff', animation: 'blink 1.2s infinite' }} />
+                LIVE CMI®
+              </span>
+            </button>
+          </div>
 
           {/* Secondary Chat Launcher */}
           <button 
@@ -268,28 +375,27 @@ export default function AskForesightWidget() {
               color: 'white',
               border: 'none',
               borderRadius: '9999px',
-              padding: '0.85rem 1.3rem',
-              minHeight: '48px',
-              fontSize: '0.92rem',
+              padding: '0.65rem 1.1rem',
+              minHeight: '44px',
+              fontSize: '0.88rem',
               fontWeight: 700,
               cursor: 'pointer',
-              boxShadow: '0 10px 25px -5px rgba(211, 47, 47, 0.4), 0 0 0 1px rgba(255,255,255,0.1)',
+              boxShadow: '0 8px 20px -4px rgba(211, 47, 47, 0.4), 0 0 0 1px rgba(255,255,255,0.1)',
               display: 'flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '6px',
               fontFamily: "'Outfit', sans-serif",
               letterSpacing: '0.02em',
-              transition: 'transform 0.2s',
-              willChange: 'transform, opacity'
+              transition: 'transform 0.2s'
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
+              e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
             }}
             onMouseLeave={e => {
               e.currentTarget.style.transform = 'translateY(0) scale(1)';
             }}
           >
-            <span style={{ fontSize: '1.2rem' }}>💬</span>
+            <span style={{ fontSize: '1.1rem' }}>💬</span>
             <span className="launcher-chat-text">Chat</span>
           </button>
         </div>
@@ -576,6 +682,19 @@ export default function AskForesightWidget() {
           0%, 80%, 100% { transform: scale(0); }
           40% { transform: scale(1); }
         }
+        @keyframes balloonFloat {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-6px); }
+        }
+        @keyframes pulseAvatarRing {
+          0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7), 0 10px 30px rgba(0, 0, 0, 0.5); }
+          70% { box-shadow: 0 0 0 14px rgba(16, 185, 129, 0), 0 10px 30px rgba(0, 0, 0, 0.5); }
+          100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0), 0 10px 30px rgba(0, 0, 0, 0.5); }
+        }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.3; }
+        }
         .ask-foresight-launcher-group {
           bottom: 24px;
           right: 24px;
@@ -583,35 +702,28 @@ export default function AskForesightWidget() {
         @media (max-width: 768px) {
           .ask-foresight-launcher-group {
             bottom: 68px !important;
-            right: 10px !important;
+            right: 12px !important;
             flex-direction: row !important;
             align-items: center !important;
-            gap: 6px !important;
+            gap: 8px !important;
           }
           .ask-foresight-voice-launcher {
-            padding: 0.45rem 0.85rem !important;
-            font-size: 0.8rem !important;
-            min-height: 38px !important;
-            border-radius: 9999px !important;
-            box-shadow: 0 4px 15px -3px rgba(212, 175, 55, 0.4) !important;
+            width: 52px !important;
+            height: 52px !important;
+            padding: 2px !important;
           }
-          .ask-foresight-voice-launcher .launcher-text-full {
-            display: none !important;
-          }
-          .ask-foresight-voice-launcher .launcher-text-short {
-            display: inline !important;
+          .liverep-speech-balloon {
+            width: 230px !important;
+            bottom: 68px !important;
+            right: 0 !important;
+            padding: 8px 10px !important;
           }
           .ask-foresight-launcher {
-            padding: 0 !important;
-            width: 38px !important;
-            height: 38px !important;
+            padding: 0 10px !important;
             min-height: 38px !important;
-            border-radius: 50% !important;
-            justify-content: center !important;
-            box-shadow: 0 4px 15px -3px rgba(211, 47, 47, 0.4) !important;
-          }
-          .ask-foresight-launcher .launcher-chat-text {
-            display: none !important;
+            height: 38px !important;
+            border-radius: 9999px !important;
+            font-size: 0.78rem !important;
           }
           .glass-chat-widget {
             width: calc(100vw - 20px) !important;

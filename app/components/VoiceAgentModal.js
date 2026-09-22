@@ -17,8 +17,30 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
   const [liveWsConnected, setLiveWsConnected] = useState(false);
-  const [persona, setPersona] = useState('jordan'); // 'jordan' (Sales Concierge) | 'chris' (Master Inspector)
-  const personaRef = useRef('jordan');
+  const [persona, setPersona] = useState('chris'); // 'chris' (Master Inspector) | 'jordan' (Sales Concierge)
+  const personaRef = useRef('chris');
+
+  const [liveLeadForm, setLiveLeadForm] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    address: '',
+    sqft: '',
+    propertyType: 'single-family',
+    foundation: 'slab',
+    addons: [],
+    preferredDate: '',
+    estimatedTotal: null
+  });
+  const liveLeadFormRef = useRef(liveLeadForm);
+  const [activeHighlightField, setActiveHighlightField] = useState(null);
+  const [leadSubmitStatus, setLeadSubmitStatus] = useState('idle'); // 'idle' | 'submitting' | 'submitted' | 'error'
+  const [formSubmissionMessage, setFormSubmissionMessage] = useState('');
+  const [isFormExpanded, setIsFormExpanded] = useState(true);
+
+  useEffect(() => {
+    liveLeadFormRef.current = liveLeadForm;
+  }, [liveLeadForm]);
 
   const [isHandsFree, setIsHandsFree] = useState(true);
   const isHandsFreeRef = useRef(true);
@@ -477,13 +499,225 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [haltSpeech]);
 
+  // Autonomous Lead Submission Engine (1-click or voice-triggered)
+  const handleAutoSubmitLead = useCallback(async (customFormData = null) => {
+    const data = customFormData || liveLeadFormRef.current;
+    if (!data.name && !data.phone && !data.email && !data.address) {
+      console.log('Skipping lead submit: no contact or property info available yet.');
+      return;
+    }
+
+    setLeadSubmitStatus('submitting');
+    try {
+      const res = await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name || 'Website Live Voice Client',
+          phone: data.phone || '',
+          email: data.email || '',
+          address: data.address || '',
+          sqft: data.sqft ? parseInt(data.sqft, 10) : null,
+          propertyType: data.propertyType || 'single-family',
+          serviceType: 'Full Comprehensive Inspection (2 Inspectors)',
+          addons: data.addons || [],
+          estimatedTotal: data.estimatedTotal || (calculatedQuote ? calculatedQuote.total : 345),
+          preferredDate: data.preferredDate || 'Upcoming Window',
+          message: `Captured live by Foresight AI LiveRep (${personaRef.current === 'chris' ? 'Chris Boykin CMI' : 'Jordan Concierge'})`,
+          source: 'AI LiveRep Voice Widget'
+        })
+      });
+
+      const json = await res.json();
+      if (json.success) {
+        setLeadSubmitStatus('submitted');
+        setFormSubmissionMessage(json.message || 'Inspection request received! Christopher Boykin will reach out within 20 minutes.');
+        
+        // Notify live AI model turns
+        if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
+          try {
+            liveWsRef.current.send(JSON.stringify({
+              realtimeInput: {
+                text: `[SYSTEM NOTIFICATION: The user just submitted their inspection request via the live request card on screen! Acknowledge enthusiastically that Christopher Boykin's office has received it and will follow up within 20 minutes to solidify agreements and confirm their appointment date.]`
+              }
+            }));
+          } catch (_) {}
+        } else {
+          speakTextFallback("Your inspection request has been solidified! Christopher's office will reach out within 20 minutes to confirm agreements.");
+        }
+      } else {
+        setLeadSubmitStatus('error');
+        setFormSubmissionMessage(json.message || 'Could not submit. Call 678-480-2110 directly.');
+      }
+    } catch (err) {
+      console.error('Lead submit error:', err);
+      setLeadSubmitStatus('error');
+      setFormSubmissionMessage('Network issue. Call Christopher at 678-480-2110 to lock in your date.');
+    }
+  }, [calculatedQuote, speakTextFallback]);
+
+  // Real-time NLP Entity Extractor for autonomous form auto-filling
+  const extractEntitiesFromText = useCallback((text) => {
+    if (!text || typeof text !== 'string') return;
+    const clean = text.trim();
+    if (clean.length < 3) return;
+
+    let changed = false;
+    let detectedField = null;
+
+    setLiveLeadForm(prev => {
+      const next = { ...prev };
+
+      // 1. Phone number extraction
+      const phoneMatch = clean.match(/(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})/);
+      if (phoneMatch && !next.phone) {
+        const digits = phoneMatch[0].replace(/\D/g, '');
+        if (digits.length >= 10) {
+          const formatted = digits.length === 11 && digits.startsWith('1')
+            ? `(${digits.slice(1,4)}) ${digits.slice(4,7)}-${digits.slice(7)}`
+            : `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6,10)}`;
+          next.phone = formatted;
+          changed = true;
+          detectedField = 'phone';
+        }
+      }
+
+      // 2. Email extraction
+      const emailMatch = clean.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
+      if (emailMatch && !next.email) {
+        next.email = emailMatch[1].toLowerCase();
+        changed = true;
+        detectedField = 'email';
+      }
+
+      // 3. Square footage extraction
+      const sqftMatch = clean.match(/(\b[1-9]\d{2,4}\b)\s*(?:sq|square|sf|sqft|ft)/i) || clean.match(/(?:about|around|is|it's|its)?\s*(\b[1-9]\d{2,4}\b)\s*square\s*feet/i);
+      if (sqftMatch) {
+        const parsedSqft = parseInt(sqftMatch[1].replace(/,/g, ''), 10);
+        if (parsedSqft >= 400 && parsedSqft <= 25000 && next.sqft !== parsedSqft) {
+          next.sqft = parsedSqft;
+          changed = true;
+          detectedField = 'sqft';
+          const q = calculateQuoteDetails({
+            sqft: parsedSqft,
+            propertyType: next.propertyType || 'single-family',
+            foundation: next.foundation || 'slab',
+            ageTier: 'under-25',
+            addons: (next.addons || []).reduce((acc, a) => { acc[a] = true; return acc; }, {})
+          });
+          next.estimatedTotal = q.total;
+          setCalculatedQuote(q);
+        }
+      }
+
+      // 4. Address or Metro Atlanta city
+      const atlCities = [
+        'Alpharetta', 'Atlanta', 'Marietta', 'Roswell', 'Decatur', 'Sandy Springs',
+        'Johns Creek', 'Milton', 'Cumming', 'Duluth', 'Lawrenceville', 'Suwanee',
+        'Smyrna', 'Kennesaw', 'Woodstock', 'Canton', 'Dunwoody', 'Brookhaven',
+        'Buford', 'Peachtree City', 'Fayetteville', 'Newnan', 'Norcross', 'Tucker',
+        'Chamblee', 'Doraville', 'Lilburn', 'Snellville', 'Acworth', 'Cartersville',
+        'Stone Mountain', 'Conyers', 'Covington', 'McDonough', 'Stockbridge'
+      ];
+      const addressMatch = clean.match(/\b\d{1,5}\s+[A-Za-z0-9\s.,]+(?:Street|St|Road|Rd|Avenue|Ave|Drive|Dr|Lane|Ln|Way|Boulevard|Blvd|Court|Ct|Circle|Cir|Place|Pl|Trail|Trl|Pkwy|Parkway)\b/i);
+      if (addressMatch) {
+        next.address = addressMatch[0].trim();
+        changed = true;
+        detectedField = 'address';
+      } else if (!next.address) {
+        for (const city of atlCities) {
+          const cityRegex = new RegExp(`\\b${city}\\b`, 'i');
+          if (cityRegex.test(clean)) {
+            next.address = `${city}, GA`;
+            changed = true;
+            detectedField = 'address';
+            break;
+          }
+        }
+      }
+
+      // 5. Client name extraction
+      const nameMatch = clean.match(/(?:my name is|i am|i'm|this is|call me)\s+([A-Za-z]+(?:\s+[A-Za-z]+)?)/i);
+      if (nameMatch && !next.name) {
+        const candidate = nameMatch[1].trim();
+        if (!['interested', 'looking', 'buying', 'selling', 'calling', 'inquiring', 'here', 'ready'].includes(candidate.toLowerCase())) {
+          next.name = candidate;
+          changed = true;
+          detectedField = 'name';
+        }
+      }
+
+      // 6. Addon recognition
+      const currentAddons = new Set(next.addons || []);
+      let addonUpdated = false;
+      if (/sewer\s*scope/i.test(clean) && !currentAddons.has('sewer')) {
+        currentAddons.add('sewer');
+        addonUpdated = true;
+        detectedField = 'addons';
+      }
+      if (/radon/i.test(clean) && !currentAddons.has('radon')) {
+        currentAddons.add('radon');
+        addonUpdated = true;
+        detectedField = 'addons';
+      }
+      if (/termite|wdo/i.test(clean) && !currentAddons.has('termite')) {
+        currentAddons.add('termite');
+        addonUpdated = true;
+        detectedField = 'addons';
+      }
+      if (/pool/i.test(clean) && !currentAddons.has('pool')) {
+        currentAddons.add('pool');
+        addonUpdated = true;
+        detectedField = 'addons';
+      }
+      if (/low\s*flow/i.test(clean) && !currentAddons.has('lowFlow')) {
+        currentAddons.add('lowFlow');
+        addonUpdated = true;
+        detectedField = 'addons';
+      }
+      if (addonUpdated) {
+        next.addons = Array.from(currentAddons);
+        changed = true;
+        const q = calculateQuoteDetails({
+          sqft: next.sqft || 2000,
+          propertyType: next.propertyType || 'single-family',
+          foundation: next.foundation || 'slab',
+          ageTier: 'under-25',
+          addons: next.addons.reduce((acc, a) => { acc[a] = true; return acc; }, {})
+        });
+        next.estimatedTotal = q.total;
+        setCalculatedQuote(q);
+      }
+
+      // 7. Preferred Date / Window
+      const dateMatch = clean.match(/(?:on|for|this|next)?\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday|tomorrow|next week|this weekend|\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?\b)/i);
+      if (dateMatch && !next.preferredDate) {
+        next.preferredDate = dateMatch[0].trim();
+        changed = true;
+        detectedField = 'preferredDate';
+      }
+
+      if (changed && detectedField) {
+        setActiveHighlightField(detectedField);
+        setTimeout(() => setActiveHighlightField(null), 2500);
+      }
+
+      return changed ? next : prev;
+    });
+
+    // Check for voice-triggered submission phrase
+    if (/(?:book it|submit it|lock it in|schedule it|reserve it|confirm appointment|confirm inspection|send request)/i.test(clean)) {
+      handleAutoSubmitLead();
+    }
+  }, [handleAutoSubmitLead]);
+
   // Handshake with Gemini Live WebSocket via ephemeral token
   const initLiveConnection = useCallback(async (targetPersona = null) => {
     if (liveWsRef.current && (liveWsRef.current.readyState === WebSocket.OPEN || liveWsRef.current.readyState === WebSocket.CONNECTING)) {
       return;
     }
 
-    const currentPersona = targetPersona || personaRef.current || 'jordan';
+    const currentPersona = targetPersona || personaRef.current || 'chris';
 
     try {
       const res = await fetch('/api/voice/token', {
@@ -658,12 +892,14 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             // Low latency interim transcription preview while user is speaking
             if (msg.serverContent.interimInputTranscription?.text) {
               setInterimUserText(msg.serverContent.interimInputTranscription.text);
+              extractEntitiesFromText(msg.serverContent.interimInputTranscription.text);
             }
 
             // Real-time finalized speech-to-text transcript of user speech
             if (msg.serverContent.inputTranscription?.text) {
               const userSpokenText = msg.serverContent.inputTranscription.text;
               setInterimUserText('');
+              extractEntitiesFromText(userSpokenText);
               setHistory(prev => {
                 const last = prev[prev.length - 1];
                 if (last && last.role === 'user' && last.streaming) {
@@ -708,6 +944,16 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                       addons: (args.addons || []).reduce((acc, a) => { acc[a] = true; return acc; }, {})
                     });
                     setCalculatedQuote(q);
+                    setLiveLeadForm(prev => ({
+                      ...prev,
+                      sqft: args.sqft || prev.sqft,
+                      propertyType: args.property_type || prev.propertyType,
+                      foundation: args.foundation || prev.foundation,
+                      addons: args.addons || prev.addons,
+                      estimatedTotal: q.total
+                    }));
+                    setActiveHighlightField('sqft');
+                    setTimeout(() => setActiveHighlightField(null), 2500);
                     toolResult = {
                       total: q.total,
                       base: q.base,
@@ -727,6 +973,17 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                       estimatedTotal: args.estimated_total || (calculatedQuote ? calculatedQuote.total : null)
                     };
                     setBookingData(bData);
+                    setLiveLeadForm(prev => ({
+                      ...prev,
+                      name: args.client_name || prev.name,
+                      phone: args.phone || prev.phone,
+                      email: args.email || prev.email,
+                      address: args.property_address || prev.address,
+                      preferredDate: args.preferred_date || prev.preferredDate,
+                      estimatedTotal: args.estimated_total || prev.estimatedTotal
+                    }));
+                    setActiveHighlightField('name');
+                    setTimeout(() => setActiveHighlightField(null), 2500);
                     toolResult = {
                       status: 'logged',
                       message: `Inspection request logged for ${args.client_name} (${args.phone}). Office confirmation and agreements queued.`
@@ -962,6 +1219,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         }
         const cleanInterim = currentTranscript.trim();
         setInterimUserText(cleanInterim);
+        extractEntitiesFromText(cleanInterim);
 
         if (silenceTimerRef.current) {
           clearTimeout(silenceTimerRef.current);
@@ -971,6 +1229,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           const finalSpeech = cleanInterim;
           if (finalSpeech) {
             try { recognition.stop(); } catch (_) {}
+            extractEntitiesFromText(finalSpeech);
             handleSendQuery(finalSpeech);
           }
         } else if (cleanInterim.length > 2) {
@@ -978,6 +1237,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           silenceTimerRef.current = setTimeout(() => {
             if (callStateRef.current === 'listening') {
               try { recognition.stop(); } catch (_) {}
+              extractEntitiesFromText(cleanInterim);
               handleSendQuery(cleanInterim);
             }
           }, 850);
@@ -1031,6 +1291,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
     setMicError(null);
 
+    extractEntitiesFromText(queryText.trim());
+
     const userMessage = { role: 'user', content: queryText.trim(), live: true };
     const newHistory = [...history, userMessage];
     setHistory(newHistory);
@@ -1069,10 +1331,24 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       if (data.action === 'quote_calculated' && data.quote) {
         setCalculatedQuote(data.quote);
+        setLiveLeadForm(prev => ({
+          ...prev,
+          sqft: data.quote.sqft || prev.sqft,
+          estimatedTotal: data.quote.total
+        }));
       }
 
       if (data.action === 'scheduled' && data.booking) {
         setBookingData(data.booking);
+        setLiveLeadForm(prev => ({
+          ...prev,
+          name: data.booking.name || prev.name,
+          phone: data.booking.phone || prev.phone,
+          email: data.booking.email || prev.email,
+          address: data.booking.address || prev.address,
+          preferredDate: data.booking.preferredDate || prev.preferredDate,
+          estimatedTotal: data.booking.estimatedTotal || prev.estimatedTotal
+        }));
       }
 
       // Play human neural audio from server, or fallback to browser speech
@@ -1191,11 +1467,15 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   alignItems: 'center',
                   justifyContent: 'center',
                   border: '2px solid #D4AF37',
-                  fontSize: '1.4rem',
+                  overflow: 'hidden',
                   boxShadow: '0 0 12px rgba(212, 175, 55, 0.4)'
                 }}
               >
-                👨‍💼
+                <img 
+                  src={persona === 'chris' ? '/images/Christopher_Boykin.webp' : '/images/cmi_logo.webp'} 
+                  alt={persona === 'chris' ? 'Christopher Boykin, Certified Master Inspector' : 'Jordan Concierge'}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
               <span style={{
                 position: 'absolute',
@@ -1378,75 +1658,140 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Central Voice Orb & Sound Visualizer */}
+        {/* Visual LiveRep Avatar & Sound Visualizer (Christopher Boykin, Certified Master Inspector®) */}
         <div style={{
-          padding: '1.5rem 1rem 0.5rem 1rem',
+          padding: '1.25rem 1rem 0.5rem 1rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%)'
+          background: 'radial-gradient(circle at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%)'
         }}>
-          {/* Animated Pulsing Sound Orb */}
-          <button 
-            type="button"
-            onClick={handleToggleOrInterrupt}
-            aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? `Interrupt ${persona === 'chris' ? 'Chris' : 'Jordan'}` : `Tap to speak with ${persona === 'chris' ? 'Chris' : 'Jordan'}`}
-            style={{
-              width: '96px',
-              height: '96px',
+          {/* Animated Audio-Reactive LiveRep Avatar */}
+          <div style={{ position: 'relative' }}>
+            <button 
+              type="button"
+              onClick={handleToggleOrInterrupt}
+              aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? `Interrupt ${persona === 'chris' ? 'Chris' : 'Jordan'}` : `Tap to speak with ${persona === 'chris' ? 'Chris' : 'Jordan'}`}
+              style={{
+                width: '104px',
+                height: '104px',
+                borderRadius: '50%',
+                border: callState === 'listening' 
+                  ? '3px solid #10b981' 
+                  : callState === 'speaking' 
+                  ? '3px solid #D4AF37' 
+                  : '3px solid rgba(212, 175, 55, 0.45)',
+                outline: 'none',
+                WebkitTapHighlightColor: 'transparent',
+                userSelect: 'none',
+                touchAction: 'manipulation',
+                background: 'linear-gradient(135deg, #1e293b, #0f172a)',
+                boxShadow: callState === 'listening'
+                  ? '0 0 35px rgba(16, 185, 129, 0.6), 0 0 70px rgba(16, 185, 129, 0.25)'
+                  : callState === 'speaking'
+                  ? '0 0 40px rgba(212, 175, 55, 0.65), 0 0 75px rgba(239, 68, 68, 0.3)'
+                  : '0 0 25px rgba(212, 175, 55, 0.35)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                animation: callState === 'speaking' 
+                  ? 'pulseVoiceSpeaking 1.2s infinite' 
+                  : callState === 'listening' 
+                  ? 'pulseVoiceListening 1.4s infinite' 
+                  : 'pulseVoiceIdle 3s infinite',
+                position: 'relative',
+                padding: '3px',
+                overflow: 'hidden'
+              }}
+              title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? `${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking... Tap to interrupt` : 'Tap to speak'}
+            >
+              <img 
+                src={persona === 'chris' ? '/images/Christopher_Boykin.webp' : '/images/cmi_logo.webp'} 
+                alt={persona === 'chris' ? 'Christopher Boykin, Certified Master Inspector' : 'Jordan Concierge'}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  filter: callState === 'speaking' ? 'brightness(1.05)' : 'none'
+                }}
+              />
+            </button>
+
+            {/* Certified Master Inspector® Badge Overlay */}
+            <div style={{
+              position: 'absolute',
+              bottom: '0px',
+              right: '0px',
+              width: '32px',
+              height: '32px',
               borderRadius: '50%',
-              border: 'none',
-              outline: 'none',
-              WebkitTapHighlightColor: 'transparent',
-              userSelect: 'none',
-              touchAction: 'manipulation',
-              background: callState === 'listening'
-                ? 'radial-gradient(circle, #10b981 0%, #047857 100%)'
-                : callState === 'speaking'
-                ? 'radial-gradient(circle, #ef4444 0%, #991b1b 100%)'
-                : callState === 'thinking'
-                ? 'radial-gradient(circle, #D4AF37 0%, #B89528 100%)'
-                : 'radial-gradient(circle, #D4AF37 20%, #742A2A 100%)',
-              boxShadow: callState === 'listening'
-                ? '0 0 35px rgba(16, 185, 129, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.4)'
-                : callState === 'speaking'
-                ? '0 0 45px rgba(239, 68, 68, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.4)'
-                : '0 0 25px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.2)',
+              background: '#ffffff',
+              border: '2px solid #0F172A',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-              animation: callState === 'speaking' 
-                ? 'pulseVoiceSpeaking 1.2s infinite' 
-                : callState === 'listening' 
-                ? 'pulseVoiceListening 1.4s infinite' 
-                : 'pulseVoiceIdle 3s infinite',
-              position: 'relative'
-            }}
-            title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? `${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking... Tap to interrupt` : 'Tap to speak'}
-          >
-            <span style={{ fontSize: '2.2rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.4))' }}>
-              {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : callState === 'thinking' ? '⏳' : '🎙️'}
-            </span>
-          </button>
+              overflow: 'hidden'
+            }}>
+              <img 
+                src="/images/cmi_logo.webp" 
+                alt="Certified Master Inspector" 
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
+            </div>
+          </div>
+
+          {/* Equalizer Sound Waveform Bars */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '3px',
+            height: '24px',
+            marginTop: '10px'
+          }}>
+            {[35, 70, 50, 95, 60, 100, 75, 85, 45, 90, 65, 40].map((h, i) => (
+              <span
+                key={i}
+                style={{
+                  width: '3px',
+                  borderRadius: '2px',
+                  background: callState === 'speaking'
+                    ? 'linear-gradient(to top, #D4AF37, #ef4444)'
+                    : callState === 'listening'
+                    ? 'linear-gradient(to top, #059669, #34d399)'
+                    : 'rgba(212, 175, 55, 0.35)',
+                  height: (callState === 'speaking' || callState === 'listening')
+                    ? `${Math.max(5, Math.round(h * (callState === 'speaking' ? 0.9 : 0.6)))}px`
+                    : '4px',
+                  animation: (callState === 'speaking' || callState === 'listening')
+                    ? `waveBar 0.75s ease-in-out infinite alternate ${i * 0.05}s`
+                    : 'none',
+                  transition: 'height 0.2s ease'
+                }}
+              />
+            ))}
+          </div>
 
           <p style={{
-            marginTop: '12px',
+            marginTop: '8px',
             fontSize: '0.85rem',
-            color: callState === 'listening' ? '#34d399' : callState === 'speaking' ? '#f87171' : '#D4AF37',
-            fontWeight: 600,
-            letterSpacing: '0.02em',
+            color: callState === 'listening' ? '#34d399' : callState === 'speaking' ? '#fcd34d' : '#D4AF37',
+            fontWeight: 700,
+            letterSpacing: '0.01em',
             textAlign: 'center'
           }}>
             {callState === 'listening'
-              ? '🟢 Listening... Speak naturally (Hands-Free Call)'
+              ? '🟢 Listening to you... Speak naturally (Hands-Free Call)'
               : callState === 'speaking'
-              ? `🗣️ ${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking (tap orb to interrupt)`
+              ? `🗣️ ${persona === 'chris' ? 'Chris Boykin (CMI®)' : 'Jordan'} is speaking... (tap to interrupt)`
               : callState === 'thinking'
-              ? 'Checking schedule & options with Foresight...'
-              : 'Tap orb or speak to begin'}
+              ? '⚡ Analyzing Atlanta building code & pricing...'
+              : 'Tap Christopher or speak naturally to begin'}
           </p>
 
           {/* Microphone Permission Warning / Helper Banner */}
@@ -1502,6 +1847,407 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             }}>
               "{interimUserText}"
             </div>
+          )}
+        </div>
+
+        {/* Autonomous Live Self-Filling Request Card ("The Magic Form") */}
+        <div style={{
+          margin: '0.4rem 1rem 0.6rem 1rem',
+          background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.9) 100%)',
+          border: '1px solid rgba(212, 175, 55, 0.35)',
+          borderRadius: '16px',
+          padding: '10px 14px',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+          position: 'relative'
+        }}>
+          {/* Card Header */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: isFormExpanded ? '8px' : '0px',
+            borderBottom: isFormExpanded ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
+            paddingBottom: isFormExpanded ? '6px' : '0px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.95rem' }}>📋</span>
+              <span style={{
+                fontSize: '0.8rem',
+                fontWeight: 800,
+                color: '#ffffff',
+                fontFamily: "'Outfit', sans-serif",
+                letterSpacing: '0.02em',
+                textTransform: 'uppercase'
+              }}>
+                Live Inspection Request Card
+              </span>
+              <span style={{
+                background: 'rgba(16, 185, 129, 0.15)',
+                color: '#34d399',
+                border: '1px solid rgba(16, 185, 129, 0.4)',
+                fontSize: '0.62rem',
+                fontWeight: 700,
+                padding: '2px 6px',
+                borderRadius: '8px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}>
+                <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
+                Auto-Filling by Voice
+              </span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {!isFormExpanded && (
+                <span style={{ fontSize: '0.75rem', color: '#D4AF37', fontWeight: 700 }}>
+                  Est: ${calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)}
+                </span>
+              )}
+              <button
+                type="button"
+                onClick={() => setIsFormExpanded(!isFormExpanded)}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.06)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '6px',
+                  color: '#94a3b8',
+                  fontSize: '0.7rem',
+                  cursor: 'pointer',
+                  padding: '2px 8px',
+                  fontWeight: 600
+                }}
+              >
+                {isFormExpanded ? '▲ Minimize' : '▼ Expand'}
+              </button>
+            </div>
+          </div>
+
+          {isFormExpanded && (
+            <>
+              {/* Form Grid */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))',
+                gap: '8px',
+                marginBottom: '8px'
+              }}>
+                {/* Client Name */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
+                    Your Name {activeHighlightField === 'name' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                  </label>
+                  <input
+                    type="text"
+                    value={liveLeadForm.name}
+                    onChange={(e) => setLiveLeadForm(prev => ({ ...prev, name: e.target.value }))}
+                    placeholder="Speak or type name..."
+                    style={{
+                      width: '100%',
+                      padding: '5px 8px',
+                      borderRadius: '6px',
+                      background: 'rgba(0, 0, 0, 0.35)',
+                      border: activeHighlightField === 'name' ? '2px solid #10b981' : '1px solid rgba(255, 255, 255, 0.12)',
+                      boxShadow: activeHighlightField === 'name' ? '0 0 10px rgba(16, 185, 129, 0.4)' : 'none',
+                      color: '#ffffff',
+                      fontSize: '0.78rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
+                    Phone Number {activeHighlightField === 'phone' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                  </label>
+                  <input
+                    type="text"
+                    value={liveLeadForm.phone}
+                    onChange={(e) => setLiveLeadForm(prev => ({ ...prev, phone: e.target.value }))}
+                    placeholder="e.g. (404) 555-0199"
+                    style={{
+                      width: '100%',
+                      padding: '5px 8px',
+                      borderRadius: '6px',
+                      background: 'rgba(0, 0, 0, 0.35)',
+                      border: activeHighlightField === 'phone' ? '2px solid #10b981' : '1px solid rgba(255, 255, 255, 0.12)',
+                      boxShadow: activeHighlightField === 'phone' ? '0 0 10px rgba(16, 185, 129, 0.4)' : 'none',
+                      color: '#ffffff',
+                      fontSize: '0.78rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
+                    Email Address {activeHighlightField === 'email' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                  </label>
+                  <input
+                    type="text"
+                    value={liveLeadForm.email}
+                    onChange={(e) => setLiveLeadForm(prev => ({ ...prev, email: e.target.value }))}
+                    placeholder="e.g. buyer@gmail.com"
+                    style={{
+                      width: '100%',
+                      padding: '5px 8px',
+                      borderRadius: '6px',
+                      background: 'rgba(0, 0, 0, 0.35)',
+                      border: activeHighlightField === 'email' ? '2px solid #10b981' : '1px solid rgba(255, 255, 255, 0.12)',
+                      boxShadow: activeHighlightField === 'email' ? '0 0 10px rgba(16, 185, 129, 0.4)' : 'none',
+                      color: '#ffffff',
+                      fontSize: '0.78rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Property Address / City */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
+                    Property Address / City {activeHighlightField === 'address' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                  </label>
+                  <input
+                    type="text"
+                    value={liveLeadForm.address}
+                    onChange={(e) => setLiveLeadForm(prev => ({ ...prev, address: e.target.value }))}
+                    placeholder="e.g. Alpharetta, GA"
+                    style={{
+                      width: '100%',
+                      padding: '5px 8px',
+                      borderRadius: '6px',
+                      background: 'rgba(0, 0, 0, 0.35)',
+                      border: activeHighlightField === 'address' ? '2px solid #10b981' : '1px solid rgba(255, 255, 255, 0.12)',
+                      boxShadow: activeHighlightField === 'address' ? '0 0 10px rgba(16, 185, 129, 0.4)' : 'none',
+                      color: '#ffffff',
+                      fontSize: '0.78rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Square Footage */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
+                    Square Footage {activeHighlightField === 'sqft' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                  </label>
+                  <input
+                    type="text"
+                    value={liveLeadForm.sqft || ''}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      setLiveLeadForm(prev => ({ ...prev, sqft: val }));
+                      const parsed = parseInt(val, 10);
+                      if (parsed >= 400 && parsed <= 25000) {
+                        const q = calculateQuoteDetails({
+                          sqft: parsed,
+                          propertyType: liveLeadForm.propertyType,
+                          foundation: liveLeadForm.foundation,
+                          ageTier: 'under-25',
+                          addons: (liveLeadForm.addons || []).reduce((acc, a) => { acc[a] = true; return acc; }, {})
+                        });
+                        setCalculatedQuote(q);
+                      }
+                    }}
+                    placeholder="e.g. 2,400 sq ft"
+                    style={{
+                      width: '100%',
+                      padding: '5px 8px',
+                      borderRadius: '6px',
+                      background: 'rgba(0, 0, 0, 0.35)',
+                      border: activeHighlightField === 'sqft' ? '2px solid #10b981' : '1px solid rgba(255, 255, 255, 0.12)',
+                      boxShadow: activeHighlightField === 'sqft' ? '0 0 10px rgba(16, 185, 129, 0.4)' : 'none',
+                      color: '#ffffff',
+                      fontSize: '0.78rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Preferred Date */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
+                    Preferred Date {activeHighlightField === 'preferredDate' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                  </label>
+                  <input
+                    type="text"
+                    value={liveLeadForm.preferredDate}
+                    onChange={(e) => setLiveLeadForm(prev => ({ ...prev, preferredDate: e.target.value }))}
+                    placeholder="e.g. Saturday morning"
+                    style={{
+                      width: '100%',
+                      padding: '5px 8px',
+                      borderRadius: '6px',
+                      background: 'rgba(0, 0, 0, 0.35)',
+                      border: activeHighlightField === 'preferredDate' ? '2px solid #10b981' : '1px solid rgba(255, 255, 255, 0.12)',
+                      boxShadow: activeHighlightField === 'preferredDate' ? '0 0 10px rgba(16, 185, 129, 0.4)' : 'none',
+                      color: '#ffffff',
+                      fontSize: '0.78rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Addons Selection Chips */}
+              <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '5px',
+                marginBottom: '8px',
+                alignItems: 'center'
+              }}>
+                <span style={{ fontSize: '0.68rem', color: '#94a3b8', fontWeight: 700 }}>Add-ons:</span>
+                {[
+                  { key: 'sewer', label: 'Sewer Scope ($450)' },
+                  { key: 'radon', label: 'Radon ($250)' },
+                  { key: 'termite', label: 'Termite ($125+)' },
+                  { key: 'pool', label: 'Pool/Spa ($275)' },
+                  { key: 'lowFlow', label: 'DeKalb Low-Flow ($100)' }
+                ].map(item => {
+                  const isSelected = (liveLeadForm.addons || []).includes(item.key);
+                  return (
+                    <button
+                      key={item.key}
+                      type="button"
+                      onClick={() => {
+                        setLiveLeadForm(prev => {
+                          const cur = prev.addons || [];
+                          const nextAddons = isSelected ? cur.filter(k => k !== item.key) : [...cur, item.key];
+                          const q = calculateQuoteDetails({
+                            sqft: prev.sqft || 2000,
+                            propertyType: prev.propertyType || 'single-family',
+                            foundation: prev.foundation || 'slab',
+                            ageTier: 'under-25',
+                            addons: nextAddons.reduce((acc, a) => { acc[a] = true; return acc; }, {})
+                          });
+                          setCalculatedQuote(q);
+                          return { ...prev, addons: nextAddons, estimatedTotal: q.total };
+                        });
+                      }}
+                      style={{
+                        padding: '2px 7px',
+                        borderRadius: '10px',
+                        border: isSelected ? '1px solid #10b981' : '1px solid rgba(255, 255, 255, 0.1)',
+                        background: isSelected ? 'rgba(16, 185, 129, 0.2)' : 'rgba(255, 255, 255, 0.04)',
+                        color: isSelected ? '#34d399' : '#cbd5e1',
+                        fontSize: '0.66rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '3px'
+                      }}
+                    >
+                      <span>{isSelected ? '✓' : '+'}</span>
+                      <span>{item.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Fee & Solidification Banner */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                background: 'rgba(212, 175, 55, 0.08)',
+                border: '1px solid rgba(212, 175, 55, 0.25)',
+                borderRadius: '8px',
+                padding: '6px 10px',
+                marginBottom: '8px'
+              }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Total Fee:</span>
+                    <span style={{ fontSize: '1.05rem', color: '#ffffff', fontWeight: 800, fontFamily: "'Outfit', sans-serif" }}>
+                      ${calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)}
+                    </span>
+                    <span style={{ fontSize: '0.62rem', background: 'rgba(212, 175, 55, 0.2)', color: '#D4AF37', padding: '1px 5px', borderRadius: '4px', fontWeight: 700 }}>
+                      2-INSPECTOR TEAM INCLUDED
+                    </span>
+                  </div>
+                  <p style={{ margin: '2px 0 0 0', fontSize: '0.66rem', color: '#cbd5e1' }}>
+                    🔒 50% Deposit to Solidify: <strong>${Math.round((calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) / 2)}</strong> (due after confirmation) &bull; Balance upon completion: <strong>${(calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) - Math.round((calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) / 2)}</strong>
+                  </p>
+                </div>
+              </div>
+
+              {/* Submit Action or Status */}
+              {leadSubmitStatus === 'submitted' ? (
+                <div style={{
+                  background: 'rgba(16, 185, 129, 0.15)',
+                  border: '1px solid rgba(16, 185, 129, 0.5)',
+                  borderRadius: '8px',
+                  padding: '8px 12px',
+                  color: '#34d399',
+                  fontSize: '0.75rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '8px'
+                }}>
+                  <div>
+                    <strong>✅ Inspection Request Solidified!</strong>
+                    <p style={{ margin: '2px 0 0 0', color: '#a7f3d0', fontSize: '0.7rem' }}>
+                      {formSubmissionMessage || "Chris Boykin's office has received your request and will call within 20 minutes to confirm your slot."}
+                    </p>
+                  </div>
+                  <a
+                    href="tel:6784802110"
+                    style={{
+                      background: '#10b981',
+                      color: '#0F172A',
+                      padding: '5px 10px',
+                      borderRadius: '6px',
+                      fontSize: '0.7rem',
+                      fontWeight: 800,
+                      textDecoration: 'none',
+                      whiteSpace: 'nowrap'
+                    }}
+                  >
+                    📞 Call (678) 480-2110
+                  </a>
+                </div>
+              ) : (
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <button
+                    type="button"
+                    disabled={leadSubmitStatus === 'submitting'}
+                    onClick={() => handleAutoSubmitLead()}
+                    style={{
+                      flex: 1,
+                      background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                      color: '#ffffff',
+                      border: 'none',
+                      padding: '7px 12px',
+                      borderRadius: '8px',
+                      fontSize: '0.78rem',
+                      fontWeight: 800,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
+                      boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)',
+                      transition: 'transform 0.15s',
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase'
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
+                  >
+                    <span>{leadSubmitStatus === 'submitting' ? '⏳' : '🔒'}</span>
+                    <span>{leadSubmitStatus === 'submitting' ? 'Locking in Master Schedule...' : 'Lock In My Inspection Date & Request Callback'}</span>
+                  </button>
+                  <span style={{ fontSize: '0.68rem', color: '#94a3b8', whiteSpace: 'nowrap' }}>
+                    Or say <em>"Book it"</em>
+                  </span>
+                </div>
+              )}
+            </>
           )}
         </div>
 
@@ -2069,6 +2815,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         @keyframes spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
+        }
+        @keyframes waveBar {
+          0% { height: 4px; }
+          100% { height: 22px; }
         }
         @keyframes pulseVoiceSpeaking {
           0% { transform: scale(1); box-shadow: 0 0 25px rgba(239, 68, 68, 0.4); }
