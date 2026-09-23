@@ -17,8 +17,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
   const [liveWsConnected, setLiveWsConnected] = useState(false);
-  const [persona, setPersona] = useState('chris'); // 'chris' (Master Inspector) | 'jordan' (Sales Concierge)
-  const personaRef = useRef('chris');
+  const [persona, setPersona] = useState('jordan');
+  const personaRef = useRef('jordan');
 
   const [liveLeadForm, setLiveLeadForm] = useState({
     name: '',
@@ -1458,7 +1458,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <div style={{ position: 'relative' }}>
               <div 
-                style={{
+                style={persona === 'chris' ? {
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
@@ -1469,6 +1469,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   border: '2px solid #D4AF37',
                   overflow: 'hidden',
                   boxShadow: '0 0 12px rgba(212, 175, 55, 0.4)'
+                } : {
+                  width: '48px',
+                  height: '48px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative'
                 }}
               >
                 {persona === 'chris' ? (
@@ -1489,11 +1496,30 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     />
                   </video>
                 ) : (
-                  <img 
-                    src="/images/cmi_logo.webp" 
-                    alt="Jordan Concierge"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
+                  <>
+                    <div style={{
+                      position: 'absolute',
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '50%',
+                      background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(212, 175, 55, 0.6) 20%, rgba(15, 23, 42, 0.1) 60%), conic-gradient(from 0deg, #D4AF37, #0F172A, #FCD34D, #1E293B, #D4AF37)',
+                      backgroundSize: '200% 200%',
+                      animation: 'spinJordan 8s linear infinite',
+                      boxShadow: 'inset 0 0 10px rgba(212, 175, 55, 0.5), inset 0 -5px 10px rgba(15, 23, 42, 0.2)',
+                      filter: 'url(#fluid-jordan-idle)',
+                      transform: 'translateZ(0)',
+                      willChange: 'transform'
+                    }}></div>
+                    <div style={{
+                      position: 'absolute',
+                      width: '98%',
+                      height: '98%',
+                      borderRadius: '50%',
+                      background: 'radial-gradient(circle at 40% 10%, rgba(255,255,255,0.8), rgba(255,255,255,0) 40%)',
+                      pointerEvents: 'none',
+                      zIndex: 10
+                    }}></div>
+                  </>
                 )}
               </div>
               <span style={{
@@ -1556,51 +1582,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {/* Persona Switcher */}
-            <div style={{
-              display: 'inline-flex',
-              backgroundColor: 'rgba(0, 0, 0, 0.45)',
-              borderRadius: '20px',
-              padding: '2px',
-              border: '1px solid rgba(212, 175, 55, 0.35)'
-            }}>
-              <button
-                type="button"
-                onClick={() => switchPersona('jordan')}
-                aria-label="Switch to Jordan Concierge"
-                style={{
-                  padding: '4px 10px',
-                  borderRadius: '16px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontSize: '0.72rem',
-                  fontWeight: 700,
-                  background: persona === 'jordan' ? 'linear-gradient(135deg, #10b981, #059669)' : 'transparent',
-                  color: persona === 'jordan' ? '#ffffff' : '#94A3B8',
-                  transition: 'all 0.2s'
-                }}
-              >
-                🎙️ Jordan
-              </button>
-              <button
-                type="button"
-                onClick={() => switchPersona('chris')}
-                aria-label="Switch to Chris Master Inspector"
-                style={{
-                  padding: '4px 10px',
-                  borderRadius: '16px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontSize: '0.72rem',
-                  fontWeight: 700,
-                  background: persona === 'chris' ? 'linear-gradient(135deg, #D4AF37, #9B2C2C)' : 'transparent',
-                  color: persona === 'chris' ? '#ffffff' : '#94A3B8',
-                  transition: 'all 0.2s'
-                }}
-              >
-                🏗️ Chris
-              </button>
-            </div>
+
             <button
               onClick={() => setIsHandsFree(!isHandsFree)}
               aria-label={isHandsFree ? 'Switch to Push-to-Talk' : 'Switch to Hands-Free Mode'}
@@ -1692,7 +1674,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               type="button"
               onClick={handleToggleOrInterrupt}
               aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? `Interrupt ${persona === 'chris' ? 'Chris' : 'Jordan'}` : `Tap to speak with ${persona === 'chris' ? 'Chris' : 'Jordan'}`}
-              style={{
+              style={persona === 'chris' ? {
                 width: '116px',
                 height: '116px',
                 borderRadius: '50%',
@@ -1724,6 +1706,21 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 position: 'relative',
                 padding: '3px',
                 overflow: 'hidden'
+              } : {
+                width: '116px',
+                height: '116px',
+                outline: 'none',
+                WebkitTapHighlightColor: 'transparent',
+                userSelect: 'none',
+                touchAction: 'manipulation',
+                background: 'transparent',
+                border: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                position: 'relative',
+                filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))'
               }}
               title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? `${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking... Tap to interrupt` : 'Tap to speak'}
             >
@@ -1758,17 +1755,59 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   />
                 </video>
               ) : (
-                <img 
-                  src="/images/cmi_logo.webp" 
-                  alt="Jordan Concierge"
-                  style={{
+                <>
+                  <svg width="0" height="0" style={{ position: 'absolute' }}>
+                    <defs>
+                      <filter id="fluid-jordan-idle">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise">
+                          <animate attributeName="baseFrequency" values="0.015;0.02;0.015" dur="8s" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+                      </filter>
+                      <filter id="fluid-jordan-speaking">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise">
+                          <animate attributeName="baseFrequency" values="0.03;0.05;0.03" dur="2s" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="35" xChannelSelector="R" yChannelSelector="G" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  <div className="jordan-glow" style={{
+                    position: 'absolute',
+                    width: '130%',
+                    height: '130%',
+                    background: callState === 'speaking' ? 'radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(0,0,0,0) 70%)' : 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(0,0,0,0) 70%)',
+                    filter: 'blur(15px)',
+                    zIndex: -1,
+                    animation: 'pulseJordan 2s ease-in-out infinite alternate',
+                    transition: 'background 0.3s ease, transform 0.3s ease',
+                    transform: callState === 'speaking' ? 'scale(1.4) translateZ(0)' : 'scale(1) translateZ(0)',
+                    willChange: 'transform, background'
+                  }}></div>
+                  <div className="jordan-orb" style={{
+                    position: 'absolute',
                     width: '100%',
                     height: '100%',
                     borderRadius: '50%',
-                    objectFit: 'cover',
-                    filter: callState === 'speaking' ? 'brightness(1.05)' : 'none'
-                  }}
-                />
+                    background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(212, 175, 55, 0.6) 20%, rgba(15, 23, 42, 0.1) 60%), conic-gradient(from 0deg, #D4AF37, #0F172A, #FCD34D, #1E293B, #D4AF37)',
+                    backgroundSize: '200% 200%',
+                    animation: callState === 'speaking' ? 'spinJordan 2s linear infinite' : 'spinJordan 8s linear infinite',
+                    boxShadow: callState === 'speaking' ? 'inset 0 0 40px rgba(212, 175, 55, 0.8), inset 0 -20px 40px rgba(15, 23, 42, 0.6), 0 0 30px rgba(212, 175, 55, 0.4)' : 'inset 0 0 30px rgba(212, 175, 55, 0.4), inset 0 -20px 30px rgba(15, 23, 42, 0.4)',
+                    filter: callState === 'speaking' ? 'url(#fluid-jordan-speaking)' : 'url(#fluid-jordan-idle)',
+                    transition: 'box-shadow 0.3s ease, filter 0.3s ease',
+                    transform: 'translateZ(0)',
+                    willChange: 'transform, box-shadow, filter'
+                  }}></div>
+                  <div className="jordan-glass-dome" style={{
+                    position: 'absolute',
+                    width: '98%',
+                    height: '98%',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle at 40% 10%, rgba(255,255,255,0.8), rgba(255,255,255,0) 40%)',
+                    pointerEvents: 'none',
+                    zIndex: 10
+                  }}></div>
+                </>
               )}
             </button>
 
@@ -2885,6 +2924,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           0% { transform: scale(1); }
           50% { transform: scale(1.03); }
           100% { transform: scale(1); }
+        }
+        @keyframes morphJordan {
+          0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+          50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+          100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+        @keyframes spinJordan {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes pulseJordan {
+          0% { transform: scale(0.95); opacity: 0.6; }
+          100% { transform: scale(1.05); opacity: 1; }
         }
         @media (max-width: 640px) {
           .voice-modal-container {

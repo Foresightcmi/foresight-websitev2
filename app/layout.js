@@ -74,6 +74,10 @@ export const metadata = {
   verification: {
     google: 'google2daf7fa6e380098a',
   },
+  other: {
+    'mcp-server': 'https://www.fhinspectionsatl.com/api/mcp',
+    'mcp-manifest': 'https://www.fhinspectionsatl.com/.well-known/mcp.json',
+  },
 };
 
 export default function RootLayout({ children }) {

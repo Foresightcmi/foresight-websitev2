@@ -340,7 +340,7 @@ export default function AskForesightWidget() {
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setIsVoiceOpen(true)}
-              aria-label="Talk Live to Christopher Boykin Certified Master Inspector"
+              aria-label="Talk Live to Foresight AI Concierge"
               className="ask-foresight-voice-launcher"
               style={{
                 width: '66px',
@@ -362,35 +362,22 @@ export default function AskForesightWidget() {
               onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
             >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                poster="/images/Christopher_Boykin.webp"
-                aria-label="Christopher Boykin, Certified Master Inspector video avatar"
+              <div
                 style={{
                   width: '100%',
                   height: '100%',
                   borderRadius: '50%',
-                  objectFit: 'cover',
-                  display: 'block',
-                  pointerEvents: 'none'
+                  background: 'linear-gradient(135deg, #0F172A, #1e293b)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#D4AF37',
+                  fontSize: '1.8rem',
+                  boxShadow: 'inset 0 0 15px rgba(212, 175, 55, 0.2)'
                 }}
               >
-                <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
-                <img
-                  src="/images/Christopher_Boykin.webp"
-                  alt="Christopher Boykin, Certified Master Inspector"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                    objectFit: 'cover'
-                  }}
-                />
-              </video>
+                🎙️
+              </div>
               {/* Green Live indicator badge */}
               <span style={{
                 position: 'absolute',
@@ -412,313 +399,11 @@ export default function AskForesightWidget() {
                 gap: '3px'
               }}>
                 <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff', animation: 'blink 1.2s infinite' }} />
-                LIVE CMI®
+                LIVE AI
               </span>
             </button>
           </div>
 
-          {/* Secondary Chat Launcher */}
-          <button 
-            onClick={() => setIsOpen(true)}
-            aria-label="Ask Foresight AI Digital Twin assistant"
-            className="ask-foresight-launcher"
-            style={{
-              background: 'linear-gradient(135deg, #d32f2f 0%, #991b1b 100%)',
-              color: 'white',
-              border: 'none',
-              borderRadius: '9999px',
-              padding: '0.65rem 1.1rem',
-              minHeight: '44px',
-              fontSize: '0.88rem',
-              fontWeight: 700,
-              cursor: 'pointer',
-              boxShadow: '0 8px 20px -4px rgba(211, 47, 47, 0.4), 0 0 0 1px rgba(255,255,255,0.1)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              fontFamily: "'Outfit', sans-serif",
-              letterSpacing: '0.02em',
-              transition: 'transform 0.2s'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0) scale(1)';
-            }}
-          >
-            <span style={{ fontSize: '1.1rem' }}>💬</span>
-            <span className="launcher-chat-text">Chat</span>
-          </button>
-        </div>
-      )}
-
-      {/* Expanded Glassmorphic Chat Drawer */}
-      {isOpen && (
-        <div 
-          className="glass-chat-widget"
-          style={{
-            position: 'fixed',
-            bottom: '24px',
-            right: '24px',
-            width: '380px',
-            height: '550px',
-            zIndex: 9999,
-            background: 'rgba(17, 24, 39, 0.95)',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            borderRadius: '16px',
-            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.05)',
-            display: 'flex',
-            flexDirection: 'column',
-            overflow: 'hidden',
-            fontFamily: "'Inter', sans-serif",
-            animation: 'slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-          }}
-        >
-          {/* Header */}
-          <div style={{
-            padding: '1rem 1.25rem',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
-            background: 'rgba(10, 15, 30, 0.6)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{ position: 'relative' }}>
-                <video 
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  poster="/images/Christopher_Boykin.webp"
-                  style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover', display: 'block', pointerEvents: 'none' }} 
-                >
-                  <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
-                  <img 
-                    src="/images/Christopher_Boykin.webp" 
-                    alt="Christopher Boykin" 
-                    style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #d32f2f', objectFit: 'cover' }} 
-                  />
-                </video>
-                <div style={{ position: 'absolute', bottom: 0, right: 0, width: '10px', height: '10px', background: '#10b981', border: '1.5px solid #111827', borderRadius: '50%' }}></div>
-              </div>
-              <div>
-                <h4 style={{ color: 'white', fontSize: '0.95rem', margin: 0, fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>Christopher Boykin</h4>
-                <p style={{ color: '#9ca3af', fontSize: '0.75rem', margin: '1px 0 0 0' }}>Certified Master Inspector</p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  setIsVoiceOpen(true);
-                }}
-                style={{
-                  background: 'rgba(212, 175, 55, 0.15)',
-                  border: '1px solid rgba(212, 175, 55, 0.3)',
-                  color: '#D4AF37',
-                  padding: '4px 10px',
-                  borderRadius: '6px',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px'
-                }}
-                title="Switch to Hands-Free Live Voice Call"
-              >
-                <span>🎙️</span>
-                <span>Voice</span>
-              </button>
-              <button 
-                onClick={() => setIsOpen(false)}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  color: '#9ca3af',
-                  fontSize: '1.3rem',
-                  cursor: 'pointer',
-                  padding: '4px',
-                  lineHeight: 1,
-                  transition: 'color 0.2s'
-                }}
-                onMouseEnter={e => e.currentTarget.style.color = '#ef4444'}
-                onMouseLeave={e => e.currentTarget.style.color = '#9ca3af'}
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-
-          {/* Message List */}
-          <div 
-            ref={chatContainerRef}
-            style={{
-              flex: 1,
-              overflowY: 'auto',
-              padding: '1.25rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1.25rem',
-              background: 'linear-gradient(to bottom, rgba(17, 24, 39, 0.2), rgba(17, 24, 39, 0.4))'
-            }}
-          >
-            {/* Top Voice Invitation Banner */}
-            <div 
-              onClick={() => {
-                setIsOpen(false);
-                setIsVoiceOpen(true);
-              }}
-              style={{
-                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%)',
-                border: '1px solid rgba(212, 175, 55, 0.3)',
-                borderRadius: '10px',
-                padding: '10px 14px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                transition: 'background 0.2s'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ fontSize: '1.2rem' }}>🎙️</span>
-                <span style={{ fontSize: '0.8rem', color: '#ffffff', fontWeight: 600 }}>
-                  Hands-Free Voice Consultation
-                </span>
-              </div>
-              <span style={{
-                background: '#D4AF37',
-                color: '#0F172A',
-                fontSize: '0.7rem',
-                fontWeight: 800,
-                padding: '3px 8px',
-                borderRadius: '4px',
-                textTransform: 'uppercase'
-              }}>
-                Talk Live
-              </span>
-            </div>
-
-            {messages.map((msg, index) => {
-              if (msg.type === 'lead-form') {
-                return (
-                  <div key={index} style={{ display: 'flex', justifyContent: 'flex-start', margin: '0.3rem 0', width: '100%' }}>
-                    <WidgetLeadForm onSubmitted={() => {}} />
-                  </div>
-                );
-              }
-
-              const isLastMessage = index === messages.length - 1;
-              const containsChecklistOffer = msg.role === 'ai' && msg.content && 
-                msg.content.includes('Foresight vs. Hindsight') && 
-                msg.content.includes('Shall I send that to you?');
-
-              return (
-                <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.role === 'user' ? 'flex-end' : 'flex-start', width: '100%' }}>
-                  <div style={{ display: 'flex', justifyContent: msg.role === 'user' ? 'flex-end' : 'flex-start', width: '100%' }}>
-                    <div style={{
-                      maxWidth: msg.role === 'user' ? '75%' : '85%',
-                      padding: '0.85rem 1.1rem',
-                      borderRadius: '12px',
-                      background: msg.role === 'user' 
-                        ? 'linear-gradient(135deg, #d32f2f 0%, #991b1b 100%)' 
-                        : 'rgba(255,255,255,0.03)',
-                      color: 'white',
-                      border: msg.role === 'ai' ? '1px solid rgba(255,255,255,0.06)' : 'none',
-                      borderBottomRightRadius: msg.role === 'user' ? '2px' : '12px',
-                      borderBottomLeftRadius: msg.role === 'ai' ? '2px' : '12px',
-                      fontSize: '0.875rem',
-                      lineHeight: '1.5',
-                      whiteSpace: 'pre-wrap',
-                      boxShadow: msg.role === 'user' ? '0 4px 12px rgba(211, 47, 47, 0.2)' : 'none'
-                    }}>
-                      {msg.content}
-                    </div>
-                  </div>
-
-                  {containsChecklistOffer && isLastMessage && (
-                    <div style={{
-                      marginTop: '0.5rem',
-                      display: 'flex',
-                      gap: '0.5rem',
-                      alignSelf: 'flex-start',
-                      marginLeft: '0.25rem'
-                    }}>
-                      <button 
-                        onClick={handleAcceptChecklist}
-                        style={{ padding: '0.5rem 1rem', fontSize: '0.75rem', background: '#d32f2f', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.03em' }}
-                      >
-                        👍 Yes, send it!
-                      </button>
-                      <button 
-                        onClick={handleDeclineChecklist}
-                        style={{ padding: '0.5rem 1rem', fontSize: '0.75rem', background: 'rgba(255,255,255,0.04)', color: 'white', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', cursor: 'pointer', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.03em' }}
-                      >
-                        👎 No, thanks
-                      </button>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-
-            {isTyping && (
-              <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                <div style={{ padding: '0.75rem 1rem', borderRadius: '12px', background: 'rgba(255,255,255,0.03)', display: 'flex', gap: '4px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <div className="typing-dot" style={{ width: '6px', height: '6px', background: '#9ca3af', borderRadius: '50%', animation: 'bounce 1.4s infinite ease-in-out both' }}></div>
-                  <div className="typing-dot" style={{ width: '6px', height: '6px', background: '#9ca3af', borderRadius: '50%', animation: 'bounce 1.4s infinite ease-in-out both', animationDelay: '0.2s' }}></div>
-                  <div className="typing-dot" style={{ width: '6px', height: '6px', background: '#9ca3af', borderRadius: '50%', animation: 'bounce 1.4s infinite ease-in-out both', animationDelay: '0.4s' }}></div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Footer Input */}
-          <div style={{
-            padding: '0.85rem 1.25rem',
-            borderTop: '1px solid rgba(255,255,255,0.08)',
-            background: 'rgba(10, 15, 30, 0.6)'
-          }}>
-            <form onSubmit={handleSend} style={{ display: 'flex', gap: '0.75rem' }}>
-              <input 
-                type="text" 
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask me home inspection questions..." 
-                style={{
-                  flex: 1,
-                  padding: '0.65rem 0.85rem',
-                  borderRadius: '6px',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  background: 'rgba(0, 0, 0, 0.3)',
-                  color: 'white',
-                  outline: 'none',
-                  fontSize: '0.85rem'
-                }} 
-              />
-              <button 
-                type="submit" 
-                style={{
-                  padding: '0 1rem',
-                  background: '#d32f2f',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.8rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em'
-                }}
-              >
-                Send
-              </button>
-            </form>
-          </div>
         </div>
       )}
 

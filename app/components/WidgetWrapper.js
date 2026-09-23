@@ -8,12 +8,6 @@ const AskForesightWidget = dynamic(
 );
 
 export default function WidgetWrapper() {
-  const pathname = usePathname();
-  
-  // Exclude the floating widget on the full chatbot portal page as it is redundant
-  if (pathname === '/ask-twin') {
-    return null;
-  }
-  
-  return <AskForesightWidget />;
+  // Floating chat box disabled per executive request
+  return null;
 }

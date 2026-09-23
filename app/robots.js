@@ -3,8 +3,8 @@ export default function robots() {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/private/', '/api/', '/dashboard', '/opengraph-image', '/*/opengraph-image'],
+        allow: ['/', '/api/mcp'],
+        disallow: ['/private/', '/api/chat', '/api/voice', '/dashboard', '/opengraph-image', '/*/opengraph-image'],
       },
       {
         userAgent: 'GPTBot',

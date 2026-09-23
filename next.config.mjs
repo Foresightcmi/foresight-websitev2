@@ -444,6 +444,67 @@ const nextConfig = {
         destination: '/about',
         permanent: true,
       },
+      // Google Search Console 404 Remediation Redirects
+      {
+        source: '/book',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/resources',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/resources/faq',
+        destination: '/faq',
+        permanent: true,
+      },
+      {
+        source: '/inspection-service-areas',
+        destination: '/service-areas',
+        permanent: true,
+      },
+      {
+        source: '/blog/categories/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/_api/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/search',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/post/how-to-prepare-your-atlanta-home-for-hurricane-season-a-reliable-guide-for-homeowners-to-weather-th',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/post/what-you-need-to-know-about-home-inspection-services',
+        destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
+        permanent: true,
+      },
+      {
+        source: '/post/hosting-with-heart-crafting-a-home-perfect-for-entertaining',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/post/how-to-negotiate-repairs-after-a-home-inspection-in-georgia',
+        destination: '/blog/how-to-negotiate-home-inspection-repairs-georgia-gar-contract',
+        permanent: true,
+      },
+      {
+        source: '/post/understanding-the-benefits-of-home-inspection-services',
+        destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
+        permanent: true,
+      },
     ];
   },
 };
