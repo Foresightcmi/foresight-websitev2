@@ -26,6 +26,7 @@ export default function QuoteClient({ showValueComparison = true }) {
   const [leadEmail, setLeadEmail] = useState('');
   const [leadPhone, setLeadPhone] = useState('');
   const [leadAddress, setLeadAddress] = useState('');
+  const [leadRealtor, setLeadRealtor] = useState('');
   const [leadPreferredDate, setLeadPreferredDate] = useState('');
   const [leadNotes, setLeadNotes] = useState('');
   const [leadStatus, setLeadStatus] = useState('idle'); // idle, submitting, success, error
@@ -256,6 +257,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           email: leadEmail,
           phone: leadPhone,
           address: leadAddress,
+          realtorAgent: leadRealtor,
           preferredDate: leadPreferredDate,
           sqft,
           propertyType,
@@ -876,6 +878,17 @@ export default function QuoteClient({ showValueComparison = true }) {
                           required 
                           value={leadAddress} 
                           onChange={e => setLeadAddress(e.target.value)} 
+                          style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Referring Real Estate Agent / Brokerage (Optional)</label>
+                        <input 
+                          type="text" 
+                          placeholder="e.g. Austin Landers - Dorsey Alston or Melissa - VPR" 
+                          value={leadRealtor} 
+                          onChange={e => setLeadRealtor(e.target.value)} 
                           style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
                         />
                       </div>
