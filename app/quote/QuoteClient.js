@@ -818,7 +818,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         </ul>
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--color-gray-mid)', margin: 0 }}>
-                        Need immediate dispatch? Call Christopher at <a href="tel:678-480-2110" style={{ color: '#34d399', fontWeight: 700 }}>678-480-2110</a>.
+                        Need immediate dispatch or tight 5-day due diligence hold? Call or text Christopher directly at <a href="tel:678-480-2110" style={{ color: '#34d399', fontWeight: 700 }}>678-480-2110</a>.
                       </p>
                     </div>
                   ) : (
