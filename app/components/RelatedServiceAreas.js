@@ -45,6 +45,7 @@ export default function RelatedServiceAreas({ currentCitySlug, serviceSlug }) {
               <Link 
                 key={slug} 
                 href={href}
+                prefetch={false}
                 style={{
                   color: 'var(--color-gray-dark)',
                   textDecoration: 'none',

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useRef, useCallback } from 'react';
 
@@ -49,7 +49,7 @@ export default function HomeVideoPlayer() {
           ref={videoRef}
           controls
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/images/home-systems-poster.webp"
           onPlay={handlePlay}
           onClick={handleClick}

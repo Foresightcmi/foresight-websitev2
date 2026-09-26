@@ -84,6 +84,14 @@ const nextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
+          },
+          {
+            key: 'Vercel-CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
+          },
         ],
       },
       {
@@ -92,6 +100,14 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
+          },
+          {
+            key: 'Vercel-CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
           },
         ],
       },
@@ -102,6 +118,31 @@ const nextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
+          },
+          {
+            key: 'Vercel-CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/vip-dispatch.html',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, stale-while-revalidate=604800',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+          },
+          {
+            key: 'Vercel-CDN-Cache-Control',
+            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+          },
         ],
       },
       {
@@ -110,6 +151,14 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
+          },
+          {
+            key: 'Vercel-CDN-Cache-Control',
+            value: 'public, s-maxage=31536000, immutable',
           },
         ],
       },

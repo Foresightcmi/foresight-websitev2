@@ -65,8 +65,7 @@ export default function BackgroundAudioPlayer() {
 
     audio.volume = 0.22;
 
-    // 1. Immediately attempt to play when site is opened
-    attemptPlay();
+    // 1. Audio remains idle (preload="none") until user explicitly taps play to save bandwidth
 
     // 2. Listen to voice modal coordination events
     const handlePauseBgMusic = () => {
