@@ -16,7 +16,7 @@ const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: t
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
-  title: 'Best Home Inspector Atlanta GA | Inspections from $345',
+  title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
   description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
   keywords: [
     'home inspection Atlanta GA',
@@ -150,12 +150,12 @@ export default function Home() {
           </span>
 
           <h1 style={{ marginBottom: '1.5rem', color: '#FFFFFF', fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-0.025em', textShadow: '0 2px 20px rgba(0,0,0,0.6)' }}>
-            Atlanta&rsquo;s Certified Home Inspections<br />
-            <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 15px rgba(212,175,55,0.35)' }}>Two Inspectors on Every Job.</span>
+            Atlanta Home Inspections<br />
+            <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 15px rgba(212,175,55,0.35)' }}>Two Certified Inspectors on Every Job.</span>
           </h1>
 
           <p style={{ maxWidth: '720px', margin: '0 auto 2.5rem', fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
-            Uncompromising thoroughness led by a Certified Master Inspector® (CMI). From entry-level single-family homes to multi-million dollar luxury estates, every home inspection features two certified inspectors, FLIR thermal imaging, aerial drone roof scanning, and up to $35,000 in combined warranty & guarantee protection.
+            Foresight provides premier Atlanta home inspections led by board-certified Certified Master Inspector® Christopher Boykin. From single-family homes to luxury estates across 20 Metro Atlanta counties, every inspection features two certified inspectors working in tandem, complimentary FLIR thermal imaging, aerial drone roof scanning, and up to $35,000 in combined warranty protection.
           </p>
 
           <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>

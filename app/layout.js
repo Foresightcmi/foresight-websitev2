@@ -28,7 +28,7 @@ const outfit = Outfit({
 export const metadata = {
   metadataBase: new URL('https://www.fhinspectionsatl.com'),
   title: {
-    default: 'Best Home Inspector Atlanta GA | Inspections from $345',
+    default: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
     template: '%s | Foresight',
   },
   description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
@@ -91,6 +91,7 @@ export default function RootLayout({ children }) {
         "url": "https://www.fhinspectionsatl.com",
         "telephone": "+1-678-480-2110",
         "email": "inspect@foresightcmi.com",
+        "hasMap": "https://maps.google.com/?cid=10862078652033010531",
         "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "additionalType": [
