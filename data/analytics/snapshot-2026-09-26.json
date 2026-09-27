@@ -1,0 +1,87 @@
+{
+  "propertyId": "342062426",
+  "propertyName": "foresight home inspections - GA4",
+  "period": "Sep 20, 2026 - Sep 26, 2026",
+  "retrievedAt": "2026-09-27T19:00:00.000Z",
+  "kpis": {
+    "activeUsers": 114,
+    "activeUsersGrowthPct": 37.3,
+    "sessions": 140,
+    "sessionsGrowthPct": 26.1,
+    "screenPageViews": 153,
+    "screenPageViewsGrowthPct": 16.8,
+    "eventCount": 1200,
+    "eventCountGrowthPct": 25.7
+  },
+  "channels": [
+    {
+      "channelGroup": "Direct",
+      "sessions": 113,
+      "growthPct": 18.9,
+      "sharePct": 80.7
+    },
+    {
+      "channelGroup": "Referral / AI Assistant (ChatGPT)",
+      "sessions": 12,
+      "growthPct": 50.0,
+      "sharePct": 8.6,
+      "sourceMedium": "chatgpt.com / ai-assistant"
+    },
+    {
+      "channelGroup": "Organic Search (Google & Bing)",
+      "sessions": 10,
+      "growthPct": 42.9,
+      "sharePct": 7.1,
+      "breakdown": [
+        { "source": "google / organic", "sessions": 8, "growthPct": 33.3 },
+        { "source": "bing / organic", "sessions": 2, "growthPct": 0.0 }
+      ]
+    },
+    {
+      "channelGroup": "Paid Search",
+      "sessions": 2,
+      "growthPct": 0.0,
+      "sharePct": 1.4,
+      "sourceMedium": "com.google.android.googlequicksearchbox / cpc"
+    }
+  ],
+  "topPages": [
+    {
+      "title": "Certified Home Inspector Atlanta | Foresight Inspections",
+      "path": "/",
+      "views": 90,
+      "status": "New Title Tag Indexed & Dominating Views (+100%)"
+    },
+    {
+      "title": "Certified Commercial Property Inspections | Foresight Inspections",
+      "path": "/commercial-inspections",
+      "views": 19,
+      "status": "High-Ticket Commercial Demand Active"
+    },
+    {
+      "title": "Top-Rated Home Inspections Atlanta GA | Foresight Inspections",
+      "path": "/services",
+      "views": 11,
+      "status": "Core Service Hub Active"
+    },
+    {
+      "title": "Mold Inspection & Air Quality Testing | Foresight Inspections",
+      "path": "/mold-testing",
+      "views": 8,
+      "status": "High Margin Ancillary Service Traction"
+    },
+    {
+      "title": "Home Inspection Services Atlanta | Foresight Inspections",
+      "path": "/services/buyers-inspection",
+      "views": 5,
+      "status": "Buyer Intent Traffic"
+    }
+  ],
+  "geography": [
+    { "country": "United States", "users": 97, "growthPct": 59.0, "sharePct": 85.1 },
+    { "country": "Ireland", "users": 5, "growthPct": 0.0, "sharePct": 4.4 },
+    { "country": "Netherlands", "users": 4, "growthPct": 0.0, "sharePct": 3.5 },
+    { "country": "Seychelles", "users": 3, "growthPct": 0.0, "sharePct": 2.6 },
+    { "country": "South Korea", "users": 2, "growthPct": 0.0, "sharePct": 1.8 }
+  ]
+}

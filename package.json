@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "analytics": "node scripts/fetch-ga4-analytics.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",
