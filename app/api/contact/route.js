@@ -4,7 +4,7 @@ import { recordLead } from '../../../lib/leads';
 export async function POST(request) {
   try {
     const data = await request.json();
-    const { name, phone, email, address, preferredDate, message } = data;
+    const { name, phone, email, address, preferredDate, message, honeypot, _hp } = data;
 
     if (!name || (!email && !phone)) {
       return NextResponse.json(
@@ -20,6 +20,7 @@ export async function POST(request) {
       address: address || '',
       preferredDate: preferredDate || '',
       message: message || '',
+      honeypot: honeypot || _hp || '',
       source: 'Contact Page Form'
     });
 

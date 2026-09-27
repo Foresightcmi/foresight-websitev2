@@ -20,6 +20,8 @@ export async function POST(request) {
       estimatedTotal, 
       notes,
       message, 
+      honeypot,
+      _hp,
       source 
     } = data;
 
@@ -45,6 +47,7 @@ export async function POST(request) {
       addons,
       estimatedTotal,
       message: message || notes || '',
+      honeypot: honeypot || _hp || '',
       source: source || 'Quote Calculator'
     });
 

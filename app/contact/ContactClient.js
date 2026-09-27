@@ -18,6 +18,7 @@ export default function ContactClient() {
       address: e.target.address?.value || '',
       preferredDate: e.target.preferredDate?.value || '',
       message: e.target.message.value,
+      _hp: e.target._hp?.value || '',
     };
 
     try {
@@ -125,6 +126,11 @@ export default function ContactClient() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  {/* Invisible Honeypot to trap automated bot crawlers */}
+                  <div style={{ display: 'none', position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0, overflow: 'hidden' }} aria-hidden="true">
+                    <label htmlFor="company_website_url">Leave blank</label>
+                    <input type="text" id="company_website_url" name="_hp" tabIndex="-1" autoComplete="off" defaultValue="" />
+                  </div>
                   <div>
                     <label className="form-label" htmlFor="name">Full Name *</label>
                     <input type="text" id="name" name="name" className="form-control" placeholder="e.g. Jane Doe" required />

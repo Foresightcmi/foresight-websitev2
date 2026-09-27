@@ -29,6 +29,7 @@ export default function QuoteClient({ showValueComparison = true }) {
   const [leadRealtor, setLeadRealtor] = useState('');
   const [leadPreferredDate, setLeadPreferredDate] = useState('');
   const [leadNotes, setLeadNotes] = useState('');
+  const [leadHp, setLeadHp] = useState('');
   const [leadStatus, setLeadStatus] = useState('idle'); // idle, submitting, success, error
   const [showLeadForm, setShowLeadForm] = useState(false);
 
@@ -267,6 +268,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           addons: activeAddonNames,
           estimatedTotal: total,
           notes: leadNotes,
+          _hp: leadHp,
           source: 'Quote Calculator Online Booking'
         })
       });
@@ -832,6 +834,11 @@ export default function QuoteClient({ showValueComparison = true }) {
                       <p style={{ fontSize: '0.78rem', color: 'var(--color-gray-mid)', margin: 0, lineHeight: 1.35 }}>
                         Enter your details below to request your preferred window. To solidify all appointments on our calendar, the 50% deposit along with the signed inspection agreements are completed after our office sends your appointment confirmation. The remaining balance is due upon inspection completion before your report is released.
                       </p>
+
+                      {/* Invisible Honeypot to trap automated bot crawlers */}
+                      <div style={{ display: 'none', position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0, overflow: 'hidden' }} aria-hidden="true">
+                        <input type="text" name="_hp" tabIndex="-1" autoComplete="off" value={leadHp} onChange={e => setLeadHp(e.target.value)} />
+                      </div>
 
                       <div>
                         <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Your Full Name *</label>
