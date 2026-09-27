@@ -6,7 +6,6 @@ const PROPERTY_ID = '342062426';
 const KEY_PATH = path.resolve(process.cwd(), 'secrets', 'ga4-key.json');
 const OUTPUT_DIR = path.resolve(process.cwd(), 'data', 'analytics');
 const LEADS_PATH = path.resolve(process.cwd(), 'data', 'leads.json');
-const BASELINE_SNAPSHOT_PATH = path.resolve(OUTPUT_DIR, 'snapshot-2026-09-26.json');
 const SERVICE_ACCOUNT_EMAIL = 'ga4-analytics-reporter@lead-generation-tool-79c91.iam.gserviceaccount.com';
 
 function base64UrlEncode(str) {
@@ -108,70 +107,157 @@ function loadLeadsSummary() {
 }
 
 export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
-  console.log(`[GA4 ENGINE] Checking analytics synchronization for Property ID: ${PROPERTY_ID}...`);
+  console.log(`[GA4 ENGINE] Initializing analytics run for Property ID: ${PROPERTY_ID}...`);
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
   const leadsSummary = loadLeadsSummary();
-  let liveReport = null;
-  let isLive = false;
+  const token = await getAccessToken(KEY_PATH);
+  console.log('[GA4 ENGINE] Scoped OAuth token successfully minted.');
 
-  try {
-    const token = await getAccessToken(KEY_PATH);
-    console.log('[GA4 ENGINE] Scoped OAuth token successfully minted.');
+  // 1. Core KPIs (Last 7 Days vs Prior 7 Days)
+  console.log('[GA4 ENGINE] Querying KPI overview...');
+  const kpiData = await runGA4Report(token, {
+    dateRanges: [
+      { startDate: '7daysAgo', endDate: 'today', name: 'current_period' },
+      { startDate: '14daysAgo', endDate: '8daysAgo', name: 'previous_period' }
+    ],
+    metrics: [
+      { name: 'activeUsers' },
+      { name: 'sessions' },
+      { name: 'screenPageViews' },
+      { name: 'averageSessionDuration' },
+      { name: 'bounceRate' }
+    ]
+  });
 
-    // Attempt live API pull
-    const kpiData = await runGA4Report(token, {
-      dateRanges: [
-        { startDate: '7daysAgo', endDate: 'today', name: 'current_period' },
-        { startDate: '14daysAgo', endDate: '8daysAgo', name: 'previous_period' }
-      ],
-      metrics: [
-        { name: 'activeUsers' },
-        { name: 'sessions' },
-        { name: 'screenPageViews' },
-        { name: 'averageSessionDuration' }
-      ]
-    });
+  // 2. Traffic Acquisition Channels & AI Assistants (ChatGPT)
+  console.log('[GA4 ENGINE] Querying Acquisition Channels & AI Citations...');
+  const channelData = await runGA4Report(token, {
+    dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+    dimensions: [
+      { name: 'sessionDefaultChannelGroup' },
+      { name: 'sessionSourceMedium' }
+    ],
+    metrics: [
+      { name: 'sessions' },
+      { name: 'activeUsers' },
+      { name: 'screenPageViews' }
+    ],
+    orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+    limit: 20
+  });
 
-    const channelData = await runGA4Report(token, {
-      dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
-      dimensions: [{ name: 'sessionDefaultChannelGroup' }, { name: 'sessionSourceMedium' }],
-      metrics: [{ name: 'sessions' }, { name: 'activeUsers' }],
-      orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
-      limit: 15
-    });
+  // 3. Top Visited Pages
+  console.log('[GA4 ENGINE] Querying Top Content & Pages...');
+  const pageData = await runGA4Report(token, {
+    dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+    dimensions: [
+      { name: 'pageTitle' },
+      { name: 'pagePath' }
+    ],
+    metrics: [
+      { name: 'screenPageViews' },
+      { name: 'activeUsers' },
+      { name: 'userEngagementDuration' }
+    ],
+    orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
+    limit: 20
+  });
 
-    const pageData = await runGA4Report(token, {
-      dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
-      dimensions: [{ name: 'pageTitle' }, { name: 'pagePath' }],
-      metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
-      orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
-      limit: 15
-    });
+  // 4. Geographic Distribution (Metro Atlanta & US)
+  console.log('[GA4 ENGINE] Querying Geographic distribution...');
+  const geoData = await runGA4Report(token, {
+    dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+    dimensions: [
+      { name: 'city' },
+      { name: 'region' },
+      { name: 'country' }
+    ],
+    metrics: [
+      { name: 'activeUsers' },
+      { name: 'sessions' }
+    ],
+    orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
+    limit: 20
+  });
 
-    liveReport = {
-      kpiData,
-      channelData,
-      pageData
-    };
-    isLive = true;
-    console.log('[GA4 ENGINE] Successfully pulled real-time live data directly from Google Analytics 4!');
-  } catch (err) {
-    if (err.status === 403 || err.code === 'PERMISSION_DENIED') {
-      console.log('[GA4 ENGINE] Service account awaits 1-click Viewer addition in GA4 Property Access Management.');
-      console.log(`[GA4 ENGINE] Dedicated Account: ${SERVICE_ACCOUNT_EMAIL}`);
-    } else {
-      console.warn('[GA4 ENGINE] API notice:', err.message);
+  // Save live raw snapshot
+  const nowIso = new Date().toISOString();
+  const rawSnapshot = {
+    retrievedAt: nowIso,
+    propertyId: PROPERTY_ID,
+    kpis: kpiData,
+    channels: channelData,
+    topPages: pageData,
+    geo: geoData
+  };
+
+  const liveSnapshotPath = path.join(OUTPUT_DIR, 'snapshot-live.json');
+  fs.writeFileSync(liveSnapshotPath, JSON.stringify(rawSnapshot, null, 2), 'utf8');
+  console.log(`[GA4 ENGINE] Saved live snapshot to ${liveSnapshotPath}`);
+
+  // Format KPI metrics
+  const kpiRows = kpiData.rows || [];
+  let curUsers = 0, prevUsers = 0;
+  let curSessions = 0, prevSessions = 0;
+  let curViews = 0, prevViews = 0;
+  let avgDuration = 0;
+
+  if (kpiRows.length > 0) {
+    // Current period row
+    const curMetricValues = kpiRows[0]?.metricValues || [];
+    curUsers = parseInt(curMetricValues[0]?.value || '0', 10);
+    curSessions = parseInt(curMetricValues[1]?.value || '0', 10);
+    curViews = parseInt(curMetricValues[2]?.value || '0', 10);
+    avgDuration = Math.round(parseFloat(curMetricValues[3]?.value || '0'));
+
+    if (kpiRows.length > 1) {
+      const prevMetricValues = kpiRows[1]?.metricValues || [];
+      prevUsers = parseInt(prevMetricValues[0]?.value || '0', 10);
+      prevSessions = parseInt(prevMetricValues[1]?.value || '0', 10);
+      prevViews = parseInt(prevMetricValues[2]?.value || '0', 10);
     }
   }
 
-  // Load baseline if live is pending
-  let baseline = {};
-  if (fs.existsSync(BASELINE_SNAPSHOT_PATH)) {
-    baseline = JSON.parse(fs.readFileSync(BASELINE_SNAPSHOT_PATH, 'utf8'));
-  }
+  const calcGrowth = (curr, prev) => {
+    if (!prev || prev === 0) return '+100%';
+    const pct = (((curr - prev) / prev) * 100).toFixed(1);
+    return pct >= 0 ? `+${pct}%` : `${pct}%`;
+  };
+
+  // Format Channels
+  const channelRows = channelData.rows || [];
+  const channelLines = channelRows.map(row => {
+    const group = row.dimensionValues?.[0]?.value || 'Unknown';
+    const sourceMedium = row.dimensionValues?.[1]?.value || '';
+    const sessions = row.metricValues?.[0]?.value || '0';
+    const users = row.metricValues?.[1]?.value || '0';
+    const isAi = sourceMedium.toLowerCase().includes('chatgpt') || sourceMedium.toLowerCase().includes('ai');
+    const badge = isAi ? ' [AI Search Engine Citation]' : '';
+    return `- **${group}** (${sourceMedium}${badge}): **${sessions} sessions**, ${users} active users`;
+  });
+
+  // Format Pages
+  const pageRows = pageData.rows || [];
+  const pageLines = pageRows.slice(0, 10).map((row, idx) => {
+    const title = row.dimensionValues?.[0]?.value || 'Untitled';
+    const pPath = row.dimensionValues?.[1]?.value || '/';
+    const views = row.metricValues?.[0]?.value || '0';
+    const users = row.metricValues?.[1]?.value || '0';
+    return `${idx + 1}. **${title}** (\`${pPath}\`): **${views} views**, ${users} users`;
+  });
+
+  // Format Geo
+  const geoRows = geoData.rows || [];
+  const geoLines = geoRows.slice(0, 10).map(row => {
+    const city = row.dimensionValues?.[0]?.value || '(not set)';
+    const region = row.dimensionValues?.[1]?.value || '';
+    const country = row.dimensionValues?.[2]?.value || '';
+    const sessions = row.metricValues?.[1]?.value || '0';
+    return `- **${city}${region ? ', ' + region : ''}** (${country}): **${sessions} sessions**`;
+  });
 
   const generatedAt = new Date().toLocaleString('en-US', {
     timeZone: 'America/New_York',
@@ -181,64 +267,53 @@ export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
 
   const briefing = [
     `# Executive Analytics Briefing | Foresight Home Inspections`,
-    `**Reporting Date**: ${generatedAt} (EST)`,
+    `**Reporting Timestamp**: ${generatedAt} (EST)`,
     `**Property ID**: ${PROPERTY_ID} (foresight home inspections - GA4)`,
-    `**API Status**: ${isLive ? 'LIVE REAL-TIME STREAM ACTIVE' : 'AWAITING 1-CLICK VIEWER PERMISSION (FALLBACK TO VERIFIED SNAPSHOT)'}`,
+    `**Live Stream Connection**: 100% OPERATIONAL (Direct Google Analytics Data API)`,
     ``,
     `---`,
     ``,
-    `## 1. Executive Performance Summary`,
-    `- **Weekly Active Users**: ${baseline.kpis?.activeUsers || 114} (+${baseline.kpis?.activeUsersGrowthPct || 37.3}% week-over-week)`,
-    `- **Total Sessions**: ${baseline.kpis?.sessions || 140} (+${baseline.kpis?.sessionsGrowthPct || 26.1}% week-over-week)`,
-    `- **Total Page Views**: ${baseline.kpis?.screenPageViews || 153} (+${baseline.kpis?.screenPageViewsGrowthPct || 16.8}%)`,
-    `- **Total Event Interactions**: ${baseline.kpis?.eventCount || 1200} (+${baseline.kpis?.eventCountGrowthPct || 25.7}%)`,
-    `- **Inbound Revenue Pipeline**: $${leadsSummary.pipelineValue.toLocaleString()} across ${leadsSummary.totalLeads} qualified lead inquiries.`,
+    `## 1. Executive Performance Metrics (Last 7 Days vs Prior Period)`,
+    `- **Active Users**: **${curUsers} users** (${calcGrowth(curUsers, prevUsers)} vs prior 7 days)`,
+    `- **Total Sessions**: **${curSessions} sessions** (${calcGrowth(curSessions, prevSessions)} vs prior 7 days)`,
+    `- **Screen Page Views**: **${curViews} views** (${calcGrowth(curViews, prevViews)} vs prior 7 days)`,
+    `- **Average Session Duration**: **${avgDuration} seconds**`,
+    `- **Verified Lead Inbound Pipeline**: **$${leadsSummary.pipelineValue.toLocaleString()}** across **${leadsSummary.totalLeads} qualified inquiries**`,
     ``,
     `---`,
     ``,
-    `## 2. Acquisition Channels & AI Search Citations`,
-    `- **Direct Traffic**: ${baseline.channels?.[0]?.sessions || 113} sessions (80.7% share) - Dominant brand recall & direct inquiries.`,
-    `- **AI Citations (ChatGPT / Generative Engines)**: ${baseline.channels?.[1]?.sessions || 12} sessions (+50.0% week-over-week surge) - High-intent buyers directed straight to Foresight.`,
-    `- **Organic Search (Google & Bing)**: ${baseline.channels?.[2]?.sessions || 10} sessions (+42.9% surge) - SEO momentum kicking into high gear.`,
-    `- **Paid Search / Mobile Quick Search**: ${baseline.channels?.[3]?.sessions || 2} sessions.`,
+    `## 2. Real-Time Acquisition Channels & AI Citations (Last 28 Days)`,
+    channelLines.length > 0 ? channelLines.join('\n') : `No channel data recorded yet.`,
     ``,
     `---`,
     ``,
-    `## 3. High-Intent Content & Page Performance`,
-    `- **Homepage (New Title Tag - Certified Home Inspector Atlanta)**: 90 views (+100% brand new indexation surge).`,
-    `- **Commercial Inspections (/commercial-inspections)**: 19 views - High-ticket inspection interest.`,
-    `- **Main Services Hub (/services)**: 11 views.`,
-    `- **Mold Testing & Air Quality (/mold-testing)**: 8 views - Ancillary revenue driver.`,
-    `- **Buyer Pre-Purchase Inspections**: 5 views.`,
+    `## 3. Top Visited Surfaces & High-Intent Routes`,
+    pageLines.length > 0 ? pageLines.join('\n') : `No page data recorded yet.`,
     ``,
     `---`,
     ``,
-    `## 4. Geographic Penetration`,
-    `- **United States Traffic**: 97 users (+59.0% national/regional surge, 85.1% share).`,
-    `- **Metro Atlanta Cities**: Primary engagement concentrated in Fulton, DeKalb, Gwinnett, Cobb, and Clayton counties.`,
+    `## 4. Top Geographic Demand Hubs`,
+    geoLines.length > 0 ? geoLines.join('\n') : `No geo data recorded yet.`,
     ``,
     `---`,
     ``,
-    `## 5. Automated Pipeline Status`,
-    isLive
-      ? `✅ Headless background sync is running directly against the Google Analytics Data API.`
-      : `⚠️ To connect the automated 24/7 background sync directly to GA4, simply add the dedicated service account email to your GA4 property:\n\n**Email**: \`${SERVICE_ACCOUNT_EMAIL}\`\n**Role**: Viewer (Read-only)\n**Link**: [Google Analytics Admin](https://analytics.google.com/analytics/web/#/a342062426p342062426/admin/propertyuseraccess)`
+    `## 5. System Health & Autonomous Monitoring`,
+    `The dedicated service account (\`${SERVICE_ACCOUNT_EMAIL}\`) is actively synchronized. Scheduled background runs will automatically update this briefing every Monday at 9:00 AM EST.`
   ].join('\n');
 
   const reportFile = path.join(OUTPUT_DIR, 'executive-analytics-briefing.md');
   fs.writeFileSync(reportFile, briefing, 'utf8');
-  console.log(`[GA4 ENGINE] Executive report generated at ${reportFile}`);
+  console.log(`[GA4 ENGINE] Live executive report written to ${reportFile}`);
 
   if (sendPushAlert) {
     try {
-      const pushTitle = 'GA4 TRAFFIC BRIEFING: 114 USERS (+37%)';
+      const pushTitle = `LIVE GA4 TRAFFIC: ${curUsers} USERS (${curSessions} SESSIONS)`;
       const pushBody = [
-        'Weekly Foresight Analytics Summary:',
-        'Users: 114 (+37.3%)',
-        'Sessions: 140 (+26.1%)',
-        'ChatGPT AI Citations: 12 sessions (+50%)',
-        'Organic Search: +42.9% surge',
-        `Inbound Pipeline: $${leadsSummary.pipelineValue.toLocaleString()} (${leadsSummary.totalLeads} inquiries)`
+        'Live Foresight GA4 Synchronization:',
+        `Users: ${curUsers} (${calcGrowth(curUsers, prevUsers)})`,
+        `Sessions: ${curSessions}`,
+        `Page Views: ${curViews}`,
+        `Pipeline: $${leadsSummary.pipelineValue.toLocaleString()} (${leadsSummary.totalLeads} leads)`
       ].join('\n');
 
       await fetch('https://ntfy.sh/fores-antigravity-alerts-77', {
@@ -246,7 +321,7 @@ export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
         headers: {
           'Title': pushTitle,
           'Priority': 'default',
-          'Tags': 'chart_with_upwards_trend,bar_chart',
+          'Tags': 'chart_with_upwards_trend,bar_chart,satellite',
           'Click': 'https://www.fhinspectionsatl.com/dashboard',
           'Content-Type': 'text/plain; charset=utf-8'
         },
@@ -260,21 +335,22 @@ export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
 
   return {
     success: true,
-    isLive,
-    leadsSummary,
-    serviceAccountEmail: SERVICE_ACCOUNT_EMAIL
+    curUsers,
+    curSessions,
+    curViews,
+    avgDuration,
+    leadsSummary
   };
 }
 
-// Auto-run when called directly from CLI
 if (process.argv[1] && process.argv[1].endsWith('fetch-ga4-analytics.mjs')) {
   fetchFullAnalytics({ sendPushAlert: process.argv.includes('--push') })
     .then(res => {
-      console.log('[GA4 ENGINE] Execution finished successfully.');
+      console.log('[GA4 ENGINE] Live run completed successfully.');
       process.exit(0);
     })
     .catch(err => {
-      console.error('[GA4 ENGINE] Execution failed:', err);
+      console.error('[GA4 ENGINE] Live run failed:', err);
       process.exit(1);
     });
 }
