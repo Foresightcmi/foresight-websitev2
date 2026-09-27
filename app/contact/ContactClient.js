@@ -132,16 +132,16 @@ export default function ContactClient() {
                     <input type="text" id="company_website_url" name="_hp" tabIndex="-1" autoComplete="off" defaultValue="" />
                   </div>
                   <div>
-                    <label className="form-label" htmlFor="name">Full Name *</label>
+                    <label className="form-label" htmlFor="name">Full Name (Required)</label>
                     <input type="text" id="name" name="name" className="form-control" placeholder="e.g. Jane Doe" required />
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                     <div>
-                      <label className="form-label" htmlFor="phone">Phone Number *</label>
+                      <label className="form-label" htmlFor="phone">Phone Number (Required)</label>
                       <input type="tel" id="phone" name="phone" className="form-control" placeholder="(678) 000-0000" required />
                     </div>
                     <div>
-                      <label className="form-label" htmlFor="email">Email Address *</label>
+                      <label className="form-label" htmlFor="email">Email Address (Required)</label>
                       <input type="email" id="email" name="email" className="form-control" placeholder="jane@example.com" required />
                     </div>
                   </div>
@@ -156,7 +156,7 @@ export default function ContactClient() {
                     </div>
                   </div>
                   <div>
-                    <label className="form-label" htmlFor="message">Message / Inspection Questions *</label>
+                    <label className="form-label" htmlFor="message">Message / Inspection Questions (Required)</label>
                     <textarea id="message" name="message" className="form-control" rows="4" placeholder="Tell us about the property, square footage, add-ons (Pool, Termite, Radon), or any questions..." required></textarea>
                   </div>
 

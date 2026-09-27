@@ -164,6 +164,14 @@ export default function RealtorsClient() {
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}>
               ⚡ Priority Schedule for My Client
             </a>
+            <a href="tel:6784802110" className="btn" style={{ padding: '1rem 2rem', fontSize: '1.125rem', background: 'rgba(255,255,255,0.08)', color: '#FFFFFF', border: '1px solid rgba(255,255,255,0.2)', fontWeight: 600 }}>
+              📞 Direct VIP Hotline: (678) 480-2110
+            </a>
+          </div>
+          <div style={{ marginTop: '1.75rem', display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap', color: 'var(--color-gold)', fontSize: '0.95rem', fontWeight: 600 }}>
+            <span>🔑 Active SUPRA eKEY</span>
+            <span>⚡ Same-Day Digital CRL™ Delivery</span>
+            <span>🛡️ $10,000 Client Warranty Included</span>
           </div>
         </div>
         {/* Subtle background decoration */}

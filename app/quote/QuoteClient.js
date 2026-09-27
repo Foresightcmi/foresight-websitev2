@@ -436,11 +436,11 @@ export default function QuoteClient({ showValueComparison = true }) {
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'basement'} onChange={() => setFoundation('basement')} />
-                    Unfinished/Partial Basement *
+                    Unfinished/Partial Basement
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'crawlspace'} onChange={() => setFoundation('crawlspace')} />
-                    Crawlspace *
+                    Crawlspace
                   </label>
                 </div>
               </>
@@ -472,7 +472,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.45 
               }}>
-                ℹ️ <strong>* Additional Complexity Fees:</strong> Per our official fee schedule, an additional <strong>$75 fee</strong> is added for a crawlspace inspection, and <strong>$250</strong> for an unfinished/partially finished basement inspection.
+                ℹ️ <strong>Additional Complexity Fees:</strong> Per our official fee schedule, an additional <strong>$75 fee</strong> is added for a crawlspace inspection, and <strong>$250</strong> for an unfinished/partially finished basement inspection.
               </div>
             )}
 
@@ -841,7 +841,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Your Full Name *</label>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Your Full Name (Required)</label>
                         <input 
                           type="text" 
                           placeholder="e.g. Alex Morgan" 
@@ -854,7 +854,7 @@ export default function QuoteClient({ showValueComparison = true }) {
 
                       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                         <div>
-                          <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Phone Number *</label>
+                          <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Phone Number (Required)</label>
                           <input 
                             type="tel" 
                             placeholder="(678) 000-0000" 
@@ -865,7 +865,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                           />
                         </div>
                         <div>
-                          <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Email Address *</label>
+                          <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Email Address (Required)</label>
                           <input 
                             type="email" 
                             placeholder="alex@example.com" 
@@ -878,7 +878,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Property Address / City *</label>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Property Address / City (Required)</label>
                         <input 
                           type="text" 
                           placeholder="e.g. 123 Peachtree St, Atlanta, GA" 
