@@ -96,6 +96,7 @@ async function dispatchPushAlert(newLeads) {
     `Tap below to inspect permit records in Accela or review in your dashboard.`
   ].join('\n');
 
+  try {
     const safeMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(topLead.address || '')}`;
     const dossierUrl = `https://www.fhinspectionsatl.com/dossiers/${topLead.recordId}.html`;
 
@@ -105,7 +106,7 @@ async function dispatchPushAlert(newLeads) {
         'Title': title,
         'Priority': 'default',
         'Tags': 'construction,house,hammer',
-        'Actions': `view, 📄 Open Dossier, ${dossierUrl}, clear=true; view, 📍 Google Maps, ${safeMapUrl}, clear=true`
+        'Actions': `view, Open Dossier, ${dossierUrl}, clear=true; view, Google Maps, ${safeMapUrl}, clear=true`
       },
       body: Buffer.from(bodyText, 'utf8')
     });
