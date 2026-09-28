@@ -121,7 +121,7 @@ export default function ReviewClient() {
 
         {/* Primary Google Review CTA */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <Link
+          <a
             href={directGoogleReviewUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -144,7 +144,7 @@ export default function ReviewClient() {
             }}
           >
             <span>⭐⭐⭐⭐⭐</span> Leave a 5-Star Google Review
-          </Link>
+          </a>
           <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#64748B' }}>
             Takes under 30 seconds • Opens directly to Google Review dialog
           </div>
