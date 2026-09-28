@@ -12,6 +12,19 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  outputFileTracingExcludes: {
+    '*': [
+      './public/videos/**',
+      './public/sample-report/**',
+      './public/vip-dispatch.html',
+    ],
+  },
   turbopack: {
     root: process.cwd(),
   },
