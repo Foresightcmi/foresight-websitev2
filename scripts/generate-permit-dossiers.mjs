@@ -455,16 +455,16 @@ function generateBrandDossierHtml(lead) {
             <div class="val">${lead.recordId}</div>
           </div>
           <div class="meta-item">
-            <div class="label">Permit Classification</div>
-            <div class="val">${lead.permitType}</div>
+            <div class="label">Jurisdiction</div>
+            <div class="val">${lead.jurisdiction || 'Metro Atlanta'}</div>
           </div>
           <div class="meta-item">
             <div class="label">Estimated Valuation</div>
             <div class="val gold">$${formattedValuation}</div>
           </div>
           <div class="meta-item">
-            <div class="label">DeKalb / Fulton Parcel</div>
-            <div class="val">${lead.parcel}</div>
+            <div class="label">Municipal Parcel ID</div>
+            <div class="val">${lead.parcel || 'N/A'}</div>
           </div>
         </div>
       </div>

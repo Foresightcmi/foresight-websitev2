@@ -1,5 +1,980 @@
 [
   {
+    "recordId": "DKB-3189834",
+    "address": "591 RAVEN SPRINGS TRL, DeKalb County, GA",
+    "permitType": "Residential Air Conditioning",
+    "jobValue": 18523,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189834.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189834",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.888Z"
+  },
+  {
+    "recordId": "DKB-3189828",
+    "address": "2456 Whites RDG, DeKalb County, GA",
+    "permitType": "Residential General Combination",
+    "jobValue": 7000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189828.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189828",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.890Z"
+  },
+  {
+    "recordId": "DKB-3189825",
+    "address": "6117 DANA CT, DeKalb County, GA",
+    "permitType": "General Combined Plumbing",
+    "jobValue": 3000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189825.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189825",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.891Z"
+  },
+  {
+    "recordId": "DKB-3189824",
+    "address": "3442 COUNTY LINE RD, DeKalb County, GA",
+    "permitType": "Additions to Existing Structures",
+    "jobValue": 150000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189824.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189824",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.894Z"
+  },
+  {
+    "recordId": "DKB-3189822",
+    "address": "4284 RIDGETOP DR, DeKalb County, GA",
+    "permitType": "Repairs to Existing Structure",
+    "jobValue": 65000,
+    "permitDate": "2026-09-27",
+    "framingStageWindow": "Oct 26, 2026 - Dec 10, 2026",
+    "warrantyExpirationTarget": "Aug 22, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189822.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189822",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.896Z"
+  },
+  {
+    "recordId": "DKB-3189821",
+    "address": "1416 DEERWOOD DR, DeKalb County, GA",
+    "permitType": "Alteration to Existing Structure",
+    "jobValue": 500,
+    "permitDate": "2026-09-26",
+    "framingStageWindow": "Oct 25, 2026 - Dec 9, 2026",
+    "warrantyExpirationTarget": "Aug 21, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189821.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189821",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.898Z"
+  },
+  {
+    "recordId": "DKB-3189817",
+    "address": "1370 EMORY RD, DeKalb County, GA",
+    "permitType": "Residential Air Conditioning",
+    "jobValue": 19000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189817.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189817",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.900Z"
+  },
+  {
+    "recordId": "DKB-3189810",
+    "address": "2007 WELLBORN RD, DeKalb County, GA",
+    "permitType": "Plumbing Water Heater",
+    "jobValue": 1449,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189810.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189810",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.902Z"
+  },
+  {
+    "recordId": "DKB-3189807",
+    "address": "1083 VISTA TRL, DeKalb County, GA",
+    "permitType": "Repairs to Existing Structure",
+    "jobValue": 12505.51,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189807.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189807",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.903Z"
+  },
+  {
+    "recordId": "DKB-3189805",
+    "address": "1909 RAVENWOOD WAY, DeKalb County, GA",
+    "permitType": "Electrical Temporary Pole",
+    "jobValue": 600,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189805.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189805",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.905Z"
+  },
+  {
+    "recordId": "DKB-3189803",
+    "address": "2615 YALE TER, DeKalb County, GA",
+    "permitType": "Demolition",
+    "jobValue": 150000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189803.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189803",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.907Z"
+  },
+  {
+    "recordId": "DKB-3189802",
+    "address": "1636 RIDGEWOOD DR, DeKalb County, GA",
+    "permitType": "Electrical Rewire",
+    "jobValue": 1000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189802.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189802",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.908Z"
+  },
+  {
+    "recordId": "DKB-3189801",
+    "address": "1403 OLDFIELD RD, DeKalb County, GA",
+    "permitType": "Residential Air Conditioning",
+    "jobValue": 13085,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189801.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189801",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.910Z"
+  },
+  {
+    "recordId": "DKB-3189796",
+    "address": "2095 STARFIRE DR, DeKalb County, GA",
+    "permitType": "Alteration to Existing Structure",
+    "jobValue": 30000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189796.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189796",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.913Z"
+  },
+  {
+    "recordId": "DKB-3189795",
+    "address": "2728 ROLLINGWOOD LN, DeKalb County, GA",
+    "permitType": "Electrical Inspection Only",
+    "jobValue": 1000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189795.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189795",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.915Z"
+  },
+  {
+    "recordId": "DKB-3189794",
+    "address": "2218 EDGEMORE DR, DeKalb County, GA",
+    "permitType": "Plumbing Gas Line",
+    "jobValue": 9000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189794.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189794",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.917Z"
+  },
+  {
+    "recordId": "DKB-3189793",
+    "address": "2218 EDGEMORE DR, DeKalb County, GA",
+    "permitType": "Electrical Line Work",
+    "jobValue": 9000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189793.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189793",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.918Z"
+  },
+  {
+    "recordId": "DKB-3189788",
+    "address": "16 102 03 039, DeKalb County, GA",
+    "permitType": "General Combined Plumbing",
+    "jobValue": 4000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189788.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189788",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.920Z"
+  },
+  {
+    "recordId": "DKB-3189787",
+    "address": "2390 WOODLEAF LN, DeKalb County, GA",
+    "permitType": "Repairs to Existing Structure",
+    "jobValue": 48000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189787.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189787",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.922Z"
+  },
+  {
+    "recordId": "DKB-3189786",
+    "address": "1921 NORMAL ST, DeKalb County, GA",
+    "permitType": "Additions to Existing Structures",
+    "jobValue": 180000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189786.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189786",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.923Z"
+  },
+  {
+    "recordId": "DKB-3189792",
+    "address": "3636 CHERRY HILL PL, DeKalb County, GA",
+    "permitType": "Plumbing Gas Line",
+    "jobValue": 9000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189792.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189792",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.925Z"
+  },
+  {
+    "recordId": "DKB-3189791",
+    "address": "2093 PINELLAS TRL, DeKalb County, GA",
+    "permitType": "Plumbing Water Heater",
+    "jobValue": 3252.3,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189791.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189791",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.926Z"
+  },
+  {
+    "recordId": "DKB-3189790",
+    "address": "3636 CHERRY HILL PL, DeKalb County, GA",
+    "permitType": "Electrical Line Work",
+    "jobValue": 9000,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189790.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189790",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.928Z"
+  },
+  {
+    "recordId": "DKB-3189787",
+    "address": "2390 WOODLEAF LN, DeKalb County, GA",
+    "permitType": "Repairs to Existing Structure",
+    "jobValue": 48000,
+    "permitDate": "2026-09-25",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189787.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189787",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.930Z"
+  },
+  {
+    "recordId": "DKB-3189772",
+    "address": "1665 NORRIS LANDING DR, DeKalb County, GA",
+    "permitType": "Electrical Temporary Pole",
+    "jobValue": 500,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189772.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189772",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.932Z"
+  },
+  {
+    "recordId": "ALP-DEM240052",
+    "address": "467 Michael Drive, Alpharetta, GA, 30009",
+    "permitType": "Residential Demolition Whole",
+    "jobValue": 275000,
+    "permitDate": "2024-09-06",
+    "framingStageWindow": "Oct 5, 2024 - Nov 19, 2024",
+    "warrantyExpirationTarget": "Aug 1, 2025",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-DEM240052.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.933Z"
+  },
+  {
+    "recordId": "ALP-BR240621",
+    "address": "1520 Shade Tree Way, Alpharetta, GA, 30009",
+    "permitType": "Residential Porch",
+    "jobValue": 275000,
+    "permitDate": "2024-11-11",
+    "framingStageWindow": "Dec 10, 2024 - Jan 24, 2025",
+    "warrantyExpirationTarget": "Oct 6, 2025",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR240621.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.935Z"
+  },
+  {
+    "recordId": "ALP-PLR240045",
+    "address": "3565 Newport Bay Drive, Alpharetta, GA, 30005",
+    "permitType": "Residential Pool",
+    "jobValue": 275000,
+    "permitDate": "2024-12-13",
+    "framingStageWindow": "Jan 11, 2025 - Feb 25, 2025",
+    "warrantyExpirationTarget": "Nov 7, 2025",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-PLR240045.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.936Z"
+  },
+  {
+    "recordId": "ALP-BR250006",
+    "address": "160 Society Street, Alpharetta, GA, 30022",
+    "permitType": "Residential Deck",
+    "jobValue": 275000,
+    "permitDate": "2025-01-07",
+    "framingStageWindow": "Feb 5, 2025 - Mar 22, 2025",
+    "warrantyExpirationTarget": "Dec 2, 2025",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250006.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.938Z"
+  },
+  {
+    "recordId": "ALP-PLR250008",
+    "address": "255 Pebble Trail, Alpharetta, GA, 30009",
+    "permitType": "Residential Pool",
+    "jobValue": 275000,
+    "permitDate": "2025-02-20",
+    "framingStageWindow": "Mar 21, 2025 - May 5, 2025",
+    "warrantyExpirationTarget": "Jan 15, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-PLR250008.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.940Z"
+  },
+  {
+    "recordId": "ALP-BR250098",
+    "address": "467 Michael Drive, Alpharetta, GA, 30009",
+    "permitType": "Residential New Construction Detached",
+    "jobValue": 275000,
+    "permitDate": "2025-02-24",
+    "framingStageWindow": "Mar 25, 2025 - May 9, 2025",
+    "warrantyExpirationTarget": "Jan 19, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250098.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.942Z"
+  },
+  {
+    "recordId": "ALP-BR250102",
+    "address": "1130 Muirfield Court, Alpharetta, GA, 30005",
+    "permitType": "Residential Deck",
+    "jobValue": 275000,
+    "permitDate": "2025-02-28",
+    "framingStageWindow": "Mar 29, 2025 - May 13, 2025",
+    "warrantyExpirationTarget": "Jan 23, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250102.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.945Z"
+  },
+  {
+    "recordId": "ALP-BR250109",
+    "address": "12060 North Hickory Trace, Alpharetta, GA, 30004",
+    "permitType": "Residential Addition",
+    "jobValue": 275000,
+    "permitDate": "2025-03-01",
+    "framingStageWindow": "Mar 30, 2025 - May 14, 2025",
+    "warrantyExpirationTarget": "Jan 24, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250109.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.947Z"
+  },
+  {
+    "recordId": "ALP-BR250155",
+    "address": "405 Gatehouse Court",
+    "permitType": "Residential Porch",
+    "jobValue": 275000,
+    "permitDate": "2025-03-18",
+    "framingStageWindow": "Apr 16, 2025 - May 31, 2025",
+    "warrantyExpirationTarget": "Feb 10, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250155.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.948Z"
+  },
+  {
+    "recordId": "ALP-BR250191",
+    "address": "397 Milton Avenue, Alpharetta, GA, 30009",
+    "permitType": "Residential New Construction Detached",
+    "jobValue": 275000,
+    "permitDate": "2025-03-27",
+    "framingStageWindow": "Apr 25, 2025 - Jun 9, 2025",
+    "warrantyExpirationTarget": "Feb 19, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250191.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.949Z"
+  },
+  {
+    "recordId": "ALP-BR250198",
+    "address": "2070 Wessex Court, Alpharetta, GA, 30009",
+    "permitType": "Residential Deck",
+    "jobValue": 275000,
+    "permitDate": "2025-03-29",
+    "framingStageWindow": "Apr 27, 2025 - Jun 11, 2025",
+    "warrantyExpirationTarget": "Feb 21, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250198.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.951Z"
+  },
+  {
+    "recordId": "ALP-BR250207",
+    "address": "2008 Elk Street",
+    "permitType": "Residential New Construction Detached",
+    "jobValue": 275000,
+    "permitDate": "2025-04-01",
+    "framingStageWindow": "Apr 30, 2025 - Jun 14, 2025",
+    "warrantyExpirationTarget": "Feb 24, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250207.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.952Z"
+  },
+  {
+    "recordId": "ALP-BR250226",
+    "address": "2007 Elk Street",
+    "permitType": "Residential New Construction Detached",
+    "jobValue": 275000,
+    "permitDate": "2025-04-07",
+    "framingStageWindow": "May 6, 2025 - Jun 20, 2025",
+    "warrantyExpirationTarget": "Mar 2, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250226.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.954Z"
+  },
+  {
+    "recordId": "ALP-DEM250020",
+    "address": "12265 Charlotte Drive, Alpharetta, GA, 30004",
+    "permitType": "Residential Demolition Whole",
+    "jobValue": 275000,
+    "permitDate": "2025-04-07",
+    "framingStageWindow": "May 6, 2025 - Jun 20, 2025",
+    "warrantyExpirationTarget": "Mar 2, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-DEM250020.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.955Z"
+  },
+  {
+    "recordId": "ALP-BR250247",
+    "address": "120 Celandine Way, Alpharetta, GA, 30022",
+    "permitType": "Residential Porch",
+    "jobValue": 275000,
+    "permitDate": "2025-04-16",
+    "framingStageWindow": "May 15, 2025 - Jun 29, 2025",
+    "warrantyExpirationTarget": "Mar 11, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250247.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.957Z"
+  },
+  {
+    "recordId": "ALP-BR250248",
+    "address": "802 Forest Path Lane, Alpharetta, GA, 30022",
+    "permitType": "Residential Deck",
+    "jobValue": 275000,
+    "permitDate": "2025-04-17",
+    "framingStageWindow": "May 16, 2025 - Jun 30, 2025",
+    "warrantyExpirationTarget": "Mar 12, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250248.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.958Z"
+  },
+  {
+    "recordId": "ALP-BR250292",
+    "address": "2007 Elk Street, Alpharetta, GA, 30009",
+    "permitType": "Residential Sitewall, retaining wall,etc",
+    "jobValue": 275000,
+    "permitDate": "2025-05-01",
+    "framingStageWindow": "May 30, 2025 - Jul 14, 2025",
+    "warrantyExpirationTarget": "Mar 26, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250292.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.960Z"
+  },
+  {
+    "recordId": "ALP-BR250308",
+    "address": "135 Lansburgh Turn, Alpharetta, GA, 30022",
+    "permitType": "Residential Deck",
+    "jobValue": 275000,
+    "permitDate": "2025-05-09",
+    "framingStageWindow": "Jun 7, 2025 - Jul 22, 2025",
+    "warrantyExpirationTarget": "Apr 3, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250308.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.962Z"
+  },
+  {
+    "recordId": "ALP-BR250336",
+    "address": "3701 Spinnaker Circle, Alpharetta, GA, 30005",
+    "permitType": "Residential Sitewall, retaining wall,etc",
+    "jobValue": 275000,
+    "permitDate": "2025-05-17",
+    "framingStageWindow": "Jun 15, 2025 - Jul 30, 2025",
+    "warrantyExpirationTarget": "Apr 11, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250336.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.963Z"
+  },
+  {
+    "recordId": "ALP-BR250354",
+    "address": "3565 Newport Bay Drive, Alpharetta, GA, 30005",
+    "permitType": "Residential Deck",
+    "jobValue": 275000,
+    "permitDate": "2025-06-03",
+    "framingStageWindow": "Jul 2, 2025 - Aug 16, 2025",
+    "warrantyExpirationTarget": "Apr 28, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250354.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.965Z"
+  },
+  {
+    "recordId": "ALP-BR250378",
+    "address": "1085 Mayfield Manor Drive, Alpharetta, GA, 30009",
+    "permitType": "Residential Porch",
+    "jobValue": 275000,
+    "permitDate": "2025-05-22",
+    "framingStageWindow": "Jun 20, 2025 - Aug 4, 2025",
+    "warrantyExpirationTarget": "Apr 16, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250378.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.966Z"
+  },
+  {
+    "recordId": "ALP-BR250382",
+    "address": "110 Wills Overlook Alley, Alpharetta, GA, 30009",
+    "permitType": "Residential New Construction Attached",
+    "jobValue": 275000,
+    "permitDate": "2025-06-13",
+    "framingStageWindow": "Jul 12, 2025 - Aug 26, 2025",
+    "warrantyExpirationTarget": "May 8, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250382.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.968Z"
+  },
+  {
+    "recordId": "ALP-BR250383",
+    "address": "120 Wills Overlook Alley, Alpharetta, GA, 30009",
+    "permitType": "Residential New Construction Attached",
+    "jobValue": 275000,
+    "permitDate": "2025-06-13",
+    "framingStageWindow": "Jul 12, 2025 - Aug 26, 2025",
+    "warrantyExpirationTarget": "May 8, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250383.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.969Z"
+  },
+  {
+    "recordId": "ALP-BR250384",
+    "address": "130 Wills Overlook Alley, Alpharetta, GA, 30009",
+    "permitType": "Residential New Construction Attached",
+    "jobValue": 275000,
+    "permitDate": "2025-06-13",
+    "framingStageWindow": "Jul 12, 2025 - Aug 26, 2025",
+    "warrantyExpirationTarget": "May 8, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250384.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.971Z"
+  },
+  {
+    "recordId": "ALP-BR250385",
+    "address": "140 Wills Overlook Alley, Alpharetta, GA, 30009",
+    "permitType": "Residential New Construction Attached",
+    "jobValue": 275000,
+    "permitDate": "2025-06-13",
+    "framingStageWindow": "Jul 12, 2025 - Aug 26, 2025",
+    "warrantyExpirationTarget": "May 8, 2026",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250385.html",
+    "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.975Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0281",
+    "address": "8720 S Mount Drive, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 35150,
+    "permitDate": "2026-08-14",
+    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
+    "warrantyExpirationTarget": "Jul 9, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0281.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.977Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0294",
+    "address": "3110 Arbor Woods Drive, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 81955,
+    "permitDate": "2026-08-14",
+    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
+    "warrantyExpirationTarget": "Jul 9, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0294.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.978Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0307",
+    "address": "410 Lake Manor Trace, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 71410,
+    "permitDate": "2026-08-13",
+    "framingStageWindow": "Sep 11, 2026 - Oct 26, 2026",
+    "warrantyExpirationTarget": "Jul 8, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0307.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.980Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0304",
+    "address": "5785 Sunset Maple Drive, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 90280,
+    "permitDate": "2026-08-13",
+    "framingStageWindow": "Sep 11, 2026 - Oct 26, 2026",
+    "warrantyExpirationTarget": "Jul 8, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0304.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.981Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0306",
+    "address": "210 Kirkton KNL, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 70670,
+    "permitDate": "2026-08-13",
+    "framingStageWindow": "Sep 11, 2026 - Oct 26, 2026",
+    "warrantyExpirationTarget": "Jul 8, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0306.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.983Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0310",
+    "address": "5630 Sandown Way, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 351500,
+    "permitDate": "2026-08-12",
+    "framingStageWindow": "Sep 10, 2026 - Oct 25, 2026",
+    "warrantyExpirationTarget": "Jul 7, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0310.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.984Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0247",
+    "address": "11115 Crofton Overlook Court, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 311725,
+    "permitDate": "2026-08-11",
+    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
+    "warrantyExpirationTarget": "Jul 6, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0247.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.986Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0265",
+    "address": "9075 Barkston Drive, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 74555,
+    "permitDate": "2026-08-10",
+    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
+    "warrantyExpirationTarget": "Jul 5, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0265.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.987Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0295",
+    "address": "8066 Kelsey Place, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 108780,
+    "permitDate": "2026-08-10",
+    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
+    "warrantyExpirationTarget": "Jul 5, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0295.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.989Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0272",
+    "address": "9135 Etching Overlook, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 526880,
+    "permitDate": "2026-08-10",
+    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
+    "warrantyExpirationTarget": "Jul 5, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0272.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.991Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0297",
+    "address": "3980 Brooksbridge Crossing , Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 23680,
+    "permitDate": "2026-08-10",
+    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
+    "warrantyExpirationTarget": "Jul 5, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0297.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.993Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0298",
+    "address": "9570 Autry Falls Drive, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 36260,
+    "permitDate": "2026-08-07",
+    "framingStageWindow": "Sep 5, 2026 - Oct 20, 2026",
+    "warrantyExpirationTarget": "Jul 2, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0298.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.994Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0255",
+    "address": "250 Parian Run, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 425315,
+    "permitDate": "2026-08-07",
+    "framingStageWindow": "Sep 5, 2026 - Oct 20, 2026",
+    "warrantyExpirationTarget": "Jul 2, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0255.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.996Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0270",
+    "address": "711 Hambledon Bend, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 63640,
+    "permitDate": "2026-08-05",
+    "framingStageWindow": "Sep 3, 2026 - Oct 18, 2026",
+    "warrantyExpirationTarget": "Jun 30, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0270.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.997Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0293",
+    "address": "1180 Vintage Club Drive, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 4625,
+    "permitDate": "2026-08-05",
+    "framingStageWindow": "Sep 3, 2026 - Oct 18, 2026",
+    "warrantyExpirationTarget": "Jun 30, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0293.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:25.999Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0153",
+    "address": "11173 Gates Terrace, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 51800,
+    "permitDate": "2026-08-05",
+    "framingStageWindow": "Sep 3, 2026 - Oct 18, 2026",
+    "warrantyExpirationTarget": "Jun 30, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0153.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.001Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0288",
+    "address": "315 Trevington Court, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 40700,
+    "permitDate": "2026-08-03",
+    "framingStageWindow": "Sep 1, 2026 - Oct 16, 2026",
+    "warrantyExpirationTarget": "Jun 28, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0288.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.002Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0166",
+    "address": "280 Broken Lance Place, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 97125,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0166.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.005Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0291",
+    "address": "9550 Rod Road, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 100640,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0291.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.007Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0090",
+    "address": "10060 Parc Sky Circle, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 92500,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0090.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.009Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0285",
+    "address": "11845 Windcreek Overlook, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 39960,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0285.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.010Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0292",
+    "address": "325 Victorian Lane, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 92500,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0292.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.012Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0282",
+    "address": "5755 Oxborough Way, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 169830,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0282.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.013Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0283",
+    "address": "10085 Groomsbridge Road, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 128760,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0283.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.015Z"
+  },
+  {
+    "recordId": "JCK-BLDR-26-0296",
+    "address": "3070 Rivermont Parkway, Johns Creek, GA",
+    "permitType": "Residential Construction (Residential)",
+    "jobValue": 9250,
+    "permitDate": "2026-07-31",
+    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
+    "warrantyExpirationTarget": "Jun 25, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0296.html",
+    "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-28T13:23:26.016Z"
+  },
+  {
     "recordId": "BB-202600800",
     "address": "970 BOULDERCREST SE, ATLANTA, GA 30316",
     "permitType": "Residential New",
@@ -10,7 +985,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600800.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600800",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:55.879Z"
+    "generatedAt": "2026-09-28T13:23:26.017Z"
   },
   {
     "recordId": "BB-202600797",
@@ -23,7 +998,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600797.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600797",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:55.905Z"
+    "generatedAt": "2026-09-28T13:23:26.019Z"
   },
   {
     "recordId": "BB-202600778",
@@ -36,7 +1011,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600778.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600778",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:55.941Z"
+    "generatedAt": "2026-09-28T13:23:26.020Z"
   },
   {
     "recordId": "BB-202600767",
@@ -49,7 +1024,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600767.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600767",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:55.949Z"
+    "generatedAt": "2026-09-28T13:23:26.022Z"
   },
   {
     "recordId": "BB-202600764",
@@ -62,7 +1037,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600764.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600764",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:55.959Z"
+    "generatedAt": "2026-09-28T13:23:26.024Z"
   },
   {
     "recordId": "BB-202600777",
@@ -75,7 +1050,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600777.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600777",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:55.967Z"
+    "generatedAt": "2026-09-28T13:23:26.025Z"
   },
   {
     "recordId": "BB-202600759",
@@ -88,7 +1063,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600759.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600759",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:55.976Z"
+    "generatedAt": "2026-09-28T13:23:26.027Z"
   },
   {
     "recordId": "BB-202600752",
@@ -101,7 +1076,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600752.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600752",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.028Z"
+    "generatedAt": "2026-09-28T13:23:26.028Z"
   },
   {
     "recordId": "BB-202600749",
@@ -114,7 +1089,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600749.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600749",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.037Z"
+    "generatedAt": "2026-09-28T13:23:26.029Z"
   },
   {
     "recordId": "BB-202600757",
@@ -127,7 +1102,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600757.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600757",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.044Z"
+    "generatedAt": "2026-09-28T13:23:26.031Z"
   },
   {
     "recordId": "BB-202600735",
@@ -140,7 +1115,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600735.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600735",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.052Z"
+    "generatedAt": "2026-09-28T13:23:26.034Z"
   },
   {
     "recordId": "BB-202600729",
@@ -153,7 +1128,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600729.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600729",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.059Z"
+    "generatedAt": "2026-09-28T13:23:26.036Z"
   },
   {
     "recordId": "BB-202600727",
@@ -166,7 +1141,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600727.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600727",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.067Z"
+    "generatedAt": "2026-09-28T13:23:26.038Z"
   },
   {
     "recordId": "BB-202600725",
@@ -179,7 +1154,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600725.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600725",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.073Z"
+    "generatedAt": "2026-09-28T13:23:26.039Z"
   },
   {
     "recordId": "BB-202600722",
@@ -192,7 +1167,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600722.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600722",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.079Z"
+    "generatedAt": "2026-09-28T13:23:26.041Z"
   },
   {
     "recordId": "BB-202600721",
@@ -205,7 +1180,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600721.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600721",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.087Z"
+    "generatedAt": "2026-09-28T13:23:26.042Z"
   },
   {
     "recordId": "BB-202600713",
@@ -218,7 +1193,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600713.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600713",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.095Z"
+    "generatedAt": "2026-09-28T13:23:26.044Z"
   },
   {
     "recordId": "BB-202600702",
@@ -231,7 +1206,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600702.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600702",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.105Z"
+    "generatedAt": "2026-09-28T13:23:26.046Z"
   },
   {
     "recordId": "BB-202600697",
@@ -244,7 +1219,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600697.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600697",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.111Z"
+    "generatedAt": "2026-09-28T13:23:26.047Z"
   },
   {
     "recordId": "BB-202600716",
@@ -257,7 +1232,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600716.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600716",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.117Z"
+    "generatedAt": "2026-09-28T13:23:26.049Z"
   },
   {
     "recordId": "BB-202600718",
@@ -270,7 +1245,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600718.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600718",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.124Z"
+    "generatedAt": "2026-09-28T13:23:26.050Z"
   },
   {
     "recordId": "BB-202600696",
@@ -283,7 +1258,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600696.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600696",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.131Z"
+    "generatedAt": "2026-09-28T13:23:26.052Z"
   },
   {
     "recordId": "BB-202600694",
@@ -296,7 +1271,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600694.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600694",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.139Z"
+    "generatedAt": "2026-09-28T13:23:26.054Z"
   },
   {
     "recordId": "BB-202600693",
@@ -309,7 +1284,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600693.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600693",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.146Z"
+    "generatedAt": "2026-09-28T13:23:26.055Z"
   },
   {
     "recordId": "BB-202600666",
@@ -322,6 +1297,6 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600666.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600666",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T03:01:56.152Z"
+    "generatedAt": "2026-09-28T13:23:26.057Z"
   }
 ]
