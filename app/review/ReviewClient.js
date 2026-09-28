@@ -8,32 +8,36 @@ import GooglePreferredSource from '../components/GooglePreferredSource';
 export default function ReviewClient() {
   const [copiedType, setCopiedType] = useState(null);
   const [showInspectorTool, setShowInspectorTool] = useState(false);
+  const [dispatchMode, setDispatchMode] = useState('previous'); // 'previous' | 'sameday'
 
-  const googleReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJk_3KQe0H9YgRw8vLCvROjpY";
+  // Dynamic Inspector Dispatch State
+  const [clientName, setClientName] = useState('John & Claire');
+  const [clientPhone, setClientPhone] = useState('404-555-0199');
+  const [clientEmail, setClientEmail] = useState('');
+  const [propertyAddress, setPropertyAddress] = useState('4829 River Valley Manor');
 
-  const smsTemplate = `Hi [Name], Christopher Boykin with Foresight Home Inspections here! Thank you for trusting us with your home inspection today. Your full digital report has been delivered. If our two-inspector team and FLIR thermal scan gave you peace of mind, could you take 30 seconds to leave us a quick review on Google? It means the world to our local family business: https://www.fhinspectionsatl.com/review - Thank you!`;
+  const directGoogleReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJk_3KQe0H9YgRw8vLCvROjpY";
+  const shortReviewUrl = "https://www.fhinspectionsatl.com/review";
 
-  const emailTemplate = `Subject: Your Foresight Home Inspection Report + Quick Favor for Christopher
+  const firstName = (clientName || 'Valued Client').split(' ')[0];
+  const address = propertyAddress || 'your property';
 
-Hi [Name],
+  // Dynamic 5-Star SMS Templates
+  const previousClientSms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home at ${address}. As an independent Atlanta local business, our reputation is built on 5-star client trust. If our thorough two-inspector audit, FLIR thermal scan, and report gave you peace of mind, would you take 30 seconds to share a quick 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - Thank you so much! Christopher Boykin, CMI® (678) 480-2110`;
 
-Thank you for choosing Foresight Home Inspections! Your comprehensive digital inspection report, thermal imaging photos, and Create-Request-List summary have been delivered.
+  const sameDaySms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! Thank you for trusting our two-inspector team on ${address} today! Your digital CRL report is ready. As an Atlanta local family business, our reputation is built on 5-star client experiences. If our thoroughness and thermal scan gave you peace of mind, could you take 30 seconds to share a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - Christopher Boykin, CMI® (678) 480-2110`;
 
-As an independent, Georgia-certified small business, Google reviews are how local Atlanta homebuyers find an honest, thorough inspection team. If our two-inspector process, detailed walkthrough, and $10,000 warranty gave you confidence during your due diligence, we would be deeply grateful if you took 45 seconds to share your experience on Google:
+  const activeSms = dispatchMode === 'previous' ? previousClientSms : sameDaySms;
 
-👉 Leave a Google Review: https://www.fhinspectionsatl.com/review
+  // Dynamic 5-Star Email Templates
+  const previousClientEmailSubject = `Checking in on ${address} + Quick Favor for Christopher Boykin ⭐⭐⭐⭐⭐`;
+  const previousClientEmailBody = `Dear ${clientName || 'Valued Client'},\n\nI hope you and your family are settling in wonderfully at ${address}!\n\nChristopher Boykin here, founder of Foresight Home Inspections. It was a true pleasure inspecting your home during your due diligence.\n\nAs an independent, Georgia-certified small business, 5-star Google reviews from previous clients are the lifeblood of our company—they are how local Atlanta homebuyers know they can trust our two-inspector team to protect their investment.\n\nIf you had a great experience with our inspection thoroughness, FLIR thermal scans, and detailed report, would you take 30 seconds to leave us a 5-star review on Google?\n\n⭐⭐⭐⭐⭐ Tap here to leave your 5-Star Review:\n${directGoogleReviewUrl}\n\nIf there is anything you ever need regarding home maintenance, contractor recommendations, or building questions, my direct cell is always open to you at (678) 480-2110.\n\nWith sincere gratitude,\n\nChristopher Boykin, CMI®\nCertified Master Inspector\nForesight Home Inspections LLC\nPhone: (678) 480-2110\nWebsite: https://www.fhinspectionsatl.com`;
 
-Helpful details other buyers love hearing about:
-• Our two-inspector team speed and thoroughness
-• FLIR thermal imaging or crawlspace/roof findings
-• How the report helped your purchase or repair negotiations
+  const sameDayEmailSubject = `Your Inspection Report + Quick Favor for Christopher Boykin ⭐⭐⭐⭐⭐`;
+  const sameDayEmailBody = `Dear ${clientName || 'Valued Client'},\n\nThank you for trusting Foresight Home Inspections to evaluate ${address} today. Our mission is to give you complete clarity and peace of mind during your home buying journey.\n\nYour complete digital inspection report and FLIR thermal photos are now ready.\n\nAs a locally-owned Atlanta business, 5-star Google reviews from valued clients mean the world to our inspection team. If you appreciated our two-inspector thoroughness, detailed walkthrough, and $10,000 warranty protection, could you take 30 seconds to leave us a 5-star review on Google?\n\n⭐⭐⭐⭐⭐ Tap here to leave your 5-Star Review:\n${directGoogleReviewUrl}\n\nPlease don't hesitate to reach out if you have any questions about your report or contractor repair priorities.\n\nWarm regards,\n\nChristopher Boykin, CMI®\nCertified Master Inspector\nForesight Home Inspections LLC\nPhone: (678) 480-2110\nWebsite: https://www.fhinspectionsatl.com`;
 
-If you have any questions as you review the report, you can call me directly at 678-480-2110.
-
-Warm regards,
-Christopher Boykin, CMI®
-Foresight Home Inspections, LLC
-www.fhinspectionsatl.com | 678-480-2110`;
+  const activeEmailSubject = dispatchMode === 'previous' ? previousClientEmailSubject : sameDayEmailSubject;
+  const activeEmailBody = dispatchMode === 'previous' ? previousClientEmailBody : sameDayEmailBody;
 
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
@@ -45,6 +49,15 @@ www.fhinspectionsatl.com | 678-480-2110`;
       });
     }
     setTimeout(() => setCopiedType(null), 2500);
+  };
+
+  const handleSendSMS = () => {
+    const cleanPhone = (clientPhone || '').replace(/[^0-9]/g, '');
+    window.location.href = `sms:${cleanPhone}?body=${encodeURIComponent(activeSms)}`;
+  };
+
+  const handleSendEmail = () => {
+    window.location.href = `mailto:${clientEmail || ''}?subject=${encodeURIComponent(activeEmailSubject)}&body=${encodeURIComponent(activeEmailBody)}`;
   };
 
   return (
@@ -60,7 +73,7 @@ www.fhinspectionsatl.com | 678-480-2110`;
     >
       <div
         style={{
-          maxWidth: '720px',
+          maxWidth: '760px',
           width: '100%',
           margin: '0 auto',
           backgroundColor: '#ffffff',
@@ -88,6 +101,7 @@ www.fhinspectionsatl.com | 678-480-2110`;
               marginTop: '1.25rem',
               marginBottom: '0.75rem',
               lineHeight: 1.2,
+              fontFamily: "'Outfit', sans-serif"
             }}
           >
             Thank You for Choosing Foresight!
@@ -101,14 +115,14 @@ www.fhinspectionsatl.com | 678-480-2110`;
               margin: '0 auto',
             }}
           >
-            We appreciate your trust! Your honest review helps Metro Atlanta homebuyers discover a thorough, CMI-led dual inspection team.
+            We appreciate your trust! Your 5-star Google review helps Metro Atlanta homebuyers discover a thorough, CMI-led dual inspector team.
           </p>
         </div>
 
         {/* Primary Google Review CTA */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <Link
-            href={googleReviewUrl}
+            href={directGoogleReviewUrl}
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -126,17 +140,17 @@ www.fhinspectionsatl.com | 678-480-2110`;
               boxShadow: '0 8px 20px -4px rgba(212, 175, 55, 0.45)',
               transition: 'transform 0.15s ease, box-shadow 0.15s ease',
               width: '100%',
-              maxWidth: '380px',
+              maxWidth: '420px',
             }}
           >
-            <span>⭐</span> Leave a 5-Star Google Review
+            <span>⭐⭐⭐⭐⭐</span> Leave a 5-Star Google Review
           </Link>
           <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#64748B' }}>
-            Takes under 45 seconds • Opens directly to Google Maps
+            Takes under 30 seconds • Opens directly to Google Review dialog
           </div>
         </div>
 
-        {/* Keyword Thought Starters Box (SEO & AI Overview Engine) */}
+        {/* Helpful Details Box */}
         <div
           style={{
             backgroundColor: '#F1F5F9',
@@ -157,7 +171,7 @@ www.fhinspectionsatl.com | 678-480-2110`;
               gap: '0.5rem',
             }}
           >
-            <span>💡</span> Helpful Details to Mention in Your Review:
+            <span>💡</span> Helpful Details to Mention in Your 5-Star Review:
           </h2>
           <p style={{ fontSize: '0.9rem', color: '#475569', marginBottom: '1rem', lineHeight: 1.5 }}>
             Specific details help other Atlanta families know what to expect and strengthen our local community presence:
@@ -172,81 +186,31 @@ www.fhinspectionsatl.com | 678-480-2110`;
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
               <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>👥 Two-Inspector Team:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Having two certified inspectors on-site for thoroughness & half the inspection time.
+                Having two certified inspectors on-site for thoroughness and half the inspection time.
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>🔍 FLIR Thermal & Tech:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>🔍 FLIR Thermal &amp; Drone Tech:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Infrared thermal imaging, crawlspace robot scans, or 4K drone roof inspection findings.
+                Infrared thermal imaging, electrical panel scan, and aerial drone roof findings.
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
               <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>🏆 Christopher Boykin, CMI®:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Clear explanations, honest communication, and patient answers during the walkthrough.
+                Clear explanations, honest communication, and patient walkthrough answers.
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>📍 Your City & Due Diligence:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>📍 Atlanta Suburb &amp; CRL Report:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Mentioning your Atlanta suburb and how the same-day report helped during repair negotiations.
+                Mentioning your neighborhood and how the same-day report helped during negotiations.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Secondary Review Platforms */}
-        <div
-          style={{
-            borderTop: '1px solid #E2E8F0',
-            paddingTop: '1.5rem',
-            marginBottom: '1.5rem',
-            textAlign: 'center',
-          }}
-        >
-          <p style={{ fontSize: '0.9rem', color: '#64748B', marginBottom: '0.75rem', fontWeight: 600 }}>
-            Also Available On:
-          </p>
-          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link
-              href="https://www.homegauge.com/inspector/foresight-home-inspections"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#0F172A',
-                backgroundColor: '#F8FAFC',
-                border: '1px solid #CBD5E1',
-                padding: '0.45rem 1rem',
-                borderRadius: '0.5rem',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                textDecoration: 'none',
-              }}
-            >
-              HomeGauge Verified
-            </Link>
-            <Link
-              href="https://www.yelp.com/biz/foresight-home-inspections-lithonia"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#0F172A',
-                backgroundColor: '#F8FAFC',
-                border: '1px solid #CBD5E1',
-                padding: '0.45rem 1rem',
-                borderRadius: '0.5rem',
-                fontSize: '0.9rem',
-                fontWeight: 600,
-                textDecoration: 'none',
-              }}
-            >
-              Yelp Atlanta
-            </Link>
-          </div>
-        </div>
-
-        {/* Christopher's One-Click Post-Inspection Client Follow-Up Tool */}
+        {/* 1-Tap Client Review Dispatch App (For Christopher Boykin) */}
         <div
           style={{
             borderTop: '1px solid #E2E8F0',
@@ -257,109 +221,254 @@ www.fhinspectionsatl.com | 678-480-2110`;
           <button
             onClick={() => setShowInspectorTool(!showInspectorTool)}
             style={{
-              background: 'none',
-              border: 'none',
-              color: '#0284C7',
+              background: '#0F172A',
+              color: '#D4AF37',
+              border: '1px solid #D4AF37',
+              borderRadius: '0.5rem',
+              padding: '0.65rem 1.25rem',
               fontSize: '0.9rem',
               fontWeight: 700,
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.4rem',
+              gap: '0.5rem',
               margin: '0 auto',
+              boxShadow: '0 4px 12px rgba(15, 23, 42, 0.15)'
             }}
           >
-            <span>📱</span> {showInspectorTool ? 'Hide Inspector Follow-Up Tool' : 'Inspector Tool: Quick Client Follow-Up Templates'}
+            <span>📱</span> {showInspectorTool ? 'Hide Review Dispatch App' : 'Open Foresight 5-Star Review Dispatch App'}
           </button>
 
           {showInspectorTool && (
             <div
               style={{
-                marginTop: '1rem',
+                marginTop: '1.25rem',
                 backgroundColor: '#0F172A',
                 color: '#FFFFFF',
-                borderRadius: '0.75rem',
+                borderRadius: '1rem',
                 padding: '1.5rem',
+                border: '1px solid #334155'
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.85rem', color: '#38BDF8', fontWeight: 700, textTransform: 'uppercase' }}>
-                  Post-Inspection Review Invites (2-Hour Follow-Up)
-                </span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <div>
+                  <span style={{ fontSize: '0.85rem', color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Foresight Client Review Dispatcher
+                  </span>
+                  <p style={{ margin: '2px 0 0 0', fontSize: '0.75rem', color: '#94A3B8' }}>
+                    1-Tap dispatch via native SMS &amp; Email to previous and recent clients
+                  </p>
+                </div>
+
+                {/* Target Mode Toggle */}
+                <div style={{ display: 'inline-flex', background: '#1E293B', padding: '3px', borderRadius: '8px', border: '1px solid #334155' }}>
+                  <button
+                    type="button"
+                    onClick={() => setDispatchMode('previous')}
+                    style={{
+                      background: dispatchMode === 'previous' ? '#D4AF37' : 'transparent',
+                      color: dispatchMode === 'previous' ? '#0F172A' : '#94A3B8',
+                      border: 'none',
+                      borderRadius: '6px',
+                      padding: '4px 10px',
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      transition: 'all 0.15s'
+                    }}
+                  >
+                    Previous Clients
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDispatchMode('sameday')}
+                    style={{
+                      background: dispatchMode === 'sameday' ? '#D4AF37' : 'transparent',
+                      color: dispatchMode === 'sameday' ? '#0F172A' : '#94A3B8',
+                      border: 'none',
+                      borderRadius: '6px',
+                      padding: '4px 10px',
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                      transition: 'all 0.15s'
+                    }}
+                  >
+                    Today's Inspection
+                  </button>
+                </div>
               </div>
 
-              {/* SMS Template */}
+              {/* Client Info Inputs */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                <div>
+                  <label style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Client Name</label>
+                  <input
+                    type="text"
+                    value={clientName}
+                    onChange={(e) => setClientName(e.target.value)}
+                    placeholder="e.g. John & Claire Vance"
+                    style={{ width: '100%', background: '#1E293B', border: '1px solid #475569', borderRadius: '6px', padding: '6px 10px', color: '#FFF', fontSize: '0.85rem' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Client Phone (for 1-Tap SMS)</label>
+                  <input
+                    type="text"
+                    value={clientPhone}
+                    onChange={(e) => setClientPhone(e.target.value)}
+                    placeholder="e.g. 404-555-0199"
+                    style={{ width: '100%', background: '#1E293B', border: '1px solid #475569', borderRadius: '6px', padding: '6px 10px', color: '#FFF', fontSize: '0.85rem' }}
+                  />
+                </div>
+                <div style={{ gridColumn: '1 / -1' }}>
+                  <label style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Property Address Inspected</label>
+                  <input
+                    type="text"
+                    value={propertyAddress}
+                    onChange={(e) => setPropertyAddress(e.target.value)}
+                    placeholder="e.g. 4829 River Valley Manor, Atlanta GA"
+                    style={{ width: '100%', background: '#1E293B', border: '1px solid #475569', borderRadius: '6px', padding: '6px 10px', color: '#FFF', fontSize: '0.85rem' }}
+                  />
+                </div>
+              </div>
+
+              {/* Direct Review Link Indicator */}
+              <div style={{ background: '#1E293B', padding: '8px 12px', borderRadius: '6px', border: '1px solid #334155', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>
+                  Direct Google 5-Star Link Embedded in Messages:
+                </span>
+                <a
+                  href={directGoogleReviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#D4AF37', fontSize: '0.75rem', fontWeight: 700, textDecoration: 'underline' }}
+                >
+                  Test 5-Star Link &rarr;
+                </a>
+              </div>
+
+              {/* SMS Dispatch Section */}
               <div style={{ marginBottom: '1.25rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#F1F5F9' }}>📱 Quick SMS Template</span>
-                  <button
-                    onClick={() => copyToClipboard(smsTemplate, 'sms')}
-                    style={{
-                      background: copiedType === 'sms' ? '#22C55E' : '#D4AF37',
-                      color: '#0F172A',
-                      border: 'none',
-                      padding: '0.35rem 0.75rem',
-                      borderRadius: '0.35rem',
-                      fontSize: '0.8rem',
-                      fontWeight: 700,
-                      cursor: 'pointer',
-                    }}
-                  >
-                    {copiedType === 'sms' ? '✅ Copied SMS!' : '📋 Copy SMS'}
-                  </button>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#38BDF8', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span>📱</span> SMS Message Preview (5-Star Request Expressed)
+                  </span>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    <button
+                      onClick={handleSendSMS}
+                      style={{
+                        background: '#10B981',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        padding: '0.4rem 0.85rem',
+                        borderRadius: '0.35rem',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
+                      }}
+                    >
+                      📲 1-Tap Send SMS
+                    </button>
+                    <button
+                      onClick={() => copyToClipboard(activeSms, 'sms')}
+                      style={{
+                        background: copiedType === 'sms' ? '#22C55E' : '#334155',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        padding: '0.4rem 0.75rem',
+                        borderRadius: '0.35rem',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {copiedType === 'sms' ? '✅ Copied!' : '📋 Copy'}
+                    </button>
+                  </div>
                 </div>
                 <div
                   style={{
                     backgroundColor: '#1E293B',
-                    padding: '0.75rem',
+                    padding: '0.85rem',
                     borderRadius: '0.5rem',
                     fontSize: '0.85rem',
                     lineHeight: 1.5,
-                    color: '#CBD5E1',
+                    color: '#E2E8F0',
                     fontFamily: 'monospace',
+                    border: '1px solid #334155'
                   }}
                 >
-                  {smsTemplate}
+                  {activeSms}
                 </div>
               </div>
 
-              {/* Email Template */}
+              {/* Email Dispatch Section */}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#F1F5F9' }}>✉️ Email Template</span>
-                  <button
-                    onClick={() => copyToClipboard(emailTemplate, 'email')}
-                    style={{
-                      background: copiedType === 'email' ? '#22C55E' : '#D4AF37',
-                      color: '#0F172A',
-                      border: 'none',
-                      padding: '0.35rem 0.75rem',
-                      borderRadius: '0.35rem',
-                      fontSize: '0.8rem',
-                      fontWeight: 700,
-                      cursor: 'pointer',
-                    }}
-                  >
-                    {copiedType === 'email' ? '✅ Copied Email!' : '📋 Copy Email'}
-                  </button>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#38BDF8', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span>✉️</span> Email Subject &amp; Body Preview
+                  </span>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    <button
+                      onClick={handleSendEmail}
+                      style={{
+                        background: '#3B82F6',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        padding: '0.4rem 0.85rem',
+                        borderRadius: '0.35rem',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
+                      }}
+                    >
+                      ✉️ 1-Tap Send Email
+                    </button>
+                    <button
+                      onClick={() => copyToClipboard(activeEmailBody, 'email')}
+                      style={{
+                        background: copiedType === 'email' ? '#22C55E' : '#334155',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        padding: '0.4rem 0.75rem',
+                        borderRadius: '0.35rem',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {copiedType === 'email' ? '✅ Copied!' : '📋 Copy'}
+                    </button>
+                  </div>
                 </div>
                 <div
                   style={{
                     backgroundColor: '#1E293B',
-                    padding: '0.75rem',
+                    padding: '0.85rem',
                     borderRadius: '0.5rem',
-                    fontSize: '0.85rem',
+                    fontSize: '0.82rem',
                     lineHeight: 1.5,
-                    color: '#CBD5E1',
+                    color: '#E2E8F0',
                     fontFamily: 'monospace',
                     whiteSpace: 'pre-line',
-                    maxHeight: '140px',
+                    maxHeight: '160px',
                     overflowY: 'auto',
+                    border: '1px solid #334155'
                   }}
                 >
-                  {emailTemplate}
+                  <strong>Subject: {activeEmailSubject}</strong>
+                  {'\n\n'}
+                  {activeEmailBody}
                 </div>
               </div>
+
             </div>
           )}
         </div>
