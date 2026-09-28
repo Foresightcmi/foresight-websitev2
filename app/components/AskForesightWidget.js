@@ -281,7 +281,7 @@ export default function AskForesightWidget() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <span style={{ fontSize: '0.9rem' }}>👋</span>
                   <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#D4AF37', fontFamily: "'Outfit', sans-serif" }}>
-                    Christopher Boykin (CMI®)
+                    Jordan (Client Concierge)
                   </span>
                 </div>
                 <button
@@ -340,7 +340,7 @@ export default function AskForesightWidget() {
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setIsVoiceOpen(true)}
-              aria-label="Talk Live to Christopher Boykin, Certified Master Inspector"
+              aria-label="Talk Live to Jordan, Client Experience Concierge"
               className="ask-foresight-voice-launcher"
               style={{
                 width: '68px',
@@ -372,22 +372,14 @@ export default function AskForesightWidget() {
                   background: '#0F172A'
                 }}
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  poster="/images/Christopher_Boykin.webp"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                >
-                  <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
+                <picture>
+                  <source srcSet="/images/jordan-avatar.webp" type="image/webp" />
                   <img 
-                    src="/images/Christopher_Boykin.webp" 
-                    alt="Christopher Boykin CMI" 
+                    src="/images/jordan-avatar.jpg" 
+                    alt="Jordan - Client Experience Concierge" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
-                </video>
+                </picture>
               </div>
               {/* Green Live indicator badge */}
               <span style={{
@@ -410,7 +402,7 @@ export default function AskForesightWidget() {
                 gap: '4px'
               }}>
                 <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff', animation: 'blink 1.2s infinite' }} />
-                TALK TO CHRIS
+                LIVE CONCIERGE
               </span>
             </button>
           </div>

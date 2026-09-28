@@ -13,7 +13,7 @@ export async function POST(req) {
       }, { status: 500 });
     }
 
-    let persona = 'chris';
+    let persona = 'jordan';
     try {
       const body = await req.json();
       if (body && body.persona) {

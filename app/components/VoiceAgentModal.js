@@ -17,8 +17,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
   const [liveWsConnected, setLiveWsConnected] = useState(false);
-  const [persona, setPersona] = useState('chris');
-  const personaRef = useRef('chris');
+  const [persona, setPersona] = useState('jordan');
+  const personaRef = useRef('jordan');
 
   const [liveLeadForm, setLiveLeadForm] = useState({
     name: '',
@@ -1458,18 +1458,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <div style={{ position: 'relative' }}>
               <div 
-                style={persona === 'chris' ? {
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #D4AF37 0%, #9B2C2C 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: '2px solid #D4AF37',
-                  overflow: 'hidden',
-                  boxShadow: '0 0 12px rgba(212, 175, 55, 0.4)'
-                } : {
+                style={{
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
@@ -1482,36 +1471,14 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   boxShadow: '0 0 12px rgba(16, 185, 129, 0.4)'
                 }}
               >
-                {persona === 'chris' ? (
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    poster="/images/Christopher_Boykin.webp"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
-                  >
-                    <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
-                    <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
-                    <img 
-                      src="/images/Christopher_Boykin.webp" 
-                      alt="Christopher Boykin, Certified Master Inspector"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  </video>
-                ) : (
-                  <div style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.4rem'
-                  }}>
-                    👩💼
-                  </div>
-                )}
+                <picture>
+                  <source srcSet="/images/jordan-avatar.webp" type="image/webp" />
+                  <img 
+                    src="/images/jordan-avatar.jpg" 
+                    alt="Jordan - Client Experience Concierge"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </picture>
               </div>
               <span style={{
                 position: 'absolute',
@@ -1529,12 +1496,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  {persona === 'chris' ? 'Chris Boykin' : 'Jordan'}
+                  Jordan
                 </h3>
                 <span style={{
-                  background: persona === 'chris' ? 'rgba(212, 175, 55, 0.15)' : 'rgba(16, 185, 129, 0.15)',
-                  color: persona === 'chris' ? '#D4AF37' : '#34d399',
-                  border: `1px solid ${persona === 'chris' ? 'rgba(212, 175, 55, 0.4)' : 'rgba(16, 185, 129, 0.4)'}`,
+                  background: 'rgba(16, 185, 129, 0.15)',
+                  color: '#34d399',
+                  border: '1px solid rgba(16, 185, 129, 0.4)',
                   fontSize: '0.65rem',
                   fontWeight: 800,
                   padding: '2px 8px',
@@ -1545,7 +1512,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   alignItems: 'center',
                   gap: '4px'
                 }}>
-                  {persona === 'chris' ? 'Certified Master Inspector' : 'Sales Concierge'}
+                  Client Experience Concierge
                 </span>
                 <span style={{
                   background: 'rgba(16, 185, 129, 0.15)',
@@ -1560,11 +1527,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   gap: '4px'
                 }}>
                   <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                  {liveWsConnected ? 'Gemini 3.1 Live' : '🎙️ Authentic Cloned Voice'}
+                  {liveWsConnected ? 'Gemini 3.1 Live' : '🎙️ Live Voice'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                {persona === 'chris' ? 'Founder & Certified Master Inspector' : 'Client Experience Specialist'} &bull; 
+                Instant Quotes &bull; Scheduling &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
                   {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
                 </span>
@@ -1650,87 +1617,21 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Persona Switcher: Chris Boykin CMI (Primary) vs Jordan Concierge */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '8px 16px',
-          background: 'rgba(0, 0, 0, 0.35)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.06)'
-        }}>
-          <div style={{
-            display: 'inline-flex',
-            background: 'rgba(15, 23, 42, 0.85)',
-            border: '1px solid rgba(212, 175, 55, 0.35)',
-            borderRadius: '24px',
-            padding: '3px',
-            gap: '4px'
-          }}>
-            <button
-              type="button"
-              onClick={() => switchPersona('chris')}
-              aria-label="Switch to Christopher Boykin (CMI)"
-              style={{
-                padding: '6px 14px',
-                borderRadius: '20px',
-                border: 'none',
-                background: persona === 'chris' ? 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)' : 'transparent',
-                color: persona === 'chris' ? '#0F172A' : '#94a3b8',
-                fontWeight: persona === 'chris' ? 800 : 600,
-                fontSize: '0.78rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: persona === 'chris' ? '0 2px 10px rgba(212, 175, 55, 0.5)' : 'none'
-              }}
-            >
-              <span style={{ fontSize: '0.9rem' }}>👨🏾‍💼</span>
-              <span>Chris Boykin (Founder &amp; CMI®)</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => switchPersona('jordan')}
-              aria-label="Switch to Jordan Concierge"
-              style={{
-                padding: '6px 14px',
-                borderRadius: '20px',
-                border: 'none',
-                background: persona === 'jordan' ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'transparent',
-                color: persona === 'jordan' ? '#ffffff' : '#94a3b8',
-                fontWeight: persona === 'jordan' ? 800 : 600,
-                fontSize: '0.78rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: persona === 'jordan' ? '0 2px 10px rgba(16, 185, 129, 0.4)' : 'none'
-              }}
-            >
-              <span style={{ fontSize: '0.9rem' }}>👩💼</span>
-              <span>Jordan (Concierge)</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Visual LiveRep Avatar & Sound Visualizer (Christopher Boykin, Certified Master Inspector®) */}
+        {/* Visual Receptionist Avatar & Sound Visualizer (Jordan, Client Experience Concierge) */}
         <div style={{
           padding: '1.25rem 1rem 0.5rem 1rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'radial-gradient(circle at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%)'
+          background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.12) 0%, transparent 70%)'
         }}>
           {/* Animated Audio-Reactive LiveRep Avatar */}
           <div style={{ position: 'relative' }}>
             <button 
               type="button"
               onClick={handleToggleOrInterrupt}
-              aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? `Interrupt ${persona === 'chris' ? 'Chris' : 'Jordan'}` : `Tap to speak with ${persona === 'chris' ? 'Chris' : 'Jordan'}`}
+              aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Jordan' : 'Tap to speak with Jordan'}
               style={{
                 width: '144px',
                 height: '144px',
@@ -1739,8 +1640,6 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   ? '3px solid #10b981' 
                   : callState === 'speaking' 
                   ? '3px solid #D4AF37' 
-                  : persona === 'chris'
-                  ? '3px solid rgba(212, 175, 55, 0.6)'
                   : '3px solid rgba(16, 185, 129, 0.6)',
                 outline: 'none',
                 WebkitTapHighlightColor: 'transparent',
@@ -1751,8 +1650,6 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   ? '0 0 35px rgba(16, 185, 129, 0.7), 0 0 70px rgba(16, 185, 129, 0.3)'
                   : callState === 'speaking'
                   ? '0 0 45px rgba(212, 175, 55, 0.75), 0 0 80px rgba(212, 175, 55, 0.3)'
-                  : persona === 'chris'
-                  ? '0 0 25px rgba(212, 175, 55, 0.35)'
                   : '0 0 25px rgba(16, 185, 129, 0.35)',
                 display: 'flex',
                 alignItems: 'center',
@@ -1768,17 +1665,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 padding: '3px',
                 overflow: 'hidden'
               }}
-              title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? `${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking... Tap to interrupt` : 'Tap to speak'}
+              title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Jordan is speaking... Tap to interrupt' : 'Tap to speak'}
             >
-              {persona === 'chris' ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  poster="/images/Christopher_Boykin.webp"
-                  aria-label="Christopher Boykin, Certified Master Inspector live video avatar"
+              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+                <source srcSet="/images/jordan-avatar.webp" type="image/webp" />
+                <img 
+                  src="/images/jordan-avatar.jpg" 
+                  alt="Jordan, Client Experience Concierge"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -1788,84 +1681,31 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     transform: 'translateZ(0)',
                     filter: callState === 'speaking' ? 'brightness(1.08) contrast(1.04)' : 'brightness(0.98)'
                   }}
-                >
-                  <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
-                  <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
-                  <img 
-                    src="/images/Christopher_Boykin.webp" 
-                    alt="Christopher Boykin, Certified Master Inspector"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: '50%',
-                      objectFit: 'cover'
-                    }}
-                  />
-                </video>
-              ) : (
-                <div style={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '50%',
-                  background: 'radial-gradient(circle at 35% 30%, #34d399, #059669 40%, #064e3b 80%, #022c22 100%)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  <div style={{
-                    fontSize: '3.2rem',
-                    filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))',
-                    transform: callState === 'speaking' ? 'scale(1.08)' : 'scale(1)',
-                    transition: 'transform 0.2s'
-                  }}>
-                    👩💼
-                  </div>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '12px',
-                    fontSize: '0.62rem',
-                    fontWeight: 800,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    color: '#a7f3d0',
-                    background: 'rgba(0, 0, 0, 0.4)',
-                    padding: '1px 8px',
-                    borderRadius: '10px'
-                  }}>
-                    Concierge
-                  </div>
-                </div>
-              )}
+                />
+              </picture>
             </button>
 
-            {/* Certified Master Inspector® Badge Overlay (for Chris) */}
-            {persona === 'chris' && (
-              <div style={{
-                position: 'absolute',
-                bottom: '2px',
-                right: '2px',
-                width: '38px',
-                height: '38px',
-                borderRadius: '50%',
-                background: '#ffffff',
-                border: '2px solid #0F172A',
-                boxShadow: '0 3px 12px rgba(0, 0, 0, 0.7)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                zIndex: 10
-              }}>
-                <img 
-                  src="/images/cmi_logo.webp" 
-                  alt="Certified Master Inspector" 
-                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                />
-              </div>
-            )}
+            {/* Live Status Badge Overlay */}
+            <div style={{
+              position: 'absolute',
+              bottom: '4px',
+              right: '4px',
+              width: '34px',
+              height: '34px',
+              borderRadius: '50%',
+              background: callState === 'speaking' ? '#D4AF37' : callState === 'listening' ? '#10b981' : '#0F172A',
+              border: '2px solid rgba(255, 255, 255, 0.85)',
+              boxShadow: '0 3px 12px rgba(0, 0, 0, 0.7)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 10,
+              transition: 'all 0.3s ease'
+            }}>
+              <span style={{ fontSize: '0.9rem' }}>
+                {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : '✨'}
+              </span>
+            </div>
           </div>
 
           {/* Equalizer Sound Waveform Bars */}
@@ -1911,10 +1751,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             {callState === 'listening'
               ? '🟢 Listening to you... Speak naturally (Hands-Free Call)'
               : callState === 'speaking'
-              ? `🗣️ ${persona === 'chris' ? 'Chris Boykin (CMI®)' : 'Jordan'} is speaking... (tap to interrupt)`
+              ? '🗣️ Jordan is speaking... (tap to interrupt)'
               : callState === 'thinking'
-              ? '⚡ Analyzing Atlanta building code & pricing...'
-              : 'Tap Christopher or speak naturally to begin'}
+              ? '⚡ Jordan is checking Atlanta building science & pricing...'
+              : 'Tap Jordan or speak naturally to begin'}
           </p>
 
           {/* Microphone Permission Warning / Helper Banner */}
