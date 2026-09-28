@@ -1,5 +1,18 @@
 [
   {
+    "recordId": "BB-202600778",
+    "recipientName": "Deborah Leah Calvert",
+    "recipientEmail": "leahcalvert@gmail.com",
+    "address": "995 DIMMOCK SW, ATLANTA, GA 30310",
+    "jobValue": 500000,
+    "subject": "Structural & Pre-Drywall Due Diligence Advisory: 995 DIMMOCK SW, ATLANTA, GA 30310 (Permit #BB-202600778)",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600778.html",
+    "messageId": "<ff3e5002-b100-5b73-13a1-88b9fbbe2a6d@foresightcmi.com>",
+    "status": "SENT",
+    "dispatchedAt": "2026-09-28T03:30:21.893Z",
+    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+  },
+  {
     "recordId": "BB-202600800",
     "recipientName": "Emanuel Amariw",
     "recipientEmail": "emanuel.amariw@gmail.com",

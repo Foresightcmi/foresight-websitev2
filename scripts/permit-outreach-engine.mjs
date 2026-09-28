@@ -250,6 +250,16 @@ async function main() {
         projectScope: '4,665 SF 3-story luxury residence with basement, Hardie siding, 3-car garage'
       };
     }
+    if (l.recordId === 'BB-202600778') {
+      return {
+        ...l,
+        ownerName: 'Deborah Leah Calvert',
+        ownerEmail: 'leahcalvert@gmail.com',
+        ownerPhone: '404-909-7117',
+        mailingAddress: '953 Victory Dr SW, Atlanta, GA 30310',
+        projectScope: 'Single-family new construction luxury residence ($500,000 valuation)'
+      };
+    }
     return l;
   });
 
