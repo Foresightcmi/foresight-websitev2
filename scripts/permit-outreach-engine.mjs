@@ -303,7 +303,7 @@ async function main() {
         messageId: info.messageId,
         status: 'SENT',
         dispatchedAt: new Date().toISOString(),
-        inspectionTarget: 'Pre-Drywall Rough-In ($475 - $850)'
+        inspectionTarget: 'Pre-Drywall Rough-In (From $275)'
       };
 
       outreachLog.unshift(entry);
