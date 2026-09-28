@@ -1,0 +1,48 @@
+name: Autonomous Municipal Permit Radar & Outreach
+
+on:
+  schedule:
+    # Run every day at 12:00 UTC (8:00 AM EST)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allows 1-click manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  harvest-and-outreach:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Harvest Municipal Permits
+        run: node scripts/permit-radar.mjs
+
+      - name: Generate Property Due Diligence Dossiers
+        run: node scripts/generate-permit-dossiers.mjs
+
+      - name: Dispatch Autonomous Outreach Advisories
+        run: node scripts/permit-outreach-engine.mjs
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+      - name: Commit and Push Updated Leads & Dossiers
+        run: |
+          git config user.name "Foresight Permit Radar Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/permit-leads.json data/permit-outreach-log.json data/permit-leads-crm.json public/dossiers/
+          git diff --cached --quiet || (git commit -m "chore(radar): automated municipal permit harvest and outreach [skip ci]" && git push)

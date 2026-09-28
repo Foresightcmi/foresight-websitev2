@@ -200,8 +200,10 @@ async function main() {
 
   const { user, pass } = getEmailCredentials();
   if (!pass) {
-    console.error('❌ [Outreach Engine] EMAIL_PASSWORD not found in environment or .env.local');
-    process.exit(1);
+    console.warn('⚠️ [Outreach Engine] EMAIL_PASSWORD not found in environment or .env.local.');
+    console.warn('   To enable live email dispatch in GitHub Actions, add EMAIL_PASSWORD to repository secrets.');
+    console.log('🏁 [Outreach Engine] Skipping email transmission for this run.');
+    return;
   }
 
   // Create real Gmail/Google Workspace SMTP transporter
