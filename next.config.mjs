@@ -129,19 +129,19 @@ const nextConfig = {
         ],
       },
       {
-        source: '/vip-dispatch.html',
+        source: '/(vip-dispatch|dispatch).html',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=604800',
+            value: 'no-cache, no-store, must-revalidate',
           },
           {
             key: 'CDN-Cache-Control',
-            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+            value: 'no-cache, no-store, must-revalidate',
           },
           {
             key: 'Vercel-CDN-Cache-Control',
-            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+            value: 'no-cache, no-store, must-revalidate',
           },
         ],
       },

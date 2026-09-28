@@ -23,7 +23,7 @@ export default function ReviewClient() {
   const address = propertyAddress || 'your property';
 
   // Dynamic 5-Star SMS Templates
-  const previousClientSms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home at ${address}. As an independent Atlanta local business, our reputation is built on 5-star client trust. If our thorough two-inspector audit, FLIR thermal scan, and report gave you peace of mind, would you take 30 seconds to share a quick 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - Thank you so much! Christopher Boykin, CMI® (678) 480-2110`;
+  const previousClientSms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home at ${address}. As an independent Atlanta local business, our reputation is built on 5-star reviews from valued clients like you. Could you please take 30 seconds to give us a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - It means the world to our team! Thank you so much! Christopher Boykin, CMI® (678) 480-2110`;
 
   const sameDaySms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! Thank you for trusting our two-inspector team on ${address} today! Your digital CRL report is ready. As an Atlanta local family business, our reputation is built on 5-star client experiences. If our thoroughness and thermal scan gave you peace of mind, could you take 30 seconds to share a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - Christopher Boykin, CMI® (678) 480-2110`;
 
