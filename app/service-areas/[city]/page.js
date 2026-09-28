@@ -61,7 +61,9 @@ export async function generateMetadata({ params }) {
     || `Need a certified home inspector in ${cityName}, GA? Foresight Home Inspections provides premium, two-inspector team services led by a Certified Master Inspector for ultimate peace of mind.`;
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
     keywords: [
       `home inspector ${cityName} GA`,

@@ -78,7 +78,9 @@ export async function generateMetadata({ params }) {
   const canonicalUrl = `${SITE_URL}/services/${normalizedService}/${resolvedParams.city}`;
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
     keywords: [
       `${serviceName.toLowerCase()} ${cityName} GA`,

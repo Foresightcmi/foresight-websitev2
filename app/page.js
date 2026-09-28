@@ -16,7 +16,9 @@ const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: t
 const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
 
 export const metadata = {
-  title: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
+  title: {
+    absolute: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
+  },
   description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
   keywords: [
     'home inspection Atlanta GA',
