@@ -219,9 +219,12 @@
       transition: all 0.2s ease;
     }
     .card.sent {
-      border-color: rgba(16, 185, 129, 0.4);
-      background: #0d1e1a;
-      opacity: 0.85;
+      border: 2px solid #10b981 !important;
+      background: #091713 !important;
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.12);
+    }
+    .card.pending {
+      border: 1px solid rgba(245, 158, 11, 0.35);
     }
     .card-top {
       display: flex;
@@ -368,6 +371,104 @@
       color: var(--text-muted);
       font-size: 13.5px;
     }
+  
+    .sent-status-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(5, 150, 105, 0.12));
+      border: 1px solid #10b981;
+      border-radius: 8px;
+      padding: 7px 11px;
+      margin-bottom: 10px;
+    }
+    .sent-status-left {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+    .sent-badge-pill {
+      background: #059669;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2.5px 8px;
+      border-radius: 5px;
+      letter-spacing: 0.4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sent-time {
+      font-size: 11px;
+      color: #6ee7b7;
+      font-weight: 600;
+    }
+    .btn-undo {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #e2e8f0;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-undo:hover {
+      background: rgba(239, 68, 68, 0.25);
+      border-color: #ef4444;
+      color: #fca5a5;
+    }
+
+    .pending-status-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px dashed rgba(245, 158, 11, 0.4);
+      border-radius: 8px;
+      padding: 6px 11px;
+      margin-bottom: 10px;
+    }
+    .pending-status-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .pending-badge-pill {
+      background: rgba(245, 158, 11, 0.25);
+      color: #fbbf24;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2.5px 7px;
+      border-radius: 5px;
+      letter-spacing: 0.3px;
+    }
+    .pending-time {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .btn-mark-sent-manual {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-mark-sent-manual:hover {
+      background: #10b981;
+      color: #0b0f19;
+    }
+
   </style>
 </head>
 <body>
@@ -462,16 +563,82 @@
     let searchQuery = '';
     let displayLimit = 80;
 
-    const realtorSentSet = new Set(JSON.parse(localStorage.getItem('foresight_sent_sms') || '[]'));
-    const clientSentSet = new Set(JSON.parse(localStorage.getItem('foresight_sent_client_sms') || '[]'));
+    // Helper function for formatted timestamps
+    function getFormattedDateTime(d = new Date()) {
+      try {
+        const month = d.toLocaleDateString('en-US', { month: 'short' });
+        const day = d.getDate();
+        let hours = d.getHours();
+        const minutes = d.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        return `${month} ${day} at ${hours}:${minutes} ${ampm}`;
+      } catch (e) {
+        return 'Recently';
+      }
+    }
 
-    // Pre-populate realtor sent set
+    // Realtor Sent Log & Set
+    const realtorSentLog = JSON.parse(localStorage.getItem('foresight_sent_realtor_log') || '{}');
+    const realtorSentSet = new Set(JSON.parse(localStorage.getItem('foresight_sent_sms') || '[]'));
     realtorFilers.forEach(f => {
       if (f.initial_sent) {
         realtorSentSet.add(f.id);
+        if (!realtorSentLog[f.id]) {
+          realtorSentLog[f.id] = { sentAt: null, displayDate: 'Sep 25, 2026' };
+        }
+      }
+    });
+    realtorSentSet.forEach(id => {
+      if (!realtorSentLog[id]) {
+        realtorSentLog[id] = { sentAt: null, displayDate: 'Previously Sent' };
       }
     });
     localStorage.setItem('foresight_sent_sms', JSON.stringify([...realtorSentSet]));
+    localStorage.setItem('foresight_sent_realtor_log', JSON.stringify(realtorSentLog));
+
+    // Client Sent Log & Set
+    const clientSentLog = JSON.parse(localStorage.getItem('foresight_sent_client_log') || '{}');
+    const clientSentSet = new Set(JSON.parse(localStorage.getItem('foresight_sent_client_sms') || '[]'));
+    clientSentSet.forEach(id => {
+      if (!clientSentLog[id]) {
+        clientSentLog[id] = { sentAt: null, displayDate: 'Previously Sent' };
+      }
+    });
+    Object.keys(clientSentLog).forEach(id => clientSentSet.add(id));
+    localStorage.setItem('foresight_sent_client_sms', JSON.stringify([...clientSentSet]));
+    localStorage.setItem('foresight_sent_client_log', JSON.stringify(clientSentLog));
+
+    function toggleSent(id, mode = 'clients', event) {
+      if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+      }
+      const isClient = mode === 'clients';
+      const sentLog = isClient ? clientSentLog : realtorSentLog;
+      const sentSet = isClient ? clientSentSet : realtorSentSet;
+      const storageKey = isClient ? 'foresight_sent_client_sms' : 'foresight_sent_sms';
+      const logKey = isClient ? 'foresight_sent_client_log' : 'foresight_sent_realtor_log';
+
+      if (sentSet.has(id)) {
+        // Toggle from Sent to Unsent (Undo)
+        sentSet.delete(id);
+        delete sentLog[id];
+      } else {
+        // Toggle from Unsent to Sent (Mark as Sent)
+        sentSet.add(id);
+        sentLog[id] = {
+          sentAt: new Date().toISOString(),
+          displayDate: getFormattedDateTime()
+        };
+      }
+
+      localStorage.setItem(storageKey, JSON.stringify([...sentSet]));
+      localStorage.setItem(logKey, JSON.stringify(sentLog));
+      updateStats();
+      renderCards();
+    }
 
     function setMode(mode) {
       currentMode = mode;
@@ -574,7 +741,6 @@
     }
 
     function markSent(id, smsLink, mode = 'realtors') {
-      // Detect iOS vs Android to guarantee pre-filled SMS body works on iPhone and Android
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
       let finalLink = smsLink;
       if (isIOS) {
@@ -582,11 +748,20 @@
       } else {
         finalLink = finalLink.replace("?&body=", "?body=");
       }
-      const sentSet = mode === 'realtors' ? realtorSentSet : clientSentSet;
-      const storageKey = mode === 'realtors' ? 'foresight_sent_sms' : 'foresight_sent_client_sms';
-      
+
+      const isClient = mode === 'clients';
+      const sentLog = isClient ? clientSentLog : realtorSentLog;
+      const sentSet = isClient ? clientSentSet : realtorSentSet;
+      const storageKey = isClient ? 'foresight_sent_client_sms' : 'foresight_sent_sms';
+      const logKey = isClient ? 'foresight_sent_client_log' : 'foresight_sent_realtor_log';
+
       sentSet.add(id);
+      sentLog[id] = {
+        sentAt: new Date().toISOString(),
+        displayDate: getFormattedDateTime()
+      };
       localStorage.setItem(storageKey, JSON.stringify([...sentSet]));
+      localStorage.setItem(logKey, JSON.stringify(sentLog));
       updateStats();
 
       const card = document.getElementById(id);
@@ -601,7 +776,7 @@
             }
           }, 300);
         } else {
-          card.classList.add('sent');
+          renderCards();
         }
       }
       window.location.href = finalLink;
@@ -674,8 +849,32 @@
       if (currentMode === 'realtors') {
         html = displayBatch.map(f => {
           const isSent = sentSet.has(f.id);
+          const sentInfo = realtorSentLog[f.id];
+          const sentDateStr = sentInfo ? sentInfo.displayDate : '';
           return `
-            <div class="card ${isSent ? 'sent' : ''}" id="${f.id}">
+            <div class="card ${isSent ? 'sent' : 'pending'}" id="${f.id}">
+              ${isSent ? `
+                <div class="sent-status-banner">
+                  <div class="sent-status-left">
+                    <span class="sent-badge-pill">✅ TEXT SENT</span>
+                    <span class="sent-time">📅 Sent: <b>${sentDateStr || 'Recorded in Log'}</b></span>
+                  </div>
+                  <button class="btn-undo" onclick="toggleSent('${f.id}', 'realtors', event)" title="Click to move back to Ready to Text">
+                    ↩️ Mark Unsent
+                  </button>
+                </div>
+              ` : `
+                <div class="pending-status-banner">
+                  <div class="pending-status-left">
+                    <span class="pending-badge-pill">🟡 READY TO TEXT</span>
+                    <span class="pending-time">Not contacted yet</span>
+                  </div>
+                  <button class="btn-mark-sent-manual" onclick="toggleSent('${f.id}', 'realtors', event)" title="Mark as sent if already contacted">
+                    ✓ Mark Sent
+                  </button>
+                </div>
+              `}
+
               <div class="card-top">
                 <div>
                   <div class="card-title">${f.name}</div>
@@ -694,7 +893,7 @@
               <div class="preview-text">"${f.text_body.replace('*Foresight Home Inspections*', '<strong style="color:#ffffff; font-weight:800;">Foresight Home Inspections</strong>').replace('https://fhinspectionsatl.com', `<a href="https://fhinspectionsatl.com" target="_blank" style="color:#60a5fa; text-decoration:underline; font-weight:700;">fhinspectionsatl.com</a>`)}"</div>
 
               <button class="btn-sms ${isSent ? 'sent' : ''}" onclick="markSent('${f.id}', '${f.sms_link}', 'realtors')">
-                ${isSent ? '✓ Text Opened / Contacted' : '📱 1-Tap Text ' + f.first + ' (' + f.phone + ')'}
+                ${isSent ? `✓ Text Sent (${sentDateStr || 'Logged'}) • Tap to Re-Send` : '📱 1-Tap Text ' + f.first + ' (' + f.phone + ')'}
               </button>
             </div>
           `;
@@ -703,8 +902,32 @@
         // Client / Homeowner Cards
         html = displayBatch.map(cl => {
           const isSent = sentSet.has(cl.id);
+          const sentInfo = clientSentLog[cl.id];
+          const sentDateStr = sentInfo ? sentInfo.displayDate : '';
           return `
-            <div class="card ${isSent ? 'sent' : ''}" id="${cl.id}">
+            <div class="card ${isSent ? 'sent' : 'pending'}" id="${cl.id}">
+              ${isSent ? `
+                <div class="sent-status-banner">
+                  <div class="sent-status-left">
+                    <span class="sent-badge-pill">✅ 5-STAR REVIEW TEXT SENT</span>
+                    <span class="sent-time">📅 Sent: <b>${sentDateStr || 'Recorded in Log'}</b></span>
+                  </div>
+                  <button class="btn-undo" onclick="toggleSent('${cl.id}', 'clients', event)" title="Click to move back to Ready to Text">
+                    ↩️ Mark Unsent
+                  </button>
+                </div>
+              ` : `
+                <div class="pending-status-banner">
+                  <div class="pending-status-left">
+                    <span class="pending-badge-pill">🟡 READY TO TEXT</span>
+                    <span class="pending-time">Not contacted yet</span>
+                  </div>
+                  <button class="btn-mark-sent-manual" onclick="toggleSent('${cl.id}', 'clients', event)" title="Mark as sent if already contacted">
+                    ✓ Mark Sent
+                  </button>
+                </div>
+              `}
+
               <div class="card-top">
                 <div>
                   <div class="card-title">👤 ${cl.name}</div>
@@ -736,8 +959,8 @@
                 <div style="color:#f3f4f6; font-size:12px; line-height:1.5;">"${cl.review_body.replace('*Foresight Home Inspections*', '<strong style=\"color:#ffffff; font-weight:800;\">Foresight Home Inspections</strong>').replace('give us a 5-star review on Google? ⭐', '<strong style=\"color:#f59e0b; background:rgba(245, 158, 11, 0.2); padding:1px 4px; border-radius:3px; font-weight:800;\">GIVE US A 5-STAR REVIEW ON GOOGLE? ⭐</strong>').replace('https://g.page/r/CaK5MZOz_FBtEBM/review', `<a href=\"https://g.page/r/CaK5MZOz_FBtEBM/review\" target=\"_blank\" style=\"color:#f59e0b; text-decoration:underline; font-weight:800;\">Direct Google 5-Star Review Dialog</a>`)}"</div>
               </div>
 
-              <button class="btn-sms ${isSent ? 'sent' : ''}" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#0b0f19; font-weight:800; font-size:13.5px; padding:11px 12px; margin-bottom:7px; box-shadow:0 4px 14px rgba(245, 158, 11, 0.35);" onclick="markSent('${cl.id}', '${cl.review_link}', 'clients')">
-                ${isSent ? '✓ 5-Star Review SMS Sent / Archived' : '⭐ 1-Tap Text 5-Star Review Request to ' + cl.first + ' (' + cl.phone + ')'}
+              <button class="btn-sms ${isSent ? 'sent' : ''}" style="${isSent ? 'background:#13261e; color:#34d399; border:1px solid #10b981; font-weight:800; font-size:13.5px; padding:11px 12px; margin-bottom:7px;' : 'background:linear-gradient(135deg, #f59e0b, #d97706); color:#0b0f19; font-weight:800; font-size:13.5px; padding:11px 12px; margin-bottom:7px; box-shadow:0 4px 14px rgba(245, 158, 11, 0.35);'}" onclick="markSent('${cl.id}', '${cl.review_link}', 'clients')">
+                ${isSent ? `✅ 5-Star SMS Sent (${sentDateStr || 'Logged'}) • Tap to Re-Send` : `⭐ 1-Tap Text 5-Star Review Request to ${cl.first} (${cl.phone})`}
               </button>
 
               <div class="btn-dual-row">
@@ -747,7 +970,6 @@
                 <button class="btn-sub-action btn-warranty" onclick="markSent('${cl.id}', '${cl.warranty_link}', 'clients')">
                   🛠️ 1-Tap Warranty/Checkup
                 </button>
-              </div>
               </div>
             </div>
           `;
@@ -793,7 +1015,25 @@
       const text = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home at ${addr}. As an independent Atlanta local business, our reputation is built on 5-star client trust. If our thorough two-inspector audit, FLIR thermal scan, and report gave you peace of mind, would you take 30 seconds to share a quick 5-star review on Google? ⭐ Tap here for instant access: ${directReviewUrl} - Thank you so much! Christopher Boykin, CMI® (678) 480-2110`;
       const cleanPhone = phone.replace(/[^0-9]/g, "");
       const smsLink = `sms:+1${cleanPhone}?&body=${encodeURIComponent(text)}`;
-      window.location.href = smsLink;
+      
+      const quickId = "quick_" + cleanPhone;
+      clientSentSet.add(quickId);
+      clientSentLog[quickId] = {
+        sentAt: new Date().toISOString(),
+        displayDate: getFormattedDateTime()
+      };
+      localStorage.setItem('foresight_sent_client_sms', JSON.stringify([...clientSentSet]));
+      localStorage.setItem('foresight_sent_client_log', JSON.stringify(clientSentLog));
+      updateStats();
+
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      let finalLink = smsLink;
+      if (isIOS) {
+        finalLink = finalLink.replace("?&body=", "&body=").replace("?body=", "&body=");
+      } else {
+        finalLink = finalLink.replace("?&body=", "?body=");
+      }
+      window.location.href = finalLink;
     }
 
     populateCityFilter();
