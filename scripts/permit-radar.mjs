@@ -67,7 +67,7 @@ async function fetchAtlantaPermits() {
         inspectionOpportunity: isNew 
           ? 'Pre-Drywall Framing Inspection + 11-Month Builder Warranty'
           : 'Major Structural & Renovation Inspection',
-        estimatedInspectionFee: isNew ? '$475 - $850' : '$425 - $650',
+        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -133,7 +133,7 @@ async function fetchDeKalbPermits() {
         inspectionOpportunity: isNew
           ? 'Pre-Drywall Framing Inspection + 11-Month Builder Warranty'
           : 'Structural Renovation, Plumbing & Electrical System Audit',
-        estimatedInspectionFee: isNew ? '$475 - $850' : '$425 - $650',
+        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -197,7 +197,7 @@ async function fetchAlpharettaPermits() {
         inspectionOpportunity: isNew
           ? 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty'
           : 'High-End Remodel, Addition & Foundation Audit',
-        estimatedInspectionFee: '$525 - $950',
+        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -258,7 +258,7 @@ async function fetchJohnsCreekPermits() {
         inspectionOpportunity: isNew
           ? 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty'
           : 'Structural Addition, Mechanical & Framing Inspection',
-        estimatedInspectionFee: '$550 - $950',
+        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
         harvestedAt: new Date().toISOString()
       };
     });
