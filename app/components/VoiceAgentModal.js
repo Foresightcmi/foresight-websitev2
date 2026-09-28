@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { calculateQuoteDetails } from '../../lib/pricing';
-import { CHRIS_SYSTEM_INSTRUCTION, JORDAN_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
+import { CHRIS_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
 
 export default function VoiceAgentModal({ isOpen, onClose }) {
   const [callState, setCallState] = useState('idle'); // 'idle' | 'listening' | 'thinking' | 'speaking'
@@ -17,8 +17,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
   const [liveWsConnected, setLiveWsConnected] = useState(false);
-  const [persona, setPersona] = useState('jordan');
-  const personaRef = useRef('jordan');
+  const [persona, setPersona] = useState('chris');
+  const personaRef = useRef('chris');
 
   const [liveLeadForm, setLiveLeadForm] = useState({
     name: '',
@@ -523,7 +523,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           addons: data.addons || [],
           estimatedTotal: data.estimatedTotal || (calculatedQuote ? calculatedQuote.total : 345),
           preferredDate: data.preferredDate || 'Upcoming Window',
-          message: `Captured live by Foresight AI LiveRep (${personaRef.current === 'chris' ? 'Chris Boykin CMI' : 'Jordan Concierge'})`,
+          message: 'Captured live by Foresight AI Live Concierge (Christopher Boykin CMI)',
           source: 'AI LiveRep Voice Widget'
         })
       });
@@ -730,15 +730,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       if (data.mode !== 'live' || !data.wsUrl) {
         console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
         setEngineMode('neural');
-        const greetingText = currentPersona === 'chris'
-          ? "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
-          : "Hello! I am Jordan, client experience concierge at Foresight Home Inspections. We send two certified inspectors on every job with free thermal imaging. How can I help you check pricing or secure an inspection date today?";
+        const greetingText = "Hello! I am Christopher Boykin, founder and Certified Master Inspector at Foresight Home Inspections. I am here as your live AI Concierge—what property address or home inspection questions can I answer for you today?";
         setHistory([{
           role: 'assistant',
           content: greetingText
         }]);
         setCallState('speaking');
-        playNeuralAudio(currentPersona === 'chris' ? '/audio/chris-cloned-greeting.mp3' : null, () => {
+        playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
           if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
             handleStartListeningRef.current();
           }
@@ -751,7 +749,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       ws.onopen = () => {
         console.log(`Gemini 3.1 Live WebSocket open for persona: ${currentPersona}. Sending setup handshake...`);
-        const livePrompt = currentPersona === 'chris' ? CHRIS_SYSTEM_INSTRUCTION : JORDAN_SYSTEM_INSTRUCTION;
+        const livePrompt = CHRIS_SYSTEM_INSTRUCTION;
 
         const liveTools = [{
           functionDeclarations: [
@@ -826,9 +824,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             setEngineMode('live');
             startLiveMicStream(ws);
 
-            const greetingPrompt = currentPersona === 'chris'
-              ? "The client just opened the voice console on our website. Greet them warmly and concisely as Chris Boykin, Certified Master Inspector from Foresight Home Inspections in Atlanta in 1 spoken sentence, and ask what inspection questions you can answer for them today."
-              : "The client just opened the voice console on our website. Greet them warmly and enthusiastically as Jordan from Foresight Home Inspections in Atlanta in 1 short spoken sentence, and ask about their property or preferred inspection date.";
+            const greetingPrompt = "The client just opened the voice console on our website. Greet them warmly and concisely in 1 spoken sentence as Christopher Boykin, founder and Certified Master Inspector from Foresight Home Inspections in Atlanta, welcoming them to your direct live AI Concierge and asking what property address or home questions you can help them with today.";
 
             ws.send(JSON.stringify({
               clientContent: {
@@ -1019,9 +1015,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: currentPersona === 'chris'
-                ? "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
-                : "Hello! I'm Jordan, client concierge at Foresight Home Inspections. How can I help you check instant pricing or book your inspection?"
+              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. I'm here as your live AI Concierge—what property address or home questions can I answer for you today?"
             }];
           }
           return prev;
@@ -1037,9 +1031,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: currentPersona === 'chris'
-                ? "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
-                : "Hello! I'm Jordan, client concierge at Foresight Home Inspections. How can I help you check instant pricing or book your inspection?"
+              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. I'm here as your live AI Concierge—what property address or home questions can I answer for you today?"
             }];
           }
           return prev;
@@ -1050,9 +1042,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     } catch (err) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
-      const greetingText = currentPersona === 'chris'
-        ? "Hello! I am Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. What inspection or home systems questions can I answer for you today?"
-        : "Hello! I am Jordan, client experience concierge at Foresight Home Inspections. How can I help you check pricing or schedule today?";
+      const greetingText = "Hello! I am Christopher Boykin, founder, lead Certified Master Inspector, and your Live Concierge at Foresight Home Inspections. What property questions or instant quote can I calculate for you today?";
       setHistory(prev => {
         if (prev.length === 0) {
           return [{
@@ -1462,20 +1452,20 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                  background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  border: '2px solid #10b981',
+                  border: '2px solid #D4AF37',
                   overflow: 'hidden',
-                  boxShadow: '0 0 12px rgba(16, 185, 129, 0.4)'
+                  boxShadow: '0 0 12px rgba(212, 175, 55, 0.4)'
                 }}
               >
                 <picture>
-                  <source srcSet="/images/jordan-avatar.webp" type="image/webp" />
+                  <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
                   <img 
-                    src="/images/jordan-avatar.jpg" 
-                    alt="Jordan - Client Experience Concierge"
+                    src="/images/Christopher_Boykin.jpg" 
+                    alt="Christopher Boykin, Certified Master Inspector"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </picture>
@@ -1496,12 +1486,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  Jordan
+                  Christopher Boykin (CMI®)
                 </h3>
                 <span style={{
-                  background: 'rgba(16, 185, 129, 0.15)',
-                  color: '#34d399',
-                  border: '1px solid rgba(16, 185, 129, 0.4)',
+                  background: 'rgba(212, 175, 55, 0.15)',
+                  color: '#D4AF37',
+                  border: '1px solid rgba(212, 175, 55, 0.4)',
                   fontSize: '0.65rem',
                   fontWeight: 800,
                   padding: '2px 8px',
@@ -1512,7 +1502,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   alignItems: 'center',
                   gap: '4px'
                 }}>
-                  Client Experience Concierge
+                  Founder &bull; Live Concierge
                 </span>
                 <span style={{
                   background: 'rgba(16, 185, 129, 0.15)',
@@ -1617,21 +1607,21 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Visual Receptionist Avatar & Sound Visualizer (Jordan, Client Experience Concierge) */}
+        {/* Visual LiveRep Avatar & Sound Visualizer (Christopher Boykin, Certified Master Inspector®) */}
         <div style={{
           padding: '1.25rem 1rem 0.5rem 1rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.12) 0%, transparent 70%)'
+          background: 'radial-gradient(circle at center, rgba(212, 175, 55, 0.14) 0%, transparent 70%)'
         }}>
           {/* Animated Audio-Reactive LiveRep Avatar */}
           <div style={{ position: 'relative' }}>
             <button 
               type="button"
               onClick={handleToggleOrInterrupt}
-              aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Jordan' : 'Tap to speak with Jordan'}
+              aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Christopher' : 'Tap to speak with Christopher'}
               style={{
                 width: '144px',
                 height: '144px',
@@ -1640,7 +1630,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   ? '3px solid #10b981' 
                   : callState === 'speaking' 
                   ? '3px solid #D4AF37' 
-                  : '3px solid rgba(16, 185, 129, 0.6)',
+                  : '3px solid rgba(212, 175, 55, 0.65)',
                 outline: 'none',
                 WebkitTapHighlightColor: 'transparent',
                 userSelect: 'none',
@@ -1650,7 +1640,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   ? '0 0 35px rgba(16, 185, 129, 0.7), 0 0 70px rgba(16, 185, 129, 0.3)'
                   : callState === 'speaking'
                   ? '0 0 45px rgba(212, 175, 55, 0.75), 0 0 80px rgba(212, 175, 55, 0.3)'
-                  : '0 0 25px rgba(16, 185, 129, 0.35)',
+                  : '0 0 25px rgba(212, 175, 55, 0.35)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1665,13 +1655,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 padding: '3px',
                 overflow: 'hidden'
               }}
-              title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Jordan is speaking... Tap to interrupt' : 'Tap to speak'}
+              title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Christopher is speaking... Tap to interrupt' : 'Tap to speak'}
             >
               <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-                <source srcSet="/images/jordan-avatar.webp" type="image/webp" />
+                <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
                 <img 
-                  src="/images/jordan-avatar.jpg" 
-                  alt="Jordan, Client Experience Concierge"
+                  src="/images/Christopher_Boykin.jpg" 
+                  alt="Christopher Boykin, Certified Master Inspector & Live Concierge"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -1685,26 +1675,28 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               </picture>
             </button>
 
-            {/* Live Status Badge Overlay */}
+            {/* Certified Master Inspector® Badge Overlay */}
             <div style={{
               position: 'absolute',
-              bottom: '4px',
-              right: '4px',
-              width: '34px',
-              height: '34px',
+              bottom: '2px',
+              right: '2px',
+              width: '38px',
+              height: '38px',
               borderRadius: '50%',
-              background: callState === 'speaking' ? '#D4AF37' : callState === 'listening' ? '#10b981' : '#0F172A',
-              border: '2px solid rgba(255, 255, 255, 0.85)',
+              background: '#ffffff',
+              border: '2px solid #0F172A',
               boxShadow: '0 3px 12px rgba(0, 0, 0, 0.7)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              zIndex: 10,
-              transition: 'all 0.3s ease'
+              overflow: 'hidden',
+              zIndex: 10
             }}>
-              <span style={{ fontSize: '0.9rem' }}>
-                {callState === 'speaking' ? '🗣️' : callState === 'listening' ? '🎙️' : '✨'}
-              </span>
+              <img 
+                src="/images/cmi_logo.webp" 
+                alt="Certified Master Inspector" 
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
             </div>
           </div>
 
@@ -1751,10 +1743,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             {callState === 'listening'
               ? '🟢 Listening to you... Speak naturally (Hands-Free Call)'
               : callState === 'speaking'
-              ? '🗣️ Jordan is speaking... (tap to interrupt)'
+              ? '🗣️ Christopher is speaking... (tap to interrupt)'
               : callState === 'thinking'
-              ? '⚡ Jordan is checking Atlanta building science & pricing...'
-              : 'Tap Jordan or speak naturally to begin'}
+              ? '⚡ Analyzing Atlanta building science & instant quote...'
+              : 'Tap Christopher or speak naturally to begin'}
           </p>
 
           {/* Microphone Permission Warning / Helper Banner */}

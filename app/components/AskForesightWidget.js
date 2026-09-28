@@ -281,7 +281,7 @@ export default function AskForesightWidget() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <span style={{ fontSize: '0.9rem' }}>👋</span>
                   <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#D4AF37', fontFamily: "'Outfit', sans-serif" }}>
-                    Jordan (Client Concierge)
+                    Christopher Boykin (CMI®)
                   </span>
                 </div>
                 <button
@@ -304,7 +304,7 @@ export default function AskForesightWidget() {
                 </button>
               </div>
               <p style={{ margin: '4px 0 0 0', fontSize: '0.76rem', color: '#e2e8f0', lineHeight: 1.4 }}>
-                Hi! Tap to speak with me live. I can answer building science questions &amp; auto-calculate your instant quote.
+                Hi! Tap to speak with me live. I'm your AI Concierge—I can answer building science questions &amp; auto-calculate your instant quote.
               </p>
               <div style={{
                 marginTop: '6px',
@@ -340,7 +340,7 @@ export default function AskForesightWidget() {
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setIsVoiceOpen(true)}
-              aria-label="Talk Live to Jordan, Client Experience Concierge"
+              aria-label="Talk Live to Christopher Boykin, Certified Master Inspector & Live Concierge"
               className="ask-foresight-voice-launcher"
               style={{
                 width: '68px',
@@ -373,10 +373,10 @@ export default function AskForesightWidget() {
                 }}
               >
                 <picture>
-                  <source srcSet="/images/jordan-avatar.webp" type="image/webp" />
+                  <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
                   <img 
-                    src="/images/jordan-avatar.jpg" 
-                    alt="Jordan - Client Experience Concierge" 
+                    src="/images/Christopher_Boykin.jpg" 
+                    alt="Christopher Boykin CMI - Founder & Live Concierge" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </picture>

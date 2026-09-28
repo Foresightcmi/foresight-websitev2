@@ -13,7 +13,7 @@ export async function POST(req) {
       }, { status: 500 });
     }
 
-    let persona = 'jordan';
+    let persona = 'chris';
     try {
       const body = await req.json();
       if (body && body.persona) {
@@ -21,7 +21,7 @@ export async function POST(req) {
       }
     } catch (_) {}
 
-    const selectedVoice = persona === 'chris' ? 'Charon' : 'Aoede';
+    const selectedVoice = persona === 'jordan' ? 'Aoede' : 'Charon';
 
     const now = Date.now();
     const expireTime = new Date(now + 30 * 60 * 1000).toISOString();
