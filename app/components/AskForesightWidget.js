@@ -340,11 +340,11 @@ export default function AskForesightWidget() {
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setIsVoiceOpen(true)}
-              aria-label="Talk Live to Foresight AI Concierge"
+              aria-label="Talk Live to Christopher Boykin, Certified Master Inspector"
               className="ask-foresight-voice-launcher"
               style={{
-                width: '66px',
-                height: '66px',
+                width: '68px',
+                height: '68px',
                 borderRadius: '50%',
                 padding: '3px',
                 background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
@@ -367,39 +367,50 @@ export default function AskForesightWidget() {
                   width: '100%',
                   height: '100%',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #0F172A, #1e293b)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#D4AF37',
-                  fontSize: '1.8rem',
-                  boxShadow: 'inset 0 0 15px rgba(212, 175, 55, 0.2)'
+                  overflow: 'hidden',
+                  position: 'relative',
+                  background: '#0F172A'
                 }}
               >
-                🎙️
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  poster="/images/Christopher_Boykin.webp"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                >
+                  <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
+                  <img 
+                    src="/images/Christopher_Boykin.webp" 
+                    alt="Christopher Boykin CMI" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </video>
               </div>
               {/* Green Live indicator badge */}
               <span style={{
                 position: 'absolute',
-                bottom: '-3px',
+                bottom: '-4px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 background: '#10b981',
                 color: '#0F172A',
-                fontSize: '0.58rem',
+                fontSize: '0.6rem',
                 fontWeight: 800,
-                padding: '1px 5px',
+                padding: '2px 7px',
                 borderRadius: '8px',
                 letterSpacing: '0.04em',
-                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.4)',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.5)',
                 whiteSpace: 'nowrap',
-                border: '1px solid rgba(255, 255, 255, 0.4)',
+                border: '1px solid rgba(255, 255, 255, 0.5)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '3px'
+                gap: '4px'
               }}>
                 <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff', animation: 'blink 1.2s infinite' }} />
-                LIVE AI
+                TALK TO CHRIS
               </span>
             </button>
           </div>

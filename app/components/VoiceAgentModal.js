@@ -17,8 +17,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
   const [liveWsConnected, setLiveWsConnected] = useState(false);
-  const [persona, setPersona] = useState('jordan');
-  const personaRef = useRef('jordan');
+  const [persona, setPersona] = useState('chris');
+  const personaRef = useRef('chris');
 
   const [liveLeadForm, setLiveLeadForm] = useState({
     name: '',
@@ -1472,10 +1472,14 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 } : {
                   width: '48px',
                   height: '48px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  position: 'relative'
+                  border: '2px solid #10b981',
+                  overflow: 'hidden',
+                  boxShadow: '0 0 12px rgba(16, 185, 129, 0.4)'
                 }}
               >
                 {persona === 'chris' ? (
@@ -1488,6 +1492,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     poster="/images/Christopher_Boykin.webp"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
                   >
+                    <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
                     <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
                     <img 
                       src="/images/Christopher_Boykin.webp" 
@@ -1496,30 +1501,16 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     />
                   </video>
                 ) : (
-                  <>
-                    <div style={{
-                      position: 'absolute',
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: '50%',
-                      background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(212, 175, 55, 0.6) 20%, rgba(15, 23, 42, 0.1) 60%), conic-gradient(from 0deg, #D4AF37, #0F172A, #FCD34D, #1E293B, #D4AF37)',
-                      backgroundSize: '200% 200%',
-                      animation: 'spinJordan 8s linear infinite',
-                      boxShadow: 'inset 0 0 10px rgba(212, 175, 55, 0.5), inset 0 -5px 10px rgba(15, 23, 42, 0.2)',
-                      filter: 'url(#fluid-jordan-idle)',
-                      transform: 'translateZ(0)',
-                      willChange: 'transform'
-                    }}></div>
-                    <div style={{
-                      position: 'absolute',
-                      width: '98%',
-                      height: '98%',
-                      borderRadius: '50%',
-                      background: 'radial-gradient(circle at 40% 10%, rgba(255,255,255,0.8), rgba(255,255,255,0) 40%)',
-                      pointerEvents: 'none',
-                      zIndex: 10
-                    }}></div>
-                  </>
+                  <div style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.4rem'
+                  }}>
+                    👩💼
+                  </div>
                 )}
               </div>
               <span style={{
@@ -1538,7 +1529,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  {persona === 'chris' ? 'Chris' : 'Jordan'}
+                  {persona === 'chris' ? 'Chris Boykin' : 'Jordan'}
                 </h3>
                 <span style={{
                   background: persona === 'chris' ? 'rgba(212, 175, 55, 0.15)' : 'rgba(16, 185, 129, 0.15)',
@@ -1659,6 +1650,72 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           </div>
         </div>
 
+        {/* Persona Switcher: Chris Boykin CMI (Primary) vs Jordan Concierge */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '8px 16px',
+          background: 'rgba(0, 0, 0, 0.35)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.06)'
+        }}>
+          <div style={{
+            display: 'inline-flex',
+            background: 'rgba(15, 23, 42, 0.85)',
+            border: '1px solid rgba(212, 175, 55, 0.35)',
+            borderRadius: '24px',
+            padding: '3px',
+            gap: '4px'
+          }}>
+            <button
+              type="button"
+              onClick={() => switchPersona('chris')}
+              aria-label="Switch to Christopher Boykin (CMI)"
+              style={{
+                padding: '6px 14px',
+                borderRadius: '20px',
+                border: 'none',
+                background: persona === 'chris' ? 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)' : 'transparent',
+                color: persona === 'chris' ? '#0F172A' : '#94a3b8',
+                fontWeight: persona === 'chris' ? 800 : 600,
+                fontSize: '0.78rem',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: persona === 'chris' ? '0 2px 10px rgba(212, 175, 55, 0.5)' : 'none'
+              }}
+            >
+              <span style={{ fontSize: '0.9rem' }}>👨🏾‍💼</span>
+              <span>Chris Boykin (Founder &amp; CMI®)</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => switchPersona('jordan')}
+              aria-label="Switch to Jordan Concierge"
+              style={{
+                padding: '6px 14px',
+                borderRadius: '20px',
+                border: 'none',
+                background: persona === 'jordan' ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' : 'transparent',
+                color: persona === 'jordan' ? '#ffffff' : '#94a3b8',
+                fontWeight: persona === 'jordan' ? 800 : 600,
+                fontSize: '0.78rem',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: persona === 'jordan' ? '0 2px 10px rgba(16, 185, 129, 0.4)' : 'none'
+              }}
+            >
+              <span style={{ fontSize: '0.9rem' }}>👩💼</span>
+              <span>Jordan (Concierge)</span>
+            </button>
+          </div>
+        </div>
+
         {/* Visual LiveRep Avatar & Sound Visualizer (Christopher Boykin, Certified Master Inspector®) */}
         <div style={{
           padding: '1.25rem 1rem 0.5rem 1rem',
@@ -1674,25 +1731,29 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               type="button"
               onClick={handleToggleOrInterrupt}
               aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? `Interrupt ${persona === 'chris' ? 'Chris' : 'Jordan'}` : `Tap to speak with ${persona === 'chris' ? 'Chris' : 'Jordan'}`}
-              style={persona === 'chris' ? {
-                width: '116px',
-                height: '116px',
+              style={{
+                width: '144px',
+                height: '144px',
                 borderRadius: '50%',
                 border: callState === 'listening' 
                   ? '3px solid #10b981' 
                   : callState === 'speaking' 
                   ? '3px solid #D4AF37' 
-                  : '3px solid rgba(212, 175, 55, 0.45)',
+                  : persona === 'chris'
+                  ? '3px solid rgba(212, 175, 55, 0.6)'
+                  : '3px solid rgba(16, 185, 129, 0.6)',
                 outline: 'none',
                 WebkitTapHighlightColor: 'transparent',
                 userSelect: 'none',
                 touchAction: 'manipulation',
                 background: 'linear-gradient(135deg, #1e293b, #0f172a)',
                 boxShadow: callState === 'listening'
-                  ? '0 0 35px rgba(16, 185, 129, 0.6), 0 0 70px rgba(16, 185, 129, 0.25)'
+                  ? '0 0 35px rgba(16, 185, 129, 0.7), 0 0 70px rgba(16, 185, 129, 0.3)'
                   : callState === 'speaking'
-                  ? '0 0 40px rgba(212, 175, 55, 0.65), 0 0 75px rgba(239, 68, 68, 0.3)'
-                  : '0 0 25px rgba(212, 175, 55, 0.35)',
+                  ? '0 0 45px rgba(212, 175, 55, 0.75), 0 0 80px rgba(212, 175, 55, 0.3)'
+                  : persona === 'chris'
+                  ? '0 0 25px rgba(212, 175, 55, 0.35)'
+                  : '0 0 25px rgba(16, 185, 129, 0.35)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1706,21 +1767,6 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 position: 'relative',
                 padding: '3px',
                 overflow: 'hidden'
-              } : {
-                width: '116px',
-                height: '116px',
-                outline: 'none',
-                WebkitTapHighlightColor: 'transparent',
-                userSelect: 'none',
-                touchAction: 'manipulation',
-                background: 'transparent',
-                border: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                position: 'relative',
-                filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))'
               }}
               title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? `${persona === 'chris' ? 'Chris' : 'Jordan'} is speaking... Tap to interrupt` : 'Tap to speak'}
             >
@@ -1739,9 +1785,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     borderRadius: '50%',
                     objectFit: 'cover',
                     pointerEvents: 'none',
-                    filter: callState === 'speaking' ? 'brightness(1.08) contrast(1.04)' : 'brightness(0.96)'
+                    transform: 'translateZ(0)',
+                    filter: callState === 'speaking' ? 'brightness(1.08) contrast(1.04)' : 'brightness(0.98)'
                   }}
                 >
+                  <source src="/videos/chris-avatar-office-loop.mp4" type="video/mp4" />
                   <source src="/videos/chris-avatar-real.mp4" type="video/mp4" />
                   <img 
                     src="/images/Christopher_Boykin.webp" 
@@ -1755,84 +1803,69 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   />
                 </video>
               ) : (
-                <>
-                  <svg width="0" height="0" style={{ position: 'absolute' }}>
-                    <defs>
-                      <filter id="fluid-jordan-idle">
-                        <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise">
-                          <animate attributeName="baseFrequency" values="0.015;0.02;0.015" dur="8s" repeatCount="indefinite" />
-                        </feTurbulence>
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
-                      </filter>
-                      <filter id="fluid-jordan-speaking">
-                        <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise">
-                          <animate attributeName="baseFrequency" values="0.03;0.05;0.03" dur="2s" repeatCount="indefinite" />
-                        </feTurbulence>
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="35" xChannelSelector="R" yChannelSelector="G" />
-                      </filter>
-                    </defs>
-                  </svg>
-                  <div className="jordan-glow" style={{
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle at 35% 30%, #34d399, #059669 40%, #064e3b 80%, #022c22 100%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{
+                    fontSize: '3.2rem',
+                    filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))',
+                    transform: callState === 'speaking' ? 'scale(1.08)' : 'scale(1)',
+                    transition: 'transform 0.2s'
+                  }}>
+                    👩💼
+                  </div>
+                  <div style={{
                     position: 'absolute',
-                    width: '130%',
-                    height: '130%',
-                    background: callState === 'speaking' ? 'radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(0,0,0,0) 70%)' : 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(0,0,0,0) 70%)',
-                    filter: 'blur(15px)',
-                    zIndex: -1,
-                    animation: 'pulseJordan 2s ease-in-out infinite alternate',
-                    transition: 'background 0.3s ease, transform 0.3s ease',
-                    transform: callState === 'speaking' ? 'scale(1.4) translateZ(0)' : 'scale(1) translateZ(0)',
-                    willChange: 'transform, background'
-                  }}></div>
-                  <div className="jordan-orb" style={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                    background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(212, 175, 55, 0.6) 20%, rgba(15, 23, 42, 0.1) 60%), conic-gradient(from 0deg, #D4AF37, #0F172A, #FCD34D, #1E293B, #D4AF37)',
-                    backgroundSize: '200% 200%',
-                    animation: callState === 'speaking' ? 'spinJordan 2s linear infinite' : 'spinJordan 8s linear infinite',
-                    boxShadow: callState === 'speaking' ? 'inset 0 0 40px rgba(212, 175, 55, 0.8), inset 0 -20px 40px rgba(15, 23, 42, 0.6), 0 0 30px rgba(212, 175, 55, 0.4)' : 'inset 0 0 30px rgba(212, 175, 55, 0.4), inset 0 -20px 30px rgba(15, 23, 42, 0.4)',
-                    filter: callState === 'speaking' ? 'url(#fluid-jordan-speaking)' : 'url(#fluid-jordan-idle)',
-                    transition: 'box-shadow 0.3s ease, filter 0.3s ease',
-                    transform: 'translateZ(0)',
-                    willChange: 'transform, box-shadow, filter'
-                  }}></div>
-                  <div className="jordan-glass-dome" style={{
-                    position: 'absolute',
-                    width: '98%',
-                    height: '98%',
-                    borderRadius: '50%',
-                    background: 'radial-gradient(circle at 40% 10%, rgba(255,255,255,0.8), rgba(255,255,255,0) 40%)',
-                    pointerEvents: 'none',
-                    zIndex: 10
-                  }}></div>
-                </>
+                    bottom: '12px',
+                    fontSize: '0.62rem',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    color: '#a7f3d0',
+                    background: 'rgba(0, 0, 0, 0.4)',
+                    padding: '1px 8px',
+                    borderRadius: '10px'
+                  }}>
+                    Concierge
+                  </div>
+                </div>
               )}
             </button>
 
-            {/* Certified Master Inspector® Badge Overlay */}
-            <div style={{
-              position: 'absolute',
-              bottom: '0px',
-              right: '0px',
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              background: '#ffffff',
-              border: '2px solid #0F172A',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              overflow: 'hidden'
-            }}>
-              <img 
-                src="/images/cmi_logo.webp" 
-                alt="Certified Master Inspector" 
-                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-              />
-            </div>
+            {/* Certified Master Inspector® Badge Overlay (for Chris) */}
+            {persona === 'chris' && (
+              <div style={{
+                position: 'absolute',
+                bottom: '2px',
+                right: '2px',
+                width: '38px',
+                height: '38px',
+                borderRadius: '50%',
+                background: '#ffffff',
+                border: '2px solid #0F172A',
+                boxShadow: '0 3px 12px rgba(0, 0, 0, 0.7)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+                zIndex: 10
+              }}>
+                <img 
+                  src="/images/cmi_logo.webp" 
+                  alt="Certified Master Inspector" 
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
+              </div>
+            )}
           </div>
 
           {/* Equalizer Sound Waveform Bars */}
@@ -2925,18 +2958,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           50% { transform: scale(1.03); }
           100% { transform: scale(1); }
         }
-        @keyframes morphJordan {
-          0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-          50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-          100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-        }
-        @keyframes spinJordan {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        @keyframes pulseJordan {
-          0% { transform: scale(0.95); opacity: 0.6; }
-          100% { transform: scale(1.05); opacity: 1; }
+        @keyframes radarRipple {
+          0% { transform: scale(1); opacity: 0.8; }
+          100% { transform: scale(1.4); opacity: 0; }
         }
         @media (max-width: 640px) {
           .voice-modal-container {
