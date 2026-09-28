@@ -16,7 +16,7 @@ export default function ReviewClient() {
   const [clientEmail, setClientEmail] = useState('');
   const [propertyAddress, setPropertyAddress] = useState('4829 River Valley Manor');
 
-  const directGoogleReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJk_3KQe0H9YgRw8vLCvROjpY";
+  const directGoogleReviewUrl = "https://g.page/r/CaK5MZOz_FBtEBM/review";
   const shortReviewUrl = "https://www.fhinspectionsatl.com/review";
 
   const firstName = (clientName || 'Valued Client').split(' ')[0];

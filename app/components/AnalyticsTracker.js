@@ -52,7 +52,7 @@ export default function AnalyticsTracker() {
       }
 
       // 3. Google Review Clicks
-      if (href.includes('search.google.com/local/writereview') || href.includes('maps.google.com/?cid=10862078652033010531')) {
+      if (href.includes('search.google.com/local/writereview') || href.includes('maps.google.com/?cid=10862078652033010531') || href.includes('g.page/r/CaK5MZOz_FBtEBM')) {
         trackEvent('google_review_click', {
           event_category: 'social_proof',
           platform: 'google',
