@@ -265,8 +265,15 @@ async function main() {
     return l;
   });
 
-  const queue = enrichedLeads.filter(l => l.ownerEmail && !contactedEmails.has(l.ownerEmail));
-  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable verified leads in queue.`);
+  const queue = enrichedLeads.filter(l => {
+    if (!l.ownerEmail || contactedEmails.has(l.ownerEmail)) return false;
+    const val = Number(l.jobValue || 0);
+    const type = (l.permitType || '').toLowerCase();
+    const isHighValue = val >= 15000;
+    const isStructural = type.includes('addition') || type.includes('new') || type.includes('alteration') || type.includes('repair') || type.includes('structure');
+    return isHighValue || isStructural;
+  }).slice(0, 5);
+  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable high-intent verified leads in queue.`);
 
   for (const lead of queue) {
     const emailData = buildDueDiligenceEmail(lead);
