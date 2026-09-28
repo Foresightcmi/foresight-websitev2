@@ -96,9 +96,8 @@ async function dispatchPushAlert(newLeads) {
     `Tap below to inspect permit records in Accela or review in your dashboard.`
   ].join('\n');
 
-  try {
     const safeMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(topLead.address || '')}`;
-    const safeAcaUrl = topLead.acaLink ? topLead.acaLink.replace(/,/g, '%2C') : 'https://aca-prod.accela.com';
+    const dossierUrl = `https://www.fhinspectionsatl.com/dossiers/${topLead.recordId}.html`;
 
     const resp = await fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
       method: 'POST',
@@ -106,7 +105,7 @@ async function dispatchPushAlert(newLeads) {
         'Title': title,
         'Priority': 'default',
         'Tags': 'construction,house,hammer',
-        'Actions': `view, View Accela, ${safeAcaUrl}, clear=true; view, Google Maps, ${safeMapUrl}, clear=true`
+        'Actions': `view, 📄 Open Dossier, ${dossierUrl}, clear=true; view, 📍 Google Maps, ${safeMapUrl}, clear=true`
       },
       body: Buffer.from(bodyText, 'utf8')
     });
@@ -154,8 +153,15 @@ async function main() {
     fs.writeFileSync(DATA_FILE, JSON.stringify(combined, null, 2), 'utf8');
     console.log(`💾 [Permit Radar] Saved ${combined.length} total qualified permit leads to ${DATA_FILE}`);
 
-    // If new leads discovered, dispatch smartphone push alert
+    // If new leads discovered, generate executive dossiers and dispatch smartphone push alert
     if (newlyDiscovered.length > 0) {
+      console.log('📄 [Permit Radar] Generating luxury property due diligence dossiers...');
+      try {
+        const { execSync } = await import('node:child_process');
+        execSync('node scripts/generate-permit-dossiers.mjs', { stdio: 'inherit', cwd: ROOT_DIR });
+      } catch (genErr) {
+        console.warn('⚠️ [Permit Radar] Dossier generation error:', genErr.message);
+      }
       await dispatchPushAlert(newlyDiscovered);
     }
 
