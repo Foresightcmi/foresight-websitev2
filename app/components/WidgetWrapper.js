@@ -8,6 +8,9 @@ const AskForesightWidget = dynamic(
 );
 
 export default function WidgetWrapper() {
-  // Floating chat box disabled per executive request
-  return null;
+  const pathname = usePathname();
+  if (pathname && (pathname.startsWith('/dashboard') || pathname.startsWith('/admin'))) {
+    return null;
+  }
+  return <AskForesightWidget />;
 }
