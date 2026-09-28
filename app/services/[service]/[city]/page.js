@@ -354,7 +354,7 @@ export default async function ServiceCityPage({ params }) {
             {serviceData.icon} {serviceData.badge}
           </span>
           <h1 style={{ fontSize: '2.75rem', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-            {serviceName} in <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
+            {cityName} {serviceName}: <span style={{ color: 'var(--color-red)' }}>Certified 2-Inspector Team</span>
           </h1>
           <p style={{ maxWidth: '750px', margin: '0 auto 2.5rem', fontSize: '1.2rem', lineHeight: 1.6, color: 'var(--color-gray-dark)' }}>
             {serviceData.heroSub.replace(/{city}/g, cityName)}

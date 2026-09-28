@@ -467,9 +467,9 @@ export default async function CityPage({ params }) {
           </p>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1rem' }}>
-              Top-Rated Home Inspection in{' '}
+              {cityName} Home Inspections:{' '}
               <br />
-              <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
+              <span style={{ color: 'var(--color-red)' }}>Two Certified Inspectors on Every Job</span>
             </h1>
             <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.1rem', lineHeight: 1.7 }}>
               {introParagraph}
@@ -829,7 +829,7 @@ export default async function CityPage({ params }) {
             </p>
           </div>
           <div className="grid grid-3" style={{ gap: '1.5rem' }}>
-            <Link href="/services/buyer-inspection" className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+            <Link href={`/services/buyer-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏡</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Buyer Home Inspection</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Full 2-inspector buyer evaluation with FLIR thermal scan and same-day report in {cityName}.</p>
@@ -849,15 +849,35 @@ export default async function CityPage({ params }) {
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Sewer Scope Camera</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>HD fiber-optic lateral pipe camera inspection from cleanout to city main in {cityName}.</p>
             </Link>
-            <Link href={`/services/new-construction-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔨</div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>New Construction Phased</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Pre-drywall and final walkthrough audits for newly constructed {cityName} homes.</p>
+            <Link href={`/services/mold-testing/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🧪</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Mold & Air Quality</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Spore trap air sampling & surface testing with AIHA-accredited lab analysis in {cityName}.</p>
             </Link>
             <Link href={`/services/pool-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏊</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pool &amp; Spa Evaluation</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Safety barrier, pump, filter, heater, and electrical bonding audits in {cityName}.</p>
+            </Link>
+            <Link href={`/services/new-construction-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔨</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>New Construction Final</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Independent dual-inspector walkthrough before builder sign-off in {cityName}.</p>
+            </Link>
+            <Link href={`/services/pre-drywall-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📐</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pre-Drywall Framing</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Load-bearing studs, trusses, rough-in plumbing, HVAC, and wiring audit in {cityName}.</p>
+            </Link>
+            <Link href={`/services/11-month-warranty-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🛡️</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>11-Month Warranty</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Detailed punch list of builder defects before your 1-year warranty expires in {cityName}.</p>
+            </Link>
+            <Link href={`/services/commercial-property-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏢</div>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Commercial Property</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>ASTM E2018-compliant Property Condition Assessments for {cityName} commercial assets.</p>
             </Link>
             <Link href={`/services/pre-listing-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📋</div>
