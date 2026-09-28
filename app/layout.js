@@ -840,6 +840,7 @@ export default function RootLayout({ children }) {
                 <h3>Company &amp; Contact</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link prefetch={false} href="/quote" style={{ color: 'var(--color-red)', fontWeight: 700 }}>Instant Quote Calculator</Link></li>
+                  <li><Link prefetch={false} href="/risk-scanner" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>🔬 Property Risk Scanner</Link></li>
                   <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                   <li><Link prefetch={false} href="/due-diligence">Due Diligence Guarantee</Link></li>
                   <li><Link prefetch={false} href="/samples">Sample Inspection Reports</Link></li>

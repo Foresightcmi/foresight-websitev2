@@ -588,6 +588,51 @@ export default function RealtorsClient() {
               </p>
             </div>
           </div>
+
+          {/* New Realtor Tool Spotlight: Property Risk Scanner */}
+          <div style={{
+            marginTop: '3rem',
+            background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(15, 23, 42, 0.6) 100%)',
+            border: '1px solid var(--color-gold)',
+            borderRadius: '1rem',
+            padding: '1.75rem 2rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1.5rem'
+          }}>
+            <div style={{ maxWidth: '700px' }}>
+              <span style={{ background: 'var(--color-gold)', color: '#0F172A', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
+                ⚡ New Realtor Pre-Offer Utility
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
+                Georgia Property Risk &amp; Age Diagnostic Scanner
+              </h3>
+              <p style={{ color: '#CBD5E1', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                Have buyers considering an older home? Enter the year built and county to instantly anticipate historical hazards (Polybutylene, Aluminum Wiring, FPE panels, EIFS Stucco, and Radon Zone 1) before drafting your offer.
+              </p>
+            </div>
+            <Link
+              href="/risk-scanner"
+              style={{
+                background: 'var(--color-gold)',
+                color: '#0F172A',
+                fontWeight: 700,
+                fontSize: '0.95rem',
+                padding: '0.85rem 1.6rem',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                boxShadow: '0 4px 14px rgba(212, 175, 55, 0.3)'
+              }}
+            >
+              <span>Launch Risk Scanner</span>
+              <span>&rarr;</span>
+            </Link>
+          </div>
         </div>
       </section>
 

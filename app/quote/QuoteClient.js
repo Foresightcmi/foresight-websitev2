@@ -39,9 +39,39 @@ export default function QuoteClient({ showValueComparison = true }) {
       const params = new URLSearchParams(window.location.search);
       const typeParam = params.get('type');
       const serviceParam = params.get('service');
+      const sqftParam = params.get('sqft');
+      const foundationParam = params.get('foundation');
+      const radonParam = params.get('radon');
+      const sewerParam = params.get('sewer');
+      const termiteParam = params.get('termite');
+      const poolParam = params.get('pool');
+
       if (serviceParam === 'str' || typeParam === 'str') {
         setServiceType('str');
+      } else if (serviceParam && ['buyer', 'seller', 'new-construction', 'warranty', 'drywall'].includes(serviceParam)) {
+        setServiceType(serviceParam);
       }
+
+      if (typeParam === 'condo' || typeParam === 'single-family') {
+        setPropertyType(typeParam);
+      }
+
+      if (sqftParam) {
+        const parsedSq = parseInt(sqftParam, 10);
+        if (!isNaN(parsedSq) && parsedSq > 0) setSqft(parsedSq);
+      }
+
+      if (foundationParam && ['slab', 'basement', 'crawlspace'].includes(foundationParam)) {
+        setFoundation(foundationParam);
+      }
+
+      setAddons(prev => ({
+        ...prev,
+        radon: radonParam === 'true' ? true : prev.radon,
+        sewer: sewerParam === 'true' ? true : prev.sewer,
+        termite: termiteParam === 'true' ? true : prev.termite,
+        pool: poolParam === 'true' ? true : prev.pool,
+      }));
     }
   }, []);
 

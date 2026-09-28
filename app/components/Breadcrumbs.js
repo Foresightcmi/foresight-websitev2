@@ -27,7 +27,8 @@ const labelMap = {
   'termite-wdo-inspection': 'Termite & WDO Inspection',
   '11-month-warranty-inspection': '11-Month Warranty Inspection',
   'str-short-term-rental-inspection': 'STR Inspection',
-  'home-buyer-inspection': 'Buyer Inspection'
+  'home-buyer-inspection': 'Buyer Inspection',
+  'risk-scanner': 'Property Risk Scanner'
 };
 
 function formatLabel(slug) {
