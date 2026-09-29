@@ -26,7 +26,6 @@ export default async function sitemap() {
     { loc: '/about', changefreq: 'monthly', priority: 0.8 },
     { loc: '/realtors', changefreq: 'monthly', priority: 0.8 },
     { loc: '/quote', changefreq: 'weekly', priority: 0.9 },
-    { loc: '/bio', changefreq: 'weekly', priority: 0.85 },
     { loc: '/risk-scanner', changefreq: 'weekly', priority: 0.85 },
     { loc: '/ask-twin', changefreq: 'monthly', priority: 0.5 },
     { loc: '/blog', changefreq: 'weekly', priority: 0.7 },

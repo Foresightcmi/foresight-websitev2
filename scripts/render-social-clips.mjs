@@ -28,7 +28,7 @@ Most solo inspectors rushing through a 4-hour checklist glance at the deck from 
 "Hindsight is expensive... Choose Foresight!"
 
 👉 Tap the link in bio for instant pricing & our Georgia Property Risk Scanner:
-https://www.fhinspectionsatl.com/bio
+https://www.fhinspectionsatl.com/quote
 
 #HomeInspectionFail #AtlantaHomes #NewConstructionAtlanta #BuilderWarranty #DeckSafety #CertifiedMasterInspector #ForesightHomeInspections`,
   },
@@ -50,7 +50,7 @@ Don't buy a fire hazard. Foresight Home Inspections puts Two Certified Inspector
 "Hindsight is expensive... Choose Foresight!"
 
 👉 Tap link in bio for our instant 60-second price quote:
-https://www.fhinspectionsatl.com/bio
+https://www.fhinspectionsatl.com/quote
 
 #ElectricalSafety #FlippedHomeFail #AtlantaRealEstate #HomeInspection #BuildingScience #AtlantaHomeBuyer #ForesightDifference`,
   },
@@ -70,7 +70,7 @@ We caught this before closing. The buyer negotiated a full HVAC overhaul paid by
 "Hindsight is expensive... Choose Foresight!"
 
 👉 Tap link in bio to book your inspection online 24/7:
-https://www.fhinspectionsatl.com/bio
+https://www.fhinspectionsatl.com/quote
 
 #HVACfail #AtticInspection #AtlantaHomes #BuildingScience #HomeInspectorLife #CertifiedMasterInspector`,
   },
@@ -92,7 +92,7 @@ Two Certified Inspectors on every job. Up to $35,000 in Combined Warranty Protec
 "Hindsight is expensive... Choose Foresight!"
 
 👉 Tap the link in bio to calculate your instant price:
-https://www.fhinspectionsatl.com/bio
+https://www.fhinspectionsatl.com/quote
 
 #PlumbingLeak #ThermalImaging #FLIR #AtlantaHomeInspection #BuildingScience #ForesightHomeInspections`,
   },
@@ -114,7 +114,7 @@ Our dual-inspector team tests every guardrail, stair tread, and ledger connectio
 "Hindsight is expensive... Choose Foresight!"
 
 👉 Tap link in bio to read our 5-star Google reviews and book online:
-https://www.fhinspectionsatl.com/bio
+https://www.fhinspectionsatl.com/quote
 
 #DeckSafety #HomeSafety #AtlantaHomeowner #HomeInspection #CertifiedMasterInspector #ForesightHomeInspections`,
   },
@@ -155,7 +155,7 @@ export function renderReels() {
       `drawtext=fontfile='${fontBd}':text='Two Certified Inspectors On Every Job':fontcolor=0xF59E0B:fontsize=36:x=(w-text_w)/2:y=1380`,
       `drawtext=fontfile='${fontReg}':text='Up to $35,000 Combined Warranty Protection':fontcolor=0x34D399:fontsize=30:x=(w-text_w)/2:y=1450`,
       `drawtext=fontfile='${fontReg}':text='Hindsight is expensive... Choose Foresight!':fontcolor=white:fontsize=28:x=(w-text_w)/2:y=1520`,
-      `drawtext=fontfile='${fontBd}':text='Tap Link in Bio for Instant Quote':fontcolor=0x60A5FA:fontsize=34:x=(w-text_w)/2:y=1610`,
+      `drawtext=fontfile='${fontBd}':text='Instant Quote: fhinspectionsatl.com/quote':fontcolor=0x60A5FA:fontsize=34:x=(w-text_w)/2:y=1610`,
     ].join(',');
 
     const cmd = `ffmpeg -y -i "${inputPath}" -vf "${vf}" -c:a copy -c:v libx264 -crf 22 -preset fast "${outputPath}"`;

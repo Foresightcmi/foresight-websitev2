@@ -60,8 +60,8 @@ export async function dispatchNextReel(targetId = null) {
       },
       {
         action: 'view',
-        label: '🌐 Open Bio Hub',
-        url: 'https://www.fhinspectionsatl.com/bio',
+        label: '⚡ Instant Quote Engine',
+        url: 'https://www.fhinspectionsatl.com/quote',
       },
     ],
   };
