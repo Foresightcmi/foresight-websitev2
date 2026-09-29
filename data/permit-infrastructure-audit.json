@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-09-28T04:02:41.159Z",
+  "operationalReadinessScore": "100/100 (100%)",
+  "results": {
+    "googleWorkspaceSmtp": {
+      "status": "PASSED",
+      "user": "inspect@foresightcmi.com",
+      "host": "smtp.gmail.com",
+      "authMethod": "Google App Password",
+      "durationMs": 573,
+      "details": "Transporter verified successfully. Ready for TLS outreach dispatch."
+    },
+    "cityOfAtlantaArcgis": {
+      "status": "PASSED",
+      "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/arcgis/rest/services/Building_Permit_latest/FeatureServer/0/query",
+      "httpStatus": 200,
+      "featuresCount": 25,
+      "durationMs": 877,
+      "newestRecord": {
+        "recordId": "BB-202600800",
+        "address": "970 BOULDERCREST SE, ATLANTA, GA 30316",
+        "statusDate": "2026-01-28T23:26:48.000Z"
+      },
+      "batchValuation": 4690340,
+      "freshnessCheck": "LIVE & RESPONSIVE"
+    },
+    "dataIntegrity": {
+      "leads": {
+        "status": "PASSED",
+        "recordCount": 25,
+        "uniqueRecords": 25,
+        "duplicateCount": 0,
+        "missingFieldsCount": 0,
+        "pipelineValuation": 4690340,
+        "sampleLead": "BB-202600800"
+      },
+      "outreach": {
+        "status": "PASSED",
+        "totalEntries": 3,
+        "statusCounts": {
+          "SENT": 2,
+          "DISPATCHED": 1
+        },
+        "messageIdIssuesCount": 0,
+        "timestampIssuesCount": 0,
+        "entries": [
+          {
+            "recordId": "BB-202600778",
+            "recipient": "Deborah Leah Calvert <leahcalvert@gmail.com>",
+            "status": "SENT",
+            "messageId": "<ff3e5002-b100-5b73-13a1-88b9fbbe2a6d@foresightcmi.com>",
+            "dispatchedAt": "2026-09-28T03:30:21.893Z"
+          },
+          {
+            "recordId": "BB-202600800",
+            "recipient": "Emanuel Amariw <emanuel.amariw@gmail.com>",
+            "status": "SENT",
+            "messageId": "<6a8f62be-e775-6775-980b-cd4435c25675@foresightcmi.com>",
+            "dispatchedAt": "2026-09-28T03:22:26.996Z"
+          },
+          {
+            "recordId": "BB-202600800",
+            "recipient": "Emanuel Amariw <emanuel.amariw@gmail.com>",
+            "status": "DISPATCHED",
+            "messageId": "N/A",
+            "dispatchedAt": "2026-09-28T03:02:55.045Z"
+          }
+        ]
+      },
+      "crm": {
+        "status": "PASSED",
+        "recordCount": 25
+      }
+    },
+    "realTimePushAlert": {
+      "status": "PASSED",
+      "endpoint": "https://ntfy.sh/fores-antigravity-alerts-77",
+      "httpStatus": 200,
+      "durationMs": 194,
+      "response": "{\"id\":\"Teemxi576q3Y\",\"time\":1790569038,\"expires\":1790612238,\"event\":\"message\",\"topic\":\"fores-antigravity-alerts-77\",\"title\":\"System Audit: Permit Radar & SMTP Verified\",\"message\":\"Autonomous Infrastructure Health Check Completed:\\n• Google Workspace SMTP: VERIFIED (inspect@foresightcmi.com)\\n• City of Atlanta ArcGIS Feed: ONLINE & RETRIEVING LIVE PERMITS\\n• Permit Database: INTEGRITY 100% VALIDATED\\n• Timestamp: 2026-09-28T04:02:40.964Z\\n\\nOperational Readiness: FULLY DEPLOYED & ARMED.\",\"priority\":3,\"tags\":[\"shield\",\"white_check_mark\",\"satellite\"],\"actions\":[{\"id\":\"5vMiR4oAts\",\"action\":\"view\",\"label\":\"Foresight Portal\",\"clear\":true,\"url\":\"https://www.fhinspectionsatl.com\"}]}"
+    }
+  }
+}

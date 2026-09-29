@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2026-09-28T01:34:12.494Z",
+    "messageSnippet": "Imagine waiting 4 to 5 hours while a solo home inspector checks a 3,500 sq. ft. house with a clipboa...",
+    "link": "https://www.fhinspectionsatl.com/quote",
+    "response": {
+      "attempt": "01a0e5b3-54d3-0907-f3df-54be17d3a01a",
+      "id": "01a0e5b3-54d3-0907-f3df-54be17d3a01a",
+      "request_id": "01a0e5b3-54d3-0907-f3df-54be17d3a01a",
+      "status": "success"
+    }
+  },
+  {
+    "timestamp": "2026-09-28T01:44:50.494Z",
+    "messageSnippet": "Imagine waiting 4 to 5 hours while a solo home inspector checks a 3,500 sq. ft. house with a clipboa...",
+    "link": "https://www.fhinspectionsatl.com/quote",
+    "response": {
+      "attempt": "01a0e5bd-10ec-f37f-d9e6-c537b869ab35",
+      "id": "01a0e5bd-10ec-f37f-d9e6-c537b869ab35",
+      "request_id": "01a0e5bd-10ec-f37f-d9e6-c537b869ab35",
+      "status": "success"
+    }
+  }
+]
