@@ -1517,13 +1517,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   gap: '4px'
                 }}>
                   <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                  {liveWsConnected ? 'Gemini 3.1 Live' : '🎙️ Live Voice'}
+                  {liveWsConnected ? 'Gemini 3.1 Live' : '🎙️ Speak or 💬 Type'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
                 Instant Quotes &bull; Building Science &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
-                  {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
+                  {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready (Speak or Type)'}
                 </span>
               </p>
             </div>
@@ -2699,7 +2699,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               type="text"
               value={typedInput}
               onChange={(e) => setTypedInput(e.target.value)}
-              placeholder="Or type your question or address..."
+              placeholder="💬 Type your question, property address, or sq ft (or speak hands-free above)..."
               style={{
                 flex: 1,
                 padding: '0.65rem 1rem',

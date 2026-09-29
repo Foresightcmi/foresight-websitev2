@@ -1,144 +1,11 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
+
+import { useState, useEffect } from 'react';
 import VoiceAgentModal from './VoiceAgentModal';
-import { getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
-
-// Inline Glassmorphic Lead Capture Form for Widget
-function WidgetLeadForm({ onSubmitted }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!name || !email) {
-      setError('Name and email are required.');
-      return;
-    }
-    setLoading(true);
-    setError('');
-    try {
-      const res = await fetch('/api/lead-capture', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone }),
-      });
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setSubmitted(true);
-        if (onSubmitted) onSubmitted(name, email);
-      } else {
-        throw new Error(data.message || 'Something went wrong');
-      }
-    } catch (err) {
-      console.error(err);
-      setError('Connection failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (submitted) {
-    return (
-      <div style={{
-        padding: '1rem 1.2rem',
-        borderRadius: '8px',
-        border: '1px solid rgba(16, 185, 129, 0.3)',
-        background: 'rgba(16, 185, 129, 0.05)',
-        width: '100%',
-        margin: '0.4rem 0',
-        backdropFilter: 'blur(5px)'
-      }}>
-        <h5 style={{ color: '#10b981', margin: '0 0 0.3rem 0', fontSize: '0.95rem', fontWeight: 600 }}>
-          ✓ Request Received!
-        </h5>
-        <p style={{ color: 'white', margin: 0, fontSize: '0.85rem', lineHeight: '1.5' }}>
-          Thank you, <strong>{name}</strong>! Part 1 of your checklist has been sent to <strong>{email}</strong>. 
-          <br /><br />
-          <em>"Hindsight is expensive; choose Foresight!"</em>
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div style={{
-      padding: '1.2rem',
-      borderRadius: '8px',
-      border: '1px solid rgba(255, 255, 255, 0.08)',
-      background: 'rgba(255, 255, 255, 0.03)',
-      width: '100%',
-      margin: '0.4rem 0',
-      boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
-      backdropFilter: 'blur(5px)'
-    }}>
-      <h5 style={{ color: 'white', margin: '0 0 0.2rem 0', fontSize: '0.95rem', fontWeight: 600 }}>
-        Get the "Foresight vs. Hindsight" Checklist
-      </h5>
-      <p style={{ color: '#9ca3af', margin: '0 0 0.8rem 0', fontSize: '0.75rem', lineHeight: '1.4' }}>
-        Hindsight is expensive; choose Foresight to secure your future.
-      </p>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-        <div>
-          <input 
-            type="text" 
-            required 
-            value={name} 
-            onChange={e => setName(e.target.value)} 
-            placeholder="Full Name *" 
-            style={{ width: '100%', padding: '0.5rem 0.75rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.3)', color: 'white', fontSize: '0.85rem', outline: 'none' }}
-          />
-        </div>
-        <div>
-          <input 
-            type="email" 
-            required 
-            value={email} 
-            onChange={e => setEmail(e.target.value)} 
-            placeholder="Email Address *" 
-            style={{ width: '100%', padding: '0.5rem 0.75rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.3)', color: 'white', fontSize: '0.85rem', outline: 'none' }}
-          />
-        </div>
-        <div>
-          <input 
-            type="tel" 
-            value={phone} 
-            onChange={e => setPhone(e.target.value)} 
-            placeholder="Phone Number (Optional)" 
-            style={{ width: '100%', padding: '0.5rem 0.75rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(0,0,0,0.3)', color: 'white', fontSize: '0.85rem', outline: 'none' }}
-          />
-        </div>
-        {error && <p style={{ color: '#ef4444', fontSize: '0.75rem', margin: 0 }}>⚠️ {error}</p>}
-        <button 
-          type="submit" 
-          disabled={loading}
-          style={{ width: '100%', padding: '0.6rem', background: '#d32f2f', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-        >
-          {loading ? 'Sending...' : 'Send Me the Checklist'}
-        </button>
-      </form>
-    </div>
-  );
-}
 
 export default function AskForesightWidget() {
-  const [isOpen, setIsOpen] = useState(false);
   const [isVoiceOpen, setIsVoiceOpen] = useState(false);
   const [isBalloonDismissed, setIsBalloonDismissed] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      role: 'ai',
-      content: "Hello! I'm Chris Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. \n\nWhat home system or inspection questions can I answer for you today?"
-    }
-  ]);
-  const [input, setInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  
-  const chatContainerRef = useRef(null);
 
   useEffect(() => {
     const handleOpen = () => setIsVoiceOpen(true);
@@ -148,109 +15,10 @@ export default function AskForesightWidget() {
     }
   }, []);
 
-  const handleAcceptChecklist = () => {
-    setMessages(prev => [
-      ...prev,
-      { role: 'user', content: 'Yes, please send it!' },
-      { role: 'ai', type: 'lead-form', content: 'Please fill out the form.' }
-    ]);
-  };
-
-  const handleDeclineChecklist = () => {
-    setMessages(prev => [
-      ...prev,
-      { role: 'user', content: 'No, thank you.' },
-      { role: 'ai', content: 'No problem at all! Let me know if you have any other questions about your home. Hindsight is expensive; choose Foresight to secure your future!' }
-    ]);
-  };
-
-  const generateAIResponse = (userText) => {
-    const baseResponse = getChrisKnowledgeFallback(userText);
-    const checklistOffer = "\n\nBy the way, I have put together a Foresight vs. Hindsight checklist to help you avoid expensive home buying mistakes. Shall I send that to you?";
-    return baseResponse + checklistOffer;
-  };
-
-  const handleSend = async (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    const userMessage = { role: 'user', content: input };
-    const updatedMessages = [...messages, userMessage];
-    setMessages(updatedMessages);
-    setInput('');
-    setIsTyping(true);
-
-    try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ messages: updatedMessages, stream: true }),
-      });
-
-      if (!response.ok) throw new Error(`API returned status ${response.status}`);
-
-      const contentType = response.headers.get('content-type') || '';
-      if (contentType.includes('text/plain') && response.body) {
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder();
-        let accumulated = '';
-        let isFirstChunk = true;
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          const chunk = decoder.decode(value, { stream: true });
-          if (chunk) {
-            accumulated += chunk;
-            if (isFirstChunk) {
-              setIsTyping(false);
-              setMessages(prev => [...prev, { role: 'ai', content: accumulated.replace(/\*/g, '') }]);
-              isFirstChunk = false;
-            } else {
-              setMessages(prev => {
-                const copy = [...prev];
-                copy[copy.length - 1] = { role: 'ai', content: accumulated.replace(/\*/g, '') };
-                return copy;
-              });
-            }
-          }
-        }
-
-        if (isFirstChunk) {
-          // If we got here and it's still the first chunk, the stream was empty
-          setIsTyping(false);
-          const aiResponseText = generateAIResponse(userMessage.content);
-          setMessages(prev => [...prev, { role: 'ai', content: aiResponseText.replace(/\*/g, '') }]);
-        }
-      } else {
-        const data = await response.json();
-        if (data.response) {
-          setMessages(prev => [...prev, { role: 'ai', content: data.response.replace(/\*/g, '') }]);
-          setIsTyping(false);
-        } else {
-          throw new Error('No response field in API data');
-        }
-      }
-    } catch (error) {
-      console.warn('Gemini chat API failed, using fallback database. Error:', error);
-      const aiResponseText = generateAIResponse(userMessage.content);
-      setMessages(prev => [...prev, { role: 'ai', content: aiResponseText.replace(/\*/g, '') }]);
-      setIsTyping(false);
-    }
-  };
-
-  useEffect(() => {
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-    }
-  }, [messages, isTyping, isOpen]);
-
   return (
     <>
-      {/* Floating Action Button Group (CueVue-style AI LiveRep Avatar Bubble + Speech Balloon + Chat) */}
-      {!isOpen && !isVoiceOpen && (
+      {/* Floating Action Button Group (LiveRep Concierge Avatar + Speech Balloon) */}
+      {!isVoiceOpen && (
         <div 
           className="ask-foresight-launcher-group"
           style={{
@@ -276,7 +44,7 @@ export default function AskForesightWidget() {
                 border: '1px solid rgba(212, 175, 55, 0.45)',
                 borderRadius: '16px',
                 padding: '10px 14px',
-                width: '270px',
+                width: '275px',
                 boxShadow: '0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15)',
                 color: '#ffffff',
                 zIndex: 10000,
@@ -312,7 +80,7 @@ export default function AskForesightWidget() {
                 </button>
               </div>
               <p style={{ margin: '4px 0 0 0', fontSize: '0.76rem', color: '#e2e8f0', lineHeight: 1.4 }}>
-                Hi! Tap to speak with me live. I&apos;m Christopher Boykin—welcome to your <strong>Live Concierge Consultation</strong> for instant quotes &amp; building science answers.
+                Hi! Tap to speak or type. I&apos;m Christopher Boykin—welcome to your <strong>Live Concierge Consultation</strong> for instant quotes &amp; building science answers.
               </p>
               <div style={{
                 marginTop: '6px',
@@ -327,7 +95,7 @@ export default function AskForesightWidget() {
                 fontWeight: 700
               }}>
                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                Live Consultation (Hands-Free)
+                🎙️ Speak or 💬 Type • Live 24/7
               </div>
               {/* Balloon tail pointer */}
               <div style={{
@@ -410,37 +178,18 @@ export default function AskForesightWidget() {
                 gap: '4px'
               }}>
                 <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff', animation: 'blink 1.2s infinite' }} />
-                LIVE CONSULTATION
+                LIVE CONCIERGE
               </span>
             </button>
           </div>
-
         </div>
       )}
 
-      {/* Voice Agent Overlay Modal */}
+      {/* Voice & Text Concierge Overlay Modal */}
       <VoiceAgentModal isOpen={isVoiceOpen} onClose={() => setIsVoiceOpen(false)} />
 
       {/* Global CSS Styles for Animations */}
       <style dangerouslySetInnerHTML={{__html: `
-        @keyframes pulse-glow {
-          0% { transform: scale(1); opacity: 0.95; }
-          50% { transform: scale(1.04); opacity: 1; }
-          100% { transform: scale(1); opacity: 0.95; }
-        }
-        @keyframes pulse-glow-gold {
-          0% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4); }
-          50% { transform: scale(1.04); box-shadow: 0 14px 30px -5px rgba(212, 175, 55, 0.7); }
-          100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4); }
-        }
-        @keyframes slide-up {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes bounce {
-          0%, 80%, 100% { transform: scale(0); }
-          40% { transform: scale(1); }
-        }
         @keyframes balloonFloat {
           0% { transform: translateY(0); }
           100% { transform: translateY(-6px); }
@@ -467,33 +216,15 @@ export default function AskForesightWidget() {
             gap: 8px !important;
           }
           .ask-foresight-voice-launcher {
-            width: 52px !important;
-            height: 52px !important;
+            width: 54px !important;
+            height: 54px !important;
             padding: 2px !important;
           }
           .liverep-speech-balloon {
-            width: 230px !important;
+            width: 235px !important;
             bottom: 68px !important;
             right: 0 !important;
             padding: 8px 10px !important;
-          }
-          .ask-foresight-launcher {
-            padding: 0 10px !important;
-            min-height: 38px !important;
-            height: 38px !important;
-            border-radius: 9999px !important;
-            font-size: 0.78rem !important;
-          }
-          .glass-chat-widget {
-            width: calc(100vw - 20px) !important;
-            max-width: 440px !important;
-            height: calc(100vh - 88px) !important;
-            max-height: 560px !important;
-            bottom: 68px !important;
-            right: 10px !important;
-            left: 10px !important;
-            margin: 0 auto !important;
-            border-radius: 16px !important;
           }
         }
       `}} />

@@ -62,7 +62,7 @@ export default function Header() {
               <li>
                 <Link
                   prefetch={false}
-                  href="/ask-twin"
+                  href="/concierge"
                   onClick={(e) => {
                     setMenuOpen(false);
                     if (typeof window !== 'undefined' && window.dispatchEvent) {
@@ -77,10 +77,11 @@ export default function Header() {
                     alignItems: 'center',
                     gap: '6px'
                   }}
-                  aria-label="Launch Live Concierge Consultation"
+                  aria-label="Live Concierge Consultation with Christopher Boykin, Certified Master Inspector"
+                  title="Live Concierge: Speak or Type with Christopher Boykin, CMI"
                 >
                   <span style={{ color: '#22C55E', fontSize: '0.65rem', animation: 'pulse 1.5s infinite' }}>●</span>
-                  Live Consultation
+                  Live Concierge
                 </Link>
               </li>
               <li>

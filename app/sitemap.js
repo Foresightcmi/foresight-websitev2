@@ -27,7 +27,7 @@ export default async function sitemap() {
     { loc: '/realtors', changefreq: 'monthly', priority: 0.8 },
     { loc: '/quote', changefreq: 'weekly', priority: 0.9 },
     { loc: '/risk-scanner', changefreq: 'weekly', priority: 0.85 },
-    { loc: '/ask-twin', changefreq: 'monthly', priority: 0.5 },
+    { loc: '/concierge', changefreq: 'weekly', priority: 0.85 },
     { loc: '/blog', changefreq: 'weekly', priority: 0.7 },
     { loc: '/press', changefreq: 'monthly', priority: 0.85 },
     { loc: '/contact', changefreq: 'monthly', priority: 0.7 },

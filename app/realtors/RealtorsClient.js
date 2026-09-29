@@ -803,7 +803,7 @@ export default function RealtorsClient() {
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ borderWidth: '2px' }}>
                   📅 Book Client Inspection
                 </a>
-                <Link href="/ask-twin" className="btn btn-outline" style={{ borderWidth: '2px' }}>
+                <Link href="/concierge" className="btn btn-outline" style={{ borderWidth: '2px' }}>
                   🎙️ Live Concierge Consultation
                 </Link>
               </div>

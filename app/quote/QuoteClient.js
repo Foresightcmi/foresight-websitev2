@@ -993,7 +993,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>
                   Need specialized consulting or WDO explanations?
                 </p>
-                <a href="/ask-twin" style={{ color: 'var(--color-red-light)', fontWeight: 600, fontSize: '0.95rem' }}>
+                <a href="/concierge" style={{ color: 'var(--color-red-light)', fontWeight: 600, fontSize: '0.95rem' }}>
                   Live Concierge Consultation &rarr;
                 </a>
               </div>

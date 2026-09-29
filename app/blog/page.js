@@ -180,11 +180,11 @@ export default function Blog() {
 
           {/* CTA */}
           <div className="card" style={{ marginTop: '3rem', textAlign: 'center', background: 'var(--color-dark)', color: 'var(--color-white)', borderColor: 'transparent' }}>
-            <h3 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Have a Specific Question?</h3>
+            <h3 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Have a Specific Home Question?</h3>
             <p style={{ color: 'var(--color-gray-mid)', marginBottom: '1.5rem' }}>
-              Foresight AI is trained on InterNACHI standards and is available 24/7 to answer your home inspection questions.
+              Christopher Boykin, Certified Master Inspector® is available 24/7 via live voice or chat to answer your Georgia home inspection questions.
             </p>
-            <Link href="/ask-twin" className="btn btn-primary">Live Concierge Consultation</Link>
+            <Link href="/concierge" className="btn btn-primary">Live Concierge Consultation</Link>
           </div>
         </div>
       </section>

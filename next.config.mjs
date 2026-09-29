@@ -12,9 +12,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -197,6 +194,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Concierge unification redirect
+      {
+        source: '/ask-twin',
+        destination: '/concierge',
+        permanent: true,
+      },
       // Legacy XML feeds
       {
         source: '/blog-feed.xml',

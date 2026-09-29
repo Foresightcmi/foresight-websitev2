@@ -182,7 +182,7 @@ export default function ContactClient() {
               )}
               <div style={{ marginTop: '2rem', textAlign: 'center' }}>
                  <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Want an instant answer?</p>
-                 <Link href="/ask-twin" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Live Concierge Consultation with Christopher Boykin, CMI® &rarr;</Link>
+                 <Link href="/concierge" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Live Concierge Consultation with Christopher Boykin, CMI® &rarr;</Link>
               </div>
             </div>
           </div>
