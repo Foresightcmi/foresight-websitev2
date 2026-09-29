@@ -184,7 +184,7 @@ export default function Blog() {
             <p style={{ color: 'var(--color-gray-mid)', marginBottom: '1.5rem' }}>
               Foresight AI is trained on InterNACHI standards and is available 24/7 to answer your home inspection questions.
             </p>
-            <Link href="/ask-twin" className="btn btn-primary">Chat with Foresight AI</Link>
+            <Link href="/ask-twin" className="btn btn-primary">Live Concierge Consultation</Link>
           </div>
         </div>
       </section>

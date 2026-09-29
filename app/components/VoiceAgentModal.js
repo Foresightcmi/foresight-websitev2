@@ -730,7 +730,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       if (data.mode !== 'live' || !data.wsUrl) {
         console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
         setEngineMode('neural');
-        const greetingText = "Hello! I am Christopher Boykin, founder and Certified Master Inspector at Foresight Home Inspections. I am here as your live AI Concierge—what property address or home inspection questions can I answer for you today?";
+        const greetingText = "Hello! I am Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?";
         setHistory([{
           role: 'assistant',
           content: greetingText
@@ -824,7 +824,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             setEngineMode('live');
             startLiveMicStream(ws);
 
-            const greetingPrompt = "The client just opened the voice console on our website. Greet them warmly and concisely in 1 spoken sentence as Christopher Boykin, founder and Certified Master Inspector from Foresight Home Inspections in Atlanta, welcoming them to your direct live AI Concierge and asking what property address or home questions you can help them with today.";
+            const greetingPrompt = "The client just opened the voice console on our website. Greet them warmly and concisely in 1 spoken sentence as Christopher Boykin, founder and Certified Master Inspector from Foresight Home Inspections in Atlanta, welcoming them to their Live Concierge Consultation and asking what property address or home questions you can help them with today.";
 
             ws.send(JSON.stringify({
               clientContent: {
@@ -1015,7 +1015,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. I'm here as your live AI Concierge—what property address or home questions can I answer for you today?"
+              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?"
             }];
           }
           return prev;
@@ -1031,7 +1031,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. I'm here as your live AI Concierge—what property address or home questions can I answer for you today?"
+              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?"
             }];
           }
           return prev;
@@ -1042,7 +1042,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     } catch (err) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
-      const greetingText = "Hello! I am Christopher Boykin, founder, lead Certified Master Inspector, and your Live Concierge at Foresight Home Inspections. What property questions or instant quote can I calculate for you today?";
+      const greetingText = "Hello! I am Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property questions or instant quote can I calculate for you today?";
       setHistory(prev => {
         if (prev.length === 0) {
           return [{
@@ -1502,7 +1502,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   alignItems: 'center',
                   gap: '4px'
                 }}>
-                  Founder &bull; Live Concierge
+                  Live Concierge Consultation
                 </span>
                 <span style={{
                   background: 'rgba(16, 185, 129, 0.15)',
@@ -1521,7 +1521,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                Instant Quotes &bull; Scheduling &bull; 
+                Instant Quotes &bull; Building Science &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
                   {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready'}
                 </span>
@@ -1661,7 +1661,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
                 <img 
                   src="/images/Christopher_Boykin.jpg" 
-                  alt="Christopher Boykin, Certified Master Inspector & Live Concierge"
+                  alt="Christopher Boykin, Certified Master Inspector • Live Concierge Consultation"
                   style={{
                     width: '100%',
                     height: '100%',

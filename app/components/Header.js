@@ -59,8 +59,30 @@ export default function Header() {
               <li><Link prefetch={false} href="/realtors" onClick={() => setMenuOpen(false)}>Realtors</Link></li>
               <li><Link prefetch={false} href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
               <li><Link prefetch={false} href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-              <li><Link prefetch={false} href="/quote" onClick={() => setMenuOpen(false)}>Get Instant Price</Link></li>
-              <li><Link prefetch={false} href="/ask-twin" onClick={() => setMenuOpen(false)} style={{ color: '#854D0E', fontWeight: '700' }}>Ask Foresight AI</Link></li>
+              <li>
+                <Link
+                  prefetch={false}
+                  href="/ask-twin"
+                  onClick={(e) => {
+                    setMenuOpen(false);
+                    if (typeof window !== 'undefined' && window.dispatchEvent) {
+                      e.preventDefault();
+                      window.dispatchEvent(new CustomEvent('open_foresight_live_consultation'));
+                    }
+                  }}
+                  style={{
+                    color: '#D4AF37',
+                    fontWeight: '700',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}
+                  aria-label="Launch Live Concierge Consultation"
+                >
+                  <span style={{ color: '#22C55E', fontSize: '0.65rem', animation: 'pulse 1.5s infinite' }}>●</span>
+                  Live Consultation
+                </Link>
+              </li>
               <li>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" onClick={() => setMenuOpen(false)}>
                   Schedule Online 24/7

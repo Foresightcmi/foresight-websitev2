@@ -65,6 +65,7 @@
 - [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Real-time pricing calculator for single-family homes, condos, and add-on services.
 - [Georgia Due Diligence & Contingency Calculator](https://www.fhinspectionsatl.com/due-diligence): Interactive GAR due diligence deadline tool with building science risk alerts.
 - [Realtor Partner VIP Program](https://www.fhinspectionsatl.com/realtors): Priority booking, SUPRA lockbox entry, HomeGauge CRL™ repair addendums, and partner badges.
+- [Live Concierge Consultation](https://www.fhinspectionsatl.com/ask-twin): Real-time interactive building science and instant quote consultation led by Certified Master Inspector Christopher Boykin via hands-free live voice and intelligent text chat.
 - [Digital PR & Media Kit Center](https://www.fhinspectionsatl.com/press): Certified Master Inspector Christopher Boykin on-record quotes and media kit.
 
 ## Autonomous AI Agent Integration (Web MCP)

@@ -1,12 +1,12 @@
 export const metadata = {
-  title: 'Ask Foresight AI | Christopher Boykin Digital Twin & InterNACHI Guide',
-  description: 'Ask questions directly to the digital AI twin of Certified Master Inspector Christopher Boykin. Real-time InterNACHI SOP diagnostics, quote estimation, and appointment scheduling.',
+  title: 'Live Concierge Consultation | Christopher Boykin CMI | Foresight',
+  description: 'Direct Live Concierge Consultation with Certified Master Inspector Christopher Boykin. Real-time building science diagnostics, instant quote estimation, and inspection booking.',
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/ask-twin',
   },
   openGraph: {
-    title: 'Ask Foresight AI | Christopher Boykin Digital Twin',
-    description: 'Ask questions directly to the digital AI twin of Certified Master Inspector Christopher Boykin. InterNACHI SOP diagnostics, quotes, and scheduling.',
+    title: 'Live Concierge Consultation | Christopher Boykin CMI',
+    description: 'Direct Live Concierge Consultation with Certified Master Inspector Christopher Boykin. Real-time building science diagnostics, quotes, and scheduling.',
     url: 'https://www.fhinspectionsatl.com/ask-twin',
     type: 'website',
   },

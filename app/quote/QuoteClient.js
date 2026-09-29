@@ -994,7 +994,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   Need specialized consulting or WDO explanations?
                 </p>
                 <a href="/ask-twin" style={{ color: 'var(--color-red-light)', fontWeight: 600, fontSize: '0.95rem' }}>
-                  Ask Foresight AI →
+                  Live Concierge Consultation &rarr;
                 </a>
               </div>
             </div>

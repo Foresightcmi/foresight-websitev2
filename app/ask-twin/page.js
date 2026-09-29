@@ -9,7 +9,7 @@ export default function AskTwin() {
   const [messages, setMessages] = useState([
     {
       role: 'ai',
-      content: "I'm Foresight AI, your home inspection and maintenance advisor. What's on your mind today? Let's talk houses!"
+      content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation. What property questions or instant quote can I calculate for you today?"
     }
   ]);
   const [input, setInput] = useState('');
@@ -187,20 +187,20 @@ export default function AskTwin() {
             letterSpacing: '0.05em',
             textTransform: 'uppercase'
           }}>
-            InterNACHI Standard Interactive Guide
+            Certified Master Inspector Real-Time Advisor
           </span>
           <h1 style={{ 
             color: 'var(--color-white)',
-            background: 'linear-gradient(135deg, #ffffff 0%, #fca5a5 100%)',
+            background: 'linear-gradient(135deg, #ffffff 0%, #F59E0B 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             fontSize: '3rem',
             marginBottom: '0.5rem'
           }}>
-            Ask Foresight AI
+            Live Concierge Consultation
           </h1>
-          <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-            Seasoned expert answers on roofing, foundations, termites, radon, and pool systems, with full 3-step InterNACHI breakdown.
+          <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.1rem', maxWidth: '650px', margin: '0 auto' }}>
+            Direct building science consultation with Christopher Boykin, Certified Master Inspector®. Ask property questions, calculate instant quotes, or speak hands-free via live voice.
           </p>
           <div style={{ marginTop: '1.25rem', display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <button
@@ -227,7 +227,7 @@ export default function AskTwin() {
               onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0) scale(1)'}
             >
               <span style={{ fontSize: '1.3rem' }}>🎙️</span>
-              <span>Launch Live Voice Consultation</span>
+              <span>Launch Live Concierge Consultation</span>
             </button>
             <Link
               href="/quote"
@@ -288,7 +288,7 @@ export default function AskTwin() {
                   </span>
                 </div>
                 <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.825rem', margin: '0.1rem 0 0 0' }}>
-                  Foresight AI Twin &bull; <span style={{ color: '#10b981', fontWeight: 600 }}>Active & Ready</span>
+                  Live Concierge Consultation &bull; <span style={{ color: '#10b981', fontWeight: 600 }}>Active & Ready</span>
                 </p>
               </div>
             </div>
@@ -314,7 +314,7 @@ export default function AskTwin() {
                 }}
               >
                 <span>🎙️</span>
-                <span>Voice Call</span>
+                <span>Live Voice Consultation</span>
               </button>
               <img src="/cmi_logo.png" alt="Certified Master Inspector" style={{ height: '40px', opacity: 0.9 }} />
               <img src="/cpi_logo.png" alt="Certified Professional Inspector" style={{ height: '40px', opacity: 0.9 }} />

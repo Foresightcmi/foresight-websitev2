@@ -140,6 +140,14 @@ export default function AskForesightWidget() {
   
   const chatContainerRef = useRef(null);
 
+  useEffect(() => {
+    const handleOpen = () => setIsVoiceOpen(true);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('open_foresight_live_consultation', handleOpen);
+      return () => window.removeEventListener('open_foresight_live_consultation', handleOpen);
+    }
+  }, []);
+
   const handleAcceptChecklist = () => {
     setMessages(prev => [
       ...prev,
@@ -304,7 +312,7 @@ export default function AskForesightWidget() {
                 </button>
               </div>
               <p style={{ margin: '4px 0 0 0', fontSize: '0.76rem', color: '#e2e8f0', lineHeight: 1.4 }}>
-                Hi! Tap to speak with me live. I'm your AI Concierge—I can answer building science questions &amp; auto-calculate your instant quote.
+                Hi! Tap to speak with me live. I&apos;m Christopher Boykin—welcome to your <strong>Live Concierge Consultation</strong> for instant quotes &amp; building science answers.
               </p>
               <div style={{
                 marginTop: '6px',
@@ -319,7 +327,7 @@ export default function AskForesightWidget() {
                 fontWeight: 700
               }}>
                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                Tap to talk live (Hands-Free)
+                Live Consultation (Hands-Free)
               </div>
               {/* Balloon tail pointer */}
               <div style={{
@@ -340,7 +348,7 @@ export default function AskForesightWidget() {
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => setIsVoiceOpen(true)}
-              aria-label="Talk Live to Christopher Boykin, Certified Master Inspector & Live Concierge"
+              aria-label="Live Concierge Consultation with Christopher Boykin, Certified Master Inspector"
               className="ask-foresight-voice-launcher"
               style={{
                 width: '68px',
@@ -376,7 +384,7 @@ export default function AskForesightWidget() {
                   <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
                   <img 
                     src="/images/Christopher_Boykin.jpg" 
-                    alt="Christopher Boykin CMI - Founder & Live Concierge" 
+                    alt="Christopher Boykin CMI - Live Concierge Consultation" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </picture>
@@ -389,7 +397,7 @@ export default function AskForesightWidget() {
                 transform: 'translateX(-50%)',
                 background: '#10b981',
                 color: '#0F172A',
-                fontSize: '0.6rem',
+                fontSize: '0.58rem',
                 fontWeight: 800,
                 padding: '2px 7px',
                 borderRadius: '8px',
@@ -402,7 +410,7 @@ export default function AskForesightWidget() {
                 gap: '4px'
               }}>
                 <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#ffffff', animation: 'blink 1.2s infinite' }} />
-                LIVE CONCIERGE
+                LIVE CONSULTATION
               </span>
             </button>
           </div>

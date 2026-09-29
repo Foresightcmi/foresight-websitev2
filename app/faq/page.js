@@ -131,7 +131,7 @@ export default function FAQPage() {
               Contact Us
             </Link>
             <Link href="/ask-twin" className="btn btn-outline" style={{ padding: '1rem 2rem', border: '2px solid var(--color-white)', color: 'var(--color-white)', textDecoration: 'none', fontWeight: 'bold', borderRadius: 'var(--radius-md)', display: 'inline-block' }}>
-              Ask Twin AI
+              Live Concierge Consultation
             </Link>
           </div>
         </div>
