@@ -97,14 +97,16 @@ export default function RootLayout({ children }) {
           "https://www.wikidata.org/wiki/Q5888806"
         ],
         "sameAs": [
-          "https://facebook.com/fhinspectionsatl",
-          "https://www.instagram.com/fhinspectionsatl/",
-          "https://www.tiktok.com/@fhinspectionsatl",
-          "https://www.youtube.com/@ForesightHomeInspections-t6r",
-          "https://www.linkedin.com/company/foresight-home-inspections-llc/",
           "https://maps.google.com/?cid=10862078652033010531",
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-          "https://certifiedmasterinspector.org"
+          "https://certifiedmasterinspector.org/verify/christopher-boykin",
+          "https://www.bbb.org/us/ga/lithonia/profile/home-inspection/foresight-home-inspections-llc",
+          "https://www.zillow.com/profile/Foresight-Home-Inspections-LLC/",
+          "https://www.linkedin.com/company/foresight-home-inspections-llc/",
+          "https://facebook.com/fhinspectionsatl",
+          "https://www.instagram.com/fhinspectionsatl/",
+          "https://www.youtube.com/@ForesightHomeInspections-t6r",
+          "https://www.tiktok.com/@fhinspectionsatl"
         ],
         "priceRange": "$$$",
         "address": {
@@ -494,13 +496,16 @@ export default function RootLayout({ children }) {
     ],
     "foundingDate": "2019",
     "sameAs": [
-      "https://www.google.com/maps/search/Foresight+Home+Inspections+Lithonia+GA",
+      "https://maps.google.com/?cid=10862078652033010531",
       "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-      "https://www.tiktok.com/@fhinspectionsatl",
-      "https://www.youtube.com/@ForesightHomeInspections-t6r",
+      "https://certifiedmasterinspector.org/verify/christopher-boykin",
+      "https://www.bbb.org/us/ga/lithonia/profile/home-inspection/foresight-home-inspections-llc",
+      "https://www.zillow.com/profile/Foresight-Home-Inspections-LLC/",
+      "https://www.linkedin.com/company/foresight-home-inspections-llc/",
       "https://facebook.com/fhinspectionsatl",
       "https://www.instagram.com/fhinspectionsatl/",
-      "https://www.linkedin.com/company/foresight-home-inspections-llc/"
+      "https://www.youtube.com/@ForesightHomeInspections-t6r",
+      "https://www.tiktok.com/@fhinspectionsatl"
     ],
     "knowsAbout": [
       "Home Inspection",

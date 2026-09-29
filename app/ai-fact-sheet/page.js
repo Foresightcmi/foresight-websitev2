@@ -50,13 +50,16 @@ export default function AiFactSheet() {
           "@id": "https://www.fhinspectionsatl.com/#founder"
         },
         "sameAs": [
+          "https://maps.google.com/?cid=10862078652033010531",
+          "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+          "https://certifiedmasterinspector.org/verify/christopher-boykin",
+          "https://www.bbb.org/us/ga/lithonia/profile/home-inspection/foresight-home-inspections-llc",
+          "https://www.zillow.com/profile/Foresight-Home-Inspections-LLC/",
+          "https://www.linkedin.com/company/foresight-home-inspections-llc/",
           "https://facebook.com/fhinspectionsatl",
           "https://www.instagram.com/fhinspectionsatl/",
           "https://www.youtube.com/@ForesightHomeInspections-t6r",
-          "https://www.linkedin.com/company/foresight-home-inspections-llc/",
-          "https://maps.google.com/?cid=10862078652033010531",
-          "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-          "https://certifiedmasterinspector.org"
+          "https://www.tiktok.com/@fhinspectionsatl"
         ]
       },
       {

@@ -1,55 +1,107 @@
 [
   {
+    "recordId": "DKB-3189890",
+    "address": "1890 WEE KIRK RD, DeKalb County, GA",
+    "permitType": "Additions to Existing Structures",
+    "jobValue": 300,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189890.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189890",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-29T12:00:24.676Z"
+  },
+  {
+    "recordId": "DKB-3189889",
+    "address": "4578 RIVERWOOD CIR, DeKalb County, GA",
+    "permitType": "Electrical Combined Line",
+    "jobValue": 9650,
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189889.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189889",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-29T12:00:24.720Z"
+  },
+  {
+    "recordId": "DKB-3189890",
+    "address": "1890 WEE KIRK RD, DeKalb County, GA",
+    "permitType": "Additions to Existing Structures",
+    "jobValue": 300,
+    "permitDate": "2026-09-28",
+    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
+    "warrantyExpirationTarget": "Aug 23, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189890.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189890",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-29T12:00:24.739Z"
+  },
+  {
+    "recordId": "DKB-3189889",
+    "address": "4578 RIVERWOOD CIR, DeKalb County, GA",
+    "permitType": "Electrical Combined Line",
+    "jobValue": 9650,
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189889.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189889",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-09-29T12:00:24.748Z"
+  },
+  {
     "recordId": "DKB-3189886",
     "address": "461 PROCTOR AVE, DeKalb County, GA",
     "permitType": "Residential Heating System",
     "jobValue": 8900,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189886.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189886",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.825Z"
+    "generatedAt": "2026-09-29T12:00:24.764Z"
   },
   {
     "recordId": "DKB-3189881",
     "address": "3501 WALDROP RD, DeKalb County, GA",
     "permitType": "Electrical Temporary Pole",
     "jobValue": 120,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189881.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189881",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.835Z"
+    "generatedAt": "2026-09-29T12:00:24.781Z"
   },
   {
     "recordId": "DKB-3189880",
     "address": "955 CLIFTON RD, DeKalb County, GA",
     "permitType": "Electrical Rewire",
     "jobValue": 1200,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189880.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189880",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.851Z"
+    "generatedAt": "2026-09-29T12:00:24.792Z"
   },
   {
     "recordId": "DKB-3189876",
     "address": "2301 AMBER WAY, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 6500,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189876.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189876",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.861Z"
+    "generatedAt": "2026-09-29T12:00:24.808Z"
   },
   {
     "recordId": "DKB-3189873",
@@ -62,7 +114,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189873.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189873",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.873Z"
+    "generatedAt": "2026-09-29T12:00:24.822Z"
   },
   {
     "recordId": "DKB-3189872",
@@ -75,7 +127,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189872.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189872",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.884Z"
+    "generatedAt": "2026-09-29T12:00:24.831Z"
   },
   {
     "recordId": "DKB-3189870",
@@ -88,7 +140,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189870.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189870",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.894Z"
+    "generatedAt": "2026-09-29T12:00:24.840Z"
   },
   {
     "recordId": "DKB-3189869",
@@ -101,20 +153,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189869.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189869",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.899Z"
+    "generatedAt": "2026-09-29T12:00:24.854Z"
   },
   {
     "recordId": "DKB-3189868",
     "address": "412 RAMMEL OAKS DR, DeKalb County, GA",
     "permitType": "Residential General Combination",
     "jobValue": 26480,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189868.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189868",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.904Z"
+    "generatedAt": "2026-09-29T12:00:24.861Z"
   },
   {
     "recordId": "DKB-3189867",
@@ -127,46 +179,46 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189867.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189867",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.908Z"
+    "generatedAt": "2026-09-29T12:00:24.879Z"
   },
   {
     "recordId": "DKB-3189865",
     "address": "1010 SCOTT CIR, DeKalb County, GA",
     "permitType": "Residential General Combination",
     "jobValue": 16625,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189865.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189865",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.927Z"
+    "generatedAt": "2026-09-29T12:00:24.893Z"
   },
   {
     "recordId": "DKB-3189864",
     "address": "1665 NORRIS LANDING DR, DeKalb County, GA",
     "permitType": "Electrical Combined Line",
     "jobValue": 8800,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189864.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189864",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.933Z"
+    "generatedAt": "2026-09-29T12:00:24.908Z"
   },
   {
     "recordId": "DKB-3189863",
     "address": "1690 NORRIS LANDING DR, DeKalb County, GA",
     "permitType": "Electrical Combined Line",
     "jobValue": 8800,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189863.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189863",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.947Z"
+    "generatedAt": "2026-09-29T12:00:24.921Z"
   },
   {
     "recordId": "DKB-3189859",
@@ -179,7 +231,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189859.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189859",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.955Z"
+    "generatedAt": "2026-09-29T12:00:24.950Z"
   },
   {
     "recordId": "DKB-3189858",
@@ -192,7 +244,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189858.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189858",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.964Z"
+    "generatedAt": "2026-09-29T12:00:24.959Z"
   },
   {
     "recordId": "DKB-3189855",
@@ -205,20 +257,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189855.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189855",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.972Z"
+    "generatedAt": "2026-09-29T12:00:24.971Z"
   },
   {
     "recordId": "DKB-3189854",
     "address": "2329 MELINDA DR, DeKalb County, GA",
     "permitType": "Electrical Expansion",
     "jobValue": 800,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189854.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189854",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.984Z"
+    "generatedAt": "2026-09-29T12:00:24.984Z"
   },
   {
     "recordId": "DKB-3189853",
@@ -231,7 +283,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189853.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189853",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:16.995Z"
+    "generatedAt": "2026-09-29T12:00:25.020Z"
   },
   {
     "recordId": "DKB-3189852",
@@ -244,33 +296,33 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189852.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189852",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.007Z"
+    "generatedAt": "2026-09-29T12:00:25.039Z"
   },
   {
     "recordId": "DKB-3189850",
     "address": "1860 CEDAR WALK LN, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 16935,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189850.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189850",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.019Z"
+    "generatedAt": "2026-09-29T12:00:25.053Z"
   },
   {
     "recordId": "DKB-3189848",
     "address": "2486 MELINDA DR, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 21603,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189848.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189848",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.034Z"
+    "generatedAt": "2026-09-29T12:00:25.069Z"
   },
   {
     "recordId": "DKB-3189847",
@@ -283,20 +335,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189847.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189847",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.046Z"
+    "generatedAt": "2026-09-29T12:00:25.082Z"
   },
   {
     "recordId": "DKB-3189841",
     "address": "459 ROCKBRIDGE TRL, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 15176,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189841.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189841",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.053Z"
+    "generatedAt": "2026-09-29T12:00:25.096Z"
   },
   {
     "recordId": "DKB-3189839",
@@ -309,46 +361,46 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189839.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189839",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.059Z"
+    "generatedAt": "2026-09-29T12:00:25.106Z"
   },
   {
     "recordId": "DKB-3189838",
     "address": "3022 ROLLINGWOOD CT, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 350000,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189838.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189838",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.064Z"
+    "generatedAt": "2026-09-29T12:00:25.118Z"
   },
   {
     "recordId": "DKB-3189834",
     "address": "591 RAVEN SPRINGS TRL, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 18523,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189834.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189834",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.068Z"
+    "generatedAt": "2026-09-29T12:00:25.132Z"
   },
   {
     "recordId": "DKB-3189828",
     "address": "2456 Whites RDG, DeKalb County, GA",
     "permitType": "Residential General Combination",
     "jobValue": 7000,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189828.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189828",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.075Z"
+    "generatedAt": "2026-09-29T12:00:25.144Z"
   },
   {
     "recordId": "DKB-3189825",
@@ -361,7 +413,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189825.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189825",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.080Z"
+    "generatedAt": "2026-09-29T12:00:25.153Z"
   },
   {
     "recordId": "DKB-3189824",
@@ -374,7 +426,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189824.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189824",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.085Z"
+    "generatedAt": "2026-09-29T12:00:25.163Z"
   },
   {
     "recordId": "DKB-3189822",
@@ -387,7 +439,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189822.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189822",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.093Z"
+    "generatedAt": "2026-09-29T12:00:25.174Z"
   },
   {
     "recordId": "DKB-3189821",
@@ -400,20 +452,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189821.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189821",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.099Z"
+    "generatedAt": "2026-09-29T12:00:25.183Z"
   },
   {
     "recordId": "DKB-3189817",
     "address": "1370 EMORY RD, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 19000,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189817.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189817",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.107Z"
+    "generatedAt": "2026-09-29T12:00:25.196Z"
   },
   {
     "recordId": "DKB-3189810",
@@ -426,7 +478,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189810.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189810",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.111Z"
+    "generatedAt": "2026-09-29T12:00:25.206Z"
   },
   {
     "recordId": "DKB-3189807",
@@ -439,20 +491,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189807.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189807",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.114Z"
+    "generatedAt": "2026-09-29T12:00:25.218Z"
   },
   {
     "recordId": "DKB-3189805",
     "address": "1909 RAVENWOOD WAY, DeKalb County, GA",
     "permitType": "Electrical Temporary Pole",
     "jobValue": 600,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189805.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189805",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.118Z"
+    "generatedAt": "2026-09-29T12:00:25.253Z"
   },
   {
     "recordId": "DKB-3189803",
@@ -465,33 +517,33 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189803.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189803",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.125Z"
+    "generatedAt": "2026-09-29T12:00:25.268Z"
   },
   {
     "recordId": "DKB-3189802",
     "address": "1636 RIDGEWOOD DR, DeKalb County, GA",
     "permitType": "Electrical Rewire",
     "jobValue": 1000,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189802.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189802",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.127Z"
+    "generatedAt": "2026-09-29T12:00:25.282Z"
   },
   {
     "recordId": "DKB-3189801",
     "address": "1403 OLDFIELD RD, DeKalb County, GA",
     "permitType": "Residential Air Conditioning",
     "jobValue": 13085,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189801.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189801",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.129Z"
+    "generatedAt": "2026-09-29T12:00:25.297Z"
   },
   {
     "recordId": "DKB-3189796",
@@ -504,20 +556,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189796.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189796",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.133Z"
+    "generatedAt": "2026-09-29T12:00:25.317Z"
   },
   {
     "recordId": "DKB-3189795",
     "address": "2728 ROLLINGWOOD LN, DeKalb County, GA",
     "permitType": "Electrical Inspection Only",
     "jobValue": 1000,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189795.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189795",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.137Z"
+    "generatedAt": "2026-09-29T12:00:25.330Z"
   },
   {
     "recordId": "DKB-3189794",
@@ -530,20 +582,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189794.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189794",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.141Z"
+    "generatedAt": "2026-09-29T12:00:25.342Z"
   },
   {
     "recordId": "DKB-3189793",
     "address": "2218 EDGEMORE DR, DeKalb County, GA",
     "permitType": "Electrical Line Work",
     "jobValue": 9000,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189793.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189793",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.143Z"
+    "generatedAt": "2026-09-29T12:00:25.354Z"
   },
   {
     "recordId": "DKB-3189788",
@@ -556,7 +608,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189788.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189788",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.145Z"
+    "generatedAt": "2026-09-29T12:00:25.363Z"
   },
   {
     "recordId": "DKB-3189787",
@@ -569,7 +621,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189787.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189787",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.147Z"
+    "generatedAt": "2026-09-29T12:00:25.392Z"
   },
   {
     "recordId": "DKB-3189786",
@@ -582,7 +634,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189786.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189786",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.150Z"
+    "generatedAt": "2026-09-29T12:00:25.401Z"
   },
   {
     "recordId": "DKB-3189792",
@@ -595,7 +647,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189792.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189792",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.156Z"
+    "generatedAt": "2026-09-29T12:00:25.412Z"
   },
   {
     "recordId": "DKB-3189791",
@@ -608,20 +660,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189791.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189791",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.161Z"
+    "generatedAt": "2026-09-29T12:00:25.423Z"
   },
   {
     "recordId": "DKB-3189790",
     "address": "3636 CHERRY HILL PL, DeKalb County, GA",
     "permitType": "Electrical Line Work",
     "jobValue": 9000,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189790.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189790",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.166Z"
+    "generatedAt": "2026-09-29T12:00:25.435Z"
   },
   {
     "recordId": "DKB-3189787",
@@ -634,20 +686,20 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189787.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189787",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.177Z"
+    "generatedAt": "2026-09-29T12:00:25.447Z"
   },
   {
     "recordId": "DKB-3189772",
     "address": "1665 NORRIS LANDING DR, DeKalb County, GA",
     "permitType": "Electrical Temporary Pole",
     "jobValue": 500,
-    "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "permitDate": "2026-09-29",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189772.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189772",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.180Z"
+    "generatedAt": "2026-09-29T12:00:25.459Z"
   },
   {
     "recordId": "ALP-DEM240052",
@@ -660,7 +712,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-DEM240052.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.185Z"
+    "generatedAt": "2026-09-29T12:00:25.474Z"
   },
   {
     "recordId": "ALP-BR240621",
@@ -673,7 +725,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR240621.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.189Z"
+    "generatedAt": "2026-09-29T12:00:25.490Z"
   },
   {
     "recordId": "ALP-PLR240045",
@@ -686,7 +738,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-PLR240045.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.192Z"
+    "generatedAt": "2026-09-29T12:00:25.498Z"
   },
   {
     "recordId": "ALP-BR250006",
@@ -699,7 +751,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250006.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.194Z"
+    "generatedAt": "2026-09-29T12:00:25.510Z"
   },
   {
     "recordId": "ALP-PLR250008",
@@ -712,7 +764,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-PLR250008.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.196Z"
+    "generatedAt": "2026-09-29T12:00:25.524Z"
   },
   {
     "recordId": "ALP-BR250098",
@@ -725,7 +777,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250098.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.198Z"
+    "generatedAt": "2026-09-29T12:00:25.532Z"
   },
   {
     "recordId": "ALP-BR250102",
@@ -738,7 +790,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250102.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.200Z"
+    "generatedAt": "2026-09-29T12:00:25.543Z"
   },
   {
     "recordId": "ALP-BR250109",
@@ -751,7 +803,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250109.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.203Z"
+    "generatedAt": "2026-09-29T12:00:25.554Z"
   },
   {
     "recordId": "ALP-BR250155",
@@ -764,7 +816,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250155.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.208Z"
+    "generatedAt": "2026-09-29T12:00:25.563Z"
   },
   {
     "recordId": "ALP-BR250191",
@@ -777,7 +829,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250191.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.211Z"
+    "generatedAt": "2026-09-29T12:00:25.573Z"
   },
   {
     "recordId": "ALP-BR250198",
@@ -790,7 +842,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250198.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.214Z"
+    "generatedAt": "2026-09-29T12:00:25.590Z"
   },
   {
     "recordId": "ALP-BR250207",
@@ -803,7 +855,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250207.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.218Z"
+    "generatedAt": "2026-09-29T12:00:25.607Z"
   },
   {
     "recordId": "ALP-BR250226",
@@ -816,7 +868,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250226.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.222Z"
+    "generatedAt": "2026-09-29T12:00:25.614Z"
   },
   {
     "recordId": "ALP-DEM250020",
@@ -829,7 +881,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-DEM250020.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.225Z"
+    "generatedAt": "2026-09-29T12:00:25.626Z"
   },
   {
     "recordId": "ALP-BR250247",
@@ -842,7 +894,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250247.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.227Z"
+    "generatedAt": "2026-09-29T12:00:25.641Z"
   },
   {
     "recordId": "ALP-BR250248",
@@ -855,7 +907,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250248.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.229Z"
+    "generatedAt": "2026-09-29T12:00:25.655Z"
   },
   {
     "recordId": "ALP-BR250292",
@@ -868,7 +920,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250292.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.233Z"
+    "generatedAt": "2026-09-29T12:00:25.666Z"
   },
   {
     "recordId": "ALP-BR250308",
@@ -881,7 +933,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250308.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.236Z"
+    "generatedAt": "2026-09-29T12:00:25.681Z"
   },
   {
     "recordId": "ALP-BR250336",
@@ -894,7 +946,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250336.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.240Z"
+    "generatedAt": "2026-09-29T12:00:25.693Z"
   },
   {
     "recordId": "ALP-BR250354",
@@ -907,7 +959,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250354.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.243Z"
+    "generatedAt": "2026-09-29T12:00:25.708Z"
   },
   {
     "recordId": "ALP-BR250378",
@@ -920,7 +972,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250378.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.245Z"
+    "generatedAt": "2026-09-29T12:00:25.719Z"
   },
   {
     "recordId": "ALP-BR250382",
@@ -933,7 +985,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250382.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.247Z"
+    "generatedAt": "2026-09-29T12:00:25.730Z"
   },
   {
     "recordId": "ALP-BR250383",
@@ -946,7 +998,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250383.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.249Z"
+    "generatedAt": "2026-09-29T12:00:25.740Z"
   },
   {
     "recordId": "ALP-BR250384",
@@ -959,7 +1011,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250384.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.253Z"
+    "generatedAt": "2026-09-29T12:00:25.749Z"
   },
   {
     "recordId": "ALP-BR250385",
@@ -972,7 +1024,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250385.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.259Z"
+    "generatedAt": "2026-09-29T12:00:25.760Z"
   },
   {
     "recordId": "JCK-BLDR-26-0281",
@@ -985,7 +1037,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0281.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.276Z"
+    "generatedAt": "2026-09-29T12:00:25.772Z"
   },
   {
     "recordId": "JCK-BLDR-26-0294",
@@ -998,7 +1050,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0294.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.285Z"
+    "generatedAt": "2026-09-29T12:00:25.782Z"
   },
   {
     "recordId": "JCK-BLDR-26-0307",
@@ -1011,7 +1063,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0307.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.292Z"
+    "generatedAt": "2026-09-29T12:00:25.791Z"
   },
   {
     "recordId": "JCK-BLDR-26-0304",
@@ -1024,7 +1076,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0304.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.297Z"
+    "generatedAt": "2026-09-29T12:00:25.804Z"
   },
   {
     "recordId": "JCK-BLDR-26-0306",
@@ -1037,7 +1089,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0306.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.303Z"
+    "generatedAt": "2026-09-29T12:00:25.829Z"
   },
   {
     "recordId": "JCK-BLDR-26-0310",
@@ -1050,7 +1102,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0310.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.314Z"
+    "generatedAt": "2026-09-29T12:00:25.838Z"
   },
   {
     "recordId": "JCK-BLDR-26-0247",
@@ -1063,7 +1115,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0247.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.325Z"
+    "generatedAt": "2026-09-29T12:00:25.848Z"
   },
   {
     "recordId": "JCK-BLDR-26-0265",
@@ -1076,7 +1128,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0265.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.333Z"
+    "generatedAt": "2026-09-29T12:00:25.857Z"
   },
   {
     "recordId": "JCK-BLDR-26-0295",
@@ -1089,7 +1141,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0295.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.341Z"
+    "generatedAt": "2026-09-29T12:00:25.870Z"
   },
   {
     "recordId": "JCK-BLDR-26-0272",
@@ -1102,7 +1154,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0272.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.353Z"
+    "generatedAt": "2026-09-29T12:00:25.883Z"
   },
   {
     "recordId": "JCK-BLDR-26-0297",
@@ -1115,7 +1167,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0297.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.359Z"
+    "generatedAt": "2026-09-29T12:00:25.894Z"
   },
   {
     "recordId": "JCK-BLDR-26-0298",
@@ -1128,7 +1180,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0298.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.365Z"
+    "generatedAt": "2026-09-29T12:00:25.905Z"
   },
   {
     "recordId": "JCK-BLDR-26-0255",
@@ -1141,7 +1193,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0255.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.372Z"
+    "generatedAt": "2026-09-29T12:00:25.913Z"
   },
   {
     "recordId": "JCK-BLDR-26-0270",
@@ -1154,7 +1206,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0270.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.380Z"
+    "generatedAt": "2026-09-29T12:00:25.925Z"
   },
   {
     "recordId": "JCK-BLDR-26-0293",
@@ -1167,7 +1219,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0293.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.387Z"
+    "generatedAt": "2026-09-29T12:00:25.938Z"
   },
   {
     "recordId": "JCK-BLDR-26-0153",
@@ -1180,7 +1232,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0153.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.395Z"
+    "generatedAt": "2026-09-29T12:00:25.948Z"
   },
   {
     "recordId": "JCK-BLDR-26-0288",
@@ -1193,7 +1245,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0288.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.401Z"
+    "generatedAt": "2026-09-29T12:00:25.963Z"
   },
   {
     "recordId": "JCK-BLDR-26-0166",
@@ -1206,7 +1258,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0166.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.409Z"
+    "generatedAt": "2026-09-29T12:00:25.975Z"
   },
   {
     "recordId": "JCK-BLDR-26-0291",
@@ -1219,7 +1271,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0291.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.416Z"
+    "generatedAt": "2026-09-29T12:00:25.988Z"
   },
   {
     "recordId": "JCK-BLDR-26-0090",
@@ -1232,7 +1284,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0090.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.423Z"
+    "generatedAt": "2026-09-29T12:00:26.005Z"
   },
   {
     "recordId": "JCK-BLDR-26-0285",
@@ -1245,7 +1297,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0285.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.429Z"
+    "generatedAt": "2026-09-29T12:00:26.015Z"
   },
   {
     "recordId": "JCK-BLDR-26-0292",
@@ -1258,7 +1310,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0292.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.437Z"
+    "generatedAt": "2026-09-29T12:00:26.027Z"
   },
   {
     "recordId": "JCK-BLDR-26-0282",
@@ -1271,7 +1323,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0282.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.445Z"
+    "generatedAt": "2026-09-29T12:00:26.048Z"
   },
   {
     "recordId": "JCK-BLDR-26-0283",
@@ -1284,7 +1336,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0283.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.454Z"
+    "generatedAt": "2026-09-29T12:00:26.058Z"
   },
   {
     "recordId": "JCK-BLDR-26-0296",
@@ -1297,7 +1349,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0296.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.465Z"
+    "generatedAt": "2026-09-29T12:00:26.070Z"
   },
   {
     "recordId": "BB-202600800",
@@ -1310,7 +1362,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600800.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600800",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.475Z"
+    "generatedAt": "2026-09-29T12:00:26.082Z"
   },
   {
     "recordId": "BB-202600797",
@@ -1323,7 +1375,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600797.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600797",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.485Z"
+    "generatedAt": "2026-09-29T12:00:26.091Z"
   },
   {
     "recordId": "BB-202600778",
@@ -1336,7 +1388,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600778.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600778",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.496Z"
+    "generatedAt": "2026-09-29T12:00:26.102Z"
   },
   {
     "recordId": "BB-202600767",
@@ -1349,7 +1401,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600767.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600767",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.502Z"
+    "generatedAt": "2026-09-29T12:00:26.110Z"
   },
   {
     "recordId": "BB-202600764",
@@ -1362,7 +1414,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600764.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600764",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.511Z"
+    "generatedAt": "2026-09-29T12:00:26.120Z"
   },
   {
     "recordId": "BB-202600777",
@@ -1375,7 +1427,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600777.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600777",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.518Z"
+    "generatedAt": "2026-09-29T12:00:26.132Z"
   },
   {
     "recordId": "BB-202600759",
@@ -1388,7 +1440,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600759.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600759",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.523Z"
+    "generatedAt": "2026-09-29T12:00:26.140Z"
   },
   {
     "recordId": "BB-202600752",
@@ -1401,7 +1453,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600752.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600752",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.529Z"
+    "generatedAt": "2026-09-29T12:00:26.151Z"
   },
   {
     "recordId": "BB-202600749",
@@ -1414,7 +1466,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600749.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600749",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.535Z"
+    "generatedAt": "2026-09-29T12:00:26.163Z"
   },
   {
     "recordId": "BB-202600757",
@@ -1427,7 +1479,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600757.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600757",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.542Z"
+    "generatedAt": "2026-09-29T12:00:26.180Z"
   },
   {
     "recordId": "BB-202600735",
@@ -1440,7 +1492,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600735.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600735",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.550Z"
+    "generatedAt": "2026-09-29T12:00:26.253Z"
   },
   {
     "recordId": "BB-202600729",
@@ -1453,7 +1505,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600729.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600729",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.558Z"
+    "generatedAt": "2026-09-29T12:00:26.264Z"
   },
   {
     "recordId": "BB-202600727",
@@ -1466,7 +1518,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600727.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600727",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.565Z"
+    "generatedAt": "2026-09-29T12:00:26.274Z"
   },
   {
     "recordId": "BB-202600725",
@@ -1479,7 +1531,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600725.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600725",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.573Z"
+    "generatedAt": "2026-09-29T12:00:26.283Z"
   },
   {
     "recordId": "BB-202600722",
@@ -1492,7 +1544,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600722.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600722",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.579Z"
+    "generatedAt": "2026-09-29T12:00:26.327Z"
   },
   {
     "recordId": "BB-202600721",
@@ -1505,7 +1557,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600721.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600721",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.584Z"
+    "generatedAt": "2026-09-29T12:00:26.357Z"
   },
   {
     "recordId": "BB-202600713",
@@ -1518,7 +1570,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600713.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600713",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.588Z"
+    "generatedAt": "2026-09-29T12:00:26.372Z"
   },
   {
     "recordId": "BB-202600702",
@@ -1531,7 +1583,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600702.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600702",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.593Z"
+    "generatedAt": "2026-09-29T12:00:26.383Z"
   },
   {
     "recordId": "BB-202600697",
@@ -1544,7 +1596,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600697.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600697",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.597Z"
+    "generatedAt": "2026-09-29T12:00:26.400Z"
   },
   {
     "recordId": "BB-202600716",
@@ -1557,7 +1609,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600716.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600716",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.601Z"
+    "generatedAt": "2026-09-29T12:00:26.412Z"
   },
   {
     "recordId": "BB-202600718",
@@ -1570,7 +1622,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600718.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600718",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.609Z"
+    "generatedAt": "2026-09-29T12:00:26.425Z"
   },
   {
     "recordId": "BB-202600696",
@@ -1583,7 +1635,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600696.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600696",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.614Z"
+    "generatedAt": "2026-09-29T12:00:26.442Z"
   },
   {
     "recordId": "BB-202600694",
@@ -1596,7 +1648,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600694.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600694",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.618Z"
+    "generatedAt": "2026-09-29T12:00:26.458Z"
   },
   {
     "recordId": "BB-202600693",
@@ -1609,7 +1661,7 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600693.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600693",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.623Z"
+    "generatedAt": "2026-09-29T12:00:26.471Z"
   },
   {
     "recordId": "BB-202600666",
@@ -1622,6 +1674,6 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600666.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600666",
     "status": "Active Pipeline",
-    "generatedAt": "2026-09-28T23:13:17.626Z"
+    "generatedAt": "2026-09-29T12:00:26.492Z"
   }
 ]
