@@ -76,8 +76,9 @@ async function generateWithGemini(topicPrompt, category) {
 AUTHOR: Christopher Boykin, Certified Master Inspector (CMI) through InterNACHI
 COMPANY FACTS:
 - Two certified inspectors on every job
-- $10,000 Elite Master Inspection Warranty included free
-- Thermal imaging included at no extra cost
+- Up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Warranty + $25,000 InterNACHI Honor Guarantee with $0 deductible)
+- Thermal imaging and aerial drone roof scans included at no extra cost
+- Any client discount is strictly capped at $25 (first-time homebuyers or repeat clients). NEVER mention or offer military or veteran discounts under any circumstances.
 - Phone: 678-480-2110
 - Serves 163+ cities across Metro Atlanta
 
@@ -111,7 +112,7 @@ REQUIREMENTS:
 - Use <h2> for subheadings (3-4 subheadings)
 - Use <ul>/<li> for lists
 - Use <strong> for key terms
-- Include 1 internal link to /quote and 1 to /ask-twin using <a href="/quote"> format
+- Include 1 internal link to /quote and 1 to /concierge using <a href="/quote"> and <a href="/concierge"> format
 - Do NOT include any images, the system will handle that
 - Content must be original, factual, and helpful`;
 

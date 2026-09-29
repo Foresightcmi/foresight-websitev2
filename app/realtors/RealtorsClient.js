@@ -52,6 +52,7 @@ export default function RealtorsClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [copiedBadgeId, setCopiedBadgeId] = useState(null);
+  const [grecError, setGrecError] = useState('');
   
   // GAR Form F404 Interactive Builder State
   const [requestMode, setRequestMode] = useState('repair'); // 'repair' | 'credit'
@@ -99,16 +100,33 @@ export default function RealtorsClient() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setSubmitStatus(null);
 
+    const name = e.target.name.value.trim();
+    const grecLicense = e.target.grecLicense.value.trim();
+    const brokerage = e.target.brokerage.value.trim();
+    const phone = e.target.phone.value.trim();
+    const email = e.target.email.value.trim();
+    const message = e.target.message.value.trim();
+    const supraNeeded = e.target.supraNeeded.checked ? 'Yes' : 'No';
+
+    // Proof of Licensure: Validate Georgia Real Estate Commission (GREC) License Number
+    const numericLic = grecLicense.replace(/[^0-9]/g, '');
+    if (!grecLicense || numericLic.length < 5) {
+      setGrecError('A valid Georgia Real Estate Commission (GREC) License Number (minimum 5 digits) is required to verify Realtor partner credentials.');
+      return;
+    }
+    setGrecError('');
+    setIsSubmitting(true);
+
     const formData = {
-      name: e.target.name.value,
-      brokerage: e.target.brokerage.value,
-      phone: e.target.phone.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
-      supraNeeded: e.target.supraNeeded.checked ? 'Yes' : 'No',
+      name,
+      grecLicense,
+      brokerage,
+      phone,
+      email,
+      message,
+      supraNeeded,
     };
 
     try {
@@ -117,7 +135,7 @@ export default function RealtorsClient() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          message: `REALTOR VIP INQUIRY:\nBrokerage: ${formData.brokerage}\nSUPRA Access Needed: ${formData.supraNeeded}\n\nMessage: ${formData.message}`
+          message: `REALTOR VIP INQUIRY & GREC LICENSURE PROOF:\nAgent Name: ${formData.name}\nGREC License #: ${formData.grecLicense}\nBrokerage Firm: ${formData.brokerage}\nSUPRA Access Needed: ${formData.supraNeeded}\nGREC Verification Status: Queued for Registry Check\n\nAgent Notes / Requests:\n${formData.message || 'None'}`
         }),
       });
 
@@ -829,9 +847,36 @@ export default function RealtorsClient() {
             {/* Signup Form */}
             <div className="card card-premium" id="partner-form" style={{ padding: '3rem', background: 'var(--color-white)' }}>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.75rem', fontWeight: 800 }}>Join the VIP Program</h3>
-              <p style={{ color: 'var(--color-gray-dark)', marginBottom: '2rem' }}>
-                Register as a Foresight Realtor Partner to secure prioritized scheduling, lockbox coordination, and co-branded marketing materials.
+              <p style={{ color: 'var(--color-gray-dark)', marginBottom: '1.5rem' }}>
+                Register as a Foresight Realtor Partner to secure prioritized scheduling, SUPRA lockbox coordination, and co-branded marketing materials.
               </p>
+
+              {/* Licensure Proof Callout */}
+              <div style={{
+                background: 'rgba(212, 175, 55, 0.08)',
+                border: '1.5px solid #d4af37',
+                borderRadius: 'var(--radius-md)',
+                padding: '1rem 1.25rem',
+                marginBottom: '1.75rem',
+                fontSize: '0.85rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <strong style={{ color: '#b45309', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem' }}>
+                    <span>🛡️</span> Georgia Real Estate Commission (GREC) Licensure Required
+                  </strong>
+                  <a 
+                    href="https://services.grec.state.ga.us/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    style={{ fontSize: '0.75rem', color: 'var(--color-red)', textDecoration: 'underline', fontWeight: 600 }}
+                  >
+                    GREC Registry Lookup ↗
+                  </a>
+                </div>
+                <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '0.8rem', lineHeight: 1.45 }}>
+                  Foresight partners exclusively with licensed real estate salespersons and brokers. Entering your active GREC License # guarantees verified partner privileges, SUPRA eKEY access, and priority 48-hour scheduling.
+                </p>
+              </div>
 
               {submitStatus === 'success' ? (
                 <div style={{ padding: '2rem', textAlign: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', color: 'var(--color-red-dark)' }}>
@@ -840,44 +885,76 @@ export default function RealtorsClient() {
                   <button onClick={() => setSubmitStatus(null)} className="btn btn-outline" style={{ display: 'inline-flex' }}>Register Another Agent</button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   <div>
-                    <label className="form-label" htmlFor="name" style={{ fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>Full Name</label>
+                    <label className="form-label" htmlFor="name" style={{ fontWeight: 600, display: 'block', marginBottom: '0.4rem' }}>Full Legal Name *</label>
                     <input type="text" id="name" name="name" className="form-control" placeholder="e.g. Sarah Jenkins" required />
                   </div>
-                  <div>
-                    <label className="form-label" htmlFor="brokerage" style={{ fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>Real Estate Brokerage</label>
-                    <input type="text" id="brokerage" name="brokerage" className="form-control" placeholder="e.g. Keller Williams Atlanta" required />
-                  </div>
+
                   <div className="grid grid-2" style={{ gap: '1rem' }}>
                     <div>
-                      <label className="form-label" htmlFor="phone" style={{ fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>Phone</label>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                        <label className="form-label" htmlFor="grecLicense" style={{ fontWeight: 600, margin: 0 }}>GREC License # *</label>
+                      </div>
+                      <input 
+                        type="text" 
+                        id="grecLicense" 
+                        name="grecLicense" 
+                        className="form-control" 
+                        placeholder="e.g. 412093" 
+                        required 
+                        onChange={() => setGrecError('')}
+                        style={{ borderColor: grecError ? 'var(--color-red)' : undefined }}
+                      />
+                      <span style={{ fontSize: '0.72rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '3px' }}>
+                        Active 5 to 7 digit Georgia license #
+                      </span>
+                    </div>
+                    <div>
+                      <label className="form-label" htmlFor="brokerage" style={{ fontWeight: 600, display: 'block', marginBottom: '0.4rem' }}>Real Estate Brokerage / Firm *</label>
+                      <input type="text" id="brokerage" name="brokerage" className="form-control" placeholder="e.g. Keller Williams Atlanta" required />
+                    </div>
+                  </div>
+
+                  {grecError && (
+                    <div style={{ background: 'rgba(211, 47, 47, 0.1)', border: '1px solid var(--color-red)', borderRadius: '4px', padding: '0.65rem 0.85rem' }}>
+                      <p style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.825rem', margin: 0 }}>
+                        ⚠️ {grecError}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="grid grid-2" style={{ gap: '1rem' }}>
+                    <div>
+                      <label className="form-label" htmlFor="phone" style={{ fontWeight: 600, display: 'block', marginBottom: '0.4rem' }}>Phone *</label>
                       <input type="tel" id="phone" name="phone" className="form-control" placeholder="678-555-0199" required />
                     </div>
                     <div>
-                      <label className="form-label" htmlFor="email" style={{ fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>Email</label>
+                      <label className="form-label" htmlFor="email" style={{ fontWeight: 600, display: 'block', marginBottom: '0.4rem' }}>Email *</label>
                       <input type="email" id="email" name="email" className="form-control" placeholder="sarah@brokerage.com" required />
                     </div>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '0.5rem 0' }}>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '0.25rem 0' }}>
                     <input type="checkbox" id="supraNeeded" name="supraNeeded" style={{ width: '1.2rem', height: '1.2rem', accentColor: 'var(--color-red)', cursor: 'pointer' }} defaultChecked />
-                    <label htmlFor="supraNeeded" style={{ fontSize: '0.95rem', color: 'var(--color-gray-dark)', cursor: 'pointer', userSelect: 'none' }}>
+                    <label htmlFor="supraNeeded" style={{ fontSize: '0.925rem', color: 'var(--color-gray-dark)', cursor: 'pointer', userSelect: 'none' }}>
                       I want Foresight to handle SUPRA key lockbox entry on my inspections.
                     </label>
                   </div>
+
                   <div>
-                    <label className="form-label" htmlFor="message" style={{ fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>Additional Comments or Special Requests</label>
+                    <label className="form-label" htmlFor="message" style={{ fontWeight: 600, display: 'block', marginBottom: '0.4rem' }}>Additional Comments or Special Requests</label>
                     <textarea id="message" name="message" className="form-control" rows="3" placeholder="e.g. Please send details about co-branded home buyers guides..."></textarea>
                   </div>
 
                   {submitStatus === 'error' && (
-                    <p style={{ color: 'var(--color-red)', fontWeight: 500 }}>
+                    <p style={{ color: 'var(--color-red)', fontWeight: 500, margin: 0 }}>
                       There was a problem sending your inquiry. Please try again or contact us directly at 678-480-2110.
                     </p>
                   )}
 
                   <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ width: '100%', padding: '1rem', fontSize: '1.125rem', opacity: isSubmitting ? 0.7 : 1 }}>
-                    {isSubmitting ? 'Registering Agent...' : 'Join Partner Program & Get Co-Branded Materials'}
+                    {isSubmitting ? 'Verifying Licensure & Registering...' : 'Verify Licensure & Join VIP Partner Program'}
                   </button>
                 </form>
               )}

@@ -21,6 +21,9 @@ export default function QuoteClient({ showValueComparison = true }) {
     detachedBuilding: false
   });
   const [discount, setDiscount] = useState('none'); // 'none', 'first-time', 'realtor', 'repeat'
+  const [realtorLicense, setRealtorLicense] = useState('');
+  const [realtorBrokerage, setRealtorBrokerage] = useState('');
+  const [realtorValidationMsg, setRealtorValidationMsg] = useState('');
 
   const [leadName, setLeadName] = useState('');
   const [leadEmail, setLeadEmail] = useState('');
@@ -173,6 +176,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     // Promotional & Client Discounts (Strict $25 cap)
     if (discount === 'first-time') extra -= 25; // First-Time Homebuyer Discount ($25.00)
     if (discount === 'repeat') extra -= 25;     // Repeat Customer Loyalty Discount ($25.00)
+    if (discount === 'realtor') extra -= 25;    // Verified Licensed Georgia Realtor Partner ($25.00)
     if (discount === 'promo') extra -= 25;      // Promotional / Referral Discount ($25.00)
 
     return { total: Math.max(0, base + extra), isCustom: false };
@@ -258,6 +262,17 @@ export default function QuoteClient({ showValueComparison = true }) {
     e.preventDefault();
     setLeadStatus('submitting');
     try {
+      if (discount === 'realtor') {
+        const cleanLic = realtorLicense.trim().replace(/[^0-9]/g, '');
+        if (!realtorLicense.trim() || cleanLic.length < 5 || !realtorBrokerage.trim()) {
+          setRealtorValidationMsg('A valid Georgia Real Estate Commission (GREC) License # (minimum 5 digits) and Brokerage Name are required to claim the Realtor Partner Discount.');
+          setLeadStatus('idle');
+          const element = document.getElementById('grec-verification-section');
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      }
+
       const activeAddonNames = Object.keys(addons)
         .filter(k => addons[k])
         .map(k => {
@@ -275,10 +290,15 @@ export default function QuoteClient({ showValueComparison = true }) {
         const discountNames = {
           'first-time': 'First-Time Homebuyer Discount (-$25)',
           'repeat': 'Repeat Customer Loyalty Discount (-$25)',
+          'realtor': `Verified Licensed Realtor Discount (-$25) [GREC #${realtorLicense.trim()} - ${realtorBrokerage.trim()}]`,
           'promo': 'Promotional / Partner Discount (-$25)'
         };
-        activeAddonNames.push(discountNames[discount]);
+        activeAddonNames.push(discountNames[discount] || 'Promotional Discount (-$25)');
       }
+
+      const formattedRealtor = leadRealtor
+        ? `${leadRealtor}${realtorLicense ? ` (Agent Claim: GREC #${realtorLicense.trim()} - ${realtorBrokerage.trim()})` : ''}`
+        : (realtorLicense ? `Verified Realtor Partner: GREC #${realtorLicense.trim()} - ${realtorBrokerage.trim()}` : '');
 
       const res = await fetch('/api/lead-capture', {
         method: 'POST',
@@ -288,7 +308,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           email: leadEmail,
           phone: leadPhone,
           address: leadAddress,
-          realtorAgent: leadRealtor,
+          realtorAgent: formattedRealtor,
           preferredDate: leadPreferredDate,
           sqft,
           propertyType,
@@ -627,14 +647,92 @@ export default function QuoteClient({ showValueComparison = true }) {
                 <select 
                   className="form-control"
                   value={discount}
-                  onChange={(e) => setDiscount(e.target.value)}
+                  onChange={(e) => {
+                    setDiscount(e.target.value);
+                    setRealtorValidationMsg('');
+                  }}
                 >
                   <option value="none">Standard Pricing ($0 Discount)</option>
                   <option value="first-time">First-Time Homebuyer Discount (-$25.00)</option>
                   <option value="repeat">Repeat Customer Loyalty Discount (-$25.00)</option>
-                  <option value="promo">Promotional / Partner Discount (-$25.00)</option>
+                  <option value="realtor">Verified Licensed Georgia Realtor / Agent Partner (-$25.00)</option>
+                  <option value="promo">Promotional / Partner Code (-$25.00)</option>
                 </select>
               </div>
+
+              {discount === 'realtor' && (
+                <div id="grec-verification-section" style={{
+                  marginTop: '1rem',
+                  background: 'rgba(212, 175, 55, 0.08)',
+                  border: '1.5px solid #d4af37',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '1.25rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span style={{ fontSize: '1.25rem' }}>🛡️</span>
+                      <strong style={{ color: '#b45309', fontSize: '0.95rem' }}>
+                        Georgia Real Estate Commission (GREC) Licensure Verification
+                      </strong>
+                    </div>
+                    <a 
+                      href="https://services.grec.state.ga.us/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      style={{ fontSize: '0.75rem', color: 'var(--color-red)', textDecoration: 'underline', fontWeight: 600 }}
+                    >
+                      GREC Public Registry Lookup ↗
+                    </a>
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--color-gray-dark)', margin: '0 0 0.85rem 0', lineHeight: 1.45 }}>
+                    Under Georgia real estate licensing standards and Foresight policy, agent partner concessions require proof of active licensure. All license numbers are cross-verified with the GREC database prior to dispatch.
+                  </p>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                    <div>
+                      <label style={{ fontSize: '0.75rem', fontWeight: 700, display: 'block', marginBottom: '4px', color: 'var(--color-dark)' }}>
+                        GREC License # (Required) *
+                      </label>
+                      <input 
+                        type="text" 
+                        placeholder="e.g. 412093 (5-7 digits)" 
+                        value={realtorLicense} 
+                        onChange={e => {
+                          setRealtorLicense(e.target.value);
+                          if (e.target.value.trim().length >= 5) setRealtorValidationMsg('');
+                        }} 
+                        className="form-control"
+                        style={{ padding: '0.55rem', fontSize: '0.85rem', borderColor: realtorValidationMsg ? 'var(--color-red)' : undefined }}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label style={{ fontSize: '0.75rem', fontWeight: 700, display: 'block', marginBottom: '4px', color: 'var(--color-dark)' }}>
+                        Active Brokerage / Firm (Required) *
+                      </label>
+                      <input 
+                        type="text" 
+                        placeholder="e.g. Keller Williams Atlanta / Compass" 
+                        value={realtorBrokerage} 
+                        onChange={e => setRealtorBrokerage(e.target.value)} 
+                        className="form-control"
+                        style={{ padding: '0.55rem', fontSize: '0.85rem' }}
+                        required
+                      />
+                    </div>
+                  </div>
+                  {realtorValidationMsg && (
+                    <p style={{ color: 'var(--color-red)', fontSize: '0.75rem', margin: '0.5rem 0 0 0', fontWeight: 600 }}>
+                      ⚠️ {realtorValidationMsg}
+                    </p>
+                  )}
+                  {realtorLicense.trim().length >= 5 && realtorBrokerage.trim().length >= 2 && (
+                    <div style={{ marginTop: '0.65rem', display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#16a34a', fontSize: '0.75rem', fontWeight: 600 }}>
+                      <span>✅</span> Validated format &bull; GREC #{realtorLicense.trim()} queued for office registry verification.
+                    </div>
+                  )}
+                </div>
+              )}
               </div>
             </>
           </div>
@@ -920,14 +1018,17 @@ export default function QuoteClient({ showValueComparison = true }) {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Referring Real Estate Agent / Brokerage (Optional)</label>
+                        <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Referring Real Estate Agent &amp; Brokerage (Optional)</label>
                         <input 
                           type="text" 
-                          placeholder="e.g. Austin Landers - Dorsey Alston or Melissa - VPR" 
+                          placeholder="e.g. Austin Landers - Dorsey Alston (GREC #412093)" 
                           value={leadRealtor} 
                           onChange={e => setLeadRealtor(e.target.value)} 
                           style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff' }} 
                         />
+                        <span style={{ fontSize: '0.68rem', color: '#94a3b8', display: 'block', marginTop: '3px' }}>
+                          Agents: Include your GREC License # to unlock priority SUPRA lockbox privileges &amp; verified partner perks.
+                        </span>
                       </div>
 
                       <div>
