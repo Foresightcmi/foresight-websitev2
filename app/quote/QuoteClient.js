@@ -170,10 +170,10 @@ export default function QuoteClient({ showValueComparison = true }) {
     if (addons.airQuality) extra += 450; // PDF Page 6: INDOOR AIR QUALITY / MOLD TESTING $450.00
     if (addons.detachedBuilding) extra += 100; // PDF Page 5: ADDITIONAL CHARGE FOR DETACHED BUILDING $100.00
 
-    // Promotional & Community Discounts (PDF Pages 5, 6, 7)
-    if (discount === 'first-time') extra -= 25; // PDF Page 7: First-Time Homebuyer Discount ($25.00)
-    if (discount === 'realtor') extra -= 50;    // PDF Page 6: RE Agent Discount ($50.00)
-    if (discount === 'repeat') extra -= 50;     // PDF Page 5: Repeat Customer Discount ($50.00)
+    // Promotional & Client Discounts (Strict $25 cap)
+    if (discount === 'first-time') extra -= 25; // First-Time Homebuyer Discount ($25.00)
+    if (discount === 'repeat') extra -= 25;     // Repeat Customer Loyalty Discount ($25.00)
+    if (discount === 'promo') extra -= 25;      // Promotional / Referral Discount ($25.00)
 
     return { total: Math.max(0, base + extra), isCustom: false };
   };
@@ -274,8 +274,8 @@ export default function QuoteClient({ showValueComparison = true }) {
       if (discount !== 'none') {
         const discountNames = {
           'first-time': 'First-Time Homebuyer Discount (-$25)',
-          'realtor': 'RE Agent VIP Partner Discount (-$50)',
-          'repeat': 'Repeat Customer Loyalty Discount (-$50)'
+          'repeat': 'Repeat Customer Loyalty Discount (-$25)',
+          'promo': 'Promotional / Partner Discount (-$25)'
         };
         activeAddonNames.push(discountNames[discount]);
       }
@@ -623,7 +623,7 @@ export default function QuoteClient({ showValueComparison = true }) {
 
               <h2 style={{ marginTop: '2.5rem', marginBottom: '1.25rem' }}>7. Available Client Discounts</h2>
               <div className="form-group">
-                <label className="form-label">Apply an Eligible Promotional or Partner Discount</label>
+                <label className="form-label">Apply an Eligible Promotional or Client Discount ($25 Max)</label>
                 <select 
                   className="form-control"
                   value={discount}
@@ -631,8 +631,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                 >
                   <option value="none">Standard Pricing ($0 Discount)</option>
                   <option value="first-time">First-Time Homebuyer Discount (-$25.00)</option>
-                  <option value="realtor">Real Estate Agent VIP Discount (-$50.00)</option>
-                  <option value="repeat">Repeat Customer Loyalty Discount (-$50.00)</option>
+                  <option value="repeat">Repeat Customer Loyalty Discount (-$25.00)</option>
+                  <option value="promo">Promotional / Partner Discount (-$25.00)</option>
                 </select>
               </div>
               </div>

@@ -220,7 +220,7 @@ const nextConfig = {
       // VIP Dispatch instant route
       {
         source: '/dispatch',
-        destination: '/vip-dispatch.html',
+        destination: '/vip-dispatch.html?v=5',
         permanent: false,
       },
       // Legacy XML feeds
