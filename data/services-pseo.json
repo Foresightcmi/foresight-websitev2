@@ -2,7 +2,7 @@
   {
     "slug": "radon-testing",
     "name": "Radon Gas Testing",
-    "metaTitle": "{city} Radon Gas Testing | 48-Hr EPA Monitor $250 | Foresight",
+    "metaTitle": "{city} Radon Testing & Gas Inspection | 48-Hr EPA Monitor $250 | Foresight",
     "metaDescription": "EPA-certified 48-hour continuous radon testing in {city}, GA. Precision hourly pCi/L graph & same-day report. Flat $250 rate. Call 678-480-2110!",
     "price": "$250",
     "priceDetails": "$250 continuous 48-hour electronic monitoring test",
@@ -70,7 +70,7 @@
   {
     "slug": "sewer-scope-inspection",
     "name": "Sewer Scope Inspection",
-    "metaTitle": "{city} Sewer Scope Camera Inspection | HD Video $450 | Foresight",
+    "metaTitle": "{city} Sewer Scope & Pipe Inspection | HD Video Camera ($450 Flat) | Foresight",
     "metaDescription": "HD fiber-optic sewer scope camera inspection in {city}, GA. Pinpoint root intrusion, pipe bellies & cracks before closing. Flat $450. Video report included.",
     "price": "$450",
     "priceDetails": "$450 flat rate inspection with high-definition digital video report",
@@ -138,8 +138,8 @@
   {
     "slug": "pool-inspection",
     "name": "Pool & Spa Inspection",
-    "metaTitle": "{city} Pool & Spa Inspection | Certified Safety $275 | Foresight",
-    "metaDescription": "Certified swimming pool & spa inspection in {city}, GA. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $275. 24-hour report.",
+    "metaTitle": "{city} Pool Inspections | Certified Leak & Equipment Audit ($275 Flat) | Foresight",
+    "metaDescription": "Certified pool inspections in {city}, GA. Precision pump, heater, salt cell, leak & electrical bonding audits. Flat $275 rate. Same-day report. Call 678-480-2110!",
     "price": "$275",
     "priceDetails": "$275 flat rate for residential pools & attached spas",
     "icon": "🏊‍♂️",
@@ -288,8 +288,8 @@
   {
     "slug": "11-month-warranty-inspection",
     "name": "11-Month Builder Warranty Inspection",
-    "metaTitle": "{city} 11-Month Builder Warranty Inspection | Catch Defects from $335",
-    "metaDescription": "Independent 11-month builder warranty home inspection in {city}, GA. Submit verified defect reports to your builder before the 1-year warranty expires.",
+    "metaTitle": "{city} 11th Month Builder Warranty Inspections | Catch Defects ($335 Flat)",
+    "metaDescription": "Independent 11th month builder warranty inspection in {city}, GA. 2 certified inspectors uncover hidden defects before your 1-year warranty expires. Call 678-480-2110!",
     "price": "$335+",
     "priceDetails": "11-month warranty audits from $335+ based on home square footage",
     "icon": "⏳",

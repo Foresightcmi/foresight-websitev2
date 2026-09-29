@@ -158,20 +158,37 @@ export default function RealtorsClient() {
             We help your clients win at the negotiating table with clear, detailed inspection reporting that strengthens your position — not undermines it. Backed by SUPRA lockbox access, two-inspector speed, and $10,000 warranties.
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#partner-form" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              🤝 Join the VIP Partner Program
+            <a href="#gar-tool" className="btn" style={{ padding: '1rem 2.25rem', fontSize: '1.125rem', background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1.5px solid var(--color-gold)', fontWeight: 700, boxShadow: '0 4px 14px rgba(212, 175, 55, 0.25)' }}>
+              ⚖️ Try GAR Form F404 Amendment Builder ↓
             </a>
-            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2.25rem', fontSize: '1.125rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}>
               ⚡ Priority Schedule for My Client
             </a>
+            <a href="#partner-form" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
+              🤝 Join VIP Partner Program
+            </a>
             <a href="tel:6784802110" className="btn" style={{ padding: '1rem 2rem', fontSize: '1.125rem', background: 'rgba(255,255,255,0.08)', color: '#FFFFFF', border: '1px solid rgba(255,255,255,0.2)', fontWeight: 600 }}>
-              📞 Direct VIP Hotline: (678) 480-2110
+              📞 VIP Line: (678) 480-2110
             </a>
           </div>
-          <div style={{ marginTop: '1.75rem', display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap', color: 'var(--color-gold)', fontSize: '0.95rem', fontWeight: 600 }}>
-            <span>🔑 Active SUPRA eKEY</span>
-            <span>⚡ Same-Day Digital CRL™ Delivery</span>
-            <span>🛡️ $10,000 Client Warranty Included</span>
+
+          {/* Instant Realtor Fast-Actions Bar */}
+          <div style={{ marginTop: '2rem', display: 'inline-flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(212, 175, 55, 0.3)', borderRadius: '999px', padding: '0.75rem 2rem', backdropFilter: 'blur(8px)' }}>
+            <a href="#gar-tool" style={{ color: 'var(--color-gold)', textDecoration: 'none', fontWeight: 600, fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              🛠️ <span>Interactive GAR F404 Builder</span>
+            </a>
+            <span style={{ color: '#475569' }}>|</span>
+            <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              🔑 <span>Active SUPRA eKEY</span>
+            </span>
+            <span style={{ color: '#475569' }}>|</span>
+            <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              ⚡ <span>Same-Day Digital CRL™</span>
+            </span>
+            <span style={{ color: '#475569' }}>|</span>
+            <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              🛡️ <span>$10,000 Guarantee Included</span>
+            </span>
           </div>
         </div>
         {/* Subtle background decoration */}
@@ -305,7 +322,7 @@ export default function RealtorsClient() {
       </section>
 
       {/* 🚀 ZERO-CLICK AGENT TOOL: INSTANT GAR FORM F404 REPAIR & CREDIT BUILDER 🚀 */}
-      <section className="section" style={{ background: '#0F172A', borderBottom: '1px solid #1E293B', padding: '4.5rem 0' }}>
+      <section id="gar-tool" className="section" style={{ background: '#0F172A', borderBottom: '1px solid #1E293B', padding: '4.5rem 0' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
