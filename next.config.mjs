@@ -139,6 +139,23 @@ const nextConfig = {
         ],
       },
       {
+        source: '/(vip-dispatch|dispatch)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+          {
+            key: 'CDN-Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+          {
+            key: 'Vercel-CDN-Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
+      {
         source: '/(vip-dispatch|dispatch).html',
         headers: [
           {
@@ -199,6 +216,12 @@ const nextConfig = {
         source: '/ask-twin',
         destination: '/concierge',
         permanent: true,
+      },
+      // VIP Dispatch instant route
+      {
+        source: '/dispatch',
+        destination: '/vip-dispatch.html',
+        permanent: false,
       },
       // Legacy XML feeds
       {
