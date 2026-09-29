@@ -33,6 +33,7 @@ export default function DashboardClient({
   const [gscPageSize, setGscPageSize] = useState(25);
 
   const [copiedKey, setCopiedKey] = useState(null);
+  const [citationFilter, setCitationFilter] = useState('ALL'); // ALL, ACTIVE, CORE, OPPORTUNITY
   const [reviewClientName, setReviewClientName] = useState('Marcus');
   const [reviewClientCity, setReviewClientCity] = useState('Alpharetta');
   const [reviewServiceType, setReviewServiceType] = useState('Home Inspection + Radon');
@@ -229,9 +230,21 @@ export default function DashboardClient({
   }
 
   const profile = citationsData?.entity_profile || {};
-  const activeCount = citationsData?.active_verified_count || 7;
-  const totalCount = citationsData?.directories_count || 16;
+  const activeCount = citationsData?.active_verified_count || 14;
+  const totalCount = citationsData?.directories_count || 25;
   const scorePercent = Math.round((activeCount / totalCount) * 100);
+  const avgDA = citationsData?.average_active_da || 88.6;
+  const coreVerified = citationsData?.core_verified_count || 8;
+  const coreTotal = citationsData?.core_total_count || 8;
+  const weightedScore = citationsData?.weighted_authority_score || 59.6;
+
+  const allDirectories = useMemo(() => citationsData?.directories || [], [citationsData]);
+  const filteredDirectories = useMemo(() => {
+    if (citationFilter === 'ACTIVE') return allDirectories.filter(d => d.status === 'ACTIVE_VERIFIED');
+    if (citationFilter === 'OPPORTUNITY') return allDirectories.filter(d => d.status === 'OPPORTUNITY');
+    if (citationFilter === 'CORE') return allDirectories.filter(d => ['google_business', 'apple_maps', 'bing_places', 'ga_sos', 'internachi', 'cmi_board', 'bbb_atlanta', 'zillow_pro'].includes(d.id));
+    return allDirectories;
+  }, [allDirectories, citationFilter]);
 
   return (
     <div style={{ background: '#0f172a', minHeight: '100vh', color: '#f8fafc', padding: '2rem 1rem' }}>
@@ -350,7 +363,7 @@ export default function DashboardClient({
           <div style={{ background: '#1e293b', border: '1px solid #334155', borderTop: '4px solid #06b6d4', borderRadius: 'var(--radius-lg)', padding: '1.25rem' }}>
             <span style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Local Authority Score</span>
             <div style={{ fontSize: '2rem', fontWeight: 800, color: '#22d3ee', margin: '0.25rem 0' }}>{activeCount} / {totalCount}</div>
-            <p style={{ color: '#22d3ee', fontSize: '0.8rem', margin: 0 }}>{scorePercent}% Active &bull; Tier-1 Directories</p>
+            <p style={{ color: '#22d3ee', fontSize: '0.8rem', margin: 0 }}>Avg DA {avgDA} &bull; Core Engine {coreVerified}/{coreTotal} (100%)</p>
           </div>
 
         </div>
@@ -901,20 +914,44 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                    🏛️ Local Authority &amp; Tier-1 Citation Ecosystem ({activeCount} of {totalCount} Active)
+                    🏛️ Local Authority &amp; Tier-1 Citation Ecosystem ({activeCount} of {totalCount} Verified &bull; Avg DA {avgDA}/100)
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
-                    Elevate domain authority and Google 3-Pack rankings by maintaining NAP consistency across verified directories.
+                    Elevate local domain authority and Google 3-Pack rankings by maintaining 100% NAP consistency across verified directories.
                   </p>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#4ade80' }}>{scorePercent}%</span>
-                  <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Authority Completion</div>
+                  <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Coverage &bull; {weightedScore}% DA Weighted</div>
                 </div>
               </div>
 
               <div style={{ width: '100%', height: '10px', background: '#0f172a', borderRadius: '5px', overflow: 'hidden', border: '1px solid #334155', marginBottom: '1.5rem' }}>
                 <div style={{ width: `${scorePercent}%`, height: '100%', background: 'linear-gradient(90deg, #3b82f6, #10b981)', borderRadius: '5px', transition: 'width 0.5s ease-in-out' }}></div>
+              </div>
+
+              {/* 4-Pillar Authority Scorecards */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>1. Search &amp; Map Packs</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#4ade80', margin: '0.25rem 0' }}>3 / 3 (100%)</div>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Google, Apple Maps, Bing Places</div>
+                </div>
+                <div style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>2. Master Credentials &amp; Legal</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#4ade80', margin: '0.25rem 0' }}>4 / 4 (100%)</div>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>InterNACHI, CMI Board, BBB, GA SOS</div>
+                </div>
+                <div style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>3. Real Estate &amp; Social</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#4ade80', margin: '0.25rem 0' }}>6 / 6 (100%)</div>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Zillow Pro, LinkedIn, FB, YT, IG, TikTok</div>
+                </div>
+                <div style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase' }}>4. Local Directory Expansion</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fbbf24', margin: '0.25rem 0' }}>1 / 12 (11 Ready)</div>
+                  <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Yelp, Nextdoor, Angi, Chambers</div>
+                </div>
               </div>
 
               {/* 1-Click Copy NAP Data Kit */}
@@ -976,16 +1013,50 @@ export default function DashboardClient({
 
             {/* Citations Grid */}
             <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
-              <h3 style={{ fontSize: '1.25rem', color: '#ffffff', marginBottom: '0.5rem' }}>
-                📡 All {totalCount} Tier-1 Authority Citation Profiles &amp; Action Portal
-              </h3>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
+                <div>
+                  <h3 style={{ fontSize: '1.25rem', color: '#ffffff', margin: '0 0 0.25rem' }}>
+                    📡 Tier-1 Authority Citation Profiles ({filteredDirectories.length} Showing)
+                  </h3>
+                  <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.85rem' }}>
+                    Active profiles strengthen entity authority; pending profiles represent high-yield backlink opportunities.
+                  </p>
+                </div>
+                {/* Filter buttons */}
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  {[
+                    { id: 'ALL', label: `All (${totalCount})` },
+                    { id: 'ACTIVE', label: `Verified Active (${activeCount})` },
+                    { id: 'CORE', label: `Core Foundation (${coreTotal})` },
+                    { id: 'OPPORTUNITY', label: `Claim Opportunities (${totalCount - activeCount})` },
+                  ].map(btn => (
+                    <button
+                      key={btn.id}
+                      onClick={() => setCitationFilter(btn.id)}
+                      style={{
+                        padding: '0.35rem 0.85rem',
+                        borderRadius: '6px',
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        border: citationFilter === btn.id ? '1px solid #38bdf8' : '1px solid #334155',
+                        background: citationFilter === btn.id ? 'rgba(56, 189, 248, 0.15)' : '#0f172a',
+                        color: citationFilter === btn.id ? '#38bdf8' : '#94a3b8',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      {btn.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.25rem' }}>
-                {(citationsData?.directories || []).map((d, i) => (
-                  <div key={i} style={{ background: '#0f172a', border: d.status === 'ACTIVE_VERIFIED' ? '1px solid #334155' : '1px solid rgba(245, 158, 11, 0.4)', borderRadius: 'var(--radius-md)', padding: '1.25rem' }}>
+                {filteredDirectories.map((d, i) => (
+                  <div key={i} style={{ background: '#0f172a', border: d.status === 'ACTIVE_VERIFIED' ? '1px solid #334155' : '1px solid rgba(245, 158, 11, 0.4)', borderRadius: 'var(--radius-md)', padding: '1.25rem', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
                       <div>
                         <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1rem', fontWeight: 700 }}>{d.name}</h4>
-                        <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>DA {d.da} &bull; {d.authority_role}</span>
+                        <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>DA {d.da || d.domain_authority} &bull; {d.authority_role || d.category}</span>
                       </div>
                       <span style={{
                         background: d.status === 'ACTIVE_VERIFIED' ? 'rgba(34, 197, 94, 0.2)' : 'rgba(245, 158, 11, 0.2)',
@@ -993,17 +1064,32 @@ export default function DashboardClient({
                         padding: '0.2rem 0.55rem',
                         borderRadius: '4px',
                         fontSize: '0.75rem',
-                        fontWeight: 700
+                        fontWeight: 700,
+                        whiteSpace: 'nowrap'
                       }}>
                         {d.status === 'ACTIVE_VERIFIED' ? 'Active' : 'Pending Claim'}
                       </span>
                     </div>
-                    <p style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: '0.5rem 0' }}>{d.notes}</p>
-                    {d.live_url && (
-                      <a href={d.live_url} target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', fontSize: '0.8rem', textDecoration: 'none' }}>
-                        View Verified Profile ↗
-                      </a>
+                    {d.tier && (
+                      <div style={{ marginBottom: '0.5rem' }}>
+                        <span style={{ background: 'rgba(51, 65, 85, 0.6)', color: '#94a3b8', fontSize: '0.7rem', padding: '0.15rem 0.5rem', borderRadius: '4px' }}>
+                          {d.tier}
+                        </span>
+                      </div>
                     )}
+                    <p style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: '0.25rem 0 0.75rem', flexGrow: 1 }}>{d.notes}</p>
+                    <div style={{ marginTop: 'auto', paddingTop: '0.5rem', borderTop: '1px solid #1e293b' }}>
+                      {d.status === 'ACTIVE_VERIFIED' && (d.live_url || d.url) && (
+                        <a href={d.live_url || d.url} target="_blank" rel="noopener noreferrer" style={{ color: '#38bdf8', fontSize: '0.8rem', textDecoration: 'none', fontWeight: 600 }}>
+                          View Verified Profile ↗
+                        </a>
+                      )}
+                      {d.status === 'OPPORTUNITY' && (d.claim_url || d.url) && (
+                        <a href={d.claim_url || d.url} target="_blank" rel="noopener noreferrer" style={{ color: '#fbbf24', fontSize: '0.8rem', textDecoration: 'none', fontWeight: 600 }}>
+                          Claim / Verify Listing ↗
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
