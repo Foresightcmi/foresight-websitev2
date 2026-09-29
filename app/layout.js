@@ -13,14 +13,12 @@ import GooglePreferredSource from './components/GooglePreferredSource';
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-inter',
 });
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
   display: 'swap',
   variable: '--font-outfit',
 });

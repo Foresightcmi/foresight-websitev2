@@ -57,6 +57,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const isModelTurnActiveRef = useRef(false);
   const speakingEndTimerRef = useRef(null);
   const isInterruptedRef = useRef(false);
+  const isGreetingPlayingRef = useRef(false);
+  const watchdogTimerRef = useRef(null);
 
   const recognitionRef = useRef(null);
   const synthRef = useRef(null);
@@ -269,6 +271,77 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     isMutedRef.current = isMuted;
   }, [isMuted]);
 
+  // Watchdog timer: Automatically rescues any conversation turn stuck in "thinking" for >7.5s
+  useEffect(() => {
+    if (callState === 'thinking') {
+      if (watchdogTimerRef.current) clearTimeout(watchdogTimerRef.current);
+      watchdogTimerRef.current = setTimeout(async () => {
+        console.warn('[Watchdog] Turn stuck in analyzing for 7.5s. Rescuing conversation via Fast-Path Engine...');
+        isModelTurnActiveRef.current = false;
+        isInterruptedRef.current = false;
+        isGreetingPlayingRef.current = false;
+
+        const lastUser = [...history].reverse().find(m => m.role === 'user');
+        const queryToRescue = lastUser ? lastUser.content : "Can you tell me about your home inspection packages and pricing?";
+
+        try {
+          const res = await fetch('/api/voice', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              messages: history.length > 0 ? history : [{ role: 'user', content: queryToRescue }],
+              currentQuote: calculatedQuote,
+              persona: personaRef.current
+            })
+          });
+
+          const data = await res.json();
+          const aiReply = (data.response || "I hear you loud and clear. Let's discuss that further! What property questions can I answer for you?").replace(/\*/g, '');
+
+          setHistory(prev => {
+            const clean = prev.filter(m => !(m.role === 'assistant' && !m.content));
+            return [...clean, { role: 'assistant', content: aiReply, live: true }];
+          });
+
+          if (data.action === 'quote_calculated' && data.quote) {
+            setCalculatedQuote(data.quote);
+            setLiveLeadForm(prev => ({
+              ...prev,
+              sqft: data.quote.sqft || prev.sqft,
+              estimatedTotal: data.quote.total
+            }));
+          }
+
+          if (data.audio) {
+            playNeuralAudio(data.audio);
+          } else {
+            speakTextFallback(aiReply);
+          }
+          return;
+        } catch (rescueErr) {
+          console.error('[Watchdog Recovery Failed]', rescueErr);
+        }
+
+        const safeFallback = "Houses are complex systems, and I want to make sure you get the right advice. Call our office directly at 678-480-2110 or feel free to type your question below!";
+        setHistory(prev => [...prev, { role: 'assistant', content: safeFallback, live: true }]);
+        speakTextFallback(safeFallback);
+        setCallState('idle');
+      }, 7500);
+    } else {
+      if (watchdogTimerRef.current) {
+        clearTimeout(watchdogTimerRef.current);
+        watchdogTimerRef.current = null;
+      }
+    }
+
+    return () => {
+      if (watchdogTimerRef.current) {
+        clearTimeout(watchdogTimerRef.current);
+        watchdogTimerRef.current = null;
+      }
+    };
+  }, [callState, history, calculatedQuote, playNeuralAudio, speakTextFallback]);
+
   // Live 24kHz PCM Audio Stream Player (Jitter-buffered gapless queue)
   const playLivePcmChunk = useCallback((base64Data) => {
     if (isMutedRef.current || !base64Data || isInterruptedRef.current) return;
@@ -425,6 +498,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           return;
         }
 
+        // If greeting is playing, NEVER send mic audio to WebSocket and NEVER trigger barge-in!
+        // This stops speaker feedback from instantly glitching/cutting off the greeting!
+        if (isGreetingPlayingRef.current) {
+          consecutiveSpeechFrames = 0;
+          return;
+        }
+
         const float32 = e.inputBuffer.getChannelData(0);
 
         // VAD RMS calculation
@@ -436,9 +516,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
         // While assistant is speaking, client-side barge-in detection:
         if (isSpeakingRef.current) {
-          if (rms >= 0.012) {
+          if (rms >= 0.05) {
             consecutiveSpeechFrames++;
-            if (consecutiveSpeechFrames >= 2) {
+            if (consecutiveSpeechFrames >= 5) {
               console.log('[Live Barge-In] User interrupted agent. Halting local audio immediately!');
               haltSpeech();
               isInterruptedRef.current = true;
@@ -536,9 +616,16 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         // Notify live AI model turns
         if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
           try {
+            isInterruptedRef.current = false;
             liveWsRef.current.send(JSON.stringify({
-              realtimeInput: {
-                text: `[SYSTEM NOTIFICATION: The user just submitted their inspection request via the live request card on screen! Acknowledge enthusiastically that Christopher Boykin's office has received it and will follow up within 20 minutes to solidify agreements and confirm their appointment date.]`
+              clientContent: {
+                turns: [{
+                  role: 'user',
+                  parts: [{
+                    text: `[SYSTEM NOTIFICATION: The user just submitted their inspection request via the live request card on screen! Acknowledge enthusiastically that Christopher Boykin's office has received it and will follow up within 20 minutes to solidify agreements and confirm their appointment date.]`
+                  }]
+                }],
+                turnComplete: true
               }
             }));
           } catch (_) {}
@@ -822,6 +909,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             console.log('Gemini 3.1 Live setup complete! Connecting microphone stream...');
             setLiveWsConnected(true);
             setEngineMode('live');
+            isGreetingPlayingRef.current = true;
+            isInterruptedRef.current = false;
             startLiveMicStream(ws);
 
             const greetingPrompt = "The client just opened the voice console on our website. Greet them warmly and concisely in 1 spoken sentence as Christopher Boykin, founder and Certified Master Inspector from Foresight Home Inspections in Atlanta, welcoming them to their Live Concierge Consultation and asking what property address or home questions you can help them with today.";
@@ -855,6 +944,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               const remainingMs = outCtx ? Math.max(0, (scheduledAudioTimeRef.current - outCtx.currentTime) * 1000) : 0;
               if (speakingEndTimerRef.current) clearTimeout(speakingEndTimerRef.current);
               speakingEndTimerRef.current = setTimeout(() => {
+                isGreetingPlayingRef.current = false;
                 if (activePcmSourcesRef.current.length === 0 && !isModelTurnActiveRef.current) {
                   isSpeakingRef.current = false;
                   setCallState('listening');
@@ -863,11 +953,15 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             }
 
             if (msg.serverContent.interrupted) {
-              console.log('Gemini Live interrupted by user speech!');
-              isInterruptedRef.current = true;
-              haltSpeech();
-              isModelTurnActiveRef.current = false;
-              setCallState('listening');
+              if (isGreetingPlayingRef.current) {
+                console.log('Suppressing false acoustic interruption during opening greeting.');
+              } else {
+                console.log('Gemini Live interrupted by user speech!');
+                isInterruptedRef.current = true;
+                haltSpeech();
+                isModelTurnActiveRef.current = false;
+                setCallState('listening');
+              }
             }
 
             // Real-time spoken transcript from Gemini
@@ -907,6 +1001,14 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             }
 
             if (msg.serverContent.modelTurn?.parts) {
+              if (greetingTimerRef.current) {
+                clearTimeout(greetingTimerRef.current);
+                greetingTimerRef.current = null;
+              }
+              if (watchdogTimerRef.current) {
+                clearTimeout(watchdogTimerRef.current);
+                watchdogTimerRef.current = null;
+              }
               isInterruptedRef.current = false;
               isModelTurnActiveRef.current = true;
               isSpeakingRef.current = true;
@@ -1095,13 +1197,34 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         setHistory([]);
         setCallState('thinking');
 
-        // Resume AudioContext instances on user interaction click
+        // Pre-create and unlock AudioContext instances immediately upon user interaction click
+        if (!audioOutputCtxRef.current || audioOutputCtxRef.current.state === 'closed') {
+          try {
+            audioOutputCtxRef.current = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
+          } catch (_) {}
+        }
         if (audioOutputCtxRef.current && audioOutputCtxRef.current.state === 'suspended') {
           try { audioOutputCtxRef.current.resume(); } catch (_) {}
         }
         if (audioInputCtxRef.current && audioInputCtxRef.current.state === 'suspended') {
           try { audioInputCtxRef.current.resume(); } catch (_) {}
         }
+
+        // Arm greeting fallback timer: if Gemini Live takes > 4.5s to deliver opening audio, rescue immediately
+        if (greetingTimerRef.current) clearTimeout(greetingTimerRef.current);
+        greetingTimerRef.current = setTimeout(() => {
+          if (isOpenRef.current && callStateRef.current === 'thinking' && !isSpeakingRef.current) {
+            console.log('Gemini Live opening greeting delayed; playing instant CMI neural greeting fallback.');
+            setEngineMode('neural');
+            const fallbackText = "Hello! I am Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?";
+            setHistory([{ role: 'assistant', content: fallbackText, live: true }]);
+            setCallState('speaking');
+            playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
+              isGreetingPlayingRef.current = false;
+              setCallState('listening');
+            });
+          }
+        }, 4500);
 
         // Initialize Gemini Live WebSocket as primary conversational engine
         initLiveConnection();
@@ -1289,12 +1412,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     setInterimUserText('');
     setCallState('thinking');
 
-    // If Gemini Live is connected, stream text directly over the WebSocket for spoken native response!
+    // If Gemini Live is connected, stream text directly over the WebSocket with turnComplete for spoken native response!
     if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
       try {
+        isInterruptedRef.current = false;
         liveWsRef.current.send(JSON.stringify({
-          realtimeInput: {
-            text: queryText.trim()
+          clientContent: {
+            turns: [
+              {
+                role: 'user',
+                parts: [{ text: queryText.trim() }]
+              }
+            ],
+            turnComplete: true
           }
         }));
         return;

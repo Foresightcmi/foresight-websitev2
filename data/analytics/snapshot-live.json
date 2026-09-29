@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-09-28T13:00:14.087Z",
+  "retrievedAt": "2026-09-29T02:38:30.923Z",
   "propertyId": "342062426",
   "kpis": {
     "dimensionHeaders": [
@@ -38,19 +38,19 @@
         ],
         "metricValues": [
           {
-            "value": "120"
+            "value": "161"
           },
           {
-            "value": "153"
+            "value": "201"
           },
           {
-            "value": "221"
+            "value": "273"
           },
           {
-            "value": "162.28398030065358"
+            "value": "137.52716171144277"
           },
           {
-            "value": "0.5490196078431373"
+            "value": "0.53233830845771146"
           }
         ]
       },
@@ -121,13 +121,13 @@
         ],
         "metricValues": [
           {
-            "value": "285"
+            "value": "328"
           },
           {
-            "value": "193"
+            "value": "230"
           },
           {
-            "value": "414"
+            "value": "458"
           }
         ]
       },
@@ -142,13 +142,13 @@
         ],
         "metricValues": [
           {
-            "value": "72"
+            "value": "74"
           },
           {
-            "value": "51"
+            "value": "53"
           },
           {
-            "value": "134"
+            "value": "140"
           }
         ]
       },
@@ -254,6 +254,27 @@
           },
           {
             "value": "3"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
+            "value": "AI Assistant"
+          },
+          {
+            "value": "gemini / ai-assistant"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "2"
+          },
+          {
+            "value": "1"
+          },
+          {
+            "value": "1"
           }
         ]
       },
@@ -382,9 +403,30 @@
             "value": "1"
           }
         ]
+      },
+      {
+        "dimensionValues": [
+          {
+            "value": "Referral"
+          },
+          {
+            "value": "link.edgepilot.com / referral"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "1"
+          },
+          {
+            "value": "1"
+          },
+          {
+            "value": "1"
+          }
+        ]
       }
     ],
-    "rowCount": 13,
+    "rowCount": 15,
     "metadata": {
       "currencyCode": "USD",
       "timeZone": "America/New_York"
@@ -429,7 +471,7 @@
             "value": "177"
           },
           {
-            "value": "122"
+            "value": "123"
           },
           {
             "value": "6346"
@@ -481,6 +523,48 @@
       {
         "dimensionValues": [
           {
+            "value": "Atlanta Home Inspections | Certified Master Inspector® | Foresight"
+          },
+          {
+            "value": "/"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "42"
+          },
+          {
+            "value": "39"
+          },
+          {
+            "value": "240"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
+            "value": "Instant Home Inspection Quote Atlanta | Rates From $345 | Foresight"
+          },
+          {
+            "value": "/quote"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "42"
+          },
+          {
+            "value": "26"
+          },
+          {
+            "value": "4293"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
             "value": "Realtor VIP Program | Home Inspector Atlanta | Foresight"
           },
           {
@@ -502,27 +586,6 @@
       {
         "dimensionValues": [
           {
-            "value": "Instant Home Inspection Quote Atlanta | Rates From $345 | Foresight"
-          },
-          {
-            "value": "/quote"
-          }
-        ],
-        "metricValues": [
-          {
-            "value": "38"
-          },
-          {
-            "value": "23"
-          },
-          {
-            "value": "3672"
-          }
-        ]
-      },
-      {
-        "dimensionValues": [
-          {
             "value": "Home Inspection Services Atlanta | Pricing From $295 | Foresight"
           },
           {
@@ -531,13 +594,13 @@
         ],
         "metricValues": [
           {
-            "value": "30"
+            "value": "32"
           },
           {
-            "value": "22"
+            "value": "24"
           },
           {
-            "value": "1482"
+            "value": "1516"
           }
         ]
       },
@@ -670,6 +733,27 @@
       {
         "dimensionValues": [
           {
+            "value": "Leave a Review | Foresight Home Inspections Atlanta | Foresight"
+          },
+          {
+            "value": "/review"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "6"
+          },
+          {
+            "value": "3"
+          },
+          {
+            "value": "33"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
             "value": "Pool & Spa Inspection in Oxford, GA | Certified Pool Specialist | Foresight"
           },
           {
@@ -706,27 +790,6 @@
           },
           {
             "value": "194"
-          }
-        ]
-      },
-      {
-        "dimensionValues": [
-          {
-            "value": "Atlanta Home Inspections | Certified Master Inspector® | Foresight"
-          },
-          {
-            "value": "/"
-          }
-        ],
-        "metricValues": [
-          {
-            "value": "4"
-          },
-          {
-            "value": "2"
-          },
-          {
-            "value": "29"
           }
         ]
       },
@@ -796,27 +859,6 @@
       {
         "dimensionValues": [
           {
-            "value": "Leave a Review | Foresight Home Inspections Atlanta | Foresight"
-          },
-          {
-            "value": "/review"
-          }
-        ],
-        "metricValues": [
-          {
-            "value": "4"
-          },
-          {
-            "value": "2"
-          },
-          {
-            "value": "16"
-          }
-        ]
-      },
-      {
-        "dimensionValues": [
-          {
             "value": "Schedule a Home Inspection Atlanta | Contact Us | Foresight"
           },
           {
@@ -836,7 +878,7 @@
         ]
       }
     ],
-    "rowCount": 115,
+    "rowCount": 120,
     "metadata": {
       "currencyCode": "USD",
       "timeZone": "America/New_York"
@@ -880,10 +922,10 @@
         ],
         "metricValues": [
           {
-            "value": "39"
+            "value": "40"
           },
           {
-            "value": "72"
+            "value": "73"
           }
         ]
       },
@@ -904,7 +946,7 @@
             "value": "3"
           },
           {
-            "value": "33"
+            "value": "36"
           }
         ]
       },
@@ -926,6 +968,27 @@
           },
           {
             "value": "32"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
+            "value": "Moses Lake"
+          },
+          {
+            "value": "Washington"
+          },
+          {
+            "value": "United States"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "31"
+          },
+          {
+            "value": "31"
           }
         ]
       },
@@ -974,27 +1037,6 @@
       {
         "dimensionValues": [
           {
-            "value": "Moses Lake"
-          },
-          {
-            "value": "Washington"
-          },
-          {
-            "value": "United States"
-          }
-        ],
-        "metricValues": [
-          {
-            "value": "22"
-          },
-          {
-            "value": "22"
-          }
-        ]
-      },
-      {
-        "dimensionValues": [
-          {
             "value": "Des Moines"
           },
           {
@@ -1006,10 +1048,10 @@
         ],
         "metricValues": [
           {
-            "value": "17"
+            "value": "23"
           },
           {
-            "value": "17"
+            "value": "23"
           }
         ]
       },
@@ -1027,10 +1069,10 @@
         ],
         "metricValues": [
           {
-            "value": "12"
+            "value": "23"
           },
           {
-            "value": "12"
+            "value": "23"
           }
         ]
       },
@@ -1111,6 +1153,48 @@
         ],
         "metricValues": [
           {
+            "value": "6"
+          },
+          {
+            "value": "6"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
+            "value": "Panama City"
+          },
+          {
+            "value": ""
+          },
+          {
+            "value": "Panama"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "1"
+          },
+          {
+            "value": "6"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
+            "value": ""
+          },
+          {
+            "value": "Virginia"
+          },
+          {
+            "value": "United States"
+          }
+        ],
+        "metricValues": [
+          {
             "value": "5"
           },
           {
@@ -1142,13 +1226,13 @@
       {
         "dimensionValues": [
           {
-            "value": "Panama City"
+            "value": "San Jose"
           },
           {
-            "value": ""
+            "value": "San Jose Province"
           },
           {
-            "value": "Panama"
+            "value": "Costa Rica"
           }
         ],
         "metricValues": [
@@ -1184,6 +1268,27 @@
       {
         "dimensionValues": [
           {
+            "value": "Flint Hill"
+          },
+          {
+            "value": "Virginia"
+          },
+          {
+            "value": "United States"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "4"
+          },
+          {
+            "value": "4"
+          }
+        ]
+      },
+      {
+        "dimensionValues": [
+          {
             "value": "Lulea"
           },
           {
@@ -1205,89 +1310,26 @@
       {
         "dimensionValues": [
           {
-            "value": "San Jose"
+            "value": "Toronto"
           },
           {
-            "value": "San Jose Province"
+            "value": "Ontario"
           },
           {
-            "value": "Costa Rica"
+            "value": "Canada"
           }
         ],
         "metricValues": [
           {
-            "value": "1"
+            "value": "4"
           },
           {
             "value": "4"
           }
         ]
-      },
-      {
-        "dimensionValues": [
-          {
-            "value": "(not set)"
-          },
-          {
-            "value": "(not set)"
-          },
-          {
-            "value": "(not set)"
-          }
-        ],
-        "metricValues": [
-          {
-            "value": "3"
-          },
-          {
-            "value": "3"
-          }
-        ]
-      },
-      {
-        "dimensionValues": [
-          {
-            "value": "Council Bluffs"
-          },
-          {
-            "value": "Iowa"
-          },
-          {
-            "value": "United States"
-          }
-        ],
-        "metricValues": [
-          {
-            "value": "3"
-          },
-          {
-            "value": "3"
-          }
-        ]
-      },
-      {
-        "dimensionValues": [
-          {
-            "value": "Flint Hill"
-          },
-          {
-            "value": "Virginia"
-          },
-          {
-            "value": "United States"
-          }
-        ],
-        "metricValues": [
-          {
-            "value": "3"
-          },
-          {
-            "value": "3"
-          }
-        ]
       }
     ],
-    "rowCount": 123,
+    "rowCount": 127,
     "metadata": {
       "currencyCode": "USD",
       "timeZone": "America/New_York"

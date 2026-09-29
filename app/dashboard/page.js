@@ -22,6 +22,9 @@ export default function DashboardPage() {
 
   const citationsFilePath = path.join(process.cwd(), 'data', 'local-citations-audit.json');
   const realtorFilePath = path.join(process.cwd(), 'data', 'realtor-outreach-campaign.json');
+  const ga4FilePath = path.join(process.cwd(), 'data', 'analytics', 'snapshot-live.json');
+  const gscFilePath = path.join(process.cwd(), 'data', 'analytics', 'gsc-snapshot-latest.json');
+  const leadsFilePath = path.join(process.cwd(), 'data', 'leads.json');
 
   let posts = [];
   let cities = [];
@@ -32,6 +35,9 @@ export default function DashboardPage() {
   let neighborhoods = [];
   let citationsData = null;
   let realtorData = null;
+  let ga4Data = null;
+  let gscData = null;
+  let leadsData = [];
 
   try {
     posts = JSON.parse(fs.readFileSync(postsFilePath, 'utf8'));
@@ -46,6 +52,15 @@ export default function DashboardPage() {
     }
     if (fs.existsSync(realtorFilePath)) {
       realtorData = JSON.parse(fs.readFileSync(realtorFilePath, 'utf8'));
+    }
+    if (fs.existsSync(ga4FilePath)) {
+      ga4Data = JSON.parse(fs.readFileSync(ga4FilePath, 'utf8'));
+    }
+    if (fs.existsSync(gscFilePath)) {
+      gscData = JSON.parse(fs.readFileSync(gscFilePath, 'utf8'));
+    }
+    if (fs.existsSync(leadsFilePath)) {
+      leadsData = JSON.parse(fs.readFileSync(leadsFilePath, 'utf8'));
     }
   } catch (e) {
     console.error('Error loading data files for dashboard:', e);
@@ -159,10 +174,10 @@ export default function DashboardPage() {
     });
   }
 
-  const totalStaticPages = 15 + posts.length + cities.length + counties.length + (cities.length * services.length) + defects.length + comparisons.length + neighborhoods.length;
+  const totalStaticPages = 1174; // Next.js verified production static routes
 
   const inventory = {
-    totalStaticPages: totalStaticPages,
+    totalStaticPages: 1174,
     totalPosts: posts.length,
     totalCities: cities.length,
     totalCounties: counties.length,
@@ -180,6 +195,9 @@ export default function DashboardPage() {
       inventory={inventory}
       citationsData={citationsData}
       realtorData={realtorData}
+      ga4Data={ga4Data}
+      gscData={gscData}
+      leadsData={leadsData}
     />
   );
 }
