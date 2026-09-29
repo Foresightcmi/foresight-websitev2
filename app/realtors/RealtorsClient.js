@@ -291,7 +291,7 @@ export default function RealtorsClient() {
                 ⚡ Agent Efficiency Tool
               </span>
               <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.25rem' }}>
-                Build Custom Repair Amendments in Minutes with 1-Click Report Selection
+                Build Custom GAR Form F404 Repair Amendments in Minutes
               </h2>
               <p style={{ color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                 Never waste hours copying and pasting inspection report findings into amendment contracts again. Foresight digital reports include interactive <strong>1-Click Repair Amendment Builder</strong>, built specifically for real estate agents.
