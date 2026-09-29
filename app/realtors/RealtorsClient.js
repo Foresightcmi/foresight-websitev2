@@ -201,7 +201,7 @@ export default function RealtorsClient() {
             </span>
             <span style={{ color: '#475569' }}>|</span>
             <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              ⚡ <span>Same-Day Digital CRL™</span>
+              ⚡ <span>1-Click Repair Amendment Builder</span>
             </span>
             <span style={{ color: '#475569' }}>|</span>
             <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -261,12 +261,12 @@ export default function RealtorsClient() {
               </p>
             </div>
 
-            {/* Pillar 5: Interactive CRL */}
+            {/* Pillar 5: 1-Click Repair Amendment */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>📝</div>
-              <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>Create Request List (CRL™)</h3>
+              <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>1-Click Repair Amendment Tool</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                Tired of copying and pasting text into amendment documents? Our digital reports feature HomeGauge\'s CRL™ tool. Agents can click items directly in the inspection report to automatically compile a polished, professional repair amendment in minutes.
+                Tired of copying and pasting text into amendment documents? Our digital reports feature interactive repair amendment builder. Agents can click items directly in the inspection report to automatically compile a polished, professional repair amendment in minutes.
               </p>
             </div>
 
@@ -282,7 +282,7 @@ export default function RealtorsClient() {
         </div>
       </section>
 
-      {/* 📝 HOMEGAUGE CREATE-REPAIR-LIST (CRL™) FEATURE HIGHLIGHT 📝 */}
+      {/* 📝 1-CLICK REPAIR AMENDMENT FEATURE HIGHLIGHT 📝 */}
       <section className="section" style={{ background: '#0F172A', color: '#FFFFFF', padding: '5rem 0', borderTop: '1px solid #1E293B', borderBottom: '1px solid #1E293B' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '3.5rem', alignItems: 'center' }}>
@@ -291,10 +291,10 @@ export default function RealtorsClient() {
                 ⚡ Agent Efficiency Tool
               </span>
               <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.25rem' }}>
-                Build Custom Repair Addendums in Minutes with HomeGauge CRL™
+                Build Custom Repair Amendments in Minutes with 1-Click Report Selection
               </h2>
               <p style={{ color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                Never waste hours copying and pasting inspection report findings into amendment contracts again. Foresight digital reports include HomeGauge&rsquo;s interactive <strong>Create-Repair-List (CRL™)</strong> tool, built specifically for real estate agents.
+                Never waste hours copying and pasting inspection report findings into amendment contracts again. Foresight digital reports include interactive <strong>1-Click Repair Amendment Builder</strong>, built specifically for real estate agents.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
@@ -319,7 +319,7 @@ export default function RealtorsClient() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid #334155', paddingBottom: '1rem' }}>
                 <div style={{ fontSize: '2.5rem' }}>📄</div>
                 <div>
-                  <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem' }}>HomeGauge CRL™ Interactive Preview</h3>
+                  <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem' }}>Interactive Repair Amendment Preview</h3>
                   <span style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600 }}>Included Standard on Every Foresight Report</span>
                 </div>
               </div>
@@ -332,7 +332,7 @@ export default function RealtorsClient() {
                 <p style={{ color: '#94A3B8', fontSize: '0.85rem', margin: 0 }}>Selected for Contractor Repair Prior to Closing</p>
               </div>
               <p style={{ color: '#64748B', fontSize: '0.85rem', margin: 0, textAlign: 'center', fontStyle: 'italic' }}>
-                Agents report saving 45+ minutes per transaction using the Foresight CRL™ addendum tool.
+                Agents report saving 45+ minutes per transaction using the Foresight 1-click repair amendment builder.
               </p>
             </div>
           </div>
@@ -687,7 +687,7 @@ export default function RealtorsClient() {
                 Some agents worry that a thorough inspector will scare buyers or blow up a deal. At Foresight, we take the opposite approach. Our reports are written to <strong style={{ color: 'var(--color-white)' }}>clearly communicate issues and potential concerns</strong> in a way that empowers your clients at the negotiating table — not frighten them away from it.
               </p>
               <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.1rem', lineHeight: 1.7 }}>
-                When your buyers know exactly what they are dealing with, you can negotiate repair credits, price reductions, or seller concessions from a position of strength. Our detailed reporting and the HomeGauge CRL tool make it easy to build professional repair amendments in minutes. The result? Your clients get a better deal, and your reputation as a <strong style={{ color: 'var(--color-white)' }}>sharp, strategic negotiator</strong> grows with every transaction.
+                When your buyers know exactly what they are dealing with, you can negotiate repair credits, price reductions, or seller concessions from a position of strength. Our detailed reporting and the 1-click repair amendment builder make it easy to build professional repair amendments in minutes. The result? Your clients get a better deal, and your reputation as a <strong style={{ color: 'var(--color-white)' }}>sharp, strategic negotiator</strong> grows with every transaction.
               </p>
             </div>
 
@@ -753,7 +753,7 @@ export default function RealtorsClient() {
               <div>
                 <div style={{ color: '#fbbf24', fontSize: '1.15rem', marginBottom: '1.25rem', letterSpacing: '0.08em' }}>★★★★★</div>
                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, fontStyle: 'italic', margin: '0 0 1.5rem 0' }}>
-                  "Foresight is my secret weapon for negotiations. On a recent Sandy Springs transaction, they caught a collapsed clay sewer line. Armed with their highly detailed report and the HomeGauge CRL tool, I put together an amendment in minutes and negotiated a <strong>$24,500 repair credit</strong> for my buyers before closing!"
+                  "Foresight is my secret weapon for negotiations. On a recent Sandy Springs transaction, they caught a collapsed clay sewer line. Armed with their highly detailed report and the 1-click repair amendment builder, I put together an amendment in minutes and negotiated a <strong>$24,500 repair credit</strong> for my buyers before closing!"
                 </p>
               </div>
               <div style={{ borderTop: '1px solid var(--color-gray-mid)', paddingTop: '1.25rem', marginTop: 'auto' }}>
