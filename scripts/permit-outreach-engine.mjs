@@ -35,9 +35,261 @@ function cleanHeader(str) {
 }
 
 /**
- * Builds both plain text and luxury HTML email for the homeowner/builder.
+ * Builds email for DeKalb County leads specifically targeting Water Conservation & Low-Flow Compliance ($100).
  */
-function buildDueDiligenceEmail(lead) {
+function buildDeKalbComplianceEmail(lead) {
+  const recipientName = lead.ownerName || 'Property Owner / Builder';
+  const address = lead.address;
+  const dossierUrl = `https://www.fhinspectionsatl.com/dossiers/${lead.recordId}.html`;
+
+  const subject = `DeKalb County Low-Flow Plumbing & Water Conservation Notice: ${address} (Permit #${lead.recordId})`;
+
+  const bodyText = `Dear ${recipientName},
+
+Public municipal records from the DeKalb County Permitting Registry indicate active permitted construction or structural alterations at ${address} (Permit #${lead.recordId}).
+
+Under DeKalb County Code (Chapter 25, Article IV, Section 25-132 - Water Conservation Standards), all residential properties in DeKalb County transferring ownership or completing major permitted alterations must obtain an official Certificate of Compliance with Water Conservation Standards.
+
+Without this signed compliance certificate, closing escrow can be delayed, title deed recording can be blocked, and municipal water service transfer can be stalled.
+
+DeKalb County Mandatory Fixture Thresholds:
+• Toilets: 1.6 Gallons Per Flush (GPF) or less
+• Showerheads: 2.5 Gallons Per Minute (GPM) or less
+• Lavatory Faucets: 2.2 Gallons Per Minute (GPM) or less
+
+Foresight Home Inspections delivers fast, certified on-site evaluations for a flat rate of just $100 (or included with any comprehensive home inspection).
+
+👉 View Your Property Due Diligence Dossier:
+${dossierUrl}
+
+👉 Learn more or book directly:
+https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance
+
+The Foresight CMI Advantage:
+• Official DeKalb County Water Conservation Certificate issued on-site / within 24 hours.
+• Two Certified Inspectors on Every Job: Concurrently inspecting structural, mechanical, and rough-in assemblies.
+• FLIR® Thermal Infrared Scans Included Free: Detecting hidden pipe leaks, insulation voids, and moisture penetration.
+• Up to $35,000 in Combined Warranty & Guarantee Protection.
+
+To schedule your $100 low-flow compliance certificate or bundle it with a framing/renovation inspection, reply to this email, book online 24/7 at https://www.fhinspectionsatl.com/quote, or contact our lead Certified Master Inspector directly at (678) 480-2110.
+
+Respectfully,
+
+Christopher Boykin, CMI®
+Lead Inspector & Founder | Foresight Home Inspections, LLC
+Certified Master Inspector® #MICB-1082 | InterNACHI Member #NACHI20061502
+Direct: (678) 480-2110 | Office: inspect@foresightcmi.com
+Serving DeKalb County & Metro Atlanta
+https://www.fhinspectionsatl.com`;
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; padding: 20px; line-height: 1.6; }
+    .card { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    .header { background: #0f172a; padding: 25px 30px; text-align: center; }
+    .header img { height: 65px; width: auto; }
+    .banner { background: #d4af37; color: #0f172a; padding: 8px 15px; font-size: 13px; font-weight: 700; text-align: center; letter-spacing: 0.5px; }
+    .content { padding: 35px 30px; }
+    h1 { font-size: 20px; color: #0f172a; margin-top: 0; }
+    .highlight-box { background: #fffdf5; border-left: 4px solid #d4af37; padding: 18px; margin: 20px 0; border-radius: 4px; }
+    .alert-box { background: #fff5f5; border-left: 4px solid #e53e3e; padding: 18px; margin: 20px 0; border-radius: 4px; }
+    .btn { display: inline-block; background: #d4af37; color: #0f172a !important; font-weight: 700; font-size: 15px; padding: 14px 28px; text-decoration: none; border-radius: 6px; margin: 20px 0; text-align: center; }
+    .footer { background: #0f172a; color: #94a3b8; padding: 25px 30px; font-size: 12px; text-align: center; line-height: 1.5; }
+    .footer a { color: #d4af37; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections">
+    </div>
+    <div class="banner">
+      💧 DEKALB COUNTY WATER CONSERVATION &amp; LOW-FLOW COMPLIANCE ADVISORY
+    </div>
+    <div class="content">
+      <p style="font-size: 16px; margin-top: 0;">Dear <strong>${recipientName}</strong>,</p>
+
+      <p>Public municipal records from the DeKalb County Permitting Registry indicate active permitted work or structural alterations at <strong>${address}</strong> (Permit #${lead.recordId}).</p>
+
+      <div class="alert-box">
+        <strong style="color: #9b2c2c;">⚖️ Mandatory DeKalb County Ordinance Notice:</strong><br>
+        Under <strong>DeKalb County Code (Chapter 25, Article IV, Section 25-132)</strong>, all residential properties transferring ownership or completing major permitted plumbing/structural alterations must obtain an official <strong>Certificate of Compliance with Water Conservation Standards</strong>. Without this signed certificate, real estate deeds cannot be recorded, closing escrow can be held, and municipal water service transfer can be blocked.
+      </div>
+
+      <div class="highlight-box">
+        <strong>DeKalb County Mandatory Flow Thresholds:</strong>
+        <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
+          <li><strong>Toilets:</strong> 1.6 Gallons Per Flush (GPF) or less</li>
+          <li><strong>Showerheads:</strong> 2.5 Gallons Per Minute (GPM) or less</li>
+          <li><strong>Faucets:</strong> 2.2 Gallons Per Minute (GPM) or less</li>
+        </ul>
+        <div style="margin-top: 10px; font-weight: 700; color: #0f172a;">
+          Official Certificate Fee: $100 Flat Rate (or included with any comprehensive home inspection)
+        </div>
+      </div>
+
+      <p>To assist your project and closing timeline, we have prepared a property-specific <strong>Due Diligence Dossier</strong> for your review:</p>
+
+      <div style="text-align: center;">
+        <a href="${dossierUrl}" class="btn">📄 Open Your DeKalb Property Dossier &rarr;</a>
+      </div>
+
+      <p>You can reserve your $100 compliance certificate online 24/7 at <a href="https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance" style="color: #d4af37; font-weight: bold;">fhinspectionsatl.com/service-areas/dekalb-county-compliance</a> or speak directly with our lead Certified Master Inspector at <strong>(678) 480-2110</strong>.</p>
+
+      <p style="margin-bottom: 0;">
+        Respectfully,<br><br>
+        <strong>Christopher Boykin, CMI®</strong><br>
+        Lead Inspector & Founder | Foresight Home Inspections, LLC<br>
+        <em>Certified Master Inspector® #MICB-1082 | InterNACHI Certified</em><br>
+        Direct: <a href="tel:6784802110" style="color: #0f172a; font-weight: bold;">(678) 480-2110</a> | Email: <a href="mailto:inspect@foresightcmi.com" style="color: #0f172a;">inspect@foresightcmi.com</a><br>
+        <a href="https://www.fhinspectionsatl.com" style="color: #d4af37; font-weight: bold;">www.fhinspectionsatl.com</a>
+      </p>
+    </div>
+    <div class="footer">
+      Foresight Home Inspections, LLC | 1816 South Deshon Road, Lithonia, GA 30058<br>
+      Serving DeKalb County, Metro Atlanta &amp; 77+ Cities Across 20 Georgia Counties.<br>
+      This confidential municipal compliance notice was prepared using public DeKalb County permitting records.
+    </div>
+  </div>
+</body>
+</html>
+  `;
+
+  return { subject, bodyText, html, dossierUrl };
+}
+
+/**
+ * Builds email for City of Atlanta Short-Term Rental leads targeting Ordinance 20-O-1656 ($495).
+ */
+function buildAtlantaSTREmail(lead) {
+  const recipientName = lead.ownerName || 'Property Host / Owner';
+  const address = lead.address;
+  const dossierUrl = `https://www.fhinspectionsatl.com/dossiers/${lead.recordId}.html`;
+
+  const subject = `City of Atlanta Short-Term Rental License Life-Safety Advisory: ${address} (License #${lead.recordId})`;
+
+  const bodyText = `Dear ${recipientName},
+
+City of Atlanta Department of City Planning public records indicate active short-term rental licensing activity at ${address} (License #${lead.recordId}).
+
+Under City of Atlanta Ordinance 20-O-1656, all residential short-term rental operators on Airbnb, Vrbo, and direct booking channels must verify full compliance with municipal life-safety codes before receiving or renewing their annual operating license.
+
+Foresight Home Inspections provides comprehensive, certified life-safety evaluations and official signed inspector affidavits delivered within 24 hours for instant upload to the City of Atlanta Accela Citizen Access portal.
+
+Key Life-Safety Verification Checklist:
+• Interconnected Smoke Detectors in every bedroom and common hallway
+• UL-Listed Carbon Monoxide Alarms on every habitable level
+• Emergency Egress Windows meeting 5.7 sq ft net clear opening standards
+• 2A:10B:C Fire Extinguishers tagged, mounted, and pressure-verified
+• Electrical Service Panel dead-front safety and GFCI wet-area protection
+
+Flat Fee: $495 (Properties up to 2,500 sq ft) | $595 (Luxury STRs 2,500+ sq ft)
+
+👉 View Your Property Due Diligence Dossier:
+${dossierUrl}
+
+👉 Learn more or book directly:
+https://www.fhinspectionsatl.com/service-areas/atlanta-str-compliance
+
+To lock in your inspection date and receive your stamped affidavit within 24 hours, reply to this email, book online 24/7, or call our team directly at (678) 480-2110.
+
+Respectfully,
+
+Christopher Boykin, CMI®
+Lead Inspector & Founder | Foresight Home Inspections, LLC
+Certified Master Inspector® #MICB-1082
+Direct: (678) 480-2110 | inspect@foresightcmi.com
+https://www.fhinspectionsatl.com`;
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; padding: 20px; line-height: 1.6; }
+    .card { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    .header { background: #0f172a; padding: 25px 30px; text-align: center; }
+    .header img { height: 65px; width: auto; }
+    .banner { background: #d4af37; color: #0f172a; padding: 8px 15px; font-size: 13px; font-weight: 700; text-align: center; letter-spacing: 0.5px; }
+    .content { padding: 35px 30px; }
+    h1 { font-size: 20px; color: #0f172a; margin-top: 0; }
+    .highlight-box { background: #fffdf5; border-left: 4px solid #d4af37; padding: 18px; margin: 20px 0; border-radius: 4px; }
+    .alert-box { background: #fff5f5; border-left: 4px solid #e53e3e; padding: 18px; margin: 20px 0; border-radius: 4px; }
+    .btn { display: inline-block; background: #d4af37; color: #0f172a !important; font-weight: 700; font-size: 15px; padding: 14px 28px; text-decoration: none; border-radius: 6px; margin: 20px 0; text-align: center; }
+    .footer { background: #0f172a; color: #94a3b8; padding: 25px 30px; font-size: 12px; text-align: center; line-height: 1.5; }
+    .footer a { color: #d4af37; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections">
+    </div>
+    <div class="banner">
+      🏨 CITY OF ATLANTA SHORT-TERM RENTAL (STR) LICENSE COMPLIANCE
+    </div>
+    <div class="content">
+      <p style="font-size: 16px; margin-top: 0;">Dear <strong>${recipientName}</strong>,</p>
+
+      <p>City of Atlanta Department of City Planning records indicate active short-term rental licensing activity at <strong>${address}</strong> (License #${lead.recordId}).</p>
+
+      <div class="alert-box">
+        <strong style="color: #9b2c2c;">⚖️ Ordinance 20-O-1656 Mandatory Compliance Notice:</strong><br>
+        All residential short-term rental operators on Airbnb and Vrbo must complete a certified third-party life-safety evaluation and submit a stamped inspector affidavit to receive or renew their annual operating license. Operating without a valid license risks heavy municipal citations and listing suspension.
+      </div>
+
+      <div class="highlight-box">
+        <strong>Foresight Life-Safety Inspection Scope:</strong>
+        <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
+          <li><strong>Smoke &amp; CO Detectors:</strong> Interconnected alarms verified in every bedroom and hallway.</li>
+          <li><strong>Emergency Egress:</strong> Window net clear openings (min 5.7 sq ft) and exits verified.</li>
+          <li><strong>Fire Extinguishers:</strong> 2A:10B:C rated extinguishers tagged and mounted.</li>
+          <li><strong>Electrical &amp; GFCI Safety:</strong> Breaker panel dead-front and wet-area circuit safety.</li>
+        </ul>
+        <div style="margin-top: 10px; font-weight: 700; color: #0f172a;">
+          Flat Fee: $495 Complete &bull; Guaranteed 24-Hour Portal Affidavit Delivery
+        </div>
+      </div>
+
+      <p>To view your property inspection requirements, open your official <strong>Due Diligence Dossier</strong>:</p>
+
+      <div style="text-align: center;">
+        <a href="${dossierUrl}" class="btn">📄 Open Your Atlanta STR Property Dossier &rarr;</a>
+      </div>
+
+      <p>You can reserve your inspection online 24/7 at <a href="https://www.fhinspectionsatl.com/service-areas/atlanta-str-compliance" style="color: #d4af37; font-weight: bold;">fhinspectionsatl.com/service-areas/atlanta-str-compliance</a> or speak directly with our lead Certified Master Inspector at <strong>(678) 480-2110</strong>.</p>
+
+      <p style="margin-bottom: 0;">
+        Respectfully,<br><br>
+        <strong>Christopher Boykin, CMI®</strong><br>
+        Lead Inspector & Founder | Foresight Home Inspections, LLC<br>
+        <em>Certified Master Inspector® #MICB-1082</em><br>
+        Direct: <a href="tel:6784802110" style="color: #0f172a; font-weight: bold;">(678) 480-2110</a> | Email: <a href="mailto:inspect@foresightcmi.com" style="color: #0f172a;">inspect@foresightcmi.com</a><br>
+        <a href="https://www.fhinspectionsatl.com" style="color: #d4af37; font-weight: bold;">www.fhinspectionsatl.com</a>
+      </p>
+    </div>
+    <div class="footer">
+      Foresight Home Inspections, LLC | 1816 South Deshon Road, Lithonia, GA 30058<br>
+      Serving the City of Atlanta &amp; 77+ Cities Across 20 Georgia Counties.<br>
+      This confidential municipal compliance notice was prepared using public City of Atlanta licensing records.
+    </div>
+  </div>
+</body>
+</html>
+  `;
+
+  return { subject, bodyText, html, dossierUrl };
+}
+
+/**
+ * Builds email for standard residential new construction & major structural builds.
+ */
+function buildPreDrywallEmail(lead) {
   const recipientName = lead.ownerName || 'Property Owner';
   const address = lead.address;
   const valuation = Number(lead.jobValue || 0).toLocaleString();
@@ -146,7 +398,7 @@ https://www.fhinspectionsatl.com`;
     </div>
     <div class="footer">
       Foresight Home Inspections, LLC | 1816 South Deshon Road, Lithonia, GA 30058<br>
-      Serving Metro Atlanta & 77+ Cities Across 20 Georgia Counties.<br>
+      Serving Metro Atlanta &amp; 77+ Cities Across 20 Georgia Counties.<br>
       This confidential building science advisory was prepared using public municipal permitting records.
     </div>
   </div>
@@ -155,6 +407,22 @@ https://www.fhinspectionsatl.com`;
   `;
 
   return { subject, bodyText, html, dossierUrl };
+}
+
+/**
+ * Intelligent Router: Dispatches the exact, tailored municipal template.
+ */
+function buildDueDiligenceEmail(lead) {
+  const isDeKalb = (lead.jurisdiction || '').includes('DeKalb') || (lead.address || '').includes('DeKalb');
+  const isSTR = (lead.jurisdiction || '').includes('Short-Term Rental') || (lead.recordId || '').startsWith('STR-');
+
+  if (isDeKalb) {
+    return buildDeKalbComplianceEmail(lead);
+  }
+  if (isSTR) {
+    return buildAtlantaSTREmail(lead);
+  }
+  return buildPreDrywallEmail(lead);
 }
 
 /**
