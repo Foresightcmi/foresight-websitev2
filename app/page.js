@@ -132,10 +132,10 @@ export default function Home() {
       <section className="hero" style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '6rem 0 5rem' }}>
         {/* Full-bleed background image */}
         <picture>
+          <source media="(min-width: 641px)" srcSet="/images/luxury-home.webp" type="image/webp" />
           <source media="(max-width: 640px)" srcSet="/images/luxury-home-mobile.webp" type="image/webp" />
-          <source srcSet="/images/luxury-home.webp" type="image/webp" />
           <img
-            src="/images/luxury-home.webp"
+            src="/images/luxury-home-mobile.webp"
             alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
             fetchPriority="high"
             loading="eager"
