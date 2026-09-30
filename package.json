@@ -10,7 +10,8 @@
     "analytics": "node scripts/fetch-ga4-analytics.mjs",
     "gsc": "node scripts/fetch-gsc-analytics.mjs",
     "telemetry": "node scripts/fetch-ga4-analytics.mjs && node scripts/fetch-gsc-analytics.mjs",
-    "perf:check": "node scripts/performance-guard.mjs"
+    "perf:check": "node scripts/performance-guard.mjs",
+    "social:post": "node scripts/multi-channel-publisher.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

@@ -1,0 +1,46 @@
+name: Autonomous Social & GBP Broadcast Engine
+
+on:
+  schedule:
+    # Run every Tuesday, Thursday, and Saturday at 1:30 PM UTC (9:30 AM EST)
+    - cron: '30 13 * * 2,4,6'
+  workflow_dispatch:
+    # Allows manual 1-click publishing from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  broadcast-social-post:
+    name: Rotate & Publish to GBP, Facebook & LinkedIn
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Execute Multi-Channel Publisher
+        run: node scripts/multi-channel-publisher.mjs
+
+      - name: Commit and Push Updated Social State & Logs
+        run: |
+          git config --global user.name "Foresight Social Bot"
+          git config --global user.email "social-bot@fhinspectionsatl.com"
+          git add data/social-logs/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(social): autonomous multi-channel rotation update [skip ci]"
+            git push
+          else
+            echo "No state changes to commit."
+          fi
