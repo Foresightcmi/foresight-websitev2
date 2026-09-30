@@ -134,38 +134,50 @@ export default function ThermalSlider() {
             fill
             sizes="(max-width: 900px) 100vw, 900px"
             style={{ objectFit: 'cover' }}
-            priority
+            loading="lazy"
           />
           <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(239, 68, 68, 0.9)', color: '#FFFFFF', padding: '0.35rem 0.75rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.05em' }}>
             🔥 FLIR® INFRARED (ACTIVE LEAK)
           </div>
         </div>
 
-        {/* Foreground Image: Visual Daylight (Clipped by slider position) */}
+        {/* Foreground Image: Visual Daylight (Clipped cleanly via GPU clip-path without layout thrashing) */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            width: `${sliderPosition}%`,
-            overflow: 'hidden',
-            borderRight: '2px solid var(--color-gold)',
-            boxShadow: '4px 0 20px rgba(0,0,0,0.5)'
+            clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+            WebkitClipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+            willChange: 'clip-path'
           }}
         >
-          <div style={{ position: 'absolute', inset: 0, width: containerRef.current ? containerRef.current.clientWidth : '100%', height: '100%' }}>
-            <Image
-              src="/images/visual-ceiling.webp"
-              alt="Visual camera photograph of ceiling showing no obvious water damage"
-              fill
-              sizes="(max-width: 900px) 100vw, 900px"
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
+          <Image
+            src="/images/visual-ceiling.webp"
+            alt="Visual camera photograph of ceiling showing no obvious water damage"
+            fill
+            sizes="(max-width: 900px) 100vw, 900px"
+            style={{ objectFit: 'cover' }}
+            loading="lazy"
+          />
           <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(15, 23, 42, 0.85)', color: '#FFFFFF', padding: '0.35rem 0.75rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.05em', border: '1px solid #475569' }}>
             👁️ VISUAL (LOOKS PERFECTLY DRY)
           </div>
         </div>
+
+        {/* Vertical divider line */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: `${sliderPosition}%`,
+            width: '2px',
+            background: 'var(--color-gold)',
+            boxShadow: '0 0 10px rgba(0,0,0,0.8)',
+            transform: 'translateX(-50%)',
+            pointerEvents: 'none'
+          }}
+        />
 
         {/* Slider Handle Grip */}
         <div

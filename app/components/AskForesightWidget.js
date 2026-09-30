@@ -1,7 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import VoiceAgentModal from './VoiceAgentModal';
+import dynamic from 'next/dynamic';
+
+const VoiceAgentModal = dynamic(() => import('./VoiceAgentModal'), {
+  ssr: false,
+});
 
 export default function AskForesightWidget() {
   const [isVoiceOpen, setIsVoiceOpen] = useState(false);
@@ -189,7 +193,7 @@ export default function AskForesightWidget() {
       )}
 
       {/* Voice & Text Concierge Overlay Modal */}
-      <VoiceAgentModal isOpen={isVoiceOpen} onClose={() => setIsVoiceOpen(false)} />
+      {isVoiceOpen && <VoiceAgentModal isOpen={isVoiceOpen} onClose={() => setIsVoiceOpen(false)} />}
 
       {/* Global CSS Styles for Animations */}
       <style dangerouslySetInnerHTML={{__html: `

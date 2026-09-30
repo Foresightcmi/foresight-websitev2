@@ -1,5 +1,3 @@
-'use client';
-
 export default function Testimonials() {
   const reviews = [
     {
@@ -47,7 +45,7 @@ export default function Testimonials() {
           {reviews.map((r, i) => (
             <div
               key={i}
-              className="card card-premium"
+              className="card card-premium testimonial-card-hover"
               style={{
                 background: 'var(--color-gray-light)',
                 borderTop: '5px solid var(--color-red)',
@@ -56,15 +54,6 @@ export default function Testimonials() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 12px 30px rgba(211,47,47,0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <div>

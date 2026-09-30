@@ -672,36 +672,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Script
-          id="google-analytics-init"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-F5NKKNS7B7', { send_page_view: true });
-              
-              function loadGtag() {
-                if (window.gtagLoaded) return;
-                window.gtagLoaded = true;
-                var script = document.createElement('script');
-                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F5NKKNS7B7';
-                script.async = true;
-                document.head.appendChild(script);
-              }
-              
-              if ('requestIdleCallback' in window) {
-                requestIdleCallback(function() { setTimeout(loadGtag, 6000); });
-              } else {
-                setTimeout(loadGtag, 7000);
-              }
-              ['scroll', 'touchstart', 'click'].forEach(function(e) {
-                window.addEventListener(e, loadGtag, { once: true, passive: true });
-              });
-            `,
-          }}
-        />
         <div style={{ background: 'var(--color-gold)', color: '#0F172A', padding: '0.6rem 1rem', textAlign: 'center', fontWeight: '700', fontSize: '0.95rem', letterSpacing: '0.5px' }}>
           🎁 BONUS: Every inspection includes a FREE VIP Utility & Smart Home Setup Concierge ($150 Value)! ⚡
         </div>
@@ -872,6 +842,36 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </footer>
+        <Script
+          id="google-analytics-init"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-F5NKKNS7B7', { send_page_view: true });
+              
+              function loadGtag() {
+                if (window.gtagLoaded) return;
+                window.gtagLoaded = true;
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F5NKKNS7B7';
+                script.async = true;
+                document.head.appendChild(script);
+              }
+              
+              if ('requestIdleCallback' in window) {
+                requestIdleCallback(function() { setTimeout(loadGtag, 6000); });
+              } else {
+                setTimeout(loadGtag, 7000);
+              }
+              ['scroll', 'touchstart', 'click'].forEach(function(e) {
+                window.addEventListener(e, loadGtag, { once: true, passive: true });
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );

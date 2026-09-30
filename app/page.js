@@ -9,11 +9,11 @@ import VslTriggerButton from './components/VslTriggerButton';
 import HomeVideoPlayer from './components/HomeVideoPlayer';
 import ThemeSongPlayer from './components/ThemeSongPlayer';
 
-const ValueComparison = dynamic(() => import('./components/ValueComparison'), { ssr: true });
-const TwoPossibilities = dynamic(() => import('./components/TwoPossibilities'), { ssr: true });
+import ValueComparison from './components/ValueComparison';
+import TwoPossibilities from './components/TwoPossibilities';
+import Testimonials from './components/Testimonials';
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
-const Testimonials = dynamic(() => import('./components/Testimonials'), { ssr: true });
-const FaqSearch = dynamic(() => import('./components/FaqSearch'), { ssr: true });
+const FaqSearch = dynamic(() => import('./components/FaqSearch'));
 
 export const metadata = {
   title: {
