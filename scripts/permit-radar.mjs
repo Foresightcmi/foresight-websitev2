@@ -269,6 +269,73 @@ async function fetchJohnsCreekPermits() {
 }
 
 /**
+ * 5. Queries City of Atlanta Short-Term Rental (STR) License Registry
+ */
+async function fetchAtlantaSTRPermits() {
+  console.log('🏛️  [Permit Radar: Atlanta STR] Querying City of Atlanta STR license registry...');
+  try {
+    const params = new URLSearchParams({
+      where: "1=1",
+      outFields: '*',
+      returnGeometry: 'false',
+      orderByFields: 'OBJECTID DESC',
+      resultRecordCount: '25',
+      f: 'json'
+    });
+
+    const url = `https://services5.arcgis.com/5RxyIIJ9boPdptdo/ArcGIS/rest/services/Short_Term_Rental_Permits/FeatureServer/8/query?${params.toString()}`;
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+      signal: AbortSignal.timeout(12000)
+    });
+
+    if (!response.ok) throw new Error(`Atlanta STR ArcGIS returned ${response.status}`);
+    const json = await response.json();
+    const features = json.features || [];
+    console.log(`✅ [Permit Radar: Atlanta STR] Retrieved ${features.length} municipal STR permits.`);
+
+    return features.map(f => {
+      const a = f.attributes || {};
+      const date = a.CREATED_DATE 
+        ? new Date(a.CREATED_DATE).toISOString().split('T')[0] 
+        : new Date().toISOString().split('T')[0];
+      
+      const hostName = (a.USER_FIRST && a.USER_LAST) 
+        ? `${a.USER_FIRST} ${a.USER_LAST}`.trim() 
+        : (a.USER_OWNER || 'STR Property Host');
+
+      const addr = a.USER_ADDRESS 
+        ? `${a.USER_ADDRESS}, Atlanta, GA` 
+        : (a.IN_SingleLine ? `${a.IN_SingleLine}, Atlanta, GA` : 'Atlanta, GA');
+
+      return {
+        recordId: a.USER_RECORD_ID ? `STR-${a.USER_RECORD_ID.replace(/[^a-zA-Z0-9_-]/g, '_')}` : `ATL-STR-${a.OBJECTID}`,
+        jurisdiction: 'City of Atlanta (Short-Term Rental)',
+        permitName: `${a.USER_ADDRESS || 'Atlanta'} Short-Term Rental License`,
+        permitType: 'Short-Term Rental Ordinance 20-O-1656 License',
+        address: addr,
+        jobValue: 125000,
+        status: a.USER_RECORD_STATUS || 'Issued',
+        statusDate: date,
+        parcel: a.USER_Field2 || 'N/A',
+        quadrant: `Council District ${a.Dist_Name || a.USER_ISSUED_LICENSE_BY_COUNCIL_ || 'Atlanta'}`,
+        ownerName: hostName,
+        ownerEmail: a.USER_EMAIL || null,
+        ownerPhone: a.USER_PHONE || null,
+        acaLink: `https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=${encodeURIComponent(a.USER_RECORD_ID || a.USER_ADDRESS || '')}`,
+        streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`,
+        inspectionOpportunity: 'City of Atlanta STR Annual Life-Safety & Smoke/CO Inspection',
+        estimatedInspectionFee: '$495 - $595 Flat Fee',
+        harvestedAt: new Date().toISOString()
+      };
+    });
+  } catch (err) {
+    console.warn(`⚠️ [Permit Radar: Atlanta STR] Error:`, err.message);
+    return [];
+  }
+}
+
+/**
  * Dispatches smartphone push notification via ntfy.sh
  */
 async function dispatchPushAlert(newLeads, statsByJurisdiction) {
@@ -331,20 +398,22 @@ async function main() {
 
   try {
     // Execute all municipal collectors in parallel
-    const [atlRes, dkbRes, alpRes, jckRes] = await Promise.allSettled([
+    const [atlRes, dkbRes, alpRes, jckRes, strRes] = await Promise.allSettled([
       fetchAtlantaPermits(),
       fetchDeKalbPermits(),
       fetchAlpharettaPermits(),
-      fetchJohnsCreekPermits()
+      fetchJohnsCreekPermits(),
+      fetchAtlantaSTRPermits()
     ]);
 
     const atlLeads = atlRes.status === 'fulfilled' ? atlRes.value : [];
     const dkbLeads = dkbRes.status === 'fulfilled' ? dkbRes.value : [];
     const alpLeads = alpRes.status === 'fulfilled' ? alpRes.value : [];
     const jckLeads = jckRes.status === 'fulfilled' ? jckRes.value : [];
+    const strLeads = strRes.status === 'fulfilled' ? strRes.value : [];
 
-    const allHarvested = [...atlLeads, ...dkbLeads, ...alpLeads, ...jckLeads];
-    console.log(`\n📊 [Permit Radar] Multi-Jurisdiction Raw Harvest Complete: ${allHarvested.length} total permits across 4 jurisdictions.`);
+    const allHarvested = [...atlLeads, ...dkbLeads, ...alpLeads, ...jckLeads, ...strLeads];
+    console.log(`\n📊 [Permit Radar] Multi-Jurisdiction Raw Harvest Complete: ${allHarvested.length} total permits across 5 jurisdictions.`);
 
     // Ensure data directory exists
     const dataDir = path.dirname(DATA_FILE);

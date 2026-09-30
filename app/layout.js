@@ -820,6 +820,9 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/services/new-construction-inspection">New Construction Phased</Link></li>
                   <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($275)</Link></li>
                   <li><Link prefetch={false} href="/services/pre-listing-inspection">Pre-Listing Seller Inspection</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/atlanta-str-compliance" style={{ color: 'var(--color-gold)' }}>Atlanta STR Permit Inspection ($495)</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/south-fulton-rental-compliance" style={{ color: 'var(--color-gold)' }}>South Fulton Rental Compliance ($250)</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/dekalb-county-compliance">DeKalb Low-Flow Compliance</Link></li>
                   <li><Link prefetch={false} href="/services">View All Services &amp; Pricing &rarr;</Link></li>
                 </ul>
               </div>
