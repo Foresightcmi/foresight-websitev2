@@ -31,18 +31,31 @@ jobs:
       - name: Harvest Municipal Permits
         run: node scripts/permit-radar.mjs
 
-      - name: Generate Property Due Diligence Dossiers
+      - name: Harvest Metro Atlanta New Construction Leads
+        run: node scripts/new-construction-radar.mjs
+
+      - name: Generate Municipal Property Due Diligence Dossiers
         run: node scripts/generate-permit-dossiers.mjs
 
-      - name: Dispatch Autonomous Outreach Advisories
+      - name: Generate New Construction Due Diligence Dossiers
+        run: node scripts/generate-new-construction-dossiers.mjs
+
+      - name: Dispatch Autonomous Municipal Outreach Advisories
         run: node scripts/permit-outreach-engine.mjs
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
 
-      - name: Commit and Push Updated Leads & Dossiers
+      - name: Dispatch New Construction Outreach & Hot Sheet
+        run: node scripts/new-construction-outreach.mjs
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+      - name: Commit and Push Updated Leads, Dossiers & Hot Sheets
         run: |
-          git config user.name "Foresight Permit Radar Bot"
+          git config user.name "Foresight Revenue Radar Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/permit-leads.json data/permit-outreach-log.json data/permit-leads-crm.json public/dossiers/
-          git diff --cached --quiet || (git commit -m "chore(radar): automated municipal permit harvest and outreach [skip ci]" && git push)
+          git add data/ public/dossiers/
+          git diff --cached --quiet || (git commit -m "chore(radar): automated municipal and new construction harvest and outreach [skip ci]" && git push)
+
