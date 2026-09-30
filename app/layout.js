@@ -770,7 +770,7 @@ export default function RootLayout({ children }) {
             <div className="footer-grid">
               <div>
                 <h3>Foresight Home Inspections, LLC</h3>
-                <p style={{ fontStyle: 'italic', color: 'var(--color-gray-mid)', marginBottom: '0.75rem', fontWeight: '600', fontSize: '1.05rem' }}>&quot;Hindsight is expensive... Choose Foresight!&quot;</p>
+                <p style={{ fontStyle: 'italic', color: '#CBD5E1', marginBottom: '0.75rem', fontWeight: '600', fontSize: '1.05rem' }}>&quot;Hindsight is expensive... Choose Foresight!&quot;</p>
                 <p>Two sets of expert eyes on every job. Unparalleled thoroughness and accuracy.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
                     <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector Certification" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
@@ -836,13 +836,13 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/service-areas/lawrenceville">Lawrenceville, GA</Link></li>
                   <li><Link prefetch={false} href="/service-areas/smyrna">Smyrna, GA</Link></li>
                   <li><Link prefetch={false} href="/service-areas/cumming">Cumming, GA</Link></li>
-                  <li><Link prefetch={false} href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Explore All 87 Cities &rarr;</Link></li>
+                  <li><Link prefetch={false} href="/service-areas" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Explore All 87 Cities &rarr;</Link></li>
                 </ul>
               </div>
               <div>
                 <h3>Company &amp; Contact</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li><Link prefetch={false} href="/quote" style={{ color: 'var(--color-red)', fontWeight: 700 }}>Instant Quote Calculator</Link></li>
+                  <li><Link prefetch={false} href="/quote" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Instant Quote Calculator</Link></li>
                   <li><Link prefetch={false} href="/risk-scanner" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>🔬 Property Risk Scanner</Link></li>
                   <li><Link prefetch={false} href="/concierge" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>🎙️ Live Concierge Consultation</Link></li>
                   <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
@@ -856,14 +856,14 @@ export default function RootLayout({ children }) {
                   <li style={{ marginTop: '0.75rem' }}><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ fontWeight: 700, color: 'var(--color-white)' }}>📞 678-480-2110</a></li>
                   <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
                   <li style={{ marginTop: '0.25rem', lineHeight: '1.4' }}>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-mid)' }}>(Serving 87+ Cities Across 20 Metro Atlanta Counties)</span>
+                    <span style={{ fontSize: '0.85rem', color: '#CBD5E1' }}>(Serving 87+ Cities Across 20 Metro Atlanta Counties)</span>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
               <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Foresight Home Inspections, LLC. All rights reserved. Proudly Black-owned.</p>
-              <Link prefetch={false} href="/dashboard" style={{ color: 'var(--color-gray-mid)', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem', opacity: 0.8 }}>
+              <Link prefetch={false} href="/dashboard" style={{ color: '#CBD5E1', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
                 <span>🔒</span> Owner Command Center
               </Link>
             </div>

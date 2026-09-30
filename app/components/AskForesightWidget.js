@@ -131,7 +131,6 @@ export default function AskForesightWidget() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                animation: 'pulseAvatarRing 2.5s infinite',
                 transition: 'transform 0.2s',
                 outline: 'none'
               }}
@@ -149,10 +148,14 @@ export default function AskForesightWidget() {
                 }}
               >
                 <picture>
-                  <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
+                  <source srcSet="/images/Christopher_Boykin_thumb.webp" type="image/webp" />
                   <img 
-                    src="/images/Christopher_Boykin.jpg" 
+                    src="/images/Christopher_Boykin_thumb.jpg" 
                     alt="Christopher Boykin CMI - Live Concierge Consultation" 
+                    width={46}
+                    height={46}
+                    loading="lazy"
+                    decoding="async"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </picture>
@@ -194,10 +197,20 @@ export default function AskForesightWidget() {
           0% { transform: translateY(0); }
           100% { transform: translateY(-6px); }
         }
+        .ask-foresight-voice-launcher::before {
+          content: '';
+          position: absolute;
+          inset: -4px;
+          border-radius: 50%;
+          border: 2px solid rgba(16, 185, 129, 0.75);
+          animation: pulseAvatarRing 2.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+          pointer-events: none;
+          will-change: transform, opacity;
+        }
         @keyframes pulseAvatarRing {
-          0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7), 0 10px 30px rgba(0, 0, 0, 0.5); }
-          70% { box-shadow: 0 0 0 14px rgba(16, 185, 129, 0), 0 10px 30px rgba(0, 0, 0, 0.5); }
-          100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0), 0 10px 30px rgba(0, 0, 0, 0.5); }
+          0% { transform: scale(0.96); opacity: 0.9; }
+          70% { transform: scale(1.24); opacity: 0; }
+          100% { transform: scale(1.24); opacity: 0; }
         }
         @keyframes blink {
           0%, 100% { opacity: 1; }

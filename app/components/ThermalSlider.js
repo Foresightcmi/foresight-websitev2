@@ -63,7 +63,7 @@ export default function ThermalSlider() {
               fontWeight: 700,
               cursor: 'pointer',
               background: sliderPosition === 0 ? 'var(--color-gold)' : 'transparent',
-              color: sliderPosition === 0 ? '#0F172A' : '#94A3B8',
+              color: sliderPosition === 0 ? '#0F172A' : '#CBD5E1',
               transition: 'all 0.2s'
             }}
           >
@@ -80,7 +80,7 @@ export default function ThermalSlider() {
               fontWeight: 700,
               cursor: 'pointer',
               background: sliderPosition > 0 && sliderPosition < 100 ? 'var(--color-gold)' : 'transparent',
-              color: sliderPosition > 0 && sliderPosition < 100 ? '#0F172A' : '#94A3B8',
+              color: sliderPosition > 0 && sliderPosition < 100 ? '#0F172A' : '#CBD5E1',
               transition: 'all 0.2s'
             }}
           >
@@ -97,7 +97,7 @@ export default function ThermalSlider() {
               fontWeight: 700,
               cursor: 'pointer',
               background: sliderPosition === 100 ? 'var(--color-gold)' : 'transparent',
-              color: sliderPosition === 100 ? '#0F172A' : '#94A3B8',
+              color: sliderPosition === 100 ? '#0F172A' : '#CBD5E1',
               transition: 'all 0.2s'
             }}
           >
@@ -236,7 +236,7 @@ export default function ThermalSlider() {
         </div>
       </div>
 
-      <p style={{ color: '#64748B', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
+      <p style={{ color: '#CBD5E1', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
         ⚡ <strong>Included Free:</strong> While other Atlanta inspection firms charge $75–$150 extra for thermal scans or omit them entirely, Foresight includes full FLIR® infrared audits on every full home inspection.
       </p>
     </div>

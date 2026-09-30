@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function BackgroundAudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -8,48 +8,7 @@ export default function BackgroundAudioPlayer() {
   const [isDismissed, setIsDismissed] = useState(false);
   const audioRef = useRef(null);
 
-  const attemptPlay = useCallback(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
 
-    // Check if user explicitly paused during this session
-    if (typeof window !== 'undefined') {
-      const userPaused = sessionStorage.getItem('foresight_bg_audio_paused');
-      if (userPaused === 'true') return;
-    }
-
-    audio.volume = 0.22;
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch(() => {
-          // Autoplay was restricted by browser policy (e.g. Chrome / iOS Safari require gesture).
-          // Listen to the very first user gesture anywhere on the page to start playing immediately.
-          const unlockAndPlay = () => {
-            const stillPaused = sessionStorage.getItem('foresight_bg_audio_paused');
-            if (stillPaused !== 'true' && audio.paused) {
-              audio.volume = 0.22;
-              audio.play()
-                .then(() => setIsPlaying(true))
-                .catch(() => {});
-            }
-            removeInteractionListeners();
-          };
-
-          const interactionEvents = ['click', 'touchstart', 'touchend', 'scroll', 'wheel', 'pointerdown', 'keydown'];
-          const removeInteractionListeners = () => {
-            interactionEvents.forEach(evt => window.removeEventListener(evt, unlockAndPlay));
-          };
-
-          interactionEvents.forEach(evt => {
-            window.addEventListener(evt, unlockAndPlay, { once: true, passive: true });
-          });
-        });
-    }
-  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -132,7 +91,7 @@ export default function BackgroundAudioPlayer() {
       document.removeEventListener('play', handleCapturePlay, true);
       document.removeEventListener('click', handleCaptureClick, true);
     };
-  }, [attemptPlay]);
+  }, []);
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -143,6 +102,9 @@ export default function BackgroundAudioPlayer() {
       setIsPlaying(false);
       sessionStorage.setItem('foresight_bg_audio_paused', 'true');
     } else {
+      if (!audio.src || audio.src === window.location.href) {
+        audio.src = '/audio/foresight-anthem.mp3';
+      }
       audio.volume = 0.22;
       audio.play()
         .then(() => {
@@ -182,7 +144,6 @@ export default function BackgroundAudioPlayer() {
     <>
       <audio
         ref={audioRef}
-        src="/audio/foresight-anthem.mp3"
         preload="none"
         loop
         playsInline

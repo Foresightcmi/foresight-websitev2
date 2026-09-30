@@ -321,7 +321,7 @@ a:hover {
 /* Footer */
 .footer {
   background: var(--color-dark);
-  color: var(--color-gray-mid);
+  color: #CBD5E1;
   padding: 4rem 0 2rem;
   margin-top: 4rem;
 }
@@ -338,8 +338,12 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
+.footer p {
+  color: #CBD5E1;
+}
+
 .footer a {
-  color: var(--color-gray-mid);
+  color: #CBD5E1;
 }
 
 .footer a:hover {
