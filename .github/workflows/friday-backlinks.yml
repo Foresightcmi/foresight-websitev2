@@ -22,14 +22,17 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Scout backlink opportunities
+      - name: Scout backlink & digital PR opportunities
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/scout-backlinks.mjs
+        run: |
+          node scripts/scout-backlinks.mjs
+          node scripts/digital-pr-scout.mjs
+          python scripts/realtor_partner_engine.py
 
       - name: Commit and push
         run: |
           git config user.name "Foresight Backlink Scout"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/backlink-opportunities.json
-          git diff --cached --quiet || (git commit -m "scout: backlink opportunities $(date +%Y-%m-%d) [skip ci]" && git push)
+          git add data/backlink-opportunities.json data/pr-pitches-ready.json data/pr-dispatch-brief.md data/realtor-outreach-campaign.json data/realtor-dispatch-brief.md
+          git diff --cached --quiet || (git commit -m "scout: backlink & digital PR opportunities $(date +%Y-%m-%d) [skip ci]" && git push)
