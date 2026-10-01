@@ -20,5 +20,15 @@
       "error": "please unsubscribe me!"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 3,
+    "title": "Georgia Red Clay Crawlspace Moisture & Subfloor Fungal Decay",
+    "publishedAt": "2026-10-01T19:17:13.936Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations"
   }
 ]

@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-01T19:17:13.883Z",
+    "post_id": 3,
+    "topic": "Severed Trusses in New Construction",
+    "type": "deposit",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
     "timestamp": "2026-10-01T10:19:58.214Z",
     "post_id": 2,
     "topic": "The 45-Minute Solo Inspector Trap",

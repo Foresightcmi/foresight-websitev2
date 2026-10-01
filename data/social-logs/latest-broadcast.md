@@ -1,10 +1,10 @@
-# 📣 Active Multi-Channel Broadcast: Post #2
-**Title:** Concealed Moisture Detection via FLIR® Infrared Thermal Imaging  
-**Topic:** FLIR Thermal Diagnostics  
-**Generated At:** 2026-10-01T10:03:52.173Z  
-**Target Booking Link:** [https://www.fhinspectionsatl.com/quote](https://www.fhinspectionsatl.com/quote)  
-**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/thermal-ceiling.webp](https://www.fhinspectionsatl.com/images/thermal-ceiling.webp)  
-**Webhook Status:** `failed`
+# 📣 Active Multi-Channel Broadcast: Post #3
+**Title:** Georgia Red Clay Crawlspace Moisture & Subfloor Fungal Decay  
+**Topic:** Crawlspace Building Science  
+**Generated At:** 2026-10-01T19:17:13.936Z  
+**Target Booking Link:** [https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations)  
+**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp](https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp)  
+**Webhook Status:** `skipped`
 
 ---
 
@@ -12,27 +12,24 @@
 *Optimized for Local 3-Pack, local municipal entities, and direct phone/online booking.*
 
 ```text
-The ceiling in this Metro Atlanta home looked pristine, freshly painted, and completely dry to the naked eye... until we turned on our FLIR® radiometric thermal camera.
+Why are Georgia crawlspaces notorious for structural decay? Two words: Red Clay.
 
-Concealed behind the drywall beneath the second-story master bathroom was an active, pooling plumbing leak that standard visual inspections would have completely missed.
+Metro Atlanta’s heavy clay soil acts like an underground sponge, trapping thousands of gallons of hydrostatic groundwater right against foundation footings.
 
-If you closed on this property without thermal imaging, you would have inherited thousands in structural subfloor rot and toxic mold remediation behind your walls.
+During our two-inspector audits across Fulton, DeKalb, Cobb, and Gwinnett counties, we frequently uncover:
+• Missing or torn 6-mil vapor barriers allowing ground moisture to saturate floor framing.
+• Relative humidity above 70%—the exact threshold for wood-destroying fungus and mold.
+• Block foundation step-cracking from expansive clay soils.
+• Subterranean termite mud tubes bridging into subfloors.
 
-At Foresight Home Inspections:
-• FLIR® Thermal Infrared scans are included FREE on every full inspection.
-• Two Certified Inspectors on every job.
-• Up to $35,000 in combined warranty and guarantee protection included.
+Every Foresight home inspection includes full sub-structure evaluation, moisture profiling, and thermal imaging.
 
-Hindsight is expensive... Choose Foresight!
-
-Serving Atlanta, Buckhead, Midtown, Sandy Springs, Dunwoody, Alpharetta, and all Metro Atlanta.
-
-Call 678-480-2110 or calculate your instant fee online.
+Call 678-480-2110 or get your instant quote online.
 ```
 
 **GBP Call to Action:** Book Online or Call (678) 480-2110  
-**Link:** https://www.fhinspectionsatl.com/quote  
-**Photo:** Attach `https://www.fhinspectionsatl.com/images/thermal-ceiling.webp`
+**Link:** https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations  
+**Photo:** Attach `https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp`
 
 ---
 
@@ -40,24 +37,24 @@ Call 678-480-2110 or calculate your instant fee online.
 *Optimized for social engagement, visual storytelling, consumer trust, and homebuyer education.*
 
 ```text
-The ceiling in this Metro Atlanta home looked pristine, freshly painted, and completely dry to the naked eye... 💧👀
+Why are Georgia crawlspaces notorious for concealed structural damage? Two words: Red Clay. 🧱
 
-Look what appeared when we powered on our FLIR® high-resolution radiometric infrared camera: an active, concealed plumbing leak pooling behind the drywall beneath the second-floor master bath.
+Metro Atlanta’s high-plasticity clay soil acts like an underground sponge, trapping thousands of gallons of hydrostatic groundwater right against your home’s foundation footings.
 
-If you hired a discount inspector with just a flashlight, you would have closed on this property and inherited thousands of dollars in structural wood rot and toxic mold remediation behind your walls.
+During our inspections across Fulton, DeKalb, Cobb, and Gwinnett, our two-inspector team frequently discovers:
+⚠️ Missing or torn vapor barriers allowing ground moisture to rot subflooring and joists
+⚠️ Relative humidity exceeding 70%—the exact scientific threshold for wood-destroying fungal mycelium bloom
+⚠️ Foundation block step-cracking caused by expanding Georgia clay pressure
+⚠️ Subterranean termite mud tubes bridging directly from clay soil into floor framing
 
-At Foresight Home Inspections:
-✅ FLIR® Thermal Infrared Imaging is included standard on EVERY full inspection at $0 extra charge. We never nickel-and-dime you for the diagnostics that protect your equity.
-✅ Two Certified Inspectors on every job.
-✅ Up to $35,000 in Combined Warranty & Guarantee Protection included ($0 deductible).
+Every Foresight inspection includes full sub-structure crawlspace profiling, digital moisture testing, and thermal scans.
 
 "Hindsight is expensive... Choose Foresight!"
 
-Tag someone buying a home in Georgia right now! 👇
-👉 Calculate your instant quote online: https://www.fhinspectionsatl.com/quote
-📞 Direct CMI Hotline: (678) 480-2110
+Read our full building science guide:
+https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations
 
-#ThermalImaging #FLIR #BuildingScience #AtlantaHomeBuyer #HomeInspectionFail #ForesightHomeInspections
+#CrawlspaceMoisture #GeorgiaClay #BuildingScience #AtlantaHomeInspection #FoundationRepair #ForesightHomeInspections
 ```
 
 ---
@@ -66,24 +63,23 @@ Tag someone buying a home in Georgia right now! 👇
 *Optimized for Real Estate Agents, GAR Contract Due Diligence, Investors, Attorneys, and Building Science Authority.*
 
 ```text
-Cosmetic seller renovations routinely mask major structural water intrusion. A freshly rolled coat of primer and latex paint will hide active drywall moisture from the naked human eye during daylight walkthroughs.
+Building science in the American Southeast is defined by psychrometric moisture loads and soil plasticity. In Metro Atlanta, high-plasticity Georgia red clay retains extensive hydrostatic moisture, generating continuous vapor drive into vented crawlspace cavities.
 
-Case in point: On a recent pre-purchase inspection in Sandy Springs, visual observation showed zero ceiling staining. However, high-resolution FLIR® thermal imaging revealed a pronounced thermal anomaly (delta T: -8.6°F) indicating active moisture migration from an unsealed second-story shower pan into the joist cavity.
+When ambient relative humidity in a crawlspace exceeds 70% with wood moisture content (WMC) above 19%, optimal conditions emerge for wood-destroying fungi (Coniophora puteana) and subterranean termite colonization (Reticulitermes flavipes).
 
-Non-invasive moisture meter testing confirmed 24.2% Wood Moisture Equivalent (WME)—well beyond the 20% scientific threshold for active fungal and wood-destroying mycelium growth.
+During our two-inspector property evaluations, we systematically measure:
+1. Ambient Relative Humidity & Dew Point Differential
+2. Subfloor Framing Wood Moisture Equivalent (WME%)
+3. Foundation Stem-Wall Deflection & Mortar Joint Shear
+4. Vapor Retarder Continuity & Ground Water Management
 
-At Foresight Home Inspections:
-• FLIR® Infrared diagnostics are integrated standard into every full inspection package at no additional fee.
-• Dual-inspector deployment ensures comprehensive verification.
-• Detailed photo documentation provides buyers and real estate attorneys undisputed leverage on the GAR F404 Amendment to Address Defects.
+Providing buyers and institutional investors with empirical moisture profiles prior to closing prevents costly structural beam sistering and encapsulation renegotiations post-closing.
 
-Protect your clients from inheriting six-figure moisture remediation liabilities.
+Read our comprehensive Georgia crawlspace analysis:
+https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations
 
-Explore our interactive thermal diagnostic viewer:
-https://www.fhinspectionsatl.com/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-29
-
-#BuildingScience #MoistureIntrusion #ThermalImaging #GeorgiaRealEstate #PropertyRisk #RiskMitigation
+#BuildingScience #StructuralEngineering #RealEstateInvestment #AtlantaRealEstate #AssetManagement #RiskAnalysis
 ```
 
 ---
-*Next post in rotation:* **Post #3: "Georgia Red Clay Crawlspace Moisture & Subfloor Fungal Decay"**
+*Next post in rotation:* **Post #4: "EPA Radon Zone 1 Warning for North Metro Atlanta"**

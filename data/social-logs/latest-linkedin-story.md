@@ -1,56 +1,54 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #2
+# 🚀 Foresight LinkedIn Growth Engine: Post #3
 
-**Schedule Slot:** Tuesday - Deposit (The Rushed Inspector Enemy) (10:00 AM Weekday Cadence)  
+**Schedule Slot:** Wednesday - Deposit (The New Construction Shortcut Enemy) (10:00 AM Weekday Cadence)  
 **Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
-**Topic:** The 45-Minute Solo Inspector Trap  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg`  
-**Generated At:** 2026-10-01T10:19:58.214Z  
+**Topic:** Severed Trusses in New Construction  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/roof-1.webp`  
+**Generated At:** 2026-10-01T19:17:13.883Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-A solo inspector spent 45 minutes on a 4,000 sq ft home yesterday.
+The site superintendent told my client: 'You don't need an independent inspector.'
 
-He collected his $350 fee and told the buyer, 'Looks great!'
+'The county building inspector already signed off on the framing.'
 
-The buyer called us because something felt off.
-
-Our two-inspecto... [see more]
+My client hired us anyway for a pre-drywall... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-A solo inspector spent 45 minutes on a 4,000 sq ft home yesterday.
+The site superintendent told my client: 'You don't need an independent inspector.'
 
-He collected his $350 fee and told the buyer, 'Looks great!'
+'The county building inspector already signed off on the framing.'
 
-The buyer called us because something felt off.
+My client hired us anyway for a pre-drywall audit.
 
-Our two-inspector team spent 2.5 hours on-site with FLIR thermal and a 4K drone.
+Within 10 minutes, we found three severed load-bearing roof trusses.
 
-We found three unbonded subpanels with double-tapped 50-amp breakers.
+The HVAC contractor had cut right through them to run flex ducting.
 
-The electrical panel was running at 148°F—an active fire hazard.
+The roof was literally sagging under its own weight before the drywall was even hung.
 
-We also found a cracked heat exchanger leaking carbon monoxide.
+The builder had to halt the drywall crew and bring out a structural engineer.
 
-A 45-minute inspection isn't an inspection.
+County inspectors spend an average of 7 minutes on residential job sites.
 
-It is an expensive game of Russian roulette with your family's savings.
+They check compliance; we protect your equity.
 
-Never let someone rush through the biggest purchase of your life.
+Never close on new construction without an independent Certified Master Inspector.
 
-Choose thoroughness over speed.
+Trust, but verify.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-See why 2 Certified Master Inspectors catch what solo operators miss: https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector
+Schedule phased new construction & pre-drywall audits in Atlanta: https://www.fhinspectionsatl.com/services/new-construction-inspection
 ```
 
 ---
