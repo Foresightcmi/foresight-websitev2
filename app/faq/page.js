@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import Link from 'next/link';
 import Script from 'next/script';
 
@@ -18,6 +20,16 @@ export const metadata = {
 };
 
 export default function FAQPage() {
+  let colonyData = null;
+  try {
+    const colonyPath = path.join(process.cwd(), 'data', 'seo-colony-matrix.json');
+    if (fs.existsSync(colonyPath)) {
+      colonyData = JSON.parse(fs.readFileSync(colonyPath, 'utf8'));
+    }
+  } catch (e) {
+    console.error('Error loading colony matrix:', e);
+  }
+
   const faqs = [
     {
       category: 'Pricing & Booking',
@@ -118,6 +130,74 @@ export default function FAQPage() {
           ))}
         </div>
       </section>
+
+      {/* TOPICAL AUTHORITY COLONY HUB (EDWARD STURM METHODOLOGY) */}
+      {colonyData && colonyData.colonies && (
+        <section style={{ backgroundColor: '#f8fafc', padding: '5rem 2rem', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+              <span style={{ backgroundColor: '#eff6ff', color: '#0284c7', border: '1px solid #bfdbfe', padding: '0.35rem 0.85rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                InterNACHI CMI Topical Authority Directory
+              </span>
+              <h2 style={{ fontSize: '2.4rem', marginTop: '1rem', marginBottom: '0.75rem', fontFamily: 'var(--font-heading)', color: '#0f172a' }}>
+                🏰 Deep-Dive Inspection Authority Colonies
+              </h2>
+              <p style={{ fontSize: '1.1rem', color: '#64748b', maxWidth: '750px', margin: '0 auto', lineHeight: '1.6' }}>
+                Detailed forensic answers to critical Georgia contract, building science, and environmental questions. Each guide funnels directly into actionable due diligence tools.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(440px, 1fr))', gap: '2rem' }}>
+              {colonyData.colonies.map((colony) => {
+                const colonyQuestions = colonyData.questions.filter(q => q.colonyId === colony.id);
+                return (
+                  <div key={colony.id} style={{ backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)' }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                        <span style={{ backgroundColor: '#f1f5f9', color: '#0369a1', fontSize: '0.75rem', fontWeight: 700, padding: '0.2rem 0.6rem', borderRadius: '4px', textTransform: 'uppercase' }}>
+                          {colony.category}
+                        </span>
+                        <span style={{ color: '#22c55e', fontSize: '0.75rem', fontWeight: 700 }}>
+                          {colonyQuestions.length} Guides
+                        </span>
+                      </div>
+                      <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.5rem', fontFamily: 'var(--font-heading)' }}>
+                        {colony.name}
+                      </h3>
+                      <p style={{ color: '#64748b', fontSize: '0.875rem', lineHeight: '1.5', margin: '0 0 1.25rem' }}>
+                        {colony.description}
+                      </p>
+
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginBottom: '1.5rem' }}>
+                        {colonyQuestions.map((q) => (
+                          <Link 
+                            key={q.slug} 
+                            href={`/faq/${q.slug}`}
+                            style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: '#334155', textDecoration: 'none', fontSize: '0.9rem', lineHeight: '1.4', padding: '0.4rem 0.5rem', borderRadius: '6px', backgroundColor: '#f8fafc', transition: 'background-color 0.15s ease' }}
+                          >
+                            <span style={{ color: '#0284c7', fontWeight: 700 }}>•</span>
+                            <span style={{ fontWeight: 600 }}>{q.question}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '1rem' }}>
+                      <Link 
+                        href={colony.primaryMoneyPage.url}
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#0284c7', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none' }}
+                      >
+                        <span>Target Solution: {colony.primaryMoneyPage.name}</span>
+                        <span>→</span>
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Bottom CTA */}
       <section style={{ backgroundColor: 'var(--color-dark)', color: 'var(--color-white)', padding: '5rem 2rem', textAlign: 'center' }}>

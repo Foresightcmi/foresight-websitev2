@@ -30,6 +30,8 @@ export default function DashboardPage() {
   const linkedInStoriesFilePath = path.join(process.cwd(), 'data', 'linkedin-tobi-engine.json');
   const linkedInProfileFilePath = path.join(process.cwd(), 'data', 'linkedin-profile-blueprint.json');
   const socialFunnelFilePath = path.join(process.cwd(), 'data', 'social-funnel-rules.json');
+  const colonyMatrixFilePath = path.join(process.cwd(), 'data', 'seo-colony-matrix.json');
+  const colonyAuditFilePath = path.join(process.cwd(), 'data', 'seo-colony-audit.json');
 
   let posts = [];
   let cities = [];
@@ -48,6 +50,8 @@ export default function DashboardPage() {
   let linkedInData = [];
   let linkedInProfile = null;
   let socialFunnelRules = [];
+  let colonyMatrixData = null;
+  let colonyAuditData = null;
 
   try {
     posts = JSON.parse(fs.readFileSync(postsFilePath, 'utf8'));
@@ -87,6 +91,12 @@ export default function DashboardPage() {
     if (fs.existsSync(socialFunnelFilePath)) {
       const parsedFunnel = JSON.parse(fs.readFileSync(socialFunnelFilePath, 'utf8'));
       socialFunnelRules = parsedFunnel.rules || [];
+    }
+    if (fs.existsSync(colonyMatrixFilePath)) {
+      colonyMatrixData = JSON.parse(fs.readFileSync(colonyMatrixFilePath, 'utf8'));
+    }
+    if (fs.existsSync(colonyAuditFilePath)) {
+      colonyAuditData = JSON.parse(fs.readFileSync(colonyAuditFilePath, 'utf8'));
     }
   } catch (e) {
     console.error('Error loading data files for dashboard:', e);
@@ -229,6 +239,8 @@ export default function DashboardPage() {
       linkedInData={linkedInData}
       linkedInProfile={linkedInProfile}
       socialFunnelRules={socialFunnelRules}
+      colonyMatrixData={colonyMatrixData}
+      colonyAuditData={colonyAuditData}
     />
   );
 }

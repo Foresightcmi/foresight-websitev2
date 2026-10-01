@@ -1,0 +1,322 @@
+{
+  "timestamp": "2026-10-01T12:49:46.761Z",
+  "totalColonies": 4,
+  "totalFeederQuestions": 20,
+  "tagPlacementPassRate": "100.0%",
+  "totalTargetMoneyPages": 11,
+  "totalPipelinePotential": 8915,
+  "moneyPages": [
+    {
+      "url": "/realtors",
+      "targetName": "1-Click GAR F404 Due Diligence Repair Clause Generator",
+      "feederCount": 3,
+      "feeders": [
+        "can-seller-refuse-repairs-georgia-due-diligence",
+        "who-is-responsible-for-tree-roots-in-sewer-line-georgia",
+        "what-is-the-create-request-list-feature-in-homegauge"
+      ],
+      "dealValue": 750,
+      "estimatedBatchValue": 2250,
+      "authorityScore": 100
+    },
+    {
+      "url": "/due-diligence",
+      "targetName": "Georgia Due Diligence Defense System",
+      "feederCount": 1,
+      "feeders": [
+        "how-many-days-is-due-diligence-period-in-georgia"
+      ],
+      "dealValue": 0,
+      "estimatedBatchValue": 0,
+      "authorityScore": 70
+    },
+    {
+      "url": "/defects",
+      "targetName": "Atlanta Defect Library & Diagnostic Guides",
+      "feederCount": 3,
+      "feeders": [
+        "what-defects-fail-a-home-inspection-in-georgia",
+        "why-does-georgia-red-clay-cause-foundation-settling",
+        "is-a-horizontal-foundation-crack-serious-in-georgia"
+      ],
+      "dealValue": 0,
+      "estimatedBatchValue": 0,
+      "authorityScore": 100
+    },
+    {
+      "url": "/services/buyer-inspection",
+      "targetName": "Comprehensive Buyer Inspection with Thermal Scan",
+      "feederCount": 2,
+      "feeders": [
+        "does-seller-have-to-disclose-prior-inspection-report-georgia",
+        "can-sewer-scope-inspection-be-done-on-slab-foundation"
+      ],
+      "dealValue": 0,
+      "estimatedBatchValue": 0,
+      "authorityScore": 85
+    },
+    {
+      "url": "/quote",
+      "targetName": "60-Second Transparent Fee Calculator",
+      "feederCount": 1,
+      "feeders": [
+        "who-pays-for-home-inspection-in-georgia"
+      ],
+      "dealValue": 0,
+      "estimatedBatchValue": 0,
+      "authorityScore": 70
+    },
+    {
+      "url": "/services/radon-testing",
+      "targetName": "Continuous 48-Hour Electronic Radon Diagnostic Testing",
+      "feederCount": 2,
+      "feeders": [
+        "is-radon-common-in-metro-atlanta-homes",
+        "what-radon-level-requires-mitigation-in-georgia"
+      ],
+      "dealValue": 595,
+      "estimatedBatchValue": 1190,
+      "authorityScore": 85
+    },
+    {
+      "url": "/compare/two-inspector-team-vs-single-inspector",
+      "targetName": "Estate Master Luxury Due Diligence Tier",
+      "feederCount": 3,
+      "feeders": [
+        "how-long-does-home-inspection-take-for-5000-sq-ft-house",
+        "why-hire-two-home-inspectors-instead-of-one",
+        "is-thermal-imaging-necessary-during-a-home-inspection"
+      ],
+      "dealValue": 1650,
+      "estimatedBatchValue": 4950,
+      "authorityScore": 100
+    },
+    {
+      "url": "/compare/11-month-warranty-vs-builder-walkthrough",
+      "targetName": "11-Month Builder Warranty Forensic Audit",
+      "feederCount": 2,
+      "feeders": [
+        "do-new-construction-homes-in-georgia-need-home-inspection",
+        "what-is-an-11-month-builder-warranty-inspection"
+      ],
+      "dealValue": 0,
+      "estimatedBatchValue": 0,
+      "authorityScore": 85
+    },
+    {
+      "url": "/about",
+      "targetName": "Foresight Certified Master Inspector & Warranty Credentials",
+      "feederCount": 1,
+      "feeders": [
+        "is-a-home-inspector-liable-for-missed-defects-in-georgia"
+      ],
+      "dealValue": 0,
+      "estimatedBatchValue": 0,
+      "authorityScore": 70
+    },
+    {
+      "url": "/defects/federal-pacific-zinsco-panel-inspection",
+      "targetName": "Federal Pacific & Zinsco Panel Safety Guide",
+      "feederCount": 1,
+      "feeders": [
+        "can-you-sell-a-house-with-a-federal-pacific-panel-in-georgia"
+      ],
+      "dealValue": 525,
+      "estimatedBatchValue": 525,
+      "authorityScore": 70
+    },
+    {
+      "url": "/defects/stucco-eifs-moisture-inspection",
+      "targetName": "Atlanta Stucco & EIFS Moisture Diagnostic Guide",
+      "feederCount": 1,
+      "feeders": [
+        "how-to-tell-difference-between-hardcoat-stucco-and-eifs"
+      ],
+      "dealValue": 0,
+      "estimatedBatchValue": 0,
+      "authorityScore": 70
+    }
+  ],
+  "questionAudits": [
+    {
+      "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+      "question": "Can a Seller Refuse to Make Repairs During Georgia Due Diligence?",
+      "wordCount": 85,
+      "moneyPageUrl": "/realtors",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "how-many-days-is-due-diligence-period-in-georgia",
+      "question": "How Many Days Is the Typical Due Diligence Period in Georgia?",
+      "wordCount": 66,
+      "moneyPageUrl": "/due-diligence",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "what-defects-fail-a-home-inspection-in-georgia",
+      "question": "What Defects Fail a Home Inspection in Georgia?",
+      "wordCount": 74,
+      "moneyPageUrl": "/defects",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "does-seller-have-to-disclose-prior-inspection-report-georgia",
+      "question": "Does a Seller Have to Disclose a Prior Home Inspection Report in Georgia?",
+      "wordCount": 75,
+      "moneyPageUrl": "/services/buyer-inspection",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "who-pays-for-home-inspection-in-georgia",
+      "question": "Who Pays for the Home Inspection in Georgia?",
+      "wordCount": 77,
+      "moneyPageUrl": "/quote",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "is-radon-common-in-metro-atlanta-homes",
+      "question": "Is Radon Common in Metro Atlanta Homes?",
+      "wordCount": 75,
+      "moneyPageUrl": "/services/radon-testing",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "what-radon-level-requires-mitigation-in-georgia",
+      "question": "What Radon Level Requires Active Mitigation in Georgia?",
+      "wordCount": 72,
+      "moneyPageUrl": "/services/radon-testing",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "can-sewer-scope-inspection-be-done-on-slab-foundation",
+      "question": "Can a Sewer Scope Inspection Be Done on a Slab Foundation?",
+      "wordCount": 84,
+      "moneyPageUrl": "/services/buyer-inspection",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "who-is-responsible-for-tree-roots-in-sewer-line-georgia",
+      "question": "Who Is Responsible for Tree Roots in a Sewer Line in Georgia?",
+      "wordCount": 81,
+      "moneyPageUrl": "/realtors",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "why-does-georgia-red-clay-cause-foundation-settling",
+      "question": "Why Does Georgia Red Clay Cause Foundation Settling?",
+      "wordCount": 65,
+      "moneyPageUrl": "/defects",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "how-long-does-home-inspection-take-for-5000-sq-ft-house",
+      "question": "How Long Does a Home Inspection Take for a 5,000 Sq Ft House?",
+      "wordCount": 80,
+      "moneyPageUrl": "/compare/two-inspector-team-vs-single-inspector",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "do-new-construction-homes-in-georgia-need-home-inspection",
+      "question": "Do New Construction Homes in Georgia Really Need an Inspection?",
+      "wordCount": 71,
+      "moneyPageUrl": "/compare/11-month-warranty-vs-builder-walkthrough",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "what-is-an-11-month-builder-warranty-inspection",
+      "question": "What Is an 11-Month Builder Warranty Inspection in Georgia?",
+      "wordCount": 80,
+      "moneyPageUrl": "/compare/11-month-warranty-vs-builder-walkthrough",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "why-hire-two-home-inspectors-instead-of-one",
+      "question": "Why Hire Two Home Inspectors Instead of One Solo Inspector?",
+      "wordCount": 76,
+      "moneyPageUrl": "/compare/two-inspector-team-vs-single-inspector",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "is-a-home-inspector-liable-for-missed-defects-in-georgia",
+      "question": "Is a Home Inspector Legally Liable for Missed Defects in Georgia?",
+      "wordCount": 84,
+      "moneyPageUrl": "/about",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "can-you-sell-a-house-with-a-federal-pacific-panel-in-georgia",
+      "question": "Can You Sell a House with a Federal Pacific Electrical Panel in Georgia?",
+      "wordCount": 88,
+      "moneyPageUrl": "/defects/federal-pacific-zinsco-panel-inspection",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "is-a-horizontal-foundation-crack-serious-in-georgia",
+      "question": "Is a Horizontal Foundation Crack Serious in Georgia?",
+      "wordCount": 75,
+      "moneyPageUrl": "/defects",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "how-to-tell-difference-between-hardcoat-stucco-and-eifs",
+      "question": "How to Tell the Difference Between Hardcoat Stucco and Synthetic EIFS in Georgia?",
+      "wordCount": 85,
+      "moneyPageUrl": "/defects/stucco-eifs-moisture-inspection",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "is-thermal-imaging-necessary-during-a-home-inspection",
+      "question": "Is FLIR Thermal Imaging Really Necessary During a Home Inspection?",
+      "wordCount": 81,
+      "moneyPageUrl": "/compare/two-inspector-team-vs-single-inspector",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    },
+    {
+      "slug": "what-is-the-create-request-list-feature-in-homegauge",
+      "question": "What Is the Create Request List (CRL) Feature in HomeGauge Reports?",
+      "wordCount": 84,
+      "moneyPageUrl": "/realtors",
+      "topicalBridgeCount": 2,
+      "passed": true,
+      "issues": []
+    }
+  ]
+}
