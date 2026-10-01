@@ -72,10 +72,15 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const hasGreetedRef = useRef(false);
   const callStateRef = useRef(callState);
   const handleStartListeningRef = useRef(null);
+  const interimUserTextRef = useRef('');
 
   useEffect(() => {
     callStateRef.current = callState;
   }, [callState]);
+
+  useEffect(() => {
+    interimUserTextRef.current = interimUserText;
+  }, [interimUserText]);
 
   useEffect(() => {
     isHandsFreeRef.current = isHandsFree;
@@ -1242,6 +1247,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
               isGreetingPlayingRef.current = false;
               setCallState('listening');
+              if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
+                handleStartListeningRef.current();
+              }
             });
           }
         }, 4500);
@@ -1284,18 +1292,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     if (callState === 'speaking') {
       haltSpeech();
       isInterruptedRef.current = true;
-      setCallState('listening');
+      handleStartListening();
     } else if (callState === 'listening') {
-      if (engineMode === 'live') {
-        setCallState('idle');
-      } else {
-        handleStopListening();
-      }
+      handleStopListening();
     } else {
-      setCallState('listening');
-      if (engineMode !== 'live') {
-        handleStartListening();
-      }
+      handleStartListening();
     }
   };
 
@@ -1306,6 +1307,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     setCallState('listening');
     setMicError(null);
     setInterimUserText('');
+    interimUserTextRef.current = '';
 
     if (audioInputCtxRef.current && audioInputCtxRef.current.state === 'suspended') {
       try { audioInputCtxRef.current.resume(); } catch (_) {}
@@ -1316,13 +1318,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       try { window.navigator.vibrate(40); } catch (_) {}
     }
 
-    // In Gemini Live mode, microphone streams raw 16kHz PCM continuously over WebSocket
-    // Browser SpeechRecognition is strictly for Neural fallback mode
-    if (engineMode === 'live') {
+    // Only bypass SpeechRecognition if Gemini Live WebSocket is actively connected and OPEN
+    if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
       return;
     }
 
-    // 3. Browser speech recognition check (Neural fallback mode only)
+    // 3. Browser speech recognition check
     const SpeechRecognition = typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition);
     if (!SpeechRecognition) {
       setMicError('Speech recognition is not available in this browser. Please type below or tap any question!');
@@ -1337,7 +1338,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       // Fresh instance every time ensures zero state-locking
       const recognition = new SpeechRecognition();
-      recognition.continuous = false;
+      recognition.continuous = true;
       recognition.interimResults = true;
       recognition.lang = 'en-US';
 
@@ -1347,33 +1348,49 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       recognition.onresult = (event) => {
         let currentTranscript = '';
-        for (let i = event.resultIndex; i < event.results.length; i++) {
+        let hasFinalResult = false;
+        for (let i = 0; i < event.results.length; i++) {
           currentTranscript += event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            hasFinalResult = true;
+          }
         }
         const cleanInterim = currentTranscript.trim();
         setInterimUserText(cleanInterim);
+        interimUserTextRef.current = cleanInterim;
         extractEntitiesFromText(cleanInterim);
 
         if (silenceTimerRef.current) {
           clearTimeout(silenceTimerRef.current);
         }
 
-        if (event.results[0].isFinal) {
-          const finalSpeech = cleanInterim;
-          if (finalSpeech) {
-            try { recognition.stop(); } catch (_) {}
-            extractEntitiesFromText(finalSpeech);
-            handleSendQuery(finalSpeech);
-          }
-        } else if (cleanInterim.length > 2) {
-          // Fast conversational silence detection: submit after 850ms of quiet
+        if (hasFinalResult && cleanInterim.length > 2) {
           silenceTimerRef.current = setTimeout(() => {
             if (callStateRef.current === 'listening') {
-              try { recognition.stop(); } catch (_) {}
-              extractEntitiesFromText(cleanInterim);
-              handleSendQuery(cleanInterim);
+              const textToSend = interimUserTextRef.current || cleanInterim;
+              if (textToSend && textToSend.trim().length > 1) {
+                try { recognition.stop(); } catch (_) {}
+                interimUserTextRef.current = '';
+                setInterimUserText('');
+                extractEntitiesFromText(textToSend);
+                handleSendQuery(textToSend);
+              }
             }
-          }, 850);
+          }, 750);
+        } else if (cleanInterim.length > 2) {
+          // Fast conversational silence detection: submit after 950ms of quiet on interim speech
+          silenceTimerRef.current = setTimeout(() => {
+            if (callStateRef.current === 'listening') {
+              const textToSend = interimUserTextRef.current || cleanInterim;
+              if (textToSend && textToSend.trim().length > 1) {
+                try { recognition.stop(); } catch (_) {}
+                interimUserTextRef.current = '';
+                setInterimUserText('');
+                extractEntitiesFromText(textToSend);
+                handleSendQuery(textToSend);
+              }
+            }
+          }, 950);
         }
       };
 
@@ -1381,14 +1398,28 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         console.warn('Speech recognition event error:', event.error);
         if (event.error === 'not-allowed') {
           setMicError('Microphone access blocked. Click the lock icon in your browser address bar to allow mic access, or type your question below.');
+          setCallState('idle');
         } else if (event.error !== 'no-speech') {
           setMicError(`Microphone note: ${event.error}. You can also type or tap any question.`);
         }
-        setCallState('idle');
       };
 
       recognition.onend = () => {
-        setCallState(prev => (prev === 'listening' ? 'idle' : prev));
+        const pending = interimUserTextRef.current ? interimUserTextRef.current.trim() : '';
+        if (pending && pending.length > 1 && callStateRef.current === 'listening') {
+          interimUserTextRef.current = '';
+          setInterimUserText('');
+          handleSendQuery(pending);
+        } else if (isOpenRef.current && isHandsFreeRef.current && callStateRef.current === 'listening') {
+          // Keep hands-free listening alive if browser ended due to brief silence
+          try {
+            recognition.start();
+          } catch (_) {
+            setCallState('idle');
+          }
+        } else {
+          setCallState(prev => (prev === 'listening' ? 'idle' : prev));
+        }
       };
 
       recognitionRef.current = recognition;
@@ -1403,11 +1434,14 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   // Stop speech recognition (sends current speech immediately if spoken)
   const handleStopListening = () => {
     if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    const pendingText = interimUserTextRef.current || (interimUserText && interimUserText.trim());
     if (recognitionRef.current) {
       try { recognitionRef.current.stop(); } catch (_) {}
     }
-    if (interimUserText && interimUserText.trim().length > 1) {
-      handleSendQuery(interimUserText.trim());
+    if (pendingText && pendingText.trim().length > 1) {
+      interimUserTextRef.current = '';
+      setInterimUserText('');
+      handleSendQuery(pendingText.trim());
     } else {
       setCallState('idle');
     }
