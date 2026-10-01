@@ -1,0 +1,56 @@
+{
+  "system": "Marketing Against the Grain / Sabrina Ramonov Social DM Automation Engine",
+  "version": "1.0.0",
+  "rules": [
+    {
+      "keyword": "CLAUSE",
+      "targetAudience": "Georgia Real Estate Agents & Brokers",
+      "leadMagnetName": "1-Click GAR F404 Due Diligence Repair Clause Generator",
+      "trackedUrl": "https://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool",
+      "dmScript": "Hey {firstName}! Thanks for commenting. Here is your free access to our 1-Click GAR F404 Repair Clause Generator:\n\n👉 https://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool\n\nYou can generate InterNACHI-backed defect repair clauses and paste them straight into your contract amendments.\n\nQuick question: Are you currently working with a buyer under contract in Metro Atlanta right now?",
+      "followUpQuestion": "Are you currently working with a buyer under contract in Metro Atlanta right now?",
+      "estimatedDealValue": 750,
+      "tag": "Realtor VIP Lead"
+    },
+    {
+      "keyword": "RADON",
+      "targetAudience": "North Metro Atlanta Homebuyers & Homeowners",
+      "leadMagnetName": "North Georgia EPA Radon Zone 1 Risk Dossier",
+      "trackedUrl": "https://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier",
+      "dmScript": "Hey {firstName}! Here is the official EPA Radon Zone 1 risk dossier for Fulton, Cobb, Gwinnett, and Cherokee counties:\n\n👉 https://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier\n\nIt covers continuous 48-hour electronic testing standards and when a seller must credit active mitigation ($1,500+ value).\n\nQuick question: Is the home you're evaluating built on a slab, crawlspace, or basement?",
+      "followUpQuestion": "Is the home you're evaluating built on a slab, crawlspace, or basement?",
+      "estimatedDealValue": 595,
+      "tag": "Radon Diagnostic Lead"
+    },
+    {
+      "keyword": "QUOTE",
+      "targetAudience": "Active Home Shoppers & Relocating Buyers",
+      "leadMagnetName": "60-Second Instant Fee Calculator & Quote Locker",
+      "trackedUrl": "https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote",
+      "dmScript": "Hey {firstName}! Here is our 60-second instant fee calculator where you can view 100% transparent pricing based on square footage:\n\n👉 https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote\n\nEvery full inspection includes Two Certified Inspectors, FLIR thermal imaging, and 4K aerial drone scans standard.\n\nWhat city or county in Georgia is the property located in?",
+      "followUpQuestion": "What city or county in Georgia is the property located in?",
+      "estimatedDealValue": 525,
+      "tag": "Instant Quote Lead"
+    },
+    {
+      "keyword": "ESTATE",
+      "targetAudience": "Luxury & High-Net-Worth Buyers ($1M+ Acquisitions)",
+      "leadMagnetName": "Estate Master Luxury Due Diligence Briefing",
+      "trackedUrl": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector?utm_source=social_dm&utm_medium=comment&utm_campaign=estate_master",
+      "dmScript": "Hey {firstName}! Here is the executive breakdown of our First-Class Estate Master Due Diligence Tier:\n\n👉 https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector?utm_source=social_dm&utm_medium=comment&utm_campaign=estate_master\n\nBuilt specifically for $1M+ estates with multiple mechanical systems, slate roofs, and extensive foundations. Includes two CMI inspectors, full thermal envelope profiling, 4K drone mapping, sewer scope video, and an attorney prep session.\n\nWhat is the approximate square footage and age of the estate?",
+      "followUpQuestion": "What is the approximate square footage and age of the estate?",
+      "estimatedDealValue": 1650,
+      "tag": "Luxury Estate Lead"
+    },
+    {
+      "keyword": "CHECKLIST",
+      "targetAudience": "First-Time Homebuyers & Property Investors",
+      "leadMagnetName": "1,600-Point InterNACHI Home Inspection Checklist",
+      "trackedUrl": "https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist",
+      "dmScript": "Hey {firstName}! Here is the complete 1,600-point InterNACHI defect checklist we use on our dual-inspector audits:\n\n👉 https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist\n\nYou can use this to spot red flags on foundation settling, electrical panels, and attic ventilation during your initial walkthroughs.\n\nWhen is your scheduled closing or due diligence deadline?",
+      "followUpQuestion": "When is your scheduled closing or due diligence deadline?",
+      "estimatedDealValue": 475,
+      "tag": "Buyer Checklist Lead"
+    }
+  ]
+}

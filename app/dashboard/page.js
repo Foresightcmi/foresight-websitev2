@@ -29,6 +29,7 @@ export default function DashboardPage() {
   const serpFilePath = path.join(process.cwd(), 'data', 'serp-simulation.json');
   const linkedInStoriesFilePath = path.join(process.cwd(), 'data', 'linkedin-tobi-engine.json');
   const linkedInProfileFilePath = path.join(process.cwd(), 'data', 'linkedin-profile-blueprint.json');
+  const socialFunnelFilePath = path.join(process.cwd(), 'data', 'social-funnel-rules.json');
 
   let posts = [];
   let cities = [];
@@ -46,6 +47,7 @@ export default function DashboardPage() {
   let serpData = null;
   let linkedInData = [];
   let linkedInProfile = null;
+  let socialFunnelRules = [];
 
   try {
     posts = JSON.parse(fs.readFileSync(postsFilePath, 'utf8'));
@@ -81,6 +83,10 @@ export default function DashboardPage() {
     }
     if (fs.existsSync(linkedInProfileFilePath)) {
       linkedInProfile = JSON.parse(fs.readFileSync(linkedInProfileFilePath, 'utf8'));
+    }
+    if (fs.existsSync(socialFunnelFilePath)) {
+      const parsedFunnel = JSON.parse(fs.readFileSync(socialFunnelFilePath, 'utf8'));
+      socialFunnelRules = parsedFunnel.rules || [];
     }
   } catch (e) {
     console.error('Error loading data files for dashboard:', e);
@@ -222,6 +228,7 @@ export default function DashboardPage() {
       serpData={serpData}
       linkedInData={linkedInData}
       linkedInProfile={linkedInProfile}
+      socialFunnelRules={socialFunnelRules}
     />
   );
 }

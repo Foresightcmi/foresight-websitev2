@@ -16,7 +16,8 @@
     "seo:audit": "node scripts/rankmath-audit-engine.mjs",
     "seo:serp": "node scripts/serp-preview-simulator.mjs",
     "linkedin:post": "node scripts/linkedin-content-engine.mjs",
-    "linkedin:dispatch": "node scripts/linkedin-content-engine.mjs --dispatch"
+    "linkedin:dispatch": "node scripts/linkedin-content-engine.mjs --dispatch",
+    "funnel:dispatch": "node scripts/social-funnel-dispatcher.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

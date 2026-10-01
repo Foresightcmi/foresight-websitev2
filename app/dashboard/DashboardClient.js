@@ -13,7 +13,8 @@ export default function DashboardClient({
   rankMathData = null,
   serpData = null,
   linkedInData = [],
-  linkedInProfile = null
+  linkedInProfile = null,
+  socialFunnelRules = []
 }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pinInput, setPinInput] = useState('');
@@ -1115,7 +1116,8 @@ export default function DashboardClient({
                   {[
                     { id: 'queue', label: `📅 20-Day Story Queue (${linkedInData?.length || 10})` },
                     { id: 'profile', label: '👤 Profile Landing Page' },
-                    { id: 'cheatsheet', label: '📊 Dwell-Time Cheat Sheets' }
+                    { id: 'cheatsheet', label: '📊 Dwell-Time Cheat Sheets' },
+                    { id: 'funnel', label: `⚡ Comment-to-DM Funnel (${socialFunnelRules?.length || 5})` }
                   ].map(st => (
                     <button
                       key={st.id}
@@ -1440,6 +1442,187 @@ export default function DashboardClient({
                   </div>
                 </div>
 
+              </div>
+            )}
+
+            {/* SUB-TAB 4: COMMENT-TO-DM FUNNELS (MATG FRAMEWORK) */}
+            {linkedInSubTab === 'funnel' && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {/* Executive Overview Card */}
+                <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.5rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
+                    <div>
+                      <h4 style={{ fontSize: '1.2rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
+                        ⚡ Automated Comment-to-DM Lead Funnels (MATG / Sabrina Ramonov Framework)
+                      </h4>
+                      <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.875rem', maxWidth: '850px' }}>
+                        Public posts provide top-of-funnel reach; private DMs close high-ticket inspections. When followers comment a trigger keyword, deliver high-value assets with UTM tags and an immediate qualification question.
+                      </p>
+                    </div>
+                    <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.4)', padding: '0.35rem 0.85rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 700 }}>
+                      $120K/yr Social Funnel Architecture
+                    </span>
+                  </div>
+
+                  {/* 4-Step Process Architecture */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                    <div style={{ background: '#0f172a', padding: '0.85rem', borderRadius: '6px', border: '1px solid #334155' }}>
+                      <span style={{ color: '#38bdf8', fontSize: '0.75rem', fontWeight: 700 }}>1. The Viral Trigger CTA</span>
+                      <p style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: '0.25rem 0 0' }}>End post with: "Comment [KEYWORD] below and I'll send you our free [Lead Magnet]."</p>
+                    </div>
+                    <div style={{ background: '#0f172a', padding: '0.85rem', borderRadius: '6px', border: '1px solid #334155' }}>
+                      <span style={{ color: '#4ade80', fontSize: '0.75rem', fontWeight: 700 }}>2. Algorithmic Boost</span>
+                      <p style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: '0.25rem 0 0' }}>LinkedIn rewards high-velocity comment threads with 3x–5x more 2nd-degree feed impressions.</p>
+                    </div>
+                    <div style={{ background: '#0f172a', padding: '0.85rem', borderRadius: '6px', border: '1px solid #334155' }}>
+                      <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 700 }}>3. 1-on-1 DM Fulfillment</span>
+                      <p style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: '0.25rem 0 0' }}>Send personalized DM with UTM-tagged link + zero friction access to the asset.</p>
+                    </div>
+                    <div style={{ background: '#0f172a', padding: '0.85rem', borderRadius: '6px', border: '1px solid #334155' }}>
+                      <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 700 }}>4. Qualifying Hand-off</span>
+                      <p style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: '0.25rem 0 0' }}>Ask closing question (contract status, house age, county) to transition into an inspection booking.</p>
+                    </div>
+                  </div>
+
+                  {/* Funnel Trigger Cards */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', gap: '1.25rem' }}>
+                    {(socialFunnelRules && socialFunnelRules.length > 0 ? socialFunnelRules : [
+                      {
+                        keyword: 'CLAUSE',
+                        targetAudience: 'Georgia Real Estate Agents & Brokers',
+                        leadMagnetName: '1-Click GAR F404 Due Diligence Repair Clause Generator',
+                        trackedUrl: 'https://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool',
+                        dmScript: 'Hey {firstName}! Thanks for commenting. Here is your free access to our 1-Click GAR F404 Repair Clause Generator:\n\n👉 https://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool\n\nYou can generate InterNACHI-backed defect repair clauses and paste them straight into your contract amendments.\n\nQuick question: Are you currently working with a buyer under contract in Metro Atlanta right now?',
+                        followUpQuestion: 'Are you currently working with a buyer under contract in Metro Atlanta right now?',
+                        estimatedDealValue: 750,
+                        tag: 'Realtor VIP Lead'
+                      },
+                      {
+                        keyword: 'RADON',
+                        targetAudience: 'North Metro Atlanta Homebuyers & Homeowners',
+                        leadMagnetName: 'North Georgia EPA Radon Zone 1 Risk Dossier',
+                        trackedUrl: 'https://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier',
+                        dmScript: 'Hey {firstName}! Here is the official EPA Radon Zone 1 risk dossier for Fulton, Cobb, Gwinnett, and Cherokee counties:\n\n👉 https://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier\n\nIt covers continuous 48-hour electronic testing standards and when a seller must credit active mitigation ($1,500+ value).\n\nQuick question: Is the home you\'re evaluating built on a slab, crawlspace, or basement?',
+                        followUpQuestion: 'Is the home you\'re evaluating built on a slab, crawlspace, or basement?',
+                        estimatedDealValue: 595,
+                        tag: 'Radon Diagnostic Lead'
+                      },
+                      {
+                        keyword: 'QUOTE',
+                        targetAudience: 'Active Home Shoppers & Relocating Buyers',
+                        leadMagnetName: '60-Second Instant Fee Calculator & Quote Locker',
+                        trackedUrl: 'https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote',
+                        dmScript: 'Hey {firstName}! Here is our 60-second instant fee calculator where you can view 100% transparent pricing based on square footage:\n\n👉 https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote\n\nEvery full inspection includes Two Certified Inspectors, FLIR thermal imaging, and 4K aerial drone scans standard.\n\nWhat city or county in Georgia is the property located in?',
+                        followUpQuestion: 'What city or county in Georgia is the property located in?',
+                        estimatedDealValue: 525,
+                        tag: 'Instant Quote Lead'
+                      },
+                      {
+                        keyword: 'ESTATE',
+                        targetAudience: 'Luxury & High-Net-Worth Buyers ($1M+ Acquisitions)',
+                        leadMagnetName: 'Estate Master Luxury Due Diligence Briefing',
+                        trackedUrl: 'https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector?utm_source=social_dm&utm_medium=comment&utm_campaign=estate_master',
+                        dmScript: 'Hey {firstName}! Here is the executive breakdown of our First-Class Estate Master Due Diligence Tier:\n\n👉 https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector?utm_source=social_dm&utm_medium=comment&utm_campaign=estate_master\n\nBuilt specifically for $1M+ estates with multiple mechanical systems, slate roofs, and extensive foundations. Includes two CMI inspectors, full thermal envelope profiling, 4K drone mapping, sewer scope video, and an attorney prep session.\n\nWhat is the approximate square footage and age of the estate?',
+                        followUpQuestion: 'What is the approximate square footage and age of the estate?',
+                        estimatedDealValue: 1650,
+                        tag: 'Luxury Estate Lead'
+                      },
+                      {
+                        keyword: 'CHECKLIST',
+                        targetAudience: 'First-Time Homebuyers & Property Investors',
+                        leadMagnetName: '1,600-Point InterNACHI Home Inspection Checklist',
+                        trackedUrl: 'https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist',
+                        dmScript: 'Hey {firstName}! Here is the complete 1,600-point InterNACHI defect checklist we use on our dual-inspector audits:\n\n👉 https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist\n\nYou can use this to spot red flags on foundation settling, electrical panels, and attic ventilation during your initial walkthroughs.\n\nWhen is your scheduled closing or due diligence deadline?',
+                        followUpQuestion: 'When is your scheduled closing or due diligence deadline?',
+                        estimatedDealValue: 475,
+                        tag: 'Buyer Checklist Lead'
+                      }
+                    ]).map((rule, idx) => (
+                      <div key={idx} style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                        {/* Header Badge Row */}
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span style={{ background: '#22c55e', color: '#052e16', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.85rem', fontWeight: 900, letterSpacing: '0.05em' }}>
+                              Comment "{rule.keyword}"
+                            </span>
+                            <span style={{ color: '#38bdf8', fontSize: '0.75rem', fontWeight: 600 }}>
+                              {rule.tag}
+                            </span>
+                          </div>
+                          <span style={{ color: '#4ade80', fontSize: '0.85rem', fontWeight: 800 }}>
+                            Est. Deal: ${rule.estimatedDealValue}
+                          </span>
+                        </div>
+
+                        {/* Target & Lead Magnet */}
+                        <div>
+                          <div style={{ fontSize: '0.75rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Target Audience</div>
+                          <div style={{ color: '#f1f5f9', fontSize: '0.85rem', fontWeight: 600 }}>{rule.targetAudience}</div>
+                        </div>
+
+                        <div>
+                          <div style={{ fontSize: '0.75rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Asset Delivered</div>
+                          <div style={{ color: '#fbbf24', fontSize: '0.85rem', fontWeight: 700 }}>{rule.leadMagnetName}</div>
+                        </div>
+
+                        {/* Qualifying Question */}
+                        <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '6px', padding: '0.65rem 0.85rem' }}>
+                          <span style={{ color: '#38bdf8', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase' }}>💬 Lead Qualification Hook</span>
+                          <p style={{ color: '#e2e8f0', fontSize: '0.8rem', margin: '0.2rem 0 0', fontStyle: 'italic' }}>
+                            "{rule.followUpQuestion}"
+                          </p>
+                        </div>
+
+                        {/* DM Copy Box */}
+                        <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '0.75rem' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                            <span style={{ color: '#94a3b8', fontSize: '0.7rem', textTransform: 'uppercase', fontWeight: 700 }}>Direct DM Script Template</span>
+                            <button
+                              onClick={() => handleCopyText(rule.dmScript, `dm-script-${rule.keyword}`)}
+                              style={{
+                                background: copiedKey === `dm-script-${rule.keyword}` ? '#22c55e' : '#334155',
+                                color: copiedKey === `dm-script-${rule.keyword}` ? '#ffffff' : '#e2e8f0',
+                                border: 'none',
+                                padding: '0.2rem 0.55rem',
+                                borderRadius: '4px',
+                                fontSize: '0.7rem',
+                                fontWeight: 700,
+                                cursor: 'pointer'
+                              }}
+                            >
+                              {copiedKey === `dm-script-${rule.keyword}` ? '✓ Copied Script!' : '📋 Copy DM Script'}
+                            </button>
+                          </div>
+                          <pre style={{ margin: 0, whiteSpace: 'pre-wrap', color: '#cbd5e1', fontSize: '0.75rem', fontFamily: 'monospace', lineHeight: 1.4 }}>
+                            {rule.dmScript}
+                          </pre>
+                        </div>
+
+                        {/* Terminal Command for Instant Dispatch */}
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#020617', padding: '0.4rem 0.65rem', borderRadius: '4px', border: '1px solid #1e293b' }}>
+                          <code style={{ color: '#94a3b8', fontSize: '0.7rem' }}>
+                            npm run funnel:dispatch -- --keyword={rule.keyword}
+                          </code>
+                          <button
+                            onClick={() => handleCopyText(`npm run funnel:dispatch -- --keyword=${rule.keyword} --name="Lead Contact"`, `cmd-${rule.keyword}`)}
+                            style={{
+                              background: copiedKey === `cmd-${rule.keyword}` ? '#22c55e' : 'transparent',
+                              color: copiedKey === `cmd-${rule.keyword}` ? '#ffffff' : '#38bdf8',
+                              border: 'none',
+                              fontSize: '0.7rem',
+                              fontWeight: 700,
+                              cursor: 'pointer'
+                            }}
+                          >
+                            {copiedKey === `cmd-${rule.keyword}` ? '✓ Copied' : 'Copy Run'}
+                          </button>
+                        </div>
+
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
               </div>
             )}
 
