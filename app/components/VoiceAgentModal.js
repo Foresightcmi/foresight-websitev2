@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { calculateQuoteDetails } from '../../lib/pricing';
 import { CHRIS_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
+import LiveAvatar3D from './LiveAvatar3D';
 
 export default function VoiceAgentModal({ isOpen, onClose }) {
   const [callState, setCallState] = useState('idle'); // 'idle' | 'listening' | 'thinking' | 'speaking'
@@ -50,6 +51,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const liveWsRef = useRef(null);
   const audioInputCtxRef = useRef(null);
   const audioOutputCtxRef = useRef(null);
+  const analyserRef = useRef(null);
   const mediaStreamRef = useRef(null);
   const processorRef = useRef(null);
   const scheduledAudioTimeRef = useRef(0);
@@ -367,6 +369,16 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         ctx.resume();
       }
 
+      if (!analyserRef.current) {
+        try {
+          const analyser = ctx.createAnalyser();
+          analyser.fftSize = 64;
+          analyser.smoothingTimeConstant = 0.65;
+          analyser.connect(ctx.destination);
+          analyserRef.current = analyser;
+        } catch (_) {}
+      }
+
       const binary = atob(base64Data);
       const bytes = new Uint8Array(binary.length);
       for (let i = 0; i < binary.length; i++) {
@@ -383,7 +395,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       const source = ctx.createBufferSource();
       source.buffer = buffer;
-      source.connect(ctx.destination);
+      if (analyserRef.current) {
+        source.connect(analyserRef.current);
+      } else {
+        source.connect(ctx.destination);
+      }
 
       const now = ctx.currentTime;
       // 80ms jitter buffer ensures smooth gapless playback between WebSocket chunk deliveries
@@ -457,6 +473,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     if (audioOutputCtxRef.current) {
       try { audioOutputCtxRef.current.close(); } catch (_) {}
       audioOutputCtxRef.current = null;
+    }
+    if (analyserRef.current) {
+      try { analyserRef.current.disconnect(); } catch (_) {}
+      analyserRef.current = null;
     }
     if (liveWsRef.current) {
       try { liveWsRef.current.close(); } catch (_) {}
@@ -1746,89 +1766,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           justifyContent: 'center',
           background: 'radial-gradient(circle at center, rgba(212, 175, 55, 0.14) 0%, transparent 70%)'
         }}>
-          {/* Animated Audio-Reactive LiveRep Avatar */}
-          <div style={{ position: 'relative' }}>
-            <button 
-              type="button"
-              onClick={handleToggleOrInterrupt}
-              aria-label={callState === 'listening' ? 'Stop listening' : callState === 'speaking' ? 'Interrupt Christopher' : 'Tap to speak with Christopher'}
-              style={{
-                width: '144px',
-                height: '144px',
-                borderRadius: '50%',
-                border: callState === 'listening' 
-                  ? '3px solid #10b981' 
-                  : callState === 'speaking' 
-                  ? '3px solid #D4AF37' 
-                  : '3px solid rgba(212, 175, 55, 0.65)',
-                outline: 'none',
-                WebkitTapHighlightColor: 'transparent',
-                userSelect: 'none',
-                touchAction: 'manipulation',
-                background: 'linear-gradient(135deg, #1e293b, #0f172a)',
-                boxShadow: callState === 'listening'
-                  ? '0 0 35px rgba(16, 185, 129, 0.7), 0 0 70px rgba(16, 185, 129, 0.3)'
-                  : callState === 'speaking'
-                  ? '0 0 45px rgba(212, 175, 55, 0.75), 0 0 80px rgba(212, 175, 55, 0.3)'
-                  : '0 0 25px rgba(212, 175, 55, 0.35)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                animation: callState === 'speaking' 
-                  ? 'pulseVoiceSpeaking 1.2s infinite' 
-                  : callState === 'listening' 
-                  ? 'pulseVoiceListening 1.4s infinite' 
-                  : 'pulseVoiceIdle 3s infinite',
-                position: 'relative',
-                padding: '3px',
-                overflow: 'hidden'
-              }}
-              title={callState === 'listening' ? 'Listening... Tap to finish' : callState === 'speaking' ? 'Christopher is speaking... Tap to interrupt' : 'Tap to speak'}
-            >
-              <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-                <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
-                <img 
-                  src="/images/Christopher_Boykin.jpg" 
-                  alt="Christopher Boykin, Certified Master Inspector • Live Concierge Consultation"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    pointerEvents: 'none',
-                    transform: 'translateZ(0)',
-                    filter: callState === 'speaking' ? 'brightness(1.08) contrast(1.04)' : 'brightness(0.98)'
-                  }}
-                />
-              </picture>
-            </button>
-
-            {/* Certified Master Inspector® Badge Overlay */}
-            <div style={{
-              position: 'absolute',
-              bottom: '2px',
-              right: '2px',
-              width: '38px',
-              height: '38px',
-              borderRadius: '50%',
-              background: '#ffffff',
-              border: '2px solid #0F172A',
-              boxShadow: '0 3px 12px rgba(0, 0, 0, 0.7)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              overflow: 'hidden',
-              zIndex: 10
-            }}>
-              <img 
-                src="/images/cmi_logo.webp" 
-                alt="Certified Master Inspector" 
-                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-              />
-            </div>
-          </div>
+          {/* Interactive 3D WebGL Live Avatar with Real-Time Audio-Synced Lip Visemes & Gaze Tracking */}
+          <LiveAvatar3D
+            callState={callState}
+            persona={persona}
+            analyserNode={analyserRef.current}
+            onClick={handleToggleOrInterrupt}
+          />
 
           {/* Equalizer Sound Waveform Bars */}
           <div style={{
