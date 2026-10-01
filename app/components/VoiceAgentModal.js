@@ -1766,7 +1766,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           justifyContent: 'center',
           background: 'radial-gradient(circle at center, rgba(212, 175, 55, 0.14) 0%, transparent 70%)'
         }}>
-          {/* Interactive 3D WebGL Live Avatar with Real-Time Audio-Synced Lip Visemes & Gaze Tracking */}
+          {/* Authentic Photorealistic Live Avatar of Christopher Boykin (CMI®) with Real-Time Audio-Reactive Aura & Video Sync */}
           <LiveAvatar3D
             callState={callState}
             persona={persona}
@@ -1781,7 +1781,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             justifyContent: 'center',
             gap: '3px',
             height: '24px',
-            marginTop: '10px'
+            marginTop: '22px'
           }}>
             {[35, 70, 50, 95, 60, 100, 75, 85, 45, 90, 65, 40].map((h, i) => (
               <span

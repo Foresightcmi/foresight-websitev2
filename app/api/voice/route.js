@@ -88,10 +88,32 @@ async function persistBooking({ name, phone, email, address, preferredDate, addo
   });
 }
 
-// Studio-Grade Neural Voice Synthesis via EdgeTTS (en-US-ChristopherNeural: Deep, Soulful Black Southern Master Builder)
-async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural') {
+// 44-byte RIFF/WAVE header wrapper for Gemini TTS Linear PCM
+function pcmToWavDataUri(base64Pcm, sampleRate = 24000, numChannels = 1, bitsPerSample = 16) {
+  const pcmBuffer = Buffer.from(base64Pcm, 'base64');
+  const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
+  const blockAlign = numChannels * (bitsPerSample / 8);
+  const header = Buffer.alloc(44);
+  header.write('RIFF', 0);
+  header.writeUInt32LE(36 + pcmBuffer.length, 4);
+  header.write('WAVE', 8);
+  header.write('fmt ', 12);
+  header.writeUInt32LE(16, 16);
+  header.writeUInt16LE(1, 20); // Linear PCM
+  header.writeUInt16LE(numChannels, 22);
+  header.writeUInt32LE(sampleRate, 24);
+  header.writeUInt32LE(byteRate, 28);
+  header.writeUInt16LE(blockAlign, 32);
+  header.writeUInt16LE(bitsPerSample, 34);
+  header.write('data', 36);
+  header.writeUInt32LE(pcmBuffer.length, 40);
+  const wavBuffer = Buffer.concat([header, pcmBuffer]);
+  return `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
+}
+
+// Studio-Grade Voice Synthesis via Google Gemini TTS (gemini-3.1-flash-tts-preview) & EdgeTTS Fallback
+async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural', persona = 'chris') {
   try {
-    const { EdgeTTS } = await import('edge-tts-universal');
     const rawClean = (text || '')
       .replace(/[*#_~`\[\]()<>]/g, ' ')
       .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
@@ -105,7 +127,39 @@ async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural') {
     const sentences = rawClean.match(/[^.!?]+[.!?]+(\s+|$)/g) || [rawClean];
     const cleanText = sentences.slice(0, 2).join(' ').trim() || rawClean;
 
-    const tts = new EdgeTTS(cleanText, voice, {
+    // 1. Primary: Google Gemini Speech Generation TTS (Ultra-realistic, deep authoritative vocal timbre)
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (apiKey) {
+      try {
+        const { GoogleGenAI } = await import('@google/genai');
+        const ai = new GoogleGenAI({ apiKey });
+        const geminiVoice = persona === 'chris' ? 'Gacrux' : 'Aoede';
+
+        const interaction = await ai.interactions.create({
+          model: 'gemini-3.1-flash-tts-preview',
+          input: cleanText,
+          response_format: { type: 'audio' },
+          generation_config: {
+            speech_config: [
+              { voice: geminiVoice }
+            ]
+          }
+        });
+
+        if (interaction && interaction.output_audio && interaction.output_audio.data) {
+          const sampleRate = interaction.output_audio.sample_rate || 24000;
+          const channels = interaction.output_audio.channels || 1;
+          return pcmToWavDataUri(interaction.output_audio.data, sampleRate, channels);
+        }
+      } catch (geminiTtsErr) {
+        console.warn('[VOICE] Google Gemini TTS fallback to EdgeTTS:', geminiTtsErr.message);
+      }
+    }
+
+    // 2. High-Availability Fallback: EdgeTTS Neural Voice
+    const { EdgeTTS } = await import('edge-tts-universal');
+    const edgeVoice = persona === 'chris' ? 'en-US-ChristopherNeural' : 'en-US-JennyNeural';
+    const tts = new EdgeTTS(cleanText, edgeVoice, {
       rate: '-3%',
       pitch: '-10Hz'
     });
@@ -116,7 +170,7 @@ async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural') {
       return `data:audio/mp3;base64,${buffer.toString('base64')}`;
     }
   } catch (err) {
-    console.error('[VOICE] Edge TTS synthesis error:', err);
+    console.error('[VOICE] Voice synthesis error:', err);
   }
   return null;
 }
@@ -603,7 +657,7 @@ export async function POST(request) {
         const deposit = Math.round(quoteResult.total / 2);
         const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, the 50 percent deposit of ${deposit} dollars along with your signed inspection agreements are completed after our office sends your appointment confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
 
-        const audio = await synthesizeHumanVoice(speechResponse, voiceName);
+        const audio = await synthesizeHumanVoice(speechResponse, voiceName, persona);
         return NextResponse.json({
           response: speechResponse,
           audio,
@@ -630,7 +684,7 @@ export async function POST(request) {
       });
 
       const speechResponse = `Thank you, ${clientName}! I have recorded your email as ${email}. Part 1 of our Foresight vs. Hindsight due diligence checklist has been queued for your inbox. What other questions can I answer about your home or our inspection process?`;
-      const audio = await synthesizeHumanVoice(speechResponse);
+      const audio = await synthesizeHumanVoice(speechResponse, voiceName, persona);
       return NextResponse.json({
         response: speechResponse,
         audio,
@@ -658,7 +712,7 @@ export async function POST(request) {
       await persistBooking(bookingArgs);
       const speechResponse = `Awesome! I have your inspection request logged. Our office team will follow up directly at ${clientPhone} within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
 
-      const audio = await synthesizeHumanVoice(speechResponse);
+      const audio = await synthesizeHumanVoice(speechResponse, voiceName, persona);
       return NextResponse.json({
         response: speechResponse,
         audio,
@@ -683,7 +737,7 @@ export async function POST(request) {
     const isGenericFallback = turnResult.text.startsWith("Whether it is evaluating structural stability");
     if (!isGenericFallback && persona === 'chris') {
       const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
-      const audio = await synthesizeHumanVoice(cleanReply, voiceName);
+      const audio = await synthesizeHumanVoice(cleanReply, voiceName, persona);
       return NextResponse.json({
         response: cleanReply,
         audio,
@@ -697,7 +751,7 @@ export async function POST(request) {
       try {
         const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, persona);
         if (dynamicReply) {
-          const audio = await synthesizeHumanVoice(dynamicReply, voiceName);
+          const audio = await synthesizeHumanVoice(dynamicReply, voiceName, persona);
           return NextResponse.json({
             response: dynamicReply,
             audio,
@@ -711,7 +765,7 @@ export async function POST(request) {
 
     // 6. Intelligent Fallback
     const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
-    const audio = await synthesizeHumanVoice(cleanReply, voiceName);
+    const audio = await synthesizeHumanVoice(cleanReply, voiceName, persona);
 
     return NextResponse.json({
       response: cleanReply,
@@ -724,7 +778,7 @@ export async function POST(request) {
     const fallbackText = persona === 'chris'
       ? "Welcome to Foresight Home Inspections! This is Chris, your Certified Master Inspector. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!"
       : "Welcome to Foresight Home Inspections! This is Jordan, your client experience concierge. We send two certified inspectors on every job with free thermal imaging and drone scans. How can I help you check pricing or secure an inspection date today?";
-    const audio = await synthesizeHumanVoice(fallbackText, voiceName);
+    const audio = await synthesizeHumanVoice(fallbackText, voiceName, persona);
     return NextResponse.json({
       response: fallbackText,
       audio,

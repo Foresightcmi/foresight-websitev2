@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
 
 export default function LiveAvatar3D({
   callState = 'idle', // 'idle' | 'listening' | 'thinking' | 'speaking'
@@ -9,540 +8,343 @@ export default function LiveAvatar3D({
   analyserNode = null,
   onClick = () => {}
 }) {
-  const containerRef = useRef(null);
-  const [webGlSupported, setWebGlSupported] = useState(true);
+  const videoRef = useRef(null);
+  const auraRef = useRef(null);
+  const animFrameRef = useRef(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
+  // Audio reactivity via Web Audio analyserNode
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    // 1. WebGL Support Detection
-    try {
-      const canvas = document.createElement('canvas');
-      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-      if (!gl) {
-        setWebGlSupported(false);
-        return;
+    if (!analyserNode || (callState !== 'speaking' && callState !== 'listening')) {
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+        animFrameRef.current = null;
       }
-    } catch {
-      setWebGlSupported(false);
+      if (auraRef.current) {
+        auraRef.current.style.transform = 'scale(1)';
+        auraRef.current.style.opacity = callState === 'speaking' ? '0.75' : callState === 'listening' ? '0.6' : '0.35';
+      }
       return;
     }
 
-    const width = container.clientWidth || 280;
-    const height = container.clientHeight || 280;
+    const bufferLength = analyserNode.frequencyBinCount || 32;
+    const dataArray = new Uint8Array(bufferLength);
 
-    // 2. Scene, Camera, and High-Performance Renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
-    camera.position.set(0, 0.3, 3.8);
+    const updatePulse = () => {
+      analyserNode.getByteFrequencyData(dataArray);
+      let sum = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        sum += dataArray[i];
+      }
+      const avg = sum / bufferLength; // 0 to 255
+      const normalized = Math.min(1, avg / 128); // 0 to 1
 
-    let renderer;
-    try {
-      renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true,
-        powerPreference: 'high-performance'
-      });
-      renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.15;
-      container.appendChild(renderer.domElement);
-    } catch {
-      setWebGlSupported(false);
-      return;
-    }
+      if (auraRef.current) {
+        const scale = 1 + normalized * 0.18;
+        const opacity = 0.4 + normalized * 0.55;
+        auraRef.current.style.transform = `scale(${scale.toFixed(3)})`;
+        auraRef.current.style.opacity = opacity.toFixed(2);
+      }
 
-    // 3. Luxurious Executive Studio Lighting
-    const ambientLight = new THREE.AmbientLight(0x1e293b, 1.8);
-    scene.add(ambientLight);
-
-    // Key Light (Warm Key)
-    const keyLight = new THREE.DirectionalLight(0xfff7ed, 2.4);
-    keyLight.position.set(2, 3, 3);
-    scene.add(keyLight);
-
-    // Foresight Signature Gold Rim Light
-    const goldRimLight = new THREE.DirectionalLight(0xd4af37, 3.8);
-    goldRimLight.position.set(-3, 2, -2);
-    scene.add(goldRimLight);
-
-    // Accent Under-Chin Dynamic Light
-    const chinLight = new THREE.PointLight(0xd4af37, 1.5, 5);
-    chinLight.position.set(0, -1.2, 1.2);
-    scene.add(chinLight);
-
-    // 4. Master Avatar Hierarchy
-    const avatarGroup = new THREE.Group();
-    scene.add(avatarGroup);
-
-    // Materials Palette (Obsidian Slate + Gold Accent + Semi-Matte Skin)
-    const skinColor = persona === 'chris' ? 0x6e473b : 0x8a5a44;
-    const skinMaterial = new THREE.MeshStandardMaterial({
-      color: skinColor,
-      roughness: 0.58,
-      metalness: 0.08
-    });
-
-    const suitMaterial = new THREE.MeshStandardMaterial({
-      color: 0x0f172a,
-      roughness: 0.82,
-      metalness: 0.15
-    });
-
-    const goldMaterial = new THREE.MeshStandardMaterial({
-      color: 0xd4af37,
-      roughness: 0.3,
-      metalness: 0.85
-    });
-
-    const eyeWhiteMaterial = new THREE.MeshBasicMaterial({ color: 0xf8fafc });
-    const irisMaterial = new THREE.MeshBasicMaterial({ color: 0x3d2314 });
-    const pupilMaterial = new THREE.MeshBasicMaterial({ color: 0x050505 });
-    const lipMaterial = new THREE.MeshStandardMaterial({
-      color: persona === 'chris' ? 0x5a352c : 0x7a4338,
-      roughness: 0.45,
-      metalness: 0.05
-    });
-
-    // --- TORSO / BUST (Executive Blazer) ---
-    const torsoGeo = new THREE.CylinderGeometry(0.75, 0.95, 1.2, 32);
-    const torsoMesh = new THREE.Mesh(torsoGeo, suitMaterial);
-    torsoMesh.position.set(0, -1.1, 0);
-    avatarGroup.add(torsoMesh);
-
-    // CMI® Gold Lapel / Collar Trim
-    const collarGeo = new THREE.TorusGeometry(0.52, 0.045, 16, 32, Math.PI);
-    const collarMesh = new THREE.Mesh(collarGeo, goldMaterial);
-    collarMesh.position.set(0, -0.48, 0.18);
-    collarMesh.rotation.x = Math.PI / 2 + 0.1;
-    collarMesh.rotation.z = Math.PI;
-    avatarGroup.add(collarMesh);
-
-    // Official Certified Master Inspector Badge on Chest
-    const badgeGeo = new THREE.CylinderGeometry(0.1, 0.1, 0.03, 32);
-    const badgeMesh = new THREE.Mesh(badgeGeo, goldMaterial);
-    badgeMesh.position.set(0.42, -0.85, 0.52);
-    badgeMesh.rotation.x = Math.PI / 2;
-    badgeMesh.rotation.y = -0.3;
-    avatarGroup.add(badgeMesh);
-
-    // --- NECK ---
-    const neckGeo = new THREE.CylinderGeometry(0.24, 0.28, 0.45, 32);
-    const neckMesh = new THREE.Mesh(neckGeo, skinMaterial);
-    neckMesh.position.set(0, -0.35, 0);
-    avatarGroup.add(neckMesh);
-
-    // --- HEAD GROUP (Tracks mouse, tilts, speaks) ---
-    const headGroup = new THREE.Group();
-    headGroup.position.set(0, 0.15, 0);
-    avatarGroup.add(headGroup);
-
-    // Cranium / Face Base
-    const headGeo = new THREE.SphereGeometry(0.68, 36, 36);
-    headGeo.scale(0.92, 1.15, 1.0);
-    const headMesh = new THREE.Mesh(headGeo, skinMaterial);
-    headGroup.add(headMesh);
-
-    // Cheeks & Chin Contours
-    const chinGeo = new THREE.SphereGeometry(0.32, 24, 24);
-    chinGeo.scale(0.85, 0.95, 0.9);
-    const chinMesh = new THREE.Mesh(chinGeo, skinMaterial);
-    chinMesh.position.set(0, -0.5, 0.3);
-    headGroup.add(chinMesh);
-
-    // Nose
-    const noseGeo = new THREE.ConeGeometry(0.12, 0.32, 16);
-    const noseMesh = new THREE.Mesh(noseGeo, skinMaterial);
-    noseMesh.position.set(0, -0.05, 0.72);
-    noseMesh.rotation.x = 0.25;
-    headGroup.add(noseMesh);
-
-    // Hair Structure
-    const hairGeo = new THREE.SphereGeometry(0.72, 32, 32);
-    hairGeo.scale(0.95, 1.12, 0.98);
-    const hairMaterial = new THREE.MeshStandardMaterial({
-      color: 0x111827,
-      roughness: 0.9,
-      metalness: 0.05
-    });
-    const hairMesh = new THREE.Mesh(hairGeo, hairMaterial);
-    hairMesh.position.set(0, 0.08, -0.06);
-    headGroup.add(hairMesh);
-
-    // --- EYES & EYELIDS (Blinking & Tracking) ---
-    const createEye = (isRight = false) => {
-      const eyeGroup = new THREE.Group();
-      const xOffset = isRight ? 0.26 : -0.26;
-      eyeGroup.position.set(xOffset, 0.12, 0.58);
-
-      // Eyeball
-      const eyeballGeo = new THREE.SphereGeometry(0.12, 20, 20);
-      const eyeball = new THREE.Mesh(eyeballGeo, eyeWhiteMaterial);
-      eyeGroup.add(eyeball);
-
-      // Iris
-      const irisGeo = new THREE.CircleGeometry(0.065, 20);
-      const iris = new THREE.Mesh(irisGeo, irisMaterial);
-      iris.position.set(0, 0, 0.118);
-      eyeGroup.add(iris);
-
-      // Pupil
-      const pupilGeo = new THREE.CircleGeometry(0.035, 20);
-      const pupil = new THREE.Mesh(pupilGeo, pupilMaterial);
-      pupil.position.set(0, 0, 0.12);
-      eyeGroup.add(pupil);
-
-      // Upper Eyelid (Scales to 0 for blinks)
-      const eyelidGeo = new THREE.SphereGeometry(0.13, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2);
-      const eyelid = new THREE.Mesh(eyelidGeo, skinMaterial);
-      eyelid.position.set(0, 0.01, 0.01);
-      eyelid.rotation.x = -Math.PI / 2;
-      eyeGroup.add(eyelid);
-
-      return { eyeGroup, iris, eyelid };
+      animFrameRef.current = requestAnimationFrame(updatePulse);
     };
 
-    const leftEye = createEye(false);
-    const rightEye = createEye(true);
-    headGroup.add(leftEye.eyeGroup);
-    headGroup.add(rightEye.eyeGroup);
+    animFrameRef.current = requestAnimationFrame(updatePulse);
 
-    // --- MOUTH & ARTICULATED JAW (Direct Speech Viseme Sync) ---
-    const jawPivot = new THREE.Group();
-    jawPivot.position.set(0, -0.32, 0.38);
-    headGroup.add(jawPivot);
-
-    // Upper Lip (Static on head)
-    const upperLipGeo = new THREE.BoxGeometry(0.24, 0.045, 0.06);
-    const upperLip = new THREE.Mesh(upperLipGeo, lipMaterial);
-    upperLip.position.set(0, -0.28, 0.64);
-    headGroup.add(upperLip);
-
-    // Lower Lip & Articulated Jaw (Rotates down on speech amplitude)
-    const lowerLipGeo = new THREE.BoxGeometry(0.22, 0.055, 0.07);
-    const lowerLip = new THREE.Mesh(lowerLipGeo, lipMaterial);
-    lowerLip.position.set(0, -0.06, 0.28);
-    jawPivot.add(lowerLip);
-
-    // Interior Oral Cavity (Depth)
-    const mouthInnerGeo = new THREE.PlaneGeometry(0.2, 0.12);
-    const mouthInnerMat = new THREE.MeshBasicMaterial({ color: 0x1f0a08 });
-    const mouthInner = new THREE.Mesh(mouthInnerGeo, mouthInnerMat);
-    mouthInner.position.set(0, -0.32, 0.62);
-    headGroup.add(mouthInner);
-
-    // --- AMBIENT SOUND-REACTIVE BASE RINGS ---
-    const haloGroup = new THREE.Group();
-    haloGroup.position.set(0, -1.65, 0);
-    avatarGroup.add(haloGroup);
-
-    const haloGeo1 = new THREE.RingGeometry(1.0, 1.05, 48);
-    const haloMat1 = new THREE.MeshBasicMaterial({
-      color: 0xd4af37,
-      side: THREE.DoubleSide,
-      transparent: true,
-      opacity: 0.35
-    });
-    const halo1 = new THREE.Mesh(haloGeo1, haloMat1);
-    halo1.rotation.x = Math.PI / 2;
-    haloGroup.add(halo1);
-
-    const haloGeo2 = new THREE.RingGeometry(1.2, 1.23, 48);
-    const haloMat2 = new THREE.MeshBasicMaterial({
-      color: 0x38bdf8,
-      side: THREE.DoubleSide,
-      transparent: true,
-      opacity: 0.2
-    });
-    const halo2 = new THREE.Mesh(haloGeo2, haloMat2);
-    halo2.rotation.x = Math.PI / 2;
-    haloGroup.add(halo2);
-
-    // 5. Interactive Mouse & Touch Gaze Tracking
-    let targetMouseX = 0;
-    let targetMouseY = 0;
-    let currentMouseX = 0;
-    let currentMouseY = 0;
-
-    const handlePointerMove = (e) => {
-      const rect = container.getBoundingClientRect();
-      const clientX = e.clientX ?? (e.touches && e.touches[0]?.clientX) ?? rect.left + rect.width / 2;
-      const clientY = e.clientY ?? (e.touches && e.touches[0]?.clientY) ?? rect.top + rect.height / 2;
-
-      const normX = ((clientX - rect.left) / rect.width) * 2 - 1;
-      const normY = -(((clientY - rect.top) / rect.height) * 2 - 1);
-
-      targetMouseX = THREE.MathUtils.clamp(normX * 0.25, -0.3, 0.3);
-      targetMouseY = THREE.MathUtils.clamp(normY * 0.2, -0.2, 0.2);
-    };
-
-    window.addEventListener('mousemove', handlePointerMove, { passive: true });
-    window.addEventListener('touchmove', handlePointerMove, { passive: true });
-
-    // 6. Animation State Variables
-    let animationFrameId;
-    let clock = new THREE.Clock();
-    let nextBlinkTime = 2.5;
-    let isBlinking = false;
-    let blinkStartTime = 0;
-    const freqData = new Uint8Array(64);
-
-    // 7. Render Loop (Strict 60 FPS)
-    const animate = () => {
-      animationFrameId = requestAnimationFrame(animate);
-      const elapsedTime = clock.getElapsedTime();
-
-      // Smooth Mouse Tracking
-      currentMouseX = THREE.MathUtils.lerp(currentMouseX, targetMouseX, 0.08);
-      currentMouseY = THREE.MathUtils.lerp(currentMouseY, targetMouseY, 0.08);
-
-      // Natural Idle Breathing Movement
-      const breath = Math.sin(elapsedTime * 1.6) * 0.02;
-      avatarGroup.position.y = breath;
-
-      // Base Head Rotation (Mouse tracking + gentle sway)
-      headGroup.rotation.y = currentMouseX + Math.sin(elapsedTime * 0.8) * 0.03;
-      headGroup.rotation.x = -currentMouseY + Math.cos(elapsedTime * 1.2) * 0.02;
-
-      // Dynamic State Posing
-      if (callState === 'listening') {
-        headGroup.rotation.z = THREE.MathUtils.lerp(headGroup.rotation.z, -0.06, 0.1); // Attentive tilt
-        chinLight.color.setHex(0x10b981); // Emerald ready
-        haloMat1.color.setHex(0x10b981);
-        haloMat1.opacity = 0.5 + Math.sin(elapsedTime * 4) * 0.2;
-      } else if (callState === 'thinking') {
-        headGroup.rotation.y = THREE.MathUtils.lerp(headGroup.rotation.y, 0.12, 0.1); // Pondering glance
-        headGroup.rotation.x = THREE.MathUtils.lerp(headGroup.rotation.x, -0.08, 0.1);
-        chinLight.color.setHex(0x38bdf8);
-        haloMat1.color.setHex(0x38bdf8);
-      } else if (callState === 'speaking') {
-        chinLight.color.setHex(0xd4af37); // Foresight Gold Aura
-        haloMat1.color.setHex(0xd4af37);
-        haloMat1.opacity = 0.6 + Math.sin(elapsedTime * 8) * 0.3;
-      } else {
-        headGroup.rotation.z = THREE.MathUtils.lerp(headGroup.rotation.z, 0, 0.08);
-        chinLight.color.setHex(0xd4af37);
-        haloMat1.color.setHex(0xd4af37);
-        haloMat1.opacity = 0.25;
-      }
-
-      // 8. REAL-TIME MOUTH / VISEME AUDIO SYNCHRONIZATION
-      let speechVolume = 0;
-
-      if (analyserNode && callState === 'speaking') {
-        analyserNode.getByteFrequencyData(freqData);
-        // Sample fundamental speech vowel frequencies (bins 2 through 10, approx 150Hz - 800Hz)
-        let sum = 0;
-        for (let i = 2; i <= 10; i++) {
-          sum += freqData[i];
-        }
-        speechVolume = sum / (9 * 255); // Normalized 0.0 to 1.0
-      } else if (callState === 'speaking') {
-        // Fallback acoustic cadence generator if analyser node is initializing
-        speechVolume = Math.abs(Math.sin(elapsedTime * 14)) * 0.65;
-      }
-
-      // Smooth Jaw Opening and Lip Shaping
-      const targetJawRotation = THREE.MathUtils.clamp(speechVolume * 0.42, 0, 0.45);
-      jawPivot.rotation.x = THREE.MathUtils.lerp(jawPivot.rotation.x, targetJawRotation, 0.32);
-
-      const targetLipSpread = 1 + speechVolume * 0.35;
-      lowerLip.scale.x = THREE.MathUtils.lerp(lowerLip.scale.x, targetLipSpread, 0.28);
-      upperLip.scale.x = THREE.MathUtils.lerp(upperLip.scale.x, targetLipSpread, 0.28);
-
-      // Micro head nods in sync with speech emphasis
-      if (callState === 'speaking') {
-        headGroup.position.y = 0.15 - speechVolume * 0.04;
-      } else {
-        headGroup.position.y = THREE.MathUtils.lerp(headGroup.position.y, 0.15, 0.1);
-      }
-
-      // 9. Natural Eye Blinking Logic
-      if (!isBlinking && elapsedTime > nextBlinkTime) {
-        isBlinking = true;
-        blinkStartTime = elapsedTime;
-        nextBlinkTime = elapsedTime + 3.0 + Math.random() * 2.5; // Random interval 3.0 - 5.5s
-      }
-
-      if (isBlinking) {
-        const blinkProgress = (elapsedTime - blinkStartTime) / 0.16; // 160ms blink duration
-        if (blinkProgress >= 1) {
-          isBlinking = false;
-          leftEye.eyelid.scale.y = 0.05;
-          rightEye.eyelid.scale.y = 0.05;
-        } else {
-          // Sine wave blink curve (snap shut, smoothly reopen)
-          const eyelidClosure = Math.sin(blinkProgress * Math.PI);
-          const lidScale = THREE.MathUtils.lerp(0.05, 1.25, eyelidClosure);
-          leftEye.eyelid.scale.y = lidScale;
-          rightEye.eyelid.scale.y = lidScale;
-        }
-      }
-
-      // Halo particle rotation
-      halo1.rotation.z = elapsedTime * 0.15;
-      halo2.rotation.z = -elapsedTime * 0.22;
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // 10. Responsive Resize Handler
-    const handleResize = () => {
-      if (!container || !renderer) return;
-      const w = container.clientWidth || 280;
-      const h = container.clientHeight || 280;
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // 11. Complete Resource Disposal and Memory Leak Prevention
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('mousemove', handlePointerMove);
-      window.removeEventListener('touchmove', handlePointerMove);
-      window.removeEventListener('resize', handleResize);
-
-      scene.traverse((obj) => {
-        if (obj.isMesh) {
-          if (obj.geometry) obj.geometry.dispose();
-          if (Array.isArray(obj.material)) {
-            obj.material.forEach((mat) => mat.dispose());
-          } else if (obj.material) {
-            obj.material.dispose();
-          }
-        }
-      });
-
-      if (renderer) {
-        renderer.dispose();
-        if (renderer.domElement && renderer.domElement.parentNode) {
-          renderer.domElement.parentNode.removeChild(renderer.domElement);
-        }
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+        animFrameRef.current = null;
       }
     };
-  }, [persona, callState, analyserNode]);
+  }, [analyserNode, callState]);
 
-  if (!webGlSupported) {
-    // Graceful 2D Fallback for older legacy hardware
-    return (
-      <div 
-        onClick={onClick}
-        style={{
-          width: '180px',
-          height: '180px',
-          borderRadius: '50%',
-          overflow: 'hidden',
-          border: '3px solid #D4AF37',
-          boxShadow: '0 0 25px rgba(212, 175, 55, 0.4)',
-          cursor: 'pointer',
-          position: 'relative'
-        }}
-      >
-        <img
-          src={persona === 'jordan' ? '/images/jordan-avatar.webp' : '/images/Christopher_Boykin.webp'}
-          alt="Live Concierge Avatar"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-      </div>
-    );
-  }
+  // Video playback management during 'speaking' state
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || persona !== 'chris' || videoError) return;
+
+    if (callState === 'speaking') {
+      video.currentTime = 0;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn('[Avatar Video] Autoplay prevented, portrait remains active:', err);
+        });
+      }
+    } else {
+      video.pause();
+    }
+  }, [callState, persona, videoError]);
+
+  const isSpeaking = callState === 'speaking';
+  const isListening = callState === 'listening';
+  const isThinking = callState === 'thinking';
+
+  // State colors
+  const primaryGlowColor = isSpeaking 
+    ? '#D4AF37' // Foresight Gold
+    : isListening 
+    ? '#10b981' // Emerald
+    : isThinking 
+    ? '#f59e0b' // Amber
+    : '#D4AF37';
+
+  const avatarSrc = persona === 'chris' ? '/images/Christopher_Boykin.webp' : '/images/jordan-avatar.webp';
+  const avatarFallbackSrc = persona === 'chris' ? '/images/Christopher_Boykin.jpg' : '/images/jordan-avatar.webp';
 
   return (
     <div
       onClick={onClick}
       style={{
         position: 'relative',
-        width: '280px',
-        height: '280px',
+        width: '270px',
+        height: '270px',
         margin: '0 auto',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        userSelect: 'none',
+        WebkitTapHighlightColor: 'transparent'
       }}
-      title={callState === 'listening' ? 'Listening... Tap to speak' : callState === 'speaking' ? 'Speaking... Tap to interrupt' : 'Live Concierge'}
+      title={isListening ? 'Listening to you... Tap to pause' : isSpeaking ? 'Christopher is speaking... Tap to interrupt' : 'Christopher Boykin, Certified Master Inspector® • Tap to speak'}
+      aria-label="Interactive Live Avatar of Christopher Boykin, Certified Master Inspector"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } }}
     >
-      {/* 3D WebGL Canvas Target */}
-      <div 
-        ref={containerRef} 
-        style={{ 
-          width: '100%', 
-          height: '100%', 
-          position: 'relative', 
-          zIndex: 2,
-          filter: callState === 'speaking' ? 'drop-shadow(0 0 20px rgba(212,175,55,0.4))' : 'none',
-          transition: 'filter 0.3s ease'
-        }} 
+      {/* Dynamic Audio-Reactive Halo Aura Rings */}
+      <div
+        ref={auraRef}
+        style={{
+          position: 'absolute',
+          inset: '-14px',
+          borderRadius: '50%',
+          background: `radial-gradient(circle, ${isSpeaking ? 'rgba(212,175,55,0.45)' : isListening ? 'rgba(16,185,129,0.45)' : 'rgba(212,175,55,0.18)'} 0%, rgba(15,23,42,0) 70%)`,
+          pointerEvents: 'none',
+          transition: analyserNode ? 'none' : 'transform 0.4s ease, opacity 0.4s ease',
+          willChange: 'transform, opacity',
+          zIndex: 1
+        }}
       />
 
-      {/* CMI® Badge Indicator in bottom-right corner */}
+      {/* Secondary Animated Ambient Ring */}
       <div
         style={{
           position: 'absolute',
-          bottom: '12px',
-          right: '18px',
-          width: '36px',
-          height: '36px',
+          inset: '-6px',
           borderRadius: '50%',
-          background: '#0F172A',
+          border: `2px solid ${primaryGlowColor}`,
+          opacity: isSpeaking || isListening ? 0.8 : 0.35,
+          boxShadow: `0 0 24px ${primaryGlowColor}66, inset 0 0 16px ${primaryGlowColor}33`,
+          pointerEvents: 'none',
+          animation: isSpeaking 
+            ? 'chrisAuraPulse 1.8s ease-in-out infinite' 
+            : isListening 
+            ? 'chrisListenPulse 2.2s ease-in-out infinite'
+            : isThinking
+            ? 'chrisThinkingSpin 3s linear infinite'
+            : 'none',
+          zIndex: 2
+        }}
+      />
+
+      {/* Main Circular Portrait & Video Capsule */}
+      <div
+        style={{
+          position: 'relative',
+          width: '240px',
+          height: '240px',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          border: '3px solid #D4AF37',
+          background: 'linear-gradient(145deg, #1e293b 0%, #0b0f17 100%)',
+          boxShadow: '0 12px 32px rgba(0,0,0,0.7), inset 0 0 20px rgba(0,0,0,0.8)',
+          zIndex: 3,
+          transform: 'translateZ(0)'
+        }}
+      >
+        {/* Authentic High-Resolution Studio Portrait */}
+        <picture>
+          <source srcSet={avatarSrc} type="image/webp" />
+          <img
+            src={avatarFallbackSrc}
+            alt="Christopher Boykin - Founder & Lead Certified Master Inspector (CMI®)"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center 15%',
+              display: 'block',
+              transform: isSpeaking ? 'scale(1.02)' : 'scale(1.0)',
+              transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease',
+              filter: isThinking ? 'brightness(0.92) contrast(1.05)' : 'none'
+            }}
+          />
+        </picture>
+
+        {/* Photorealistic Office Video Loop - Activated during Christopher speaking */}
+        {persona === 'chris' && !videoError && (
+          <video
+            ref={videoRef}
+            src="/videos/chris-avatar-office-loop.mp4"
+            loop
+            muted
+            playsInline
+            onLoadedData={() => setVideoLoaded(true)}
+            onError={() => setVideoError(true)}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center 15%',
+              opacity: isSpeaking && videoLoaded ? 1 : 0,
+              transition: 'opacity 0.35s ease',
+              pointerEvents: 'none',
+              zIndex: 4
+            }}
+          />
+        )}
+
+        {/* Subtle Vignette Gradient Overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'radial-gradient(circle at center, transparent 55%, rgba(11,15,23,0.45) 100%)',
+            pointerEvents: 'none',
+            zIndex: 5
+          }}
+        />
+      </div>
+
+      {/* Official CMI® Gold Medallion Badge (Bottom-Right) */}
+      <div
+        title="InterNACHI Certified Master Inspector (CMI®) - North America's Highest Professional Inspection Credential"
+        style={{
+          position: 'absolute',
+          bottom: '16px',
+          right: '18px',
+          width: '42px',
+          height: '42px',
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
           border: '2px solid #D4AF37',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 10,
-          boxShadow: '0 4px 12px rgba(0,0,0,0.6)'
+          boxShadow: '0 4px 14px rgba(0,0,0,0.7), 0 0 10px rgba(212,175,55,0.4)',
+          transition: 'transform 0.2s ease',
+          cursor: 'pointer'
         }}
       >
         <img
           src="/images/cmi_logo.webp"
           alt="Certified Master Inspector"
-          style={{ width: '24px', height: 'auto', objectFit: 'contain' }}
+          style={{ width: '28px', height: 'auto', objectFit: 'contain' }}
         />
       </div>
 
-      {/* Status Pill Badge */}
+      {/* Executive Status Pill Badge (Bottom-Center) */}
       <div
         style={{
           position: 'absolute',
-          bottom: '-10px',
+          bottom: '-12px',
           left: '50%',
           transform: 'translateX(-50%)',
-          background: callState === 'speaking' 
-            ? 'linear-gradient(135deg, rgba(212,175,55,0.95), rgba(184,149,40,0.95))'
-            : callState === 'listening'
-            ? 'linear-gradient(135deg, rgba(16,185,129,0.95), rgba(5,150,105,0.95))'
-            : 'rgba(15,23,42,0.85)',
-          color: callState === 'speaking' ? '#0F172A' : '#FFFFFF',
-          border: '1px solid rgba(212,175,55,0.4)',
+          background: isSpeaking 
+            ? 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)'
+            : isListening
+            ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+            : isThinking
+            ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+            : 'rgba(15, 23, 42, 0.92)',
+          color: isSpeaking ? '#0F172A' : '#FFFFFF',
+          border: '1.5px solid rgba(212, 175, 55, 0.5)',
           borderRadius: '9999px',
-          padding: '3px 12px',
+          padding: '4px 14px',
           fontSize: '0.72rem',
           fontWeight: 800,
           letterSpacing: '0.04em',
           textTransform: 'uppercase',
           zIndex: 10,
-          boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+          boxShadow: '0 6px 16px rgba(0,0,0,0.6)',
           display: 'flex',
           alignItems: 'center',
-          gap: '5px'
+          gap: '6px',
+          whiteSpace: 'nowrap',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)'
         }}
       >
-        <span style={{ 
-          width: '6px', 
-          height: '6px', 
-          borderRadius: '50%', 
-          background: callState === 'speaking' ? '#0F172A' : callState === 'listening' ? '#34D399' : '#D4AF37',
-          boxShadow: '0 0 6px currentColor'
-        }} />
-        <span>{callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Thinking...' : '3D Live Concierge'}</span>
+        <span
+          style={{ 
+            width: '7px', 
+            height: '7px', 
+            borderRadius: '50%', 
+            background: isSpeaking ? '#0F172A' : isListening ? '#34D399' : '#D4AF37',
+            boxShadow: `0 0 8px ${isSpeaking ? '#0F172A' : isListening ? '#34D399' : '#D4AF37'}`,
+            animation: (isSpeaking || isListening) ? 'chrisDotPulse 1.2s ease-in-out infinite' : 'none'
+          }} 
+        />
+        <span>
+          {isSpeaking 
+            ? 'Christopher Speaking' 
+            : isListening 
+            ? 'Listening... Speak' 
+            : isThinking 
+            ? 'Analyzing Atlanta Codes...' 
+            : 'Christopher Boykin, CMI®'}
+        </span>
       </div>
+
+      {/* Global Embedded Keyframes for Fluid 60fps Micro-Animations */}
+      <style jsx>{`
+        @keyframes chrisAuraPulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.75;
+          }
+          50% {
+            transform: scale(1.035);
+            opacity: 0.95;
+          }
+        }
+        @keyframes chrisListenPulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.6;
+          }
+          50% {
+            transform: scale(1.025);
+            opacity: 0.85;
+          }
+        }
+        @keyframes chrisThinkingSpin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes chrisDotPulse {
+          0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.4;
+            transform: scale(1.3);
+          }
+        }
+      `}</style>
     </div>
   );
 }
