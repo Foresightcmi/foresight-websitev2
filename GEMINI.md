@@ -1,4 +1,4 @@
-﻿---
+---
 description: Enforces absolute best, world-class SEO strategies, architecture, and engineering methods for the entrepreneur's website and web properties.
 always_on: true
 ---
@@ -40,7 +40,17 @@ The entrepreneur demands the **absolute best strategies, architectures, and engi
 
 7. **E-E-A-T & NavBoost Click Stream Resilience (Lily Ray & Marie Haynes Standard)**:
    - Eliminate bounce rates and pogo-sticking by delivering instant, transparent value, ensuring Google logs positive "Good Clicks" and high dwell times over its 13-month rolling NavBoost cycle.
-   - Protect sitewide Normalized Site Rank (NSR) by ensuring every page clears high-quality standards.
+8. **90+ Mobile Core Web Vitals & Zero-Regressive Hydration Doctrine**:
+   - **Dynamic Client Chunking**: Any interactive overlay, modal, or widget exceeding 20 KB or containing Web Audio, WebSockets, or Canvas (e.g. `VoiceAgentModal`) MUST be loaded via `next/dynamic({ ssr: false })` and rendered strictly conditionally (`{isOpen && <Modal />}`). Never bundle heavy interactive tools into initial page hydration.
+   - **Zero Forced Reflow (Zero Layout Thrashing)**: NEVER read geometric DOM properties (`clientWidth`, `offsetWidth`, `clientHeight`, `offsetHeight`, `getBoundingClientRect`) inside React render/mount execution loops. Always use GPU-accelerated CSS `clip-path`, `transform`, or `opacity`.
+   - **Below-the-Fold Lazy Loading**: Below-the-fold component images must strictly use `loading="lazy"`. NEVER add `priority` or `<link rel="preload">` to images below the initial viewport fold.
+   - **Next.js Zero-CLS Font Metric Fallback Binding**: CSS font variables (`--font-main`, `--font-heading`) must bind directly to Next.js font variables (`var(--font-inter)`, `var(--font-outfit)`) to leverage automatic `size-adjust` fallback metrics, preventing Flash of Invisible Text (FOIT) and eliminating webfont chaining delays.
+   - **Critical Paint Hierarchy**: Above-the-fold announcement banners must paint as the first elements inside `<body>`. All non-critical third-party analytics (GTM/GA4) must be placed at the bottom of `<body>` and deferred via `requestIdleCallback` or user interaction.
+   - **React Server Component (RSC) Purity**: Purely presentational marketing sections (Testimonials, Value Comparison, Process Steps) must remain React Server Components with zero `'use client'`, keeping initial JS bundles under 80 KB.
+   - **Mobile-First Hero Preload**: The hero `<picture>` fallback `<img>` src must point directly to the lightweight mobile asset (`luxury-home-mobile.webp`), with desktop high-res served conditionally via `<source media="(min-width: 641px)">`.
+   - **Click-to-Play Video Facade Standard**: Native `<video controls>` elements must NEVER mount eagerly on page load. Always render a lightweight image poster facade with a gold play button overlay, mounting the `<video autoPlay controls>` element only upon explicit user tap, eliminating media decoder allocation and CPU blocking time (TBT).
+   - **Zero Global Audio & Capture Listeners**: Global background audio players (`BackgroundAudioPlayer`) must NEVER be mounted in root layouts; audio elements and global document capture listeners inflate TBT and degrade page responsiveness.
+   - **Idle / Interaction Widget Deferral**: Floating concierge/chat widgets (`WidgetWrapper`) must defer mounting via `requestIdleCallback` or first user interaction (`scroll`, `touchstart`) so the initial page paint and CWV measurement window remain 100% unencumbered.
 
 ### 🛡️ Execution & Financial Constraints:
 - **Zero Financial Cost**: $0 out-of-pocket spend; leverage the Google AI Ultra ecosystem, open-source packages, GitHub, and free cloud tiers.
