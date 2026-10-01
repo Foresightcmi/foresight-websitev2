@@ -2,8 +2,8 @@ name: Autonomous Social & GBP Broadcast Engine
 
 on:
   schedule:
-    # Run every Tuesday, Thursday, and Saturday at 1:30 PM UTC (9:30 AM EST)
-    - cron: '30 13 * * 2,4,6'
+    # Run every weekday Monday through Friday at 2:00 PM UTC (10:00 AM EST) - Tobi Oluwole Rule #1
+    - cron: '0 14 * * 1-5'
   workflow_dispatch:
     # Allows manual 1-click publishing from GitHub Actions tab
 
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   broadcast-social-post:
-    name: Rotate & Publish to GBP, Facebook & LinkedIn
+    name: Rotate & Publish to LinkedIn, GBP & Facebook
     runs-on: ubuntu-latest
 
     steps:
@@ -30,16 +30,19 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Execute Multi-Channel Publisher
+      - name: Execute LinkedIn Content Engine (Tobi Oluwole & Josh Sanders Standard)
+        run: node scripts/linkedin-content-engine.mjs
+
+      - name: Execute Multi-Channel Publisher (GBP + Facebook)
         run: node scripts/multi-channel-publisher.mjs
 
       - name: Commit and Push Updated Social State & Logs
         run: |
           git config --global user.name "Foresight Social Bot"
           git config --global user.email "social-bot@fhinspectionsatl.com"
-          git add data/social-logs/
+          git add data/social-logs/ data/
           if ! git diff --cached --quiet; then
-            git commit -m "chore(social): autonomous multi-channel rotation update [skip ci]"
+            git commit -m "chore(social): autonomous 10 AM weekday LinkedIn & multi-channel rotation [skip ci]"
             git push
           else
             echo "No state changes to commit."

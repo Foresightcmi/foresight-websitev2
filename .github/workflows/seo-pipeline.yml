@@ -47,14 +47,20 @@ jobs:
       run: |
         git config --global user.name "Foresight SEO Bot"
         git config --global user.email "seo-bot@fhinspectionsatl.com"
-        git add data/posts.json data/cities.json data/refresh-log.json
+        git add data/posts.json data/cities.json data/refresh-log.json data/rankmath-audit.json data/serp-simulation.json
         # Only commit if there are actual changes
         if ! git diff --cached --quiet; then
-          git commit -m "chore(seo): automated weekly blog post and city pages refresh [skip ci]"
+          git commit -m "chore(seo): automated weekly blog post, city refresh & Rank Math audit [skip ci]"
           git push
         else
           echo "No changes to commit."
         fi
+
+    - name: Run Native Rank Math & TruSEO Audit Engine
+      run: node scripts/rankmath-audit-engine.mjs
+
+    - name: Run SERP Simulator (Desktop & Mobile Pixel Check)
+      run: node scripts/serp-preview-simulator.mjs
 
     - name: Run Search Engine Pinger (IndexNow & Google)
       run: node scripts/ping-indexnow.mjs

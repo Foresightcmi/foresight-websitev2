@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-10-01T10:19:58.214Z",
+    "post_id": 2,
+    "topic": "The 45-Minute Solo Inspector Trap",
+    "type": "deposit",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
+    "timestamp": "2026-10-01T10:16:50.866Z",
+    "post_id": 1,
+    "topic": "The Flipped House Fire Hazard",
+    "type": "deposit",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  }
+]

@@ -25,6 +25,10 @@ export default function DashboardPage() {
   const ga4FilePath = path.join(process.cwd(), 'data', 'analytics', 'snapshot-live.json');
   const gscFilePath = path.join(process.cwd(), 'data', 'analytics', 'gsc-snapshot-latest.json');
   const leadsFilePath = path.join(process.cwd(), 'data', 'leads.json');
+  const rankMathFilePath = path.join(process.cwd(), 'data', 'rankmath-audit.json');
+  const serpFilePath = path.join(process.cwd(), 'data', 'serp-simulation.json');
+  const linkedInStoriesFilePath = path.join(process.cwd(), 'data', 'linkedin-tobi-engine.json');
+  const linkedInProfileFilePath = path.join(process.cwd(), 'data', 'linkedin-profile-blueprint.json');
 
   let posts = [];
   let cities = [];
@@ -38,6 +42,10 @@ export default function DashboardPage() {
   let ga4Data = null;
   let gscData = null;
   let leadsData = [];
+  let rankMathData = null;
+  let serpData = null;
+  let linkedInData = [];
+  let linkedInProfile = null;
 
   try {
     posts = JSON.parse(fs.readFileSync(postsFilePath, 'utf8'));
@@ -61,6 +69,18 @@ export default function DashboardPage() {
     }
     if (fs.existsSync(leadsFilePath)) {
       leadsData = JSON.parse(fs.readFileSync(leadsFilePath, 'utf8'));
+    }
+    if (fs.existsSync(rankMathFilePath)) {
+      rankMathData = JSON.parse(fs.readFileSync(rankMathFilePath, 'utf8'));
+    }
+    if (fs.existsSync(serpFilePath)) {
+      serpData = JSON.parse(fs.readFileSync(serpFilePath, 'utf8'));
+    }
+    if (fs.existsSync(linkedInStoriesFilePath)) {
+      linkedInData = JSON.parse(fs.readFileSync(linkedInStoriesFilePath, 'utf8'));
+    }
+    if (fs.existsSync(linkedInProfileFilePath)) {
+      linkedInProfile = JSON.parse(fs.readFileSync(linkedInProfileFilePath, 'utf8'));
     }
   } catch (e) {
     console.error('Error loading data files for dashboard:', e);
@@ -198,6 +218,10 @@ export default function DashboardPage() {
       ga4Data={ga4Data}
       gscData={gscData}
       leadsData={leadsData}
+      rankMathData={rankMathData}
+      serpData={serpData}
+      linkedInData={linkedInData}
+      linkedInProfile={linkedInProfile}
     />
   );
 }

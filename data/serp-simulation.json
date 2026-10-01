@@ -1,0 +1,436 @@
+{
+  "timestamp": "2026-10-01T10:21:33.227Z",
+  "totalSimulations": 10,
+  "simulations": [
+    {
+      "targetName": "Homepage (Brand Authority Hub)",
+      "route": "/",
+      "url": "https://www.fhinspectionsatl.com",
+      "desktop": {
+        "pixelWidth": 530,
+        "maxPixels": 600,
+        "isTruncated": false,
+        "renderedTitle": "Atlanta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal &amp; 4K drones. Instant..."
+      },
+      "mobile": {
+        "pixelWidth": 530,
+        "maxPixels": 540,
+        "isTruncated": false,
+        "renderedTitle": "Atlanta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal &amp; 4K drones. Instant..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "Atlanta Service Area (Fulton County Hub)",
+      "route": "/service-areas/atlanta",
+      "url": "https://www.fhinspectionsatl.com/service-areas/atlanta",
+      "desktop": {
+        "pixelWidth": 530,
+        "maxPixels": 600,
+        "isTruncated": false,
+        "renderedTitle": "Atlanta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Rated Atlanta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free FLIR ther..."
+      },
+      "mobile": {
+        "pixelWidth": 530,
+        "maxPixels": 540,
+        "isTruncated": false,
+        "renderedTitle": "Atlanta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Rated Atlanta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free FLIR ther..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "Marietta Service Area (Cobb County Hub)",
+      "route": "/service-areas/marietta",
+      "url": "https://www.fhinspectionsatl.com/service-areas/marietta",
+      "desktop": {
+        "pixelWidth": 545,
+        "maxPixels": 600,
+        "isTruncated": false,
+        "renderedTitle": "Marietta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Rated Marietta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free FLIR the..."
+      },
+      "mobile": {
+        "pixelWidth": 545,
+        "maxPixels": 540,
+        "isTruncated": true,
+        "renderedTitle": "Marietta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Rated Marietta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free FLIR the..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "Alpharetta Service Area (North Fulton Hub)",
+      "route": "/service-areas/alpharetta",
+      "url": "https://www.fhinspectionsatl.com/service-areas/alpharetta",
+      "desktop": {
+        "pixelWidth": 557,
+        "maxPixels": 600,
+        "isTruncated": false,
+        "renderedTitle": "Alpharetta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Rated Alpharetta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free FLIR t..."
+      },
+      "mobile": {
+        "pixelWidth": 557,
+        "maxPixels": 540,
+        "isTruncated": true,
+        "renderedTitle": "Alpharetta Home Inspections | Certified Master Inspector® | Foresight",
+        "renderedSnippet": "4.9★ Rated Alpharetta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free FLIR t..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "Buyer Inspection (Core Service Pillar)",
+      "route": "/services/buyer-inspection",
+      "url": "https://www.fhinspectionsatl.com/services/buyer-inspection",
+      "desktop": {
+        "pixelWidth": 644,
+        "maxPixels": 600,
+        "isTruncated": true,
+        "renderedTitle": "Buyer &amp; Seller Home Inspection Atlanta | 2 Inspectors From $345 |...",
+        "renderedSnippet": "Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning &amp; $10,000 warra..."
+      },
+      "mobile": {
+        "pixelWidth": 644,
+        "maxPixels": 540,
+        "isTruncated": true,
+        "renderedTitle": "Buyer &amp; Seller Home Inspection Atlanta | 2 Inspectors From $345 |...",
+        "renderedSnippet": "Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning &amp; $10,000 warra..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "Radon Testing (Diagnostic Service Pillar)",
+      "route": "/services/radon-testing",
+      "url": "https://www.fhinspectionsatl.com/services/radon-testing",
+      "desktop": {
+        "pixelWidth": 580,
+        "maxPixels": 600,
+        "isTruncated": false,
+        "renderedTitle": "Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $250 | Foresight",
+        "renderedSnippet": "EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph &amp; same-day report. Flat $250. Call 678-480..."
+      },
+      "mobile": {
+        "pixelWidth": 580,
+        "maxPixels": 540,
+        "isTruncated": true,
+        "renderedTitle": "Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $250 | Foresight",
+        "renderedSnippet": "EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph &amp; same-day report. Flat $250. Call 678-480..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "New Construction Inspection (Pre-Drywall & Final)",
+      "route": "/services/new-construction-inspection",
+      "url": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
+      "desktop": {
+        "pixelWidth": 672,
+        "maxPixels": 600,
+        "isTruncated": true,
+        "renderedTitle": "New Construction Inspection Atlanta GA | Phased &amp; Final From $4...",
+        "renderedSnippet": "Independent new construction &amp; pre-drywall home inspections in Metro Atlanta. Two certified inspectors, FLIR thermal scans &amp; builder-ready punch li..."
+      },
+      "mobile": {
+        "pixelWidth": 672,
+        "maxPixels": 540,
+        "isTruncated": true,
+        "renderedTitle": "New Construction Inspection Atlanta GA | Phased &amp; Final From $4...",
+        "renderedSnippet": "Independent new construction &amp; pre-drywall home inspections in Metro Atlanta. Two certified inspectors, FLIR thermal scans &amp; builder-ready punch li..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "2-Inspector Team vs Solo (Product-Led Comparison)",
+      "route": "/compare/two-inspector-team-vs-single-inspector",
+      "url": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
+      "desktop": {
+        "pixelWidth": 591,
+        "maxPixels": 600,
+        "isTruncated": false,
+        "renderedTitle": "Two-Inspector Team vs Single Inspector | Foresight Difference | Foresight",
+        "renderedSnippet": "Discover why a two-inspector team provides 2x coverage, faster reporting, and zero missed defects compared to single-person home inspections in Atlanta...."
+      },
+      "mobile": {
+        "pixelWidth": 591,
+        "maxPixels": 540,
+        "isTruncated": true,
+        "renderedTitle": "Two-Inspector Team vs Single Inspector | Foresight Difference | Foresight",
+        "renderedSnippet": "Discover why a two-inspector team provides 2x coverage, faster reporting, and zero missed defects compared to single-person home inspections in Atlanta...."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "Residential Defect Index (E-E-A-T Pillar Study)",
+      "route": "/blog/metro-atlanta-residential-defect-index-building-science-study",
+      "url": "https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study",
+      "desktop": {
+        "pixelWidth": 855,
+        "maxPixels": 600,
+        "isTruncated": true,
+        "renderedTitle": "Metro Atlanta Residential Defect Index: 2026 Building Science &amp;...",
+        "renderedSnippet": "Empirical 2026 field study analyzing HVAC thermal load failures, crawlspace fungal thresholds, and radon penetration across 20 Metro Atlanta counties...."
+      },
+      "mobile": {
+        "pixelWidth": 855,
+        "maxPixels": 540,
+        "isTruncated": true,
+        "renderedTitle": "Metro Atlanta Residential Defect Index: 2026 Building Science &amp;...",
+        "renderedSnippet": "Empirical 2026 field study analyzing HVAC thermal load failures, crawlspace fungal thresholds, and radon penetration across 20 Metro Atlanta counties...."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    },
+    {
+      "targetName": "Realtor VIP Partner Hub (B2B Lead Magnet)",
+      "route": "/realtors",
+      "url": "https://www.fhinspectionsatl.com/realtors",
+      "desktop": {
+        "pixelWidth": 445,
+        "maxPixels": 600,
+        "isTruncated": false,
+        "renderedTitle": "Realtor VIP Program | Home Inspector Atlanta | Foresight",
+        "renderedSnippet": "Join Foresight Home Inspections&#x27; exclusive Realtor VIP Program. SUPRA lockbox access, priority scheduling, and $10,000 warranty protection for your bu..."
+      },
+      "mobile": {
+        "pixelWidth": 445,
+        "maxPixels": 540,
+        "isTruncated": false,
+        "renderedTitle": "Realtor VIP Program | Home Inspector Atlanta | Foresight",
+        "renderedSnippet": "Join Foresight Home Inspections&#x27; exclusive Realtor VIP Program. SUPRA lockbox access, priority scheduling, and $10,000 warranty protection for your bu..."
+      },
+      "ratingSnippet": {
+        "stars": "★★★★★",
+        "ratingValue": "5.0",
+        "reviewCount": "150+",
+        "priceRange": "$315 - $1,895"
+      },
+      "sitelinks": [
+        {
+          "label": "Instant Fee Calculator",
+          "path": "/quote"
+        },
+        {
+          "label": "Realtor VIP Portal",
+          "path": "/realtors"
+        },
+        {
+          "label": "2-Inspector Comparison",
+          "path": "/compare/two-inspector-team-vs-single-inspector"
+        },
+        {
+          "label": "Thermal & Radon Add-ons",
+          "path": "/services"
+        }
+      ]
+    }
+  ]
+}

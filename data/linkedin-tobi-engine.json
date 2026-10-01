@@ -1,0 +1,217 @@
+[
+  {
+    "id": 1,
+    "day": "Monday - Deposit (The Flipped House Enemy)",
+    "type": "deposit",
+    "hook": "The seller spent $12,000 on new gray paint and quartz countertops.",
+    "lines": [
+      "The seller spent $12,000 on new gray paint and quartz countertops.",
+      "The buyer was ready to sign an unconditional waiver.",
+      "Then our two-inspector team arrived.",
+      "While my partner checked the electrical panel, I climbed into the attic.",
+      "Beneath fresh blown-in insulation was a charred roof rafter from an old house fire.",
+      "The flipper had simply covered up the fire damage with cheap plywood.",
+      "Our FLIR thermal scan also caught an active water leak behind the master shower.",
+      "Repair estimate: $28,400.",
+      "The buyer got a $30,000 price reduction before 5:00 PM.",
+      "Fresh paint hides ugly secrets.",
+      "Hindsight is expensive... Choose Foresight."
+    ],
+    "imagePath": "/images/thermal-ceiling.webp",
+    "firstComment": "Protecting home buyers across Metro Atlanta with a 2-Inspector protocol: https://www.fhinspectionsatl.com/quote",
+    "topic": "The Flipped House Fire Hazard"
+  },
+  {
+    "id": 2,
+    "day": "Tuesday - Deposit (The Rushed Inspector Enemy)",
+    "type": "deposit",
+    "hook": "A solo inspector spent 45 minutes on a 4,000 sq ft home yesterday.",
+    "lines": [
+      "A solo inspector spent 45 minutes on a 4,000 sq ft home yesterday.",
+      "He collected his $350 fee and told the buyer, 'Looks great!'",
+      "The buyer called us because something felt off.",
+      "Our two-inspector team spent 2.5 hours on-site with FLIR thermal and a 4K drone.",
+      "We found three unbonded subpanels with double-tapped 50-amp breakers.",
+      "The electrical panel was running at 148°F—an active fire hazard.",
+      "We also found a cracked heat exchanger leaking carbon monoxide.",
+      "A 45-minute inspection isn't an inspection.",
+      "It is an expensive game of Russian roulette with your family's savings.",
+      "Never let someone rush through the biggest purchase of your life.",
+      "Choose thoroughness over speed."
+    ],
+    "imagePath": "/images/two-inspectors-electrical-panel-inspection.jpg",
+    "firstComment": "See why 2 Certified Master Inspectors catch what solo operators miss: https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
+    "topic": "The 45-Minute Solo Inspector Trap"
+  },
+  {
+    "id": 3,
+    "day": "Wednesday - Deposit (The New Construction Shortcut Enemy)",
+    "type": "deposit",
+    "hook": "The site superintendent told my client: 'You don't need a third-party inspector.'",
+    "lines": [
+      "The site superintendent told my client: 'You don't need an independent inspector.'",
+      "'The county building inspector already signed off on the framing.'",
+      "My client hired us anyway for a pre-drywall audit.",
+      "Within 10 minutes, we found three severed load-bearing roof trusses.",
+      "The HVAC contractor had cut right through them to run flex ducting.",
+      "The roof was literally sagging under its own weight before the drywall was even hung.",
+      "The builder had to halt the drywall crew and bring out a structural engineer.",
+      "County inspectors spend an average of 7 minutes on residential job sites.",
+      "They check compliance; we protect your equity.",
+      "Never close on new construction without an independent Certified Master Inspector.",
+      "Trust, but verify."
+    ],
+    "imagePath": "/images/roof-1.webp",
+    "firstComment": "Schedule phased new construction & pre-drywall audits in Atlanta: https://www.fhinspectionsatl.com/services/new-construction-inspection",
+    "topic": "Severed Trusses in New Construction"
+  },
+  {
+    "id": 4,
+    "day": "Thursday - Deposit (The Georgia Red Clay Enemy)",
+    "type": "deposit",
+    "hook": "Georgia red clay looks solid until it drinks 1,000 gallons of rain.",
+    "lines": [
+      "Georgia red clay looks solid until it drinks 1,000 gallons of rain.",
+      "Then it acts like an expanding hydraulic jack against your basement walls.",
+      "Last week in Marietta, a buyer was told 'that small hairline crack is just settling.'",
+      "We put laser levels and digital moisture meters on the stem wall.",
+      "The foundation wall was deflecting inward by 1.75 inches.",
+      "Hydrostatic clay pressure had sheared the mortar joints below the grade.",
+      "Cost to install carbon fiber reinforcement straps: $16,500.",
+      "Hairline cracks are rarely 'just settling' in Atlanta's Piedmont soil.",
+      "Always measure the deflection before your due diligence expires.",
+      "Building science doesn't guess."
+    ],
+    "imagePath": "/images/crawlspace-inspection.webp",
+    "firstComment": "Read our building science guide on Georgia clay & foundations: https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations",
+    "topic": "Hydrostatic Red Clay Foundation Deflection"
+  },
+  {
+    "id": 5,
+    "day": "Friday - Withdrawal (The High-Ticket Lead Funnel)",
+    "type": "withdrawal",
+    "hook": "To every Atlanta real estate agent fighting the 7-day due diligence clock:",
+    "lines": [
+      "To every Atlanta real estate agent fighting the 7-day due diligence clock:",
+      "We built a free tool that writes your GAR defect amendments in 60 seconds.",
+      "Most inspectors send 90-page PDFs with vague summaries that terrify your clients.",
+      "Our reports separate cosmetic scuffs from structural deal-breakers instantly.",
+      "Plus, our 1-Click Repair Clause Generator gives you exact contract language.",
+      "You copy the InterNACHI defect citation and paste it straight into GAR F404.",
+      "No guessing, no negotiating blind, and no late-night contract stress.",
+      "And we deliver same-day reports on every 2-inspector deployment.",
+      "Try the tool completely free at the link below.",
+      "Let's make due diligence smooth again."
+    ],
+    "imagePath": "/images/drone-2.webp",
+    "firstComment": "Free 1-Click GAR Repair Clause Generator for Georgia Realtors: https://www.fhinspectionsatl.com/realtors",
+    "topic": "The 1-Click GAR Due Diligence Tool"
+  },
+  {
+    "id": 6,
+    "day": "Monday - Deposit (The Odorless Killer Enemy)",
+    "type": "deposit",
+    "hook": "The house was built in 2023 on a hill in Alpharetta.",
+    "lines": [
+      "The house was built in 2023 on a hill in Alpharetta.",
+      "The buyer assumed high elevation meant zero environmental risk.",
+      "We placed our continuous electronic radon monitor in the basement for 48 hours.",
+      "The reading came back at 11.4 pCi/L.",
+      "The EPA action guideline is 4.0 pCi/L.",
+      "11.4 pCi/L is equivalent to smoking half a pack of cigarettes inside the home every day.",
+      "North Georgia sits on granite bedrock loaded with decaying uranium.",
+      "You cannot smell radon. You cannot see it. You cannot taste it.",
+      "The seller paid $1,800 to install an active sub-slab mitigation system before closing.",
+      "Never waive an environmental radon screen in North Metro Atlanta."
+    ],
+    "imagePath": "/images/radon-testing-banner.webp",
+    "firstComment": "Learn about EPA Radon Zone 1 risks in Fulton & Cobb: https://www.fhinspectionsatl.com/services/radon-testing",
+    "topic": "Silent Radon Spike in Alpharetta"
+  },
+  {
+    "id": 7,
+    "day": "Tuesday - Deposit (The Missing Roof Flashing Enemy)",
+    "type": "deposit",
+    "hook": "The roof looked brand new from the driveway.",
+    "lines": [
+      "The roof looked brand new from the driveway.",
+      "The inspector before us wrote: 'Roof inspected from ground level with binoculars.'",
+      "We don't use binoculars.",
+      "We launched our FAA-registered 4K drone over the two-story chimney.",
+      "The roofers had skipped counter-flashing entirely around the cricket.",
+      "They smeared black silicone caulk over open gaps instead of bending metal.",
+      "Rainwater was running straight down the chimney framing into the living room ceiling.",
+      "A $3,200 roofer shortcut caught in 3 minutes of 4K flight.",
+      "If your inspector doesn't walk the roof or fly a drone, you don't have a roof inspection.",
+      "High roofs require high standards."
+    ],
+    "imagePath": "/images/drone-2.webp",
+    "firstComment": "4K aerial drone roof inspections included standard with Foresight: https://www.fhinspectionsatl.com/quote",
+    "topic": "Drone Detects Unflashed Chimney"
+  },
+  {
+    "id": 8,
+    "day": "Wednesday - Deposit (The Flipped Electrical Enemy)",
+    "type": "deposit",
+    "hook": "A brand new kitchen with designer matte black outlets.",
+    "lines": [
+      "A brand new kitchen with designer matte black outlets.",
+      "Everything looked straight out of an Architectural Digest spread.",
+      "Then we plugged in our circuit tester.",
+      "Every single outlet along the island had an open ground.",
+      "The contractor had installed 3-prong receptacles onto 1960s ungrounded 2-wire cable.",
+      "Worse, he jumped the ground screw to the neutral terminal—a bootleg ground.",
+      "It tricks cheap plug-in testers into showing 'Correct Wiring.'",
+      "But if an appliance shorts out, the metal frame becomes energized at 120 volts.",
+      "It is an invisible shock hazard for anyone touching the sink and stove.",
+      "Never judge electrical safety by the color of the outlet cover.",
+      "Always verify with true digital metering."
+    ],
+    "imagePath": "/images/two-inspectors-electrical-panel-inspection.jpg",
+    "firstComment": "Full MEP forensic evaluations by Certified Master Inspectors: https://www.fhinspectionsatl.com/quote",
+    "topic": "The Deadly Bootleg Ground in Flipped Kitchens"
+  },
+  {
+    "id": 9,
+    "day": "Thursday - Deposit (The Sewer Collapse Enemy)",
+    "type": "deposit",
+    "hook": "The toilets flushed perfectly during the open house.",
+    "lines": [
+      "The toilets flushed perfectly during the open house.",
+      "The seller checked 'No Known Plumbing Defects' on the disclosure form.",
+      "We ran our self-leveling HD sewer camera 65 feet down the main lateral.",
+      "At 42 feet under the front yard, the old clay pipe was completely crushed.",
+      "Mature oak tree roots had invaded the bell joint and formed a solid wooden plug.",
+      "One week of regular household laundry would have flooded raw sewage across the basement.",
+      "Cost to excavate the front lawn and replace the sewer line: $9,200.",
+      "The seller credited the full $9,200 at closing.",
+      "A $250 sewer scope just paid for itself 36 times over.",
+      "You can't see underground without optics."
+    ],
+    "imagePath": "/images/crawlspace-inspection.webp",
+    "firstComment": "Add high-definition sewer scope diagnostics to your inspection: https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
+    "topic": "Crushed Sewer Line Under Tree Roots"
+  },
+  {
+    "id": 10,
+    "day": "Friday - Withdrawal (The Estate Master Package)",
+    "type": "withdrawal",
+    "hook": "If you're buying a $1M+ estate in Atlanta, don't buy an economy inspection.",
+    "lines": [
+      "If you're buying a $1M+ home in Buckhead, Alpharetta, or Milton:",
+      "Do not buy an economy inspection designed for a 1,200 sq ft starter house.",
+      "A 6,000 sq ft estate has three HVAC systems, two water heaters, and complex roofing.",
+      "That's why we introduced the Estate Master Due Diligence Package.",
+      "Two Certified Master Inspectors on-site for 3.5 uninterrupted hours.",
+      "Full radiometric FLIR thermal imaging of every exterior wall and ceiling.",
+      "FAA 4K drone mapping of all roof valleys, slate/tile planes, and chimneys.",
+      "Continuous electronic radon monitoring and full HD sewer scope video.",
+      "Plus a private 1-on-1 strategy call with your real estate attorney before negotiations.",
+      "First class protection for high-stakes acquisitions.",
+      "Book your private estate audit at the link below."
+    ],
+    "imagePath": "/images/two-inspectors-electrical-panel-inspection.jpg",
+    "firstComment": "Explore our First-Class Estate Master Due Diligence Package: https://www.fhinspectionsatl.com/quote",
+    "topic": "The Estate Master High-Ticket Due Diligence Tier"
+  }
+]
