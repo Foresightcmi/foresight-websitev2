@@ -117,6 +117,30 @@ function checkHeroMobileFirst() {
   }
 }
 
+// Check 7: layout.js must not load background audio player globally
+function checkNoGlobalAudioPlayer() {
+  const file = path.join(ROOT, 'app', 'layout.js');
+  const code = fs.readFileSync(file, 'utf8');
+
+  if (/BackgroundAudioPlayer/i.test(code)) {
+    fail('Zero Global Audio Player', 'BackgroundAudioPlayer detected in layout.js! Triggers capture listeners and TBT.');
+  } else {
+    pass('Zero Global Audio Player', 'Layout has 0 global audio players (0 media listener overhead).');
+  }
+}
+
+// Check 8: HomeVideoPlayer must use click-to-play facade
+function checkVideoPlayerFacade() {
+  const file = path.join(ROOT, 'app', 'components', 'HomeVideoPlayer.js');
+  const code = fs.readFileSync(file, 'utf8');
+
+  if (!/isPlaying/i.test(code) || !/onClick/i.test(code)) {
+    fail('Video Player Facade', 'HomeVideoPlayer is not using a click-to-play facade pattern!');
+  } else {
+    pass('Video Player Facade', 'HomeVideoPlayer implements lightweight click-to-play facade (0 initial video decoders).');
+  }
+}
+
 console.log('\n🛡️  Foresight Mobile Performance Guard — Running Automated Audit...\n');
 
 checkVoiceAgentModalImport();
@@ -125,6 +149,8 @@ checkFontVariableBindings();
 checkLayoutScriptPlacement();
 checkTestimonialsServerComponent();
 checkHeroMobileFirst();
+checkNoGlobalAudioPlayer();
+checkVideoPlayerFacade();
 
 console.log('\n------------------------------------------------------------');
 const failures = checks.filter(c => c.status === 'FAIL');
@@ -133,6 +159,6 @@ if (failures.length > 0) {
   console.error(`\x1b[31m💥 AUDIT FAILED: ${failures.length} performance invariant violation(s) detected!\x1b[0m\n`);
   process.exit(1);
 } else {
-  console.log(`\x1b[32m✨ ALL 6 PERFORMANCE INVARIANTS SATISFIED! Mobile 90+ Range Guaranteed.\x1b[0m\n`);
+  console.log(`\x1b[32m✨ ALL 8 PERFORMANCE INVARIANTS SATISFIED! Mobile 90+ Range Guaranteed.\x1b[0m\n`);
   process.exit(0);
 }

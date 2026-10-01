@@ -7,7 +7,6 @@ import LatestPosts from './components/LatestPosts';
 import NewsletterSignup from './components/NewsletterSignup';
 import VslTriggerButton from './components/VslTriggerButton';
 import HomeVideoPlayer from './components/HomeVideoPlayer';
-import ThemeSongPlayer from './components/ThemeSongPlayer';
 
 import ValueComparison from './components/ValueComparison';
 import TwoPossibilities from './components/TwoPossibilities';
@@ -258,29 +257,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 🎵 OFFICIAL FORESIGHT THEME SONG SECTION */}
-      <section style={{ 
-        background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', 
-        borderTop: '2px solid rgba(212,175,55,0.4)', 
-        borderBottom: '2px solid rgba(212,175,55,0.4)', 
-        padding: '2.5rem 1rem', 
-        color: '#FFFFFF' 
-      }}>
-        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid var(--color-gold)', borderRadius: '9999px', padding: '0.4rem 1.2rem', color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
-            <span>🎵</span> Official Foresight Theme Song
-          </div>
-          <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>
-            &ldquo;Hindsight is Expensive. Call Foresight.&rdquo;
-          </h2>
-          <p style={{ color: '#94A3B8', fontSize: '1rem', maxWidth: '600px', margin: '0 auto 1.5rem', lineHeight: 1.5 }}>
-            Listen to our official anthem featuring the 678-480-2110 inspection hotline and our two-inspector guarantee.
-          </p>
-          
-          <ThemeSongPlayer />
         </div>
       </section>
 
