@@ -41,6 +41,8 @@ export default async function sitemap() {
     { loc: '/free-utility-setup', changefreq: 'monthly', priority: 0.8 },
     { loc: '/review', changefreq: 'monthly', priority: 0.8 },
     { loc: '/faq', changefreq: 'monthly', priority: 0.7 },
+    { loc: '/videos', changefreq: 'weekly', priority: 0.85 },
+    { loc: '/videos/complete-home-systems-diagnostic', changefreq: 'monthly', priority: 0.9 },
     { loc: '/privacy', changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', changefreq: 'yearly', priority: 0.3 }
   ];

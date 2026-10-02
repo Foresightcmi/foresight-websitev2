@@ -52,22 +52,17 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "VideoObject",
-        "name": "Foresight Home Inspections - Complete Home Systems Diagnostic Commercial",
-        "description": "Certified Master Inspector Christopher Boykin and Foresight Home Inspections demonstrate major home systems evaluations, diagnostic technology, and two-inspector thoroughness across Atlanta.",
-        "thumbnailUrl": "https://www.fhinspectionsatl.com/images/home-systems-poster.webp",
-        "uploadDate": "2026-09-13T22:00:00Z",
-        "duration": "PT1M19S",
-        "contentUrl": "https://www.fhinspectionsatl.com/videos/foresight-home-systems.mp4",
-        "publisher": { "@id": "https://www.fhinspectionsatl.com/#business" }
-      },
-      {
         "@type": "WebPage",
         "@id": "https://www.fhinspectionsatl.com/#webpage",
         "url": "https://www.fhinspectionsatl.com",
         "name": "Foresight Home Inspections | Certified Master Inspector® | Atlanta GA",
         "description": "Two certified inspectors on every job. Led by a Certified Master Inspector® providing premium, thorough home inspections across Metro Atlanta.",
         "isPartOf": { "@id": "https://www.fhinspectionsatl.com/#website" },
+        "relatedLink": [
+          "https://www.fhinspectionsatl.com/videos/complete-home-systems-diagnostic",
+          "https://www.fhinspectionsatl.com/due-diligence",
+          "https://www.fhinspectionsatl.com/services/buyer-inspection"
+        ],
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [".slogan-heading", ".hero h1", ".hero p", ".badge"]
@@ -253,6 +248,25 @@ export default function Home() {
                   style={{ padding: '0.9rem 2rem', fontSize: '1rem', flexGrow: 1, textAlign: 'center' }}
                 >
                   📊 Instant Quote
+                </Link>
+              </div>
+
+              <div style={{ textAlign: 'center', marginTop: '0.25rem' }}>
+                <Link
+                  prefetch={false}
+                  href="/videos/complete-home-systems-diagnostic"
+                  style={{
+                    color: 'var(--color-gold)',
+                    fontSize: '0.92rem',
+                    fontWeight: 600,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px'
+                  }}
+                >
+                  🎥 Open Dedicated Watch Page &amp; Full Audit Transcript →
                 </Link>
               </div>
             </div>
