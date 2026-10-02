@@ -226,53 +226,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [haltSpeech]);
 
-  // Fallback voice speak function (Natural Authoritative Male)
+  // Fallback voice speak function (Guaranteed Authentic Christopher Boykin)
   const speakTextFallback = useCallback((text) => {
-    if (!synthRef.current || isMuted) return;
+    if (isMutedRef.current) return;
+    if (audioRef.current) return;
+    playNeuralAudio('/audio/chris-browsing.mp3');
+  }, [playNeuralAudio]);
 
-    synthRef.current.cancel();
-    const cleanText = text.replace(/[*#_~]/g, '').trim();
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-
-    const voices = synthRef.current.getVoices();
-    const preferredVoice = voices.find(v => 
-      (v.name.includes('David') || 
-       v.name.includes('Guy') || 
-       v.name.includes('Christopher') || 
-       v.name.includes('Mark') || 
-       v.name.includes('George') ||
-       v.name.includes('Google US English Male') ||
-       v.name.includes('Microsoft David')) && v.lang.startsWith('en')
-    ) || voices.find(v => v.lang.startsWith('en') && (v.name.toLowerCase().includes('male') || (!v.name.toLowerCase().includes('female') && !v.name.toLowerCase().includes('zira') && !v.name.toLowerCase().includes('jenny')))) || voices.find(v => v.lang.startsWith('en'));
-
-    if (preferredVoice) utterance.voice = preferredVoice;
-    utterance.rate = 1.0;
-    utterance.pitch = 0.95;
-
-    utterance.onstart = () => {
-      isSpeakingRef.current = true;
-      setCallState('speaking');
-    };
-
-    utterance.onend = () => {
-      isSpeakingRef.current = false;
-      setCallState('idle');
-      if (isHandsFreeRef.current && isOpenRef.current && handleStartListeningRef.current) {
-        setTimeout(() => {
-          if (isOpenRef.current && callStateRef.current === 'idle') {
-            handleStartListeningRef.current();
-          }
-        }, 350);
-      }
-    };
-
-    utterance.onerror = () => {
-      isSpeakingRef.current = false;
-      setCallState('idle');
-    };
-
-    synthRef.current.speak(utterance);
-  }, [isMuted]);
 
   useEffect(() => {
     isMutedRef.current = isMuted;
@@ -842,7 +802,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       if (data.mode !== 'live' || !data.wsUrl) {
         console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
         setEngineMode('neural');
-        const greetingText = "Hello! I am Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?";
+        const greetingText = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
         setHistory([{
           role: 'assistant',
           content: greetingText
@@ -1142,7 +1102,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?"
+              content: "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close."
             }];
           }
           return prev;
@@ -1158,7 +1118,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: "Hello! I'm Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?"
+              content: "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close."
             }];
           }
           return prev;
@@ -1169,7 +1129,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     } catch (err) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
-      const greetingText = "Hello! I am Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property questions or instant quote can I calculate for you today?";
+      const greetingText = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
       setHistory(prev => {
         if (prev.length === 0) {
           return [{
@@ -1180,7 +1140,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         return prev;
       });
       setCallState('speaking');
-      playNeuralAudio(currentPersona === 'chris' ? '/audio/chris-cloned-greeting.mp3' : null, () => {
+      playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
         if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
           handleStartListeningRef.current();
         }
@@ -1188,19 +1148,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [startLiveMicStream, playLivePcmChunk, haltSpeech, playNeuralAudio, calculatedQuote]);
 
-  // Persona switcher between Jordan (Concierge) and Chris (Master Inspector)
+  // Unified Chris CMI persona
   const switchPersona = useCallback((newPersona) => {
-    if (newPersona === personaRef.current) return;
-    setPersona(newPersona);
-    personaRef.current = newPersona;
-    stopLiveSession();
-    setHistory([]);
-    setInterimUserText('');
-    setCalculatedQuote(null);
-    setBookingData(null);
-    setCallState('thinking');
-    initLiveConnection(newPersona);
-  }, [stopLiveSession, initLiveConnection]);
+    setPersona('chris');
+    personaRef.current = 'chris';
+  }, []);
 
   // Auto-scroll transcript container
   useEffect(() => {
@@ -1241,7 +1193,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (isOpenRef.current && callStateRef.current === 'thinking' && !isSpeakingRef.current) {
             console.log('Gemini Live opening greeting delayed; playing instant CMI neural greeting fallback.');
             setEngineMode('neural');
-            const fallbackText = "Hello! I am Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections. Welcome to your Live Concierge Consultation—what property address or inspection questions can I answer for you today?";
+            const fallbackText = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
             setHistory([{ role: 'assistant', content: fallbackText, live: true }]);
             setCallState('speaking');
             playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {

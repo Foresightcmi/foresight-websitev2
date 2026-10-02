@@ -198,7 +198,7 @@ function extractPhoneNumber(rawText) {
 }
 
 // Dynamic LLM Brain Generation via Google Gemini (Real-Time Cognitive Listening with thinkingBudget: 0)
-async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, persona = 'jordan') {
+async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, persona = 'chris') {
   if (!apiKey) return null;
 
   const recentMessages = (messages || []).slice(-6);
@@ -207,10 +207,10 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
     parts: [{ text: msg.content }]
   }));
 
-  const basePrompt = persona === 'chris' ? CHRIS_SYSTEM_INSTRUCTION : JORDAN_SYSTEM_INSTRUCTION;
+  const basePrompt = CHRIS_SYSTEM_INSTRUCTION;
   const spokenConstraint = "\n\nCRITICAL CONVERSATIONAL CONSTRAINT: You are speaking aloud over a voice call. Keep your answer direct, authoritative, and concise (1 to 2 short sentences max, under 35 words). Never use lists, bullet points, asterisks, or markdown.";
 
-  const models = ['gemini-3.5-flash', 'gemini-2.0-flash'];
+  const models = ['gemini-2.5-flash', 'gemini-3.8-flash'];
   for (const model of models) {
     try {
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
@@ -465,7 +465,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     const clientName = nameIntroMatch[1].trim();
     return {
       text: `Great to meet you, ${clientName}! What's the best phone number for you, and what date or time would you prefer for your inspection?`,
-      preAudio: null
+      preAudio: '/audio/chris-morning-afternoon.mp3'
     };
   }
 
@@ -473,7 +473,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo', 'why two'])) {
     return {
       text: "Most discount companies send one inspector who gets exhausted after four hours and can easily miss hidden defects. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus up to 35,000 dollars in warranty and guarantee protection. Would you like to check our availability for your inspection?",
-      preAudio: null
+      preAudio: '/audio/chris-why-two.mp3'
     };
   }
 
@@ -481,7 +481,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['warranty', '10000', '10,000', '25000', '25,000', '35000', '35,000', 'guarantee', 'honor', 'protection'])) {
     return {
       text: "Every full home inspection includes up to 35,000 dollars in combined warranty and guarantee protection: our complimentary 10,000 dollar Master Protection Warranty with zero deductible covering mechanicals, structure, appliances, roofs, and mold after closing, plus InterNACHI's 25,000 dollar Honor Guarantee. Would you like to get your inspection scheduled with our team?",
-      preAudio: null
+      preAudio: '/audio/chris-warranty.mp3'
     };
   }
 
@@ -489,7 +489,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['compare', 'competitor', 'competitors', 'franchise', 'franchises', 'bpg', 'home-probe', 'inspect-all', 'pillar to post', 'why foresight', 'why choose you'])) {
     return {
       text: "National franchises charge 450 to 575 dollars to pay corporate royalties and dispatch hourly junior techs. Solo discount operators charge 325 to 400, but working alone for 4 hours causes fatigue and they offer zero warranty. Foresight delivers two certified inspectors led by a Certified Master Inspector, up to 35,000 dollars in warranty protection, and free FLIR thermal and drone scans starting from 345 dollars. Would you like to get an instant quote or check our schedule?",
-      preAudio: null
+      preAudio: '/audio/chris-competitors.mp3'
     };
   }
 
@@ -497,7 +497,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['checklist', 'hindsight checklist', 'foresight checklist', 'guide', 'free download', 'send checklist'])) {
     return {
       text: "We have put together our exclusive Foresight vs. Hindsight Due Diligence Checklist to help you avoid expensive home buying pitfalls. What is your email address? I can log your request right now so our office sends it straight to your inbox!",
-      preAudio: null,
+      preAudio: '/audio/chris-checklist.mp3',
       action: 'offer_checklist'
     };
   }
@@ -506,7 +506,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
     return {
       text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, 375 for up to 2,000, 405 for up to 2,500, and 440 for up to 3,000 square feet. That includes our two-inspector team, complimentary FLIR thermal imaging, drone scans, and up to 35,000 dollars in warranty and guarantee protection. What is the approximate square footage of the home? I can give you your exact flat rate right now!",
-      preAudio: null
+      preAudio: '/audio/chris-pricing.mp3'
     };
   }
 
@@ -538,28 +538,28 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
       text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 450 dollars to inspect the underground line all the way to the municipal main. It is one of the smartest investments you can make during due diligence. Shall I reserve a slot for your sewer scope?",
-      preAudio: null
+      preAudio: '/audio/chris-upsell-sewer.mp3'
     };
   }
 
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
       text: "We provide comprehensive pool and spa inspections for 275 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
-      preAudio: null
+      preAudio: '/audio/chris-pricing.mp3'
     };
   }
 
   if (matchesAny(['thermal', 'flir', 'infrared', 'drone', 'drones', 'camera'])) {
     return {
       text: "Yes, absolutely! We include FLIR infrared thermal imaging to catch hidden leaks behind walls and aerial drone roof scans standard on every single inspection for free. Would you like to reserve an inspection window with our team?",
-      preAudio: null
+      preAudio: '/audio/chris-drone-thermal.mp3'
     };
   }
 
   if (matchesAny(['how long', 'duration', 'time take', 'hours'])) {
     return {
       text: "Because we send two certified inspectors on every single job instead of just one, we finish a complete, highly thorough inspection in just 1.5 to 2.5 hours, saving you half the time of exhausted solo inspectors! Would a morning or afternoon time work best for you?",
-      preAudio: null
+      preAudio: '/audio/chris-why-two.mp3'
     };
   }
 
@@ -657,7 +657,7 @@ export async function POST(request) {
         const deposit = Math.round(quoteResult.total / 2);
         const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, the 50 percent deposit of ${deposit} dollars along with your signed inspection agreements are completed after our office sends your appointment confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
 
-        const audio = await synthesizeHumanVoice(speechResponse, voiceName, persona);
+        const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'chris')) || '/audio/chris-pricing.mp3';
         return NextResponse.json({
           response: speechResponse,
           audio,
@@ -684,7 +684,7 @@ export async function POST(request) {
       });
 
       const speechResponse = `Thank you, ${clientName}! I have recorded your email as ${email}. Part 1 of our Foresight vs. Hindsight due diligence checklist has been queued for your inbox. What other questions can I answer about your home or our inspection process?`;
-      const audio = await synthesizeHumanVoice(speechResponse, voiceName, persona);
+      const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'chris')) || '/audio/chris-checklist.mp3';
       return NextResponse.json({
         response: speechResponse,
         audio,
@@ -712,7 +712,7 @@ export async function POST(request) {
       await persistBooking(bookingArgs);
       const speechResponse = `Awesome! I have your inspection request logged. Our office team will follow up directly at ${clientPhone} within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
 
-      const audio = await synthesizeHumanVoice(speechResponse, voiceName, persona);
+      const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'chris')) || '/audio/chris-booked.mp3';
       return NextResponse.json({
         response: speechResponse,
         audio,
@@ -737,7 +737,7 @@ export async function POST(request) {
     const isGenericFallback = turnResult.text.startsWith("Whether it is evaluating structural stability");
     if (!isGenericFallback && persona === 'chris') {
       const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
-      const audio = await synthesizeHumanVoice(cleanReply, voiceName, persona);
+      const audio = (await synthesizeHumanVoice(cleanReply, voiceName, 'chris')) || turnResult.preAudio || '/audio/chris-browsing.mp3';
       return NextResponse.json({
         response: cleanReply,
         audio,
@@ -749,9 +749,9 @@ export async function POST(request) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey) {
       try {
-        const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, persona);
+        const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, 'chris');
         if (dynamicReply) {
-          const audio = await synthesizeHumanVoice(dynamicReply, voiceName, persona);
+          const audio = (await synthesizeHumanVoice(dynamicReply, voiceName, 'chris')) || '/audio/chris-browsing.mp3';
           return NextResponse.json({
             response: dynamicReply,
             audio,
@@ -765,7 +765,7 @@ export async function POST(request) {
 
     // 6. Intelligent Fallback
     const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
-    const audio = await synthesizeHumanVoice(cleanReply, voiceName, persona);
+    const audio = (await synthesizeHumanVoice(cleanReply, voiceName, 'chris')) || turnResult.preAudio || '/audio/chris-browsing.mp3';
 
     return NextResponse.json({
       response: cleanReply,
@@ -775,10 +775,8 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
-    const fallbackText = persona === 'chris'
-      ? "Welcome to Foresight Home Inspections! This is Chris, your Certified Master Inspector. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!"
-      : "Welcome to Foresight Home Inspections! This is Jordan, your client experience concierge. We send two certified inspectors on every job with free thermal imaging and drone scans. How can I help you check pricing or secure an inspection date today?";
-    const audio = await synthesizeHumanVoice(fallbackText, voiceName, persona);
+    const fallbackText = "Welcome to Foresight Home Inspections! This is Chris, your Certified Master Inspector. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!";
+    const audio = (await synthesizeHumanVoice(fallbackText, voiceName, 'chris')) || '/audio/chris-browsing.mp3';
     return NextResponse.json({
       response: fallbackText,
       audio,
