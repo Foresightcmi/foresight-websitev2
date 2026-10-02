@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-02T18:58:32.753Z",
+    "post_id": 4,
+    "topic": "Hydrostatic Red Clay Foundation Deflection",
+    "type": "deposit",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
     "timestamp": "2026-10-01T19:17:13.883Z",
     "post_id": 3,
     "topic": "Severed Trusses in New Construction",
