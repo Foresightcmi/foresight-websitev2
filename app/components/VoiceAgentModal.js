@@ -6,6 +6,9 @@ import { calculateQuoteDetails } from '../../lib/pricing';
 import { CHRIS_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
 import LiveAvatar3D from './LiveAvatar3D';
 
+const AUTHENTIC_CHRIS_GREETING_AUDIO = '/audio/chris-cloned-greeting.mp3?v=20261002_master_cmi';
+const AUTHENTIC_CHRIS_GREETING_TEXT = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
+
 export default function VoiceAgentModal({ isOpen, onClose }) {
   const [callState, setCallState] = useState('idle'); // 'idle' | 'listening' | 'thinking' | 'speaking'
   const [interimUserText, setInterimUserText] = useState('');
@@ -103,6 +106,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   // Master audio halt: instantly stops all audio playback across HTML5 Audio, Gemini Live PCM, and Web Speech
   const haltSpeech = useCallback(() => {
+    isGreetingPlayingRef.current = false;
     if (greetingTimerRef.current) {
       clearTimeout(greetingTimerRef.current);
       greetingTimerRef.current = null;
@@ -311,7 +315,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
   // Live 24kHz PCM Audio Stream Player (Jitter-buffered gapless queue)
   const playLivePcmChunk = useCallback((base64Data) => {
-    if (isMutedRef.current || !base64Data || isInterruptedRef.current) return;
+    if (isMutedRef.current || !base64Data || isInterruptedRef.current || isGreetingPlayingRef.current) return;
     try {
       // Ensure HTML5 audio greeting/fallback is stopped so they never overlap
       if (audioRef.current) {
@@ -800,19 +804,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       const data = await res.json();
 
       if (data.mode !== 'live' || !data.wsUrl) {
-        console.log('Gemini Live session unavailable (falling back to Neural Concierge):', data.error || data.message);
+        console.log('Gemini Live session unavailable (using Neural Concierge mode):', data.error || data.message);
         setEngineMode('neural');
-        const greetingText = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
-        setHistory([{
-          role: 'assistant',
-          content: greetingText
-        }]);
-        setCallState('speaking');
-        playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
-          if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
-            handleStartListeningRef.current();
-          }
-        });
         return;
       }
 
@@ -891,26 +884,15 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           const rawText = typeof evt.data === 'string' ? evt.data : (evt.data instanceof Blob ? await evt.data.text() : String(evt.data));
           const msg = JSON.parse(rawText);
           if (msg.setupComplete) {
-            console.log('Gemini 3.1 Live setup complete! Connecting microphone stream...');
+            console.log('Gemini 3.1 Live setup complete! WebSocket session open.');
             setLiveWsConnected(true);
             setEngineMode('live');
-            isGreetingPlayingRef.current = true;
-            isInterruptedRef.current = false;
             startLiveMicStream(ws);
-
-            const greetingPrompt = "The client just opened the voice console on our website. Greet them warmly and concisely in 1 spoken sentence as Christopher Boykin, founder and Certified Master Inspector from Foresight Home Inspections in Atlanta, welcoming them to their Live Concierge Consultation and asking what property address or home questions you can help them with today.";
-
-            ws.send(JSON.stringify({
-              clientContent: {
-                turns: [{
-                  role: 'user',
-                  parts: [{
-                    text: greetingPrompt
-                  }]
-                }],
-                turnComplete: true
-              }
-            }));
+            // CRITICAL: DO NOT SEND greetingPrompt to Gemini Live!
+            // Christopher's authentic recording is playing/has played the official opening vocal.
+            if (!isGreetingPlayingRef.current && isOpenRef.current) {
+              setCallState('listening');
+            }
           }
 
           if (msg.serverContent) {
@@ -1114,37 +1096,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         console.warn('Gemini Live WebSocket error, using Neural Fallback:', err);
         setLiveWsConnected(false);
         setEngineMode('neural');
-        setHistory(prev => {
-          if (prev.length === 0) {
-            return [{
-              role: 'assistant',
-              content: "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close."
-            }];
-          }
-          return prev;
-        });
-        setCallState('idle');
       };
 
     } catch (err) {
       console.warn('Could not initialize Gemini Live session:', err);
       setEngineMode('neural');
-      const greetingText = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
-      setHistory(prev => {
-        if (prev.length === 0) {
-          return [{
-            role: 'assistant',
-            content: greetingText
-          }];
-        }
-        return prev;
-      });
-      setCallState('speaking');
-      playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
-        if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
-          handleStartListeningRef.current();
-        }
-      });
     }
   }, [startLiveMicStream, playLivePcmChunk, haltSpeech, playNeuralAudio, calculatedQuote]);
 
@@ -1171,10 +1127,14 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         setCalculatedQuote(null);
         setInterimUserText('');
         setMicError(null);
-        setHistory([]);
-        setCallState('thinking');
 
-        // Pre-create and unlock AudioContext instances immediately upon user interaction click
+        // 1. Immediately present Christopher's authentic opening greeting text in the transcript
+        setHistory([{
+          role: 'assistant',
+          content: AUTHENTIC_CHRIS_GREETING_TEXT
+        }]);
+
+        // 2. Pre-create and unlock AudioContext instances immediately upon user interaction click
         if (!audioOutputCtxRef.current || audioOutputCtxRef.current.state === 'closed') {
           try {
             audioOutputCtxRef.current = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
@@ -1187,31 +1147,30 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           try { audioInputCtxRef.current.resume(); } catch (_) {}
         }
 
-        // Arm greeting fallback timer: if Gemini Live takes > 4.5s to deliver opening audio, rescue immediately
-        if (greetingTimerRef.current) clearTimeout(greetingTimerRef.current);
-        greetingTimerRef.current = setTimeout(() => {
-          if (isOpenRef.current && callStateRef.current === 'thinking' && !isSpeakingRef.current) {
-            console.log('Gemini Live opening greeting delayed; playing instant CMI neural greeting fallback.');
-            setEngineMode('neural');
-            const fallbackText = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
-            setHistory([{ role: 'assistant', content: fallbackText, live: true }]);
-            setCallState('speaking');
-            playNeuralAudio('/audio/chris-cloned-greeting.mp3', () => {
-              isGreetingPlayingRef.current = false;
-              setCallState('listening');
-              if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
-                handleStartListeningRef.current();
-              }
-            });
-          }
-        }, 4500);
+        // 3. Immediately play Christopher's authentic high-fidelity recording (Zero robot speech, zero lag)
+        setCallState('speaking');
+        isGreetingPlayingRef.current = true;
+        isSpeakingRef.current = true;
 
-        // Initialize Gemini Live WebSocket as primary conversational engine
+        playNeuralAudio(AUTHENTIC_CHRIS_GREETING_AUDIO, () => {
+          console.log('Christopher authentic greeting completed naturally.');
+          isGreetingPlayingRef.current = false;
+          isSpeakingRef.current = false;
+          setCallState('listening');
+          if (liveWsRef.current && liveWsRef.current.readyState === WebSocket.OPEN) {
+            startLiveMicStream(liveWsRef.current);
+          } else if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
+            handleStartListeningRef.current();
+          }
+        });
+
+        // 4. Concurrently initialize Gemini Live in background so it is ready when the greeting completes
         initLiveConnection();
       }
     } else {
       // Modal closed: reset greeting guard and stop all live sessions and audio
       hasGreetedRef.current = false;
+      isGreetingPlayingRef.current = false;
       setHistory([]);
       if (greetingTimerRef.current) {
         clearTimeout(greetingTimerRef.current);
@@ -1230,7 +1189,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         greetingTimerRef.current = null;
       }
     };
-  }, [isOpen, haltSpeech, playNeuralAudio, stopLiveSession, initLiveConnection]);
+  }, [isOpen, haltSpeech, playNeuralAudio, stopLiveSession, initLiveConnection, startLiveMicStream]);
 
   // Instant barge-in / toggle helper: interrupts Chris immediately when speaking, or toggles listen
   const handleToggleOrInterrupt = () => {
