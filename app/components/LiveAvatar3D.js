@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function LiveAvatar3D({
   callState = 'idle', // 'idle' | 'listening' | 'thinking' | 'speaking'
-  persona = 'chris',   // 'chris' | 'jordan'
+  persona = 'receptionist',   // 'receptionist' | 'chris' | 'jordan'
   analyserNode = null,
   onClick = () => {}
 }) {
@@ -91,8 +91,9 @@ export default function LiveAvatar3D({
     ? '#f59e0b' // Amber
     : '#D4AF37';
 
-  const avatarSrc = persona === 'chris' ? '/images/Christopher_Boykin.webp' : '/images/jordan-avatar.webp';
-  const avatarFallbackSrc = persona === 'chris' ? '/images/Christopher_Boykin.jpg' : '/images/jordan-avatar.webp';
+  const isReceptionist = persona === 'receptionist' || persona === 'jordan';
+  const avatarSrc = isReceptionist ? '/images/jordan-avatar.webp' : '/images/Christopher_Boykin.webp';
+  const avatarFallbackSrc = isReceptionist ? '/images/jordan-avatar.jpg' : '/images/Christopher_Boykin.jpg';
 
   return (
     <div
@@ -109,8 +110,8 @@ export default function LiveAvatar3D({
         userSelect: 'none',
         WebkitTapHighlightColor: 'transparent'
       }}
-      title={isListening ? 'Listening to you... Tap to pause' : isSpeaking ? 'Christopher is speaking... Tap to interrupt' : 'Christopher Boykin, Certified Master Inspector® • Tap to speak'}
-      aria-label="Interactive Live Avatar of Christopher Boykin, Certified Master Inspector"
+      title={isListening ? 'Listening to you... Tap to pause' : isSpeaking ? `${isReceptionist ? 'Receptionist' : 'Christopher'} is speaking... Tap to interrupt` : `${isReceptionist ? 'Foresight Receptionist' : 'Christopher Boykin, CMI®'} • Tap to speak`}
+      aria-label={`Interactive Live Avatar of ${isReceptionist ? 'Foresight Virtual Receptionist' : 'Christopher Boykin, Certified Master Inspector'}`}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } }}
@@ -171,12 +172,12 @@ export default function LiveAvatar3D({
           <source srcSet={avatarSrc} type="image/webp" />
           <img
             src={avatarFallbackSrc}
-            alt="Christopher Boykin - Founder & Lead Certified Master Inspector (CMI®)"
+            alt={isReceptionist ? "Foresight Virtual Receptionist & Concierge representing Christopher Boykin, CMI®" : "Christopher Boykin - Founder & Lead Certified Master Inspector (CMI®)"}
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center 15%',
+              objectPosition: isReceptionist ? 'center top' : 'center 15%',
               display: 'block',
               transform: isSpeaking ? 'scale(1.02)' : 'scale(1.0)',
               transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease',
@@ -295,12 +296,12 @@ export default function LiveAvatar3D({
         />
         <span>
           {isSpeaking 
-            ? 'Christopher Speaking' 
+            ? (isReceptionist ? 'Receptionist Speaking' : 'Christopher Speaking') 
             : isListening 
             ? 'Listening... Speak' 
             : isThinking 
-            ? 'Analyzing Atlanta Codes...' 
-            : 'Christopher Boykin, CMI®'}
+            ? (isReceptionist ? 'Checking Pricing & Info...' : 'Analyzing Atlanta Codes...') 
+            : (isReceptionist ? 'Foresight Receptionist' : 'Christopher Boykin, CMI®')}
         </span>
       </div>
 

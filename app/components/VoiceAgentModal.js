@@ -6,8 +6,8 @@ import { calculateQuoteDetails } from '../../lib/pricing';
 import { CHRIS_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
 import LiveAvatar3D from './LiveAvatar3D';
 
-const AUTHENTIC_CHRIS_GREETING_AUDIO = '/audio/chris-cloned-greeting.mp3?v=20261002_master_cmi';
-const AUTHENTIC_CHRIS_GREETING_TEXT = "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close.";
+const AUTHENTIC_RECEPTIONIST_GREETING_AUDIO = '/audio/receptionist-greeting.mp3?v=20261002_receptionist';
+const AUTHENTIC_RECEPTIONIST_GREETING_TEXT = "Hello, and welcome to Foresight Home Inspections! I'm your virtual concierge and receptionist for Christopher Boykin and our inspection team. Are you looking to schedule an inspection, calculate an instant price quote, or do you have questions about a home in Metro Atlanta?";
 
 export default function VoiceAgentModal({ isOpen, onClose }) {
   const [callState, setCallState] = useState('idle'); // 'idle' | 'listening' | 'thinking' | 'speaking'
@@ -21,8 +21,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
   const [liveWsConnected, setLiveWsConnected] = useState(false);
-  const [persona, setPersona] = useState('chris');
-  const personaRef = useRef('chris');
+  const [persona, setPersona] = useState('receptionist');
+  const personaRef = useRef('receptionist');
 
   const [liveLeadForm, setLiveLeadForm] = useState({
     name: '',
@@ -230,11 +230,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [haltSpeech]);
 
-  // Fallback voice speak function (Guaranteed Authentic Christopher Boykin)
+  // Fallback voice speak function (Guaranteed Receptionist Neural Voice)
   const speakTextFallback = useCallback((text) => {
     if (isMutedRef.current) return;
     if (audioRef.current) return;
-    playNeuralAudio('/audio/chris-browsing.mp3');
+    playNeuralAudio('/audio/receptionist-browsing.mp3');
   }, [playNeuralAudio]);
 
 
@@ -793,7 +793,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       return;
     }
 
-    const currentPersona = targetPersona || personaRef.current || 'chris';
+    const currentPersona = targetPersona || personaRef.current || 'receptionist';
 
     try {
       const res = await fetch('/api/voice/token', {
@@ -864,7 +864,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               speechConfig: {
                 voiceConfig: {
                   prebuiltVoiceConfig: {
-                    voiceName: data.voice || (currentPersona === 'chris' ? "Charon" : "Aoede")
+                    voiceName: data.voice || "Aoede"
                   }
                 }
               }
@@ -1084,7 +1084,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           if (prev.length === 0) {
             return [{
               role: 'assistant',
-              content: "Hello, my name is Christopher Boykin, founder and lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. When you're buying a home in Georgia, due diligence moves fast. That's why we send two certified inspectors to every property, complete thorough evaluations in under two hours, and back every inspection with up to $35,000 in warranty protection. From thermal imaging to foundation scans, we make sure you have complete clarity before you close."
+              content: AUTHENTIC_RECEPTIONIST_GREETING_TEXT
             }];
           }
           return prev;
@@ -1104,10 +1104,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
   }, [startLiveMicStream, playLivePcmChunk, haltSpeech, playNeuralAudio, calculatedQuote]);
 
-  // Unified Chris CMI persona
+  // Unified Receptionist persona
   const switchPersona = useCallback((newPersona) => {
-    setPersona('chris');
-    personaRef.current = 'chris';
+    setPersona('receptionist');
+    personaRef.current = 'receptionist';
   }, []);
 
   // Auto-scroll transcript container
@@ -1128,10 +1128,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         setInterimUserText('');
         setMicError(null);
 
-        // 1. Immediately present Christopher's authentic opening greeting text in the transcript
+        // 1. Immediately present receptionist's authentic opening greeting text in the transcript
         setHistory([{
           role: 'assistant',
-          content: AUTHENTIC_CHRIS_GREETING_TEXT
+          content: AUTHENTIC_RECEPTIONIST_GREETING_TEXT
         }]);
 
         // 2. Pre-create and unlock AudioContext instances immediately upon user interaction click
@@ -1147,13 +1147,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           try { audioInputCtxRef.current.resume(); } catch (_) {}
         }
 
-        // 3. Immediately play Christopher's authentic high-fidelity recording (Zero robot speech, zero lag)
+        // 3. Immediately play receptionist's authentic high-fidelity recording (Zero robot speech, zero lag)
         setCallState('speaking');
         isGreetingPlayingRef.current = true;
         isSpeakingRef.current = true;
 
-        playNeuralAudio(AUTHENTIC_CHRIS_GREETING_AUDIO, () => {
-          console.log('Christopher authentic greeting completed naturally.');
+        playNeuralAudio(AUTHENTIC_RECEPTIONIST_GREETING_AUDIO, () => {
+          console.log('Receptionist authentic greeting completed naturally.');
           isGreetingPlayingRef.current = false;
           isSpeakingRef.current = false;
           setCallState('listening');
@@ -1557,10 +1557,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 }}
               >
                 <picture>
-                  <source srcSet="/images/Christopher_Boykin.webp" type="image/webp" />
+                  <source srcSet="/images/jordan-avatar.webp" type="image/webp" />
                   <img 
-                    src="/images/Christopher_Boykin.jpg" 
-                    alt="Christopher Boykin, Certified Master Inspector"
+                    src="/images/jordan-avatar.jpg" 
+                    alt="Foresight Live Receptionist"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </picture>
@@ -1581,7 +1581,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                 <h3 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700, fontFamily: "'Outfit', sans-serif" }}>
-                  Christopher Boykin (CMI®)
+                  Foresight Live Receptionist
                 </h3>
                 <span style={{
                   background: 'rgba(212, 175, 55, 0.15)',
@@ -1597,7 +1597,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   alignItems: 'center',
                   gap: '4px'
                 }}>
-                  Live Concierge Consultation
+                  Virtual Front Desk & Concierge
                 </span>
                 <span style={{
                   background: 'rgba(16, 185, 129, 0.15)',
@@ -1616,7 +1616,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
-                Instant Quotes &bull; Building Science &bull; 
+                Representing Christopher Boykin, CMI® &bull; 
                 <span style={{ color: callState === 'speaking' ? '#ef4444' : callState === 'listening' ? '#10b981' : '#D4AF37', marginLeft: '5px', fontWeight: 600 }}>
                   {callState === 'speaking' ? 'Speaking...' : callState === 'listening' ? 'Listening...' : callState === 'thinking' ? 'Checking...' : 'Ready (Speak or Type)'}
                 </span>
@@ -1760,12 +1760,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             textAlign: 'center'
           }}>
             {callState === 'listening'
-              ? '🟢 Listening to you... Speak naturally (Hands-Free Call)'
+              ? '🟢 Receptionist is listening... Speak naturally'
               : callState === 'speaking'
-              ? '🗣️ Christopher is speaking... (tap to interrupt)'
+              ? '🗣️ Foresight Receptionist is speaking... (tap to interrupt)'
               : callState === 'thinking'
-              ? '⚡ Analyzing Atlanta building science & instant quote...'
-              : 'Tap Christopher or speak naturally to begin'}
+              ? '⚡ Consulting Christopher Boykin & checking pricing...'
+              : 'Tap avatar to speak with our Receptionist'}
           </p>
 
           {/* Microphone Permission Warning / Helper Banner */}
@@ -2260,7 +2260,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 animation: 'spin 1s linear infinite'
               }} />
               <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1', fontWeight: 600 }}>
-                Connecting with Christopher Boykin (Certified Master Inspector)...
+                Connecting with Foresight Live Receptionist (Representing Christopher Boykin, CMI®)...
               </p>
               <p style={{ margin: 0, fontSize: '0.78rem', color: '#64748b' }}>
                 Ask anything about home systems, InterNACHI SOP, instant pricing, or scheduling

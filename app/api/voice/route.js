@@ -111,8 +111,8 @@ function pcmToWavDataUri(base64Pcm, sampleRate = 24000, numChannels = 1, bitsPer
   return `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
 }
 
-// Studio-Grade Voice Synthesis via Google Gemini TTS (gemini-3.1-flash-tts-preview) & EdgeTTS Fallback
-async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural', persona = 'chris') {
+// Studio-Grade Voice Synthesis via Python EdgeTTS (en-US-JennyNeural) & Gemini Voice Parity
+async function synthesizeHumanVoice(text, voice = 'en-US-JennyNeural', persona = 'receptionist') {
   try {
     const rawClean = (text || '')
       .replace(/[*#_~`\[\]()<>]/g, ' ')
@@ -127,48 +127,34 @@ async function synthesizeHumanVoice(text, voice = 'en-US-ChristopherNeural', per
     const sentences = rawClean.match(/[^.!?]+[.!?]+(\s+|$)/g) || [rawClean];
     const cleanText = sentences.slice(0, 2).join(' ').trim() || rawClean;
 
-    // 1. Primary: Google Gemini Speech Generation TTS (Ultra-realistic, deep authoritative vocal timbre)
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (apiKey) {
-      try {
-        const { GoogleGenAI } = await import('@google/genai');
-        const ai = new GoogleGenAI({ apiKey });
-        const geminiVoice = persona === 'chris' ? 'Gacrux' : 'Aoede';
+    // Fast, reliable Python edge-tts synthesis (100% matched to receptionist audio)
+    const { execFile } = await import('child_process');
+    const fs = await import('fs');
+    const path = await import('path');
+    const os = await import('os');
 
-        const interaction = await ai.interactions.create({
-          model: 'gemini-3.1-flash-tts-preview',
-          input: cleanText,
-          response_format: { type: 'audio' },
-          generation_config: {
-            speech_config: [
-              { voice: geminiVoice }
-            ]
-          }
-        });
-
-        if (interaction && interaction.output_audio && interaction.output_audio.data) {
-          const sampleRate = interaction.output_audio.sample_rate || 24000;
-          const channels = interaction.output_audio.channels || 1;
-          return pcmToWavDataUri(interaction.output_audio.data, sampleRate, channels);
+    const result = await new Promise((resolve) => {
+      const tmpFile = path.join(os.tmpdir(), `receptionist-${Date.now()}-${Math.random().toString(36).substring(7)}.mp3`);
+      execFile('python', ['-m', 'edge_tts', '--voice', voice, '--text', cleanText, '--write-media', tmpFile], (err) => {
+        if (err) {
+          console.warn('[VOICE] Python edge-tts warning:', err.message);
+          return resolve(null);
         }
-      } catch (geminiTtsErr) {
-        console.warn('[VOICE] Google Gemini TTS fallback to EdgeTTS:', geminiTtsErr.message);
-      }
-    }
-
-    // 2. High-Availability Fallback: EdgeTTS Neural Voice
-    const { EdgeTTS } = await import('edge-tts-universal');
-    const edgeVoice = persona === 'chris' ? 'en-US-ChristopherNeural' : 'en-US-JennyNeural';
-    const tts = new EdgeTTS(cleanText, edgeVoice, {
-      rate: '-3%',
-      pitch: '-10Hz'
+        try {
+          if (fs.existsSync(tmpFile)) {
+            const buf = fs.readFileSync(tmpFile);
+            fs.unlinkSync(tmpFile);
+            return resolve(`data:audio/mp3;base64,${buf.toString('base64')}`);
+          }
+          resolve(null);
+        } catch (readErr) {
+          console.warn('[VOICE] Read temp audio error:', readErr.message);
+          resolve(null);
+        }
+      });
     });
-    const result = await tts.synthesize();
-    if (result && result.audio) {
-      const arrayBuffer = await result.audio.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
-      return `data:audio/mp3;base64,${buffer.toString('base64')}`;
-    }
+
+    if (result) return result;
   } catch (err) {
     console.error('[VOICE] Voice synthesis error:', err);
   }
@@ -251,8 +237,8 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   // 0. Farewell / Hang up detection
   if (matchesAny(['bye', 'goodbye', 'hang up', 'end call', 'that is all', "that's all", 'have a good day', 'see you', 'thanks bye', 'thank you bye'])) {
     return {
-      text: "Thank you for visiting Foresight Home Inspections! Have a great day, and we look forward to inspecting your home soon!",
-      preAudio: '/audio/chris-goodbye.mp3',
+      text: "Thank you for visiting Foresight Home Inspections! Have a wonderful day, and Christopher and our team look forward to inspecting your home soon!",
+      preAudio: '/audio/receptionist-goodbye.mp3',
       action: 'end_call'
     };
   }
@@ -261,19 +247,27 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['sunday', 'sundays', 'open on sunday', 'open sunday', 'weekend', 'weekends', 'hours', 'operating hours', 'business hours', 'when are you open', 'what time are you open', 'are you open', 'what days are you open'])) {
     return {
       text: "Foresight Home Inspections is open on Sunday strictly by advance appointment. While our standard inspection schedule runs Monday through Saturday from 8:00 AM to 8:00 PM, we are always glad to accommodate Sunday inspections booked in advance. What property address are you looking to have inspected?",
-      preAudio: '/audio/chris-sunday.mp3'
+      preAudio: '/audio/receptionist-sunday.mp3'
     };
   }
 
   // 0b. Business Identity / Foresight AI Advisor Grounding
   if (matchesAny(['what business', 'which business', 'what company', 'who are you', 'who is this', 'what is this', 'what do you do', 'not connected', 'who is your boss'])) {
     return {
-      text: "You have reached Foresight Home Inspections. I am Chris, founder and lead Certified Master Inspector. Our two-inspector team delivers Georgia's most thorough home evaluations, building science diagnostics, and instant quotes. What property or questions can I help you with today?",
-      preAudio: null
+      text: "You have reached Foresight Home Inspections. I am the virtual concierge and receptionist for Christopher Boykin, our lead Certified Master Inspector. Our two-inspector team delivers Georgia's most thorough home evaluations, building science diagnostics, and instant quotes. What property or questions can I help you with today?",
+      preAudio: '/audio/receptionist-identity.mp3'
     };
   }
 
-  // 0c. Shared Knowledge Engine (100% Parity with Chatbot)
+  // 0c. Price difference objection ($25 or $50 cheaper elsewhere)
+  if (matchesAny(['25', '50', 'cheaper', 'difference', 'another company', 'other company', 'another inspector', 'other inspector', 'save money', 'lower price', 'better price'])) {
+    return {
+      text: "Choosing another inspector to save 25 or 50 dollars is a dangerous mistake. Discount solo inspectors work alone for 4 exhausting hours, carry zero warranty, and charge extra for thermal cameras. Missing just one hidden 8,000 dollar roof leak or bad AC compressor completely wipes out any small upfront saving! Foresight sends two certified inspectors, includes free thermal and drone scans, and backs you with up to 35,000 dollars in warranty protection. Shall I calculate an exact quote for you?",
+      preAudio: '/audio/receptionist-competitors.mp3'
+    };
+  }
+
+  // 0d. Shared Knowledge Engine (100% Parity with Chatbot)
   const sharedTopicAnswer = getChrisKnowledgeFallback(lastUserMessage);
   if (sharedTopicAnswer && !sharedTopicAnswer.startsWith("Houses are complex systems")) {
     return {
@@ -301,7 +295,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['process', 'evaluate', 'evaluation', 'how do you inspect', 'how you inspect', 'what do you inspect', 'what is inspected', 'what do you check', 'sop', 'standard', 'steps', 'procedure', 'how does it work'])) {
     return {
       text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free FLIR thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?",
-      preAudio: '/audio/chris-process.mp3'
+      preAudio: '/audio/receptionist-process.mp3'
     };
   }
 
@@ -379,7 +373,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     if (text.includes('sunday')) {
       return {
         text: "We can definitely accommodate you on Sunday! Just as a reminder, Sunday is strictly by appointment only. What is the address of the home and your name so our office can coordinate that for you?",
-        preAudio: '/audio/chris-sunday.mp3'
+        preAudio: '/audio/receptionist-sunday.mp3'
       };
     }
 
@@ -387,7 +381,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     if (text.includes('10')) {
       return {
         text: "10:00 AM works out perfectly for our two-inspector team! I have that penciled in for you. What is the address of the property and your name so I can lock that in?",
-        preAudio: '/audio/chris-10am.mp3'
+        preAudio: '/audio/receptionist-10am.mp3'
       };
     }
 
@@ -395,7 +389,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     if (text.includes('9')) {
       return {
         text: "9:00 AM works out great for our two-inspector team! I have that penciled in for you. What is the address of the property and your name so I can lock that in?",
-        preAudio: '/audio/chris-9am.mp3'
+        preAudio: '/audio/receptionist-9am.mp3'
       };
     }
 
@@ -403,7 +397,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     if (text.includes('afternoon') || text.includes('1pm') || text.includes('1:') || text.includes('2pm') || text.includes('2:')) {
       return {
         text: "An afternoon slot around 1:30 PM works out great for our two-inspector team! I have that penciled in for you. What is the address of the property and your name so I can lock that in?",
-        preAudio: '/audio/chris-afternoon.mp3'
+        preAudio: '/audio/receptionist-afternoon.mp3'
       };
     }
 
@@ -420,7 +414,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     if (prev.includes('schedule') || prev.includes('reserve') || prev.includes('date') || prev.includes('slot') || prev.includes('availability')) {
       return {
         text: "Awesome! Does a morning slot around 9:00 or 10:00 AM work better for you, or would you prefer afternoon? What is the address of the home so I can hold that for you?",
-        preAudio: '/audio/chris-morning-afternoon.mp3'
+        preAudio: '/audio/receptionist-morning-afternoon.mp3'
       };
     }
   }
@@ -430,12 +424,12 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     if (prev.includes('radon') || prev.includes('termite') || prev.includes('sewer') || prev.includes('pool') || prev.includes('add') || prev.includes('upsell') || prev.includes('bundle') || prev.includes('suggest') || prev.includes('recommend') || prev.includes('camera') || prev.includes('scope')) {
       return {
         text: "Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation with our two-inspector team. What date or time window works best for you?",
-        preAudio: '/audio/chris-decline-addon.mp3'
+        preAudio: '/audio/receptionist-decline-addon.mp3'
       };
     }
     return {
       text: "No problem at all! Feel free to ask me anything about our up to 35,000 dollar warranty protection, pricing, or our two-inspector process whenever you are ready. What questions can I answer for you?",
-      preAudio: '/audio/chris-browsing.mp3'
+      preAudio: '/audio/receptionist-browsing.mp3'
     };
   }
 
@@ -443,7 +437,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['deposit', 'down payment', 'payment policy', 'payment terms', 'when do i pay', 'how do i pay', 'pay upfront', '50 percent', 'half down', 'half upfront'])) {
     return {
       text: "To solidify all appointments on our master calendar, a 50 percent deposit is required upon booking, with the remaining 50 percent balance due after our on-site walkthrough before your official report is released. Would you like me to hold our next available window for you?",
-      preAudio: '/audio/chris-payment-policy.mp3'
+      preAudio: '/audio/receptionist-payment-policy.mp3'
     };
   }
 
@@ -455,7 +449,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (addressFound && (prev.includes('address') || prev.includes('property') || text.includes('road') || text.includes('street') || text.includes('drive') || text.includes('ave'))) {
     return {
       text: "Got that property address down! What is your name and the best phone number so our office can send the confirmation and coordinate access?",
-      preAudio: '/audio/chris-address-confirm.mp3'
+      preAudio: '/audio/receptionist-address-confirm.mp3'
     };
   }
 
@@ -465,7 +459,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     const clientName = nameIntroMatch[1].trim();
     return {
       text: `Great to meet you, ${clientName}! What's the best phone number for you, and what date or time would you prefer for your inspection?`,
-      preAudio: '/audio/chris-morning-afternoon.mp3'
+      preAudio: '/audio/receptionist-morning-afternoon.mp3'
     };
   }
 
@@ -473,7 +467,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo', 'why two'])) {
     return {
       text: "Most discount companies send one inspector who gets exhausted after four hours and can easily miss hidden defects. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus up to 35,000 dollars in warranty and guarantee protection. Would you like to check our availability for your inspection?",
-      preAudio: '/audio/chris-why-two.mp3'
+      preAudio: '/audio/receptionist-why-two.mp3'
     };
   }
 
@@ -481,7 +475,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['warranty', '10000', '10,000', '25000', '25,000', '35000', '35,000', 'guarantee', 'honor', 'protection'])) {
     return {
       text: "Every full home inspection includes up to 35,000 dollars in combined warranty and guarantee protection: our complimentary 10,000 dollar Master Protection Warranty with zero deductible covering mechanicals, structure, appliances, roofs, and mold after closing, plus InterNACHI's 25,000 dollar Honor Guarantee. Would you like to get your inspection scheduled with our team?",
-      preAudio: '/audio/chris-warranty.mp3'
+      preAudio: '/audio/receptionist-warranty.mp3'
     };
   }
 
@@ -489,7 +483,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['compare', 'competitor', 'competitors', 'franchise', 'franchises', 'bpg', 'home-probe', 'inspect-all', 'pillar to post', 'why foresight', 'why choose you'])) {
     return {
       text: "National franchises charge 450 to 575 dollars to pay corporate royalties and dispatch hourly junior techs. Solo discount operators charge 325 to 400, but working alone for 4 hours causes fatigue and they offer zero warranty. Foresight delivers two certified inspectors led by a Certified Master Inspector, up to 35,000 dollars in warranty protection, and free FLIR thermal and drone scans starting from 345 dollars. Would you like to get an instant quote or check our schedule?",
-      preAudio: '/audio/chris-competitors.mp3'
+      preAudio: '/audio/receptionist-competitors.mp3'
     };
   }
 
@@ -497,7 +491,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['checklist', 'hindsight checklist', 'foresight checklist', 'guide', 'free download', 'send checklist'])) {
     return {
       text: "We have put together our exclusive Foresight vs. Hindsight Due Diligence Checklist to help you avoid expensive home buying pitfalls. What is your email address? I can log your request right now so our office sends it straight to your inbox!",
-      preAudio: '/audio/chris-checklist.mp3',
+      preAudio: '/audio/receptionist-checklist.mp3',
       action: 'offer_checklist'
     };
   }
@@ -506,7 +500,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
     return {
       text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, 375 for up to 2,000, 405 for up to 2,500, and 440 for up to 3,000 square feet. That includes our two-inspector team, complimentary FLIR thermal imaging, drone scans, and up to 35,000 dollars in warranty and guarantee protection. What is the approximate square footage of the home? I can give you your exact flat rate right now!",
-      preAudio: '/audio/chris-pricing.mp3'
+      preAudio: '/audio/receptionist-pricing.mp3'
     };
   }
 
@@ -514,7 +508,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['older home', 'historic home', 'pre-1990', '1960', '1970', '1980', 'cast iron pipe', 'clay pipe', 'tree roots', 'root intrusion'])) {
     return {
       text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 450 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
-      preAudio: '/audio/chris-upsell-sewer.mp3'
+      preAudio: '/audio/receptionist-upsell-sewer.mp3'
     };
   }
 
@@ -522,7 +516,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['radon'])) {
     return {
       text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 250 dollars. Would you like to add that to your estimate, or keep it as is?",
-      preAudio: '/audio/chris-upsell-radon.mp3'
+      preAudio: '/audio/receptionist-upsell-radon.mp3'
     };
   }
 
@@ -530,7 +524,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation', 'wood destroying'])) {
     return {
       text: "Because Georgia is in the termite belt and most lenders require an official clearance letter, we can bundle your official Georgia termite letter starting at 125 dollars. Would you like that included, or do you already have that covered?",
-      preAudio: '/audio/chris-upsell-termite.mp3'
+      preAudio: '/audio/receptionist-upsell-termite.mp3'
     };
   }
 
@@ -538,28 +532,28 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
       text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 450 dollars to inspect the underground line all the way to the municipal main. It is one of the smartest investments you can make during due diligence. Shall I reserve a slot for your sewer scope?",
-      preAudio: '/audio/chris-upsell-sewer.mp3'
+      preAudio: '/audio/receptionist-upsell-sewer.mp3'
     };
   }
 
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
       text: "We provide comprehensive pool and spa inspections for 275 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
-      preAudio: '/audio/chris-pricing.mp3'
+      preAudio: '/audio/receptionist-pricing.mp3'
     };
   }
 
   if (matchesAny(['thermal', 'flir', 'infrared', 'drone', 'drones', 'camera'])) {
     return {
       text: "Yes, absolutely! We include FLIR infrared thermal imaging to catch hidden leaks behind walls and aerial drone roof scans standard on every single inspection for free. Would you like to reserve an inspection window with our team?",
-      preAudio: '/audio/chris-drone-thermal.mp3'
+      preAudio: '/audio/receptionist-drone-thermal.mp3'
     };
   }
 
   if (matchesAny(['how long', 'duration', 'time take', 'hours'])) {
     return {
       text: "Because we send two certified inspectors on every single job instead of just one, we finish a complete, highly thorough inspection in just 1.5 to 2.5 hours, saving you half the time of exhausted solo inspectors! Would a morning or afternoon time work best for you?",
-      preAudio: '/audio/chris-why-two.mp3'
+      preAudio: '/audio/receptionist-why-two.mp3'
     };
   }
 
@@ -604,7 +598,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['deposit', 'down payment', 'pay', 'payment', 'solidify', 'agreement', 'agreements', 'terms of payment', 'when do i pay', 'how do i pay', 'upfront'])) {
     return {
       text: "To solidify all appointments on our master calendar, a 50 percent deposit along with the signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50 percent balance is due after our on-site walkthrough before your official report is released. Would you like me to hold our next available window for you?",
-      preAudio: '/audio/chris-payment-policy.mp3'
+      preAudio: '/audio/receptionist-payment-policy.mp3'
     };
   }
 
@@ -612,21 +606,21 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['no thanks', 'no thank you', 'pass', 'just the basic', 'don\'t need it', 'do not need it', 'not right now', 'skip it', 'just the inspection', 'no addon', 'no add-on', 'decline', 'without that', 'leave that off'])) {
     return {
       text: "Understood, no problem at all! We will keep your inspection focused strictly on your core evaluation with our two-inspector team. What date or time window works best for you?",
-      preAudio: '/audio/chris-decline-addon.mp3'
+      preAudio: '/audio/receptionist-decline-addon.mp3'
     };
   }
 
   // Conversational Fallback: Genuinely acknowledging with active encouragement
   return {
     text: "Whether it is evaluating structural stability, electrical safety, or crawlspace moisture, our Certified Master Inspector team is here to give you complete peace of mind. What is the square footage or address of the home? I would love to calculate your exact rate and hold a slot for you.",
-    preAudio: null
+    preAudio: '/audio/receptionist-browsing.mp3'
   };
 }
 
 export async function POST(request) {
   try {
-    const { messages = [], currentQuote = null, persona = 'jordan' } = await request.json();
-    const voiceName = persona === 'chris' ? 'en-US-ChristopherNeural' : 'en-US-JennyNeural';
+    const { messages = [], currentQuote = null, persona = 'receptionist' } = await request.json();
+    const voiceName = 'en-US-JennyNeural';
     const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || '';
     const lastUserTextLower = lastUserMessage.toLowerCase();
 
@@ -657,7 +651,7 @@ export async function POST(request) {
         const deposit = Math.round(quoteResult.total / 2);
         const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, the 50 percent deposit of ${deposit} dollars along with your signed inspection agreements are completed after our office sends your appointment confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
 
-        const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'chris')) || '/audio/chris-pricing.mp3';
+        const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'receptionist')) || '/audio/receptionist-pricing.mp3';
         return NextResponse.json({
           response: speechResponse,
           audio,
@@ -679,12 +673,12 @@ export async function POST(request) {
         name: clientName,
         email,
         phone: clientPhone,
-        message: 'Requested Foresight vs. Hindsight Due Diligence Checklist via Chris Voice Concierge',
+        message: 'Requested Foresight vs. Hindsight Due Diligence Checklist via Receptionist Voice Concierge',
         source: 'Voice Assistant (Checklist)'
       });
 
       const speechResponse = `Thank you, ${clientName}! I have recorded your email as ${email}. Part 1 of our Foresight vs. Hindsight due diligence checklist has been queued for your inbox. What other questions can I answer about your home or our inspection process?`;
-      const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'chris')) || '/audio/chris-checklist.mp3';
+      const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'receptionist')) || '/audio/receptionist-checklist.mp3';
       return NextResponse.json({
         response: speechResponse,
         audio,
@@ -710,9 +704,9 @@ export async function POST(request) {
       };
 
       await persistBooking(bookingArgs);
-      const speechResponse = `Awesome! I have your inspection request logged. Our office team will follow up directly at ${clientPhone} within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
+      const speechResponse = `Awesome! I have your inspection request logged. Christopher's office team will follow up directly at ${clientPhone} within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50 percent deposit along with your signed agreements are submitted after receiving our confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. We look forward to working with you!`;
 
-      const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'chris')) || '/audio/chris-booked.mp3';
+      const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'receptionist')) || '/audio/receptionist-booked.mp3';
       return NextResponse.json({
         response: speechResponse,
         audio,
@@ -721,11 +715,11 @@ export async function POST(request) {
       });
     }
 
-    // 4. Fast-Path CMI Dialogue Engine (0ms to 250ms latency for all standard domain queries)
+    // 4. Fast-Path Receptionist Dialogue Engine (0ms latency for all standard domain queries)
     const turnResult = generateChrisDialogueTurn(messages, lastUserMessage);
 
     // 4a. If pre-recorded studio audio exists, return INSTANTLY (0ms synthesis!)
-    if (turnResult.preAudio && persona === 'chris') {
+    if (turnResult.preAudio) {
       return NextResponse.json({
         response: turnResult.text,
         audio: turnResult.preAudio,
@@ -735,9 +729,9 @@ export async function POST(request) {
 
     // 4b. If this matched a specific domain rule (not generic fallback), synthesize and return immediately
     const isGenericFallback = turnResult.text.startsWith("Whether it is evaluating structural stability");
-    if (!isGenericFallback && persona === 'chris') {
+    if (!isGenericFallback) {
       const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
-      const audio = (await synthesizeHumanVoice(cleanReply, voiceName, 'chris')) || turnResult.preAudio || '/audio/chris-browsing.mp3';
+      const audio = (await synthesizeHumanVoice(cleanReply, voiceName, 'receptionist')) || turnResult.preAudio || '/audio/receptionist-browsing.mp3';
       return NextResponse.json({
         response: cleanReply,
         audio,
@@ -749,9 +743,9 @@ export async function POST(request) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey) {
       try {
-        const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, 'chris');
+        const dynamicReply = await generateWithGeminiBrain(messages, lastUserMessage, apiKey, currentQuote, 'receptionist');
         if (dynamicReply) {
-          const audio = (await synthesizeHumanVoice(dynamicReply, voiceName, 'chris')) || '/audio/chris-browsing.mp3';
+          const audio = (await synthesizeHumanVoice(dynamicReply, voiceName, 'receptionist')) || '/audio/receptionist-browsing.mp3';
           return NextResponse.json({
             response: dynamicReply,
             audio,
@@ -765,7 +759,7 @@ export async function POST(request) {
 
     // 6. Intelligent Fallback
     const cleanReply = turnResult.text.replace(/[*#_~`]/g, '').trim();
-    const audio = (await synthesizeHumanVoice(cleanReply, voiceName, 'chris')) || turnResult.preAudio || '/audio/chris-browsing.mp3';
+    const audio = (await synthesizeHumanVoice(cleanReply, voiceName, 'receptionist')) || turnResult.preAudio || '/audio/receptionist-browsing.mp3';
 
     return NextResponse.json({
       response: cleanReply,
@@ -775,8 +769,8 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Voice API Route Exception:', error);
-    const fallbackText = "Welcome to Foresight Home Inspections! This is Chris, your Certified Master Inspector. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!";
-    const audio = (await synthesizeHumanVoice(fallbackText, voiceName, 'chris')) || '/audio/chris-browsing.mp3';
+    const fallbackText = "Welcome to Foresight Home Inspections! I'm your virtual receptionist and concierge for Christopher Boykin and our inspection team. How can I help you protect your investment today? Feel free to ask about our two-inspector standard, up to $35,000 in warranty protection, instant pricing, or getting on our schedule!";
+    const audio = (await synthesizeHumanVoice(fallbackText, 'en-US-JennyNeural', 'receptionist')) || '/audio/receptionist-browsing.mp3';
     return NextResponse.json({
       response: fallbackText,
       audio,

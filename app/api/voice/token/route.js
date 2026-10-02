@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(req) {
   try {
-    let persona = 'chris';
+    let persona = 'receptionist';
     try {
       const body = await req.json();
       if (body && body.persona) {
@@ -13,19 +13,20 @@ export async function POST(req) {
       }
     } catch (_) {}
 
-    // Direct, ultra-fast connection to Foresight Neural Speech & Brain Engine
-    // (Bypasses billable/depleted Gemini Live WebSockets with 0ms latency)
+    // Direct, ultra-fast connection to Foresight Receptionist Voice Engine
     return NextResponse.json({
       mode: 'neural',
-      persona,
-      message: 'Active Foresight Google Gemini Voice Engine'
+      persona: 'receptionist',
+      voice: 'Aoede',
+      message: 'Active Foresight Google Gemini Receptionist Voice Engine'
     }, { status: 200 });
 
   } catch (error) {
     console.error('Unexpected error in voice token API:', error);
     return NextResponse.json({
       mode: 'neural',
-      persona: 'chris'
+      persona: 'receptionist',
+      voice: 'Aoede'
     }, { status: 200 });
   }
 }
