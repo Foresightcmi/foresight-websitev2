@@ -8,8 +8,7 @@ import NewsletterSignup from './components/NewsletterSignup';
 import VslTriggerButton from './components/VslTriggerButton';
 import HomeVideoPlayer from './components/HomeVideoPlayer';
 
-import ValueComparison from './components/ValueComparison';
-import TwoPossibilities from './components/TwoPossibilities';
+import TrueValueComparison from './components/TrueValueComparison';
 import Testimonials from './components/Testimonials';
 const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
 const FaqSearch = dynamic(() => import('./components/FaqSearch'));
@@ -363,9 +362,9 @@ export default function Home() {
               <span className="badge" style={{ background: 'rgba(15, 23, 42, 0.08)', color: '#0F172A', border: '1px solid #0F172A', marginBottom: '1rem', fontWeight: 600 }}>
                 🎖️ Master-Level Leadership
               </span>
-              <h2 style={{ marginBottom: '1.25rem', color: '#0F172A', fontSize: '2.1rem' }}>Did you know Georgia does not require a license to be a home inspector?</h2>
+              <h2 style={{ marginBottom: '1.25rem', color: '#0F172A', fontSize: '2.1rem' }}>Lead Certified Master Inspector® Christopher Boykin: Setting the Top 3% Standard in Georgia</h2>
               <p style={{ marginBottom: '1.25rem', fontSize: '1.1rem', fontWeight: 600, color: '#1E293B', lineHeight: 1.6 }}>
-                Anyone can legally inspect your home in Georgia. That’s why Foresight is led by Christopher Boykin, a Certified Master Inspector® (CMI)—the top 3% of the industry—so you never have to gamble on your biggest investment.
+                While Georgia requires zero state licensing for home inspectors, Christopher Boykin holds the elite Certified Master Inspector® (CMI) designation—the highest professional credential in North America, awarded to less than 3% of inspectors.
               </p>
               <p style={{ marginBottom: '1.25rem', fontSize: '1rem', color: '#475569', lineHeight: 1.6 }}>
                 Together with another fully certified professional inspector, our two-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
@@ -400,9 +399,7 @@ export default function Home() {
         </div>
       </section>
 
-      <TwoPossibilities />
-
-      <ValueComparison />
+      <TrueValueComparison />
 
       {/* 📊 GEO / AI SEARCH ENGINE STATS MODULE 📊 */}
       <section className="section" style={{ padding: '4.5rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
@@ -721,59 +718,6 @@ export default function Home() {
       </section>
 
       <Testimonials />
-
-      {/* 🏆 COMPETITIVE ADVANTAGE SECTION */}
-      <section className="section" style={{ background: '#0F172A', padding: '5rem 0' }}>
-        <div className="container">
-          <div className="section-title text-center" style={{ marginBottom: '3.5rem' }}>
-            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem' }}>🏆 The Foresight Difference</span>
-            <h2 style={{ color: '#FFFFFF', fontSize: '2.25rem', marginBottom: '1rem' }}>Why Atlanta Homebuyers Choose Foresight Over Other Inspectors</h2>
-            <p style={{ color: '#94A3B8', maxWidth: '700px', margin: '0 auto', fontSize: '1.05rem', lineHeight: 1.6 }}>
-              Most inspection companies send one inspector. We send two. Most charge extra for thermal imaging. We include it free. Here is how Foresight stacks up.
-            </p>
-          </div>
-
-          {/* Comparison Table */}
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '1rem', minWidth: '700px' }}>
-              <thead>
-                <tr style={{ borderBottom: '2px solid var(--color-gold)' }}>
-                  <th style={{ textAlign: 'left', padding: '1rem 1.25rem', color: '#94A3B8', fontWeight: 600, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Feature</th>
-                  <th style={{ textAlign: 'center', padding: '1rem 1.25rem', color: 'var(--color-gold)', fontWeight: 700, fontSize: '1rem', background: 'rgba(212,175,55,0.08)', borderRadius: '0.5rem 0.5rem 0 0' }}>Foresight Home Inspections</th>
-                  <th style={{ textAlign: 'center', padding: '1rem 1.25rem', color: '#64748B', fontWeight: 600, fontSize: '0.9rem' }}>Typical Single-Inspector Companies</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Inspectors on Site', '✅ Two Certified Inspectors', '❌ One Inspector'],
-                  ['Lead Inspector Credential', '✅ Certified Master Inspector® (CMI)', '❌ Standard Certification'],
-                  ['FLIR Thermal Imaging', '✅ Included Free', '❌ $150–$300 Extra'],
-                  ['Aerial Drone Roof Scan', '✅ Included Free', '❌ Not Offered'],
-                  ['Post-Inspection Warranty & Guarantee', '✅ Up to $35,000 Protection ($10K Warranty + $25K Honor Guarantee)', '❌ $0–$2,500'],
-                  ['Utility Setup Concierge', '✅ Included Free (Utilities Plus)', '❌ Not Offered'],
-                  ['Online Booking', '✅ 24/7 Instant Self-Scheduling', '❌ Phone/Email Only'],
-                  ['AI Maintenance Advisor', '✅ Foresight AI (24/7)', '❌ Not Available'],
-                  ['Report Delivery', '✅ Within 24 Hours', '⚠️ 48–72 Hours'],
-                  ['Sewer Scope Camera', '✅ $450 Add-On', '❌ Not Offered'],
-                  ['Realtor SUPRA Key Access', '✅ Active SUPRA', '❌ Agent Must Be Present'],
-                ].map(([feature, foresight, typical], i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #1E293B' }}>
-                    <td style={{ padding: '0.9rem 1.25rem', color: '#E2E8F0', fontWeight: 500 }}>{feature}</td>
-                    <td style={{ padding: '0.9rem 1.25rem', textAlign: 'center', color: '#22C55E', fontWeight: 600, background: 'rgba(212,175,55,0.04)' }}>{foresight}</td>
-                    <td style={{ padding: '0.9rem 1.25rem', textAlign: 'center', color: '#64748B' }}>{typical}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem' }}>
-              📅 Book Online 24/7 — Experience the Difference
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* 📰 LATEST BLOG POSTS */}
       <LatestPosts />
