@@ -364,6 +364,16 @@ const nextConfig = {
         destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
         permanent: true,
       },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-30',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-29',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
       // Legacy /post/ URLs to modern /blog/ routes
       {
         source: '/post/unveiling-the-hidden-value-the-unknown-marketing-power-of-pre-listing-inspections-for-sellers',

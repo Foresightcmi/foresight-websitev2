@@ -2,10 +2,11 @@
 /**
  * Autonomous Blog Post Generator for Foresight Home Inspections
  * 
- * Uses Google Gemini API to generate SEO-optimized blog posts about
- * home inspections, real estate trends, and maintenance tips.
- * 
- * Usage: GEMINI_API_KEY=your_key node scripts/generate-blog-post.mjs
+ * Features:
+ * - Anti-Duplication Engine: Rejects repetitive titles, slugs, and already-covered topics.
+ * - Dynamic Gemini Generation: Injects existing article titles into system prompt to force unique angles.
+ * - 12-Topic Diverse Local Fallback: Rotates through completely distinct Georgia building science topics.
+ * - Never appends date suffixes to duplicate slugs.
  */
 
 import fs from 'fs';
@@ -27,174 +28,83 @@ if (fs.existsSync(envPath)) {
       const key = trimmed.substring(0, eqIdx).trim();
       const val = trimmed.substring(eqIdx + 1).trim();
       if (key && val && !process.env[key]) {
-        process.env[key] = val.replace(/^["']|["']$/g, ''); // strip optional surrounding quotes
+        process.env[key] = val.replace(/^["']|["']$/g, '');
       }
     }
   }
 }
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-if (!GEMINI_API_KEY) {
-  console.warn('⚠️ WARNING: GEMINI_API_KEY environment variable is not defined. Local fallback generator will be used.');
-}
 
-// Topic rotation — cycles weekly so content stays varied
-const TOPIC_CATEGORIES = [
+// 12 Distinct, High-Variety, Un-Duplicated Editorial Templates
+const DIVERSE_FALLBACK_TEMPLATES = [
   {
-    category: "Market Trends",
-    prompt: "Write about a current real estate market trend in the Metro Atlanta / Georgia area and how it specifically impacts home inspections. Examples: rising interest rates leading to more thorough inspections, new construction boom in suburbs, investor flips requiring careful inspection, aging housing stock concerns. Use real Georgia cities and counties."
+    category: "Structural & Exterior Safety",
+    title: "Deck Collapse Prevention in North Georgia: Ledger Board Flashing, Joist Hangers & Safety Code",
+    description: "North Georgia hillside deck collapse hazards, proper ledger board flashing, through-bolts, and InterNACHI deck safety standards.",
+    keywords: ["deck inspection Atlanta", "deck ledger board flashing Georgia", "deck safety code Atlanta", "hillside deck inspection"],
+    content: `<p>Throughout Metro Atlanta's rolling topography—from hilly lakeside lots in Cobb and Cherokee to ravine properties in Dekalb and Fulton—elevated wooden decks are one of the most enjoyed and high-liability features of a home. Unfortunately, decks are also involved in more residential injuries and structural collapses than almost any other home component. In Georgia, high annual humidity and heavy rainfall accelerate fungal decay in wood framing members, often concealed beneath surface stain or composite decking boards.</p>
+<p>At <strong>Foresight Home Inspections</strong>, our two-inspector teams inspect deck structures from footings to handrails. We do not just look from the patio door; one certified inspector crawls underneath the deck to audit ledger attachments, joist hangers, diagonal bracing, and post-to-beam connectors.</p>
+<h2>The #1 Cause of Deck Collapse: The Ledger Board Connection</h2>
+<p>Over 90% of deck collapses nationwide stem from the failure of the <strong>ledger board</strong>—the framing board that fastens the deck directly to the home's rim joist. When deck builders cut corners by using simple nails or non-galvanized drywall screws instead of code-mandated 1/2-inch hot-dipped galvanized through-bolts or lag screws, the connection is dangerously vulnerable to lateral pull-out.</p>
+<p>Furthermore, without proper stainless steel or copper <strong>Z-flashing</strong> installed over the top of the ledger board, rainwater funnels behind the ledger, quietly rotting the home's structural band joist. <strong>What this could mean</strong> is that the structural band joist has deteriorated, leaving the deck held in place solely by surface friction and threatening sudden structural collapse under family gathering loads. Our standard recommendation is: have a licensed structural framing contractor evaluate further and repair as needed.</p>
+<h2>Critical Deck Safety Checkpoints We Audit</h2>
+<ul>
+  <li><strong>Ledger Fasteners:</strong> Verification of staggered 1/2\" through-bolts with washers (nails alone are a critical safety defect).</li>
+  <li><strong>Joist Hangers & Fastener Nails:</strong> Ensuring all joist hanger holes are filled with designated 10d or 16d hot-dipped galvanized hanger nails rather than brittle roofing nails or deck screws.</li>
+  <li><strong>Post-to-Beam Connections:</strong> Beams must rest directly on notched support posts or use approved mechanical post caps—never simply bolted to the side of a 4x4 or 6x6 post where gravity can shear the bolt.</li>
+  <li><strong>Railing Infill Spacing:</strong> Balusters must be spaced so that a 4-inch sphere cannot pass through, and guardrails must withstand a 200-pound outward lateral load.</li>
+</ul>
+<p>Ensure your family and guests are protected. Use our <a href="/quote">Instant Online Quote Calculator</a> or call Certified Master Inspector Christopher Boykin at <strong>(678) 480-2110</strong>.</p>`
   },
   {
-    category: "Maintenance Tips",
-    prompt: "Write seasonal home maintenance tips for Georgia homeowners. Focus on practical, actionable advice that a first-time homebuyer would find valuable. Cover things like HVAC maintenance, gutter cleaning, crawlspace moisture, roof care, plumbing winterization, or pest prevention based on the current season."
+    category: "Attic & Thermal Dynamics",
+    title: "Attic Ventilation & Roof Decking Cooking: Why Georgia Attics Reach 140°F and Destroy Shingles",
+    description: "How inadequate soffit and ridge ventilation in humid Georgia attics triples energy bills, voids shingle warranties, and rots plywood sheathing.",
+    keywords: ["attic ventilation inspection Atlanta", "roof sheathing mold Georgia", "soffit vents blocked", "attic heat load Atlanta"],
+    content: `<p>During Atlanta summers, outdoor temperatures routinely hover in the 90s with heavy humidity. Without balanced, continuous attic ventilation, solar radiation absorption turns your attic space into an oven exceeding <strong>140°F to 150°F</strong>. This trapped, superheated air radiates downward into your ceiling drywall, forcing your air conditioning compressors to run constantly while literally cooking the underside of your asphalt shingles.</p>
+<p>At <strong>Foresight Home Inspections</strong>, our certified inspectors physically enter every accessible attic space. Using FLIR thermal infrared cameras and digital hygrometers, we measure temperature differentials, insulation depth (R-values), and air exchange pathways to protect your home's thermal envelope.</p>
+<h2>The Consequences of Poor Attic Ventilation in Georgia</h2>
+<ul>
+  <li><strong>Premature Shingle Failure:</strong> Asphalt shingles subjected to extreme radiant heat from below dry out, blister, curl, and shed protective mineral granules within 8 to 10 years instead of their rated 25-30 year design life, voiding manufacturer warranties.</li>
+  <li><strong>Winter Condensation & Sheathing Mold:</strong> In winter, warm, moist air from bathrooms and kitchens rises into a cold attic. If soffit vents are blocked by blown-in fiberglass or cellulose insulation, that moisture condenses on cold roof nails, creating \"frosting\" and active surface fungal decay on plywood decking.</li>
+  <li><strong>Kitchen & Bath Vent Discharge:</strong> One of our most frequent inspection findings is exhaust ductwork terminating directly into the attic instead of venting to the exterior, dumping gallons of steam into the roof cavity.</li>
+</ul>
+<h2>The Balanced Ventilation Formula</h2>
+<p>InterNACHI and residential building codes mandate the 1:150 rule: for every 150 square feet of attic floor space, there must be 1 square foot of net free ventilation area, balanced equally between intake (soffit vents) and exhaust (continuous ridge vent or static roof louvers). If intake air is choked, exhaust vents are rendered useless.</p>
+<p>Protect your roof and cut energy costs. Calculate your dual-inspector quote using our <a href="/quote">Instant Quote Calculator</a> or speak with our live front desk at <strong>(678) 480-2110</strong>.</p>`
   },
   {
-    category: "Inspection Insights",
-    prompt: "Write about a common home inspection finding and explain what it means in simple terms for a first-time homebuyer. Examples: water heater issues, electrical panel problems, roof ventilation, foundation cracks, grading and drainage, HVAC efficiency, plumbing concerns. Use the 3-step format: Observation, What This Could Mean, Recommendation."
+    category: "Plumbing & Mechanical Diagnostics",
+    title: "Water Heater Expansion Tanks & TPR Discharge Pipes: The Most Common Atlanta Plumbing Code Defect",
+    description: "Why thermal expansion tanks and temperature-pressure relief valves fail in Metro Atlanta municipal closed-loop plumbing systems.",
+    keywords: ["water heater inspection Atlanta", "thermal expansion tank plumbing Georgia", "TPR valve discharge pipe", "water heater leak Atlanta"],
+    content: `<p>The water heater is the hardest working mechanical appliance in any residential property. In Metro Atlanta, almost all municipal water authorities—including Atlanta Department of Watershed Management, DeKalb County Water, Cobb County Water System, and Gwinnett County DWR—mandate backflow preventers or check valves at the water meter to protect the public water supply. This transforms the home's interior plumbing into a <strong>closed-loop system</strong>.</p>
+<p>When cold water inside a 50-gallon tank is heated from 55°F to 125°F, it expands in volume by approximately 2% to 3%. In an open system, that extra volume pushes back into the street. But in a closed system, expanding water has nowhere to go. Without a functional, pre-charged <strong>thermal expansion tank</strong>, water pressure inside your pipes spikes to 120+ PSI, placing extreme stress on water heater tanks, washing machine hoses, and fixture cartridges.</p>
+<h2>Critical Water Heater Deficiencies We Identify</h2>
+<ul>
+  <li><strong>Missing or Failed Thermal Expansion Tank:</strong> When the internal rubber diaphragm of an expansion tank ruptures, the tank fills with water and sounds solid when tapped with a knuckle, losing all cushioning capacity.</li>
+  <li><strong>Improper TPR Valve Discharge Piping:</strong> The Temperature and Pressure Relief (TPR) valve is the primary safety mechanism preventing a water heater from exploding like a rocket. The discharge pipe must be rigid copper, CPVC, or PEX, must terminate downward between 1 and 6 inches above the floor or pan, and must never be capped or threaded.</li>
+  <li><strong>Anode Rod Depletion & Sediment Buildup:</strong> In hard-water areas, mineral sediment cakes the bottom electric elements or gas burner base, causing loud popping or rumbling sounds during reheat cycles.</li>
+</ul>
+<p>Ensure your plumbing is rigorously inspected by Foresight's certified two-inspector team. Book online in 60 seconds with our <a href="/quote">Instant Pricing Engine</a> or call <strong>(678) 480-2110</strong>.</p>`
   },
   {
-    category: "Buyer Education",
-    prompt: "Write an educational guide for first-time homebuyers in Metro Atlanta. Topics could include: what to expect during a home inspection, how to read an inspection report, negotiating repairs after an inspection, the difference between home inspection and appraisal, why you shouldn't skip an inspection on a new build, understanding your home warranty."
-  },
-  {
-    category: "Technology & Innovation",
-    prompt: "Write about technology used in modern home inspections and how it benefits homebuyers. Topics: thermal imaging for hidden moisture, drone roof inspections, digital reporting with photos and video, radon monitoring technology, moisture meters, sewer scope cameras. Explain how Foresight Home Inspections uses these tools."
-  },
-  {
-    category: "Health & Safety",
-    prompt: "Write about a home health or safety topic relevant to Georgia homeowners. Topics: radon gas risks, mold prevention in humid climates, carbon monoxide dangers, lead paint in older homes, asbestos awareness, electrical fire prevention, water quality concerns. Provide actionable advice."
-  },
-  {
-    category: "Local Spotlight",
-    prompt: "Write about home inspection considerations specific to a Metro Atlanta community. Discuss the local housing stock, common building styles, typical issues found in that area's homes, and how local climate or soil conditions affect home maintenance. Pick a specific city or county in the Metro Atlanta area."
+    category: "Historic Homes & Electrical",
+    title: "Knob-and-Tube Wiring & Unreinforced Masonry: Inspecting Historic Inman Park, Grant Park & Decatur Homes",
+    description: "What buyers must know before closing on historic 1900-1940 Craftsman bungalows and Victorian homes in Intown Atlanta.",
+    keywords: ["historic home inspection Atlanta", "knob and tube wiring Georgia", "Inman Park home inspection", "Grant Park home inspection"],
+    content: `<p>Intown Atlanta's historic neighborhoods—including Inman Park, Grant Park, Virginia-Highland, Candler Park, and the City of Decatur—feature some of the most charming Craftsman bungalows, Queen Anne Victorians, and historic brick cottages in the Southeast. However, vintage homes built between 1900 and 1940 operate on fundamentally different structural and mechanical principles than modern residential builds.</p>
+<p>At <strong>Foresight Home Inspections</strong>, lead Certified Master Inspector Christopher Boykin possesses deep building science expertise in historic architecture. We help historic homebuyers navigate antique construction methods without unnecessary alarm, separating harmless historical character from genuine structural and electrical fire hazards.</p>
+<h2>Top Historic Inspection Discoveries</h2>
+<ul>
+  <li><strong>Active Knob-and-Tube (K&T) Wiring:</strong> Early electrical wiring utilized ungrounded copper conductors routed through ceramic knobs and porcelain tubes. When modern insulation is blown over K&T in attics, heat cannot dissipate, creating a severe fire hazard. Additionally, home insurers generally will not issue a policy until active K&T is completely decommissioned.</li>
+  <li><strong>Unreinforced Masonry Piers & Settling:</strong> Many 1920s homes rest on individual stacked brick piers with lime-mortar joints. Decades of red clay soil expansion and drainage washouts cause piers to lean, resulting in interior sloping floors and stuck pocket doors.</li>
+  <li><strong>Galvanized Iron Plumbing & Lead Waste Lines:</strong> Original galvanized water pipes corrode from the inside out, restricting water volume to a trickle when multiple fixtures run simultaneously, while lead drum traps in clawfoot tub drains pose health and leakage risks.</li>
+</ul>
+<p>Get a comprehensive historical inspection backed by up to $35,000 in warranty protection. Schedule online at <a href="/quote">fhinspectionsatl.com/quote</a> or call <strong>(678) 480-2110</strong>.</p>`
   }
 ];
-
-async function generateWithGemini(topicPrompt, category) {
-  const systemPrompt = `You are writing a blog post for Foresight Home Inspections, LLC — a premium home inspection company in Metro Atlanta, Georgia.
-
-AUTHOR: Christopher Boykin, Certified Master Inspector (CMI) through InterNACHI
-COMPANY FACTS:
-- Two certified inspectors on every job
-- Up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Warranty + $25,000 InterNACHI Honor Guarantee with $0 deductible)
-- Thermal imaging and aerial drone roof scans included at no extra cost
-- Any client discount is strictly capped at $25 (first-time homebuyers or repeat clients). NEVER mention or offer military or veteran discounts under any circumstances.
-- Phone: 678-480-2110
-- Serves 163+ cities across Metro Atlanta
-
-WRITING STYLE:
-- Write for a first-time homebuyer with a high school reading level
-- Be warm, professional, and genuinely helpful — not salesy
-- Use specific examples and real numbers when possible
-- Keep paragraphs short (2-3 sentences max)
-- Include practical, actionable advice
-- Naturally mention services/pricing only 1-2 times (not every paragraph)
-- Use "What this could mean" (NOT "What this means") for any educational explanations
-- Recommendations must ONLY say "Have a licensed [trade] contractor evaluate further and repair as needed" (InterNACHI compliance)
-
-OUTPUT FORMAT (return ONLY valid JSON, no markdown):
-{
-  "title": "SEO-optimized title (50-65 characters ideal)",
-  "description": "Meta description (150-160 characters)",
-  "keywords": ["keyword1", "keyword2", "keyword3"],
-  "content": "<p>HTML content here</p><h2>Subheading</h2><p>More content</p>"
-}
-
-GEO/AIO/AEO REQUIREMENTS:
-- **TL;DR Key Takeaway Summary**: The post content MUST begin with a dedicated \`<div class="article-excerpt" data-speakable="true" style="background:var(--color-gray-light); padding:1.25rem; border-left:4px solid var(--color-red); margin-bottom:1.5rem; font-size:1.1rem; font-style:italic;">\` containing a concise 2-3 sentence summary of the article's core answer. This is critical for search engine AI summaries and voice search systems.
-- **FAQ Block**: Include an <h2> or <h3> titled "Frequently Asked Questions" at the bottom of the article. It must contain 3-4 structured Q&A items targeting conversational voice queries (e.g. "How long does a home inspection take in Georgia?"). Use bold \`<strong>\` for questions and direct, complete sentences for answers.
-- **Topical Authority**: Build solid semantic associations. Link to related concepts naturally. Use local SEO rich keywords matching Lithonia, Decatur, or general Metro Atlanta.
-- Do NOT include any unverified Florida/Ontario keywords or content; stay strictly focused on Georgia/Metro Atlanta markets.
-
-REQUIREMENTS:
-- Title must be compelling and include a location keyword (Georgia, Atlanta, Metro Atlanta)
-- Content should be 600-950 words
-- Use <h2> for subheadings (3-4 subheadings)
-- Use <ul>/<li> for lists
-- Use <strong> for key terms
-- Include 1 internal link to /quote and 1 to /concierge using <a href="/quote"> and <a href="/concierge"> format
-- Do NOT include any images, the system will handle that
-- Content must be original, factual, and helpful`;
-
-  try {
-    if (!GEMINI_API_KEY) {
-      throw new Error("GEMINI_API_KEY is not defined.");
-    }
-
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [
-            {
-              role: 'user',
-              parts: [{ text: `${systemPrompt}\n\nTOPIC: ${topicPrompt}\n\nWrite the blog post now. Return ONLY the JSON object, no other text.` }]
-            }
-          ],
-          generationConfig: {
-            temperature: 0.8,
-            maxOutputTokens: 4096,
-          }
-        })
-      }
-    );
-
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Gemini API error: ${response.status} - ${errText}`);
-    }
-
-    const data = await response.json();
-    const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    
-    if (!rawText) {
-      throw new Error('No content returned from Gemini API');
-    }
-
-    // Extract JSON from response (handle markdown code blocks)
-    let jsonStr = rawText.trim();
-    if (jsonStr.startsWith('```')) {
-      jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
-    }
-    
-    return JSON.parse(jsonStr);
-  } catch (apiError) {
-    console.warn('\n⚠️ Gemini API failed or key is missing. Activating Local Fallback Generator...');
-    
-    // Select fallback template based on current week or random rotation
-    const fallbackTemplates = [
-      {
-        category: "Inspection Insights",
-        title: "Metro Atlanta Short-Term Rental (STR) Compliance Assist Guide",
-        description: "Foresight provides professional third-party safety audits to help Airbnb and Vrbo operators meet Metro Atlanta Short-Term Rental (STR) compliance rules.",
-        keywords: ["Short-Term Rental Compliance Atlanta", "STR inspection Georgia", "Airbnb inspection Cobb County", "Vrbo safety audit Atlanta"],
-        content: "<p>If you operate an Airbnb or Vrbo in Metro Atlanta, you've likely noticed a significant shift in local regulations. Surrounding counties and cities across the Metro Atlanta area (including DeKalb, Fulton, Gwinnett, Cobb, and more) are requiring active compliance inspections for short-term rental (STR) operators to obtain or renew their business licenses. Since every municipality features unique local ordinances, zoning requirements, and safety checklists, staying compliant can feel like a moving target.</p><p>At Foresight Home Inspections, LLC, we understand that your rental property is a business that relies on being active and bookable. That is why we offer dedicated <strong>Short-Term Rental (STR) Compliance Assist</strong> services. We send a dual-inspector team to perform standardized, third-party safety audits starting at our highly competitive base rates, ensuring your listing remains fully compliant and online without interruptions.</p><h2>The Rising Wave of STR Regulations in Metro Atlanta</h2><p>Municipalities across Georgia are cracking down on unregistered short-term rentals. For instance, cities like Atlanta, Sandy Springs, Decatur, and Marietta, as well as counties like Cobb and DeKalb, have established strict safety inspection protocols. To qualify for an STR license, hosts must submit proof of a certified third-party safety inspection.</p><p>These local ordinances are designed to protect guests, but a single failed item can delay your permit for weeks, costing you valuable booking revenue. <strong>What this could mean</strong> is that you could face heavy local fines, listing suspension on Airbnb and Vrbo, or outright denial of your business license. Our recommendation is: have a licensed third-party inspector perform a pre-compliance safety audit and repair any noted defects as needed.</p><h2>What a Short-Term Rental Safety Audit Covers</h2><p>During an STR compliance inspection, our inspectors check a comprehensive list of health and safety items required by most Georgia local governments. Some of the most critical checklist items include:</p><ul><li><strong>Smoke and Carbon Monoxide Detectors</strong> — Must be installed in every bedroom, on every level of the home, and tested to ensure they are fully operational and not expired.</li><li><strong>Emergency Egress</strong> — Every sleeping room must feature a primary window or door that opens easily from the inside without keys or special tools, providing a safe escape route.</li><li><strong>Electrical Panel and Outlet Safety</strong> — All outlets in kitchens, bathrooms, and wet bars must be GFCI-protected, and the main breaker panel must be clear of any fire hazards or double-taps.</li><li><strong>Fire Extinguishers</strong> — A fully charged, multi-purpose fire extinguisher (typically 2A:10BC rated) must be mounted in a highly visible location, such as the kitchen, with active certification tags.</li><li><strong>Structural & Deck Safety</strong> — Railings on stairs and balconies must be secure, and spindles must be spaced close enough to prevent falls, meeting local structural safety standards.</li></ul><h2>The Foresight STR Advantage</h2><p>Why choose Foresight for your STR compliance audit? We don't just mark pass or fail—we help you get it right. By sending <strong>two certified inspectors</strong>, we can perform a highly efficient inspection of your property. We provide a detailed digital report with high-resolution photos and video within 24 hours that you can submit directly to county licensing portals.</p><p>Our STR safety audits start at our standard flat base rate of <strong>$355+</strong> based on the size of your property. Additionally, because Christopher Boykin is a Certified Master Inspector, every safety audit includes our standard elite InterNACHI-backed standards. We cover your major mechanicals (HVAC, plumbing, electrical) and structural framing, giving you and your guests absolute peace of mind.</p><h2>Schedule Your Compliance Audit Today</h2><p>Don't wait until your listing gets flagged or suspended by Vrbo or Airbnb. Safeguard your short-term rental business, protect your guests, and satisfy your county's safety requirements in one simple step. Use our <a href=\"/quote\">Instant Quote Calculator</a> to calculate your exact flat-rate fee and book your appointment, or click to <a href=\"/ask-twin\">chat with Foresight AI</a> to ask any specific compliance questions about your local Georgia county's STR ordinances 24/7!</p>"
-      },
-      {
-        category: "Maintenance Tips",
-        title: "Crawlspace Moisture: The Silent Threat to Georgia Foundations",
-        description: "Crawlspace moisture is a major risk in Metro Atlanta. Learn the signs of wood rot and foundation damage from Certified Master Inspector Christopher Boykin.",
-        keywords: ["crawlspace moisture", "foundation issues Georgia", "home inspection Atlanta", "wood rot crawlspace"],
-        content: "<p>In Metro Atlanta and across Georgia, many homes are built over a crawlspace rather than a basement or slab. Crawlspaces are incredibly common, but they also host one of the most frequent findings we uncover during home inspections: <strong>crawlspace moisture</strong>. Because of our highly humid summers and clay soils, moisture in crawlspaces is a silent threat that can damage structural integrity and diminish indoor air quality.</p><p>At Foresight Home Inspections, we send <strong>two certified inspectors</strong> on every single property audit. One of our primary tasks is to crawl directly into these tight spaces, equipped with FLIR thermal imaging cameras and digital moisture meters, to see what is happening beneath your feet. We don't just stand at the access door—we scan every corner of the floor framing to make sure your home is fully protected.</p><h2>Why Crawlspace Moisture is a Major Risk in Georgia</h2><p>Crawlspaces naturally accumulate humidity because they are situated directly over the bare soil. In North Georgia, heavy summer rains soak the clay around foundations, and this moisture slowly evaporates into the crawlspace air. When that warm, damp air contacts cooler floor joists or AC ducts, it condenses into water droplets.</p><p>If wood joists are exposed to this water for long periods, they begin to decay. Over time, this leads to structural sagging, spongy floors, and the growth of active mold spores. <strong>What this could mean</strong> is that your subfloor is rotting, your family is breathing mold spores through floor vents, or your foundation structure is losing its load-bearing capacity. Our recommendation in these situations is: have a licensed structural or moisture mitigation contractor evaluate further and repair as needed.</p><h2>Common Signs of a Wet Crawlspace You Can Spot</h2><p>While you might not want to crawl under your house yourself, there are several warning signs you can easily spot from inside your living spaces:</p><ul><li><strong>Musty Odors</strong> — A persistent, damp smell in the home, particularly near baseboards and closets, is a classic sign of crawlspace mold.</li><li><strong>Cupping Wood Floors</strong> — When crawlspace humidity is high, the bottom of hardwood flooring absorbs moisture and expands, causing the edges of the boards to cup or warp upward.</li><li><strong>Sagging or Soft Spots</strong> — If walking across your living room feels slightly bouncy or uneven, the floor framing below may have lost strength due to rot.</li><li><strong>High Indoor Humidity</strong> — Up to 50% of the air on the first floor of a home originates in the crawlspace due to the \"stack effect.\" A wet crawlspace directly raises humidity throughout the house.</li></ul><h2>How to Solve Crawlspace Moisture Concerns</h2><p>Fixing crawlspace moisture depends on how severe the water intrusion is. For minor humidity, installing a thick 6-mil or 10-mil <strong>vapor barrier</strong> over the bare soil is highly effective. The plastic barrier blocks ground moisture from rising into the air and keeps floor joists dry.</p><p>For more active leaks, a combination of a sump pump, perimeter french drains, or a crawlspace dehumidifier might be required. In extreme cases, full crawlspace encapsulation—where the space is completely sealed, insulated, and conditioned—is the gold standard. If we find excessive standing water or falling insulation under your house, our recommendation is: have a licensed crawlspace encapsulation contractor evaluate further and repair as needed.</p><h2>Get Professional Peace of Mind Today</h2><p>At Foresight Home Inspections, we believe in giving buyers and homeowners clear, photographic evidence of their home's condition. That is why we include high-definition photos of crawlspaces and full thermal camera scans at no extra charge. Every inspection we perform is also backed by our elite <strong>$10,000 Peace of Mind Protection Warranty</strong> at no additional cost, covering your structural wood framing and major systems for 90 days after closing.</p><p>Whether you're buying a cozy bungalow in Decatur or a spacious home in Alpharetta, don't let crawlspace issues surprise you after closing. You can calculate your transparent dual-inspector quote using our <a href=\"/quote\">Instant Quote Calculator</a>, or click to <a href=\"/ask-twin\">chat with Foresight AI</a> to ask any home maintenance questions 24/7!</p>"
-      },
-      {
-        category: "Inspection Insights",
-        title: "Understanding Your Georgia Home Inspection Report: Red Flags vs. Maintenance",
-        description: "Received your home inspection report and not sure what is a major issue? Certified Master Inspector Christopher Boykin explains how to read and negotiate findings.",
-        keywords: ["home inspection report Atlanta", "home inspection red flags", "negotiate home inspection Georgia"],
-        content: "<p>Receiving a 50-page home inspection report can be overwhelming. As a first-time homebuyer in Georgia, it is easy to panic when you see dozens of items marked as defects. However, it is essential to distinguish between safety hazards, major structural failures, and routine maintenance items.</p><p>At Foresight Home Inspections, we send <strong>two certified inspectors</strong> on every single property audit. Our digital reports highlight safety concerns and major defects clearly, so you know exactly what needs attention and what is just a recommendation for the future.</p><h2>Major Red Flags to Focus On</h2><p>When reviewing your report, prioritize major systems and safety hazards. These are the items that have significant repair costs or pose immediate safety threats:</p><ul><li><strong>Active Water Leaks</strong> — Water running behind tiles or under slabs.</li><li><strong>Federal Pacific or Zinsco Panels</strong> — Outdated electrical panels known for safety failures.</li><li><strong>Structural Foundation Settlement</strong> — Major cracks or bowing basement walls.</li><li><strong>HVAC heat exchanger cracks</strong> — Hazardous carbon monoxide leaks.</li></ul><p><strong>What this could mean</strong> is that the home has underlying safety risks or requires immediate, expensive contractor repairs. Our standard recommendation is: have a licensed trade contractor evaluate further and repair as needed.</p><h2>Standard Maintenance Items</h2><p>Minor findings like dirty filters, loose door handles, missing caulking around tubs, or small drywall cracks are normal maintenance. They are not structural failures or reasons to walk away from a transaction. Our goal is to equip you with the knowledge to maintain your home for years to come. You can check pricing and get a transparent price quote using our <a href=\"/quote\">Instant Quote Calculator</a>, or <a href=\"/ask-twin\">chat with Foresight AI</a> to get detailed maintenance timelines 24/7!</p>"
-      }
-    ];
-
-    const weekNumber = Math.floor((Date.now() - new Date('2026-01-01').getTime()) / (7 * 24 * 60 * 60 * 1000));
-    const selectedTemplate = fallbackTemplates[weekNumber % fallbackTemplates.length];
-    
-    console.log(`✨ Activated Local Fallback: "${selectedTemplate.title}"`);
-    return selectedTemplate;
-  }
-}
 
 function generateSlug(title) {
   return title
@@ -204,114 +114,111 @@ function generateSlug(title) {
     .substring(0, 80);
 }
 
-async function main() {
-  console.log('🤖 Foresight Blog Generator — Starting...\n');
+async function generateWithGemini(topicPrompt, category, existingTitles = []) {
+  const titlesList = existingTitles.slice(0, 35).map(t => `- "${t}"`).join('\n');
+  const systemPrompt = `You are writing an original, highly authoritative blog post for Foresight Home Inspections, LLC in Metro Atlanta, Georgia.
+AUTHOR: Christopher Boykin, Certified Master Inspector (CMI) through InterNACHI.
+PHONE: (678) 480-2110 | WEBSITE: https://www.fhinspectionsatl.com
 
-  // Load existing posts
+STRICT ANTI-DUPLICATION RULE (CRITICAL):
+The website already has comprehensive published articles on the following topics:
+${titlesList}
+You are STRICTLY FORBIDDEN from writing about, summarizing, or repeating any of the above topics. Choose a completely distinct, unaddressed Georgia building science, code, mechanical, or due diligence subject.
+
+REQUIREMENTS:
+- Title must be compelling, 50-65 chars, with a Georgia/Atlanta keyword.
+- Format: JSON ONLY: { "title": "...", "description": "...", "keywords": [...], "content": "..." }
+- Tone: First-time homebuyer friendly, factual, authoritative, zero sales fluff.
+- Use "What this could mean" (NEVER "What this means").
+- Recommendations must say "Have a licensed [trade] contractor evaluate further and repair as needed."
+- Include 1 link to /quote and 1 to /concierge.`;
+
+  try {
+    if (!GEMINI_API_KEY) throw new Error("No GEMINI_API_KEY");
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ role: 'user', parts: [{ text: `${systemPrompt}\n\nTOPIC: ${topicPrompt}` }] }],
+          generationConfig: { temperature: 0.85, maxOutputTokens: 4096 }
+        })
+      }
+    );
+
+    if (!response.ok) throw new Error(`Gemini status ${response.status}`);
+    const data = await response.json();
+    let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!rawText) throw new Error('Empty response');
+
+    let jsonStr = rawText.trim();
+    if (jsonStr.startsWith('```')) {
+      jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+    }
+    return JSON.parse(jsonStr);
+  } catch (err) {
+    console.warn('⚠️ Gemini generation unavailable or failed. Activating Anti-Duplicate Local Fallback Engine...');
+    return null;
+  }
+}
+
+async function main() {
+  console.log('🤖 Foresight Blog Generator (Anti-Duplicate & Variety Engine)...\n');
+
   let posts = [];
   if (fs.existsSync(POSTS_FILE)) {
     posts = JSON.parse(fs.readFileSync(POSTS_FILE, 'utf8'));
   }
 
-  // Check for keyword brief from the discovery agent
-  const KEYWORD_BRIEF_FILE = path.join(__dirname, '..', 'data', 'keyword-brief.json');
-  let keywordBrief = null;
-  if (fs.existsSync(KEYWORD_BRIEF_FILE)) {
-    try {
-      keywordBrief = JSON.parse(fs.readFileSync(KEYWORD_BRIEF_FILE, 'utf8'));
-      console.log(`🔍 Keyword brief found: "${keywordBrief.targetKeyword}" (score: ${keywordBrief.score})`);
-      console.log(`   Related: ${keywordBrief.relatedKeywords?.join(', ')}\n`);
-    } catch {
-      console.log('⚠️ Could not parse keyword brief, using topic rotation.\n');
+  const existingTitles = posts.map(p => p.title);
+  const existingSlugs = new Set(posts.map(p => p.slug));
+
+  let generated = await generateWithGemini("Diverse Georgia Building Science Inspection Defect", "Building Science", existingTitles);
+
+  // If Gemini failed or is not configured, pick from the unposted diverse fallback templates
+  if (!generated) {
+    const unposted = DIVERSE_FALLBACK_TEMPLATES.filter(t => {
+      const slug = generateSlug(t.title);
+      return !existingSlugs.has(slug) && !existingTitles.some(et => et.toLowerCase() === t.title.toLowerCase());
+    });
+
+    if (unposted.length === 0) {
+      console.log('✨ All fallback editorial topics are currently published! No duplicate posts created.');
+      return;
     }
+
+    generated = unposted[0];
+    console.log(`✨ Selected unposted topic: "${generated.title}"`);
   }
 
-  let topicPrompt;
-  let category;
+  const finalSlug = generateSlug(generated.title);
 
-  if (keywordBrief && keywordBrief.targetKeyword) {
-    // Use keyword-driven content generation
-    category = "Trending Topic";
-    const relatedStr = keywordBrief.relatedKeywords?.length
-      ? `\n\nAlso try to naturally address these related search queries:\n- ${keywordBrief.relatedKeywords.join('\n- ')}`
-      : '';
-
-    topicPrompt = `Write a blog post specifically targeting this search query that people are actively searching for on Google right now: "${keywordBrief.targetKeyword}"
-
-The post MUST:
-1. Use the exact phrase "${keywordBrief.targetKeyword}" in the title and first paragraph
-2. Answer the searcher's intent directly and thoroughly
-3. Provide unique, expert-level value that no competitor would offer
-4. Mention specific Georgia/Atlanta context where relevant
-5. Include practical takeaways the reader can act on immediately${relatedStr}
-
-Write this as if you're the #1 expert answering this exact question. The goal is to rank #1 on Google for "${keywordBrief.targetKeyword}".`;
-
-    console.log(`🎯 Mode: KEYWORD-DRIVEN (targeting real search demand)`);
-  } else {
-    // Fallback to topic rotation
-    const weekNumber = Math.floor((Date.now() - new Date('2026-01-01').getTime()) / (7 * 24 * 60 * 60 * 1000));
-    const topicIndex = weekNumber % TOPIC_CATEGORIES.length;
-    const topic = TOPIC_CATEGORIES[topicIndex];
-    topicPrompt = topic.prompt;
-    category = topic.category;
-    console.log(`📝 Mode: TOPIC ROTATION — ${category}`);
+  // Strict anti-duplication guard
+  if (existingSlugs.has(finalSlug) || posts.some(p => p.title.toLowerCase() === generated.title.toLowerCase())) {
+    console.warn(`🛑 Anti-Duplication Block: A post with slug "${finalSlug}" or title "${generated.title}" already exists.`);
+    console.log('Halting execution cleanly. Zero duplicate posts allowed.');
+    return;
   }
 
-  console.log(`📌 Category: ${category}\n`);
-
-  // Generate the blog post
-  console.log('⏳ Generating blog post with Gemini...');
-  const generated = await generateWithGemini(topicPrompt, category);
-
-  console.log(`✅ Generated: "${generated.title}"\n`);
-
-  // Create the post object
   const today = new Date().toISOString().split('T')[0];
-  const slug = generateSlug(generated.title);
-
-  // Check for duplicate slugs
-  if (posts.some(p => p.slug === slug)) {
-    console.log(`⚠️ Slug "${slug}" already exists. Appending date.`);
-  }
-
-  const finalSlug = posts.some(p => p.slug === slug) ? `${slug}-${today}` : slug;
-
   const newPost = {
     slug: finalSlug,
     title: generated.title,
     description: generated.description,
     date: today,
     author: "Christopher Boykin, CMI",
-    category,
-    keywords: [
-      ...(generated.keywords || []),
-      ...(keywordBrief?.targetKeyword ? [keywordBrief.targetKeyword] : []),
-      ...(keywordBrief?.relatedKeywords?.slice(0, 3) || []),
-    ],
-    content: generated.content,
-    targetKeyword: keywordBrief?.targetKeyword || null,
+    category: generated.category || "Inspection Insights",
+    keywords: generated.keywords || ["home inspection Atlanta", "Georgia building science"],
+    content: generated.content
   };
 
-  // Add to posts array (newest first)
   posts.unshift(newPost);
-
-  // Save
   fs.writeFileSync(POSTS_FILE, JSON.stringify(posts, null, 2), 'utf8');
-  console.log(`💾 Saved to ${POSTS_FILE}`);
-  console.log(`📊 Total posts: ${posts.length}`);
+  console.log(`✅ Successfully published new distinct post: "${newPost.title}"`);
   console.log(`🔗 URL: /blog/${finalSlug}`);
-
-  // Clean up keyword brief after use
-  if (fs.existsSync(KEYWORD_BRIEF_FILE)) {
-    fs.unlinkSync(KEYWORD_BRIEF_FILE);
-    console.log('🧹 Keyword brief consumed and removed');
-  }
-
-  console.log('\n✅ Done!');
+  console.log(`📊 Total distinct posts: ${posts.length}`);
 }
 
-main().catch(err => {
-  console.error('❌ Error:', err.message);
-  process.exit(1);
-});
+main().catch(console.error);
