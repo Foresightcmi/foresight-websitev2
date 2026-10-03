@@ -18,7 +18,8 @@
     "linkedin:post": "node scripts/linkedin-content-engine.mjs",
     "linkedin:dispatch": "node scripts/linkedin-content-engine.mjs --dispatch",
     "funnel:dispatch": "node scripts/social-funnel-dispatcher.mjs",
-    "colony:audit": "node scripts/colony-audit-engine.mjs"
+    "colony:audit": "node scripts/colony-audit-engine.mjs",
+    "dispatch:build": "node scripts/generate-vip-dispatch-v6.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

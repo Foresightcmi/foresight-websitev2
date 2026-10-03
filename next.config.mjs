@@ -220,7 +220,18 @@ const nextConfig = {
       // VIP Dispatch instant route
       {
         source: '/dispatch',
-        destination: '/vip-dispatch.html?v=5',
+        destination: '/vip-dispatch.html',
+        permanent: false,
+      },
+      {
+        source: '/vip',
+        destination: '/vip-dispatch.html',
+        permanent: false,
+      },
+      // VIP Realtor Partner Portal route
+      {
+        source: '/vip-realtors',
+        destination: '/realtors',
         permanent: false,
       },
       // Legacy XML feeds
