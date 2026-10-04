@@ -34,6 +34,7 @@ deduped.sort((a, b) => b.date.localeCompare(a.date));
 deduped.forEach(f => {
   const firstName = f.first || (f.name ? f.name.trim().split(' ')[0] : 'there');
   f.first = firstName;
+  f.email = f.email || '';
   const cleanPhone = (f.raw_phone || f.phone || '').replace(/[^0-9]/g, '');
   f.clean_phone = cleanPhone;
 

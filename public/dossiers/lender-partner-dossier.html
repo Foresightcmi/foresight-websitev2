@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lender Closing-Protection & Due Diligence Dossier | Foresight Home Inspections</title>
+  <meta name="description" content="Official Mortgage Originator SLA & Collateral Protection Dossier. 24-hr due diligence inspection scheduling, dual Certified Master Inspectors, and $35,000 warranty protection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-black: #0F172A;
+      --color-white: #ffffff;
+      --color-gray-light: #F8FAFC;
+      --color-gray-mid: #94A3B8;
+      --color-gray-dark: #334155;
+      --color-gold: #D4AF37;
+      --color-gold-hover: #B89528;
+      --color-slate-dark: #0F172A;
+      --color-slate-navy: #1E293B;
+      --color-green: #10B981;
+      --color-red: #9B2C2C;
+      --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--color-gray-light);
+      color: var(--color-slate-dark);
+      font-family: var(--font-main);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .top-banner {
+      background: linear-gradient(90deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .top-banner .gold { color: var(--color-gold); font-weight: 700; }
+
+    .sla-ribbon {
+      background: var(--color-gold);
+      color: #0F172A;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .navbar {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 0.85rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-img {
+      height: 65px;
+      width: auto;
+      object-fit: contain;
+    }
+    .brand-text h1 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-slate-dark);
+      line-height: 1.2;
+    }
+    .brand-text p {
+      font-size: 0.75rem;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .nav-phone {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-slate-dark);
+    }
+    .btn-gold {
+      background: var(--color-gold);
+      color: #0F172A;
+      font-weight: 700;
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-gold:hover { background: var(--color-gold-hover); }
+
+    .main-container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+    }
+
+    .hero-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      padding: 2.25rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.12);
+      color: #065f46;
+      border: 1px solid #10b981;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-slate-dark);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .navbar { flex-direction: column; gap: 1rem; text-align: center; }
+      .nav-actions { flex-direction: column; }
+    }
+
+    .pillar-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .pillar-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .pillar-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-slate-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pillar-desc {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    .plug-in-box {
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      color: #FFFFFF;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .plug-in-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+    }
+    .snippet-container {
+      background: #090D16;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 1.25rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #E2E8F0;
+      line-height: 1.5;
+      margin: 1rem 0;
+      white-space: pre-wrap;
+      user-select: all;
+    }
+
+    .copy-btn {
+      background: var(--color-gold);
+      color: #0F172A;
+      font-weight: 700;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .cmi-seal-card {
+      background: #FFFFFF;
+      border-radius: 10px;
+      border: 1px solid #E2E8F0;
+      padding: 1.75rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .cmi-seal-img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 2.5rem 1.25rem;
+      font-size: 0.85rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .footer a { color: var(--color-gold); }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    <span>🏛️ <span class="gold">MORTGAGE ORIGINATOR SERVICE LEVEL AGREEMENT</span></span>
+    <span>•</span>
+    <span>Zero Rate-Lock Expiration Delays</span>
+    <span>•</span>
+    <span>Direct Lender Priority Desk: <span class="gold">(678) 480-2110</span></span>
+  </div>
+
+  <div class="sla-ribbon">
+    ⭐ 24-Hour Inspection Turnaround &amp; Same-Day Digital Reports Across Metro Atlanta
+  </div>
+
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections" class="logo-img">
+      <div class="brand-text">
+        <h1>FORESIGHT HOME INSPECTIONS</h1>
+        <p>Certified Master Inspector® (CMI) Dual-Inspector Team</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:6784802110" class="nav-phone">📞 (678) 480-2110</a>
+      <a href="https://www.fhinspectionsatl.com/quote" class="btn-gold">⚡ Book Inspection Online</a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    
+    <div class="hero-card">
+      <div class="hero-badge">Verified Lending Protection Standard</div>
+      <h2 class="hero-title">Eliminating Due Diligence Stalls, Rate-Lock Expirations &amp; Deal Fallout</h2>
+      <p class="hero-subtitle">
+        For mortgage loan officers, branch managers, and producing originators, <strong>the 5-to-7 day Georgia due diligence window</strong> is where loan transactions are most vulnerable. Delayed inspection reports, missed defects, and adversarial repair negotiation battles threaten appraisal scheduling and closing dates.
+      </p>
+      <p class="hero-subtitle" style="margin-bottom:0;">
+        Foresight Home Inspections operates under an institutional Service Level Agreement engineered to protect the loan file, borrower collateral, and closing calendar.
+      </p>
+    </div>
+
+    <!-- The 4 Lending Protection Pillars -->
+    <div class="grid-2">
+      <div class="pillar-box">
+        <div class="pillar-icon">⏱️</div>
+        <div class="pillar-title">1. Guaranteed 24-Hr Scheduling &amp; Same-Day Reports</div>
+        <div class="pillar-desc">
+          We maintain dedicated due diligence calendar reserve slots across Metro Atlanta. Every report is delivered digitally the exact same day of inspection so buyer-seller negotiations conclude days before financing contingency milestones.
+        </div>
+      </div>
+
+      <div class="pillar-box">
+        <div class="pillar-icon">👥</div>
+        <div class="pillar-title">2. Two Certified Master Inspectors on Every Job</div>
+        <div class="pillar-desc">
+          Unlike solo operators who take 4+ hours and miss concealed mechanical flaws, our dual-inspector team conducts concurrent building science audits (structural, MEP, building envelope, and free FLIR thermal imaging) in under 2.5 hours.
+        </div>
+      </div>
+
+      <div class="pillar-box">
+        <div class="pillar-icon">📄</div>
+        <div class="pillar-title">3. 1-Click GAR Form F404 Repair Addendum</div>
+        <div class="pillar-desc">
+          Inspection reports shouldn't create negotiation gridlock. Our interactive client portal automatically converts flagged defects into precise, code-compliant repair clauses formatted specifically for the Georgia Association of Realtors (GAR) Form F404.
+        </div>
+      </div>
+
+      <div class="pillar-box">
+        <div class="pillar-icon">🛡️</div>
+        <div class="pillar-title">4. $35,000 in Buyer Collateral Guarantees</div>
+        <div class="pillar-desc">
+          Backed by InterNACHI's "We'll Buy Your Home Back" Guarantee and our 90-Day Structural &amp; Mechanical Warranty. This gives hesitant first-time borrowers the security they need to stay confident and proceed to closing.
+        </div>
+      </div>
+    </div>
+
+    <!-- Ready-to-use Lender Plug-In -->
+    <div class="plug-in-box">
+      <div class="plug-in-title">📲 Plug Foresight Directly Into Your Borrower Onboarding Template</div>
+      <p style="font-size:0.95rem; color:#cbd5e1; margin-bottom:1rem;">
+        Copy and paste this pre-approved snippet into Step 2 of your automated "Under Contract Next Steps" email sequence in Encompass, Total Expert, or Salesforce:
+      </p>
+
+      <div class="snippet-container" id="lenderSnippet">
+"STEP 2: SCHEDULE YOUR HOME INSPECTION IMMEDIATELY
+In Georgia, due diligence is typically only 5 to 7 days. To protect your earnest money and keep your loan timeline on track, we recommend scheduling your inspection within 24 hours.
+
+Our preferred Metro Atlanta inspection partner is Foresight Home Inspections:
+• Two Certified Master Inspectors on every inspection
+• Guaranteed same-day digital report delivery
+• $35,000 Client Protection Warranty & InterNACHI Buy-Back Guarantee
+• Free FLIR Thermal Imaging & Utility Setup Concierge
+
+👉 Reserve your inspection slot in 60 seconds:
+https://fhinspectionsatl.com/quote
+
+Direct Priority Desk: (678) 480-2110 | inspect@foresightcmi.com"
+      </div>
+
+      <button class="copy-btn" onclick="copySnippet()">📋 Click to Copy Borrower Snippet</button>
+      <span id="copyConfirm" style="color:var(--color-gold); font-size:0.85rem; margin-left:10px; display:none;">✓ Copied to clipboard!</span>
+    </div>
+
+    <!-- Inspector Profile -->
+    <div class="cmi-seal-card">
+      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Certified Master Inspector" class="cmi-seal-img">
+      <div>
+        <h3 style="font-family:var(--font-heading); font-size:1.2rem; color:var(--color-slate-dark); margin-bottom:0.25rem;">
+          Christopher Boykin, CMI®
+        </h3>
+        <p style="font-size:0.85rem; color:#64748B; font-weight:600; margin-bottom:0.5rem;">
+          Lead Inspector &amp; Founder • Certified Master Inspector® #MICB-1082 • InterNACHI #NACHI20061502
+        </p>
+        <p style="font-size:0.9rem; color:#334155; line-height:1.5;">
+          Direct: <strong>(678) 480-2110</strong> • Office: <strong>inspect@foresightcmi.com</strong><br>
+          Serving Fulton, Gwinnett, Cobb, DeKalb, Cherokee, Forsyth &amp; 20 Metro Atlanta Counties.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>Foresight Home Inspections, LLC • 1816 South Deshon Road, Lithonia, GA 30058</p>
+    <p style="margin-top:6px;">Serving Atlanta, Alpharetta, Marietta, Decatur, Cumming, Duluth, and 77+ Georgia Municipalities.</p>
+    <p style="margin-top:6px;">Direct Line: <a href="tel:6784802110">(678) 480-2110</a> • <a href="https://www.fhinspectionsatl.com">www.fhinspectionsatl.com</a></p>
+  </footer>
+
+  <script>
+    function copySnippet() {
+      const text = document.getElementById('lenderSnippet').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const confirm = document.getElementById('copyConfirm');
+        confirm.style.display = 'inline';
+        setTimeout(() => { confirm.style.display = 'none'; }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+[
+  {
+    "key": "LO_lo_movement_01_david.caldwell@movement.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "David M. Caldwell",
+    "company": "Movement Mortgage",
+    "email": "david.caldwell@movement.com",
+    "city": "Buckhead (Atlanta)",
+    "timestamp": "2026-10-04T00:55:49.823Z"
+  },
+  {
+    "key": "LO_lo_fairway_02_sarah.jenkins@fairwaymc.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Sarah Jenkins",
+    "company": "Fairway Independent Mortgage",
+    "email": "sarah.jenkins@fairwaymc.com",
+    "city": "Alpharetta",
+    "timestamp": "2026-10-04T00:55:53.727Z"
+  },
+  {
+    "key": "CONTRACT_card_b1ab9985c5_heatherp@ansleyre.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Heather Pitts",
+    "brokerage": "Ansley Real Estate Christie's International",
+    "address": "2520 Peachtree Road NW 602",
+    "city": "Atlanta",
+    "email": "heatherp@ansleyre.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T00:55:59.392Z"
+  },
+  {
+    "key": "CONTRACT_card_fa701b379d_ev@jsbarker.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Evelyn Cook",
+    "brokerage": "Virtual Properties Realty.com",
+    "address": "3229 Vanderbilt Lane NW",
+    "city": "Palmetto",
+    "email": "ev@jsbarker.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T00:56:04.660Z"
+  },
+  {
+    "key": "CONTRACT_card_be1f3dcabe_isaiah.williams@kellerknapp.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Isaiah Williams",
+    "brokerage": "Keller Knapp",
+    "address": "2351 Pinewood Drive",
+    "city": "Decatur",
+    "email": "isaiah.williams@kellerknapp.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T00:56:09.829Z"
+  },
+  {
+    "key": "CONTRACT_card_c43ea45ff7_angela@edsonrealty.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Angela Edgar",
+    "brokerage": "Sterling Real Estate Services, LLC.",
+    "address": "124 Townsend Court Lot 41",
+    "city": "Mcdonough",
+    "email": "angela@edsonrealty.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T00:56:14.271Z"
+  },
+  {
+    "key": "PRE_DD_card_96acbbce8e_robin.blass@harrynorman.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Robin Blass",
+    "brokerage": "Harry Norman Realtors",
+    "address": "565 Old Lathemtown Road",
+    "city": "Atlanta",
+    "email": "robin.blass@harrynorman.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-04T00:56:19.547Z"
+  },
+  {
+    "key": "PRE_DD_card_b37afc0a67_loganfitts@icloud.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Logan Fitts",
+    "brokerage": "Mountain Sotheby's International Realty",
+    "address": "89 High Meadows Court",
+    "city": "Mineral Bluff",
+    "email": "loganfitts@icloud.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-04T00:56:23.874Z"
+  }
+]
