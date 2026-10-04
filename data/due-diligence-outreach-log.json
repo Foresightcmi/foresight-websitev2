@@ -82,5 +82,89 @@
     "email": "loganfitts@icloud.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-04T00:56:23.874Z"
+  },
+  {
+    "key": "LO_lo_southeast_03_marcus.vance@southeastmortgage.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Marcus Vance",
+    "company": "Southeast Mortgage of Georgia",
+    "email": "marcus.vance@southeastmortgage.com",
+    "city": "Norcross / Gwinnett",
+    "timestamp": "2026-10-04T12:00:19.649Z"
+  },
+  {
+    "key": "LO_lo_guaranteed_04_michael.sterling@rate.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Michael Sterling",
+    "company": "Guaranteed Rate",
+    "email": "michael.sterling@rate.com",
+    "city": "Sandy Springs",
+    "timestamp": "2026-10-04T12:00:24.870Z"
+  },
+  {
+    "key": "CONTRACT_card_b2bfec6ac9_teresalsinclair@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Teresa Sinclair",
+    "brokerage": "Southern Classic Realtors",
+    "address": "839 Wooten Road",
+    "city": "Cleveland",
+    "email": "teresalsinclair@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T12:00:30.975Z"
+  },
+  {
+    "key": "CONTRACT_card_d5795bafc1_amandanichols@atlantafinehomes.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Amanda Nichols",
+    "brokerage": "Atlanta Fine Homes Sotheby's International",
+    "address": "1332 Wayne Avenue NE",
+    "city": "Atlanta",
+    "email": "amandanichols@atlantafinehomes.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T12:00:36.543Z"
+  },
+  {
+    "key": "CONTRACT_card_1b957eb9da_gabbygray@beacham.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "GABRIELA GRAY",
+    "brokerage": "Beacham and Company",
+    "address": "570 Woodward Avenue SE B",
+    "city": "Atlanta",
+    "email": "gabbygray@beacham.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T12:00:42.665Z"
+  },
+  {
+    "key": "CONTRACT_card_f736ebe274_atlantasmartmove@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Kiran Chawla",
+    "brokerage": "Singh Realty, LLC",
+    "address": "5320 Ripken Road",
+    "city": "Johns Creek",
+    "email": "atlantasmartmove@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-04T12:00:48.601Z"
+  },
+  {
+    "key": "PRE_DD_card_cafe622961_info@teambonds.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Bonds Realty Group",
+    "brokerage": "Keller Williams Realty Atlanta Partners",
+    "address": "104 Boulder Drive",
+    "city": "Commerce",
+    "email": "info@teambonds.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-04T12:00:55.420Z"
+  },
+  {
+    "key": "PRE_DD_card_107e2e9122_danielle.montgomery@bhhsgeorgia.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Danielle Montgomery",
+    "brokerage": "Berkshire Hathaway HomeServices Georgia Properties",
+    "address": "6338 Kinsland Court",
+    "city": "Snellville",
+    "email": "danielle.montgomery@bhhsgeorgia.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-04T12:01:01.574Z"
   }
 ]
