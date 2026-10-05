@@ -1,9 +1,9 @@
-# 📣 Active Multi-Channel Broadcast: Post #4
-**Title:** EPA Radon Zone 1 Warning for North Metro Atlanta  
-**Topic:** Radon Testing Add-On  
-**Generated At:** 2026-10-02T18:58:32.796Z  
-**Target Booking Link:** [https://www.fhinspectionsatl.com/services/radon-testing](https://www.fhinspectionsatl.com/services/radon-testing)  
-**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/radon-testing-banner.webp](https://www.fhinspectionsatl.com/images/radon-testing-banner.webp)  
+# 📣 Active Multi-Channel Broadcast: Post #5
+**Title:** 11-Month Builder Warranty Expiration Alert  
+**Topic:** Builder Warranty Inspections  
+**Generated At:** 2026-10-05T21:22:26.300Z  
+**Target Booking Link:** [https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta](https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta)  
+**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/roof-1.webp](https://www.fhinspectionsatl.com/images/roof-1.webp)  
 **Webhook Status:** `skipped`
 
 ---
@@ -12,22 +12,24 @@
 *Optimized for Local 3-Pack, local municipal entities, and direct phone/online booking.*
 
 ```text
-Did you know that Fulton, DeKalb, Cobb, Gwinnett, and Cherokee counties sit squarely inside EPA Radon Zone 1?
+Did you buy a new construction home in Metro Atlanta over the past 11 months? Your builder's 1-year comprehensive warranty is about to expire!
 
-This means homes have a high predicted average indoor radon screening level above the EPA action guideline of 4.0 pCi/L.
+Once that 12-month anniversary passes, the builder is off the hook, and all hidden defects become your out-of-pocket financial liability.
 
-Radon is an odorless, invisible, radioactive gas produced by the natural decay of Georgia granite bedrock. It is the #1 cause of lung cancer among non-smokers.
+Georgia homes settle rapidly during year one. Our dual-inspector audits routinely discover:
+• Roof shingle nail pops and compromised flashing boots
+• Attic truss uplift cracking drywall seams
+• Negative exterior grading causing water to pool at foundation footings
+• Unbalanced HVAC duct dampers leaving bedrooms hot
 
-Foresight Home Inspections deploys calibrated 48-hour continuous electronic radon monitors that capture hourly air samples, pressure readings, and tamper sensor data.
+A Foresight 11-Month Warranty Inspection (from $335) gives you an independent Certified Master Inspector punch list ready to upload directly into your builder's warranty portal.
 
-Add EPA certified radon gas testing to your Atlanta home inspection package for $250.
-
-Call 678-480-2110 or book online 24/7.
+Call 678-480-2110 or schedule online.
 ```
 
 **GBP Call to Action:** Book Online or Call (678) 480-2110  
-**Link:** https://www.fhinspectionsatl.com/services/radon-testing  
-**Photo:** Attach `https://www.fhinspectionsatl.com/images/radon-testing-banner.webp`
+**Link:** https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta  
+**Photo:** Attach `https://www.fhinspectionsatl.com/images/roof-1.webp`
 
 ---
 
@@ -35,24 +37,27 @@ Call 678-480-2110 or book online 24/7.
 *Optimized for social engagement, visual storytelling, consumer trust, and homebuyer education.*
 
 ```text
-EPA Zone 1 Alert: Why Radon Testing is Non-Negotiable in North Georgia ☢️🏡
+Did you buy a new construction home in Metro Atlanta over the past 11 months? 🚨
 
-Did you know that Fulton, Cobb, Gwinnett, Cherokee, and DeKalb counties sit in EPA Radon Zone 1?
+Your builder’s 1-year comprehensive warranty is ticking down to the final days. Once that 12-month anniversary passes, the builder is legally off the hook—and every hidden defect becomes your out-of-pocket financial liability.
 
-This means indoor radon screening levels frequently exceed the EPA action limit of 4.0 pCi/L.
+Georgia building science data proves that first-year homes routinely develop:
+⚠️ Roof shingle nail pops and compromised chimney/plumbing flashings
+⚠️ Attic truss uplift cracking drywall seams
+⚠️ Negative exterior grading causing rainwater to pool against foundation walls
+⚠️ Unbalanced HVAC duct dampers leaving master bedrooms overheated
 
-Because radon is completely odorless, tasteless, and invisible, you cannot detect it without specialized diagnostic equipment. It is the leading cause of lung cancer in non-smokers, responsible for over 21,000 deaths annually in the U.S.
+A Foresight 11-Month Builder Warranty Inspection (from $335) gives you an independent, Certified Master Inspector photo punch list ready to upload directly into your builder's warranty portal.
 
-Foresight deploys professional 48-hour continuous electronic monitors that track radon levels hourly with precision digital reporting.
-
-Add professional radon testing to your home inspection package today for $250.
+On average, our clients save $1,500 to $4,500 in builder-paid repairs before warranty expiration!
 
 "Hindsight is expensive... Choose Foresight!"
 
-👉 Learn more & book your test online:
-https://www.fhinspectionsatl.com/services/radon-testing
+👉 Book your 11-Month Warranty Inspection today:
+https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta
+📞 Direct CMI Phone: (678) 480-2110
 
-#RadonTesting #AtlantaRealEstate #HomeSafety #EPAZone1 #AtlantaHomes #CertifiedMasterInspector
+#NewConstructionAtlanta #BuilderWarranty #11MonthWarranty #AtlantaSuburbs #NewHomeowner
 ```
 
 ---
@@ -61,23 +66,25 @@ https://www.fhinspectionsatl.com/services/radon-testing
 *Optimized for Real Estate Agents, GAR Contract Due Diligence, Investors, Attorneys, and Building Science Authority.*
 
 ```text
-Environmental due diligence is a critical component of residential and commercial property risk management in Georgia. The Piedmont geological province across North Metro Atlanta features extensive granite bedrock formations (e.g., Stone Mountain and Lithonia granite gneiss) containing natural uranium deposits that decay into Radium-226 and gaseous Radon-222.
+New construction volume across Metro Atlanta (Gwinnett, Forsyth, Cobb, North Fulton) has surged, yet accelerated construction cycles frequently leave substantial latent defects concealed behind finished surfaces.
 
-As a result, counties including Fulton, Gwinnett, Cobb, DeKalb, and Cherokee are classified as EPA Zone 1 (predicted indoor screening average >4.0 pCi/L).
+Under Georgia residential warranty contracts, builders offer a comprehensive 1-year materials and workmanship warranty. At month 12, liability transfers entirely to the property owner.
 
-Foresight Home Inspections utilizes state-of-the-art continuous electronic radon monitors (CRM) operating on 48-hour protocols. Our devices measure:
-• Hourly Radon Concentrations (pCi/L)
-• Barometric Pressure Fluctuations
-• Temperature & Relative Humidity Controls
-• Anti-Tamper Accelerometer Logging
+Our field data across hundreds of first-year audits indicates high frequencies of:
+• Attic Truss Uplift (seasonal differential deflection causing ceiling drywall cracking)
+• HVAC Static Pressure Imbalances & Unsealed Plenum Transitions
+• Inadequate Slope on Exterior Drainage Swales (IRC Section R401.3 violations)
+• Roof Deck Nail Penetrations & Unsealed Flashing Boots
 
-Accurate radon data during the due diligence window enables buyer agents to request seller-paid active soil depressurization (radon mitigation) systems ($1,200 to $2,500 value) prior to closing.
+An independent 11-Month Warranty Audit conducted by a Certified Master Inspector provides homeowners with an itemized, code-referenced punch list with high-resolution photographic proof for immediate builder portal submission.
 
-Review our radon diagnostic standards:
-https://www.fhinspectionsatl.com/services/radon-testing
+Our clients routinely recover $1,500 to $4,500 in builder-funded remediations prior to warranty cutoff.
 
-#EnvironmentalDueDiligence #RadonTesting #BuildingSafety #AtlantaRealEstate #CommercialRealEstate #RiskMitigation
+Learn more:
+https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta
+
+#NewConstruction #BuilderWarranty #QualityControl #PropertyManagement #RealEstateAtlanta #AssetProtection
 ```
 
 ---
-*Next post in rotation:* **Post #5: "11-Month Builder Warranty Expiration Alert"**
+*Next post in rotation:* **Post #6: "4K Aerial Drone Roof Diagnostics Included Free"**

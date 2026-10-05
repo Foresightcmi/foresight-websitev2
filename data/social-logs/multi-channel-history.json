@@ -40,5 +40,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/services/radon-testing"
+  },
+  {
+    "postId": 5,
+    "title": "11-Month Builder Warranty Expiration Alert",
+    "publishedAt": "2026-10-05T21:22:26.300Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta"
   }
 ]

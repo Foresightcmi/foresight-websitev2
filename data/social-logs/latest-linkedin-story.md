@@ -1,52 +1,52 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #4
+# 🚀 Foresight LinkedIn Growth Engine: Post #5
 
-**Schedule Slot:** Thursday - Deposit (The Georgia Red Clay Enemy) (10:00 AM Weekday Cadence)  
-**Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
-**Topic:** Hydrostatic Red Clay Foundation Deflection  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp`  
-**Generated At:** 2026-10-02T18:58:32.753Z  
+**Schedule Slot:** Friday - Withdrawal (The High-Ticket Lead Funnel) (10:00 AM Weekday Cadence)  
+**Strategy Type:** WITHDRAWAL (1:4 High-Ticket Withdrawal)  
+**Topic:** The 1-Click GAR Due Diligence Tool  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/drone-2.webp`  
+**Generated At:** 2026-10-05T21:22:26.260Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-Georgia red clay looks solid until it drinks 1,000 gallons of rain.
+To every Atlanta real estate agent fighting the 7-day due diligence clock:
 
-Then it acts like an expanding hydraulic jack against your basement walls.
+We built a free tool that writes your GAR defect amendments in 60 seconds.
 
-Last week in Marietta, a buyer was told 'that smal... [see more]
+Most inspectors send 90-page PDFs with vagu... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-Georgia red clay looks solid until it drinks 1,000 gallons of rain.
+To every Atlanta real estate agent fighting the 7-day due diligence clock:
 
-Then it acts like an expanding hydraulic jack against your basement walls.
+We built a free tool that writes your GAR defect amendments in 60 seconds.
 
-Last week in Marietta, a buyer was told 'that small hairline crack is just settling.'
+Most inspectors send 90-page PDFs with vague summaries that terrify your clients.
 
-We put laser levels and digital moisture meters on the stem wall.
+Our reports separate cosmetic scuffs from structural deal-breakers instantly.
 
-The foundation wall was deflecting inward by 1.75 inches.
+Plus, our 1-Click Repair Clause Generator gives you exact contract language.
 
-Hydrostatic clay pressure had sheared the mortar joints below the grade.
+You copy the InterNACHI defect citation and paste it straight into GAR F404.
 
-Cost to install carbon fiber reinforcement straps: $16,500.
+No guessing, no negotiating blind, and no late-night contract stress.
 
-Hairline cracks are rarely 'just settling' in Atlanta's Piedmont soil.
+And we deliver same-day reports on every 2-inspector deployment.
 
-Always measure the deflection before your due diligence expires.
+Try the tool completely free at the link below.
 
-Building science doesn't guess.
+Let's make due diligence smooth again.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-Read our building science guide on Georgia clay & foundations: https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations
+Free 1-Click GAR Repair Clause Generator for Georgia Realtors: https://www.fhinspectionsatl.com/realtors
 ```
 
 ---
