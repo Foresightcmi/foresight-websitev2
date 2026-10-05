@@ -1,4 +1,4 @@
-name: Autonomous Municipal Permit Radar & Outreach
+name: Autonomous New Construction Radar & Advisory Engine
 
 on:
   schedule:
@@ -28,23 +28,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Harvest Municipal Permits
-        run: node scripts/permit-radar.mjs
-
       - name: Harvest Metro Atlanta New Construction Leads
         run: node scripts/new-construction-radar.mjs
 
-      - name: Generate Municipal Property Due Diligence Dossiers
-        run: node scripts/generate-permit-dossiers.mjs
-
       - name: Generate New Construction Due Diligence Dossiers
         run: node scripts/generate-new-construction-dossiers.mjs
-
-      - name: Dispatch Autonomous Municipal Outreach Advisories
-        run: node scripts/permit-outreach-engine.mjs
-        env:
-          EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
 
       - name: Dispatch New Construction Outreach & Hot Sheet
         run: node scripts/new-construction-outreach.mjs
@@ -57,5 +45,4 @@ jobs:
           git config user.name "Foresight Revenue Radar Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/ public/dossiers/
-          git diff --cached --quiet || (git commit -m "chore(radar): automated municipal and new construction harvest and outreach [skip ci]" && git push)
-
+          git diff --cached --quiet || (git commit -m "chore(radar): automated metro atlanta new construction harvest and dossiers [skip ci]" && git push)

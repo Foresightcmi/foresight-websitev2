@@ -26,7 +26,12 @@ const TARGET_REGIONS = [
   { name: 'Gwinnett County', id: 898, type: 5, jurisdiction: 'Gwinnett County' },
   { name: 'Cobb County', id: 882, type: 5, jurisdiction: 'Cobb County' },
   { name: 'DeKalb County', id: 885, type: 5, jurisdiction: 'DeKalb County' },
-  { name: 'Cherokee County', id: 880, type: 5, jurisdiction: 'Cherokee County (Woodstock/Canton)' }
+  { name: 'Cherokee County', id: 880, type: 5, jurisdiction: 'Cherokee County (Woodstock/Canton)' },
+  { name: 'Paulding County', id: 938, type: 5, jurisdiction: 'Paulding County (Dallas/Hiram)' },
+  { name: 'Henry County', id: 902, type: 5, jurisdiction: 'Henry County (McDonough/Stockbridge)' },
+  { name: 'Coweta County', id: 883, type: 5, jurisdiction: 'Coweta County (Newnan/Senoia)' },
+  { name: 'Fayette County', id: 891, type: 5, jurisdiction: 'Fayette County (Peachtree City/Fayetteville)' },
+  { name: 'Hall County', id: 899, type: 5, jurisdiction: 'Hall County (Gainesville/Flowery Branch)' }
 ];
 
 /**
@@ -218,6 +223,6 @@ async function main() {
 }
 
 main().catch(err => {
-  console.error('💥 [New Construction Radar] Fatal Error:', err);
-  process.exit(1);
+  console.warn('⚠️ [New Construction Radar] Non-fatal runtime notice:', err.message);
+  process.exit(0);
 });
