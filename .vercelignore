@@ -1,0 +1,20 @@
+# Vercel Ignore File - Optimizes deployment payload and storage ($0 cost protection)
+
+# Offline MLS & Lead Datasets (Used locally by background scouting engines, not by Next.js)
+data/under-contract-realtors.json
+data/past-clients.json
+data/social-logs/
+data/due-diligence-outreach-log.json
+data/permit-leads.json
+data/permit-leads-crm.json
+data/new-construction-leads.json
+data/new-construction-crm.json
+
+# Local scripts (Maintenance & cron execution run on server, not in Vercel build)
+scripts/
+
+# Local logs and temporary files
+*.log
+scratch/
+secrets/
+*.key.json
