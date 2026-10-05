@@ -160,6 +160,15 @@ function buildUnderContractEmail(realtor) {
 
   const subject = `⚡ Due Diligence Inspection Advisory: ${address} (${city}) | 24-Hr Turnaround`;
 
+  const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i.test(city) || /dekalb/i.test(address);
+
+  const deKalbBox = isDeKalb ? `
+      <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 14px 16px; margin: 15px 0; border-radius: 4px; font-size: 14px; color: #1e3a8a;">
+        <strong>🏛️ DeKalb County Mandatory Closing Requirement:</strong><br>
+        Under DeKalb County Water Conservation Ordinance § 25-41, pre-1993 homes require an official signed <strong>Certificate of Compliance</strong> verifying 1.28 GPF low-flow plumbing fixtures to transfer title at closing. Foresight conducts the fixture audit on-site and issues the official signed certificate for a <strong>$100 flat fee</strong>.
+      </div>
+  ` : '';
+
   const html = `
 <!DOCTYPE html>
 <html>
@@ -197,6 +206,8 @@ function buildUnderContractEmail(realtor) {
         📅 <strong>Due Diligence Window:</strong> Active (5-to-7 Day Contingency Clock Running)
       </div>
 
+      ${deKalbBox}
+
       <p>With Georgia due diligence timelines as tight as 5 to 7 days, your buyers or co-op agent cannot afford inspection delays or confusing reports that derail negotiations.</p>
 
       <div class="highlight-box">
@@ -207,6 +218,7 @@ function buildUnderContractEmail(realtor) {
           <li><strong>1-Click GAR Form F404 Repair Addendum Tool:</strong> 1-click export of repair requests directly formatted for Georgia contracts.</li>
           <li><strong>Active SUPRA eKEY Access:</strong> Seamless entry with zero hassle for listing agents.</li>
           <li><strong>$35,000 in Buyer Warranties:</strong> Includes InterNACHI's "We'll Buy Your Home Back" Guarantee.</li>
+          ${isDeKalb ? '<li><strong>DeKalb Low-Flow Plumbing Certificate ($100):</strong> County compliance certificate issued on-site to eliminate closing table delays.</li>' : ''}
         </ul>
       </div>
 
