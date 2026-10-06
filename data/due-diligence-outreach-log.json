@@ -166,5 +166,89 @@
     "email": "danielle.montgomery@bhhsgeorgia.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-04T12:01:01.574Z"
+  },
+  {
+    "key": "LO_lo_amerisave_05_jreynolds@amerisave.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Jason Reynolds",
+    "company": "Amerisave Mortgage Corporation",
+    "email": "jreynolds@amerisave.com",
+    "city": "Midtown Atlanta",
+    "timestamp": "2026-10-06T12:00:20.432Z"
+  },
+  {
+    "key": "LO_lo_supreme_06_courtney.adams@supremelending.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Courtney Adams",
+    "company": "Supreme Lending",
+    "email": "courtney.adams@supremelending.com",
+    "city": "Marietta / Cobb",
+    "timestamp": "2026-10-06T12:00:26.634Z"
+  },
+  {
+    "key": "CONTRACT_card_51e61dfd38_youragentolga@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Olga Druzhinina",
+    "brokerage": "HomeSmart",
+    "address": "776 Tanners Bridge Circle",
+    "city": "Dunwoody",
+    "email": "youragentolga@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-06T12:00:33.839Z"
+  },
+  {
+    "key": "CONTRACT_card_9b04ac64be_david@duttonandassociatesllc.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "DAVID DUTTON",
+    "brokerage": "EXP Realty, LLC.",
+    "address": "5500 Hemlock Court",
+    "city": "Buford",
+    "email": "david@duttonandassociatesllc.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-06T12:00:38.993Z"
+  },
+  {
+    "key": "CONTRACT_card_45e539a226_tamibreedy@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Tami Barber-Reedy",
+    "brokerage": "Atlanta Communities",
+    "address": "3405 Leland Trail Way SE",
+    "city": "Gainesville",
+    "email": "tamibreedy@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-06T12:00:45.928Z"
+  },
+  {
+    "key": "CONTRACT_card_3978aa68a5_tom@tombreedenhomes.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Tombreedenhomes By Tom Breeden",
+    "brokerage": "Atlanta Communities",
+    "address": "1048 W Macedonia Church Road",
+    "city": "Atlanta",
+    "email": "tom@tombreedenhomes.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-06T12:00:52.851Z"
+  },
+  {
+    "key": "PRE_DD_card_0b57b8827c_allison.dodd@mylocalrealty.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Allison Dodd",
+    "brokerage": "Local Realty",
+    "address": "24 Plantation Oaks Drive",
+    "city": "Aragon",
+    "email": "allison.dodd@mylocalrealty.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-06T12:00:58.556Z"
+  },
+  {
+    "key": "PRE_DD_card_3053659bc6_ashton.adams@centurycommunities.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Ashton Adams",
+    "brokerage": "CCG Realty Group, LLC.",
+    "address": "2637 Marshwood Circle",
+    "city": "Gainesville",
+    "email": "ashton.adams@centurycommunities.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-06T12:01:06.369Z"
   }
 ]

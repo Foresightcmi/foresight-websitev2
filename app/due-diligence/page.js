@@ -6,21 +6,21 @@ import DueDiligenceCalculator from '../components/DueDiligenceCalculator';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
-  title: 'Georgia Due Diligence Defense System | Fast 48-Hour Home Inspections',
-  description: 'Protect your Georgia Due Diligence period. Guaranteed 48-hour inspection scheduling, same-day digital reports in under 24 hours, and up to $35,000 in combined warranty & guarantee protection.',
+  title: 'Georgia Due Diligence Defense & Repair Credit Negotiator | Foresight',
+  description: 'Protect your Georgia Due Diligence period. Quantify repair credits with RSMeans data, generate 1-click GAR amendment clauses, and secure guaranteed 48-hour dual-inspector scheduling with up to $35,000 in warranty protection.',
   keywords: [
     'Georgia due diligence period home inspection',
+    'home inspection repair credit calculator',
+    'GAR amendment repair list inspection',
     'fast home inspection Atlanta',
     '48 hour home inspector Georgia',
-    'rush home inspection Atlanta',
-    'GAR amendment repair list inspection',
     'due diligence timeline real estate Georgia',
-    'emergency home inspection Atlanta'
+    'repair credit negotiator Atlanta'
   ],
   alternates: { canonical: `${SITE_URL}/due-diligence` },
   openGraph: {
-    title: 'Georgia Due Diligence Defense System | Foresight Home Inspections',
-    description: 'Never lose your negotiating window. Dual-inspector speed, 48-hour guaranteed booking, and same-day reports for tight Georgia contracts.',
+    title: 'Georgia Due Diligence Defense & Repair Credit Negotiator | Foresight',
+    description: 'Calculate your contingency deadlines, price inspection repairs with RSMeans data, and generate instant GAR-compliant amendment language.',
     url: `${SITE_URL}/due-diligence`,
   },
 };
@@ -145,11 +145,11 @@ export default function DueDiligencePage() {
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
             <span className="badge" style={{ marginBottom: '0.75rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold-dark)' }}>
-              🧮 Interactive GAR Contingency Tool
+              🏛️ Georgia Real Estate Contingency &amp; Repair Underwriter
             </span>
-            <h2 style={{ fontSize: '2.4rem', fontWeight: 800 }}>Calculate Your Due Diligence Deadlines &amp; Risk Profile</h2>
-            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '750px', margin: '0.75rem auto 0', fontSize: '1.1rem' }}>
-              Select your contract binding date and contingency window to see exact inspection, quote, and amendment deadlines, plus localized Georgia building science risks.
+            <h2 style={{ fontSize: '2.4rem', fontWeight: 800 }}>Due Diligence Timeline &amp; Repair Credit Negotiator</h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '0.75rem auto 0', fontSize: '1.1rem' }}>
+              Protect your earnest money and maximize seller concession leverage. Calculate your legal contingency deadlines, quantify inspection repairs with RSMeans regional data, and generate an enforceable GAR amendment in seconds.
             </p>
           </div>
           <DueDiligenceCalculator />

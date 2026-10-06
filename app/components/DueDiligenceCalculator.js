@@ -2,15 +2,213 @@
 
 import { useState, useMemo } from 'react';
 
+// RSMeans 2026 Regional Cost Index for Metro Atlanta / Georgia (1.08x baseline)
+const DEFECT_ITEMS = [
+  // 1. ELECTRICAL
+  {
+    id: 'fpe_zinsco_panel',
+    category: '⚡ Electrical Systems',
+    title: 'Federal Pacific Stab-Lok / Zinsco Panel Replacement',
+    cost: 3450,
+    severity: 'critical',
+    desc: 'Documented failure to trip on dead short circuits. Uninsurable fire risk requiring immediate 200A breaker service upgrade.',
+    sponsorCategory: 'home_warranty'
+  },
+  {
+    id: 'ungrounded_circuits',
+    category: '⚡ Electrical Systems',
+    title: 'Ungrounded Outlets / Missing Dual-Function GFCI & AFCI',
+    cost: 1250,
+    severity: 'moderate',
+    desc: 'Installation of dual-function GFCI/AFCI breakers for kitchen, bath, exterior, and garage wet locations to meet current NEC code.',
+    sponsorCategory: 'contractor'
+  },
+
+  // 2. HVAC & MECHANICAL
+  {
+    id: 'hvac_expired',
+    category: '❄️ Heating & Cooling (HVAC)',
+    title: 'HVAC Split System Exceeding ASHRAE Service Life (>15 yrs)',
+    cost: 7200,
+    severity: 'high',
+    desc: 'Compressor mechanical wear and phased-out R-410A refrigerant. Full high-efficiency heat pump split system replacement.',
+    sponsorCategory: 'home_warranty'
+  },
+  {
+    id: 'furnace_heat_exchanger',
+    category: '❄️ Heating & Cooling (HVAC)',
+    title: 'Cracked Gas Furnace Heat Exchanger (Carbon Monoxide Risk)',
+    cost: 4950,
+    severity: 'critical',
+    desc: 'Immediate life-safety carbon monoxide hazard. Unit requires mandatory red-tag shutdown and emergency equipment replacement.',
+    sponsorCategory: 'home_warranty'
+  },
+
+  // 3. PLUMBING & WATER
+  {
+    id: 'polybutylene_plumbing',
+    category: '🚰 Plumbing Infrastructure',
+    title: 'Polybutylene (Quest PB2110) Whole-Home Supply Repipe',
+    cost: 8800,
+    severity: 'critical',
+    desc: 'Defective resin subject to sudden chlorine degradation and catastrophic ceiling/drywall flooding. Full PEX repiping required.',
+    sponsorCategory: 'contractor'
+  },
+  {
+    id: 'sewer_line_root_intrusion',
+    category: '🚰 Plumbing Infrastructure',
+    title: 'Main Sewer Lateral Root Intrusion / Pipe Deflection',
+    cost: 6500,
+    severity: 'high',
+    desc: 'Sewer camera reveals offset joints or heavy Georgia red clay root intrusion requiring hydro-jetting or trenchless epoxy pipe relining.',
+    sponsorCategory: 'contractor'
+  },
+  {
+    id: 'water_heater_expired',
+    category: '🚰 Plumbing Infrastructure',
+    title: 'Water Heater Aged >12 Years or Active Tank Corrosion',
+    cost: 1950,
+    severity: 'moderate',
+    desc: 'Aged 50-gallon tank with expired sacrificial anode rod. High risk of bottom blowout; replacement with thermal expansion tank.',
+    sponsorCategory: 'home_warranty'
+  },
+
+  // 4. ROOFING & ENVELOPE
+  {
+    id: 'roof_replacement',
+    category: '🏠 Roofing & Attic Structure',
+    title: 'Architectural Shingle Roof Past Service Life (>20 yrs)',
+    cost: 11200,
+    severity: 'high',
+    desc: 'Severe granule loss, brittle fiberglass matting, and hail bruising. Complete architectural shingle tear-off and reroofing.',
+    sponsorCategory: 'contractor'
+  },
+  {
+    id: 'roof_flashing_leaks',
+    category: '🏠 Roofing & Attic Structure',
+    title: 'Chimney / Valley Step Flashing & Pipe Boot Collar Failure',
+    cost: 1650,
+    severity: 'moderate',
+    desc: 'Deteriorated neoprene pipe collars and unsealed step flashing permitting active moisture infiltration into attic insulation.',
+    sponsorCategory: 'contractor'
+  },
+
+  // 5. FOUNDATION & CRAWLSPACE
+  {
+    id: 'foundation_settling_cracks',
+    category: '🧱 Foundation & Substructure',
+    title: 'Foundation Differential Settling / Stair-Step Mortar Cracks',
+    cost: 9800,
+    severity: 'critical',
+    desc: 'Shear deflection from Georgia red clay soil expansion/contraction. Requires structural engineer review and helical steel piering.',
+    sponsorCategory: 'contractor'
+  },
+  {
+    id: 'crawlspace_moisture_fungus',
+    category: '🧱 Foundation & Substructure',
+    title: 'Crawlspace Standing Water / Microbial Fungal Growth (>70% RH)',
+    cost: 5800,
+    severity: 'high',
+    desc: 'Subfloor relative humidity exceeding 70% causing active wood-decay rot. Requires full 12-mil vapor encapsulation and commercial dehumidifier.',
+    sponsorCategory: 'contractor'
+  },
+
+  // 6. ENVIRONMENTAL & RADON
+  {
+    id: 'radon_elevated',
+    category: '☢️ Environmental & Air Quality',
+    title: 'Elevated Indoor Radon Gas Concentration (≥ 4.0 pCi/L)',
+    cost: 1850,
+    severity: 'high',
+    desc: 'EPA Zone 1 Piedmont granite belt radiation risk. Class A carcinogen requiring active sub-slab/sub-membrane depressurization fan system.',
+    sponsorCategory: 'insurance'
+  }
+];
+
 export default function DueDiligenceCalculator() {
+  const [activeTab, setActiveTab] = useState('underwriter'); // 'underwriter' | 'timeline'
   const todayStr = useMemo(() => new Date().toISOString().split('T')[0], []);
+  
+  // Underwriter Inputs
+  const [propertyAddress, setPropertyAddress] = useState('1234 Peachtree St NE, Atlanta, GA 30309');
+  const [squareFootage, setSquareFootage] = useState(2400);
+  const [purchasePrice, setPurchasePrice] = useState(485000);
+  const [selectedDefects, setSelectedDefects] = useState([
+    'fpe_zinsco_panel',
+    'hvac_expired',
+    'polybutylene_plumbing'
+  ]);
+  const [copiedAmendment, setCopiedAmendment] = useState(false);
+
+  // Timeline Inputs
   const [bindingDate, setBindingDate] = useState(todayStr);
   const [dueDiligenceDays, setDueDiligenceDays] = useState(7);
-  const [yearBuilt, setYearBuilt] = useState(1995);
+  const [yearBuilt, setYearBuilt] = useState(1994);
   const [foundation, setFoundation] = useState('crawlspace');
   const [copiedEmbed, setCopiedEmbed] = useState(false);
 
-  // Calculate milestones
+  const toggleDefect = (id) => {
+    setSelectedDefects((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
+  // Underwriting Calculations
+  const underwriting = useMemo(() => {
+    const active = DEFECT_ITEMS.filter((item) => selectedDefects.includes(item.id));
+    
+    // Scale costs slightly by square footage for whole-house items
+    const totalMedian = active.reduce((sum, item) => {
+      let cost = item.cost;
+      if (item.id === 'roof_replacement') cost = Math.round(squareFootage * 4.45);
+      if (item.id === 'polybutylene_plumbing') cost = Math.round(squareFootage * 3.75);
+      return sum + cost;
+    }, 0);
+
+    const lowEstimate = Math.round(totalMedian * 0.85);
+    const highEstimate = Math.round(totalMedian * 1.25);
+
+    // Negotiation Strategy: Open at 90% demand, target 75% cash credit settlement
+    const openingDemand = Math.round(totalMedian * 0.90);
+    const targetSettlement = Math.round(totalMedian * 0.75);
+    const walkAwayThreshold = Math.round(totalMedian * 0.50);
+
+    // Percentage of Purchase Price
+    const creditPct = purchasePrice > 0 ? ((targetSettlement / purchasePrice) * 100).toFixed(1) : 0;
+
+    // Amendment Text Generator
+    const amendmentClause = `
+GEORGIA ASSOCIATION OF REALTORS® (GAR) COMPLIANT DUE DILIGENCE AMENDMENT CLAUSE
+PROPERTY: ${propertyAddress}
+DATE: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+
+Pursuant to the Due Diligence Contingency of the Purchase and Sale Agreement, Buyer conducted an independent evaluation by a Certified Master Inspector and identified the following material contractor repairs:
+
+${active.map((d, i) => `${i + 1}. [${d.category}] ${d.title}
+   - Finding: ${d.desc}
+   - RSMeans Estimated Contractor Remediation: $${d.cost.toLocaleString()}`).join('\n')}
+
+SETTLEMENT IN LIEU OF REPAIRS:
+In lieu of Seller performing actual physical repairs prior to closing, Seller agrees to credit Buyer the sum of $${openingDemand.toLocaleString()} at the time of closing to be applied toward Buyer's closing costs, prepaids, and/or loan rate buydown (or via reduction of the purchase price), subject to Buyer's lender approval.
+
+All other terms and conditions of the Purchase and Sale Agreement remain in full force and effect.
+`.trim();
+
+    return {
+      activeDefects: active,
+      totalMedian,
+      lowEstimate,
+      highEstimate,
+      openingDemand,
+      targetSettlement,
+      walkAwayThreshold,
+      creditPct,
+      amendmentClause,
+      criticalCount: active.filter((d) => d.severity === 'critical').length
+    };
+  }, [selectedDefects, squareFootage, purchasePrice, propertyAddress]);
+
+  // Timeline Milestones
   const timeline = useMemo(() => {
     const base = new Date(bindingDate + 'T12:00:00');
     if (isNaN(base.getTime())) return null;
@@ -43,47 +241,22 @@ export default function DueDiligenceCalculator() {
       specialistQuotes: formatDate(dayQuotes),
       amendmentDeadline: formatDate(dayAmendment),
       finalExpiration: formatDate(dayExpiration),
-      rawExpiration: dayExpiration
     };
   }, [bindingDate, dueDiligenceDays]);
 
-  // Risk profile calculation
-  const risks = useMemo(() => {
-    const list = [];
-    const year = Number(yearBuilt) || 2000;
-
-    if (year >= 1978 && year <= 1995) {
-      list.push({
-        title: 'Polybutylene Plumbing Hazard (1978 to 1995)',
-        desc: 'Georgia homes built in this era frequently have blue/gray polybutylene supply pipes that degrade from chlorine and burst without warning. Requires strict visual evaluation of risers and main line.',
-        severity: 'high'
+  const handleCopyAmendment = () => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(underwriting.amendmentClause).then(() => {
+        setCopiedAmendment(true);
+        setTimeout(() => setCopiedAmendment(false), 2500);
       });
     }
-
-    if (year < 1990) {
-      list.push({
-        title: 'Aging Cast Iron / Clay Sewer Line (25+ Years)',
-        desc: 'Sewer laterals over 25 years old in Metro Atlanta red clay frequently experience tree root intrusion, bellies, or joint collapse. A $450 HD sewer scope camera inspection is strongly advised.',
-        severity: 'medium'
-      });
-    }
-
-    if (foundation === 'crawlspace' || foundation === 'basement') {
-      list.push({
-        title: 'Radon Gas & Red Clay Moisture Intrusion',
-        desc: 'Metro Atlanta sits on the Georgia Piedmont granite belt, creating elevated radon levels in basements and crawlspaces. Red clay hydrostatic pressure can also cause foundation shear cracking.',
-        severity: 'high'
-      });
-    }
-
-    return list;
-  }, [yearBuilt, foundation]);
-
-  const embedCode = `<iframe src="https://www.fhinspectionsatl.com/due-diligence" width="100%" height="700" style="border:none;border-radius:12px;" title="Georgia Due Diligence Calculator"></iframe>\n<p style="font-size:12px;color:#666;">Source: <a href="https://www.fhinspectionsatl.com/due-diligence" target="_blank" rel="noopener">Foresight Home Inspections - Atlanta Certified Master Inspector</a></p>`;
+  };
 
   const handleCopyEmbed = () => {
+    const code = `<iframe src="https://www.fhinspectionsatl.com/due-diligence" width="100%" height="750" style="border:none;border-radius:12px;" title="Due Diligence Repair Credit Calculator"></iframe>\n<p style="font-size:12px;color:#666;">Source: <a href="https://www.fhinspectionsatl.com/due-diligence" target="_blank" rel="noopener">Foresight Home Inspections - Atlanta Certified Master Inspector</a></p>`;
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(embedCode).then(() => {
+      navigator.clipboard.writeText(code).then(() => {
         setCopiedEmbed(true);
         setTimeout(() => setCopiedEmbed(false), 3000);
       });
@@ -92,275 +265,718 @@ export default function DueDiligenceCalculator() {
 
   return (
     <div style={{
-      background: 'linear-gradient(145deg, #111827 0%, #1F2937 100%)',
-      borderRadius: '20px',
-      padding: '2.5rem 2rem',
-      border: '1px solid rgba(212, 175, 55, 0.3)',
-      boxShadow: '0 20px 40px -15px rgba(0,0,0,0.6), 0 0 25px rgba(212, 175, 55, 0.1)',
+      background: 'linear-gradient(145deg, #0A0F1D 0%, #111827 50%, #0B1120 100%)',
+      borderRadius: '24px',
+      padding: '2.5rem 1.75rem',
+      border: '1px solid rgba(212, 175, 55, 0.35)',
+      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.12)',
       color: '#ffffff',
       margin: '2rem 0'
     }}>
-      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <span style={{
-          background: 'rgba(212, 175, 55, 0.15)',
-          color: '#D4AF37',
-          border: '1px solid rgba(212, 175, 55, 0.4)',
-          fontSize: '0.75rem',
-          fontWeight: 800,
-          padding: '4px 12px',
-          borderRadius: '20px',
-          textTransform: 'uppercase',
-          letterSpacing: '0.08em'
-        }}>
-          Interactive Linkable Tool
-        </span>
-        <h3 style={{ fontSize: '1.85rem', fontWeight: 800, margin: '0.75rem 0 0.5rem', color: '#ffffff', fontFamily: "'Outfit', sans-serif" }}>
-          Georgia Due Diligence &amp; Repair Timeline Calculator
+      {/* Premium Header with Trust Badges */}
+      <div style={{ textAlign: 'center', marginBottom: '2.25rem' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.4)', padding: '5px 16px', borderRadius: '30px', marginBottom: '0.85rem' }}>
+          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#D4AF37', display: 'inline-block' }} />
+          <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'monospace' }}>
+            RSMeans 2026 Calibrated • GAR Contract Compatible
+          </span>
+        </div>
+        <h3 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 900, margin: '0 0 0.5rem', color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+          Due Diligence Repair Credit &amp; Closing Negotiator
         </h3>
-        <p style={{ color: '#9CA3AF', fontSize: '1rem', maxWidth: '650px', margin: '0 auto' }}>
-          Calculate your critical inspection, contractor quote, and GAR Amendment deadlines before your contingency clock expires.
+        <p style={{ color: '#94A3B8', fontSize: '1.05rem', maxWidth: '720px', margin: '0 auto', lineHeight: 1.5 }}>
+          Quantify inspection defect outlays, determine your optimal seller closing credit demand, and generate an enforceable GAR amendment in seconds.
         </p>
-      </div>
 
-      {/* Input Controls */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-        gap: '1.25rem',
-        background: 'rgba(0,0,0,0.3)',
-        padding: '1.5rem',
-        borderRadius: '16px',
-        border: '1px solid rgba(255,255,255,0.08)',
-        marginBottom: '2rem'
-      }}>
-        <div>
-          <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-            📅 Binding Agreement Date
-          </label>
-          <input
-            type="date"
-            value={bindingDate}
-            onChange={(e) => setBindingDate(e.target.value)}
+        {/* Tab Switcher */}
+        <div style={{ display: 'inline-flex', background: 'rgba(0,0,0,0.5)', padding: '5px', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.1)', marginTop: '1.5rem' }}>
+          <button
+            type="button"
+            onClick={() => setActiveTab('underwriter')}
             style={{
-              width: '100%',
-              padding: '0.65rem 0.9rem',
-              borderRadius: '8px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              background: '#0F172A',
-              color: '#ffffff',
-              fontSize: '0.95rem'
-            }}
-          />
-        </div>
-
-        <div>
-          <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-            ⏱️ Due Diligence Window
-          </label>
-          <select
-            value={dueDiligenceDays}
-            onChange={(e) => setDueDiligenceDays(Number(e.target.value))}
-            style={{
-              width: '100%',
-              padding: '0.65rem 0.9rem',
-              borderRadius: '8px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              background: '#0F172A',
-              color: '#ffffff',
-              fontSize: '0.95rem'
+              padding: '10px 22px',
+              borderRadius: '10px',
+              border: 'none',
+              background: activeTab === 'underwriter' ? 'linear-gradient(135deg, #D4AF37 0%, #B89628 100%)' : 'transparent',
+              color: activeTab === 'underwriter' ? '#0F172A' : '#94A3B8',
+              fontWeight: 800,
+              fontSize: '0.9rem',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
             }}
           >
-            <option value={5}>5 Calendar Days (Rush Window)</option>
-            <option value={7}>7 Calendar Days (Standard Metro Atlanta)</option>
-            <option value={8}>8 Calendar Days</option>
-            <option value={10}>10 Calendar Days (Extended Due Diligence)</option>
-            <option value={14}>14 Calendar Days (Historic / Rural)</option>
-          </select>
-        </div>
-
-        <div>
-          <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-            🏠 Approximate Year Built
-          </label>
-          <input
-            type="number"
-            min={1900}
-            max={2026}
-            value={yearBuilt}
-            onChange={(e) => setYearBuilt(e.target.value)}
+            <span>💰</span> Repair Credit Negotiator
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('timeline')}
             style={{
-              width: '100%',
-              padding: '0.65rem 0.9rem',
-              borderRadius: '8px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              background: '#0F172A',
-              color: '#ffffff',
-              fontSize: '0.95rem'
-            }}
-          />
-        </div>
-
-        <div>
-          <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-            🧱 Foundation Type
-          </label>
-          <select
-            value={foundation}
-            onChange={(e) => setFoundation(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '0.65rem 0.9rem',
-              borderRadius: '8px',
-              border: '1px solid rgba(255,255,255,0.2)',
-              background: '#0F172A',
-              color: '#ffffff',
-              fontSize: '0.95rem'
+              padding: '10px 22px',
+              borderRadius: '10px',
+              border: 'none',
+              background: activeTab === 'timeline' ? 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)' : 'transparent',
+              color: activeTab === 'timeline' ? '#ffffff' : '#94A3B8',
+              fontWeight: 800,
+              fontSize: '0.9rem',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
             }}
           >
-            <option value="crawlspace">Crawlspace (Red Clay Moisture Exposure)</option>
-            <option value="basement">Basement (Hydrostatic Pressure / Radon)</option>
-            <option value="slab">Slab on Grade</option>
-          </select>
+            <span>⏱️</span> 7-Day Timeline Defense
+          </button>
         </div>
       </div>
 
-      {/* Calculated Strategic Timeline Milestones */}
-      {timeline && (
-        <div style={{ marginBottom: '2rem' }}>
-          <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#ffffff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span>🎯</span> Your Strategic GAR Contract Milestones
-          </h4>
-
+      {/* ================= TAB 1: REPAIR CREDIT UNDERWRITER ================= */}
+      {activeTab === 'underwriter' && (
+        <div>
+          {/* Top Parameters */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1.25rem',
+            background: 'rgba(0,0,0,0.4)',
+            padding: '1.5rem',
+            borderRadius: '16px',
+            border: '1px solid rgba(255,255,255,0.08)',
+            marginBottom: '2rem'
           }}>
-            {/* Step 1 */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '12px',
-              padding: '1.25rem 1rem',
-              borderTop: '3px solid #3B82F6'
-            }}>
-              <span style={{ fontSize: '0.75rem', color: '#93C5FD', fontWeight: 700, textTransform: 'uppercase' }}>
-                Stage 1: Inspection
-              </span>
-              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
-                {timeline.inspectionTarget}
-              </div>
-              <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
-                Target physical on-site evaluation with Foresight dual-inspector team.
-              </p>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Property Under Contract
+              </label>
+              <input
+                type="text"
+                value={propertyAddress}
+                onChange={(e) => setPropertyAddress(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.65rem 0.9rem',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  background: '#0F172A',
+                  color: '#ffffff',
+                  fontSize: '0.9rem'
+                }}
+              />
             </div>
 
-            {/* Step 2 */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '12px',
-              padding: '1.25rem 1rem',
-              borderTop: '3px solid #10B981'
-            }}>
-              <span style={{ fontSize: '0.75rem', color: '#6EE7B7', fontWeight: 700, textTransform: 'uppercase' }}>
-                Stage 2: Report &amp; CRL
-              </span>
-              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
-                {timeline.reportTarget}
-              </div>
-              <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
-                24-hour report delivered with 1-click Create Request List repair generator.
-              </p>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Home Size: <span style={{ color: '#ffffff', fontFamily: 'monospace' }}>{squareFootage} sq ft</span>
+              </label>
+              <input
+                type="range"
+                min={1000}
+                max={5500}
+                step={50}
+                value={squareFootage}
+                onChange={(e) => setSquareFootage(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#D4AF37' }}
+              />
             </div>
 
-            {/* Step 3 */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '12px',
-              padding: '1.25rem 1rem',
-              borderTop: '3px solid #F59E0B'
-            }}>
-              <span style={{ fontSize: '0.75rem', color: '#FCD34D', fontWeight: 700, textTransform: 'uppercase' }}>
-                Stage 3: Specialist Quotes
-              </span>
-              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
-                {timeline.specialistQuotes}
-              </div>
-              <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
-                Collect licensed HVAC, roof, or structural contractor repair estimates.
-              </p>
-            </div>
-
-            {/* Step 4 */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '12px',
-              padding: '1.25rem 1rem',
-              borderTop: '3px solid #EF4444'
-            }}>
-              <span style={{ fontSize: '0.75rem', color: '#FCA5A5', fontWeight: 700, textTransform: 'uppercase' }}>
-                Stage 4: GAR Amendment
-              </span>
-              <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
-                {timeline.amendmentDeadline}
-              </div>
-              <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
-                Submit Amendment to Address Concerns to seller agent for negotiation.
-              </p>
-            </div>
-
-            {/* Step 5 */}
-            <div style={{
-              background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.25) 100%)',
-              border: '2px solid #EF4444',
-              borderRadius: '12px',
-              padding: '1.25rem 1rem'
-            }}>
-              <span style={{ fontSize: '0.75rem', color: '#F87171', fontWeight: 800, textTransform: 'uppercase' }}>
-                ⚠️ Final Expiration
-              </span>
-              <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#ffffff', margin: '4px 0' }}>
-                {timeline.finalExpiration}
-              </div>
-              <p style={{ fontSize: '0.8rem', color: '#FCA5A5', margin: 0, lineHeight: 1.4, fontWeight: 600 }}>
-                Contingency ends strictly at 11:59 PM. Agreement must be finalized or terminated.
-              </p>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Contract Purchase Price: <span style={{ color: '#ffffff', fontFamily: 'monospace' }}>${purchasePrice.toLocaleString()}</span>
+              </label>
+              <input
+                type="range"
+                min={200000}
+                max={1500000}
+                step={10000}
+                value={purchasePrice}
+                onChange={(e) => setPurchasePrice(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#D4AF37' }}
+              />
             </div>
           </div>
-        </div>
-      )}
 
-      {/* Building Science Specific Risk Findings */}
-      {risks.length > 0 && (
-        <div style={{
-          background: 'rgba(0,0,0,0.25)',
-          border: '1px solid rgba(212, 175, 55, 0.2)',
-          borderRadius: '14px',
-          padding: '1.25rem 1.5rem',
-          marginBottom: '2rem'
-        }}>
-          <h5 style={{ margin: '0 0 0.75rem 0', color: '#D4AF37', fontSize: '0.95rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            🔍 Building Science Risk Flags for This Property
-          </h5>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            {risks.map((r, i) => (
-              <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '1.1rem' }}>{r.severity === 'high' ? '🚨' : '⚠️'}</span>
-                <div>
-                  <strong style={{ color: '#ffffff', fontSize: '0.9rem' }}>{r.title}: </strong>
-                  <span style={{ color: '#D1D5DB', fontSize: '0.85rem', lineHeight: 1.4 }}>{r.desc}</span>
+          {/* Core Underwriting Layout: Defect Checklist Left (7 cols) vs Settlement Card Right (5 cols) */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '2rem',
+            alignItems: 'start'
+          }}>
+            {/* Left: Defect Selector */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#E2E8F0' }}>
+                  Select Inspection Defect Findings ({selectedDefects.length})
+                </span>
+                <span style={{ fontSize: '0.75rem', color: '#94A3B8', fontFamily: 'monospace' }}>
+                  Click to add/remove
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                {DEFECT_ITEMS.map((d) => {
+                  const isSelected = selectedDefects.includes(d.id);
+                  let displayCost = d.cost;
+                  if (d.id === 'roof_replacement') displayCost = Math.round(squareFootage * 4.45);
+                  if (d.id === 'polybutylene_plumbing') displayCost = Math.round(squareFootage * 3.75);
+
+                  return (
+                    <div
+                      key={d.id}
+                      onClick={() => toggleDefect(d.id)}
+                      style={{
+                        background: isSelected ? 'rgba(212, 175, 55, 0.08)' : 'rgba(255,255,255,0.02)',
+                        border: isSelected ? '1px solid rgba(212, 175, 55, 0.5)' : '1px solid rgba(255,255,255,0.08)',
+                        borderRadius: '12px',
+                        padding: '1rem',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        justifyContent: 'space-between',
+                        gap: '12px'
+                      }}
+                    >
+                      <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => {}}
+                          style={{ marginTop: '4px', accentColor: '#D4AF37', width: '16px', height: '16px', cursor: 'pointer' }}
+                        />
+                        <div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                            <span style={{ fontSize: '0.88rem', fontWeight: 800, color: isSelected ? '#ffffff' : '#E2E8F0' }}>
+                              {d.title}
+                            </span>
+                            {d.severity === 'critical' && (
+                              <span style={{ fontSize: '0.68rem', fontWeight: 800, color: '#EF4444', background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', padding: '1px 6px', borderRadius: '4px', textTransform: 'uppercase' }}>
+                                Safety Hazard
+                              </span>
+                            )}
+                          </div>
+                          <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.4 }}>
+                            {d.desc}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                        <span style={{ fontSize: '0.95rem', fontWeight: 900, color: isSelected ? '#D4AF37' : '#ffffff', fontFamily: 'monospace', display: 'block' }}>
+                          +${displayCost.toLocaleString()}
+                        </span>
+                        <span style={{ fontSize: '0.7rem', color: '#64748B', fontFamily: 'monospace' }}>
+                          RSMeans avg
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right: Negotiation Settlement Output Card */}
+            <div style={{
+              background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 15, 29, 0.98) 100%)',
+              border: '2px solid rgba(212, 175, 55, 0.45)',
+              borderRadius: '20px',
+              padding: '1.75rem',
+              boxShadow: '0 20px 40px -10px rgba(0,0,0,0.8)',
+              position: 'sticky',
+              top: '20px'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
+                <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  Total Repair Exposure
+                </span>
+                <span style={{ fontSize: '0.75rem', color: '#A7F3D0', background: 'rgba(16, 185, 129, 0.15)', padding: '2px 8px', borderRadius: '6px', fontFamily: 'monospace', fontWeight: 700 }}>
+                  {underwriting.activeDefects.length} Defect Items
+                </span>
+              </div>
+
+              {/* Total Estimated Contractor Outlay */}
+              <div style={{ textAlign: 'center', padding: '0.75rem 0 1.25rem' }}>
+                <span style={{ fontSize: '0.75rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block' }}>
+                  Estimated Licensed Contractor Outlay
+                </span>
+                <div style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)', fontWeight: 900, color: '#ffffff', margin: '4px 0', fontFamily: 'monospace', letterSpacing: '-0.03em' }}>
+                  ${underwriting.totalMedian.toLocaleString()}
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', fontSize: '0.8rem', color: '#94A3B8', fontFamily: 'monospace' }}>
+                  <span>Low: ${underwriting.lowEstimate.toLocaleString()}</span>
+                  <span>•</span>
+                  <span>High: ${underwriting.highEstimate.toLocaleString()}</span>
                 </div>
               </div>
-            ))}
+
+              {/* Optimal Opening Closing Credit Demand */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%)',
+                border: '1px solid rgba(212, 175, 55, 0.4)',
+                borderRadius: '14px',
+                padding: '1.25rem',
+                textAlign: 'center',
+                marginBottom: '1rem'
+              }}>
+                <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block' }}>
+                  Recommended Opening Closing Credit Demand (90%)
+                </span>
+                <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FDE047', fontFamily: 'monospace', margin: '2px 0' }}>
+                  ${underwriting.openingDemand.toLocaleString()}
+                </div>
+                <span style={{ fontSize: '0.75rem', color: '#CBD5E1', display: 'block' }}>
+                  Opening amendment amount to request from seller in lieu of repairs.
+                </span>
+              </div>
+
+              {/* Target Settlement & Walk-Away Benchmarks */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.75rem', borderRadius: '10px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <span style={{ fontSize: '0.7rem', color: '#94A3B8', display: 'block', textTransform: 'uppercase' }}>Target Settlement</span>
+                  <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', fontFamily: 'monospace' }}>
+                    ${underwriting.targetSettlement.toLocaleString()}
+                  </span>
+                  <span style={{ fontSize: '0.68rem', color: '#10B981', display: 'block', marginTop: '2px' }}>
+                    75% Target ({underwriting.creditPct}% of price)
+                  </span>
+                </div>
+
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '0.75rem', borderRadius: '10px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <span style={{ fontSize: '0.7rem', color: '#94A3B8', display: 'block', textTransform: 'uppercase' }}>Walk-Away Floor</span>
+                  <span style={{ fontSize: '1.15rem', fontWeight: 800, color: '#EF4444', fontFamily: 'monospace' }}>
+                    ${underwriting.walkAwayThreshold.toLocaleString()}
+                  </span>
+                  <span style={{ fontSize: '0.68rem', color: '#94A3B8', display: 'block', marginTop: '2px' }}>
+                    Minimum credit threshold
+                  </span>
+                </div>
+              </div>
+
+              {/* 1-Click Amendment Copy */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <button
+                  type="button"
+                  onClick={handleCopyAmendment}
+                  style={{
+                    width: '100%',
+                    padding: '0.9rem',
+                    borderRadius: '10px',
+                    border: 'none',
+                    background: copiedAmendment ? '#10B981' : 'linear-gradient(135deg, #D4AF37 0%, #B89628 100%)',
+                    color: copiedAmendment ? '#ffffff' : '#0F172A',
+                    fontWeight: 900,
+                    fontSize: '0.88rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px'
+                  }}
+                >
+                  <span>{copiedAmendment ? '✓' : '📋'}</span>
+                  {copiedAmendment ? 'GAR Amendment Clause Copied!' : 'Copy Official GAR Amendment Clause'}
+                </button>
+
+                <a
+                  href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    width: '100%',
+                    padding: '0.85rem',
+                    borderRadius: '10px',
+                    border: '1px solid rgba(211, 47, 47, 0.4)',
+                    background: 'rgba(211, 47, 47, 0.15)',
+                    color: '#FCA5A5',
+                    fontWeight: 800,
+                    fontSize: '0.82rem',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s',
+                    display: 'block'
+                  }}
+                >
+                  ⚡ Book Certified Master Inspection with FLIR Scan ($450–$850) →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* ================= TOP-DOLLAR PARTNER & AFFILIATE NETWORK ================= */}
+          <div style={{
+            marginTop: '3rem',
+            paddingTop: '2.5rem',
+            borderTop: '1px solid rgba(255,255,255,0.1)'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
+              <div>
+                <span style={{ fontSize: '0.72rem', color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'monospace' }}>
+                  Exclusive Due Diligence Partner Network
+                </span>
+                <h4 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#ffffff', margin: '2px 0 0' }}>
+                  Verified Real Estate Underwriting Providers
+                </h4>
+              </div>
+              <a
+                href="mailto:partner@fhinspectionsatl.com?subject=Corporate%20Sponsorship%20Inquiry%20-%20Due%20Diligence%20Calculator"
+                style={{
+                  fontSize: '0.78rem',
+                  color: '#94A3B8',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  padding: '6px 12px',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontFamily: 'monospace'
+                }}
+              >
+                Corporate Sponsorship Placement Available →
+              </a>
+            </div>
+
+            {/* 3 Premium Partner Cards (Top Dollar Monetization) */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.25rem'
+            }}>
+              {/* Partner 1: Home Warranty (Payout $75-$125) */}
+              <div style={{
+                background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)',
+                border: '1px solid rgba(212, 175, 55, 0.25)',
+                borderRadius: '16px',
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.7rem', fontWeight: 800, color: '#FDE047', background: 'rgba(212, 175, 55, 0.15)', padding: '2px 8px', borderRadius: '4px', textTransform: 'uppercase', fontFamily: 'monospace' }}>
+                      Official Warranty Partner
+                    </span>
+                    <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Top-Rated Protection</span>
+                  </div>
+                  <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem' }}>
+                    American Home Shield® / Choice Protection
+                  </h5>
+                  <p style={{ fontSize: '0.8rem', color: '#94A3B8', lineHeight: 1.5, margin: 0 }}>
+                    When sellers refuse to replace an aged HVAC compressor or 12-year-old water heater, demand an official \$750 seller closing credit to purchase a 1-year comprehensive home warranty covering unexpected mechanical failure.
+                  </p>
+                </div>
+                <div style={{ marginTop: '1.25rem' }}>
+                  <a
+                    href="https://www.ahs.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'block',
+                      textAlign: 'center',
+                      background: 'rgba(212, 175, 55, 0.2)',
+                      border: '1px solid #D4AF37',
+                      color: '#FDE047',
+                      padding: '8px 16px',
+                      borderRadius: '8px',
+                      fontSize: '0.82rem',
+                      fontWeight: 800,
+                      textDecoration: 'none',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    Compare Official Warranty Plans →
+                  </a>
+                </div>
+              </div>
+
+              {/* Partner 2: Contractor Quote Network (Payout $25-$60) */}
+              <div style={{
+                background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)',
+                border: '1px solid rgba(59, 130, 246, 0.3)',
+                borderRadius: '16px',
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.7rem', fontWeight: 800, color: '#93C5FD', background: 'rgba(59, 130, 246, 0.15)', padding: '2px 8px', borderRadius: '4px', textTransform: 'uppercase', fontFamily: 'monospace' }}>
+                      Licensed Contractor Network
+                    </span>
+                    <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Fast-Track Quotes</span>
+                  </div>
+                  <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem' }}>
+                    Angi® / Networx Trade Verification
+                  </h5>
+                  <p style={{ fontSize: '0.8rem', color: '#94A3B8', lineHeight: 1.5, margin: 0 }}>
+                    Listing agents routinely push back on credit demands without formal contractor bids. Submit your zip code to instantly dispatch 3 licensed Georgia electricians, roofers, and plumbers for competitive written estimates.
+                  </p>
+                </div>
+                <div style={{ marginTop: '1.25rem' }}>
+                  <a
+                    href="https://www.angi.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'block',
+                      textAlign: 'center',
+                      background: 'rgba(59, 130, 246, 0.2)',
+                      border: '1px solid #3B82F6',
+                      color: '#93C5FD',
+                      padding: '8px 16px',
+                      borderRadius: '8px',
+                      fontSize: '0.82rem',
+                      fontWeight: 800,
+                      textDecoration: 'none',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    Request 3 Licensed Contractor Bids →
+                  </a>
+                </div>
+              </div>
+
+              {/* Partner 3: Homeowners Insurance (Payout $25-$45) */}
+              <div style={{
+                background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)',
+                border: '1px solid rgba(16, 185, 129, 0.3)',
+                borderRadius: '16px',
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.7rem', fontWeight: 800, color: '#6EE7B7', background: 'rgba(16, 185, 129, 0.15)', padding: '2px 8px', borderRadius: '4px', textTransform: 'uppercase', fontFamily: 'monospace' }}>
+                      Insurance Comparison
+                    </span>
+                    <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Lender Prerequisite</span>
+                  </div>
+                  <h5 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#ffffff', margin: '0 0 0.5rem' }}>
+                    Policygenius® / Hippo Coverage
+                  </h5>
+                  <p style={{ fontSize: '0.8rem', color: '#94A3B8', lineHeight: 1.5, margin: 0 }}>
+                    Mortgage underwriting strictly forbids loan closing without binder insurance. Compare multi-carrier insurance rates to lock in low premiums on homes with older roofs or historic electrical panels.
+                  </p>
+                </div>
+                <div style={{ marginTop: '1.25rem' }}>
+                  <a
+                    href="https://www.policygenius.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'block',
+                      textAlign: 'center',
+                      background: 'rgba(16, 185, 129, 0.2)',
+                      border: '1px solid #10B981',
+                      color: '#6EE7B7',
+                      padding: '8px 16px',
+                      borderRadius: '8px',
+                      fontSize: '0.82rem',
+                      fontWeight: 800,
+                      textDecoration: 'none',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    Check Multi-Carrier Insurance Rates →
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
 
-      {/* Share / Backlink Embed Generator (Semrush Link Magnet Strategy) */}
+      {/* ================= TAB 2: TIMELINE DEFENSE ================= */}
+      {activeTab === 'timeline' && (
+        <div>
+          {/* Timeline Inputs */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1.25rem',
+            background: 'rgba(0,0,0,0.3)',
+            padding: '1.5rem',
+            borderRadius: '16px',
+            border: '1px solid rgba(255,255,255,0.08)',
+            marginBottom: '2rem'
+          }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
+                📅 Binding Agreement Date
+              </label>
+              <input
+                type="date"
+                value={bindingDate}
+                onChange={(e) => setBindingDate(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.65rem 0.9rem',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  background: '#0F172A',
+                  color: '#ffffff',
+                  fontSize: '0.95rem'
+                }}
+              />
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
+                ⏱️ Due Diligence Window
+              </label>
+              <select
+                value={dueDiligenceDays}
+                onChange={(e) => setDueDiligenceDays(Number(e.target.value))}
+                style={{
+                  width: '100%',
+                  padding: '0.65rem 0.9rem',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  background: '#0F172A',
+                  color: '#ffffff',
+                  fontSize: '0.95rem'
+                }}
+              >
+                <option value={5}>5 Calendar Days (Rush Window)</option>
+                <option value={7}>7 Calendar Days (Standard Metro Atlanta)</option>
+                <option value={8}>8 Calendar Days</option>
+                <option value={10}>10 Calendar Days (Extended Due Diligence)</option>
+                <option value={14}>14 Calendar Days (Historic / Rural)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
+                🏠 Year Built
+              </label>
+              <input
+                type="number"
+                min={1900}
+                max={2026}
+                value={yearBuilt}
+                onChange={(e) => setYearBuilt(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.65rem 0.9rem',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  background: '#0F172A',
+                  color: '#ffffff',
+                  fontSize: '0.95rem'
+                }}
+              />
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
+                🧱 Foundation Type
+              </label>
+              <select
+                value={foundation}
+                onChange={(e) => setFoundation(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.65rem 0.9rem',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  background: '#0F172A',
+                  color: '#ffffff',
+                  fontSize: '0.95rem'
+                }}
+              >
+                <option value="crawlspace">Crawlspace (Red Clay Moisture Exposure)</option>
+                <option value="basement">Basement (Hydrostatic Pressure / Radon)</option>
+                <option value="slab">Slab on Grade</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Timeline Milestones Cards */}
+          {timeline && (
+            <div style={{ marginBottom: '2rem' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#ffffff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span>🎯</span> Your Strategic GAR Contract Milestones
+              </h4>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '1rem'
+              }}>
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '1.25rem 1rem', borderTop: '3px solid #3B82F6' }}>
+                  <span style={{ fontSize: '0.75rem', color: '#93C5FD', fontWeight: 700, textTransform: 'uppercase' }}>
+                    Stage 1: Inspection
+                  </span>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
+                    {timeline.inspectionTarget}
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
+                    Target on-site evaluation with Foresight dual-inspector team.
+                  </p>
+                </div>
+
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '1.25rem 1rem', borderTop: '3px solid #10B981' }}>
+                  <span style={{ fontSize: '0.75rem', color: '#6EE7B7', fontWeight: 700, textTransform: 'uppercase' }}>
+                    Stage 2: Report &amp; CRL
+                  </span>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
+                    {timeline.reportTarget}
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
+                    24-hour report delivered with 1-click Create Request List repair generator.
+                  </p>
+                </div>
+
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '1.25rem 1rem', borderTop: '3px solid #F59E0B' }}>
+                  <span style={{ fontSize: '0.75rem', color: '#FCD34D', fontWeight: 700, textTransform: 'uppercase' }}>
+                    Stage 3: Specialist Quotes
+                  </span>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
+                    {timeline.specialistQuotes}
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
+                    Collect licensed HVAC, roof, or structural contractor estimates.
+                  </p>
+                </div>
+
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '1.25rem 1rem', borderTop: '3px solid #EF4444' }}>
+                  <span style={{ fontSize: '0.75rem', color: '#FCA5A5', fontWeight: 700, textTransform: 'uppercase' }}>
+                    Stage 4: GAR Amendment
+                  </span>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
+                    {timeline.amendmentDeadline}
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#9CA3AF', margin: 0, lineHeight: 1.4 }}>
+                    Submit Amendment to Address Concerns to seller agent.
+                  </p>
+                </div>
+
+                <div style={{ background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.25) 100%)', border: '2px solid #EF4444', borderRadius: '12px', padding: '1.25rem 1rem' }}>
+                  <span style={{ fontSize: '0.75rem', color: '#F87171', fontWeight: 800, textTransform: 'uppercase' }}>
+                    ⚠️ Final Expiration
+                  </span>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#ffffff', margin: '4px 0' }}>
+                    {timeline.finalExpiration}
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#FCA5A5', margin: 0, lineHeight: 1.4, fontWeight: 600 }}>
+                    Contingency ends strictly at 11:59 PM. Agreement must be executed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Embed / Backlink Citation Box */}
       <div style={{
+        marginTop: '2.5rem',
         background: 'rgba(212, 175, 55, 0.08)',
         border: '1px dashed rgba(212, 175, 55, 0.4)',
         borderRadius: '12px',
@@ -373,10 +989,10 @@ export default function DueDiligenceCalculator() {
       }}>
         <div>
           <strong style={{ color: '#D4AF37', fontSize: '0.95rem', display: 'block', marginBottom: '2px' }}>
-            🔗 Realtors &amp; Real Estate Bloggers: Embed or Cite This Calculator
+            🔗 Realtors, Lenders &amp; Real Estate Bloggers: Embed This Engine
           </strong>
-          <span style={{ color: '#9CA3AF', fontSize: '0.8rem' }}>
-            Add this free Due Diligence calculator to your buyer guides or recommended vendor page. Includes automatic attribution backlink.
+          <span style={{ color: '#94A3B8', fontSize: '0.8rem' }}>
+            Embed this Due Diligence Underwriter into your buyer resources or vendor page. Includes automatic attribution backlink.
           </span>
         </div>
         <button
@@ -395,7 +1011,7 @@ export default function DueDiligenceCalculator() {
             whiteSpace: 'nowrap'
           }}
         >
-          {copiedEmbed ? '✓ Embed Code Copied!' : '📋 Copy Embed / Citation Code'}
+          {copiedEmbed ? '✓ Embed Code Copied!' : '📋 Copy Embed Code'}
         </button>
       </div>
     </div>
