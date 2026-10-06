@@ -1,9 +1,9 @@
-# 📣 Active Multi-Channel Broadcast: Post #5
-**Title:** 11-Month Builder Warranty Expiration Alert  
-**Topic:** Builder Warranty Inspections  
-**Generated At:** 2026-10-05T21:22:26.300Z  
-**Target Booking Link:** [https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta](https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta)  
-**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/roof-1.webp](https://www.fhinspectionsatl.com/images/roof-1.webp)  
+# 📣 Active Multi-Channel Broadcast: Post #6
+**Title:** 4K Aerial Drone Roof Diagnostics Included Free  
+**Topic:** FAA Drone Scans  
+**Generated At:** 2026-10-06T19:19:10.840Z  
+**Target Booking Link:** [https://www.fhinspectionsatl.com/quote](https://www.fhinspectionsatl.com/quote)  
+**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/drone-2.webp](https://www.fhinspectionsatl.com/images/drone-2.webp)  
 **Webhook Status:** `skipped`
 
 ---
@@ -12,24 +12,24 @@
 *Optimized for Local 3-Pack, local municipal entities, and direct phone/online booking.*
 
 ```text
-Did you buy a new construction home in Metro Atlanta over the past 11 months? Your builder's 1-year comprehensive warranty is about to expire!
+When a solo inspector arrives at a steep 2-story roof in Atlanta, what happens? Most mark the roof as 'Viewed from ground with binoculars', leaving you blind to hidden roof damage.
 
-Once that 12-month anniversary passes, the builder is off the hook, and all hidden defects become your out-of-pocket financial liability.
+At Foresight Home Inspections:
+• FAA Part 107 Commercial Drone Aerial Scans are INCLUDED FREE on every full inspection.
+• We capture 4K ultra-high-definition imaging of every roof plane, chimney cap, and plumbing penetration.
+• Two Certified Inspectors on every job.
+• Up to $35,000 in Combined Warranty & Guarantee Protection included.
 
-Georgia homes settle rapidly during year one. Our dual-inspector audits routinely discover:
-• Roof shingle nail pops and compromised flashing boots
-• Attic truss uplift cracking drywall seams
-• Negative exterior grading causing water to pool at foundation footings
-• Unbalanced HVAC duct dampers leaving bedrooms hot
+Don't buy a home with an uninspected roof. Choose the thoroughness your investment deserves.
 
-A Foresight 11-Month Warranty Inspection (from $335) gives you an independent Certified Master Inspector punch list ready to upload directly into your builder's warranty portal.
+Serving Atlanta, Alpharetta, Sandy Springs, Marietta, Decatur, and 87+ Georgia cities.
 
-Call 678-480-2110 or schedule online.
+Call 678-480-2110 or get your instant quote online 24/7.
 ```
 
 **GBP Call to Action:** Book Online or Call (678) 480-2110  
-**Link:** https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta  
-**Photo:** Attach `https://www.fhinspectionsatl.com/images/roof-1.webp`
+**Link:** https://www.fhinspectionsatl.com/quote  
+**Photo:** Attach `https://www.fhinspectionsatl.com/images/drone-2.webp`
 
 ---
 
@@ -37,27 +37,24 @@ Call 678-480-2110 or schedule online.
 *Optimized for social engagement, visual storytelling, consumer trust, and homebuyer education.*
 
 ```text
-Did you buy a new construction home in Metro Atlanta over the past 11 months? 🚨
+When a solo inspector arrives at a steep 2-story roof in Atlanta, what happens? 🚁👀
 
-Your builder’s 1-year comprehensive warranty is ticking down to the final days. Once that 12-month anniversary passes, the builder is legally off the hook—and every hidden defect becomes your out-of-pocket financial liability.
+Most inspectors mark the roof section as "Viewed from ground with binoculars" or "Too steep to inspect safely", leaving you completely blind to damaged architectural shingles, missing valley flashings, and cracked plumbing boots.
 
-Georgia building science data proves that first-year homes routinely develop:
-⚠️ Roof shingle nail pops and compromised chimney/plumbing flashings
-⚠️ Attic truss uplift cracking drywall seams
-⚠️ Negative exterior grading causing rainwater to pool against foundation walls
-⚠️ Unbalanced HVAC duct dampers leaving master bedrooms overheated
+At Foresight Home Inspections:
+✅ FAA Part 107 Commercial Drone Aerial Scans are INCLUDED FREE on every full inspection.
+✅ We capture 4K ultra-high-definition imaging of every roof plane, chimney cap, and plumbing penetration.
+✅ Two Certified Inspectors on every job.
+✅ Up to $35,000 in Combined Warranty & Guarantee Protection included ($0 deductible).
 
-A Foresight 11-Month Builder Warranty Inspection (from $335) gives you an independent, Certified Master Inspector photo punch list ready to upload directly into your builder's warranty portal.
-
-On average, our clients save $1,500 to $4,500 in builder-paid repairs before warranty expiration!
+Don’t buy a home with an uninspected roof. Choose the technology and thoroughness your investment deserves.
 
 "Hindsight is expensive... Choose Foresight!"
 
-👉 Book your 11-Month Warranty Inspection today:
-https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta
-📞 Direct CMI Phone: (678) 480-2110
+👉 Get your instant price online 24/7:
+https://www.fhinspectionsatl.com/quote
 
-#NewConstructionAtlanta #BuilderWarranty #11MonthWarranty #AtlantaSuburbs #NewHomeowner
+#DroneRoofInspection #FAAPart107 #AtlantaHomeInspection #RoofingInspection #CertifiedMasterInspector #ForesightHomeInspections
 ```
 
 ---
@@ -66,25 +63,23 @@ https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta
 *Optimized for Real Estate Agents, GAR Contract Due Diligence, Investors, Attorneys, and Building Science Authority.*
 
 ```text
-New construction volume across Metro Atlanta (Gwinnett, Forsyth, Cobb, North Fulton) has surged, yet accelerated construction cycles frequently leave substantial latent defects concealed behind finished surfaces.
+Roof inspections represent one of the highest liability zones in residential and commercial real estate due diligence. Steep pitches (>8/12), 3-story eaves, and wet weather frequently force solo inspectors to disclaim the roof covering under standard SOP exclusions ('Viewed from ground level with binoculars').
 
-Under Georgia residential warranty contracts, builders offer a comprehensive 1-year materials and workmanship warranty. At month 12, liability transfers entirely to the property owner.
+This creates unacceptable risk exposure for buyers and investors. Compromised step flashings, hail bruising, unsealed pipe boots, and deteriorated chimney crowns are nearly impossible to assess accurately from the street.
 
-Our field data across hundreds of first-year audits indicates high frequencies of:
-• Attic Truss Uplift (seasonal differential deflection causing ceiling drywall cracking)
-• HVAC Static Pressure Imbalances & Unsealed Plenum Transitions
-• Inadequate Slope on Exterior Drainage Swales (IRC Section R401.3 violations)
-• Roof Deck Nail Penetrations & Unsealed Flashing Boots
+Foresight Home Inspections integrates FAA Part 107 Licensed Drone Aerial Thermography and 4K optical telemetry standard across all property inspections:
+• Sub-millimeter Shingle Defect Resolution
+• Chimney Crown, Spark Arrestor & Counter-Flashing Inspection
+• Gutter Slope & Hidden Eaves Flashing Verification
+• High-Definition Aerial Video Delivered Inside the Report
 
-An independent 11-Month Warranty Audit conducted by a Certified Master Inspector provides homeowners with an itemized, code-referenced punch list with high-resolution photographic proof for immediate builder portal submission.
+All inspection packages include our Two-Inspector Protocol and up to $35,000 in combined warranty protection.
 
-Our clients routinely recover $1,500 to $4,500 in builder-funded remediations prior to warranty cutoff.
+Explore our inspection standards:
+https://www.fhinspectionsatl.com/quote
 
-Learn more:
-https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta
-
-#NewConstruction #BuilderWarranty #QualityControl #PropertyManagement #RealEstateAtlanta #AssetProtection
+#AviationInTech #DroneSurvey #RealEstateTech #BuildingDiagnostics #CommercialInspection #AssetManagement
 ```
 
 ---
-*Next post in rotation:* **Post #6: "4K Aerial Drone Roof Diagnostics Included Free"**
+*Next post in rotation:* **Post #7: "Up to $35,000 in Combined Warranty & Guarantee Protection"**
