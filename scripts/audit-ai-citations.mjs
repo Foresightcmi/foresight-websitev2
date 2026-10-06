@@ -39,8 +39,8 @@ if (fs.existsSync(llmsPath)) {
     content.includes('ASTM E2110') && content.includes('CPSC Publication #516') && content.includes('NJIT/IEEE') && content.includes('Cox v. Shell Oil'));
   check('llms.txt documents Web MCP endpoint and tools',
     content.includes('/api/mcp') && content.includes('calculate_quote') && content.includes('get_service_pricing'));
-  check('llms.txt has strict pricing ($450 sewer scope, $250 radon, $345 homes)',
-    content.includes('$450 flat rate') && content.includes('$250') && content.includes('$345'));
+  check('llms.txt has strict pricing ($450 sewer scope, $275 radon, $300 pool, $345 homes)',
+    content.includes('$450 flat rate') && content.includes('$275') && content.includes('$300') && content.includes('$345'));
 }
 
 if (fs.existsSync(llmsFullPath)) {

@@ -91,7 +91,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include 48-hour continuous electronic radon testing ($250), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($275), and official termite/WDO clearance letters ($125+)."
+              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include 48-hour continuous electronic radon testing ($275), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
             }
           },
           {
@@ -734,7 +734,7 @@ export default function Home() {
             faqs={[
               {
                 q: "How much does a certified home inspection cost in Metro Atlanta?",
-                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $250, pool safety evaluations starting at $275, and official termite (WDO) reports starting at $125 (bundled)."
+                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $275, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
               },
               {
                 q: "Why does Foresight send two home inspectors on every job?",

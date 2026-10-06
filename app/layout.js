@@ -593,8 +593,8 @@ export default function RootLayout({ children }) {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "365", "unitText": "starting" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Final Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "400", "unitText": "starting" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sewer Scope Camera Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "450" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing (48-Hr Continuous Monitor)" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "250" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "275" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing (48-Hr Continuous Monitor)" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "275" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "300" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite and WDO Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "125" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) City Compliance Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "595" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DeKalb County Plumbing Low-Flow Compliance Certificate" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "100" } }
@@ -782,11 +782,11 @@ export default function RootLayout({ children }) {
                 <h3>Inspection Services</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link prefetch={false} href="/services/buyer-inspection">Buyer Home Inspection</Link></li>
-                  <li><Link prefetch={false} href="/services/radon-testing">Radon Gas Testing ($250)</Link></li>
+                  <li><Link prefetch={false} href="/services/radon-testing">Radon Gas Testing ($275)</Link></li>
                   <li><Link prefetch={false} href="/services/termite-inspection">Termite &amp; WDO ($125+)</Link></li>
                   <li><Link prefetch={false} href="/services/sewer-scope-inspection">Sewer Scope Camera ($450)</Link></li>
                   <li><Link prefetch={false} href="/services/new-construction-inspection">New Construction Phased</Link></li>
-                  <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($275)</Link></li>
+                  <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($300)</Link></li>
                   <li><Link prefetch={false} href="/services/pre-listing-inspection">Pre-Listing Seller Inspection</Link></li>
                   <li><Link prefetch={false} href="/service-areas/atlanta-str-compliance" style={{ color: 'var(--color-gold)' }}>Atlanta STR Permit Inspection ($495)</Link></li>
                   <li><Link prefetch={false} href="/service-areas/south-fulton-rental-compliance" style={{ color: 'var(--color-gold)' }}>South Fulton Rental Compliance ($250)</Link></li>

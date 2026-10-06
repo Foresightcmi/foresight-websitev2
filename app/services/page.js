@@ -79,7 +79,7 @@ export default function Services() {
     },
     {
       title: 'Pool & Spa Inspections',
-      price: '$275',
+      price: '$300',
       description: 'Comprehensive mechanical and safety evaluation of residential swimming pools and spas. We test pumps, filters, heaters, electrical safety, plumbing lines, shell integrity, and safety boundaries.',
       details: ['Comprehensive pool & spa inspection', 'Pump & heater functional tests', 'Safety barrier & GFCI electrical review', 'Filter and plumbing line evaluation'],
       image: '/images/pool-inspecting.png',
@@ -102,7 +102,7 @@ export default function Services() {
     },
     {
       title: 'Radon Gas Testing',
-      price: '$250',
+      price: '$275',
       description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
       details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Precise hourly radon level tracking', 'Strict EPA protocol compliance'],
       slug: 'hidden-dangers-of-radon-gas-georgia'
@@ -132,9 +132,9 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "365", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new build was constructed to specifications with complete builder punch list." }, "price": "400", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "275", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "250", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "595", "priceCurrency": "USD" }
       ]

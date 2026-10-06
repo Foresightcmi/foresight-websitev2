@@ -86,13 +86,13 @@ function calculateQuoteDetails(input = {}) {
   }
 
   const addonBreakdown = [];
-  if (addons.radon) { extra += 250; addonBreakdown.push({ name: 'Radon Gas Testing', price: 250 }); }
+  if (addons.radon) { extra += 275; addonBreakdown.push({ name: 'Radon Gas Testing', price: 275 }); }
   if (addons.termite) {
     const termitePrice = foundation === 'crawlspace' ? 165 : 125;
     extra += termitePrice;
     addonBreakdown.push({ name: 'Termite / WDO Inspection', price: termitePrice });
   }
-  if (addons.pool) { extra += 275; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 275 }); }
+  if (addons.pool) { extra += 300; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 300 }); }
   if (addons.sewer) { extra += 450; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 450 }); }
   if (addons.lowFlow) { extra += 100; addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 100 }); }
   if (addons.buildfax) { extra += 15; addonBreakdown.push({ name: 'Permit History Report', price: 15 }); }
@@ -137,9 +137,9 @@ const MCP_TOOLS = [
         addons: {
           type: 'object',
           properties: {
-            radon: { type: 'boolean', description: 'Continuous Radon Monitor testing ($250)' },
+            radon: { type: 'boolean', description: 'Continuous Radon Monitor testing ($275)' },
             termite: { type: 'boolean', description: 'Official Georgia WDO/Termite clearance ($125 slab/basement, $165 crawlspace)' },
-            pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety audit ($275)' },
+            pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety audit ($300)' },
             sewer: { type: 'boolean', description: 'High-definition underground lateral sewer scope camera inspection ($450 flat rate)' },
             lowFlow: { type: 'boolean', description: 'DeKalb County Mandatory Low-Flow Plumbing Certificate ($100)' },
             buildfax: { type: 'boolean', description: 'Historical municipal permit and renovation record audit ($15)' },
@@ -246,8 +246,8 @@ async function handleToolCall(name, args) {
         'new-construction': { name: 'New Construction Final Phase Inspection', base: 'From $400', details: 'Comprehensive pre-closing quality control audit covering all major home components.' },
         'warranty': { name: '11-Month Builder Warranty Inspection', base: 'From $335', details: 'Comprehensive audit before builder 1-year warranty expires to ensure warranty items are addressed.' },
         'sewer-scope': { name: 'Sewer Scope Camera Inspection', base: '$450 flat rate', details: 'High-definition camera scan through main cleanout to municipal lateral or septic tank.' },
-        'radon': { name: 'Continuous Radon Gas Monitoring', base: '$250', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
-        'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$275', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
+        'radon': { name: 'Continuous Radon Gas Monitoring', base: '$275', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
+        'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
         'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
         'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: '$595 flat rate', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
         'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Mandatory toilet, shower, and faucet flow rate verification for pre-1993 property transfers.' }

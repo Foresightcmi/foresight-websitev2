@@ -38,13 +38,13 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
   }
 
   const addonBreakdown = [];
-  if (addons.radon) { extra += 250; addonBreakdown.push({ name: 'Radon Gas Testing', price: 250 }); }
+  if (addons.radon) { extra += 275; addonBreakdown.push({ name: 'Radon Gas Testing', price: 275 }); }
   if (addons.termite) { 
     const termitePrice = foundation === 'crawlspace' ? 165 : 125;
     extra += termitePrice; 
     addonBreakdown.push({ name: 'Termite / WDO Inspection', price: termitePrice }); 
   }
-  if (addons.pool) { extra += 275; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 275 }); }
+  if (addons.pool) { extra += 300; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 300 }); }
   if (addons.sewer) { extra += 450; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 450 }); }
   if (addons.lowFlow) { extra += 100; addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 100 }); }
   if (addons.buildfax) { extra += 15; addonBreakdown.push({ name: 'Permit History Report', price: 15 }); }
@@ -515,7 +515,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   // Radon (Contextual Upsell & Info)
   if (matchesAny(['radon'])) {
     return {
-      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 250 dollars. Would you like to add that to your estimate, or keep it as is?",
+      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 275 dollars. Would you like to add that to your estimate, or keep it as is?",
       preAudio: '/audio/receptionist-upsell-radon.mp3'
     };
   }
@@ -538,7 +538,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
 
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
-      text: "We provide comprehensive pool and spa inspections for 275 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
+      text: "We provide comprehensive pool and spa inspections for 300 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
       preAudio: '/audio/receptionist-pricing.mp3'
     };
   }

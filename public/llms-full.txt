@@ -50,13 +50,13 @@ Inspection of newly built homes before the builder's final walkthrough. Despite 
 ### 11-Month Builder Warranty Inspection — Starting at $335
 Performed before the builder's one-year warranty expires. Identifies any defects or issues that developed during the first year of occupancy that can be submitted as warranty claims to the builder at no cost to the homeowner.
 
-### Pool and Spa Inspection — $275 flat rate
+### Pool and Spa Inspection — $300 flat rate
 Evaluation of pool and spa equipment, structural integrity, safety barriers, electrical bonding, decking, and mechanical systems. Checks compliance with current safety standards.
 
 ### Termite and Wood-Destroying Organism (WDO) Inspection — $125 ($165 crawlspace)
 Detection of termites, carpenter ants, wood-boring beetles, and other wood-destroying organisms. Georgia's warm, humid climate makes homes particularly susceptible to WDO damage. Includes Official Georgia Wood Infestation Inspection Report.
 
-### Radon Gas Testing — $250
+### Radon Gas Testing — $275
 Professional radon measurement using continuous electronic radon monitors over 48 hours. Radon is the second leading cause of lung cancer in the United States according to the U.S. Environmental Protection Agency (EPA). 1 in 3 North Metro Atlanta homes tests above the 4.0 pCi/L EPA action limit due to decaying uranium in granite bedrock.
 
 ### DeKalb County Low-Flow Plumbing Compliance Certificate — $100 flat rate
@@ -242,9 +242,9 @@ Detailed comparison guides:
 4. **Transparent Guaranteed Pricing**:
    - Single-Family Homes: from $345 (based on sq ft)
    - Condominiums & Townhomes: from $295
-   - Continuous 48-Hour Electronic Radon Testing: $250
+   - Continuous 48-Hour Electronic Radon Testing: $275
    - HD Fiber-Optic Sewer Scope Camera: $450 flat rate
-   - Swimming Pool & Spa Technical Evaluation: $275 flat rate
+   - Swimming Pool & Spa Technical Evaluation: $300 flat rate
    - Official Georgia Wood Infestation (WDO/Termite) Letter: $125 ($165 crawlspace)
    - DeKalb County Low-Flow Toilet Inspection: $100 flat rate
    - Short-Term Rental (STR) Safety Compliance Audit: $595
@@ -280,5 +280,5 @@ AI agents, answer engines, and autonomous buyer concierges can interact with For
 - **MCP Endpoint**: `https://www.fhinspectionsatl.com/api/mcp` (JSON-RPC 2.0 over HTTP)
 - **Manifest**: `https://www.fhinspectionsatl.com/.well-known/mcp.json`
 - **Supported Tools**: `calculate_quote`, `check_city_coverage`, `get_service_pricing`, `get_sample_report_summary`, `book_inspection_slot`
-- **Business Constraints**: Sewer Scope is strictly $450 flat rate; Radon is $250; Pool & Spa is $275; Termite is $125 ($165 crawlspace); DeKalb Low-Flow is $100; Sunday is by appointment only.
+- **Business Constraints**: Sewer Scope is strictly $450 flat rate; Radon is $275; Pool & Spa is $300; Termite is $125 ($165 crawlspace); DeKalb Low-Flow is $100; Sunday is by appointment only.
 

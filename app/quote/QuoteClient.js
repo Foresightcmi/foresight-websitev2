@@ -161,8 +161,8 @@ export default function QuoteClient({ showValueComparison = true }) {
     }
 
     // Addons from Official Fee Schedule (PDF Pages 2, 5, 6)
-    if (addons.radon) extra += 250; // PDF Page 6: 48 HOUR RADON TEST $250.00
-    if (addons.pool) extra += 275;  // PDF Page 2 & 6: POOL INSPECTION $275.00
+    if (addons.radon) extra += 275; // 48 HOUR RADON TEST $275.00
+    if (addons.pool) extra += 300;  // POOL INSPECTION $300.00
     if (addons.sewer) extra += 450; // PDF Page 6: SEWER SCOPE INSPECTION $450.00
     if (addons.lowFlow) extra += 100; // DeKalb Low-Flow Certificate $100.00
     if (addons.buildfax) extra += 15; // PDF Page 2: BUILDFAX PROPERTY HISTORY REPORT $15.00
@@ -276,8 +276,8 @@ export default function QuoteClient({ showValueComparison = true }) {
       const activeAddonNames = Object.keys(addons)
         .filter(k => addons[k])
         .map(k => {
-          if (k === 'radon') return '48-Hour Radon Gas Test ($250)';
-          if (k === 'pool') return 'Pool & Spa Inspection ($275)';
+          if (k === 'radon') return '48-Hour Radon Gas Test ($275)';
+          if (k === 'pool') return 'Pool & Spa Inspection ($300)';
           if (k === 'sewer') return 'Sewer Scope Camera ($450)';
           if (k === 'termite') return foundation === 'crawlspace' ? 'Termite / WDO Crawlspace ($165)' : 'Termite / WDO Slab/Basement ($125)';
           if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance ($100)';
@@ -562,7 +562,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('radon')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>48-Hour Radon Gas Test (+ $250)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>48-Hour Radon Gas Test (+ $275)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour electronic monitoring following strict EPA protocols.</span>
                   </div>
                 </label>
@@ -574,7 +574,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('pool')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Inspection (+ $275)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Inspection (+ $300)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pump, filter, heater, electrical bonding, and shell safety evaluation.</span>
                   </div>
                 </label>

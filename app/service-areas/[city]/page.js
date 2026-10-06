@@ -125,7 +125,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
-      a: `Home inspection pricing in ${cityName} starts at $345+ for a standard single-family buyer's inspection ($295 for condos). 11-month warranty inspections start at $335+, pre-listing seller inspections start at $365+, and new construction inspections start at $400+. Pricing varies based on square footage, age, foundation type, and add-on services such as radon testing ($250), termite/WDO inspection ($125+), pool evaluation ($275), or sewer scope inspection ($450). Property age surcharges apply ($75 for 50+ yrs vintage/historic homes). Complexity fees add $75 for a crawlspace and $250 for an unfinished basement. Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
+      a: `Home inspection pricing in ${cityName} starts at $345+ for a standard single-family buyer's inspection ($295 for condos). 11-month warranty inspections start at $335+, pre-listing seller inspections start at $365+, and new construction inspections start at $400+. Pricing varies based on square footage, age, foundation type, and add-on services such as radon testing ($275), termite/WDO inspection ($125+), pool evaluation ($300), or sewer scope inspection ($450). Property age surcharges apply ($75 for 50+ yrs vintage/historic homes). Complexity fees add $75 for a crawlspace and $250 for an unfinished basement. Visit our <a href="/quote">instant quote page</a> for a personalized price in seconds. Every inspection includes our $10,000 warranty at no extra cost.`,
     },
     {
       q: `What should I look for when hiring a home inspector in ${cityName}?`,
@@ -137,7 +137,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `Do you offer radon testing in ${cityName}, GA?`,
-      a: `Yes — Foresight Home Inspections offers professional radon gas testing in ${cityName} as an add-on service for $250. Radon is the second leading cause of lung cancer in the United States, according to the U.S. Environmental Protection Agency (EPA), and is completely odorless and invisible. Our testing uses a continuous 48-hour professional diagnostic monitor that provides highly accurate readings. The EPA recommends radon testing for every home purchase, regardless of location. You can add radon testing to any inspection package through our <a href="/quote">instant quote page</a>.`,
+      a: `Yes — Foresight Home Inspections offers professional radon gas testing in ${cityName} as an add-on service for $275. Radon is the second leading cause of lung cancer in the United States, according to the U.S. Environmental Protection Agency (EPA), and is completely odorless and invisible. Our testing uses a continuous 48-hour professional diagnostic monitor that provides highly accurate readings. The EPA recommends radon testing for every home purchase, regardless of location. You can add radon testing to any inspection package through our <a href="/quote">instant quote page</a>.`,
     },
     {
       q: `Do you do termite inspections in ${cityName}, GA?`,

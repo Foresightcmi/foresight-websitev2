@@ -45,11 +45,11 @@ const SERVICE_MAP = {
   },
   'radon-testing': {
     name: 'Radon Gas Testing',
-    price: '$250',
+    price: '$275',
     icon: '☢️',
     headline: 'Continuous 48-Hour Electronic Radon Testing Across Metro Atlanta',
-    metaTitle: 'Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $250',
-    metaDescription: 'EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph & same-day report. Flat $250. Call 678-480-2110!',
+    metaTitle: 'Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $275',
+    metaDescription: 'EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph & same-day report. Flat $275. Call 678-480-2110!',
     description: 'Radon is an odorless, invisible radioactive gas that represents the second leading cause of lung cancer in the United States. Northern Georgia geology contains significant granite bedrock with naturally occurring uranium deposits. Foresight uses state-of-the-art continuous electronic radon monitors delivering precision hourly graphs and EPA-compliant action reports.',
     included: [
       '48-hour continuous electronic active monitor placement',
@@ -75,11 +75,11 @@ const SERVICE_MAP = {
   },
   'pool-inspection': {
     name: 'Pool & Spa Inspection',
-    price: '$275',
+    price: '$300',
     icon: '🏊',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
-    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $275',
-    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $275 rate with 24-hr report.',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $300',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
       'Pump, filtration, and circulation system pressure testing',
@@ -90,11 +90,11 @@ const SERVICE_MAP = {
   },
   'pool-spa-inspection': {
     name: 'Pool & Spa Inspection',
-    price: '$275',
+    price: '$300',
     icon: '🏊',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
-    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $275',
-    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $275 rate with 24-hr report.',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $300',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
       'Pump, filtration, and circulation system pressure testing',
