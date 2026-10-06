@@ -1,40 +1,40 @@
 # Executive Google Search Console Briefing | Foresight Home Inspections
-**Reporting Timestamp**: Monday, September 28, 2026 at 10:38 PM (EST)
+**Reporting Timestamp**: Monday, October 5, 2026 at 10:48 PM (EST)
 **Verified Property**: https://www.fhinspectionsatl.com/
-**Window**: 2026-08-29 to 2026-09-26
+**Window**: 2026-09-05 to 2026-10-03
 
 ---
 
 ## 1. Top Search Queries Driving Clicks & Visibility
-1. **"foresight home inspections"** - 6 clicks, 35 impressions, CTR: 17.1%, Avg Position: 3.1
-2. **"11 month warranty inspections"** - 0 clicks, 4 impressions, CTR: 0.0%, Avg Position: 38.5
-3. **"11th month builders warranty inspection"** - 0 clicks, 6 impressions, CTR: 0.0%, Avg Position: 18.8
-4. **"30 day walkthrough inspection report"** - 0 clicks, 2 impressions, CTR: 0.0%, Avg Position: 57.5
-5. **"345 built inspections"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 21.0
-6. **"911 home inspections"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 33.0
-7. **"action home inspections"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 10.0
-8. **"acworth pool inspection"** - 0 clicks, 3 impressions, CTR: 0.0%, Avg Position: 5.3
-9. **"acworth radon testing"** - 0 clicks, 11 impressions, CTR: 0.0%, Avg Position: 12.6
-10. **"affordable home inspection"** - 0 clicks, 3 impressions, CTR: 0.0%, Avg Position: 15.3
-11. **"affordable home inspection atlanta ga"** - 0 clicks, 15 impressions, CTR: 0.0%, Avg Position: 29.0
-12. **"ai inspectors"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 38.0
-13. **"alert home inspections"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 37.0
-14. **"allatoona radon mitigation"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 13.0
-15. **"alpharetta pool inspection"** - 0 clicks, 5 impressions, CTR: 0.0%, Avg Position: 8.8
+1. **"foresight home inspections"** - 6 clicks, 45 impressions, CTR: 13.3%, Avg Position: 2.8
+2. **"11 month builder warranty inspection"** - 0 clicks, 2 impressions, CTR: 0.0%, Avg Position: 40.5
+3. **"11 month warranty home inspection"** - 0 clicks, 6 impressions, CTR: 0.0%, Avg Position: 93.2
+4. **"11 month warranty inspection"** - 0 clicks, 3 impressions, CTR: 0.0%, Avg Position: 38.3
+5. **"11 month warranty inspection acworth ga"** - 0 clicks, 4 impressions, CTR: 0.0%, Avg Position: 10.3
+6. **"11 month warranty inspection atlanta ga"** - 0 clicks, 4 impressions, CTR: 0.0%, Avg Position: 5.0
+7. **"11 month warranty inspection ball ground ga"** - 0 clicks, 2 impressions, CTR: 0.0%, Avg Position: 10.5
+8. **"11 month warranty inspection canton ga"** - 0 clicks, 7 impressions, CTR: 0.0%, Avg Position: 8.3
+9. **"11 month warranty inspection cartersville ga"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 2.0
+10. **"11 month warranty inspection cumming ga"** - 0 clicks, 5 impressions, CTR: 0.0%, Avg Position: 5.2
+11. **"11 month warranty inspection dallas ga"** - 0 clicks, 5 impressions, CTR: 0.0%, Avg Position: 6.8
+12. **"11 month warranty inspection dunwoody ga"** - 0 clicks, 5 impressions, CTR: 0.0%, Avg Position: 8.6
+13. **"11 month warranty inspection kennesaw ga"** - 0 clicks, 3 impressions, CTR: 0.0%, Avg Position: 5.0
+14. **"11 month warranty inspection mableton ga"** - 0 clicks, 2 impressions, CTR: 0.0%, Avg Position: 8.0
+15. **"11 month warranty inspection marietta ga"** - 0 clicks, 1 impressions, CTR: 0.0%, Avg Position: 2.0
 
 ---
 
 ## 2. Striking Distance Opportunities (Page 1-2 Quick Wins)
-1. **"alpharetta pool inspections"** (Avg Pos: 9.2, Impressions: 30) - High-priority on-page optimization target
-2. **"atlanta home inspections"** (Avg Pos: 15.5, Impressions: 28) - High-priority on-page optimization target
-3. **"bartow county building inspection"** (Avg Pos: 10.5, Impressions: 12) - High-priority on-page optimization target
-4. **"best home inspection company dekalb county"** (Avg Pos: 13.9, Impressions: 12) - High-priority on-page optimization target
-5. **"acworth radon testing"** (Avg Pos: 12.6, Impressions: 11) - High-priority on-page optimization target
-6. **"bartow county inspections"** (Avg Pos: 9.0, Impressions: 9) - High-priority on-page optimization target
-7. **"11th month builders warranty inspection"** (Avg Pos: 18.8, Impressions: 6) - High-priority on-page optimization target
-8. **"alpharetta pool inspection"** (Avg Pos: 8.8, Impressions: 5) - High-priority on-page optimization target
-9. **"atlanta, in wood destroying organisms"** (Avg Pos: 17.5, Impressions: 4) - High-priority on-page optimization target
-10. **"acworth pool inspection"** (Avg Pos: 5.3, Impressions: 3) - High-priority on-page optimization target
+1. **"acworth radon testing"** (Avg Pos: 11.8, Impressions: 9) - High-priority on-page optimization target
+2. **"11 month warranty inspection canton ga"** (Avg Pos: 8.3, Impressions: 7) - High-priority on-page optimization target
+3. **"11 month warranty inspection roswell ga"** (Avg Pos: 7.7, Impressions: 6) - High-priority on-page optimization target
+4. **"11 month warranty inspection cumming ga"** (Avg Pos: 5.2, Impressions: 5) - High-priority on-page optimization target
+5. **"11 month warranty inspection dallas ga"** (Avg Pos: 6.8, Impressions: 5) - High-priority on-page optimization target
+6. **"11 month warranty inspection dunwoody ga"** (Avg Pos: 8.6, Impressions: 5) - High-priority on-page optimization target
+7. **"11 month warranty inspection acworth ga"** (Avg Pos: 10.3, Impressions: 4) - High-priority on-page optimization target
+8. **"11 month warranty inspection atlanta ga"** (Avg Pos: 5.0, Impressions: 4) - High-priority on-page optimization target
+9. **"11 month warranty inspection vinings ga"** (Avg Pos: 5.0, Impressions: 4) - High-priority on-page optimization target
+10. **"air quality testing fairburn"** (Avg Pos: 8.5, Impressions: 4) - High-priority on-page optimization target
 
 ---
 

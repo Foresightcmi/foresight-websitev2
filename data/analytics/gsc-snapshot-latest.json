@@ -1,9 +1,9 @@
 {
-  "retrievedAt": "2026-09-29T02:38:32.267Z",
+  "retrievedAt": "2026-10-06T02:48:33.116Z",
   "siteUrl": "https://www.fhinspectionsatl.com/",
   "dateRange": {
-    "startDate": "2026-08-29",
-    "endDate": "2026-09-26"
+    "startDate": "2026-09-05",
+    "endDate": "2026-10-03"
   },
   "queries": [
     {
@@ -11,36 +11,261 @@
         "foresight home inspections"
       ],
       "clicks": 6,
-      "impressions": 35,
-      "ctr": 0.17142857142857143,
-      "position": 3.085714285714286
+      "impressions": 45,
+      "ctr": 0.13333333333333333,
+      "position": 2.822222222222222
+    },
+    {
+      "keys": [
+        "11 month builder warranty inspection"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 40.5
+    },
+    {
+      "keys": [
+        "11 month warranty home inspection"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 93.16666666666667
+    },
+    {
+      "keys": [
+        "11 month warranty inspection"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 38.333333333333336
+    },
+    {
+      "keys": [
+        "11 month warranty inspection acworth ga"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 10.25
+    },
+    {
+      "keys": [
+        "11 month warranty inspection atlanta ga"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "keys": [
+        "11 month warranty inspection ball ground ga"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10.5
+    },
+    {
+      "keys": [
+        "11 month warranty inspection canton ga"
+      ],
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 8.285714285714285
+    },
+    {
+      "keys": [
+        "11 month warranty inspection cartersville ga"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "keys": [
+        "11 month warranty inspection cumming ga"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5.2
+    },
+    {
+      "keys": [
+        "11 month warranty inspection dallas ga"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 6.8
+    },
+    {
+      "keys": [
+        "11 month warranty inspection dunwoody ga"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 8.6
+    },
+    {
+      "keys": [
+        "11 month warranty inspection kennesaw ga"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "keys": [
+        "11 month warranty inspection mableton ga"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
+        "11 month warranty inspection marietta ga"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "keys": [
+        "11 month warranty inspection near me"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 74
+    },
+    {
+      "keys": [
+        "11 month warranty inspection roswell ga"
+      ],
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 7.666666666666667
+    },
+    {
+      "keys": [
+        "11 month warranty inspection smyrna ga"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "keys": [
+        "11 month warranty inspection vinings ga"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "keys": [
+        "11 month warranty inspection woodstock ga"
+      ],
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 2
     },
     {
       "keys": [
         "11 month warranty inspections"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 32,
       "ctr": 0,
-      "position": 38.5
+      "position": 49.03125
+    },
+    {
+      "keys": [
+        "11-month warranty inspection"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "keys": [
+        "11-month warranty inspection cost"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "keys": [
+        "11-month/builder warranty inspection"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 74.5
+    },
+    {
+      "keys": [
+        "11-month/builder warranty inspection near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
     },
     {
       "keys": [
         "11th month builders warranty inspection"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 5,
       "ctr": 0,
-      "position": 18.833333333333332
+      "position": 32.8
+    },
+    {
+      "keys": [
+        "11th month inspection"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 17.5
     },
     {
       "keys": [
         "30 day walkthrough inspection report"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 1,
       "ctr": 0,
-      "position": 57.5
+      "position": 56
+    },
+    {
+      "keys": [
+        "30043"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
     },
     {
       "keys": [
@@ -50,15 +275,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 21
-    },
-    {
-      "keys": [
-        "911 home inspections"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 33
     },
     {
       "keys": [
@@ -76,34 +292,34 @@
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 5.333333333333333
+      "position": 5
     },
     {
       "keys": [
         "acworth radon testing"
       ],
       "clicks": 0,
-      "impressions": 11,
+      "impressions": 9,
       "ctr": 0,
-      "position": 12.636363636363637
+      "position": 11.777777777777779
     },
     {
       "keys": [
         "affordable home inspection"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 15.333333333333334
+      "position": 20.25
     },
     {
       "keys": [
         "affordable home inspection atlanta ga"
       ],
       "clicks": 0,
-      "impressions": 15,
+      "impressions": 16,
       "ctr": 0,
-      "position": 29
+      "position": 36.9375
     },
     {
       "keys": [
@@ -116,196 +332,52 @@
     },
     {
       "keys": [
-        "alert home inspections"
+        "air conditioning porterdale ga"
       ],
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 37
+      "position": 44
     },
     {
       "keys": [
-        "allatoona radon mitigation"
+        "air quality test atlanta"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 50.833333333333336
+    },
+    {
+      "keys": [
+        "air quality test fairburn"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
+        "air quality test lawrenceville ga"
+      ],
+      "clicks": 0,
+      "impressions": 3,
       "ctr": 0,
       "position": 13
     },
     {
       "keys": [
-        "alpharetta pool inspection"
-      ],
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 8.8
-    },
-    {
-      "keys": [
-        "alpharetta pool inspections"
-      ],
-      "clicks": 0,
-      "impressions": 30,
-      "ctr": 0,
-      "position": 9.2
-    },
-    {
-      "keys": [
-        "and how much do they charge"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 3
-    },
-    {
-      "keys": [
-        "answering service for home inspectors"
-      ],
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 60.25
-    },
-    {
-      "keys": [
-        "apertures inspection service"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 18
-    },
-    {
-      "keys": [
-        "apex sight solutions"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 55
-    },
-    {
-      "keys": [
-        "apex sight solutions 203k consultant"
-      ],
-      "clicks": 0,
-      "impressions": 10,
-      "ctr": 0,
-      "position": 59
-    },
-    {
-      "keys": [
-        "apex sight solutions fha consulting"
-      ],
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": 0,
-      "position": 61.09090909090909
-    },
-    {
-      "keys": [
-        "atl home inspections"
+        "air quality test newnan"
       ],
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 25.333333333333332
+      "position": 13.333333333333334
     },
     {
       "keys": [
-        "atlanta certified home inspector"
-      ],
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 36.42857142857143
-    },
-    {
-      "keys": [
-        "atlanta home inspection"
-      ],
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 26.307692307692307
-    },
-    {
-      "keys": [
-        "atlanta home inspections"
-      ],
-      "clicks": 0,
-      "impressions": 28,
-      "ctr": 0,
-      "position": 15.5
-    },
-    {
-      "keys": [
-        "atlanta home inspections near me"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 29
-    },
-    {
-      "keys": [
-        "atlanta home inspector"
-      ],
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 29.23076923076923
-    },
-    {
-      "keys": [
-        "atlanta home inspector near me"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 30
-    },
-    {
-      "keys": [
-        "atlanta home inspectors"
-      ],
-      "clicks": 0,
-      "impressions": 22,
-      "ctr": 0,
-      "position": 23.681818181818183
-    },
-    {
-      "keys": [
-        "atlanta homebuyers roof evaluation guide"
-      ],
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 27.6
-    },
-    {
-      "keys": [
-        "atlanta inspections"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 56
-    },
-    {
-      "keys": [
-        "atlanta inspector"
-      ],
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 35
-    },
-    {
-      "keys": [
-        "atlanta permit search"
+        "air quality test peachtree city"
       ],
       "clicks": 0,
       "impressions": 2,
@@ -314,147 +386,75 @@
     },
     {
       "keys": [
-        "atlanta premier home inspections"
+        "air quality testing atlanta"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 7,
       "ctr": 0,
-      "position": 21
+      "position": 43.857142857142854
     },
     {
       "keys": [
-        "atlanta property inspections"
+        "air quality testing atlanta ga"
       ],
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 2,
       "ctr": 0,
-      "position": 36.6
+      "position": 46.5
     },
     {
       "keys": [
-        "atlanta property inspectors"
-      ],
-      "clicks": 0,
-      "impressions": 10,
-      "ctr": 0,
-      "position": 30.2
-    },
-    {
-      "keys": [
-        "atlanta sewer inspection"
-      ],
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 10.666666666666666
-    },
-    {
-      "keys": [
-        "atlanta, in wood destroying organisms"
+        "air quality testing fairburn"
       ],
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
-      "position": 17.5
+      "position": 8.5
     },
     {
       "keys": [
-        "attic insulation moreland ga"
+        "air quality testing lawrenceville ga"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 17
+      "position": 9.333333333333334
     },
     {
       "keys": [
-        "average estimate of home inspection"
+        "air quality testing near me"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 66
+      "position": 12
     },
     {
       "keys": [
-        "bartow county building inspection"
+        "air quality testing peachtree city"
       ],
       "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 10.5
-    },
-    {
-      "keys": [
-        "bartow county inspections"
-      ],
-      "clicks": 0,
-      "impressions": 9,
+      "impressions": 3,
       "ctr": 0,
       "position": 9
     },
     {
       "keys": [
-        "best home inspection company dekalb county"
-      ],
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 13.916666666666666
-    },
-    {
-      "keys": [
-        "best home inspector atlanta ga"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 36
-    },
-    {
-      "keys": [
-        "best home inspectors atlanta"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 17.5
-    },
-    {
-      "keys": [
-        "best home inspectors monroe ga"
-      ],
-      "clicks": 0,
-      "impressions": 16,
-      "ctr": 0,
-      "position": 23.0625
-    },
-    {
-      "keys": [
-        "best independent home inspectors atlanta"
-      ],
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 34
-    },
-    {
-      "keys": [
-        "best price home inspections"
+        "air testing company"
       ],
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 10
+      "position": 1
     },
     {
       "keys": [
-        "black home inspectors"
+        "airbnb inspection"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 1,
       "ctr": 0,
-      "position": 17.5
+      "position": 59
     }
   ],
   "pages": [
@@ -462,91 +462,163 @@
       "keys": [
         "https://www.fhinspectionsatl.com/"
       ],
-      "clicks": 15,
-      "impressions": 4543,
-      "ctr": 0.003301782962799912,
-      "position": 27.659476117103235
+      "clicks": 17,
+      "impressions": 4460,
+      "ctr": 0.003811659192825112,
+      "position": 27.911434977578477
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/blog/how-to-negotiate-home-inspection-repairs-georgia-gar-contract"
+      ],
+      "clicks": 4,
+      "impressions": 268,
+      "ctr": 0.014925373134328358,
+      "position": 4.82089552238806
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services/pool-inspection/oxford"
       ],
       "clicks": 4,
-      "impressions": 251,
-      "ctr": 0.01593625498007968,
-      "position": 13.314741035856574
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/blog/how-to-negotiate-home-inspection-repairs-georgia-gar-contract"
-      ],
-      "clicks": 3,
-      "impressions": 220,
-      "ctr": 0.013636363636363636,
-      "position": 4.8954545454545455
+      "impressions": 376,
+      "ctr": 0.010638297872340425,
+      "position": 15.601063829787234
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services"
       ],
       "clicks": 3,
-      "impressions": 995,
-      "ctr": 0.003015075376884422,
-      "position": 41.59899497487437
+      "impressions": 958,
+      "ctr": 0.003131524008350731,
+      "position": 35.79331941544885
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/services/sewer-scope-inspection/atlanta"
+      ],
+      "clicks": 2,
+      "impressions": 61,
+      "ctr": 0.03278688524590164,
+      "position": 33.39344262295082
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services/sewer-scope-inspection/decatur"
       ],
       "clicks": 2,
-      "impressions": 31,
-      "ctr": 0.06451612903225806,
-      "position": 7.806451612903226
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/blog/11-month-warranty-inspection-guide"
-      ],
-      "clicks": 1,
-      "impressions": 31,
-      "ctr": 0.03225806451612903,
-      "position": 15.419354838709678
+      "impressions": 22,
+      "ctr": 0.09090909090909091,
+      "position": 7.363636363636363
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/blog/crawlspace-moisture-silent-threat-georgia-foundations"
       ],
       "clicks": 1,
-      "impressions": 3,
-      "ctr": 0.3333333333333333,
-      "position": 4.666666666666666
+      "impressions": 5,
+      "ctr": 0.2,
+      "position": 4.8
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/blog/dekalb-housing-bond-homebuyers"
+      ],
+      "clicks": 1,
+      "impressions": 21,
+      "ctr": 0.047619047619047616,
+      "position": 10.19047619047619
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough"
+      ],
+      "clicks": 1,
+      "impressions": 76,
+      "ctr": 0.013157894736842105,
+      "position": 11
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/compare/new-construction-inspection-vs-county-building-inspector"
+      ],
+      "clicks": 1,
+      "impressions": 61,
+      "ctr": 0.01639344262295082,
+      "position": 13.295081967213115
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/contact"
       ],
       "clicks": 1,
-      "impressions": 189,
-      "ctr": 0.005291005291005291,
-      "position": 50.333333333333336
+      "impressions": 174,
+      "ctr": 0.005747126436781609,
+      "position": 40.51149425287356
     },
     {
       "keys": [
-        "https://www.fhinspectionsatl.com/service-areas/counties/gwinnett-county"
+        "https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection"
       ],
       "clicks": 1,
-      "impressions": 49,
-      "ctr": 0.02040816326530612,
-      "position": 14.428571428571429
+      "impressions": 2,
+      "ctr": 0.5,
+      "position": 3
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/neighborhoods/grant-park"
+      ],
+      "clicks": 1,
+      "impressions": 2,
+      "ctr": 0.5,
+      "position": 2
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/quote"
+      ],
+      "clicks": 1,
+      "impressions": 310,
+      "ctr": 0.0032258064516129032,
+      "position": 27.758064516129032
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/service-areas/atlanta"
+      ],
+      "clicks": 1,
+      "impressions": 296,
+      "ctr": 0.0033783783783783786,
+      "position": 26.71283783783784
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance"
       ],
       "clicks": 1,
-      "impressions": 23,
-      "ctr": 0.043478260869565216,
-      "position": 9.043478260869565
+      "impressions": 19,
+      "ctr": 0.05263157894736842,
+      "position": 9.210526315789474
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection"
+      ],
+      "clicks": 1,
+      "impressions": 166,
+      "ctr": 0.006024096385542169,
+      "position": 28.451807228915662
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/services/new-construction-inspection/cartersville"
+      ],
+      "clicks": 1,
+      "impressions": 14,
+      "ctr": 0.07142857142857142,
+      "position": 22.428571428571427
     },
     {
       "keys": [
@@ -559,15 +631,6 @@
     },
     {
       "keys": [
-        "https://www.fhinspectionsatl.com/services/new-construction-inspection/dacula"
-      ],
-      "clicks": 1,
-      "impressions": 5,
-      "ctr": 0.2,
-      "position": 5
-    },
-    {
-      "keys": [
         "https://www.fhinspectionsatl.com/services/new-construction-inspection/newnan"
       ],
       "clicks": 1,
@@ -577,66 +640,57 @@
     },
     {
       "keys": [
-        "https://www.fhinspectionsatl.com/services/pool-inspection/acworth"
-      ],
-      "clicks": 1,
-      "impressions": 16,
-      "ctr": 0.0625,
-      "position": 4.375
-    },
-    {
-      "keys": [
         "https://www.fhinspectionsatl.com/services/pool-inspection/alpharetta"
       ],
       "clicks": 1,
-      "impressions": 68,
-      "ctr": 0.014705882352941176,
-      "position": 15.691176470588236
+      "impressions": 55,
+      "ctr": 0.01818181818181818,
+      "position": 13.49090909090909
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services/pool-inspection/douglasville"
       ],
       "clicks": 1,
-      "impressions": 143,
-      "ctr": 0.006993006993006993,
-      "position": 28.53146853146853
+      "impressions": 144,
+      "ctr": 0.006944444444444444,
+      "position": 28.541666666666668
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services/pool-inspection/milton"
       ],
       "clicks": 1,
-      "impressions": 22,
-      "ctr": 0.045454545454545456,
-      "position": 17.09090909090909
+      "impressions": 36,
+      "ctr": 0.027777777777777776,
+      "position": 20.75
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services/pool-inspection/peachtree-corners"
       ],
       "clicks": 1,
-      "impressions": 13,
-      "ctr": 0.07692307692307693,
-      "position": 9.23076923076923
+      "impressions": 12,
+      "ctr": 0.08333333333333333,
+      "position": 9.583333333333334
     },
     {
       "keys": [
-        "https://www.fhinspectionsatl.com/services/sewer-scope-inspection/atlanta"
-      ],
-      "clicks": 1,
-      "impressions": 73,
-      "ctr": 0.0136986301369863,
-      "position": 34.917808219178085
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/services/sewer-scope-inspection/between"
+        "https://www.fhinspectionsatl.com/services/pool-inspection/sharpsburg"
       ],
       "clicks": 1,
       "impressions": 6,
       "ctr": 0.16666666666666666,
-      "position": 21.166666666666668
+      "position": 5.666666666666667
+    },
+    {
+      "keys": [
+        "https://www.fhinspectionsatl.com/services/radon-testing/alpharetta"
+      ],
+      "clicks": 1,
+      "impressions": 45,
+      "ctr": 0.022222222222222223,
+      "position": 24.42222222222222
     },
     {
       "keys": [
@@ -645,88 +699,34 @@
       "clicks": 1,
       "impressions": 26,
       "ctr": 0.038461538461538464,
-      "position": 3.5
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/services/sewer-scope-inspection/fayetteville"
-      ],
-      "clicks": 1,
-      "impressions": 26,
-      "ctr": 0.038461538461538464,
-      "position": 4.961538461538462
+      "position": 3.6923076923076925
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services/sewer-scope-inspection/roswell"
       ],
       "clicks": 1,
-      "impressions": 40,
-      "ctr": 0.025,
-      "position": 12
+      "impressions": 41,
+      "ctr": 0.024390243902439025,
+      "position": 11.146341463414634
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/services/termite-inspection/stockbridge"
       ],
       "clicks": 1,
-      "impressions": 11,
-      "ctr": 0.09090909090909091,
-      "position": 7
+      "impressions": 5,
+      "ctr": 0.2,
+      "position": 12
     },
     {
       "keys": [
         "https://www.fhinspectionsatl.com/about"
       ],
       "clicks": 0,
-      "impressions": 50,
+      "impressions": 53,
       "ctr": 0,
-      "position": 4.279999999999999
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/ai-fact-sheet"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/ask-twin"
-      ],
-      "clicks": 0,
-      "impressions": 88,
-      "ctr": 0,
-      "position": 12.954545454545455
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/blog"
-      ],
-      "clicks": 0,
-      "impressions": 76,
-      "ctr": 0,
-      "position": 16.671052631578945
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/blog/atlanta-housing-market-due-diligence-contract-trends"
-      ],
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 7
-    },
-    {
-      "keys": [
-        "https://www.fhinspectionsatl.com/blog/atlanta-red-clay-soil-foundation-settlement"
-      ],
-      "clicks": 0,
-      "impressions": 16,
-      "ctr": 0,
-      "position": 9.5
+      "position": 4.169811320754717
     }
   ]
 }
