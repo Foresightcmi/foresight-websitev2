@@ -70,11 +70,11 @@ const nextConfig = {
           },
           {
             key: 'CDN-Cache-Control',
-            value: 'public, s-maxage=604800, stale-while-revalidate=86400',
+            value: 'public, s-maxage=31536000',
           },
           {
             key: 'Vercel-CDN-Cache-Control',
-            value: 'public, s-maxage=604800, stale-while-revalidate=86400',
+            value: 'public, s-maxage=31536000',
           },
         ],
       },

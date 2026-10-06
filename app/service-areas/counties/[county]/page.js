@@ -9,7 +9,6 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
-export const revalidate = false;
 
 function loadCounties() {
   const filePath = path.join(process.cwd(), 'data', 'counties-pseo.json');
