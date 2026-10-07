@@ -1,52 +1,54 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #6
+# 🚀 Foresight LinkedIn Growth Engine: Post #7
 
-**Schedule Slot:** Monday - Deposit (The Odorless Killer Enemy) (10:00 AM Weekday Cadence)  
+**Schedule Slot:** Tuesday - Deposit (The Missing Roof Flashing Enemy) (10:00 AM Weekday Cadence)  
 **Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
-**Topic:** Silent Radon Spike in Alpharetta  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/radon-testing-banner.webp`  
-**Generated At:** 2026-10-06T19:19:10.783Z  
+**Topic:** Drone Detects Unflashed Chimney  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/drone-2.webp`  
+**Generated At:** 2026-10-07T19:44:51.246Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-The house was built in 2023 on a hill in Alpharetta.
+The roof looked brand new from the driveway.
 
-The buyer assumed high elevation meant zero environmental risk.
+The inspector before us wrote: 'Roof inspected from ground level with binoculars.'
 
-We placed our continuous electronic radon monitor in the basement for 48 hou... [see more]
+We don't use binoculars.
+
+We launched our FAA-registered 4K drone... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-The house was built in 2023 on a hill in Alpharetta.
+The roof looked brand new from the driveway.
 
-The buyer assumed high elevation meant zero environmental risk.
+The inspector before us wrote: 'Roof inspected from ground level with binoculars.'
 
-We placed our continuous electronic radon monitor in the basement for 48 hours.
+We don't use binoculars.
 
-The reading came back at 11.4 pCi/L.
+We launched our FAA-registered 4K drone over the two-story chimney.
 
-The EPA action guideline is 4.0 pCi/L.
+The roofers had skipped counter-flashing entirely around the cricket.
 
-11.4 pCi/L is equivalent to smoking half a pack of cigarettes inside the home every day.
+They smeared black silicone caulk over open gaps instead of bending metal.
 
-North Georgia sits on granite bedrock loaded with decaying uranium.
+Rainwater was running straight down the chimney framing into the living room ceiling.
 
-You cannot smell radon. You cannot see it. You cannot taste it.
+A $3,200 roofer shortcut caught in 3 minutes of 4K flight.
 
-The seller paid $1,800 to install an active sub-slab mitigation system before closing.
+If your inspector doesn't walk the roof or fly a drone, you don't have a roof inspection.
 
-Never waive an environmental radon screen in North Metro Atlanta.
+High roofs require high standards.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-Learn about EPA Radon Zone 1 risks in Fulton & Cobb: https://www.fhinspectionsatl.com/services/radon-testing
+4K aerial drone roof inspections included standard with Foresight: https://www.fhinspectionsatl.com/quote
 ```
 
 ---

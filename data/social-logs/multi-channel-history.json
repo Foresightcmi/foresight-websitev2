@@ -60,5 +60,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 7,
+    "title": "Up to $35,000 in Combined Warranty & Guarantee Protection",
+    "publishedAt": "2026-10-07T19:44:51.294Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]
