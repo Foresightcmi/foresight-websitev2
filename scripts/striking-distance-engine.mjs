@@ -80,7 +80,7 @@ const STRIKING_QUERIES = [
     enrichmentHook: 'Granite Bedrock Alert: Why 1 in 3 North Metro Atlanta Homes Exceed EPA Radon Limits',
     faqToAdd: {
       q: 'How much does radon gas testing cost in Georgia?',
-      a: 'Professional 48-hour continuous electronic radon testing by Foresight Home Inspections costs $250. Calibrated CRM devices record hourly pCi/L readings and provide immediate tamper-resistant reports compliant with EPA 4.0 pCi/L action protocols.'
+      a: 'Professional 48-hour continuous electronic radon testing by Foresight Home Inspections costs $275. Calibrated CRM devices record hourly pCi/L readings and provide immediate tamper-resistant reports compliant with EPA 4.0 pCi/L action protocols.'
     }
   },
   {

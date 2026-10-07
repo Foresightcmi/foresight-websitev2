@@ -16,7 +16,7 @@ const SERVICE_MAP = {
     price: 'From $345',
     icon: '🏠',
     headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
-    metaTitle: 'Buyer & Seller Home Inspection Atlanta | 2 Inspectors From $345',
+    metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
     metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning & $10,000 warranty.',
     description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
     included: [
@@ -32,7 +32,7 @@ const SERVICE_MAP = {
     price: 'From $345',
     icon: '🏠',
     headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
-    metaTitle: 'Buyer & Seller Home Inspection Atlanta | 2 Inspectors From $345',
+    metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
     metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning & $10,000 warranty.',
     description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
     included: [
@@ -78,7 +78,7 @@ const SERVICE_MAP = {
     price: '$300',
     icon: '🏊',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
-    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $300',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat | Foresight',
     metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
@@ -93,7 +93,7 @@ const SERVICE_MAP = {
     price: '$300',
     icon: '🏊',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
-    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Safety & Mechanics $300',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat | Foresight',
     metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
@@ -138,7 +138,7 @@ const SERVICE_MAP = {
     price: 'From $400',
     icon: '🏗️',
     headline: 'Independent Phased & Final New Construction Inspections in Metro Atlanta',
-    metaTitle: 'New Construction Inspection Atlanta GA | Phased & Final From $400',
+    metaTitle: 'New Construction Inspection Atlanta GA | From $400 | Foresight',
     metaDescription: 'Independent new construction & pre-drywall home inspections in Metro Atlanta. Two certified inspectors, FLIR thermal scans & builder-ready punch lists. From $400.',
     description: 'Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in Metro Atlanta frequently have major concealed defects. Municipal code inspectors only spend 15 minutes on site. Our independent two-inspector team evaluates every system before final closing.',
     included: [
@@ -150,11 +150,11 @@ const SERVICE_MAP = {
   },
   'pre-listing-inspection': {
     name: 'Pre-Listing Seller Inspection',
-    price: 'From $295',
+    price: 'From $365',
     icon: '📋',
     headline: 'Sell With Confidence: Pre-Listing Inspections for Atlanta Homeowners',
-    metaTitle: 'Pre-Listing Home Inspection Atlanta GA | Seller Audit From $295',
-    metaDescription: 'Pre-listing seller home inspection in Metro Atlanta. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. From $295.',
+    metaTitle: 'Pre-Listing Inspection Atlanta GA | From $365 | Foresight',
+    metaDescription: 'Pre-listing seller home inspection in Metro Atlanta. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. From $365.',
     description: 'When a buyer inspector finds unexpected major defects, negotiations stall or contracts fall through. A Pre-Listing Seller Inspection by Foresight gives you total transparency into your home condition before hitting the MLS, letting you make targeted repairs on your timeline.',
     included: [
       'Complete two-inspector evaluation of roof, HVAC, electrical, plumbing & foundation',
@@ -168,7 +168,7 @@ const SERVICE_MAP = {
     price: 'From $335',
     icon: '🏗️',
     headline: 'Protect Your New Construction Equity Before the 1-Year Builder Warranty Expires',
-    metaTitle: '11-Month Builder Warranty Inspection Atlanta | Punch List From $335',
+    metaTitle: '11-Month Warranty Inspection Atlanta | From $335 | Foresight',
     metaDescription: 'Independent 11-month builder warranty inspection in Metro Atlanta. 2 certified inspectors, FLIR thermal scans & builder-ready punch lists before warranty expires.',
     description: 'Most new construction homes include a 1-year builder warranty covering materials and workmanship. Over the first year, homes settle, framing contracts, roof shingles experience storm cycles, and HVAC ductwork can detach. Our two-inspector team provides a comprehensive punch list backed by thermal imaging to submit directly to your builder.',
     included: [
@@ -183,7 +183,7 @@ const SERVICE_MAP = {
     price: '$595',
     icon: '🏡',
     headline: 'Safety, Code Compliance & Due Diligence for Airbnb & STR Investments',
-    metaTitle: 'Short-Term Rental STR Inspection Atlanta | Airbnb Permit Assist $595',
+    metaTitle: 'Airbnb & STR Inspection Atlanta GA | Flat $595 | Foresight',
     metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. Flat $595.',
     description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, electrical load capacities, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
     included: [
