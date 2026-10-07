@@ -15,7 +15,7 @@ const FaqSearch = dynamic(() => import('./components/FaqSearch'));
 
 export const metadata = {
   title: {
-    absolute: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
+    absolute: 'Atlanta Home Inspections from $345 | 2 Inspectors | Foresight',
   },
   description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
   keywords: [
