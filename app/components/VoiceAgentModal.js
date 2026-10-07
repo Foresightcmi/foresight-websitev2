@@ -17,6 +17,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   const [isMuted, setIsMuted] = useState(false);
   const [bookingData, setBookingData] = useState(null);
   const [calculatedQuote, setCalculatedQuote] = useState(null);
+  const calculatedQuoteRef = useRef(null);
+
+  useEffect(() => {
+    calculatedQuoteRef.current = calculatedQuote;
+  }, [calculatedQuote]);
   const [typedInput, setTypedInput] = useState('');
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [engineMode, setEngineMode] = useState('neural'); // 'live' | 'neural'
@@ -261,7 +266,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               messages: history.length > 0 ? history : [{ role: 'user', content: queryToRescue }],
-              currentQuote: calculatedQuote,
+              currentQuote: calculatedQuoteRef.current || calculatedQuote,
               persona: personaRef.current
             })
           });
@@ -275,6 +280,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           });
 
           if (data.action === 'quote_calculated' && data.quote) {
+            calculatedQuoteRef.current = data.quote;
             setCalculatedQuote(data.quote);
             setLiveLeadForm(prev => ({
               ...prev,
@@ -674,16 +680,33 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           next.sqft = parsedSqft;
           changed = true;
           detectedField = 'sqft';
-          const q = calculateQuoteDetails({
-            sqft: parsedSqft,
-            propertyType: next.propertyType || 'single-family',
-            foundation: next.foundation || 'slab',
-            ageTier: 'under-25',
-            addons: (next.addons || []).reduce((acc, a) => { acc[a] = true; return acc; }, {})
-          });
-          next.estimatedTotal = q.total;
-          setCalculatedQuote(q);
         }
+      }
+
+      // 3b. Property Type extraction
+      if (/(?:condo|condominium|townhouse|townhome|apartment)\b/i.test(clean) && next.propertyType !== 'condo') {
+        next.propertyType = 'condo';
+        changed = true;
+        detectedField = 'propertyType';
+      } else if (/(?:single\s*family|house|detached)\b/i.test(clean) && next.propertyType !== 'single-family') {
+        next.propertyType = 'single-family';
+        changed = true;
+        detectedField = 'propertyType';
+      }
+
+      // 3c. Foundation extraction
+      if (/(?:crawlspace|crawl\s*space)\b/i.test(clean) && next.foundation !== 'crawlspace') {
+        next.foundation = 'crawlspace';
+        changed = true;
+        detectedField = 'foundation';
+      } else if (/(?:basement|cellar)\b/i.test(clean) && next.foundation !== 'basement') {
+        next.foundation = 'basement';
+        changed = true;
+        detectedField = 'foundation';
+      } else if (/(?:slab|concrete\s*slab)\b/i.test(clean) && next.foundation !== 'slab') {
+        next.foundation = 'slab';
+        changed = true;
+        detectedField = 'foundation';
       }
 
       // 4. Address or Metro Atlanta city
@@ -754,14 +777,19 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       if (addonUpdated) {
         next.addons = Array.from(currentAddons);
         changed = true;
+      }
+
+      // Recalculate quote synchronously whenever sqft, propertyType, foundation, or addons change
+      if (changed && next.sqft) {
         const q = calculateQuoteDetails({
-          sqft: next.sqft || 2000,
+          sqft: next.sqft,
           propertyType: next.propertyType || 'single-family',
           foundation: next.foundation || 'slab',
           ageTier: 'under-25',
-          addons: next.addons.reduce((acc, a) => { acc[a] = true; return acc; }, {})
+          addons: (next.addons || []).reduce((acc, a) => { acc[a] = true; return acc; }, {})
         });
         next.estimatedTotal = q.total;
+        calculatedQuoteRef.current = q;
         setCalculatedQuote(q);
       }
 
@@ -1008,6 +1036,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                       ageTier: args.age_tier || 'under-25',
                       addons: (args.addons || []).reduce((acc, a) => { acc[a] = true; return acc; }, {})
                     });
+                    calculatedQuoteRef.current = q;
                     setCalculatedQuote(q);
                     setLiveLeadForm(prev => ({
                       ...prev,
@@ -1125,6 +1154,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         haltSpeech();
         setBookingData(null);
         setCalculatedQuote(null);
+        calculatedQuoteRef.current = null;
         setInterimUserText('');
         setMicError(null);
 
@@ -1172,6 +1202,8 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       hasGreetedRef.current = false;
       isGreetingPlayingRef.current = false;
       setHistory([]);
+      setCalculatedQuote(null);
+      calculatedQuoteRef.current = null;
       if (greetingTimerRef.current) {
         clearTimeout(greetingTimerRef.current);
         greetingTimerRef.current = null;
@@ -1404,7 +1436,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: newHistory,
-          currentQuote: calculatedQuote,
+          currentQuote: calculatedQuoteRef.current || calculatedQuote,
           persona: personaRef.current
         })
       });
@@ -1415,6 +1447,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       setHistory(prev => [...prev, { role: 'assistant', content: aiReply }]);
 
       if (data.action === 'quote_calculated' && data.quote) {
+        calculatedQuoteRef.current = data.quote;
         setCalculatedQuote(data.quote);
         setLiveLeadForm(prev => ({
           ...prev,

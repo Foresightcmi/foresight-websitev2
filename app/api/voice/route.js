@@ -193,7 +193,18 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
     parts: [{ text: msg.content }]
   }));
 
-  const basePrompt = CHRIS_SYSTEM_INSTRUCTION;
+  let basePrompt = CHRIS_SYSTEM_INSTRUCTION;
+  if (currentQuote && currentQuote.total) {
+    basePrompt += `\n\nCRITICAL CONCIERGE PRICING CONTEXT:
+The caller's quote is ALREADY CALCULATED in the live concierge box:
+- Square footage: ${currentQuote.sqft || 'standard'} sq ft
+- Property type: ${currentQuote.propertyType || 'single-family'}
+- Foundation: ${currentQuote.foundation || 'slab'}
+- Add-ons: ${currentQuote.addonBreakdown?.map(a => `${a.name} ($${a.price})`).join(', ') || 'None'}
+- EXACT TOTAL: $${currentQuote.total}
+- 50% Deposit to Solidify: $${Math.round(currentQuote.total / 2)}
+INVIOLABLE PRICING LAW: NEVER quote ranges or brackets (like "$345 to $550" or listing square footage ranges). Always quote the EXACT dollar total ($${currentQuote.total}) with 100% confidence.`;
+  }
   const spokenConstraint = "\n\nCRITICAL CONVERSATIONAL CONSTRAINT: You are speaking aloud over a voice call. Keep your answer direct, authoritative, and concise (1 to 2 short sentences max, under 35 words). Never use lists, bullet points, asterisks, or markdown.";
 
   const models = ['gemini-2.5-flash', 'gemini-3.8-flash'];
@@ -226,7 +237,7 @@ async function generateWithGeminiBrain(messages, lastUserMessage, apiKey, curren
 }
 
 // Chris (Christopher Boykin) CMI Knowledge & Dialogue Engine (Articulate, Confident, Deep & Proactively Encouraging)
-function generateChrisDialogueTurn(messages, lastUserMessage) {
+function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = null) {
   const history = messages || [];
   const text = (lastUserMessage || '').toLowerCase().trim();
   const lastAssistant = history.filter(m => m.role === 'assistant').pop()?.content || '';
@@ -264,6 +275,27 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     return {
       text: "Choosing another inspector to save 25 or 50 dollars is a dangerous mistake. Discount solo inspectors work alone for 4 exhausting hours, carry zero warranty, and charge extra for thermal cameras. Missing just one hidden 8,000 dollar roof leak or bad AC compressor completely wipes out any small upfront saving! Foresight sends two certified inspectors, includes free thermal and drone scans, and backs you with up to 35,000 dollars in warranty protection. Shall I calculate an exact quote for you?",
       preAudio: '/audio/receptionist-competitors.mp3'
+    };
+  }
+
+  // 0c-1. Direct Price / Quote Query (Exact Flat Rates Only — Zero Ranges)
+  if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much', 'rate', 'rates'])) {
+    if (currentQuote && currentQuote.total) {
+      const deposit = Math.round(currentQuote.total / 2);
+      const sqftStr = currentQuote.sqft ? `${Number(currentQuote.sqft).toLocaleString()} square foot ` : '';
+      const propStr = currentQuote.propertyType === 'condo' ? 'condo' : 'home';
+      const foundStr = currentQuote.foundation === 'crawlspace' ? ' with a crawlspace' : currentQuote.foundation === 'basement' ? ' with a basement' : '';
+      const addonsStr = currentQuote.addonBreakdown && currentQuote.addonBreakdown.length > 0 
+        ? ` including ${currentQuote.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}` 
+        : '';
+      return {
+        text: `For your ${sqftStr}${propStr}${foundStr}, your exact fee is ${currentQuote.total} dollars with our two-person Certified Master Inspector team${addonsStr}. That includes complimentary FLIR thermal imaging, 4K aerial drone scans, and up to 35,000 dollars in warranty protection. The 50 percent deposit to solidify your date is ${deposit} dollars. Would you prefer a morning or afternoon window?`,
+        preAudio: null
+      };
+    }
+    return {
+      text: "Our comprehensive home inspections start at 345 dollars for single-family homes and 295 dollars for condos with our two-person Certified Master Inspector team, free FLIR thermal imaging, and 4K aerial drone scans included. What is the property address or square footage? I will give you your exact dollar quote right now!",
+      preAudio: '/audio/receptionist-pricing.mp3'
     };
   }
 
@@ -496,14 +528,6 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
     };
   }
 
-  // Pricing
-  if (matchesAny(['price', 'prices', 'cost', 'costs', 'quote', 'quotes', 'fee', 'fees', 'pricing', 'how much'])) {
-    return {
-      text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, 375 for up to 2,000, 405 for up to 2,500, and 440 for up to 3,000 square feet. That includes our two-inspector team, complimentary FLIR thermal imaging, drone scans, and up to 35,000 dollars in warranty and guarantee protection. What is the approximate square footage of the home? I can give you your exact flat rate right now!",
-      preAudio: '/audio/receptionist-pricing.mp3'
-    };
-  }
-
   // Older Homes Contextual Sewer Scope Recommendation
   if (matchesAny(['older home', 'historic home', 'pre-1990', '1960', '1970', '1980', 'cast iron pipe', 'clay pipe', 'tree roots', 'root intrusion'])) {
     return {
@@ -539,7 +563,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage) {
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
       text: "We provide comprehensive pool and spa inspections for 300 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
-      preAudio: '/audio/receptionist-pricing.mp3'
+      preAudio: '/audio/receptionist-pool.mp3'
     };
   }
 
@@ -716,7 +740,7 @@ export async function POST(request) {
     }
 
     // 4. Fast-Path Receptionist Dialogue Engine (0ms latency for all standard domain queries)
-    const turnResult = generateChrisDialogueTurn(messages, lastUserMessage);
+    const turnResult = generateChrisDialogueTurn(messages, lastUserMessage, currentQuote);
 
     // 4a. If pre-recorded studio audio exists, return INSTANTLY (0ms synthesis!)
     if (turnResult.preAudio) {
