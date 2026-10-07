@@ -313,6 +313,188 @@ const nextConfig = {
         destination: '/service-areas/:city',
         permanent: true,
       },
+      // Essential service variations and legacy aliases
+      {
+        source: '/services/home-inspection',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/home-inspections',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/general-home-inspection',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/residential-home-inspection',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/buyer-home-inspection',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/home-inspection/:city',
+        destination: '/services/buyer-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/home-inspections/:city',
+        destination: '/services/buyer-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/radon',
+        destination: '/services/radon-testing',
+        permanent: true,
+      },
+      {
+        source: '/services/radon/:city',
+        destination: '/services/radon-testing/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/termite',
+        destination: '/services/termite-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/termite/:city',
+        destination: '/services/termite-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-scope',
+        destination: '/services/sewer-scope-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-scope/:city',
+        destination: '/services/sewer-scope-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/pool',
+        destination: '/services/pool-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/pool/:city',
+        destination: '/services/pool-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/warranty-inspection',
+        destination: '/services/11-month-warranty-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/warranty-inspection/:city',
+        destination: '/services/11-month-warranty-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/new-construction',
+        destination: '/services/new-construction-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/new-construction/:city',
+        destination: '/services/new-construction-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/commercial',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/commercial-inspection',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/commercial-inspections',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/commercial-inspection/:city',
+        destination: '/service-areas/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/mold-inspection',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/thermal-imaging',
+        destination: '/services',
+        permanent: true,
+      },
+      // Common legacy static HTML pages
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/home.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/services.html',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/contact.html',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/about.html',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/blog.html',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/quote.html',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/pricing.html',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/faq.html',
+        destination: '/faq',
+        permanent: true,
+      },
+      {
+        source: '/reviews.html',
+        destination: '/review',
+        permanent: true,
+      },
+      {
+        source: '/sitemap_index.xml',
+        destination: '/sitemap.xml',
+        permanent: true,
+      },
       // Old dated blog post slugs to canonical
       {
         source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-09',

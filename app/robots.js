@@ -4,7 +4,7 @@ export default function robots() {
       {
         userAgent: '*',
         allow: ['/', '/api/mcp'],
-        disallow: ['/private/', '/api/chat', '/api/voice', '/dashboard', '/opengraph-image', '/*/opengraph-image'],
+        disallow: ['/private/', '/api/chat', '/api/voice', '/dashboard'],
       },
       {
         userAgent: 'GPTBot',
