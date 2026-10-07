@@ -112,7 +112,7 @@ export async function fetchGSCAnalytics() {
       startDate: startDateStr,
       endDate: endDateStr,
       dimensions: ['query'],
-      rowLimit: 50
+      rowLimit: 5000
     })
   });
 
@@ -129,7 +129,7 @@ export async function fetchGSCAnalytics() {
       startDate: startDateStr,
       endDate: endDateStr,
       dimensions: ['page'],
-      rowLimit: 30
+      rowLimit: 500
     })
   });
 
