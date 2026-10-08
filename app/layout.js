@@ -818,6 +818,7 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/concierge" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>🎙️ Live Concierge Consultation</Link></li>
                   <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                   <li><Link prefetch={false} href="/due-diligence">Due Diligence Guarantee</Link></li>
+                  <li><Link prefetch={false} href="/repair-credit-calculator" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>🛠️ Repair Credit Calculator</Link></li>
                   <li><Link prefetch={false} href="/samples">Sample Inspection Reports</Link></li>
                   <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
                   <li><Link prefetch={false} href="/realtors">Realtors VIP Program</Link></li>

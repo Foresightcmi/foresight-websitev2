@@ -178,7 +178,7 @@ export default function DueDiligenceCalculator() {
 
     // Amendment Text Generator
     const amendmentClause = `
-GEORGIA ASSOCIATION OF REALTORS® (GAR) COMPLIANT DUE DILIGENCE AMENDMENT CLAUSE
+SAMPLE DUE DILIGENCE NEGOTIATION LANGUAGE (FOR REALTOR / CLOSING ATTORNEY REVIEW - GAR FORM F404 EXHIBIT)
 PROPERTY: ${propertyAddress}
 DATE: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
 
@@ -188,10 +188,12 @@ ${active.map((d, i) => `${i + 1}. [${d.category}] ${d.title}
    - Finding: ${d.desc}
    - RSMeans Estimated Contractor Remediation: $${d.cost.toLocaleString()}`).join('\n')}
 
-SETTLEMENT IN LIEU OF REPAIRS:
+PROPOSED SETTLEMENT IN LIEU OF REPAIRS:
 In lieu of Seller performing actual physical repairs prior to closing, Seller agrees to credit Buyer the sum of $${openingDemand.toLocaleString()} at the time of closing to be applied toward Buyer's closing costs, prepaids, and/or loan rate buydown (or via reduction of the purchase price), subject to Buyer's lender approval.
 
 All other terms and conditions of the Purchase and Sale Agreement remain in full force and effect.
+
+*DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic home inspection firm and not a licensed general contractor or legal counsel. This sample wording is provided strictly for review, modification, and incorporation into contract amendments by the consumer's licensed Georgia Real Estate Broker or closing attorney. Cost figures reflect historical statistical benchmarks (RSMeans Southeast Metro Atlanta index) for preliminary negotiation budgeting. All defect remediations must be independently evaluated, quoted, and confirmed by licensed, insured trade specialists prior to contract closing. Not affiliated with or endorsed by the Georgia Association of Realtors® (GAR).
 `.trim();
 
     return {
@@ -578,7 +580,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                   }}
                 >
                   <span>{copiedAmendment ? '✓' : '📋'}</span>
-                  {copiedAmendment ? 'GAR Amendment Clause Copied!' : 'Copy Official GAR Amendment Clause'}
+                  {copiedAmendment ? 'Sample GAR Clause Copied!' : 'Copy Sample GAR Amendment Clause'}
                 </button>
 
                 <a
@@ -600,8 +602,66 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                     display: 'block'
                   }}
                 >
-                  ⚡ Book Certified Master Inspection with FLIR Scan ($450–$850) →
+                  ⚡ Book Certified Master Inspection with FLIR Scan (From $345) →
                 </a>
+
+                {/* Standalone $99 Second-Opinion Audit Door */}
+                <div style={{
+                  marginTop: '0.75rem',
+                  background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%)',
+                  border: '1px solid rgba(212, 175, 55, 0.35)',
+                  borderRadius: '10px',
+                  padding: '0.9rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.4rem'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span style={{ fontSize: '0.7rem', color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'monospace' }}>
+                      ⚡ Already Booked Another Inspector?
+                    </span>
+                  </div>
+                  <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#ffffff' }}>
+                    Get the Official Foresight Repair Cost &amp; GAR Exhibit Audit ($99 Flat)
+                  </div>
+                  <p style={{ fontSize: '0.74rem', color: '#94A3B8', margin: 0, lineHeight: 1.4 }}>
+                    Hired a competitor who handed you an un-priced PDF? Upload your report to have our Certified Master Inspector engine extract contractor repair costs and generate your GAR Form F404 amendment exhibit in 4 hours.
+                  </p>
+                  <a
+                    href="/contact?service=due-diligence-audit"
+                    style={{
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(212, 175, 55, 0.15)',
+                      border: '1px solid #D4AF37',
+                      color: '#FDE047',
+                      fontWeight: 800,
+                      fontSize: '0.78rem',
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      marginTop: '4px'
+                    }}
+                  >
+                    Upload Outside Report for $99 Audit →
+                  </a>
+                </div>
+
+                {/* 4-Part Statutory Due Diligence Legal Armor Shield Card */}
+                <div style={{
+                  marginTop: '0.75rem',
+                  padding: '0.85rem',
+                  borderRadius: '10px',
+                  background: 'rgba(0, 0, 0, 0.35)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  fontSize: '0.7rem',
+                  color: '#64748B',
+                  lineHeight: 1.45
+                }}>
+                  <strong style={{ color: '#94A3B8', display: 'block', marginBottom: '3px' }}>
+                    ⚖️ Statutory Due Diligence &amp; Contract Disclaimer:
+                  </strong>
+                  Foresight Home Inspections, LLC is an independent diagnostic inspection firm and not a licensed general contractor or legal advisor. Cost calculations reflect regional statistical indices (RSMeans 2026 Metro Atlanta index) for preliminary buyer due diligence budgeting. Sample amendment text is provided solely for review and formal submission by your licensed Georgia Real Estate Broker or closing attorney. Foresight disclaims all liability for contract negotiations, seller disputes, or contractor price variances. All defects must be evaluated by licensed, insured tradesmen prior to closing. Not affiliated with or endorsed by the Georgia Association of Realtors® (GAR).
+                </div>
               </div>
             </div>
           </div>
