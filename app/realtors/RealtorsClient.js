@@ -668,6 +668,51 @@ export default function RealtorsClient() {
               <span>&rarr;</span>
             </Link>
           </div>
+
+          {/* Realtor Tool Spotlight: Due Diligence Repair Credit Negotiator */}
+          <div style={{
+            marginTop: '1.5rem',
+            background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%)',
+            border: '1px solid #38BDF8',
+            borderRadius: '1rem',
+            padding: '1.75rem 2rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1.5rem'
+          }}>
+            <div style={{ maxWidth: '700px' }}>
+              <span style={{ background: '#0284C7', color: '#FFFFFF', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
+                🛠️ RSMeans 2026 Calibrated
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
+                GAR Due Diligence Repair Credit &amp; Cost Negotiator
+              </h3>
+              <p style={{ color: '#CBD5E1', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                Need to calculate multi-item repair credits for an active transaction? Select documented inspection defects, calculate contractor ranges with RSMeans 2026 regional data, check lender concession limits, and generate 1-click GAR Form F404 amendment wording.
+              </p>
+            </div>
+            <Link
+              href="/repair-credit-calculator"
+              style={{
+                background: '#0284C7',
+                color: '#FFFFFF',
+                fontWeight: 700,
+                fontSize: '0.95rem',
+                padding: '0.85rem 1.6rem',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                boxShadow: '0 4px 14px rgba(2, 132, 199, 0.3)'
+              }}
+            >
+              <span>Launch GAR Negotiator</span>
+              <span>&rarr;</span>
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -842,6 +842,42 @@ const nextConfig = {
         destination: '/services/sewer-scope-inspection/:city',
         permanent: true,
       },
+      // GAR Tool & Due Diligence Direct Aliases
+      {
+        source: '/gar-tool',
+        destination: '/repair-credit-calculator',
+        permanent: true,
+      },
+      {
+        source: '/gar',
+        destination: '/repair-credit-calculator',
+        permanent: true,
+      },
+      {
+        source: '/gar-calculator',
+        destination: '/repair-credit-calculator',
+        permanent: true,
+      },
+      {
+        source: '/gar-amendment',
+        destination: '/repair-credit-calculator',
+        permanent: true,
+      },
+      {
+        source: '/amendment-generator',
+        destination: '/repair-credit-calculator',
+        permanent: true,
+      },
+      {
+        source: '/gar-f404',
+        destination: '/realtors',
+        permanent: true,
+      },
+      {
+        source: '/gar-builder',
+        destination: '/realtors',
+        permanent: true,
+      },
     ];
   },
 };
