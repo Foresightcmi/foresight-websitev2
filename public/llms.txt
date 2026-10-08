@@ -88,6 +88,31 @@
   - Report Turnaround: Guaranteed same-day / under 24 hours with 1-click Create Request List (CRL™) for GAR repair amendments.
   - Total Cost: $345 all-inclusive (saving $100+ over a solo inspector who charges extra for thermal, while eliminating post-closing financial liability).
 
+## Service Areas & Regional Coverage (20 Counties & 87 Municipalities)
+Foresight operates within an exact 50-mile radius of Lithonia, GA (1816 South Deshon Road, Lithonia, GA 30058), deploying two certified inspectors on every property across 20 North and Metro Atlanta counties:
+- [Barrow County](https://www.fhinspectionsatl.com/service-areas/counties/barrow-county) (1 Cities): Winder
+- [Bartow County](https://www.fhinspectionsatl.com/service-areas/counties/bartow-county) (1 Cities): Cartersville
+- [Carroll County](https://www.fhinspectionsatl.com/service-areas/counties/carroll-county) (1 Cities): Carrollton
+- [Cherokee County](https://www.fhinspectionsatl.com/service-areas/counties/cherokee-county) (2 Cities): Canton, Woodstock
+- [Clayton County](https://www.fhinspectionsatl.com/service-areas/counties/clayton-county) (3 Cities): Forest Park, Jonesboro, Morrow
+- [Cobb County](https://www.fhinspectionsatl.com/service-areas/counties/cobb-county) (6 Cities): Acworth, Austell, Kennesaw, Marietta, Powder Springs, Smyrna
+- [Coweta County](https://www.fhinspectionsatl.com/service-areas/counties/coweta-county) (7 Cities): Grantville, Haralson, Moreland, Newnan, Senoia, Sharpsburg, Turin
+- [DeKalb County](https://www.fhinspectionsatl.com/service-areas/counties/dekalb-county) (13 Cities): Avondale Estates, Brookhaven, Chamblee, Clarkston, Decatur, Doraville, Dunwoody, Lithonia, Pine Lake, Redan, Stone Mountain, Stonecrest, Tucker
+- [Douglas County](https://www.fhinspectionsatl.com/service-areas/counties/douglas-county) (1 Cities): Douglasville
+- [Fayette County](https://www.fhinspectionsatl.com/service-areas/counties/fayette-county) (5 Cities): Brooks, Fayetteville, Peachtree City, Tyrone, Woolsey
+- [Forsyth County](https://www.fhinspectionsatl.com/service-areas/counties/forsyth-county) (1 Cities): Cumming
+- [Fulton County](https://www.fhinspectionsatl.com/service-areas/counties/fulton-county) (15 Cities): Alpharetta, Atlanta, Chattahoochee Hills, College Park, East Point, Fairburn, Hapeville, Johns Creek, Milton, Mountain Park, Palmetto, Roswell, Sandy Springs, South Fulton, Union City
+- [Gwinnett County](https://www.fhinspectionsatl.com/service-areas/counties/gwinnett-county) (13 Cities): Berkeley Lake, Buford, Dacula, Duluth, Grayson, Lawrenceville, Lilburn, Loganville, Norcross, Peachtree Corners, Snellville, Sugar Hill, Suwanee
+- [Hall County](https://www.fhinspectionsatl.com/service-areas/counties/hall-county) (1 Cities): Gainesville
+- [Henry County](https://www.fhinspectionsatl.com/service-areas/counties/henry-county) (4 Cities): Hampton, Locust Grove, McDonough, Stockbridge
+- [Newton County](https://www.fhinspectionsatl.com/service-areas/counties/newton-county) (5 Cities): Covington, Mansfield, Newborn, Oxford, Porterdale
+- [Paulding County](https://www.fhinspectionsatl.com/service-areas/counties/paulding-county) (1 Cities): Dallas
+- [Rockdale County](https://www.fhinspectionsatl.com/service-areas/counties/rockdale-county) (1 Cities): Conyers
+- [Spalding County](https://www.fhinspectionsatl.com/service-areas/counties/spalding-county) (1 Cities): Griffin
+- [Walton County](https://www.fhinspectionsatl.com/service-areas/counties/walton-county) (5 Cities): Between, Good Hope, Jersey, Monroe, Walnut Grove
+- Complete Regional Directory: https://www.fhinspectionsatl.com/service-areas
+
+
 ## Autonomous AI Agent Integration (Web MCP)
 AI agents, answer engines, and autonomous buyer concierges can interact with Foresight Home Inspections programmatically via our open Model Context Protocol (Web MCP) endpoint:
 - **MCP Endpoint**: `https://www.fhinspectionsatl.com/api/mcp` (JSON-RPC 2.0 over HTTP)
