@@ -157,6 +157,44 @@ export default async function BlogPost({ params }) {
     });
   }
 
+  // Add Schema.org Dataset markup if the post contains empirical study data
+  if (post.dataset) {
+    schemaGraph.push({
+      "@type": "Dataset",
+      "name": post.dataset.name || post.title,
+      "description": post.dataset.description || post.description,
+      "url": `https://www.fhinspectionsatl.com/blog/${post.slug}`,
+      "keywords": post.keywords,
+      "creator": {
+        "@type": "Person",
+        "name": "Christopher Boykin",
+        "jobTitle": "Certified Master Inspector",
+        "sameAs": "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Foresight Home Inspections, LLC",
+        "url": "https://www.fhinspectionsatl.com"
+      },
+      "temporalCoverage": post.dataset.temporalCoverage || "2026",
+      "spatialCoverage": {
+        "@type": "Place",
+        "geo": {
+          "@type": "GeoShape",
+          "addressCountry": "US",
+          "addressRegion": "GA"
+        }
+      },
+      "variableMeasured": post.dataset.variables || [
+        "HVAC Thermal Delta-T Split Variance (°F)",
+        "Crawlspace Wood Moisture Equivalent (% WME)",
+        "Continuous Electronic Radon Concentration (pCi/L)",
+        "Underground Lateral Sewer Line Root Intrusion Frequency (%)",
+        "11-Month Builder Warranty Punch List Defect Rate (%)"
+      ]
+    });
+  }
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@graph": schemaGraph

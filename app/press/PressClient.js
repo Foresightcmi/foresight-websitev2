@@ -143,6 +143,44 @@ export default function PressClient() {
         </div>
       </section>
 
+      {/* Featured Research Asset / Passive Link Magnet */}
+      <section style={{ background: '#f8fafc', padding: '2.5rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ background: '#0f172a', color: '#ffffff', padding: '2rem 2.25rem', borderRadius: '12px', borderLeft: '6px solid var(--color-gold)', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
+              <span style={{ background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', padding: '0.3rem 0.85rem', borderRadius: '4px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                📊 Primary Empirical Research Report
+              </span>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
+                Updated for 2026 Georgia Housing Market
+              </span>
+            </div>
+            <h2 style={{ color: '#ffffff', fontSize: '1.75rem', fontWeight: 800, marginBottom: '0.75rem' }}>
+              Metro Atlanta Residential Defect Index &amp; Building Science Field Study
+            </h2>
+            <p style={{ color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+              Our proprietary 2026 dataset covering 1,200+ property evaluations across 20 Metro Atlanta counties. Over <strong>78.4% of inspected homes</strong> require repair amendment negotiations, <strong>82.4% of summer HVAC systems</strong> fail thermal splits, and <strong>34.2% of North Metro homes</strong> exceed EPA radon thresholds. Free for media and academic citation.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <Link 
+                href="/blog/metro-atlanta-residential-defect-index-building-science-study" 
+                className="btn btn-primary"
+                style={{ padding: '0.75rem 1.75rem', fontSize: '0.95rem', fontWeight: 700 }}
+              >
+                📑 View Complete 2026 Statistics &amp; Datasets &rarr;
+              </Link>
+              <a 
+                href="mailto:inspect@foresightcmi.com?subject=Press%20Data%20Request%20-%202026%20Defect%20Study" 
+                className="btn btn-outline"
+                style={{ padding: '0.75rem 1.75rem', fontSize: '0.95rem', borderColor: '#e2e8f0', color: '#ffffff' }}
+              >
+                📩 Request County-Specific Data Cut
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Expert Profile & Core Competencies */}
       <section className="section bg-white" style={{ padding: '4.5rem 0' }}>
         <div className="container">
