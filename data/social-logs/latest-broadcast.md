@@ -1,9 +1,9 @@
-# 📣 Active Multi-Channel Broadcast: Post #7
-**Title:** Up to $35,000 in Combined Warranty & Guarantee Protection  
-**Topic:** Warranty Protection Package  
-**Generated At:** 2026-10-07T19:44:51.294Z  
+# 📣 Active Multi-Channel Broadcast: Post #8
+**Title:** Concealed Electrical Hazards in Cosmetic Flipped Homes  
+**Topic:** Electrical Safety Diagnostics  
+**Generated At:** 2026-10-08T19:40:31.448Z  
 **Target Booking Link:** [https://www.fhinspectionsatl.com/quote](https://www.fhinspectionsatl.com/quote)  
-**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/internachi_inspection_warranty_card.webp](https://www.fhinspectionsatl.com/images/internachi_inspection_warranty_card.webp)  
+**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/electrical-inspection.webp](https://www.fhinspectionsatl.com/images/electrical-inspection.webp)  
 **Webhook Status:** `skipped`
 
 ---
@@ -12,26 +12,25 @@
 *Optimized for Local 3-Pack, local municipal entities, and direct phone/online booking.*
 
 ```text
-Every home inspection by Foresight Home Inspections includes up to $35,000 in combined warranty and guarantee protection at zero extra cost!
+The kitchen in this flipped Atlanta home looked stunning with brand new quartz counters and subway tile... until we removed the electrical panel dead front.
 
-1. $10,000 Elite Master Inspection Warranty ($0 Deductible):
-• 90 Days of coverage after closing (or 120 days from inspection).
-• Covers major appliances, HVAC systems, electrical, plumbing, and structural elements.
-• Includes up to $1,000 for roof leak repair and $2,250 for mold remediation.
+Concealed behind fresh drywall were double-tapped circuit breakers, ungrounded Romex connections, and scorched neutral wiring.
 
-2. InterNACHI $25,000 Honor Guarantee:
-• Complete peace of mind backing our inspector's integrity and ethics.
+In Metro Atlanta, quick cosmetic flips frequently bypass licensed electrical permits to maximize seller margins, leaving buyers with dangerous fire hazards.
 
-While discount inspectors carry zero warranty protection, Foresight backs every evaluation with real financial security.
+At Foresight Home Inspections:
+• Two Certified Inspectors on every job thoroughly audit panel interiors, bus bars, and grounding rods.
+• FLIR Thermal Infrared panel scans are included standard.
+• $10,000 warranty protection included.
 
-Led by Certified Master Inspector Christopher Boykin.
+Protect your family before closing.
 
-Call 678-480-2110 or calculate your instant quote online.
+Call 678-480-2110 or get an instant online quote.
 ```
 
 **GBP Call to Action:** Book Online or Call (678) 480-2110  
 **Link:** https://www.fhinspectionsatl.com/quote  
-**Photo:** Attach `https://www.fhinspectionsatl.com/images/internachi_inspection_warranty_card.webp`
+**Photo:** Attach `https://www.fhinspectionsatl.com/images/electrical-inspection.webp`
 
 ---
 
@@ -39,26 +38,20 @@ Call 678-480-2110 or calculate your instant quote online.
 *Optimized for social engagement, visual storytelling, consumer trust, and homebuyer education.*
 
 ```text
-Did you know that every full home inspection from Foresight includes up to $35,000 in combined warranty and guarantee protection? 🛡️💰
+The kitchen looked gorgeous on Zillow with modern quartz countertops, but look what happened when we took off the electrical panel cover... ⚡🚨
 
-We don't just inspect homes—we back our work with real financial protection:
+Concealed double-tapped breakers, ungrounded circuits, and scorched neutral wiring behind fresh drywall. In Metro Atlanta, quick cosmetic flips frequently skip licensed electrical permits to save cash.
 
-🛡️ $10,000 Elite Master Inspection Warranty ($0 Deductible):
-• 90 Days of coverage after closing (or 120 days from inspection).
-• Covers major appliances, HVAC heating/cooling, electrical service, plumbing supply/drains, and structural framing.
-• Includes up to $1,000 for roof leak repair and $2,250 for mold remediation.
+Don't buy a fire hazard. Foresight Home Inspections puts Two Certified Inspectors on every job with infrared thermal panel diagnostics included at $0 extra charge.
 
-🛡️ InterNACHI® $25,000 Honor Guarantee:
-• Complete peace of mind backing our inspector's integrity and ethics.
-
-While solo discount operators carry zero warranty, Foresight backs every evaluation with real financial security.
+🛡️ $10,000 Elite Master Warranty ($0 deductible) + $25,000 InterNACHI Honor Guarantee.
 
 "Hindsight is expensive... Choose Foresight!"
 
-👉 Calculate your transparent quote in 60 seconds:
+👉 Tap link in bio for our instant 60-second price quote:
 https://www.fhinspectionsatl.com/quote
 
-#HomeWarranty #CertifiedMasterInspector #AtlantaHomeowner #BuyerProtection #ForesightDifference
+#ElectricalSafety #FlippedHomeFail #AtlantaRealEstate #HomeInspection #BuildingScience #AtlantaHomeBuyer #ForesightDifference
 ```
 
 ---
@@ -67,27 +60,19 @@ https://www.fhinspectionsatl.com/quote
 *Optimized for Real Estate Agents, GAR Contract Due Diligence, Investors, Attorneys, and Building Science Authority.*
 
 ```text
-Risk mitigation in real estate transactions requires more than an opinion—it requires contractual underwriting and financial warranty backing.
+Cosmetic property renovations across Metro Atlanta continue to present significant MEP compliance risks. During a recent pre-purchase inspection of a 1960s mid-century ranch in Decatur that had undergone a $150K cosmetic remodel, our dual-inspector audit identified multiple critical NEC (National Electrical Code) non-conformances:
 
-Most independent inspectors in Georgia carry standard errors and omissions (E&O) insurance designed solely to protect the inspector, providing zero direct post-closing warranty coverage to the client for appliance failures or mechanical breakdowns.
+1. Double-Tapped Main Lug Feeders: Two 12 AWG copper branch circuits improperly terminated beneath a single 30A screw lug, creating localized resistance and arc-fault hazards.
+2. Inverted Neutral & Ground Bonding in Sub-Panels: Neutral bars were bonded to the chassis enclosure on a 4-wire feeder subpanel, creating dangerous parallel return paths on grounding conductors.
+3. Thermal Panel Anomalies: Radiometric FLIR® scans revealed breaker bus bar hotspot temperatures exceeding 135°F under continuous 15A resistive load.
 
-At Foresight Home Inspections, every client inspection contract automatically includes up to $35,000 in combined financial warranty and guarantee backing:
+Our two-inspector team provides rigorous NEC-compliant documentation that enables buyer agents to secure complete electrical panel replacements via the GAR F404 Amendment before earnest money expires.
 
-1. $10,000 Elite Master Inspection Warranty ($0 Deductible):
-• 90 Days post-closing coverage on major appliances (refrigerators, ranges, dishwashers)
-• Central HVAC compressor, evaporator coil, and furnace heat exchanger coverage
-• Interior plumbing supply, water heater, waste lines, and electrical distribution service
-• Structural framing, foundation walls, plus dedicated allowances for roof leaks ($1,000) and mold remediation ($2,250)
+Review our diagnostic inspection protocols:
+https://www.fhinspectionsatl.com/quote
 
-2. InterNACHI® $25,000 Honor Guarantee backing inspector integrity.
-
-Ensure your clients are protected by an institutional-grade warranty standard.
-
-View complete warranty documentation:
-https://www.fhinspectionsatl.com/about
-
-#RealEstateInsurance #RiskManagement #HomeBuyerProtection #CommercialProperty #DueDiligence #AtlantaRealtors
+#ElectricalSafety #BuildingCodes #NECCompliance #RealEstateInvesting #AtlantaRealtors #RiskManagement
 ```
 
 ---
-*Next post in rotation:* **Post #8: "Concealed Electrical Hazards in Cosmetic Flipped Homes"**
+*Next post in rotation:* **Post #9: "Realtor VIP Due Diligence & GAR F404 Contract Leverage"**

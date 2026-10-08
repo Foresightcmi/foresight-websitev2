@@ -1,54 +1,56 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #7
+# 🚀 Foresight LinkedIn Growth Engine: Post #8
 
-**Schedule Slot:** Tuesday - Deposit (The Missing Roof Flashing Enemy) (10:00 AM Weekday Cadence)  
+**Schedule Slot:** Wednesday - Deposit (The Flipped Electrical Enemy) (10:00 AM Weekday Cadence)  
 **Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
-**Topic:** Drone Detects Unflashed Chimney  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/drone-2.webp`  
-**Generated At:** 2026-10-07T19:44:51.246Z  
+**Topic:** The Deadly Bootleg Ground in Flipped Kitchens  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg`  
+**Generated At:** 2026-10-08T19:40:31.409Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-The roof looked brand new from the driveway.
+A brand new kitchen with designer matte black outlets.
 
-The inspector before us wrote: 'Roof inspected from ground level with binoculars.'
+Everything looked straight out of an Architectural Digest spread.
 
-We don't use binoculars.
+Then we plugged in our circuit tester.
 
-We launched our FAA-registered 4K drone... [see more]
+Every single outlet along the is... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-The roof looked brand new from the driveway.
+A brand new kitchen with designer matte black outlets.
 
-The inspector before us wrote: 'Roof inspected from ground level with binoculars.'
+Everything looked straight out of an Architectural Digest spread.
 
-We don't use binoculars.
+Then we plugged in our circuit tester.
 
-We launched our FAA-registered 4K drone over the two-story chimney.
+Every single outlet along the island had an open ground.
 
-The roofers had skipped counter-flashing entirely around the cricket.
+The contractor had installed 3-prong receptacles onto 1960s ungrounded 2-wire cable.
 
-They smeared black silicone caulk over open gaps instead of bending metal.
+Worse, he jumped the ground screw to the neutral terminal—a bootleg ground.
 
-Rainwater was running straight down the chimney framing into the living room ceiling.
+It tricks cheap plug-in testers into showing 'Correct Wiring.'
 
-A $3,200 roofer shortcut caught in 3 minutes of 4K flight.
+But if an appliance shorts out, the metal frame becomes energized at 120 volts.
 
-If your inspector doesn't walk the roof or fly a drone, you don't have a roof inspection.
+It is an invisible shock hazard for anyone touching the sink and stove.
 
-High roofs require high standards.
+Never judge electrical safety by the color of the outlet cover.
+
+Always verify with true digital metering.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-4K aerial drone roof inspections included standard with Foresight: https://www.fhinspectionsatl.com/quote
+Full MEP forensic evaluations by Certified Master Inspectors: https://www.fhinspectionsatl.com/quote
 ```
 
 ---

@@ -70,5 +70,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 8,
+    "title": "Concealed Electrical Hazards in Cosmetic Flipped Homes",
+    "publishedAt": "2026-10-08T19:40:31.448Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]
