@@ -806,6 +806,42 @@ const nextConfig = {
         destination: '/services/new-construction-inspection',
         permanent: true,
       },
+      // GSC 3-Month Performance Recovery & Striking-Distance Redirects
+      {
+        source: '/service-areas/brooks-ga',
+        destination: '/service-areas/brooks',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-camera-inspection',
+        destination: '/services/sewer-scope-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-camera-inspection/:city',
+        destination: '/services/sewer-scope-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-video-inspection',
+        destination: '/services/sewer-scope-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-video-inspection/:city',
+        destination: '/services/sewer-scope-inspection/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-inspection',
+        destination: '/services/sewer-scope-inspection',
+        permanent: true,
+      },
+      {
+        source: '/services/sewer-inspection/:city',
+        destination: '/services/sewer-scope-inspection/:city',
+        permanent: true,
+      },
     ];
   },
 };
