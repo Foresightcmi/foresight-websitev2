@@ -796,6 +796,16 @@ const nextConfig = {
         destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
         permanent: true,
       },
+      {
+        source: '/blog/estate-and-luxury-home-inspection-guide',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/blog/why-you-need-home-inspection-new-build',
+        destination: '/services/new-construction-inspection',
+        permanent: true,
+      },
     ];
   },
 };
