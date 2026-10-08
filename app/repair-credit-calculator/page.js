@@ -57,6 +57,14 @@ const calculatorFaqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Does Foresight provide contractor repair estimates for every inspection?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice, which do not include cost estimates. However, Foresight offers an optional $99 Due Diligence Contractor Repair Cost & Pricing Estimate for clients who specifically request line-item contractor estimates and trade schedules for their GAR Form F404 negotiation. We also offer this service as a standalone $99 audit for buyers who hired an outside inspection company.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'What contractor cost index powers this repair credit calculator?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -168,6 +176,15 @@ export default function RepairCreditCalculatorPage() {
               </h2>
               <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.55, margin: 0 }}>
                 Foresight places two certified inspectors on every single property, delivering digital reports with FLIR thermal imaging within 24 hours to maximize your remaining negotiation runway.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '14px', padding: '1.75rem' }}>
+              <h2 style={{ fontSize: '1.15rem', color: '#FDE047', fontWeight: 800, margin: '0 0 0.75rem' }}>
+                4. Optional $99 Contractor Cost Estimates
+              </h2>
+              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.55, margin: 0 }}>
+                Standard home inspections are diagnostic only per InterNACHI Standards of Practice. For clients who specifically want contractor cost projections, Foresight offers an optional \$99 add-on (or standalone \$99 outside report audit) providing itemized labor rates (\$95–\$165/hr) and materials schedules.
               </p>
             </div>
           </div>

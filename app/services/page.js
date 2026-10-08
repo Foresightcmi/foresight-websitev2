@@ -106,6 +106,15 @@ export default function Services() {
       description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
       details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Precise hourly radon level tracking', 'Strict EPA protocol compliance'],
       slug: 'hidden-dangers-of-radon-gas-georgia'
+    },
+    {
+      title: 'Contractor Repair Cost & Pricing Estimates',
+      price: '$99',
+      priceNote: 'Optional Inspection Add-On or Standalone Outside Report Audit',
+      description: 'Standard home inspections are diagnostic only per InterNACHI Standards of Practice. When requested, Foresight provides empirical contractor repair cost estimates and trade schedules (RSMeans 2026 data) formatted for GAR Form F404 amendment negotiation.',
+      details: ['Trade labor ($95–$165/hr) & materials breakdowns', 'Sample GAR Form F404 Amendment language', 'Available as $99 add-on for Foresight clients', 'Available as $99 standalone audit for outside reports'],
+      image: '/images/ac-pic.png',
+      slug: 'repair-credit-calculator'
     }
   ];
 
@@ -136,7 +145,8 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "595", "priceCurrency": "USD" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "595", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for GAR Form F404 negotiation. Available as $99 add-on or standalone outside audit." }, "price": "99", "priceCurrency": "USD" }
       ]
     }
   };

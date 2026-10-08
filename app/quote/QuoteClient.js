@@ -18,7 +18,8 @@ export default function QuoteClient({ showValueComparison = true }) {
     lowFlow: false,
     buildfax: false,
     airQuality: false,
-    detachedBuilding: false
+    detachedBuilding: false,
+    repairEstimates: false
   });
   const [discount, setDiscount] = useState('none'); // 'none', 'first-time', 'realtor', 'repeat'
   const [realtorLicense, setRealtorLicense] = useState('');
@@ -68,12 +69,15 @@ export default function QuoteClient({ showValueComparison = true }) {
         setFoundation(foundationParam);
       }
 
+      const estimatesParam = params.get('estimates') || params.get('repairEstimates');
+
       setAddons(prev => ({
         ...prev,
         radon: radonParam === 'true' ? true : prev.radon,
         sewer: sewerParam === 'true' ? true : prev.sewer,
         termite: termiteParam === 'true' ? true : prev.termite,
         pool: poolParam === 'true' ? true : prev.pool,
+        repairEstimates: estimatesParam === 'true' ? true : prev.repairEstimates,
       }));
     }
   }, []);
@@ -172,6 +176,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     }
     if (addons.airQuality) extra += 450; // PDF Page 6: INDOOR AIR QUALITY / MOLD TESTING $450.00
     if (addons.detachedBuilding) extra += 100; // PDF Page 5: ADDITIONAL CHARGE FOR DETACHED BUILDING $100.00
+    if (addons.repairEstimates) extra += 99; // Optional Due Diligence Contractor Repair Cost & Pricing Estimates $99.00
 
     // Promotional & Client Discounts (Strict $25 cap)
     if (discount === 'first-time') extra -= 25; // First-Time Homebuyer Discount ($25.00)
@@ -284,6 +289,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           if (k === 'buildfax') return 'BuildFax Report ($15)';
           if (k === 'airQuality') return 'Indoor Air Quality & Mold Lab Testing ($450)';
           if (k === 'detachedBuilding') return 'Detached Building / Workshop Inspection ($100)';
+          if (k === 'repairEstimates') return 'Contractor Repair Cost & Pricing Estimates ($99)';
           return k;
         });
       if (discount !== 'none') {
@@ -543,6 +549,27 @@ export default function QuoteClient({ showValueComparison = true }) {
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <label className="checkbox-container" style={{
+                  background: addons.repairEstimates ? 'rgba(212, 175, 55, 0.1)' : 'rgba(255, 255, 255, 0.02)',
+                  border: addons.repairEstimates ? '1px solid rgba(212, 175, 55, 0.4)' : '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '8px',
+                  padding: '12px'
+                }}>
+                  <input 
+                    type="checkbox" 
+                    checked={addons.repairEstimates} 
+                    onChange={() => handleAddonToggle('repairEstimates')} 
+                  />
+                  <div>
+                    <span style={{ fontWeight: 700, display: 'block', color: addons.repairEstimates ? '#fde047' : 'var(--color-white)' }}>
+                      🛠️ Contractor Repair Cost &amp; Pricing Estimate (+ $99)
+                    </span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '2px', lineHeight: 1.45 }}>
+                      <strong>Optional Due Diligence Add-On:</strong> Detailed contractor labor ($95–$165/hr) and materials estimates for every reported defect, formatted for GAR Form F404 amendment negotiation. <em>(Standard home inspections are diagnostic only per InterNACHI SOP; we do not provide repair estimates unless specifically requested).</em>
+                    </span>
+                  </div>
+                </label>
+
                 <label className="checkbox-container">
                   <input 
                     type="checkbox" 

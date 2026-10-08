@@ -147,6 +147,51 @@ export default function DueDiligenceCalculator() {
   const [foundation, setFoundation] = useState('crawlspace');
   const [copiedEmbed, setCopiedEmbed] = useState(false);
 
+  // $99 Outside Report Audit Modal & Stripe Checkout State
+  const [showAuditModal, setShowAuditModal] = useState(false);
+  const [auditName, setAuditName] = useState('');
+  const [auditEmail, setAuditEmail] = useState('');
+  const [auditPhone, setAuditPhone] = useState('');
+  const [auditAddress, setAuditAddress] = useState('');
+  const [auditReportLink, setAuditReportLink] = useState('');
+  const [auditNotes, setAuditNotes] = useState('');
+  const [auditLoading, setAuditLoading] = useState(false);
+  const [auditMsg, setAuditMsg] = useState('');
+
+  const handleStartAuditCheckout = async (e) => {
+    e.preventDefault();
+    setAuditLoading(true);
+    setAuditMsg('');
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          serviceType: 'outside-report-audit',
+          name: auditName,
+          email: auditEmail,
+          phone: auditPhone,
+          address: auditAddress,
+          reportLink: auditReportLink,
+          notes: auditNotes,
+          amount: 99
+        })
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else if (data.setupMode) {
+        setAuditMsg(data.message || 'Intake received! We will contact you immediately.');
+      } else {
+        setAuditMsg(data.error || 'Unable to start checkout. Please call (678) 480-2110.');
+      }
+    } catch (err) {
+      setAuditMsg('Network connection error. Please call or text (678) 480-2110 for immediate dispatch.');
+    } finally {
+      setAuditLoading(false);
+    }
+  };
+
   const toggleDefect = (id) => {
     setSelectedDefects((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
@@ -627,23 +672,25 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                   <p style={{ fontSize: '0.74rem', color: '#94A3B8', margin: 0, lineHeight: 1.4 }}>
                     Hired a competitor who handed you an un-priced PDF? Upload your report to have our Certified Master Inspector engine extract contractor repair costs and generate your GAR Form F404 amendment exhibit in 4 hours.
                   </p>
-                  <a
-                    href="/contact?service=due-diligence-audit"
+                  <button
+                    type="button"
+                    onClick={() => setShowAuditModal(true)}
                     style={{
-                      padding: '8px 12px',
+                      padding: '10px 14px',
                       borderRadius: '8px',
-                      background: 'rgba(212, 175, 55, 0.15)',
-                      border: '1px solid #D4AF37',
-                      color: '#FDE047',
+                      background: 'linear-gradient(135deg, #D4AF37 0%, #B89628 100%)',
+                      color: '#0F172A',
                       fontWeight: 800,
-                      fontSize: '0.78rem',
+                      fontSize: '0.8rem',
                       textAlign: 'center',
-                      textDecoration: 'none',
-                      marginTop: '4px'
+                      border: 'none',
+                      cursor: 'pointer',
+                      marginTop: '6px',
+                      boxShadow: '0 4px 12px rgba(212, 175, 55, 0.25)'
                     }}
                   >
-                    Upload Outside Report for $99 Audit →
-                  </a>
+                    🔒 Order $99 Outside Report Audit (Stripe Checkout) →
+                  </button>
                 </div>
 
                 {/* 4-Part Statutory Due Diligence Legal Armor Shield Card */}
@@ -1074,6 +1121,253 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
           {copiedEmbed ? '✓ Embed Code Copied!' : '📋 Copy Embed Code'}
         </button>
       </div>
+
+      {/* $99 Outside Report Audit Stripe Intake Modal */}
+      {showAuditModal && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(5, 8, 17, 0.85)',
+          backdropFilter: 'blur(8px)',
+          zIndex: 99999,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1.25rem'
+        }}>
+          <div style={{
+            backgroundColor: '#0F172A',
+            border: '1px solid rgba(212, 175, 55, 0.4)',
+            borderRadius: '16px',
+            maxWidth: '540px',
+            width: '100%',
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            padding: '2rem 1.75rem',
+            boxShadow: '0 25px 60px rgba(0,0,0,0.8)',
+            position: 'relative'
+          }}>
+            <button
+              type="button"
+              onClick={() => setShowAuditModal(false)}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: 'none',
+                color: '#94A3B8',
+                fontSize: '1.2rem',
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              ✕
+            </button>
+
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(212, 175, 55, 0.12)', border: '1px solid rgba(212, 175, 55, 0.35)', borderRadius: '9999px', padding: '4px 10px', marginBottom: '0.75rem' }}>
+              <span style={{ fontSize: '0.72rem', color: '#FDE047', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'monospace' }}>
+                ⚡ Standalone Outside Report Audit
+              </span>
+            </div>
+
+            <h3 style={{ fontSize: '1.35rem', fontWeight: 900, color: '#FFFFFF', margin: '0 0 0.5rem', letterSpacing: '-0.01em' }}>
+              4-Hour Due Diligence Repair Cost Audit ($99 Flat)
+            </h3>
+
+            <p style={{ fontSize: '0.8rem', color: '#94A3B8', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
+              Standard home inspections are diagnostic only per InterNACHI SOP. If you hired another inspection company and received an un-priced PDF, our CMI team cross-references your findings against <strong>RSMeans 2026 Metro Atlanta trade rates ($95–$165/hr)</strong> and generates a clean GAR Form F404 amendment exhibit within 4 hours.
+            </p>
+
+            <form onSubmit={handleStartAuditCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+              <div>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Sarah Jenkins"
+                  value={auditName}
+                  onChange={(e) => setAuditName(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px',
+                    borderRadius: '8px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#FFFFFF',
+                    fontSize: '0.85rem',
+                    boxSizing: 'border-box'
+                  }}
+                />
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="sarah@example.com"
+                    value={auditEmail}
+                    onChange={(e) => setAuditEmail(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '10px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      color: '#FFFFFF',
+                      fontSize: '0.85rem',
+                      boxSizing: 'border-box'
+                    }}
+                  />
+                </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
+                    Mobile Phone *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="(404) 555-0199"
+                    value={auditPhone}
+                    onChange={(e) => setAuditPhone(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '10px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      color: '#FFFFFF',
+                      fontSize: '0.85rem',
+                      boxSizing: 'border-box'
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
+                  Property Under Contract *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Street Address, City, GA"
+                  value={auditAddress}
+                  onChange={(e) => setAuditAddress(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px',
+                    borderRadius: '8px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#FFFFFF',
+                    fontSize: '0.85rem',
+                    boxSizing: 'border-box'
+                  }}
+                />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
+                  Inspection Report Link / Cloud URL (Optional)
+                </label>
+                <input
+                  type="url"
+                  placeholder="https://drive.google.com/... or report URL"
+                  value={auditReportLink}
+                  onChange={(e) => setAuditReportLink(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px',
+                    borderRadius: '8px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#FFFFFF',
+                    fontSize: '0.85rem',
+                    boxSizing: 'border-box'
+                  }}
+                />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
+                  Due Diligence Deadline &amp; Priority Concerns
+                </label>
+                <textarea
+                  rows={2}
+                  placeholder="e.g. Due diligence ends Friday at 5pm. Main issues: HVAC, roof shingles, and main panel."
+                  value={auditNotes}
+                  onChange={(e) => setAuditNotes(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px',
+                    borderRadius: '8px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#FFFFFF',
+                    fontSize: '0.85rem',
+                    boxSizing: 'border-box',
+                    fontFamily: 'inherit'
+                  }}
+                />
+              </div>
+
+              {auditMsg && (
+                <div style={{
+                  padding: '10px 12px',
+                  borderRadius: '8px',
+                  background: 'rgba(56, 189, 248, 0.12)',
+                  border: '1px solid rgba(56, 189, 248, 0.3)',
+                  color: '#38BDF8',
+                  fontSize: '0.8rem',
+                  lineHeight: 1.4
+                }}>
+                  {auditMsg}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={auditLoading}
+                style={{
+                  padding: '13px 20px',
+                  borderRadius: '10px',
+                  background: 'linear-gradient(135deg, #D4AF37 0%, #B89628 100%)',
+                  color: '#0F172A',
+                  fontWeight: 900,
+                  fontSize: '0.95rem',
+                  border: 'none',
+                  cursor: auditLoading ? 'not-allowed' : 'pointer',
+                  boxShadow: '0 4px 15px rgba(212, 175, 55, 0.35)',
+                  marginTop: '0.5rem',
+                  transition: 'opacity 0.2s',
+                  opacity: auditLoading ? 0.7 : 1
+                }}
+              >
+                {auditLoading ? 'Connecting to Stripe...' : '🔒 Proceed to Secure Stripe Checkout ($99 Flat) →'}
+              </button>
+
+              <div style={{ fontSize: '0.72rem', color: '#64748B', textAlign: 'center', lineHeight: 1.4 }}>
+                🛡️ 256-Bit Encrypted Stripe Processing • Guaranteed 4-Hour Turnaround • Questions? Call (678) 480-2110
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
