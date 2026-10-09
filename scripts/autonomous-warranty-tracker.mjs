@@ -210,14 +210,57 @@ async function main() {
   // Ingest External New Construction Permit Leads
   if (fs.existsSync(PERMIT_LEADS_FILE)) {
     const rawPermits = JSON.parse(fs.readFileSync(PERMIT_LEADS_FILE, 'utf8'));
+
+    // Strict non-commercial, non-contractor exclusion rules
+    const contractorKeywords = [
+      'llc', 'inc', 'corp', 'co', 'company', 'solutions', 'services', 'heating', 'cooling',
+      'plumbing', 'electric', 'electrical', 'solar', 'windows', 'roofing', 'construction',
+      'builders', 'contractor', 'realty', 'properties', 'holdings', 'group', 'property owner',
+      'owner on file', 'homeowner', 'enterprise', 'enterprises', 'associates', 'llp', 'l.l.c.',
+      'consulting', 'management', 'development', 'mechanical', 'air', 'conditioning', 'hvac',
+      'repair', 'systems', 'rehab', 'roof', 'remodeling', 'expediting', 'restorations', 'design'
+    ];
+
+    const contractorEmails = [
+      'coolray.com', 'reliableair.com', 'casteelair.com', 'emailte.com', 'makohvac.com',
+      'neesehvac.com', 'windowsusa.com', 'permitflowteam.com', 'hollandlegacy.com',
+      'pinehillremodeling.com', 'aquaworks-plumbing.com', 'c2expediting', 'bynumplumbing.com',
+      'peachtreerestorations.com', 'allianceco.com', 'gaplumbingremodelers.com',
+      'friendlyelectric', 'epieselectrical', 'gillair', 'lightningconst', 'callclimateheroes.com',
+      'getchampion.com', 'constructionoutsource.com'
+    ];
+
+    function isContractor(name, email) {
+      if (!name) return true;
+      const n = name.toLowerCase().trim();
+      if (/^\d/.test(n)) return true; // Starts with street number / address
+      if (contractorKeywords.some(kw => new RegExp('\\b' + kw + '\\b', 'i').test(n))) return true;
+      if (email) {
+        const em = email.toLowerCase();
+        if (contractorEmails.some(domain => em.includes(domain))) return true;
+      }
+      return false;
+    }
+
+    const tradePermits = [
+      'air conditioning', 'heating', 'water heater', 'plumbing', 'electrical',
+      'alteration', 'repairs', 'sewer tap', 'pool', 'porch', 'deck', 'sitewall',
+      'short-term rental', 'line work', 'temporary', 'water meter', 'venting',
+      'drain', 'back flow', 'general combination', 'county review'
+    ];
+
+    function isTradeWork(permitType) {
+      if (!permitType) return true;
+      const pt = permitType.toLowerCase();
+      return tradePermits.some(t => pt.includes(t));
+    }
+
     const validPermits = rawPermits.filter(p => {
-      return (
-        p.ownerName && 
-        p.ownerName !== 'Homeowner on File' && 
-        p.address &&
-        p.permitType &&
-        (p.permitType.includes('New') || p.permitType.includes('Residential') || p.permitType.includes('Alteration'))
-      );
+      if (!p.ownerName || p.ownerName === 'Homeowner on File') return false;
+      if (isContractor(p.ownerName, p.ownerEmail)) return false;
+      if (isTradeWork(p.permitType)) return false;
+      if (!p.address) return false;
+      return true;
     });
 
     for (let i = 0; i < validPermits.length; i++) {
@@ -287,7 +330,11 @@ async function main() {
   // Ingest External New Construction MLS Leads
   if (fs.existsSync(NEW_CONSTRUCTION_FILE)) {
     const rawNC = JSON.parse(fs.readFileSync(NEW_CONSTRUCTION_FILE, 'utf8'));
-    const sampleNC = rawNC.slice(0, 30);
+    const gaNC = rawNC.filter(x => {
+      const text = (x.address + ' ' + (x.zip || '')).trim();
+      return /\b3[01]\d{3}\b/.test(text) || x.city === 'Atlanta' || x.city === 'Sandy Springs' || x.city === 'Alpharetta' || x.city === 'Brookhaven';
+    });
+    const sampleNC = gaNC.slice(0, 50);
     for (let i = 0; i < sampleNC.length; i++) {
       const nc = sampleNC[i];
       const leadId = `nc_${nc.mlsId || i}`;
@@ -352,7 +399,10 @@ async function main() {
   if (fs.existsSync(NEW_CONSTRUCTION_FILE)) {
     const rawNC = JSON.parse(fs.readFileSync(NEW_CONSTRUCTION_FILE, 'utf8'));
     newConstructionClusters = rawNC
-      .filter(x => x.address && (x.address.includes(', GA') || x.address.includes(' GA ')))
+      .filter(x => {
+        const text = (x.address + ' ' + (x.zip || '')).trim();
+        return /\b3[01]\d{3}\b/.test(text) || x.city === 'Atlanta' || x.city === 'Sandy Springs' || x.city === 'Alpharetta' || x.city === 'Brookhaven';
+      })
       .slice(0, 35)
       .map(x => ({
         address: x.address,
