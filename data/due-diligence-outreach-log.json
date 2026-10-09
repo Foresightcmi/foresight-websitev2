@@ -250,5 +250,89 @@
     "email": "ashton.adams@centurycommunities.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-06T12:01:06.369Z"
+  },
+  {
+    "key": "LO_lo_homestar_07_brian.thompson@homestarfc.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Brian Thompson",
+    "company": "Homestar Financial",
+    "email": "brian.thompson@homestarfc.com",
+    "city": "Cumming / Forsyth",
+    "timestamp": "2026-10-09T12:00:43.191Z"
+  },
+  {
+    "key": "LO_lo_crosscountry_08_angela.ross@ccm.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Angela Ross",
+    "company": "CrossCountry Mortgage",
+    "email": "angela.ross@ccm.com",
+    "city": "Decatur / DeKalb",
+    "timestamp": "2026-10-09T12:00:48.558Z"
+  },
+  {
+    "key": "CONTRACT_card_50f4cf8e70_gravittgabriel@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Gabriel Gravitt",
+    "brokerage": "Landmark Realty Associates, Inc.",
+    "address": "6865 lake view Point",
+    "city": "Buford",
+    "email": "gravittgabriel@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-09T12:00:53.182Z"
+  },
+  {
+    "key": "CONTRACT_card_fab80117f5_kimonetherealtor@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Kimone Oruga",
+    "brokerage": "Dwelli Inc.",
+    "address": "2374 Battle Forest Dr SW",
+    "city": "Marietta",
+    "email": "kimonetherealtor@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-09T12:00:59.426Z"
+  },
+  {
+    "key": "CONTRACT_card_2f9a951199_miminicole@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Real Estate by Mimi",
+    "brokerage": "Pend Realty, LLC.",
+    "address": "1214 Ridge Hollow Lane",
+    "city": "Lawrenceville",
+    "email": "miminicole@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-09T12:01:04.844Z"
+  },
+  {
+    "key": "CONTRACT_card_1dd785b5a3_hhall@davidsonhomes.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Heather Hall",
+    "brokerage": "Davidson Realty GA, LLC",
+    "address": "232 Black Walnut Way",
+    "city": "Canton",
+    "email": "hhall@davidsonhomes.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-09T12:01:11.373Z"
+  },
+  {
+    "key": "PRE_DD_card_a64b19f103_info@keyrentalhomes.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "DERYK HARPER",
+    "brokerage": "Key Locations Property Management, LLC.",
+    "address": "525 Birch Forest Lane",
+    "city": "Johns Creek",
+    "email": "info@keyrentalhomes.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-09T12:01:21.758Z"
+  },
+  {
+    "key": "PRE_DD_card_2fb9295cce_juan.jr@jriverarealty.org",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Juan Rivera",
+    "brokerage": "Atlanta Communities",
+    "address": "411 Hunters Lane",
+    "city": "Woodstock",
+    "email": "juan.jr@jriverarealty.org",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-09T12:01:26.596Z"
   }
 ]
