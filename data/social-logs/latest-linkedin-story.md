@@ -1,56 +1,52 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #8
+# 🚀 Foresight LinkedIn Growth Engine: Post #9
 
-**Schedule Slot:** Wednesday - Deposit (The Flipped Electrical Enemy) (10:00 AM Weekday Cadence)  
+**Schedule Slot:** Thursday - Deposit (The Sewer Collapse Enemy) (10:00 AM Weekday Cadence)  
 **Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
-**Topic:** The Deadly Bootleg Ground in Flipped Kitchens  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg`  
-**Generated At:** 2026-10-08T19:40:31.409Z  
+**Topic:** Crushed Sewer Line Under Tree Roots  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp`  
+**Generated At:** 2026-10-09T19:16:03.570Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-A brand new kitchen with designer matte black outlets.
+The toilets flushed perfectly during the open house.
 
-Everything looked straight out of an Architectural Digest spread.
+The seller checked 'No Known Plumbing Defects' on the disclosure form.
 
-Then we plugged in our circuit tester.
-
-Every single outlet along the is... [see more]
+We ran our self-leveling HD sewer camera 65 feet down the main latera... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-A brand new kitchen with designer matte black outlets.
+The toilets flushed perfectly during the open house.
 
-Everything looked straight out of an Architectural Digest spread.
+The seller checked 'No Known Plumbing Defects' on the disclosure form.
 
-Then we plugged in our circuit tester.
+We ran our self-leveling HD sewer camera 65 feet down the main lateral.
 
-Every single outlet along the island had an open ground.
+At 42 feet under the front yard, the old clay pipe was completely crushed.
 
-The contractor had installed 3-prong receptacles onto 1960s ungrounded 2-wire cable.
+Mature oak tree roots had invaded the bell joint and formed a solid wooden plug.
 
-Worse, he jumped the ground screw to the neutral terminal—a bootleg ground.
+One week of regular household laundry would have flooded raw sewage across the basement.
 
-It tricks cheap plug-in testers into showing 'Correct Wiring.'
+Cost to excavate the front lawn and replace the sewer line: $9,200.
 
-But if an appliance shorts out, the metal frame becomes energized at 120 volts.
+The seller credited the full $9,200 at closing.
 
-It is an invisible shock hazard for anyone touching the sink and stove.
+A $250 sewer scope just paid for itself 36 times over.
 
-Never judge electrical safety by the color of the outlet cover.
-
-Always verify with true digital metering.
+You can't see underground without optics.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-Full MEP forensic evaluations by Certified Master Inspectors: https://www.fhinspectionsatl.com/quote
+Add high-definition sewer scope diagnostics to your inspection: https://www.fhinspectionsatl.com/services/sewer-scope-inspection
 ```
 
 ---

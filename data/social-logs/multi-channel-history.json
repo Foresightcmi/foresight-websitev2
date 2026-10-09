@@ -80,5 +80,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 9,
+    "title": "Realtor VIP Due Diligence & GAR F404 Contract Leverage",
+    "publishedAt": "2026-10-09T19:16:03.616Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/realtors"
   }
 ]
