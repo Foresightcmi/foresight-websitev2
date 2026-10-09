@@ -37,7 +37,11 @@ async function sendPushNotification(title, message, priority = 'default') {
 
 function cleanPhone(phone) {
   if (!phone) return '';
-  return String(phone).replace(/[^0-9]/g, '');
+  let digits = String(phone).replace(/[^0-9]/g, '');
+  if (digits.length === 11 && digits.startsWith('1')) {
+    digits = digits.slice(1);
+  }
+  return digits;
 }
 
 function formatPhoneDisplay(phone) {
@@ -46,6 +50,40 @@ function formatPhoneDisplay(phone) {
     return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
   }
   return phone || '';
+}
+
+function extractCleanFirstName(rawName) {
+  if (!rawName) return '';
+  let clean = rawName.replace(/[*#]/g, '').trim();
+  
+  // If starts with digit or address
+  if (/^\d/.test(clean)) return '';
+  
+  // If company or entity keywords
+  const entityKeywords = [
+    'llc', 'inc', 'corp', 'co', 'company', 'solutions', 'services', 'heating', 'cooling',
+    'plumbing', 'electric', 'electrical', 'solar', 'windows', 'roofing', 'construction',
+    'builders', 'contractor', 'realty', 'properties', 'holdings', 'group', 'property owner',
+    'owner on file', 'homeowner'
+  ];
+  const lower = clean.toLowerCase();
+  for (const kw of entityKeywords) {
+    const re = new RegExp(`\\b${kw}\\b`, 'i');
+    if (re.test(lower)) return '';
+  }
+
+  // Handle professional prefixes
+  clean = clean.replace(/^(architect|dr|mr|mrs|ms)\.?\s+/i, '');
+
+  const parts = clean.split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return '';
+  
+  let first = parts[0];
+  // Title-case
+  first = first.charAt(0).toUpperCase() + first.slice(1).toLowerCase();
+  
+  if (first.length < 2 || !/^[A-Za-z]+$/.test(first)) return '';
+  return first;
 }
 
 function calculateWarrantyMetrics(refDate, now = new Date()) {
@@ -90,14 +128,16 @@ function generateSmsPresets(firstName, address, city, daysUntilDeadline, deadlin
     ? `in less than 30 days (${deadlineStr})`
     : `in approximately ${Math.max(1, Math.round(daysUntilDeadline / 7))} weeks`;
 
+  const greeting = firstName ? `Hi ${firstName},` : `Hello,`;
+
   // Preset 1: Urgent 30-Day Builder Expiration Notice (Recommended)
-  const preset1 = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections. Checking in on your home at ${address} in ${city}! Your 1-year builder warranty expires ${deadlineText}. Before that deadline passes and your builder is officially off the hook, we prepared an 11-Month Warranty Building Science Dossier for your property: ${dossierUrl} — Let's compile your InterNACHI punch list so the builder repairs settling items on their dime! Reply here or call (678) 480-2110`;
+  const preset1 = `${greeting} Christopher Boykin with Foresight Home Inspections. Checking in on your home at ${address} in ${city}! Your 1-year builder warranty expires ${deadlineText}. Before that deadline passes and your builder is officially off the hook, we prepared an 11-Month Warranty Building Science Dossier for your property: ${dossierUrl} — Let's compile your InterNACHI punch list so the builder repairs settling items on their dime! Reply here or call (678) 480-2110`;
 
   // Preset 2: Punch List & Latent Settlement Focus
-  const preset2 = `Hi ${firstName}, Christopher Boykin here with Foresight Home Inspections. Don't let your builder dismiss drywall cracks, reverse grading, or HVAC duct leaks at ${address} as "normal settling." Review your property's 11-Month Warranty settlement dossier here: ${dossierUrl} — Happy to help hold your builder accountable before day 365! (678) 480-2110`;
+  const preset2 = `${greeting} Christopher Boykin here with Foresight Home Inspections. Don't let your builder dismiss drywall cracks, reverse grading, or HVAC duct leaks at ${address} as "normal settling." Review your property's 11-Month Warranty settlement dossier here: ${dossierUrl} — Happy to help hold your builder accountable before day 365! (678) 480-2110`;
 
   // Preset 3: Ultra-Concise Direct Touchpoint
-  const preset3 = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections. Your 1-year builder warranty cutoff at ${address} in ${city} is approaching. Tap here to review your property's 11-month punch list: ${dossierUrl} — Let me know if you have any questions! (678) 480-2110`;
+  const preset3 = `${greeting} Christopher Boykin with Foresight Home Inspections. Your 1-year builder warranty cutoff at ${address} in ${city} is approaching. Tap here to review your property's 11-month punch list: ${dossierUrl} — Let me know if you have any questions! (678) 480-2110`;
 
   return { preset1, preset2, preset3 };
 }
@@ -107,9 +147,11 @@ function generateHomeownerEmail(firstName, address, city, daysUntilDeadline, dea
     ? `in less than 30 days (${deadlineStr})`
     : `in approximately ${Math.max(1, Math.round(daysUntilDeadline / 7))} weeks (${deadlineStr})`;
 
+  const greeting = firstName ? `Hi ${firstName},` : `Hello,`;
+
   const subject = `11-Month Builder Warranty Technical Dossier: ${address}, ${city} | Action Required Before Day 365`;
   
-  const body = `Hi ${firstName},
+  const body = `${greeting}
 
 Christopher Boykin here with Foresight Home Inspections.
 
@@ -186,7 +228,7 @@ async function main() {
       const metrics = calculateWarrantyMetrics(inspDate, now);
 
       const ownerName = p.ownerName.trim();
-      const firstName = ownerName.split(' ')[0] || 'Homeowner';
+      const firstName = extractCleanFirstName(ownerName);
       const cleanOwnerPhone = cleanPhone(p.ownerPhone);
       const ownerEmail = (p.ownerEmail && p.ownerEmail.includes('@') && !p.ownerEmail.includes('foresightcmi.com')) ? p.ownerEmail.trim() : '';
 
@@ -199,8 +241,9 @@ async function main() {
 
       const presets = generateSmsPresets(firstName, p.address, city, metrics.daysUntilDeadline, metrics.deadlineStr, dossierUrl);
       const defaultSmsBody = presets.preset1;
-      const clientSmsLink = cleanOwnerPhone ? `sms:+1${cleanOwnerPhone}?&body=${encodeURIComponent(defaultSmsBody)}` : '';
-      const clientCallLink = cleanOwnerPhone ? `tel:+1${cleanOwnerPhone}` : '';
+      const smsDigits = cleanOwnerPhone ? (cleanOwnerPhone.length === 10 ? '1' + cleanOwnerPhone : cleanOwnerPhone) : '';
+      const clientSmsLink = smsDigits ? `sms:${smsDigits}?body=${encodeURIComponent(defaultSmsBody)}` : '';
+      const clientCallLink = smsDigits ? `tel:+${smsDigits}` : '';
 
       const { subject: homeownerSubject, body: homeownerBody } = generateHomeownerEmail(
         firstName, p.address, city, metrics.daysUntilDeadline, metrics.deadlineStr, dossierUrl
@@ -253,7 +296,7 @@ async function main() {
       const metrics = calculateWarrantyMetrics(inspDate, now);
 
       const ownerName = `Homeowner at ${nc.propertyName || nc.address.split(',')[0]}`;
-      const firstName = 'Homeowner';
+      const firstName = '';
       const city = nc.city || 'Atlanta';
 
       const dossierFilename = `warranty-${leadId}.html`;
@@ -665,6 +708,23 @@ async function main() {
     let activeTab = 'ready_to_text';
     const activePresets = {};
 
+    function isAppleDevice() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    }
+
+    function buildSmsUri(phone, text) {
+      if (!phone) return '';
+      let digits = String(phone).replace(/[^0-9]/g, '');
+      if (digits.length === 11 && digits.startsWith('1')) {
+        // Keep 11 digits
+      } else if (digits.length === 10) {
+        digits = '1' + digits;
+      }
+      const sep = isAppleDevice() ? '&' : '?';
+      return 'sms:' + digits + sep + 'body=' + encodeURIComponent(text);
+    }
+
     function showToast(msg) {
       const t = document.getElementById('toast');
       if (!t) return;
@@ -685,18 +745,52 @@ async function main() {
       return localStorage.getItem('warranty_status_' + id) || 'pending';
     }
 
+    function updateTabCounts() {
+      const urgentList = cohorts.urgent || [];
+      const readyCount = urgentList.filter(function(item) {
+        const hasPhone = item.cleanPhone && item.cleanPhone.length >= 10;
+        return hasPhone && getStatus(item.id) === 'pending';
+      }).length;
+      const textedCount = urgentList.filter(function(item) {
+        return getStatus(item.id) === 'text_sent';
+      }).length;
+      
+      const readyBtn = document.querySelector('.tab-btn[data-tab="ready_to_text"]');
+      if (readyBtn) readyBtn.innerText = '📱 Ready to Text (' + readyCount + ')';
+      
+      const textedBtn = document.querySelector('.tab-btn[data-tab="texted"]');
+      if (textedBtn) textedBtn.innerText = '✅ Text Sent (' + textedCount + ')';
+    }
+
     function toggleStatus(id) {
       const current = getStatus(id);
       let next = 'text_sent';
       if (current === 'text_sent') next = 'booked';
       else if (current === 'booked') next = 'pending';
       localStorage.setItem('warranty_status_' + id, next);
-      renderCards();
+      
+      const card = document.getElementById('card_' + id);
+      if (card) {
+        const badge = card.querySelector('.btn-toggle-status');
+        if (badge) {
+          badge.className = 'status-badge status-' + next + ' btn-toggle-status';
+          badge.innerText = next === 'text_sent' ? '📱 TEXT SENT' : (next === 'booked' ? '⭐ BOOKED' : 'PENDING ⟳');
+        }
+      }
+      updateTabCounts();
     }
 
     function markStatus(id, newStatus) {
       localStorage.setItem('warranty_status_' + id, newStatus);
-      renderCards();
+      const card = document.getElementById('card_' + id);
+      if (card) {
+        const badge = card.querySelector('.btn-toggle-status');
+        if (badge) {
+          badge.className = 'status-badge status-' + newStatus + ' btn-toggle-status';
+          badge.innerText = newStatus === 'text_sent' ? '📱 TEXT SENT' : (newStatus === 'booked' ? '⭐ BOOKED' : 'PENDING ⟳');
+        }
+      }
+      updateTabCounts();
     }
 
     function copyToClipboard(text, label) {
@@ -740,7 +834,32 @@ async function main() {
 
     function setPreset(id, presetKey) {
       activePresets[id] = presetKey;
-      renderCards();
+      const client = getClientById(id);
+      if (!client) return;
+      const card = document.getElementById('card_' + id);
+      if (!card) {
+        renderCards();
+        return;
+      }
+      // Update preset pills
+      const pills = card.querySelectorAll('.btn-preset');
+      pills.forEach(function(p) {
+        if (p.getAttribute('data-preset') === presetKey) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
+      // Update preview text box
+      const preview = card.querySelector('.sms-preview-text');
+      const text = getActiveSmsText(client);
+      if (preview) preview.innerText = text;
+      
+      // Update SMS button href
+      const sendBtn = card.querySelector('.btn-send-sms');
+      if (sendBtn && client.cleanPhone) {
+        sendBtn.setAttribute('href', buildSmsUri(client.cleanPhone, text));
+      }
       showToast('Switched to ' + (presetKey === 'preset1' ? '30-Day Warning' : (presetKey === 'preset2' ? 'Punch List' : 'Short Touchpoint')));
     }
 
@@ -755,7 +874,7 @@ async function main() {
 
     function copyPhone(phone) {
       if (phone) {
-        copyToClipboard(phone, 'Phone Number');
+        copyToClipboard(phone, 'Phone Number (' + phone + ')');
       }
     }
 
@@ -823,6 +942,7 @@ async function main() {
 
       if (filtered.length === 0) {
         container.innerHTML = '<div style="text-align:center; padding:40px; color:#6B7280;">No leads found in this queue. Great job!</div>';
+        updateTabCounts();
         return;
       }
 
@@ -833,7 +953,8 @@ async function main() {
 
         const activePreset = activePresets[item.id] || 'preset1';
         const activeSms = getActiveSmsText(item);
-        const smsLink = item.cleanPhone ? 'sms:+1' + item.cleanPhone + '?&body=' + encodeURIComponent(activeSms) : '';
+        const smsLink = item.cleanPhone ? buildSmsUri(item.cleanPhone, activeSms) : '';
+        const phoneDisplay = item.phone || item.cleanPhone;
 
         const emailBadge = item.emailAutomatedSent
           ? '<span class="badge badge-emerald" style="margin-left:6px;">✉️ Email Dossier: Sent by AI</span>'
@@ -845,7 +966,7 @@ async function main() {
               '<span class="badge" style="background:' + item.metrics.badgeColor + '22; color:' + item.metrics.badgeColor + '; border:1px solid ' + item.metrics.badgeColor + '44;">' +
                 item.metrics.badgeLabel +
               '</span>' +
-              '<span class="status-badge ' + statusClass + ' btn-toggle-status" data-id="' + item.id + '" style="margin-left:6px; cursor:pointer;">' +
+              '<span class="status-badge ' + statusClass + ' btn-toggle-status" data-id="' + item.id + '" style="margin-left:6px; cursor:pointer;" title="Tap to toggle status">' +
                 statusLabel +
               '</span>' +
               emailBadge +
@@ -871,9 +992,9 @@ async function main() {
               '<div class="sms-phone-row">' +
                 '<div>' +
                   '<span style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Homeowner Phone:</span> ' +
-                  '<span class="sms-phone-display">' + item.phone + '</span>' +
+                  '<span class="sms-phone-display">' + phoneDisplay + '</span>' +
                 '</div>' +
-                '<button type="button" class="action-btn btn-secondary btn-copy-phone" data-phone="' + item.cleanPhone + '" style="padding:4px 8px; font-size:11px;">📋 Copy Phone</button>' +
+                '<button type="button" class="action-btn btn-secondary btn-copy-phone" data-phone="' + phoneDisplay + '" style="padding:4px 8px; font-size:11px;">📋 Copy Phone</button>' +
               '</div>' +
 
               '<div class="preset-selector">' +
@@ -886,8 +1007,8 @@ async function main() {
               '<div class="sms-preview-text">' + activeSms + '</div>' +
 
               '<div class="sms-actions-grid">' +
-                '<a href="' + smsLink + '" class="action-btn btn-sms-primary btn-send-sms" data-id="' + item.id + '">' +
-                  '📱 Send Text (Auto-Track)' +
+                '<a href="' + smsLink + '" class="action-btn btn-sms-primary btn-send-sms" data-id="' + item.id + '" data-phone="' + phoneDisplay + '">' +
+                  '📱 Text ' + phoneDisplay +
                 '</a>' +
                 '<button type="button" class="action-btn btn-secondary btn-copy-sms" data-id="' + item.id + '">' +
                   '📋 Copy Text' +
@@ -907,6 +1028,7 @@ async function main() {
 
         '</div>';
       }).join('');
+      updateTabCounts();
     }
 
     function filterCards() {
@@ -932,11 +1054,28 @@ async function main() {
         return;
       }
 
-      // 3. Send SMS (Marks status as text_sent)
+      // 3. Send SMS (User taps "📱 Text (XXX) XXX-XXXX")
       const sendSmsBtn = e.target.closest('.btn-send-sms');
       if (sendSmsBtn) {
         const id = sendSmsBtn.getAttribute('data-id');
-        if (id) markStatus(id, 'text_sent');
+        const phone = sendSmsBtn.getAttribute('data-phone');
+        const client = getClientById(id);
+        if (client) {
+          const text = getActiveSmsText(client);
+          copyToClipboard(text, 'SMS text');
+          localStorage.setItem('warranty_status_' + id, 'text_sent');
+          const card = document.getElementById('card_' + id);
+          if (card) {
+            const badge = card.querySelector('.btn-toggle-status');
+            if (badge) {
+              badge.className = 'status-badge status-text_sent btn-toggle-status';
+              badge.innerText = '📱 TEXT SENT';
+            }
+          }
+          showToast('📱 Launching text to ' + (phone || client.phone) + '...');
+          updateTabCounts();
+        }
+        // Native href="sms:..." will be followed without interruption
         return;
       }
 
@@ -967,6 +1106,7 @@ async function main() {
 
     // Initial render
     renderCards();
+    updateTabCounts();
   </script>
 </body>
 </html>`;

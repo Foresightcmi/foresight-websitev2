@@ -39,7 +39,7 @@ function generateWarrantyDossierHtml(client) {
   
   const encodedAddress = encodeURIComponent(`${client.address || ''}, ${client.city || 'Atlanta'}, GA`);
   const bookLink = `https://fhinspectionsatl.com/quote?prop=${encodedAddress}&service=11-month-warranty`;
-  const smsChristopher = `sms:+16784802110?&body=${encodeURIComponent(`Hi Christopher, I reviewed the 11-Month Warranty Building Science Dossier for my home at ${client.address} in ${client.city}. I'd like to discuss scheduling our inspection before our builder warranty cutoff.`)}`;
+  const smsChristopher = `sms:16784802110?body=${encodeURIComponent(`Hi Christopher, I reviewed the 11-Month Warranty Building Science Dossier for my home at ${client.address} in ${client.city}. I'd like to discuss scheduling our inspection before our builder warranty cutoff.`)}`;
 
   // Target deadline date object for countdown
   const inspDateObj = new Date(client.date);
