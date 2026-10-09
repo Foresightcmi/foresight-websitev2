@@ -170,7 +170,7 @@ const MCP_TOOLS = [
       properties: {
         serviceKey: { 
           type: 'string', 
-          enum: ['buyer', 'condo', 'pre-listing', 'new-construction', 'warranty', 'sewer-scope', 'radon', 'pool', 'termite', 'str', 'low-flow'],
+          enum: ['buyer', 'condo', 'pre-listing', 'new-construction', 'warranty', 'sewer-scope', 'radon', 'pool', 'termite', 'str', 'low-flow', 'repair-estimates'],
           description: 'The inspection service key'
         }
       },
@@ -250,7 +250,8 @@ async function handleToolCall(name, args) {
         'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
         'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
         'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: '$595 flat rate', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
-        'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Mandatory toilet, shower, and faucet flow rate verification for pre-1993 property transfers.' }
+        'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Mandatory toilet, shower, and faucet flow rate verification for pre-1993 property transfers.' },
+        'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional RSMeans 2026 contractor repair labor and materials estimate formatted for GAR Form F404 amendment negotiation. Available as $99 add-on or standalone audit for outside reports.' }
       };
       return serviceMap[args.serviceKey] || { error: `Service key '${args.serviceKey}' not found.` };
     }

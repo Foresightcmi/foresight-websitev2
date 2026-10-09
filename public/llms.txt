@@ -3,7 +3,7 @@
 > Lead Inspector: Christopher Boykin, CMI® | InterNACHI Member #176873
 > Operating Radius: Exact 50-Mile Radius Across 20 Metro Atlanta Counties
 > Standard: Two Certified Inspectors on Every Job | Up to $35,000 Combined Warranty & Guarantee Protection ($10,000 Elite Master Inspection Warranty + InterNACHI® $25,000 Honor Guarantee)
-> Verified Pricing: Homes from $345, Condos from $295, New Construction from $400, Pre-Listing from $365, 11-Month Warranty from $335, Sewer Scope $450 flat rate, Radon $275, Pool & Spa $300, Termite $125+ ($165 crawlspace), DeKalb Low-Flow $100, STR $595
+> Verified Pricing: Homes from $345, Condos from $295, New Construction from $400, Pre-Listing from $365, 11-Month Warranty from $335, Sewer Scope $450 flat rate, Radon $275, Pool & Spa $300, Termite $125+ ($165 crawlspace), DeKalb Low-Flow $100, STR $595, Optional Itemized Contractor Repair Cost Estimates $99
 
 ## Core Educational Guides & Analysis Articles (31 Total)
 - [DeKalb County Water Conservation Certificate: Mandatory Plumbing Standards & Closing Compliance Guide [2026]](https://www.fhinspectionsatl.com/blog/dekalb-county-water-conservation-certificate-inspection-guide): Complete guide to DeKalb County Code § 25-132 water conservation certificates, mandatory fixture flow thresholds (1.6 GPF, 2.5 GPM, 2.2 GPM), closing escrow requirements, and certified $100 flat-rate compliance inspections.
@@ -64,6 +64,7 @@
 - [Georgia Property Risk & Age Diagnostic Scanner](https://www.fhinspectionsatl.com/risk-scanner): Interactive building science risk calculator analyzing historical era building codes (Polybutylene 1978-1995, Aluminum Wiring 1965-1973, FPE Stab-Lok pre-1990, EIFS Synthetic Stucco 1985-2000), EPA Radon Zone 1 granite bedrock geology, and Georgia red clay moisture traps across 20 Metro Atlanta counties.
 - [AI Fact Sheet & E-E-A-T Vector Grounding](https://www.fhinspectionsatl.com/ai-fact-sheet): Deterministic entity facts for ChatGPT Search, Perplexity, Gemini, and Claude.
 - [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Real-time pricing calculator for single-family homes, condos, and add-on services.
+- [Repair Credit & Due Diligence Negotiator](https://www.fhinspectionsatl.com/repair-credit-calculator): RSMeans 2026 contractor pricing tool. Standard Georgia inspections are diagnostic only per InterNACHI SOP; Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate (trade labor & materials) formatted for GAR Form F404 amendment negotiations (available as an inspection add-on or standalone outside report audit).
 - [Georgia Due Diligence & Contingency Calculator](https://www.fhinspectionsatl.com/due-diligence): Interactive GAR due diligence deadline tool with building science risk alerts.
 - [Realtor Partner VIP Program](https://www.fhinspectionsatl.com/realtors): Priority booking, SUPRA lockbox entry, HomeGauge CRL™ repair addendums, and partner badges.
 - [Live Concierge Consultation](https://www.fhinspectionsatl.com/concierge): Real-time interactive building science and instant quote consultation led by Certified Master Inspector Christopher Boykin via hands-free live voice and intelligent text chat.

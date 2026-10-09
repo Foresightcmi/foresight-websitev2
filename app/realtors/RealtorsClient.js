@@ -669,6 +669,53 @@ export default function RealtorsClient() {
             </Link>
           </div>
 
+          {/* Realtor Tool Spotlight: $99 Contractor Repair Estimates & Outside Report Audits */}
+          <div style={{
+            marginTop: '1.5rem',
+            background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%)',
+            border: '1px solid rgba(212, 175, 55, 0.35)',
+            borderRadius: '1rem',
+            padding: '1.75rem 2rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1.5rem'
+          }}>
+            <div style={{ maxWidth: '700px' }}>
+              <span style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
+                🛠️ Optional Realtor Negotiation Service &bull; $99 Flat Fee
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
+                Itemized Contractor Repair Cost Estimates &amp; Outside Report Audits ($99)
+              </h3>
+              <p style={{ color: '#CBD5E1', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
+                Standard Georgia home inspections are diagnostic only per InterNACHI standards. When your clients need empirical trade numbers for GAR Form F404 amendment negotiations, Foresight provides an optional <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with RSMeans 2026 Atlanta trade schedules. <em>Also available as a 4-hour standalone audit if your client already hired an outside inspection company!</em>
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <Link
+                href="/repair-credit-calculator"
+                style={{
+                  background: 'var(--color-gold)',
+                  color: '#0F172A',
+                  fontWeight: 700,
+                  fontSize: '0.92rem',
+                  padding: '0.8rem 1.4rem',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  boxShadow: '0 4px 14px rgba(212, 175, 55, 0.25)'
+                }}
+              >
+                <span>Repair Credit Negotiator</span>
+                <span>&rarr;</span>
+              </Link>
+            </div>
+          </div>
+
           {/* Realtor Tool Spotlight: Due Diligence Repair Credit Negotiator */}
           <div style={{
             marginTop: '1.5rem',

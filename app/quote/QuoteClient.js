@@ -237,6 +237,14 @@ export default function QuoteClient({ showValueComparison = true }) {
     }
 
     // Adjust by add-ons
+    if (addons.repairEstimates) {
+      minLeverage += 2000;
+      maxLeverage += 5000;
+    }
+    if (addons.sewer) {
+      minLeverage += 3000;
+      maxLeverage += 8000;
+    }
     if (addons.radon) {
       minLeverage += 1500;
       maxLeverage += 2500;
@@ -854,6 +862,70 @@ export default function QuoteClient({ showValueComparison = true }) {
                 }}>
                   🎁 $724 in premium diagnostic & protection value included at no extra charge!
                 </div>
+
+                {Object.values(addons).some(Boolean) && (
+                  <div style={{ marginTop: '1.25rem', borderTop: '1px dashed rgba(255,255,255,0.2)', paddingTop: '0.85rem' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-gold)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                      Selected Auxiliary Add-Ons:
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                      {addons.repairEstimates && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#fde047', fontWeight: 600 }}>
+                          <span>🛠️ Contractor Repair Cost Estimates</span>
+                          <span>+$99</span>
+                        </div>
+                      )}
+                      {addons.sewer && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>📹 Sewer Scope Camera Inspection</span>
+                          <span>+$450</span>
+                        </div>
+                      )}
+                      {addons.radon && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>☢️ 48-Hour Radon Gas Testing</span>
+                          <span>+$275</span>
+                        </div>
+                      )}
+                      {addons.pool && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🏊 Pool &amp; Spa Inspection</span>
+                          <span>+$300</span>
+                        </div>
+                      )}
+                      {addons.termite && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🪵 Termite / WDO Clearance Letter</span>
+                          <span>+{foundation === 'crawlspace' ? '$165' : '$125'}</span>
+                        </div>
+                      )}
+                      {addons.airQuality && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🧪 Mold &amp; Air Quality Lab Testing</span>
+                          <span>+$450</span>
+                        </div>
+                      )}
+                      {addons.detachedBuilding && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🏚️ Detached Building Inspection</span>
+                          <span>+$100</span>
+                        </div>
+                      )}
+                      {addons.lowFlow && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🚰 DeKalb Low-Flow Compliance Certificate</span>
+                          <span>+$100</span>
+                        </div>
+                      )}
+                      {addons.buildfax && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>📜 BuildFax History Report</span>
+                          <span>+$15</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div style={{ background: 'rgba(211, 47, 47, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1rem', border: '1px solid rgba(211, 47, 47, 0.2)' }}>

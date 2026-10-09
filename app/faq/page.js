@@ -37,6 +37,7 @@ export default function FAQPage() {
         { q: 'How much does a home inspection cost in Atlanta?', a: 'Start at $295+ condos, $345+ homes. Add-ons: sewer scope $450, radon $275, pool $300, termite $125+.' },
         { q: 'How do I book an inspection?', a: '24/7 online booking at schedulenow.homegauge.com, or call 678-480-2110.' },
         { q: 'Do you offer flat-rate pricing?', a: 'Yes, transparent flat-rate pricing based on sq ft, property age, and add-ons. Use /quote calculator.' },
+        { q: 'Can I get an itemized contractor repair cost estimate for my inspection report?', a: 'Standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight provides an optional $99 Itemized Contractor Repair Cost Estimate. Calibrated using RSMeans 2026 regional data and formatted for direct Georgia Association of Realtors (GAR Form F404) amendment negotiations, this service is available as a $99 add-on to any Foresight inspection or as a $99 standalone audit for outside inspection reports.' },
         { q: 'What are your business hours?', a: 'Mon, Tue, Thu, Fri, Sat: 8AM-8PM. Wednesday: 8AM-7PM. Sunday: By Appointment. 24/7 online booking.' },
       ],
     },
@@ -63,7 +64,7 @@ export default function FAQPage() {
       questions: [
         { q: 'What areas do you serve?', a: '163+ cities across Metro Atlanta including Fulton, DeKalb, Gwinnett, Cobb, Forsyth, Clayton, Henry, and Rockdale counties.' },
         { q: 'Do you inspect luxury and estate homes?', a: 'Yes, our Estate & Luxury Tier includes extended 4+ hour evaluation, CMI-led team, full drone scanning, and a private strategy call.' },
-        { q: 'What add-on services do you offer?', a: 'Sewer scope ($450), radon gas testing ($275), pool/spa ($300), termite/WDO ($125+), and more.' },
+        { q: 'What add-on services do you offer?', a: 'Sewer scope ($450 flat rate), radon gas testing ($275), pool/spa ($300), termite/WDO ($125+), optional $99 itemized contractor repair cost estimates, and DeKalb Low-Flow certificates ($100).' },
         { q: 'Do you offer free utility setup?', a: 'Yes, complimentary Utilities Plus concierge sets up all utilities (power, gas, water, internet, security) at best market rates.' },
       ],
     },
