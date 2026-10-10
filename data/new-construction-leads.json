@@ -6987,5 +6987,63 @@
       "Complete 3-Phase New Construction Master Bundle ($1,295 - $1,795)"
     ],
     "harvestedAt": "2026-10-09T17:49:37.960Z"
+  },
+  {
+    "recordId": "NC-7852214",
+    "mlsId": "7852214",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "1375 Zodiac Dr SE",
+    "address": "1375 Zodiac Dr SE, Atlanta, GA 30315",
+    "city": "Atlanta",
+    "zip": "30315",
+    "price": 380422,
+    "sqft": 1069,
+    "yearBuilt": 2026,
+    "beds": 2,
+    "baths": 2,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/1375-30354/home/206181270",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Audit ($495 - $695)",
+      "Pre-Closing Final Blue Tape Walkthrough + FLIR® Infrared ($495 - $795)",
+      "11-Month Builder Warranty Inspection ($450 - $650)",
+      "Complete 3-Phase New Construction Master Bundle ($1,295 - $1,795)"
+    ],
+    "harvestedAt": "2026-10-10T16:44:37.424Z"
+  },
+  {
+    "recordId": "NC-7850502",
+    "mlsId": "7850502",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "112 1st Ave Unit B",
+    "address": "112 1st Ave Unit B, Decatur, GA 30030",
+    "city": "Decatur",
+    "zip": "30030",
+    "price": 950000,
+    "sqft": 2350,
+    "yearBuilt": 2026,
+    "beds": 4,
+    "baths": 3.5,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Decatur/112-1st-Ave-NE-30030/unit-B/home/203499291",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Audit ($495 - $695)",
+      "Pre-Closing Final Blue Tape Walkthrough + FLIR® Infrared ($495 - $795)",
+      "11-Month Builder Warranty Inspection ($450 - $650)",
+      "Complete 3-Phase New Construction Master Bundle ($1,295 - $1,795)"
+    ],
+    "harvestedAt": "2026-10-10T16:44:37.424Z"
   }
 ]
