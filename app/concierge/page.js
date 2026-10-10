@@ -149,7 +149,7 @@ export default function ConciergePage() {
           }}>
             Live Concierge Consultation
           </h1>
-          <p style={{ color: '#94a3b8', fontSize: '1.1rem', maxWidth: '680px', margin: '0 auto', lineHeight: 1.6 }}>
+          <p style={{ color: '#F1F5F9', fontSize: '1.15rem', maxWidth: '680px', margin: '0 auto', lineHeight: 1.65, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Speak hands-free or type directly with <strong>Christopher Boykin</strong>, founder &amp; lead Certified Master Inspector®. Get instant quotes, Georgia building code answers, and priority inspection reservations.
           </p>
 

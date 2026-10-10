@@ -216,15 +216,15 @@ export default async function BlogPost({ params }) {
       <section className="section bg-dark text-white" style={{ padding: '5rem 0 3rem' }}>
         <div className="container" style={{ maxWidth: '850px' }}>
           <div style={{ marginBottom: '1.5rem' }}>
-            <Link href="/blog" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.9rem' }}>
+            <Link href="/blog" style={{ color: 'var(--color-gold)', fontWeight: 600, fontSize: '0.95rem' }}>
               ← Back to Blog
             </Link>
           </div>
-          <span className="badge" style={{ marginBottom: '1rem' }}>{post.category}</span>
-          <h1 className="article-title" style={{ color: 'var(--color-white)', fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem' }}>
+          <span className="badge" style={{ marginBottom: '1rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)' }}>{post.category}</span>
+          <h1 className="article-title" style={{ color: '#FFFFFF', fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem', textShadow: '0 2px 14px rgba(0,0,0,0.6)' }}>
             {post.title}
           </h1>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--color-gray-mid)', fontSize: '0.95rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: '#E2E8F0', fontSize: '0.95rem' }}>
             <span>By {post.author} (CMI®)</span>
             <span>•</span>
             <time dateTime={post.date}>

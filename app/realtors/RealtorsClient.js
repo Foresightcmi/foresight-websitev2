@@ -165,14 +165,14 @@ export default function RealtorsClient() {
       {/* Hero Section */}
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <span className="badge" style={{ marginBottom: '1.5rem', background: 'rgba(211,47,47,0.15)', color: 'var(--color-red-light)', fontSize: '0.9rem', padding: '0.5rem 1.25rem' }}>
+          <span className="badge" style={{ marginBottom: '1.5rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.9rem', padding: '0.5rem 1.25rem', backdropFilter: 'blur(8px)' }}>
             Exclusive Realtor Partner Program
           </span>
-          <h1 style={{ color: 'var(--color-white)', fontSize: '3.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
+          <h1 style={{ color: '#FFFFFF', fontSize: '3.5rem', fontWeight: 800, marginBottom: '1.5rem', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Your Negotiation Asset.<br />
-            <span style={{ color: 'var(--color-red)' }}>Never a Deal Killer.</span>
+            <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.45)' }}>Never a Deal Killer.</span>
           </h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#F1F5F9', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             We help your clients win at the negotiating table with clear, detailed inspection reporting that strengthens your position — not undermines it. Backed by SUPRA lockbox access, two-inspector speed, and $10,000 warranties.
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

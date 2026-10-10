@@ -123,13 +123,13 @@ export default async function ComparisonPage({ params }) {
           <span className="badge" style={{ marginBottom: '1rem', display: 'inline-block' }}>
             {item.icon} {item.badge}
           </span>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: 1.2, color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             {item.title}
           </h1>
-          <h2 style={{ fontSize: '1.35rem', color: 'var(--color-red)', marginBottom: '1.5rem', fontWeight: 600 }}>
+          <h2 style={{ fontSize: '1.35rem', color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)', marginBottom: '1.5rem', fontWeight: 600 }}>
             {item.headline}
           </h2>
-          <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: 'rgba(255, 255, 255, 0.9)', marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.15rem', lineHeight: 1.7, color: '#F1F5F9', textShadow: '0 1px 4px rgba(0,0,0,0.6)', marginBottom: '2rem' }}>
             {item.summary}
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

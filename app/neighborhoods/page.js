@@ -57,13 +57,13 @@ export default function NeighborhoodsIndexPage() {
       {/* Hero Section */}
       <section className="section bg-dark text-white text-center" style={{ padding: '5rem 0 4rem', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <span className="badge" style={{ marginBottom: '1.25rem', background: 'rgba(211,47,47,0.2)', color: 'var(--color-red-light)', fontSize: '0.9rem' }}>
+          <span className="badge" style={{ marginBottom: '1.25rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.9rem', backdropFilter: 'blur(8px)' }}>
             🏛️ Hyper-Local Neighborhood Expertise
           </span>
-          <h1 style={{ color: 'var(--color-white)', fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15 }}>
+          <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Atlanta Neighborhood &amp; Subdivision Hubs
           </h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '780px', margin: '0 auto 2rem', fontSize: '1.2rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#F1F5F9', maxWidth: '780px', margin: '0 auto 2rem', fontSize: '1.2rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Every Atlanta community has its own distinct architectural era, soil dynamics, and hidden defect profile. Explore our specialized due diligence guides for historic districts and luxury golf communities.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

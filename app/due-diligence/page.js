@@ -109,14 +109,14 @@ export default function DueDiligencePage() {
       {/* Hero Section */}
       <section className="section bg-dark text-white text-center" style={{ padding: '5.5rem 0 4.5rem', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <span className="badge" style={{ marginBottom: '1.25rem', background: 'rgba(211,47,47,0.2)', color: 'var(--color-red-light)', fontSize: '0.9rem' }}>
+          <span className="badge" style={{ marginBottom: '1.25rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.9rem', backdropFilter: 'blur(8px)' }}>
             ⏱️ Contract Timeline Protection
           </span>
-          <h1 style={{ color: 'var(--color-white)', fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15 }}>
+          <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             The Georgia Due Diligence<br />
-            <span style={{ color: 'var(--color-red-light)' }}>Defense System</span>
+            <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.45)' }}>Defense System</span>
           </h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto 2.25rem', fontSize: '1.2rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#F1F5F9', maxWidth: '800px', margin: '0 auto 2.25rem', fontSize: '1.2rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             In Georgia real estate, you have a strict 5-to-10 day Due Diligence clock. Don't let a slow inspector burn your negotiation window. Foresight pairs dual-inspector speed with guaranteed 48-hour scheduling and same-day reports.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -321,10 +321,10 @@ export default function DueDiligencePage() {
       {/* Bottom Conversion Section */}
       <section className="section bg-dark text-white text-center" style={{ padding: '4.5rem 0' }}>
         <div className="container" style={{ maxWidth: '750px' }}>
-          <h2 style={{ color: 'var(--color-white)', fontSize: '2.4rem', fontWeight: 800, marginBottom: '1rem' }}>
+          <h2 style={{ color: '#FFFFFF', fontSize: '2.4rem', fontWeight: 800, marginBottom: '1rem', textShadow: '0 2px 14px rgba(0,0,0,0.5)' }}>
             Ready to Protect Your Due Diligence Window?
           </h2>
-          <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.15rem', lineHeight: 1.6, marginBottom: '2rem' }}>
+          <p style={{ color: '#F1F5F9', fontSize: '1.15rem', lineHeight: 1.6, marginBottom: '2rem', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Book now to lock in your 48-hour inspection slot. Certified Master Inspector Christopher Boykin and our two-inspector team are ready across Metro Atlanta.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

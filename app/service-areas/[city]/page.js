@@ -467,14 +467,14 @@ export default async function CityPage({ params }) {
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </p>
           <div className="hero-content">
-            <h1 style={{ marginBottom: '1rem' }}>
+            <h1 style={{ marginBottom: '1rem', color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
               {cityName} Home Inspections:{' '}
               <br />
-              <span style={{ color: 'var(--color-red)' }}>Two Certified Inspectors on Every Job</span>
+              <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)' }}>Two Certified Inspectors on Every Job</span>
             </h1>
-            <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.1rem', lineHeight: 1.7 }}>
+            <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.7, color: '#F1F5F9', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
               {introParagraph}
-              <span style={{ display: 'block', marginTop: '0.75rem', fontSize: '1rem', color: 'var(--color-gray-mid)', fontWeight: '500' }}>
+              <span style={{ display: 'block', marginTop: '0.75rem', fontSize: '1rem', color: '#E2E8F0', fontWeight: '500' }}>
                 ⚡ Certified Master Inspector® leadership, two certified inspectors per job, FLIR thermal imaging &amp; included $10,000 Elite Warranty ($0 deductible).
               </span>
             </p>
@@ -539,60 +539,60 @@ export default async function CityPage({ params }) {
       <section className="section" style={{ background: 'linear-gradient(135deg, var(--color-dark), #1f2937)', color: 'white' }}>
         <div className="container">
           <div className="section-title">
-            <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>
-              <span style={{ color: 'var(--color-red)' }}>$10,000</span> Peace of Mind Protection
+            <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', marginBottom: '1rem', textShadow: '0 2px 14px rgba(0,0,0,0.5)' }}>
+              <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 16px rgba(212, 175, 55, 0.45)' }}>$10,000</span> Peace of Mind Protection
             </h2>
-            <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem' }}>
+            <p style={{ color: '#E2E8F0', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6 }}>
               Because Christopher Boykin is a Certified Master Inspector®, you receive the maximum Elite MASTER level warranty plan that ordinary inspectors simply cannot offer.
             </p>
           </div>
           
           <div className="grid grid-3" style={{ gap: '1.5rem' }}>
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
+            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Elite Terms
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Elite Terms
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>90 Days from closing or 120 Days from inspection (whichever comes first).</p>
+              <p style={{ color: '#CBD5E1', lineHeight: 1.6 }}>90 Days from closing or 120 Days from inspection (whichever comes first).</p>
             </div>
             
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
+            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Total Coverage
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Total Coverage
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>$10,000 Aggregate Coverage Limit with exactly $0 Deductible.</p>
+              <p style={{ color: '#CBD5E1', lineHeight: 1.6 }}>$10,000 Aggregate Coverage Limit with exactly $0 Deductible.</p>
             </div>
 
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
+            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Appliances
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Appliances
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for Major Kitchen Appliances (NO age limits). Washer/Dryer fully included.</p>
+              <p style={{ color: '#CBD5E1', lineHeight: 1.6 }}>Up to $2,250 for Major Kitchen Appliances (NO age limits). Washer/Dryer fully included.</p>
             </div>
 
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
+            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Structural
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Structural
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 coverage for structural components of the home.</p>
+              <p style={{ color: '#CBD5E1', lineHeight: 1.6 }}>Up to $2,250 coverage for structural components of the home.</p>
             </div>
 
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
+            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Mechanicals
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Mechanicals
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 coverage for Major Mechanicals (HVAC, Electrical, Plumbing).</p>
+              <p style={{ color: '#CBD5E1', lineHeight: 1.6 }}>Up to $2,250 coverage for Major Mechanicals (HVAC, Electrical, Plumbing).</p>
             </div>
 
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
+            <div className="card" style={{ background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)', color: 'white' }}>
               <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-red)' }}>✓</span> Additional Protection
+                <span style={{ color: 'var(--color-gold)' }}>✓</span> Additional Protection
               </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for Mold Remediation and $1,000 for Roof Leak Protection.</p>
+              <p style={{ color: '#CBD5E1', lineHeight: 1.6 }}>Up to $2,250 for Mold Remediation and $1,000 for Roof Leak Protection.</p>
             </div>
           </div>
           
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.125rem', marginBottom: '1.5rem', maxWidth: '700px', margin: '0 auto 1.5rem' }}>
+            <p style={{ color: '#E2E8F0', fontSize: '1.15rem', marginBottom: '1.5rem', maxWidth: '700px', margin: '0 auto 1.5rem', lineHeight: 1.65 }}>
               Getting an inspection isn't just smart—it saves you from financial disasters and gives realtors a powerful tool to negotiate thousands off the asking price.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -152,19 +152,19 @@ export default async function NeighborhoodPage({ params }) {
       <section className="section bg-dark text-white text-center" style={{ padding: '4.5rem 0 4rem', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <span className="badge" style={{ background: 'rgba(211,47,47,0.2)', color: 'var(--color-red-light)', fontSize: '0.85rem' }}>
+            <span className="badge" style={{ background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.85rem', backdropFilter: 'blur(8px)' }}>
               🏛️ {hood.type}
             </span>
-            <span className="badge" style={{ background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', fontSize: '0.85rem' }}>
+            <span className="badge" style={{ background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.85rem', backdropFilter: 'blur(8px)' }}>
               ⏳ Era: {hood.era}
             </span>
           </div>
 
-          <h1 style={{ color: 'var(--color-white)', fontSize: 'clamp(2.2rem, 4vw, 3.25rem)', fontWeight: 800, marginBottom: '1.25rem', lineHeight: 1.15 }}>
-            Expert Home Inspections in <span style={{ color: 'var(--color-red-light)' }}>{hood.name}</span>
+          <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4vw, 3.25rem)', fontWeight: 800, marginBottom: '1.25rem', lineHeight: 1.15, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
+            Expert Home Inspections in <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.45)' }}>{hood.name}</span>
           </h1>
 
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '780px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#F1F5F9', maxWidth: '780px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             {hood.tagline}. Backed by Lead Certified Master Inspector Christopher Boykin, two certified inspectors on site, FLIR thermal scans, aerial drones, and our complimentary $10,000 warranty.
           </p>
 
@@ -370,10 +370,10 @@ export default async function NeighborhoodPage({ params }) {
       {/* Bottom Conversion CTA */}
       <section className="section bg-dark text-white text-center" style={{ padding: '4.5rem 0' }}>
         <div className="container" style={{ maxWidth: '750px' }}>
-          <h2 style={{ color: 'var(--color-white)', fontSize: '2.4rem', fontWeight: 800, marginBottom: '1rem' }}>
+          <h2 style={{ color: '#FFFFFF', fontSize: '2.4rem', fontWeight: 800, marginBottom: '1rem', textShadow: '0 2px 14px rgba(0,0,0,0.5)' }}>
             Protect Your {hood.name} Investment
           </h2>
-          <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.15rem', lineHeight: 1.6, marginBottom: '2rem' }}>
+          <p style={{ color: '#F1F5F9', fontSize: '1.15rem', lineHeight: 1.6, marginBottom: '2rem', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Schedule with Georgia's premier two-inspector team led by Certified Master Inspector Christopher Boykin. Reports delivered within 24 hours with the Create Request List (CRL) repair tool included.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

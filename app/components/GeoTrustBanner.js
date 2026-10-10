@@ -168,7 +168,7 @@ export default function GeoTrustBanner() {
               Active Inspectors Serving <strong style={{ color: 'var(--color-gold)' }}>{geoCity.name}, GA</strong> &amp; Surrounding Communities
             </span>
             <span style={{ color: 'rgba(255,255,255,0.4)', margin: '0 0.25rem' }}>|</span>
-            <span style={{ color: '#94a3b8' }}>Guaranteed 48-Hour Scheduling &amp; $10K Warranty</span>
+            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Guaranteed 48-Hour Scheduling &amp; $10K Warranty</span>
             <Link
               href={`/service-areas/${geoCity.slug}`}
               style={{
@@ -190,7 +190,7 @@ export default function GeoTrustBanner() {
               Metro Atlanta's Premier Two-Inspector Team | Serving 87+ Cities Within Our 50-Mile Footprint
             </span>
             <span style={{ color: 'rgba(255,255,255,0.4)', margin: '0 0.25rem' }}>|</span>
-            <span style={{ color: '#94a3b8' }}>Guaranteed 48-Hour Scheduling &amp; $10K Warranty</span>
+            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Guaranteed 48-Hour Scheduling &amp; $10K Warranty</span>
             <Link
               href="/service-areas"
               style={{

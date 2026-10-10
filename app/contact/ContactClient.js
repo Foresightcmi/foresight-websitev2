@@ -48,8 +48,8 @@ export default function ContactClient() {
           <h2 className="slogan-heading">
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </h2>
-          <h1 style={{ color: 'var(--color-white)' }}>Contact Foresight</h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
+          <h1 style={{ color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>Contact Foresight</h1>
+          <p style={{ color: '#F1F5F9', maxWidth: '600px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.7, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             We're ready to provide you with the comprehensive service and peace of mind you deserve.
           </p>
         </div>

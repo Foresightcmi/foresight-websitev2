@@ -354,10 +354,10 @@ export default async function ServiceCityPage({ params }) {
           <span className="badge" style={{ marginBottom: '1rem', display: 'inline-block' }}>
             {serviceData.icon} {serviceData.badge}
           </span>
-          <h1 style={{ fontSize: '2.75rem', marginBottom: '1.25rem', lineHeight: 1.2 }}>
-            {cityName} {serviceName}: <span style={{ color: 'var(--color-red)' }}>Certified 2-Inspector Team</span>
+          <h1 style={{ fontSize: '2.75rem', marginBottom: '1.25rem', lineHeight: 1.2, color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
+            {cityName} {serviceName}: <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)' }}>Certified 2-Inspector Team</span>
           </h1>
-          <p style={{ maxWidth: '750px', margin: '0 auto 2.5rem', fontSize: '1.2rem', lineHeight: 1.6, color: 'var(--color-gray-dark)' }}>
+          <p style={{ maxWidth: '750px', margin: '0 auto 2.5rem', fontSize: '1.2rem', lineHeight: 1.6, color: '#F1F5F9', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             {serviceData.heroSub.replace(/{city}/g, cityName)}
           </p>
 

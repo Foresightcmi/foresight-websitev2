@@ -6,7 +6,7 @@ export default function Testimonials() {
       rating: 5,
       saving: 'Saved $24,500',
       tag: '🚽 Foundation & Sewer Issues',
-      text: '“Foresight’s two person inspection team team was an absolute game-changer. They found a major structural foundation crack hidden behind basement paneling and a collapsed clay pipe. Their crystal-clear report gave our realtor massive negotiating leverage, and she successfully secured a $24,500 seller repair credit at closing!”',
+      text: '“Foresight’s two person inspection team was an absolute game-changer. They found a major structural foundation crack hidden behind basement paneling and a collapsed clay pipe. Their crystal-clear report gave our realtor massive negotiating leverage, and she successfully secured a $24,500 seller repair credit at closing!”',
     },
     {
       name: 'David L.',
@@ -34,10 +34,10 @@ export default function Testimonials() {
             Real Client Success
           </span>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>
-            How Choosing Foresight Saves <span style={{ color: 'var(--color-red)' }}>Thousands</span>
+            How Choosing Foresight Saves <span style={{ color: '#B45309' }}>Thousands</span>
           </h2>
-          <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            A standard home inspection finds basic defects—Foresight’s two person inspection team, high-tech diagnostic sweeps locate hidden major system issues, giving you the leverage to negotiate tens of thousands off your purchase.
+          <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.65 }}>
+            A standard home inspection finds basic defects—Foresight’s two person inspection team and high-tech diagnostic sweeps locate hidden major system issues, giving you the leverage to negotiate tens of thousands off your purchase.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export default function Testimonials() {
         {/* Small Trust Badge under reviews */}
         <div style={{ textAlign: 'center', marginTop: '3.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', color: '#0F172A', fontSize: '1rem', fontWeight: 500 }}>
           <span style={{ color: '#B45309', fontSize: '1.25rem' }}>★★★★★</span>
-          <span>Rated <strong style={{ color: '#0F172A' }}>4.9 out of 5 stars</strong> across 43+ verified Google Reviews. <a href="/review" style={{ color: '#854D0E', fontWeight: 700, textDecoration: 'underline' }}>Share your experience →</a></span>
+          <span>Rated <strong style={{ color: '#0F172A' }}>4.9 out of 5 stars</strong> across 48+ verified Google Reviews. <a href="/review" style={{ color: '#854D0E', fontWeight: 700, textDecoration: 'underline' }}>Share your experience →</a></span>
         </div>
 
         {/* Review Velocity & Social Proof CTA */}
@@ -120,7 +120,7 @@ export default function Testimonials() {
             <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>Warranty Included</span>
           </div>
           <div style={{ background: '#F1F5F9', padding: '1rem 1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #CBD5E1', textAlign: 'center' }}>
-            <strong style={{ display: 'block', fontSize: '1.5rem', color: '#0F172A' }}>77+</strong>
+            <strong style={{ display: 'block', fontSize: '1.5rem', color: '#0F172A' }}>87+</strong>
             <span style={{ fontSize: '0.85rem', color: '#334155', fontWeight: 600 }}>Cities Served</span>
           </div>
         </div>

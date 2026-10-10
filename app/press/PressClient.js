@@ -92,11 +92,11 @@ export default function PressClient() {
           <span className="badge" style={{ marginBottom: '1.25rem', background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', fontSize: '0.9rem' }}>
             📰 Digital PR &amp; Media Kit
           </span>
-          <h1 style={{ color: 'var(--color-white)', fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15 }}>
+          <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Expert Building Science &amp;<br />
-            <span style={{ color: 'var(--color-gold)' }}>Georgia Real Estate Commentary</span>
+            <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.45)' }}>Georgia Real Estate Commentary</span>
           </h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '820px', margin: '0 auto 2.25rem', fontSize: '1.2rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#F1F5F9', maxWidth: '820px', margin: '0 auto 2.25rem', fontSize: '1.2rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Christopher Boykin, Certified Master Inspector® (Top 1% in North America), delivers deadline-ready analysis, verified data, and practical soundbites for journalists, real estate editors, and media producers.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -55,8 +55,8 @@ export default function ServiceAreasDirectory() {
 
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
-          <h1 style={{ color: 'var(--color-white)' }}>Areas We Serve</h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '600px', margin: '0 auto 2rem', fontSize: '1.125rem' }}>
+          <h1 style={{ color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>Areas We Serve</h1>
+          <p style={{ color: '#F1F5F9', maxWidth: '600px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.7, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Proudly providing premium two-inspector team services across Georgia. Find your city or ZIP code below to learn more about our local services.
           </p>
         </div>

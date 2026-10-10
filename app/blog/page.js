@@ -106,8 +106,8 @@ export default function Blog() {
       {/* Hero Section */}
       <section className="section bg-dark text-white text-center" style={{ padding: '6rem 0' }}>
         <div className="container">
-          <h1 style={{ color: 'var(--color-white)' }}>Atlanta Home Inspection Guides, Tips, and Expert Insights</h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.125rem', lineHeight: 1.7 }}>
+          <h1 style={{ color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>Atlanta Home Inspection Guides, Tips, and Expert Insights</h1>
+          <p style={{ color: '#F1F5F9', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.15rem', lineHeight: 1.7, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             From our 1,000+ inspections across Metro Atlanta, we share the real-world insights that help homebuyers, sellers, and agents make smarter decisions.
           </p>
         </div>

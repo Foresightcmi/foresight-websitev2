@@ -131,10 +131,10 @@ export default function About() {
           <p className="slogan-heading">
             &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
           </p>
-          <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>
-            About <span style={{ color: 'var(--color-red)' }}>Foresight Home Inspections</span>
+          <h1 style={{ color: '#FFFFFF', marginBottom: '1rem', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
+            About <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.4)' }}>Foresight Home Inspections</span>
           </h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '750px', margin: '0 auto', fontSize: '1.125rem' }}>
+          <p style={{ color: '#F1F5F9', maxWidth: '750px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.7, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Founded by Christopher Boykin, Certified Master Inspector (CMI), Foresight Home Inspections delivers Metro Atlanta&rsquo;s most thorough residential inspections &mdash; two certified inspectors on every job, advanced diagnostic technology, and a $10,000 Elite Master Inspection Warranty included at no extra cost.
           </p>
         </div>

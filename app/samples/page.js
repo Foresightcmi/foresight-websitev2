@@ -39,9 +39,9 @@ export default function SampleReports() {
 
       <section className="section bg-dark text-white text-center" style={{ padding: '5rem 0' }}>
         <div className="container">
-          <span className="badge" style={{ marginBottom: '1rem' }}>Transparent Quality Assurance</span>
-          <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Sample Home Inspection Reports</h1>
-          <p style={{ color: 'var(--color-gray-mid)', maxWidth: '750px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.6 }}>
+          <span className="badge" style={{ marginBottom: '1rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', backdropFilter: 'blur(8px)' }}>Transparent Quality Assurance</span>
+          <h1 style={{ color: '#FFFFFF', marginBottom: '1rem', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>Sample Home Inspection Reports</h1>
+          <p style={{ color: '#F1F5F9', maxWidth: '750px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.65, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             See exactly what you will receive before you book. Every Foresight report is delivered within 24 hours in an easy-to-read digital format with high-resolution photos, thermal imaging, and prioritized repair action items.
           </p>
         </div>
