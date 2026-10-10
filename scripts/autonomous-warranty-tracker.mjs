@@ -143,21 +143,6 @@ function generateSmsPresets(firstName, address, city, daysUntilDeadline, deadlin
   return { preset1, preset2, preset3 };
 }
 
-function generateClusterSmsPresets(agentFirst, address, city, dossierUrl) {
-  const greeting = agentFirst ? `Hi ${agentFirst},` : `Hello,`;
-
-  // Preset 1: Advisory & $50 Subdivision Group Rate (Recommended)
-  const preset1 = `${greeting} Christopher Boykin with Foresight Home Inspections here! We prepared an official Pre-Drywall & 11-Month Warranty Building Science Dossier for ${address} in ${city}: ${dossierUrl} — Includes our $50 subdivision group rate if multiple neighbors book together. Feel free to pass this directly to your buyers to protect them before builder signoff! (678) 480-2110`;
-
-  // Preset 2: Due Diligence & GAR F404 Repair Addendum Focus
-  const preset2 = `${greeting} Christopher Boykin with Foresight Home Inspections. Checking in on ${address} in ${city}. If your buyers need pre-closing blue tape or 11-month builder punch lists with our 2-inspector team, active SUPRA eKEY, and 1-click GAR F404 repair tool, here is the property dossier: ${dossierUrl} — (678) 480-2110`;
-
-  // Preset 3: Ultra-Concise Direct Client Share Hook
-  const preset3 = `${greeting} here is the 11-Month Warranty Due Diligence Dossier and booking link for ${address} in ${city}: ${dossierUrl} — Includes $50 subdivision discount for your clients. Let me know if you need anything! — Christopher Boykin, CMI® (678) 480-2110`;
-
-  return { preset1, preset2, preset3 };
-}
-
 function generateHomeownerEmail(firstName, address, city, daysUntilDeadline, deadlineStr, dossierUrl) {
   const deadlineText = daysUntilDeadline <= 30
     ? `in less than 30 days (${deadlineStr})`
@@ -410,19 +395,10 @@ async function main() {
   cohorts.urgent.sort((a, b) => a.metrics.daysUntilDeadline - b.metrics.daysUntilDeadline);
   cohorts.upcoming.sort((a, b) => a.metrics.daysUntilDeadline - b.metrics.daysUntilDeadline);
 
-  // Builder Clusters with Matched Realtor & Outreach Data
+  // Subdivision Target Clusters (Geographic Cul-de-sac Group Rate Zones)
   let newConstructionClusters = [];
   if (fs.existsSync(NEW_CONSTRUCTION_FILE)) {
     const rawNC = JSON.parse(fs.readFileSync(NEW_CONSTRUCTION_FILE, 'utf8'));
-    let realtors = [];
-    if (fs.existsSync(REALTORS_FILE)) {
-      try {
-        realtors = JSON.parse(fs.readFileSync(REALTORS_FILE, 'utf8'));
-      } catch (err) {
-        console.warn('⚠️ Could not load realtors file:', err.message);
-      }
-    }
-
     const gaNC = rawNC
       .filter(x => {
         const text = (x.address + ' ' + (x.zip || '')).trim();
@@ -430,66 +406,11 @@ async function main() {
       })
       .slice(0, 35);
 
-    const usedEmails = new Set();
-
     newConstructionClusters = gaNC.map((x, idx) => {
       const recordId = x.recordId || `NC-${x.mlsId || idx}`;
-      const leadCity = (x.city || 'Atlanta').toLowerCase().trim();
-      const leadPrice = x.price || 450000;
-
-      // Find matching realtor candidate by city
-      let candidates = realtors.filter(r => {
-        if (!r.email) return false;
-        if (usedEmails.has(r.email.toLowerCase().trim())) return false;
-        return (r.city || '').toLowerCase().trim() === leadCity;
-      });
-
-      if (candidates.length === 0) {
-        candidates = realtors.filter(r => {
-          if (!r.email) return false;
-          if (usedEmails.has(r.email.toLowerCase().trim())) return false;
-          return (r.city || '').toLowerCase().trim() === 'atlanta';
-        });
-      }
-
-      if (candidates.length === 0) {
-        candidates = realtors.filter(r => {
-          if (!r.email) return false;
-          return !usedEmails.has(r.email.toLowerCase().trim());
-        });
-      }
-
-      // Sort by price proximity to match appropriate luxury tier
-      candidates.sort((a, b) => {
-        const diffA = Math.abs((a.raw_price || 500000) - leadPrice);
-        const diffB = Math.abs((b.raw_price || 500000) - leadPrice);
-        return diffA - diffB;
-      });
-
-      const matchedAgent = candidates[0] || null;
-      if (matchedAgent) {
-        usedEmails.add(matchedAgent.email.toLowerCase().trim());
-      }
-
       const dossierFilename = `${recordId}.html`;
       const dossierUrl = `https://fhinspectionsatl.com/dossiers/${dossierFilename}`;
       const dossierPath = `/dossiers/${dossierFilename}`;
-
-      const agentName = matchedAgent ? matchedAgent.name : 'Buyer Agent Representative';
-      const agentFirst = matchedAgent ? (matchedAgent.first || matchedAgent.name.split(' ')[0]) : 'Agent';
-      const brokerage = matchedAgent ? matchedAgent.brokerage : 'Atlanta Board of REALTORS®';
-      const agentEmail = matchedAgent ? matchedAgent.email.trim() : '';
-      const rawPhone = matchedAgent ? (matchedAgent.clean_phone || matchedAgent.phone) : '';
-      const cleanAgentPhone = cleanPhone(rawPhone);
-      const formattedPhone = formatPhoneDisplay(cleanAgentPhone || rawPhone);
-
-      const presets = generateClusterSmsPresets(agentFirst, x.address, x.city, dossierUrl);
-      const defaultSms = presets.preset1;
-      const smsDigits = cleanAgentPhone ? (cleanAgentPhone.length === 10 ? '1' + cleanAgentPhone : cleanAgentPhone) : '';
-      const clientSmsLink = smsDigits ? `sms:${smsDigits}?body=${encodeURIComponent(defaultSms)}` : '';
-      const clientCallLink = smsDigits ? `tel:+${smsDigits}` : '';
-
-      const isEmailed = emailedIds.has(recordId) || (agentEmail && emailedAddresses.has(agentEmail.toLowerCase()));
 
       return {
         id: `cluster_${recordId}`,
@@ -503,19 +424,7 @@ async function main() {
         redfinUrl: x.redfinUrl || null,
         dossierFilename,
         dossierUrl,
-        dossierPath,
-        agentName,
-        agentFirst,
-        brokerage,
-        email: agentEmail,
-        phone: formattedPhone,
-        cleanPhone: cleanAgentPhone,
-        emailAutomatedSent: isEmailed,
-        status: isEmailed ? 'email_sent' : 'pending',
-        presets,
-        clientSmsBody: defaultSms,
-        clientSmsLink,
-        clientCallLink
+        dossierPath
       };
     });
   }
@@ -1060,37 +969,21 @@ async function main() {
       if (activeTab === 'clusters') {
         const filteredClusters = clusters.filter(function(c) {
           if (!searchTerm) return true;
-          const text = (c.address + ' ' + c.city + ' ' + (c.agentName || '') + ' ' + (c.brokerage || '') + ' ' + (c.phone || '')).toLowerCase();
+          const text = (c.address + ' ' + c.city).toLowerCase();
           return text.indexOf(searchTerm) !== -1;
         });
 
         if (filteredClusters.length === 0) {
-          container.innerHTML = '<div style="text-align:center; padding:40px; color:#6B7280;">No clusters matching your search.</div>';
+          container.innerHTML = '<div style="text-align:center; padding:40px; color:#6B7280;">No subdivisions matching your search.</div>';
           return;
         }
 
         container.innerHTML = filteredClusters.map(function(c) {
-          const st = getStatus(c.id);
-          const statusClass = 'status-' + st;
-          const statusLabel = st === 'text_sent' ? '📱 TEXT SENT' : (st === 'booked' ? '⭐ BOOKED' : 'PENDING ⟳');
-
-          const activePreset = activePresets[c.id] || 'preset1';
-          const activeSms = getActiveSmsText(c);
-          const smsLink = c.cleanPhone ? buildSmsUri(c.cleanPhone, activeSms) : '';
-          const phoneDisplay = c.phone || c.cleanPhone;
-
-          const emailBadge = c.emailAutomatedSent
-            ? '<span class="badge badge-emerald" style="margin-left:6px;">✉️ Email Dossier: Sent by AI</span>'
-            : (c.email ? '<span class="badge badge-blue" style="margin-left:6px;">✉️ Email Dossier: Queued for AI</span>' : '');
-
           return '<div class="card pipeline" id="card_' + c.id + '">' +
             '<div class="card-top">' +
               '<div>' +
-                '<span class="badge badge-blue">New Build Cluster</span>' +
-                '<span class="status-badge ' + statusClass + ' btn-toggle-status" data-id="' + c.id + '" style="margin-left:6px; cursor:pointer;" title="Tap to toggle status">' +
-                  statusLabel +
-                '</span>' +
-                emailBadge +
+                '<span class="badge badge-blue">Subdivision Target Zone</span>' +
+                '<span class="badge badge-emerald" style="margin-left:6px;">$50 Group Rate Eligible</span>' +
                 '<div class="client-name" style="margin-top:6px;">' + c.address + '</div>' +
                 '<div class="client-addr">' + c.city + ', GA &bull; ' + c.price + '</div>' +
               '</div>' +
@@ -1098,51 +991,14 @@ async function main() {
             '</div>' +
             '<p class="client-meta">' +
               '<strong>Development Stage:</strong> ' + c.stage + '<br>' +
-              '<strong>Assigned Buyer Agent Specialist:</strong> ' + (c.agentName || 'Buyer Representative') + ' &bull; <em>' + (c.brokerage || 'Atlanta Metro') + '</em><br>' +
-              (c.email ? '<strong>Agent Email:</strong> ' + c.email + '<br>' : '') +
-              '💡 <em>Entire subdivision phase closed recently. Every neighbor on this block is entering their 11-month builder warranty window ($50 group rate applies).</em>' +
+              '<strong>Target Strategy:</strong> <em>Cul-de-sac Group Rate Target. Multiple homeowners on this block share the same warranty window ($50 off each for 2+ neighbors scheduled together).</em>' +
             '</p>' +
-
-            (c.cleanPhone ? (
-              '<div class="sms-dispatch-box">' +
-                '<div class="sms-phone-row">' +
-                  '<div>' +
-                    '<span style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Realtor Phone:</span> ' +
-                    '<span class="sms-phone-display">' + phoneDisplay + '</span>' +
-                  '</div>' +
-                  '<button type="button" class="action-btn btn-secondary btn-copy-phone" data-phone="' + phoneDisplay + '" style="padding:4px 8px; font-size:11px;">📋 Copy Phone</button>' +
-                '</div>' +
-
-                '<div class="preset-selector">' +
-                  '<span style="font-size:11px; color:var(--text-muted); align-self:center; font-weight:700; margin-right:4px;">SMS Hook:</span>' +
-                  '<span class="preset-pill ' + (activePreset === 'preset1' ? 'active' : '') + ' btn-preset" data-id="' + c.id + '" data-preset="preset1">1. Advisory &amp; Group Rate</span>' +
-                  '<span class="preset-pill ' + (activePreset === 'preset2' ? 'active' : '') + ' btn-preset" data-id="' + c.id + '" data-preset="preset2">2. F404 &amp; Blue Tape</span>' +
-                  '<span class="preset-pill ' + (activePreset === 'preset3' ? 'active' : '') + ' btn-preset" data-id="' + c.id + '" data-preset="preset3">3. Short Link</span>' +
-                '</div>' +
-
-                '<div class="sms-preview-text">' + activeSms + '</div>' +
-
-                '<div class="sms-actions-grid">' +
-                  '<a href="' + smsLink + '" class="action-btn btn-sms-primary btn-send-sms" data-id="' + c.id + '" data-phone="' + phoneDisplay + '">' +
-                    '📱 Text ' + (c.agentFirst || 'Agent') + ' (' + phoneDisplay + ')' +
-                  '</a>' +
-                  '<button type="button" class="action-btn btn-secondary btn-copy-sms" data-id="' + c.id + '">' +
-                    '📋 Copy Text' +
-                  '</button>' +
-                  (c.clientCallLink ? '<a href="' + c.clientCallLink + '" class="action-btn btn-secondary">📞 Call</a>' : '') +
-                  '<a href="' + c.dossierPath + '" target="_blank" class="action-btn btn-dossier">' +
-                    '📄 Dossier' +
-                  '</a>' +
-                  (c.redfinUrl ? '<a href="' + c.redfinUrl + '" target="_blank" class="action-btn btn-secondary">🌐 Map</a>' : '') +
-                '</div>' +
-              '</div>'
-            ) : (
-              '<div class="actions-grid" style="display:flex; gap:10px; margin-top:10px;">' +
-                '<a href="' + c.dossierPath + '" target="_blank" class="action-btn btn-dossier">📄 View Dossier</a>' +
-                (c.redfinUrl ? '<a href="' + c.redfinUrl + '" target="_blank" class="action-btn btn-secondary">🌐 View Map</a>' : '') +
-              '</div>'
-            )) +
-
+            '<div class="actions-grid" style="display:flex; gap:10px; margin-top:12px;">' +
+              '<a href="' + c.dossierPath + '" target="_blank" class="action-btn btn-dossier" style="flex:1;">' +
+                '📄 View Subdivision Dossier' +
+              '</a>' +
+              (c.redfinUrl ? '<a href="' + c.redfinUrl + '" target="_blank" class="action-btn btn-secondary" style="flex:1;">🌐 View Neighborhood Map</a>' : '') +
+            '</div>' +
           '</div>';
         }).join('');
         return;
