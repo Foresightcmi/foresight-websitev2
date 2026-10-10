@@ -1,0 +1,45 @@
+name: Autonomous Weekly SEO Dominance Engine
+
+on:
+  schedule:
+    # 13:00 UTC = 9:00 AM EST (Every Monday)
+    - cron: '0 13 * * 1'
+  workflow_dispatch: # Allows 1-click manual trigger anytime from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-guard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SEO Technical Health Check
+        run: node scripts/seo-health-check.mjs
+
+      - name: Audit AI Citations & Web MCP Manifests
+        run: node scripts/audit-ai-citations.mjs
+
+      - name: Scout Digital PR & Authority Citation Pitches
+        run: node scripts/digital-pr-scout.mjs
+
+      - name: Commit and Push SEO Moat Refinements
+        run: |
+          git config user.name "Foresight SEO Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/ public/
+          git diff --cached --quiet || (git commit -m "chore(seo): weekly automated technical audit & schema sync [skip ci]" && git push)

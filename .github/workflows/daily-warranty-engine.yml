@@ -1,0 +1,42 @@
+name: Autonomous 11-Month Warranty Email Dispatcher
+
+on:
+  schedule:
+    # 12:30 UTC = 8:30 AM EST (Daily)
+    - cron: '30 12 * * *'
+  workflow_dispatch: # Allows 1-click manual trigger anytime from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  dispatch-warranty-dossiers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Autonomous 11-Month Warranty Dispatch Engine
+        run: node scripts/autonomous-warranty-email-engine.mjs
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+      - name: Commit and Push Outreach Logs & CRM Updates
+        run: |
+          git config user.name "Foresight Warranty Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/warranty-outreach-log.json data/warranty-tracker-crm.json public/warranty-dispatch.html
+          git diff --cached --quiet || (git commit -m "chore(warranty): autonomous 11-month warranty outreach dispatch [skip ci]" && git push)

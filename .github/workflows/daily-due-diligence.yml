@@ -1,0 +1,42 @@
+name: Autonomous Daily Due Diligence & Loan Officer Scouting Engine
+
+on:
+  schedule:
+    # 12:00 UTC = 8:00 AM EST (Daily)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allows 1-click manual trigger anytime from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  scout-and-dispatch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Autonomous Due Diligence & Loan Officer Scout
+        run: node scripts/autonomous-due-diligence-engine.mjs
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+      - name: Commit and Push Outreach Logs & CRM Records
+        run: |
+          git config user.name "Foresight Scout Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/due-diligence-outreach-log.json data/loan-officers.json data/under-contract-realtors.json
+          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily due diligence scout and dispatch [skip ci]" && git push)

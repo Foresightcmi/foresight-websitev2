@@ -291,6 +291,33 @@ async function main() {
   fs.writeFileSync(LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
   console.log(`💾 Saved updated outreach log to: ${LOG_FILE}`);
 
+  // Update CRM records & sync mobile dispatcher portal
+  const DISPATCH_HTML_FILE = path.join(ROOT_DIR, 'public', 'warranty-dispatch.html');
+  if (sentCount > 0) {
+    for (const cohortKey of Object.keys(crm.cohorts || {})) {
+      for (const item of (crm.cohorts[cohortKey] || [])) {
+        if (item.email && contactedEmails.has(item.email.toLowerCase().trim())) {
+          item.emailAutomatedSent = true;
+          item.status = 'email_sent';
+        }
+      }
+    }
+    fs.writeFileSync(CRM_FILE, JSON.stringify(crm, null, 2), 'utf8');
+    console.log(`💾 Saved updated CRM to: ${CRM_FILE}`);
+
+    if (fs.existsSync(DISPATCH_HTML_FILE)) {
+      const dispatchHtml = fs.readFileSync(DISPATCH_HTML_FILE, 'utf8');
+      const cohortsJson = JSON.stringify(crm.cohorts || {});
+      const lines = dispatchHtml.split('\n');
+      const cohortLineIdx = lines.findIndex(l => l.includes('const cohorts = '));
+      if (cohortLineIdx !== -1) {
+        lines[cohortLineIdx] = `    const cohorts = ${cohortsJson};`;
+        fs.writeFileSync(DISPATCH_HTML_FILE, lines.join('\n'), 'utf8');
+        console.log(`💾 Synced updated cohorts into: ${DISPATCH_HTML_FILE}`);
+      }
+    }
+  }
+
   // Send push notification
   if (sentCount > 0) {
     const pushTitle = `📧 Warranty Dossiers Dispatched: ${sentCount} Leads Emailed!`;
