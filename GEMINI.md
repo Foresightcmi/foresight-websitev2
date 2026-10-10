@@ -56,3 +56,12 @@ The entrepreneur demands the **absolute best strategies, architectures, and engi
 - **Zero Financial Cost**: $0 out-of-pocket spend; leverage the Google AI Ultra ecosystem, open-source packages, GitHub, and free cloud tiers.
 - **Zero Build Degradation**: 100% clean compilation across all routes with zero errors.
 - **Commercial Uniformity**: Exact pricing synchronization across all visible copy and JSON-LD schemas. Zero asterisks in visible copy.
+
+---
+
+### ☁️ Inviolable Cloud-First Scheduled Tasks & Zero-Downtime Automation Protocol (/learn):
+- **Cloud-Native Automation Mandate**: Business-critical scheduled automations (Warranty Outreach, Due Diligence Scout, Weekly SEO Dominance) must NEVER depend solely on in-memory local IDE timers.
+- **GitHub Actions Cloud Runners**: All recurring background engines must be deployed as native GitHub Actions workflows in `.github/workflows/` with strict UTC cron schedules, manual `workflow_dispatch` triggers, and two-way Git commit persistence back to `main`.
+- **$0 Marginal Cost**: Runs 100% on GitHub's free runner tier.
+- **Encrypted Secrets & Mobile Alerts**: Sensitive credentials injected via GitHub Secrets; real-time notifications dispatched to `ntfy.sh/fores-antigravity-alerts-77`.
+
