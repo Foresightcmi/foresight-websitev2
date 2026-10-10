@@ -183,6 +183,141 @@ function buildWarrantyEmailHtml(lead) {
   return { subject, html };
 }
 
+function buildClusterEmailHtml(cluster) {
+  const safeAgent = cluster.agentName || 'Real Estate Professional';
+  const firstName = cluster.agentFirst || safeAgent.split(' ')[0] || 'Agent';
+  const safeAddress = cluster.address || 'Metro Atlanta Area';
+  const safeCity = cluster.city || 'Atlanta';
+  const price = cluster.price || '$450,000+';
+  const stage = cluster.stage || '11-Month Warranty Eligible Phase';
+  const brokerage = cluster.brokerage || 'Atlanta Board of REALTORS®';
+  const dossierUrl = cluster.dossierUrl || `https://fhinspectionsatl.com/dossiers/${cluster.recordId}.html`;
+  const bookingUrl = `https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(`${safeAddress}, ${safeCity}, GA`)}&service=11-month-warranty`;
+
+  const subject = `🏗️ New Construction Due Diligence Advisory: ${safeAddress}, ${safeCity} | Pre-Drywall & 11-Month Warranty Protection`;
+
+  const html = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; padding: 20px; line-height: 1.6; }
+    .card { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    .header { background: #0f172a; padding: 25px 30px; text-align: center; }
+    .header img { height: 60px; width: auto; }
+    .banner { background: #d4af37; color: #0f172a; padding: 8px 15px; font-size: 13px; font-weight: 800; text-align: center; letter-spacing: 0.5px; }
+    .alert-box { background: #f0fdf4; border-left: 4px solid #10b981; padding: 14px 18px; margin: 20px 0; border-radius: 4px; font-size: 14px; color: #065f46; }
+    .content { padding: 30px; }
+    .highlight-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px; margin: 20px 0; font-size: 14px; }
+    .vector-item { padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+    .vector-item:last-child { border-bottom: none; }
+    .vector-title { font-weight: 700; color: #0f172a; }
+    .vector-desc { font-size: 13px; color: #64748b; margin-top: 2px; }
+    .btn { display: inline-block; background: #d4af37; color: #0f172a !important; font-weight: 800; font-size: 14.5px; padding: 14px 28px; text-decoration: none; border-radius: 8px; margin: 18px 0; text-align: center; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35); }
+    .footer { background: #0f172a; color: #94a3b8; padding: 25px 30px; font-size: 12px; text-align: center; line-height: 1.5; }
+    .footer a { color: #d4af37; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections">
+    </div>
+    <div class="banner">
+      🏛️ INDEPENDENT BUILDING SCIENCE &amp; NEW CONSTRUCTION WARRANTY ADVISORY
+    </div>
+    <div class="content">
+      <h2 style="margin-top:0; font-size:20px; color:#0f172a;">
+        Pre-Drywall &amp; 11-Month Warranty Due Diligence Advisory
+      </h2>
+
+      <p style="font-size:15px; color:#334155;">
+        Dear <strong>${firstName}</strong>,
+      </p>
+
+      <p style="font-size:14.5px; color:#334155;">
+        Christopher Boykin here with Foresight Home Inspections. As an active Realtor representing buyers and homeowners across <strong>${safeCity}</strong> with <em>${brokerage}</em>, you know how crucial it is to safeguard clients during new construction milestones.
+      </p>
+
+      <div class="alert-box">
+        <strong>📍 Development Property:</strong> ${safeAddress}, ${safeCity}, GA<br>
+        <strong>Market Stage:</strong> ${stage} &bull; ${price}<br>
+        <strong>Action Window:</strong> Pre-Drywall Rough-In &amp; 11-Month Builder Warranty Due Diligence
+      </div>
+
+      <p style="font-size:14.5px; color:#334155;">
+        Municipal code inspectors spend an average of only 8 to 12 minutes on-site and legally cannot inspect for cosmetic settling, truss uplift, HVAC duct plenum leakage, or contractor shortcuts.
+      </p>
+
+      <p style="font-size:14.5px; color:#334155;">
+        In Georgia (under OCGA § 8-2-35 et seq. and standard residential warranties), once day 365 passes, the builder is legally released from financial liability, transferring tens of thousands in latent repair costs directly to your buyers.
+      </p>
+
+      <div class="highlight-box">
+        <div style="font-weight:800; text-transform:uppercase; font-size:11px; color:#64748b; margin-bottom:8px;">
+          🌟 Exclusive Subdivision / Cul-de-sac Group Rate:
+        </div>
+        <p style="font-size:13.5px; color:#334155; margin-bottom:10px;">
+          Because multiple homes in this development phase share the same construction timeline, we offer a <strong>$50 Group Discount</strong> to any of your buyers or neighbors who schedule together:
+        </p>
+        <div class="vector-item">
+          <div class="vector-title">✓ Two-Inspector InterNACHI Certified Master Inspector® (CMI) Team</div>
+          <div class="vector-desc">Double the thoroughness on roof trusses, electrical panels, and thermal envelope.</div>
+        </div>
+        <div class="vector-item">
+          <div class="vector-title">✓ High-Resolution FLIR® Infrared Thermal Imaging Included</div>
+          <div class="vector-desc">Detect concealed insulation voids, missing vapor barriers, and attic duct separation.</div>
+        </div>
+        <div class="vector-item">
+          <div class="vector-title">✓ 1-Click GAR Form F404 Repair Addendum Integration</div>
+          <div class="vector-desc">Generates official Georgia Association of Realtors amendment wording with one tap.</div>
+        </div>
+        <div class="vector-item">
+          <div class="vector-title">✓ Active SUPRA eKEY Access</div>
+          <div class="vector-desc">Direct lockbox entry across all FMLS/GAMLS properties with zero hassle for agents.</div>
+        </div>
+      </div>
+
+      <p style="font-size:14.5px; color:#334155;">
+        We prepared a technical building science dossier specifically for this property that you can review or forward directly to your clients:
+      </p>
+
+      <div style="text-align:center; margin:25px 0;">
+        <a href="${dossierUrl}" class="btn">
+          👉 View Property Due Diligence Dossier
+        </a>
+        <div style="font-size:12px; color:#64748b; margin-top:6px;">
+          Live technical dossier with punch list blueprints &amp; booking tools.
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:#334155;">
+        Your clients can reserve their inspection date online directly: <a href="${bookingUrl}" style="color:#0284c7; font-weight:600;">Reserve Online Here</a>, or call/text me directly at <strong>(678) 480-2110</strong>.
+      </p>
+
+      <p style="font-size:14px; color:#0f172a; font-weight:600; margin-top:20px;">
+        Christopher Boykin, CMI®<br>
+        <span style="color:#64748b; font-weight:400;">Certified Master Inspector® &bull; InterNACHI®</span><br>
+        Direct: <a href="tel:+16784802110" style="color:#0f172a; text-decoration:none;">(678) 480-2110</a><br>
+        Web: <a href="https://fhinspectionsatl.com" style="color:#d4af37;">https://fhinspectionsatl.com</a>
+      </p>
+    </div>
+    <div class="footer">
+      <p>
+        <strong>Foresight Home Inspections</strong> &bull; Metro Atlanta, GA<br>
+        InterNACHI® Certified Master Inspector Team &bull; $100,000 Buy-Back Guarantee &bull; 5.0★ Google Verified
+      </p>
+      <p style="margin-top:10px; font-size:11px; color:#64748b;">
+        This advisory is sent as a Realtor partner and client due diligence alert regarding new construction warranties in Georgia.
+      </p>
+    </div>
+  </div>
+</body>
+</html>`;
+
+  return { subject, html };
+}
+
 async function main() {
   console.log('🚀 [Warranty Email Engine] Initializing Autonomous Email Dispatch...');
 
@@ -211,11 +346,12 @@ async function main() {
   }
 
   const crm = JSON.parse(fs.readFileSync(CRM_FILE, 'utf8'));
-  const allLeads = [
+  const allHomeowners = [
     ...(crm.cohorts?.urgent || []),
     ...(crm.cohorts?.upcoming || []),
     ...(crm.cohorts?.pipeline || [])
   ];
+  const allClusters = crm.newConstructionClusters || [];
 
   // Load Outreach Log to prevent duplicate sends
   let outreachLog = [];
@@ -227,63 +363,147 @@ async function main() {
     }
   }
   const contactedEmails = new Set(outreachLog.map(o => o.email.toLowerCase()));
+  const contactedIds = new Set(outreachLog.map(o => o.leadId || o.clusterId).filter(Boolean));
 
-  console.log(`📋 Total external leads in CRM: ${allLeads.length}`);
-  console.log(`📜 Previously contacted leads in log: ${contactedEmails.size}`);
+  console.log(`📋 Total external homeowner leads in CRM: ${allHomeowners.length}`);
+  console.log(`🏗️ Total new build clusters in CRM: ${allClusters.length}`);
+  console.log(`📜 Previously contacted recipients in log: ${contactedEmails.size}`);
 
-  // Find leads with valid emails who haven't been contacted yet
-  const eligibleLeads = allLeads.filter(lead => {
+  // Find homeowner leads with valid emails who haven't been contacted yet
+  const eligibleHomeowners = allHomeowners.filter(lead => {
     if (!lead.email || !lead.email.includes('@')) return false;
     const cleanEmail = lead.email.toLowerCase().trim();
     if (cleanEmail.includes('foresightcmi.com')) return false;
-    return !contactedEmails.has(cleanEmail);
+    return !contactedEmails.has(cleanEmail) && !contactedIds.has(lead.id);
   });
 
-  console.log(`🎯 Eligible leads ready for autonomous email dispatch: ${eligibleLeads.length}`);
+  // Find new build clusters with valid agent emails who haven't been contacted yet
+  const eligibleClusters = allClusters.filter(cluster => {
+    if (!cluster.email || !cluster.email.includes('@')) return false;
+    const cleanEmail = cluster.email.toLowerCase().trim();
+    if (cleanEmail.includes('foresightcmi.com')) return false;
+    return !contactedEmails.has(cleanEmail) && !contactedIds.has(cluster.recordId);
+  });
 
-  if (eligibleLeads.length === 0) {
-    console.log('✨ All current email leads have already received their dossiers! Standing by.');
+  console.log(`🎯 Eligible homeowner leads ready: ${eligibleHomeowners.length}`);
+  console.log(`🎯 Eligible new build clusters ready: ${eligibleClusters.length}`);
+
+  if (eligibleHomeowners.length === 0 && eligibleClusters.length === 0) {
+    console.log('✨ All current email targets have already received their dossiers! Standing by.');
     return;
   }
 
-  let sentCount = 0;
+  // Build unified dispatch queue: prioritize new build clusters as requested by user
+  const dispatchQueue = [];
   const BATCH_LIMIT = 5; // Dispatches 5 per pass to maintain 100% deliverability & zero spam risk
 
-  for (const lead of eligibleLeads) {
-    const targetEmail = lead.email.trim();
-    const { subject, html } = buildWarrantyEmailHtml(lead);
-
-    console.log(`📤 Dispatching Warranty Dossier to: ${lead.name} <${targetEmail}> at ${lead.address}...`);
-
-    try {
-      await transporter.sendMail({
-        from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
-        to: targetEmail,
-        subject,
-        html
-      });
-
-      contactedEmails.add(targetEmail.toLowerCase());
-      outreachLog.push({
-        leadId: lead.id,
-        name: lead.name,
-        address: lead.address,
-        city: lead.city,
-        email: targetEmail,
-        dossierUrl: lead.dossierUrl,
-        timestamp: new Date().toISOString()
-      });
-
-      sentCount++;
-      console.log(`  ✓ Transmitted successfully to ${targetEmail}`);
-      await sleep(2500); // 2.5s safe spacing between sends
-    } catch (e) {
-      console.error(`  ❌ Failed to send to ${targetEmail}:`, e.message);
+  // Pick up to 3 clusters and up to 2 homeowners per pass
+  for (const c of eligibleClusters) {
+    if (dispatchQueue.length >= 3) break;
+    dispatchQueue.push({ type: 'cluster', data: c });
+  }
+  for (const h of eligibleHomeowners) {
+    if (dispatchQueue.length >= BATCH_LIMIT) break;
+    dispatchQueue.push({ type: 'homeowner', data: h });
+  }
+  // Fill remaining slots if either category had fewer
+  if (dispatchQueue.length < BATCH_LIMIT) {
+    for (const c of eligibleClusters) {
+      if (!dispatchQueue.some(item => item.data.recordId === c.recordId)) {
+        dispatchQueue.push({ type: 'cluster', data: c });
+        if (dispatchQueue.length >= BATCH_LIMIT) break;
+      }
     }
+  }
+  if (dispatchQueue.length < BATCH_LIMIT) {
+    for (const h of eligibleHomeowners) {
+      if (!dispatchQueue.some(item => item.data.id === h.id)) {
+        dispatchQueue.push({ type: 'homeowner', data: h });
+        if (dispatchQueue.length >= BATCH_LIMIT) break;
+      }
+    }
+  }
 
-    if (sentCount >= BATCH_LIMIT) {
-      console.log(`🛑 Batch limit of ${BATCH_LIMIT} reached for this execution cycle.`);
-      break;
+  let sentCount = 0;
+  let clusterSentCount = 0;
+  let homeownerSentCount = 0;
+
+  for (const item of dispatchQueue) {
+    if (item.type === 'cluster') {
+      const cluster = item.data;
+      const targetEmail = cluster.email.trim();
+      const { subject, html } = buildClusterEmailHtml(cluster);
+
+      console.log(`📤 Dispatching Cluster Dossier to: ${cluster.agentName} <${targetEmail}> at ${cluster.address}...`);
+
+      try {
+        await transporter.sendMail({
+          from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
+          to: targetEmail,
+          subject,
+          html
+        });
+
+        contactedEmails.add(targetEmail.toLowerCase());
+        contactedIds.add(cluster.recordId);
+        outreachLog.push({
+          clusterId: cluster.recordId,
+          name: cluster.agentName,
+          brokerage: cluster.brokerage,
+          address: cluster.address,
+          city: cluster.city,
+          email: targetEmail,
+          dossierUrl: cluster.dossierUrl,
+          type: 'new_build_cluster',
+          timestamp: new Date().toISOString()
+        });
+
+        cluster.emailAutomatedSent = true;
+        cluster.status = 'email_sent';
+        sentCount++;
+        clusterSentCount++;
+        console.log(`  ✓ Transmitted successfully to agent ${targetEmail}`);
+        await sleep(2500); // 2.5s safe spacing between sends
+      } catch (e) {
+        console.error(`  ❌ Failed to send cluster email to ${targetEmail}:`, e.message);
+      }
+    } else {
+      const lead = item.data;
+      const targetEmail = lead.email.trim();
+      const { subject, html } = buildWarrantyEmailHtml(lead);
+
+      console.log(`📤 Dispatching Warranty Dossier to: ${lead.name} <${targetEmail}> at ${lead.address}...`);
+
+      try {
+        await transporter.sendMail({
+          from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
+          to: targetEmail,
+          subject,
+          html
+        });
+
+        contactedEmails.add(targetEmail.toLowerCase());
+        contactedIds.add(lead.id);
+        outreachLog.push({
+          leadId: lead.id,
+          name: lead.name,
+          address: lead.address,
+          city: lead.city,
+          email: targetEmail,
+          dossierUrl: lead.dossierUrl,
+          type: 'permit_homeowner',
+          timestamp: new Date().toISOString()
+        });
+
+        lead.emailAutomatedSent = true;
+        lead.status = 'email_sent';
+        sentCount++;
+        homeownerSentCount++;
+        console.log(`  ✓ Transmitted successfully to homeowner ${targetEmail}`);
+        await sleep(2500); // 2.5s safe spacing between sends
+      } catch (e) {
+        console.error(`  ❌ Failed to send homeowner email to ${targetEmail}:`, e.message);
+      }
     }
   }
 
@@ -294,6 +514,7 @@ async function main() {
   // Update CRM records & sync mobile dispatcher portal
   const DISPATCH_HTML_FILE = path.join(ROOT_DIR, 'public', 'warranty-dispatch.html');
   if (sentCount > 0) {
+    // Sync cohorts
     for (const cohortKey of Object.keys(crm.cohorts || {})) {
       for (const item of (crm.cohorts[cohortKey] || [])) {
         if (item.email && contactedEmails.has(item.email.toLowerCase().trim())) {
@@ -302,30 +523,43 @@ async function main() {
         }
       }
     }
+    // Sync clusters
+    for (const item of (crm.newConstructionClusters || [])) {
+      if (item.email && contactedEmails.has(item.email.toLowerCase().trim())) {
+        item.emailAutomatedSent = true;
+        item.status = 'email_sent';
+      }
+    }
+
     fs.writeFileSync(CRM_FILE, JSON.stringify(crm, null, 2), 'utf8');
     console.log(`💾 Saved updated CRM to: ${CRM_FILE}`);
 
     if (fs.existsSync(DISPATCH_HTML_FILE)) {
-      const dispatchHtml = fs.readFileSync(DISPATCH_HTML_FILE, 'utf8');
+      let dispatchHtml = fs.readFileSync(DISPATCH_HTML_FILE, 'utf8');
       const cohortsJson = JSON.stringify(crm.cohorts || {});
+      const clustersJson = JSON.stringify(crm.newConstructionClusters || []);
       const lines = dispatchHtml.split('\n');
       const cohortLineIdx = lines.findIndex(l => l.includes('const cohorts = '));
       if (cohortLineIdx !== -1) {
         lines[cohortLineIdx] = `    const cohorts = ${cohortsJson};`;
-        fs.writeFileSync(DISPATCH_HTML_FILE, lines.join('\n'), 'utf8');
-        console.log(`💾 Synced updated cohorts into: ${DISPATCH_HTML_FILE}`);
       }
+      const clusterLineIdx = lines.findIndex(l => l.includes('const clusters = '));
+      if (clusterLineIdx !== -1) {
+        lines[clusterLineIdx] = `    const clusters = ${clustersJson};`;
+      }
+      fs.writeFileSync(DISPATCH_HTML_FILE, lines.join('\n'), 'utf8');
+      console.log(`💾 Synced updated cohorts and clusters into: ${DISPATCH_HTML_FILE}`);
     }
   }
 
-  // Send push notification
+  // Send smartphone push notification
   if (sentCount > 0) {
-    const pushTitle = `📧 Warranty Dossiers Dispatched: ${sentCount} Leads Emailed!`;
-    const pushMsg = `Autonomous Email Dispatch Engine sent ${sentCount} 11-Month Warranty Dossiers via inspect@foresightcmi.com.\n\nRemaining email queue: ${eligibleLeads.length - sentCount}\nCheck dispatcher portal for SMS tracking.`;
+    const pushTitle = `📧 Warranty & Cluster Dossiers Dispatched: ${sentCount} Emailed!`;
+    const pushMsg = `Autonomous Email Engine dispatched ${sentCount} dossiers (${clusterSentCount} New Build Clusters, ${homeownerSentCount} Homeowners) via inspect@foresightcmi.com.\n\nRemaining Queue: ${eligibleClusters.length - clusterSentCount} Clusters, ${eligibleHomeowners.length - homeownerSentCount} Homeowners.\nView status on Mobile Dispatcher.`;
     await sendPushNotification(pushTitle, pushMsg, 'default');
   }
 
-  console.log(`🏁 [Warranty Email Engine] Cycle complete: ${sentCount} dossiers emailed.`);
+  console.log(`🏁 [Warranty Email Engine] Cycle complete: ${sentCount} dossiers emailed (${clusterSentCount} clusters, ${homeownerSentCount} homeowners).`);
 }
 
 main().catch(err => {
