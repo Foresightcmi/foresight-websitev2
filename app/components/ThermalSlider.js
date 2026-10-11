@@ -48,7 +48,7 @@ export default function ThermalSlider() {
             🔬 Interactive Diagnostic Comparison
           </span>
           <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 800, margin: 0 }}>
-            Visual Daylight vs. FLIR® Infrared Thermal Scan
+            Visual Daylight vs. Infrared Thermal Imaging Thermal Scan
           </h3>
         </div>
         <div style={{ display: 'flex', gap: '0.4rem', background: '#1E293B', padding: '0.25rem', borderRadius: '50px', border: '1px solid #334155' }}>
@@ -88,7 +88,7 @@ export default function ThermalSlider() {
           </button>
           <button
             type="button"
-            onClick={() => { setSliderPosition(100); triggerGtag('view_flir_only'); }}
+            onClick={() => { setSliderPosition(100); triggerGtag('view_thermal_only'); }}
             style={{
               padding: '0.35rem 0.85rem',
               borderRadius: '50px',
@@ -101,7 +101,7 @@ export default function ThermalSlider() {
               transition: 'all 0.2s'
             }}
           >
-            🔥 FLIR Thermal
+            🔥 Infrared Thermal
           </button>
         </div>
       </div>
@@ -126,18 +126,18 @@ export default function ThermalSlider() {
           border: '1px solid #475569'
         }}
       >
-        {/* Background Image: FLIR Infrared Thermal */}
+        {/* Background Image: infrared thermal Thermal */}
         <div style={{ position: 'absolute', inset: 0 }}>
           <Image
             src="/images/thermal-ceiling.webp"
-            alt="FLIR Thermal Infrared scan of ceiling showing cold water leak anomaly"
+            alt="infrared thermal scan of ceiling showing cold water leak anomaly"
             fill
             sizes="(max-width: 900px) 100vw, 900px"
             style={{ objectFit: 'cover' }}
             loading="lazy"
           />
           <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(239, 68, 68, 0.9)', color: '#FFFFFF', padding: '0.35rem 0.75rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.05em' }}>
-            🔥 FLIR® INFRARED (ACTIVE LEAK)
+            🔥 Infrared Thermal Imaging (ACTIVE LEAK)
           </div>
         </div>
 
@@ -215,7 +215,7 @@ export default function ThermalSlider() {
             setSliderPosition(Number(e.target.value));
             triggerGtag('slider_scrub');
           }}
-          aria-label="Drag slider to compare visual daylight view and FLIR thermal infrared scan"
+          aria-label="Drag slider to compare visual daylight view and infrared thermal scan"
           style={{
             width: '100%',
             accentColor: 'var(--color-gold)',
@@ -223,7 +223,7 @@ export default function ThermalSlider() {
           }}
         />
         <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94A3B8', fontSize: '0.78rem', marginTop: '0.25rem' }}>
-          <span>← Drag Left for FLIR Thermal Infrared</span>
+          <span>← Drag Left for calibrated infrared thermal</span>
           <span>Drag Right for Visual Daylight View →</span>
         </div>
       </div>
@@ -249,7 +249,7 @@ export default function ThermalSlider() {
       </div>
 
       <p style={{ color: '#CBD5E1', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
-        ⚡ <strong>Included Free:</strong> While other Atlanta inspection firms charge $75–$150 extra for thermal scans or omit them entirely, Foresight includes full FLIR® infrared audits on every full home inspection.
+        ⚡ <strong>Included Free:</strong> While other Atlanta inspection firms charge $75–$150 extra for thermal scans or omit them entirely, Foresight includes full Infrared Thermal Imaging audits on every full home inspection.
       </p>
     </div>
   );

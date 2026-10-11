@@ -42,7 +42,7 @@
     "preferredDate": "Monday, Sep 14 at 9:30 AM",
     "addons": [
       "48-Hour Radon Gas Continuous Monitor ($200)",
-      "FLIR Thermal Infrared Moisture Scan (Included)"
+      "calibrated infrared thermal Moisture Scan (Included)"
     ],
     "estimatedTotal": "$435",
     "message": "Lead pipeline verification test - Confirming instant dual-email dispatch and Google Sheets sync.",

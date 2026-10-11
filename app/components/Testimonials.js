@@ -14,7 +14,7 @@ export default function Testimonials() {
       rating: 5,
       saving: 'Saved $18,000',
       tag: '🔥 HVAC & Water Intrusion',
-      text: '“Christopher Boykin used his FLIR thermal camera to locate active moisture leaks in the second-story subfloor and cracked heat exchangers in both HVAC systems venting carbon monoxide. Armed with this detailed report, our agent negotiated a full $18,000 price reduction to cover total HVAC replacements before closing.”',
+      text: '“Christopher Boykin used his infrared thermal camera to locate active moisture leaks in the second-story subfloor and cracked heat exchangers in both HVAC systems venting carbon monoxide. Armed with this detailed report, our agent negotiated a full $18,000 price reduction to cover total HVAC replacements before closing.”',
     },
     {
       name: 'Elena R.',

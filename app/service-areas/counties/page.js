@@ -14,7 +14,7 @@ function loadCounties() {
 
 export const metadata = {
   title: 'Metro Atlanta County Inspection Services | 20 Counties',
-  description: 'Certified Master Inspector coverage across all 20 Metro Atlanta and North Georgia counties. Dual-inspector precision, FLIR thermal imaging, and $10,000 warranty protection.',
+  description: 'Certified Master Inspector coverage across all 20 Metro Atlanta and North Georgia counties. Dual-inspector precision, infrared thermal imaging, and $10,000 warranty protection.',
   keywords: [
     'Metro Atlanta home inspection counties',
     'Fulton County home inspector',

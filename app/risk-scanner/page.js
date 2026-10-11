@@ -61,7 +61,7 @@ const scannerFaqSchema = {
       name: 'What are the risks of buying a home with Synthetic Stucco (EIFS) in Georgia?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Exterior Insulation and Finish Systems (EIFS) installed in Georgia between 1985 and 2000 are barrier systems that lack internal drainage planes. Over 85% of unsealed EIFS homes allow rainwater behind window headers, pipe penetrations, and roof kickouts. Because EIFS does not breathe, trapped moisture rots structural OSB sheathing and studs invisibly. Foresight utilizes FLIR thermal imaging to locate thermal evaporative delta-T anomalies and moisture meters to pinpoint hidden decay.'
+        text: 'Exterior Insulation and Finish Systems (EIFS) installed in Georgia between 1985 and 2000 are barrier systems that lack internal drainage planes. Over 85% of unsealed EIFS homes allow rainwater behind window headers, pipe penetrations, and roof kickouts. Because EIFS does not breathe, trapped moisture rots structural OSB sheathing and studs invisibly. Foresight utilizes infrared thermal imaging to locate thermal evaporative delta-T anomalies and moisture meters to pinpoint hidden decay.'
       },
     },
     {

@@ -205,7 +205,7 @@ export default function PressClient() {
               <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🔬</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>Building Science Authority</h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
-                Specialized in Southeastern building envelope failures, slab settlement on Piedmont red clay, crawlspace psychrometrics, FLIR thermal infrared analysis, and sewer video diagnostics.
+                Specialized in Southeastern building envelope failures, slab settlement on Piedmont red clay, crawlspace psychrometrics, calibrated infrared thermal analysis, and sewer video diagnostics.
               </p>
             </div>
 

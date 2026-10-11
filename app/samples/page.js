@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const metadata = {
   title: 'Sample Home Inspection Reports | Foresight Home Inspections Atlanta',
-  description: 'View sample home inspection reports from Foresight Home Inspections. See how our dual-inspector model, FLIR thermal imaging, and 3-step reporting system deliver clear, buyer-friendly insights.',
+  description: 'View sample home inspection reports from Foresight Home Inspections. See how our dual-inspector model, infrared thermal imaging, and 3-step reporting system deliver clear, buyer-friendly insights.',
   keywords: ['sample home inspection report Atlanta', 'HomeGauge sample report', 'home inspection sample Georgia', 'dual inspector report format'],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/samples',
@@ -60,7 +60,7 @@ export default function SampleReports() {
                   Actual Full Foresight Home Inspection Report
                 </h2>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.05rem', maxWidth: '750px', lineHeight: 1.6 }}>
-                  Explore a complete, authentic digital inspection report delivered to a Metro Atlanta client. Features 220+ high-resolution photos, FLIR thermal imaging, crawlspace analysis, and prioritized repair summaries. <em>(Property address and personal client names have been redacted to protect client privacy.)</em>
+                  Explore a complete, authentic digital inspection report delivered to a Metro Atlanta client. Features 220+ high-resolution photos, infrared thermal imaging, crawlspace analysis, and prioritized repair summaries. <em>(Property address and personal client names have been redacted to protect client privacy.)</em>
                 </p>
               </div>
 
@@ -95,7 +95,7 @@ export default function SampleReports() {
                 <span>📸</span> 220+ Diagnostic Photos
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
-                <span>🌡️</span> FLIR Thermal Scan Included
+                <span>🌡️</span> infrared thermal scan Included
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
                 <span>📝</span> HomeGauge CRL™ Repair List
@@ -184,7 +184,7 @@ export default function SampleReports() {
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <span style={{ fontSize: '2rem' }}>🌡️</span>
-                <h3 style={{ margin: 0 }}>FLIR Thermal Imaging Scan</h3>
+                <h3 style={{ margin: 0 }}>infrared thermal imaging scan</h3>
               </div>
               <p style={{ color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
                 Included on every standard inspection at no extra charge. Thermal scans identify hidden moisture leaks behind drywall, missing ceiling insulation, and overheating electrical breakers that visual inspection alone would miss.
@@ -233,7 +233,7 @@ export default function SampleReports() {
               <div className="card card-premium" style={{ background: '#FFFFFF', padding: '1.75rem', borderTop: '4px solid var(--color-gold)' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🌡️</div>
                 <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
-                  FLIR Thermal Anomaly Delta Guide
+                  infrared thermal Anomaly Delta Guide
                 </h3>
                 <p style={{ fontSize: '0.925rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, marginBottom: '1rem' }}>
                   Explains the 5°F to 10°F infrared temperature differential that unmasks hidden moisture leaks behind tile, missing insulation batts, and overloaded circuit breakers.

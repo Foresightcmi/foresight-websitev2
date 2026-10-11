@@ -10,7 +10,7 @@ export default function ProcessSteps() {
       id: 2,
       icon: "🔍",
       title: "Dual-Inspector Audit",
-      description: "Two certified inspectors examine every system—roof, structure, HVAC, electrical, plumbing—using FLIR thermal and drone technology."
+      description: "Two certified inspectors examine every system—roof, structure, HVAC, electrical, plumbing—using infrared thermal and drone technology."
     },
     {
       id: 3,

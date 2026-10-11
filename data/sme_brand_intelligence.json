@@ -4,7 +4,7 @@
   "credentials": "Certified Master Inspector® (CMI) - Master Inspector Certification Board",
   "primaryAdvantage": "Two Certified Inspectors on Every Inspection (Cuts On-Site Time in Half)",
   "warrantyProtection": "$10,000 Elite Master Inspection Warranty ($0 Deductible, Covers Structure & Mechanicals)",
-  "technologyStandard": "FLIR Thermal Imaging & Aerial Drone Scans Included Free on Every Inspection",
+  "technologyStandard": "infrared thermal imaging & Aerial Drone Scans Included Free on Every Inspection",
   "realtorTools": "Active SUPRA eKEY Access & HomeGauge CRL™ Interactive Repair Addendum Generator",
   "smeFieldKnowledge": [
     {
@@ -15,7 +15,7 @@
     {
       "topic": "Polybutylene Plumbing Blowout Risks",
       "smeInsight": "Common in 1980s-1990s Metro Atlanta subdivisions (Alpharetta, Sandy Springs, Duluth). Chlorine in municipal water degrades gray polybutylene pipes internally without surface signs until sudden wall blowout.",
-      "actionableAdvice": "Use FLIR thermal cameras to check behind vanities and main shutoffs for micro-leaks before full re-pipe failure."
+      "actionableAdvice": "Use infrared thermal cameras to check behind vanities and main shutoffs for micro-leaks before full re-pipe failure."
     },
     {
       "topic": "Federal Pacific & Zinsco Electrical Panel Fire Hazards",

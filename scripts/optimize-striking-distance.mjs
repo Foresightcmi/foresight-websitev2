@@ -30,7 +30,7 @@ function formatCityTitle(name) {
 }
 
 function formatCityDesc(name) {
-  const base = `4.9★ ${name} home inspection from $345. Two certified inspectors on every job led by a CMI. Free FLIR thermal, 4K drones & $10k warranty. Fast 24-hr reports!`;
+  const base = `4.9★ ${name} home inspection from $345. Two certified inspectors on every job led by a CMI. Free infrared thermal, 4K drones & $10k warranty. Fast 24-hr reports!`;
   if (base.length <= 158) return base;
   const opt2 = `4.9★ ${name} home inspection from $345. 2 certified inspectors on every job led by a CMI. Free thermal, 4K drones & $10k warranty. Fast 24-hr reports!`;
   if (opt2.length <= 158) return opt2;
@@ -69,11 +69,11 @@ const serviceOptimizations = {
   },
   '11-month-warranty-inspection': {
     metaTitle: '{city} 11-Month Warranty Inspection | From $335 | Foresight',
-    metaDescription: 'Beat your 1-year builder deadline in {city}, GA! Certified Master Inspector punch list with FLIR thermal scans from $335. Builder-ready report in 24 hrs.'
+    metaDescription: 'Beat your 1-year builder deadline in {city}, GA! Certified Master Inspector punch list with infrared thermal scans from $335. Builder-ready report in 24 hrs.'
   },
   'new-construction-inspection': {
     metaTitle: '{city} New Construction Inspection | From $400 | Foresight',
-    metaDescription: 'Independent new build inspection in {city}, GA. 2 certified inspectors uncover defects municipal code checks miss. FLIR thermal included. From $400.'
+    metaDescription: 'Independent new build inspection in {city}, GA. 2 certified inspectors uncover defects municipal code checks miss. infrared thermal included. From $400.'
   },
   'pre-listing-inspection': {
     metaTitle: '{city} Pre-Listing Inspection GA | From $365 | Foresight',
@@ -81,7 +81,7 @@ const serviceOptimizations = {
   },
   'buyer-inspection': {
     metaTitle: '{city} Home Inspection GA | 2 Certified Inspectors | $345',
-    metaDescription: 'Top-rated {city}, GA home inspection from $345. Two certified inspectors on every job led by a CMI. Free FLIR thermal, 4K drones & $10,000 warranty included!'
+    metaDescription: 'Top-rated {city}, GA home inspection from $345. Two certified inspectors on every job led by a CMI. Free infrared thermal, 4K drones & $10,000 warranty included!'
   },
   'pre-drywall-inspection': {
     metaTitle: '{city} Pre-Drywall Inspection | Phase 2 From $275 | Foresight',

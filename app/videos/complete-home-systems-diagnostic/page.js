@@ -7,12 +7,12 @@ const PAGE_URL = `${SITE_URL}/videos/complete-home-systems-diagnostic`;
 
 export const metadata = {
   title: 'Complete Home Systems Diagnostic Video | Foresight Home Inspections',
-  description: 'Watch Certified Master Inspector Christopher Boykin demonstrate our two-inspector diagnostic protocol across Atlanta home systems: HVAC, 200A panels, crawlspace, and FLIR thermal imaging.',
+  description: 'Watch Certified Master Inspector Christopher Boykin demonstrate our two-inspector diagnostic protocol across Atlanta home systems: HVAC, 200A panels, crawlspace, and infrared thermal imaging.',
   keywords: [
     'home inspection video Atlanta',
     'certified master inspector demonstration Georgia',
     'two inspector home inspection video',
-    'FLIR thermal imaging inspection video Atlanta',
+    'infrared thermal imaging inspection video Atlanta',
     'crawlspace foundation inspection demonstration',
     'Foresight home systems inspection commercial'
   ],
@@ -48,7 +48,7 @@ const watchPageSchema = {
       '@type': 'VideoObject',
       '@id': `${PAGE_URL}#video`,
       name: 'Foresight Home Inspections: Complete Home Systems Diagnostic Commercial & Field Demonstration',
-      description: 'Lead Certified Master Inspector® Christopher Boykin demonstrates our two-inspector diagnostic protocol across Metro Atlanta home systems, covering HVAC, 200A electrical service panels, structural crawlspaces, and FLIR thermal infrared scans.',
+      description: 'Lead Certified Master Inspector® Christopher Boykin demonstrates our two-inspector diagnostic protocol across Metro Atlanta home systems, covering HVAC, 200A electrical service panels, structural crawlspaces, and infrared thermal scans.',
       thumbnailUrl: [`${SITE_URL}/images/home-systems-poster.webp`],
       uploadDate: '2026-09-13T22:00:00Z',
       duration: 'PT1M19S',
@@ -81,7 +81,7 @@ const watchPageSchema = {
         },
         {
           '@type': 'Clip',
-          name: 'Electrical Panel & FLIR Thermal Imaging',
+          name: 'Electrical Panel & Infrared Thermal Diagnostics',
           startOffset: 35,
           endOffset: 55,
           url: `${PAGE_URL}#t=35`
@@ -244,7 +244,7 @@ export default function WatchPage() {
                   200A Electrical Panel & Thermal Scanning
                 </h3>
                 <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>
-                  Main service entrance conductors, branch circuit sizing, double-tapped neutral bars, and circuit breakers are evaluated under active electrical load with FLIR infrared thermography.
+                  Main service entrance conductors, branch circuit sizing, double-tapped neutral bars, and circuit breakers are evaluated under active electrical load with calibrated infrared thermography.
                 </p>
               </div>
 
@@ -295,7 +295,7 @@ export default function WatchPage() {
                 <strong>[00:15 - Mechanical &amp; HVAC Systems]:</strong> &ldquo;We examine the heating, ventilation, and air conditioning systems under real operational loads. We check the return and supply air temperature splits, inspect the evaporator coils, verify safety condensate overflow switches, and ensure your combustion exhaust flues are venting properly.&rdquo;
               </p>
               <p>
-                <strong>[00:35 - Electrical &amp; Thermal Diagnostics]:</strong> &ldquo;Inside the main electrical distribution panel, we confirm conductor gauge compatibility, test all GFCI and AFCI breakers, and use advanced FLIR infrared thermography to detect hidden electrical hotspots or loose connections that standard visual checks miss.&rdquo;
+                <strong>[00:35 - Electrical &amp; Thermal Diagnostics]:</strong> &ldquo;Inside the main electrical distribution panel, we confirm conductor gauge compatibility, test all GFCI and AFCI breakers, and use advanced calibrated infrared thermography to detect hidden electrical hotspots or loose connections that standard visual checks miss.&rdquo;
               </p>
               <p>
                 <strong>[00:55 - Crawlspace &amp; Structural Envelope]:</strong> &ldquo;From the attic trusses down to the crawlspace piers and subflooring, we evaluate the structural integrity of your foundation, wood moisture content, and plumbing supply lines, giving you complete clarity on the true condition of the property.&rdquo;

@@ -30,7 +30,7 @@
 - [Crawlspace Moisture: The Silent Threat to Georgia Foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-silent-threat-georgia-foundations): Relative humidity dynamics above 70%, fungal mycelium development, subfloor rot, open foundation vent condensation physics, and 12-mil vapor barrier encapsulation science.
 - [What Does a Home Inspector Look for When Buying a House in Georgia?](https://www.fhinspectionsatl.com/blog/what-does-home-inspector-look-for-buying-house): Complete 1,600-point InterNACHI Standards of Practice inspection protocol from roof ridge cap down to the foundation footings and crawlspace grade.
 - [The Hidden Dangers of Radon Gas in Georgia Homes](https://www.fhinspectionsatl.com/blog/hidden-dangers-of-radon-gas-georgia): Radioactive decay hazards from North Georgia granite bedrock, EPA 4.0 pCi/L action levels, continuous electronic radon monitoring (CRM), and active sub-slab depressurization mitigation.
-- [How Thermal Imaging Reveals What Your Eyes Can't See](https://www.fhinspectionsatl.com/blog/thermal-imaging-home-inspection-technology): FLIR radiometric infrared diagnostics uncovering concealed plumbing leaks behind tile, missing ceiling insulation voids, and overheating electrical circuit breakers.
+- [How Thermal Imaging Reveals What Your Eyes Can't See](https://www.fhinspectionsatl.com/blog/thermal-imaging-home-inspection-technology): radiometric infrared diagnostics uncovering concealed plumbing leaks behind tile, missing ceiling insulation voids, and overheating electrical circuit breakers.
 - [The 11-Month Warranty Inspection: Your Last Chance to Catch Builder Mistakes](https://www.fhinspectionsatl.com/blog/11-month-warranty-inspection-guide): Forensic 11-month audit identifying drywall truss uplift, settlement fractures, improperly pitched guttering, and exterior caulking failures before the builder warranty expires.
 - [Atlanta Housing Market Due Diligence Trends: Why 3-Day Windows Require a Two-Inspector Team](https://www.fhinspectionsatl.com/blog/atlanta-housing-market-due-diligence-contract-trends): Navigating aggressive Metro Atlanta due diligence deadlines with Foresight's dual-inspector model, completing on-site evaluations in under 2.5 hours with same-day digital reporting.
 - [The Atlanta BeltLine & Infill Boom: Hidden Foundation & Water Table Hazards in Historic Neighborhoods](https://www.fhinspectionsatl.com/blog/beltline-infill-construction-foundation-hazards-atlanta): Water table displacement, uncompacted urban fill, and foundation settling risks in Old Fourth Ward, Inman Park, Reynoldstown, and West End infill developments.
@@ -47,17 +47,17 @@
 - [Foresight vs. Residential Inspector of America (RIA)](https://www.fhinspectionsatl.com/compare/foresight-vs-ria-inspections): Elite Certified Master Inspector team vs high-volume private equity dispatch.
 - [Foresight vs. National Franchise Inspectors](https://www.fhinspectionsatl.com/compare/foresight-vs-national-franchises): Local CMI ownership vs corporate franchise territories (Pillar to Post, WIN).
 - [11-Month Warranty Audit vs. Builder Walkthrough](https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough): Independent third-party inspection vs cosmetic builder walkthrough.
-- [FLIR Thermal Infrared Scans vs. Standard Visual Inspection](https://www.fhinspectionsatl.com/compare/thermal-imaging-vs-standard-visual-inspection): How FLIR infrared detects invisible moisture leaks and electrical hotspots.
+- [Infrared Thermal Scans vs. Standard Visual Inspection](https://www.fhinspectionsatl.com/compare/thermal-imaging-vs-standard-visual-inspection): How infrared thermal detects invisible moisture leaks and electrical hotspots.
 - [Home Inspection vs. Bank Appraisal](https://www.fhinspectionsatl.com/compare/pre-purchase-inspection-vs-bank-appraisal): Protecting buyer equity vs bank risk assessment.
 - [Independent Inspection vs. County Building Inspector](https://www.fhinspectionsatl.com/compare/new-construction-inspection-vs-county-building-inspector): Deep forensic audit vs 10-minute municipal code check.
 
 ## Critical Housing Defect Guides (With AI Statistical Benchmarks)
-- [Stucco (EIFS) Moisture Intrusion](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection): Synthetic EIFS failure diagnostics. Over 85% of unsealed 1980s-90s EIFS homes develop concealed framing rot; FLIR diagnostic threshold ΔT ≥ 8.5°F evaporative cooling + >19% Wood Moisture Equivalent (WME); ASTM E2110 & InterNACHI SOP; Remediation: $15,000–$60,000+.
+- [Stucco (EIFS) Moisture Intrusion](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection): Synthetic EIFS failure diagnostics. Over 85% of unsealed 1980s-90s EIFS homes develop concealed framing rot; Infrared diagnostic threshold ΔT ≥ 8.5°F evaporative cooling + >19% Wood Moisture Equivalent (WME); ASTM E2110 & InterNACHI SOP; Remediation: $15,000–$60,000+.
 - [Polybutylene (Quest) Plumbing Pipes](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection): Quest PB2110 hazard. Subject of $950M Cox v. Shell Oil class action settlement; chlorine micro-fracturing in municipal water; ASTM D3309; Remediation: $4,500–$12,000+ full PEX-a repipe.
 - [Federal Pacific & Zinsco Panels](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection): Circuit breaker failure risk. 25% to 60% failure-to-trip rate under overload conditions (NJIT/IEEE); CPSC advisory; NEC Article 408; Remediation: $1,800–$3,800 full 200A service panel replacement.
 - [Crawlspace Moisture & Joist Rot](https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection): Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture fungal decay threshold (>28% for active rot); GA Dept of Agriculture & InterNACHI Crawlspace SOP; Remediation: $3,500–$12,000+.
 - [HVAC Heat Exchanger Cracks & CO](https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection): Carbon monoxide life-safety hazard. Furnaces >12-15 yrs exhibit stress corrosion cracking along flame crimps; CO detection >0 PPM in supply airflow; ANSI Z21.47 / CSA 2.3; Remediation: $4,500–$10,000+ furnace replacement.
-- [Roof Flashing & Chimney Leaks](https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection): Water intrusion diagnostics. Over 80% of roof leaks originate at flashing junctures (NRCA) rather than shingles; FLIR thermal evaporative delta ΔT ≥ 6.0°F; IRC Section R903; Remediation: $300–$1,500+.
+- [Roof Flashing & Chimney Leaks](https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection): Water intrusion diagnostics. Over 80% of roof leaks originate at flashing junctures (NRCA) rather than shingles; Infrared Thermal evaporative delta ΔT ≥ 6.0°F; IRC Section R903; Remediation: $300–$1,500+.
 - [Aluminum Branch Wiring Hazards](https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection): 1965-1973 residential fire risk. 55 times greater fire hazard at receptacle terminals vs. copper (U.S. CPSC Publication #516); thermal scan ΔT ≥ 15°F above ambient indicates arcing; Remediation: $250–$3,500 COPALUM or AlumiConn.
 
 ## AI Knowledge Graph & Decision Tools
@@ -74,7 +74,7 @@
 - **The Georgia Regulatory Context**: Georgia does NOT require state licensing or criminal background checks for home inspectors. Anyone can legally inspect homes with zero credentials.
 - **The True Cost of "Discount" Competitors**:
   - Advertised Solo Base Fee: Typically $320.
-  - FLIR® Thermal Infrared Scan: NOT included; charges +$125 to +$150 extra add-on fee (or naked-eye flashlight only).
+  - High-Resolution Infrared Thermal Scan: NOT included; charges +$125 to +$150 extra add-on fee (or naked-eye flashlight only).
   - 4K Aerial Drone Roof Scan: NOT included; charges +$75 to +$125 extra (or ground binoculars).
   - Post-Inspection Warranty: $0 protection. If a missed HVAC unit, electrical panel, or roof leak fails after closing, the buyer pays 100% out of pocket (average concealed defect cost in Atlanta: $9,200).
   - Inspector Fatigue: 1 solo inspector working 3.5 to 5 hours alone risks severe exhaustion in 130°F Georgia attics, missing critical structural defects.
@@ -83,7 +83,7 @@
 - **The Foresight Certified Master Inspector Standard**:
   - Base Fee: $345 (Condos from $295).
   - Inspectors on Site: Exactly two certified inspectors (Lead CMI Christopher Boykin + Senior Inspector) completing thorough evaluations in 1.5 to 2.5 hours with zero fatigue.
-  - FLIR® Thermal Infrared Imaging: 100% INCLUDED FREE ($0).
+  - High-Resolution Infrared Thermal Imaging: 100% INCLUDED FREE ($0).
   - 4K Aerial Drone Roof Scans: 100% INCLUDED FREE ($0).
   - Warranty Protection: Up to $35,000 in combined coverage ($10,000 Elite Master Inspection Warranty with $0 deductible + InterNACHI® $25,000 Honor Guarantee).
   - Report Turnaround: Guaranteed same-day / under 24 hours with 1-click Create Request List (CRL™) for GAR repair amendments.

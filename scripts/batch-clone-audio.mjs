@@ -24,7 +24,7 @@ const clips = [
   },
   {
     name: 'chris-process',
-    text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free FLIR thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?"
+    text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free infrared thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?"
   },
   {
     name: 'chris-10am',
@@ -72,7 +72,7 @@ const clips = [
   },
   {
     name: 'chris-pricing',
-    text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, and condos start at 295 dollars. Every inspection includes our two-inspector standard, free FLIR thermal imaging, aerial drone scans, and up to 35,000 dollars in warranty protection. What is the approximate square footage of the home you are looking to inspect?"
+    text: "Our single-family home inspections start at 345 dollars for homes up to 1,500 square feet, and condos start at 295 dollars. Every inspection includes our two-inspector standard, free infrared thermal imaging, aerial drone scans, and up to 35,000 dollars in warranty protection. What is the approximate square footage of the home you are looking to inspect?"
   },
   {
     name: 'chris-why-two',
@@ -84,11 +84,11 @@ const clips = [
   },
   {
     name: 'chris-competitors',
-    text: "Unlike national franchises that charge 450 to 575 dollars with royalty fees and assign junior inspectors, or discount solo operators who rush or miss major defects, Foresight gives you a dedicated two-inspector team led by a Certified Master Inspector, free FLIR thermal imaging, drone scans, and up to 35,000 dollars in warranties. When is your due diligence deadline?"
+    text: "Unlike national franchises that charge 450 to 575 dollars with royalty fees and assign junior inspectors, or discount solo operators who rush or miss major defects, Foresight gives you a dedicated two-inspector team led by a Certified Master Inspector, free infrared thermal imaging, drone scans, and up to 35,000 dollars in warranties. When is your due diligence deadline?"
   },
   {
     name: 'chris-drone-thermal',
-    text: "Complimentary FLIR infrared thermal imaging and 4K aerial drone roof scans are standard on every full home inspection at zero extra charge. Thermal imaging detects hidden moisture behind walls and plumbing leaks, while drone scans inspect high and steep roofs safely with high-resolution detail. What property are you looking to evaluate?"
+    text: "Complimentary high-resolution infrared thermal imaging and 4K aerial drone roof scans are standard on every full home inspection at zero extra charge. Thermal imaging detects hidden moisture behind walls and plumbing leaks, while drone scans inspect high and steep roofs safely with high-resolution detail. What property are you looking to evaluate?"
   },
   {
     name: 'chris-checklist',

@@ -106,7 +106,7 @@ const STRIKING_QUERIES = [
     enrichmentHook: 'Independent 11-Month Warranty Audit: Finding Concealed Builder Omissions Before Month 12',
     faqToAdd: {
       q: 'What is included in an 11-month builder warranty inspection?',
-      a: 'Our dual-inspector team conducts a comprehensive structural, roofing, attic, and mechanical audit using FLIR thermal cameras to detect settled drywall fractures, unsealed roof flashings, detached HVAC ducts, and missing insulation bats before the builder one-year warranty period expires.'
+      a: 'Our dual-inspector team conducts a comprehensive structural, roofing, attic, and mechanical audit using infrared thermal cameras to detect settled drywall fractures, unsealed roof flashings, detached HVAC ducts, and missing insulation bats before the builder one-year warranty period expires.'
     }
   }
 ];

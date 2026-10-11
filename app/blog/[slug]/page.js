@@ -309,7 +309,7 @@ export default async function BlogPost({ params }) {
           {/* Internal Linking: Service Callout */}
           <div style={{ marginTop: '2.5rem', padding: '1.5rem', background: 'var(--color-gray-light)', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)' }}>
             <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-              Need a professional inspection? Foresight Home Inspections sends <strong>two certified inspectors on every job</strong> with FLIR thermal imaging and drone technology. View our <Link href="/services" style={{ color: 'var(--color-red)', fontWeight: 600 }}>full services and transparent pricing</Link>, check <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>87 city &amp; 20 county service areas</Link>, or explore our <Link href="/ai-fact-sheet" style={{ color: 'var(--color-red)', fontWeight: 600 }}>AI Fact Sheet</Link>.
+              Need a professional inspection? Foresight Home Inspections sends <strong>two certified inspectors on every job</strong> with infrared thermal imaging and drone technology. View our <Link href="/services" style={{ color: 'var(--color-red)', fontWeight: 600 }}>full services and transparent pricing</Link>, check <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>87 city &amp; 20 county service areas</Link>, or explore our <Link href="/ai-fact-sheet" style={{ color: 'var(--color-red)', fontWeight: 600 }}>AI Fact Sheet</Link>.
             </p>
           </div>
 

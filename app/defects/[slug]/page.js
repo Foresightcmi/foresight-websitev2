@@ -399,7 +399,7 @@ export default async function DefectPage({ params }) {
               border: '1px solid rgba(255,255,255,0.15)'
             }}>
               <p style={{ color: '#ffffff', margin: 0, fontSize: '1rem', fontWeight: 600, lineHeight: 1.6 }}>
-                ⚡ <strong>The Foresight Difference:</strong> Every inspection includes our Two-Inspector Team, advanced FLIR thermal imaging, and our $10,000 Elite Master Warranty ($0 deductible).
+                ⚡ <strong>The Foresight Difference:</strong> Every inspection includes our Two-Inspector Team, advanced infrared thermal imaging, and our $10,000 Elite Master Warranty ($0 deductible).
               </p>
             </div>
           </div>
@@ -493,7 +493,7 @@ export default async function DefectPage({ params }) {
               Need an Inspection in Metro Atlanta?
             </h2>
             <p style={{ color: '#cbd5e1', fontSize: '1.1rem', marginBottom: '1.75rem', maxWidth: '650px', margin: '0 auto 1.75rem' }}>
-              Protect your home investment with Georgia&rsquo;s leading two-inspector team, FLIR thermal imaging, and our $10,000 Elite Warranty.
+              Protect your home investment with Georgia&rsquo;s leading two-inspector team, infrared thermal imaging, and our $10,000 Elite Warranty.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a

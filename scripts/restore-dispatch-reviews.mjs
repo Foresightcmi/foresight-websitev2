@@ -422,7 +422,7 @@ const scriptAfterClientCards = `
       }
       const firstName = name.split(" ")[0];
       const addrPart = addr && addr !== 'your home' ? \` at \${addr}\` : '';
-      const text = \`Hi \${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home\${addrPart}. As an independent Atlanta local business, our reputation is built on 5-star client trust. If our thorough two-inspector audit, FLIR thermal scan, and report gave you peace of mind, would you take 30 seconds to share a quick 5-star review on Google? ⭐ Tap here for instant access: \${directReviewUrl} - Thank you so much! Christopher Boykin, CMI® (678) 480-2110\`;
+      const text = \`Hi \${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home\${addrPart}. As an independent Atlanta local business, our reputation is built on 5-star client trust. If our thorough two-inspector audit, infrared thermal scan, and report gave you peace of mind, would you take 30 seconds to share a quick 5-star review on Google? ⭐ Tap here for instant access: \${directReviewUrl} - Thank you so much! Christopher Boykin, CMI® (678) 480-2110\`;
       const cleanPhone = phone.replace(/[^0-9]/g, "");
       const smsLink = \`sms:+1\${cleanPhone}?&body=\${encodeURIComponent(text)}\`;
       

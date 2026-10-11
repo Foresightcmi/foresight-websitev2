@@ -825,7 +825,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     </span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: 'var(--color-gray-mid)' }}>🔍 FLIR® Infrared Thermal Imaging</span>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>🔍 High-Resolution Infrared Thermal Imaging</span>
                     <span style={{ fontWeight: 600, color: '#34d399' }}>
                       <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$99</span> FREE
                     </span>

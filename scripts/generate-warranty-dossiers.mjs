@@ -583,7 +583,7 @@ function generateWarrantyDossierHtml(client) {
             Summer attic temperatures reach 140°F in Atlanta. Flex-duct zip ties and mastic sealants degrade under vibration, dumping chilled air into attics and causing severe room-to-room temperature differentials.
           </p>
           <div class="vector-spec">
-            DIAGNOSTIC: FLIR® thermal camera sweep &amp; static airflow test (&Delta;T 16&deg;F&ndash;22&deg;F)
+            DIAGNOSTIC: infrared thermal camera sweep &amp; static airflow test (&Delta;T 16&deg;F&ndash;22&deg;F)
           </div>
         </div>
 
@@ -642,7 +642,7 @@ function generateWarrantyDossierHtml(client) {
           <p>
             • Treated as cosmetic opinion by the builder.<br>
             • No IRC/Georgia building code citations.<br>
-            • Missing thermal FLIR evidence &amp; calibrated moisture readings.<br>
+            • Missing infrared thermal evidence &amp; calibrated moisture readings.<br>
             • Easily delayed by builder reps until Day 366 when warranty legally expires.
           </p>
         </div>
@@ -650,7 +650,7 @@ function generateWarrantyDossierHtml(client) {
           <h3 style="color:#6EE7B7;">✅ The Foresight CMI® Punch List</h3>
           <p>
             • Prepared by InterNACHI Certified Master Inspector® (Top 1% in US).<br>
-            • Backed by calibrated thermal FLIR imaging and drone photography.<br>
+            • Backed by calibrated calibrated infrared thermal imaging and drone photography.<br>
             • Cites specific building science structural and mechanical standards.<br>
             • Formal engineering format that superintendents cannot dismiss.
           </p>
@@ -676,7 +676,7 @@ function generateWarrantyDossierHtml(client) {
       <div class="deliverable-item">
         <span class="check-icon">✓</span>
         <div>
-          <div class="deliv-title">FLIR® Infrared Thermal Imaging Scan</div>
+          <div class="deliv-title">High-Resolution Infrared Thermal Imaging Scan</div>
           <div class="deliv-desc">Detects concealed ceiling insulation voids, duct leakage, plumbing leaks inside walls, and hot electrical connections before they cause catastrophic damage.</div>
         </div>
       </div>

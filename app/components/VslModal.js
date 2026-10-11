@@ -151,7 +151,7 @@ export default function VslModal({ isOpen, onClose }) {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
               <span style={{ color: '#34D399', fontSize: '1.1rem' }}>🔍</span>
               <div>
-                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>FLIR Infrared &amp; Drones</strong>
+                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>infrared thermal &amp; Drones</strong>
                 <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}>Catch hidden leaks &amp; roof defects</span>
               </div>
             </div>

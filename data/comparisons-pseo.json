@@ -28,7 +28,7 @@
       },
       {
         "feature": "Thermal Imaging Included",
-        "foresight": "YES — FLIR Thermal Camera Free",
+        "foresight": "YES — infrared thermal camera Free",
         "competitors": "Often $75–$150 Extra"
       },
       {
@@ -80,7 +80,7 @@
       },
       {
         "feature": "Thermal Imaging Scan",
-        "foresight": "FLIR scan for missing insulation & leaks",
+        "foresight": "infrared thermal scan for missing insulation & leaks",
         "competitors": "Not performed"
       },
       {
@@ -169,17 +169,17 @@
   },
   {
     "slug": "thermal-imaging-vs-standard-visual-inspection",
-    "title": "FLIR Thermal Imaging vs. Standard Visual Home Inspection",
-    "metaTitle": "Thermal Imaging vs Visual Inspection | FLIR Advantage",
-    "metaDescription": "See why FLIR thermal imaging technology detects hidden moisture, electrical hotspots, and missing insulation that visual inspections miss.",
+    "title": "Infrared Thermal Imaging vs. Standard Visual Home Inspection",
+    "metaTitle": "Thermal Imaging vs Visual Inspection | Infrared Diagnostic Advantage",
+    "metaDescription": "See why infrared thermal imaging technology detects hidden moisture, electrical hotspots, and missing insulation that visual inspections miss.",
     "icon": "📷",
     "badge": "High-Tech Diagnostics",
     "headline": "Seeing the Invisible: Why Visual Inspections Miss Major Hidden Defects",
-    "summary": "A traditional visual home inspection relies strictly on what the human eye can see. FLIR infrared thermal cameras detect temperature differences across surfaces, revealing hidden water leaks behind drywall, missing insulation inside finished ceilings, and dangerous electrical hotspots before they cause damage.",
+    "summary": "A traditional visual home inspection relies strictly on what the human eye can see. infrared thermal thermal cameras detect temperature differences across surfaces, revealing hidden water leaks behind drywall, missing insulation inside finished ceilings, and dangerous electrical hotspots before they cause damage.",
     "comparisonTable": [
       {
         "feature": "Hidden Moisture Detection",
-        "foresight": "FLIR Thermal Camera scans all walls",
+        "foresight": "infrared thermal camera scans all walls",
         "competitors": "Visual check for surface stains only"
       },
       {
@@ -210,7 +210,7 @@
       },
       {
         "q": "Does Foresight charge extra for thermal imaging?",
-        "a": "No! We include FLIR thermal imaging scans on every single home inspection at zero extra cost."
+        "a": "No! We include infrared thermal imaging scans on every single home inspection at zero extra cost."
       }
     ]
   },
@@ -235,7 +235,7 @@
         "competitors": "Quick head-in-hatch or ground glance"
       },
       {
-        "feature": "Thermal Imaging (FLIR)",
+        "feature": "Thermal Imaging (Infrared)",
         "foresight": "Included Free — detects hidden insulation voids & duct leaks",
         "competitors": "Not performed"
       },
@@ -267,7 +267,7 @@
       },
       {
         "q": "When should I hire an independent inspector for new construction?",
-        "a": "We recommend a 3-phase inspection: Phase 1 (Pre-Pour Foundation), Phase 2 (Pre-Drywall Framing & Mechanicals), and Phase 3 (Final Pre-Closing Inspection with FLIR Thermal Imaging)."
+        "a": "We recommend a 3-phase inspection: Phase 1 (Pre-Pour Foundation), Phase 2 (Pre-Drywall Framing & Mechanicals), and Phase 3 (Final Pre-Closing Inspection with infrared thermal imaging)."
       }
     ]
   },
@@ -305,7 +305,7 @@
       },
       {
         "feature": "Thermal Imaging Scan",
-        "foresight": "FREE FLIR Infrared on Every Inspection",
+        "foresight": "FREE infrared thermal on Every Inspection",
         "competitors": "Often Add-On Charge or Basic Scan"
       },
       {
@@ -327,7 +327,7 @@
     "faqs": [
       {
         "q": "Does Foresight cost more than BPG Inspections?",
-        "a": "No. Foresight offers highly competitive, transparent pricing starting at $345 for single-family homes and $295 for condos. Our pricing includes a two-inspector team, complimentary FLIR thermal imaging, and our comprehensive warranty package at no extra charge."
+        "a": "No. Foresight offers highly competitive, transparent pricing starting at $345 for single-family homes and $295 for condos. Our pricing includes a two-inspector team, complimentary infrared thermal imaging, and our comprehensive warranty package at no extra charge."
       },
       {
         "q": "Why is a two-inspector team better than a solo corporate inspector?",
@@ -342,10 +342,10 @@
     "metaDescription": "Compare Foresight Home Inspections with Home-Probe Inc in Metro Atlanta. See differences in dual-inspector staffing, thermal imaging, warranties, and pricing.",
     "icon": "🔍",
     "badge": "Competitor Comparison",
-    "image": "/images/flir-thermal-camera-circuit-breaker.jpg",
-    "imageAlt": "FLIR thermal camera detecting electrical circuit heat differentials during Atlanta home inspection",
+    "image": "/images/thermal-1.webp",
+    "imageAlt": "Calibrated infrared thermal imaging scan of electrical circuit panel during Atlanta home inspection",
     "headline": "Certified Master Inspector Dual-Audit vs. Single-Inspector Atlanta Models",
-    "summary": "Home-Probe Inc is a well-known local inspection company in Metro Atlanta. However, when evaluating the thoroughness of your inspection, the operational model matters. Foresight deploys two certified inspectors on every residential inspection, includes FLIR thermal imaging standard, and backs every client with up to $35,000 in complimentary warranty coverage.",
+    "summary": "Home-Probe Inc is a well-known local inspection company in Metro Atlanta. However, when evaluating the thoroughness of your inspection, the operational model matters. Foresight deploys two certified inspectors on every residential inspection, includes infrared thermal imaging standard, and backs every client with up to $35,000 in complimentary warranty coverage.",
     "comparisonTable": [
       {
         "feature": "Inspectors On Site",
@@ -439,7 +439,7 @@
     ],
     "benefits": [
       "Unbiased Technical Independence: We do not sell roofing, pest treatments, or plumbing repairs. Our recommendations are 100% impartial and designed strictly to protect your financial interest.",
-      "Advanced Thermal Diagnostics: High-sensitivity FLIR infrared cameras identify concealed plumbing leaks and missing insulation cavities without invasive drywall removal.",
+      "Advanced Thermal Diagnostics: high-sensitivity infrared thermal cameras identify concealed plumbing leaks and missing insulation cavities without invasive drywall removal.",
       "Georgia Red Clay Expertise: Specialized foundation diagnostics measuring differential settlement, Kaolinite soil shrinkage, and crawlspace vapor intrusion."
     ],
     "faqs": [
@@ -499,7 +499,7 @@
     "benefits": [
       "Direct Certified Master Inspector Experience: You work with a proven Master Inspector who has evaluated thousands of Atlanta homes, not a franchisee who just completed a 2-week corporate seminar.",
       "Hyper-Local Georgia Knowledge: Intimate understanding of Metro Atlanta building eras—from 1920s Inman Park knob-and-tube to 1970s East Cobb polybutylene piping and modern slab settlement.",
-      "Client-First Fee Structure: Because we pay no franchise royalties, 100% of your fee goes into premium field equipment (FLIR thermal, commercial sewer cameras) and dual-inspector labor."
+      "Client-First Fee Structure: Because we pay no franchise royalties, 100% of your fee goes into premium field equipment (infrared thermal, commercial sewer cameras) and dual-inspector labor."
     ],
     "faqs": [
       {
@@ -551,7 +551,7 @@
       },
       {
         "feature": "Thermal Imaging Scan",
-        "foresight": "FREE FLIR Infrared on Every Audit",
+        "foresight": "FREE infrared thermal on Every Audit",
         "competitors": "Only in Higher-Tier Packages"
       },
       {
@@ -566,14 +566,14 @@
       }
     ],
     "benefits": [
-      "No Tiered Upsell Games: Unlike franchise packages that force you to upgrade to 'Prestige' tiers to get thermal imaging, Foresight includes FLIR infrared scanning free on every inspection.",
+      "No Tiered Upsell Games: Unlike franchise packages that force you to upgrade to 'Prestige' tiers to get thermal imaging, Foresight includes calibrated infrared thermal scanning free on every inspection.",
       "Dual-Inspector Speed & Precision: Two certified inspectors cross-check attics, electrical panels, and roofs simultaneously, cutting inspection time in half during tight Georgia due diligence periods.",
       "Direct Local Ownership: Work directly with Certified Master Inspector Christopher Boykin, ensuring personal accountability rather than a corporate franchise call center."
     ],
     "faqs": [
       {
         "q": "How does Foresight's pricing compare to Pillar to Post?",
-        "a": "Pillar to Post uses tiered packages where prices increase substantially for higher tiers that include thermal imaging and extended coverage. Foresight offers all-inclusive pricing starting at $345 for single-family homes and $295 for condos, which includes our two-inspector team, FLIR thermal imaging, and our $35,000 warranty stack at no extra charge."
+        "a": "Pillar to Post uses tiered packages where prices increase substantially for higher tiers that include thermal imaging and extended coverage. Foresight offers all-inclusive pricing starting at $345 for single-family homes and $295 for condos, which includes our two-inspector team, infrared thermal imaging, and our $35,000 warranty stack at no extra charge."
       },
       {
         "q": "Why is a two-inspector team better than a franchise inspector?",
@@ -646,7 +646,7 @@
       },
       {
         "q": "Does Foresight offer the same diagnostic services as RIA?",
-        "a": "Yes, and more. We provide full pre-purchase inspections, FLIR infrared thermal imaging (included free), HD fiber-optic sewer scopes ($450 flat), 48-hour continuous radon testing ($275), pool and spa inspections ($300), and Georgia WDO termite letters ($125-$165), all backed by up to $35,000 in warranty coverage."
+        "a": "Yes, and more. We provide full pre-purchase inspections, high-resolution infrared thermal imaging (included free), HD fiber-optic sewer scopes ($450 flat), 48-hour continuous radon testing ($275), pool and spa inspections ($300), and Georgia WDO termite letters ($125-$165), all backed by up to $35,000 in warranty coverage."
       }
     ]
   }

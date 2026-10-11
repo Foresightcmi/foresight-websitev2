@@ -18,7 +18,7 @@ export const metadata = {
     'pre-listing seller inspection pricing',
     'luxury estate inspection Atlanta',
     'commercial and municipal rehab inspection Georgia',
-    'FLIR thermal imaging inspection Atlanta'
+    'infrared thermal imaging inspection Atlanta'
   ],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/services',
@@ -38,7 +38,7 @@ export default function Services() {
       price: 'Custom Quote',
       priceNote: 'Popular for $750k+ Estates & Custom Builds',
       description: 'Dedicated 4+ hour comprehensive property inspection for luxury estates and complex architectural grounds. Led by a Certified Master Inspector® (CMI) with aerial drone scanning, thermal envelope diagnostics, and 1-on-1 strategy consultation.',
-      details: ['Lead Certified Master Inspector® (CMI) + Senior Inspector', 'Extended 4+ hour dedicated evaluation window', 'Aerial drone roof & grounds scan', 'FLIR thermal imaging & envelope diagnostics', 'Direct 1-on-1 post-report strategy consultation', '$10,000 Warranty protection included'],
+      details: ['Lead Certified Master Inspector® (CMI) + Senior Inspector', 'Extended 4+ hour dedicated evaluation window', 'Aerial drone roof & grounds scan', 'infrared thermal imaging & envelope diagnostics', 'Direct 1-on-1 post-report strategy consultation', '$10,000 Warranty protection included'],
       image: '/images/drone-2.png',
       slug: 'estate-and-luxury-home-inspection-guide'
     },
@@ -202,7 +202,7 @@ export default function Services() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Foresight Home Inspection Services Package",
-    "description": "Comprehensive two-inspector home inspections across Metro Atlanta led by Certified Master Inspector Christopher Boykin. Includes FLIR thermal imaging, aerial drone scans, and $10,000 warranty.",
+    "description": "Comprehensive two-inspector home inspections across Metro Atlanta led by Certified Master Inspector Christopher Boykin. Includes infrared thermal imaging, aerial drone scans, and $10,000 warranty.",
     "image": [
       "https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg",
       "https://www.fhinspectionsatl.com/images/luxury-home.jpg",
@@ -303,7 +303,7 @@ export default function Services() {
             Transparent pricing based on actual square footage. We provide Certified Master Inspector®-led inspections with thermal imaging included, plus a full range of specialty assessments. All inspections are conducted to InterNACHI Standards of Practice.
           </p>
           <p style={{ color: '#E2E8F0', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.025rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
-            A certified home inspection in Metro Atlanta starts at $345 for single-family homes ($295 for condos) and includes two certified inspectors, FLIR thermal imaging, 4K aerial drone scans, and the $10,000 Elite Master Inspection Warranty at no extra cost.
+            A certified home inspection in Metro Atlanta starts at $345 for single-family homes ($295 for condos) and includes two certified inspectors, infrared thermal imaging, 4K aerial drone scans, and the $10,000 Elite Master Inspection Warranty at no extra cost.
           </p>
         </div>
       </section>
@@ -519,13 +519,13 @@ export default function Services() {
               <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                 <Image
                   src="/images/thermal-1.png"
-                  alt="Infrared Thermal Imaging (FLIR) camera inspecting home electrical heat profile"
+                  alt="Infrared Thermal Imaging camera inspecting home electrical heat profile"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging (FLIR)</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Our professional thermal cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation without damaging any drywall. Included on every inspection at no extra charge.
                 </p>

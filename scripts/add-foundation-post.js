@@ -28,7 +28,7 @@ const newPost = {
 
 <p>For homeowners in Metro Atlanta, Georgia's red clay soils present unique challenges. The expansion and contraction of this clay under changing seasonal weather conditions can cause foundation settlement, resulting in structural shifts. If you've been searching for a <strong>foundation inspection and repair near me</strong>, it is vital to understand the difference between an independent, unbiased home inspection and a sales-pitch inspection offered by repair contractors.</p>
 
-<p>At Foresight Home Inspections, LLC, we do not perform repairs, meaning our inspections are 100% unbiased. We send <strong>two certified inspectors</strong> on every single job, combining traditional visual methods with advanced FLIR thermal imaging to detect hidden moisture, grading issues, and structural shifting. We provide the peace of mind you need before committing to costly foundation repairs.</p>
+<p>At Foresight Home Inspections, LLC, we do not perform repairs, meaning our inspections are 100% unbiased. We send <strong>two certified inspectors</strong> on every single job, combining traditional visual methods with advanced infrared thermal imaging to detect hidden moisture, grading issues, and structural shifting. We provide the peace of mind you need before committing to costly foundation repairs.</p>
 
 <h2>Common Signs of Foundation Issues in Georgia Homes</h2>
 
@@ -50,7 +50,7 @@ const newPost = {
 <ul>
   <li><strong>Exterior Grading and Drainage</strong> — Water is the primary enemy of foundations. We evaluate the slope of the ground, gutter downspouts, and perimeter drainage to ensure water flows away from your foundation walls.</li>
   <li><strong>Crawlspace and Basement Inspection</strong> — We crawl under the home to examine foundation piers, floor joists, sills, and subflooring for bowing, cracking, wood rot, or active moisture intrusion.</li>
-  <li><strong>Thermal Camera Scanning</strong> — Using FLIR thermal imaging, we detect temperature variations in foundation walls that reveal hidden water leaks, moisture pooling, or insulation gaps.</li>
+  <li><strong>Thermal Camera Scanning</strong> — Using infrared thermal imaging, we detect temperature variations in foundation walls that reveal hidden water leaks, moisture pooling, or insulation gaps.</li>
   <li><strong>Framing and Support Posts</strong> — We verify that structural posts, beams, and columns are plumb, secure, and properly supported by adequate concrete footings.</li>
 </ul>
 

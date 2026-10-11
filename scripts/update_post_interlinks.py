@@ -38,8 +38,8 @@ def update_posts():
         if p.get('slug') == 'why-new-construction-needs-inspections':
             content = p['content']
             content = content.replace(
-                'New construction inspections start at $355+ for condos and $395+ for single-family homes, including FLIR thermal imaging and our $10,000 warranty.',
-                'New construction final phase inspections start at $400+, including FLIR thermal imaging, complete exterior drone scans, and our $10,000 warranty.'
+                'New construction inspections start at $355+ for condos and $395+ for single-family homes, including infrared thermal imaging and our $10,000 warranty.',
+                'New construction final phase inspections start at $400+, including infrared thermal imaging, complete exterior drone scans, and our $10,000 warranty.'
             )
             
             new_build_links = (

@@ -164,7 +164,7 @@ Because your home's 1-year builder warranty reaches its official 365-day cutoff 
 
 In Georgia, builders provide a 1-year builder warranty covering structural settlement, plumbing line deflections, drywall truss uplift, and HVAC duct plenum imbalances. However, once day 365 passes, the builder is legally released from financial liability, transferring all repair costs directly to the homeowner.
 
-Builders routinely dismiss informal homeowner checklists as "normal cosmetic settling"—but they legally must respond to an official InterNACHI Certified Master Inspector® engineering punch list backed by thermal FLIR imaging and building code citations.
+Builders routinely dismiss informal homeowner checklists as "normal cosmetic settling"—but they legally must respond to an official InterNACHI Certified Master Inspector® engineering punch list backed by calibrated infrared thermal imaging and building code citations.
 
 You can review your complete settlement diagnostic and reserve your 11-month inspection date directly inside your dossier:
 ${dossierUrl}

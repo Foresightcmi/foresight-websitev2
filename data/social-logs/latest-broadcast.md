@@ -66,7 +66,7 @@ To my fellow Georgia Real Estate Professionals and Managing Brokers:
 
 The due diligence period defined in the GAR Purchase and Sale Agreement (GAR Form F201) is the most critical window in any residential transaction. When buyers uncover major structural or mechanical defects, the quality of the inspection report dictates the success of the Amendment to Address Defects (GAR Form F404).
 
-A generic, alarmist report riddled with disclaimers undermines negotiation credibility. Conversely, an evidence-grounded report from a board-certified Certified Master Inspector® (CMI) featuring FLIR® radiometric thermal data, 4K aerial photography, and clear building science context provides undeniable leverage.
+A generic, alarmist report riddled with disclaimers undermines negotiation credibility. Conversely, an evidence-grounded report from a board-certified Certified Master Inspector® (CMI) featuring infrared thermal radiometric thermal data, 4K aerial photography, and clear building science context provides undeniable leverage.
 
 Why Atlanta's top-producing agents partner with Foresight Home Inspections:
 • Two-Inspector Protocol: 1.5 to 2.5 hour on-site duration minimizes inconvenience to sellers while maximizing audit thoroughness.

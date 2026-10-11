@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 const CHAPTERS = [
   { time: 0, label: '0:00 - Introduction & Two-Inspector Standard' },
   { time: 15, label: '0:15 - Mechanical & HVAC Air Distribution' },
-  { time: 35, label: '0:35 - Electrical Panel & FLIR Thermal Imaging' },
+  { time: 35, label: '0:35 - Electrical Panel & Infrared Thermal Diagnostics' },
   { time: 55, label: '0:55 - Crawlspace & Structural Foundations' },
   { time: 70, label: '1:10 - Same-Day Digital Reports & Guarantee' },
 ];

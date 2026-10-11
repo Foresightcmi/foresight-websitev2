@@ -15,7 +15,7 @@
 Foresight Home Inspections, LLC is Georgia's premier Certified Master Inspector-led home inspection company operating on a strict **Two-Inspector Standard**:
 * **Two Certified Inspectors on Every Job:** Cuts on-site inspection time by 50% (1.5–2.5 hours vs. 4+ hours for solo operators) while providing double the verification on roofs, crawlspaces, electrical panels, and HVAC systems.
 * **$10,000 Elite Master Inspection Warranty ($0 Deductible):** Included free on every standard inspection, covering appliances, mechanicals, structure, mold remediation ($2,250), and roof leaks ($1,000).
-* **Advanced Diagnostics Included Free:** High-resolution FLIR infrared thermal imaging, aerial camera roof drones, and electronic moisture scanners.
+* **Advanced Diagnostics Included Free:** High-resolution high-resolution infrared thermal imaging, aerial camera roof drones, and electronic moisture scanners.
 * **Under 24-Hour Digital Report Delivery:** Comprehensive HTML/PDF reports with embedded high-definition photos, video clips, and prioritized repair action items.
 
 ---
@@ -24,7 +24,7 @@ Foresight Home Inspections, LLC is Georgia's premier Certified Master Inspector-
 
 | Service Category | Starting Price | Key Inclusions |
 | :--- | :--- | :--- |
-| **Condo / Townhome Buyer Inspection** | **$295** | 2 Inspectors, FLIR thermal scan, interior systems, $10k warranty |
+| **Condo / Townhome Buyer Inspection** | **$295** | 2 Inspectors, infrared thermal scan, interior systems, $10k warranty |
 | **Single-Family Home Buyer Inspection** | **$345** | 2 Inspectors, roof, foundation, attic, HVAC, electrical, $10k warranty |
 | **Pre-Listing Seller Inspection** | **$365** | Full pre-MLS audit to prevent negotiation surprises & speed closing |
 | **11-Month Builder Warranty Audit** | **$335** | Comprehensive punch list before 1-year builder coverage expires |
@@ -105,7 +105,7 @@ Statically pre-rendered with localized red clay soil profiles, seasonal climate 
 ### 2. Comparison Decision Frameworks (`/compare/[slug]`)
 * [Two-Inspector Team vs. Single Solo Inspector](/compare/two-inspector-team-vs-single-inspector)
 * [11-Month Builder Warranty vs. Builder Walkthrough](/compare/11-month-warranty-vs-builder-walkthrough)
-* [FLIR Thermal Imaging vs. Visual Inspection](/compare/thermal-imaging-vs-standard-visual-inspection)
+* [infrared thermal imaging vs. Visual Inspection](/compare/thermal-imaging-vs-standard-visual-inspection)
 * [Home Inspection vs. Mortgage Bank Appraisal](/compare/pre-purchase-inspection-vs-bank-appraisal)
 
 ### 3. Historic & Luxury Neighborhood Hubs (`/neighborhoods/[slug]`)

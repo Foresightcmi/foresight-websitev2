@@ -73,7 +73,7 @@ export default function ValueComparison() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem', fontSize: '0.92rem', color: '#e2e8f0' }}>
                 <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Two Certified Inspectors:</strong> Dual-team on every site (1.5–2.5 hrs + double check).</li>
                 <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>$10,000 Elite Warranty:</strong> $0 deductible covering mechanicals, roof, mold &amp; appliances.</li>
-                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Free FLIR Thermal Imaging:</strong> Advanced infrared moisture/electrical scans included free.</li>
+                <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Free infrared thermal imaging:</strong> Advanced infrared moisture/electrical scans included free.</li>
                 <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Certified Master Inspector (CMI):</strong> Led by Christopher Boykin (Top 1% nationwide).</li>
                 <li style={{ display: 'flex', gap: '0.5rem' }}><span style={{ color: '#4ade80', fontWeight: 800 }}>✓</span> <strong>Instant Transparent Pricing:</strong> 5-second quote calculator + same-day digital report.</li>
               </ul>

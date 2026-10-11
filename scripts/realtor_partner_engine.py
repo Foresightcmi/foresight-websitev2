@@ -33,7 +33,7 @@ BROKERAGES = [
         "brokerage": "Atlanta Fine Homes Sotheby's International Realty",
         "office": "Intown & North Metro",
         "target_specialty": "Ultra-Luxury Estates & Historic Properties",
-        "pitch_angle": "Certified Master Inspector® leadership (top 1% in North America) + FLIR thermal scans on every inspection.",
+        "pitch_angle": "Certified Master Inspector® leadership (top 1% in North America) + infrared thermal scans on every inspection.",
         "sample_agent": "Luxury Collection Specialist"
     },
     {

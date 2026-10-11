@@ -93,7 +93,7 @@ export default function About() {
           "name": "Georgia"
         },
         "priceRange": "$295 - $890+",
-        "description": "Certified Master Inspector-led home inspection company in Metro Atlanta. Two certified inspectors on every job with FLIR thermal imaging, drones, and a $10,000 Elite Master Inspection Warranty included.",
+        "description": "Certified Master Inspector-led home inspection company in Metro Atlanta. Two certified inspectors on every job with infrared thermal imaging, drones, and a $10,000 Elite Master Inspection Warranty included.",
         "memberOf": {
           "@type": "Organization",
           "name": "InterNACHI (International Association of Certified Home Inspectors)"
@@ -254,7 +254,7 @@ export default function About() {
                 🔥
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>FLIR Thermal Imaging</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>infrared thermal imaging</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Professional infrared cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation &mdash; without damaging drywall.
                 </p>
@@ -444,7 +444,7 @@ export default function About() {
               {
                 year: '2022',
                 title: 'Advanced Technology Integration',
-                description: 'Foresight integrates professional FLIR thermal imaging cameras, high-resolution aerial drones, and digital moisture diagnostic equipment into every standard inspection.',
+                description: 'Foresight integrates professional infrared thermal imaging cameras, high-resolution aerial drones, and digital moisture diagnostic equipment into every standard inspection.',
               },
               {
                 year: '2021',

@@ -10,7 +10,7 @@
 | Brokerage | Target Location | Pitch & Link Magnet | Est. DA | Status |
 | :--- | :--- | :--- | :---: | :---: |
 | **Keller Williams Realty First Atlanta / Buckhead** | Buyer Resources / Trusted Local Vendors | [Embed Free Georgia Due Diligence Calculator + CMI Dual-Inspector 48hr turnaround](https://www.fhinspectionsatl.com/due-diligence) | DA 70+ | `Ready for Outreach` |
-| **Harry Norman, REALTORS® (Buckhead & Intown)** | Client Services / Home Inspection Partners | [Luxury & historic home diagnostics, FLIR thermal scans, $35,000 warranty protection](https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector) | DA 50+ | `Ready for Outreach` |
+| **Harry Norman, REALTORS® (Buckhead & Intown)** | Client Services / Home Inspection Partners | [Luxury & historic home diagnostics, infrared thermal scans, $35,000 warranty protection](https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector) | DA 50+ | `Ready for Outreach` |
 | **Atlanta Fine Homes Sotheby's International Realty** | Buyer Advisory & Concierge Resources | [Top 1% CMI credentials, complimentary VIP Utility Setup Concierge, zero repair-blindspots](https://www.fhinspectionsatl.com/due-diligence) | DA 48+ | `Ready for Outreach` |
 | **Compass Atlanta** | Atlanta Agent Resources / Inspection Vendor Network | [HomeGauge CRL™ 1-click repair amendment builder saves agents 45 mins per deal](https://www.fhinspectionsatl.com/realtors) | DA 80+ | `Ready for Outreach` |
 | **Berkshire Hathaway HomeServices Georgia Properties** | Preferred Vendor Directory | [Dual-inspector speed (1.5–2.5 hrs on site) with guaranteed same-day digital reports](https://www.fhinspectionsatl.com/due-diligence) | DA 46+ | `Ready for Outreach` |

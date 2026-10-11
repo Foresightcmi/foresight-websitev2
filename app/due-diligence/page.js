@@ -51,7 +51,7 @@ const dueDiligenceFaqSchema = {
       name: 'When will I receive my digital inspection report?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Guaranteed within 24 hours of inspection completion (and frequently the same evening). Our reports include high-definition photos, FLIR thermal imaging scans, drone footage, and the interactive Create Request List (CRL) tool to generate repair amendments in one click.',
+        text: 'Guaranteed within 24 hours of inspection completion (and frequently the same evening). Our reports include high-definition photos, infrared thermal imaging scans, drone footage, and the interactive Create Request List (CRL) tool to generate repair amendments in one click.',
       },
     },
     {
@@ -186,7 +186,7 @@ export default function DueDiligencePage() {
                 Same-Day Digital Report Delivery
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '1rem', lineHeight: 1.6, flexGrow: 1 }}>
-                Your complete digital report is delivered within 24 hours of inspection (usually the same evening). Complete with HD photos, FLIR thermal imaging, drone captures, and the 1-click Create Request List (CRL) tool for instant GAR repair addendums.
+                Your complete digital report is delivered within 24 hours of inspection (usually the same evening). Complete with HD photos, infrared thermal imaging, drone captures, and the 1-click Create Request List (CRL) tool for instant GAR repair addendums.
               </p>
             </div>
 
@@ -230,7 +230,7 @@ export default function DueDiligencePage() {
                   <div>
                     <h3 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0 0 0.35rem' }}>Day 2–3: Dual-Inspector Diagnostic Audit</h3>
                     <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                      Two certified inspectors evaluate structure, electrical, HVAC, plumbing, roof, and foundation in 1.5–2.5 hours with FLIR thermal and drones.
+                      Two certified inspectors evaluate structure, electrical, HVAC, plumbing, roof, and foundation in 1.5–2.5 hours with infrared thermal and drones.
                     </p>
                   </div>
                 </div>

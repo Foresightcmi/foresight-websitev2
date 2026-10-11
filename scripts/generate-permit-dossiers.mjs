@@ -604,7 +604,7 @@ function generateBrandDossierHtml(lead) {
             <p>While solo inspectors rush through a multi-thousand sq ft build in 90 minutes, our two-inspector team inspects concurrently with zero blindspots.</p>
           </div>
           <div class="advantage-item">
-            <h4>🔥 FLIR® Infrared Thermal Imaging Included</h4>
+            <h4>🔥 High-Resolution Infrared Thermal Imaging Included</h4>
             <p>High-resolution thermal infrared scans detect missing attic insulation, thermal bridging, and HVAC duct leakage invisible to the naked eye.</p>
           </div>
           <div class="advantage-item">

@@ -61,7 +61,7 @@ Once sheetrock is hung, over 80% of the home's framing, plumbing stacks, electri
 
 The Foresight CMI® Two-Inspector Advantage:
 • Two Certified Master Inspectors on Every Job: Concurrently inspecting structural, mechanical, and rough-in assemblies.
-• High-Resolution FLIR® Thermal Infrared Scans Included Free.
+• High-Resolution High-Resolution Infrared Thermal Scans Included Free.
 • Comprehensive Digital Report with HD Photos and Video within 24 Hours for the builder blue-tape repair mandate.
 • Up to $35,000 in Combined Warranty & Guarantee Protection, including InterNACHI's "We'll Buy Your Home Back" Guarantee.
 
@@ -128,7 +128,7 @@ https://www.fhinspectionsatl.com`;
         <strong>The Foresight CMI® Two-Inspector Advantage:</strong>
         <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
           <li><strong>Two Certified Inspectors:</strong> Evaluating structural framing, MEP, and building envelope.</li>
-          <li><strong>FLIR® Thermal Infrared Scans:</strong> Uncovering hidden insulation voids and thermal leaks.</li>
+          <li><strong>High-Resolution Infrared Thermal Scans:</strong> Uncovering hidden insulation voids and thermal leaks.</li>
           <li><strong>Contractual Blue-Tape Report:</strong> Forcing the builder to fix defects on their dime before closing.</li>
           <li><strong>Up to $35,000 Guarantee:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty.</li>
         </ul>

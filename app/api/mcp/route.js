@@ -114,7 +114,7 @@ function calculateQuoteDetails(input = {}) {
     inclusions: [
       'Two Certified Master Inspectors on every property',
       'High-resolution aerial drone roof scan',
-      'FLIR infrared thermal imaging scan',
+      'high-resolution infrared thermal imaging scan',
       'Up to $35,000 in combined warranty & guarantee protection ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee)',
       'Same-day digital report turnaround with video'
     ]
@@ -213,7 +213,7 @@ async function handleToolCall(name, args) {
       const quote = calculateQuoteDetails(args);
       return {
         quote,
-        summary: `Total estimated fee is $${quote.total}. Includes two-inspector team, aerial drone scan, FLIR thermal scan, and up to $35,000 in combined warranty and guarantee protection. 50% deposit ($${quote.depositRequired}) to solidify booking. Balance ($${quote.balanceDue}) due upon report delivery.`
+        summary: `Total estimated fee is $${quote.total}. Includes two-inspector team, aerial drone scan, infrared thermal scan, and up to $35,000 in combined warranty and guarantee protection. 50% deposit ($${quote.depositRequired}) to solidify booking. Balance ($${quote.balanceDue}) due upon report delivery.`
       };
     }
     case 'check_city_coverage': {
@@ -261,7 +261,7 @@ async function handleToolCall(name, args) {
         url: 'https://www.fhinspectionsatl.com/sample-report/index.html',
         features: [
           '220+ annotated high-resolution photographs',
-          'FLIR infrared thermal scans revealing hidden moisture and insulation voids',
+          'infrared thermal scans revealing hidden moisture and insulation voids',
           'Detailed crawlspace and structural framing evaluations',
           'Prioritized repair list categorized into Safety Hazards, Major Defects, and Maintenance Items',
           'HomeGauge Create Request List (CRL) integration for rapid real estate repair amendments',

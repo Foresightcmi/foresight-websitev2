@@ -23,7 +23,7 @@ During a new construction inspection in Metro Atlanta, our two-inspector team fo
 Most solo inspectors rushing through a 4-hour checklist glance at the deck from 20 feet away. At Foresight, Two Certified Inspectors evaluate every inch of the structure simultaneously.
 
 🛡️ Up to $35,000 in Combined Warranty & Guarantee Protection included ($0 deductible).
-🔥 FLIR® Thermal + 4K Drone Scans included standard.
+🔥 Infrared Thermal + 4K Drone Scans included standard.
 
 "Hindsight is expensive... Choose Foresight!"
 
@@ -83,9 +83,9 @@ https://www.fhinspectionsatl.com/quote
     hook: 'To the naked eye, this bathroom wall looked dry and freshly painted. Here is what we found...',
     caption: `Drywall looked 100% dry and freshly painted to the naked eye... 💧👀
 
-Then we ran the plumbing and engaged our high-resolution FLIR® thermal camera. An active pinhole copper leak was pooling inside the wall cavity, rotting the baseplate studs.
+Then we ran the plumbing and engaged our high-resolution infrared thermal camera. An active pinhole copper leak was pooling inside the wall cavity, rotting the baseplate studs.
 
-Solo discount inspectors with just a flashlight would have walked right past this. Foresight includes FLIR® thermal imaging standard on every full home inspection at $0 extra cost.
+Solo discount inspectors with just a flashlight would have walked right past this. Foresight includes infrared thermal imaging standard on every full home inspection at $0 extra cost.
 
 Two Certified Inspectors on every job. Up to $35,000 in Combined Warranty Protection.
 
@@ -94,7 +94,7 @@ Two Certified Inspectors on every job. Up to $35,000 in Combined Warranty Protec
 👉 Tap the link in bio to calculate your instant price:
 https://www.fhinspectionsatl.com/quote
 
-#PlumbingLeak #ThermalImaging #FLIR #AtlantaHomeInspection #BuildingScience #ForesightHomeInspections`,
+#PlumbingLeak #ThermalImaging #InfraredScan #AtlantaHomeInspection #BuildingScience #ForesightHomeInspections`,
   },
   {
     id: 5,

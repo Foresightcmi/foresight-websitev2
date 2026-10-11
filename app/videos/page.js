@@ -106,7 +106,7 @@ export default function VideosHub() {
                 </Link>
               </h3>
               <p style={{ color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6, margin: '0 0 1.25rem 0' }}>
-                Lead Certified Master Inspector® Christopher Boykin evaluates HVAC, 200A electrical distribution, crawlspace foundations, and FLIR thermal infrared scans under real field conditions.
+                Lead Certified Master Inspector® Christopher Boykin evaluates HVAC, 200A electrical distribution, crawlspace foundations, and infrared thermal scans under real field conditions.
               </p>
               
               <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
@@ -154,7 +154,7 @@ export default function VideosHub() {
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
               <span style={{ fontSize: '1.5rem' }}>🔍</span>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.5rem 0 0.4rem 0' }}>
-                FLIR® Thermal Infrared Scans
+                High-Resolution Infrared Thermal Scans
               </h3>
               <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6, margin: '0 0 1rem 0' }}>
                 Detect hidden plumbing leaks behind drywall, missing ceiling insulation, and overheated circuit breakers using thermal emissivity differentials.

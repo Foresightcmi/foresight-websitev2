@@ -21,7 +21,7 @@ export default function QualityChecklist() {
     },
     {
       id: 'thermal',
-      label: 'Complimentary FLIR Thermal Imaging Scan Included',
+      label: 'Complimentary infrared thermal imaging scan Included',
       description: 'Infrared scanning of panels, walls, and ceilings to locate active hidden water leaks and fire hazards.',
       foresight: '✅ YES (Included on every inspection at $0 cost)',
       others: '❌ NO (Charged as a $150–$250 paid add-on, or not offered)'

@@ -175,7 +175,7 @@ export default function RepairCreditCalculatorPage() {
                 3. Two-Inspector Due Diligence Advantage
               </h2>
               <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.55, margin: 0 }}>
-                Foresight places two certified inspectors on every single property, delivering digital reports with FLIR thermal imaging within 24 hours to maximize your remaining negotiation runway.
+                Foresight places two certified inspectors on every single property, delivering digital reports with infrared thermal imaging within 24 hours to maximize your remaining negotiation runway.
               </p>
             </div>
 
@@ -197,7 +197,7 @@ export default function RepairCreditCalculatorPage() {
               Need an Empirical Report That Georgia Sellers Cannot Dispute?
             </h2>
             <p style={{ fontSize: '0.95rem', color: '#CBD5E1', maxWidth: '680px', margin: '0 auto 1.5rem', lineHeight: 1.6 }}>
-              Online estimates give you a negotiation target, but contract enforcement requires verified evidence from a Certified Master Inspector. Book Foresight with 2 inspectors, FLIR thermal imaging, and guaranteed 24-hour turnaround.
+              Online estimates give you a negotiation target, but contract enforcement requires verified evidence from a Certified Master Inspector. Book Foresight with 2 inspectors, infrared thermal imaging, and guaranteed 24-hour turnaround.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link

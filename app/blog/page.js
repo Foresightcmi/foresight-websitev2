@@ -42,7 +42,7 @@ const HUB_SECTIONS = [
   {
     hub: 'Home Safety & Diagnostics',
     heading: 'Home Safety and Diagnostics: Protecting Your Family and Investment',
-    description: 'From radon testing and crawlspace moisture to FLIR thermal imaging and sewer scope inspections, these articles cover the advanced diagnostics and safety evaluations that reveal hidden hazards in Georgia homes.',
+    description: 'From radon testing and crawlspace moisture to infrared thermal imaging and sewer scope inspections, these articles cover the advanced diagnostics and safety evaluations that reveal hidden hazards in Georgia homes.',
   },
   {
     hub: 'Seller & Agent Resources',

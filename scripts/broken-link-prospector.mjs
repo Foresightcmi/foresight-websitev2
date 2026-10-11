@@ -72,7 +72,7 @@ During tight 5-to-7 day Georgia GAR due diligence periods, one of the biggest fr
 
 At Foresight Home Inspections, we send two certified inspectors to every single home. This allows us to complete a comprehensive, dual-audited inspection in 90 to 120 minutes with zero inspector fatigue and deliver the report the very same afternoon—complete with an interactive Create Request List (CRL) amendment tool.
 
-We also include up to $35,000 in complimentary warranty coverage ($0 deductible) and free FLIR thermal imaging on every inspection starting at $345.
+We also include up to $35,000 in complimentary warranty coverage ($0 deductible) and free infrared thermal imaging on every inspection starting at $345.
 
 We would love to provide your agents and buyers with our quick Due Diligence Comparison Guide:
 https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector
@@ -135,7 +135,7 @@ Certified Master Inspector | Foresight Home Inspections
 
 Large luxury estates in Buckhead, Sandy Springs, and Chastain Park present complex mechanical systems—multiple HVAC zones, commercial subpanels, elaborate roof valleys, and extensive sewer laterals—that easily overwhelm a single inspector.
 
-Foresight Home Inspections provides an executive two-inspector team led by a Certified Master Inspector (CMI®). We conduct deep forensic audits with commercial FLIR thermal cameras and flat-rate $450 high-definition sewer scopes, delivering same-day interactive reports with zero disruption to high-net-worth clients.
+Foresight Home Inspections provides an executive two-inspector team led by a Certified Master Inspector (CMI®). We conduct deep forensic audits with commercial infrared thermal cameras and flat-rate $450 high-definition sewer scopes, delivering same-day interactive reports with zero disruption to high-net-worth clients.
 
 Here is our comparative framework detailing why two certified inspectors are essential for multi-million dollar transactions:
 https://www.fhinspectionsatl.com/compare/foresight-vs-bpg-inspections

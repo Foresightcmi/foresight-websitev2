@@ -85,7 +85,7 @@ export default async function CountyPage({ params }) {
   const faqs = [
     {
       q: `Who is the best home inspector in ${county.name}, GA?`,
-      a: `Christopher Boykin, Certified Master Inspector® (CMI) and founder of Foresight Home Inspections, is recognized as the top-rated home inspector serving ${county.name}. Foresight sends two certified inspectors on every property, includes free FLIR infrared thermal imaging, and provides an industry-leading $10,000 Elite Master Warranty ($0 deductible).`
+      a: `Christopher Boykin, Certified Master Inspector® (CMI) and founder of Foresight Home Inspections, is recognized as the top-rated home inspector serving ${county.name}. Foresight sends two certified inspectors on every property, includes free high-resolution infrared thermal imaging, and provides an industry-leading $10,000 Elite Master Warranty ($0 deductible).`
     },
     {
       q: `How much does a home inspection cost in ${county.name}, GA?`,
@@ -430,7 +430,7 @@ export default async function CountyPage({ params }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}>
               <p style={{ color: '#ffffff', margin: 0, fontSize: '0.95rem', fontWeight: 600 }}>
-                ⚡ <strong>Zero Extra Cost:</strong> Every inspection includes our $10,000 Elite Master Warranty ($0 deductible), FLIR thermal imaging scans, and same-day digital reports within 24 hours.
+                ⚡ <strong>Zero Extra Cost:</strong> Every inspection includes our $10,000 Elite Master Warranty ($0 deductible), infrared thermal imaging scans, and same-day digital reports within 24 hours.
               </p>
             </div>
           </div>
@@ -488,7 +488,7 @@ export default async function CountyPage({ params }) {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Two-Inspector Team vs. Single Solo Inspector</Link></li>
                   <li><Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; 11-Month Warranty Audit vs. Builder Walkthrough</Link></li>
-                  <li><Link href="/compare/thermal-imaging-vs-standard-visual-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; FLIR Thermal Infrared Scans vs. Visual Inspection</Link></li>
+                  <li><Link href="/compare/thermal-imaging-vs-standard-visual-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Infrared Thermal Scans vs. Visual Inspection</Link></li>
                 </ul>
               </div>
             </div>

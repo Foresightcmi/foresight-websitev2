@@ -410,7 +410,7 @@ for (const city of remainingCities) {
     "Intro": `${name} is ${desc}. Our dual-inspector home inspection teams deliver highly advanced, thermal-assisted audits to protect your significant residential investments in this beautiful community.`,
     "Local Risks HTML": `<p>Properties in ${name} commonly face specialized local conditions. ${risks.charAt(0).toUpperCase() + risks.slice(1)}. We trace these defects using high-tech thermal and moisture diagnostic tools before they become expensive problems.</p>`,
     "Services HTML": `<ul><li>${services.split(', ')[0]}</li><li>${services.split(', ')[1]}</li><li>${services.split(', ')[2] || 'Pre-listing and new construction checks'}</li></ul>`,
-    "Benefits HTML": `<ul><li>Two certified home inspectors on every single ${name} site visit</li><li>FLIR thermal cameras and aerial drone scans included at no extra cost</li><li>$10,000 Elite Master warranty protection withexactly $0 deductible</li></ul>`,
+    "Benefits HTML": `<ul><li>Two certified home inspectors on every single ${name} site visit</li><li>infrared thermal cameras and aerial drone scans included at no extra cost</li><li>$10,000 Elite Master warranty protection withexactly $0 deductible</li></ul>`,
     "Nearby Cities HTML": `<p>Nearby cities: <a href='/home-inspector-lithonia'>Lithonia</a>, <a href='/home-inspector-decatur'>Decatur</a>, <a href='/home-inspector-conyers'>Conyers</a></p>`,
     "Meta Title": `${name} GA Home Inspections | Certified Master Inspector`,
     "Meta Description": `Premium home inspections in ${name}, GA by Certified Master Inspectors. Thermal imaging, drone scans, and $10,000 warranty included. Call 678-480-2110.`,

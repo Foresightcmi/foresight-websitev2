@@ -92,7 +92,7 @@ export default function MunicipalRehabInspections() {
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span>
-                  <span><strong>FLIR Thermal & Moisture Diagnostics:</strong> Thermal scanning for active leaks, insulation voids, and electrical fire risks.</span>
+                  <span><strong>infrared thermal & Moisture Diagnostics:</strong> Thermal scanning for active leaks, insulation voids, and electrical fire risks.</span>
                 </li>
               </ul>
             </div>

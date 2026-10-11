@@ -292,7 +292,7 @@ export default function ConciergePage() {
             {[
               { label: '👥 2-Inspector Standard', q: 'Why do you send two certified inspectors on every inspection?' },
               { label: '🛡️ Up to $35k Warranties', q: 'What warranties and guarantees are included with my inspection?' },
-              { label: '📷 Free FLIR & Drones', q: 'Do you include infrared thermal imaging and aerial drone scans?' },
+              { label: '📷 Free Thermal & Drones', q: 'Do you include infrared thermal imaging and aerial drone scans?' },
               { label: '💰 Negotiation Leverage', q: 'How does your 24-hour CRL report help me negotiate seller repairs?' },
               { label: '⚖️ vs Competitors', q: 'How does Foresight compare to national franchises and discount solo inspectors?' },
               { label: '📋 InterNACHI SOP', q: 'What are the official InterNACHI Standards of Practice that you inspect?' }
@@ -455,7 +455,7 @@ export default function ConciergePage() {
           </div>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '1.2rem', textAlign: 'center' }}>
             <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>📷</div>
-            <h3 style={{ color: '#ffffff', fontSize: '0.95rem', margin: '0 0 0.3rem 0', fontWeight: 700 }}>Free FLIR &amp; Drone</h3>
+            <h3 style={{ color: '#ffffff', fontSize: '0.95rem', margin: '0 0 0.3rem 0', fontWeight: 700 }}>Free Thermal &amp; Drone</h3>
             <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>High-res infrared thermal imaging and 4K aerial roof scans included free.</p>
           </div>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '1.2rem', textAlign: 'center' }}>

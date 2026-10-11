@@ -49,7 +49,7 @@ flowchart TD
 - Review velocity integration and review schema markup (`4.9★ / 48 reviews`).
 
 ### Phase 5: Information Gain & AI Citations (Bernard Huang US Patent 10,956,488 B2)
-- Zero generic boilerplate. Infuse proprietary field data: exact FLIR thermal differentials ($\Delta T$), local building code quirks (Fulton, DeKalb, Cobb, Gwinnett), and Certified Master Inspector field notes.
+- Zero generic boilerplate. Infuse proprietary field data: exact infrared thermal differential ($\Delta T$), local building code quirks (Fulton, DeKalb, Cobb, Gwinnett), and Certified Master Inspector field notes.
 - Grounding via `/llms.txt`, `/llms-full.txt`, and Web MCP endpoints (`/api/mcp`).
 
 ---

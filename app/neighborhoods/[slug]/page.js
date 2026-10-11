@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
   }
 
   const title = `Home Inspection in ${hood.name}, ${hood.city} GA | Foresight Dual-Inspector Team`;
-  const description = `Certified Master Inspector home inspections in ${hood.name} (${hood.city}, GA). Specialized diagnostics for ${hood.era} architecture, ${hood.type.toLowerCase()} risks, FLIR thermal, and $10k warranty.`;
+  const description = `Certified Master Inspector home inspections in ${hood.name} (${hood.city}, GA). Specialized diagnostics for ${hood.era} architecture, ${hood.type.toLowerCase()} risks, infrared thermal, and $10k warranty.`;
   const canonicalUrl = `${SITE_URL}/neighborhoods/${resolvedParams.slug}`;
 
   return {
@@ -165,7 +165,7 @@ export default async function NeighborhoodPage({ params }) {
           </h1>
 
           <p style={{ color: '#F1F5F9', maxWidth: '780px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
-            {hood.tagline}. Backed by Lead Certified Master Inspector Christopher Boykin, two certified inspectors on site, FLIR thermal scans, aerial drones, and our complimentary $10,000 warranty.
+            {hood.tagline}. Backed by Lead Certified Master Inspector Christopher Boykin, two certified inspectors on site, infrared thermal scans, aerial drones, and our complimentary $10,000 warranty.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -228,7 +228,7 @@ export default async function NeighborhoodPage({ params }) {
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red-light)', fontSize: '1.2rem' }}>✓</span>
                   <div>
-                    <strong>FLIR Thermal Envelope Diagnostics:</strong> Detect concealed moisture and insulation voids without damage.
+                    <strong>infrared thermal Envelope Diagnostics:</strong> Detect concealed moisture and insulation voids without damage.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

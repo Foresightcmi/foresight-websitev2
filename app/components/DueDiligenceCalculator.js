@@ -647,7 +647,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                     display: 'block'
                   }}
                 >
-                  ⚡ Book Certified Master Inspection with FLIR Scan (From $345) →
+                  ⚡ Book Certified Master Inspection with infrared thermal scan (From $345) →
                 </a>
 
                 {/* Standalone $99 Second-Opinion Audit Door */}

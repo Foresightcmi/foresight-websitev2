@@ -110,7 +110,7 @@ async function fetchNewBuildsForRegion(region) {
         ownerPhone: null,
         inspectionPackages: [
           'Pre-Drywall Framing & Mechanical Audit ($495 - $695)',
-          'Pre-Closing Final Blue Tape Walkthrough + FLIR® Infrared ($495 - $795)',
+          'Pre-Closing Final Blue Tape Walkthrough + Infrared Thermal Imaging ($495 - $795)',
           '11-Month Builder Warranty Inspection ($450 - $650)',
           'Complete 3-Phase New Construction Master Bundle ($1,295 - $1,795)'
         ],

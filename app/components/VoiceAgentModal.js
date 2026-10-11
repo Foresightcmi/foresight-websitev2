@@ -2567,7 +2567,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            📷 Free FLIR &amp; Drones
+            📷 Free Thermal &amp; Drones
           </button>
           <button
             onClick={() => handleSendQuery("How does your InterNACHI inspection report help me negotiate seller repairs or closing credits?")}

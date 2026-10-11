@@ -134,7 +134,7 @@ function buildWarrantyEmailHtml(lead) {
           <div class="vector-desc">Loose soil trench compaction reversing grade and trapping stormwater against masonry.</div>
         </div>
         <div class="vector-item">
-          <div class="vector-title">3. Attic Duct Plenum Separation (FLIR® Thermal Scan)</div>
+          <div class="vector-title">3. Attic Duct Plenum Separation (Infrared Thermal Scan)</div>
           <div class="vector-desc">Chilled AC air dumping into 140°F Georgia attics causing hot spots and high power bills.</div>
         </div>
         <div class="vector-item">

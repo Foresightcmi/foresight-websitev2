@@ -30,7 +30,7 @@ BUSINESS_ENTITY = {
     "credentials": [
         "Certified Master Inspector® (CMI) #176873",
         "InterNACHI Certified Professional Inspector (CPI)",
-        "Certified Infrared Thermographer (FLIR Building Science)",
+        "Certified Infrared Thermographer (Building Science)",
         "FAA Part 107 Licensed Commercial Drone Pilot",
         "Georgia Residential & New Construction Inspection Specialist"
     ],

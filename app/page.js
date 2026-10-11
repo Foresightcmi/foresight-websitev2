@@ -107,7 +107,7 @@ export default function Home() {
             "name": "What are the two possibilities when hiring a home inspector in Georgia?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary FLIR thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
+              "text": "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary infrared thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
             }
           },
           {
@@ -158,7 +158,7 @@ export default function Home() {
           </h1>
 
           <p style={{ maxWidth: '720px', margin: '0 auto 2.5rem', fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
-            Foresight provides premier Atlanta home inspections led by board-certified Certified Master Inspector® Christopher Boykin. From single-family homes to luxury estates across 20 Metro Atlanta counties, every inspection features two certified inspectors working in tandem, complimentary FLIR thermal imaging, aerial drone roof scanning, and up to $35,000 in combined warranty protection.
+            Foresight provides premier Atlanta home inspections led by board-certified Certified Master Inspector® Christopher Boykin. From single-family homes to luxury estates across 20 Metro Atlanta counties, every inspection features two certified inspectors working in tandem, complimentary infrared thermal imaging, aerial drone roof scanning, and up to $35,000 in combined warranty protection.
           </p>
 
           <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
@@ -229,7 +229,7 @@ export default function Home() {
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
                     <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
-                    <div><strong>Advanced Diagnostic Suite:</strong> Complimentary FLIR thermal imaging and 4K aerial drone roof scans.</div>
+                    <div><strong>Advanced Diagnostic Suite:</strong> Complimentary infrared thermal imaging and 4K aerial drone roof scans.</div>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
                     <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
@@ -314,7 +314,7 @@ export default function Home() {
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', color: '#CBD5E1', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   <li>✓ <strong>Two Certified Inspectors</strong> on every job</li>
-                  <li>✓ Standard FLIR Thermal Imaging &amp; Moisture Detection</li>
+                  <li>✓ Standard infrared thermal imaging &amp; Moisture Detection</li>
                   <li>✓ Same-day digital photo report within 24 hours</li>
                   <li>✓ Compliments of Foresight: <strong>Up to $35,000 Protection</strong> ($10K Warranty + $25K Honor Guarantee)</li>
                   <li>✓ Full online scheduling &amp; transparent flat-rate calculator</li>
@@ -345,7 +345,7 @@ export default function Home() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', color: '#F1F5F9', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   <li>✓ Lead <strong>Certified Master Inspector® (CMI)</strong> + Senior Inspector</li>
                   <li>✓ Extended 4+ hour dedicated property evaluation window</li>
-                  <li>✓ Full Aerial Drone Scanning + FLIR Thermal Envelope Diagnostics</li>
+                  <li>✓ Full Aerial Drone Scanning + infrared thermal Envelope Diagnostics</li>
                   <li>✓ Dedicated 1-on-1 post-inspection strategy call with lead CMI</li>
                   <li>✓ Priority report turnaround &amp; Up to $35,000 Warranty &amp; Guarantee Protection</li>
                 </ul>
@@ -422,10 +422,10 @@ export default function Home() {
                 While Georgia requires zero state licensing for home inspectors, Christopher Boykin holds the elite Certified Master Inspector® (CMI) designation—the highest professional credential in North America, awarded to less than 3% of inspectors.
               </p>
               <p style={{ marginBottom: '1.25rem', fontSize: '1rem', color: '#475569', lineHeight: 1.6 }}>
-                Together with another fully certified professional inspector, our two-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with FLIR thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
+                Together with another fully certified professional inspector, our two-inspector team adheres strictly to the rigorous InterNACHI Standards of Practice. Armed with infrared thermal scanners, camera drones, and moisture diagnostics, we deliver detailed reports within 24 hours.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1rem', color: '#1E293B', lineHeight: 1.6, background: '#F8FAFC', padding: '1.25rem', borderLeft: '4px solid var(--color-gold)', borderRadius: 'var(--radius-sm)', boxShadow: '0 2px 8px rgba(0,0,0,0.03)' }}>
-                Every home inspection integrates FLIR thermal imaging and aerial drone technology, and includes up to $35,000 in combined protection &mdash; our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI&rsquo;s $25,000 Honor Guarantee.
+                Every home inspection integrates infrared thermal imaging and aerial drone technology, and includes up to $35,000 in combined protection &mdash; our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI&rsquo;s $25,000 Honor Guarantee.
               </p>
               <ul className="cms-content" style={{ marginBottom: '2rem', listStyle: 'none' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
@@ -472,7 +472,7 @@ export default function Home() {
               <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>82%</h3>
               <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1E293B' }}>Thermal Leak Detection Rate</h4>
               <p style={{ color: '#475569', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
-                Over 80% of hidden moisture intrusion in Atlanta crawlspaces and subfloors is invisible to the naked eye and only detected via FLIR thermal imaging cameras.
+                Over 80% of hidden moisture intrusion in Atlanta crawlspaces and subfloors is invisible to the naked eye and only detected via infrared thermal imaging cameras.
               </p>
             </div>
 
@@ -511,14 +511,14 @@ export default function Home() {
               <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                 <Image
                   src="/images/thermal-1.webp"
-                  alt="Infrared Thermal Imaging (FLIR) camera inspecting home electrical heat profile"
+                  alt="Infrared Thermal Imaging camera inspecting home electrical heat profile"
                   fill
                   sizes="90px"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging (FLIR)</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Our professional thermal cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation without damaging any drywall. Included on every inspection at no extra charge.
                 </p>
@@ -801,7 +801,7 @@ export default function Home() {
               },
               {
                 q: "What are the two possibilities when hiring a home inspector in Georgia?",
-                a: "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary FLIR thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
+                a: "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary infrared thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
               },
               {
                 q: "What is covered under Foresight's up to $35,000 in warranties and guarantees?",
@@ -813,7 +813,7 @@ export default function Home() {
               },
               {
                 q: "How quickly will I receive my home inspection report?",
-                a: "Most of the time, you will receive your comprehensive digital report the very same day—and definitely within 24 hours of your inspection. Our reports include detailed photos, FLIR thermal imaging scans, and clear recommendation summaries for easy seller negotiations."
+                a: "Most of the time, you will receive your comprehensive digital report the very same day—and definitely within 24 hours of your inspection. Our reports include detailed photos, infrared thermal imaging scans, and clear recommendation summaries for easy seller negotiations."
               },
               {
                 q: "When should I schedule a new construction home inspection in Atlanta?",
@@ -821,7 +821,7 @@ export default function Home() {
               },
               {
                 q: "How do I schedule a certified home inspection near me in Metro Atlanta?",
-                a: "Foresight Home Inspections serves all 87 municipalities across Metro Atlanta with rapid 24-hour report turnaround. Every inspection includes two certified inspectors led by a Certified Master Inspector®, complimentary FLIR thermal imaging, and aerial drone roof scans. You can book online 24/7 or call 678-480-2110."
+                a: "Foresight Home Inspections serves all 87 municipalities across Metro Atlanta with rapid 24-hour report turnaround. Every inspection includes two certified inspectors led by a Certified Master Inspector®, complimentary infrared thermal imaging, and aerial drone roof scans. You can book online 24/7 or call 678-480-2110."
               },
               {
                 q: "Can I get an itemized repair cost estimate for contractor repairs?",

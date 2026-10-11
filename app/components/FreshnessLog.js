@@ -96,7 +96,7 @@ export default function FreshnessLog() {
             {dates.latestInspection || 'Loading...'}
           </div>
           <div style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginTop: '0.25rem' }}>
-            Fayetteville, GA — Two Person Inspection Team residential inspection & FLIR thermal scan.
+            Fayetteville, GA — Two Person Inspection Team residential inspection & infrared thermal scan.
           </div>
         </div>
 

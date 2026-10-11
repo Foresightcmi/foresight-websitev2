@@ -188,7 +188,7 @@ export default async function ComparisonPage({ params }) {
         </section>
       )}
 
-      {/* Interactive FLIR Thermal Split-Screen Diagnostic Viewer */}
+      {/* Interactive infrared thermal Split-Screen Diagnostic Viewer */}
       {item.slug === 'thermal-imaging-vs-standard-visual-inspection' && (
         <section className="section" style={{ background: '#0B1120', padding: '4rem 0 3.5rem', borderBottom: '1px solid #1E293B' }}>
           <div className="container" style={{ maxWidth: '960px' }}>
@@ -283,7 +283,7 @@ export default async function ComparisonPage({ params }) {
               Choose the Superior Inspection Standard
             </h2>
             <p style={{ color: 'var(--color-gray-mid)', fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '650px', margin: '0 auto 1.5rem' }}>
-              Two certified inspectors, FLIR thermal imaging, and a $10,000 Elite Warranty on every job. Book online in 5 minutes.
+              Two certified inspectors, infrared thermal imaging, and a $10,000 Elite Warranty on every job. Book online in 5 minutes.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>

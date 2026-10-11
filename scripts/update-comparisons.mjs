@@ -42,7 +42,7 @@ const newComparisons = [
       },
       {
         feature: "Thermal Imaging Scan",
-        foresight: "FREE FLIR Infrared on Every Inspection",
+        foresight: "FREE infrared thermal on Every Inspection",
         competitors: "Often Add-On Charge or Basic Scan"
       },
       {
@@ -64,7 +64,7 @@ const newComparisons = [
     faqs: [
       {
         q: "Does Foresight cost more than BPG Inspections?",
-        a: "No. Foresight offers highly competitive, transparent pricing starting at $345 for single-family homes and $295 for condos. Our pricing includes a two-inspector team, complimentary FLIR thermal imaging, and our comprehensive warranty package at no extra charge."
+        a: "No. Foresight offers highly competitive, transparent pricing starting at $345 for single-family homes and $295 for condos. Our pricing includes a two-inspector team, complimentary infrared thermal imaging, and our comprehensive warranty package at no extra charge."
       },
       {
         q: "Why is a two-inspector team better than a solo corporate inspector?",
@@ -79,10 +79,10 @@ const newComparisons = [
     metaDescription: "Compare Foresight Home Inspections with Home-Probe Inc in Metro Atlanta. See differences in dual-inspector staffing, thermal imaging, warranties, and pricing.",
     icon: "🔍",
     badge: "Competitor Comparison",
-    image: "/images/flir-thermal-camera-circuit-breaker.jpg",
-    imageAlt: "FLIR thermal camera detecting electrical circuit heat differentials during Atlanta home inspection",
+    image: "/images/thermal-1.webp",
+    imageAlt: "Calibrated infrared thermal imaging scan of electrical circuit panel during Atlanta home inspection",
     headline: "Certified Master Inspector Dual-Audit vs. Single-Inspector Atlanta Models",
-    summary: "Home-Probe Inc is a well-known local inspection company in Metro Atlanta. However, when evaluating the thoroughness of your inspection, the operational model matters. Foresight deploys two certified inspectors on every residential inspection, includes FLIR thermal imaging standard, and backs every client with up to $35,000 in complimentary warranty coverage.",
+    summary: "Home-Probe Inc is a well-known local inspection company in Metro Atlanta. However, when evaluating the thoroughness of your inspection, the operational model matters. Foresight deploys two certified inspectors on every residential inspection, includes infrared thermal imaging standard, and backs every client with up to $35,000 in complimentary warranty coverage.",
     comparisonTable: [
       {
         feature: "Inspectors On Site",
@@ -176,7 +176,7 @@ const newComparisons = [
     ],
     benefits: [
       "Unbiased Technical Independence: We do not sell roofing, pest treatments, or plumbing repairs. Our recommendations are 100% impartial and designed strictly to protect your financial interest.",
-      "Advanced Thermal Diagnostics: High-sensitivity FLIR infrared cameras identify concealed plumbing leaks and missing insulation cavities without invasive drywall removal.",
+      "Advanced Thermal Diagnostics: high-sensitivity infrared thermal cameras identify concealed plumbing leaks and missing insulation cavities without invasive drywall removal.",
       "Georgia Red Clay Expertise: Specialized foundation diagnostics measuring differential settlement, Kaolinite soil shrinkage, and crawlspace vapor intrusion."
     ],
     faqs: [
@@ -236,7 +236,7 @@ const newComparisons = [
     benefits: [
       "Direct Certified Master Inspector Experience: You work with a proven Master Inspector who has evaluated thousands of Atlanta homes, not a franchisee who just completed a 2-week corporate seminar.",
       "Hyper-Local Georgia Knowledge: Intimate understanding of Metro Atlanta building eras—from 1920s Inman Park knob-and-tube to 1970s East Cobb polybutylene piping and modern slab settlement.",
-      "Client-First Fee Structure: Because we pay no franchise royalties, 100% of your fee goes into premium field equipment (FLIR thermal, commercial sewer cameras) and dual-inspector labor."
+      "Client-First Fee Structure: Because we pay no franchise royalties, 100% of your fee goes into premium field equipment (infrared thermal, commercial sewer cameras) and dual-inspector labor."
     ],
     faqs: [
       {

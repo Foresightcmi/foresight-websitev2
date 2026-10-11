@@ -68,7 +68,7 @@ https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance
 The Foresight CMI Advantage:
 • Official DeKalb County Water Conservation Certificate issued on-site / within 24 hours.
 • Two Certified Inspectors on Every Job: Concurrently inspecting structural, mechanical, and rough-in assemblies.
-• FLIR® Thermal Infrared Scans Included Free: Detecting hidden pipe leaks, insulation voids, and moisture penetration.
+• High-Resolution Infrared Thermal Scans Included Free: Detecting hidden pipe leaks, insulation voids, and moisture penetration.
 • Up to $35,000 in Combined Warranty & Guarantee Protection.
 
 To schedule your $100 low-flow compliance certificate or bundle it with a framing/renovation inspection, reply to this email, book online 24/7 at https://www.fhinspectionsatl.com/quote, or contact our lead Certified Master Inspector directly at (678) 480-2110.
@@ -312,7 +312,7 @@ ${dossierUrl}
 
 The Foresight Master Due Diligence Advantage:
 • Two Certified Inspectors on Every Job: Concurrently inspecting with zero blindspots.
-• FLIR® Thermal Infrared Scan Included Free: Detecting hidden insulation voids and thermal envelope leakage.
+• High-Resolution Infrared Thermal Scan Included Free: Detecting hidden insulation voids and thermal envelope leakage.
 • 4K Aerial Drone Roof Analysis: Inspecting architectural shingles, roof flashing, and plumbing stack penetrations.
 • Up to $35,000 in Combined Warranty Protection: Backed by our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI's $25,000 Honor Guarantee.
 
@@ -377,7 +377,7 @@ https://www.fhinspectionsatl.com`;
         <strong>The Foresight Master Due Diligence Advantage:</strong>
         <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
           <li><strong>Two Certified Inspectors on Every Job:</strong> Concurrently inspecting with zero blindspots.</li>
-          <li><strong>FLIR® Thermal Infrared Scans Included Free:</strong> Detecting hidden insulation voids and thermal envelope leaks.</li>
+          <li><strong>High-Resolution Infrared Thermal Scans Included Free:</strong> Detecting hidden insulation voids and thermal envelope leaks.</li>
           <li><strong>4K Aerial Drone Roof Analysis:</strong> Inspecting architectural shingles, roof flashing, and plumbing stack seals.</li>
           <li><strong>Up to $35,000 in Combined Protection:</strong> Backed by our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI's $25,000 Honor Guarantee.</li>
         </ul>

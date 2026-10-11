@@ -17,11 +17,11 @@ const SERVICE_MAP = {
     icon: '🏠',
     headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
     metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
-    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning & $10,000 warranty.',
+    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, infrared thermal imaging, aerial drone scanning & $10,000 warranty.',
     description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
-      'FLIR thermal imaging and moisture meter diagnostics included free',
+      'infrared thermal imaging and moisture meter diagnostics included free',
       'Aerial camera drone roof scanning for high or steep roofs',
       '$10,000 Master Protection Warranty with $0 deductible included free',
       'Free Utilities Plus VIP utility setup concierge ($150 value)'
@@ -33,11 +33,11 @@ const SERVICE_MAP = {
     icon: '🏠',
     headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
     metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
-    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, FLIR thermal imaging, aerial drone scanning & $10,000 warranty.',
+    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, infrared thermal imaging, aerial drone scanning & $10,000 warranty.',
     description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
-      'FLIR thermal imaging and moisture meter diagnostics included free',
+      'infrared thermal imaging and moisture meter diagnostics included free',
       'Aerial camera drone roof scanning for high or steep roofs',
       '$10,000 Master Protection Warranty with $0 deductible included free',
       'Free Utilities Plus VIP utility setup concierge ($150 value)'
@@ -139,12 +139,12 @@ const SERVICE_MAP = {
     icon: '🏗️',
     headline: 'Independent Phased & Final New Construction Inspections in Metro Atlanta',
     metaTitle: 'New Construction Inspection Atlanta GA | From $400 | Foresight',
-    metaDescription: 'Independent new construction & pre-drywall home inspections in Metro Atlanta. Two certified inspectors, FLIR thermal scans & builder-ready punch lists. From $400.',
+    metaDescription: 'Independent new construction & pre-drywall home inspections in Metro Atlanta. Two certified inspectors, infrared thermal scans & builder-ready punch lists. From $400.',
     description: 'Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in Metro Atlanta frequently have major concealed defects. Municipal code inspectors only spend 15 minutes on site. Our independent two-inspector team evaluates every system before final closing.',
     included: [
       'Pre-drywall framing, rough plumbing, electrical and HVAC audit',
       'Final phase complete mechanical, structural and cosmetic evaluation',
-      'FLIR thermal imaging to verify attic and wall insulation integrity',
+      'infrared thermal imaging to verify attic and wall insulation integrity',
       'Builder-ready digital punch list with photos and technical citations'
     ]
   },
@@ -158,7 +158,7 @@ const SERVICE_MAP = {
     description: 'When a buyer inspector finds unexpected major defects, negotiations stall or contracts fall through. A Pre-Listing Seller Inspection by Foresight gives you total transparency into your home condition before hitting the MLS, letting you make targeted repairs on your timeline.',
     included: [
       'Complete two-inspector evaluation of roof, HVAC, electrical, plumbing & foundation',
-      'FLIR thermal scan to catch hidden moisture or insulation gaps',
+      'infrared thermal scan to catch hidden moisture or insulation gaps',
       'Prioritized repair roadmap to eliminate buyer negotiation leverage',
       'Shareable inspection report to build buyer confidence and justify asking price'
     ]
@@ -169,11 +169,11 @@ const SERVICE_MAP = {
     icon: '🏗️',
     headline: 'Protect Your New Construction Equity Before the 1-Year Builder Warranty Expires',
     metaTitle: '11-Month Warranty Inspection Atlanta | From $335 | Foresight',
-    metaDescription: 'Independent 11-month builder warranty inspection in Metro Atlanta. 2 certified inspectors, FLIR thermal scans & builder-ready punch lists before warranty expires.',
+    metaDescription: 'Independent 11-month builder warranty inspection in Metro Atlanta. 2 certified inspectors, infrared thermal scans & builder-ready punch lists before warranty expires.',
     description: 'Most new construction homes include a 1-year builder warranty covering materials and workmanship. Over the first year, homes settle, framing contracts, roof shingles experience storm cycles, and HVAC ductwork can detach. Our two-inspector team provides a comprehensive punch list backed by thermal imaging to submit directly to your builder.',
     included: [
       'Two certified inspectors on site for complete dual coverage',
-      'FLIR thermal imaging to verify attic and wall insulation integrity',
+      'infrared thermal imaging to verify attic and wall insulation integrity',
       'Roof, flashing, attic truss, and structural movement verification',
       'Digital punch-list report with photos formatted for builder warranty submissions'
     ]

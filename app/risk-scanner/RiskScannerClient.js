@@ -110,7 +110,7 @@ export default function RiskScannerClient() {
         standard: 'U.S. CPSC Publication #516 (55x Fire Hazard Rating) / NEC Art. 310',
         description: 'Single-strand aluminum wiring expands at a higher thermal rate than copper, loosening connections at switches and outlets. Terminal oxidation causes resistive micro-arcing that can ignite structural wall framing.',
         exposure: '$2,500 – $6,500 (COPALUM / AlumiConn Pig-tailing or Rewiring)',
-        foresightProtocol: 'Every electrical breaker and junction box is scanned with FLIR® radiometric thermal infrared to detect ΔT ≥ 15°F thermal anomalies.'
+        foresightProtocol: 'Every electrical breaker and junction box is scanned with infrared thermal radiometric thermal infrared to detect ΔT ≥ 15°F thermal anomalies.'
       });
     } else if (year < 1990) {
       score += 20;
@@ -141,7 +141,7 @@ export default function RiskScannerClient() {
         standard: 'ASTM E2110 / Moisture Intrusion Diagnostic SOP',
         description: 'Barrier EIFS systems lack an integrated secondary drainage plane. Unsealed kickout flashing, window headers, and deck ledgers allow rainwater behind the synthetic foam, quietly rotting OSB sheathing and studs with zero surface signs.',
         exposure: '$15,000 – $55,000+ (Cladding Replacement & Structural Reframing)',
-        foresightProtocol: 'FLIR® thermal scans pinpoint evaporative cooling ΔT ≥ 8.5°F anomalies, followed by non-destructive dielectric pin moisture verification.'
+        foresightProtocol: 'infrared thermal scans pinpoint evaporative cooling ΔT ≥ 8.5°F anomalies, followed by non-destructive dielectric pin moisture verification.'
       });
     } else if (siding === 'wood' && year < 2000) {
       score += 12;
@@ -203,7 +203,7 @@ export default function RiskScannerClient() {
         standard: 'IRC R404 Foundation Walls / Georgia Red Clay Expansion Index',
         description: 'Heavy Georgia red clay expands dramatically when saturated with winter rain, exerting severe lateral hydrostatic pressure against concrete block basement walls, manifesting as horizontal shear cracks.',
         exposure: '$2,500 – $8,000 (Carbon Fiber Strapping or Helical Pier Tiebacks)',
-        foresightProtocol: 'Laser level horizontal deflection scan and FLIR® infrared water table intrusion diagnostic.'
+        foresightProtocol: 'Laser level horizontal deflection scan and Infrared Thermal Imaging water table intrusion diagnostic.'
       });
     }
 
@@ -308,7 +308,7 @@ export default function RiskScannerClient() {
         desc: 'Two Certified Inspectors on site concurrently. Full 1,600-point InterNACHI SOP audit.'
       },
       {
-        name: 'FLIR® Infrared Thermal Imaging Scan',
+        name: 'High-Resolution Infrared Thermal Imaging Scan',
         price: 'FREE ($150 Value)',
         cost: 0,
         included: true,
@@ -448,7 +448,7 @@ export default function RiskScannerClient() {
             </span>
             <span>•</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-              <strong style={{ color: 'var(--color-gold)' }}>🔥 Free FLIR® Thermal</strong>
+              <strong style={{ color: 'var(--color-gold)' }}>🔥 Free infrared thermal</strong>
             </span>
             <span>•</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>

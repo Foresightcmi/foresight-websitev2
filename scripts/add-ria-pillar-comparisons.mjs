@@ -47,7 +47,7 @@ const newComparisons = [
       },
       {
         feature: "Thermal Imaging Scan",
-        foresight: "FREE FLIR Infrared on Every Audit",
+        foresight: "FREE infrared thermal on Every Audit",
         competitors: "Only in Higher-Tier Packages"
       },
       {
@@ -62,14 +62,14 @@ const newComparisons = [
       }
     ],
     benefits: [
-      "No Tiered Upsell Games: Unlike franchise packages that force you to upgrade to 'Prestige' tiers to get thermal imaging, Foresight includes FLIR infrared scanning free on every inspection.",
+      "No Tiered Upsell Games: Unlike franchise packages that force you to upgrade to 'Prestige' tiers to get thermal imaging, Foresight includes calibrated infrared thermal scanning free on every inspection.",
       "Dual-Inspector Speed & Precision: Two certified inspectors cross-check attics, electrical panels, and roofs simultaneously, cutting inspection time in half during tight Georgia due diligence periods.",
       "Direct Local Ownership: Work directly with Certified Master Inspector Christopher Boykin, ensuring personal accountability rather than a corporate franchise call center."
     ],
     faqs: [
       {
         q: "How does Foresight's pricing compare to Pillar to Post?",
-        a: "Pillar to Post uses tiered packages where prices increase substantially for higher tiers that include thermal imaging and extended coverage. Foresight offers all-inclusive pricing starting at $345 for single-family homes and $295 for condos, which includes our two-inspector team, FLIR thermal imaging, and our $35,000 warranty stack at no extra charge."
+        a: "Pillar to Post uses tiered packages where prices increase substantially for higher tiers that include thermal imaging and extended coverage. Foresight offers all-inclusive pricing starting at $345 for single-family homes and $295 for condos, which includes our two-inspector team, infrared thermal imaging, and our $35,000 warranty stack at no extra charge."
       },
       {
         q: "Why is a two-inspector team better than a franchise inspector?",
@@ -142,7 +142,7 @@ const newComparisons = [
       },
       {
         q: "Does Foresight offer the same diagnostic services as RIA?",
-        a: "Yes, and more. We provide full pre-purchase inspections, FLIR infrared thermal imaging (included free), HD fiber-optic sewer scopes ($450 flat), 48-hour continuous radon testing ($250), pool and spa inspections ($275), and Georgia WDO termite letters ($125-$165), all backed by up to $35,000 in warranty coverage."
+        a: "Yes, and more. We provide full pre-purchase inspections, high-resolution infrared thermal imaging (included free), HD fiber-optic sewer scopes ($450 flat), 48-hour continuous radon testing ($250), pool and spa inspections ($275), and Georgia WDO termite letters ($125-$165), all backed by up to $35,000 in warranty coverage."
       }
     ]
   }

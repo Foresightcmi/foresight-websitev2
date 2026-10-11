@@ -8,7 +8,7 @@ import { dispatchSocialPost } from './publish-social-webhook.mjs';
  * Fully synchronized with official website branding:
  * - Two Certified Inspectors on Every Job
  * - Certified Master Inspector® (CMI) Leadership
- * - Free FLIR® Thermal Infrared + Free 4K Drone Scans
+ * - Free infrared thermal Infrared + Free 4K Drone Scans
  * - Up to $35,000 Combined Warranty & Guarantee Protection ($0 Deductible)
  * - Zero Asterisks & Exact Fee Schedule Synchronization
  */
@@ -27,7 +27,7 @@ That’s why Foresight Home Inspections deploys Two Certified Inspectors on Ever
 
 👥 Double the Scrutiny: One inspector thoroughly evaluates the roof, exterior grading, foundation, and crawlspace, while the second audits electrical panels, mechanicals, plumbing fixtures, and attic insulation simultaneously.
 ⚡ Half the On-Site Time: Comprehensive 1,600-point InterNACHI SOP evaluations completed in 1.5 to 2.5 hours—with same-day digital reporting.
-🔥 FLIR® Thermal Infrared & 4K Aerial Drones Included FREE: Zero extra fees for the advanced diagnostic technology that protects your investment.
+🔥 infrared thermal Infrared & 4K Aerial Drones Included FREE: Zero extra fees for the advanced diagnostic technology that protects your investment.
 🛡️ Up to $35,000 in Warranty Protection: Every full inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI’s $25,000 Honor Guarantee.
 
 Led by board-certified Certified Master Inspector® Christopher Boykin.
@@ -44,15 +44,15 @@ https://www.fhinspectionsatl.com/quote
   },
   {
     id: 2,
-    title: 'What the Naked Eye Misses (FLIR® Thermal Scan)',
+    title: 'What the Naked Eye Misses (Infrared Thermal Scan)',
     message: `The ceiling in this Metro Atlanta home looked pristine, freshly painted, and completely dry to the naked eye... 💧👀
 
-Look what appeared when we powered on our FLIR® high-resolution radiometric infrared camera: an active, concealed plumbing leak pooling behind the drywall beneath the second-floor master bath.
+Look what appeared when we powered on our calibrated high-resolution radiometric infrared camera: an active, concealed plumbing leak pooling behind the drywall beneath the second-floor master bath.
 
 If you hired a discount inspector with just a flashlight, you would have closed on this property and inherited thousands of dollars in structural wood rot and toxic mold remediation behind your walls.
 
 At Foresight Home Inspections:
-✅ FLIR® Thermal Infrared Imaging is included standard on EVERY full inspection at $0 extra charge. We never nickel-and-dime you for the diagnostics that protect your equity.
+✅ High-Resolution Infrared Thermal Imaging is included standard on EVERY full inspection at $0 extra charge. We never nickel-and-dime you for the diagnostics that protect your equity.
 ✅ Two Certified Inspectors on every job.
 ✅ Up to $35,000 in Combined Warranty & Guarantee Protection included ($0 deductible).
 
@@ -62,7 +62,7 @@ Tag someone buying a home in Georgia right now! 👇
 👉 Calculate your instant quote online: https://www.fhinspectionsatl.com/quote
 📞 Direct CMI Hotline: (678) 480-2110
 
-#ThermalImaging #FLIR #BuildingScience #AtlantaHomeBuyer #HomeInspectionFail #ForesightHomeInspections`,
+#ThermalImaging #InfraredScan #BuildingScience #AtlantaHomeBuyer #HomeInspectionFail #ForesightHomeInspections`,
     link: 'https://www.fhinspectionsatl.com/quote',
     imageUrl: 'https://www.fhinspectionsatl.com/images/thermal-ceiling.png',
   },
@@ -79,7 +79,7 @@ During our inspections across Fulton, DeKalb, Cobb, and Gwinnett, our two-inspec
 ⚠️ Foundation block step-cracking caused by expanding Georgia clay pressure
 ⚠️ Subterranean termite mud tubes bridging directly from clay soil into floor framing
 
-Don't buy a house without knowing what lies beneath your floorboards. Our dual-inspector team traverses every accessible inch of the crawlspace with electronic moisture meters and FLIR thermal cameras.
+Don't buy a house without knowing what lies beneath your floorboards. Our dual-inspector team traverses every accessible inch of the crawlspace with electronic moisture meters and infrared thermal cameras.
 
 "Hindsight is expensive... Choose Foresight!"
 

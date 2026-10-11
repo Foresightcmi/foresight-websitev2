@@ -289,12 +289,12 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
         ? ` including ${currentQuote.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}` 
         : '';
       return {
-        text: `For your ${sqftStr}${propStr}${foundStr}, your exact fee is ${currentQuote.total} dollars with our two-person Certified Master Inspector team${addonsStr}. That includes complimentary FLIR thermal imaging, 4K aerial drone scans, and up to 35,000 dollars in warranty protection. The 50 percent deposit to solidify your date is ${deposit} dollars. Would you prefer a morning or afternoon window?`,
+        text: `For your ${sqftStr}${propStr}${foundStr}, your exact fee is ${currentQuote.total} dollars with our two-person Certified Master Inspector team${addonsStr}. That includes complimentary infrared thermal imaging, 4K aerial drone scans, and up to 35,000 dollars in warranty protection. The 50 percent deposit to solidify your date is ${deposit} dollars. Would you prefer a morning or afternoon window?`,
         preAudio: null
       };
     }
     return {
-      text: "Our comprehensive home inspections start at 345 dollars for single-family homes and 295 dollars for condos with our two-person Certified Master Inspector team, free FLIR thermal imaging, and 4K aerial drone scans included. What is the property address or square footage? I will give you your exact dollar quote right now!",
+      text: "Our comprehensive home inspections start at 345 dollars for single-family homes and 295 dollars for condos with our two-person Certified Master Inspector team, free infrared thermal imaging, and 4K aerial drone scans included. What is the property address or square footage? I will give you your exact dollar quote right now!",
       preAudio: '/audio/receptionist-pricing.mp3'
     };
   }
@@ -326,7 +326,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // 2. Comprehensive Home Evaluation Process (Top-to-Bottom InterNACHI SOP)
   if (matchesAny(['process', 'evaluate', 'evaluation', 'how do you inspect', 'how you inspect', 'what do you inspect', 'what is inspected', 'what do you check', 'sop', 'standard', 'steps', 'procedure', 'how does it work'])) {
     return {
-      text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free FLIR thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?",
+      text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free infrared thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?",
       preAudio: '/audio/receptionist-process.mp3'
     };
   }
@@ -366,7 +366,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // Mold, Moisture & Infrared Thermal Imaging
   if (matchesAny(['mold', 'moisture', 'humidity', 'damp', 'water intrusion', 'flir', 'thermal', 'infrared'])) {
     return {
-      text: "We include complimentary FLIR infrared thermal imaging on every inspection. It catches temperature anomalies behind drywall, locating hidden plumbing leaks, roof intrusion, and missing insulation before mold can spread. That is part of why over ninety percent of top Atlanta agents recommend us. What date are you hoping to have your home inspected?",
+      text: "We include complimentary high-resolution infrared thermal imaging on every inspection. It catches temperature anomalies behind drywall, locating hidden plumbing leaks, roof intrusion, and missing insulation before mold can spread. That is part of why over ninety percent of top Atlanta agents recommend us. What date are you hoping to have your home inspected?",
       preAudio: null
     };
   }
@@ -514,7 +514,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // Competitor & Franchise Comparison
   if (matchesAny(['compare', 'competitor', 'competitors', 'franchise', 'franchises', 'bpg', 'home-probe', 'inspect-all', 'pillar to post', 'why foresight', 'why choose you'])) {
     return {
-      text: "National franchises charge 450 to 575 dollars to pay corporate royalties and dispatch hourly junior techs. Solo discount operators charge 325 to 400, but working alone for 4 hours causes fatigue and they offer zero warranty. Foresight delivers two certified inspectors led by a Certified Master Inspector, up to 35,000 dollars in warranty protection, and free FLIR thermal and drone scans starting from 345 dollars. Would you like to get an instant quote or check our schedule?",
+      text: "National franchises charge 450 to 575 dollars to pay corporate royalties and dispatch hourly junior techs. Solo discount operators charge 325 to 400, but working alone for 4 hours causes fatigue and they offer zero warranty. Foresight delivers two certified inspectors led by a Certified Master Inspector, up to 35,000 dollars in warranty protection, and free infrared thermal and drone scans starting from 345 dollars. Would you like to get an instant quote or check our schedule?",
       preAudio: '/audio/receptionist-competitors.mp3'
     };
   }
@@ -569,7 +569,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
 
   if (matchesAny(['thermal', 'flir', 'infrared', 'drone', 'drones', 'camera'])) {
     return {
-      text: "Yes, absolutely! We include FLIR infrared thermal imaging to catch hidden leaks behind walls and aerial drone roof scans standard on every single inspection for free. Would you like to reserve an inspection window with our team?",
+      text: "Yes, absolutely! We include high-resolution infrared thermal imaging to catch hidden leaks behind walls and aerial drone roof scans standard on every single inspection for free. Would you like to reserve an inspection window with our team?",
       preAudio: '/audio/receptionist-drone-thermal.mp3'
     };
   }

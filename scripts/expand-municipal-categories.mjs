@@ -11,7 +11,7 @@ let updatedCitiesCount = 0;
 for (const city of cities) {
   const name = city['City Name'];
   city['Meta Title'] = `${name} Home Inspections | Certified Master Inspector® | Foresight`;
-  city['Meta Description'] = `4.9★ Rated ${name} home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free FLIR thermal, drone scans & $10k warranty!`;
+  city['Meta Description'] = `4.9★ Rated ${name} home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free infrared thermal, drone scans & $10k warranty!`;
   updatedCitiesCount++;
 }
 
@@ -33,8 +33,8 @@ const newCategories = [
     badge: "Most Popular",
     heroSub: "Don't buy a home in {city} with blind spots. Our two-inspector team evaluates every system from roof to foundation with same-day digital reporting.",
     overview: "Purchasing a home in {city} is one of the largest financial investments of your life. Standard single-inspector companies take 4+ hours and often miss concealed defects. Foresight dispatches two certified inspectors—led by board-certified Certified Master Inspector® Christopher Boykin—cutting time to 1.5–2.5 hours while delivering double verification across structural, mechanical, plumbing, electrical, and roofing systems.",
-    standards: "Conducted strictly to InterNACHI Standards of Practice with complimentary FLIR thermal infrared scans, 4K aerial roof drone evaluations, and up to $35,000 in warranty protection.",
-    equipment: "FLIR thermal cameras, aerial inspection drones, digital moisture meters, circuit load testers, and combustible gas sniffers.",
+    standards: "Conducted strictly to InterNACHI Standards of Practice with complimentary infrared thermal scans, 4K aerial roof drone evaluations, and up to $35,000 in warranty protection.",
+    equipment: "infrared thermal cameras, aerial inspection drones, digital moisture meters, circuit load testers, and combustible gas sniffers.",
     faqs: [
       {
         q: "Why do you send two certified inspectors to a buyer inspection in {city}?",
@@ -116,7 +116,7 @@ const newCategories = [
     heroSub: "Your builder's one-year warranty is about to expire. Uncover structural settlement, HVAC leaks, and roof flaws before the repair bill becomes yours in {city}.",
     overview: "During the first year of living in a new home in {city}, seasonal temperature swings, foundation settling, and everyday living reveal hidden construction defects. An 11-Month Warranty Inspection gives you an independent Certified Master Inspector report documenting code deficiencies, drywall nail pops, truss uplift, and drainage issues to submit directly to your builder for mandatory repairs before your warranty coverage ends.",
     standards: "Complete 1,600-point InterNACHI evaluation with thermal imaging, roof drone scans, and cosmetic/structural settlement audit.",
-    equipment: "FLIR thermal cameras, roof drones, laser leveling devices, and circuit analyzers.",
+    equipment: "infrared thermal cameras, roof drones, laser leveling devices, and circuit analyzers.",
     faqs: [
       {
         q: "Why shouldn't I just do the 11-month walkthrough myself in {city}?",

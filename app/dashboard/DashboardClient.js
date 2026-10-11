@@ -1025,7 +1025,7 @@ export default function DashboardClient({
                         <span style={{ color: '#1a0dab', fontWeight: 600 }}>Instant Fee Calculator →</span>
                         <span style={{ color: '#1a0dab', fontWeight: 600 }}>Realtor VIP Portal →</span>
                         <span style={{ color: '#1a0dab', fontWeight: 600 }}>2-Inspector Benchmark →</span>
-                        <span style={{ color: '#1a0dab', fontWeight: 600 }}>Radon &amp; FLIR Scans →</span>
+                        <span style={{ color: '#1a0dab', fontWeight: 600 }}>Radon &amp; infrared thermal scans →</span>
                       </div>
                     </div>
 
@@ -1339,7 +1339,7 @@ export default function DashboardClient({
                       <ul style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: 0, paddingLeft: '1.2rem', lineHeight: 1.6 }}>
                         <li>👥 Two Certified Inspectors on Every Job</li>
                         <li>⚡ 1.5–2.5 Hour On-Site Audit (Same-Day Digital Reports)</li>
-                        <li>🔥 FLIR® Infrared Thermal &amp; 4K Aerial Drones Included Standard</li>
+                        <li>🔥 Infrared Thermal Imaging Thermal &amp; 4K Aerial Drones Included Standard</li>
                         <li>🛡️ Up to $35,000 in Combined Warranty Protection</li>
                       </ul>
                     </div>
@@ -1437,7 +1437,7 @@ export default function DashboardClient({
                       <ul style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: 0, paddingLeft: '1rem', lineHeight: 1.5 }}>
                         <li>1.5–2.5 hours parallel audit</li>
                         <li>4K FAA aerial drone scan</li>
-                        <li>FLIR thermal infrared included</li>
+                        <li>calibrated infrared thermal included</li>
                         <li>Same-day digital report</li>
                         <li>$35,000 warranty underwriting</li>
                       </ul>
@@ -1515,7 +1515,7 @@ export default function DashboardClient({
                         targetAudience: 'Active Home Shoppers & Relocating Buyers',
                         leadMagnetName: '60-Second Instant Fee Calculator & Quote Locker',
                         trackedUrl: 'https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote',
-                        dmScript: 'Hey {firstName}! Here is our 60-second instant fee calculator where you can view 100% transparent pricing based on square footage:\n\n👉 https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote\n\nEvery full inspection includes Two Certified Inspectors, FLIR thermal imaging, and 4K aerial drone scans standard.\n\nWhat city or county in Georgia is the property located in?',
+                        dmScript: 'Hey {firstName}! Here is our 60-second instant fee calculator where you can view 100% transparent pricing based on square footage:\n\n👉 https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote\n\nEvery full inspection includes Two Certified Inspectors, infrared thermal imaging, and 4K aerial drone scans standard.\n\nWhat city or county in Georgia is the property located in?',
                         followUpQuestion: 'What city or county in Georgia is the property located in?',
                         estimatedDealValue: 525,
                         tag: 'Instant Quote Lead'

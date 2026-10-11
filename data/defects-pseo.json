@@ -6,10 +6,10 @@
     "metaDescription": "Specialized EIFS synthetic stucco and hard-coat stucco inspection in Metro Atlanta. Advanced moisture metering and thermal camera evaluation for hidden wood rot.",
     "icon": "🧱",
     "badge": "Stucco & EIFS Audit",
-    "blufSummary": "Synthetic EIFS stucco traps moisture behind exterior wall assemblies when kick-out flashings or window sealants fail. In Georgia's humid climate, trapped moisture causes structural framing rot without visible surface signs. Non-invasive FLIR infrared scanning identifies thermal evaporative cooling patterns where subsurface moisture exceeds 19% wood moisture equivalent.",
+    "blufSummary": "Synthetic EIFS stucco traps moisture behind exterior wall assemblies when kick-out flashings or window sealants fail. In Georgia's humid climate, trapped moisture causes structural framing rot without visible surface signs. Non-invasive calibrated infrared thermal scanning identifies thermal evaporative cooling patterns where subsurface moisture exceeds 19% wood moisture equivalent.",
     "statisticalBenchmarks": {
       "riskMetric": "Over 85% of unsealed 1980s–90s EIFS homes develop concealed framing rot",
-      "diagnosticThreshold": "FLIR Thermal Differential ΔT ≥ 8.5°F (evaporative cooling) + >19% WME",
+      "diagnosticThreshold": "infrared thermal differential ΔT ≥ 8.5°F (evaporative cooling) + >19% WME",
       "authorityCitation": "ASTM E2110 & InterNACHI Stucco Standards of Practice",
       "remediationCost": "$15,000 – $60,000+ (Full remediation or hard-coat recladding)"
     },
@@ -26,7 +26,7 @@
       "Termite intrusion through ground-contact synthetic foam barriers",
       "High repair costs ranging from $15,000 to $60,000+ for full remediation and re-cladding"
     ],
-    "howWeInspect": "We inspect all stucco penetrations, window kick-out flashings, window sills, and roof-to-wall intersections. We use electronic moisture scanners and FLIR thermal cameras to pinpoint elevated moisture levels behind the stucco surface without damaging the finish.",
+    "howWeInspect": "We inspect all stucco penetrations, window kick-out flashings, window sills, and roof-to-wall intersections. We use electronic moisture scanners and infrared thermal cameras to pinpoint elevated moisture levels behind the stucco surface without damaging the finish.",
     "remediation": "Remediation includes retrofitting kick-out flashings, sealing expansion joints, maintaining a 6-inch ground clearance, or full re-cladding with hard-coat stucco or fiber cement siding.",
     "faqs": [
       {
@@ -35,7 +35,7 @@
       },
       {
         "q": "Can you inspect stucco without drilling holes in the house?",
-        "a": "Yes. Foresight Home Inspections utilizes high-resolution FLIR thermal imaging and non-invasive moisture meters to detect thermal anomalies and moisture pockets behind walls first."
+        "a": "Yes. Foresight Home Inspections utilizes high-resolution infrared thermal imaging and non-invasive moisture meters to detect thermal anomalies and moisture pockets behind walls first."
       },
       {
         "q": "Is hard-coat real stucco better than synthetic EIFS?",
@@ -70,7 +70,7 @@
       "Oxidation and micro-arcing at standard outlet screws and wire nuts",
       "Uninsurable property status or mandatory electrical remediation demands from insurance carriers"
     ],
-    "howWeInspect": "We open main electrical subpanels to inspect branch wire materials, evaluate outlet and switch connection types, and use FLIR thermal imaging to scan outlets, switches, and breakers for active electrical hotspots.",
+    "howWeInspect": "We open main electrical subpanels to inspect branch wire materials, evaluate outlet and switch connection types, and use infrared thermal imaging to scan outlets, switches, and breakers for active electrical hotspots.",
     "remediation": "Remediation includes installing COPALUM crimp connectors, AlumiConn mechanical connectors, or replacing branch circuits with copper wiring.",
     "faqs": [
       {
@@ -83,7 +83,7 @@
       },
       {
         "q": "Can thermal imaging detect aluminum wiring fire hazards?",
-        "a": "Yes! FLIR thermal imaging cameras detect invisible heat buildup caused by loose aluminum wire connections before smoke or fire occurs."
+        "a": "Yes! infrared thermal imaging cameras detect invisible heat buildup caused by loose aluminum wire connections before smoke or fire occurs."
       }
     ]
   },
@@ -114,7 +114,7 @@
       "Melting bus bars and electrical panel enclosure fires",
       "Immediate red-flag for home insurance underwriters in Georgia"
     ],
-    "howWeInspect": "We inspect electrical panel branding, breaker model numbers, bus bar condition, grounding systems, and scan the entire dead-front panel with FLIR thermal imaging for active overheating.",
+    "howWeInspect": "We inspect electrical panel branding, breaker model numbers, bus bar condition, grounding systems, and scan the entire dead-front panel with infrared thermal imaging for active overheating.",
     "remediation": "Both FPE Stab-Lok and Zinsco panels should be fully replaced with a modern 200-amp electrical panel by a licensed electrician ($1,800 to $3,500).",
     "faqs": [
       {
@@ -158,7 +158,7 @@
       "Airborne mold spore circulation into living areas (stack effect)",
       "Attraction of subterranean termites and wood-boring beetles to damp wood"
     ],
-    "howWeInspect": "Our certified inspectors physically crawl the entire under-floor area. We test wood moisture content with digital meters, evaluate vapor barrier coverage, inspect pier stability, and scan with FLIR thermal cameras.",
+    "howWeInspect": "Our certified inspectors physically crawl the entire under-floor area. We test wood moisture content with digital meters, evaluate vapor barrier coverage, inspect pier stability, and scan with infrared thermal cameras.",
     "remediation": "Solutions include installing 6-mil or 12-mil vapor barriers, crawlspace encapsulation with a dedicated dehumidifier, sump pump installation, and sistering damaged floor joists.",
     "faqs": [
       {
@@ -229,7 +229,7 @@
     "blufSummary": "Over 80% of roof leaks in Metro Atlanta originate at flashing junctures (chimneys, valleys, plumbing boots, roof-to-wall intersections) rather than shingle failure. Unsealed flashings channel stormwater behind roof decking, rotting structural rafters and attic insulation undetected for years.",
     "statisticalBenchmarks": {
       "riskMetric": "80%+ of residential roof water leaks occur at flashing transitions (NRCA)",
-      "diagnosticThreshold": "FLIR Thermal evaporative delta ΔT ≥ 6.0°F in attic sheathing + aerial 4K drone audit",
+      "diagnosticThreshold": "Infrared Thermal evaporative delta ΔT ≥ 6.0°F in attic sheathing + aerial 4K drone audit",
       "authorityCitation": "National Roofing Contractors Association (NRCA) & IRC Section R905",
       "remediationCost": "$300 – $1,500 (Flashing retrofit) to $8,000+ (if decking is rotted)"
     },
@@ -246,7 +246,7 @@
       "Attic mold growth circulating into house HVAC ductwork",
       "Damaged ceiling drywall and ruined interior finishes"
     ],
-    "howWeInspect": "We walk accessible roofs and deploy high-resolution camera drones for steep or fragile surfaces. In the attic, we inspect roof decking under valleys and chimneys and use FLIR thermal cameras to trace moisture paths.",
+    "howWeInspect": "We walk accessible roofs and deploy high-resolution camera drones for steep or fragile surfaces. In the attic, we inspect roof decking under valleys and chimneys and use infrared thermal cameras to trace moisture paths.",
     "remediation": "Replacing damaged neoprene pipe boots, step flashings, and installing proper metal kick-out flashings typically costs $300 to $1,200.",
     "faqs": [
       {
@@ -259,7 +259,7 @@
       },
       {
         "q": "Can thermal cameras find roof leaks before ceilings show water spots?",
-        "a": "Yes! FLIR thermal cameras detect subtle evaporative cooling temperature drops in damp attic insulation long before water stains bleed through ceiling drywall."
+        "a": "Yes! infrared thermal cameras detect subtle evaporative cooling temperature drops in damp attic insulation long before water stains bleed through ceiling drywall."
       }
     ]
   },
@@ -273,7 +273,7 @@
     "blufSummary": "Polybutylene (commonly branded as Quest) is a flexible plastic plumbing pipe installed in millions of American homes built between 1978 and 1995. In Metro Atlanta, chlorine and oxidants in municipal drinking water react with polybutylene resin, causing microscopic structural flaking, brittle joint fractures, and sudden catastrophic water leaks inside walls and crawlspaces.",
     "statisticalBenchmarks": {
       "riskMetric": "Subject of $950M national class action settlement (Cox v. Shell Oil) due to widespread bursting",
-      "diagnosticThreshold": "Visual identification (PB2110 stamp / gray tubing) + FLIR scan for wall cavity dampness",
+      "diagnosticThreshold": "Visual identification (PB2110 stamp / gray tubing) + infrared thermal scan for wall cavity dampness",
       "authorityCitation": "ASTM D3309 Standard Specification for Polybutylene Plastic Distribution",
       "remediationCost": "$4,500 – $12,000+ (Complete whole-home repipe with PEX-a or copper)"
     },
@@ -290,7 +290,7 @@
       "Micro-fractures at plastic fittings causing chronic hidden rot inside wall cavities",
       "Denied homeowner insurance coverage or mandatory whole-home repipe exclusions from top carriers"
     ],
-    "howWeInspect": "We inspect all visible supply lines at water heaters, main water shut-off valves, laundry boxes, crawlspaces, and beneath plumbing fixtures. We check for pipe stamps (PB2110), assess crimp ring integrity, and use FLIR thermal imaging to verify that no hidden moisture leaks exist behind bathroom and laundry drywall.",
+    "howWeInspect": "We inspect all visible supply lines at water heaters, main water shut-off valves, laundry boxes, crawlspaces, and beneath plumbing fixtures. We check for pipe stamps (PB2110), assess crimp ring integrity, and use infrared thermal imaging to verify that no hidden moisture leaks exist behind bathroom and laundry drywall.",
     "remediation": "Remediation requires a complete whole-home repiping with modern PEX-a (cross-linked polyethylene) or Type L copper tubing, along with drywall restoration and new quarter-turn shut-off valves.",
     "faqs": [
       {

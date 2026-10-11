@@ -149,7 +149,7 @@ export default async function CityPage({ params }) {
     },
     {
       q: `What does thermal imaging detect during a home inspection in ${cityName}?`,
-      a: `Thermal imaging (infrared camera technology) is included in every Foresight inspection at no extra charge. In ${cityName} homes, our FLIR thermal cameras detect hidden moisture intrusion behind walls and ceilings, missing or damaged insulation, electrical hotspots that could be fire hazards, HVAC duct leaks, and plumbing leaks beneath floors. These are problems completely invisible to the naked eye that could cost thousands to repair if undiscovered. This advanced technology is a standard part of our two-inspector team approach.`,
+      a: `Thermal imaging (infrared camera technology) is included in every Foresight inspection at no extra charge. In ${cityName} homes, our infrared thermal cameras detect hidden moisture intrusion behind walls and ceilings, missing or damaged insulation, electrical hotspots that could be fire hazards, HVAC duct leaks, and plumbing leaks beneath floors. These are problems completely invisible to the naked eye that could cost thousands to repair if undiscovered. This advanced technology is a standard part of our two-inspector team approach.`,
     },
   ];
 
@@ -231,7 +231,7 @@ export default async function CityPage({ params }) {
     "@type": "Product",
     "@id": `https://www.fhinspectionsatl.com/service-areas/${slug}#package`,
     "name": `Two-Inspector Home Inspection Package - ${cityName}, GA`,
-    "description": `Two certified inspectors on every job led by a Certified Master Inspector®. Includes complimentary FLIR infrared thermal imaging, 4K roof drone scans, and $10,000 warranty in ${cityName}, GA.`,
+    "description": `Two certified inspectors on every job led by a Certified Master Inspector®. Includes complimentary high-resolution infrared thermal imaging, 4K roof drone scans, and $10,000 warranty in ${cityName}, GA.`,
     "image": [
       `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
       `${SITE_URL}/images/luxury-home.jpg`,
@@ -475,7 +475,7 @@ export default async function CityPage({ params }) {
             <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.7, color: '#F1F5F9', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
               {introParagraph}
               <span style={{ display: 'block', marginTop: '0.75rem', fontSize: '1rem', color: '#E2E8F0', fontWeight: '500' }}>
-                ⚡ Certified Master Inspector® leadership, two certified inspectors per job, FLIR thermal imaging &amp; included $10,000 Elite Warranty ($0 deductible).
+                ⚡ Certified Master Inspector® leadership, two certified inspectors per job, infrared thermal imaging &amp; included $10,000 Elite Warranty ($0 deductible).
               </span>
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -505,14 +505,14 @@ export default async function CityPage({ params }) {
               </Link>
             </div>
             <p className="city-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
-              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, reducing on-site inspection time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary FLIR infrared thermal imaging, aerial roof drone audits, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
+              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, reducing on-site inspection time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary high-resolution infrared thermal imaging, aerial roof drone audits, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)' }}>
               <div><strong>👨‍🔧 Standard:</strong> 2 Certified Inspectors</div>
               <div><strong>⏱️ Efficiency:</strong> 1.5–2.5 Hours (50% Faster)</div>
               <div><strong>📑 Turnaround:</strong> Under 24-Hour Digital Report</div>
               <div><strong>🛡️ Protection:</strong> $10,000 Warranty ($0 Deductible)</div>
-              <div><strong>🔬 Diagnostics:</strong> FLIR Thermal + 4K Drone Included</div>
+              <div><strong>🔬 Diagnostics:</strong> Infrared Thermal + 4K Drone Included</div>
               <div><strong>☢️ EPA Radon Risk:</strong> {['Fulton', 'Gwinnett', 'Cobb', 'DeKalb', 'Cherokee', 'Forsyth', 'Barrow', 'Jackson', 'Hall', 'Walton'].includes(county) ? 'Zone 1 (>4.0 pCi/L)' : 'Zone 2 (2.0–4.0 pCi/L)'}</div>
             </div>
           </div>
@@ -712,13 +712,13 @@ export default async function CityPage({ params }) {
               <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                 <Image
                   src="/images/thermal-1.png"
-                  alt={`Infrared Thermal Imaging (FLIR) camera inspecting home electrical heat profile in ${cityName}`}
+                  alt={`Infrared Thermal Imaging camera inspecting home electrical heat profile in ${cityName}`}
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging (FLIR)</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Our professional thermal cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation without damaging any drywall. Included on every {cityName} inspection at no extra charge.
                 </p>
@@ -833,7 +833,7 @@ export default async function CityPage({ params }) {
             <Link href={`/services/buyer-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏡</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Buyer Home Inspection</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Full 2-inspector buyer evaluation with FLIR thermal scan and same-day report in {cityName}.</p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Full 2-inspector buyer evaluation with infrared thermal scan and same-day report in {cityName}.</p>
             </Link>
             <Link href={`/services/radon-testing/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>☢️</div>
@@ -1016,7 +1016,7 @@ export default async function CityPage({ params }) {
                 </li>
                 <li>
                   <Link href="/compare/thermal-imaging-vs-standard-visual-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
-                    &rarr; FLIR Thermal Infrared Scans vs. Visual Inspection
+                    &rarr; Infrared Thermal Scans vs. Visual Inspection
                   </Link>
                 </li>
                 <li>

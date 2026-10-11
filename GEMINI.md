@@ -25,7 +25,7 @@ The entrepreneur demands the **absolute best strategies, architectures, and engi
 
 4. **Information Gain & Entity Redundancy Elimination (Bernard Huang / Google Patent US10,956,488 B2)**:
    - Strictly prohibit derivative content that summarizes existing top-10 search results.
-   - Infuse proprietary first-party data: exact FLIR thermal temperature differentials (ΔT), defect occurrence statistics, local municipal building code nuances, and Certified Master Inspector field observations.
+   - Infuse proprietary first-party data: exact infrared thermal temperature differentials (ΔT), defect occurrence statistics, local municipal building code nuances, and Certified Master Inspector field observations.
 
 5. **Generative Engine Optimization (GEO) & LLM Citation Readiness (Kevin Indig / Princeton KDD '24 Standard)**:
    - Apply the **"First 30%" Rule**: Deliver clear, direct answers (BLUF - Bottom Line Up Front) within the top 30% of page content.

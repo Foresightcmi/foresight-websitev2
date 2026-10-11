@@ -102,7 +102,7 @@ export default function TwoPossibilities() {
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: '#22C55E', fontWeight: 800, fontSize: '1.1rem', lineHeight: 1 }}>✓</span>
                   <div>
-                    <strong style={{ color: '#FFFFFF' }}>FLIR Infrared Thermal &amp; 4K Drone Included:</strong> State-of-the-art thermal imaging reveals hidden moisture, missing insulation, and hot circuits. 4K aerial drones safely audit steep roof planes and chimney flashings at no extra charge.
+                    <strong style={{ color: '#FFFFFF' }}>infrared thermal Thermal &amp; 4K Drone Included:</strong> State-of-the-art thermal imaging reveals hidden moisture, missing insulation, and hot circuits. 4K aerial drones safely audit steep roof planes and chimney flashings at no extra charge.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

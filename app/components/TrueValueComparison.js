@@ -108,7 +108,7 @@ export default function TrueValueComparison() {
                 {/* Row 2 */}
                 <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
                   <td style={{ padding: '1.15rem 1.5rem', fontWeight: 600, color: '#FFFFFF' }}>
-                    FLIR® Thermal Infrared Scan
+                    High-Resolution Infrared Thermal Scan
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', color: '#CBD5E1' }}>
                     <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> +$125 to +$150 Extra <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(or naked eyes only)</span>
