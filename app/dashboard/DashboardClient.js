@@ -182,6 +182,15 @@ export default function DashboardClient({
     }, 0);
   }, [leadsData]);
 
+  // Directory Citations Calculation
+  const allDirectories = useMemo(() => citationsData?.directories || [], [citationsData]);
+  const filteredDirectories = useMemo(() => {
+    if (citationFilter === 'ACTIVE') return allDirectories.filter(d => d.status === 'ACTIVE_VERIFIED');
+    if (citationFilter === 'OPPORTUNITY') return allDirectories.filter(d => d.status === 'OPPORTUNITY');
+    if (citationFilter === 'CORE') return allDirectories.filter(d => ['google_business', 'apple_maps', 'bing_places', 'ga_sos', 'internachi', 'cmi_board', 'bbb_atlanta', 'zillow_pro'].includes(d.id));
+    return allDirectories;
+  }, [allDirectories, citationFilter]);
+
   if (!isClient) {
     return (
       <div style={{ background: '#0f172a', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8' }}>
@@ -253,14 +262,6 @@ export default function DashboardClient({
   const coreVerified = citationsData?.core_verified_count || 8;
   const coreTotal = citationsData?.core_total_count || 8;
   const weightedScore = citationsData?.weighted_authority_score || 59.6;
-
-  const allDirectories = useMemo(() => citationsData?.directories || [], [citationsData]);
-  const filteredDirectories = useMemo(() => {
-    if (citationFilter === 'ACTIVE') return allDirectories.filter(d => d.status === 'ACTIVE_VERIFIED');
-    if (citationFilter === 'OPPORTUNITY') return allDirectories.filter(d => d.status === 'OPPORTUNITY');
-    if (citationFilter === 'CORE') return allDirectories.filter(d => ['google_business', 'apple_maps', 'bing_places', 'ga_sos', 'internachi', 'cmi_board', 'bbb_atlanta', 'zillow_pro'].includes(d.id));
-    return allDirectories;
-  }, [allDirectories, citationFilter]);
 
   return (
     <div style={{ background: '#0f172a', minHeight: '100vh', color: '#f8fafc', padding: '2rem 1rem' }}>
