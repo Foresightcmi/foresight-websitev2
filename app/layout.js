@@ -835,7 +835,12 @@ export default function RootLayout({ children }) {
               </div>
             </div>
             <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
-              <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Foresight Home Inspections, LLC. All rights reserved. Proudly Black-owned.</p>
+              <p style={{ margin: 0, fontSize: '0.85rem' }}>
+                &copy; {new Date().getFullYear()} Foresight Home Inspections, LLC. All rights reserved.{' '}
+                <span style={{ fontSize: '0.68rem', opacity: 0.65, display: 'inline-block', letterSpacing: '0.02em' }}>
+                  Proudly Black-owned.
+                </span>
+              </p>
               <Link prefetch={false} href="/dashboard" style={{ color: '#CBD5E1', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
                 <span>🔒</span> Owner Command Center
               </Link>
