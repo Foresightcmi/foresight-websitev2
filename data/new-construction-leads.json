@@ -7045,5 +7045,34 @@
       "Complete 3-Phase New Construction Master Bundle ($1,295 - $1,795)"
     ],
     "harvestedAt": "2026-10-10T16:44:37.424Z"
+  },
+  {
+    "recordId": "NC-7852427",
+    "mlsId": "7852427",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "10 Moreland NE",
+    "address": "10 Moreland NE, Atlanta, GA 30307",
+    "city": "Atlanta",
+    "zip": "30307",
+    "price": 1250000,
+    "sqft": 2713,
+    "yearBuilt": 2024,
+    "beds": 5,
+    "baths": 4.5,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/10-Moreland-Ave-NE-30307/home/198972466",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Audit ($495 - $695)",
+      "Pre-Closing Final Blue Tape Walkthrough + Infrared Thermal Imaging ($495 - $795)",
+      "11-Month Builder Warranty Inspection ($450 - $650)",
+      "Complete 3-Phase New Construction Master Bundle ($1,295 - $1,795)"
+    ],
+    "harvestedAt": "2026-10-11T17:10:05.881Z"
   }
 ]
