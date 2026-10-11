@@ -148,25 +148,27 @@ export default function Home() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15,23,42,0.82) 0%, rgba(15,23,42,0.68) 40%, rgba(15,23,42,0.85) 100%)', zIndex: 1 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-          <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.5rem 1.5rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.06em', marginBottom: '1.75rem', display: 'inline-block', backdropFilter: 'blur(8px)' }}>
+          <span className="badge" style={{ background: 'rgba(11, 17, 32, 0.78)', color: 'var(--color-gold)', border: '1px solid rgba(212, 175, 55, 0.45)', padding: '0.5rem 1.4rem', borderRadius: '50px', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.08em', marginBottom: '1.75rem', display: 'inline-block', backdropFilter: 'blur(12px)', boxShadow: '0 4px 16px rgba(0,0,0,0.35)' }}>
             🏛️ METICULOUS HOME INSPECTIONS FOR ATLANTA&apos;S FINEST HOMES
           </span>
 
-          <h1 style={{ marginBottom: '1.5rem', color: '#FFFFFF', fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-0.025em', textShadow: '0 2px 20px rgba(0,0,0,0.6)' }}>
+          <h1 style={{ marginBottom: '1.5rem', color: '#FFFFFF', fontSize: 'clamp(2.35rem, 5.5vw, 3.85rem)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-0.03em', textShadow: '0 3px 25px rgba(0,0,0,0.85)' }}>
             Atlanta Home Inspections<br />
-            <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 15px rgba(212,175,55,0.35)' }}>Two Certified Inspectors on Every Job.</span>
+            <span style={{ background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE047 30%, #D4AF37 70%, #CA8A04 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+              Two Certified Inspectors on Every Job.
+            </span>
           </h1>
 
           <p style={{ maxWidth: '720px', margin: '0 auto 2.5rem', fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
             Foresight provides premier Atlanta home inspections led by board-certified Certified Master Inspector® Christopher Boykin. From single-family homes to luxury estates across 20 Metro Atlanta counties, every inspection features two certified inspectors working in tandem, complimentary infrared thermal imaging, aerial drone roof scanning, and up to $35,000 in combined warranty protection.
           </p>
 
-          <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginBottom: '2.25rem' }}>
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.08rem', fontWeight: 800, borderRadius: 'var(--radius-md)', boxShadow: '0 6px 25px rgba(212, 175, 55, 0.45)' }}>
               📅 Schedule Inspection Now
             </a>
-            <Link prefetch={false} href="/quote" className="btn btn-outline-light" style={{ padding: '1.1rem 2.5rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
-              📊 Calculate Instant Fee
+            <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ padding: '1.1rem 2.25rem', fontSize: '1.05rem', fontWeight: 700, borderRadius: 'var(--radius-md)', background: 'rgba(15, 23, 42, 0.65)', border: '1px solid rgba(255, 255, 255, 0.28)', color: '#FFFFFF', backdropFilter: 'blur(8px)' }}>
+              📊 Instant Fee Calculator
             </Link>
             <VslTriggerButton />
           </div>
@@ -745,16 +747,16 @@ export default function Home() {
             </div>
             <div>
               <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.5rem' }}>
-                Pillar 2 &bull; InterNACHI® Member Guarantee
+                Pillar 2 &bull; InterNACHI® Institutional Guarantee
               </span>
-              <h3 style={{ color: '#FFFFFF', fontSize: '1.85rem', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.25 }}>
-                InterNACHI&rsquo;s $25,000 Honor Guarantee
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.85rem', fontWeight: 800, marginBottom: '0.85rem', lineHeight: 1.25 }}>
+                InterNACHI&rsquo;s $25,000 Client Property Protection &amp; Honor Guarantee
               </h3>
               <p style={{ color: '#E2E8F0', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1rem' }}>
-                InterNACHI® is so certain of the integrity of our members that we back them up with our $25,000 Honor Guarantee.
+                InterNACHI® is so confident in the vetted background, character, and professional integrity of its certified inspectors that every inspection is backed by an exclusive <strong>$25,000 Honor Guarantee</strong>.
               </p>
-              <p style={{ color: '#94A3B8', fontSize: '0.92rem', lineHeight: 1.65, borderLeft: '3px solid var(--color-gold)', paddingLeft: '1rem', margin: 0 }}>
-                InterNACHI® will pay up to $25,000 (USD; maximum collective aggregate) for the cost of replacement of personal property lost (and not recovered, restituted or insured) during an inspection and stolen by an InterNACHI®-certified member who was convicted of or pleaded guilty (or no contest) to any criminal charge resulting from the member&rsquo;s taking of the client&rsquo;s personal property. Claimant agrees that the exclusive venue for any action against InterNACHI® arising out of this Honor Guarantee is the District Court in Boulder County, Colorado. InterNACHI&rsquo;s Honor Guarantee is valid throughout the U.S. and Canada.
+              <p style={{ color: '#94A3B8', fontSize: '0.88rem', lineHeight: 1.65, borderLeft: '3px solid var(--color-gold)', paddingLeft: '1rem', margin: 0 }}>
+                InterNACHI® provides up to $25,000 aggregate coverage for the replacement of personal property during an inspection, ensuring complete financial security, mutual trust, and total peace of mind for buyers and real estate professionals across the United States and Canada.
               </p>
             </div>
           </div>

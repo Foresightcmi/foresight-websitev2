@@ -7,42 +7,12 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-      {/* 24/7 Top Banner — captures off-hours late-night search traffic */}
-      <div className="top-banner" style={{
-        background: 'linear-gradient(90deg, #0F172A 0%, #1E293B 100%)',
-        color: '#FFFFFF',
-        textAlign: 'center',
-        padding: '0.5rem 1rem',
-        fontSize: '0.85rem',
-        fontWeight: 500,
-        letterSpacing: '0.02em',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '0.5rem',
-        flexWrap: 'wrap'
-      }}>
-        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-          <span style={{ color: '#22C55E', fontSize: '0.7rem' }}>●</span>
-          <strong style={{ color: '#D4AF37' }}>Book Online 24/7</strong>
-          <span style={{ color: '#94A3B8' }}>—</span>
-          <span>No waiting. Instant scheduling anytime.</span>
-        </span>
-        <span style={{ color: '#475569' }}>|</span>
-        <a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ color: '#E2E8F0', textDecoration: 'none', fontWeight: 600 }}>
-          📞 678-480-2110
-        </a>
-        <span style={{ color: '#475569' }}>|</span>
-        <span style={{ color: '#94A3B8' }}>Serving Metro Atlanta &amp; 77+ Cities</span>
-      </div>
-
-      <header className="header glass-header">
-        <div className="container nav-container">
-          <Link prefetch={false} href="/" className="logo">
-            <Image src="/images/Logopng.webp" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={300} height={180} style={{ height: '120px', width: 'auto' }} priority />
-            <span className="sr-only">Foresight Home Inspections</span>
-          </Link>
+    <header className="header glass-header">
+      <div className="container nav-container">
+        <Link prefetch={false} href="/" className="logo">
+          <Image src="/images/Logopng.webp" alt="Foresight Home Inspections - Certified Master Inspector in Atlanta GA" width={180} height={60} style={{ height: '58px', width: 'auto' }} priority />
+          <span className="sr-only">Foresight Home Inspections</span>
+        </Link>
           <button
             className={`mobile-menu-btn ${menuOpen ? 'active' : ''}`}
             aria-label="Toggle navigation menu"
@@ -100,6 +70,5 @@ export default function Header() {
           )}
         </div>
       </header>
-    </>
   );
 }

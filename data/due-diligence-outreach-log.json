@@ -400,5 +400,71 @@
     "email": "pam.oconnor-smith@redfin.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-11T12:00:59.284Z"
+  },
+  {
+    "key": "CONTRACT_card_4dae85ace6_tonya0814@yahoo.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Tonya Givens",
+    "brokerage": "Southern Classic Realtors",
+    "address": "1038 Orchard Circle",
+    "city": "Monroe",
+    "email": "tonya0814@yahoo.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T22:35:22.510Z"
+  },
+  {
+    "key": "CONTRACT_card_7e81c22235_mdorsey@davidsonhomes.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Matrina Dorsey",
+    "brokerage": "Davidson Realty GA, LLC",
+    "address": "123 Park Ridge Circle",
+    "city": "Emerson",
+    "email": "mdorsey@davidsonhomes.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T22:35:28.532Z"
+  },
+  {
+    "key": "CONTRACT_card_5e4d38b414_aracely.pieceofcelyhomes@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Aracely Carrera",
+    "brokerage": "The Realty Group",
+    "address": "1902 Mural Circle",
+    "city": "Morrow",
+    "email": "aracely.pieceofcelyhomes@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T22:35:34.043Z"
+  },
+  {
+    "key": "CONTRACT_card_e661460231_keishatompkins@kw.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "KEISHA TOMPKINS",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "address": "5601 Tunbridge Wells Road",
+    "city": "Lithonia",
+    "email": "keishatompkins@kw.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T22:35:39.782Z"
+  },
+  {
+    "key": "PRE_DD_card_f00c30bbc6_skylar.topper@compass.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Skylar Topper",
+    "brokerage": "Compass",
+    "address": "608 Eagle Creek Pointe",
+    "city": "Roswell",
+    "email": "skylar.topper@compass.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-11T22:35:46.287Z"
+  },
+  {
+    "key": "PRE_DD_card_51e88aa79b_chase@chasemizell.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "CHASE MIZELL",
+    "brokerage": "Atlanta Fine Homes Sotheby's International",
+    "address": "6815 Prelude Drive",
+    "city": "Atlanta",
+    "email": "chase@chasemizell.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-11T22:35:52.537Z"
   }
 ]

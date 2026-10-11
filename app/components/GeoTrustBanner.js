@@ -148,64 +148,110 @@ export default function GeoTrustBanner() {
   }, []);
 
   return (
-    <div style={{
-      background: 'linear-gradient(90deg, #0f172a 0%, #1e293b 100%)',
-      borderBottom: '1px solid rgba(211, 47, 47, 0.4)',
-      color: '#ffffff',
-      padding: '0.65rem 1rem',
-      minHeight: '44px',
-      contain: 'layout style',
-      fontSize: '0.9rem',
-      textAlign: 'center',
-      position: 'relative',
-      zIndex: 40
-    }}>
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-        {geoCity ? (
-          <>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontWeight: 600, color: '#f8fafc' }}>
-              <span style={{ color: 'var(--color-red-light)' }}>📍</span>
-              Active Inspectors Serving <strong style={{ color: 'var(--color-gold)' }}>{geoCity.name}, GA</strong> &amp; Surrounding Communities
-            </span>
-            <span style={{ color: 'rgba(255,255,255,0.4)', margin: '0 0.25rem' }}>|</span>
-            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Guaranteed 48-Hour Scheduling &amp; $10K Warranty</span>
+    <div
+      role="banner"
+      aria-label="Executive Announcement and Direct Dispatch Bar"
+      style={{
+        background: '#0B1120',
+        borderBottom: '1px solid rgba(212, 175, 55, 0.22)',
+        color: '#F8FAFC',
+        padding: '0.45rem 1rem',
+        fontSize: '0.84rem',
+        contain: 'layout style',
+        position: 'relative',
+        zIndex: 50,
+        letterSpacing: '0.015em'
+      }}
+    >
+      <div
+        className="container"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '0.65rem',
+          maxWidth: '1360px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}
+      >
+        {/* Left: Dynamic Geo Footprint Tag */}
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
+          {geoCity ? (
             <Link
               href={`/service-areas/${geoCity.slug}`}
               style={{
-                marginLeft: '0.5rem',
-                color: '#ffffff',
-                textDecoration: 'underline',
-                textUnderlineOffset: '3px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                background: 'rgba(212, 175, 55, 0.12)',
+                border: '1px solid rgba(212, 175, 55, 0.35)',
+                color: 'var(--color-gold)',
+                padding: '0.2rem 0.65rem',
+                borderRadius: '50px',
+                fontSize: '0.75rem',
                 fontWeight: 700,
-                fontSize: '0.85rem'
+                textDecoration: 'none',
+                letterSpacing: '0.04em'
               }}
             >
-              View {geoCity.name} Coverage &rarr;
+              <span style={{ fontSize: '0.75rem' }}>📍</span>
+              <span>ACTIVE IN {geoCity.name.toUpperCase()}, GA &rarr;</span>
             </Link>
-          </>
-        ) : (
-          <>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontWeight: 600, color: '#f8fafc' }}>
-              <span style={{ color: 'var(--color-red-light)' }}>📍</span>
-              Metro Atlanta's Premier Two-Inspector Team | Serving 87+ Cities Within Our 50-Mile Footprint
-            </span>
-            <span style={{ color: 'rgba(255,255,255,0.4)', margin: '0 0.25rem' }}>|</span>
-            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Guaranteed 48-Hour Scheduling &amp; $10K Warranty</span>
+          ) : (
             <Link
               href="/service-areas"
               style={{
-                marginLeft: '0.5rem',
-                color: '#ffffff',
-                textDecoration: 'underline',
-                textUnderlineOffset: '3px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                background: 'rgba(212, 175, 55, 0.12)',
+                border: '1px solid rgba(212, 175, 55, 0.35)',
+                color: 'var(--color-gold)',
+                padding: '0.2rem 0.65rem',
+                borderRadius: '50px',
+                fontSize: '0.75rem',
                 fontWeight: 700,
-                fontSize: '0.85rem'
+                textDecoration: 'none',
+                letterSpacing: '0.04em'
               }}
             >
-              Explore Service Areas &rarr;
+              <span style={{ fontSize: '0.75rem' }}>📍</span>
+              <span>METRO ATLANTA &bull; 87+ CITIES &rarr;</span>
             </Link>
-          </>
-        )}
+          )}
+
+          <span style={{ color: '#E2E8F0', fontWeight: 500, fontSize: '0.82rem' }}>
+            Two Certified Inspectors &bull; Up to $35K Combined Warranty &bull; Free $150 Utility Setup
+          </span>
+        </div>
+
+        {/* Right: Direct Dispatch & 24/7 Booking Hook */}
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.85rem', flexWrap: 'wrap' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#94A3B8', fontSize: '0.82rem' }}>
+            <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E', display: 'inline-block', boxShadow: '0 0 8px #22C55E' }}></span>
+            <strong style={{ color: '#F1F5F9' }}>Online Booking 24/7</strong>
+          </span>
+
+          <span style={{ color: '#334155' }}>|</span>
+
+          <a
+            href="tel:678-480-2110"
+            aria-label="Call Foresight Home Inspections directly at 678-480-2110"
+            style={{
+              color: 'var(--color-gold)',
+              fontWeight: 700,
+              fontSize: '0.84rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.3rem',
+              textDecoration: 'none'
+            }}
+          >
+            <span>📞</span> 678-480-2110
+          </a>
+        </div>
       </div>
     </div>
   );
