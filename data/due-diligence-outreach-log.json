@@ -334,5 +334,71 @@
     "email": "juan.jr@jriverarealty.org",
     "date": "2026-10-02",
     "timestamp": "2026-10-09T12:01:26.596Z"
+  },
+  {
+    "key": "CONTRACT_card_eba4501add_stadlerrealestate@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "LIN STADLERPERRY",
+    "brokerage": "Chapman Hall Professionals Realty, LLC",
+    "address": "2371 Wood Creek Court",
+    "city": "Dacula",
+    "email": "stadlerrealestate@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T12:00:21.297Z"
+  },
+  {
+    "key": "CONTRACT_card_77902a753f_nikitatodd@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Nikita Hankerson",
+    "brokerage": "Keller Williams Realty Signature Partners",
+    "address": "6990 Misttop Loop",
+    "city": "Fairburn",
+    "email": "nikitatodd@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T12:00:30.853Z"
+  },
+  {
+    "key": "CONTRACT_card_80c34785e8_czimmerman33@msn.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Clay Zimmerman",
+    "brokerage": "Maximum One Catalyst Partners",
+    "address": "1215 Briers Creek Drive",
+    "city": "Alpharetta",
+    "email": "czimmerman33@msn.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T12:00:38.785Z"
+  },
+  {
+    "key": "CONTRACT_card_7a574b5e17_neil.hediger@compass.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Neil Hediger",
+    "brokerage": "Compass",
+    "address": "800 Peachtree Street NE 8227",
+    "city": "Atlanta",
+    "email": "neil.hediger@compass.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-11T12:00:44.759Z"
+  },
+  {
+    "key": "PRE_DD_card_db73222d0b_msh@storagekey.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "MIKE HOWREN",
+    "brokerage": "Michael Howren Realty",
+    "address": "121 Dogwood Drive",
+    "city": "Emerson",
+    "email": "msh@storagekey.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-11T12:00:52.345Z"
+  },
+  {
+    "key": "PRE_DD_card_655f333688_pam.oconnor-smith@redfin.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "PAMELA OCONNORSMITH",
+    "brokerage": "Redfin Corporation",
+    "address": "9395 Edgewater Drive",
+    "city": "Lawrenceville",
+    "email": "pam.oconnor-smith@redfin.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-11T12:00:59.284Z"
   }
 ]
