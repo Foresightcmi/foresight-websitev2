@@ -65,3 +65,13 @@ The entrepreneur demands the **absolute best strategies, architectures, and engi
 - **$0 Marginal Cost**: Runs 100% on GitHub's free runner tier.
 - **Encrypted Secrets & Mobile Alerts**: Sensitive credentials injected via GitHub Secrets; real-time notifications dispatched to `ntfy.sh/fores-antigravity-alerts-77`.
 
+### 📷 Brand-Neutral Building-Science Thermal Imaging Standard (/learn):
+- **Zero "FLIR" / Single-Brand Mentions**: The entrepreneur utilizes multiple commercial, calibrated thermal imaging cameras across field inspections. NEVER specify or restrict terminology to "FLIR" or "FLIR®".
+- **Approved Professional Terminology**: Always describe thermal diagnostics using rigorous, brand-agnostic building-science terms:
+  - *High-Resolution Infrared Thermal Imaging*
+  - *Calibrated Radiometric Infrared Scanning*
+  - *Infrared Thermal Diagnostics*
+  - *Infrared Thermal Camera Scans*
+- **Applies Universally**: Enforce across all website pages, UI components, social media engines, client emails, technical dossiers, pSEO datasets, and AI grounding documentation (`/llms.txt`).
+
+
