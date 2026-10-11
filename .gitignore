@@ -42,3 +42,4 @@ next-env.d.ts
 /scratch/
 secrets/
 *.key.json
+*.log
