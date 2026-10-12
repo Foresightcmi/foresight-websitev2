@@ -532,5 +532,38 @@
     "email": "jody@rivermoorepartnersrealty.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-12T12:01:13.786Z"
+  },
+  {
+    "key": "CONTRACT_card_f7fa94723f_susanparkerrealty@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Susan Parker Livingood",
+    "brokerage": "Hometown Realty Brokerage Partners, LLC",
+    "address": "2222 Spink Street NW",
+    "city": "Atlanta",
+    "email": "susanparkerrealty@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-12T20:45:43.657Z"
+  },
+  {
+    "key": "CONTRACT_card_4b82af02cb_gretchensoldit@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Gretchen Patsios",
+    "brokerage": "EXP Realty, LLC.",
+    "address": "4141 Ashwoody Trail NE",
+    "city": "Atlanta",
+    "email": "gretchensoldit@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-12T20:45:50.009Z"
+  },
+  {
+    "key": "CONTRACT_card_afb061de0d_offers@gowithmt.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Modern Traditions",
+    "brokerage": "REMAX Center",
+    "address": "159 Nacoochee Way",
+    "city": "Atlanta",
+    "email": "offers@gowithmt.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-12T20:45:59.934Z"
   }
 ]
