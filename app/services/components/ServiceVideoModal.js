@@ -1,33 +1,51 @@
 'use client';
 
-import { useEffect } from 'react';
-import Image from 'next/image';
+import { useEffect, useState, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 
 export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
+  const [mounted, setMounted] = useState(false);
+  const videoRef = useRef(null);
+
   useEffect(() => {
-    if (isOpen) {
-      // Pause any playing audio
-      if (typeof document !== 'undefined') {
-        document.querySelectorAll('audio').forEach((audio) => {
-          if (!audio.paused) audio.pause();
-        });
-      }
-      if (typeof window !== 'undefined') {
-        window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
-      }
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    // Prevent body background scrolling & double scrollbars
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     }
 
+    // Pause any background audio
+    document.querySelectorAll('audio').forEach((audio) => {
+      if (!audio.paused) audio.pause();
+    });
+    window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [isOpen, onClose]);
 
-  if (!isOpen || !briefing) return null;
+  if (!isOpen || !briefing || !mounted) return null;
 
   const {
     title,
@@ -40,7 +58,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
     quoteUrl = '/quote',
   } = briefing;
 
-  return (
+  const modalContent = (
     <div
       className="service-video-modal-overlay"
       onClick={onClose}
@@ -50,14 +68,17 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: 'rgba(11, 17, 32, 0.92)',
-        backdropFilter: 'blur(10px)',
-        zIndex: 9999,
+        backgroundColor: 'rgba(11, 17, 32, 0.94)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+        zIndex: 99999,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '1rem',
-        animation: 'fadeIn 0.2s ease-out'
+        animation: 'fadeIn 0.2s ease-out',
+        isolation: 'isolate',
+        pointerEvents: 'auto'
       }}
     >
       <div
@@ -70,13 +91,18 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
           maxWidth: '780px',
           width: '100%',
           maxHeight: '92vh',
-          overflowY: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
           boxShadow: '0 25px 65px -12px rgba(0, 0, 0, 0.85)',
           position: 'relative',
-          color: '#FFFFFF'
+          color: '#FFFFFF',
+          overflow: 'hidden',
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          willChange: 'transform'
         }}
       >
-        {/* Header Bar */}
+        {/* Header Bar - Fixed Top (Zero Layout Shift) */}
         <div
           style={{
             display: 'flex',
@@ -84,11 +110,9 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
             alignItems: 'center',
             padding: '1.15rem 1.5rem',
             borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-            background: 'rgba(15, 23, 42, 0.75)',
-            position: 'sticky',
-            top: 0,
-            zIndex: 10,
-            backdropFilter: 'blur(8px)'
+            background: 'rgba(15, 23, 42, 0.85)',
+            flexShrink: 0,
+            zIndex: 10
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -145,14 +169,32 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
           </button>
         </div>
 
-        {/* Video Player Container */}
-        <div style={{ position: 'relative', width: '100%', background: '#000000', maxHeight: '380px', overflow: 'hidden' }}>
+        {/* Video Player Container - Fixed 16:9 Aspect Ratio (Immune to Hover Glitch) */}
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            aspectRatio: '16 / 9',
+            maxHeight: '400px',
+            background: '#000000',
+            overflow: 'hidden',
+            flexShrink: 0,
+            contain: 'paint'
+          }}
+        >
           <video
+            ref={videoRef}
             controls
             autoPlay
             playsInline
             poster={poster}
-            style={{ width: '100%', maxHeight: '380px', objectFit: 'contain', display: 'block' }}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              display: 'block',
+              backgroundColor: '#000000'
+            }}
             onPlay={() => {
               if (typeof document !== 'undefined') {
                 document.querySelectorAll('audio').forEach((a) => {
@@ -170,8 +212,16 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
           </video>
         </div>
 
-        {/* Content Body: Key Takeaways & Speaker Credentials */}
-        <div style={{ padding: '1.5rem 1.75rem' }}>
+        {/* Content Body - Scrollable Area with Stable Gutter (No Layout Jitter) */}
+        <div
+          style={{
+            flex: 1,
+            overflowY: 'auto',
+            padding: '1.5rem 1.75rem',
+            scrollbarGutter: 'stable',
+            scrollbarWidth: 'thin'
+          }}
+        >
           {/* CMI Credential Byline */}
           <div
             style={{
@@ -199,7 +249,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
           {/* Takeaways List */}
           <div style={{ marginBottom: '1.75rem' }}>
             <h4 style={{ fontSize: '0.92rem', color: '#F8FAFC', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '0 0 0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ color: 'var(--color-gold)' }}>★</span> What You Learn In This 45-Second Briefing
+              <span style={{ color: 'var(--color-gold)' }}>★</span> What You Learn In This Briefing
             </h4>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {takeaways.map((point, index) => (
@@ -273,4 +323,6 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
