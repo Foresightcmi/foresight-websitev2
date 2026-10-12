@@ -91,7 +91,15 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include 48-hour continuous electronic radon testing ($275), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
+              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing ($450), 48-hour continuous electronic radon testing ($275), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Foresight Home Inspections do mold testing in Atlanta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline) and surface tape lifts for visible fungal growth. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
             }
           },
           {
@@ -434,6 +442,9 @@ export default function Home() {
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> InterNACHI Certified Master Inspector
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Certified Mold Testing &amp; Indoor Air Quality Diagnostics
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> Certified Pool &amp; Spa Inspections
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
@@ -571,6 +582,18 @@ export default function Home() {
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Digital Moisture &amp; Combustible Gas Detectors</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   We employ electronic moisture scanners to trace active leaks through subflooring and walls, plus high-sensitivity combustible gas sniffers to check appliance lines and gas meters for micro-leaks.
+                </p>
+              </div>
+            </div>
+
+            <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
+              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
+                🧪
+              </div>
+              <div>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Calibrated Mold Spore-Trap Air Pumps</h3>
+                <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
+                  Calibrated high-volume air sampling pumps and Air-O-Cell cassettes capture airborne fungal spores across interior living spaces vs. an outdoor baseline, analyzed by an independent accredited microbiology lab.
                 </p>
               </div>
             </div>
@@ -791,7 +814,11 @@ export default function Home() {
             faqs={[
               {
                 q: "How much does a certified home inspection cost in Metro Atlanta?",
-                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $275, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
+                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include certified mold & indoor air quality lab testing for $450, sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $275, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
+              },
+              {
+                q: "Does Foresight Home Inspections provide mold testing and air quality sampling?",
+                a: "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline) and surface tape lifts for visible fungal growth. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
               },
               {
                 q: "Why does Foresight send two home inspectors on every job?",

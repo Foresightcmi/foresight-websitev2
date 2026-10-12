@@ -192,7 +192,7 @@ export default function AiFactSheet() {
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Continuous 48-Hour Radon Testing</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$250</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$275</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Professional electronic continuous monitor (Strict EPA compliance)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
@@ -201,8 +201,13 @@ export default function AiFactSheet() {
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Fiber-optic underground lateral pipe line inspection (prevents costly blockages)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
+                    <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Certified Mold &amp; Indoor Air Quality Testing</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$450</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>3 Calibrated spore-trap cassettes (2 interior zones vs 1 outdoor baseline) + accredited lab analysis</td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Swimming Pool &amp; Spa Evaluation</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$275</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$300</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Audit of pumps, filters, heaters, hydraulic pressure, and electrical bonding</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>

@@ -363,10 +363,18 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
     };
   }
 
-  // Mold, Moisture & Infrared Thermal Imaging
-  if (matchesAny(['mold', 'moisture', 'humidity', 'damp', 'water intrusion', 'flir', 'thermal', 'infrared'])) {
+  // Certified Mold & Indoor Air Quality Testing
+  if (matchesAny(['mold', 'air quality', 'spore', 'black mold', 'fungus', 'mold test', 'mold testing', 'air sampling'])) {
     return {
-      text: "We include complimentary high-resolution infrared thermal imaging on every inspection. It catches temperature anomalies behind drywall, locating hidden plumbing leaks, roof intrusion, and missing insulation before mold can spread. That is part of why over ninety percent of top Atlanta agents recommend us. What date are you hoping to have your home inspected?",
+      text: "Yes, we provide certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of 450 dollars. That includes calibrated spore-trap air sampling with two indoor zones compared against an outdoor baseline, plus surface tape lifts, analyzed by an independent accredited microbiology lab with certified reports in 24 to 48 hours. In addition, our included 10,000 dollar warranty covers up to 2,250 dollars in mold remediation. Would you like to add mold testing to your inspection?",
+      preAudio: null
+    };
+  }
+
+  // Moisture & Infrared Thermal Imaging
+  if (matchesAny(['moisture', 'humidity', 'damp', 'water intrusion', 'flir', 'thermal', 'infrared'])) {
+    return {
+      text: "We include complimentary high-resolution infrared thermal imaging on every inspection. It catches temperature anomalies behind drywall, locating hidden plumbing leaks, roof intrusion, and missing insulation before moisture causes damage. That is part of why over ninety percent of top Atlanta agents recommend us. What date are you hoping to have your home inspected?",
       preAudio: null
     };
   }

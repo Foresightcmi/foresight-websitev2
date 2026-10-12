@@ -170,7 +170,7 @@ const MCP_TOOLS = [
       properties: {
         serviceKey: { 
           type: 'string', 
-          enum: ['buyer', 'condo', 'pre-listing', 'new-construction', 'warranty', 'sewer-scope', 'radon', 'pool', 'termite', 'str', 'low-flow', 'repair-estimates'],
+          enum: ['buyer', 'condo', 'pre-listing', 'new-construction', 'warranty', 'sewer-scope', 'radon', 'pool', 'termite', 'mold', 'air-quality', 'str', 'low-flow', 'repair-estimates'],
           description: 'The inspection service key'
         }
       },
@@ -249,6 +249,8 @@ async function handleToolCall(name, args) {
         'radon': { name: 'Continuous Radon Gas Monitoring', base: '$275', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
         'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
         'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
+        'mold': { name: 'Mold & Indoor Air Quality Testing', base: '$450 flat rate', details: 'Certified mold inspection with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) and surface tape lifts, analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours.' },
+        'air-quality': { name: 'Mold & Indoor Air Quality Testing', base: '$450 flat rate', details: 'Certified mold inspection with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) and surface tape lifts, analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours.' },
         'crawlspace-complexity': { name: 'Unfinished Crawlspace Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished crawlspace subfloor, pier, and vapor barrier inspection labor.' },
         'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$250', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
         'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: '$595 flat rate', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },

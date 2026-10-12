@@ -192,6 +192,38 @@ const SERVICE_MAP = {
       'Thermal imaging of electrical panels and HVAC distribution',
       'Municipal STR compliance checklist support'
     ]
+  },
+  'mold-testing': {
+    name: 'Mold & Indoor Air Quality Testing',
+    price: '$450',
+    icon: '🧪',
+    headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
+    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality Lab Analysis $450',
+    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & accredited lab report. Call 678-480-2110!',
+    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Led by Certified Master Inspector® Christopher Boykin, Foresight combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, delivering court-admissible, objective lab reports within 24 to 48 hours.',
+    included: [
+      'Comprehensive moisture intrusion & thermal infrared wall/ceiling scan',
+      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline)',
+      'Spore trap cassette analysis for toxigenic & allergenic fungal species',
+      'Certified independent microbiology laboratory report within 24–48 hours',
+      'Actionable remediation protocol recommendations if elevated spore counts are detected'
+    ]
+  },
+  'mold-inspection': {
+    name: 'Mold & Indoor Air Quality Testing',
+    price: '$450',
+    icon: '🧪',
+    headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
+    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality Lab Analysis $450',
+    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & accredited lab report. Call 678-480-2110!',
+    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Led by Certified Master Inspector® Christopher Boykin, Foresight combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, delivering court-admissible, objective lab reports within 24 to 48 hours.',
+    included: [
+      'Comprehensive moisture intrusion & thermal infrared wall/ceiling scan',
+      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline)',
+      'Spore trap cassette analysis for toxigenic & allergenic fungal species',
+      'Certified independent microbiology laboratory report within 24–48 hours',
+      'Actionable remediation protocol recommendations if elevated spore counts are detected'
+    ]
   }
 };
 
@@ -210,6 +242,7 @@ export async function generateMetadata({ params }) {
   const canonicalService = resolvedParams.service === 'termite-wdo-inspection' ? 'termite-inspection' :
                            resolvedParams.service === 'pool-spa-inspection' ? 'pool-inspection' :
                            resolvedParams.service === 'home-buyer-inspection' ? 'buyer-inspection' :
+                           resolvedParams.service === 'mold-inspection' ? 'mold-testing' :
                            resolvedParams.service;
   const serviceData = SERVICE_MAP[canonicalService] || SERVICE_MAP[resolvedParams.service];
   if (!serviceData) {
@@ -235,6 +268,7 @@ export default async function ServiceHubPage({ params }) {
   const canonicalService = resolvedParams.service === 'termite-wdo-inspection' ? 'termite-inspection' :
                            resolvedParams.service === 'pool-spa-inspection' ? 'pool-inspection' :
                            resolvedParams.service === 'home-buyer-inspection' ? 'buyer-inspection' :
+                           resolvedParams.service === 'mold-inspection' ? 'mold-testing' :
                            resolvedParams.service;
   const serviceData = SERVICE_MAP[canonicalService] || SERVICE_MAP[resolvedParams.service];
   if (!serviceData) {
@@ -339,7 +373,8 @@ export default async function ServiceHubPage({ params }) {
                 'sewer-scope-inspection',
                 'new-construction-inspection',
                 'pool-inspection',
-                'pre-listing-inspection'
+                'pre-listing-inspection',
+                'mold-testing'
               ];
               const href = pseoServices.includes(canonicalService)
                 ? `/services/${canonicalService}/${citySlug}`

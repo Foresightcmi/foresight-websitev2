@@ -61,6 +61,7 @@ export default function Services() {
       details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', '$10,000 Master Warranty included'],
       image: '/images/ac-pic.png',
       slug: 'what-does-home-inspector-look-for-buying-house',
+      serviceSlug: 'buyer-inspection',
       briefing: {
         title: 'Standard Buyer Home Inspection',
         duration: '45-Sec Briefing',
@@ -80,6 +81,7 @@ export default function Services() {
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
       image: '/images/crawlspace.png',
       slug: 'pre-listing-seller-inspection-guide',
+      serviceSlug: 'pre-listing-inspection',
       briefing: {
         title: 'Pre-Listing Seller Inspection',
         duration: '40-Sec Briefing',
@@ -99,6 +101,7 @@ export default function Services() {
       details: ['Pre-drywall framing & mechanical audit', 'Final phase move-in inspection', 'Objective builder punch list', 'Workmanship & code-reference review'],
       image: '/images/drone-2.png',
       slug: 'why-you-need-home-inspection-new-build',
+      serviceSlug: 'new-construction-inspection',
       briefing: {
         title: 'New Construction Inspections',
         duration: '30-Sec Briefing',
@@ -119,6 +122,7 @@ export default function Services() {
       details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousands in future repairs', 'Maximum warranty utilization'],
       image: '/images/gas-meter.png',
       slug: '11-month-warranty-inspection-guide',
+      serviceSlug: '11-month-warranty-inspection',
       briefing: {
         title: '11-Month Warranty Inspection',
         duration: '40-Sec Briefing',
@@ -139,6 +143,7 @@ export default function Services() {
       details: ['Comprehensive pool & spa inspection', 'Pump & heater functional tests', 'Safety barrier & GFCI electrical review', 'Filter and plumbing line evaluation'],
       image: '/images/pool-inspecting.png',
       slug: 'pool-and-spa-inspection-guide',
+      serviceSlug: 'pool-inspection',
       briefing: {
         title: 'Pool & Spa Inspections',
         duration: '40-Sec Briefing',
@@ -159,6 +164,7 @@ export default function Services() {
       details: ['High-definition sewer video camera', 'Main lateral line inspection', 'Full digital video recording provided', 'Detects root intrusion, bellies, and cracks'],
       image: '/images/sewer-scope.png',
       slug: 'sewer-scope-inspection-guide',
+      serviceSlug: 'sewer-scope-inspection',
       briefing: {
         title: 'Sewer Scope Inspections',
         duration: '36-Sec Briefing',
@@ -178,6 +184,7 @@ export default function Services() {
       description: 'Wood Destroying Organisms can cause catastrophic structural damage. We deliver the Official Georgia Wood Infestation Inspection Report (GAR compliant) required for real estate closings.',
       details: ['Official GA WDO Inspection Report', 'Identifies active and past termite activity', 'Checks for wood-boring beetles & fungus', 'Standard requirement for mortgage approvals'],
       slug: 'termite-and-wdo-inspection-guide',
+      serviceSlug: 'termite-inspection',
       briefing: {
         title: 'Termite & WDO Clearance Inspection',
         duration: '35-Sec Briefing',
@@ -197,6 +204,7 @@ export default function Services() {
       description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
       details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Strict EPA protocol compliance'],
       slug: 'hidden-dangers-of-radon-gas-georgia',
+      serviceSlug: 'radon-testing',
       briefing: {
         title: 'Continuous Radon Gas Testing',
         duration: '30-Sec Briefing',
@@ -207,6 +215,45 @@ export default function Services() {
           'Metro Atlanta sits on granite bedrock known for producing colorless, odorless radioactive radon gas.',
           'We deploy calibrated continuous electronic monitors over a 48-hour testing window.',
           'Generates an EPA-compliant report for official seller radon mitigation requests.'
+        ]
+      }
+    },
+    {
+      title: 'Mold & Indoor Air Quality Testing',
+      price: '$450',
+      priceNote: 'Certified Independent Microbiology Lab Analysis',
+      description: 'Georgia\'s humid subtropical climate and vented crawlspaces make toxic mold a serious hidden health hazard. We perform calibrated spore trap air sampling (indoor samples compared against outdoor baseline) and surface tape lifts, analyzed by an accredited microbiology laboratory with certified spore count reports.',
+      details: ['Calibrated spore trap air sampling', 'Outdoor control baseline comparison', 'Accredited microbiology lab report', 'Infrared moisture mapping included', 'Toxigenic species identification (Stachybotrys, etc.)'],
+      image: '/images/crawlspace.png',
+      slug: 'mold-testing-atlanta-indoor-air-quality-inspection-guide',
+      serviceSlug: 'mold-testing',
+      briefing: {
+        title: 'Mold & Indoor Air Quality Testing',
+        duration: '40-Sec Briefing',
+        tagline: 'Calibrated Spore Trap Air Sampling & Accredited Microbiology Lab Reports',
+        takeaways: [
+          'High ambient Georgia humidity creates concealed fungal blooms behind drywall and inside HVAC ducts.',
+          'We deploy calibrated high-volume air pumps and Air-O-Cell spore trap cassettes indoors and outdoors.',
+          'Independent accredited microbiology lab returns certified spore counts and species identification in 24–48 hours.'
+        ]
+      }
+    },
+    {
+      title: 'Short-Term Rental (STR) Compliance Inspection',
+      price: '$595',
+      priceNote: 'Airbnb & VRBO Safety & County Code Compliance',
+      description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, egress clearances, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
+      details: ['Life-safety & egress clearance audit', 'High-occupancy mechanical load check', 'Thermal imaging of electrical & HVAC', 'Municipal STR compliance checklist support'],
+      image: '/images/luxury-home.jpg',
+      serviceSlug: 'str-short-term-rental-inspection',
+      briefing: {
+        title: 'Short-Term Rental (STR) Inspection',
+        duration: '40-Sec Briefing',
+        tagline: 'Life-Safety, Mechanical Capacity & Municipal Compliance Audits',
+        takeaways: [
+          'Pre-screens properties against Metro Atlanta city and county STR regulations.',
+          'Evaluates smoke/CO interconnected detectors, egress routes, and handrail code compliance.',
+          'Delivers an investor-ready safety audit documentation package within 24 hours.'
         ]
       }
     },
@@ -258,6 +305,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis." }, "price": "450", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "595", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for GAR Form F404 negotiation. Available as $99 add-on or standalone outside audit." }, "price": "99", "priceCurrency": "USD" }
       ]
@@ -306,6 +354,14 @@ export default function Services() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Foresight Home Inspections proudly serves over 163 cities across the Metro Atlanta area and greater Georgia. This includes major areas such as Atlanta, Marietta, Alpharetta, Roswell, Decatur, Kennesaw, and many more. Visit our Service Areas page for a complete list of cities we cover."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Foresight Home Inspections do mold testing in Atlanta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Our testing protocol includes calibrated spore-trap air sampling (2 indoor living zones compared against an outdoor control baseline) and surface tape-lift sampling where visible microbial growth is observed. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered within 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
         }
       }
     ]
@@ -455,6 +511,11 @@ export default function Services() {
                     <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className={`btn ${idx === 0 ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: idx !== 0 ? 'var(--color-red)' : undefined, color: idx !== 0 ? 'var(--color-red)' : undefined }}>
                       📅 Book Inspection
                     </a>
+                    {s.serviceSlug && (
+                      <Link href={`/services/${s.serviceSlug}`} className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
+                        🔍 Service Hub
+                      </Link>
+                    )}
                     {s.briefing && (
                       <ServiceVideoTrigger briefing={s.briefing} label="🎥 45-Sec Video Briefing" />
                     )}
@@ -541,6 +602,11 @@ export default function Services() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', justifyContent: 'center', flexShrink: 0, width: '100%', mdWidth: 'auto', marginTop: '1rem', minWidth: '160px' }}>
                   <Link href="/quote" className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }}>Add to Quote</Link>
+                  {s.serviceSlug && (
+                    <Link href={`/services/${s.serviceSlug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
+                      🔍 Service Hub
+                    </Link>
+                  )}
                   {s.briefing && (
                     <ServiceVideoTrigger briefing={s.briefing} label="🎥 45-Sec Briefing" />
                   )}
@@ -863,6 +929,13 @@ export default function Services() {
             <summary className="faq-question" style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>What is not covered in a standard home inspection?</summary>
             <p className="speakable-answer" style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
               Per InterNACHI Standards of Practice, a standard home inspection does not include testing for environmental hazards like radon gas, termite/WDO infestation, mold, or lead paint. It also does not include sewer line camera scoping, pool or spa evaluation, or septic system testing. However, Foresight offers all of these as add-on services that can be bundled with your inspection. We recommend radon testing and WDO inspections on virtually every Georgia home purchase due to the region's geological and climate conditions.
+            </p>
+          </details>
+
+          <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
+            <summary className="faq-question" style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Do you provide mold testing and indoor air quality assessments in Atlanta?</summary>
+            <p className="speakable-answer" style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Our protocol includes calibrated spore-trap air sampling (2 interior living zones compared against an outdoor control baseline) and surface tape-lift sampling where visible microbial growth is observed. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage.
             </p>
           </details>
 
