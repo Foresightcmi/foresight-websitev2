@@ -101,8 +101,10 @@ export default function Services() {
       slug: 'why-you-need-home-inspection-new-build',
       briefing: {
         title: 'New Construction Inspections',
-        duration: '45-Sec Briefing',
+        duration: '30-Sec Briefing',
         tagline: 'Independent Third-Party Quality Control Collaborating with Site Builders',
+        videoSrc: '/videos/services/new-construction.mp4',
+        poster: '/images/services/new-construction-poster.webp',
         takeaways: [
           'Pre-drywall framing and rough-in audit to catch plumbing/electrical issues before walls close.',
           'Final move-in inspection validating HVAC balance, envelope seal, and code compliance.',
@@ -119,8 +121,10 @@ export default function Services() {
       slug: '11-month-warranty-inspection-guide',
       briefing: {
         title: '11-Month Warranty Inspection',
-        duration: '45-Sec Briefing',
+        duration: '40-Sec Briefing',
         tagline: 'Protect Your Investment Before the 1-Year Builder Warranty Expires',
+        videoSrc: '/videos/services/11-month-warranty.mp4',
+        poster: '/images/services/11-month-warranty-poster.webp',
         takeaways: [
           'Performed during month 11 to document 1 full year of structural settling and thermal cycling.',
           'Identifies hidden truss uplift, foundation cracks, duct leakage, and cosmetic stresses.',
@@ -139,6 +143,8 @@ export default function Services() {
         title: 'Pool & Spa Inspections',
         duration: '40-Sec Briefing',
         tagline: 'Specialized Mechanical, Plumbing & Electrical Safety Verification',
+        videoSrc: '/videos/services/pool-and-spa.mp4',
+        poster: '/images/services/pool-and-spa-poster.webp',
         takeaways: [
           'Comprehensive operational testing of multi-speed pumps, sand/DE filters, and gas/heat-pump heaters.',
           'Critical life-safety checks: GFCI protection, underwater luminaire grounding, and pool safety barriers.',
@@ -155,8 +161,10 @@ export default function Services() {
       slug: 'sewer-scope-inspection-guide',
       briefing: {
         title: 'Sewer Scope Inspections',
-        duration: '45-Sec Briefing',
+        duration: '36-Sec Briefing',
         tagline: 'High-Definition Video Audit of Main Underground Lateral Line',
+        videoSrc: '/videos/services/sewer-scope.mp4',
+        poster: '/images/services/sewer-scope-poster.webp',
         takeaways: [
           'High-resolution fiber-optic camera travels the entire line from house cleanout to municipal main.',
           'Detects tree root intrusions, pipe bellies (standing water), cracked clay, and cast-iron scale.',
@@ -174,6 +182,8 @@ export default function Services() {
         title: 'Termite & WDO Clearance Inspection',
         duration: '35-Sec Briefing',
         tagline: 'Official Georgia Wood Infestation Inspection Report (GAR Compliant)',
+        videoSrc: '/videos/services/termite-inspection.mp4',
+        poster: '/images/services/termite-inspection-poster.webp',
         takeaways: [
           'Licensed specialist check for active subterranean termites, powder post beetles, and wood-decay fungus.',
           'Official Georgia Wood Infestation Inspection Report required for Georgia mortgage underwriting.',
@@ -189,8 +199,10 @@ export default function Services() {
       slug: 'hidden-dangers-of-radon-gas-georgia',
       briefing: {
         title: 'Continuous Radon Gas Testing',
-        duration: '40-Sec Briefing',
+        duration: '30-Sec Briefing',
         tagline: '48-Hour Electronic Monitor Deployment for Georgia Granite Bedrock',
+        videoSrc: '/videos/services/radon-testing.mp4',
+        poster: '/images/services/radon-testing-poster.webp',
         takeaways: [
           'Metro Atlanta sits on granite bedrock known for producing colorless, odorless radioactive radon gas.',
           'We deploy calibrated continuous electronic monitors over a 48-hour testing window.',
