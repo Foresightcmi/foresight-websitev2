@@ -22,18 +22,7 @@ export default function AskForesightWidget() {
     <>
       {/* Floating Action Button Group (LiveRep Concierge Avatar) */}
       {!isVoiceOpen && (
-        <div 
-          className="ask-foresight-launcher-group"
-          style={{
-            position: 'fixed',
-            zIndex: 9999,
-            bottom: '24px',
-            right: '24px',
-            display: 'flex',
-            gap: '12px',
-            alignItems: 'center'
-          }}
-        >
+        <div className="ask-foresight-launcher-group">
           {/* Primary LiveRep Circular Avatar Launcher */}
           <div style={{ position: 'relative' }}>
             <button

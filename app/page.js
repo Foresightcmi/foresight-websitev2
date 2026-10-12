@@ -138,7 +138,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="hero" style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '6rem 0 5rem' }}>
+      <section className="hero hero-section-responsive">
         {/* Full-bleed background image */}
         <picture>
           <source media="(min-width: 641px)" srcSet="/images/luxury-home.webp" type="image/webp" />
@@ -156,51 +156,53 @@ export default function Home() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15,23,42,0.82) 0%, rgba(15,23,42,0.68) 40%, rgba(15,23,42,0.85) 100%)', zIndex: 1 }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-          <span className="badge" style={{ background: 'rgba(11, 17, 32, 0.78)', color: 'var(--color-gold)', border: '1px solid rgba(212, 175, 55, 0.45)', padding: '0.5rem 1.4rem', borderRadius: '50px', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.08em', marginBottom: '1.75rem', display: 'inline-block', backdropFilter: 'blur(12px)', boxShadow: '0 4px 16px rgba(0,0,0,0.35)' }}>
+          <span className="badge hero-eyebrow-badge">
             🏛️ METICULOUS HOME INSPECTIONS FOR ATLANTA&apos;S FINEST HOMES
           </span>
 
-          <h1 style={{ marginBottom: '1.5rem', color: '#FFFFFF', fontSize: 'clamp(2.35rem, 5.5vw, 3.85rem)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-0.03em', textShadow: '0 3px 25px rgba(0,0,0,0.85)' }}>
+          <h1 className="hero-heading">
             Atlanta Home Inspections<br />
             <span style={{ color: '#FDE047', background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE047 30%, #D4AF37 70%, #CA8A04 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
               Two Certified Inspectors on Every Job.
             </span>
           </h1>
 
-          <p style={{ maxWidth: '720px', margin: '0 auto 2.5rem', fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
+          <p className="hero-description">
             Foresight provides premier Atlanta home inspections led by board-certified Certified Master Inspector® Christopher Boykin. From single-family homes to luxury estates across 20 Metro Atlanta counties, every inspection features two certified inspectors working in tandem, complimentary infrared thermal imaging, aerial drone roof scanning, and up to $35,000 in combined warranty protection.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginBottom: '2.25rem' }}>
-            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.1rem 2.5rem', fontSize: '1.08rem', fontWeight: 800, borderRadius: 'var(--radius-md)', boxShadow: '0 6px 25px rgba(212, 175, 55, 0.45)' }}>
+          <div className="hero-cta-group">
+            <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.05rem 2.25rem', fontSize: '1.05rem', fontWeight: 800, borderRadius: 'var(--radius-md)', boxShadow: '0 6px 25px rgba(212, 175, 55, 0.45)' }}>
               📅 Schedule Inspection Now
             </a>
-            <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ padding: '1.1rem 2.25rem', fontSize: '1.05rem', fontWeight: 700, borderRadius: 'var(--radius-md)', background: 'rgba(15, 23, 42, 0.65)', border: '1px solid rgba(255, 255, 255, 0.28)', color: '#FFFFFF', backdropFilter: 'blur(8px)' }}>
+            <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ padding: '1.05rem 2rem', fontSize: '1.02rem', fontWeight: 700, borderRadius: 'var(--radius-md)', background: 'rgba(15, 23, 42, 0.65)', border: '1px solid rgba(255, 255, 255, 0.28)', color: '#FFFFFF', backdropFilter: 'blur(8px)' }}>
               📊 Instant Fee Calculator
             </Link>
             <VslTriggerButton />
           </div>
 
-          <div style={{ marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: '#E2E8F0', fontSize: '0.92rem', flexWrap: 'wrap' }}>
+          <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: '#E2E8F0', fontSize: '0.92rem', flexWrap: 'wrap' }}>
             <span style={{ color: 'var(--color-gold)', letterSpacing: '2px' }}>★★★★★</span>
             <span>4.9/5 Rating &bull; Google <strong style={{ color: '#FFFFFF' }}>&ldquo;Foresight Home Inspections&rdquo;</strong> to read 40+ verified 5-star reviews</span>
           </div>
 
-          <div style={{ display: 'inline-block', background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.3)', color: '#34d399', padding: '0.5rem 1.25rem', borderRadius: '2rem', fontSize: '0.9rem', fontWeight: 600, marginBottom: '3rem', backdropFilter: 'blur(4px)' }}>
+          <div style={{ display: 'inline-block', background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.3)', color: '#34d399', padding: '0.45rem 1.25rem', borderRadius: '2rem', fontSize: '0.88rem', fontWeight: 600, marginBottom: '2rem', backdropFilter: 'blur(4px)' }}>
             ✓ Includes Free Utilities Plus Concierge Setup ($150 Value)
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
-             <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
-             <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={130} height={130} sizes="130px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
-             
-             {/* 10+ Years Experience Badge */}
-             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.5)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '130px', minWidth: '140px', backdropFilter: 'blur(8px)' }}>
-                <span style={{ fontSize: '2.75rem', fontWeight: 800, color: 'var(--color-gold)', lineHeight: 1, textShadow: '0 2px 10px rgba(212,175,55,0.3)' }}>10+</span>
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center', marginTop: '0.5rem', lineHeight: 1.2 }}>Years Trusted<br/>Experience</span>
-             </div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="hero-credentials-dock">
+               <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={110} height={80} sizes="110px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={110} height={80} sizes="110px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={100} height={80} sizes="100px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={80} height={80} sizes="80px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+               
+               {/* 10+ Years Experience Badge */}
+               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.65)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.5rem 1rem', height: '80px', minWidth: '110px', backdropFilter: 'blur(8px)' }}>
+                  <span style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--color-gold)', lineHeight: 1, textShadow: '0 2px 10px rgba(212,175,55,0.3)' }}>10+</span>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 600, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center', marginTop: '0.25rem', lineHeight: 1.15 }}>Years Trusted<br/>Experience</span>
+               </div>
+            </div>
           </div>
         </div>
       </section>

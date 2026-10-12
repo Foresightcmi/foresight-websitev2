@@ -37,9 +37,9 @@ export default function ProcessSteps() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', position: 'relative' }}>
+        <div className="process-steps-grid">
           {/* Desktop connecting line */}
-          <div style={{ position: 'absolute', top: '3rem', left: '10%', right: '10%', height: '2px', backgroundColor: 'var(--color-gold)', zIndex: 0, opacity: 0.5 }}></div>
+          <div className="process-connecting-line"></div>
           
           {steps.map((step) => (
             <div key={step.id} style={{ 

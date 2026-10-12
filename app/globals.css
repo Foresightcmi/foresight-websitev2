@@ -114,11 +114,9 @@ a:hover {
 }
 
 .glass-header {
-  background: rgba(255, 255, 255, 0.92) !important;
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.85) !important;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+  background: #FFFFFF !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08) !important;
 }
 
 .glass-panel {
@@ -874,3 +872,166 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
 img {
   content-visibility: auto;
 }
+
+/* ═══════════════════════════════════════════
+   AGENCY UI/UX & SPATIAL HARMONY ENHANCEMENTS
+═══════════════════════════════════════════ */
+
+/* Live Concierge Positioning & Mobile Collision Protection */
+.ask-foresight-launcher-group {
+  position: fixed;
+  z-index: 9999;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  transition: bottom 0.25s ease, right 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .ask-foresight-launcher-group {
+    bottom: 74px !important;
+    right: 14px !important;
+  }
+}
+
+/* Hero Section Spacing & Above-the-Fold Optimization */
+.hero-section-responsive {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 5.5rem 0 4.5rem;
+}
+
+.hero-eyebrow-badge {
+  background: rgba(11, 17, 32, 0.82);
+  color: var(--color-gold);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  padding: 0.45rem 1.3rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.hero-heading {
+  margin-bottom: 1.25rem;
+  color: #FFFFFF;
+  font-size: clamp(2.2rem, 5.2vw, 3.85rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-shadow: 0 3px 25px rgba(0, 0, 0, 0.85);
+}
+
+.hero-description {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  font-size: 1.12rem;
+  color: #E2E8F0;
+  line-height: 1.65;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section-responsive {
+    min-height: auto;
+    padding: 2.25rem 0 2rem !important;
+  }
+  .hero-eyebrow-badge {
+    margin-bottom: 0.75rem !important;
+    padding: 0.35rem 0.85rem !important;
+    font-size: 0.72rem !important;
+  }
+  .hero-heading {
+    margin-bottom: 0.75rem !important;
+    font-size: 1.9rem !important;
+    line-height: 1.18 !important;
+  }
+  .hero-description {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin: 0 auto 1.25rem !important;
+    max-width: 100% !important;
+  }
+  .hero-cta-group {
+    margin-bottom: 1.25rem !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Credentials Dock */
+.hero-credentials-dock {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hero-credentials-dock {
+    padding: 1rem !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+}
+
+/* Process Steps Balanced 4-Column Grid */
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.process-connecting-line {
+  position: absolute;
+  top: 3rem;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: var(--color-gold);
+  z-index: 0;
+  opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .process-connecting-line {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .process-steps-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+

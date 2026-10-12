@@ -381,35 +381,17 @@ export default function QuoteClient({ showValueComparison = true }) {
           })
         }}
       />
-      <section className="section bg-gray-light">
+      <section className="section bg-gray-light" style={{ paddingTop: '2.5rem', paddingBottom: '3.5rem' }}>
       <div className="container">
-        <div className="section-title" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-          <h2 className="slogan-heading-light">
-            &ldquo;Hindsight is expensive... <span className="slogan-accent">Choose Foresight!</span>&rdquo;
-          </h2>
-          <h1>Foresight Pricing Estimator</h1>
-          <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0' }}>
-            Instant, direct, and completely transparent quotes. Based directly on our registered local service fees.
-          </p>
-        </div>
-
-        <div style={{ 
-          background: 'rgba(211, 47, 47, 0.03)', 
-          border: '1px solid rgba(211, 47, 47, 0.12)', 
-          borderRadius: 'var(--radius-lg)', 
-          padding: '1.25rem 2rem', 
-          marginBottom: '3rem', 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '1.5rem',
-          maxWidth: '900px',
-          margin: '0 auto 3rem',
-          boxShadow: 'var(--shadow-sm)'
-        }} className="savings-banner">
-          <div style={{ fontSize: '2rem' }}>💡</div>
-          <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
-            <strong>The Inspection Pays for Itself:</strong> Getting a professional physical inspection is designed to <strong>save you more money in the long run</strong>. We regularly save our clients thousands of dollars on their home purchases—either by forcing the seller/builder to make critical <strong>upfront repairs</strong> before you close, or by using our master-level report to negotiate substantial closing <strong>repair credits</strong>.<br /><br />
-            <strong>⚡ 100% Instant Transparency:</strong> We believe in saving you time and stress. Unlike other companies that hide pricing behind manual, delayed &ldquo;quote request&rdquo; forms to capture your email, Foresight provides exact, instant flat-rate pricing based directly on our registered local service fees. Calculate your quote below and book online instantly!
+        <div className="section-title" style={{ marginBottom: '2rem', textAlign: 'center' }}>
+          <span className="badge" style={{ backgroundColor: 'rgba(212, 175, 55, 0.15)', color: '#854d0e', border: '1px solid rgba(212, 175, 55, 0.4)', padding: '0.35rem 1rem', borderRadius: '2rem', fontWeight: 700, fontSize: '0.82rem', display: 'inline-block', marginBottom: '0.75rem' }}>
+            ⚡ 100% Transparent Flat-Rate Pricing &bull; Two Inspectors Included
+          </span>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.8vw, 2.65rem)', fontWeight: 800, margin: '0.25rem 0 0.5rem', color: 'var(--color-dark)' }}>
+            Instant Home Inspection Fee Calculator
+          </h1>
+          <p style={{ color: 'var(--color-gray-dark)', maxWidth: '650px', margin: '0.5rem auto 0', fontSize: '1rem', lineHeight: 1.5 }}>
+            Calculate exact square-footage pricing in seconds. Every inspection includes two certified inspectors, complimentary thermal imaging, 4K drone scans, and up to $35,000 in warranty protection.
           </p>
         </div>
 
@@ -1225,6 +1207,29 @@ export default function QuoteClient({ showValueComparison = true }) {
                   Live Concierge Consultation &rarr;
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Inspection Pays for Itself & Value Guarantee */}
+        <div style={{
+          background: '#FFFFFF',
+          border: '1px solid rgba(226, 232, 240, 0.9)',
+          borderRadius: 'var(--radius-lg)',
+          padding: '1.75rem 2rem',
+          maxWidth: '1000px',
+          margin: '3.5rem auto 0',
+          boxShadow: 'var(--shadow-sm)'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '1.75rem' }}>💡</span>
+            <div style={{ flex: 1, minWidth: '280px' }}>
+              <h3 style={{ fontSize: '1.15rem', color: 'var(--color-dark)', marginBottom: '0.5rem', fontWeight: 700 }}>
+                Why a Foresight Inspection Pays for Itself
+              </h3>
+              <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                A professional physical inspection is engineered to save you thousands in unexpected repair costs. Our master-level reports identify hidden structural, electrical, and moisture issues upfront—providing you with clear, documented evidence to negotiate substantial seller repair credits or mandatory repairs before closing.
+              </p>
             </div>
           </div>
         </div>
