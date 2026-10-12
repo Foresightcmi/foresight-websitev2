@@ -90,7 +90,7 @@ export default function PressClient() {
       <section className="section bg-dark text-white text-center" style={{ padding: '5.5rem 0 4.5rem', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span className="badge" style={{ marginBottom: '1.25rem', background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', fontSize: '0.9rem' }}>
-            📰 Digital PR &amp; Media Kit
+            Digital PR &amp; Media Kit
           </span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Expert Building Science &amp;<br />
@@ -105,14 +105,14 @@ export default function PressClient() {
               className="btn btn-primary"
               style={{ padding: '0.95rem 2.25rem', fontSize: '1.1rem', fontWeight: 700 }}
             >
-              🎙️ Request Interview / Comment
+              Request Interview / Comment &rarr;
             </a>
             <a
               href="#quotes"
               className="btn btn-outline"
               style={{ padding: '0.95rem 2.25rem', fontSize: '1.1rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}
             >
-              📋 Ready-to-Cite Quotes
+              Ready-to-Cite Quotes &rarr;
             </a>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function PressClient() {
         <div className="container">
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <span style={{ fontSize: '2rem' }}>⚡</span>
+              <span style={{ fontSize: '0.85rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-gold)', padding: '0.2rem 0.6rem', background: 'rgba(212,175,55,0.15)', borderRadius: '4px' }}>FAST</span>
               <div>
                 <strong style={{ color: '#F1F5F9', fontSize: '1.1rem', display: 'block' }}>Journalist Deadline Guarantee</strong>
                 <span style={{ color: '#94A3B8', fontSize: '0.9rem' }}>We guarantee a response to accredited media inquiries within 2 business hours.</span>
@@ -132,7 +132,7 @@ export default function PressClient() {
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
               <div>
                 <span style={{ color: '#64748B', fontSize: '0.8rem', display: 'block', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Direct Press Phone</span>
-                <a href="tel:6784802110" style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '1.05rem', textDecoration: 'none' }}>678-480-2110</a>
+                <a href="tel:6784802110" style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '1.05rem', textDecoration: 'none' }}>(678) 480-2110</a>
               </div>
               <div>
                 <span style={{ color: '#64748B', fontSize: '0.8rem', display: 'block', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Press Inbox</span>
@@ -149,7 +149,7 @@ export default function PressClient() {
           <div style={{ background: '#0f172a', color: '#ffffff', padding: '2rem 2.25rem', borderRadius: '12px', borderLeft: '6px solid var(--color-gold)', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1rem' }}>
               <span style={{ background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', padding: '0.3rem 0.85rem', borderRadius: '4px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                📊 Primary Empirical Research Report
+                Primary Empirical Research Report
               </span>
               <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
                 Updated for 2026 Georgia Housing Market
@@ -167,14 +167,14 @@ export default function PressClient() {
                 className="btn btn-primary"
                 style={{ padding: '0.75rem 1.75rem', fontSize: '0.95rem', fontWeight: 700 }}
               >
-                📑 View Complete 2026 Statistics &amp; Datasets &rarr;
+                View Complete 2026 Statistics &amp; Datasets &rarr;
               </Link>
               <a 
                 href="mailto:inspect@foresightcmi.com?subject=Press%20Data%20Request%20-%202026%20Defect%20Study" 
                 className="btn btn-outline"
                 style={{ padding: '0.75rem 1.75rem', fontSize: '0.95rem', borderColor: '#e2e8f0', color: '#ffffff' }}
               >
-                📩 Request County-Specific Data Cut
+                Request County-Specific Data Cut &rarr;
               </a>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function PressClient() {
 
           <div className="grid grid-3" style={{ gap: '2rem' }}>
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-gold)' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🏆</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>01</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>Top 1% Industry Credential</h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
                 Certified Master Inspector (CMI®), designated by the Master Inspector Certification Board after thousands of verified fee-paid property evaluations and background clearance.
@@ -202,7 +202,7 @@ export default function PressClient() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>🔬</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>02</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>Building Science Authority</h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
                 Specialized in Southeastern building envelope failures, slab settlement on Piedmont red clay, crawlspace psychrometrics, calibrated infrared thermal analysis, and sewer video diagnostics.
@@ -210,7 +210,7 @@ export default function PressClient() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2rem', borderRadius: '12px', borderTop: '4px solid var(--color-gold)' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>📍</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>03</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>Regional Field Scope</h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
                 Deep regional experience across 163+ municipalities in DeKalb, Fulton, Gwinnett, Cobb, Forsyth, Cherokee, Clayton, and Henry counties, with an average 4.9-star rating across 48 verified client reviews.
@@ -225,7 +225,7 @@ export default function PressClient() {
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '3.5rem' }}>
             <span className="badge" style={{ background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
-              💬 Ready-to-Cite Commentary
+              Ready-to-Cite Commentary
             </span>
             <h2 style={{ color: '#FFFFFF', fontSize: '2.4rem', fontWeight: 800 }}>
               On-Record Soundbites for Reporters &amp; Writers
@@ -277,7 +277,7 @@ export default function PressClient() {
                       transition: 'all 0.2s'
                     }}
                   >
-                    {copiedQuoteId === item.id ? '✓ Quote Copied!' : '📋 Copy Quote & Attribution'}
+                    {copiedQuoteId === item.id ? 'Quote Copied' : 'Copy Quote & Attribution'}
                   </button>
                 </div>
               </div>
@@ -337,7 +337,7 @@ export default function PressClient() {
                 className="btn btn-primary"
                 style={{ padding: '8px 18px', fontSize: '0.9rem' }}
               >
-                {copiedBioId === activeBio ? '✓ Bio Copied to Clipboard!' : '📋 Copy Selected Bio'}
+                {copiedBioId === activeBio ? 'Bio Copied' : 'Copy Selected Bio'}
               </button>
             </div>
           </div>
@@ -358,14 +358,14 @@ export default function PressClient() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}
             >
-              ✉️ Email Press Request
+              Email Press Request &rarr;
             </a>
             <a
               href="tel:6784802110"
               className="btn btn-outline"
               style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}
             >
-              📞 Direct Press Line: 678-480-2110
+              Direct Press Line: (678) 480-2110
             </a>
           </div>
         </div>

@@ -127,32 +127,32 @@ export default function SouthFultonRentalCompliancePage() {
 
   const inspectionPillars = [
     {
-      icon: '🏠',
+      icon: '01',
       title: 'Structural & Exterior Envelope',
       desc: 'Roof shingles, flashings, gutters, foundation walls, exterior siding, and weather-tightness verification to ensure zero active water penetration.',
     },
     {
-      icon: '🔥',
+      icon: '02',
       title: 'HVAC Heating & Air Quality',
       desc: 'Operational testing of the primary heating system ensuring reliable winter capacity (min 68°F), filter cleanliness, and flue venting integrity.',
     },
     {
-      icon: '⚡',
+      icon: '03',
       title: 'Electrical Service & Shock Prevention',
       desc: 'Main distribution panel inspection, breaker sizing, dead-front cover security, and GFCI receptacle testing in kitchens, bathrooms, and outdoors.',
     },
     {
-      icon: '🚰',
+      icon: '04',
       title: 'Plumbing Supply & Water Heating',
       desc: 'Adequate static water pressure, leak-free drainage, operational shutoff valves, and water heater temperature-pressure relief (T&P) safety piping.',
     },
     {
-      icon: '🚨',
+      icon: '05',
       title: 'Smoke & Carbon Monoxide Detectors',
       desc: 'Testing of working smoke alarms on every level and in all sleeping quarters, plus UL-listed CO detectors outside bedrooms.',
     },
     {
-      icon: '📜',
+      icon: '06',
       title: 'Official CMI Compliance Certificate',
       desc: 'Official signed certification ready for instant submission to the City of South Fulton Community Development & Business Licensing portal.',
     },
@@ -239,7 +239,7 @@ export default function SouthFultonRentalCompliancePage() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
             >
-              📊 Instant Rental Quote ($250)
+              Instant Rental Quote ($250)
             </Link>
             <a
               href="tel:678-480-2110"
@@ -251,7 +251,7 @@ export default function SouthFultonRentalCompliancePage() {
                 color: 'var(--color-gold)',
               }}
             >
-              📞 Call Direct: 678-480-2110
+              Call Direct: 678-480-2110
             </a>
           </div>
           <div
@@ -265,9 +265,9 @@ export default function SouthFultonRentalCompliancePage() {
               color: '#CBD5E1',
             }}
           >
-            <span>🛡️ Certified Master Inspector® (CMI)</span>
-            <span>⚡ Fast Same-Day / 24-Hr Certificates</span>
-            <span>💼 Volume Rates for 3+ Unit Portfolios ($195/unit)</span>
+            <span>Certified Master Inspector® (CMI)</span>
+            <span>Fast Same-Day / 24-Hr Certificates</span>
+            <span>Volume Rates for 3+ Unit Portfolios ($195/unit)</span>
           </div>
         </div>
       </section>
@@ -340,7 +340,7 @@ export default function SouthFultonRentalCompliancePage() {
                 }}
               >
                 <div style={{ fontWeight: 700, color: 'var(--color-slate-dark)', marginBottom: '0.5rem' }}>
-                  🔑 Landlord Notice: Fast Tenant Turnaround
+                  Landlord Notice: Fast Tenant Turnaround
                 </div>
                 <div style={{ fontSize: '0.95rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
                   Don’t let vacant units sit idle waiting on municipal inspectors. Foresight provides priority scheduling within 24 to 48 hours and instant digital certificates, helping you place paying tenants faster.
@@ -589,7 +589,7 @@ export default function SouthFultonRentalCompliancePage() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
             >
-              📊 Book Rental Inspection ($250)
+              Book Rental Inspection ($250)
             </Link>
             <a
               href="tel:678-480-2110"
@@ -601,7 +601,7 @@ export default function SouthFultonRentalCompliancePage() {
                 color: 'var(--color-gold)',
               }}
             >
-              📞 678-480-2110
+              Call: 678-480-2110
             </a>
           </div>
         </div>

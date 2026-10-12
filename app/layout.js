@@ -812,20 +812,20 @@ export default function RootLayout({ children }) {
                 <h3>Company &amp; Contact</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link prefetch={false} href="/quote" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Instant Quote Calculator</Link></li>
-                  <li><Link prefetch={false} href="/risk-scanner" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>🔬 Property Risk Scanner</Link></li>
-                  <li><Link prefetch={false} href="/concierge" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>🎙️ Live Concierge Consultation</Link></li>
+                  <li><Link prefetch={false} href="/risk-scanner" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Property Risk Scanner</Link></li>
+                  <li><Link prefetch={false} href="/concierge" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Live Concierge Consultation</Link></li>
                   <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
                   <li><Link prefetch={false} href="/due-diligence">Due Diligence Guarantee</Link></li>
-                  <li><Link prefetch={false} href="/repair-credit-calculator" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>🛠️ Repair Credit Calculator</Link></li>
+                  <li><Link prefetch={false} href="/repair-credit-calculator" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Repair Credit Calculator</Link></li>
                   <li><Link prefetch={false} href="/samples">Sample Inspection Reports</Link></li>
                   <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
                   <li><Link prefetch={false} href="/realtors">Realtors VIP Program</Link></li>
                   <li><Link prefetch={false} href="/press">Press &amp; Media Kit</Link></li>
                   <li><Link prefetch={false} href="/blog">Inspection Knowledge Base</Link></li>
-                  <li><Link prefetch={false} href="/videos">🎥 Field Inspection Videos</Link></li>
+                  <li><Link prefetch={false} href="/videos">Field Inspection Videos</Link></li>
                   <li><Link prefetch={false} href="/faq">FAQ</Link></li>
-                  <li style={{ marginTop: '0.75rem' }}><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ fontWeight: 700, color: 'var(--color-white)' }}>📞 678-480-2110</a></li>
-                  <li><a href="mailto:inspect@foresightcmi.com">✉️ inspect@foresightcmi.com</a></li>
+                  <li style={{ marginTop: '0.75rem' }}><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ fontWeight: 700, color: 'var(--color-white)' }}>678-480-2110</a></li>
+                  <li><a href="mailto:inspect@foresightcmi.com">inspect@foresightcmi.com</a></li>
                   <li style={{ marginTop: '0.25rem', lineHeight: '1.4' }}>
                     <span style={{ fontSize: '0.85rem', color: '#CBD5E1' }}>(Serving 87+ Cities Across 20 Metro Atlanta Counties)</span>
                   </li>
@@ -840,7 +840,7 @@ export default function RootLayout({ children }) {
                 </span>
               </p>
               <Link prefetch={false} href="/dashboard" style={{ color: '#CBD5E1', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                <span>🔒</span> Owner Command Center
+                Owner Command Center
               </Link>
             </div>
           </div>

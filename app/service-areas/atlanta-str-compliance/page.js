@@ -129,32 +129,32 @@ export default function AtlantaSTRCompliancePage() {
 
   const checklistItems = [
     {
-      icon: '🚨',
+      icon: '01',
       title: 'Interconnected Smoke & CO Alarms',
       desc: 'Verification of dual-sensor smoke detectors in every sleeping room and hallway, plus UL-listed carbon monoxide alarms on every habitable level.',
     },
     {
-      icon: '🚪',
+      icon: '02',
       title: 'Emergency Egress & Escape Openings',
       desc: 'Measurement of bedroom egress windows ensuring minimum 5.7 sq ft net clear opening, maximum 44-inch sill height, and unobstructed exit corridors.',
     },
     {
-      icon: '🧯',
+      icon: '03',
       title: 'Fire Extinguishers & Life-Safety Gear',
       desc: 'Inspection of 2A:10B:C rated extinguishers mounted in kitchen and common areas, with active pressure gauges and annual inspection validation.',
     },
     {
-      icon: '⚡',
+      icon: '04',
       title: 'Electrical Panel & GFCI Protection',
       desc: 'Testing of ground-fault circuit interrupters (GFCI) in all wet areas (bathrooms, kitchens, outdoor patios) and main breaker dead-front safety inspection.',
     },
     {
-      icon: '🌡️',
+      icon: '05',
       title: 'HVAC Heating & Water Heater Safety',
       desc: 'Verification of operational heating capacity, water heater temperature-pressure relief (T&P) valve piping, and combustible gas leak detection.',
     },
     {
-      icon: '📑',
+      icon: '06',
       title: 'Official Signed CMI Affidavit',
       desc: 'Formal signed and stamped compliance certification ready for instant submission to the City of Atlanta Department of City Planning Accela portal.',
     },
@@ -241,7 +241,7 @@ export default function AtlantaSTRCompliancePage() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
             >
-              📊 Instant STR Quote ($495)
+              Instant STR Quote ($495)
             </Link>
             <a
               href="tel:678-480-2110"
@@ -253,7 +253,7 @@ export default function AtlantaSTRCompliancePage() {
                 color: 'var(--color-gold)',
               }}
             >
-              📞 Call Inspector: 678-480-2110
+              Call Inspector: 678-480-2110
             </a>
           </div>
           <div
@@ -267,8 +267,8 @@ export default function AtlantaSTRCompliancePage() {
               color: '#CBD5E1',
             }}
           >
-            <span>🛡️ Certified Master Inspector® (CMI)</span>
-            <span>⚡ 24-Hour Portal Affidavit Delivery</span>
+            <span>Certified Master Inspector® (CMI)</span>
+            <span>24-Hour Portal Affidavit Delivery</span>
             <span>⭐ 4.9-Star Highest Rated in Atlanta</span>
           </div>
         </div>
@@ -342,7 +342,7 @@ export default function AtlantaSTRCompliancePage() {
                 }}
               >
                 <div style={{ fontWeight: 700, color: 'var(--color-slate-dark)', marginBottom: '0.5rem' }}>
-                  🔑 What City Regulators Specifically Look For:
+                  What City Regulators Specifically Look For:
                 </div>
                 <div style={{ fontSize: '0.95rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
                   Accela Citizen Access portal reviewers strictly verify working interconnected smoke alarms, operational carbon monoxide detectors, unobstructed egress pathways, active fire extinguishers with inspection tags, and electrical panel integrity. An incomplete or uncertified submission will cause application rejection.
@@ -591,7 +591,7 @@ export default function AtlantaSTRCompliancePage() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
             >
-              📊 Book STR Inspection ($495)
+              Book STR Inspection ($495)
             </Link>
             <a
               href="tel:678-480-2110"
@@ -603,7 +603,7 @@ export default function AtlantaSTRCompliancePage() {
                 color: 'var(--color-gold)',
               }}
             >
-              📞 678-480-2110
+              Call: 678-480-2110
             </a>
           </div>
         </div>

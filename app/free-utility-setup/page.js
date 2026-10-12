@@ -30,7 +30,7 @@ export default function FreeUtilitySetupPage() {
         
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1.5rem', display: 'inline-block' }}>
-            ⚡ VIP BUYER PERK
+            VIP BUYER PERK
           </span>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.1 }}>
             Moving Just Got <span style={{ color: 'var(--color-gold)' }}>Easier.</span>
@@ -40,7 +40,7 @@ export default function FreeUtilitySetupPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
-              📅 Book Your Inspection
+              Book Your Inspection &rarr;
             </a>
             <Link href="/services" className="btn btn-outline-light" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
               View All Included Perks
@@ -64,10 +64,10 @@ export default function FreeUtilitySetupPage() {
                 That's why Foresight Home Inspections partnered with <strong>Utilities Plus</strong>. Once your inspection is paid for, you'll receive a VIP email introduction to their concierge team. They will find the best rates in your new neighborhood and handle the setup for you. 
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981' }}>✅</span> Electricity & Gas</li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981' }}>✅</span> Water & Trash Services</li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981' }}>✅</span> High-Speed Internet & Cable</li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981' }}>✅</span> Home Security Systems</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981', fontWeight: 800 }}>✓</span> Electricity & Gas</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981', fontWeight: 800 }}>✓</span> Water & Trash Services</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981', fontWeight: 800 }}>✓</span> High-Speed Internet & Cable</li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.1rem', fontWeight: 500 }}><span style={{ color: '#10B981', fontWeight: 800 }}>✓</span> Home Security Systems</li>
               </ul>
             </div>
             <div style={{ background: 'var(--color-gray-light)', padding: '3rem', borderRadius: 'var(--radius-lg)', borderTop: '6px solid var(--color-gold)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
@@ -118,7 +118,7 @@ export default function FreeUtilitySetupPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1.25rem 2.5rem', fontSize: '1.1rem' }}>
-              📅 Schedule Your Inspection
+              Schedule Your Inspection &rarr;
             </a>
           </div>
         </div>

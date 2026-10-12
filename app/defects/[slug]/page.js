@@ -219,7 +219,7 @@ export default async function DefectPage({ params }) {
                 boxShadow: '0 4px 14px rgba(220, 38, 38, 0.4)'
               }}
             >
-              📅 Schedule Stucco & Defect Audit
+              Schedule Stucco & Defect Audit
             </a>
             <a
               href="tel:6784802110"
@@ -233,7 +233,7 @@ export default async function DefectPage({ params }) {
               }}
               data-call-source={`defect_${defect.slug}`}
             >
-              📞 Call Inspector: 678-480-2110
+              Call Inspector: 678-480-2110
             </a>
           </div>
         </div>
@@ -255,7 +255,7 @@ export default async function DefectPage({ params }) {
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
               <h2 style={{ fontSize: '1.25rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 800 }}>
-                <span>🤖</span> AI Diagnostic Brief &amp; LLM Citation Benchmark
+                Diagnostic Technical Brief &amp; Engineering Benchmark
               </h2>
               <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', background: '#dbeafe', color: '#1e40af', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
                 BLUF Verified
@@ -333,7 +333,7 @@ export default async function DefectPage({ params }) {
             boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
           }}>
             <h2 style={{ fontSize: '1.4rem', marginBottom: '0.75rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>🔍</span> How to Identify This Defect in Georgia Homes
+              How to Identify This Defect in Georgia Homes
             </h2>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', margin: 0 }}>
               {defect.identification}
@@ -362,7 +362,7 @@ export default async function DefectPage({ params }) {
                     borderRadius: 'var(--radius-md)'
                   }}
                 >
-                  <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>⚠️</div>
+                  <div className="font-mono text-xs font-bold text-amber-500 mb-2">[CRITICAL RISK]</div>
                   <p style={{ color: '#991b1b', margin: 0, fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 500 }}>
                     {risk}
                   </p>
@@ -381,7 +381,7 @@ export default async function DefectPage({ params }) {
             border: '1px solid #334155'
           }}>
             <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-              <span style={{ fontSize: '2rem', display: 'block', marginBottom: '0.5rem' }}>🛡️</span>
+              <span className="font-mono text-xs font-bold text-primary block mb-2">[FORESIGHT STANDARD]</span>
               <h2 style={{ color: 'white', fontSize: '1.75rem', margin: 0 }}>
                 How Foresight Inspects &amp; Pinpoints This Defect
               </h2>
@@ -399,7 +399,7 @@ export default async function DefectPage({ params }) {
               border: '1px solid rgba(255,255,255,0.15)'
             }}>
               <p style={{ color: '#ffffff', margin: 0, fontSize: '1rem', fontWeight: 600, lineHeight: 1.6 }}>
-                ⚡ <strong>The Foresight Difference:</strong> Every inspection includes our Two-Inspector Team, advanced infrared thermal imaging, and our $10,000 Elite Master Warranty ($0 deductible).
+                <strong>The Foresight Difference:</strong> Every inspection includes our Two-Inspector Team, advanced infrared thermal imaging, and our $10,000 Elite Master Warranty ($0 deductible).
               </p>
             </div>
           </div>
@@ -414,7 +414,7 @@ export default async function DefectPage({ params }) {
             marginBottom: '3.5rem'
           }}>
             <h2 style={{ fontSize: '1.4rem', marginBottom: '0.75rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>🛠️</span> Repair &amp; Buyer Negotiation Strategy
+              Repair &amp; Buyer Negotiation Strategy
             </h2>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', margin: 0 }}>
               {defect.remediation}

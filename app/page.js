@@ -157,7 +157,7 @@ export default function Home() {
 
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <span className="badge hero-eyebrow-badge">
-            🏛️ METICULOUS HOME INSPECTIONS FOR ATLANTA&apos;S FINEST HOMES
+            METICULOUS HOME INSPECTIONS FOR ATLANTA&apos;S FINEST HOMES
           </span>
 
           <h1 className="hero-heading">
@@ -173,10 +173,10 @@ export default function Home() {
 
           <div className="hero-cta-group">
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '1.05rem 2.25rem', fontSize: '1.05rem', fontWeight: 800, borderRadius: 'var(--radius-md)', boxShadow: '0 6px 25px rgba(212, 175, 55, 0.45)' }}>
-              📅 Schedule Inspection Now
+              Schedule Inspection Now
             </a>
             <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ padding: '1.05rem 2rem', fontSize: '1.02rem', fontWeight: 700, borderRadius: 'var(--radius-md)', background: 'rgba(15, 23, 42, 0.65)', border: '1px solid rgba(255, 255, 255, 0.28)', color: '#FFFFFF', backdropFilter: 'blur(8px)' }}>
-              📊 Instant Fee Calculator
+              Instant Fee Calculator
             </Link>
             <VslTriggerButton />
           </div>
@@ -207,12 +207,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🎥 VIDEO SHOWCASE SECTION (Home Systems Commercial & Field Proof) 🎥 */}
+      {/* VIDEO SHOWCASE SECTION (Home Systems Commercial & Field Proof) */}
       <section className="section bg-dark text-white" style={{ padding: '4.5rem 0', position: 'relative', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
             <span className="badge" style={{ background: 'rgba(211,47,47,0.2)', color: 'var(--color-red-light)', marginBottom: '0.75rem', fontSize: '0.85rem' }}>
-              🎥 Field Diagnostics In Action
+              Field Diagnostics In Action
             </span>
             <h2 style={{ color: 'var(--color-white)', fontSize: '2.4rem', fontWeight: 800 }}>
               See How Our Two-Inspector Team Evaluates Atlanta Home Systems
@@ -260,7 +260,7 @@ export default function Home() {
                   className="btn btn-gold"
                   style={{ padding: '0.9rem 2rem', fontSize: '1rem', flexGrow: 1, textAlign: 'center' }}
                 >
-                  📅 Schedule Your Inspection
+                  Schedule Your Inspection
                 </a>
                 <Link
                   prefetch={false}
@@ -268,7 +268,7 @@ export default function Home() {
                   className="btn btn-outline-light"
                   style={{ padding: '0.9rem 2rem', fontSize: '1rem', flexGrow: 1, textAlign: 'center' }}
                 >
-                  📊 Instant Quote
+                  Instant Quote
                 </Link>
               </div>
 
@@ -287,7 +287,7 @@ export default function Home() {
                     textUnderlineOffset: '3px'
                   }}
                 >
-                  🎥 Open Dedicated Watch Page &amp; Full Audit Transcript →
+                  Open Dedicated Watch Page &amp; Full Audit Transcript →
                 </Link>
               </div>
             </div>
@@ -295,15 +295,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 📋 HOW IT WORKS — 4-Step Process Flow */}
+      {/* HOW IT WORKS — 4-Step Process Flow */}
       <ProcessSteps />
 
-      {/* 🏛️ TIERED SERVICE ARCHITECTURE 🏛️ */}
+      {/* TIERED SERVICE ARCHITECTURE */}
       <section className="section" style={{ background: '#0F172A', color: '#FFFFFF', padding: '4.5rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 3rem' }}>
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem' }}>
-              🌟 Tailored Inspection Solutions
+              Tailored Inspection Solutions
             </span>
             <h2 style={{ color: '#FFFFFF', fontSize: '2.25rem', marginBottom: '1rem' }}>
               Choose the Home Inspection Tier Right for Your Property
@@ -318,7 +318,7 @@ export default function Home() {
             <div style={{ background: '#1E293B', borderRadius: 'var(--radius-lg)', padding: '2.5rem', border: '1px solid #334155', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
                 <span className="badge" style={{ background: '#334155', color: '#F1F5F9', marginBottom: '1rem' }}>
-                  🏡 Core Home Inspection Tier
+                  Core Home Inspection Tier
                 </span>
                 <h3 style={{ color: '#FFFFFF', fontSize: '1.75rem', marginBottom: '0.75rem' }}>
                   Standard Buyer &amp; Seller Home Inspection
@@ -348,7 +348,7 @@ export default function Home() {
               </div>
               <div>
                 <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem' }}>
-                  🏛️ Estate &amp; Luxury Tier
+                  Estate &amp; Luxury Tier
                 </span>
                 <h3 style={{ color: '#FFFFFF', fontSize: '1.75rem', marginBottom: '0.75rem' }}>
                   Estate &amp; Luxury Home Inspection
@@ -372,7 +372,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 🛠️ OPTIONAL $99 ITEMIZED CONTRACTOR REPAIR ESTIMATES & GAR F404 AMENDMENT EXHIBIT */}
+          {/* OPTIONAL $99 ITEMIZED CONTRACTOR REPAIR ESTIMATES & GAR F404 AMENDMENT EXHIBIT */}
           <div style={{
             marginTop: '2.5rem',
             background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%)',
@@ -388,7 +388,7 @@ export default function Home() {
           }}>
             <div style={{ maxWidth: '720px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.35)', color: 'var(--color-gold)', padding: '0.3rem 0.85rem', borderRadius: '2rem', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
-                <span>🛠️ Optional Due Diligence Service &bull; $99 Flat Fee</span>
+                <span>Optional Due Diligence Service &bull; $99 Flat Fee</span>
               </div>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.5rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>
                 Itemized Contractor Repair Cost Estimates &amp; GAR F404 Exhibits ($99)
@@ -429,7 +429,7 @@ export default function Home() {
             </div>
             <div style={{ padding: '0 1rem' }}>
               <span className="badge" style={{ background: 'rgba(15, 23, 42, 0.08)', color: '#0F172A', border: '1px solid #0F172A', marginBottom: '1rem', fontWeight: 600 }}>
-                🎖️ Master-Level Leadership
+                Master-Level Leadership
               </span>
               <h2 style={{ marginBottom: '1.25rem', color: '#0F172A', fontSize: '2.1rem' }}>Lead Certified Master Inspector® Christopher Boykin: Setting the Top 3% Standard in Georgia</h2>
               <p style={{ marginBottom: '1.25rem', fontSize: '1.1rem', fontWeight: 600, color: '#1E293B', lineHeight: 1.6 }}>
@@ -466,7 +466,7 @@ export default function Home() {
               </ul>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
-                  📅 Schedule Inspection Now
+                  Schedule Inspection Now
                 </a>
                 <Link prefetch={false} href="/ask-twin" className="btn btn-outline" style={{ borderColor: '#0F172A', color: '#0F172A', padding: '0.9rem 2rem' }}>
                   Ask Foresight AI
@@ -479,7 +479,7 @@ export default function Home() {
 
       <TrueValueComparison />
 
-      {/* 📊 GEO / AI SEARCH ENGINE STATS MODULE 📊 */}
+      {/* GEO / AI SEARCH ENGINE STATS MODULE */}
       <section className="section" style={{ padding: '4.5rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container">
           <div className="section-title">
@@ -567,8 +567,8 @@ export default function Home() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                🤖
+              <div style={{ width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(211, 47, 47, 0.08)', border: '1px solid rgba(211, 47, 47, 0.2)', borderRadius: 'var(--radius-md)', flexShrink: 0, color: 'var(--color-red)' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
@@ -597,8 +597,8 @@ export default function Home() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                🧪
+              <div style={{ width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(211, 47, 47, 0.08)', border: '1px solid rgba(211, 47, 47, 0.2)', borderRadius: 'var(--radius-md)', flexShrink: 0, color: 'var(--color-red)' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M10 2v7.31L4.69 17.6A2 2 0 0 0 6.36 21h11.28a2 2 0 0 0 1.67-3.4L14 9.31V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/><line x1="14" y1="14" x2="14.01" y2="14"/></svg>
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Calibrated Mold Spore-Trap Air Pumps</h3>
@@ -652,7 +652,9 @@ export default function Home() {
 
           <div className="grid grid-2" style={{ gap: '2.5rem' }}>
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)', padding: '2.5rem' }}>
-              <div style={{ fontSize: '3rem', lineHeight: 1 }}>🔑</div>
+              <div style={{ width: '64px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(211, 47, 47, 0.08)', border: '1px solid rgba(211, 47, 47, 0.2)', borderRadius: '12px', flexShrink: 0, color: 'var(--color-red)' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+              </div>
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Realtor Convenience: Active SUPRA Access</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.025rem', lineHeight: 1.6 }}>
@@ -662,7 +664,9 @@ export default function Home() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)', padding: '2.5rem' }}>
-              <div style={{ fontSize: '3rem', lineHeight: 1 }}>🔌</div>
+              <div style={{ width: '64px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(211, 47, 47, 0.08)', border: '1px solid rgba(211, 47, 47, 0.2)', borderRadius: '12px', flexShrink: 0, color: 'var(--color-red)' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Free Utility Setup: Utilities Plus Concierge</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.025rem', lineHeight: 1.6 }}>
@@ -678,7 +682,7 @@ export default function Home() {
         <div className="container">
           <div className="section-title">
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.4rem 1.25rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '1rem', display: 'inline-block' }}>
-              🛡️ UNMATCHED CLIENT FINANCIAL PROTECTION
+              UNMATCHED CLIENT FINANCIAL PROTECTION
             </span>
             <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>
               Up to <span style={{ color: 'var(--color-gold)' }}>$35,000</span> in Combined Warranty & Guarantee Protection
@@ -774,7 +778,7 @@ export default function Home() {
                   className="btn btn-gold"
                   style={{ fontSize: '0.9rem', padding: '0.65rem 1.5rem', display: 'inline-block' }}
                 >
-                  🔍 Find the Best Inspector in Your Neighborhood
+                  Find Certified Master Inspectors Near You
                 </a>
               </div>
             </div>
@@ -809,10 +813,10 @@ export default function Home() {
 
       <Testimonials />
 
-      {/* 📰 LATEST BLOG POSTS */}
+      {/* LATEST BLOG POSTS */}
       <LatestPosts />
 
-      {/* ⚡ FAQ SECTION (AEO/GEO Optimized with Real-Time Search) ⚡ */}
+      {/* FAQ SECTION (AEO/GEO Optimized with Real-Time Search) */}
       <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '0.75rem', fontSize: '2.25rem', fontWeight: 800 }}>Frequently Asked Questions</h2>
@@ -871,7 +875,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 📧 NEWSLETTER SIGNUP / LEAD MAGNET */}
+      {/* NEWSLETTER SIGNUP / LEAD MAGNET */}
       <NewsletterSignup />
     </>
   );

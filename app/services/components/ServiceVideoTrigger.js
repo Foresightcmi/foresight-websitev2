@@ -7,7 +7,7 @@ const ServiceVideoModal = dynamic(() => import('./ServiceVideoModal'), { ssr: fa
 
 export default function ServiceVideoTrigger({
   briefing,
-  label = '🎥 45-Sec Briefing',
+  label = '45-Sec Video Briefing',
   style = {},
   variant = 'compact'
 }) {

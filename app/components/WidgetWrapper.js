@@ -48,7 +48,7 @@ export default function WidgetWrapper() {
     };
   }, []);
 
-  if (pathname && (pathname.startsWith('/dashboard') || pathname.startsWith('/admin'))) {
+  if (pathname && (pathname.startsWith('/dashboard') || pathname.startsWith('/admin') || pathname.startsWith('/concierge'))) {
     return null;
   }
 

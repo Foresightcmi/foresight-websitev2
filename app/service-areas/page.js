@@ -86,7 +86,7 @@ export default function ServiceAreasDirectory() {
 
           <div className="grid grid-3" style={{ gap: '1.5rem' }}>
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>☢️</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[RADON]</div>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Radon Gas Testing</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 48-hour continuous electronic radon monitoring for granite-zone foundations.
@@ -97,7 +97,7 @@ export default function ServiceAreasDirectory() {
             </div>
 
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-gold)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🐜</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[TERMITE]</div>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Termite & WDO Clearances</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 Official Georgia Wood Infestation Reports for loan closing and pest defense.
@@ -108,7 +108,7 @@ export default function ServiceAreasDirectory() {
             </div>
 
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-dark)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🚽</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[SEWER]</div>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>HD Sewer Scope Cameras</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 Fiber-optic underground lateral pipe evaluations to locate roots and collapses.
@@ -119,7 +119,7 @@ export default function ServiceAreasDirectory() {
             </div>
 
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🏗️</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[NEW BUILD]</div>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>New Construction Audits</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 Independent builder punch-list inspections for pre-drywall and final phase.
@@ -130,7 +130,7 @@ export default function ServiceAreasDirectory() {
             </div>
 
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-gold)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>🏊‍♂️</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[POOL/SPA]</div>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Pool & Spa Inspections</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 Complete shell, pump, heater, hydraulic, and electrical bonding evaluations.
@@ -141,7 +141,7 @@ export default function ServiceAreasDirectory() {
             </div>
 
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-dark)' }}>
-              <div style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>📋</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[PRE-LIST]</div>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Pre-Listing Seller Audits</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 Identify defects before hitting MLS to protect asking price and speed closing.
@@ -176,7 +176,7 @@ export default function ServiceAreasDirectory() {
                         return (
                           <li key={slug}>
                             <Link href={`/service-areas/${slug}`} style={{ color: '#334155', textDecoration: 'none', fontSize: '0.95rem' }}>
-                              📍 {city['City Name']} Home Inspections
+                              {city['City Name']} Home Inspections
                             </Link>
                           </li>
                         );

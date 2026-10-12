@@ -5,15 +5,15 @@ export default function Testimonials() {
       location: 'Sandy Springs, GA',
       rating: 5,
       saving: 'Saved $24,500',
-      tag: '🚽 Foundation & Sewer Issues',
-      text: '“Foresight’s two person inspection team was an absolute game-changer. They found a major structural foundation crack hidden behind basement paneling and a collapsed clay pipe. Their crystal-clear report gave our realtor massive negotiating leverage, and she successfully secured a $24,500 seller repair credit at closing!”',
+      tag: 'Foundation & Sewer Issues',
+      text: '“Foresight’s two person inspection team made all the difference. They found a major structural foundation crack hidden behind basement paneling and a collapsed clay pipe. Their crystal-clear report gave our realtor massive negotiating leverage, and she successfully secured a $24,500 seller repair credit at closing!”',
     },
     {
       name: 'David L.',
       location: 'Alpharetta, GA',
       rating: 5,
       saving: 'Saved $18,000',
-      tag: '🔥 HVAC & Water Intrusion',
+      tag: 'HVAC & Water Intrusion',
       text: '“Christopher Boykin used his infrared thermal camera to locate active moisture leaks in the second-story subfloor and cracked heat exchangers in both HVAC systems venting carbon monoxide. Armed with this detailed report, our agent negotiated a full $18,000 price reduction to cover total HVAC replacements before closing.”',
     },
     {
@@ -21,7 +21,7 @@ export default function Testimonials() {
       location: 'Decatur, GA',
       rating: 5,
       saving: 'Saved $12,500+',
-      tag: '⚡ New Construction Defects',
+      tag: 'New Construction Defects',
       text: '“We hired Foresight for a new construction final inspection. Their team caught an improperly wired subpanel, missing attic fire-stops, and high radon levels. The report gave our realtor the exact proof needed to force the builder to install a radon mitigation system and redo the electrical work before closing, saving us over $12,500.”',
     },
   ];

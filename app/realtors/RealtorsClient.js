@@ -6,42 +6,42 @@ import { useState } from 'react';
 const GAR_PRESETS = [
   {
     id: 'hvac',
-    label: '❄️ HVAC System',
+    label: 'HVAC System',
     category: 'HVAC System & Mechanicals',
     repairClause: 'Seller agrees to pay a licensed HVAC contractor to evaluate, service, and repair the primary HVAC system, specifically addressing [e.g., low temperature split / failing capacitor / refrigerant charge], and provide buyer with a paid invoice and proof of completion showing system is in normal working order prior to closing.',
     defaultCredit: 1850,
   },
   {
     id: 'electrical',
-    label: '⚡ Electrical Panel',
+    label: 'Electrical Panel',
     category: 'Electrical Service Panel',
     repairClause: 'Seller agrees to hire a licensed electrician to inspect the main electrical breaker panel, repair any double-tapped breakers, properly bond neutral/ground buses, and provide buyer with a copy of the licensed electrician\'s invoice prior to closing.',
     defaultCredit: 1200,
   },
   {
     id: 'moisture',
-    label: '🌊 Crawlspace Moisture',
+    label: 'Crawlspace Moisture',
     category: 'Crawlspace Moisture & Vapor Barrier',
     repairClause: 'Seller agrees to hire a qualified contractor to remedy moisture intrusion identified in the crawlspace, replace damaged subflooring or framing, and install a continuous 6-mil polyethylene vapor barrier over 100% of exposed crawlspace soil prior to closing.',
     defaultCredit: 2800,
   },
   {
     id: 'roof',
-    label: '🏠 Roof & Flashing',
+    label: 'Roof & Flashing',
     category: 'Roofing & Flashing Penetrations',
     repairClause: 'Seller agrees to hire a licensed roofing contractor to replace damaged or missing shingles and reseal all pipe boot and step flashings, providing buyer with a paid invoice and transferrable workmanship warranty prior to closing.',
     defaultCredit: 1500,
   },
   {
     id: 'wdo',
-    label: '🐜 Termite / WDO',
+    label: 'Termite / WDO',
     category: 'Termite & Wood Destroying Organisms',
     repairClause: 'Seller agrees to provide an Official Georgia Wood Infestation Inspection Report (WDO) and hire a licensed pest control company to complete liquid soil treatment for subterranean termites, transferring a 1-year renewable warranty to buyer at closing.',
     defaultCredit: 1250,
   },
   {
     id: 'plumbing',
-    label: '🚰 Plumbing & PRV',
+    label: 'Plumbing & PRV',
     category: 'Plumbing Supply & Pressure Regulating Valve',
     repairClause: 'Seller agrees to hire a licensed master plumber to repair active supply leaks, replace unapproved piping or damaged shut-off valves, and ensure domestic water pressure is regulated between 50-70 PSI with a paid invoice provided to buyer prior to closing.',
     defaultCredit: 1600,
@@ -177,35 +177,35 @@ export default function RealtorsClient() {
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#gar-tool" className="btn" style={{ padding: '1rem 2.25rem', fontSize: '1.125rem', background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1.5px solid var(--color-gold)', fontWeight: 700, boxShadow: '0 4px 14px rgba(212, 175, 55, 0.25)' }}>
-              ⚖️ Try GAR Form F404 Amendment Builder ↓
+              Try GAR Form F404 Amendment Builder ↓
             </a>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2.25rem', fontSize: '1.125rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}>
-              ⚡ Priority Schedule for My Client
+              Priority Schedule for My Client
             </a>
             <a href="#partner-form" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
-              🤝 Join VIP Partner Program
+              Join VIP Partner Program
             </a>
             <a href="tel:6784802110" className="btn" style={{ padding: '1rem 2rem', fontSize: '1.125rem', background: 'rgba(255,255,255,0.08)', color: '#FFFFFF', border: '1px solid rgba(255,255,255,0.2)', fontWeight: 600 }}>
-              📞 VIP Line: (678) 480-2110
+              VIP Line: (678) 480-2110
             </a>
           </div>
 
           {/* Instant Realtor Fast-Actions Bar */}
           <div style={{ marginTop: '2rem', display: 'inline-flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(212, 175, 55, 0.3)', borderRadius: '999px', padding: '0.75rem 2rem', backdropFilter: 'blur(8px)' }}>
             <a href="#gar-tool" style={{ color: 'var(--color-gold)', textDecoration: 'none', fontWeight: 600, fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              🛠️ <span>Interactive GAR F404 Builder</span>
+              <span>Interactive GAR F404 Builder</span>
             </a>
             <span style={{ color: '#475569' }}>|</span>
             <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              🔑 <span>Active SUPRA eKEY</span>
+              <span>Active SUPRA eKEY</span>
             </span>
             <span style={{ color: '#475569' }}>|</span>
             <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              ⚡ <span>1-Click Repair Amendment Builder</span>
+              <span>1-Click Repair Amendment Builder</span>
             </span>
             <span style={{ color: '#475569' }}>|</span>
             <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              🛡️ <span>$10,000 Guarantee Included</span>
+              <span>$10,000 Guarantee Included</span>
             </span>
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function RealtorsClient() {
           <div className="grid grid-3" style={{ gap: '2rem' }}>
             {/* Pillar 1: SUPRA Key */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🔑</div>
+              <div className="font-mono text-sm font-bold text-primary mb-3">[ACCESS]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>Active SUPRA Key Access</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
                 Stop driving across Metro Atlanta just to unlock doors. Foresight carries <strong>active SUPRA key access</strong> for secure lockbox entry. We handle the opening, inspection, and lockup professionally, giving you hours of your day back.
@@ -236,7 +236,7 @@ export default function RealtorsClient() {
 
             {/* Pillar 2: Two Person Inspection Team speed */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>👥</div>
+              <div className="font-mono text-sm font-bold text-primary mb-3">[TWO INSPECTORS]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>The Due Diligence Accelerator</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
                 In Atlanta's fast-paced market, tight due diligence windows kill deals. We send <strong>two certified inspectors</strong> to every job to cut on-site time in half and guarantee your clients get their comprehensive report within 24 hours, maximizing your negotiation leverage.
@@ -245,7 +245,7 @@ export default function RealtorsClient() {
 
             {/* Pillar 3: Utilities Plus */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🔌</div>
+              <div className="font-mono text-sm font-bold text-primary mb-3">[DIAGNOSTICS]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>Free Utility Concierge Service</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
                 Help your clients transition seamlessly. Through our partnership with <strong>Utilities Plus</strong>, all Foresight buyers receive complimentary, high-touch utility connection services (water, gas, electric, internet, security) at the best available market rates.
@@ -254,7 +254,7 @@ export default function RealtorsClient() {
 
             {/* Pillar 4: $10,000 Master Warranty */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🛡️</div>
+              <div className="font-mono text-sm font-bold text-primary mb-3">[WARRANTY]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>$10,000 Client Protection</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
                 Every inspection led by Christopher Boykin, a Certified Master Inspector®, includes our <strong>$10,000 Elite Master Inspection Warranty</strong> with $0 deductible. It covers mechanicals, structure, major appliances, mold, and roofs, protecting your buyer and your reputation post-closing.
@@ -263,7 +263,7 @@ export default function RealtorsClient() {
 
             {/* Pillar 5: 1-Click Repair Amendment */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>📝</div>
+              <div className="font-mono text-sm font-bold text-primary mb-3">[REPAIR CLAUSES]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>1-Click Repair Amendment Tool</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
                 Tired of copying and pasting text into amendment documents? Our digital reports feature interactive repair amendment builder. Agents can click items directly in the inspection report to automatically compile a polished, professional repair amendment in minutes.
@@ -272,7 +272,7 @@ export default function RealtorsClient() {
 
             {/* Pillar 6: elite CMI credentials */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', borderTop: '4px solid var(--color-red)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1 }}>🏆</div>
+              <div className="font-mono text-sm font-bold text-primary mb-3">[CMI CERTIFIED]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>CMI-Led Dual Inspections</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
                 We don&apos;t dispatch rookie solo inspectors. Every job features a certified inspector paired directly with Christopher Boykin, a fully-credentialed Certified Master Inspector®—representing the highest professional standard in North America.
@@ -282,13 +282,13 @@ export default function RealtorsClient() {
         </div>
       </section>
 
-      {/* 📝 1-CLICK REPAIR AMENDMENT FEATURE HIGHLIGHT 📝 */}
+      {/* 1-CLICK REPAIR AMENDMENT FEATURE HIGHLIGHT */}
       <section className="section" style={{ background: '#0F172A', color: '#FFFFFF', padding: '5rem 0', borderTop: '1px solid #1E293B', borderBottom: '1px solid #1E293B' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '3.5rem', alignItems: 'center' }}>
             <div>
               <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
-                ⚡ Agent Efficiency Tool
+                Agent Efficiency Tool
               </span>
               <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.25rem' }}>
                 Build Custom GAR Form F404 Repair Amendments in Minutes
@@ -311,13 +311,13 @@ export default function RealtorsClient() {
                 </div>
               </div>
               <a href="#partner-form" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
-                🤝 Connect with Foresight Realtor VIP
+                Connect with Foresight Realtor VIP
               </a>
             </div>
 
             <div style={{ background: '#1E293B', border: '2px solid var(--color-gold)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid #334155', paddingBottom: '1rem' }}>
-                <div style={{ fontSize: '2.5rem' }}>📄</div>
+                <div className="font-mono text-sm font-bold text-primary mb-2">[GAR F404]</div>
                 <div>
                   <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem' }}>Interactive Repair Amendment Preview</h3>
                   <span style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600 }}>Included Standard on Every Foresight Report</span>
@@ -339,12 +339,12 @@ export default function RealtorsClient() {
         </div>
       </section>
 
-      {/* 🚀 ZERO-CLICK AGENT TOOL: INSTANT GAR FORM F404 REPAIR & CREDIT BUILDER 🚀 */}
+      {/* ZERO-CLICK AGENT TOOL: INSTANT GAR FORM F404 REPAIR & CREDIT BUILDER */}
       <section id="gar-tool" className="section" style={{ background: '#0F172A', borderBottom: '1px solid #1E293B', padding: '4.5rem 0' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
-              🛠️ GAR Form F404 Interactive Builder
+              GAR Form F404 Interactive Builder
             </span>
             <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>
               Georgia REALTOR® Repair &amp; Credit Amendment Builder
@@ -382,7 +382,7 @@ export default function RealtorsClient() {
                   }}
                 >
                   <span style={{ fontWeight: 700, fontSize: '1.05rem', color: requestMode === 'repair' ? 'var(--color-gold)' : '#FFFFFF' }}>
-                    🛠️ Contractor Repair Clause
+                    Contractor Repair Clause
                   </span>
                   <span style={{ fontSize: '0.82rem', color: '#94A3B8' }}>
                     Requires licensed trade contractor with paid invoice before closing
@@ -411,7 +411,7 @@ export default function RealtorsClient() {
                   }}
                 >
                   <span style={{ fontWeight: 700, fontSize: '1.05rem', color: requestMode === 'credit' ? 'var(--color-gold)' : '#FFFFFF' }}>
-                    💵 Closing Cost Credit in Lieu of Repairs
+                    Closing Cost Credit in Lieu of Repairs
                   </span>
                   <span style={{ fontSize: '0.82rem', color: '#94A3B8' }}>
                     Secures buyer credit towards closing costs, rate buydown, or fees
@@ -587,7 +587,7 @@ export default function RealtorsClient() {
                       transition: 'all 0.2s ease'
                     }}
                   >
-                    {copiedClause ? '✅ Copied to Clipboard!' : '📋 Copy Full GAR Clause'}
+                    {copiedClause ? 'Copied to Clipboard!' : 'Copy Full GAR Clause'}
                   </button>
                   <a
                     href={`mailto:?subject=${encodeURIComponent(`GAR F404 Repair Clause - ${currentPreset.label}`)}&body=${encodeURIComponent(`GAR Form F404 Special Stipulation:\n\n${generatedClause}\n\nGenerated via Foresight Home Inspections Realtor VIP Portal (www.fhinspectionsatl.com/realtors).`)}`}
@@ -607,7 +607,7 @@ export default function RealtorsClient() {
                       transition: 'all 0.2s ease'
                     }}
                   >
-                    ✉️ Email Clause
+                    Email Clause
                   </a>
                 </div>
               </div>
@@ -619,7 +619,7 @@ export default function RealtorsClient() {
               </div>
 
               <p style={{ color: '#64748B', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
-                💡 Aligned with Georgia Association of REALTORS® (GAR) Form F404 standards. Certified Master Inspector Christopher Boykin recommends attaching the corresponding Foresight inspection report defect page and contractor estimate to eliminate seller pushback.
+                Aligned with Georgia Association of REALTORS® (GAR) Form F404 standards. Certified Master Inspector Christopher Boykin recommends attaching the corresponding Foresight inspection report defect page and contractor estimate to eliminate seller pushback.
               </p>
             </div>
           </div>
@@ -639,7 +639,7 @@ export default function RealtorsClient() {
           }}>
             <div style={{ maxWidth: '700px' }}>
               <span style={{ background: 'var(--color-gold)', color: '#0F172A', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
-                ⚡ New Realtor Pre-Offer Utility
+                New Realtor Pre-Offer Utility
               </span>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
                 Georgia Property Risk &amp; Age Diagnostic Scanner
@@ -684,7 +684,7 @@ export default function RealtorsClient() {
           }}>
             <div style={{ maxWidth: '700px' }}>
               <span style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
-                🛠️ Optional Realtor Negotiation Service &bull; $99 Flat Fee
+                Optional Realtor Negotiation Service &bull; $99 Flat Fee
               </span>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
                 Itemized Contractor Repair Cost Estimates &amp; Outside Report Audits ($99)
@@ -731,7 +731,7 @@ export default function RealtorsClient() {
           }}>
             <div style={{ maxWidth: '700px' }}>
               <span style={{ background: '#0284C7', color: '#FFFFFF', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
-                🛠️ RSMeans 2026 Calibrated
+                RSMeans 2026 Calibrated
               </span>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
                 GAR Due Diligence Repair Credit &amp; Cost Negotiator
@@ -786,7 +786,7 @@ export default function RealtorsClient() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div className="card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '1.75rem' }}>
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ fontSize: '2rem', lineHeight: 1 }}>📋</div>
+                  <div className="font-mono text-xs font-bold text-primary mb-1">[01]</div>
                   <div>
                     <h4 style={{ color: 'var(--color-white)', fontWeight: 700, marginBottom: '0.5rem' }}>Clear, Actionable Reporting</h4>
                     <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '0.95rem', lineHeight: 1.6 }}>
@@ -798,7 +798,7 @@ export default function RealtorsClient() {
 
               <div className="card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '1.75rem' }}>
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ fontSize: '2rem', lineHeight: 1 }}>💪</div>
+                  <div className="font-mono text-xs font-bold text-primary mb-1">[02]</div>
                   <div>
                     <h4 style={{ color: 'var(--color-white)', fontWeight: 700, marginBottom: '0.5rem' }}>Stronger Negotiation Position</h4>
                     <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '0.95rem', lineHeight: 1.6 }}>
@@ -810,7 +810,7 @@ export default function RealtorsClient() {
 
               <div className="card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '1.75rem' }}>
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ fontSize: '2rem', lineHeight: 1 }}>🤝</div>
+                  <div className="font-mono text-xs font-bold text-primary mb-1">[03]</div>
                   <div>
                     <h4 style={{ color: 'var(--color-white)', fontWeight: 700, marginBottom: '0.5rem' }}>Your Reputation, Elevated</h4>
                     <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '0.95rem', lineHeight: 1.6 }}>
@@ -854,7 +854,7 @@ export default function RealtorsClient() {
                 </strong>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-gray-mid)', fontSize: '0.875rem' }}>
                   <span>Keller Williams Peachtree Rd</span>
-                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>💼 Buyer Agent</span>
+                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>Buyer Agent</span>
                 </div>
               </div>
             </div>
@@ -873,7 +873,7 @@ export default function RealtorsClient() {
                 </strong>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-gray-mid)', fontSize: '0.875rem' }}>
                   <span>Compass Atlanta</span>
-                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>🔑 Listing Agent</span>
+                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>Listing Agent</span>
                 </div>
               </div>
             </div>
@@ -892,7 +892,7 @@ export default function RealtorsClient() {
                 </strong>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--color-gray-mid)', fontSize: '0.875rem' }}>
                   <span>Harry Norman Realtors</span>
-                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>🛡️ Realtor Partner</span>
+                  <span style={{ fontWeight: 600, color: 'var(--color-red)' }}>Realtor Partner</span>
                 </div>
               </div>
             </div>
@@ -925,13 +925,13 @@ export default function RealtorsClient() {
               </ul>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link href="/quote" className="btn btn-outline" style={{ borderWidth: '2px' }}>
-                  💰 Try Instant Quote Calculator
+                  Try Instant Quote Calculator
                 </Link>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ borderWidth: '2px' }}>
-                  📅 Book Client Inspection
+                  Book Client Inspection
                 </a>
                 <Link href="/concierge" className="btn btn-outline" style={{ borderWidth: '2px' }}>
-                  🎙️ Live Concierge Consultation
+                  Live Concierge Consultation
                 </Link>
               </div>
             </div>
@@ -954,7 +954,7 @@ export default function RealtorsClient() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <strong style={{ color: '#b45309', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.9rem' }}>
-                    <span>🛡️</span> Georgia Real Estate Commission (GREC) Licensure Required
+                    Georgia Real Estate Commission (GREC) Licensure Required
                   </strong>
                   <a 
                     href="https://services.grec.state.ga.us/" 
@@ -1011,7 +1011,7 @@ export default function RealtorsClient() {
                   {grecError && (
                     <div style={{ background: 'rgba(211, 47, 47, 0.1)', border: '1px solid var(--color-red)', borderRadius: '4px', padding: '0.65rem 0.85rem' }}>
                       <p style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.825rem', margin: 0 }}>
-                        ⚠️ {grecError}
+                        {grecError}
                       </p>
                     </div>
                   )}
@@ -1055,12 +1055,12 @@ export default function RealtorsClient() {
         </div>
       </section>
 
-      {/* 🔗 REALTOR PARTNER EMBED BADGES & BACKLINK WIDGETS (SEMRUSH 2025 LINK MAGNET) 🔗 */}
+      {/* REALTOR PARTNER EMBED BADGES & BACKLINK WIDGETS */}
       <section className="section" style={{ background: '#0B1120', color: '#FFFFFF', padding: '5rem 0', borderBottom: '1px solid #1E293B' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '3.5rem' }}>
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
-              🔗 Realtor Partner Digital Assets
+              Realtor Partner Digital Assets
             </span>
             <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800 }}>
               Embed Preferred Partner Badges &amp; Due Diligence Tools
@@ -1084,7 +1084,7 @@ export default function RealtorsClient() {
               </p>
               <div style={{ background: '#0F172A', padding: '1rem', borderRadius: '8px', border: '1px solid #334155', marginBottom: '1.25rem', textAlign: 'center' }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1E293B', border: '1px solid var(--color-gold)', padding: '6px 14px', borderRadius: '6px' }}>
-                  <span style={{ fontSize: '1.1rem' }}>🛡️</span>
+                  <span className="font-mono text-xs font-bold text-primary mr-1">[VERIFIED]</span>
                   <div style={{ textAlign: 'left', lineHeight: 1.2 }}>
                     <div style={{ color: '#FFFFFF', fontSize: '0.75rem', fontWeight: 700 }}>PREFERRED INSPECTION PARTNER</div>
                     <div style={{ color: 'var(--color-gold)', fontSize: '0.7rem' }}>Foresight CMI® &bull; 4.9★ (48 Reviews)</div>
@@ -1106,7 +1106,7 @@ export default function RealtorsClient() {
                   transition: 'all 0.2s'
                 }}
               >
-                {copiedBadgeId === 'badge-cmi' ? '✅ HTML Snippet Copied!' : '📋 Copy Badge HTML Snippet'}
+                {copiedBadgeId === 'badge-cmi' ? 'HTML Snippet Copied!' : 'Copy Badge HTML Snippet'}
               </button>
             </div>
 
@@ -1141,7 +1141,7 @@ export default function RealtorsClient() {
                   transition: 'all 0.2s'
                 }}
               >
-                {copiedBadgeId === 'badge-widget' ? '✅ Widget HTML Copied!' : '📋 Copy Widget HTML Snippet'}
+                {copiedBadgeId === 'badge-widget' ? 'Widget HTML Copied!' : 'Copy Widget HTML Snippet'}
               </button>
             </div>
 
@@ -1176,7 +1176,7 @@ export default function RealtorsClient() {
                   transition: 'all 0.2s'
                 }}
               >
-                {copiedBadgeId === 'badge-text' ? '✅ Text Snippet Copied!' : '📋 Copy Text HTML Snippet'}
+                {copiedBadgeId === 'badge-text' ? 'Text Snippet Copied!' : 'Copy Text HTML Snippet'}
               </button>
             </div>
           </div>

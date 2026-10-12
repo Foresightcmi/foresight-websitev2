@@ -140,7 +140,7 @@ export default async function ComparisonPage({ params }) {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}
             >
-              📅 Experience the Foresight Advantage
+              Experience the Foresight Advantage
             </a>
             <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
               See Pricing & Packages
@@ -166,7 +166,7 @@ export default async function ComparisonPage({ params }) {
               </div>
               <div>
                 <span className="badge" style={{ background: 'rgba(211,47,47,0.1)', color: 'var(--color-red)', marginBottom: '0.75rem', fontSize: '0.85rem' }}>
-                  🔍 Field Verification
+                  Field Verification
                 </span>
                 <h2 style={{ fontSize: '1.85rem', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.25 }}>
                   Two Trained Experts. Double the Technical Oversight.
@@ -290,7 +290,7 @@ export default async function ComparisonPage({ params }) {
                 Schedule Now
               </a>
               <a href="tel:6784802110" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '1rem 2.5rem' }}>
-                📞 Call 678-480-2110
+                Call 678-480-2110
               </a>
             </div>
           </div>

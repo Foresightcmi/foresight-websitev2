@@ -67,7 +67,7 @@ export default function CompareHubPage() {
       <section style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', color: '#FFFFFF', padding: '4.5rem 0 3.5rem', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1.25rem' }}>
-            ⚖️ Decision Frameworks
+            Decision Frameworks
           </span>
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.25rem', lineHeight: 1.2 }}>
             Home Inspection Decision &amp; Comparison Guides
@@ -97,7 +97,7 @@ export default function CompareHubPage() {
               >
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-                    <span style={{ fontSize: '2rem' }}>{c.icon || '⚖️'}</span>
+                    <span style={{ fontSize: '2rem' }}>'COMPARE'</span>
                     <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: '#854D0E', fontSize: '0.75rem', fontWeight: 700 }}>
                       {c.badge || 'Comparison'}
                     </span>

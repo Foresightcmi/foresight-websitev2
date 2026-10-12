@@ -19,7 +19,7 @@ export default function CitySearch({ cities }) {
       <div style={{ marginBottom: '2rem', position: 'relative' }}>
         <input
           type="text"
-          placeholder="🔍 Type your City or ZIP Code (e.g. Sandy Springs, Alpharetta, 30058, Fulton)..."
+          placeholder="Search by City or ZIP Code (e.g. Sandy Springs, Alpharetta, 30058, Fulton)..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           style={{
@@ -84,7 +84,7 @@ export default function CitySearch({ cities }) {
               }}
             >
               <strong style={{ display: 'block', color: 'var(--color-dark)', fontSize: '1rem' }}>
-                📍 {c['City Name']}
+                {c['City Name']}
               </strong>
               <span style={{ fontSize: '0.85rem', color: 'var(--color-gray)' }}>
                 {c.County} County {c.Zip ? `• ${c.Zip}` : ''}
@@ -100,7 +100,7 @@ export default function CitySearch({ cities }) {
             We serve all 163+ cities across Metro Atlanta! If your city isn&apos;t listed above, we still cover your area.
           </p>
           <a href="tel:6784802110" className="btn btn-primary">
-            📞 Call to Confirm Coverage: 678-480-2110
+            Call to Confirm Coverage: (678) 480-2110 &rarr;
           </a>
         </div>
       )}

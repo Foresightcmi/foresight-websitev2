@@ -25,7 +25,11 @@ export default function AeoDirectAnswer({
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-        <span style={{ fontSize: '1.25rem' }}>💡</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#854d0e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
         <span style={{ 
           fontSize: '0.8rem', 
           fontWeight: 700, 
@@ -71,7 +75,7 @@ export default function AeoDirectAnswer({
         fontSize: '0.8rem', 
         color: '#475569' 
       }}>
-        <span>🛡️ <strong>Certified Authority:</strong> {cmiNote}</span>
+        <span><strong>Certified Authority:</strong> {cmiNote}</span>
         <span style={{ fontWeight: 600, color: '#854d0e' }}>Two-Inspector Team Standard</span>
       </div>
     </div>

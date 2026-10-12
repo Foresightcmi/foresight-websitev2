@@ -20,7 +20,7 @@ export default function LatestPosts() {
     <section className="section" style={{ backgroundColor: '#FFFFFF', padding: '5rem 0' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <span className="badge" style={{ backgroundColor: 'var(--color-gray-light)', color: 'var(--color-red)', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontWeight: 'bold', fontSize: '0.85rem' }}>📰 From Our Blog</span>
+          <span className="badge" style={{ backgroundColor: 'var(--color-gray-light)', color: 'var(--color-red)', padding: '0.25rem 0.75rem', borderRadius: '1rem', fontWeight: 'bold', fontSize: '0.85rem' }}>From Our Blog</span>
           <h2 style={{ fontSize: '2.5rem', color: 'var(--color-dark)', margin: '1rem 0', fontFamily: 'var(--font-heading)' }}>Latest Home Inspection Insights</h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--color-gray-dark)', maxWidth: '600px', margin: '0 auto' }}>
             Expert advice, tips, and insights for homebuyers and real estate professionals.

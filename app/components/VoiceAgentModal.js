@@ -110,8 +110,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   });
 
   // Master audio halt: instantly stops all audio playback across HTML5 Audio, Gemini Live PCM, and Web Speech
-  const haltSpeech = useCallback(() => {
-    isGreetingPlayingRef.current = false;
+  const haltSpeech = useCallback((clearGreetingLock = true) => {
+    if (clearGreetingLock) {
+      isGreetingPlayingRef.current = false;
+    }
     if (greetingTimerRef.current) {
       clearTimeout(greetingTimerRef.current);
       greetingTimerRef.current = null;
@@ -124,8 +126,12 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       clearTimeout(speakingEndTimerRef.current);
       speakingEndTimerRef.current = null;
     }
+    if (watchdogTimerRef.current) {
+      clearTimeout(watchdogTimerRef.current);
+      watchdogTimerRef.current = null;
+    }
 
-    // 1. Stop and clear HTML5 Audio element
+    // 1. Stop and clear local HTML5 Audio element
     if (audioRef.current) {
       try {
         audioRef.current.pause();
@@ -133,6 +139,16 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         audioRef.current.src = '';
       } catch (_) {}
       audioRef.current = null;
+    }
+
+    // Stop global window audio reference to prevent any collision across components/tabs
+    if (typeof window !== 'undefined' && window.__foresight_active_voice_audio) {
+      try {
+        window.__foresight_active_voice_audio.pause();
+        window.__foresight_active_voice_audio.currentTime = 0;
+        window.__foresight_active_voice_audio.src = '';
+      } catch (_) {}
+      window.__foresight_active_voice_audio = null;
     }
 
     // 2. Stop all Gemini Live PCM buffer sources
@@ -148,6 +164,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     if (synthRef.current) {
       try { synthRef.current.cancel(); } catch (_) {}
     }
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      try { window.speechSynthesis.cancel(); } catch (_) {}
+    }
 
     isSpeakingRef.current = false;
     isModelTurnActiveRef.current = false;
@@ -162,15 +181,15 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
 
     return () => {
-      haltSpeech();
+      haltSpeech(true);
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
     };
   }, [haltSpeech]);
 
-  // Play studio-grade human neural voice (en-US-GuyNeural)
-  const playNeuralAudio = useCallback((audioSrc, onEnded) => {
+  // Play studio-grade human neural voice (en-US-GuyNeural / Receptionist)
+  const playNeuralAudio = useCallback((audioSrc, onEnded, isGreeting = false) => {
     if (isMutedRef.current || !audioSrc) {
       setCallState('idle');
       if (onEnded) onEnded();
@@ -178,13 +197,30 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     }
 
     try {
-      haltSpeech();
+      // Halt prior speech; if starting authentic greeting, preserve the greeting lock
+      haltSpeech(!isGreeting);
+      if (isGreeting) {
+        isGreetingPlayingRef.current = true;
+      }
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
       }
 
+      // Stop any globally active audio on window
+      if (typeof window !== 'undefined' && window.__foresight_active_voice_audio) {
+        try {
+          window.__foresight_active_voice_audio.pause();
+          window.__foresight_active_voice_audio.currentTime = 0;
+          window.__foresight_active_voice_audio.src = '';
+        } catch (_) {}
+        window.__foresight_active_voice_audio = null;
+      }
+
       const audio = new Audio(audioSrc);
       audioRef.current = audio;
+      if (typeof window !== 'undefined') {
+        window.__foresight_active_voice_audio = audio;
+      }
 
       audio.onplay = () => {
         isSpeakingRef.current = true;
@@ -193,6 +229,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
 
       audio.onended = () => {
         audioRef.current = null;
+        if (typeof window !== 'undefined' && window.__foresight_active_voice_audio === audio) {
+          window.__foresight_active_voice_audio = null;
+        }
         // Acoustic decay window before unmuting or starting recognition
         setTimeout(() => {
           isSpeakingRef.current = false;
@@ -212,6 +251,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         console.warn('Neural audio playback error:', e);
         isSpeakingRef.current = false;
         audioRef.current = null;
+        if (typeof window !== 'undefined' && window.__foresight_active_voice_audio === audio) {
+          window.__foresight_active_voice_audio = null;
+        }
         setCallState('idle');
         if (onEnded) onEnded();
       };
@@ -222,6 +264,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           console.log('Audio autoplay prevented by browser policy (user tap required):', err);
           isSpeakingRef.current = false;
           audioRef.current = null;
+          if (typeof window !== 'undefined' && window.__foresight_active_voice_audio === audio) {
+            window.__foresight_active_voice_audio = null;
+          }
           setCallState('idle');
           if (onEnded) onEnded();
         });
@@ -230,6 +275,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       console.warn('Could not play neural audio:', err);
       isSpeakingRef.current = false;
       audioRef.current = null;
+      if (typeof window !== 'undefined' && window.__foresight_active_voice_audio === audio) {
+        window.__foresight_active_voice_audio = null;
+      }
       setCallState('idle');
       if (onEnded) onEnded();
     }
@@ -238,7 +286,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
   // Fallback voice speak function (Guaranteed Receptionist Neural Voice)
   const speakTextFallback = useCallback((text) => {
     if (isMutedRef.current) return;
-    if (audioRef.current) return;
+    if (audioRef.current || (typeof window !== 'undefined' && window.__foresight_active_voice_audio)) return;
     playNeuralAudio('/audio/receptionist-browsing.mp3');
   }, [playNeuralAudio]);
 
@@ -493,9 +541,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           return;
         }
 
-        // If greeting is playing, NEVER send mic audio to WebSocket and NEVER trigger barge-in!
-        // This stops speaker feedback from instantly glitching/cutting off the greeting!
-        if (isGreetingPlayingRef.current) {
+        // If greeting is playing or assistant is speaking, NEVER send mic audio to WebSocket and NEVER trigger barge-in!
+        // This stops speaker feedback from instantly glitching/cutting off the greeting or speaking simultaneously!
+        if (isGreetingPlayingRef.current || isSpeakingRef.current) {
           consecutiveSpeechFrames = 0;
           return;
         }
@@ -915,11 +963,15 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             console.log('Gemini 3.1 Live setup complete! WebSocket session open.');
             setLiveWsConnected(true);
             setEngineMode('live');
-            startLiveMicStream(ws);
-            // CRITICAL: DO NOT SEND greetingPrompt to Gemini Live!
-            // Christopher's authentic recording is playing/has played the official opening vocal.
-            if (!isGreetingPlayingRef.current && isOpenRef.current) {
-              setCallState('listening');
+            // CRITICAL: DO NOT start mic stream while opening greeting is still actively playing!
+            // Starting the mic early causes speaker acoustic feedback back into Gemini Live.
+            if (!isGreetingPlayingRef.current) {
+              startLiveMicStream(ws);
+              if (isOpenRef.current) {
+                setCallState('listening');
+              }
+            } else {
+              console.log('Gemini Live setup complete. Mic stream deferred until authentic greeting finishes.');
             }
           }
 
@@ -1192,7 +1244,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
           } else if (isOpenRef.current && isHandsFreeRef.current && handleStartListeningRef.current) {
             handleStartListeningRef.current();
           }
-        });
+        }, true);
 
         // 4. Concurrently initialize Gemini Live in background so it is ready when the greeting completes
         initLiveConnection();
@@ -1208,10 +1260,22 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         clearTimeout(greetingTimerRef.current);
         greetingTimerRef.current = null;
       }
-      haltSpeech();
+      if (watchdogTimerRef.current) {
+        clearTimeout(watchdogTimerRef.current);
+        watchdogTimerRef.current = null;
+      }
+      haltSpeech(true);
       stopLiveSession();
       if (recognitionRef.current) {
         try { recognitionRef.current.abort(); } catch (_) {}
+      }
+      if (typeof window !== 'undefined' && window.__foresight_active_voice_audio) {
+        try {
+          window.__foresight_active_voice_audio.pause();
+          window.__foresight_active_voice_audio.currentTime = 0;
+          window.__foresight_active_voice_audio.src = '';
+        } catch (_) {}
+        window.__foresight_active_voice_audio = null;
       }
     }
 
@@ -1441,6 +1505,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         })
       });
 
+      if (watchdogTimerRef.current) {
+        clearTimeout(watchdogTimerRef.current);
+        watchdogTimerRef.current = null;
+      }
+
       const data = await res.json();
       const aiReply = (data.response || "I hear you loud and clear. Let's discuss that further!").replace(/\*/g, '');
 
@@ -1485,6 +1554,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
       }
 
     } catch (err) {
+      if (watchdogTimerRef.current) {
+        clearTimeout(watchdogTimerRef.current);
+        watchdogTimerRef.current = null;
+      }
       console.error('Voice Assistant Query Error:', err);
       const fallbackReply = "Houses are complex systems, and I want to make sure you get the right advice. If you need an immediate quote or want to book our two-inspector team, call us directly at 678-480-2110!";
       setHistory(prev => [...prev, { role: 'assistant', content: fallbackReply }]);
@@ -1645,7 +1718,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   gap: '4px'
                 }}>
                   <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                  {liveWsConnected ? 'Gemini 3.1 Live' : '🎙️ Speak or 💬 Type'}
+                  {liveWsConnected ? 'Gemini 3.1 Live' : 'Voice & Text Consultation'}
                 </span>
               </div>
               <p style={{ color: '#94A3B8', fontSize: '0.8rem', margin: '2px 0 0 0' }}>
@@ -1706,7 +1779,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 gap: '6px'
               }}
             >
-              {isMuted ? '🔇' : '🔊'}
+              {isMuted ? (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              ) : (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              )}
             </button>
 
             <button
@@ -1793,11 +1870,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             textAlign: 'center'
           }}>
             {callState === 'listening'
-              ? '🟢 Receptionist is listening... Speak naturally'
+              ? 'Receptionist is listening... Speak naturally'
               : callState === 'speaking'
-              ? '🗣️ Foresight Receptionist is speaking... (tap to interrupt)'
+              ? 'Foresight Receptionist is speaking... (tap to interrupt)'
               : callState === 'thinking'
-              ? '⚡ Consulting Christopher Boykin & checking pricing...'
+              ? 'Consulting Christopher Boykin & checking pricing...'
               : 'Tap avatar to speak with our Receptionist'}
           </p>
 
@@ -1819,7 +1896,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               gap: '8px',
               animation: 'fadeIn 0.2s ease'
             }}>
-              <span>⚠️ {micError}</span>
+              <span>{micError}</span>
               <button 
                 type="button"
                 onClick={() => setMicError(null)}
@@ -1877,7 +1954,6 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             paddingBottom: isFormExpanded ? '6px' : '0px'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '0.95rem' }}>📋</span>
               <span style={{
                 fontSize: '0.8rem',
                 fontWeight: 800,
@@ -1942,7 +2018,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 {/* Client Name */}
                 <div>
                   <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
-                    Your Name {activeHighlightField === 'name' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                    Your Name {activeHighlightField === 'name' && <span style={{ color: '#34d399', fontWeight: 800 }}>• Voice auto-filled</span>}
                   </label>
                   <input
                     type="text"
@@ -1966,7 +2042,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 {/* Phone */}
                 <div>
                   <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
-                    Phone Number {activeHighlightField === 'phone' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                    Phone Number {activeHighlightField === 'phone' && <span style={{ color: '#34d399', fontWeight: 800 }}>• Voice auto-filled</span>}
                   </label>
                   <input
                     type="text"
@@ -1990,7 +2066,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 {/* Email */}
                 <div>
                   <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
-                    Email Address {activeHighlightField === 'email' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                    Email Address {activeHighlightField === 'email' && <span style={{ color: '#34d399', fontWeight: 800 }}>• Voice auto-filled</span>}
                   </label>
                   <input
                     type="text"
@@ -2014,7 +2090,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 {/* Property Address / City */}
                 <div>
                   <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
-                    Property Address / City {activeHighlightField === 'address' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                    Property Address / City {activeHighlightField === 'address' && <span style={{ color: '#34d399', fontWeight: 800 }}>• Voice auto-filled</span>}
                   </label>
                   <input
                     type="text"
@@ -2038,7 +2114,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 {/* Square Footage */}
                 <div>
                   <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
-                    Square Footage {activeHighlightField === 'sqft' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                    Square Footage {activeHighlightField === 'sqft' && <span style={{ color: '#34d399', fontWeight: 800 }}>• Voice auto-filled</span>}
                   </label>
                   <input
                     type="text"
@@ -2076,7 +2152,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 {/* Preferred Date */}
                 <div>
                   <label style={{ display: 'block', fontSize: '0.68rem', color: '#94a3b8', fontWeight: 600, marginBottom: '2px' }}>
-                    Preferred Date {activeHighlightField === 'preferredDate' && <span style={{ color: '#34d399', fontWeight: 800 }}>✨ Voice auto-filled</span>}
+                    Preferred Date {activeHighlightField === 'preferredDate' && <span style={{ color: '#34d399', fontWeight: 800 }}>• Voice auto-filled</span>}
                   </label>
                   <input
                     type="text"
@@ -2177,7 +2253,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     </span>
                   </div>
                   <p style={{ margin: '2px 0 0 0', fontSize: '0.66rem', color: '#cbd5e1' }}>
-                    🔒 50% Deposit to Solidify: <strong>${Math.round((calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) / 2)}</strong> (due after confirmation) &bull; Balance upon completion: <strong>${(calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) - Math.round((calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) / 2)}</strong>
+                    50% Deposit to Solidify: <strong>${Math.round((calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) / 2)}</strong> (due after confirmation) &bull; Balance upon completion: <strong>${(calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) - Math.round((calculatedQuote ? calculatedQuote.total : (liveLeadForm.estimatedTotal || 345)) / 2)}</strong>
                   </p>
                 </div>
               </div>
@@ -2197,7 +2273,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   gap: '8px'
                 }}>
                   <div>
-                    <strong>✅ Inspection Request Solidified!</strong>
+                    <strong>Inspection Request Solidified</strong>
                     <p style={{ margin: '2px 0 0 0', color: '#a7f3d0', fontSize: '0.7rem' }}>
                       {formSubmissionMessage || "Chris Boykin's office has received your request and will call within 20 minutes to confirm your slot."}
                     </p>
@@ -2215,7 +2291,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                       whiteSpace: 'nowrap'
                     }}
                   >
-                    📞 Call (678) 480-2110
+                    Call (678) 480-2110
                   </a>
                 </div>
               ) : (
@@ -2246,7 +2322,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
                     onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
                   >
-                    <span>{leadSubmitStatus === 'submitting' ? '⏳' : '🔒'}</span>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#ffffff', opacity: 0.9 }} />
                     <span>{leadSubmitStatus === 'submitting' ? 'Locking in Master Schedule...' : 'Lock In My Inspection Date & Request Callback'}</span>
                   </button>
                   <span style={{ fontSize: '0.68rem', color: '#94a3b8', whiteSpace: 'nowrap' }}>
@@ -2348,23 +2424,23 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                        🛡️ InterNACHI Standard Diagnostic Finding
+                        InterNACHI Standard Diagnostic Finding
                       </span>
                     </div>
 
                     {internachi.observation && (
                       <div style={{ fontSize: '0.8rem', color: '#e2e8f0' }}>
-                        <strong style={{ color: '#60a5fa' }}>🔍 Observation:</strong> {internachi.observation}
+                        <strong style={{ color: '#60a5fa' }}>Observation:</strong> {internachi.observation}
                       </div>
                     )}
                     {internachi.meaning && (
                       <div style={{ fontSize: '0.8rem', color: '#e2e8f0' }}>
-                        <strong style={{ color: '#f59e0b' }}>💡 What This Could Mean:</strong> {internachi.meaning}
+                        <strong style={{ color: '#f59e0b' }}>Context &amp; Impact:</strong> {internachi.meaning}
                       </div>
                     )}
                     {internachi.recommendation && (
                       <div style={{ fontSize: '0.8rem', color: '#e2e8f0' }}>
-                        <strong style={{ color: '#10b981' }}>🛠️ Recommendation:</strong> {internachi.recommendation}
+                        <strong style={{ color: '#10b981' }}>Recommendation:</strong> {internachi.recommendation}
                       </div>
                     )}
                   </div>
@@ -2386,7 +2462,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                 <span style={{ color: '#34d399', fontWeight: 800, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  ✓ Inspection Request Logged!
+                  ✓ Inspection Request Logged
                 </span>
                 <span style={{ fontSize: '0.75rem', background: '#f59e0b', color: '#0F172A', padding: '2px 8px', borderRadius: '6px', fontWeight: 700 }}>
                   Pending Office Confirmation
@@ -2396,11 +2472,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 Thank you, <strong>{bookingData.name}</strong>! We have logged your tentative inspection request. Our office will contact you at <strong>{bookingData.phone}</strong> within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify your appointment on our master calendar, the 50% deposit along with your signed agreements are submitted after receiving our confirmation. The remaining balance is paid after on-site completion before your report is released.
               </p>
               <div style={{ fontSize: '0.8rem', color: '#94A3B8', display: 'flex', flexDirection: 'column', gap: '4px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '8px' }}>
-                <div>📍 <strong>Address:</strong> {bookingData.address || 'Pending confirmation'}</div>
-                <div>📅 <strong>Requested Window:</strong> {bookingData.preferredDate || 'Upcoming Window'} (Sunday by appt only)</div>
+                <div><strong>Address:</strong> {bookingData.address || 'Pending confirmation'}</div>
+                <div><strong>Requested Window:</strong> {bookingData.preferredDate || 'Upcoming Window'} (Sunday by appt only)</div>
                 {bookingData.estimatedTotal && (
                   <div>
-                    💰 <strong>Total:</strong> ${bookingData.estimatedTotal} &nbsp;|&nbsp; 
+                    <strong>Total:</strong> ${bookingData.estimatedTotal} &nbsp;|&nbsp; 
                     <span style={{ color: '#D4AF37' }}>50% Deposit to Solidify: ${Math.round(bookingData.estimatedTotal / 2)} (with signed agreement)</span> &nbsp;|&nbsp; 
                     <span>Balance upon completion: ${bookingData.estimatedTotal - Math.round(bookingData.estimatedTotal / 2)}</span>
                   </div>
@@ -2422,7 +2498,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                     gap: '4px'
                   }}
                 >
-                  📞 Call Christopher (678) 480-2110
+                  Call Christopher (678) 480-2110
                 </a>
               </div>
             </div>
@@ -2439,7 +2515,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ color: '#D4AF37', fontWeight: 700, fontSize: '0.85rem' }}>
-                  📊 Inspection Estimate Summary
+                  Inspection Estimate Summary
                 </span>
                 <span style={{ color: '#ffffff', fontSize: '1.2rem', fontWeight: 800 }}>
                   ${calculatedQuote.total}
@@ -2450,10 +2526,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px', fontSize: '0.75rem' }}>
                 <span style={{ background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.3)', color: '#fef08a', padding: '3px 8px', borderRadius: '4px' }}>
-                  🔒 50% Deposit to Solidify: <strong>${Math.round(calculatedQuote.total / 2)}</strong> (Due with signed agreements after confirmation)
+                  50% Deposit to Solidify: <strong>${Math.round(calculatedQuote.total / 2)}</strong> (Due with signed agreements after confirmation)
                 </span>
                 <span style={{ background: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.1)', color: '#cbd5e1', padding: '3px 8px', borderRadius: '4px' }}>
-                  📋 Balance (Upon Completion): <strong>${calculatedQuote.total - Math.round(calculatedQuote.total / 2)}</strong> (Due before report release)
+                  Balance (Upon Completion): <strong>${calculatedQuote.total - Math.round(calculatedQuote.total / 2)}</strong> (Due before report release)
                 </span>
               </div>
               <button
@@ -2503,7 +2579,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            👥 2-Inspector Standard
+            2-Inspector Standard
           </button>
           <button
             onClick={() => handleSendQuery("What warranties are included? What is covered under your up to $35,000 warranty and InterNACHI Honor Guarantee?")}
@@ -2519,7 +2595,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            🛡️ Up to $35k Warranties
+            Up to $35k Warranties
           </button>
           <button
             onClick={() => handleSendQuery("Can you send me your exclusive Foresight vs Hindsight Due Diligence Checklist?")}
@@ -2535,7 +2611,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            📋 Free Checklist
+            Free Due Diligence Checklist
           </button>
           <button
             onClick={() => handleSendQuery("How does Foresight compare to national franchises and discount solo inspectors in Atlanta?")}
@@ -2551,7 +2627,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            ⚖️ vs Competitors
+            Firm Comparison
           </button>
           <button
             onClick={() => handleSendQuery("Do you include infrared thermal imaging and aerial drone scans?")}
@@ -2567,7 +2643,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            📷 Free Thermal &amp; Drones
+            Included Thermal &amp; Drones
           </button>
           <button
             onClick={() => handleSendQuery("How does your InterNACHI inspection report help me negotiate seller repairs or closing credits?")}
@@ -2583,7 +2659,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            💰 Negotiation Leverage
+            Negotiation Leverage
           </button>
           <button
             onClick={() => handleSendQuery("What are the official InterNACHI Standards of Practice that you inspect?")}
@@ -2599,7 +2675,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            📋 InterNACHI SOP
+            InterNACHI Standards
           </button>
         </div>
 
@@ -2733,7 +2809,13 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             }}
             title={callState === 'listening' ? 'Listening... tap to stop' : callState === 'speaking' ? 'Speaking... tap to interrupt' : 'Tap to speak'}
           >
-            {callState === 'listening' ? '⏹' : callState === 'speaking' ? '✋' : '🎙️'}
+            {callState === 'listening' ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2" /></svg>
+            ) : callState === 'speaking' ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="10" y1="5" x2="10" y2="19" /><line x1="14" y1="5" x2="14" y2="19" /></svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            )}
           </button>
 
           {/* Text input fallback */}
@@ -2751,7 +2833,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               type="text"
               value={typedInput}
               onChange={(e) => setTypedInput(e.target.value)}
-              placeholder="💬 Type your question, property address, or sq ft (or speak hands-free above)..."
+              placeholder="Type your question, property address, or sq ft (or speak hands-free above)..."
               style={{
                 flex: 1,
                 padding: '0.65rem 1rem',

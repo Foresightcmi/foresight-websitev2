@@ -67,7 +67,7 @@ export default function CountiesHubPage() {
       <section style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', color: '#FFFFFF', padding: '4.5rem 0 3.5rem', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1.25rem' }}>
-            🏛️ Regional County Coverage
+            Regional County Coverage
           </span>
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.25rem', lineHeight: 1.2 }}>
             Metro Atlanta &amp; North Georgia County Inspection Directory
@@ -77,10 +77,10 @@ export default function CountiesHubPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
-              📅 Schedule County Inspection
+              Schedule County Inspection
             </a>
             <Link href="/service-areas" className="btn btn-outline-light" style={{ padding: '0.9rem 2rem' }}>
-              🏙️ View 87 City Hubs
+              View 87 City Hubs
             </Link>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function CountiesHubPage() {
               >
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                    <span style={{ fontSize: '1.75rem' }}>📍</span>
+                    <span className="font-mono text-xs font-semibold text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20">COUNTY</span>
                     <span style={{ fontSize: '0.75rem', fontWeight: 700, background: 'rgba(211, 47, 47, 0.1)', color: 'var(--color-red)', padding: '0.25rem 0.65rem', borderRadius: '1rem' }}>
                       2-Inspector Team
                     </span>

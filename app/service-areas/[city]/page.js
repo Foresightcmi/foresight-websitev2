@@ -459,7 +459,7 @@ export default async function CityPage({ params }) {
       <section className="hero" style={{ padding: '5rem 0 4.5rem' }}>
         <div className="container">
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(239, 68, 68, 0.15)', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '0.35rem 1rem', borderRadius: '50px', color: '#fca5a5', fontWeight: 700, fontSize: '0.85rem', marginBottom: '1.25rem' }}>
-            <span>📍</span>
+            
             <span>{county} County • ~{distanceMiles} miles from Lithonia HQ • 50-Mile Service Footprint</span>
           </div>
 
@@ -475,12 +475,12 @@ export default async function CityPage({ params }) {
             <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.7, color: '#F1F5F9', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
               {introParagraph}
               <span style={{ display: 'block', marginTop: '0.75rem', fontSize: '1rem', color: '#E2E8F0', fontWeight: '500' }}>
-                ⚡ Certified Master Inspector® leadership, two certified inspectors per job, infrared thermal imaging &amp; included $10,000 Elite Warranty ($0 deductible).
+                Certified Master Inspector® leadership, two certified inspectors per job, infrared thermal imaging &amp; included $10,000 Elite Warranty ($0 deductible).
               </span>
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.875rem 2.25rem', fontSize: '1.05rem', fontWeight: 700 }}>
-                📅 Schedule Your Inspection
+                Schedule Your Inspection
               </a>
               <Link href="/quote" className="btn btn-outline" style={{ padding: '0.875rem 2.25rem', fontSize: '1.05rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
                 Get Instant Quote
@@ -498,7 +498,7 @@ export default async function CityPage({ params }) {
           <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
               <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>🛡️</span> Quick Diagnostic Overview: {cityName}, GA Home Inspections
+                Quick Diagnostic Overview: {cityName}, GA Home Inspections
               </h2>
               <Link href={`/service-areas/counties/${countySlug}`} style={{ fontSize: '0.85rem', color: 'var(--color-red)', fontWeight: 700, textDecoration: 'none' }}>
                 Explore {county} County Hub &rarr;
@@ -508,12 +508,12 @@ export default async function CityPage({ params }) {
               Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, reducing on-site inspection time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary high-resolution infrared thermal imaging, aerial roof drone audits, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)' }}>
-              <div><strong>👨‍🔧 Standard:</strong> 2 Certified Inspectors</div>
+              <div><strong>Standard:</strong> 2 Certified Inspectors</div>
               <div><strong>⏱️ Efficiency:</strong> 1.5–2.5 Hours (50% Faster)</div>
-              <div><strong>📑 Turnaround:</strong> Under 24-Hour Digital Report</div>
-              <div><strong>🛡️ Protection:</strong> $10,000 Warranty ($0 Deductible)</div>
-              <div><strong>🔬 Diagnostics:</strong> Infrared Thermal + 4K Drone Included</div>
-              <div><strong>☢️ EPA Radon Risk:</strong> {['Fulton', 'Gwinnett', 'Cobb', 'DeKalb', 'Cherokee', 'Forsyth', 'Barrow', 'Jackson', 'Hall', 'Walton'].includes(county) ? 'Zone 1 (>4.0 pCi/L)' : 'Zone 2 (2.0–4.0 pCi/L)'}</div>
+              <div><strong>Turnaround:</strong> Under 24-Hour Digital Report</div>
+              <div><strong>Protection:</strong> $10,000 Warranty ($0 Deductible)</div>
+              <div><strong>Diagnostics:</strong> Infrared Thermal + 4K Drone Included</div>
+              <div><strong>EPA Radon Risk:</strong> {['Fulton', 'Gwinnett', 'Cobb', 'DeKalb', 'Cherokee', 'Forsyth', 'Barrow', 'Jackson', 'Hall', 'Walton'].includes(county) ? 'Zone 1 (>4.0 pCi/L)' : 'Zone 2 (2.0–4.0 pCi/L)'}</div>
             </div>
           </div>
         </div>
@@ -597,7 +597,7 @@ export default async function CityPage({ params }) {
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                📅 Schedule Inspection & Get Warranty
+                Schedule Inspection & Get Warranty
               </a>
               <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
                 See Pricing First
@@ -744,7 +744,7 @@ export default async function CityPage({ params }) {
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                🤖
+                
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
@@ -784,7 +784,7 @@ export default async function CityPage({ params }) {
           </div>
           <div style={{ background: 'var(--color-white)', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', borderLeft: '4px solid var(--color-red)' }}>
             <p className="county-bluf-summary" style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'left' }}>
-              <strong>📍 Hyper-Local Expertise:</strong> {getCountyContext(county)}
+              <strong>Hyper-Local Expertise:</strong> {getCountyContext(county)}
             </p>
           </div>
         </div>
@@ -796,7 +796,7 @@ export default async function CityPage({ params }) {
       <section className="section" style={{ background: 'var(--color-white)', padding: '3rem 0' }}>
         <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
           <h3 style={{ marginBottom: '1rem', fontSize: '1.5rem', color: 'var(--color-dark)' }}>
-            📍 Foresight Home Inspections Coverage Area: <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
+            Foresight Home Inspections Coverage Area: <span style={{ color: 'var(--color-red)' }}>{cityName}, GA</span>
           </h3>
           <p style={{ color: 'var(--color-gray-dark)', marginBottom: '1.5rem', fontSize: '1rem' }}>
             We provide fast, same-day scheduling and certified two-inspector team coverage across {cityName} and all surrounding neighborhoods in {county} County.
@@ -831,57 +831,57 @@ export default async function CityPage({ params }) {
           </div>
           <div className="grid grid-3" style={{ gap: '1.5rem' }}>
             <Link href={`/services/buyer-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏡</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[HOME]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Buyer Home Inspection</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Full 2-inspector buyer evaluation with infrared thermal scan and same-day report in {cityName}.</p>
             </Link>
             <Link href={`/services/radon-testing/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>☢️</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[RADON]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Radon Gas Testing</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Continuous 48-hour electronic radon monitoring in {cityName} for EPA-compliant safety.</p>
             </Link>
             <Link href={`/services/termite-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🐜</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[TERMITE]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Termite & WDO Clearance</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Official Georgia Wood Infestation Report for {cityName} buyers and lender approvals.</p>
             </Link>
             <Link href={`/services/sewer-scope-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🚽</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[SEWER]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Sewer Scope Camera</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>HD fiber-optic lateral pipe camera inspection from cleanout to city main in {cityName}.</p>
             </Link>
             <Link href={`/services/mold-testing/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🧪</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[MOLD]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Mold & Air Quality</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Spore trap air sampling & surface testing with AIHA-accredited lab analysis in {cityName}.</p>
             </Link>
             <Link href={`/services/pool-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏊</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[POOL]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pool &amp; Spa Evaluation</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Safety barrier, pump, filter, heater, and electrical bonding audits in {cityName}.</p>
             </Link>
             <Link href={`/services/new-construction-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔨</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[REPAIR]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>New Construction Final</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Independent dual-inspector walkthrough before builder sign-off in {cityName}.</p>
             </Link>
             <Link href={`/services/pre-drywall-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📐</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[STRUCTURE]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pre-Drywall Framing</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Load-bearing studs, trusses, rough-in plumbing, HVAC, and wiring audit in {cityName}.</p>
             </Link>
             <Link href={`/services/11-month-warranty-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🛡️</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[WARRANTY]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>11-Month Warranty</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Detailed punch list of builder defects before your 1-year warranty expires in {cityName}.</p>
             </Link>
             <Link href={`/services/commercial-property-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏢</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[COMMERCIAL]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Commercial Property</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>ASTM E2018-compliant Property Condition Assessments for {cityName} commercial assets.</p>
             </Link>
             <Link href={`/services/pre-listing-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📋</div>
+              <div className="font-mono text-xs font-bold text-primary mb-2">[COMPLIANCE]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pre-Listing Seller Audit</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Uncover repair issues before listing your {cityName} home to protect equity and speed closing.</p>
             </Link>
@@ -915,28 +915,28 @@ export default async function CityPage({ params }) {
                 </h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem', color: '#334155' }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>📍</span>
+                    <span className="font-mono text-xs text-primary font-bold">[GEO]</span>
                     <span><strong>Service Territory:</strong> {cityName}, {county} County, GA {zip}</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>🏢</span>
+                    <span className="font-mono text-xs text-primary font-bold">[HUB]</span>
                     <span><strong>Lithonia HQ Distance:</strong> Approx. {distanceMiles} miles (~{Math.round(distanceMiles * 1.35)} min dispatch)</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>⚡</span>
+                    <span className="font-mono text-xs text-primary font-bold">[SPEED]</span>
                     <span><strong>Inspection Standard:</strong> Two Certified Inspectors on every {cityName} property</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>🛡️</span>
+                    <span className="font-mono text-xs text-primary font-bold">[CMI]</span>
                     <span><strong>Included Warranty:</strong> $10,000 Elite Master 90-day protection ($0 deductible)</span>
                   </li>
                 </ul>
                 <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                   <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Foresight Home Inspections ${cityName} GA`)}`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
-                    🗺️ Open in Google Maps ↗
+                    Open in Google Maps ↗
                   </a>
                   <a href="tel:6784802110" className="btn btn-primary" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
-                    📞 Call 678-480-2110
+                    Call 678-480-2110
                   </a>
                 </div>
               </div>
@@ -973,7 +973,7 @@ export default async function CityPage({ params }) {
           <div className="grid grid-2" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
             <div className="card" style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
               <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>🔍</span> Common Red Flag Diagnostics
+                Common Red Flag Diagnostics
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 <li>
@@ -1001,7 +1001,7 @@ export default async function CityPage({ params }) {
 
             <div className="card" style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
               <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>⚖️</span> Inspection Decision Frameworks
+                Inspection Decision Frameworks
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 <li>
@@ -1111,10 +1111,10 @@ export default async function CityPage({ params }) {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.2rem', boxShadow: 'var(--shadow-md)' }}>
-              📅 Schedule Your Inspection Online
+              Schedule Your Inspection Online
             </a>
             <a href="tel:6784802110" className="btn btn-outline" style={{ padding: '1.25rem 3rem', fontSize: '1.2rem' }}>
-              📞 Call to Book: 678-480-2110
+              Call to Book: 678-480-2110
             </a>
           </div>
         </div>

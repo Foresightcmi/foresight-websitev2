@@ -40,7 +40,7 @@ export default function TableOfContents() {
       marginBottom: '2rem'
     }}>
       <h2 style={{ fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        📋 Table of Contents
+        Table of Contents
       </h2>
       <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
         {headings.map((heading, index) => (

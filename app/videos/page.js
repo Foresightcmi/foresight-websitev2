@@ -36,7 +36,7 @@ export default function VideosHub() {
         {/* Header */}
         <header style={{ marginBottom: '3rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.15)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)', borderRadius: '9999px', padding: '0.35rem 0.95rem', fontSize: '0.8rem', fontWeight: 700, marginBottom: '0.75rem' }}>
-            🎥 Field Video Library
+            Field Video Library
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', fontWeight: 800, color: '#FFFFFF', margin: '0 0 1rem 0' }}>
             Foresight Field Inspections &amp; Diagnostic Videos
@@ -122,7 +122,7 @@ export default function VideosHub() {
                   className="btn btn-outline-light"
                   style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem', fontWeight: 700 }}
                 >
-                  📊 Instant Quote
+                  Instant Quote
                 </Link>
               </div>
             </div>
@@ -132,13 +132,13 @@ export default function VideosHub() {
         {/* Video Topic Library Grid */}
         <section>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.25rem' }}>
-            📚 Inspection Video Topics &amp; Procedures
+            Inspection Video Topics &amp; Procedures
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {/* Card 1 */}
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
-              <span style={{ fontSize: '1.5rem' }}>🚁</span>
+              <span className="font-mono text-xs font-bold text-primary px-2 py-1 rounded bg-primary/10 border border-primary/20">DRONE</span>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.5rem 0 0.4rem 0' }}>
                 4K Aerial Drone Roof Audits
               </h3>
@@ -152,7 +152,7 @@ export default function VideosHub() {
 
             {/* Card 2 */}
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
-              <span style={{ fontSize: '1.5rem' }}>🔍</span>
+              <span className="font-mono text-xs font-bold text-primary px-2 py-1 rounded bg-primary/10 border border-primary/20">SYSTEMS</span>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.5rem 0 0.4rem 0' }}>
                 High-Resolution Infrared Thermal Scans
               </h3>
@@ -166,7 +166,7 @@ export default function VideosHub() {
 
             {/* Card 3 */}
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
-              <span style={{ fontSize: '1.5rem' }}>🔬</span>
+              <span className="font-mono text-xs font-bold text-primary px-2 py-1 rounded bg-primary/10 border border-primary/20">THERMAL</span>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.5rem 0 0.4rem 0' }}>
                 Fiber-Optic Sewer Scope Audits
               </h3>

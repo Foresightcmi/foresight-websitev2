@@ -65,14 +65,14 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
 // Lead & appointment persistence helper
 async function persistBooking({ name, phone, email, address, preferredDate, addons = [], estimatedTotal, notes = '' }) {
   console.log('==========================================');
-  console.log('🎙️ [VOICE AGENT] NEW APPOINTMENT REQUESTED:');
-  console.log(`👤 Client:    ${name}`);
-  console.log(`📞 Phone:     ${phone}`);
-  console.log(`✉️ Email:     ${email || 'Not provided'}`);
-  console.log(`📍 Address:   ${address || 'Address pending verification'}`);
-  console.log(`📅 Date:      ${preferredDate || 'Earliest available (Sunday appointment only)'}`);
-  console.log(`🛠️ Addons:    ${Array.isArray(addons) ? addons.join(', ') : JSON.stringify(addons)}`);
-  console.log(`💰 Est Total: $${estimatedTotal || 'TBD'}`);
+  console.log('[VOICE AGENT] NEW APPOINTMENT REQUESTED:');
+  console.log(`Client:    ${name}`);
+  console.log(`Phone:     ${phone}`);
+  console.log(`Email:     ${email || 'Not provided'}`);
+  console.log(`Address:   ${address || 'Address pending verification'}`);
+  console.log(`Date:      ${preferredDate || 'Earliest available (Sunday appointment only)'}`);
+  console.log(`Addons:    ${Array.isArray(addons) ? addons.join(', ') : JSON.stringify(addons)}`);
+  console.log(`Est Total: $${estimatedTotal || 'TBD'}`);
   console.log('==========================================');
 
   return await recordLead({

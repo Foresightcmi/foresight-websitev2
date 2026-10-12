@@ -27,13 +27,13 @@ const COUNTIES_DATA = {
 };
 
 const ERA_PRESETS = [
-  { label: '🏛️ Pre-1950 Historic', year: 1935, foundation: 'crawlspace', siding: 'wood' },
-  { label: '🌿 1950-1964 Mid-Century', year: 1958, foundation: 'crawlspace', siding: 'brick' },
-  { label: '⚡ 1965-1973 Aluminum Wire', year: 1970, foundation: 'crawlspace', siding: 'brick' },
-  { label: '⚠️ 1978-1995 Polybutylene & FPE', year: 1988, foundation: 'slab', siding: 'vinyl' },
-  { label: '🏰 1985-2000 Synthetic Stucco', year: 1994, foundation: 'basement-finished', siding: 'eifs' },
-  { label: '🏡 2001-2019 Modern Suburban', year: 2012, foundation: 'slab', siding: 'hardie' },
-  { label: '🏗️ 2020-2026 New Construction', year: 2025, foundation: 'slab', siding: 'hardie' },
+  { label: 'Pre-1950 Historic', year: 1935, foundation: 'crawlspace', siding: 'wood' },
+  { label: '1950-1964 Mid-Century', year: 1958, foundation: 'crawlspace', siding: 'brick' },
+  { label: '1965-1973 Aluminum Wire', year: 1970, foundation: 'crawlspace', siding: 'brick' },
+  { label: '1978-1995 Polybutylene & FPE', year: 1988, foundation: 'slab', siding: 'vinyl' },
+  { label: '1985-2000 Synthetic Stucco', year: 1994, foundation: 'basement-finished', siding: 'eifs' },
+  { label: '2001-2019 Modern Suburban', year: 2012, foundation: 'slab', siding: 'hardie' },
+  { label: '2020-2026 New Construction', year: 2025, foundation: 'slab', siding: 'hardie' },
 ];
 
 export default function RiskScannerClient() {
@@ -74,7 +74,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'polybutylene',
         severity: 'critical',
-        badge: '🚨 CRITICAL LIFE-SAFETY / FLOODING',
+        badge: 'CRITICAL LIFE-SAFETY / FLOODING',
         title: 'Polybutylene (Quest PB2110) Plumbing Hazard (1978 - 1995)',
         standard: 'ASTM D3309 / $950M Cox v. Shell Oil Class Action',
         description: 'Homes built in this boom era heavily utilized flexible blue/gray polybutylene supply piping. Municipal chlorine disinfectant micro-fractures acetal plastic fittings from the inside out, causing catastrophic sudden wall/ceiling blowouts.',
@@ -88,7 +88,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'galvanized-lead',
         severity: 'high',
-        badge: '⚠️ HIGH CONTAMINATION & RESTRICTION',
+        badge: 'HIGH CONTAMINATION & RESTRICTION',
         title: 'Galvanized Steel & Lead Solder Water Supply (Pre-1970)',
         standard: 'EPA Safe Drinking Water Act / InterNACHI SOP Plumbing §3.1',
         description: 'Interior zinc coatings corrode internally into heavy rust buildup, cutting water volume to a trickle. Solder connections on pre-1986 copper lines may introduce heavy metal lead particulates.',
@@ -105,7 +105,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'aluminum-wiring',
         severity: 'critical',
-        badge: '🔥 CRITICAL RESIDENTIAL FIRE HAZARD',
+        badge: 'CRITICAL RESIDENTIAL FIRE HAZARD',
         title: 'Single-Strand Aluminum Branch Circuit Wiring (1965 - 1973)',
         standard: 'U.S. CPSC Publication #516 (55x Fire Hazard Rating) / NEC Art. 310',
         description: 'Single-strand aluminum wiring expands at a higher thermal rate than copper, loosening connections at switches and outlets. Terminal oxidation causes resistive micro-arcing that can ignite structural wall framing.',
@@ -119,7 +119,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'fpe-zinsco',
         severity: 'high',
-        badge: '⚡ LIFE-SAFETY OVERCURRENT FAILURE',
+        badge: 'LIFE-SAFETY OVERCURRENT FAILURE',
         title: 'Federal Pacific Electric (FPE) Stab-Lok & Zinsco Breaker Panels',
         standard: 'NJIT / IEEE Study (25% - 60% Failure-to-Trip Rate)',
         description: 'Standard circuit breakers trip to shut off power during an electrical overload. Independent lab tests prove FPE Stab-Lok and Zinsco breakers fail to trip up to 60% of the time, allowing wiring inside walls to melt and burn.',
@@ -136,7 +136,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'eifs-stucco',
         severity: 'critical',
-        badge: '🌊 CONCEALED WALL CAVITY ROT RISK',
+        badge: 'CONCEALED WALL CAVITY ROT RISK',
         title: 'Synthetic Stucco (EIFS) Moisture Entrapment (1985 - 2000 Era)',
         standard: 'ASTM E2110 / Moisture Intrusion Diagnostic SOP',
         description: 'Barrier EIFS systems lack an integrated secondary drainage plane. Unsealed kickout flashing, window headers, and deck ledgers allow rainwater behind the synthetic foam, quietly rotting OSB sheathing and studs with zero surface signs.',
@@ -150,7 +150,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'lp-siding',
         severity: 'moderate',
-        badge: '🪵 WOOD MOISTURE WICKING & SUBTERRANEAN TERMITES',
+        badge: 'WOOD MOISTURE WICKING & SUBTERRANEAN TERMITES',
         title: 'Hardboard / LP Inner-Seal Siding Deterioration & Fungal Wicking',
         standard: 'InterNACHI Exterior SOP §3.2 / Georgia Structural Pest Rules',
         description: 'Composite wood sidings without minimum 6-inch ground clearances absorb capillary moisture from Georgia red clay soil, swelling and creating hidden bridge tunnels for subterranean termites.',
@@ -167,7 +167,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'sewer-lateral',
         severity: 'high',
-        badge: '🚰 CONCEALED UNDERGROUND COLLAPSE HAZARD',
+        badge: 'CONCEALED UNDERGROUND COLLAPSE HAZARD',
         title: 'Aging Cast Iron / Vitrified Clay Sewer Lateral (30+ Years Old)',
         standard: 'ASTM C12 / Municipal Lateral Maintenance Standard',
         description: 'Homes built before 1995 across Metro Atlanta frequently have cast iron or clay sewer pipes beneath driveways and yards. Mature oak root systems penetrate joints, and acidic wastewater corrodes bottom channels into soil.',
@@ -184,7 +184,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'red-clay-crawlspace',
         severity: 'high',
-        badge: '🍄 FUNGAL DECAY & HIGH RELATIVE HUMIDITY',
+        badge: 'FUNGAL DECAY & HIGH RELATIVE HUMIDITY',
         title: 'Georgia Red Clay Crawlspace Moisture & Subfloor Rot',
         standard: 'GA Dept of Agriculture Fungal Guidelines (>19% WME Rot Threshold)',
         description: 'Vented crawlspaces in Metro Atlanta suck in warm humid summer air, condensing against cool floor ducts. Red clay ground moisture elevates crawlspace humidity above 70%, fostering fungal mycelium bloom and joist deflection.',
@@ -198,7 +198,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'hydrostatic-pressure',
         severity: 'moderate',
-        badge: '🧱 HYDROSTATIC RED CLAY LATERAL SHEAR',
+        badge: 'HYDROSTATIC RED CLAY LATERAL SHEAR',
         title: 'Hydrostatic Soil Pressure & Basement Wall Shear Cracking',
         standard: 'IRC R404 Foundation Walls / Georgia Red Clay Expansion Index',
         description: 'Heavy Georgia red clay expands dramatically when saturated with winter rain, exerting severe lateral hydrostatic pressure against concrete block basement walls, manifesting as horizontal shear cracks.',
@@ -215,7 +215,7 @@ export default function RiskScannerClient() {
       items.push({
         id: 'radon-zone-1',
         severity: 'critical',
-        badge: '☢️ EPA RADON ZONE 1 CARCINOGENIC HAZARD',
+        badge: 'EPA RADON ZONE 1 CARCINOGENIC HAZARD',
         title: `EPA Radon Zone 1 Warning: ${countyInfo.name}`,
         standard: 'EPA Action Level 4.0 pCi/L / Piedmont Granite Geological Belt',
         description: 'North Metro Atlanta sits atop a massive subterranean granite bedrock formation. Naturally decaying uranium releases odorless, invisible radioactive radon gas that seeps directly through basement slabs and crawlspace soils.',
@@ -245,7 +245,7 @@ export default function RiskScannerClient() {
     let tier = {
       level: 'MODERATE',
       color: '#EAB308',
-      label: '🟡 MODERATE - Age-Related Deferred Maintenance',
+      label: 'MODERATE - Age-Related Deferred Maintenance',
       summary: 'Property exhibits typical mid-life mechanical wear. Requires thorough mechanical testing and targeted lateral line diagnostics.'
     };
 
@@ -253,21 +253,21 @@ export default function RiskScannerClient() {
       tier = {
         level: 'CRITICAL',
         color: '#EF4444',
-        label: '🔴 CRITICAL - High Defect Vulnerability & Life-Safety Exposure',
+        label: 'CRITICAL - High Defect Vulnerability & Life-Safety Exposure',
         summary: 'Multiple high-liability building code hazards detected (hazardous wiring, recalled plumbing, or high moisture trap risk). Full forensic dual-inspector audit is essential.'
       };
     } else if (clampedScore >= 50) {
       tier = {
         level: 'HIGH',
         color: '#F97316',
-        label: '🟠 HIGH - Significant Material & Environmental Hazards',
+        label: 'HIGH - Significant Material & Environmental Hazards',
         summary: 'Substantial structural or environmental vulnerabilities identified based on regional geological conditions and era building practices.'
       };
     } else if (clampedScore < 30) {
       tier = {
         level: 'LOW',
         color: '#22C55E',
-        label: '🟢 LOW - Modern Code Compliance Baseline',
+        label: 'LOW - Modern Code Compliance Baseline',
         summary: 'Modern construction practices reduce historical material hazards, but independent third-party verification of subcontractor execution remains vital.'
       };
     }
@@ -415,7 +415,7 @@ export default function RiskScannerClient() {
       }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid var(--color-gold)', padding: '0.35rem 1rem', borderRadius: '50px', marginBottom: '1.25rem' }}>
-            <span style={{ fontSize: '1rem' }}>🔬</span>
+            <span className="font-mono text-xs font-bold text-primary mr-1">[DIAGNOSTIC]</span>
             <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
               Building Science Diagnostic Intelligence
             </span>
@@ -444,15 +444,15 @@ export default function RiskScannerClient() {
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap', fontSize: '0.9rem', color: '#94A3B8' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-              <strong style={{ color: 'var(--color-gold)' }}>👥 Two CMI Inspectors</strong> on Every Job
+              <strong style={{ color: 'var(--color-gold)' }}>Two CMI Inspectors</strong> on Every Job
             </span>
             <span>•</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-              <strong style={{ color: 'var(--color-gold)' }}>🔥 Free infrared thermal</strong>
+              <strong style={{ color: 'var(--color-gold)' }}>Free infrared thermal</strong>
             </span>
             <span>•</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-              <strong style={{ color: 'var(--color-gold)' }}>🛡️ Up to $35,000</strong> Warranty Included
+              <strong style={{ color: 'var(--color-gold)' }}>Up to $35,000</strong> Warranty Included
             </span>
           </div>
         </div>
@@ -486,7 +486,7 @@ export default function RiskScannerClient() {
               alignItems: 'center',
               justifyContent: 'space-between'
             }}>
-              <span>⚙️ Property Parameters</span>
+              <span>Property Parameters</span>
               <button
                 type="button"
                 onClick={handlePrint}
@@ -501,7 +501,7 @@ export default function RiskScannerClient() {
                   cursor: 'pointer'
                 }}
               >
-                🖨️ Print
+                Print Report
               </button>
             </h2>
 
@@ -542,7 +542,7 @@ export default function RiskScannerClient() {
             <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
                 <label htmlFor="year-input" style={{ fontWeight: 700, fontSize: '0.9rem', color: '#0F172A' }}>
-                  📅 Year Built
+                  Year Built
                 </label>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <input
@@ -584,7 +584,7 @@ export default function RiskScannerClient() {
             {/* Metro Atlanta County */}
             <div style={{ marginBottom: '1.35rem' }}>
               <label htmlFor="county-select" style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', color: '#0F172A', marginBottom: '0.4rem' }}>
-                📍 Metro Atlanta County
+                Metro Atlanta County
               </label>
               <select
                 id="county-select"
@@ -603,19 +603,19 @@ export default function RiskScannerClient() {
               >
                 {Object.entries(COUNTIES_DATA).map(([key, data]) => (
                   <option key={key} value={key}>
-                    {data.name} {data.radonZone === 1 ? '☢️ Zone 1' : '⚠️ Zone 2'}
+                    {data.name} {data.radonZone === 1 ? 'Zone 1 (High)' : 'Zone 2 (Moderate)'}
                   </option>
                 ))}
               </select>
               <div style={{ fontSize: '0.75rem', color: countyInfo.radonZone === 1 ? '#DC2626' : '#D97706', marginTop: '0.35rem', fontWeight: 600 }}>
-                {countyInfo.radonZone === 1 ? '🚨 EPA Radon Zone 1 (>4.0 pCi/L)' : '⚠️ EPA Radon Zone 2 (2.0 - 4.0 pCi/L)'} • {countyInfo.soil}
+                {countyInfo.radonZone === 1 ? 'EPA Radon Zone 1 (>4.0 pCi/L)' : 'EPA Radon Zone 2 (2.0 - 4.0 pCi/L)'} • {countyInfo.soil}
               </div>
             </div>
 
             {/* Foundation Type */}
             <div style={{ marginBottom: '1.35rem' }}>
               <label htmlFor="foundation-select" style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', color: '#0F172A', marginBottom: '0.4rem' }}>
-                🧱 Foundation Type
+                Foundation Type
               </label>
               <select
                 id="foundation-select"
@@ -643,7 +643,7 @@ export default function RiskScannerClient() {
             {/* Exterior Siding */}
             <div style={{ marginBottom: '1.35rem' }}>
               <label htmlFor="siding-select" style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', color: '#0F172A', marginBottom: '0.4rem' }}>
-                🏠 Exterior Cladding
+                Exterior Cladding
               </label>
               <select
                 id="siding-select"
@@ -672,7 +672,7 @@ export default function RiskScannerClient() {
             <div style={{ marginBottom: '1.75rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
                 <label htmlFor="sqft-range" style={{ fontWeight: 700, fontSize: '0.9rem', color: '#0F172A' }}>
-                  📐 Home Square Footage
+                  Home Square Footage
                 </label>
                 <span style={{ fontWeight: 800, color: 'var(--color-slate-dark)', fontSize: '1rem' }}>
                   {sqft.toLocaleString()} sq ft
@@ -711,7 +711,7 @@ export default function RiskScannerClient() {
                 transition: 'all 0.2s'
               }}
             >
-              <span>{copiedLink ? '✅ Link Copied to Clipboard!' : '📋 Copy Shareable Link'}</span>
+              <span>{copiedLink ? 'Link Copied to Clipboard!' : 'Copy Shareable Link'}</span>
             </button>
           </div>
 
@@ -795,7 +795,7 @@ export default function RiskScannerClient() {
                 alignItems: 'center',
                 gap: '0.5rem'
               }}>
-                <span>🔍 Identified Age &amp; Geological Vulnerabilities ({diagnostic.items.length})</span>
+                <span>Identified Age &amp; Geological Vulnerabilities ({diagnostic.items.length})</span>
               </h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -848,7 +848,7 @@ export default function RiskScannerClient() {
                       fontSize: '0.88rem',
                       color: '#0F172A'
                     }}>
-                      <strong style={{ color: 'var(--color-gold-hover)' }}>🛡️ Foresight Master Diagnostic Protocol:</strong>{' '}
+                      <strong style={{ color: 'var(--color-gold-hover)' }}>Foresight Master Diagnostic Protocol:</strong>{' '}
                       {item.foresightProtocol}
                     </div>
                   </div>
@@ -879,7 +879,7 @@ export default function RiskScannerClient() {
                     display: 'inline-block',
                     marginBottom: '0.5rem'
                   }}>
-                    🎯 Tailored Due Diligence Solution
+                    Tailored Due Diligence Solution
                   </span>
                   <h3 style={{
                     fontFamily: 'var(--font-heading)',
@@ -927,7 +927,7 @@ export default function RiskScannerClient() {
                   >
                     <div>
                       <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#FFFFFF', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <span>{srv.included ? '✅' : '⚡'}</span>
+                        <span>{srv.included ? '[INCLUDED]' : '[ADD-ON]'}</span>
                         <span>{srv.name}</span>
                       </div>
                       <div style={{ fontSize: '0.8rem', color: '#94A3B8', marginTop: '0.2rem' }}>
@@ -960,7 +960,7 @@ export default function RiskScannerClient() {
                     transition: 'all 0.2s'
                   }}
                 >
-                  <span>📅 Calculate Instant Quote Online</span>
+                  <span>Calculate Instant Quote Online</span>
                   <span>&rarr;</span>
                 </Link>
 
@@ -980,7 +980,7 @@ export default function RiskScannerClient() {
                     gap: '0.5rem'
                   }}
                 >
-                  <span>📞 CMI Hotline: 678-480-2110</span>
+                  <span>CMI Direct: 678-480-2110</span>
                 </a>
               </div>
             </div>
@@ -996,7 +996,7 @@ export default function RiskScannerClient() {
               gap: '1.5rem',
               flexWrap: 'wrap'
             }}>
-              <div style={{ fontSize: '2.5rem' }}>🛡️</div>
+              <div className="font-mono text-sm font-bold text-primary mb-2">[WARRANTY CERTIFIED]</div>
               <div style={{ flex: 1, minWidth: '260px' }}>
                 <h4 style={{ margin: '0 0 0.25rem 0', color: '#0F172A', fontSize: '1.1rem', fontWeight: 800 }}>
                   Backed by Up to $35,000 in Combined Warranty Protection

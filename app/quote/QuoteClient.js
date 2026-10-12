@@ -385,7 +385,7 @@ export default function QuoteClient({ showValueComparison = true }) {
       <div className="container">
         <div className="section-title" style={{ marginBottom: '2rem', textAlign: 'center' }}>
           <span className="badge" style={{ backgroundColor: 'rgba(212, 175, 55, 0.15)', color: '#854d0e', border: '1px solid rgba(212, 175, 55, 0.4)', padding: '0.35rem 1rem', borderRadius: '2rem', fontWeight: 700, fontSize: '0.82rem', display: 'inline-block', marginBottom: '0.75rem' }}>
-            ⚡ 100% Transparent Flat-Rate Pricing &bull; Two Inspectors Included
+            100% Transparent Flat-Rate Pricing &bull; Two Inspectors Included
           </span>
           <h1 style={{ fontSize: 'clamp(2rem, 3.8vw, 2.65rem)', fontWeight: 800, margin: '0.25rem 0 0.5rem', color: 'var(--color-dark)' }}>
             Instant Home Inspection Fee Calculator
@@ -458,7 +458,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.5 
               }}>
-                <strong>📋 Short-Term Rental (STR) Compliance Inspection:</strong>
+                <strong>Short-Term Rental (STR) Compliance Inspection:</strong>
                 <p style={{ margin: '0.25rem 0 0.5rem 0', fontSize: '0.825rem', color: 'var(--color-gray-dark)', lineHeight: 1.4 }}>
                   Surrounding Atlanta counties require strict compliance. Our service assists hosts by inspecting standard safety benchmarks ($595 flat rate):
                 </p>
@@ -535,7 +535,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)',
                 lineHeight: 1.5
               }}>
-                🗓️ <strong>Specialty Service Scheduling:</strong> Specialized auxiliary inspections (Pool &amp; Spa, Termite/WDO, Radon Gas Testing, and Sewer Scope) are coordinated alongside your main home inspection. When requested, our office coordinates the dedicated equipment and specialized schedules to ensure seamless on-site execution.
+                <strong>Specialty Service Scheduling:</strong> Specialized auxiliary inspections (Pool &amp; Spa, Termite/WDO, Radon Gas Testing, and Sewer Scope) are coordinated alongside your main home inspection. When requested, our office coordinates the dedicated equipment and specialized schedules to ensure seamless on-site execution.
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -552,7 +552,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 700, display: 'block', color: addons.repairEstimates ? '#fde047' : 'var(--color-white)' }}>
-                      🛠️ Contractor Repair Cost &amp; Pricing Estimate (+ $99)
+                      Contractor Repair Cost &amp; Pricing Estimate (+ $99)
                     </span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '2px', lineHeight: 1.45 }}>
                       <strong>Optional Due Diligence Add-On:</strong> Detailed contractor labor ($95–$165/hr) and materials estimates for every reported defect, formatted for GAR Form F404 amendment negotiation. <em>(Standard home inspections are diagnostic only per InterNACHI SOP; we do not provide repair estimates unless specifically requested).</em>
@@ -688,7 +688,9 @@ export default function QuoteClient({ showValueComparison = true }) {
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <span style={{ fontSize: '1.25rem' }}>🛡️</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      </svg>
                       <strong style={{ color: '#b45309', fontSize: '0.95rem' }}>
                         Georgia Real Estate Commission (GREC) Licensure Verification
                       </strong>
@@ -740,12 +742,12 @@ export default function QuoteClient({ showValueComparison = true }) {
                   </div>
                   {realtorValidationMsg && (
                     <p style={{ color: 'var(--color-red)', fontSize: '0.75rem', margin: '0.5rem 0 0 0', fontWeight: 600 }}>
-                      ⚠️ {realtorValidationMsg}
+                      Notice: {realtorValidationMsg}
                     </p>
                   )}
                   {realtorLicense.trim().length >= 5 && realtorBrokerage.trim().length >= 2 && (
                     <div style={{ marginTop: '0.65rem', display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#16a34a', fontSize: '0.75rem', fontWeight: 600 }}>
-                      <span>✅</span> Validated format &bull; GREC #{realtorLicense.trim()} queued for office registry verification.
+                      <span style={{ fontWeight: 700 }}>✓</span> Validated format &bull; GREC #{realtorLicense.trim()} queued for office registry verification.
                     </div>
                   )}
                 </div>
@@ -799,33 +801,33 @@ export default function QuoteClient({ showValueComparison = true }) {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem', marginBottom: '0.5rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ color: 'var(--color-white)', fontWeight: 600 }}>👥 Two Person Inspection Team</span>
+                      <span style={{ color: 'var(--color-white)', fontWeight: 600 }}>Two-Inspector Lead Team</span>
                       <span style={{ fontWeight: 600, color: 'var(--color-white)' }}>Standard</span>
                     </div>
                     <span style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)' }}>
-                      ⚡ <strong>2 Inspectors = 2x Faster:</strong> Completed in 2–2.5 hours instead of 4+ hours, saving you and your agent time.
+                      <strong>Two Inspectors = 2x Thorough:</strong> Completed in 2–2.5 hours instead of 4+ hours, saving you and your agent time.
                     </span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: 'var(--color-gray-mid)' }}>🔍 High-Resolution Infrared Thermal Imaging</span>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>High-Resolution Infrared Thermal Imaging</span>
                     <span style={{ fontWeight: 600, color: '#34d399' }}>
                       <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$99</span> FREE
                     </span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: 'var(--color-gray-mid)' }}>🛸 High-Resolution Aerial Drone Scan</span>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>High-Resolution Aerial Drone Scan</span>
                     <span style={{ fontWeight: 600, color: '#34d399' }}>
                       <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$125</span> FREE
                     </span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: 'var(--color-gray-mid)' }}>🛡️ $10,000 Elite Master Warranty Suite</span>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>$10,000 Elite Master Warranty Suite</span>
                     <span style={{ fontWeight: 600, color: '#34d399' }}>
                       <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$350</span> FREE
                     </span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ color: 'var(--color-gray-mid)' }}>🔌 Utilities Plus Concierge Setup</span>
+                    <span style={{ color: 'var(--color-gray-mid)' }}>Utilities Plus Concierge Setup</span>
                     <span style={{ fontWeight: 600, color: '#34d399' }}>
                       <span style={{ textDecoration: 'line-through', color: 'var(--color-gray)', marginRight: '0.5rem', fontSize: '0.8rem' }}>$150</span> FREE
                     </span>
@@ -842,7 +844,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   border: '1px solid rgba(211, 47, 47, 0.3)',
                   fontWeight: 600
                 }}>
-                  🎁 $724 in premium diagnostic & protection value included at no extra charge!
+                  $724 in premium diagnostic &amp; protection value included at no extra charge!
                 </div>
 
                 {(propertyType === 'single-family' && serviceType !== 'str' && (foundation === 'crawlspace' || foundation === 'basement')) || (serviceType !== 'str' && ageTier === 'over-50') ? (
@@ -853,19 +855,19 @@ export default function QuoteClient({ showValueComparison = true }) {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                       {propertyType === 'single-family' && serviceType !== 'str' && foundation === 'crawlspace' && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🧱 Unfinished Crawlspace Inspection</span>
+                          <span>Unfinished Crawlspace Inspection</span>
                           <span>+$75</span>
                         </div>
                       )}
                       {propertyType === 'single-family' && serviceType !== 'str' && foundation === 'basement' && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🏚️ Unfinished / Partial Basement</span>
+                          <span>Unfinished / Partial Basement</span>
                           <span>+$250</span>
                         </div>
                       )}
                       {serviceType !== 'str' && ageTier === 'over-50' && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🏛️ Vintage Home (50+ Years Old)</span>
+                          <span>Vintage Home (50+ Years Old)</span>
                           <span>+$75</span>
                         </div>
                       )}
@@ -881,55 +883,55 @@ export default function QuoteClient({ showValueComparison = true }) {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                       {addons.repairEstimates && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#fde047', fontWeight: 600 }}>
-                          <span>🛠️ Contractor Repair Cost Estimates</span>
+                          <span>Contractor Repair Cost Estimates</span>
                           <span>+$99</span>
                         </div>
                       )}
                       {addons.sewer && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>📹 Sewer Scope Camera Inspection</span>
+                          <span>Sewer Scope Camera Inspection</span>
                           <span>+$450</span>
                         </div>
                       )}
                       {addons.radon && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>☢️ 48-Hour Radon Gas Testing</span>
+                          <span>48-Hour Radon Gas Testing</span>
                           <span>+$275</span>
                         </div>
                       )}
                       {addons.pool && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🏊 Pool &amp; Spa Inspection</span>
+                          <span>Pool &amp; Spa Inspection</span>
                           <span>+$300</span>
                         </div>
                       )}
                       {addons.termite && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🪵 Termite / WDO Clearance Letter</span>
+                          <span>Termite / WDO Clearance Letter</span>
                           <span>+{foundation === 'crawlspace' ? '$165' : '$125'}</span>
                         </div>
                       )}
                       {addons.airQuality && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🧪 Mold &amp; Air Quality Lab Testing</span>
+                          <span>Mold &amp; Air Quality Lab Testing</span>
                           <span>+$450</span>
                         </div>
                       )}
                       {addons.detachedBuilding && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🏚️ Detached Building Inspection</span>
+                          <span>Detached Building Inspection</span>
                           <span>+$100</span>
                         </div>
                       )}
                       {addons.lowFlow && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>🚰 DeKalb Low-Flow Compliance Certificate</span>
+                          <span>DeKalb Low-Flow Compliance Certificate</span>
                           <span>+$100</span>
                         </div>
                       )}
                       {addons.buildfax && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>📜 BuildFax History Report</span>
+                          <span>BuildFax History Report</span>
                           <span>+$15</span>
                         </div>
                       )}
@@ -967,7 +969,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   gap: '0.4rem',
                   lineHeight: 1
                 }}>
-                  💰 Smart Investment & Savings
+                  Smart Investment & Savings
                 </span>
                 
                 <div style={{ 
@@ -1029,7 +1031,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       textAlign: 'center', 
                       color: 'var(--color-white)' 
                     }}>
-                      <div style={{ fontSize: '2.5rem', marginBottom: '0.25rem' }}>✅</div>
+                      <div style={{ width: '48px', height: '48px', margin: '0 auto 0.75rem', borderRadius: '50%', background: 'rgba(16, 185, 129, 0.2)', border: '1px solid #10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#10b981', fontSize: '1.5rem', fontWeight: 800 }}>✓</div>
                       <h4 style={{ color: '#34d399', fontSize: '1.2rem', marginBottom: '0.5rem', fontWeight: 800 }}>
                         Tentative Request Received!
                       </h4>
@@ -1047,7 +1049,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         marginBottom: '1rem'
                       }}>
                         <p style={{ color: '#fef08a', fontWeight: 700, margin: '0 0 0.35rem 0' }}>
-                          ℹ️ Next Steps (Pending Office Confirmation):
+                          Next Steps (Pending Office Confirmation):
                         </p>
                         <ul style={{ margin: 0, paddingLeft: '1.1rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
                           <li><strong>Office Confirmation &amp; Agreements:</strong> Our office reviews county tax records and contacts you within 20 minutes with your official appointment confirmation and inspection agreements to sign.</li>
@@ -1064,7 +1066,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     <form onSubmit={handleHoldSlot} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', textAlign: 'left' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <h4 style={{ color: 'var(--color-white)', fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>
-                          📋 Submit Online Inspection Request
+                          Submit Online Inspection Request
                         </h4>
                         <span style={{ fontSize: '0.75rem', color: '#34d399', fontWeight: 600 }}>Lock In Price</span>
                       </div>
@@ -1163,7 +1165,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       </div>
 
                       <div style={{ background: 'rgba(211,47,47,0.12)', padding: '0.6rem 0.8rem', borderRadius: '4px', border: '1px solid rgba(211,47,47,0.25)', fontSize: '0.75rem', color: '#fca5a5', lineHeight: 1.35 }}>
-                        ℹ️ <strong>Tentative Slot Request:</strong> Our office reviews property records and contacts you within 20 minutes with your official appointment confirmation. Sunday is by appointment only.
+                        <strong>Tentative Slot Request:</strong> Our office reviews property records and contacts you within 20 minutes with your official appointment confirmation. Sunday is by appointment only.
                       </div>
 
                       <button 
@@ -1172,7 +1174,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         className="btn btn-primary" 
                         style={{ padding: '0.85rem', fontSize: '1.05rem', fontWeight: 700, width: '100%', background: 'var(--color-red)' }}
                       >
-                        {leadStatus === 'submitting' ? 'Submitting Request...' : `📅 Submit Inspection Request ($${total})`}
+                        {leadStatus === 'submitting' ? 'Submitting Request...' : `Submit Inspection Request ($${total})`}
                       </button>
 
                       {leadStatus === 'error' && (
@@ -1195,7 +1197,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   className="btn btn-outline" 
                   style={{ width: '100%', fontSize: '0.95rem', padding: '0.75rem', textAlign: 'center', display: 'block', borderColor: 'rgba(255,255,255,0.3)', color: 'var(--color-white)' }}
                 >
-                  ⚡ Open HomeGauge Automated Scheduler
+                  Open HomeGauge Automated Scheduler
                 </a>
               </div>
               
@@ -1222,7 +1224,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           boxShadow: 'var(--shadow-sm)'
         }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '1.75rem' }}>💡</span>
+            <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(212, 175, 55, 0.12)', border: '1px solid rgba(212, 175, 55, 0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#854d0e', fontWeight: 800, fontSize: '0.85rem', flexShrink: 0 }}>ROI</div>
             <div style={{ flex: 1, minWidth: '280px' }}>
               <h3 style={{ fontSize: '1.15rem', color: 'var(--color-dark)', marginBottom: '0.5rem', fontWeight: 700 }}>
                 Why a Foresight Inspection Pays for Itself
@@ -1262,7 +1264,7 @@ export default function QuoteClient({ showValueComparison = true }) {
         className="btn btn-primary" 
         style={{ padding: '0.6rem 1.25rem', fontSize: '0.9rem', fontWeight: 700 }}
       >
-        📅 Book / Request Online
+        Book / Request Online
       </a>
     </div>
 

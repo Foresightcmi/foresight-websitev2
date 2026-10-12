@@ -14,7 +14,13 @@ export default function Error({ error, reset }) {
       textAlign: 'center',
       backgroundColor: 'var(--color-gray-light)'
     }}>
-      <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>⚠️</div>
+      <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
       <h1 style={{ 
         fontSize: '2.5rem', 
         color: 'var(--color-dark)', 

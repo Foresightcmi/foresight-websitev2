@@ -42,7 +42,7 @@ export default function NewsletterSignup() {
     }}>
       <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)', color: '#FFFFFF' }}>
-          📋 Free Atlanta Home Buyer Inspection Checklist
+          Free Atlanta Home Buyer Inspection Checklist
         </h2>
         <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', lineHeight: '1.6', color: 'rgba(255,255,255,0.8)' }}>
           Get our comprehensive 25-point checklist that Metro Atlanta homebuyers use to protect their investment. Delivered straight to your inbox.
@@ -50,7 +50,7 @@ export default function NewsletterSignup() {
 
         {status === 'success' ? (
           <div style={{ backgroundColor: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(255,255,255,0.2)' }}>
-            <h3 style={{ color: 'var(--color-gold)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>✅ Check your inbox!</h3>
+            <h3 style={{ color: 'var(--color-gold)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Check your inbox!</h3>
             <p>Your checklist is on the way.</p>
           </div>
         ) : (

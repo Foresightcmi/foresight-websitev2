@@ -35,7 +35,7 @@ export default function ValueComparison() {
               </ul>
             </div>
             <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.85rem', color: '#991b1b', fontWeight: 600 }}>
-              ⚠️ High corporate prices with no guarantee of who inspects your home.
+              Notice: High corporate prices with no guarantee of who inspects your home.
             </div>
           </div>
 
@@ -55,14 +55,14 @@ export default function ValueComparison() {
               </ul>
             </div>
             <div style={{ marginTop: '1.5rem', padding: '0.75rem', background: '#fee2e2', borderRadius: 'var(--radius-md)', fontSize: '0.85rem', color: '#991b1b', fontWeight: 600 }}>
-              ⚠️ Missing a hidden $8,000 defect wipes out any small upfront savings.
+              Notice: Missing a hidden $8,000 defect wipes out any small upfront savings.
             </div>
           </div>
 
           {/* Column 3: The Foresight CMI Standard */}
           <div className="card card-premium" style={{ border: '2px solid var(--color-red)', background: 'linear-gradient(145deg, #0f172a, #1e293b)', color: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 12px 30px rgba(220, 38, 38, 0.25)', position: 'relative' }}>
             <div style={{ position: 'absolute', top: '-12px', right: '20px', background: 'var(--color-red)', color: '#ffffff', fontSize: '0.75rem', fontWeight: 800, padding: '0.25rem 0.85rem', borderRadius: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              ⭐ BEST VALUE IN ATLANTA
+              BEST VALUE IN ATLANTA
             </div>
             <div>
               <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#fca5a5', fontWeight: 700 }}>The Foresight Standard</span>
@@ -105,10 +105,10 @@ export default function ValueComparison() {
               className="btn btn-primary"
               style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}
             >
-              📅 Schedule Inspection
+              Schedule Inspection
             </a>
             <Link href="/quote" className="btn btn-outline" style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}>
-              📊 Price Calculator
+              Price Calculator
             </Link>
           </div>
         </div>

@@ -98,7 +98,7 @@ export default function ThemeSongPlayer() {
               Foresight Anthem &bull; &ldquo;Choose Foresight&rdquo;
             </div>
             <div style={{ fontSize: '0.82rem', color: '#CBD5E1', display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '2px' }}>
-              <span>{isPlaying ? '🎵 Playing official audio track' : '🎧 Official Metro Atlanta Theme Song'}</span>
+              <span>{isPlaying ? 'Playing official audio track' : 'Official Metro Atlanta Theme Song'}</span>
             </div>
           </div>
         </div>
@@ -120,14 +120,14 @@ export default function ThemeSongPlayer() {
             background: 'rgba(212, 175, 55, 0.08)'
           }}
         >
-          ⬇️ Download MP3
+          Download MP3 &darr;
         </a>
       </div>
       
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', fontSize: '0.82rem', color: '#CBD5E1', flexWrap: 'wrap', gap: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '0.75rem' }}>
-        <span>📞 Inspection Hotline: <strong style={{ color: '#FFFFFF' }}>678-480-2110</strong></span>
-        <span>🛡️ Two Inspectors On Every Job</span>
-        <span>⭐ Certified Master Inspector®</span>
+        <span>Inspection Hotline: <strong style={{ color: '#FFFFFF' }}>(678) 480-2110</strong></span>
+        <span>Two Inspectors On Every Job</span>
+        <span>Certified Master Inspector&reg;</span>
       </div>
     </div>
   );

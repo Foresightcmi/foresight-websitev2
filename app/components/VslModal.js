@@ -68,7 +68,9 @@ export default function VslModal({ isOpen, onClose }) {
           background: 'rgba(30, 41, 59, 0.6)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <span style={{ fontSize: '1.25rem' }}>🎬</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
             <div>
               <h3 style={{ margin: 0, fontSize: '1.05rem', color: '#FFFFFF', fontWeight: 700 }}>
                 The Foresight 60-Second Inspection Briefing
@@ -142,24 +144,24 @@ export default function VslModal({ isOpen, onClose }) {
             border: '1px solid rgba(255, 255, 255, 0.08)'
           }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-              <span style={{ color: '#D4AF37', fontSize: '1.1rem' }}>👥</span>
+              <span style={{ color: '#D4AF37', fontWeight: 800, fontSize: '0.85rem', fontFamily: 'monospace' }}>01</span>
               <div>
                 <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>Two Inspectors Every Job</strong>
                 <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}>CMI leadership + partner speed and accuracy</span>
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-              <span style={{ color: '#34D399', fontSize: '1.1rem' }}>🔍</span>
+              <span style={{ color: '#34D399', fontWeight: 800, fontSize: '0.85rem', fontFamily: 'monospace' }}>02</span>
               <div>
-                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>infrared thermal &amp; Drones</strong>
+                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>Infrared Thermal &amp; Drones</strong>
                 <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}>Catch hidden leaks &amp; roof defects</span>
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
-              <span style={{ color: '#60A5FA', fontSize: '1.1rem' }}>🛡️</span>
+              <span style={{ color: '#60A5FA', fontWeight: 800, fontSize: '0.85rem', fontFamily: 'monospace' }}>03</span>
               <div>
-                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>,000 Elite Warranty</strong>
-                <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}> deductible coverage for 90 days</span>
+                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>$100,000 Elite Warranty</strong>
+                <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}>$0 deductible coverage for 90 days</span>
               </div>
             </div>
           </div>
@@ -184,14 +186,14 @@ export default function VslModal({ isOpen, onClose }) {
               style={{ padding: '0.85rem 1.75rem', fontSize: '0.95rem', fontWeight: 700 }}
               onClick={onClose}
             >
-              📅 Schedule Inspection Online
+              Schedule Inspection Online &rarr;
             </a>
             <a 
               href="tel:678-480-2110" 
               className="btn btn-outline-light" 
               style={{ padding: '0.85rem 1.75rem', fontSize: '0.95rem', fontWeight: 600, borderColor: '#D4AF37', color: '#D4AF37' }}
             >
-              📞 Call 678-480-2110
+              Call (678) 480-2110
             </a>
             <Link 
               prefetch={false} 
@@ -200,7 +202,7 @@ export default function VslModal({ isOpen, onClose }) {
               style={{ background: 'rgba(255, 255, 255, 0.1)', color: '#FFFFFF', padding: '0.85rem 1.5rem', fontSize: '0.95rem' }}
               onClick={onClose}
             >
-              📊 Instant Fee Quote
+              Instant Fee Quote &rarr;
             </Link>
           </div>
         </div>

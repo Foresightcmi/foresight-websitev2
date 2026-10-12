@@ -369,7 +369,7 @@ export default async function ServiceCityPage({ params }) {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}
             >
-              📅 Schedule {serviceName}
+              Schedule {serviceName}
             </a>
             <a
               href="tel:6784802110"
@@ -377,7 +377,7 @@ export default async function ServiceCityPage({ params }) {
               style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}
               data-call-source={`pseo_${serviceData.slug}_${resolvedParams.city}`}
             >
-              📞 Call 678-480-2110
+              Call 678-480-2110
             </a>
           </div>
         </div>
@@ -389,7 +389,7 @@ export default async function ServiceCityPage({ params }) {
           <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
               <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>⚡</span> {serviceName} in {cityName}, GA: Quick Facts &amp; Pricing
+                {serviceName} in {cityName}, GA: Quick Facts &amp; Pricing
               </h2>
               <span style={{ fontSize: '0.8rem', background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', padding: '0.2rem 0.6rem', borderRadius: '4px', fontWeight: 600 }}>
                 Verified 2026 Standards
@@ -399,10 +399,10 @@ export default async function ServiceCityPage({ params }) {
               <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Led by Certified Master Inspector® Christopher Boykin with two certified inspectors on every appointment, evaluations include high-tech diagnostic equipment, digital reports delivered within 24 hours, and our included $10,000 Elite Warranty with $0 deductible.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#475569' }}>
-              <div><strong>💵 Price:</strong> {serviceData.price}</div>
-              <div><strong>👥 Inspectors:</strong> 2 Certified on Site</div>
+              <div><strong>Price:</strong> {serviceData.price}</div>
+              <div><strong>Inspectors:</strong> 2 Certified on Site</div>
               <div><strong>⭐ Rating:</strong> 4.9★ (48 Reviews)</div>
-              <div><strong>🛡️ Warranty:</strong> $10,000 Included</div>
+              <div><strong>Warranty:</strong> $10,000 Included</div>
             </div>
           </div>
         </div>
@@ -449,7 +449,7 @@ export default async function ServiceCityPage({ params }) {
           <div className="grid grid-2" style={{ gap: '2rem', marginTop: '2rem' }}>
             <div style={{ background: 'var(--color-gray-light)', padding: '1.75rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-red)' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                📋 Testing Standards & Regulations
+                Testing Standards & Regulations
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
                 {serviceData.standards}
@@ -458,7 +458,7 @@ export default async function ServiceCityPage({ params }) {
 
             <div style={{ background: 'var(--color-gray-light)', padding: '1.75rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-dark)' }}>
               <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                ⚙️ Diagnostic Equipment Used
+                Diagnostic Equipment Used
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
                 {serviceData.equipment}
@@ -476,17 +476,17 @@ export default async function ServiceCityPage({ params }) {
           </div>
           <div className="card" style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)', borderTop: '4px solid var(--color-red)' }}>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', marginBottom: '1.25rem' }}>
-              <strong>📍 Regional Analysis for {cityName}:</strong> {getCountyContext(county, cityName, serviceName)}
+              <strong>Regional Analysis for {cityName}:</strong> {getCountyContext(county, cityName, serviceName)}
             </p>
             {cityData?.Intro && (
               <p style={{ fontSize: '1.025rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', marginBottom: '1.25rem' }}>
-                <strong>🏡 Local Neighborhood Overview:</strong> {cityData.Intro}
+                <strong>Local Neighborhood Overview:</strong> {cityData.Intro}
               </p>
             )}
             {cityData?.['Local Risks HTML'] && (
               <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-sm)', padding: '1.25rem', marginBottom: '1.25rem' }}>
                 <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.5rem' }}>
-                  🛡️ Geotechnical &amp; Housing Vulnerabilities in {cityName}:
+                  Geotechnical &amp; Housing Vulnerabilities in {cityName}:
                 </strong>
                 <div style={{ fontSize: '0.975rem', lineHeight: 1.7, color: 'var(--color-gray-dark)' }} dangerouslySetInnerHTML={{ __html: cityData['Local Risks HTML'] }} />
               </div>
@@ -494,13 +494,13 @@ export default async function ServiceCityPage({ params }) {
             {cityData?.['Seasonal Tip'] && (
               <div style={{ background: 'rgba(211,47,47,0.04)', borderLeft: '4px solid var(--color-gold)', padding: '1rem 1.25rem', borderRadius: '4px', marginBottom: '1.25rem' }}>
                 <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.25rem' }}>
-                  🌤️ Seasonal Inspection Advisory for {cityName}:
+                  Seasonal Inspection Advisory for {cityName}:
                 </strong>
                 <span style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }} dangerouslySetInnerHTML={{ __html: cityData['Seasonal Tip'] }} />
               </div>
             )}
             <p style={{ fontSize: '1.025rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', margin: 0 }}>
-              <strong>⚠️ Environmental Warning:</strong> {serviceData.riskContext.replace(/{city}/g, cityName)}
+              <strong>Environmental Advisory:</strong> {serviceData.riskContext.replace(/{city}/g, cityName)}
             </p>
           </div>
 
@@ -556,28 +556,28 @@ export default async function ServiceCityPage({ params }) {
                 </h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem', color: '#334155' }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>📍</span>
+                    <span className="font-mono text-xs text-primary font-bold">[GEO]</span>
                     <span><strong>Service Area:</strong> {cityName}, {county} County, GA</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>🏢</span>
+                    <span className="font-mono text-xs text-primary font-bold">[HUB]</span>
                     <span><strong>Operating Base:</strong> Metro Atlanta Headquarters (Lithonia, GA)</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>🔍</span>
+                    <span className="font-mono text-xs text-primary font-bold">[CMI]</span>
                     <span><strong>Inspector Credential:</strong> Certified Master Inspector® (CMI) Led Team</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-red)' }}>📞</span>
+                    <span className="font-mono text-xs text-primary font-bold">[TEL]</span>
                     <span><strong>Direct Dispatch Phone:</strong> 678-480-2110</span>
                   </li>
                 </ul>
                 <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                   <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Foresight Home Inspections ${serviceName} ${cityName} GA`)}`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
-                    🗺️ View {cityName} Map ↗
+                    View {cityName} Map ↗
                   </a>
                   <a href="/quote" className="btn btn-primary" style={{ fontSize: '0.9rem', padding: '0.6rem 1.2rem' }}>
-                    ⚡ Instant {serviceName} Quote
+                    Instant {serviceName} Quote
                   </a>
                 </div>
               </div>
@@ -664,7 +664,7 @@ export default async function ServiceCityPage({ params }) {
               className="btn btn-outline"
               style={{ fontSize: '0.9rem', background: 'white' }}
             >
-              🏡 Full {cityName} Inspection Overview
+              Full {cityName} Inspection Overview
             </Link>
             {nearbyCities.map(nc => (
               <Link
@@ -673,7 +673,7 @@ export default async function ServiceCityPage({ params }) {
                 className="btn btn-outline"
                 style={{ fontSize: '0.9rem', background: 'white' }}
               >
-                📍 {serviceName} in {nc['City Name']}
+                {serviceName} in {nc['City Name']}
               </Link>
             ))}
           </div>

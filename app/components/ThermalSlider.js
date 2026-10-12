@@ -45,7 +45,7 @@ export default function ThermalSlider() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.25rem' }}>
         <div>
           <span className="badge" style={{ background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', fontSize: '0.8rem', padding: '0.25rem 0.75rem', marginBottom: '0.35rem', display: 'inline-block' }}>
-            🔬 Interactive Diagnostic Comparison
+            Interactive Diagnostic Comparison
           </span>
           <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 800, margin: 0 }}>
             Visual Daylight vs. Infrared Thermal Imaging Thermal Scan
@@ -67,7 +67,7 @@ export default function ThermalSlider() {
               transition: 'all 0.2s'
             }}
           >
-            👁️ Visual
+            Visual
           </button>
           <button
             type="button"
@@ -84,7 +84,7 @@ export default function ThermalSlider() {
               transition: 'all 0.2s'
             }}
           >
-            🌗 50/50 Split
+            50/50 Split
           </button>
           <button
             type="button"
@@ -101,7 +101,7 @@ export default function ThermalSlider() {
               transition: 'all 0.2s'
             }}
           >
-            🔥 Infrared Thermal
+            Infrared Thermal
           </button>
         </div>
       </div>
@@ -137,7 +137,7 @@ export default function ThermalSlider() {
             loading="lazy"
           />
           <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(239, 68, 68, 0.9)', color: '#FFFFFF', padding: '0.35rem 0.75rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.05em' }}>
-            🔥 Infrared Thermal Imaging (ACTIVE LEAK)
+            Infrared Thermal Imaging (ACTIVE LEAK)
           </div>
         </div>
 
@@ -160,7 +160,7 @@ export default function ThermalSlider() {
             loading="lazy"
           />
           <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(15, 23, 42, 0.85)', color: '#FFFFFF', padding: '0.35rem 0.75rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.05em', border: '1px solid #475569' }}>
-            👁️ VISUAL (LOOKS PERFECTLY DRY)
+            VISUAL (LOOKS PERFECTLY DRY)
           </div>
         </div>
 
@@ -249,7 +249,7 @@ export default function ThermalSlider() {
       </div>
 
       <p style={{ color: '#CBD5E1', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
-        ⚡ <strong>Included Free:</strong> While other Atlanta inspection firms charge $75–$150 extra for thermal scans or omit them entirely, Foresight includes full Infrared Thermal Imaging audits on every full home inspection.
+        <strong>Included Free:</strong> While other Atlanta inspection firms charge $75–$150 extra for thermal scans or omit them entirely, Foresight includes full Infrared Thermal Imaging audits on every full home inspection.
       </p>
     </div>
   );

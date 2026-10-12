@@ -199,12 +199,12 @@ export default function DashboardClient({
     );
   }
 
-  // 🔒 PIN Protection Gate Screen
+  // PIN Protection Gate Screen
   if (!isAuthenticated) {
     return (
       <div style={{ background: '#0f172a', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem' }}>
         <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '2.5rem', maxWidth: '440px', width: '100%', textAlign: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🔐</div>
+          <div className="font-mono text-sm font-bold text-primary mb-2">[SECURE GATE]</div>
           <h1 style={{ fontSize: '1.4rem', color: '#ffffff', marginBottom: '0.5rem', fontWeight: 800 }}>
             Foresight Executive Command Center
           </h1>
@@ -301,7 +301,7 @@ export default function DashboardClient({
                 boxShadow: '0 4px 12px rgba(2, 132, 199, 0.3)'
               }}
             >
-              <span>{refreshing ? '⏳ Syncing...' : '🔄 Refresh Telemetry'}</span>
+              <span>{refreshing ? 'Syncing...' : 'Refresh Telemetry'}</span>
             </button>
             <a 
               href="https://analytics.google.com/" 
@@ -310,7 +310,7 @@ export default function DashboardClient({
               className="btn btn-outline"
               style={{ borderColor: '#f59e0b', color: '#fbbf24', padding: '0.55rem 0.9rem', fontSize: '0.85rem' }}
             >
-              📈 Open GA4 ↗
+              Open GA4 ↗
             </a>
             <a 
               href="https://search.google.com/search-console" 
@@ -319,7 +319,7 @@ export default function DashboardClient({
               className="btn btn-outline"
               style={{ borderColor: '#38bdf8', color: '#38bdf8', padding: '0.55rem 0.9rem', fontSize: '0.85rem' }}
             >
-              🔍 Open GSC ↗
+              Open GSC ↗
             </a>
             <button
               onClick={handleLogout}
@@ -333,7 +333,7 @@ export default function DashboardClient({
                 fontSize: '0.85rem'
               }}
             >
-              🔒 Lock
+              Lock
             </button>
           </div>
         </div>
@@ -388,19 +388,19 @@ export default function DashboardClient({
         {/* Tab Navigation */}
         <div style={{ display: 'flex', gap: '0.5rem', borderBottom: '1px solid #334155', marginBottom: '2rem', overflowX: 'auto', paddingBottom: '0.25rem' }}>
           {[
-            { id: 'ga4', label: '📊 Google Analytics 4 Intelligence (Live API)' },
-            { id: 'gsc', label: `🎯 Google Search Console & Striking Distance (${gscQueries.length})` },
-            { id: 'rankmath', label: `🎯 Rank Math & TruSEO (${rankMathData?.overallScore || 86}/100)` },
-            { id: 'colonies', label: `🏰 SEO Colonies & Authority (${colonyMatrixData?.questions?.length || 20})` },
-            { id: 'linkedin', label: '🚀 LinkedIn 3M+ Growth Machine' },
-            { id: 'leads', label: `💼 Inbound Pipeline ($${totalPipelineValue.toLocaleString()})` },
-            { id: 'citations', label: `🏛️ Authority Citations (${activeCount}/${totalCount})` },
+            { id: 'ga4', label: 'Google Analytics 4 Intelligence (Live API)' },
+            { id: 'gsc', label: `Google Search Console & Striking Distance (${gscQueries.length})` },
+            { id: 'rankmath', label: `Rank Math & TruSEO (${rankMathData?.overallScore || 86}/100)` },
+            { id: 'colonies', label: `SEO Colonies & Authority (${colonyMatrixData?.questions?.length || 20})` },
+            { id: 'linkedin', label: 'LinkedIn 3M+ Growth Machine' },
+            { id: 'leads', label: `Inbound Pipeline ($${totalPipelineValue.toLocaleString()})` },
+            { id: 'citations', label: `Authority Citations (${activeCount}/${totalCount})` },
             { id: 'reviews', label: '⭐ Review Velocity Engine' },
-            { id: 'gbp', label: '📍 GBP Power Matrix' },
-            { id: 'realtors', label: `🤝 Brokerage Outreach (${realtorData?.total_target_brokerages || 6})` },
-            { id: 'loops', label: '🔄 Autonomous Daemons (4 Standing Engines)' },
-            { id: 'inventory', label: '📦 1,174-Page Programmatic Footprint' },
-            { id: 'health', label: '⚡ Technical Health & PageSpeed (100/100)' },
+            { id: 'gbp', label: 'GBP Power Matrix' },
+            { id: 'realtors', label: `Brokerage Outreach (${realtorData?.total_target_brokerages || 6})` },
+            { id: 'loops', label: 'Autonomous Daemons (4 Standing Engines)' },
+            { id: 'inventory', label: '1,174-Page Programmatic Footprint' },
+            { id: 'health', label: 'Technical Health & PageSpeed (100/100)' },
           ].map(tab => (
             <button
               key={tab.id}
@@ -432,7 +432,7 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
                 <div>
                   <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                    📊 Google Analytics 4 Performance Stream
+                    Google Analytics 4 Performance Stream
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
                     Direct OAuth connection to Property ID: <strong style={{ color: '#38bdf8' }}>{ga4Kpi.propertyId}</strong> (Live Production Data)
@@ -480,7 +480,7 @@ export default function DashboardClient({
               <div style={{ background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.05))', border: '1px solid rgba(139, 92, 246, 0.3)', borderRadius: 'var(--radius-md)', padding: '1.25rem', marginBottom: '1.75rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
                   <h4 style={{ color: '#c084fc', fontSize: '1rem', margin: 0, fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    <span>🤖</span> Generative Engine Optimization (GEO) Traffic &bull; AI Assistant Direct Referrals
+                    Generative Engine Optimization (GEO) Traffic &bull; AI Assistant Direct Referrals
                   </h4>
                   <span style={{ background: '#8b5cf6', color: '#ffffff', fontSize: '0.75rem', fontWeight: 700, padding: '0.2rem 0.6rem', borderRadius: '50px' }}>
                     38 AI Search Sessions
@@ -635,14 +635,14 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                    🎯 Google Search Console &bull; Striking Distance Opportunities
+                    Google Search Console &bull; Striking Distance Opportunities
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
                     Verified Property: <strong style={{ color: '#38bdf8' }}>https://www.fhinspectionsatl.com/</strong> &bull; Window: {gscData?.dateRange?.startDate} to {gscData?.dateRange?.endDate}
                   </p>
                 </div>
                 <span style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24', border: '1px solid rgba(245, 158, 11, 0.4)', padding: '0.35rem 0.85rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700 }}>
-                  ⚡ {strikingDistanceQueries.length} Quick-Win Striking Distance Targets
+                  {strikingDistanceQueries.length} Quick-Win Striking Distance Targets
                 </span>
               </div>
 
@@ -855,7 +855,7 @@ export default function DashboardClient({
                     Rank Math PRO &amp; AIOSEO Equivalent Sentry · Zero Bloat / 100% Native Next.js
                   </div>
                   <h3 style={{ fontSize: '1.5rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                    🎯 On-Page SEO &amp; SERP Truncation Auditor
+                    On-Page SEO &amp; SERP Truncation Auditor
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
                     Continuous 30-factor evaluation across Basic SEO, Density, SERP Pixels, Flesch Readability, and Schema Graph.
@@ -868,12 +868,12 @@ export default function DashboardClient({
                     <div style={{ fontSize: '2rem', fontWeight: 800, color: '#4ade80', margin: '0.1rem 0' }}>
                       {rankMathData?.overallScore || 86}/100
                     </div>
-                    <span style={{ color: '#22c55e', fontSize: '0.75rem', fontWeight: 700 }}>🟢 RANK MATH GREEN</span>
+                    <span style={{ color: '#22c55e', fontSize: '0.75rem', fontWeight: 700 }}>RANK MATH GREEN</span>
                   </div>
 
                   <button
                     onClick={() => {
-                      setIndexNowNotice('⚡ IndexNow Ping Broadcasted! 1,174 URLs submitted to Bing, Yandex, Naver & Seznam.');
+                      setIndexNowNotice('IndexNow Ping Broadcasted! 1,174 URLs submitted to Bing, Yandex, Naver & Seznam.');
                       setTimeout(() => setIndexNowNotice(null), 5000);
                     }}
                     style={{
@@ -891,7 +891,7 @@ export default function DashboardClient({
                       gap: '0.2rem'
                     }}
                   >
-                    <span>⚡ Broadcast IndexNow</span>
+                    <span>Broadcast IndexNow</span>
                     <span style={{ fontSize: '0.7rem', opacity: 0.9 }}>Ping All Search Engines</span>
                   </button>
                 </div>
@@ -924,7 +924,7 @@ export default function DashboardClient({
                         cursor: 'pointer'
                       }}
                     >
-                      {p.score >= 90 ? '🟢' : (p.score >= 80 ? '🟡' : '🔴')} {p.targetName.split('(')[0].trim()} ({p.score})
+                      {p.score >= 90 ? '[90+]' : (p.score >= 80 ? '[80+]' : '[<80]')} {p.targetName.split('(')[0].trim()} ({p.score})
                     </button>
                   ))}
                 </div>
@@ -943,7 +943,7 @@ export default function DashboardClient({
                   <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.5rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
                       <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>
-                        🔍 Google SERP Snippet Preview
+                        Google SERP Snippet Preview
                       </h4>
                       <div style={{ display: 'inline-flex', background: '#0f172a', padding: '0.2rem', borderRadius: '6px', border: '1px solid #334155' }}>
                         <button
@@ -959,7 +959,7 @@ export default function DashboardClient({
                             fontWeight: 700
                           }}
                         >
-                          💻 Desktop (600px)
+                          Desktop (600px)
                         </button>
                         <button
                           onClick={() => setSerpDevice('mobile')}
@@ -974,7 +974,7 @@ export default function DashboardClient({
                             fontWeight: 700
                           }}
                         >
-                          📱 Mobile (540px)
+                          Mobile (540px)
                         </button>
                       </div>
                     </div>
@@ -1059,7 +1059,7 @@ export default function DashboardClient({
                   <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.5rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                       <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>
-                        📋 30-Point On-Page Audit Checklist
+                        30-Point On-Page Audit Checklist
                       </h4>
                       <span style={{ background: curPage.score >= 90 ? 'rgba(34, 197, 94, 0.2)' : 'rgba(234, 179, 8, 0.2)', color: curPage.score >= 90 ? '#4ade80' : '#fbbf24', border: curPage.score >= 90 ? '1px solid #22c55e' : '1px solid #eab308', padding: '0.2rem 0.65rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 700 }}>
                         Score: {curPage.score}/100
@@ -1109,7 +1109,7 @@ export default function DashboardClient({
                     Tobi Oluwole ($6M) + Callum McDonnell &amp; Josh Sanders (3M Followers) Master Engine
                   </div>
                   <h3 style={{ fontSize: '1.5rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                    🚀 Autonomous LinkedIn Personal Brand &amp; Inbound Funnel
+                    Autonomous LinkedIn Personal Brand &amp; Inbound Funnel
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
                     Snack-sized 8–12 line Freytag stories, "The Enemy" narrative positioning, high dwell-time cheat sheets, and 4:1 deposit-to-withdrawal mechanics.
@@ -1118,10 +1118,10 @@ export default function DashboardClient({
 
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                   {[
-                    { id: 'queue', label: `📅 20-Day Story Queue (${linkedInData?.length || 10})` },
-                    { id: 'profile', label: '👤 Profile Landing Page' },
-                    { id: 'cheatsheet', label: '📊 Dwell-Time Cheat Sheets' },
-                    { id: 'funnel', label: `⚡ Comment-to-DM Funnel (${socialFunnelRules?.length || 5})` }
+                    { id: 'queue', label: `20-Day Story Queue (${linkedInData?.length || 10})` },
+                    { id: 'profile', label: 'Profile Landing Page' },
+                    { id: 'cheatsheet', label: 'Dwell-Time Cheat Sheets' },
+                    { id: 'funnel', label: `Comment-to-DM Funnel (${socialFunnelRules?.length || 5})` }
                   ].map(st => (
                     <button
                       key={st.id}
@@ -1175,7 +1175,7 @@ export default function DashboardClient({
                 {/* Story Queue Selector */}
                 <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.5rem' }}>
                   <h4 style={{ color: '#ffffff', margin: '0 0 1rem', fontSize: '1.1rem', fontWeight: 700 }}>
-                    📅 Curated Story Queue (4 Deposits : 1 Withdrawal)
+                    Curated Story Queue (4 Deposits : 1 Withdrawal)
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', maxHeight: '550px', overflowY: 'auto', paddingRight: '0.5rem' }}>
                     {(linkedInData || []).map((item, idx) => (
@@ -1239,14 +1239,14 @@ export default function DashboardClient({
                             fontWeight: 700
                           }}
                         >
-                          {copiedKey === 'linkedin_post' ? '✓ Copied Post!' : '📋 Copy Post Text'}
+                          {copiedKey === 'linkedin_post' ? 'Copied Post!' : 'Copy Post Text'}
                         </button>
                       </div>
 
                       {/* Josh Sanders "...see more" Cutoff Simulator */}
                       <div style={{ background: '#0f172a', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid #334155' }}>
                         <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>
-                          📱 Mobile Feed Cutoff Preview (Forces Dwell Time):
+                          Mobile Feed Cutoff Preview (Forces Dwell Time):
                         </span>
                         <div style={{ color: '#e2e8f0', fontSize: '0.9rem', lineHeight: 1.5, marginTop: '0.5rem', fontFamily: 'system-ui' }}>
                           {post.lines[0]}
@@ -1270,7 +1270,7 @@ export default function DashboardClient({
                       <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                           <span style={{ color: '#38bdf8', fontSize: '0.8rem', fontWeight: 700 }}>
-                            💬 Drop in First Comment (Immediate Funnel Conversion):
+                            Drop in First Comment (Immediate Funnel Conversion):
                           </span>
                           <button
                             onClick={() => handleCopyText(post.firstComment, 'linkedin_comment')}
@@ -1285,7 +1285,7 @@ export default function DashboardClient({
                               fontWeight: 700
                             }}
                           >
-                            {copiedKey === 'linkedin_comment' ? '✓ Copied!' : '📋 Copy Comment'}
+                            {copiedKey === 'linkedin_comment' ? 'Copied!' : 'Copy Comment'}
                           </button>
                         </div>
                         <p style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: 0 }}>
@@ -1305,7 +1305,7 @@ export default function DashboardClient({
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
                   <h4 style={{ color: '#ffffff', margin: '0 0 0.5rem', fontSize: '1.25rem', fontWeight: 800 }}>
-                    👤 Christopher Boykin’s LinkedIn Profile as a High-Ticket Landing Page
+                    Christopher Boykin’s LinkedIn Profile as a High-Ticket Landing Page
                   </h4>
                   <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: '0 0 1.5rem' }}>
                     Tobi Oluwole Rule #5: "When people like your post, they click your profile. Your profile must function as an undisputed high-ticket landing page."
@@ -1338,10 +1338,10 @@ export default function DashboardClient({
                         "Hindsight is expensive... Choose Foresight."
                       </div>
                       <ul style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: 0, paddingLeft: '1.2rem', lineHeight: 1.6 }}>
-                        <li>👥 Two Certified Inspectors on Every Job</li>
-                        <li>⚡ 1.5–2.5 Hour On-Site Audit (Same-Day Digital Reports)</li>
-                        <li>🔥 Infrared Thermal Imaging Thermal &amp; 4K Aerial Drones Included Standard</li>
-                        <li>🛡️ Up to $35,000 in Combined Warranty Protection</li>
+                        <li>Two Certified Inspectors on Every Job</li>
+                        <li>1.5–2.5 Hour On-Site Audit (Same-Day Digital Reports)</li>
+                        <li>Infrared Thermal Imaging Thermal &amp; 4K Aerial Drones Included Standard</li>
+                        <li>Up to $35,000 in Combined Warranty Protection</li>
                       </ul>
                     </div>
 
@@ -1424,7 +1424,7 @@ export default function DashboardClient({
                   </h4>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                     <div style={{ background: '#0f172a', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid #ef4444' }}>
-                      <span style={{ color: '#f87171', fontWeight: 700, fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>❌ THE SOLO OPERATOR</span>
+                      <span style={{ color: '#f87171', fontWeight: 700, fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>THE SOLO OPERATOR</span>
                       <ul style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: 0, paddingLeft: '1rem', lineHeight: 1.5 }}>
                         <li>4–5 exhausting hours on-site</li>
                         <li>Roof viewed with binoculars</li>
@@ -1457,7 +1457,7 @@ export default function DashboardClient({
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
                     <div>
                       <h4 style={{ fontSize: '1.2rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                        ⚡ Automated Comment-to-DM Lead Funnels (MATG / Sabrina Ramonov Framework)
+                        Automated Comment-to-DM Lead Funnels (MATG / Sabrina Ramonov Framework)
                       </h4>
                       <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.875rem', maxWidth: '850px' }}>
                         Public posts provide top-of-funnel reach; private DMs close high-ticket inspections. When followers comment a trigger keyword, deliver high-value assets with UTM tags and an immediate qualification question.
@@ -1496,7 +1496,7 @@ export default function DashboardClient({
                         targetAudience: 'Georgia Real Estate Agents & Brokers',
                         leadMagnetName: '1-Click GAR F404 Due Diligence Repair Clause Generator',
                         trackedUrl: 'https://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool',
-                        dmScript: 'Hey {firstName}! Thanks for commenting. Here is your free access to our 1-Click GAR F404 Repair Clause Generator:\n\n👉 https://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool\n\nYou can generate InterNACHI-backed defect repair clauses and paste them straight into your contract amendments.\n\nQuick question: Are you currently working with a buyer under contract in Metro Atlanta right now?',
+                        dmScript: 'Hey {firstName}! Thanks for commenting. Here is your free access to our 1-Click GAR F404 Repair Clause Generator:\n\nhttps://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool\n\nYou can generate InterNACHI-backed defect repair clauses and paste them straight into your contract amendments.\n\nQuick question: Are you currently working with a buyer under contract in Metro Atlanta right now?',
                         followUpQuestion: 'Are you currently working with a buyer under contract in Metro Atlanta right now?',
                         estimatedDealValue: 750,
                         tag: 'Realtor VIP Lead'
@@ -1506,7 +1506,7 @@ export default function DashboardClient({
                         targetAudience: 'North Metro Atlanta Homebuyers & Homeowners',
                         leadMagnetName: 'North Georgia EPA Radon Zone 1 Risk Dossier',
                         trackedUrl: 'https://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier',
-                        dmScript: 'Hey {firstName}! Here is the official EPA Radon Zone 1 risk dossier for Fulton, Cobb, Gwinnett, and Cherokee counties:\n\n👉 https://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier\n\nIt covers continuous 48-hour electronic testing standards and when a seller must credit active mitigation ($1,500+ value).\n\nQuick question: Is the home you\'re evaluating built on a slab, crawlspace, or basement?',
+                        dmScript: 'Hey {firstName}! Here is the official EPA Radon Zone 1 risk dossier for Fulton, Cobb, Gwinnett, and Cherokee counties:\n\nhttps://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier\n\nIt covers continuous 48-hour electronic testing standards and when a seller must credit active mitigation ($1,500+ value).\n\nQuick question: Is the home you\'re evaluating built on a slab, crawlspace, or basement?',
                         followUpQuestion: 'Is the home you\'re evaluating built on a slab, crawlspace, or basement?',
                         estimatedDealValue: 595,
                         tag: 'Radon Diagnostic Lead'
@@ -1516,7 +1516,7 @@ export default function DashboardClient({
                         targetAudience: 'Active Home Shoppers & Relocating Buyers',
                         leadMagnetName: '60-Second Instant Fee Calculator & Quote Locker',
                         trackedUrl: 'https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote',
-                        dmScript: 'Hey {firstName}! Here is our 60-second instant fee calculator where you can view 100% transparent pricing based on square footage:\n\n👉 https://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote\n\nEvery full inspection includes Two Certified Inspectors, infrared thermal imaging, and 4K aerial drone scans standard.\n\nWhat city or county in Georgia is the property located in?',
+                        dmScript: 'Hey {firstName}! Here is our 60-second instant fee calculator where you can view 100% transparent pricing based on square footage:\n\nhttps://www.fhinspectionsatl.com/quote?utm_source=social_dm&utm_medium=comment&utm_campaign=instant_quote\n\nEvery full inspection includes Two Certified Inspectors, infrared thermal imaging, and 4K aerial drone scans standard.\n\nWhat city or county in Georgia is the property located in?',
                         followUpQuestion: 'What city or county in Georgia is the property located in?',
                         estimatedDealValue: 525,
                         tag: 'Instant Quote Lead'
@@ -1526,7 +1526,7 @@ export default function DashboardClient({
                         targetAudience: 'Luxury & High-Net-Worth Buyers ($1M+ Acquisitions)',
                         leadMagnetName: 'Estate Master Luxury Due Diligence Briefing',
                         trackedUrl: 'https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector?utm_source=social_dm&utm_medium=comment&utm_campaign=estate_master',
-                        dmScript: 'Hey {firstName}! Here is the executive breakdown of our First-Class Estate Master Due Diligence Tier:\n\n👉 https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector?utm_source=social_dm&utm_medium=comment&utm_campaign=estate_master\n\nBuilt specifically for $1M+ estates with multiple mechanical systems, slate roofs, and extensive foundations. Includes two CMI inspectors, full thermal envelope profiling, 4K drone mapping, sewer scope video, and an attorney prep session.\n\nWhat is the approximate square footage and age of the estate?',
+                        dmScript: 'Hey {firstName}! Here is the executive breakdown of our First-Class Estate Master Due Diligence Tier:\n\nhttps://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector?utm_source=social_dm&utm_medium=comment&utm_campaign=estate_master\n\nBuilt specifically for $1M+ estates with multiple mechanical systems, slate roofs, and extensive foundations. Includes two CMI inspectors, full thermal envelope profiling, 4K drone mapping, sewer scope video, and an attorney prep session.\n\nWhat is the approximate square footage and age of the estate?',
                         followUpQuestion: 'What is the approximate square footage and age of the estate?',
                         estimatedDealValue: 1650,
                         tag: 'Luxury Estate Lead'
@@ -1536,7 +1536,7 @@ export default function DashboardClient({
                         targetAudience: 'First-Time Homebuyers & Property Investors',
                         leadMagnetName: '1,600-Point InterNACHI Home Inspection Checklist',
                         trackedUrl: 'https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist',
-                        dmScript: 'Hey {firstName}! Here is the complete 1,600-point InterNACHI defect checklist we use on our dual-inspector audits:\n\n👉 https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist\n\nYou can use this to spot red flags on foundation settling, electrical panels, and attic ventilation during your initial walkthroughs.\n\nWhen is your scheduled closing or due diligence deadline?',
+                        dmScript: 'Hey {firstName}! Here is the complete 1,600-point InterNACHI defect checklist we use on our dual-inspector audits:\n\nhttps://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist\n\nYou can use this to spot red flags on foundation settling, electrical panels, and attic ventilation during your initial walkthroughs.\n\nWhen is your scheduled closing or due diligence deadline?',
                         followUpQuestion: 'When is your scheduled closing or due diligence deadline?',
                         estimatedDealValue: 475,
                         tag: 'Buyer Checklist Lead'
@@ -1571,7 +1571,7 @@ export default function DashboardClient({
 
                         {/* Qualifying Question */}
                         <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '6px', padding: '0.65rem 0.85rem' }}>
-                          <span style={{ color: '#38bdf8', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase' }}>💬 Lead Qualification Hook</span>
+                          <span style={{ color: '#38bdf8', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase' }}>Lead Qualification Hook</span>
                           <p style={{ color: '#e2e8f0', fontSize: '0.8rem', margin: '0.2rem 0 0', fontStyle: 'italic' }}>
                             "{rule.followUpQuestion}"
                           </p>
@@ -1594,7 +1594,7 @@ export default function DashboardClient({
                                 cursor: 'pointer'
                               }}
                             >
-                              {copiedKey === `dm-script-${rule.keyword}` ? '✓ Copied Script!' : '📋 Copy DM Script'}
+                              {copiedKey === `dm-script-${rule.keyword}` ? 'Copied Script!' : 'Copy DM Script'}
                             </button>
                           </div>
                           <pre style={{ margin: 0, whiteSpace: 'pre-wrap', color: '#cbd5e1', fontSize: '0.75rem', fontFamily: 'monospace', lineHeight: 1.4 }}>
@@ -1640,7 +1640,7 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
                 <div>
                   <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                    💼 Verified Inbound Leads &amp; CRM Pipeline (${totalPipelineValue.toLocaleString()})
+                    Verified Inbound Leads &amp; CRM Pipeline (${totalPipelineValue.toLocaleString()})
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
                     Real-time captures from Website Quote Engine, Live AI Concierge, and Due Diligence Portals.
@@ -1724,7 +1724,7 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.25rem', fontWeight: 800 }}>
-                    🏛️ Local Authority &amp; Tier-1 Citation Ecosystem ({activeCount} of {totalCount} Verified &bull; Avg DA {avgDA}/100)
+                    Local Authority &amp; Tier-1 Citation Ecosystem ({activeCount} of {totalCount} Verified &bull; Avg DA {avgDA}/100)
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
                     Elevate local domain authority and Google 3-Pack rankings by maintaining 100% NAP consistency across verified directories.
@@ -1768,7 +1768,7 @@ export default function DashboardClient({
               <div style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1.25rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <h4 style={{ color: '#38bdf8', fontSize: '0.95rem', margin: 0, fontWeight: 700 }}>
-                    📋 1-Click Copy-Paste NAP Data Kit (Use for all directory submissions)
+                    1-Click Copy-Paste NAP Data Kit (Use for all directory submissions)
                   </h4>
                   <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Click any card to copy</span>
                 </div>
@@ -1826,7 +1826,7 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
                 <div>
                   <h3 style={{ fontSize: '1.25rem', color: '#ffffff', margin: '0 0 0.25rem' }}>
-                    📡 Tier-1 Authority Citation Profiles ({filteredDirectories.length} Showing)
+                    Tier-1 Authority Citation Profiles ({filteredDirectories.length} Showing)
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.85rem' }}>
                     Active profiles strengthen entity authority; pending profiles represent high-yield backlink opportunities.
@@ -1950,7 +1950,7 @@ export default function DashboardClient({
             {/* Generated Review SMS */}
             <div style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 'var(--radius-md)', padding: '1.25rem', marginBottom: '1.25rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                <span style={{ color: '#38bdf8', fontSize: '0.85rem', fontWeight: 700 }}>📱 High-Converting SMS Template</span>
+                <span style={{ color: '#38bdf8', fontSize: '0.85rem', fontWeight: 700 }}>High-Converting SMS Template</span>
                 <button
                   onClick={() => handleCopyText(`Hi ${reviewClientName}, this is Christopher with Foresight Home Inspections. Thank you for trusting us with your home inspection in ${reviewClientCity}! If our 2-inspector team gave you peace of mind, would you take 45 seconds to leave us a quick review on Google? It means the world to our local family business: https://g.page/r/CbGjW894Yg5pEAI/review`, 'sms_review')}
                   style={{ background: '#334155', color: copiedKey === 'sms_review' ? '#4ade80' : '#ffffff', border: 'none', padding: '0.35rem 0.75rem', borderRadius: '4px', cursor: 'pointer', fontSize: '0.8rem' }}
@@ -1969,7 +1969,7 @@ export default function DashboardClient({
         {activeTab === 'gbp' && (
           <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
             <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.5rem', fontWeight: 800 }}>
-              📍 Google Business Profile Optimization &bull; 3-Pack Radius Dominance
+              Google Business Profile Optimization &bull; 3-Pack Radius Dominance
             </h3>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
               Strategic GBP settings aligned with Whitespark &amp; Darren Shaw 2026 Local Ranking Factor Standards:
@@ -2001,7 +2001,7 @@ export default function DashboardClient({
         {activeTab === 'realtors' && (
           <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
             <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.5rem', fontWeight: 800 }}>
-              🤝 Brokerage VIP Partnership Program ({realtorData?.total_target_brokerages || 6} Luxury Brokerages)
+              Brokerage VIP Partnership Program ({realtorData?.total_target_brokerages || 6} Luxury Brokerages)
             </h3>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
               Targeted partnership frameworks customized for Atlanta&apos;s leading real estate brokerages:
@@ -2028,7 +2028,7 @@ export default function DashboardClient({
         {activeTab === 'loops' && (
           <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
             <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.5rem', fontWeight: 800 }}>
-              🔄 Standing Autonomous Daemons (4 Production Engines)
+              Standing Autonomous Daemons (4 Production Engines)
             </h3>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
               Self-sustaining background daemons executing continuous SEO, competitor recon, social distribution, and telemetry:
@@ -2066,7 +2066,7 @@ export default function DashboardClient({
         {activeTab === 'inventory' && (
           <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
             <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.5rem', fontWeight: 800 }}>
-              📦 Complete Programmatic Footprint (1,174 Live Pre-Rendered Pages)
+              Complete Programmatic Footprint (1,174 Live Pre-Rendered Pages)
             </h3>
             <p style={{ color: '#94a3b8', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
               Your static pre-rendered inventory across all Metro Atlanta regional and municipal tiers:
@@ -2118,7 +2118,7 @@ export default function DashboardClient({
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
               <div>
                 <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: 0, fontWeight: 800 }}>
-                  ⚡ Core Web Vitals &amp; PageSpeed Telemetry
+                  Core Web Vitals &amp; PageSpeed Telemetry
                 </h3>
                 <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: '0.25rem 0 0' }}>
                   Lighthouse 13.4.1 verified production benchmarks on Next.js 16 (Turbopack)
@@ -2189,7 +2189,7 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem' }}>
                 <div>
                   <h3 style={{ fontSize: '1.35rem', color: '#ffffff', margin: '0 0 0.35rem', fontWeight: 800 }}>
-                    🏰 Edward Sturm SEO Colony &amp; Internal Authority Funnels
+                    Edward Sturm SEO Colony &amp; Internal Authority Funnels
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem', maxWidth: '850px' }}>
                     Rank high-ticket money pages without external backlinks. Google measures utility through user clicks. Non-competitive People Also Ask (PAA) question colonies capture search clicks and funnel page-level PageRank directly to bottom-of-the-funnel (BOFU) conversion pages.
@@ -2209,7 +2209,7 @@ export default function DashboardClient({
                       cursor: 'pointer'
                     }}
                   >
-                    {copiedKey === 'cmd-colony-audit' ? '✓ Copied Audit Command' : '📋 Copy `npm run colony:audit`'}
+                    {copiedKey === 'cmd-colony-audit' ? 'Copied Audit Command' : 'Copy `npm run colony:audit`'}
                   </button>
                   <Link
                     href="/faq"
@@ -2291,7 +2291,7 @@ export default function DashboardClient({
               <div style={{ padding: '1.25rem 1.75rem', borderBottom: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
                 <div>
                   <h4 style={{ color: '#ffffff', margin: '0 0 0.2rem', fontSize: '1.1rem', fontWeight: 800 }}>
-                    🎯 Target Money Pages &amp; Inbound Feeder Distribution
+                    Target Money Pages &amp; Inbound Feeder Distribution
                   </h4>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.85rem' }}>
                     Every high-converting landing page is systematically fed authority by dedicated PAA colony nodes.
@@ -2388,7 +2388,7 @@ export default function DashboardClient({
 
                       <div style={{ background: '#0f172a', padding: '0.75rem', borderRadius: '6px', border: '1px solid #334155', marginBottom: '1rem' }}>
                         <span style={{ color: '#fbbf24', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase' }}>
-                          🎯 Primary Target Money Page
+                          Primary Target Money Page
                         </span>
                         <div style={{ color: '#ffffff', fontWeight: 700, fontSize: '0.85rem', marginTop: '0.2rem' }}>
                           <Link href={colony.primaryMoneyPage?.url || '/'} target="_blank" style={{ color: '#38bdf8', textDecoration: 'underline' }}>

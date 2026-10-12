@@ -161,7 +161,7 @@ export default function WatchPage() {
           {/* Main Watch Page Header (H1) */}
           <header style={{ marginBottom: '2rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.15)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)', borderRadius: '9999px', padding: '0.35rem 0.95rem', fontSize: '0.8rem', fontWeight: 700, marginBottom: '0.75rem' }}>
-              🎥 Official Field Inspection Video
+              Official Field Inspection Video
             </div>
             <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', fontWeight: 800, lineHeight: 1.2, color: '#FFFFFF', margin: '0 0 0.75rem 0' }}>
               Complete Home Systems Diagnostic Field Demonstration
@@ -207,14 +207,14 @@ export default function WatchPage() {
                 className="btn btn-gold"
                 style={{ padding: '0.85rem 1.75rem', fontWeight: 700, fontSize: '0.95rem' }}
               >
-                📅 Schedule Inspection
+                Schedule Inspection
               </a>
               <Link
                 href="/quote"
                 className="btn btn-outline-light"
                 style={{ padding: '0.85rem 1.75rem', fontWeight: 700, fontSize: '0.95rem' }}
               >
-                📊 Instant Quote
+                Instant Quote
               </Link>
             </div>
           </div>

@@ -15,7 +15,7 @@ export default function FaqSearch({ faqs }) {
       <div style={{ marginBottom: '2rem', position: 'relative' }}>
         <input
           type="text"
-          placeholder="🔍 Search questions (e.g. radon, warranty, price, termite, sewer, schedule)..."
+          placeholder="Search questions (e.g. radon, warranty, price, termite, sewer, schedule)..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
@@ -82,7 +82,7 @@ export default function FaqSearch({ faqs }) {
             No matching questions found for &quot;<strong>{searchTerm}</strong>&quot;.
           </p>
           <a href="tel:6784802110" className="btn btn-primary">
-            📞 Call Us Directly: 678-480-2110
+            Call Us Directly: (678) 480-2110 &rarr;
           </a>
         </div>
       )}

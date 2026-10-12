@@ -116,7 +116,9 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <span style={{ fontSize: '1.4rem' }}>🎥</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <h3
@@ -138,7 +140,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
                     letterSpacing: '0.04em'
                   }}
                 >
-                  ⏱️ {duration}
+                  {duration}
                 </span>
               </div>
               <p style={{ margin: '0.2rem 0 0', fontSize: '0.8rem', color: '#94A3B8' }}>
@@ -235,7 +237,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
               marginBottom: '1.25rem'
             }}
           >
-            <span style={{ fontSize: '1.5rem' }}>🏛️</span>
+            <span style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: '0.85rem', fontFamily: 'monospace' }}>CMI</span>
             <div>
               <span style={{ fontSize: '0.72rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block' }}>
                 Expert Field Briefing
@@ -297,7 +299,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
                 borderRadius: 'var(--radius-md)'
               }}
             >
-              📅 Schedule This Inspection
+              Schedule This Inspection &rarr;
             </a>
             <Link
               href={quoteUrl}
@@ -316,7 +318,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
                 background: 'rgba(255, 255, 255, 0.05)'
               }}
             >
-              📊 Instant Fee Calculator
+              Instant Fee Calculator &rarr;
             </Link>
           </div>
         </div>

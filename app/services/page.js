@@ -509,22 +509,22 @@ export default function Services() {
                   </ul>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: 'auto' }}>
                     <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className={`btn ${idx === 0 ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: idx !== 0 ? 'var(--color-red)' : undefined, color: idx !== 0 ? 'var(--color-red)' : undefined }}>
-                      📅 Book Inspection
+                      Book Inspection
                     </a>
                     {s.serviceSlug && (
                       <Link href={`/services/${s.serviceSlug}`} className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
-                        🔍 Service Hub
+                        Service Hub
                       </Link>
                     )}
                     {s.briefing && (
-                      <ServiceVideoTrigger briefing={s.briefing} label="🎥 45-Sec Video Briefing" />
+                      <ServiceVideoTrigger briefing={s.briefing} label="45-Sec Video Briefing" />
                     )}
                     <Link href="/quote" className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', opacity: 0.8, fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
                       Calculate Price
                     </Link>
                     {s.slug && (
                       <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', fontSize: '0.9rem', padding: '0.5rem 1rem', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)' }}>
-                        📖 In-Depth Guide
+                        In-Depth Guide
                       </Link>
                     )}
                   </div>
@@ -604,15 +604,15 @@ export default function Services() {
                   <Link href="/quote" className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }}>Add to Quote</Link>
                   {s.serviceSlug && (
                     <Link href={`/services/${s.serviceSlug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
-                      🔍 Service Hub
+                      Service Hub
                     </Link>
                   )}
                   {s.briefing && (
-                    <ServiceVideoTrigger briefing={s.briefing} label="🎥 45-Sec Briefing" />
+                    <ServiceVideoTrigger briefing={s.briefing} label="45-Sec Briefing" />
                   )}
                   {s.slug && (
                     <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
-                      📖 Read Guide
+                      Read Guide
                     </Link>
                   )}
                 </div>
@@ -659,26 +659,26 @@ export default function Services() {
 
               <div className="grid grid-2" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <li>🛡️ <strong>Life-Safety Alarms:</strong> Placement and functional testing of smoke detectors (minimum one per level and inside every sleeping room) and carbon monoxide alarms (minimum one per level).</li>
-                  <li>🧯 <strong>Fire Extinguishers:</strong> Verification and documentation of visible, accessible fire extinguishers (at least one per level).</li>
-                  <li>🚪 <strong>Egress Safety:</strong> Detailed checks of stairs, handrails, guards, and exit routes to ensure clear emergency egress paths.</li>
+                  <li><strong>Life-Safety Alarms:</strong> Placement and functional testing of smoke detectors (minimum one per level and inside every sleeping room) and carbon monoxide alarms (minimum one per level).</li>
+                  <li><strong>Fire Extinguishers:</strong> Verification and documentation of visible, accessible fire extinguishers (at least one per level).</li>
+                  <li><strong>Egress Safety:</strong> Detailed checks of stairs, handrails, guards, and exit routes to ensure clear emergency egress paths.</li>
                 </ul>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem' }}>
-                  <li>🪧 <strong>Local Agent Signage:</strong> Checking that the mandatory 24-hour local contact information and evacuation maps are clearly posted.</li>
-                  <li>🚫 <strong>Historic Exclusions:</strong> Pre-screening checks for localized historic district restrictions to safeguard your non-refundable government portal application fees.</li>
-                  <li>📞 <strong>Custom Pricing:</strong> Pricing starts at <strong>$355</strong> based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
+                  <li><strong>Local Agent Signage:</strong> Checking that the mandatory 24-hour local contact information and evacuation maps are clearly posted.</li>
+                  <li><strong>Historic Exclusions:</strong> Pre-screening checks for localized historic district restrictions to safeguard your non-refundable government portal application fees.</li>
+                  <li><strong>Custom Pricing:</strong> Pricing starts at <strong>$355</strong> based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
                 </ul>
               </div>
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <Link href="/quote" className="btn btn-primary" style={{ padding: '0.75rem 2rem' }}>
-                  📊 Estimate Short-Term Rental (STR) Price
+                  Estimate Short-Term Rental (STR) Price
                 </Link>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.75rem 2rem', color: 'var(--color-red)', borderColor: 'var(--color-red)' }}>
-                  📅 Schedule Audit
+                  Schedule Audit
                 </a>
                 <Link href="/blog/metro-atlanta-short-term-rental-str-compliance-assist" className="btn btn-outline" style={{ padding: '0.75rem 2rem' }}>
-                  📖 Read STR Guide
+                  Read STR Guide
                 </Link>
               </div>
             </div>
@@ -736,7 +736,7 @@ export default function Services() {
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                🤖
+                
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
@@ -781,7 +781,7 @@ export default function Services() {
                 1
               </div>
               <div>
-                <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>🔍 Step 1: The Observation</h3>
+                <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>Step 1: The Observation</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
                   We state exactly what we observed during the inspection in clear, plain language (e.g., &ldquo;The water heater&apos;s temperature-pressure relief valve is missing a discharge pipe.&rdquo;).
                 </p>
@@ -793,7 +793,7 @@ export default function Services() {
                 2
               </div>
               <div>
-                <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>💡 Step 2: What This Could Mean</h3>
+                <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>Step 2: What This Could Mean</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
                   We explain the real-world implications, risks, and potential safety or financial consequences (e.g., &ldquo;If the water heater ever overheats, super-heated water could release directly onto anyone standing nearby, causing severe burns.&rdquo;).
                 </p>
@@ -805,7 +805,7 @@ export default function Services() {
                 3
               </div>
               <div>
-                <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>🛠️ Step 3: Our Recommendations</h3>
+                <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem' }}>Step 3: Our Recommendations</h3>
                 <p style={{ color: 'var(--color-gray-mid)', margin: 0, fontSize: '1.05rem' }}>
                   To stay 100% InterNACHI compliant, our recommendations specify exactly who needs to evaluate the system further and perform repairs as needed, keeping you safe and within standards (e.g., &ldquo;Have a licensed plumbing contractor evaluate further and repair as needed.&rdquo;).
                 </p>
@@ -816,7 +816,7 @@ export default function Services() {
           <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                📅 Schedule Your Inspection
+                Schedule Your Inspection
               </a>
               <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
                 Calculate Pricing First
@@ -837,7 +837,7 @@ export default function Services() {
 
           <div className="grid grid-2" style={{ gap: '2.5rem' }}>
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🔑</div>
+              <div className="font-mono text-sm font-bold text-primary mb-2">[ACCESS]</div>
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Active SUPRA Key Access</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
@@ -847,7 +847,7 @@ export default function Services() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1 }}>🔌</div>
+              <div className="font-mono text-sm font-bold text-primary mb-2">[SYSTEMS]</div>
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Complimentary Utility Concierge Service</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>

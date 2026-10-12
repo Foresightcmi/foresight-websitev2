@@ -206,7 +206,7 @@ export default function About() {
               </p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                  📅 Schedule With Christopher
+                  Schedule With Christopher &rarr;
                 </a>
                 <Link href="/quote" className="btn btn-outline" style={{ borderWidth: '2px' }}>
                   Get Instant Quote
@@ -232,21 +232,21 @@ export default function About() {
 
           <div className="grid grid-3">
             <div className="card card-premium" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>👥</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>01</div>
               <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Dual Coverage</h3>
               <p style={{ color: 'var(--color-gray-dark)' }}>
                 One inspector audits the roof, structure, and exterior while the second simultaneously reviews interior plumbing, electrical, and HVAC. Two sets of expert eyes dramatically reduce the chance of missed defects.
               </p>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚡</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>02</div>
               <h3 style={{ marginBottom: '1rem' }}>Half the Time</h3>
               <p style={{ color: 'var(--color-gray-dark)' }}>
                 Our two-inspector model cuts total inspection time in half &mdash; typically under 2.5 hours &mdash; without ever sacrificing thoroughness. You and your realtor get time back in your day.
               </p>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🛡️</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>03</div>
               <h3 style={{ marginBottom: '1rem' }}>CMI-Led Accuracy</h3>
               <p style={{ color: 'var(--color-gray-dark)' }}>
                 A lead Certified Master Inspector is on site at every single appointment, paired with another fully certified professional inspector. This team structure exceeds every InterNACHI standard.
@@ -273,11 +273,11 @@ export default function About() {
 
           <div className="grid grid-2" style={{ gap: '2.5rem' }}>
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                🔥
+              <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
+                FLIR
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>infrared thermal imaging</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Professional infrared cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation &mdash; without damaging drywall.
                 </p>
@@ -285,8 +285,8 @@ export default function About() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                🚁
+              <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
+                UAV
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>High-Resolution Aerial Drones</h3>
@@ -297,8 +297,8 @@ export default function About() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                💧
+              <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
+                H2O
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Moisture &amp; Gas Diagnostics</h3>
@@ -309,8 +309,8 @@ export default function About() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                📋
+              <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
+                24H
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>24-Hour Digital Reports</h3>
@@ -330,7 +330,7 @@ export default function About() {
         <div className="container">
           <div className="section-title">
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', padding: '0.4rem 1.25rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '1rem', display: 'inline-block' }}>
-              🛡️ UNMATCHED CLIENT FINANCIAL PROTECTION
+              UNMATCHED CLIENT FINANCIAL PROTECTION
             </span>
             <h2 style={{ color: 'var(--color-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>
               Up to <span style={{ color: 'var(--color-gold)' }}>$35,000</span> in Combined Warranty &amp; Guarantee Protection
@@ -405,7 +405,7 @@ export default function About() {
                   className="btn btn-gold"
                   style={{ fontSize: '0.9rem', padding: '0.65rem 1.5rem', display: 'inline-block' }}
                 >
-                  🔍 Find the Best Inspector in Your Neighborhood
+                  Find the Best Inspector in Your Neighborhood &rarr;
                 </a>
               </div>
             </div>
@@ -428,7 +428,7 @@ export default function About() {
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                📅 Schedule &amp; Get Your $35,000 Protection
+                Schedule &amp; Get Your $35,000 Protection &rarr;
               </a>
               <Link href="/quote" className="btn btn-outline-light" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
                 See Pricing First
@@ -550,7 +550,7 @@ export default function About() {
           </div>
           <div className="grid grid-3" style={{ gap: '2rem' }}>
             <div className="card" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📍</div>
+              <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', marginBottom: '1rem' }}>HQ</div>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.1rem' }}>Headquarters</h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                 Serving Metro Atlanta, GA<br />
@@ -558,7 +558,7 @@ export default function About() {
               </p>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📞</div>
+              <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', marginBottom: '1rem' }}>TEL</div>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.1rem' }}>Contact</h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                 <a href="tel:+16784802110" style={{ color: 'var(--color-red)', fontWeight: 600 }}>678-480-2110</a><br />
@@ -566,7 +566,7 @@ export default function About() {
               </p>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🌍</div>
+              <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', marginBottom: '1rem' }}>GEO</div>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.1rem' }}>Service Area</h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                 Serving 163+ cities across<br />
@@ -590,7 +590,7 @@ export default function About() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', background: 'var(--color-white)', color: 'var(--color-red)', fontWeight: 700, borderRadius: 'var(--radius-md)' }}>
-              📅 Schedule Your Inspection
+              Schedule Your Inspection &rarr;
             </a>
             <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
               Get Instant Quote

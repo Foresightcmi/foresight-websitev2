@@ -141,7 +141,7 @@ export default function FAQPage() {
                 InterNACHI CMI Topical Authority Directory
               </span>
               <h2 style={{ fontSize: '2.4rem', marginTop: '1rem', marginBottom: '0.75rem', fontFamily: 'var(--font-heading)', color: '#0f172a' }}>
-                🏰 Deep-Dive Inspection Authority Colonies
+                Deep-Dive Inspection Authority Hub
               </h2>
               <p style={{ fontSize: '1.1rem', color: '#64748b', maxWidth: '750px', margin: '0 auto', lineHeight: '1.6' }}>
                 Detailed forensic answers to critical Georgia contract, building science, and environmental questions. Each guide funnels directly into actionable due diligence tools.

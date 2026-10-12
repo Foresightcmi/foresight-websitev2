@@ -49,12 +49,12 @@ export default function SampleReports() {
 
       <section className="section bg-gray-light">
         <div className="container">
-          {/* 🌟 ACTUAL LIVE SAMPLE REPORT SHOWCASE 🌟 */}
+          {/* ACTUAL LIVE SAMPLE REPORT SHOWCASE */}
           <div className="card card-premium" style={{ marginBottom: '3.5rem', padding: '2.5rem', background: '#FFFFFF', borderTop: '4px solid var(--color-gold)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '1.5rem' }}>
               <div>
                 <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '0.75rem', fontWeight: 700 }}>
-                  🌟 Real Client Report Example
+                  Real Client Report Example
                 </span>
                 <h2 style={{ fontSize: '2rem', fontWeight: 800, margin: '0.25rem 0 0.5rem 0', color: '#0F172A' }}>
                   Actual Full Foresight Home Inspection Report
@@ -72,7 +72,7 @@ export default function SampleReports() {
                   className="btn btn-primary"
                   style={{ padding: '0.85rem 1.75rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                 >
-                  <span>📄</span> Open Full Screen Report
+                  Open Full Screen Report &rarr;
                 </a>
                 <a
                   href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
@@ -81,7 +81,7 @@ export default function SampleReports() {
                   className="btn btn-outline"
                   style={{ padding: '0.85rem 1.75rem', fontSize: '1rem', fontWeight: 700, borderColor: 'var(--color-gold)', color: 'var(--color-gold)' }}
                 >
-                  ⚡ Book Inspection
+                  Book Inspection &rarr;
                 </a>
               </div>
             </div>
@@ -89,19 +89,19 @@ export default function SampleReports() {
             {/* Feature Badges */}
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem', padding: '1rem', background: '#F8FAFC', borderRadius: '0.75rem', border: '1px solid #E2E8F0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
-                <span>👥</span> Two Certified Inspectors
+                <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Two Certified Inspectors
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
-                <span>📸</span> 220+ Diagnostic Photos
+                <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> 220+ Diagnostic Photos
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
-                <span>🌡️</span> infrared thermal scan Included
+                <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Infrared Thermal Scan Included
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
-                <span>📝</span> HomeGauge CRL™ Repair List
+                <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> HomeGauge CRL™ Repair List
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
-                <span>🛡️</span> $10,000 Warranty Backed
+                <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> $10,000 Warranty Backed
               </div>
             </div>
 
@@ -153,7 +153,7 @@ export default function SampleReports() {
                 className="btn btn-primary"
                 style={{ padding: '0.75rem 1.75rem' }}
               >
-                📅 Schedule Inspection
+                Schedule Inspection &rarr;
               </a>
             </div>
 
@@ -183,8 +183,8 @@ export default function SampleReports() {
           <div className="grid grid-2" style={{ gap: '2rem', marginBottom: '4rem' }}>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '2rem' }}>🌡️</span>
-                <h3 style={{ margin: 0 }}>infrared thermal imaging scan</h3>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', padding: '0.2rem 0.5rem', background: 'var(--color-red-light)', borderRadius: '4px' }}>FLIR</span>
+                <h3 style={{ margin: 0 }}>Infrared Thermal Imaging Scan</h3>
               </div>
               <p style={{ color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
                 Included on every standard inspection at no extra charge. Thermal scans identify hidden moisture leaks behind drywall, missing ceiling insulation, and overheating electrical breakers that visual inspection alone would miss.
@@ -193,7 +193,7 @@ export default function SampleReports() {
 
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '2rem' }}>👥</span>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-gold)', padding: '0.2rem 0.5rem', background: 'rgba(212,175,55,0.15)', borderRadius: '4px' }}>CMI</span>
                 <h3 style={{ margin: 0 }}>Two Inspectors on Site</h3>
               </div>
               <p style={{ color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
@@ -217,7 +217,7 @@ export default function SampleReports() {
             <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
               {/* Infographic Card 1 */}
               <div className="card card-premium" style={{ background: '#FFFFFF', padding: '1.75rem', borderTop: '4px solid var(--color-red)' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📅</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '0.5rem' }}>01</div>
                 <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
                   Georgia 7-Day Due Diligence Flowchart
                 </h3>
@@ -231,9 +231,9 @@ export default function SampleReports() {
 
               {/* Infographic Card 2 */}
               <div className="card card-premium" style={{ background: '#FFFFFF', padding: '1.75rem', borderTop: '4px solid var(--color-gold)' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🌡️</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '0.5rem' }}>02</div>
                 <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
-                  infrared thermal Anomaly Delta Guide
+                  Infrared Thermal Anomaly Delta Guide
                 </h3>
                 <p style={{ fontSize: '0.925rem', color: 'var(--color-gray-dark)', lineHeight: 1.6, marginBottom: '1rem' }}>
                   Explains the 5°F to 10°F infrared temperature differential that unmasks hidden moisture leaks behind tile, missing insulation batts, and overloaded circuit breakers.
@@ -245,7 +245,7 @@ export default function SampleReports() {
 
               {/* Infographic Card 3 */}
               <div className="card card-premium" style={{ background: '#FFFFFF', padding: '1.75rem', borderTop: '4px solid var(--color-dark)' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🏛️</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '0.5rem' }}>03</div>
                 <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--color-dark)' }}>
                   Atlanta Red Clay Soil & Foundation Matrix
                 </h3>
@@ -262,7 +262,7 @@ export default function SampleReports() {
             <div style={{ background: 'var(--color-dark)', color: '#FFFFFF', padding: '2rem', borderRadius: 'var(--radius-lg)', textAlign: 'left' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
                 <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem' }}>
-                  📢 Realtors & Publishers: Embed Our Inspection Data
+                  Realtors &amp; Publishers: Embed Our Inspection Data
                 </h3>
                 <span style={{ fontSize: '0.85rem', background: 'rgba(255,255,255,0.1)', padding: '0.3rem 0.8rem', borderRadius: '50px' }}>
                   Creative Commons Attribution License
@@ -290,10 +290,10 @@ export default function SampleReports() {
                 className="btn btn-primary"
                 style={{ padding: '0.85rem 2rem' }}
               >
-                📅 Schedule Now via HomeGauge
+                Schedule Now via HomeGauge &rarr;
               </a>
               <Link href="/quote" className="btn btn-outline" style={{ padding: '0.85rem 2rem' }}>
-                📊 Instant Quote Calculator
+                Instant Quote Calculator &rarr;
               </Link>
             </div>
           </div>

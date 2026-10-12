@@ -50,7 +50,7 @@ export default function TrueValueComparison() {
               marginBottom: '1rem' 
             }}
           >
-            ⚠️ Georgia Due Diligence Advisory: Unlicensed State Standard
+            Georgia Due Diligence Advisory: Unlicensed State Standard
           </div>
           <h2 style={{ fontSize: 'clamp(1.9rem, 4vw, 2.75rem)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.2, margin: '0 0 1rem 0' }}>
             The &ldquo;$25 Savings&rdquo; Illusion:<br />
@@ -209,7 +209,7 @@ export default function TrueValueComparison() {
         >
           <div style={{ maxWidth: '680px' }}>
             <span style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              💡 The Bottom Line For Atlanta Homebuyers
+              The Bottom Line For Atlanta Homebuyers
             </span>
             <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#FFFFFF', margin: '0.4rem 0 0.5rem 0' }}>
               Foresight is actually $100+ cheaper than a &ldquo;discount&rdquo; inspector.
@@ -227,14 +227,14 @@ export default function TrueValueComparison() {
               className="btn btn-gold"
               style={{ padding: '0.85rem 1.85rem', fontSize: '0.95rem', fontWeight: 800 }}
             >
-              📅 Schedule Two-Inspector Team
+              Schedule Two-Inspector Team
             </a>
             <Link
               href="/quote"
               className="btn btn-outline-light"
               style={{ padding: '0.85rem 1.85rem', fontSize: '0.95rem', fontWeight: 700 }}
             >
-              📊 Instant Online Quote
+              Instant Online Quote
             </Link>
           </div>
         </div>

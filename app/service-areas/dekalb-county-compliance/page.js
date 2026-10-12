@@ -108,30 +108,30 @@ export default function DeKalbCountyCompliancePage() {
 
   // ── Fixture requirement data ────────────────────────────────────────
   const fixtures = [
-    { icon: '🚽', label: 'Toilets', spec: '1.6 GPF or less' },
-    { icon: '🚿', label: 'Showerheads', spec: '2.5 GPM or less' },
-    { icon: '🚰', label: 'Faucets', spec: '2.2 GPM or less' },
+    { icon: '01', label: 'Toilets', spec: '1.6 GPF or less' },
+    { icon: '02', label: 'Showerheads', spec: '2.5 GPM or less' },
+    { icon: '03', label: 'Faucets', spec: '2.2 GPM or less' },
   ];
 
   // ── Inspection cards ────────────────────────────────────────────────
   const inspectionItems = [
     {
-      icon: '🚽',
+      icon: '01',
       title: 'Toilet Flow Rate Verification',
       desc: 'Every toilet is checked to confirm it meets the 1.6 gallons-per-flush (GPF) maximum required by DeKalb County.',
     },
     {
-      icon: '🚿',
+      icon: '02',
       title: 'Showerhead GPM Testing',
       desc: 'All showerheads are tested to verify they do not exceed the 2.5 gallons-per-minute (GPM) threshold.',
     },
     {
-      icon: '🚰',
+      icon: '03',
       title: 'Faucet Aerator Compliance',
       desc: 'Kitchen and bathroom faucets are inspected for compliant aerators at or below 2.2 GPM.',
     },
     {
-      icon: '📋',
+      icon: '04',
       title: 'Official Compliance Certificate',
       desc: 'Upon passing, we issue the official low-flow compliance certificate required for your DeKalb County property transfer.',
     },
@@ -215,7 +215,7 @@ export default function DeKalbCountyCompliancePage() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
             >
-              📊 Get Instant Quote
+              Get Instant Quote
             </Link>
             <a
               href={SCHEDULE_URL}
@@ -229,7 +229,7 @@ export default function DeKalbCountyCompliancePage() {
                 color: 'var(--color-white)',
               }}
             >
-              📅 Schedule Compliance Inspection
+              Schedule Compliance Inspection
             </a>
           </div>
         </div>
@@ -349,7 +349,7 @@ export default function DeKalbCountyCompliancePage() {
                   lineHeight: 1.6,
                 }}
               >
-                <strong style={{ color: 'var(--color-red)' }}>⚠️ Important:</strong> Non-compliant
+                <strong style={{ color: 'var(--color-red)' }}>Important:</strong> Non-compliant
                 fixtures must be replaced before the property transfer can close.
               </div>
             </div>
@@ -504,7 +504,7 @@ export default function DeKalbCountyCompliancePage() {
                 className="btn btn-primary"
                 style={{ padding: '0.85rem 2.5rem', fontSize: '1.05rem' }}
               >
-                📊 Get Your Quote
+                Get Your Quote
               </Link>
               <a
                 href={SCHEDULE_URL}
@@ -518,7 +518,7 @@ export default function DeKalbCountyCompliancePage() {
                   borderColor: 'var(--color-red)',
                 }}
               >
-                📅 Book Now
+                Book Now
               </a>
             </div>
           </div>
@@ -615,7 +615,7 @@ export default function DeKalbCountyCompliancePage() {
                 boxShadow: '0 6px 20px rgba(211,47,47,0.4)',
               }}
             >
-              📅 Schedule Compliance Inspection
+              Schedule Compliance Inspection
             </a>
             <a
               href="tel:6784802110"
@@ -627,7 +627,7 @@ export default function DeKalbCountyCompliancePage() {
                 color: 'var(--color-white)',
               }}
             >
-              📞 Call: 678-480-2110
+              Call: 678-480-2110
             </a>
           </div>
         </div>

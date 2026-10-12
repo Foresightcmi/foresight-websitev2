@@ -63,7 +63,7 @@ export default function ContactClient() {
               <p style={{ color: 'var(--color-gray-dark)', margin: 0 }}>Skip phone tag—schedule your Certified Master Inspector-led dual home inspection online for any home size across Metro Atlanta.</p>
             </div>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              📅 Schedule Your Inspection Online
+              Schedule Your Inspection Online &rarr;
             </a>
           </div>
 
@@ -77,7 +77,7 @@ export default function ContactClient() {
               <div className="card" style={{ marginBottom: '2rem' }}>
                 <h3 style={{ marginBottom: '0.75rem', color: 'var(--color-red)' }}>Phone</h3>
                 <a href="tel:678-480-2110" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-dark)', display: 'block', marginBottom: '0.75rem' }}>
-                  📞 678-480-2110
+                  (678) 480-2110
                 </a>
                 <a href="tel:678-480-2110" className="btn btn-outline" style={{ display: 'inline-block', padding: '0.5rem 1.25rem', fontSize: '0.9rem' }}>
                   Tap to Call Now
@@ -87,7 +87,7 @@ export default function ContactClient() {
               <div className="card" style={{ marginBottom: '2rem' }}>
                 <h3 style={{ marginBottom: '0.75rem', color: 'var(--color-red)' }}>Email</h3>
                 <a href="mailto:inspect@foresightcmi.com" style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--color-dark)' }}>
-                  ✉️ inspect@foresightcmi.com
+                  inspect@foresightcmi.com
                 </a>
               </div>
               
@@ -97,7 +97,7 @@ export default function ContactClient() {
                   <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Mon, Tue, Thu, Fri, Sat: 8:00 AM – 8:00 PM</li>
                   <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Wednesday: 8:00 AM – 7:00 PM</li>
                   <li style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Sunday: By Appointment Only</li>
-                  <li style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', marginTop: '0.5rem' }}>⚡ 24/7 Online Self-Scheduling Always Available</li>
+                  <li style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', marginTop: '0.5rem' }}>24/7 Online Self-Scheduling Always Available</li>
                 </ul>
               </div>
 
@@ -105,7 +105,7 @@ export default function ContactClient() {
                 <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', fontSize: '1.25rem' }}>Need an Instant Price Quote?</h3>
                 <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.95rem', marginBottom: '1.25rem' }}>Calculate exact inspection fees based on square footage, age, and location in seconds.</p>
                 <Link href="/quote" className="btn btn-primary" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
-                  ⚡ Calculate Instant Price Quote
+                  Calculate Instant Price Quote &rarr;
                 </Link>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function ContactClient() {
               <h2 style={{ marginBottom: '1.5rem' }}>Send Us a Message</h2>
               {submitStatus === 'success' ? (
                 <div style={{ padding: '2rem', textAlign: 'center', background: 'rgba(16, 185, 129, 0.08)', border: '2px solid #10b981', borderRadius: 'var(--radius-md)' }}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>✅</div>
+                  <div style={{ fontSize: '2rem', fontWeight: 900, color: '#10b981', marginBottom: '0.5rem' }}>✓</div>
                   <h3 style={{ marginBottom: '0.75rem', color: 'var(--color-dark)', fontSize: '1.4rem' }}>Message &amp; Request Received!</h3>
                   <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.5, maxWidth: '500px', margin: '0 auto 1.25rem' }}>
                     Thank you for reaching out to Foresight Home Inspections! Please note that all online submissions are <strong>tentative requests</strong>. Our office will review your message and contact you within <strong>20 minutes</strong> by phone or text with your official appointment confirmation and inspection agreements to sign. To solidify all appointments on our master calendar, the 50% deposit along with your signed agreements are submitted after receiving our confirmation (the remaining 50% balance is due upon completion before your report is released).
@@ -169,14 +169,14 @@ export default function ContactClient() {
                     color: 'var(--color-gray-dark)', 
                     lineHeight: 1.45 
                   }}>
-                    ℹ️ <strong>Tentative Inquiries &amp; Requests:</strong> All online contact submissions are tentative requests. Our office reviews property details and contacts you within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify all appointments on our calendar, the 50% deposit along with your signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50% balance is due upon inspection completion before report release. Sunday is strictly by appointment only. Auxiliary services (Pool, Termite, Radon, Sewer Scope) are scheduled and coordinated alongside your primary inspection.
+                    <strong>Tentative Inquiries &amp; Requests:</strong> All online contact submissions are tentative requests. Our office reviews property details and contacts you within 20 minutes with your official appointment confirmation and inspection agreements to sign. To solidify all appointments on our calendar, the 50% deposit along with your signed inspection agreements are completed after our office sends your appointment confirmation. The remaining 50% balance is due upon inspection completion before report release. Sunday is strictly by appointment only. Auxiliary services (Pool, Termite, Radon, Sewer Scope) are scheduled and coordinated alongside your primary inspection.
                   </div>
 
                   {submitStatus === 'error' && (
                     <p style={{ color: 'var(--color-red)', fontWeight: 500 }}>There was an error sending your message. Please try again or call us directly at 678-480-2110.</p>
                   )}
                   <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ width: '100%', padding: '1rem', fontSize: '1.125rem', opacity: isSubmitting ? 0.7 : 1 }}>
-                    {isSubmitting ? 'Sending...' : '✉️ Send Message / Request'}
+                    {isSubmitting ? 'Sending...' : 'Send Message / Request &rarr;'}
                   </button>
                 </form>
               )}
@@ -214,30 +214,30 @@ export default function ContactClient() {
                 <div style={{ flex: '1 1 320px', padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
                     <div style={{ display: 'inline-block', background: 'var(--color-red-light)', color: 'var(--color-red)', fontWeight: 700, padding: '0.35rem 0.85rem', borderRadius: 'var(--radius-full)', fontSize: '0.825rem', marginBottom: '1rem' }}>
-                      📍 HEADQUARTERS & DISPATCH
+                      HEADQUARTERS & DISPATCH
                     </div>
                     <h3 style={{ color: 'var(--color-dark)', marginBottom: '0.75rem', fontSize: '1.4rem' }}>Foresight Home Inspections, LLC</h3>
                     <address style={{ fontStyle: 'normal', lineHeight: 1.8, fontSize: '1.05rem', color: 'var(--color-gray-dark)' }}>
                       <strong style={{ color: 'var(--color-dark)' }}>Serving Metro Atlanta</strong><br />
                       and surrounding areas<br /><br />
                       <a href="tel:678-480-2110" style={{ fontWeight: 700, color: 'var(--color-red)', fontSize: '1.15rem', display: 'inline-block', marginBottom: '0.25rem' }}>
-                        📞 678-480-2110
+                        (678) 480-2110
                       </a><br />
                       <a href="mailto:inspect@foresightcmi.com" style={{ color: 'var(--color-dark)', fontWeight: 500 }}>
-                        ✉️ inspect@foresightcmi.com
+                        inspect@foresightcmi.com
                       </a>
                     </address>
                   </div>
 
                   <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#f8fafc', borderRadius: 'var(--radius-md)', fontSize: '0.925rem', borderLeft: '4px solid var(--color-red)' }}>
-                    <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.35rem' }}>⏰ Business Hours:</strong>
+                    <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.35rem' }}>Business Hours:</strong>
                     <div style={{ lineHeight: 1.6, color: 'var(--color-gray-dark)' }}>
                       Mon, Tue, Thu, Fri, Sat: <strong>8:00 AM – 8:00 PM</strong><br />
                       Wednesday: <strong>8:00 AM – 7:00 PM</strong><br />
                       Sunday: <strong>By Appointment Only</strong>
                     </div>
                     <span style={{ fontSize: '0.8rem', color: 'var(--color-red)', fontWeight: 600, display: 'block', marginTop: '0.5rem' }}>
-                      ⚡ 24/7 Online Self-Scheduling Always Active
+                      24/7 Online Self-Scheduling Always Active
                     </span>
                   </div>
 
@@ -249,14 +249,14 @@ export default function ContactClient() {
                       className="btn btn-primary"
                       style={{ flex: '1 1 180px', padding: '0.75rem 1rem', textAlign: 'center', fontSize: '0.925rem' }}
                     >
-                      📍 Open in Google Maps
+                      Open in Google Maps &rarr;
                     </a>
                     <Link
                       href="/service-areas"
                       className="btn btn-outline"
                       style={{ flex: '1 1 140px', padding: '0.75rem 1rem', textAlign: 'center', fontSize: '0.925rem' }}
                     >
-                      🏙️ Service Areas
+                      Service Areas &rarr;
                     </Link>
                   </div>
                 </div>

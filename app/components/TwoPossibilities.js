@@ -10,7 +10,7 @@ export default function TwoPossibilities() {
         {/* Section Header */}
         <div className="section-title text-center" style={{ marginBottom: '3.5rem' }}>
           <span className="badge" style={{ background: 'rgba(239, 68, 68, 0.15)', color: '#F87171', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '0.45rem 1.25rem', borderRadius: '2rem', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.06em', display: 'inline-block', marginBottom: '1.25rem' }}>
-            ⚠️ GEORGIA CONSUMER ADVISORY: ZERO STATE LICENSING REQUIRED
+            GEORGIA CONSUMER ADVISORY: ZERO STATE LICENSING REQUIRED
           </span>
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.2, marginBottom: '1rem', letterSpacing: '-0.02em' }}>
             The Two Possibilities on Inspection Day<br />
@@ -70,7 +70,7 @@ export default function TwoPossibilities() {
               </ul>
             </div>
             <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(239, 68, 68, 0.12)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: 'var(--radius-md)', fontSize: '0.88rem', color: '#FCA5A5', lineHeight: 1.5 }}>
-              ⚠️ <strong>The Cost:</strong> A minor $50 upfront savings can easily result in thousands in undiscovered repairs after you take title.
+              <strong>The Cost:</strong> A minor $50 upfront savings can easily result in thousands in undiscovered repairs after you take title.
             </div>
           </div>
 
@@ -127,7 +127,7 @@ export default function TwoPossibilities() {
                 className="btn btn-gold"
                 style={{ flex: '1 1 200px', textAlign: 'center', padding: '0.9rem 1.5rem', fontWeight: 700 }}
               >
-                📅 Schedule Inspection Now
+                Schedule Inspection Now
               </a>
               <Link
                 href="/quote"
@@ -141,10 +141,10 @@ export default function TwoPossibilities() {
 
         </div>
 
-        {/* 🏛️ What Is a Certified Master Inspector (CMI®)? Credential Deep Dive */}
+        {/* What Is a Certified Master Inspector (CMI®)? Credential Deep Dive */}
         <div style={{ background: 'rgba(15, 23, 42, 0.95)', border: '1px solid rgba(212, 175, 55, 0.35)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', backdropFilter: 'blur(8px)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '2.25rem', lineHeight: 1 }}>🎖️</span>
+            <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-gold)', fontWeight: 800, fontSize: '0.9rem' }}>CMI</div>
             <div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFFFFF', margin: 0 }}>
                 What Is a Certified Master Inspector (CMI®)?

@@ -9,57 +9,57 @@ export default function QualityChecklist() {
       id: 'cmi',
       label: 'Lead Inspector is a Certified Master Inspector® (CMI)',
       description: 'The highest designation in North America, representing the top 2% of elite, audit-verified inspectors.',
-      foresight: '✅ YES (Christopher Boykin is a credentialed CMI®)',
-      others: '❌ NO (Often rookie or uncertified solo operators)'
+      foresight: 'Included (Christopher Boykin is a credentialed CMI®)',
+      others: 'Not Included (Often rookie or uncertified solo operators)'
     },
     {
       id: 'dual',
       label: 'Two Certified Inspectors On-Site Working in Unison',
       description: 'Double the eyes, double the thoroughness. One focuses on systems/exterior, one on interior/details.',
-      foresight: '✅ YES (Two Person Inspection Team certified team physically on every job)',
-      others: '❌ NO (Solo dispatch model where one person rushes the job)'
+      foresight: 'Included (Two Person Inspection Team certified team physically on every job)',
+      others: 'Not Included (Solo dispatch model where one person rushes the job)'
     },
     {
       id: 'thermal',
       label: 'Complimentary infrared thermal imaging scan Included',
       description: 'Infrared scanning of panels, walls, and ceilings to locate active hidden water leaks and fire hazards.',
-      foresight: '✅ YES (Included on every inspection at $0 cost)',
-      others: '❌ NO (Charged as a $150–$250 paid add-on, or not offered)'
+      foresight: 'Included (Included on every inspection at $0 cost)',
+      others: 'Not Included (Charged as a $150–$250 paid add-on, or not offered)'
     },
     {
       id: 'warranty',
       label: 'Complimentary $10,000 Master Protection Warranty',
       description: '$0 deductible coverage for major appliances, structure, mechanicals (HVAC/plumbing), roofs, and mold.',
-      foresight: '✅ YES (Elite Master-level $10,000 policy included free)',
-      others: '❌ NO (Zero warranty protection, or heavily restricted plans)'
+      foresight: 'Included (Elite Master-level $10,000 policy included free)',
+      others: 'Not Included (Zero warranty protection, or heavily restricted plans)'
     },
     {
       id: 'concierge',
       label: 'Free White-Glove Utility Setup (Utilities Plus)',
       description: 'A single, high-touch concierge phone call to connect power, water, gas, fiber internet, and home security.',
-      foresight: '✅ YES (Complimentary VIP access to Utilities Plus)',
-      others: '❌ NO (Client must coordinate and call individual utilities themselves)'
+      foresight: 'Included (Complimentary VIP access to Utilities Plus)',
+      others: 'Not Included (Client must coordinate and call individual utilities themselves)'
     },
     {
       id: 'supra',
       label: 'Active SUPRA Key Access for Secure Lockbox Entry',
       description: 'Inspectors carry active MLS eKEYs, saving real estate agents time-consuming coordination and long drives.',
-      foresight: '✅ YES (Active SUPRA entry carried by our team)',
-      others: '❌ NO (Realtor or homeowner must physically open the door)'
+      foresight: 'Included (Active SUPRA entry carried by our team)',
+      others: 'Not Included (Realtor or homeowner must physically open the door)'
     },
     {
       id: 'drone',
       label: 'High-Resolution Aerial Drone Scan for Steep Roofs',
       description: 'Specialized camera drones scan steep, tall, or delicate roofs that other inspectors mark as "inaccessible".',
-      foresight: '✅ YES (Drone imaging included for all inaccessible structures)',
-      others: '❌ NO (Roof is marked "Not Inspected" if steep or wet)'
+      foresight: 'Included (Drone imaging included for all inaccessible structures)',
+      others: 'Not Included (Roof is marked "Not Inspected" if steep or wet)'
     },
     {
       id: 'crl',
       label: '24-Hour Digital Report with Create Request List (CRL™)',
       description: 'Allows agents and buyers to click items directly inside the report to generate standard repair amendments in minutes.',
-      foresight: '✅ YES (Interactive HomeGauge CRL™ reports delivered within 24hr)',
-      others: '❌ NO (Static PDF reports requiring manual copying and pasting)'
+      foresight: 'Included (Interactive HomeGauge CRL™ reports delivered within 24hr)',
+      others: 'Not Included (Static PDF reports requiring manual copying and pasting)'
     }
   ];
 
@@ -143,11 +143,11 @@ export default function QualityChecklist() {
         {/* Printable/Downloadable Callout */}
         <div className="no-print" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--color-gray-light)', padding: '1.5rem 2rem', borderRadius: 'var(--radius-lg)', marginBottom: '3rem', border: '1px solid var(--color-gray-mid)' }}>
           <div style={{ flex: 1, marginRight: '2rem' }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.25rem' }}>📋 Vetting Checklist Worksheet</h3>
+            <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.25rem' }}>Vetting Checklist Worksheet</h3>
             <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '0.95rem' }}>Print this sheet to physically verify credentials, or check items off online as you make calls.</p>
           </div>
           <button onClick={handlePrint} className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', gap: '0.5rem', display: 'flex', alignItems: 'center' }}>
-            🖨️ Print / Download Vetting PDF
+            Print / Download Vetting PDF
           </button>
         </div>
 
@@ -224,7 +224,7 @@ export default function QualityChecklist() {
                 {/* Foresight Column */}
                 <div style={{ background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(211,47,47,0.15)', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
                   <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-red)', fontWeight: 800, display: 'block', marginBottom: '0.25rem' }}>
-                    🛡️ FORESIGHT STANDARDS
+                    FORESIGHT STANDARDS
                   </span>
                   <strong style={{ fontSize: '0.95rem', color: 'var(--color-dark)' }}>{item.foresight}</strong>
                 </div>
@@ -232,7 +232,7 @@ export default function QualityChecklist() {
                 {/* Other/Cheap Inspectors Column */}
                 <div style={{ background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
                   <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-gray-dark)', fontWeight: 800, display: 'block', marginBottom: '0.25rem' }}>
-                    ⚖️ CHEAP / OTHER INSPECTORS
+                    OTHER / BUDGET INSPECTORS
                   </span>
                   <strong style={{ fontSize: '0.95rem', color: 'var(--color-gray-dark)' }}>{item.others}</strong>
                 </div>
@@ -249,10 +249,10 @@ export default function QualityChecklist() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-              📅 Book CMI-Led Inspection Now
+              Book CMI-Led Inspection Now
             </a>
             <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}>
-              💰 Calculate Instant Price Quote
+              Calculate Instant Price Quote
             </Link>
           </div>
         </div>

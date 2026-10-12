@@ -25,7 +25,7 @@ export async function POST(req) {
       event = JSON.parse(payload);
     }
   } catch (err) {
-    console.error('⚠️ Stripe Webhook signature verification failed:', err.message);
+    console.error('Stripe Webhook signature verification failed:', err.message);
     return NextResponse.json({ error: `Webhook Error: ${err.message}` }, { status: 400 });
   }
 
@@ -42,7 +42,7 @@ export async function POST(req) {
     const amountTotal = (session.amount_total / 100).toFixed(2);
     const serviceType = metadata.service_type || 'outside-report-audit';
 
-    console.log(`💰 [STRIPE WEBHOOK] Payment received: $${amountTotal} from ${clientName} (${clientEmail}) for ${serviceType}`);
+    console.log(`[STRIPE WEBHOOK] Payment received: $${amountTotal} from ${clientName} (${clientEmail}) for ${serviceType}`);
 
     // 1. Update data/leads.json
     try {
@@ -85,9 +85,9 @@ export async function POST(req) {
 
     // 2. Real-Time Push Notification via ntfy.sh ($0 Cost)
     try {
-      const pushTitle = `💰 $${amountTotal} PAID: ${clientName} (4-Hr Audit)`;
+      const pushTitle = `$${amountTotal} PAID: ${clientName} (4-Hr Audit)`;
       const pushLines = [
-        `💵 STRIPE PAYMENT CONFIRMED: $${amountTotal}`,
+        `STRIPE PAYMENT CONFIRMED: $${amountTotal}`,
         `Service: ${serviceType === 'outside-report-audit' ? '$99 Due Diligence Report Audit' : 'Inspection Deposit'}`,
         `Client: ${clientName}`,
         `Phone: ${clientPhone}`,
@@ -95,7 +95,7 @@ export async function POST(req) {
         `Property: ${propertyAddress}`,
         reportLink ? `Report: ${reportLink}` : '',
         notes ? `Notes: ${notes}` : '',
-        `⏱️ 4-Hour Delivery Clock Started!`
+        `4-Hour Delivery Clock Started!`
       ].filter(Boolean).join('\n');
 
       await fetch('https://ntfy.sh/fores-antigravity-alerts-77', {
@@ -129,11 +129,11 @@ export async function POST(req) {
         await transporter.sendMail({
           from: 'inspect@foresightcmi.com',
           to: 'inspect@foresightcmi.com, plsinspectnow@gmail.com',
-          subject: `💰 [PAID $${amountTotal}] Due Diligence Audit Order - ${clientName}`,
+          subject: `[PAID $${amountTotal}] Due Diligence Audit Order - ${clientName}`,
           html: `
             <div style="font-family: Arial, sans-serif; padding: 24px; border: 2px solid #10B981; border-radius: 8px; background: #ffffff; max-width: 650px;">
               <div style="background: #10B981; color: #ffffff; padding: 12px 16px; border-radius: 6px 6px 0 0; margin: -24px -24px 20px -24px;">
-                <h2 style="margin: 0; font-size: 1.25rem;">💰 Payment Confirmed • $${amountTotal}</h2>
+                <h2 style="margin: 0; font-size: 1.25rem;">Payment Confirmed • $${amountTotal}</h2>
                 <p style="margin: 4px 0 0; font-size: 0.85rem; opacity: 0.95;">Stripe Checkout Session: ${session.id}</p>
               </div>
               <p>A new <strong>$99 Standalone Due Diligence Repair Cost Audit</strong> has been paid on Stripe. The 4-hour SLA delivery clock has started.</p>

@@ -171,7 +171,7 @@ export default function ReviewClient() {
               gap: '0.5rem',
             }}
           >
-            <span>💡</span> Helpful Details to Mention in Your 5-Star Review:
+            Helpful Details to Mention in Your 5-Star Review:
           </h2>
           <p style={{ fontSize: '0.9rem', color: '#475569', marginBottom: '1rem', lineHeight: 1.5 }}>
             Specific details help other Atlanta families know what to expect and strengthen our local community presence:
@@ -184,25 +184,25 @@ export default function ReviewClient() {
             }}
           >
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>👥 Two-Inspector Team:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Two-Inspector Team:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
                 Having two certified inspectors on-site for thoroughness and half the inspection time.
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>🔍 infrared thermal &amp; Drone Tech:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Infrared Thermal &amp; Drone Tech:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
                 Infrared thermal imaging, electrical panel scan, and aerial drone roof findings.
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>🏆 Christopher Boykin, CMI®:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Christopher Boykin, CMI®:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
                 Clear explanations, honest communication, and patient walkthrough answers.
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>📍 Atlanta Suburb &amp; CRL Report:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Atlanta Suburb &amp; CRL Report:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
                 Mentioning your neighborhood and how the same-day report helped during negotiations.
               </p>
@@ -236,7 +236,7 @@ export default function ReviewClient() {
               boxShadow: '0 4px 12px rgba(15, 23, 42, 0.15)'
             }}
           >
-            <span>📱</span> {showInspectorTool ? 'Hide Review Dispatch App' : 'Open Foresight 5-Star Review Dispatch App'}
+            {showInspectorTool ? 'Hide Review Dispatch App' : 'Open Foresight 5-Star Review Dispatch App'}
           </button>
 
           {showInspectorTool && (
@@ -352,7 +352,7 @@ export default function ReviewClient() {
               <div style={{ marginBottom: '1.25rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                   <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#38BDF8', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span>📱</span> SMS Message Preview (5-Star Request Expressed)
+                    SMS Message Preview (5-Star Request Expressed)
                   </span>
                   <div style={{ display: 'flex', gap: '6px' }}>
                     <button
@@ -371,7 +371,7 @@ export default function ReviewClient() {
                         gap: '4px'
                       }}
                     >
-                      📲 1-Tap Send SMS
+                      1-Tap Send SMS &rarr;
                     </button>
                     <button
                       onClick={() => copyToClipboard(activeSms, 'sms')}
@@ -386,7 +386,7 @@ export default function ReviewClient() {
                         cursor: 'pointer',
                       }}
                     >
-                      {copiedType === 'sms' ? '✅ Copied!' : '📋 Copy'}
+                      {copiedType === 'sms' ? 'Copied' : 'Copy'}
                     </button>
                   </div>
                 </div>
@@ -410,7 +410,7 @@ export default function ReviewClient() {
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                   <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#38BDF8', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span>✉️</span> Email Subject &amp; Body Preview
+                    Email Subject &amp; Body Preview
                   </span>
                   <div style={{ display: 'flex', gap: '6px' }}>
                     <button
@@ -429,7 +429,7 @@ export default function ReviewClient() {
                         gap: '4px'
                       }}
                     >
-                      ✉️ 1-Tap Send Email
+                      1-Tap Send Email &rarr;
                     </button>
                     <button
                       onClick={() => copyToClipboard(activeEmailBody, 'email')}
@@ -444,7 +444,7 @@ export default function ReviewClient() {
                         cursor: 'pointer',
                       }}
                     >
-                      {copiedType === 'email' ? '✅ Copied!' : '📋 Copy'}
+                      {copiedType === 'email' ? 'Copied' : 'Copy'}
                     </button>
                   </div>
                 </div>

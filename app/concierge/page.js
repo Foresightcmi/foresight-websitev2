@@ -2,11 +2,22 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import VoiceAgentModal from '../components/VoiceAgentModal';
+import dynamic from 'next/dynamic';
 import { getChrisKnowledgeFallback } from '../../lib/chris-brain-prompt';
+
+const VoiceAgentModal = dynamic(() => import('../components/VoiceAgentModal'), {
+  ssr: false,
+});
 
 export default function ConciergePage() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpen = () => setIsVoiceModalOpen(true);
+    window.addEventListener('open_foresight_live_consultation', handleOpen);
+    return () => window.removeEventListener('open_foresight_live_consultation', handleOpen);
+  }, []);
+
   const [messages, setMessages] = useState([
     {
       role: 'ai',
@@ -178,7 +189,7 @@ export default function ConciergePage() {
               onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0) scale(1)'}
             >
-              <span style={{ fontSize: '1.3rem' }}>🎙️</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
               <span>Launch Live Voice Consultation</span>
             </button>
             <Link
@@ -245,7 +256,7 @@ export default function ConciergePage() {
                   </span>
                 </div>
                 <p style={{ color: '#94a3b8', fontSize: '0.825rem', margin: '0.15rem 0 0 0' }}>
-                  Live Concierge Consultation &bull; <span style={{ color: '#10b981', fontWeight: 600 }}>🎙️ Speak or 💬 Type</span>
+                  Live Concierge Consultation &bull; <span style={{ color: '#10b981', fontWeight: 600 }}>Hands-Free Voice &amp; Direct Text</span>
                 </p>
               </div>
             </div>
@@ -269,7 +280,7 @@ export default function ConciergePage() {
                   letterSpacing: '0.03em'
                 }}
               >
-                <span>🎙️</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
                 <span>Open Voice Console</span>
               </button>
               <img src="/cmi_logo.png" alt="Certified Master Inspector" style={{ height: '36px', opacity: 0.9 }} />
@@ -290,12 +301,12 @@ export default function ConciergePage() {
               Quick Answers:
             </span>
             {[
-              { label: '👥 2-Inspector Standard', q: 'Why do you send two certified inspectors on every inspection?' },
-              { label: '🛡️ Up to $35k Warranties', q: 'What warranties and guarantees are included with my inspection?' },
-              { label: '📷 Free Thermal & Drones', q: 'Do you include infrared thermal imaging and aerial drone scans?' },
-              { label: '💰 Negotiation Leverage', q: 'How does your 24-hour CRL report help me negotiate seller repairs?' },
-              { label: '⚖️ vs Competitors', q: 'How does Foresight compare to national franchises and discount solo inspectors?' },
-              { label: '📋 InterNACHI SOP', q: 'What are the official InterNACHI Standards of Practice that you inspect?' }
+              { label: '2-Inspector Standard', q: 'Why do you send two certified inspectors on every inspection?' },
+              { label: 'Up to $35k Warranties', q: 'What warranties and guarantees are included with my inspection?' },
+              { label: 'Included Thermal & Drones', q: 'Do you include infrared thermal imaging and aerial drone scans?' },
+              { label: 'Negotiation Leverage', q: 'How does your 24-hour CRL report help me negotiate seller repairs?' },
+              { label: 'Firm Comparison', q: 'How does Foresight compare to national franchises and discount solo inspectors?' },
+              { label: 'InterNACHI SOP', q: 'What are the official InterNACHI Standards of Practice that you inspect?' }
             ].map((chip, idx) => (
               <button
                 key={idx}
@@ -401,7 +412,7 @@ export default function ConciergePage() {
                 flexShrink: 0
               }}
             >
-              🎙️
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
             </button>
             <input 
               type="text"
@@ -444,22 +455,22 @@ export default function ConciergePage() {
         {/* Trust Badges Bar */}
         <div style={{ marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '1.2rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>👥</div>
+            <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 800, color: '#D4AF37', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'inline-flex', padding: '3px 8px', borderRadius: '4px', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)' }}>01</div>
             <h3 style={{ color: '#ffffff', fontSize: '0.95rem', margin: '0 0 0.3rem 0', fontWeight: 700 }}>2-Inspector Standard</h3>
             <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>Every inspection conducted by two certified inspectors for double scrutiny.</p>
           </div>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '1.2rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>🛡️</div>
+            <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 800, color: '#D4AF37', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'inline-flex', padding: '3px 8px', borderRadius: '4px', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)' }}>02</div>
             <h3 style={{ color: '#ffffff', fontSize: '0.95rem', margin: '0 0 0.3rem 0', fontWeight: 700 }}>Up to $35k Warranties</h3>
             <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>$10,000 Elite Master ($0 ded.) + $25,000 InterNACHI Honor Guarantee.</p>
           </div>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '1.2rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>📷</div>
+            <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 800, color: '#D4AF37', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'inline-flex', padding: '3px 8px', borderRadius: '4px', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)' }}>03</div>
             <h3 style={{ color: '#ffffff', fontSize: '0.95rem', margin: '0 0 0.3rem 0', fontWeight: 700 }}>Free Thermal &amp; Drone</h3>
             <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>High-res infrared thermal imaging and 4K aerial roof scans included free.</p>
           </div>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '1.2rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>⚡</div>
+            <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 800, color: '#D4AF37', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'inline-flex', padding: '3px 8px', borderRadius: '4px', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)' }}>04</div>
             <h3 style={{ color: '#ffffff', fontSize: '0.95rem', margin: '0 0 0.3rem 0', fontWeight: 700 }}>24-Hour Reports</h3>
             <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>Create Request List (CRL) for fast, effortless seller repair negotiation addenda.</p>
           </div>
@@ -467,7 +478,9 @@ export default function ConciergePage() {
       </div>
 
       {/* Voice Agent Modal for Live Audio Turns */}
-      <VoiceAgentModal isOpen={isVoiceModalOpen} onClose={() => setIsVoiceModalOpen(false)} />
+      {isVoiceModalOpen && (
+        <VoiceAgentModal isOpen={isVoiceModalOpen} onClose={() => setIsVoiceModalOpen(false)} />
+      )}
     </section>
   );
 }

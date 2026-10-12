@@ -127,14 +127,14 @@ export default function DueDiligencePage() {
               className="btn btn-primary"
               style={{ padding: '0.95rem 2.25rem', fontSize: '1.1rem', fontWeight: 700 }}
             >
-              ⚡ Priority Schedule Inspection (24/7)
+              Priority Schedule Inspection (24/7) &rarr;
             </a>
             <a
               href="tel:6784802110"
               className="btn btn-outline"
               style={{ padding: '0.95rem 2.25rem', fontSize: '1.1rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}
             >
-              📞 Call for Rush Slot: 678-480-2110
+              Call for Rush Slot: (678) 480-2110
             </a>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function DueDiligencePage() {
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
             <span className="badge" style={{ marginBottom: '0.75rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold-dark)' }}>
-              🏛️ Georgia Real Estate Contingency &amp; Repair Underwriter
+              Georgia Real Estate Contingency &amp; Repair Underwriter
             </span>
             <h2 style={{ fontSize: '2.4rem', fontWeight: 800 }}>Due Diligence Timeline &amp; Repair Credit Negotiator</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '0.75rem auto 0', fontSize: '1.1rem' }}>
@@ -170,7 +170,7 @@ export default function DueDiligencePage() {
           <div className="grid grid-3" style={{ gap: '2rem' }}>
             {/* Pillar 1 */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2.5rem 2rem', borderRadius: '12px', borderTop: '4px solid var(--color-red)', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>📅</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1.25rem' }}>01</div>
               <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.75rem' }}>
                 Guaranteed 48-Hour Scheduling Window
               </h3>
@@ -181,7 +181,7 @@ export default function DueDiligencePage() {
 
             {/* Pillar 2 */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2.5rem 2rem', borderRadius: '12px', borderTop: '4px solid var(--color-red)', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>⚡</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1.25rem' }}>02</div>
               <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.75rem' }}>
                 Same-Day Digital Report Delivery
               </h3>
@@ -192,7 +192,7 @@ export default function DueDiligencePage() {
 
             {/* Pillar 3 */}
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', padding: '2.5rem 2rem', borderRadius: '12px', borderTop: '4px solid var(--color-gold)', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>🛡️</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1.25rem' }}>03</div>
               <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.75rem' }}>
                 Up to $35,000 Warranty &amp; Guarantee Protection
               </h3>
@@ -335,14 +335,14 @@ export default function DueDiligencePage() {
               className="btn btn-primary"
               style={{ padding: '0.95rem 2.25rem', fontSize: '1.1rem', fontWeight: 700 }}
             >
-              📅 Book Online 24/7 (Instant Confirmation)
+              Book Online 24/7 (Instant Confirmation) &rarr;
             </a>
             <Link
               href="/quote"
               className="btn btn-outline"
               style={{ padding: '0.95rem 2.25rem', fontSize: '1.1rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}
             >
-              📊 Instant Fee Calculator
+              Instant Fee Calculator &rarr;
             </Link>
           </div>
         </div>

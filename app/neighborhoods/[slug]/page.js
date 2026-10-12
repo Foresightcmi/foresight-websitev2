@@ -153,7 +153,7 @@ export default async function NeighborhoodPage({ params }) {
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <span className="badge" style={{ background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.85rem', backdropFilter: 'blur(8px)' }}>
-              🏛️ {hood.type}
+              {hood.type}
             </span>
             <span className="badge" style={{ background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.85rem', backdropFilter: 'blur(8px)' }}>
               ⏳ Era: {hood.era}
@@ -176,14 +176,14 @@ export default async function NeighborhoodPage({ params }) {
               className="btn btn-primary"
               style={{ padding: '0.9rem 2rem', fontSize: '1.05rem', fontWeight: 700 }}
             >
-              📅 Schedule {hood.name} Inspection
+              Schedule {hood.name} Inspection
             </a>
             <Link
               href="/quote"
               className="btn btn-outline"
               style={{ padding: '0.9rem 2rem', fontSize: '1.05rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}
             >
-              📊 Calculate Instant Fee
+              Calculate Instant Fee
             </Link>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default async function NeighborhoodPage({ params }) {
               </p>
               <div style={{ padding: '1.25rem', background: 'var(--color-gray-light)', borderRadius: '8px', borderLeft: '4px solid var(--color-red)' }}>
                 <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.5rem' }}>
-                  📍 Parent Municipality & Service Link:
+                  Parent Municipality & Service Link:
                 </strong>
                 <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--color-gray-dark)' }}>
                   Located within {hood.county} County. Explore our full citywide inspection capabilities on our{' '}
@@ -384,14 +384,14 @@ export default async function NeighborhoodPage({ params }) {
               className="btn btn-primary"
               style={{ padding: '0.9rem 2.25rem', fontSize: '1.1rem', fontWeight: 700 }}
             >
-              📅 Book Online 24/7
+              Book Online 24/7
             </a>
             <a
               href="tel:6784802110"
               className="btn btn-outline"
               style={{ padding: '0.9rem 2.25rem', fontSize: '1.1rem', borderColor: 'var(--color-white)', color: 'var(--color-white)' }}
             >
-              📞 Call 678-480-2110
+              Call 678-480-2110
             </a>
           </div>
         </div>

@@ -250,7 +250,7 @@ export default async function CountyPage({ params }) {
             fontSize: '0.9rem',
             marginBottom: '1.25rem'
           }}>
-            <span>📍</span>
+            
             <span>{county.name} Regional Coverage (County Seat: {county.seat})</span>
           </div>
 
@@ -289,7 +289,7 @@ export default async function CountyPage({ params }) {
                 boxShadow: '0 4px 14px rgba(220, 38, 38, 0.4)'
               }}
             >
-              📅 Schedule in {county.name}
+              Schedule in {county.name}
             </a>
             <Link
               href="/quote"
@@ -302,7 +302,7 @@ export default async function CountyPage({ params }) {
                 color: '#ffffff'
               }}
             >
-              📊 Instant Flat-Rate Quote
+              Instant Flat-Rate Quote
             </Link>
           </div>
         </div>
@@ -313,16 +313,16 @@ export default async function CountyPage({ params }) {
         <div className="container" style={{ maxWidth: '900px' }}>
           <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
             <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: '0 0 0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>🛡️</span> Quick Diagnostic Overview: {county.name}, GA Inspections
+              Quick Diagnostic Overview: {county.name}, GA Inspections
             </h2>
             <p className="county-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
               Foresight Home Inspections serves all residential communities across {county.name}, Georgia within our 50-mile operating radius. Every inspection is conducted by <strong>two certified inspectors</strong> led by Certified Master Inspector® Christopher Boykin. Pricing starts at $295 for condos and $345 for single-family homes, with same-day digital PDF reports delivered within 24 hours and an included <strong>$10,000 Elite Master Warranty ($0 deductible)</strong>.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)' }}>
-              <div><strong>👨‍🔧 Team:</strong> 2 Certified Inspectors</div>
+              <div><strong>Team:</strong> 2 Certified Inspectors</div>
               <div><strong>⏱️ Duration:</strong> 1.5–2.5 Hours</div>
-              <div><strong>📑 Report:</strong> Under 24 Hours</div>
-              <div><strong>🛡️ Warranty:</strong> $10,000 ($0 Deductible)</div>
+              <div><strong>Report:</strong> Under 24 Hours</div>
+              <div><strong>Warranty:</strong> $10,000 ($0 Deductible)</div>
             </div>
           </div>
         </div>
@@ -342,7 +342,7 @@ export default async function CountyPage({ params }) {
             marginBottom: '3rem'
           }}>
             <h2 style={{ fontSize: '1.35rem', color: '#991b1b', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>⚠️</span> Common Property Defect Risks in {county.name}
+              Common Property Defect Risks in {county.name}
             </h2>
             <ul style={{ margin: 0, paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#7f1d1d', fontSize: '1rem', lineHeight: 1.6 }}>
               {county.keyRisks.map((risk, idx) => (
@@ -379,7 +379,7 @@ export default async function CountyPage({ params }) {
                       boxShadow: '0 1px 3px rgba(0,0,0,0.02)'
                     }}
                   >
-                    <span style={{ color: 'var(--color-red)', marginRight: '0.5rem' }}>📍</span>
+                    <span className="font-mono text-xs text-primary font-bold mr-2">[ZONE]</span>
                     {city['City Name']}
                     <span style={{ display: 'block', fontSize: '0.75rem', color: '#64748b', marginTop: '0.25rem', fontWeight: 400 }}>
                       Zip: {city.Zip} • View Page &rarr;
@@ -399,7 +399,7 @@ export default async function CountyPage({ params }) {
                       fontWeight: 600
                     }}
                   >
-                    <span style={{ color: 'var(--color-red)', marginRight: '0.5rem' }}>📍</span>
+                    <span className="font-mono text-xs text-primary font-bold mr-2">[ZONE]</span>
                     {cityName}
                   </div>
                 ))
@@ -417,7 +417,7 @@ export default async function CountyPage({ params }) {
             border: '1px solid #334155'
           }}>
             <h2 style={{ color: '#ffffff', fontSize: '1.65rem', marginBottom: '1rem', textAlign: 'center' }}>
-              🛡️ The Foresight Dual-Inspector Standard in {county.name}
+              The Foresight Dual-Inspector Standard in {county.name}
             </h2>
             <p style={{ color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.7, textAlign: 'center', maxWidth: '750px', margin: '0 auto 1.5rem' }}>
               Unlike ordinary single-inspector companies in {county.name} that take 3.5 to 5 hours on site, Foresight sends <strong>two certified inspectors</strong> on every residential property. Led by Certified Master Inspector Christopher Boykin, you get double the thoroughness in half the time.
@@ -430,7 +430,7 @@ export default async function CountyPage({ params }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}>
               <p style={{ color: '#ffffff', margin: 0, fontSize: '0.95rem', fontWeight: 600 }}>
-                ⚡ <strong>Zero Extra Cost:</strong> Every inspection includes our $10,000 Elite Master Warranty ($0 deductible), infrared thermal imaging scans, and same-day digital reports within 24 hours.
+                <strong>Zero Extra Cost:</strong> Every inspection includes our $10,000 Elite Master Warranty ($0 deductible), infrared thermal imaging scans, and same-day digital reports within 24 hours.
               </p>
             </div>
           </div>
@@ -443,7 +443,7 @@ export default async function CountyPage({ params }) {
 
             <div className="grid grid-3" style={{ gap: '1.25rem' }}>
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
-                <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.5rem' }}>☢️</span>
+                <div className="font-mono text-xs font-bold text-primary mb-2">[RADON]</div>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Radon Gas Testing ($275)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   Continuous 48-hour diagnostic monitoring for invisible radon gas in {county.name} granite bedrock zones.
@@ -451,7 +451,7 @@ export default async function CountyPage({ params }) {
               </div>
 
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
-                <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.5rem' }}>📹</span>
+                <div className="font-mono text-xs font-bold text-primary mb-2">[SEWER]</div>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Sewer Scope Camera ($450)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   High-definition camera inspection of main sewer lines to identify tree root breaks and offset joints.
@@ -459,7 +459,7 @@ export default async function CountyPage({ params }) {
               </div>
 
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
-                <span style={{ fontSize: '1.5rem', display: 'block', marginBottom: '0.5rem' }}>🏊</span>
+                <div className="font-mono text-xs font-bold text-primary mb-2">[POOL]</div>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Pool &amp; Spa Evaluation ($300)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   Comprehensive inspection of pool pumps, filters, heaters, GFCI bonding, and coping safety.
@@ -475,7 +475,7 @@ export default async function CountyPage({ params }) {
             </h2>
             <div className="grid grid-2" style={{ gap: '1.25rem' }}>
               <div className="card" style={{ background: '#f8fafc', padding: '1.5rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
-                <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>🔍 Common Defect Audits</h3>
+                <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>Common Defect Audits</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Stucco (EIFS) Moisture Intrusion Audit</Link></li>
                   <li><Link href="/defects/polybutylene-pipe-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Polybutylene Plumbing Pipe Risk Guide</Link></li>
@@ -484,7 +484,7 @@ export default async function CountyPage({ params }) {
               </div>
 
               <div className="card" style={{ background: '#f8fafc', padding: '1.5rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
-                <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>⚖️ Decision Frameworks</h3>
+                <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>Decision Frameworks</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Two-Inspector Team vs. Single Solo Inspector</Link></li>
                   <li><Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; 11-Month Warranty Audit vs. Builder Walkthrough</Link></li>

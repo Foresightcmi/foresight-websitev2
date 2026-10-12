@@ -29,7 +29,7 @@ export default function CheckoutCancelPage() {
 
         <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1.25rem', marginBottom: '2rem' }}>
           <p style={{ fontSize: '0.88rem', color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>
-            📞 <strong>Direct Master Inspector Support:</strong><br />
+            <strong>Direct Master Inspector Support:</strong><br />
             Call or text Christopher Boykin, CMI® at{' '}
             <a href="tel:6784802110" style={{ color: '#38BDF8', fontWeight: 700, textDecoration: 'none' }}>
               (678) 480-2110

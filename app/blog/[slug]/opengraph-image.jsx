@@ -102,8 +102,8 @@ export default async function Image({ params }) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-               <div style={{ background: '#D4AF37', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '30px' }}>
-                 🏗️
+               <div style={{ background: '#D4AF37', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', fontWeight: 800, color: '#090D15' }}>
+                 CMI
                </div>
                <div style={{ display: 'flex', flexDirection: 'column' }}>
                  <span style={{ color: '#FFFFFF', fontSize: '24px', fontWeight: 700 }}>Christopher Boykin, CMI</span>

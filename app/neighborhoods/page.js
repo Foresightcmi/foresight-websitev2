@@ -58,7 +58,7 @@ export default function NeighborhoodsIndexPage() {
       <section className="section bg-dark text-white text-center" style={{ padding: '5rem 0 4rem', position: 'relative', overflow: 'hidden' }}>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span className="badge" style={{ marginBottom: '1.25rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', fontSize: '0.9rem', backdropFilter: 'blur(8px)' }}>
-            🏛️ Hyper-Local Neighborhood Expertise
+            Hyper-Local Neighborhood Expertise
           </span>
           <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.15, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Atlanta Neighborhood &amp; Subdivision Hubs
@@ -68,10 +68,10 @@ export default function NeighborhoodsIndexPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/service-areas" className="btn btn-outline" style={{ borderColor: 'var(--color-gold)', color: 'var(--color-gold)' }}>
-              🏙️ View All 163+ Service Cities
+              View All 163+ Service Cities
             </Link>
             <Link href="/quote" className="btn btn-primary">
-              📊 Calculate Instant Fee
+              Calculate Instant Fee
             </Link>
           </div>
         </div>

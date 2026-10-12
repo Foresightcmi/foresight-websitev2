@@ -196,7 +196,6 @@ export default function GeoTrustBanner() {
                 letterSpacing: '0.04em'
               }}
             >
-              <span style={{ fontSize: '0.75rem' }}>📍</span>
               <span>ACTIVE IN {geoCity.name.toUpperCase()}, GA &rarr;</span>
             </Link>
           ) : (
@@ -217,7 +216,6 @@ export default function GeoTrustBanner() {
                 letterSpacing: '0.04em'
               }}
             >
-              <span style={{ fontSize: '0.75rem' }}>📍</span>
               <span>METRO ATLANTA &bull; 87+ CITIES &rarr;</span>
             </Link>
           )}
@@ -249,7 +247,7 @@ export default function GeoTrustBanner() {
               textDecoration: 'none'
             }}
           >
-            <span>📞</span> 678-480-2110
+            678-480-2110
           </a>
         </div>
       </div>

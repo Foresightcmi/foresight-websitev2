@@ -102,7 +102,7 @@ export default function HomeVideoPlayer() {
                 backdropFilter: 'blur(4px)',
               }}
             >
-              🎥 CMI® Field Demonstration
+              CMI&reg; Field Demonstration
             </div>
 
             {/* Pulsing Gold Play Button */}

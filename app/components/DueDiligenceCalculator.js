@@ -7,7 +7,7 @@ const DEFECT_ITEMS = [
   // 1. ELECTRICAL
   {
     id: 'fpe_zinsco_panel',
-    category: '⚡ Electrical Systems',
+    category: 'Electrical Systems',
     title: 'Federal Pacific Stab-Lok / Zinsco Panel Replacement',
     cost: 3450,
     severity: 'critical',
@@ -16,7 +16,7 @@ const DEFECT_ITEMS = [
   },
   {
     id: 'ungrounded_circuits',
-    category: '⚡ Electrical Systems',
+    category: 'Electrical Systems',
     title: 'Ungrounded Outlets / Missing Dual-Function GFCI & AFCI',
     cost: 1250,
     severity: 'moderate',
@@ -27,7 +27,7 @@ const DEFECT_ITEMS = [
   // 2. HVAC & MECHANICAL
   {
     id: 'hvac_expired',
-    category: '❄️ Heating & Cooling (HVAC)',
+    category: 'Heating & Cooling (HVAC)',
     title: 'HVAC Split System Exceeding ASHRAE Service Life (>15 yrs)',
     cost: 7200,
     severity: 'high',
@@ -36,7 +36,7 @@ const DEFECT_ITEMS = [
   },
   {
     id: 'furnace_heat_exchanger',
-    category: '❄️ Heating & Cooling (HVAC)',
+    category: 'Heating & Cooling (HVAC)',
     title: 'Cracked Gas Furnace Heat Exchanger (Carbon Monoxide Risk)',
     cost: 4950,
     severity: 'critical',
@@ -47,7 +47,7 @@ const DEFECT_ITEMS = [
   // 3. PLUMBING & WATER
   {
     id: 'polybutylene_plumbing',
-    category: '🚰 Plumbing Infrastructure',
+    category: 'Plumbing Infrastructure',
     title: 'Polybutylene (Quest PB2110) Whole-Home Supply Repipe',
     cost: 8800,
     severity: 'critical',
@@ -56,7 +56,7 @@ const DEFECT_ITEMS = [
   },
   {
     id: 'sewer_line_root_intrusion',
-    category: '🚰 Plumbing Infrastructure',
+    category: 'Plumbing Infrastructure',
     title: 'Main Sewer Lateral Root Intrusion / Pipe Deflection',
     cost: 6500,
     severity: 'high',
@@ -65,7 +65,7 @@ const DEFECT_ITEMS = [
   },
   {
     id: 'water_heater_expired',
-    category: '🚰 Plumbing Infrastructure',
+    category: 'Plumbing Infrastructure',
     title: 'Water Heater Aged >12 Years or Active Tank Corrosion',
     cost: 1950,
     severity: 'moderate',
@@ -76,7 +76,7 @@ const DEFECT_ITEMS = [
   // 4. ROOFING & ENVELOPE
   {
     id: 'roof_replacement',
-    category: '🏠 Roofing & Attic Structure',
+    category: 'Roofing & Attic Structure',
     title: 'Architectural Shingle Roof Past Service Life (>20 yrs)',
     cost: 11200,
     severity: 'high',
@@ -85,7 +85,7 @@ const DEFECT_ITEMS = [
   },
   {
     id: 'roof_flashing_leaks',
-    category: '🏠 Roofing & Attic Structure',
+    category: 'Roofing & Attic Structure',
     title: 'Chimney / Valley Step Flashing & Pipe Boot Collar Failure',
     cost: 1650,
     severity: 'moderate',
@@ -96,7 +96,7 @@ const DEFECT_ITEMS = [
   // 5. FOUNDATION & CRAWLSPACE
   {
     id: 'foundation_settling_cracks',
-    category: '🧱 Foundation & Substructure',
+    category: 'Foundation & Substructure',
     title: 'Foundation Differential Settling / Stair-Step Mortar Cracks',
     cost: 9800,
     severity: 'critical',
@@ -105,7 +105,7 @@ const DEFECT_ITEMS = [
   },
   {
     id: 'crawlspace_moisture_fungus',
-    category: '🧱 Foundation & Substructure',
+    category: 'Foundation & Substructure',
     title: 'Crawlspace Standing Water / Microbial Fungal Growth (>70% RH)',
     cost: 5800,
     severity: 'high',
@@ -116,7 +116,7 @@ const DEFECT_ITEMS = [
   // 6. ENVIRONMENTAL & RADON
   {
     id: 'radon_elevated',
-    category: '☢️ Environmental & Air Quality',
+    category: 'Environmental & Air Quality',
     title: 'Elevated Indoor Radon Gas Concentration (≥ 4.0 pCi/L)',
     cost: 1850,
     severity: 'high',
@@ -355,7 +355,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
               gap: '6px'
             }}
           >
-            <span>💰</span> Repair Credit Negotiator
+            Repair Credit Negotiator
           </button>
           <button
             type="button"
@@ -624,7 +624,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                     gap: '8px'
                   }}
                 >
-                  <span>{copiedAmendment ? '✓' : '📋'}</span>
+                  {copiedAmendment ? <span>✓</span> : null}
                   {copiedAmendment ? 'Sample GAR Clause Copied!' : 'Copy Sample GAR Amendment Clause'}
                 </button>
 
@@ -647,7 +647,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                     display: 'block'
                   }}
                 >
-                  ⚡ Book Certified Master Inspection with infrared thermal scan (From $345) →
+                  Book Certified Master Inspection with infrared thermal scan (From $345) →
                 </a>
 
                 {/* Standalone $99 Second-Opinion Audit Door */}
@@ -663,7 +663,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <span style={{ fontSize: '0.7rem', color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                      ⚡ Already Booked Another Inspector?
+                      Already Booked Another Inspector?
                     </span>
                   </div>
                   <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#ffffff' }}>
@@ -689,7 +689,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                       boxShadow: '0 4px 12px rgba(212, 175, 55, 0.25)'
                     }}
                   >
-                    🔒 Order $99 Outside Report Audit (Stripe Checkout) →
+                    Order $99 Outside Report Audit (Stripe Checkout) →
                   </button>
                 </div>
 
@@ -705,7 +705,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                   lineHeight: 1.45
                 }}>
                   <strong style={{ color: '#94A3B8', display: 'block', marginBottom: '3px' }}>
-                    ⚖️ Statutory Due Diligence &amp; Contract Disclaimer:
+                    Statutory Due Diligence &amp; Contract Disclaimer:
                   </strong>
                   Foresight Home Inspections, LLC is an independent diagnostic inspection firm and not a licensed general contractor or legal advisor. Cost calculations reflect regional statistical indices (RSMeans 2026 Metro Atlanta index) for preliminary buyer due diligence budgeting. Sample amendment text is provided solely for review and formal submission by your licensed Georgia Real Estate Broker or closing attorney. Foresight disclaims all liability for contract negotiations, seller disputes, or contractor price variances. All defects must be evaluated by licensed, insured tradesmen prior to closing. Not affiliated with or endorsed by the Georgia Association of Realtors® (GAR).
                 </div>
@@ -915,7 +915,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
           }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-                📅 Binding Agreement Date
+                Binding Agreement Date
               </label>
               <input
                 type="date"
@@ -935,7 +935,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
 
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-                ⏱️ Due Diligence Window
+                Due Diligence Window
               </label>
               <select
                 value={dueDiligenceDays}
@@ -960,7 +960,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
 
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-                🏠 Year Built
+                Year Built
               </label>
               <input
                 type="number"
@@ -982,7 +982,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
 
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: '#D4AF37', marginBottom: '6px' }}>
-                🧱 Foundation Type
+                Foundation Type
               </label>
               <select
                 value={foundation}
@@ -1008,7 +1008,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
           {timeline && (
             <div style={{ marginBottom: '2rem' }}>
               <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#ffffff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span>🎯</span> Your Strategic GAR Contract Milestones
+                Your Strategic GAR Contract Milestones
               </h4>
 
               <div style={{
@@ -1066,7 +1066,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
 
                 <div style={{ background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.25) 100%)', border: '2px solid #EF4444', borderRadius: '12px', padding: '1.25rem 1rem' }}>
                   <span style={{ fontSize: '0.75rem', color: '#F87171', fontWeight: 800, textTransform: 'uppercase' }}>
-                    ⚠️ Final Expiration
+                    Final Expiration
                   </span>
                   <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#ffffff', margin: '4px 0' }}>
                     {timeline.finalExpiration}
@@ -1096,7 +1096,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
       }}>
         <div>
           <strong style={{ color: '#D4AF37', fontSize: '0.95rem', display: 'block', marginBottom: '2px' }}>
-            🔗 Realtors, Lenders &amp; Real Estate Bloggers: Embed This Engine
+            Realtors, Lenders &amp; Real Estate Bloggers: Embed This Engine
           </strong>
           <span style={{ color: '#94A3B8', fontSize: '0.8rem' }}>
             Embed this Due Diligence Underwriter into your buyer resources or vendor page. Includes automatic attribution backlink.
@@ -1118,7 +1118,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
             whiteSpace: 'nowrap'
           }}
         >
-          {copiedEmbed ? '✓ Embed Code Copied!' : '📋 Copy Embed Code'}
+          {copiedEmbed ? '✓ Embed Code Copied!' : 'Copy Embed Code'}
         </button>
       </div>
 
@@ -1175,7 +1175,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
 
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(212, 175, 55, 0.12)', border: '1px solid rgba(212, 175, 55, 0.35)', borderRadius: '9999px', padding: '4px 10px', marginBottom: '0.75rem' }}>
               <span style={{ fontSize: '0.72rem', color: '#FDE047', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                ⚡ Standalone Outside Report Audit
+                Standalone Outside Report Audit
               </span>
             </div>
 
@@ -1358,11 +1358,11 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                   opacity: auditLoading ? 0.7 : 1
                 }}
               >
-                {auditLoading ? 'Connecting to Stripe...' : '🔒 Proceed to Secure Stripe Checkout ($99 Flat) →'}
+                {auditLoading ? 'Connecting to Stripe...' : 'Proceed to Secure Stripe Checkout ($99 Flat) →'}
               </button>
 
               <div style={{ fontSize: '0.72rem', color: '#64748B', textAlign: 'center', lineHeight: 1.4 }}>
-                🛡️ 256-Bit Encrypted Stripe Processing • Guaranteed 4-Hour Turnaround • Questions? Call (678) 480-2110
+                256-Bit Encrypted Stripe Processing • Guaranteed 4-Hour Turnaround • Questions? Call (678) 480-2110
               </div>
             </form>
           </div>

@@ -15,7 +15,7 @@ const SERVICE_MAP = {
   'buyer-inspection': {
     name: 'Standard Buyer & Seller Inspection',
     price: 'From $345',
-    icon: '🏠',
+    icon: '01',
     headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
     metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
     metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, infrared thermal imaging, aerial drone scanning & $10,000 warranty.',
@@ -31,7 +31,7 @@ const SERVICE_MAP = {
   'home-buyer-inspection': {
     name: 'Standard Buyer & Seller Inspection',
     price: 'From $345',
-    icon: '🏠',
+    icon: '01',
     headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
     metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
     metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, infrared thermal imaging, aerial drone scanning & $10,000 warranty.',
@@ -47,7 +47,7 @@ const SERVICE_MAP = {
   'radon-testing': {
     name: 'Radon Gas Testing',
     price: '$275',
-    icon: '☢️',
+    icon: '02',
     headline: 'Continuous 48-Hour Electronic Radon Testing Across Metro Atlanta',
     metaTitle: 'Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $275',
     metaDescription: 'EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph & same-day report. Flat $275. Call 678-480-2110!',
@@ -62,7 +62,7 @@ const SERVICE_MAP = {
   'sewer-scope-inspection': {
     name: 'Sewer Scope Camera Inspection',
     price: '$450',
-    icon: '🎥',
+    icon: '03',
     headline: 'HD Fiber-Optic Main Drain & Lateral Sewer Scope Camera Audits',
     metaTitle: 'Sewer Scope Camera Inspection Atlanta GA | HD Pipe Audit $450',
     metaDescription: 'HD fiber-optic sewer scope camera inspection in Metro Atlanta. Detect root intrusions, crushed pipes & blockages before closing. Flat $450. Video report included.',
@@ -77,7 +77,7 @@ const SERVICE_MAP = {
   'pool-inspection': {
     name: 'Pool & Spa Inspection',
     price: '$300',
-    icon: '🏊',
+    icon: '04',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
     metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat | Foresight',
     metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
@@ -92,7 +92,7 @@ const SERVICE_MAP = {
   'pool-spa-inspection': {
     name: 'Pool & Spa Inspection',
     price: '$300',
-    icon: '🏊',
+    icon: '04',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
     metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat | Foresight',
     metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
@@ -107,7 +107,7 @@ const SERVICE_MAP = {
   'termite-inspection': {
     name: 'Termite & WDO Clearance Inspection',
     price: '$125+',
-    icon: '🐜',
+    icon: '05',
     headline: 'Official Georgia Wood Destroying Organism (WDO) Clearance Letters',
     metaTitle: 'Official Termite & WDO Inspection Atlanta GA | $125+ Clearance',
     metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. From $125+.',
@@ -122,7 +122,7 @@ const SERVICE_MAP = {
   'termite-wdo-inspection': {
     name: 'Termite & WDO Clearance Inspection',
     price: '$125+',
-    icon: '🐜',
+    icon: '05',
     headline: 'Official Georgia Wood Destroying Organism (WDO) Clearance Letters',
     metaTitle: 'Official Termite & WDO Inspection Atlanta GA | $125+ Clearance',
     metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. From $125+.',
@@ -137,7 +137,7 @@ const SERVICE_MAP = {
   'new-construction-inspection': {
     name: 'New Construction & Phased Inspection',
     price: 'From $400',
-    icon: '🏗️',
+    icon: '06',
     headline: 'Independent Phased & Final New Construction Inspections in Metro Atlanta',
     metaTitle: 'New Construction Inspection Atlanta GA | From $400 | Foresight',
     metaDescription: 'Independent new construction & pre-drywall home inspections in Metro Atlanta. Two certified inspectors, infrared thermal scans & builder-ready punch lists. From $400.',
@@ -152,7 +152,7 @@ const SERVICE_MAP = {
   'pre-listing-inspection': {
     name: 'Pre-Listing Seller Inspection',
     price: 'From $365',
-    icon: '📋',
+    icon: '07',
     headline: 'Sell With Confidence: Pre-Listing Inspections for Atlanta Homeowners',
     metaTitle: 'Pre-Listing Inspection Atlanta GA | From $365 | Foresight',
     metaDescription: 'Pre-listing seller home inspection in Metro Atlanta. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. From $365.',
@@ -167,7 +167,7 @@ const SERVICE_MAP = {
   '11-month-warranty-inspection': {
     name: '11-Month Builder Warranty Inspection',
     price: 'From $335',
-    icon: '🏗️',
+    icon: '06',
     headline: 'Protect Your New Construction Equity Before the 1-Year Builder Warranty Expires',
     metaTitle: '11-Month Warranty Inspection Atlanta | From $335 | Foresight',
     metaDescription: 'Independent 11-month builder warranty inspection in Metro Atlanta. 2 certified inspectors, infrared thermal scans & builder-ready punch lists before warranty expires.',
@@ -182,7 +182,7 @@ const SERVICE_MAP = {
   'str-short-term-rental-inspection': {
     name: 'Short-Term Rental (STR) Inspection',
     price: '$595',
-    icon: '🏡',
+    icon: '08',
     headline: 'Safety, Code Compliance & Due Diligence for Airbnb & STR Investments',
     metaTitle: 'Airbnb & STR Inspection Atlanta GA | Flat $595 | Foresight',
     metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. Flat $595.',
@@ -197,7 +197,7 @@ const SERVICE_MAP = {
   'mold-testing': {
     name: 'Mold & Indoor Air Quality Testing',
     price: '$450',
-    icon: '🧪',
+    icon: '09',
     headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
     metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality Lab Analysis $450',
     metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & accredited lab report. Call 678-480-2110!',
@@ -213,7 +213,7 @@ const SERVICE_MAP = {
   'mold-inspection': {
     name: 'Mold & Indoor Air Quality Testing',
     price: '$450',
-    icon: '🧪',
+    icon: '09',
     headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
     metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality Lab Analysis $450',
     metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & accredited lab report. Call 678-480-2110!',
@@ -307,7 +307,7 @@ export default async function ServiceHubPage({ params }) {
       <section style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', color: '#FFFFFF', padding: '4.5rem 0 3.5rem', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1.25rem' }}>
-            {serviceData.icon} Specialized Inspection Service
+            Specialized Inspection Service
           </span>
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.25rem', lineHeight: 1.2 }}>
             {serviceData.name} in Metro Atlanta
@@ -317,10 +317,10 @@ export default async function ServiceHubPage({ params }) {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
-              📅 Schedule {serviceData.name}
+              Schedule {serviceData.name}
             </a>
             <Link href="/quote" className="btn btn-outline-light" style={{ padding: '0.9rem 2rem' }}>
-              📊 Calculate Instant Fee
+              Calculate Instant Fee
             </Link>
           </div>
         </div>

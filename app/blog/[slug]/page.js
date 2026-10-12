@@ -241,7 +241,7 @@ export default async function BlogPost({ params }) {
           {/* Reading Time + Share */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-gray-light)' }}>
             <span style={{ color: 'var(--color-gray)', fontSize: '0.9rem' }}>
-              📖 {Math.ceil(wordCount / 230)} min read • Verified by Certified Master Inspector®
+              {Math.ceil(wordCount / 230)} min read • Verified by Certified Master Inspector®
             </span>
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
               <span style={{ color: 'var(--color-gray)', fontSize: '0.85rem' }}>Share:</span>
@@ -252,7 +252,7 @@ export default async function BlogPost({ params }) {
                 aria-label="Share on Facebook"
                 style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem' }}
               >
-                📘
+                Share
               </a>
               <a
                 href={`https://twitter.com/intent/tweet?url=https://www.fhinspectionsatl.com/blog/${post.slug}&text=${encodeURIComponent(post.title)}`}
@@ -261,7 +261,7 @@ export default async function BlogPost({ params }) {
                 aria-label="Share on X"
                 style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem' }}
               >
-                🐦
+                Tweet
               </a>
               <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.fhinspectionsatl.com/blog/${post.slug}`}
@@ -270,7 +270,7 @@ export default async function BlogPost({ params }) {
                 aria-label="Share on LinkedIn"
                 style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem' }}
               >
-                💼
+                Post
               </a>
             </div>
           </div>
@@ -283,7 +283,7 @@ export default async function BlogPost({ params }) {
           {post.tldr && post.tldr.length > 0 && (
             <div className="ai-summary-box" style={{ background: '#f1f5f9', padding: '1.5rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid #3b82f6', marginBottom: '2rem' }}>
               <h2 style={{ fontSize: '1.15rem', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#0f172a' }}>
-                <span role="img" aria-label="robot">🤖</span> AI Key Takeaways &amp; Field Summary
+                Executive Field Summary &amp; Key Findings
               </h2>
               <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', margin: 0, color: '#334155', fontSize: '1rem', lineHeight: 1.6 }}>
                 {post.tldr.map((bullet, i) => (
@@ -316,7 +316,7 @@ export default async function BlogPost({ params }) {
           {/* Defect Diagnostics & Comparisons Cross-Link Section */}
           <div style={{ marginTop: '3rem', padding: '1.75rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
             <h3 style={{ fontSize: '1.2rem', color: '#0f172a', marginBottom: '1rem' }}>
-              🔍 Related Defect Diagnostics &amp; Decision Guides
+              Related Defect Diagnostics &amp; Decision Guides
             </h3>
             <div className="grid grid-2" style={{ gap: '1rem' }}>
               <div>
@@ -350,7 +350,7 @@ export default async function BlogPost({ params }) {
               Call us directly or get an instant quote — backed by our $10,000 warranty.
             </p>
             <a href="tel:678-480-2110" style={{ display: 'inline-block', color: 'var(--color-red)', fontSize: '1.5rem', fontWeight: 800, textDecoration: 'none', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }} data-call-source="blog_post_cta">
-              📞 678-480-2110
+              Call 678-480-2110
             </a>
             <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Schedule Inspection</a>

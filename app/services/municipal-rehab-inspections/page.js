@@ -71,8 +71,8 @@ export default function MunicipalRehabInspections() {
                 Led by Certified Master Inspector Christopher Boykin, our dual-inspector teams verify that general contractor repairs comply with safety standards before final draw releases.
               </p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <a href="tel:678-480-2110" className="btn btn-primary">📞 Call Direct: 678-480-2110</a>
-                <Link href="/contact" className="btn btn-outline">✉️ Request B2G Proposal</Link>
+                <a href="tel:678-480-2110" className="btn btn-primary">Call Direct: 678-480-2110</a>
+                <Link href="/contact" className="btn btn-outline">Request B2G Proposal</Link>
               </div>
             </div>
             <div className="card card-premium" style={{ padding: '2.5rem', borderTop: '5px solid var(--color-red)' }}>
@@ -105,10 +105,10 @@ export default function MunicipalRehabInspections() {
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/blog/pre-rehab-post-rehab-inspections-dekalb" className="btn btn-outline">
-                📖 Read Pre/Post-Rehab Guide
+                Read Pre/Post-Rehab Guide
               </Link>
               <Link href="/service-areas/dekalb-county-compliance" className="btn btn-primary">
-                🏛️ DeKalb Compliance Services
+                DeKalb Compliance Services
               </Link>
             </div>
           </div>
