@@ -185,7 +185,7 @@ export default function Services() {
       title: 'Radon Gas Testing',
       price: '$275',
       description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
-      details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Precise hourly radon level tracking', 'Strict EPA protocol compliance'],
+      details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Strict EPA protocol compliance'],
       slug: 'hidden-dangers-of-radon-gas-georgia',
       briefing: {
         title: 'Continuous Radon Gas Testing',
@@ -193,8 +193,8 @@ export default function Services() {
         tagline: '48-Hour Electronic Monitor Deployment for Georgia Granite Bedrock',
         takeaways: [
           'Metro Atlanta sits on granite bedrock known for producing colorless, odorless radioactive radon gas.',
-          'We deploy calibrated continuous electronic monitors taking hourly measurements over 48 hours.',
-          'Generates an EPA-compliant hourly graph for official seller radon mitigation requests.'
+          'We deploy calibrated continuous electronic monitors over a 48-hour testing window.',
+          'Generates an EPA-compliant report for official seller radon mitigation requests.'
         ]
       }
     },

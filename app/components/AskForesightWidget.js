@@ -9,7 +9,6 @@ const VoiceAgentModal = dynamic(() => import('./VoiceAgentModal'), {
 
 export default function AskForesightWidget() {
   const [isVoiceOpen, setIsVoiceOpen] = useState(false);
-  const [isBalloonDismissed, setIsBalloonDismissed] = useState(false);
 
   useEffect(() => {
     const handleOpen = () => setIsVoiceOpen(true);
@@ -21,7 +20,7 @@ export default function AskForesightWidget() {
 
   return (
     <>
-      {/* Floating Action Button Group (LiveRep Concierge Avatar + Speech Balloon) */}
+      {/* Floating Action Button Group (LiveRep Concierge Avatar) */}
       {!isVoiceOpen && (
         <div 
           className="ask-foresight-launcher-group"
@@ -35,87 +34,6 @@ export default function AskForesightWidget() {
             alignItems: 'center'
           }}
         >
-          {/* Animated Speech Balloon Invitation */}
-          {!isBalloonDismissed && (
-            <div 
-              className="liverep-speech-balloon"
-              onClick={() => setIsVoiceOpen(true)}
-              style={{
-                position: 'absolute',
-                bottom: '84px',
-                right: '0',
-                background: 'linear-gradient(135deg, rgba(20, 30, 48, 0.98) 0%, rgba(10, 17, 30, 0.98) 100%)',
-                border: '1px solid rgba(212, 175, 55, 0.45)',
-                borderRadius: '16px',
-                padding: '10px 14px',
-                width: '275px',
-                boxShadow: '0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15)',
-                color: '#ffffff',
-                zIndex: 10000,
-                cursor: 'pointer',
-                animation: 'balloonFloat 3s ease-in-out infinite alternate',
-                transition: 'transform 0.2s'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '6px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '0.9rem' }}>👋</span>
-                  <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#D4AF37', fontFamily: "'Outfit', sans-serif" }}>
-                    Christopher Boykin (CMI®)
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setIsBalloonDismissed(true);
-                  }}
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    color: '#94a3b8',
-                    cursor: 'pointer',
-                    fontSize: '0.75rem',
-                    padding: '0 2px'
-                  }}
-                  aria-label="Dismiss message"
-                >
-                  ✕
-                </button>
-              </div>
-              <p style={{ margin: '4px 0 0 0', fontSize: '0.76rem', color: '#e2e8f0', lineHeight: 1.4 }}>
-                Hi! Tap to speak or type. I&apos;m Christopher Boykin—welcome to your <strong>Live Concierge Consultation</strong> for instant quotes &amp; building science answers.
-              </p>
-              <div style={{
-                marginTop: '6px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                background: 'rgba(16, 185, 129, 0.15)',
-                color: '#34d399',
-                padding: '2px 8px',
-                borderRadius: '12px',
-                fontSize: '0.68rem',
-                fontWeight: 700
-              }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                🎙️ Speak or 💬 Type • Live 24/7
-              </div>
-              {/* Balloon tail pointer */}
-              <div style={{
-                position: 'absolute',
-                bottom: '-7px',
-                right: '30px',
-                width: '12px',
-                height: '12px',
-                background: '#0a111e',
-                borderRight: '1px solid rgba(212, 175, 55, 0.45)',
-                borderBottom: '1px solid rgba(212, 175, 55, 0.45)',
-                transform: 'rotate(45deg)'
-              }} />
-            </div>
-          )}
-
           {/* Primary LiveRep Circular Avatar Launcher */}
           <div style={{ position: 'relative' }}>
             <button

@@ -50,7 +50,6 @@ export default function Header() {
                   aria-label="Live Concierge Consultation with Christopher Boykin, Certified Master Inspector"
                   title="Live Concierge: Speak or Type with Christopher Boykin, CMI"
                 >
-                  <span style={{ color: '#22C55E', fontSize: '0.65rem', animation: 'pulse 1.5s infinite' }}>●</span>
                   Live Concierge
                 </Link>
               </li>
