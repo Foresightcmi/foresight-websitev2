@@ -282,6 +282,144 @@ const nextConfig = {
         destination: '/service-areas/counties',
         permanent: true,
       },
+      // ── Official Google Search Console 404 Remediation & Legacy Wix Migration ──
+      // 1. Defect route migration
+      {
+        source: '/defects/foundation-crack-settlement-inspection',
+        destination: '/blog/foundation-inspection-and-repair-near-me-atlanta',
+        permanent: true,
+      },
+      // 2. Service area legacy -ga suffix
+      {
+        source: '/service-areas/brooks-ga',
+        destination: '/service-areas/brooks',
+        permanent: true,
+      },
+      // 3. Dated duplicate blog slugs -> canonical blog posts
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-29',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-08',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-05',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-26',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-07-12',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-07-15',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-08-02',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-07-01',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-07-22',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      // 4. Blog Category URLs
+      {
+        source: '/blog/categories/home-buying-tips',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/categories/inspection-insights',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/categories/:category*',
+        destination: '/blog',
+        permanent: true,
+      },
+      // 5. Legacy Wix internal API URLs
+      {
+        source: '/_api/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      // 6. Legacy Wix /post/... URLs
+      {
+        source: '/post/how-to-negotiate-repairs-after-a-home-inspection-in-georgia',
+        destination: '/blog/how-to-negotiate-home-inspection-repairs-georgia-gar-contract',
+        permanent: true,
+      },
+      {
+        source: '/post/what-you-need-to-know-about-home-inspection-services',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/post/understanding-the-benefits-of-home-inspection-services',
+        destination: '/services/buyer-inspection',
+        permanent: true,
+      },
+      {
+        source: '/post/how-to-prepare-your-atlanta-home-for-hurricane-season-a-reliable-guide-for-homeowners-to-weather-th',
+        destination: '/blog/georgia-summer-heat-wave-hvac-crises-refrigerant-rules',
+        permanent: true,
+      },
+      {
+        source: '/post/hosting-with-heart-crafting-a-home-perfect-for-entertaining',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/post/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
+      // 7. Legacy Navigation, Booking & Resource URLs
+      {
+        source: '/book',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/resources',
+        destination: '/faq',
+        permanent: true,
+      },
+      {
+        source: '/resources/faq',
+        destination: '/faq',
+        permanent: true,
+      },
+      {
+        source: '/inspection-service-areas',
+        destination: '/service-areas',
+        permanent: true,
+      },
+      {
+        source: '/search',
+        destination: '/services',
+        permanent: true,
+      },
       // Service slug normalization redirects
       {
         source: '/services/pool-spa-inspection',
