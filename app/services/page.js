@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ValueComparison from '../components/ValueComparison';
 import QualityChecklist from '../components/QualityChecklist';
+import ServiceVideoTrigger from './components/ServiceVideoTrigger';
 
 export const metadata = {
   title: 'Home Inspection Services Atlanta | Pricing From $295',
@@ -40,7 +41,17 @@ export default function Services() {
       description: 'Dedicated 4+ hour comprehensive property inspection for luxury estates and complex architectural grounds. Led by a Certified Master Inspector® (CMI) with aerial drone scanning, thermal envelope diagnostics, and 1-on-1 strategy consultation.',
       details: ['Lead Certified Master Inspector® (CMI) + Senior Inspector', 'Extended 4+ hour dedicated evaluation window', 'Aerial drone roof & grounds scan', 'infrared thermal imaging & envelope diagnostics', 'Direct 1-on-1 post-report strategy consultation', '$10,000 Warranty protection included'],
       image: '/images/drone-2.png',
-      slug: 'estate-and-luxury-home-inspection-guide'
+      slug: 'estate-and-luxury-home-inspection-guide',
+      briefing: {
+        title: 'Estate & Luxury Home Inspection',
+        duration: '50-Sec Briefing',
+        tagline: 'White-Glove Architectural & Systems Audit for High-Value Properties',
+        takeaways: [
+          'Dedicated 4+ hour protocol led directly by Lead Certified Master Inspector® Christopher Boykin.',
+          'Comprehensive 4K aerial drone scanning of complex architectural rooflines, parapets, and grounds.',
+          'Infrared thermal envelope diagnostic scan and direct 1-on-1 strategic negotiation consultation.'
+        ]
+      }
     },
     {
       title: 'Standard Buyer Inspection',
@@ -49,7 +60,17 @@ export default function Services() {
       description: 'Our core comprehensive inspection covering the structure, roof, electrical, plumbing, HVAC, and all major systems. Two expert inspectors on site for maximum thoroughness.',
       details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', '$10,000 Master Warranty included'],
       image: '/images/ac-pic.png',
-      slug: 'what-does-home-inspector-look-for-buying-house'
+      slug: 'what-does-home-inspector-look-for-buying-house',
+      briefing: {
+        title: 'Standard Buyer Home Inspection',
+        duration: '45-Sec Briefing',
+        tagline: 'Two Certified Inspectors On Every Job — Double the Accuracy, Half the Disruption',
+        takeaways: [
+          'Two certified inspectors deploy simultaneously: one covers exterior/roof, one inspects interior MEP mechanicals.',
+          'Reduces on-site client wait time to 1.5–2.5 hours while catching defects solo inspectors overlook.',
+          'Includes complimentary infrared thermal imaging, drone scan, and $10,000 warranty protection.'
+        ]
+      }
     },
     {
       title: 'Pre-Listing Seller Inspection',
@@ -58,24 +79,54 @@ export default function Services() {
       description: 'Identify potential issues before putting your home on the market. Streamline negotiations, avoid last-minute surprises, and increase buyer confidence.',
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
       image: '/images/crawlspace.png',
-      slug: 'pre-listing-seller-inspection-guide'
+      slug: 'pre-listing-seller-inspection-guide',
+      briefing: {
+        title: 'Pre-Listing Seller Inspection',
+        duration: '40-Sec Briefing',
+        tagline: 'Eliminate Deal-Killers & Take Total Control of Your Sale Price',
+        takeaways: [
+          'Uncover hidden system and structural defects before buyers and their agents discover them.',
+          'Prevent deal-killing re-negotiations, escrow delays, and sudden price reductions during due diligence.',
+          'Hand prospective buyers a verified CMI inspection report to command top dollar.'
+        ]
+      }
     },
     {
       title: 'New Construction Inspections',
       price: '$355 / $375',
       priceNote: 'Pre-Drywall $355 | Final Move-In $375',
-      description: 'Ensure your brand-new home was built to correct specifications. We perform structural pre-drywall audits and comprehensive final phase inspections.',
-      details: ['Pre-drywall framing audit', 'Final phase move-in check', 'Workmanship quality review', 'Identify developer defects'],
+      description: 'Independent third-party quality assurance for your newly built home. We collaborate professionally with site superintendents to perform structural pre-drywall audits and comprehensive final move-in inspections.',
+      details: ['Pre-drywall framing & mechanical audit', 'Final phase move-in inspection', 'Objective builder punch list', 'Workmanship & code-reference review'],
       image: '/images/drone-2.png',
-      slug: 'why-you-need-home-inspection-new-build'
+      slug: 'why-you-need-home-inspection-new-build',
+      briefing: {
+        title: 'New Construction Inspections',
+        duration: '45-Sec Briefing',
+        tagline: 'Independent Third-Party Quality Control Collaborating with Site Builders',
+        takeaways: [
+          'Pre-drywall framing and rough-in audit to catch plumbing/electrical issues before walls close.',
+          'Final move-in inspection validating HVAC balance, envelope seal, and code compliance.',
+          'Objective, photo-documented builder punch list formatted for superintendent sign-off.'
+        ]
+      }
     },
     {
       title: '11-Month Warranty Inspection',
       price: '$335+',
-      description: 'Performed just before your 1-year builder warranty expires. Get a professional punch list to have the builder fix issues on their dime, not yours.',
-      details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousand in future repairs', 'Maximum warranty utilization'],
+      description: 'Performed before your 1-year builder warranty expires. Receive an itemized, photo-documented punch list to ensure your builder warranty covers settlement, trade adjustments, and mechanical items before month 12.',
+      details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousands in future repairs', 'Maximum warranty utilization'],
       image: '/images/gas-meter.png',
-      slug: '11-month-warranty-inspection-guide'
+      slug: '11-month-warranty-inspection-guide',
+      briefing: {
+        title: '11-Month Warranty Inspection',
+        duration: '45-Sec Briefing',
+        tagline: 'Protect Your Investment Before the 1-Year Builder Warranty Expires',
+        takeaways: [
+          'Performed during month 11 to document 1 full year of structural settling and thermal cycling.',
+          'Identifies hidden truss uplift, foundation cracks, duct leakage, and cosmetic stresses.',
+          'Provides an itemized, builder-ready punch list to submit directly to your warranty portal.'
+        ]
+      }
     },
     {
       title: 'Pool & Spa Inspections',
@@ -83,7 +134,17 @@ export default function Services() {
       description: 'Comprehensive mechanical and safety evaluation of residential swimming pools and spas. We test pumps, filters, heaters, electrical safety, plumbing lines, shell integrity, and safety boundaries.',
       details: ['Comprehensive pool & spa inspection', 'Pump & heater functional tests', 'Safety barrier & GFCI electrical review', 'Filter and plumbing line evaluation'],
       image: '/images/pool-inspecting.png',
-      slug: 'pool-and-spa-inspection-guide'
+      slug: 'pool-and-spa-inspection-guide',
+      briefing: {
+        title: 'Pool & Spa Inspections',
+        duration: '40-Sec Briefing',
+        tagline: 'Specialized Mechanical, Plumbing & Electrical Safety Verification',
+        takeaways: [
+          'Comprehensive operational testing of multi-speed pumps, sand/DE filters, and gas/heat-pump heaters.',
+          'Critical life-safety checks: GFCI protection, underwater luminaire grounding, and pool safety barriers.',
+          'Plaster shell, coping, vinyl liner integrity, and deck drainage evaluation.'
+        ]
+      }
     },
     {
       title: 'Sewer Scope Inspections',
@@ -91,21 +152,51 @@ export default function Services() {
       description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the cleanout to the municipal street main or septic connection. Highly recommended for older properties.',
       details: ['High-definition sewer video camera', 'Main lateral line inspection', 'Full digital video recording provided', 'Detects root intrusion, bellies, and cracks'],
       image: '/images/sewer-scope.png',
-      slug: 'sewer-scope-inspection-guide'
+      slug: 'sewer-scope-inspection-guide',
+      briefing: {
+        title: 'Sewer Scope Inspections',
+        duration: '45-Sec Briefing',
+        tagline: 'High-Definition Video Audit of Main Underground Lateral Line',
+        takeaways: [
+          'High-resolution fiber-optic camera travels the entire line from house cleanout to municipal main.',
+          'Detects tree root intrusions, pipe bellies (standing water), cracked clay, and cast-iron scale.',
+          'Protects home buyers from unexpected $8,000 to $15,000 underground excavation repairs.'
+        ]
+      }
     },
     {
       title: 'Termite & WDO Inspections',
       price: '$125+',
       description: 'Wood Destroying Organisms can cause catastrophic structural damage. We deliver the Official Georgia Wood Infestation Inspection Report (GAR compliant) required for real estate closings.',
       details: ['Official GA WDO Inspection Report', 'Identifies active and past termite activity', 'Checks for wood-boring beetles & fungus', 'Standard requirement for mortgage approvals'],
-      slug: 'termite-and-wdo-inspection-guide'
+      slug: 'termite-and-wdo-inspection-guide',
+      briefing: {
+        title: 'Termite & WDO Clearance Inspection',
+        duration: '35-Sec Briefing',
+        tagline: 'Official Georgia Wood Infestation Inspection Report (GAR Compliant)',
+        takeaways: [
+          'Licensed specialist check for active subterranean termites, powder post beetles, and wood-decay fungus.',
+          'Official Georgia Wood Infestation Inspection Report required for Georgia mortgage underwriting.',
+          'Prevents mortgage closing delays on Conventional, FHA, and VA loan approvals.'
+        ]
+      }
     },
     {
       title: 'Radon Gas Testing',
       price: '$275',
       description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
       details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Precise hourly radon level tracking', 'Strict EPA protocol compliance'],
-      slug: 'hidden-dangers-of-radon-gas-georgia'
+      slug: 'hidden-dangers-of-radon-gas-georgia',
+      briefing: {
+        title: 'Continuous Radon Gas Testing',
+        duration: '40-Sec Briefing',
+        tagline: '48-Hour Electronic Monitor Deployment for Georgia Granite Bedrock',
+        takeaways: [
+          'Metro Atlanta sits on granite bedrock known for producing colorless, odorless radioactive radon gas.',
+          'We deploy calibrated continuous electronic monitors taking hourly measurements over 48 hours.',
+          'Generates an EPA-compliant hourly graph for official seller radon mitigation requests.'
+        ]
+      }
     },
     {
       title: 'Contractor Repair Cost & Pricing Estimates',
@@ -114,7 +205,17 @@ export default function Services() {
       description: 'Standard home inspections are diagnostic only per InterNACHI Standards of Practice. When requested, Foresight provides empirical contractor repair cost estimates and trade schedules (RSMeans 2026 data) formatted for GAR Form F404 amendment negotiation.',
       details: ['Trade labor ($95–$165/hr) & materials breakdowns', 'Sample GAR Form F404 Amendment language', 'Available as $99 add-on for Foresight clients', 'Available as $99 standalone audit for outside reports'],
       image: '/images/ac-pic.png',
-      slug: 'repair-credit-calculator'
+      slug: 'repair-credit-calculator',
+      briefing: {
+        title: 'Contractor Repair Cost & Pricing Estimates',
+        duration: '45-Sec Briefing',
+        tagline: 'Bridge the Diagnostic Gap with RSMeans 2026 Metro Atlanta Trade Pricing',
+        takeaways: [
+          'InterNACHI SOP is diagnostic only; this optional $99 add-on calculates true dollar repair costs.',
+          'Itemizes trade labor ($95–$165/hr) and materials using localized RSMeans 2026 construction data.',
+          'Includes ready-to-copy GAR Form F404 Amendment wording to secure maximum seller credits.'
+        ]
+      }
     }
   ];
 
@@ -139,8 +240,8 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Home Inspection", "description": "Comprehensive inspection covering structure, roof, electrical, plumbing, HVAC, and all major systems with two certified inspectors and $10,000 warranty." }, "price": "345", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Condo & Townhome Inspection", "description": "Focused interior and mechanical systems inspection tailored for condominium units." }, "price": "295", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "365", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Ensure your new build was constructed to specifications with complete builder punch list." }, "price": "400", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Independent third-party quality assurance for your newly built home with complete builder punch list." }, "price": "355", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional code-referenced punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275", "priceCurrency": "USD" },
@@ -342,6 +443,9 @@ export default function Services() {
                     <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className={`btn ${idx === 0 ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: idx !== 0 ? 'var(--color-red)' : undefined, color: idx !== 0 ? 'var(--color-red)' : undefined }}>
                       📅 Book Inspection
                     </a>
+                    {s.briefing && (
+                      <ServiceVideoTrigger briefing={s.briefing} label="🎥 45-Sec Video Briefing" />
+                    )}
                     <Link href="/quote" className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', opacity: 0.8, fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
                       Calculate Price
                     </Link>
@@ -423,8 +527,11 @@ export default function Services() {
                     ))}
                   </ul>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', justifyContent: 'center', flexShrink: 0, width: '100%', mdWidth: 'auto', marginTop: '1rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', justifyContent: 'center', flexShrink: 0, width: '100%', mdWidth: 'auto', marginTop: '1rem', minWidth: '160px' }}>
                   <Link href="/quote" className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }}>Add to Quote</Link>
+                  {s.briefing && (
+                    <ServiceVideoTrigger briefing={s.briefing} label="🎥 45-Sec Briefing" />
+                  )}
                   {s.slug && (
                     <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
                       📖 Read Guide

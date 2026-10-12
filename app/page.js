@@ -104,10 +104,10 @@ export default function Home() {
           },
           {
             "@type": "Question",
-            "name": "What are the two possibilities when hiring a home inspector in Georgia?",
+            "name": "What is the difference between a standard solo inspection and Foresight's Dual-Team CMI Protocol?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary infrared thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
+              "text": "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This cuts on-site disruption to 1.5–2.5 hours, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with 1-click GAR repair lists, and includes up to $35,000 in combined warranty and guarantee protection."
             }
           },
           {
@@ -802,8 +802,8 @@ export default function Home() {
                 a: "Christopher Boykin is a Certified Master Inspector® (CMI), the highest professional designation in North America. Because Georgia does not require state licensing for home inspectors, Christopher's CMI credential proves thousands of hours of verified field experience, peer-reviewed education, and strict adherence to InterNACHI Standards of Practice."
               },
               {
-                q: "What are the two possibilities when hiring a home inspector in Georgia?",
-                a: "Because Georgia has zero licensing requirements for home inspectors, buyers face two distinct possibilities: Possibility A is the Unvetted Solo Inspector Gamble—an unregulated solo operator who works alone for 4+ hours, risks severe fatigue, skips thermal imaging, delivers a slow report burning your due diligence period, and offers $0 warranty. Possibility B is the Certified Master Inspector Dual-Team Standard—Foresight dispatches two certified inspectors led by board-certified CMI Christopher Boykin, cutting time to 1.5–2.5 hours with zero fatigue, including complimentary infrared thermal imaging and 4K drone scans, same-day reporting with 1-click GAR repair list generation, and up to $35,000 in combined warranty and guarantee protection."
+                q: "What is the difference between a standard solo inspection and Foresight's Dual-Team CMI Protocol?",
+                a: "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This cuts on-site disruption to 1.5–2.5 hours, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with 1-click GAR repair lists, and includes up to $35,000 in combined warranty and guarantee protection."
               },
               {
                 q: "What is covered under Foresight's up to $35,000 in warranties and guarantees?",
@@ -819,7 +819,7 @@ export default function Home() {
               },
               {
                 q: "When should I schedule a new construction home inspection in Atlanta?",
-                a: "For new construction homes, we recommend 3 critical milestones: pre-pour foundation, pre-drywall framing, and final walk-through before closing. Our 2-inspector team checks builder punch lists against Georgia building standards so structural and electrical defects are repaired on the builder's dime before your final sign-off."
+                a: "For new construction homes, we recommend 3 critical milestones: pre-pour foundation, pre-drywall framing, and final walk-through before closing. Our 2-inspector team provides an objective, code-referenced punch list so items are addressed under your builder warranty before final closing."
               },
               {
                 q: "How do I schedule a certified home inspection near me in Metro Atlanta?",

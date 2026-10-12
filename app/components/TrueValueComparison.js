@@ -50,14 +50,14 @@ export default function TrueValueComparison() {
               marginBottom: '1rem' 
             }}
           >
-            ⚠️ Georgia Buyer Financial Advisory: Zero State Licensing Required
+            ⚠️ Georgia Due Diligence Advisory: Unlicensed State Standard
           </div>
           <h2 style={{ fontSize: 'clamp(1.9rem, 4vw, 2.75rem)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.2, margin: '0 0 1rem 0' }}>
             The &ldquo;$25 Savings&rdquo; Illusion:<br />
-            <span style={{ color: 'var(--color-gold)' }}>The Most Expensive $25 in Georgia Real Estate</span>
+            <span style={{ color: 'var(--color-gold)' }}>The True Cost of a Standard Solo Inspection in Georgia</span>
           </h2>
           <p style={{ color: '#94A3B8', maxWidth: '820px', margin: '0 auto', fontSize: '1.08rem', lineHeight: 1.7 }}>
-            In Georgia, <strong>anyone can legally inspect your home with zero state licensing or experience</strong>. When buyers choose an unvetted solo inspector to &ldquo;save $25,&rdquo; they are usually taking on an uncalculated $10,000+ risk. Here is the mathematical truth comparing a $320 solo operator to Foresight&rsquo;s Two-Inspector Certified Master Team.
+            In Georgia, where home inspectors are not required to hold state licensing, homebuyers face a structural choice: hiring a standard solo inspector who works alone, or dispatching Foresight&rsquo;s Two-Inspector Certified Master Team. When you compare on-site time, physical fatigue, and hidden add-on fees, here is the empirical breakdown.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function TrueValueComparison() {
               <thead>
                 <tr style={{ background: 'rgba(30, 41, 59, 0.95)', borderBottom: '2px solid rgba(212, 175, 55, 0.4)' }}>
                   <th style={{ padding: '1.25rem 1.5rem', color: '#CBD5E1', fontWeight: 700, width: '34%' }}>Inspection Deliverable</th>
-                  <th style={{ padding: '1.25rem 1.5rem', color: '#F87171', fontWeight: 700, width: '33%' }}>The &ldquo;$320&rdquo; Solo Operator</th>
+                  <th style={{ padding: '1.25rem 1.5rem', color: '#F87171', fontWeight: 700, width: '33%' }}>Standard Solo Inspector ($320)</th>
                   <th style={{ padding: '1.25rem 1.5rem', color: 'var(--color-gold)', fontWeight: 800, background: 'rgba(212, 175, 55, 0.12)', width: '33%' }}>
                     Foresight Two-Inspector Team ($345)
                   </th>
@@ -98,10 +98,10 @@ export default function TrueValueComparison() {
                     Inspectors On-Site
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', color: '#CBD5E1' }}>
-                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> 1 Person Alone <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(3.5–5 hrs, severe fatigue)</span>
+                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> 1 Inspector Alone <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(3.5–5 hrs on-site, human fatigue on 400+ points)</span>
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', background: 'rgba(212, 175, 55, 0.06)', fontWeight: 700, color: '#FFFFFF' }}>
-                    <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> 2 Certified Inspectors <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>(Double coverage in 1.5–2.5 hrs)</span>
+                    <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> 2 Certified Inspectors <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>(Double coverage, cross-checked in 1.5–2.5 hrs)</span>
                   </td>
                 </tr>
 
@@ -111,7 +111,7 @@ export default function TrueValueComparison() {
                     High-Resolution Infrared Thermal Scan
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', color: '#CBD5E1' }}>
-                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> +$125 to +$150 Extra <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(or naked eyes only)</span>
+                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> +$125 to +$150 Extra <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(often skipped or visual only)</span>
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', background: 'rgba(212, 175, 55, 0.06)', fontWeight: 700, color: '#FFFFFF' }}>
                     <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> INCLUDED FREE ($0)
@@ -124,7 +124,7 @@ export default function TrueValueComparison() {
                     4K Aerial Drone Roof Scan
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', color: '#CBD5E1' }}>
-                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> +$75 to +$125 Extra <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(or ground binoculars)</span>
+                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> +$75 to +$125 Extra <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(or ground binoculars only)</span>
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', background: 'rgba(212, 175, 55, 0.06)', fontWeight: 700, color: '#FFFFFF' }}>
                     <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> INCLUDED FREE ($0)
@@ -137,7 +137,7 @@ export default function TrueValueComparison() {
                     Post-Inspection Financial Protection
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', color: '#CBD5E1' }}>
-                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> $0 Protection <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(You pay 100% of missed defects)</span>
+                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> $0 Warranty <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(Buyer assumes 100% post-closing risk)</span>
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', background: 'rgba(212, 175, 55, 0.06)', fontWeight: 700, color: '#FFFFFF' }}>
                     <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> Up to $35,000 Combined Protection <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>($0 Deductible)</span>
@@ -147,10 +147,10 @@ export default function TrueValueComparison() {
                 {/* Row 5 */}
                 <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
                   <td style={{ padding: '1.15rem 1.5rem', fontWeight: 600, color: '#FFFFFF' }}>
-                    Lead Inspector Credentials
+                    Lead Inspector Verification
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', color: '#CBD5E1' }}>
-                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> Basic Online Certificate <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(Zero state verification)</span>
+                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> Standard Entry Credential <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(Without Master Board vetting)</span>
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', background: 'rgba(212, 175, 55, 0.06)', fontWeight: 700, color: '#FFFFFF' }}>
                     <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> Certified Master Inspector® <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>(Top 3% Nationally)</span>
@@ -163,10 +163,10 @@ export default function TrueValueComparison() {
                     Digital Report Delivery Time
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', color: '#CBD5E1' }}>
-                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> 24–48+ Hours <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(Eats into your 5-day due diligence)</span>
+                    <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> 24–48+ Hours <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(Burns crucial due diligence days)</span>
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', background: 'rgba(212, 175, 55, 0.06)', fontWeight: 700, color: '#FFFFFF' }}>
-                    <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> Same-Day / Under 24 Hours <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>(Includes CRL repair list tool)</span>
+                    <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> Same-Day / Under 24 Hours <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>(Includes 1-click GAR repair list tool)</span>
                   </td>
                 </tr>
 
