@@ -154,7 +154,7 @@ export default function Home() {
 
           <h1 style={{ marginBottom: '1.5rem', color: '#FFFFFF', fontSize: 'clamp(2.35rem, 5.5vw, 3.85rem)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-0.03em', textShadow: '0 3px 25px rgba(0,0,0,0.85)' }}>
             Atlanta Home Inspections<br />
-            <span style={{ background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE047 30%, #D4AF37 70%, #CA8A04 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+            <span style={{ color: '#FDE047', background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE047 30%, #D4AF37 70%, #CA8A04 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
               Two Certified Inspectors on Every Job.
             </span>
           </h1>
