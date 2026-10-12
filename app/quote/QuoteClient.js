@@ -500,11 +500,11 @@ export default function QuoteClient({ showValueComparison = true }) {
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'basement'} onChange={() => setFoundation('basement')} />
-                    Unfinished/Partial Basement
+                    Unfinished/Partial Basement (+$250)
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'crawlspace'} onChange={() => setFoundation('crawlspace')} />
-                    Crawlspace
+                    Unfinished Crawlspace (+$75)
                   </label>
                 </div>
               </>
@@ -536,7 +536,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.45 
               }}>
-                ℹ️ <strong>Additional Complexity Fees:</strong> Per our official fee schedule, an additional <strong>$75 fee</strong> is added for a crawlspace inspection, and <strong>$250</strong> for an unfinished/partially finished basement inspection.
+                ℹ️ <strong>Additional Complexity Fees:</strong> Per our official fee schedule, an additional <strong>$75 fee</strong> is added for an unfinished crawlspace inspection, and <strong>$250</strong> for an unfinished/partially finished basement inspection.
               </div>
             )}
 
@@ -862,6 +862,34 @@ export default function QuoteClient({ showValueComparison = true }) {
                 }}>
                   🎁 $724 in premium diagnostic & protection value included at no extra charge!
                 </div>
+
+                {(propertyType === 'single-family' && serviceType !== 'str' && (foundation === 'crawlspace' || foundation === 'basement')) || (serviceType !== 'str' && ageTier === 'over-50') ? (
+                  <div style={{ marginTop: '1rem', borderTop: '1px dashed rgba(255,255,255,0.2)', paddingTop: '0.75rem' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-gold)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.45rem' }}>
+                      Property Complexity:
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                      {propertyType === 'single-family' && serviceType !== 'str' && foundation === 'crawlspace' && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🧱 Unfinished Crawlspace Inspection</span>
+                          <span>+$75</span>
+                        </div>
+                      )}
+                      {propertyType === 'single-family' && serviceType !== 'str' && foundation === 'basement' && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🏚️ Unfinished / Partial Basement</span>
+                          <span>+$250</span>
+                        </div>
+                      )}
+                      {serviceType !== 'str' && ageTier === 'over-50' && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
+                          <span>🏛️ Vintage Home (50+ Years Old)</span>
+                          <span>+$75</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ) : null}
 
                 {Object.values(addons).some(Boolean) && (
                   <div style={{ marginTop: '1.25rem', borderTop: '1px dashed rgba(255,255,255,0.2)', paddingTop: '0.85rem' }}>

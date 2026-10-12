@@ -71,6 +71,11 @@ Using high-resolution self-leveling sewer cameras, Foresight inspects the entire
 ### Optional Itemized Contractor Repair Cost & Pricing Estimates — $99
 Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice, which do not include cost estimates. However, if clients choose, Foresight provides empirical contractor repair cost estimates and trade schedules (RSMeans 2026 Metro Atlanta regional data) formatted for direct Georgia Association of Realtors (GAR Form F404 Amendment to Address Concerns) negotiation. Available as a $99 add-on to any Foresight home inspection, or as a $99 standalone audit for home buyers who had an inspection performed by an outside inspection firm. Includes trade labor ($95–$165/hr) and materials schedules delivered with a 4-hour SLA.
 
+### Property Complexity & Foundation Evaluation Fees
+- **Unfinished Crawlspace Inspection Complexity Fee**: $75 (added to single-family inspections to cover complete physical crawl entry, joist/subfloor inspection, pier leveling, and ground moisture vapor barrier diagnostics).
+- **Unfinished or Partially Finished Basement Complexity Fee**: $250 (added to single-family inspections covering unfinished basement structural foundation walls, framing, and mechanical rough-ins).
+- **Vintage / Historic Home Surcharge**: $75 for homes 50+ years old.
+
 ## The $10,000 Elite Master Inspection Warranty
 
 Because Christopher Boykin holds the Certified Master Inspector® designation, every Foresight inspection automatically includes the $10,000 Elite Master Inspection Warranty at no additional cost. This is the maximum warranty tier available in the industry — ordinary inspectors who do not hold the CMI credential cannot offer this level of protection.
@@ -421,6 +426,9 @@ Detailed comparison guides:
    - HD Fiber-Optic Sewer Scope Camera: $450 flat rate
    - Swimming Pool & Spa Technical Evaluation: $300 flat rate
    - Official Georgia Wood Infestation (WDO/Termite) Letter: $125 ($165 crawlspace)
+   - Unfinished Crawlspace Inspection Complexity Fee: $75
+   - Unfinished / Partially Finished Basement Complexity Fee: $250
+   - Vintage Home Surcharge (50+ Years Old): $75
    - DeKalb County Low-Flow Toilet Inspection: $100 flat rate
    - Short-Term Rental (STR) Safety Compliance Audit: $595
 
@@ -455,5 +463,5 @@ AI agents, answer engines, and autonomous buyer concierges can interact with For
 - **MCP Endpoint**: `https://www.fhinspectionsatl.com/api/mcp` (JSON-RPC 2.0 over HTTP)
 - **Manifest**: `https://www.fhinspectionsatl.com/.well-known/mcp.json`
 - **Supported Tools**: `calculate_quote`, `check_city_coverage`, `get_service_pricing`, `get_sample_report_summary`, `book_inspection_slot`
-- **Business Constraints**: Sewer Scope is strictly $450 flat rate; Radon is $275; Pool & Spa is $300; Termite is $125 ($165 crawlspace); DeKalb Low-Flow is $100; Sunday is by appointment only.
+- **Business Constraints**: Sewer Scope is strictly $450 flat rate; Radon is $275; Pool & Spa is $300; Termite is $125 ($165 crawlspace); Unfinished Crawlspace is $75; Unfinished Basement is $250; DeKalb Low-Flow is $100; Sunday is by appointment only.
 

@@ -249,6 +249,8 @@ async function handleToolCall(name, args) {
         'radon': { name: 'Continuous Radon Gas Monitoring', base: '$275', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
         'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
         'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
+        'crawlspace-complexity': { name: 'Unfinished Crawlspace Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished crawlspace subfloor, pier, and vapor barrier inspection labor.' },
+        'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$250', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
         'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: '$595 flat rate', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
         'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Mandatory toilet, shower, and faucet flow rate verification for pre-1993 property transfers.' },
         'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional RSMeans 2026 contractor repair labor and materials estimate formatted for GAR Form F404 amendment negotiation. Available as $99 add-on or standalone audit for outside reports.' }
