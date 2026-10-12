@@ -1,8 +1,8 @@
 # 🌐 Cody Schneider AI Fanning & GEO Surface Area Audit
 
-**Generated**: September 21, 2026  
+**Generated**: October 12, 2026  
 **Framework**: Generative Engine Optimization (GEO) & AI Fan-Out Modeling  
-**Overall Surface Area Score**: **100%** (37/37 Subqueries Covered)
+**Overall Surface Area Score**: **97%** (36/37 Subqueries Covered)
 
 ---
 
@@ -65,7 +65,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 ---
 
 ### 📡 Fan Cluster: "What are the biggest structural and environmental red flags in Georgia homes?"
-- **Coverage**: **100%** (8/8 nodes)
+- **Coverage**: **88%** (7/8 nodes)
 - **Cluster ID**: `building-science-defects`
 
 | Derivative Subquery | Target URL | Coverage Type | Status |
@@ -73,7 +73,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 | **Atlanta red clay soil foundation settlement cracking** | [/blog/atlanta-red-clay-soil-foundation-settlement](https://www.fhinspectionsatl.com/blog/atlanta-red-clay-soil-foundation-settlement) | Dynamic Blog | ✅ COVERED |
 | **polybutylene pipe failure Atlanta homes 1980s 1990s** | [/defects/polybutylene-pipe-plumbing-defect-inspection](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection) | Defect Guide | ✅ COVERED |
 | **radon gas levels North Georgia granite bedrock** | [/blog/hidden-dangers-of-radon-gas-georgia](https://www.fhinspectionsatl.com/blog/hidden-dangers-of-radon-gas-georgia) | Dynamic Blog | ✅ COVERED |
-| **crawlspace humidity fungal mold Southeast summer** | [/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations) | Dynamic Blog | ✅ COVERED |
+| **crawlspace humidity fungal mold Southeast summer** | [/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations) | None | ⚠️ GAP |
 | **stucco EIFS moisture intrusion inspection Georgia** | [/defects/stucco-eifs-moisture-inspection](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection) | Defect Guide | ✅ COVERED |
 | **Federal Pacific Zinsco electrical panel hazards** | [/defects/federal-pacific-zinsco-panel-inspection](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection) | Defect Guide | ✅ COVERED |
 | **11-month builder warranty inspection Atlanta** | [/blog/11-month-warranty-inspection-guide](https://www.fhinspectionsatl.com/blog/11-month-warranty-inspection-guide) | Dynamic Blog | ✅ COVERED |
