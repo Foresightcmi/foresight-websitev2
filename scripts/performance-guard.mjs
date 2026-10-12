@@ -83,10 +83,13 @@ function checkLayoutScriptPlacement() {
   const code = fs.readFileSync(file, 'utf8');
 
   const bodyIndex = code.indexOf('<body>');
-  const firstBannerIndex = code.indexOf("var(--color-gold)");
-  const firstScriptIndex = code.indexOf("<Script");
+  let firstBannerIndex = code.indexOf("<GeoTrustBanner");
+  if (firstBannerIndex === -1) {
+    firstBannerIndex = code.indexOf("var(--color-gold)");
+  }
+  const firstScriptIndex = code.indexOf("<Script", bodyIndex !== -1 ? bodyIndex : 0);
 
-  if (bodyIndex !== -1 && firstScriptIndex !== -1 && firstScriptIndex < firstBannerIndex) {
+  if (bodyIndex !== -1 && firstScriptIndex !== -1 && firstBannerIndex !== -1 && firstScriptIndex < firstBannerIndex) {
     fail('Critical Paint Hierarchy', 'A <Script> tag appears before the top announcement banners! Delays LCP.');
   } else {
     pass('Critical Paint Hierarchy', 'Visible announcement banners paint ahead of all body scripts.');
