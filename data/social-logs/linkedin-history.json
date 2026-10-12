@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-12T21:58:52.031Z",
+    "post_id": 10,
+    "topic": "The Estate Master High-Ticket Due Diligence Tier",
+    "type": "withdrawal",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
     "timestamp": "2026-10-09T19:16:03.570Z",
     "post_id": 9,
     "topic": "Crushed Sewer Line Under Tree Roots",
