@@ -466,5 +466,71 @@
     "email": "chase@chasemizell.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-11T22:35:52.537Z"
+  },
+  {
+    "key": "CONTRACT_card_4229da4347_4sightrealty@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Temitope Eka",
+    "brokerage": "Chapman Hall Premier, REALTORS",
+    "address": "2031 Pinnacle Pointe Drive",
+    "city": "Norcross",
+    "email": "4sightrealty@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-12T12:00:47.372Z"
+  },
+  {
+    "key": "CONTRACT_card_aa37877495_blair@blairsells.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "BLAIR BRANCH HUCKEBA",
+    "brokerage": "Dorsey Alston Realtors",
+    "address": "3635 E Paces Circle NE 1418",
+    "city": "Atlanta",
+    "email": "blair@blairsells.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-12T12:00:52.001Z"
+  },
+  {
+    "key": "CONTRACT_card_c3d63f3c27_cj@atlrentalmanagement.net",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "CJ Wilson",
+    "brokerage": "ATL Rental Management, LLC",
+    "address": "1735 Peachtree Street",
+    "city": "Atlanta",
+    "email": "cj@atlrentalmanagement.net",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-12T12:00:57.366Z"
+  },
+  {
+    "key": "CONTRACT_card_a31324e869_andrewvadala@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Andrew Vadala",
+    "brokerage": "D.R.. Horton Realty of Georgia, Inc",
+    "address": "412 Teamon Pointe Drive",
+    "city": "Griffin",
+    "email": "andrewvadala@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-12T12:01:02.618Z"
+  },
+  {
+    "key": "PRE_DD_card_bdd36d191c_ted@millermorrishomes.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Ted Morris",
+    "brokerage": "Keller Williams Buckhead",
+    "address": "3475 Oak Valley Road NE 1210",
+    "city": "Atlanta",
+    "email": "ted@millermorrishomes.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-12T12:01:07.983Z"
+  },
+  {
+    "key": "PRE_DD_card_2ef84d26a5_jody@rivermoorepartnersrealty.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Jody Gillis",
+    "brokerage": "Rivermoore Partners Realty, LLC.",
+    "address": "3199 Brush Arbor Court",
+    "city": "Covington",
+    "email": "jody@rivermoorepartnersrealty.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-12T12:01:13.786Z"
   }
 ]

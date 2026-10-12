@@ -4,11 +4,11 @@ import Link from 'next/link';
 import CitySearch from '../components/CitySearch';
 
 export const metadata = {
-  title: 'Home Inspections in 163+ Metro Atlanta Cities',
-  description: 'Foresight Home Inspections serves over 163 cities across Georgia. Find a certified master home inspector in your local area.',
+  title: 'Home Inspection Service Areas Atlanta | 87 Cities | Foresight',
+  description: '4.9★ home inspections across 87 Metro Atlanta municipalities. 2-inspector team led by a CMI from $345. Free thermal & 4K drones. Select your city today!',
   openGraph: {
-    title: 'Home Inspections in 163+ Metro Atlanta Cities | Foresight',
-    description: 'Foresight Home Inspections serves over 163 cities across Georgia. Find a certified master home inspector in your local area.',
+    title: 'Metro Atlanta Home Inspection Service Areas | Foresight',
+    description: '4.9★ home inspections across 87 Metro Atlanta cities with two certified inspectors on every job led by a Certified Master Inspector®.',
     url: 'https://www.fhinspectionsatl.com/service-areas',
     type: 'website',
   },
