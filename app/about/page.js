@@ -50,6 +50,24 @@ export default function About() {
           {
             "@type": "EducationalOccupationalCredential",
             "credentialCategory": "Professional Certification",
+            "name": "InterNACHI Certified New Construction Inspector",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "InterNACHI"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Professional Certification",
+            "name": "InterNACHI Certified Moisture Intrusion Inspector",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "InterNACHI"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Professional Certification",
             "name": "Certified Professional Inspector (CPI)",
             "recognizedBy": {
               "@type": "Organization",
@@ -61,6 +79,9 @@ export default function About() {
           "Residential Home Inspections",
           "Thermal Imaging Inspections",
           "Drone Roof Inspections",
+          "New Construction Phased Inspections",
+          "Moisture Intrusion Diagnostics",
+          "Mold and Indoor Air Quality Testing",
           "Radon Gas Testing",
           "Sewer Scope Inspections",
           "Pool and Spa Inspections",
@@ -155,9 +176,11 @@ export default function About() {
                 style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}
                 priority
               />
-              <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
                 <Image src="/images/cmi_logo.png" alt="Certified Master Inspector designation logo" width={160} height={120} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
                 <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector designation logo" width={160} height={120} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+                <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector designation logo" width={140} height={100} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+                <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector designation logo" width={100} height={100} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
                 
                 {/* 10+ Years Experience Badge */}
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'var(--color-dark)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '100px', minWidth: '120px' }}>
@@ -179,7 +202,7 @@ export default function About() {
                 In <strong>September 2024</strong>, Christopher earned the prestigious <strong>Certified Master Inspector (CMI)</strong> designation &mdash; the highest professional credential awarded by the Master Inspector Certification Board (top 3% of the industry). This distinction is reserved for inspectors who have completed at least 1,000 paid inspections or equivalent hours of verified education, maintain an impeccable professional record, and adhere strictly to the InterNACHI Standards of Practice, meaning you never have to gamble on your biggest investment.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.05rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
-                Christopher also holds the <strong>Certified Professional Inspector (CPI)</strong> credential through InterNACHI, the International Association of Certified Home Inspectors &mdash; the world&rsquo;s largest home inspector association.
+                Christopher also holds the <strong>Certified Professional Inspector (CPI)</strong> credential, along with specialized designations as an <strong>InterNACHI® Certified New Construction Inspector</strong> and <strong>InterNACHI® Certified Moisture Intrusion Inspector</strong> through InterNACHI, the International Association of Certified Home Inspectors &mdash; the world&rsquo;s largest home inspection organization. These specialized credentials provide rigorous technical oversight across foundation framing, pre-drywall audits, builder warranties, crawlspace moisture science, and certified mold/air quality diagnostics.
               </p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -434,6 +457,12 @@ export default function About() {
                 year: '2024',
                 title: 'Certified Master Inspector (CMI) Designation',
                 description: 'Christopher Boykin earns the Certified Master Inspector credential from the Master Inspector Certification Board — the highest professional designation in North America — in September 2024.',
+                highlight: true,
+              },
+              {
+                year: '2024',
+                title: 'InterNACHI® Certified New Construction & Moisture Intrusion Inspector',
+                description: 'Christopher Boykin achieves dual specialized certifications for phased new construction framing, IRC code compliance, pre-closing builder audits, and building envelope moisture intrusion diagnostics.',
                 highlight: true,
               },
               {

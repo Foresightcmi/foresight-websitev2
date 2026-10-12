@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import Image from 'next/image';
 import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
@@ -334,6 +335,43 @@ export default async function ServiceHubPage({ params }) {
             <p style={{ fontSize: '1.1rem', color: '#334155', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               {serviceData.description}
             </p>
+
+            {canonicalService === 'new-construction-inspection' && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#0F172A', color: '#FFFFFF', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', border: '1px solid rgba(212,175,55,0.3)' }}>
+                <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={140} height={95} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+                <div>
+                  <h4 style={{ color: 'var(--color-gold)', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Certified New Construction Inspector</h4>
+                  <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.5 }}>
+                    Christopher Boykin holds specialized certification for phased residential builds, ensuring pre-pour foundation assessments, pre-drywall framing diagnostics, and pre-closing builder warranty inspections meet strict national structural standards.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {canonicalService === '11-month-warranty-inspection' && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#0F172A', color: '#FFFFFF', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', border: '1px solid rgba(212,175,55,0.3)' }}>
+                <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={140} height={95} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+                <div>
+                  <h4 style={{ color: 'var(--color-gold)', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Certified New Construction Inspector</h4>
+                  <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.5 }}>
+                    Specialized builder warranty verification. We audit structural settlement, roof truss movement, and envelope seal integrity to generate an airtight punch list before your 1-year builder warranty expires.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {canonicalService === 'mold-testing' && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#0F172A', color: '#FFFFFF', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', border: '1px solid rgba(52,211,153,0.3)' }}>
+                <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={90} height={90} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+                <div>
+                  <h4 style={{ color: '#34d399', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Certified Moisture Intrusion Inspector</h4>
+                  <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.5 }}>
+                    Certified building envelope and moisture science diagnostics. We pinpoint active condensation points, plumbing seepage, and crawlspace relative humidity to identify mold breeding grounds before taking calibrated indoor air spore trap samples.
+                  </p>
+                </div>
+              </div>
+            )}
+
             <div style={{ background: '#F8FAFC', padding: '2rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-gold)' }}>
               <h3 style={{ fontSize: '1.2rem', color: '#0F172A', fontWeight: 700, marginBottom: '1rem' }}>
                 What&apos;s Included in Every Evaluation:

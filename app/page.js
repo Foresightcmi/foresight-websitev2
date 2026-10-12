@@ -190,9 +190,11 @@ export default function Home() {
             ✓ Includes Free Utilities Plus Concierge Setup ($150 Value)
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))' }}>
              <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
              <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={160} height={130} sizes="160px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
+             <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={130} height={130} sizes="130px" style={{ height: '130px', width: 'auto', objectFit: 'contain' }} />
              
              {/* 10+ Years Experience Badge */}
              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.5)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.75rem 1.25rem', height: '130px', minWidth: '140px', backdropFilter: 'blur(8px)' }}>
@@ -440,6 +442,12 @@ export default function Home() {
               <ul className="cms-content" style={{ marginBottom: '2rem', listStyle: 'none' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> InterNACHI Certified Master Inspector
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> InterNACHI® Certified New Construction Inspector
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> InterNACHI® Certified Moisture Intrusion Inspector
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontWeight: 600, color: '#0F172A' }}>
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> Certified Mold Testing &amp; Indoor Air Quality Diagnostics
