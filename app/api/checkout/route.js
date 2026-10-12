@@ -67,7 +67,6 @@ export async function POST(req) {
       : 'Initial deposit for scheduled home inspection services with Foresight Home Inspections, LLC.';
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
       line_items: [
         {
           price_data: {
