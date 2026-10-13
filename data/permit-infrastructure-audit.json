@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-28T04:02:41.159Z",
+  "timestamp": "2026-10-13T17:31:55.869Z",
   "operationalReadinessScore": "100/100 (100%)",
   "results": {
     "googleWorkspaceSmtp": {
@@ -7,7 +7,7 @@
       "user": "inspect@foresightcmi.com",
       "host": "smtp.gmail.com",
       "authMethod": "Google App Password",
-      "durationMs": 573,
+      "durationMs": 959,
       "details": "Transporter verified successfully. Ready for TLS outreach dispatch."
     },
     "cityOfAtlantaArcgis": {
@@ -15,7 +15,7 @@
       "endpoint": "https://services5.arcgis.com/5RxyIIJ9boPdptdo/arcgis/rest/services/Building_Permit_latest/FeatureServer/0/query",
       "httpStatus": 200,
       "featuresCount": 25,
-      "durationMs": 877,
+      "durationMs": 1569,
       "newestRecord": {
         "recordId": "BB-202600800",
         "address": "970 BOULDERCREST SE, ATLANTA, GA 30316",
@@ -26,24 +26,199 @@
     },
     "dataIntegrity": {
       "leads": {
-        "status": "PASSED",
-        "recordCount": 25,
-        "uniqueRecords": 25,
-        "duplicateCount": 0,
+        "status": "PASSED_WITH_WARNINGS",
+        "recordCount": 250,
+        "uniqueRecords": 249,
+        "duplicateCount": 1,
         "missingFieldsCount": 0,
-        "pipelineValuation": 4690340,
-        "sampleLead": "BB-202600800"
+        "pipelineValuation": 24380933.930000003,
+        "sampleLead": "DKB-3190177"
       },
       "outreach": {
         "status": "PASSED",
-        "totalEntries": 3,
+        "totalEntries": 28,
         "statusCounts": {
-          "SENT": 2,
+          "SENT": 27,
           "DISPATCHED": 1
         },
         "messageIdIssuesCount": 0,
         "timestampIssuesCount": 0,
         "entries": [
+          {
+            "recordId": "DKB-3189996",
+            "recipient": "Casteel Heating & Cooling LLC* <scooper@casteelair.com>",
+            "status": "SENT",
+            "messageId": "<40fa1f37-0075-f34d-b445-c11666ea50e1@foresightcmi.com>",
+            "dispatchedAt": "2026-10-01T12:01:03.331Z"
+          },
+          {
+            "recordId": "DKB-3189998",
+            "recipient": "Casteel Heating & Cooling LLC* <scooper@casteelair.com>",
+            "status": "SENT",
+            "messageId": "<02c08da3-af28-63b7-fac8-84bb03aa619a@foresightcmi.com>",
+            "dispatchedAt": "2026-10-01T12:01:01.673Z"
+          },
+          {
+            "recordId": "DKB-3189999",
+            "recipient": "Casteel Heating & Cooling LLC* <scooper@casteelair.com>",
+            "status": "SENT",
+            "messageId": "<d11fd30a-3315-83c9-2d4f-680f05203a81@foresightcmi.com>",
+            "dispatchedAt": "2026-10-01T12:00:59.706Z"
+          },
+          {
+            "recordId": "DKB-3190003",
+            "recipient": "JERRY L ROBINSON* <bac@bac-constructioninc.com>",
+            "status": "SENT",
+            "messageId": "<389e0a96-1d34-c9a4-252d-43339194c0d3@foresightcmi.com>",
+            "dispatchedAt": "2026-10-01T12:00:57.524Z"
+          },
+          {
+            "recordId": "DKB-3190010",
+            "recipient": "Ty Rosales <tyr1427@gmail.com>",
+            "status": "SENT",
+            "messageId": "<1846811f-bc58-384c-9e02-a3ccbd0bba90@foresightcmi.com>",
+            "dispatchedAt": "2026-10-01T12:00:55.101Z"
+          },
+          {
+            "recordId": "STR-STRL-2025-00079",
+            "recipient": "Wafi Lalani <wafi@jewelryunlimited.com>",
+            "status": "SENT",
+            "messageId": "<82e9d427-835c-c272-01cc-779910fd1cd3@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:39:57.985Z"
+          },
+          {
+            "recordId": "STR-STRL-2025-00057",
+            "recipient": "Ami Pierce <ami@amorebetterhome.com>",
+            "status": "SENT",
+            "messageId": "<35a30be1-0f98-8333-2a6c-b09b5b32ad0f@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:39:56.085Z"
+          },
+          {
+            "recordId": "STR-STRL-2025-00064",
+            "recipient": "Sviatlana Kuchynski <lana575@zoho.com>",
+            "status": "SENT",
+            "messageId": "<765afddb-19c1-63ca-227b-d90f8cca9857@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:39:54.325Z"
+          },
+          {
+            "recordId": "STR-STRL-2025-00088",
+            "recipient": "Pablo Tejada Bassols <pablo1tejada@gmail.com>",
+            "status": "SENT",
+            "messageId": "<3c6c5153-5de4-9604-e0b2-dba24ccb1a4c@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:39:52.605Z"
+          },
+          {
+            "recordId": "STR-STRL-2025-00086",
+            "recipient": "Rachel Pryzby <rachel.pryzby@gmail.com>",
+            "status": "SENT",
+            "messageId": "<72a108d5-d739-b3a2-5973-802c4d4a2d87@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:39:50.463Z"
+          },
+          {
+            "recordId": "DKB-3189934",
+            "recipient": "Jamal Holland <info@hollandlegacy.com>",
+            "status": "SENT",
+            "messageId": "<7e6fb7d6-e476-a75a-543f-3ee634f26268@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:00:34.551Z"
+          },
+          {
+            "recordId": "DKB-3189939",
+            "recipient": "Jamal Holland <info@hollandlegacy.com>",
+            "status": "SENT",
+            "messageId": "<79c2b801-0f9d-b914-9a77-79747ac0df5d@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:00:32.672Z"
+          },
+          {
+            "recordId": "DKB-3189940",
+            "recipient": "MW JOHNSON ENTERPRISES, LLC <J.ELISH@PEACHTREERESTORATIONS.COM>",
+            "status": "SENT",
+            "messageId": "<b3b06d3e-b9f8-ca7c-51e1-8c2359b40b1c@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:00:28.737Z"
+          },
+          {
+            "recordId": "DKB-3189941",
+            "recipient": "Prime Foundation LLC. <jwalke52@yahoo.com>",
+            "status": "SENT",
+            "messageId": "<f2c33574-445b-8f23-e5d5-6cce69332e13@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:00:26.866Z"
+          },
+          {
+            "recordId": "DKB-3189946",
+            "recipient": "PINE HILL CONSTRUCTION, INC. <aaron@pinehillremodeling.com>",
+            "status": "SENT",
+            "messageId": "<449af642-2978-24d0-0434-d3b7bbb147fd@foresightcmi.com>",
+            "dispatchedAt": "2026-09-30T12:00:24.182Z"
+          },
+          {
+            "recordId": "DKB-3189870",
+            "recipient": "Davisbuilders <davisfloors10@gmail.com>",
+            "status": "SENT",
+            "messageId": "<64f85824-c468-1a7c-4c0d-1f7839be250e@foresightcmi.com>",
+            "dispatchedAt": "2026-09-29T12:01:01.302Z"
+          },
+          {
+            "recordId": "DKB-3189872",
+            "recipient": "Atlanta Porch and Patio <admin@atlantaporchandpatio.com>",
+            "status": "SENT",
+            "messageId": "<14c95a81-ea97-d9d6-b9a8-b5cc904bf678@foresightcmi.com>",
+            "dispatchedAt": "2026-09-29T12:00:59.399Z"
+          },
+          {
+            "recordId": "DKB-3189873",
+            "recipient": "la vista construction llc <ilavistaconstruction@gmail.com>",
+            "status": "SENT",
+            "messageId": "<9252d625-a28f-c6e2-352d-a1cb35a22046@foresightcmi.com>",
+            "dispatchedAt": "2026-09-29T12:00:57.450Z"
+          },
+          {
+            "recordId": "DKB-3189890",
+            "recipient": "Michael Fitzpatrick <fitzpatrickciacontracting@gmail.com>",
+            "status": "SENT",
+            "messageId": "<9120ef08-c2aa-f298-6edd-972bda487fe6@foresightcmi.com>",
+            "dispatchedAt": "2026-09-29T12:00:55.278Z"
+          },
+          {
+            "recordId": "DKB-3189890",
+            "recipient": "Michael Fitzpatrick <fitzpatrickciacontracting@gmail.com>",
+            "status": "SENT",
+            "messageId": "<8424266e-49de-c2a3-5ee2-b4a906b94b71@foresightcmi.com>",
+            "dispatchedAt": "2026-09-29T12:00:52.242Z"
+          },
+          {
+            "recordId": "DKB-3189817",
+            "recipient": "ryan sooklal <ryan.hopehvac@gmail.com>",
+            "status": "SENT",
+            "messageId": "<e3fdcd04-494b-a874-1113-61cd40bac520@foresightcmi.com>",
+            "dispatchedAt": "2026-09-28T13:24:35.379Z"
+          },
+          {
+            "recordId": "DKB-3189821",
+            "recipient": "Kevin Mackinder <kmackinder1@gmail.com>",
+            "status": "SENT",
+            "messageId": "<060f1b46-e83a-faca-fc63-6a5859d1b9c7@foresightcmi.com>",
+            "dispatchedAt": "2026-09-28T13:24:33.493Z"
+          },
+          {
+            "recordId": "DKB-3189822",
+            "recipient": "COO Curtis W Sutherland <curtis@345cares.com>",
+            "status": "SENT",
+            "messageId": "<36bee74f-8ce5-ef45-9e4d-675bee3c37e3@foresightcmi.com>",
+            "dispatchedAt": "2026-09-28T13:24:31.768Z"
+          },
+          {
+            "recordId": "DKB-3189824",
+            "recipient": "Xzaveous Smith <spanicoly@gmail.com>",
+            "status": "SENT",
+            "messageId": "<2095232a-69dc-bada-1e04-f8542a52fec1@foresightcmi.com>",
+            "dispatchedAt": "2026-09-28T13:24:29.790Z"
+          },
+          {
+            "recordId": "DKB-3189834",
+            "recipient": "Climate Heroes LLC <brynna@callclimateheroes.com>",
+            "status": "SENT",
+            "messageId": "<0b42ba0a-251c-1bbc-b1f2-768e8776f4c3@foresightcmi.com>",
+            "dispatchedAt": "2026-09-28T13:24:27.544Z"
+          },
           {
             "recordId": "BB-202600778",
             "recipient": "Deborah Leah Calvert <leahcalvert@gmail.com>",
@@ -69,15 +244,15 @@
       },
       "crm": {
         "status": "PASSED",
-        "recordCount": 25
+        "recordCount": 250
       }
     },
     "realTimePushAlert": {
       "status": "PASSED",
       "endpoint": "https://ntfy.sh/fores-antigravity-alerts-77",
       "httpStatus": 200,
-      "durationMs": 194,
-      "response": "{\"id\":\"Teemxi576q3Y\",\"time\":1790569038,\"expires\":1790612238,\"event\":\"message\",\"topic\":\"fores-antigravity-alerts-77\",\"title\":\"System Audit: Permit Radar & SMTP Verified\",\"message\":\"Autonomous Infrastructure Health Check Completed:\\n• Google Workspace SMTP: VERIFIED (inspect@foresightcmi.com)\\n• City of Atlanta ArcGIS Feed: ONLINE & RETRIEVING LIVE PERMITS\\n• Permit Database: INTEGRITY 100% VALIDATED\\n• Timestamp: 2026-09-28T04:02:40.964Z\\n\\nOperational Readiness: FULLY DEPLOYED & ARMED.\",\"priority\":3,\"tags\":[\"shield\",\"white_check_mark\",\"satellite\"],\"actions\":[{\"id\":\"5vMiR4oAts\",\"action\":\"view\",\"label\":\"Foresight Portal\",\"clear\":true,\"url\":\"https://www.fhinspectionsatl.com\"}]}"
+      "durationMs": 116,
+      "response": "{\"id\":\"jfUqA8atFAeD\",\"time\":1791912834,\"expires\":1791956034,\"event\":\"message\",\"topic\":\"fores-antigravity-alerts-77\",\"title\":\"System Audit: Permit Radar & SMTP Verified\",\"message\":\"Autonomous Infrastructure Health Check Completed:\\n• Google Workspace SMTP: VERIFIED (inspect@foresightcmi.com)\\n• City of Atlanta ArcGIS Feed: ONLINE & RETRIEVING LIVE PERMITS\\n• Permit Database: INTEGRITY 100% VALIDATED\\n• Timestamp: 2026-10-13T17:31:55.752Z\\n\\nOperational Readiness: FULLY DEPLOYED & ARMED.\",\"priority\":3,\"tags\":[\"shield\",\"white_check_mark\",\"satellite\"],\"actions\":[{\"id\":\"KXTb3ngdS4\",\"action\":\"view\",\"label\":\"Foresight Portal\",\"clear\":true,\"url\":\"https://www.fhinspectionsatl.com\"}]}"
     }
   }
 }

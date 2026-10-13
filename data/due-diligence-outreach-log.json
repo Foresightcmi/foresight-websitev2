@@ -565,5 +565,71 @@
     "email": "offers@gowithmt.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-12T20:45:59.934Z"
+  },
+  {
+    "key": "CONTRACT_card_c6b60c4447_katiebraswellrealtor@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "KATIE BRASWELL",
+    "brokerage": "Re/Max Towne Square",
+    "address": "6503 Silk Tree",
+    "city": "Braselton",
+    "email": "katiebraswellrealtor@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-13T17:22:13.728Z"
+  },
+  {
+    "key": "CONTRACT_card_024df21cbc_k.perezagr@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Kevin Perez",
+    "brokerage": "Virtual Properties Realty. Biz",
+    "address": "1585 Roper Rd",
+    "city": "Canton",
+    "email": "k.perezagr@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-13T17:22:18.071Z"
+  },
+  {
+    "key": "CONTRACT_card_9786ff69ee_beiningzhang1@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "BEINING ZHANG",
+    "brokerage": "Best Home Realty, Inc.",
+    "address": "2010 Whitestone Place",
+    "city": "Alpharetta",
+    "email": "beiningzhang1@gmail.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-13T17:22:22.316Z"
+  },
+  {
+    "key": "CONTRACT_card_1f7ee24f99_rachelalberts@kw.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Rachel Alberts",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "address": "11855 Jones Ferry Road",
+    "city": "Chattahoochee Hills",
+    "email": "rachelalberts@kw.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-13T17:22:26.663Z"
+  },
+  {
+    "key": "PRE_DD_card_9e6e59b9ea_kgordon@gordonstreetrealty.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "KEITH GORDON",
+    "brokerage": "Gordon Street Realty, LLC.",
+    "address": "1975 Kilburn Drive NE",
+    "city": "Dawsonville",
+    "email": "kgordon@gordonstreetrealty.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-13T17:22:31.102Z"
+  },
+  {
+    "key": "PRE_DD_card_88fa58e573_oneida@homesbyholloman.com",
+    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "targetName": "Oneida Holloman",
+    "brokerage": "Homes By Holloman, LLC",
+    "address": "105 Al Jennah Boulevard",
+    "city": "Atlanta",
+    "email": "oneida@homesbyholloman.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-13T17:22:36.777Z"
   }
 ]
