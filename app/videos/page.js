@@ -22,8 +22,41 @@ export const metadata = {
 };
 
 export default function VideosHub() {
+  const videoHubSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${SITE_URL}/videos#featured-video`,
+    name: 'Complete Home Systems Diagnostic Field Demonstration - Foresight Home Inspections',
+    description: 'Lead Certified Master Inspector® Christopher Boykin evaluates HVAC, 200A electrical distribution, crawlspace foundations, and infrared thermal scans under real field conditions in Metro Atlanta.',
+    thumbnailUrl: [`${SITE_URL}/images/home-systems-poster.webp`],
+    uploadDate: '2026-09-13T22:00:00Z',
+    duration: 'PT1M19S',
+    contentUrl: `${SITE_URL}/videos/foresight-home-systems.mp4`,
+    embedUrl: `${SITE_URL}/videos/complete-home-systems-diagnostic`,
+    inLanguage: 'en-US',
+    author: {
+      '@type': 'Person',
+      name: 'Christopher Boykin',
+      jobTitle: 'Certified Master Inspector® (CMI)',
+      url: `${SITE_URL}/about`
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Foresight Home Inspections',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/Logopng.png`
+      }
+    }
+  };
+
   return (
     <main style={{ background: '#090D16', color: '#F8FAFC', minHeight: '100vh', padding: '3.5rem 0 5rem' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoHubSchema) }}
+      />
       <div className="container" style={{ maxWidth: '1080px', margin: '0 auto', padding: '0 1.25rem' }}>
         
         {/* Breadcrumb Navigation */}
@@ -49,7 +82,7 @@ export default function VideosHub() {
         {/* Featured Video Card */}
         <div style={{ marginBottom: '3.5rem' }}>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.25rem' }}>
-            ⭐ Featured Video Demonstration
+            Featured Field Demonstration
           </h2>
 
           <div 
@@ -86,8 +119,10 @@ export default function VideosHub() {
                 style={{ objectFit: 'cover' }}
               />
               <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', color: '#0F172A', paddingLeft: '4px', boxShadow: '0 8px 24px rgba(212,175,55,0.6)' }}>
-                  ▶
+                <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0F172A', boxShadow: '0 8px 24px rgba(212,175,55,0.6)' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="#0F172A" aria-hidden="true" style={{ marginLeft: '3px' }}>
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
                 </div>
               </div>
               <span style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(0,0,0,0.8)', color: '#FFFFFF', padding: '0.2rem 0.6rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 600 }}>
@@ -115,7 +150,7 @@ export default function VideosHub() {
                   className="btn btn-gold"
                   style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem', fontWeight: 700 }}
                 >
-                  ▶ Watch Video &amp; Transcript
+                  Watch Video &amp; Transcript &rarr;
                 </Link>
                 <Link
                   href="/quote"

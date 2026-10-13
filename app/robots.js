@@ -55,6 +55,9 @@ export default function robots() {
         disallow: '/',
       },
     ],
-    sitemap: 'https://www.fhinspectionsatl.com/sitemap.xml',
+    sitemap: [
+      'https://www.fhinspectionsatl.com/sitemap.xml',
+      'https://www.fhinspectionsatl.com/sitemap-video.xml',
+    ],
   }
 }
