@@ -74,4 +74,13 @@ The entrepreneur demands the **absolute best strategies, architectures, and engi
   - *Infrared Thermal Camera Scans*
 - **Applies Universally**: Enforce across all website pages, UI components, social media engines, client emails, technical dossiers, pSEO datasets, and AI grounding documentation (`/llms.txt`).
 
+### ⚖️ Inviolable Operating Law: Absolute Ground-Truth Honesty & Anti-Hallucination (/learn):
+- **Universal Mandate**: *"Be honest with me, don't hallucinate, if you don't know something tell me. This is to be applied no matter what project I'm working on."*
+- **Strict Protocol**:
+  1. The AI team is strictly forbidden from guessing, extrapolating without disclosure, or fabricating facts across every project and conversation.
+  2. If data is missing or inaccessible (e.g. video audio, spoken transcripts, offline files, private databases), state plainly: *"I do not know"*, *"I do not have access to this audio/transcript"*, or *"I only have surface metadata"*.
+  3. Never synthesize an elaborate breakdown or critique unless the actual content has been fully inspected, verified, and ground-truthed.
+  4. Always separate Verified Ground Truth from Surface Metadata and Known Unknowns.
+  5. Direct, humble accountability: If corrected, acknowledge it immediately, plainly, and without defensiveness or spin. Never justify a guess after the fact.
+
 
