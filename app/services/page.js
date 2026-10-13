@@ -41,17 +41,7 @@ export default function Services() {
       description: 'Dedicated 4+ hour comprehensive property inspection for luxury estates and complex architectural grounds. Led by a Certified Master Inspector® (CMI) with aerial drone scanning, thermal envelope diagnostics, and 1-on-1 strategy consultation.',
       details: ['Lead Certified Master Inspector® (CMI) + Senior Inspector', 'Extended 4+ hour dedicated evaluation window', 'Aerial drone roof & grounds scan', 'infrared thermal imaging & envelope diagnostics', 'Direct 1-on-1 post-report strategy consultation', '$10,000 Warranty protection included'],
       image: '/images/drone-2.png',
-      slug: 'estate-and-luxury-home-inspection-guide',
-      briefing: {
-        title: 'Estate & Luxury Home Inspection',
-        duration: '50-Sec Briefing',
-        tagline: 'White-Glove Architectural & Systems Audit for High-Value Properties',
-        takeaways: [
-          'Dedicated 4+ hour protocol led directly by Lead Certified Master Inspector® Christopher Boykin.',
-          'Comprehensive 4K aerial drone scanning of complex architectural rooflines, parapets, and grounds.',
-          'Infrared thermal envelope diagnostic scan and direct 1-on-1 strategic negotiation consultation.'
-        ]
-      }
+      slug: 'estate-and-luxury-home-inspection-guide'
     },
     {
       title: 'Standard Buyer Inspection',
@@ -61,17 +51,7 @@ export default function Services() {
       details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', '$10,000 Master Warranty included'],
       image: '/images/ac-pic.png',
       slug: 'what-does-home-inspector-look-for-buying-house',
-      serviceSlug: 'buyer-inspection',
-      briefing: {
-        title: 'Standard Buyer Home Inspection',
-        duration: '45-Sec Briefing',
-        tagline: 'Two Certified Inspectors On Every Job — Double the Accuracy, Half the Disruption',
-        takeaways: [
-          'Two certified inspectors deploy simultaneously: one covers exterior/roof, one inspects interior MEP mechanicals.',
-          'Reduces on-site client wait time to 1.5–2.5 hours while catching defects solo inspectors overlook.',
-          'Includes complimentary infrared thermal imaging, drone scan, and $10,000 warranty protection.'
-        ]
-      }
+      serviceSlug: 'buyer-inspection'
     },
     {
       title: 'Pre-Listing Seller Inspection',
@@ -81,17 +61,7 @@ export default function Services() {
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
       image: '/images/crawlspace.png',
       slug: 'pre-listing-seller-inspection-guide',
-      serviceSlug: 'pre-listing-inspection',
-      briefing: {
-        title: 'Pre-Listing Seller Inspection',
-        duration: '40-Sec Briefing',
-        tagline: 'Eliminate Deal-Killers & Take Total Control of Your Sale Price',
-        takeaways: [
-          'Uncover hidden system and structural defects before buyers and their agents discover them.',
-          'Prevent deal-killing re-negotiations, escrow delays, and sudden price reductions during due diligence.',
-          'Hand prospective buyers a verified CMI inspection report to command top dollar.'
-        ]
-      }
+      serviceSlug: 'pre-listing-inspection'
     },
     {
       title: 'New Construction Inspections',
