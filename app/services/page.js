@@ -201,6 +201,8 @@ export default function Services() {
         title: 'Mold & Indoor Air Quality Testing',
         duration: '40-Sec Briefing',
         tagline: 'Calibrated Spore Trap Air Sampling & Accredited Microbiology Lab Reports',
+        videoSrc: '/videos/services/mold-testing.mp4',
+        poster: '/images/services/mold-testing-poster.webp',
         takeaways: [
           'High ambient Georgia humidity creates concealed fungal blooms behind drywall and inside HVAC ducts.',
           'We deploy calibrated high-volume air pumps and Air-O-Cell spore trap cassettes indoors and outdoors.',
@@ -218,8 +220,10 @@ export default function Services() {
       serviceSlug: 'str-short-term-rental-inspection',
       briefing: {
         title: 'Short-Term Rental (STR) Inspection',
-        duration: '40-Sec Briefing',
+        duration: '30-Sec Briefing',
         tagline: 'Life-Safety, Mechanical Capacity & Municipal Compliance Audits',
+        videoSrc: '/videos/services/short-term-rental.mp4',
+        poster: '/images/services/short-term-rental-poster.webp',
         takeaways: [
           'Pre-screens properties against Metro Atlanta city and county STR regulations.',
           'Evaluates smoke/CO interconnected detectors, egress routes, and handrail code compliance.',
