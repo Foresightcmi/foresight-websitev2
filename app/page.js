@@ -123,7 +123,7 @@ export default function Home() {
             "name": "Can I get an itemized contractor repair cost estimate for inspection defects?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate. Calibrated using RSMeans 2026 Metro Atlanta trade rates, this report provides line-item repair costs and ready-to-use GAR Form F404 amendment wording to maximize your seller repair credit negotiations. It is available as a $99 add-on to any Foresight inspection or as a standalone $99 audit for outside inspection reports."
+              "text": "Yes. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller credit negotiations. It is available as a $99 add-on to any Foresight inspection or as a standalone $99 audit for outside inspection reports."
             }
           }
         ]
@@ -391,14 +391,14 @@ export default function Home() {
                 <span>Optional Due Diligence Service &bull; $99 Flat Fee</span>
               </div>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.5rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>
-                Itemized Contractor Repair Cost Estimates &amp; GAR F404 Exhibits ($99)
+                Itemized Contractor Repair Cost Estimates &amp; Amendment Exhibits ($99)
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '0.98rem', lineHeight: 1.6, margin: '0 0 0.75rem 0' }}>
-                Standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, <strong>if you choose</strong>, Foresight provides an empirical <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with RSMeans 2026 Metro Atlanta trade labor ($95–$165/hr) and materials schedules.
+                Standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, <strong>if you choose</strong>, Foresight provides an empirical <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with regional Metro Atlanta contractor trade labor ($95–$165/hr) and materials schedules.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', fontSize: '0.88rem', color: '#94A3B8' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Ready-to-paste GAR Form F404 Amendment language
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Ready-to-paste Georgia repair amendment language
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> Optional $99 add-on to any Foresight inspection
@@ -868,7 +868,7 @@ export default function Home() {
               },
               {
                 q: "Can I get an itemized repair cost estimate for contractor repairs?",
-                a: "Yes. While standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair estimates by default), Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate if you choose to add it. Calibrated using RSMeans 2026 Metro Atlanta trade rates, this report provides line-item repair costs and ready-to-use GAR Form F404 amendment wording to maximize your seller repair credit negotiations. It is also available as a standalone 4-hour audit for buyers who hired an outside inspection company."
+                a: "Yes. While standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair estimates by default), Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate if you choose to add it. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller repair credit negotiations. It is also available as a standalone 4-hour audit for buyers who hired an outside inspection company."
               }
             ]}
           />

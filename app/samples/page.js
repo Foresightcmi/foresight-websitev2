@@ -183,7 +183,7 @@ export default function SampleReports() {
           <div className="grid grid-2" style={{ gap: '2rem', marginBottom: '4rem' }}>
             <div className="card" style={{ padding: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', padding: '0.2rem 0.5rem', background: 'var(--color-red-light)', borderRadius: '4px' }}>FLIR</span>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', padding: '0.2rem 0.5rem', background: 'var(--color-red-light)', borderRadius: '4px' }}>IR</span>
                 <h3 style={{ margin: 0 }}>Infrared Thermal Imaging Scan</h3>
               </div>
               <p style={{ color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>

@@ -235,18 +235,18 @@ export default function Services() {
       title: 'Contractor Repair Cost & Pricing Estimates',
       price: '$99',
       priceNote: 'Optional Inspection Add-On or Standalone Outside Report Audit',
-      description: 'Standard home inspections are diagnostic only per InterNACHI Standards of Practice. When requested, Foresight provides empirical contractor repair cost estimates and trade schedules (RSMeans 2026 data) formatted for GAR Form F404 amendment negotiation.',
-      details: ['Trade labor ($95–$165/hr) & materials breakdowns', 'Sample GAR Form F404 Amendment language', 'Available as $99 add-on for Foresight clients', 'Available as $99 standalone audit for outside reports'],
+      description: 'Standard home inspections are diagnostic only per InterNACHI Standards of Practice. When requested, Foresight provides empirical contractor repair cost estimates and trade schedules (regional Metro Atlanta contractor data) formatted for standard Georgia repair amendment negotiation.',
+      details: ['Trade labor ($95–$165/hr) & materials breakdowns', 'Sample Georgia repair amendment language', 'Available as $99 add-on for Foresight clients', 'Available as $99 standalone audit for outside reports'],
       image: '/images/ac-pic.png',
       slug: 'repair-credit-calculator',
       briefing: {
         title: 'Contractor Repair Cost & Pricing Estimates',
         duration: '45-Sec Briefing',
-        tagline: 'Bridge the Diagnostic Gap with RSMeans 2026 Metro Atlanta Trade Pricing',
+        tagline: 'Bridge the Diagnostic Gap with Regional Metro Atlanta Trade Pricing',
         takeaways: [
           'InterNACHI SOP is diagnostic only; this optional $99 add-on calculates true dollar repair costs.',
-          'Itemizes trade labor ($95–$165/hr) and materials using localized RSMeans 2026 construction data.',
-          'Includes ready-to-copy GAR Form F404 Amendment wording to secure maximum seller credits.'
+          'Itemizes trade labor ($95–$165/hr) and materials using localized regional construction cost data.',
+          'Includes ready-to-copy repair amendment wording to secure maximum seller credits.'
         ]
       }
     }

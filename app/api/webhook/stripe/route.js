@@ -146,7 +146,7 @@ export async function POST(req) {
                 ${notes ? `<tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Client Notes:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${notes}</td></tr>` : ''}
               </table>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px; border-radius: 6px; font-size: 0.85rem; color: #64748B;">
-                Next Step: Cross-reference findings with RSMeans 2026 data and formulate the GAR Form F404 amendment exhibit for client delivery.
+                Next Step: Cross-reference findings with regional contractor data and formulate the sample repair amendment exhibit for client delivery.
               </div>
             </div>
           `

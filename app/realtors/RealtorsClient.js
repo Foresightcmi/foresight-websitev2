@@ -690,7 +690,7 @@ export default function RealtorsClient() {
                 Itemized Contractor Repair Cost Estimates &amp; Outside Report Audits ($99)
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                Standard Georgia home inspections are diagnostic only per InterNACHI standards. When your clients need empirical trade numbers for GAR Form F404 amendment negotiations, Foresight provides an optional <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with RSMeans 2026 Atlanta trade schedules. <em>Also available as a 4-hour standalone audit if your client already hired an outside inspection company!</em>
+                Standard Georgia home inspections are diagnostic only per InterNACHI standards. When your clients need empirical trade numbers for repair amendment negotiations, Foresight provides an optional <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with regional Atlanta trade schedules. <em>Also available as a 4-hour standalone audit if your client already hired an outside inspection company!</em>
               </p>
             </div>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -731,13 +731,13 @@ export default function RealtorsClient() {
           }}>
             <div style={{ maxWidth: '700px' }}>
               <span style={{ background: '#0284C7', color: '#FFFFFF', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
-                RSMeans 2026 Calibrated
+                Regional Contractor Benchmarks
               </span>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
-                GAR Due Diligence Repair Credit &amp; Cost Negotiator
+                Due Diligence Repair Credit &amp; Cost Negotiator
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                Need to calculate multi-item repair credits for an active transaction? Select documented inspection defects, calculate contractor ranges with RSMeans 2026 regional data, check lender concession limits, and generate 1-click GAR Form F404 amendment wording.
+                Need to calculate multi-item repair credits for an active transaction? Select documented inspection defects, calculate contractor ranges with regional construction cost data, check lender concession limits, and generate sample repair amendment wording.
               </p>
             </div>
             <Link

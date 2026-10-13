@@ -25,7 +25,7 @@ export default function CheckoutSuccessPage() {
         </h1>
 
         <p style={{ fontSize: '0.95rem', color: '#CBD5E1', lineHeight: 1.6, margin: '0 0 2rem' }}>
-          Thank you for choosing Foresight Home Inspections. Our Certified Master Inspector® (CMI) team has received your order and is cross-referencing your defect findings against <strong>RSMeans 2026 Metro Atlanta contractor pricing indices</strong>.
+          Thank you for choosing Foresight Home Inspections. Our Certified Master Inspector® (CMI) team has received your order and is cross-referencing your defect findings against <strong>regional Metro Atlanta contractor pricing indices</strong>.
         </p>
 
         {/* 4-Step Process Timeline */}

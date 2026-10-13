@@ -7,7 +7,7 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
   title: 'Home Inspection Repair Credit Calculator Atlanta GA | Foresight',
-  description: 'Calculate home inspection repair costs with RSMeans 2026 data. Model Georgia seller closing credit requests and generate sample GAR Form F404 amendment wording.',
+  description: 'Calculate home inspection repair costs with regional contractor trade benchmarks. Model Georgia seller closing credit requests and generate sample repair amendment wording.',
   keywords: [
     'home inspection repair credit calculator',
     'inspection repair cost calculator atlanta',
@@ -20,7 +20,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/repair-credit-calculator` },
   openGraph: {
     title: 'Home Inspection Repair Credit Calculator Atlanta GA | Foresight',
-    description: 'Price inspection defect outlays with RSMeans contractor data, formulate seller closing credit demands, and generate sample GAR amendment wording.',
+    description: 'Price inspection defect outlays with regional contractor data, formulate seller closing credit demands, and generate sample repair amendment wording.',
     url: `${SITE_URL}/repair-credit-calculator`,
     type: 'website',
   },
@@ -68,7 +68,7 @@ const calculatorFaqSchema = {
       name: 'What contractor cost index powers this repair credit calculator?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our calculator utilizes RSMeans 2026 construction data calibrated with a 1.08x regional cost modifier specifically for the 87 municipalities across Metro Atlanta and North Georgia.',
+        text: 'Our calculator utilizes regional construction cost indices and local trade labor rates calibrated specifically for the 87 municipalities across Metro Atlanta and North Georgia.',
       },
     },
   ],
@@ -135,7 +135,7 @@ export default function RepairCreditCalculatorPage() {
           </h1>
 
           <p style={{ fontSize: '1.05rem', color: '#CBD5E1', maxWidth: '820px', lineHeight: 1.6, margin: '0 0 1.5rem' }}>
-            Under contract on an Atlanta home with an inspection report full of defect findings? Quantify contractor repair outlays using RSMeans 2026 trade indices, formulate your optimal cash-in-lieu settlement, and generate sample <strong>GAR Form F404 (Amendment to Address Concerns)</strong> wording before your contingency deadline expires.
+            Under contract on an Atlanta home with an inspection report full of defect findings? Quantify contractor repair outlays using regional trade indices, formulate your optimal cash-in-lieu settlement, and generate sample repair request wording compatible with standard Georgia contracts (such as GAR Form F404) before your contingency deadline expires.
           </p>
 
           <GooglePreferredSource
@@ -231,6 +231,13 @@ export default function RepairCreditCalculatorPage() {
                 View Due Diligence Timeline Guide
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* Statutory Legal Disclaimer */}
+        <section style={{ maxWidth: '1280px', margin: '3rem auto 0', padding: '0 1.5rem', textAlign: 'center' }}>
+          <div style={{ padding: '1.25rem', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', fontSize: '0.75rem', color: '#64748B', lineHeight: 1.5 }}>
+            <strong>Legal, Due Diligence &amp; Trademark Notice:</strong> Foresight Home Inspections, LLC is an independent diagnostic property inspection firm and not a licensed general contractor, law firm, or real estate brokerage. Repair cost calculations reflect regional construction benchmarks and trade labor averages for preliminary negotiation planning only. Sample repair amendment text is diagnostic summary language provided strictly for review, modification, and preparation by the consumer&apos;s licensed Georgia Real Estate Broker or closing attorney on official standard contract forms. Foresight does not draft binding legal contracts and disclaims all liability for contract disputes, seller negotiations, or contractor pricing variances. Georgia Association of REALTORS&reg; and GAR&reg; are registered trademarks of the Georgia Association of REALTORS&reg;. RSMeans&reg; is a registered trademark of The Gordian Group, Inc. Foresight Home Inspections, LLC is not affiliated with, sponsored by, or endorsed by the Georgia Association of REALTORS&reg; or The Gordian Group, Inc.
           </div>
         </section>
       </main>

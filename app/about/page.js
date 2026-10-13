@@ -274,7 +274,7 @@ export default function About() {
           <div className="grid grid-2" style={{ gap: '2.5rem' }}>
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
               <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
-                FLIR
+                IR
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging</h3>

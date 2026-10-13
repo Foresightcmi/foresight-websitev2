@@ -63,7 +63,7 @@ export async function POST(req) {
       : 'Foresight Home Inspection Service Deposit';
 
     const productDescription = isAudit
-      ? 'Certified Master Inspector extraction of line-item contractor repair costs (RSMeans 2026 Metro Atlanta trade rates) and formatted GAR Form F404 amendment exhibit.'
+      ? 'Certified Master Inspector extraction of line-item contractor repair costs (regional Metro Atlanta trade rates) and formatted sample repair amendment exhibit.'
       : 'Initial deposit for scheduled home inspection services with Foresight Home Inspections, LLC.';
 
     const session = await stripe.checkout.sessions.create({

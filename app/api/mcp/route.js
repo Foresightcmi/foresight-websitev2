@@ -255,7 +255,7 @@ async function handleToolCall(name, args) {
         'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$250', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
         'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: '$595 flat rate', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
         'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Mandatory toilet, shower, and faucet flow rate verification for pre-1993 property transfers.' },
-        'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional RSMeans 2026 contractor repair labor and materials estimate formatted for GAR Form F404 amendment negotiation. Available as $99 add-on or standalone audit for outside reports.' }
+        'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional regional contractor repair labor and materials estimate formatted for standard Georgia repair amendment negotiation. Available as $99 add-on or standalone audit for outside reports.' }
       };
       return serviceMap[args.serviceKey] || { error: `Service key '${args.serviceKey}' not found.` };
     }

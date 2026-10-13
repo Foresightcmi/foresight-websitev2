@@ -7,7 +7,7 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
   title: 'Georgia Due Diligence Defense & Repair Credit Negotiator | Foresight',
-  description: 'Protect your Georgia Due Diligence period. Quantify repair credits with RSMeans data, generate 1-click GAR amendment clauses, and secure guaranteed 48-hour dual-inspector scheduling with up to $35,000 in warranty protection.',
+  description: 'Protect your Georgia Due Diligence period. Quantify repair credits with regional contractor cost benchmarks, generate sample repair amendment clauses, and secure guaranteed 48-hour dual-inspector scheduling with up to $35,000 in warranty protection.',
   keywords: [
     'Georgia due diligence period home inspection',
     'home inspection repair credit calculator',
@@ -20,7 +20,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/due-diligence` },
   openGraph: {
     title: 'Georgia Due Diligence Defense & Repair Credit Negotiator | Foresight',
-    description: 'Calculate your contingency deadlines, price inspection repairs with RSMeans data, and generate instant GAR-compliant amendment language.',
+    description: 'Calculate your contingency deadlines, price inspection repairs with regional contractor cost benchmarks, and generate sample Georgia contract amendment language.',
     url: `${SITE_URL}/due-diligence`,
   },
 };
@@ -149,7 +149,7 @@ export default function DueDiligencePage() {
             </span>
             <h2 style={{ fontSize: '2.4rem', fontWeight: 800 }}>Due Diligence Timeline &amp; Repair Credit Negotiator</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '0.75rem auto 0', fontSize: '1.1rem' }}>
-              Protect your earnest money and maximize seller concession leverage. Calculate your legal contingency deadlines, quantify inspection repairs with RSMeans regional data, and generate an enforceable GAR amendment in seconds.
+              Protect your earnest money and maximize seller concession leverage. Calculate your legal contingency deadlines, quantify inspection repairs with regional contractor cost benchmarks, and generate sample repair amendment wording in seconds.
             </p>
           </div>
           <DueDiligenceCalculator />
