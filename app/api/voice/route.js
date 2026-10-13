@@ -207,7 +207,7 @@ INVIOLABLE PRICING LAW: NEVER quote ranges or brackets (like "$345 to $550" or l
   }
   const spokenConstraint = "\n\nCRITICAL CONVERSATIONAL CONSTRAINT: You are speaking aloud over a voice call. Keep your answer direct, authoritative, and concise (1 to 2 short sentences max, under 35 words). Never use lists, bullet points, asterisks, or markdown.";
 
-  const models = ['gemini-2.5-flash', 'gemini-3.8-flash'];
+  const models = ['gemini-3.8-flash', 'gemini-2.5-flash'];
   for (const model of models) {
     try {
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
