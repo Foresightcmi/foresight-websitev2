@@ -39,4 +39,5 @@ jobs:
           git config user.name "Foresight Scout Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/due-diligence-outreach-log.json data/loan-officers.json data/under-contract-realtors.json
-          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily due diligence scout and dispatch [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily due diligence scout and dispatch [skip ci]" && git pull --rebase origin main && git push origin main) || echo "Outreach logs clean or push bypassed."
+

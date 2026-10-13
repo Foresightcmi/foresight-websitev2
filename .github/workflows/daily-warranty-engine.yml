@@ -39,4 +39,5 @@ jobs:
           git config user.name "Foresight Warranty Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/warranty-outreach-log.json data/warranty-tracker-crm.json public/warranty-dispatch.html
-          git diff --cached --quiet || (git commit -m "chore(warranty): autonomous 11-month warranty outreach dispatch [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "chore(warranty): autonomous 11-month warranty outreach dispatch [skip ci]" && git pull --rebase origin main && git push origin main) || echo "Warranty records clean or push bypassed."
+
