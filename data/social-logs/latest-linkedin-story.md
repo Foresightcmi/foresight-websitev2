@@ -1,54 +1,56 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #10
+# 🚀 Foresight LinkedIn Growth Engine: Post #1
 
-**Schedule Slot:** Friday - Withdrawal (The Estate Master Package) (10:00 AM Weekday Cadence)  
-**Strategy Type:** WITHDRAWAL (1:4 High-Ticket Withdrawal)  
-**Topic:** The Estate Master High-Ticket Due Diligence Tier  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg`  
-**Generated At:** 2026-10-12T21:58:52.031Z  
+**Schedule Slot:** Monday - Deposit (The Flipped House Enemy) (10:00 AM Weekday Cadence)  
+**Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
+**Topic:** The Flipped House Fire Hazard  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/thermal-ceiling.webp`  
+**Generated At:** 2026-10-13T20:05:50.322Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-If you're buying a $1M+ home in Buckhead, Alpharetta, or Milton:
+The seller spent $12,000 on new gray paint and quartz countertops.
 
-Do not buy an economy inspection designed for a 1,200 sq ft starter house.
+The buyer was ready to sign an unconditional waiver.
 
-A 6,000 sq ft estate has three HVAC systems, two wate... [see more]
+Then our two-inspector team arrived.
+
+While my partner checked the electr... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-If you're buying a $1M+ home in Buckhead, Alpharetta, or Milton:
+The seller spent $12,000 on new gray paint and quartz countertops.
 
-Do not buy an economy inspection designed for a 1,200 sq ft starter house.
+The buyer was ready to sign an unconditional waiver.
 
-A 6,000 sq ft estate has three HVAC systems, two water heaters, and complex roofing.
+Then our two-inspector team arrived.
 
-That's why we introduced the Estate Master Due Diligence Package.
+While my partner checked the electrical panel, I climbed into the attic.
 
-Two Certified Master Inspectors on-site for 3.5 uninterrupted hours.
+Beneath fresh blown-in insulation was a charred roof rafter from an old house fire.
 
-Full radiometric infrared thermal imaging of every exterior wall and ceiling.
+The flipper had simply covered up the fire damage with cheap plywood.
 
-FAA 4K drone mapping of all roof valleys, slate/tile planes, and chimneys.
+Our infrared thermal scan also caught an active water leak behind the master shower.
 
-Continuous electronic radon monitoring and full HD sewer scope video.
+Repair estimate: $28,400.
 
-Plus a private 1-on-1 strategy call with your real estate attorney before negotiations.
+The buyer got a $30,000 price reduction before 5:00 PM.
 
-First class protection for high-stakes acquisitions.
+Fresh paint hides ugly secrets.
 
-Book your private estate audit at the link below.
+Hindsight is expensive... Choose Foresight.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-Explore our First-Class Estate Master Due Diligence Package: https://www.fhinspectionsatl.com/quote
+Protecting home buyers across Metro Atlanta with a 2-Inspector protocol: https://www.fhinspectionsatl.com/quote
 ```
 
 ---
