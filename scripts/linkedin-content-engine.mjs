@@ -137,6 +137,22 @@ export async function runLinkedInEngine(shouldDispatch = false) {
     }
   }
 
+  // Push ready-to-paste LinkedIn post directly to smartphone via ntfy.sh
+  try {
+    const ntfyTopic = process.env.NTFY_TOPIC || 'fores-antigravity-alerts-77';
+    await fetch(`https://ntfy.sh/${ntfyTopic}`, {
+      method: 'POST',
+      headers: {
+        'Title': `LinkedIn Post #${post.id} Ready: ${post.topic}`.replace(/[^\x20-\x7E]/g, ''),
+        'Priority': 'default',
+        'Tags': 'briefcase,rocket',
+        'Click': 'https://www.linkedin.com/feed/'
+      },
+      body: `${formattedPost}\n\n---\nFIRST COMMENT:\n${post.firstComment}`
+    });
+    console.log(`\x1b[32m📲 Pushed ready-to-paste LinkedIn post to ntfy.sh/${ntfyTopic}\x1b[0m`);
+  } catch (_) {}
+
   // Write Latest Story Markdown Briefing
   const markdownReport = `# 🚀 Foresight LinkedIn Growth Engine: Post #${post.id}
 
