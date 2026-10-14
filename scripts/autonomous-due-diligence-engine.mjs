@@ -11,6 +11,7 @@ const LOAN_OFFICERS_FILE = path.join(ROOT_DIR, 'data', 'loan-officers.json');
 const UNDER_CONTRACT_FILE = path.join(ROOT_DIR, 'data', 'under-contract-realtors.json');
 const OUTREACH_LOG_FILE = path.join(ROOT_DIR, 'data', 'due-diligence-outreach-log.json');
 const ENV_LOCAL_FILE = path.join(ROOT_DIR, '.env.local');
+const UNSUBSCRIBED_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
 
 function getEmailCredentials() {
@@ -383,6 +384,38 @@ async function main() {
   }
   const contactedKeys = new Set(outreachLog.map(o => o.key));
 
+  // Load Unsubscribed / Suppressions
+  const suppressedEmails = new Set();
+  if (fs.existsSync(UNSUBSCRIBED_FILE)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(UNSUBSCRIBED_FILE, 'utf8'));
+      for (const item of data) {
+        if (typeof item === 'string') suppressedEmails.add(item.toLowerCase().trim());
+        else if (item && typeof item === 'object' && item.email) suppressedEmails.add(item.email.toLowerCase().trim());
+      }
+      console.log(`🛡️ [Due Diligence Engine] Loaded ${suppressedEmails.size} suppressed contacts.`);
+    } catch (err) {
+      console.warn('⚠️ [Due Diligence Engine] Could not load unsubscribed contacts:', err.message);
+    }
+  }
+
+  function isSuppressed(email, name = '', brokerage = '') {
+    if (!email) return true;
+    const cleanEmail = String(email).toLowerCase().trim();
+    const cleanName = String(name).toLowerCase().trim();
+    const cleanBrokerage = String(brokerage).toLowerCase().trim();
+
+    if (suppressedEmails.has(cleanEmail)) return true;
+    if (cleanEmail.includes('ansleyre.com') || cleanEmail.includes('ansley')) return true;
+    if (cleanEmail.includes('amyfuchs') || cleanEmail.includes('amy.fuchs')) return true;
+    if (cleanName.includes('amy fuchs')) return true;
+    if (cleanBrokerage.includes('ansley')) return true;
+
+    return false;
+  }
+
+  let quotaCeilingHit = false;
+
   let sentLendersCount = 0;
   let sentUnderContractCount = 0;
   let sentPreDDCount = 0;
@@ -398,8 +431,13 @@ async function main() {
 
     if (canSendEmail && transporter) {
       for (const lo of loanOfficers) {
+        if (quotaCeilingHit) break;
         const key = `LO_${lo.id}_${lo.email}`;
         if (contactedKeys.has(key)) continue;
+        if (isSuppressed(lo.email, lo.name, lo.company)) {
+          console.log(`  🛡️ [Suppression Gate] Bypassed suppressed loan officer: ${lo.name} (${lo.email})`);
+          continue;
+        }
 
         console.log(`📤 [Due Diligence Engine] Dispatching Lender Dossier to ${lo.name} (${lo.company}) <${lo.email}>...`);
         const { subject, html } = buildLoanOfficerEmail(lo);
@@ -428,6 +466,11 @@ async function main() {
           await sleep(2500); // 2.5s safe spacing
         } catch (e) {
           console.error(`  ❌ Failed to send to ${lo.email}:`, e.message);
+          if (e.message.includes('550') || e.message.includes('Daily user sending limit exceeded')) {
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550). Halting dispatch cleanly to preserve domain reputation.');
+            quotaCeilingHit = true;
+            break;
+          }
         }
 
         // Max 2 loan officers per automated daily scout pass to keep deliverability pristine
@@ -452,9 +495,14 @@ async function main() {
       const sorted = [...underContractRealtors].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
       for (const r of sorted) {
+        if (quotaCeilingHit) break;
         if (!r.email || !r.email.includes('@')) continue;
         const key = `CONTRACT_${r.id}_${r.email}`;
         if (contactedKeys.has(key)) continue;
+        if (isSuppressed(r.email, r.name, r.brokerage)) {
+          console.log(`  🛡️ [Suppression Gate] Bypassed suppressed contact: ${r.name} (${r.email}) [Ansley / Unsubscribed Lockout]`);
+          continue;
+        }
 
         console.log(`📤 [Due Diligence Engine] Dispatching Due Diligence Dossier to ${r.name} (${r.address}) <${r.email}>...`);
         const { subject, html } = buildUnderContractEmail(r);
@@ -485,6 +533,11 @@ async function main() {
           await sleep(3000); // 3s safe spacing
         } catch (e) {
           console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
+          if (e.message.includes('550') || e.message.includes('Daily user sending limit exceeded')) {
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550). Halting dispatch cleanly to preserve domain reputation.');
+            quotaCeilingHit = true;
+            break;
+          }
         }
 
         // Limit to 4 contracts per daily run
@@ -505,9 +558,14 @@ async function main() {
 
     if (canSendEmail && transporter) {
       for (const r of preDDListings) {
+        if (quotaCeilingHit) break;
         if (!r.email || !r.email.includes('@')) continue;
         const key = `PRE_DD_${r.id}_${r.email}`;
         if (contactedKeys.has(key)) continue;
+        if (isSuppressed(r.email, r.name, r.brokerage)) {
+          console.log(`  🛡️ [Suppression Gate] Bypassed suppressed contact: ${r.name} (${r.email}) [Ansley / Unsubscribed Lockout]`);
+          continue;
+        }
 
         console.log(`📤 [Due Diligence Engine] Dispatching Pre-Due Diligence Reservation to ${r.name} (${r.address}) <${r.email}>...`);
         const { subject, html } = buildPreDueDiligenceEmail(r);
@@ -538,6 +596,11 @@ async function main() {
           await sleep(3000); // 3s safe spacing
         } catch (e) {
           console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
+          if (e.message.includes('550') || e.message.includes('Daily user sending limit exceeded')) {
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550). Halting dispatch cleanly to preserve domain reputation.');
+            quotaCeilingHit = true;
+            break;
+          }
         }
 
         // Limit to 2 pre-DD per daily run
