@@ -477,6 +477,9 @@ async function main() {
   // Create real Gmail/Google Workspace SMTP transporter
   const transporter = nodemailer.createTransport({
     service: 'gmail',
+    pool: true,
+    maxConnections: 1,
+    maxMessages: 200,
     auth: { user, pass }
   });
 
@@ -603,13 +606,14 @@ async function main() {
 
     } catch (sendErr) {
       console.error(`❌ [Outreach Engine] Failed to send email to ${lead.ownerEmail}:`, sendErr.message);
-      if (sendErr.message.includes('550-5.4.5') || sendErr.message.includes('Daily user sending limit exceeded')) {
+      if (sendErr.message.includes('550-5.4.5') || sendErr.message.includes('454') || sendErr.message.includes('Daily user sending limit exceeded')) {
         console.warn('\n⚠️ [Outreach Engine] Google SMTP daily quota reached. Pausing remaining queue until rolling 24-hr window resets.');
         break;
       }
     }
   }
 
+  transporter.close();
   console.log(`\n🏁 [Outreach Engine] Outreach run completed.`);
 }
 

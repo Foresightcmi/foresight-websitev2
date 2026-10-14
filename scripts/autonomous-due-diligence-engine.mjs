@@ -361,6 +361,9 @@ async function main() {
     try {
       const testTransporter = nodemailer.createTransport({
         service: 'gmail',
+        pool: true,
+        maxConnections: 1,
+        maxMessages: 200,
         auth: { user, pass }
       });
       await testTransporter.verify();
@@ -466,8 +469,8 @@ async function main() {
           await sleep(2500); // 2.5s safe spacing
         } catch (e) {
           console.error(`  ❌ Failed to send to ${lo.email}:`, e.message);
-          if (e.message.includes('550') || e.message.includes('Daily user sending limit exceeded')) {
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550). Halting dispatch cleanly to preserve domain reputation.');
+          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
             quotaCeilingHit = true;
             break;
           }
@@ -533,8 +536,8 @@ async function main() {
           await sleep(3000); // 3s safe spacing
         } catch (e) {
           console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
-          if (e.message.includes('550') || e.message.includes('Daily user sending limit exceeded')) {
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550). Halting dispatch cleanly to preserve domain reputation.');
+          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
             quotaCeilingHit = true;
             break;
           }
@@ -596,8 +599,8 @@ async function main() {
           await sleep(3000); // 3s safe spacing
         } catch (e) {
           console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
-          if (e.message.includes('550') || e.message.includes('Daily user sending limit exceeded')) {
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550). Halting dispatch cleanly to preserve domain reputation.');
+          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
             quotaCeilingHit = true;
             break;
           }
@@ -631,6 +634,7 @@ async function main() {
     await sendPushNotification(pushTitle, pushMsg, 'default');
   }
 
+  if (transporter) transporter.close();
   console.log('🏁 [Due Diligence Engine] Execution complete!');
   console.log(`Summary: ${sentLendersCount} Lenders, ${sentUnderContractCount} Under Contract, ${sentPreDDCount} Pre-DD dispatched.`);
 }
