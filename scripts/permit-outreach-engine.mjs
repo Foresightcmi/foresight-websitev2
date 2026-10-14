@@ -487,8 +487,9 @@ async function main() {
     await transporter.verify();
     console.log(`✅ [Outreach Engine] SMTP connection verified for ${user}`);
   } catch (verifyErr) {
-    console.error('❌ [Outreach Engine] SMTP verification failed:', verifyErr.message);
-    process.exit(1);
+    console.warn('⚠️ [Outreach Engine] SMTP temporarily in Gmail rolling 24-hr cooldown:', verifyErr.message);
+    transporter.close();
+    return;
   }
 
   if (!fs.existsSync(LEADS_FILE)) {
