@@ -573,7 +573,7 @@ async function main() {
 
   if (transporter) transporter.close();
   console.log('🏁 [Due Diligence Engine] Execution complete!');
-  console.log(`Summary: ${sentLendersCount} Lenders, ${sentUnderContractCount} Under Contract, ${sentPreDDCount} Pre-DD dispatched.`);
+  console.log(`Summary: ${sentUnderContractCount} Active Under-Contract Due Diligence, ${sentLendersCount} Lenders dispatched.`);
 }
 
 main().catch(async (err) => {

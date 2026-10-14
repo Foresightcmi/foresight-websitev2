@@ -631,5 +631,71 @@
     "email": "oneida@homesbyholloman.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-13T17:22:36.777Z"
+  },
+  {
+    "key": "CONTRACT_card_3694c39802_devan@devanstown.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Devan Pinckney",
+    "brokerage": "Epique Realty",
+    "address": "359 Mathewson Place SW",
+    "city": "Atlanta",
+    "email": "devan@devanstown.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-14T21:54:14.940Z"
+  },
+  {
+    "key": "CONTRACT_card_998e3ba14a_realtordvc@yahoo.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Deadral Caterro",
+    "brokerage": "Virtual Properties Realty.Net, LLC.",
+    "address": "117 Lake Drive",
+    "city": "Griffin",
+    "email": "realtordvc@yahoo.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-14T21:54:19.487Z"
+  },
+  {
+    "key": "CONTRACT_card_d9c4d739f3_winston@winstonwhiterealty.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Winston White",
+    "brokerage": "Winston White Realty",
+    "address": "3015 Tommy Dillard Road",
+    "city": "Monroe",
+    "email": "winston@winstonwhiterealty.com",
+    "date": "2026-10-03",
+    "timestamp": "2026-10-14T21:54:23.617Z"
+  },
+  {
+    "key": "CONTRACT_card_57efc7746b_kd@dowtinrealtyco.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Kaiya Dowtin",
+    "brokerage": "Dowtin Realty & Co.",
+    "address": "176 Paige Street",
+    "city": "Atlanta",
+    "email": "kd@dowtinrealtyco.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-14T21:54:27.782Z"
+  },
+  {
+    "key": "CONTRACT_card_59a9747aac_mike@mikepriceteam.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Mike Price",
+    "brokerage": "EXP Realty, LLC.",
+    "address": "113 Himalaya Way",
+    "city": "Cumming",
+    "email": "mike@mikepriceteam.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-14T21:54:31.901Z"
+  },
+  {
+    "key": "CONTRACT_card_177f8039e6_gina@ginasellsgeorgia.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "GINA DURBANO",
+    "brokerage": "Professional Realty Group",
+    "address": "622 West Avenue",
+    "city": "Euharlee",
+    "email": "gina@ginasellsgeorgia.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-14T21:54:35.939Z"
   }
 ]

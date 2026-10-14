@@ -297,7 +297,7 @@ export default async function ServiceHubPage({ params }) {
     },
     {
       q: `How fast do I receive the ${serviceData.name} report?`,
-      a: `All digital inspection reports are delivered within 24 hours (often the same evening). Reports include high-definition photos, thermal scans, drone imagery, and 1-click GAR repair list generators.`
+      a: `All digital inspection reports are delivered within 24 hours (often the same evening). Reports include high-definition photos, thermal scans, drone imagery, and 1-click repair request list builders.`
     },
     {
       q: `What warranties are included with ${serviceData.name}?`,
