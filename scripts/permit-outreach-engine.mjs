@@ -57,7 +57,7 @@ DeKalb County Mandatory Fixture Thresholds:
 • Showerheads: 2.5 Gallons Per Minute (GPM) or less
 • Lavatory Faucets: 2.2 Gallons Per Minute (GPM) or less
 
-Foresight Home Inspections delivers fast, certified on-site evaluations for a flat rate of just $100 (or included with any comprehensive home inspection).
+Foresight Home Inspections delivers fast, certified on-site evaluations for a flat rate of just $100 (standalone inspection or bundled with any comprehensive home inspection).
 
 👉 View Your Property Due Diligence Dossier:
 ${dossierUrl}
@@ -71,7 +71,7 @@ The Foresight CMI Advantage:
 • High-Resolution Infrared Thermal Scans Included Free: Detecting hidden pipe leaks, insulation voids, and moisture penetration.
 • Up to $35,000 in Combined Warranty & Guarantee Protection.
 
-To schedule your $100 low-flow compliance certificate or bundle it with a framing/renovation inspection, reply to this email, book online 24/7 at https://www.fhinspectionsatl.com/quote, or contact our lead Certified Master Inspector directly at (678) 480-2110.
+To schedule your $100 low-flow compliance certificate (standalone or bundled), reply to this email, book online 24/7 at https://www.fhinspectionsatl.com/quote, or contact our lead Certified Master Inspector directly at (678) 480-2110.
 
 Respectfully,
 
@@ -128,7 +128,7 @@ https://www.fhinspectionsatl.com`;
           <li><strong>Faucets:</strong> 2.2 Gallons Per Minute (GPM) or less</li>
         </ul>
         <div style="margin-top: 10px; font-weight: 700; color: #0f172a;">
-          Official Certificate Fee: $100 Flat Rate (or included with any comprehensive home inspection)
+          Official Certificate Fee: $100 Flat Rate (Standalone Inspection or bundled with any home inspection)
         </div>
       </div>
 
