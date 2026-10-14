@@ -60,10 +60,10 @@ Once sheetrock is hung, over 80% of the home's framing, plumbing stacks, electri
 • Thermal voids and uninsulated exterior wall cavities behind bathtubs
 
 The Foresight CMI® Two-Inspector Advantage:
-• Two Certified Master Inspectors on Every Job: Concurrently inspecting structural, mechanical, and rough-in assemblies.
-• High-Resolution High-Resolution Infrared Thermal Scans Included Free.
+• Two Certified Inspectors on Every Job: Concurrently inspecting structural, mechanical, and rough-in assemblies.
+• High-Resolution Infrared Thermal Scans Included Free.
 • Comprehensive Digital Report with HD Photos and Video within 24 Hours for the builder blue-tape repair mandate.
-• Up to $35,000 in Combined Warranty & Guarantee Protection, including InterNACHI's "We'll Buy Your Home Back" Guarantee.
+• Up to $35,000 in Combined Warranty & Guarantee Protection ($10,000 Elite Master Inspection Warranty with $0 deductible + InterNACHI's $25,000 Honor Guarantee).
 
 👉 Open Your Custom Due Diligence Dossier:
 ${dossierUrl}
@@ -130,7 +130,7 @@ https://www.fhinspectionsatl.com`;
           <li><strong>Two Certified Inspectors:</strong> Evaluating structural framing, MEP, and building envelope.</li>
           <li><strong>High-Resolution Infrared Thermal Scans:</strong> Uncovering hidden insulation voids and thermal leaks.</li>
           <li><strong>Contractual Blue-Tape Report:</strong> Forcing the builder to fix defects on their dime before closing.</li>
-          <li><strong>Up to $35,000 Guarantee:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty.</li>
+          <li><strong>Up to $35,000 Protection:</strong> $10,000 Elite Master Inspection Warranty ($0 deductible) + InterNACHI $25,000 Honor Guarantee.</li>
         </ul>
       </div>
 

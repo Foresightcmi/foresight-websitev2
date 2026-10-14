@@ -523,7 +523,7 @@ function generateBrandDossierHtml(lead) {
               City of Atlanta Mandate
             </span>
             <span style="font-weight: 800; color: #D4AF37; font-size: 1.15rem;">
-              $495 Flat-Rate CMI Stamped Affidavit
+              $595 Flat-Rate CMI Stamped Affidavit
             </span>
           </div>
           <h3 style="font-size: 1.3rem; color: #0F172A; margin-bottom: 0.5rem; font-family: var(--font-heading);">
@@ -545,7 +545,7 @@ function generateBrandDossierHtml(lead) {
           </div>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
             <a href="https://www.fhinspectionsatl.com/service-areas/atlanta-str-compliance" class="btn-large btn-gold" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">
-              Book STR Inspection ($495) &rarr;
+              Book STR Inspection ($595) &rarr;
             </a>
             <a href="tel:6784802110" style="color: #0F172A; font-weight: 700; font-size: 0.9rem; text-decoration: underline;">
               📞 Call CMI Direct: (678) 480-2110

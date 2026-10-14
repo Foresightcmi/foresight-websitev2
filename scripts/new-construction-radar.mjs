@@ -59,12 +59,17 @@ async function fetchNewBuildsForRegion(region) {
     const json = JSON.parse(cleanText);
     const homes = json.payload?.homes || [];
 
-    // Filter strictly for New Construction (Built 2024-2026 or isNewConstruction true)
+    // Filter for New Construction (Built 2024-2026 or isNewConstruction true)
+    // Prioritize Under Contract / Pending due diligence properties over premature active listings
     const newBuilds = homes.filter(h => {
       const year = h.yearBuilt?.value;
       const isNew = h.isNewConstruction === true;
       const recentYear = year >= 2024;
       return isNew || recentYear;
+    }).sort((a, b) => {
+      const aContract = (a.mlsStatus === 'Under Contract' || a.mlsStatus === 'Pending' || a.mlsStatus === 'Contingent') ? 0 : 1;
+      const bContract = (b.mlsStatus === 'Under Contract' || b.mlsStatus === 'Pending' || b.mlsStatus === 'Contingent') ? 0 : 1;
+      return aContract - bContract;
     });
 
     console.log(`✅ [New Construction Radar] ${region.name}: Harvested ${newBuilds.length} verified new construction properties.`);
@@ -81,10 +86,10 @@ async function fetchNewBuildsForRegion(region) {
 
       // Calculate estimated days until drywall / closing
       const daysOnMarket = h.dom?.value || h.timeOnRedfin?.value ? Math.floor((h.timeOnRedfin?.value || 0) / (1000 * 60 * 60 * 24)) : 14;
-      const estStage = h.mlsStatus === 'Coming Soon' || daysOnMarket < 21
-        ? 'Active Framing & Rough-In (Pre-Drywall Critical Window)'
-        : (h.mlsStatus === 'Under Contract' || h.mlsStatus === 'Pending'
-            ? 'Under Contract Due Diligence / Pre-Closing Final'
+      const estStage = (h.mlsStatus === 'Under Contract' || h.mlsStatus === 'Pending' || h.mlsStatus === 'Contingent')
+        ? 'Active Due Diligence / Pre-Closing Final Walkthrough Window'
+        : (h.mlsStatus === 'Coming Soon' || daysOnMarket < 21
+            ? 'Active Framing & Rough-In (Pre-Drywall Critical Window)'
             : 'Pre-Drywall & 11-Month Warranty Window');
 
       return {
@@ -109,10 +114,10 @@ async function fetchNewBuildsForRegion(region) {
         ownerEmail: null,
         ownerPhone: null,
         inspectionPackages: [
-          'Pre-Drywall Framing & Mechanical Audit ($495 - $695)',
-          'Pre-Closing Final Blue Tape Walkthrough + Infrared Thermal Imaging ($495 - $795)',
-          '11-Month Builder Warranty Inspection ($450 - $650)',
-          'Complete 3-Phase New Construction Master Bundle ($1,295 - $1,795)'
+          'Pre-Drywall Framing & Mechanical Rough-In Audit (From $275)',
+          'New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)',
+          '11-Month Builder Warranty Inspection (From $335)',
+          'HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)'
         ],
         harvestedAt: new Date().toISOString()
       };
