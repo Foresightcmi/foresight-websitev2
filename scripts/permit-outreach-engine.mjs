@@ -413,7 +413,7 @@ https://www.fhinspectionsatl.com`;
  * Intelligent Router: Dispatches the exact, tailored municipal template.
  */
 function buildDueDiligenceEmail(lead) {
-  const isDeKalb = (lead.jurisdiction || '').includes('DeKalb') || (lead.address || '').includes('DeKalb');
+  const isDeKalb = (lead.jurisdiction || '').includes('DeKalb') || (lead.address || '').includes('DeKalb') || (lead.recordId || '').startsWith('DKB-');
   const isSTR = (lead.jurisdiction || '').includes('Short-Term Rental') || (lead.recordId || '').startsWith('STR-');
 
   if (isDeKalb) {
@@ -560,6 +560,12 @@ async function main() {
       const info = await transporter.sendMail(mailOptions);
       console.log(`🎉 [Outreach Engine] Email SENT successfully! Message ID: ${info.messageId}`);
 
+      const isDeKalbLead = (lead.jurisdiction || '').includes('DeKalb') || (lead.recordId || '').startsWith('DKB-');
+      const isSTRLead = (lead.jurisdiction || '').includes('Short-Term Rental') || (lead.recordId || '').startsWith('STR-');
+      const inspectionTarget = isDeKalbLead
+        ? 'DeKalb Low-Flow Compliance ($100)'
+        : (isSTRLead ? 'Atlanta STR Life-Safety ($495)' : 'Pre-Drywall Rough-In (From $275)');
+
       const entry = {
         recordId: lead.recordId,
         recipientName: lead.ownerName,
@@ -571,7 +577,7 @@ async function main() {
         messageId: info.messageId,
         status: 'SENT',
         dispatchedAt: new Date().toISOString(),
-        inspectionTarget: 'Pre-Drywall Rough-In (From $275)'
+        inspectionTarget
       };
 
       outreachLog.unshift(entry);
@@ -586,7 +592,15 @@ async function main() {
     }
   }
 
-  console.log(`\n🏁 [Outreach Engine] Outreach run completed.`);
 }
 
-main();
+export {
+  buildDueDiligenceEmail,
+  buildDeKalbComplianceEmail,
+  buildAtlantaSTREmail,
+  buildPreDrywallEmail
+};
+
+if (process.argv[1] && process.argv[1].endsWith('permit-outreach-engine.mjs')) {
+  main();
+}
