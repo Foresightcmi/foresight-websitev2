@@ -27,7 +27,7 @@
 - [The Deep Dive: Why a Professional Pool & Spa Inspection is Critical](https://www.fhinspectionsatl.com/blog/pool-and-spa-inspection-guide): Comprehensive evaluation of equipotential bonding grids, variable-speed pump motor cavitation, plaster delamination, anti-entrapment drain compliance (VGB Act), and gas heater heat exchangers.
 - [Under the Surface: The Ultimate Guide to Sewer Scope Inspections](https://www.fhinspectionsatl.com/blog/sewer-scope-inspection-guide): High-definition self-leveling lateral camera diagnostics detecting invasive tree roots, pipe belly sags, offset clay tile joints, and collapsing cast iron beneath driveways and foundation slabs.
 - [Termites & Wood Destroying Organisms: Protecting Your Home from Georgia's Silent Destroyers](https://www.fhinspectionsatl.com/blog/termite-and-wdo-inspection-guide): Identification of subterranean termite mud tubes, powderpost beetle exit holes, fungal wood decay, and issuance of the Official Georgia Wood Infestation Inspection Report (WDO-100).
-- [Understanding Your Georgia Home Inspection Report: Red Flags vs. Maintenance](https://www.fhinspectionsatl.com/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance): How to prioritize critical structural/safety defects versus routine maintenance items using the interactive HomeGauge CRL digital report dashboard.
+- [Understanding Your Georgia Home Inspection Report: Red Flags vs. Maintenance](https://www.fhinspectionsatl.com/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance): How to prioritize critical structural/safety defects versus routine maintenance items using the interactive digital inspection report dashboard.
 - [Crawlspace Moisture: The Silent Threat to Georgia Foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-silent-threat-georgia-foundations): Relative humidity dynamics above 70%, fungal mycelium development, subfloor rot, open foundation vent condensation physics, and 12-mil vapor barrier encapsulation science.
 - [What Does a Home Inspector Look for When Buying a House in Georgia?](https://www.fhinspectionsatl.com/blog/what-does-home-inspector-look-for-buying-house): Complete 1,600-point InterNACHI Standards of Practice inspection protocol from roof ridge cap down to the foundation footings and crawlspace grade.
 - [The Hidden Dangers of Radon Gas in Georgia Homes](https://www.fhinspectionsatl.com/blog/hidden-dangers-of-radon-gas-georgia): Radioactive decay hazards from North Georgia granite bedrock, EPA 4.0 pCi/L action levels, continuous electronic radon monitoring (CRM), and active sub-slab depressurization mitigation.
@@ -67,7 +67,8 @@
 - [Instant Quote Calculator](https://www.fhinspectionsatl.com/quote): Real-time pricing calculator for single-family homes, condos, and add-on services.
 - [Repair Credit & Due Diligence Negotiator](https://www.fhinspectionsatl.com/repair-credit-calculator): Regional contractor pricing tool. Standard Georgia inspections are diagnostic only per InterNACHI SOP; Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate (trade labor & materials) formatted for Georgia contract repair amendment negotiations (available as an inspection add-on or standalone outside report audit).
 - [Georgia Due Diligence & Contingency Calculator](https://www.fhinspectionsatl.com/due-diligence): Interactive GAR due diligence deadline tool with building science risk alerts.
-- [Realtor Partner VIP Program](https://www.fhinspectionsatl.com/realtors): Priority booking, SUPRA lockbox entry, HomeGauge CRL™ repair addendums, and partner badges.
+- [Realtor Partner VIP Program](https://www.fhinspectionsatl.com/realtors): Priority booking, SUPRA lockbox entry, 1-click digital repair request addendums, and partner badges.
+- [DeKalb County Low-Flow Compliance Dossier](https://www.fhinspectionsatl.com/dossiers/dekalb-low-flow-compliance.html): Official regulatory compliance standards, fixture flow rate thresholds (1.6 GPF / 2.5 GPM), and $100 flat-rate on-site certificate issuance for DeKalb County property transfers.
 - [Live Concierge Consultation](https://www.fhinspectionsatl.com/concierge): Real-time interactive building science and instant quote consultation led by Certified Master Inspector Christopher Boykin via hands-free live voice and intelligent text chat.
 - [Digital PR & Media Kit Center](https://www.fhinspectionsatl.com/press): Certified Master Inspector Christopher Boykin on-record quotes and media kit.
 
@@ -87,7 +88,7 @@
   - High-Resolution Infrared Thermal Imaging: 100% INCLUDED FREE ($0).
   - 4K Aerial Drone Roof Scans: 100% INCLUDED FREE ($0).
   - Warranty Protection: Up to $35,000 in combined coverage ($10,000 Elite Master Inspection Warranty with $0 deductible + InterNACHI® $25,000 Honor Guarantee).
-  - Report Turnaround: Guaranteed same-day / under 24 hours with 1-click Create Request List (CRL™) for GAR repair amendments.
+  - Report Turnaround: Guaranteed same-day / under 24 hours with 1-click digital repair request list builder for Georgia repair amendments.
   - Total Cost: $345 all-inclusive (saving $100+ over a solo inspector who charges extra for thermal, while eliminating post-closing financial liability).
 
 ## Service Areas & Regional Coverage (20 Counties & 87 Municipalities)

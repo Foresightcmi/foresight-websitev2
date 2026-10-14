@@ -749,8 +749,9 @@ const htmlContent = `<!DOCTYPE html>
         const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i.test(f.city || '') || /dekalb/i.test(f.address || '');
         const dekalbTag = isDeKalb ? ' + DeKalb Low-Flow Certificate ($100)' : '';
 
-        const textBody = 'Hi ' + f.first + ', Christopher Boykin with Foresight Home Inspections here! Saw ' + f.address + ' in ' + f.city + ' is under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and our 1-click GAR Form F404 repair addendum tool' + dekalbTag + ', we have a slot open in ' + f.city + ' this week. Best wishes on a smooth closing! — (678) 480-2110 | https://fhinspectionsatl.com/realtors';
+        const textBody = 'Hi ' + f.first + ', Christopher Boykin with Foresight Home Inspections here! Saw ' + f.address + ' in ' + f.city + ' is under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report delivery' + dekalbTag + ', we have a slot open in ' + f.city + ' this week. Best wishes on a smooth closing! — (678) 480-2110 | https://fhinspectionsatl.com/realtors';
         const smsLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(textBody);
+
 
         const buyerBody = 'Hi ' + f.first + ', here is our 1-click due diligence scheduler and $35,000 warranty certificate for your buyers at ' + f.address + ': https://fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' — Includes our two-inspector team, same-day report' + (isDeKalb ? ', official DeKalb Low-Flow Certificate ($100),' : '') + ', and free utility setup concierge. Feel free to pass this directly to your buyers so they can lock in their inspection date today!';
         const buyerLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(buyerBody);

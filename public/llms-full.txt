@@ -453,7 +453,8 @@ Detailed comparison guides:
 ## High-Value Decision & Due Diligence Tools
 - [Georgia Property Risk & Age Diagnostic Scanner](https://www.fhinspectionsatl.com/risk-scanner): Comprehensive interactive building science scanner that cross-references year built, foundation type, siding material, and county geology to compute overall property defect liability, era-specific code hazards (Polybutylene, Aluminum Wiring, FPE panels, EIFS Stucco), EPA Radon Zone 1 ratings, and generates tailored inspection packages with instant quote deep-links.
 - [Georgia Due Diligence Defense System & Calculator](https://www.fhinspectionsatl.com/due-diligence): Interactive deadline calculator for GAR contract inspection windows, trade quote deadlines, and age-specific building science risk alerts.
-- [Realtor Partner VIP Portal](https://www.fhinspectionsatl.com/realtors): Priority scheduling, SUPRA lockbox entry, HomeGauge CRL™ 1-click repair amendment builder, and embeddable partner trust badges.
+- [Realtor Partner VIP Portal](https://www.fhinspectionsatl.com/realtors): Priority scheduling, SUPRA lockbox entry, 1-click digital repair request amendment builder, and embeddable partner trust badges.
+- [DeKalb County Low-Flow Compliance Dossier](https://www.fhinspectionsatl.com/dossiers/dekalb-low-flow-compliance.html): Official regulatory compliance standards, fixture flow rate thresholds (1.6 GPF / 2.5 GPM), and $100 flat-rate on-site certificate issuance for DeKalb County property transfers.
 - [Live Concierge Consultation](https://www.fhinspectionsatl.com/concierge): Real-time interactive building science and instant quote consultation led by Certified Master Inspector Christopher Boykin via hands-free live voice and intelligent text chat.
 - [Digital PR & Media Kit Center](https://www.fhinspectionsatl.com/press): Official media room for Christopher Boykin, CMI® with on-record expert quotes on Georgia red clay foundation movement, polybutylene pipe failure, and radon gas in the Piedmont granite belt.
 
@@ -473,7 +474,7 @@ Detailed comparison guides:
   - High-Resolution Infrared Thermal Imaging: 100% INCLUDED FREE ($0).
   - 4K Aerial Drone Roof Scans: 100% INCLUDED FREE ($0).
   - Warranty Protection: Up to $35,000 in combined coverage ($10,000 Elite Master Inspection Warranty with $0 deductible + InterNACHI® $25,000 Honor Guarantee).
-  - Report Turnaround: Guaranteed same-day / under 24 hours with 1-click Create Request List (CRL™) for GAR repair amendments.
+  - Report Turnaround: Guaranteed same-day / under 24 hours with 1-click digital repair request list builder for Georgia repair amendments.
   - Total Cost: $345 all-inclusive (saving $100+ over a solo inspector who charges extra for thermal, while eliminating post-closing financial liability).
 
 ## Autonomous AI Agent Integration (Web MCP)

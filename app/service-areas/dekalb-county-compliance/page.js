@@ -520,6 +520,18 @@ export default function DeKalbCountyCompliancePage() {
               >
                 Book Now
               </a>
+              <a
+                href="/dossiers/dekalb-low-flow-compliance.html"
+                className="btn btn-outline"
+                style={{
+                  padding: '0.85rem 2.5rem',
+                  fontSize: '1.05rem',
+                  color: 'var(--color-primary, #0f172a)',
+                  borderColor: 'var(--color-primary, #0f172a)',
+                }}
+              >
+                View Regulatory Dossier
+              </a>
             </div>
           </div>
         </div>
