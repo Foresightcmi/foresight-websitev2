@@ -110,5 +110,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance"
+  },
+  {
+    "postId": 12,
+    "title": "HVAC Heat Exchanger Cracking & Carbon Monoxide Risks",
+    "publishedAt": "2026-10-14T18:20:05.651Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]

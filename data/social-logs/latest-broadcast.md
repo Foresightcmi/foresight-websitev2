@@ -1,9 +1,9 @@
-# 📣 Active Multi-Channel Broadcast: Post #11
-**Title:** DeKalb County Plumbing Low-Flow Compliance Certificate ($100)  
-**Topic:** Municipal Compliance Certificate  
-**Generated At:** 2026-10-13T20:05:50.373Z  
-**Target Booking Link:** [https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance)  
-**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/dekalb-low-flow.webp](https://www.fhinspectionsatl.com/images/dekalb-low-flow.webp)  
+# 📣 Active Multi-Channel Broadcast: Post #12
+**Title:** HVAC Heat Exchanger Cracking & Carbon Monoxide Risks  
+**Topic:** HVAC Safety Diagnostics  
+**Generated At:** 2026-10-14T18:20:05.651Z  
+**Target Booking Link:** [https://www.fhinspectionsatl.com/quote](https://www.fhinspectionsatl.com/quote)  
+**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/hvac-inspection.webp](https://www.fhinspectionsatl.com/images/hvac-inspection.webp)  
 **Webhook Status:** `skipped`
 
 ---
@@ -12,22 +12,23 @@
 *Optimized for Local 3-Pack, local municipal entities, and direct phone/online booking.*
 
 ```text
-Buying or selling a home in DeKalb County, Georgia? You cannot transfer water service or complete closing without an official DeKalb County Plumbing Low-Flow Compliance Certificate!
+Is your home's furnace safe? A cracked heat exchanger can leak odorless, deadly carbon monoxide gas directly into your living spaces.
 
-Under DeKalb County Code (Section 25-41), all residential properties built prior to 1993 must be certified as meeting water conservation standards (toilets 1.6 GPF or less, showerheads 2.5 GPM, faucets 2.2 GPM).
+In older Metro Atlanta gas furnaces, metal fatigue and thermal cycling cause microscopic cracks in heat exchanger cells that standard quick inspections miss.
 
-Foresight Home Inspections conducts certified on-site low-flow audits and issues official signed compliance documentation for a flat fee of $100.
+At Foresight Home Inspections:
+• Two Certified Inspectors on every job thoroughly audit combustion chambers, flue venting, flame patterns, and safety shut-offs.
+• Calibrated infrared thermal diagnostics detect heat exchanger stress points and duct leakage.
+• $10,000 warranty protection covering HVAC heating and cooling systems is included free.
 
-Don't let missing county paperwork delay your closing.
+Protect your home and family. Choose Certified Master Inspector thoroughness.
 
-Serving Decatur, Brookhaven, Dunwoody, Chamblee, Tucker, Lithonia, and all DeKalb County.
-
-Call 678-480-2110 or book your certificate audit online.
+Call 678-480-2110 or get an instant fee estimate online.
 ```
 
 **GBP Call to Action:** Book Online or Call (678) 480-2110  
-**Link:** https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance  
-**Photo:** Attach `https://www.fhinspectionsatl.com/images/dekalb-low-flow.webp`
+**Link:** https://www.fhinspectionsatl.com/quote  
+**Photo:** Attach `https://www.fhinspectionsatl.com/images/hvac-inspection.webp`
 
 ---
 
@@ -35,26 +36,22 @@ Call 678-480-2110 or book your certificate audit online.
 *Optimized for social engagement, visual storytelling, consumer trust, and homebuyer education.*
 
 ```text
-Buying or selling a home in DeKalb County? Don't let this county requirement stall your closing! 📝💧
+Is your furnace silently leaking carbon monoxide? ⚠️🔥
 
-Under DeKalb County Code Section 25-41, all residential properties built prior to 1993 MUST have an official Plumbing Low-Flow Water Conservation Certificate before water service can be transferred to the new buyer.
+Inside your gas furnace sits a metal chamber called the heat exchanger. It separates toxic combustion gases (including carbon monoxide) from the warm air that blows through your living room and bedrooms.
 
-Missing this paperwork at closing can delay your transaction by days.
+As furnaces age, metal expands and contracts hundreds of times every winter. Eventually, cracks develop in the metal cells—allowing poisonous, odorless carbon monoxide gas to mix into your indoor air.
 
-Foresight Home Inspections performs on-site fixture flow testing and issues the official certified paperwork for just $100 flat.
+During Foresight's dual-inspector evaluations, our secondary inspector audits furnace chambers, draft inducer motors, and thermal exhaust venting with precision diagnostics.
 
-✅ Toilets certified under 1.6 GPF
-✅ Showerheads certified under 2.5 GPM
-✅ Lavatory faucets certified under 2.2 GPM
-✅ Fast digital turnaround directly to your closing attorney
+🛡️ Plus: Every full inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) covering HVAC systems for 90 days after closing!
 
 "Hindsight is expensive... Choose Foresight!"
 
-👉 Book your DeKalb County Low-Flow Certificate ($100):
-https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance
-📞 Call: 678-480-2110
+👉 Calculate your instant inspection quote in 60 seconds:
+https://www.fhinspectionsatl.com/quote
 
-#DeKalbCounty #DecaturGA #BrookhavenGA #AtlantaRealEstate #ClosingAttorney #HomeClosingTips
+#HVACSafety #CarbonMonoxide #HomeInspection #AtlantaHomes #CertifiedMasterInspector #ForesightHomeInspections
 ```
 
 ---
@@ -63,22 +60,23 @@ https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance
 *Optimized for Real Estate Agents, GAR Contract Due Diligence, Investors, Attorneys, and Building Science Authority.*
 
 ```text
-Closing attorneys, title coordinators, and real estate brokers operating in DeKalb County, Georgia must remain strictly compliant with DeKalb County Code Section 25-41 regarding water conservation transfer requirements.
+Atlanta HVAC & Furnace Safety Inspection: Residential heating system evaluation is one of the most critical life-safety checkpoints in Georgia property due diligence. Gas-fired forced-air furnaces rely on a sealed heat exchanger to isolate combustion byproducts (including Carbon Monoxide, Nitrous Oxides, and unburned hydrocarbons) from the conditioned supply air stream.
 
-Under municipal mandate, any residential property constructed prior to 1993 requires an executed Certificate of Compliance certifying that plumbing fixtures conform to maximum flow thresholds:
-• Water Closets: <= 1.6 gallons per flush (GPF)
-• Showerheads: <= 2.5 gallons per minute (GPM)
-• Lavatory Faucets: <= 2.2 gallons per minute (GPM)
+Corrosion, persistent flame impingement, or reduced airflow across the evaporator coil lead to metal fatigue and cell breach. When a heat exchanger crack develops, the blower fan pressurizes the combustion chamber, creating flame rollout and venting CO directly into living quarters.
 
-Foresight Home Inspections delivers fast, certified on-site evaluations and issues the official stamped compliance paperwork for a flat fee of $100, transmitting documentation directly to the closing attorney and DeKalb County Department of Watershed Management.
+At Foresight Home Inspections, our Two-Inspector Protocol ensures comprehensive mechanical diagnostics:
+1. Blower Plenum & Evaporator Coil Static Pressure Audit
+2. Flue Gas Draft Inducer & Venting Integrity Analysis
+3. Combustible Gas & Ambient Carbon Monoxide Electronic Sniffing
+4. Infrared Thermography of Plenum Transitions and Duct Leakage
 
-Ensure your pre-1993 DeKalb transactions close on time without municipal delays.
+In addition, all clients receive our $10,000 Elite Master Inspection Warranty ($0 deductible) covering HVAC heating and cooling components for 90 days post-closing.
 
-Learn more and schedule:
-https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance
+Ensure your clients are protected with CMI-level mechanical diagnostics:
+https://www.fhinspectionsatl.com/quote
 
-#ClosingAttorney #TitleInsurance #DeKalbCounty #RealEstateLaw #WaterConservation #AtlantaRealEstate
+#HVACDiagnostics #BuildingSafety #LifeSafety #RealEstateDueDiligence #CertifiedMasterInspector #AtlantaRealtors
 ```
 
 ---
-*Next post in rotation:* **Post #12: "HVAC Heat Exchanger Cracking & Carbon Monoxide Risks"**
+*Next post in rotation:* **Post #13: "Stucco & EIFS Moisture Intrusion Across Georgia Luxury Homes"**
