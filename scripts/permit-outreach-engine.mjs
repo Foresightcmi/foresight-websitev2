@@ -533,15 +533,27 @@ async function main() {
     return l;
   });
 
+  const args = process.argv.slice(2);
+  const sendAll = args.includes('--all');
+  const dekalbOnly = args.includes('--dekalb-only');
+  const limitArg = args.find(a => a.startsWith('--limit='));
+  const batchLimit = sendAll ? Infinity : (limitArg ? parseInt(limitArg.split('=')[1], 10) : 50);
+
   const queue = enrichedLeads.filter(l => {
-    if (!l.ownerEmail || contactedEmails.has(l.ownerEmail)) return false;
+    if (!l.ownerEmail || contactedEmails.has(l.ownerEmail.toLowerCase())) return false;
+    const isDeKalb = (l.jurisdiction || '').includes('DeKalb') || (l.recordId || '').startsWith('DKB-');
+    if (dekalbOnly && !isDeKalb) return false;
+
+    // For DeKalb permits, all permitted residential alterations & transfers require low-flow compliance
+    if (isDeKalb) return true;
+
     const val = Number(l.jobValue || 0);
     const type = (l.permitType || '').toLowerCase();
     const isHighValue = val >= 15000;
     const isStructural = type.includes('addition') || type.includes('new') || type.includes('alteration') || type.includes('repair') || type.includes('structure');
     return isHighValue || isStructural;
-  }).slice(0, 5);
-  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable high-intent verified leads in queue.`);
+  }).slice(0, batchLimit);
+  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable high-intent verified leads in queue (Batch Limit: ${batchLimit === Infinity ? 'ALL' : batchLimit}).`);
 
   for (const lead of queue) {
     const emailData = buildDueDiligenceEmail(lead);
@@ -550,7 +562,6 @@ async function main() {
     const mailOptions = {
       from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
       to: lead.ownerEmail,
-      bcc: user, // Sends exact copy to inspect@foresightcmi.com
       subject: emailData.subject,
       text: emailData.bodyText,
       html: emailData.html
@@ -587,11 +598,19 @@ async function main() {
       await dispatchSmartphoneAlert(lead, emailData);
       console.log(`📱 [Outreach Engine] Live confirmation pinged to your phone for ${lead.ownerName}`);
 
+      // Respect Google SMTP pacing with 2.5s delay between sends
+      await new Promise(r => setTimeout(r, 2500));
+
     } catch (sendErr) {
       console.error(`❌ [Outreach Engine] Failed to send email to ${lead.ownerEmail}:`, sendErr.message);
+      if (sendErr.message.includes('550-5.4.5') || sendErr.message.includes('Daily user sending limit exceeded')) {
+        console.warn('\n⚠️ [Outreach Engine] Google SMTP daily quota reached. Pausing remaining queue until rolling 24-hr window resets.');
+        break;
+      }
     }
   }
 
+  console.log(`\n🏁 [Outreach Engine] Outreach run completed.`);
 }
 
 export {
