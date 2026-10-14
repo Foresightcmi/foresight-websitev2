@@ -421,16 +421,83 @@ async function main() {
 
   let sentLendersCount = 0;
   let sentUnderContractCount = 0;
-  let sentPreDDCount = 0;
 
   // -----------------------------------------------------------
-  // TASK A: Dispatch to Mortgage Loan Officers
+  // PRIORITY #1 (TASK A): Dispatch to Active Under-Contract / Due Diligence Properties First
+  // (Premature Pre-Due Diligence active listings disabled so 100% of realtor allocation targets active contracts)
+  // -----------------------------------------------------------
+  let totalUnderContract = 0;
+  if (fs.existsSync(UNDER_CONTRACT_FILE)) {
+    const underContractRealtors = JSON.parse(fs.readFileSync(UNDER_CONTRACT_FILE, 'utf8'));
+    totalUnderContract = underContractRealtors.length;
+    console.log(`📋 [Due Diligence Engine] Priority #1: Loaded ${underContractRealtors.length} Active Under-Contract / Due Diligence Realtors.`);
+
+    if (canSendEmail && transporter) {
+      // Sort newest contracts first
+      const sorted = [...underContractRealtors].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+      for (const r of sorted) {
+        if (quotaCeilingHit) break;
+        if (!r.email || !r.email.includes('@')) continue;
+        const key = `CONTRACT_${r.id}_${r.email}`;
+        if (contactedKeys.has(key)) continue;
+        if (isSuppressed(r.email, r.name, r.brokerage)) {
+          console.log(`  🛡️ [Suppression Gate] Bypassed suppressed contact: ${r.name} (${r.email}) [Ansley / Unsubscribed Lockout]`);
+          continue;
+        }
+
+        console.log(`📤 [Due Diligence Engine] Dispatching Active Due Diligence Dossier to ${r.name} (${r.address}) <${r.email}>...`);
+        const { subject, html } = buildUnderContractEmail(r);
+
+        try {
+          await transporter.sendMail({
+            from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
+            to: r.email,
+            subject,
+            html
+          });
+
+          contactedKeys.add(key);
+          outreachLog.push({
+            key,
+            type: 'UNDER_CONTRACT_DUE_DILIGENCE',
+            targetName: r.name,
+            brokerage: r.brokerage,
+            address: r.address,
+            city: r.city,
+            email: r.email,
+            date: r.date,
+            timestamp: new Date().toISOString()
+          });
+
+          sentUnderContractCount++;
+          console.log(`  ✓ Transmitted successfully to ${r.name} for ${r.address}`);
+          await sleep(3000); // 3s safe spacing
+        } catch (e) {
+          console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
+          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
+            quotaCeilingHit = true;
+            break;
+          }
+        }
+
+        // Priority allocation: 6 active under-contract due diligence properties per run (0 wasted on premature active listings)
+        if (sentUnderContractCount >= 6) break;
+      }
+    } else {
+      console.log('  ℹ️ Email dispatch inactive; under-contract due diligence directory is verified and current.');
+    }
+  }
+
+  // -----------------------------------------------------------
+  // PRIORITY #2 (TASK B): Dispatch to Mortgage Loan Officers
   // -----------------------------------------------------------
   let totalLoanOfficers = 0;
   if (fs.existsSync(LOAN_OFFICERS_FILE)) {
     const loanOfficers = JSON.parse(fs.readFileSync(LOAN_OFFICERS_FILE, 'utf8'));
     totalLoanOfficers = loanOfficers.length;
-    console.log(`🏦 [Due Diligence Engine] Loaded ${loanOfficers.length} Mortgage Loan Officers.`);
+    console.log(`🏦 [Due Diligence Engine] Priority #2: Loaded ${loanOfficers.length} Mortgage Loan Officers.`);
 
     if (canSendEmail && transporter) {
       for (const lo of loanOfficers) {
@@ -476,141 +543,11 @@ async function main() {
           }
         }
 
-        // Max 2 loan officers per automated daily scout pass to keep deliverability pristine
+        // Max 2 loan officers per automated daily scout pass
         if (sentLendersCount >= 2) break;
       }
     } else {
       console.log('  ℹ️ Email dispatch inactive; loan officer directory is verified and current.');
-    }
-  }
-
-  // -----------------------------------------------------------
-  // TASK B: Dispatch to Under Due Diligence Listings (Newest Contracts)
-  // -----------------------------------------------------------
-  let totalUnderContract = 0;
-  if (fs.existsSync(UNDER_CONTRACT_FILE)) {
-    const underContractRealtors = JSON.parse(fs.readFileSync(UNDER_CONTRACT_FILE, 'utf8'));
-    totalUnderContract = underContractRealtors.length;
-    console.log(`📋 [Due Diligence Engine] Loaded ${underContractRealtors.length} Under-Contract Realtors.`);
-
-    if (canSendEmail && transporter) {
-      // Sort newest first
-      const sorted = [...underContractRealtors].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-
-      for (const r of sorted) {
-        if (quotaCeilingHit) break;
-        if (!r.email || !r.email.includes('@')) continue;
-        const key = `CONTRACT_${r.id}_${r.email}`;
-        if (contactedKeys.has(key)) continue;
-        if (isSuppressed(r.email, r.name, r.brokerage)) {
-          console.log(`  🛡️ [Suppression Gate] Bypassed suppressed contact: ${r.name} (${r.email}) [Ansley / Unsubscribed Lockout]`);
-          continue;
-        }
-
-        console.log(`📤 [Due Diligence Engine] Dispatching Due Diligence Dossier to ${r.name} (${r.address}) <${r.email}>...`);
-        const { subject, html } = buildUnderContractEmail(r);
-
-        try {
-          await transporter.sendMail({
-            from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
-            to: r.email,
-            subject,
-            html
-          });
-
-          contactedKeys.add(key);
-          outreachLog.push({
-            key,
-            type: 'UNDER_CONTRACT_DUE_DILIGENCE',
-            targetName: r.name,
-            brokerage: r.brokerage,
-            address: r.address,
-            city: r.city,
-            email: r.email,
-            date: r.date,
-            timestamp: new Date().toISOString()
-          });
-
-          sentUnderContractCount++;
-          console.log(`  ✓ Transmitted successfully to ${r.name} for ${r.address}`);
-          await sleep(3000); // 3s safe spacing
-        } catch (e) {
-          console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
-          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
-            quotaCeilingHit = true;
-            break;
-          }
-        }
-
-        // Limit to 4 contracts per daily run
-        if (sentUnderContractCount >= 4) break;
-      }
-    } else {
-      console.log('  ℹ️ Email dispatch inactive; under-contract directory is verified and current.');
-    }
-  }
-
-  // -----------------------------------------------------------
-  // TASK C: Dispatch to Pre-Due Diligence (Hot Listings / About to Go Binding)
-  // -----------------------------------------------------------
-  if (fs.existsSync(UNDER_CONTRACT_FILE)) {
-    const underContractRealtors = JSON.parse(fs.readFileSync(UNDER_CONTRACT_FILE, 'utf8'));
-    // Select listings that hit the market recently
-    const preDDListings = underContractRealtors.slice(50, 100);
-
-    if (canSendEmail && transporter) {
-      for (const r of preDDListings) {
-        if (quotaCeilingHit) break;
-        if (!r.email || !r.email.includes('@')) continue;
-        const key = `PRE_DD_${r.id}_${r.email}`;
-        if (contactedKeys.has(key)) continue;
-        if (isSuppressed(r.email, r.name, r.brokerage)) {
-          console.log(`  🛡️ [Suppression Gate] Bypassed suppressed contact: ${r.name} (${r.email}) [Ansley / Unsubscribed Lockout]`);
-          continue;
-        }
-
-        console.log(`📤 [Due Diligence Engine] Dispatching Pre-Due Diligence Reservation to ${r.name} (${r.address}) <${r.email}>...`);
-        const { subject, html } = buildPreDueDiligenceEmail(r);
-
-        try {
-          await transporter.sendMail({
-            from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
-            to: r.email,
-            subject,
-            html
-          });
-
-          contactedKeys.add(key);
-          outreachLog.push({
-            key,
-            type: 'PRE_DUE_DILIGENCE_RESERVATION',
-            targetName: r.name,
-            brokerage: r.brokerage,
-            address: r.address,
-            city: r.city,
-            email: r.email,
-            date: r.date,
-            timestamp: new Date().toISOString()
-          });
-
-          sentPreDDCount++;
-          console.log(`  ✓ Transmitted successfully to ${r.name} for ${r.address}`);
-          await sleep(3000); // 3s safe spacing
-        } catch (e) {
-          console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
-          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
-            quotaCeilingHit = true;
-            break;
-          }
-        }
-
-        // Limit to 2 pre-DD per daily run
-        if (sentPreDDCount >= 2) break;
-      }
-    } else {
-      console.log('  ℹ️ Email dispatch inactive; pre-due diligence directory is verified and current.');
     }
   }
 
@@ -619,18 +556,18 @@ async function main() {
   console.log(`💾 [Due Diligence Engine] Updated outreach log (${outreachLog.length} total historical communications).`);
 
   // 4. Send Mobile Summary Alert
-  const totalSentThisRun = sentLendersCount + sentUnderContractCount + sentPreDDCount;
+  const totalSentThisRun = sentUnderContractCount + sentLendersCount;
   if (canSendEmail && totalSentThisRun > 0) {
     const pushTitle = `⚡ Due Diligence Scout: ${totalSentThisRun} Dossiers Dispatched`;
-    const pushMsg = `Autonomous Scout Run Complete:\n• Mortgage Loan Officers: ${sentLendersCount}\n• Under Due Diligence Listings: ${sentUnderContractCount}\n• Pre-Due Diligence Listings: ${sentPreDDCount}\nTotal Historical Dispatched: ${outreachLog.length}`;
+    const pushMsg = `Autonomous Scout Run Complete:\n• Priority #1 (Active Under-Contract Due Diligence): ${sentUnderContractCount}\n• Priority #2 (Mortgage Loan Officers): ${sentLendersCount}\nTotal Historical Dispatched: ${outreachLog.length}`;
     await sendPushNotification(pushTitle, pushMsg, 'high');
   } else if (!canSendEmail) {
     const pushTitle = `🛡️ Due Diligence Scout: Directory Verified`;
-    const pushMsg = `Autonomous Scout Directory Verified:\n• ${totalUnderContract} Under-Contract Listings Verified\n• ${totalLoanOfficers} Loan Officers Verified\n• Email dispatch handled by local daemon engine`;
+    const pushMsg = `Autonomous Scout Directory Verified:\n• ${totalUnderContract} Active Under-Contract Due Diligence Listings Verified\n• ${totalLoanOfficers} Loan Officers Verified\n• Email dispatch handled by local daemon engine`;
     await sendPushNotification(pushTitle, pushMsg, 'default');
   } else {
     const pushTitle = `⚡ Due Diligence Scout: Roster Current`;
-    const pushMsg = `All active listings and loan officers have current dossiers.\nTotal Historical Dispatched: ${outreachLog.length}`;
+    const pushMsg = `All active under-contract properties and loan officers have current dossiers.\nTotal Historical Dispatched: ${outreachLog.length}`;
     await sendPushNotification(pushTitle, pushMsg, 'default');
   }
 
