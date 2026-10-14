@@ -234,6 +234,16 @@ function loadCities() {
   return JSON.parse(fileContents);
 }
 
+function loadServicesPseo() {
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'services-pseo.json');
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    return JSON.parse(fileContents);
+  } catch {
+    return [];
+  }
+}
+
 export async function generateStaticParams() {
   return Object.keys(SERVICE_MAP).map(service => ({ service }));
 }
@@ -277,6 +287,34 @@ export default async function ServiceHubPage({ params }) {
   }
 
   const cities = loadCities();
+  const servicesPseo = loadServicesPseo();
+  const pseoMatch = servicesPseo.find(s => s.slug === canonicalService || s.slug === resolvedParams.service);
+
+  const defaultFaqs = [
+    {
+      q: `Why does Foresight dispatch two certified inspectors for ${serviceData.name}?`,
+      a: `Our signature Two-Inspector Protocol pairs Lead Certified Master Inspector® Christopher Boykin with a senior inspector, completing thorough structural, mechanical, and diagnostic checks in 1.5 to 2.5 hours rather than 4+ hours solo, eliminating fatigue and delivering double verification.`
+    },
+    {
+      q: `How fast do I receive the ${serviceData.name} report?`,
+      a: `All digital inspection reports are delivered within 24 hours (often the same evening). Reports include high-definition photos, thermal scans, drone imagery, and 1-click GAR repair list generators.`
+    },
+    {
+      q: `What warranties are included with ${serviceData.name}?`,
+      a: `Every standard home inspection includes up to $35,000 in combined warranty and guarantee protection: our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI's $25,000 Honor Guarantee.`
+    },
+    {
+      q: `How much does ${serviceData.name} cost in Metro Atlanta?`,
+      a: `${serviceData.name} pricing starts at ${serviceData.price} with transparent flat-rate pricing and no hidden mileage fees across our 50-mile Metro Atlanta service footprint.`
+    }
+  ];
+
+  const activeFaqs = (pseoMatch?.faqs && pseoMatch.faqs.length > 0)
+    ? pseoMatch.faqs.map(f => ({
+        q: f.q.replace(/{city}/g, 'Metro Atlanta'),
+        a: f.a.replace(/{city}/g, 'Metro Atlanta')
+      }))
+    : defaultFaqs;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -296,12 +334,30 @@ export default async function ServiceHubPage({ params }) {
     }
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": activeFaqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a.replace(/<[^>]*>/g, '')
+      }
+    }))
+  };
+
   return (
     <>
       <Script
         id="service-hub-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Script
+        id="service-hub-faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       <section style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', color: '#FFFFFF', padding: '4.5rem 0 3.5rem', textAlign: 'center' }}>
@@ -322,6 +378,33 @@ export default async function ServiceHubPage({ params }) {
             <Link href="/quote" className="btn btn-outline-light" style={{ padding: '0.9rem 2rem' }}>
               Calculate Instant Fee
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── AEO / GEO DIRECT ANSWER & HARD-NUMBER EVIDENCE BOX (AI Overviews & LLM Scraping) ── */}
+      <section style={{ background: '#F8FAFC', padding: '2rem 0', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', borderLeft: '5px solid var(--color-gold)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <h2 style={{ fontSize: '1.15rem', color: '#0F172A', margin: 0, fontWeight: 700 }}>
+                {serviceData.name} in Metro Atlanta: Verified Diagnostic Overview
+              </h2>
+              <span style={{ fontSize: '0.8rem', background: '#ECFDF5', color: '#065F46', border: '1px solid #A7F3D0', padding: '0.2rem 0.6rem', borderRadius: '4px', fontWeight: 600 }}>
+                Verified 2026 Standards
+              </span>
+            </div>
+            <p style={{ fontSize: '0.975rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
+              <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties starting at <strong>{serviceData.price}</strong>. Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, cutting on-site disruption to 1.5–2.5 hours while delivering double verification. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #F1F5F9', fontSize: '0.85rem', color: '#475569' }}>
+              <div><strong>Lead Credential:</strong> Certified Master Inspector® (CMI)</div>
+              <div><strong>Deployment:</strong> 2 Certified Inspectors (100% of jobs)</div>
+              <div><strong>⏱️ Duration:</strong> 1.5–2.5 Hours (50% faster than solo)</div>
+              <div><strong>Turnaround:</strong> Under 24 Hours (Same-Day Evening Avg.)</div>
+              <div><strong>⭐ Rating:</strong> 4.9/5.0 (48+ Verified 5-Star Reviews)</div>
+              <div><strong>Protection:</strong> $35,000 Warranty / Guarantee ($0 Deductible)</div>
+            </div>
           </div>
         </div>
       </section>
@@ -389,6 +472,41 @@ export default async function ServiceHubPage({ params }) {
         </div>
       </section>
 
+      {/* ── VISIBLE BUYER FAQ ACCORDION (Steve Chou Category Page Doctrine) ── */}
+      <section className="section bg-white" style={{ padding: '3.5rem 0', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212, 175, 55, 0.4)', marginBottom: '0.75rem' }}>
+              Frequently Asked Questions
+            </span>
+            <h2 style={{ fontSize: '2rem', color: '#0F172A', fontWeight: 800 }}>
+              {serviceData.name} FAQs for Georgia Homeowners &amp; Buyers
+            </h2>
+          </div>
+          <div>
+            {activeFaqs.map((faq, i) => (
+              <details
+                key={i}
+                style={{
+                  border: '1px solid #E2E8F0',
+                  borderRadius: 'var(--radius-md)',
+                  marginBottom: '1rem',
+                  padding: '1.25rem 1.5rem',
+                  background: '#F8FAFC',
+                }}
+              >
+                <summary style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem', color: '#0F172A' }}>
+                  {faq.q}
+                </summary>
+                <p style={{ marginTop: '0.85rem', marginBottom: 0, lineHeight: 1.7, color: '#334155', fontSize: '0.975rem' }}>
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 87 City Silo Directory Grid */}
       <section className="section" style={{ background: '#F8FAFC', padding: '4.5rem 0' }}>
         <div className="container">
@@ -412,7 +530,9 @@ export default async function ServiceHubPage({ params }) {
                 'new-construction-inspection',
                 'pool-inspection',
                 'pre-listing-inspection',
-                'mold-testing'
+                'mold-testing',
+                'buyer-inspection',
+                '11-month-warranty-inspection'
               ];
               const href = pseoServices.includes(canonicalService)
                 ? `/services/${canonicalService}/${citySlug}`

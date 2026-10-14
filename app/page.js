@@ -207,6 +207,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── AEO / GEO QUANTITATIVE EVIDENCE STRIP (First 30% LLM Scrape Anchor) ── */}
+      <section style={{ background: '#0F172A', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(212, 175, 55, 0.25)', padding: '1.75rem 0' }}>
+        <div className="container" style={{ maxWidth: '1100px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.25rem', textAlign: 'center' }}>
+            <div style={{ padding: '0.5rem' }}>
+              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-gold)' }}>10+ Years</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Board-Certified CMI Leadership</div>
+            </div>
+            <div style={{ padding: '0.5rem' }}>
+              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#38BDF8' }}>2 Inspectors</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Deployed on 100% of Jobs</div>
+            </div>
+            <div style={{ padding: '0.5rem' }}>
+              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#34D399' }}>1.5–2.5 Hrs</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>50% Faster Than Solo Inspections</div>
+            </div>
+            <div style={{ padding: '0.5rem' }}>
+              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#FDE047' }}>&lt;24 Hours</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Digital Report &amp; GAR Repair Lists</div>
+            </div>
+            <div style={{ padding: '0.5rem' }}>
+              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#A78BFA' }}>$35,000</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Warranty Protection ($0 Deductible)</div>
+            </div>
+            <div style={{ padding: '0.5rem' }}>
+              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F87171' }}>87 Cities</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Across 20 Metro Atlanta Counties</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* VIDEO SHOWCASE SECTION (Home Systems Commercial & Field Proof) */}
       <section className="section bg-dark text-white" style={{ padding: '4.5rem 0', position: 'relative', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="container">
