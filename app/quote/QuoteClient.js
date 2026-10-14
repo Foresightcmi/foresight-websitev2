@@ -154,13 +154,13 @@ export default function QuoteClient({ showValueComparison = true }) {
     }
 
     // Foundation Complexity Fees: PDF Page 5:
-    // Crawlspace = +$75, Unfinished Basement = +$250
+    // Crawlspace = +$75, Unfinished Basement = +$75
     if (propertyType === 'single-family' && serviceType !== 'str') {
       if (foundation === 'crawlspace') {
         extra += 75;
       }
       if (foundation === 'basement') {
-        extra += 250;
+        extra += 75;
       }
     }
 
@@ -482,7 +482,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'basement'} onChange={() => setFoundation('basement')} />
-                    Unfinished/Partial Basement (+$250)
+                    Unfinished/Partial Basement (+$75)
                   </label>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                     <input type="radio" name="foundation" checked={foundation === 'crawlspace'} onChange={() => setFoundation('crawlspace')} />
@@ -518,7 +518,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)', 
                 lineHeight: 1.45 
               }}>
-                ℹ️ <strong>Additional Complexity Fees:</strong> Per our official fee schedule, an additional <strong>$75 fee</strong> is added for an unfinished crawlspace inspection, and <strong>$250</strong> for an unfinished/partially finished basement inspection.
+                ℹ️ <strong>Additional Complexity Fees:</strong> Per our official fee schedule, an additional <strong>$75 fee</strong> is added for an unfinished crawlspace inspection, and <strong>$75</strong> for an unfinished/partially finished basement inspection.
               </div>
             )}
 
@@ -862,7 +862,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       {propertyType === 'single-family' && serviceType !== 'str' && foundation === 'basement' && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>Unfinished / Partial Basement</span>
-                          <span>+$250</span>
+                          <span>+$75</span>
                         </div>
                       )}
                       {serviceType !== 'str' && ageTier === 'over-50' && (

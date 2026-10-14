@@ -77,18 +77,22 @@ async function fetchAtlantaPermits() {
   }
 }
 
+const TRADE_SUBCONTRACTOR_REGEX = /plumb|electr|hvac|heat|air|roof|solar|drain|rooter|sewer|mech|generator|dekalbcountyga\.gov|expedit|sign|pool|fence|paving|grading|demo|fire|alarm|sprinkler|restore|remediat|mitigat/i;
+
 /**
  * 2. Queries DeKalb County Building Permit Applications GIS FeatureServer
+ * Strictly filters for primaryContactType = '1' (Actual Property Owners / Homeowners / Builders)
+ * and excludes trade subcontractors (plumbers, electricians, HVAC, roofers, county staff).
  */
 async function fetchDeKalbPermits() {
-  console.log('🏛️  [Permit Radar: DeKalb] Querying DeKalb County GIS permit registry...');
+  console.log('🏛️  [Permit Radar: DeKalb] Querying DeKalb County GIS permit registry (Property Owners Only: primaryContactType=1)...');
   try {
     const params = new URLSearchParams({
-      where: "OccupancyTypeDescription LIKE '%Single Family%' OR applicationType_description LIKE '%Building%'",
+      where: "primaryContactType = '1' AND primaryContactEMailAddress IS NOT NULL AND (OccupancyTypeDescription LIKE '%Single Family%' OR OccupancyTypeDescription LIKE '%Residential%' OR WorkTypeDescription LIKE '%Addition%' OR WorkTypeDescription LIKE '%Alteration%' OR WorkTypeDescription LIKE '%New%' OR WorkTypeDescription LIKE '%Water Meter%' OR WorkTypeDescription LIKE '%Sewer%')",
       outFields: '*',
       returnGeometry: 'false',
       orderByFields: 'OBJECTID DESC',
-      resultRecordCount: '25',
+      resultRecordCount: '100',
       f: 'json'
     });
 
@@ -100,17 +104,27 @@ async function fetchDeKalbPermits() {
 
     if (!response.ok) throw new Error(`DeKalb ArcGIS returned ${response.status}`);
     const json = await response.json();
-    const features = json.features || [];
-    console.log(`✅ [Permit Radar: DeKalb] Retrieved ${features.length} municipal permits.`);
+    const rawFeatures = json.features || [];
 
-    return features.map(f => {
+    // Filter out any trade subcontractor or county employee who registered under primaryContactType = '1'
+    const ownerFeatures = rawFeatures.filter(f => {
+      const a = f.attributes || {};
+      const email = (a.primaryContactEMailAddress || '').trim();
+      if (!email || !email.includes('@')) return false;
+      const combinedText = `${a.primaryContactName || ''} ${email} ${a.applicationName || ''}`;
+      return !TRADE_SUBCONTRACTOR_REGEX.test(combinedText);
+    });
+
+    console.log(`✅ [Permit Radar: DeKalb] Retrieved ${ownerFeatures.length} verified Property Owner permits (filtered from ${rawFeatures.length} raw records).`);
+
+    return ownerFeatures.map(f => {
       const a = f.attributes || {};
       const date = a.applicationDateTime 
         ? new Date(a.applicationDateTime).toISOString().split('T')[0] 
         : (a.issuedDateTime ? new Date(a.issuedDateTime).toISOString().split('T')[0] : 'Unknown');
       
       const valuation = parseFloat(a.declaredValuation || a.calculatedValuation || 0) || 0;
-      const typeDesc = a.applicationType_description || a.WorkTypeDescription || 'Residential Building Permit';
+      const typeDesc = a.WorkTypeDescription || a.applicationType_description || 'Residential Building Permit';
       const isNew = typeDesc.toLowerCase().includes('new') || (a.comments || '').toLowerCase().includes('new');
 
       return {
@@ -124,16 +138,17 @@ async function fetchDeKalbPermits() {
         statusDate: date,
         parcel: a.commonId || 'N/A',
         quadrant: `District ${a.District || 'DeKalb'}`,
+        primaryContactType: String(a.primaryContactType || '1'),
         ownerName: a.primaryContactName || a.applicationName || 'Property Owner',
-        ownerEmail: a.primaryContactEMailAddress || null,
+        ownerEmail: a.primaryContactEMailAddress ? a.primaryContactEMailAddress.trim() : null,
         ownerPhone: a.primaryContactPhone || null,
         comments: a.comments ? a.comments.slice(0, 300) : null,
         acaLink: `https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=${a.applicationNumber || a.id}`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.locationLine1 || 'DeKalb County, GA')}`,
         inspectionOpportunity: isNew
-          ? 'Pre-Drywall Framing Inspection + 11-Month Builder Warranty'
-          : 'Structural Renovation, Plumbing & Electrical System Audit',
-        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
+          ? 'Pre-Drywall Framing Inspection + DeKalb Low-Flow Certificate ($100)'
+          : 'DeKalb Low-Flow Compliance Certificate ($100) + Structural Renovation Audit',
+        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : '$100 Low-Flow / From $345 Full Audit',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -421,18 +436,40 @@ async function main() {
       fs.mkdirSync(dataDir, { recursive: true });
     }
 
-    // Read existing leads to prevent duplicates
+    // Read existing leads and purge any legacy DeKalb trade subcontractor records
     let existingLeads = [];
     if (fs.existsSync(DATA_FILE)) {
       try {
-        existingLeads = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+        const rawExisting = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+        const dossiersDir = path.join(ROOT_DIR, 'public', 'dossiers');
+        existingLeads = rawExisting.filter(l => {
+          const isDeKalb = (l.jurisdiction || '').includes('DeKalb') || (l.recordId || '').startsWith('DKB-');
+          if (isDeKalb) {
+            const combinedText = `${l.ownerName || ''} ${l.ownerEmail || ''} ${l.permitName || ''}`;
+            const isValidOwner = l.primaryContactType === '1' && !TRADE_SUBCONTRACTOR_REGEX.test(combinedText);
+            if (!isValidOwner) {
+              const staleDossier = path.join(dossiersDir, `${l.recordId}.html`);
+              if (fs.existsSync(staleDossier)) {
+                try { fs.unlinkSync(staleDossier); } catch (_) {}
+              }
+              return false;
+            }
+          }
+          return true;
+        });
       } catch (e) {
         existingLeads = [];
       }
     }
 
     const existingIds = new Set(existingLeads.map(l => l.recordId));
-    const newlyDiscovered = allHarvested.filter(l => !existingIds.has(l.recordId));
+    const newlyDiscovered = [];
+    for (const l of allHarvested) {
+      if (!existingIds.has(l.recordId)) {
+        existingIds.add(l.recordId);
+        newlyDiscovered.push(l);
+      }
+    }
 
     console.log(`✨ [Permit Radar] ${newlyDiscovered.length} NEWLY DISCOVERED high-intent permits across Metro Atlanta.`);
 

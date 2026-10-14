@@ -543,21 +543,37 @@ async function main() {
   const limitArg = args.find(a => a.startsWith('--limit='));
   const batchLimit = sendAll ? Infinity : (limitArg ? parseInt(limitArg.split('=')[1], 10) : 50);
 
+  const TRADE_SUBCONTRACTOR_REGEX = /plumb|electr|hvac|heat|air|roof|solar|drain|rooter|sewer|mech|generator|dekalbcountyga\.gov|expedit|sign|pool|fence|paving|grading|demo|fire|alarm|sprinkler|restore|remediat|mitigat/i;
+  const seenEmailsInQueue = new Set();
+
   const queue = enrichedLeads.filter(l => {
-    if (!l.ownerEmail || contactedEmails.has(l.ownerEmail.toLowerCase())) return false;
+    if (!l.ownerEmail) return false;
+    const normEmail = l.ownerEmail.trim().toLowerCase();
+    if (contactedEmails.has(normEmail) || seenEmailsInQueue.has(normEmail)) return false;
+
     const isDeKalb = (l.jurisdiction || '').includes('DeKalb') || (l.recordId || '').startsWith('DKB-');
     if (dekalbOnly && !isDeKalb) return false;
 
-    // For DeKalb permits, all permitted residential alterations & transfers require low-flow compliance
-    if (isDeKalb) return true;
+    // Strict guard: never email trade subcontractors or government emails
+    if (isDeKalb) {
+      if (l.primaryContactType && String(l.primaryContactType) !== '1') return false;
+      const combinedText = `${l.ownerName || ''} ${l.ownerEmail || ''} ${l.permitName || ''}`;
+      if (TRADE_SUBCONTRACTOR_REGEX.test(combinedText)) return false;
+      seenEmailsInQueue.add(normEmail);
+      return true;
+    }
 
     const val = Number(l.jobValue || 0);
     const type = (l.permitType || '').toLowerCase();
     const isHighValue = val >= 15000;
     const isStructural = type.includes('addition') || type.includes('new') || type.includes('alteration') || type.includes('repair') || type.includes('structure');
-    return isHighValue || isStructural;
+    if (isHighValue || isStructural) {
+      seenEmailsInQueue.add(normEmail);
+      return true;
+    }
+    return false;
   }).slice(0, batchLimit);
-  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable high-intent verified leads in queue (Batch Limit: ${batchLimit === Infinity ? 'ALL' : batchLimit}).`);
+  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable high-intent verified Property Owner leads in queue (Batch Limit: ${batchLimit === Infinity ? 'ALL' : batchLimit}).`);
 
   for (const lead of queue) {
     const emailData = buildDueDiligenceEmail(lead);
@@ -579,7 +595,7 @@ async function main() {
       const isSTRLead = (lead.jurisdiction || '').includes('Short-Term Rental') || (lead.recordId || '').startsWith('STR-');
       const inspectionTarget = isDeKalbLead
         ? 'DeKalb Low-Flow Compliance ($100)'
-        : (isSTRLead ? 'Atlanta STR Life-Safety ($495)' : 'Pre-Drywall Rough-In (From $275)');
+        : (isSTRLead ? 'Atlanta STR Life-Safety ($595)' : 'Pre-Drywall Rough-In (From $275)');
 
       const entry = {
         recordId: lead.recordId,

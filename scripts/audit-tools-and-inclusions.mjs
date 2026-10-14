@@ -34,7 +34,7 @@ assert(quoteClientCode.includes("addons.sewer") && quoteClientCode.includes("ext
 assert(quoteClientCode.includes("addons.pool") && quoteClientCode.includes("extra += 300"), 'Pool & Spa Inspection is strictly $300');
 assert(quoteClientCode.includes("addons.termite") && quoteClientCode.includes("165 : 125"), 'Georgia Termite / WDO is strictly $125 ($165 crawlspace)');
 assert(quoteClientCode.includes("foundation === 'crawlspace'") && quoteClientCode.includes("extra += 75"), 'Crawlspace foundation surcharge is +$75');
-assert(quoteClientCode.includes("foundation === 'basement'") && quoteClientCode.includes("extra += 250"), 'Finished/Unfinished Basement surcharge is +$250');
+assert(quoteClientCode.includes("foundation === 'basement'") && quoteClientCode.includes("extra += 75"), 'Finished/Unfinished Basement surcharge is +$75');
 assert(quoteClientCode.includes("serviceType === 'str'") && quoteClientCode.includes("base = 595"), 'Short-Term Rental (STR) compliance is $595');
 
 // 2. AUDIT REPAIR CREDIT & GAR F404 AMENDMENT CALCULATOR

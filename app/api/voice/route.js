@@ -34,7 +34,7 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
 
   if (propertyType === 'single-family' && serviceType !== 'str') {
     if (foundation === 'crawlspace') extra += 75;
-    if (foundation === 'basement') extra += 250;
+    if (foundation === 'basement') extra += 75;
   }
 
   const addonBreakdown = [];
