@@ -20,7 +20,9 @@
     "linkedin:dispatch": "node scripts/linkedin-content-engine.mjs --dispatch",
     "funnel:dispatch": "node scripts/social-funnel-dispatcher.mjs",
     "colony:audit": "node scripts/colony-audit-engine.mjs",
-    "dispatch:build": "node scripts/generate-vip-dispatch-v6.mjs"
+    "dispatch:build": "node scripts/generate-vip-dispatch-v6.mjs",
+    "permits:sweep": "node scripts/permit-radar.mjs",
+    "permits:outreach": "node scripts/permit-outreach-engine.mjs --all"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

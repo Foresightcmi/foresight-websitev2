@@ -459,6 +459,15 @@ async function main() {
       await dispatchPushAlert(newlyDiscovered, statsByJurisdiction);
     }
 
+    // Instantly trigger autonomous email dispatch for any uncontacted leads ASAP
+    console.log('⚡ [Permit Radar] Dispatching autonomous email outreach to all uncontacted permit leads ASAP...');
+    try {
+      const { execSync } = await import('node:child_process');
+      execSync('node scripts/permit-outreach-engine.mjs --all', { stdio: 'inherit', cwd: ROOT_DIR });
+    } catch (outreachErr) {
+      console.warn('⚠️ [Permit Radar] Outreach dispatch note:', outreachErr.message);
+    }
+
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`\n🏁 [Permit Radar] Multi-County Radar cycle completed in ${duration}s.`);
 
