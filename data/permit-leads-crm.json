@@ -1,42 +1,68 @@
 [
   {
+    "recordId": "DKB-3190500",
+    "address": "3768 Covington HWY, DeKalb County, GA",
+    "permitType": "Stand Alone Water Meter",
+    "jobValue": 1200000,
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190500.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190500",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-10-15T16:10:26.683Z"
+  },
+  {
+    "recordId": "DKB-3190422",
+    "address": "913 SCHOEL DR, DeKalb County, GA",
+    "permitType": "Additions to Existing Structures",
+    "jobValue": 200000,
+    "permitDate": "2026-10-12",
+    "framingStageWindow": "Nov 11, 2026 - Dec 26, 2026",
+    "warrantyExpirationTarget": "Sep 7, 2027",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190422.html",
+    "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190422",
+    "status": "Active Pipeline",
+    "generatedAt": "2026-10-15T16:10:26.684Z"
+  },
+  {
     "recordId": "DKB-3190492",
     "address": "4216 CONNOR DR, DeKalb County, GA",
     "permitType": "Demolition",
     "jobValue": 14105,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190492.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190492",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.784Z"
+    "generatedAt": "2026-10-15T16:10:26.685Z"
   },
   {
     "recordId": "DKB-3190370",
     "address": "2212 Wexford DR, DeKalb County, GA",
     "permitType": "Stand Alone Sewer Tap",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190370.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190370",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.793Z"
+    "generatedAt": "2026-10-15T16:10:26.687Z"
   },
   {
     "recordId": "DKB-3190369",
     "address": "2214 Wexford DR, DeKalb County, GA",
     "permitType": "Stand Alone Sewer Tap",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190369.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190369",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.802Z"
+    "generatedAt": "2026-10-15T16:10:26.687Z"
   },
   {
     "recordId": "DKB-3190302",
@@ -44,12 +70,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 5000,
     "permitDate": "2026-10-08",
-    "framingStageWindow": "Nov 6, 2026 - Dec 21, 2026",
-    "warrantyExpirationTarget": "Sep 2, 2027",
+    "framingStageWindow": "Nov 7, 2026 - Dec 22, 2026",
+    "warrantyExpirationTarget": "Sep 3, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190302.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190302",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.807Z"
+    "generatedAt": "2026-10-15T16:10:26.688Z"
   },
   {
     "recordId": "DKB-3190301",
@@ -57,12 +83,12 @@
     "permitType": "New Construction",
     "jobValue": 84186,
     "permitDate": "2026-10-07",
-    "framingStageWindow": "Nov 5, 2026 - Dec 20, 2026",
-    "warrantyExpirationTarget": "Sep 1, 2027",
+    "framingStageWindow": "Nov 6, 2026 - Dec 21, 2026",
+    "warrantyExpirationTarget": "Sep 2, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190301.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190301",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.814Z"
+    "generatedAt": "2026-10-15T16:10:26.689Z"
   },
   {
     "recordId": "DKB-3190298",
@@ -70,25 +96,25 @@
     "permitType": "Demolition",
     "jobValue": 14105,
     "permitDate": "2026-10-07",
-    "framingStageWindow": "Nov 5, 2026 - Dec 20, 2026",
-    "warrantyExpirationTarget": "Sep 1, 2027",
+    "framingStageWindow": "Nov 6, 2026 - Dec 21, 2026",
+    "warrantyExpirationTarget": "Sep 2, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190298.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190298",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.820Z"
+    "generatedAt": "2026-10-15T16:10:26.690Z"
   },
   {
     "recordId": "DKB-3190274",
     "address": "5319 GALLEON XING, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190274.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190274",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.826Z"
+    "generatedAt": "2026-10-15T16:10:26.691Z"
   },
   {
     "recordId": "DKB-3190237",
@@ -96,25 +122,25 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 3000,
     "permitDate": "2026-10-06",
-    "framingStageWindow": "Nov 4, 2026 - Dec 19, 2026",
-    "warrantyExpirationTarget": "Aug 31, 2027",
+    "framingStageWindow": "Nov 5, 2026 - Dec 20, 2026",
+    "warrantyExpirationTarget": "Sep 1, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3190237.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3190237",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.832Z"
+    "generatedAt": "2026-10-15T16:10:26.692Z"
   },
   {
     "recordId": "DKB-3189914",
     "address": "5644 BEND CREEK RD, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189914.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189914",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.838Z"
+    "generatedAt": "2026-10-15T16:10:26.693Z"
   },
   {
     "recordId": "DKB-3189824",
@@ -122,12 +148,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 150000,
     "permitDate": "2026-09-28",
-    "framingStageWindow": "Oct 27, 2026 - Dec 11, 2026",
-    "warrantyExpirationTarget": "Aug 23, 2027",
+    "framingStageWindow": "Oct 28, 2026 - Dec 12, 2026",
+    "warrantyExpirationTarget": "Aug 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189824.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189824",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.847Z"
+    "generatedAt": "2026-10-15T16:10:26.694Z"
   },
   {
     "recordId": "DKB-3189821",
@@ -135,25 +161,25 @@
     "permitType": "Alteration to Existing Structure",
     "jobValue": 500,
     "permitDate": "2026-10-11",
-    "framingStageWindow": "Nov 9, 2026 - Dec 24, 2026",
-    "warrantyExpirationTarget": "Sep 5, 2027",
+    "framingStageWindow": "Nov 10, 2026 - Dec 25, 2026",
+    "warrantyExpirationTarget": "Sep 6, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189821.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189821",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.853Z"
+    "generatedAt": "2026-10-15T16:10:26.695Z"
   },
   {
     "recordId": "DKB-3189642",
     "address": "4570 CHADWELL LN, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189642.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189642",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.860Z"
+    "generatedAt": "2026-10-15T16:10:26.695Z"
   },
   {
     "recordId": "DKB-3189585",
@@ -161,12 +187,12 @@
     "permitType": "Electrical Combined Line",
     "jobValue": 18000,
     "permitDate": "2026-09-24",
-    "framingStageWindow": "Oct 23, 2026 - Dec 7, 2026",
-    "warrantyExpirationTarget": "Aug 19, 2027",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189585.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189585",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.866Z"
+    "generatedAt": "2026-10-15T16:10:26.696Z"
   },
   {
     "recordId": "DKB-3189485",
@@ -174,12 +200,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 40000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189485.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189485",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.872Z"
+    "generatedAt": "2026-10-15T16:10:26.697Z"
   },
   {
     "recordId": "DKB-3189343",
@@ -187,12 +213,12 @@
     "permitType": "New Construction",
     "jobValue": 140,
     "permitDate": "2026-09-21",
-    "framingStageWindow": "Oct 20, 2026 - Dec 4, 2026",
-    "warrantyExpirationTarget": "Aug 16, 2027",
+    "framingStageWindow": "Oct 21, 2026 - Dec 5, 2026",
+    "warrantyExpirationTarget": "Aug 17, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189343.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189343",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.878Z"
+    "generatedAt": "2026-10-15T16:10:26.697Z"
   },
   {
     "recordId": "DKB-3189398",
@@ -200,12 +226,12 @@
     "permitType": "Repairs to Existing Structure",
     "jobValue": 15000,
     "permitDate": "2026-09-18",
-    "framingStageWindow": "Oct 17, 2026 - Dec 1, 2026",
-    "warrantyExpirationTarget": "Aug 13, 2027",
+    "framingStageWindow": "Oct 18, 2026 - Dec 2, 2026",
+    "warrantyExpirationTarget": "Aug 14, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189398.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189398",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.884Z"
+    "generatedAt": "2026-10-15T16:10:26.698Z"
   },
   {
     "recordId": "DKB-3083938",
@@ -213,12 +239,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 50000,
     "permitDate": "2022-01-27",
-    "framingStageWindow": "Feb 25, 2022 - Apr 11, 2022",
-    "warrantyExpirationTarget": "Dec 22, 2022",
+    "framingStageWindow": "Feb 26, 2022 - Apr 12, 2022",
+    "warrantyExpirationTarget": "Dec 23, 2022",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3083938.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3083938",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.890Z"
+    "generatedAt": "2026-10-15T16:10:26.699Z"
   },
   {
     "recordId": "DKB-3073136",
@@ -226,12 +252,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 28000,
     "permitDate": "2021-06-14",
-    "framingStageWindow": "Jul 13, 2021 - Aug 27, 2021",
-    "warrantyExpirationTarget": "May 9, 2022",
+    "framingStageWindow": "Jul 14, 2021 - Aug 28, 2021",
+    "warrantyExpirationTarget": "May 10, 2022",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3073136.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3073136",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.894Z"
+    "generatedAt": "2026-10-15T16:10:26.699Z"
   },
   {
     "recordId": "DKB-3189338",
@@ -239,25 +265,25 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 25000,
     "permitDate": "2026-10-08",
-    "framingStageWindow": "Nov 6, 2026 - Dec 21, 2026",
-    "warrantyExpirationTarget": "Sep 2, 2027",
+    "framingStageWindow": "Nov 7, 2026 - Dec 22, 2026",
+    "warrantyExpirationTarget": "Sep 3, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189338.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189338",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.900Z"
+    "generatedAt": "2026-10-15T16:10:26.700Z"
   },
   {
     "recordId": "DKB-3189187",
     "address": "202 5TH AVE, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3189187.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3189187",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.906Z"
+    "generatedAt": "2026-10-15T16:10:26.701Z"
   },
   {
     "recordId": "DKB-3188985",
@@ -265,12 +291,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 7500,
     "permitDate": "2026-09-05",
-    "framingStageWindow": "Oct 4, 2026 - Nov 18, 2026",
-    "warrantyExpirationTarget": "Jul 31, 2027",
+    "framingStageWindow": "Oct 5, 2026 - Nov 19, 2026",
+    "warrantyExpirationTarget": "Aug 1, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188985.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188985",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.911Z"
+    "generatedAt": "2026-10-15T16:10:26.702Z"
   },
   {
     "recordId": "DKB-3188975",
@@ -278,12 +304,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 15000,
     "permitDate": "2026-09-24",
-    "framingStageWindow": "Oct 23, 2026 - Dec 7, 2026",
-    "warrantyExpirationTarget": "Aug 19, 2027",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188975.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188975",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.917Z"
+    "generatedAt": "2026-10-15T16:10:26.703Z"
   },
   {
     "recordId": "DKB-3188823",
@@ -291,12 +317,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 55000,
     "permitDate": "2026-09-16",
-    "framingStageWindow": "Oct 15, 2026 - Nov 29, 2026",
-    "warrantyExpirationTarget": "Aug 11, 2027",
+    "framingStageWindow": "Oct 16, 2026 - Nov 30, 2026",
+    "warrantyExpirationTarget": "Aug 12, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188823.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188823",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.922Z"
+    "generatedAt": "2026-10-15T16:10:26.704Z"
   },
   {
     "recordId": "DKB-3188599",
@@ -304,38 +330,38 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 211000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188599.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188599",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.926Z"
+    "generatedAt": "2026-10-15T16:10:26.704Z"
   },
   {
     "recordId": "DKB-3188536",
     "address": "1975 Walton CT, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188536.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188536",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.932Z"
+    "generatedAt": "2026-10-15T16:10:26.706Z"
   },
   {
     "recordId": "DKB-3188489",
     "address": "808 EAST AVE, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 373283.95,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188489.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188489",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.937Z"
+    "generatedAt": "2026-10-15T16:10:26.706Z"
   },
   {
     "recordId": "DKB-3188486",
@@ -343,77 +369,77 @@
     "permitType": "New Construction",
     "jobValue": 454171,
     "permitDate": "2026-08-25",
-    "framingStageWindow": "Sep 23, 2026 - Nov 7, 2026",
-    "warrantyExpirationTarget": "Jul 20, 2027",
+    "framingStageWindow": "Sep 24, 2026 - Nov 8, 2026",
+    "warrantyExpirationTarget": "Jul 21, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188486.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188486",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.951Z"
+    "generatedAt": "2026-10-15T16:10:26.707Z"
   },
   {
     "recordId": "DKB-3188467",
     "address": "1561 NORRIS LANDING DR, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188467.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188467",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.958Z"
+    "generatedAt": "2026-10-15T16:10:26.707Z"
   },
   {
     "recordId": "DKB-3188432",
     "address": "4986 KANAWHA BLF, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 600000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188432.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188432",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.964Z"
+    "generatedAt": "2026-10-15T16:10:26.708Z"
   },
   {
     "recordId": "DKB-3188422",
     "address": "10 Gentrys WALK, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188422.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188422",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.969Z"
+    "generatedAt": "2026-10-15T16:10:26.708Z"
   },
   {
     "recordId": "DKB-3188315",
     "address": "1977 Walton CT, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188315.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188315",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.973Z"
+    "generatedAt": "2026-10-15T16:10:26.709Z"
   },
   {
     "recordId": "DKB-3188289",
     "address": "2850 Bankers Industrial DR, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188289.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188289",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.980Z"
+    "generatedAt": "2026-10-15T16:10:26.709Z"
   },
   {
     "recordId": "DKB-3188004",
@@ -421,12 +447,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 185000,
     "permitDate": "2026-08-27",
-    "framingStageWindow": "Sep 25, 2026 - Nov 9, 2026",
-    "warrantyExpirationTarget": "Jul 22, 2027",
+    "framingStageWindow": "Sep 26, 2026 - Nov 10, 2026",
+    "warrantyExpirationTarget": "Jul 23, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188004.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188004",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.985Z"
+    "generatedAt": "2026-10-15T16:10:26.710Z"
   },
   {
     "recordId": "DKB-3188178",
@@ -434,25 +460,25 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 10000,
     "permitDate": "2026-09-22",
-    "framingStageWindow": "Oct 21, 2026 - Dec 5, 2026",
-    "warrantyExpirationTarget": "Aug 17, 2027",
+    "framingStageWindow": "Oct 22, 2026 - Dec 6, 2026",
+    "warrantyExpirationTarget": "Aug 18, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188178.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188178",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.990Z"
+    "generatedAt": "2026-10-15T16:10:26.710Z"
   },
   {
     "recordId": "DKB-3188211",
     "address": "3250 Rockbridge RD, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188211.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188211",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:14.996Z"
+    "generatedAt": "2026-10-15T16:10:26.711Z"
   },
   {
     "recordId": "DKB-3188111",
@@ -460,12 +486,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 5000,
     "permitDate": "2026-09-24",
-    "framingStageWindow": "Oct 23, 2026 - Dec 7, 2026",
-    "warrantyExpirationTarget": "Aug 19, 2027",
+    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
+    "warrantyExpirationTarget": "Aug 20, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188111.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188111",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.001Z"
+    "generatedAt": "2026-10-15T16:10:26.711Z"
   },
   {
     "recordId": "DKB-3188067",
@@ -473,25 +499,25 @@
     "permitType": "Alteration to Existing Structure",
     "jobValue": 58500,
     "permitDate": "2026-08-26",
-    "framingStageWindow": "Sep 24, 2026 - Nov 8, 2026",
-    "warrantyExpirationTarget": "Jul 21, 2027",
+    "framingStageWindow": "Sep 25, 2026 - Nov 9, 2026",
+    "warrantyExpirationTarget": "Jul 22, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188067.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188067",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.006Z"
+    "generatedAt": "2026-10-15T16:10:26.712Z"
   },
   {
     "recordId": "DKB-3188061",
     "address": "1459 CORTEZ LN, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3188061.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3188061",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.016Z"
+    "generatedAt": "2026-10-15T16:10:26.712Z"
   },
   {
     "recordId": "DKB-3187983",
@@ -499,25 +525,25 @@
     "permitType": "New Construction",
     "jobValue": 134488,
     "permitDate": "2026-08-24",
-    "framingStageWindow": "Sep 22, 2026 - Nov 6, 2026",
-    "warrantyExpirationTarget": "Jul 19, 2027",
+    "framingStageWindow": "Sep 23, 2026 - Nov 7, 2026",
+    "warrantyExpirationTarget": "Jul 20, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187983.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187983",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.022Z"
+    "generatedAt": "2026-10-15T16:10:26.713Z"
   },
   {
     "recordId": "DKB-3187899",
     "address": "3916 E BROOKHAVEN DR, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 2000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187899.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187899",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.027Z"
+    "generatedAt": "2026-10-15T16:10:26.713Z"
   },
   {
     "recordId": "DKB-3187651",
@@ -525,25 +551,25 @@
     "permitType": "Alteration to Existing Structure",
     "jobValue": 850000,
     "permitDate": "2026-08-07",
-    "framingStageWindow": "Sep 5, 2026 - Oct 20, 2026",
-    "warrantyExpirationTarget": "Jul 2, 2027",
+    "framingStageWindow": "Sep 6, 2026 - Oct 21, 2026",
+    "warrantyExpirationTarget": "Jul 3, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187651.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187651",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.032Z"
+    "generatedAt": "2026-10-15T16:10:26.715Z"
   },
   {
     "recordId": "DKB-3187625",
     "address": "1969 Walton CT, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187625.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187625",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.040Z"
+    "generatedAt": "2026-10-15T16:10:26.715Z"
   },
   {
     "recordId": "DKB-3187589",
@@ -551,12 +577,12 @@
     "permitType": "Swimming Pool Permit",
     "jobValue": 15000,
     "permitDate": "2026-08-28",
-    "framingStageWindow": "Sep 26, 2026 - Nov 10, 2026",
-    "warrantyExpirationTarget": "Jul 23, 2027",
+    "framingStageWindow": "Sep 27, 2026 - Nov 11, 2026",
+    "warrantyExpirationTarget": "Jul 24, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187589.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187589",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.044Z"
+    "generatedAt": "2026-10-15T16:10:26.716Z"
   },
   {
     "recordId": "DKB-3187497",
@@ -564,12 +590,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 20000,
     "permitDate": "2026-09-02",
-    "framingStageWindow": "Oct 1, 2026 - Nov 15, 2026",
-    "warrantyExpirationTarget": "Jul 28, 2027",
+    "framingStageWindow": "Oct 2, 2026 - Nov 16, 2026",
+    "warrantyExpirationTarget": "Jul 29, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187497.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187497",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.050Z"
+    "generatedAt": "2026-10-15T16:10:26.717Z"
   },
   {
     "recordId": "DKB-3187488",
@@ -577,12 +603,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 7000,
     "permitDate": "2026-08-18",
-    "framingStageWindow": "Sep 16, 2026 - Oct 31, 2026",
-    "warrantyExpirationTarget": "Jul 13, 2027",
+    "framingStageWindow": "Sep 17, 2026 - Nov 1, 2026",
+    "warrantyExpirationTarget": "Jul 14, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187488.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187488",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.054Z"
+    "generatedAt": "2026-10-15T16:10:26.717Z"
   },
   {
     "recordId": "DKB-3187475",
@@ -590,38 +616,38 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 110000,
     "permitDate": "2026-08-11",
-    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
-    "warrantyExpirationTarget": "Jul 6, 2027",
+    "framingStageWindow": "Sep 10, 2026 - Oct 25, 2026",
+    "warrantyExpirationTarget": "Jul 7, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187475.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187475",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.059Z"
+    "generatedAt": "2026-10-15T16:10:26.718Z"
   },
   {
     "recordId": "DKB-3187466",
     "address": "3270 LESLIE CT, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 690000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187466.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187466",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.068Z"
+    "generatedAt": "2026-10-15T16:10:26.718Z"
   },
   {
     "recordId": "DKB-3187410",
     "address": "4127 PINE VALLEY RD, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187410.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187410",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.073Z"
+    "generatedAt": "2026-10-15T16:10:26.719Z"
   },
   {
     "recordId": "DKB-3187293",
@@ -629,38 +655,38 @@
     "permitType": "New Construction",
     "jobValue": 350000,
     "permitDate": "2026-07-28",
-    "framingStageWindow": "Aug 26, 2026 - Oct 10, 2026",
-    "warrantyExpirationTarget": "Jun 22, 2027",
+    "framingStageWindow": "Aug 27, 2026 - Oct 11, 2026",
+    "warrantyExpirationTarget": "Jun 23, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187293.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187293",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.076Z"
+    "generatedAt": "2026-10-15T16:10:26.719Z"
   },
   {
     "recordId": "DKB-3187276",
     "address": "11 CLARENDON PL, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 1,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187276.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187276",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.081Z"
+    "generatedAt": "2026-10-15T16:10:26.720Z"
   },
   {
     "recordId": "DKB-3187264",
     "address": "4477 BRIARCLIFF RD, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187264.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187264",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.086Z"
+    "generatedAt": "2026-10-15T16:10:26.720Z"
   },
   {
     "recordId": "DKB-3187263",
@@ -668,12 +694,12 @@
     "permitType": "New Construction",
     "jobValue": 3000,
     "permitDate": "2026-08-14",
-    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
-    "warrantyExpirationTarget": "Jul 9, 2027",
+    "framingStageWindow": "Sep 13, 2026 - Oct 28, 2026",
+    "warrantyExpirationTarget": "Jul 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187263.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187263",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.089Z"
+    "generatedAt": "2026-10-15T16:10:26.721Z"
   },
   {
     "recordId": "DKB-3187247",
@@ -681,25 +707,25 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 10000,
     "permitDate": "2026-09-17",
-    "framingStageWindow": "Oct 16, 2026 - Nov 30, 2026",
-    "warrantyExpirationTarget": "Aug 12, 2027",
+    "framingStageWindow": "Oct 17, 2026 - Dec 1, 2026",
+    "warrantyExpirationTarget": "Aug 13, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187247.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187247",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.092Z"
+    "generatedAt": "2026-10-15T16:10:26.721Z"
   },
   {
     "recordId": "DKB-3187177",
     "address": "3449 Keswick DR, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187177.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187177",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.096Z"
+    "generatedAt": "2026-10-15T16:10:26.722Z"
   },
   {
     "recordId": "DKB-3187167",
@@ -707,12 +733,12 @@
     "permitType": "Alteration to Existing Structure",
     "jobValue": 25000,
     "permitDate": "2026-07-28",
-    "framingStageWindow": "Aug 26, 2026 - Oct 10, 2026",
-    "warrantyExpirationTarget": "Jun 22, 2027",
+    "framingStageWindow": "Aug 27, 2026 - Oct 11, 2026",
+    "warrantyExpirationTarget": "Jun 23, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187167.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187167",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.101Z"
+    "generatedAt": "2026-10-15T16:10:26.722Z"
   },
   {
     "recordId": "DKB-3187112",
@@ -720,38 +746,38 @@
     "permitType": "Alteration to Existing Structure",
     "jobValue": 40000,
     "permitDate": "2026-10-01",
-    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
-    "warrantyExpirationTarget": "Aug 26, 2027",
+    "framingStageWindow": "Oct 31, 2026 - Dec 15, 2026",
+    "warrantyExpirationTarget": "Aug 27, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187112.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187112",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.105Z"
+    "generatedAt": "2026-10-15T16:10:26.723Z"
   },
   {
     "recordId": "DKB-3187052",
     "address": "685 Memphis DR, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 215000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3187052.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3187052",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.109Z"
+    "generatedAt": "2026-10-15T16:10:26.724Z"
   },
   {
     "recordId": "DKB-3186940",
     "address": "4210 CANDLER LK W, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186940.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186940",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.115Z"
+    "generatedAt": "2026-10-15T16:10:26.725Z"
   },
   {
     "recordId": "DKB-3186783",
@@ -759,12 +785,12 @@
     "permitType": "Electrical Inspection Only",
     "jobValue": 500,
     "permitDate": "2026-07-21",
-    "framingStageWindow": "Aug 19, 2026 - Oct 3, 2026",
-    "warrantyExpirationTarget": "Jun 15, 2027",
+    "framingStageWindow": "Aug 20, 2026 - Oct 4, 2026",
+    "warrantyExpirationTarget": "Jun 16, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186783.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186783",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.122Z"
+    "generatedAt": "2026-10-15T16:10:26.726Z"
   },
   {
     "recordId": "DKB-3186728",
@@ -772,12 +798,12 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 611000,
     "permitDate": "2026-09-25",
-    "framingStageWindow": "Oct 24, 2026 - Dec 8, 2026",
-    "warrantyExpirationTarget": "Aug 20, 2027",
+    "framingStageWindow": "Oct 25, 2026 - Dec 9, 2026",
+    "warrantyExpirationTarget": "Aug 21, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186728.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186728",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.126Z"
+    "generatedAt": "2026-10-15T16:10:26.726Z"
   },
   {
     "recordId": "DKB-3186677",
@@ -785,64 +811,64 @@
     "permitType": "Alteration to Existing Structure",
     "jobValue": 15000,
     "permitDate": "2026-07-20",
-    "framingStageWindow": "Aug 18, 2026 - Oct 2, 2026",
-    "warrantyExpirationTarget": "Jun 14, 2027",
+    "framingStageWindow": "Aug 19, 2026 - Oct 3, 2026",
+    "warrantyExpirationTarget": "Jun 15, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186677.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186677",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.130Z"
+    "generatedAt": "2026-10-15T16:10:26.726Z"
   },
   {
     "recordId": "DKB-3186607",
     "address": "1200 KENDRICK RD, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186607.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186607",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.135Z"
+    "generatedAt": "2026-10-15T16:10:26.727Z"
   },
   {
     "recordId": "DKB-3186469",
     "address": "1963 Walton CT, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186469.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186469",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.140Z"
+    "generatedAt": "2026-10-15T16:10:26.727Z"
   },
   {
     "recordId": "DKB-3186468",
     "address": "1961 Walton CT, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186468.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186468",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.143Z"
+    "generatedAt": "2026-10-15T16:10:26.728Z"
   },
   {
     "recordId": "DKB-3186470",
     "address": "1965 Walton CT, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186470.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186470",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.148Z"
+    "generatedAt": "2026-10-15T16:10:26.728Z"
   },
   {
     "recordId": "DKB-3186418",
@@ -850,25 +876,25 @@
     "permitType": "General Combined Plumbing",
     "jobValue": 1500,
     "permitDate": "2026-08-11",
-    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
-    "warrantyExpirationTarget": "Jul 6, 2027",
+    "framingStageWindow": "Sep 10, 2026 - Oct 25, 2026",
+    "warrantyExpirationTarget": "Jul 7, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186418.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186418",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.153Z"
+    "generatedAt": "2026-10-15T16:10:26.729Z"
   },
   {
     "recordId": "DKB-3186355",
     "address": "1126 BLACKSHEAR DR, DeKalb County, GA",
     "permitType": "Stand Alone Water Meter",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186355.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186355",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.157Z"
+    "generatedAt": "2026-10-15T16:10:26.729Z"
   },
   {
     "recordId": "DKB-3186157",
@@ -876,38 +902,38 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 14000,
     "permitDate": "2026-09-09",
-    "framingStageWindow": "Oct 8, 2026 - Nov 22, 2026",
-    "warrantyExpirationTarget": "Aug 4, 2027",
+    "framingStageWindow": "Oct 9, 2026 - Nov 23, 2026",
+    "warrantyExpirationTarget": "Aug 5, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3186157.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3186157",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.160Z"
+    "generatedAt": "2026-10-15T16:10:26.730Z"
   },
   {
     "recordId": "DKB-3185763",
     "address": "2211 Wexford DR, DeKalb County, GA",
     "permitType": "Stand Alone Sewer Tap",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3185763.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3185763",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.165Z"
+    "generatedAt": "2026-10-15T16:10:26.730Z"
   },
   {
     "recordId": "DKB-3185762",
     "address": "2209 Wexford DR, DeKalb County, GA",
     "permitType": "Stand Alone Sewer Tap",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3185762.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3185762",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.170Z"
+    "generatedAt": "2026-10-15T16:10:26.731Z"
   },
   {
     "recordId": "DKB-3185794",
@@ -915,25 +941,25 @@
     "permitType": "Alteration to Existing Structure",
     "jobValue": 5000,
     "permitDate": "2026-06-23",
-    "framingStageWindow": "Jul 22, 2026 - Sep 5, 2026",
-    "warrantyExpirationTarget": "May 18, 2027",
+    "framingStageWindow": "Jul 23, 2026 - Sep 6, 2026",
+    "warrantyExpirationTarget": "May 19, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3185794.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3185794",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.175Z"
+    "generatedAt": "2026-10-15T16:10:26.731Z"
   },
   {
     "recordId": "DKB-3185761",
     "address": "2207 Wexford DR, DeKalb County, GA",
     "permitType": "Stand Alone Sewer Tap",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3185761.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3185761",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.180Z"
+    "generatedAt": "2026-10-15T16:10:26.732Z"
   },
   {
     "recordId": "DKB-3185697",
@@ -941,25 +967,25 @@
     "permitType": "Additions to Existing Structures",
     "jobValue": 100000,
     "permitDate": "2026-07-15",
-    "framingStageWindow": "Aug 13, 2026 - Sep 27, 2026",
-    "warrantyExpirationTarget": "Jun 9, 2027",
+    "framingStageWindow": "Aug 14, 2026 - Sep 28, 2026",
+    "warrantyExpirationTarget": "Jun 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3185697.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3185697",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.192Z"
+    "generatedAt": "2026-10-15T16:10:26.732Z"
   },
   {
     "recordId": "DKB-3185537",
     "address": "3851 REDAN RD, DeKalb County, GA",
     "permitType": "Stand Alone Sewer Tap",
     "jobValue": 185000,
-    "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "permitDate": "2026-10-15",
+    "framingStageWindow": "Nov 14, 2026 - Dec 29, 2026",
+    "warrantyExpirationTarget": "Sep 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/DKB-3185537.html",
     "acaLink": "https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=3185537",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.198Z"
+    "generatedAt": "2026-10-15T16:10:26.733Z"
   },
   {
     "recordId": "STR-STRL-2024-00143",
@@ -967,12 +993,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2024-00143.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2024-00143",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.205Z"
+    "generatedAt": "2026-10-15T16:10:26.733Z"
   },
   {
     "recordId": "STR-STRL-2025-00078",
@@ -980,12 +1006,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00078.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00078",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.210Z"
+    "generatedAt": "2026-10-15T16:10:26.734Z"
   },
   {
     "recordId": "STR-STRL-2025-00017",
@@ -993,12 +1019,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00017.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00017",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.219Z"
+    "generatedAt": "2026-10-15T16:10:26.735Z"
   },
   {
     "recordId": "STR-STRL-2025-00085",
@@ -1006,12 +1032,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00085.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00085",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.224Z"
+    "generatedAt": "2026-10-15T16:10:26.735Z"
   },
   {
     "recordId": "STR-STRL-2025-00002",
@@ -1019,12 +1045,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00002.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00002",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.233Z"
+    "generatedAt": "2026-10-15T16:10:26.736Z"
   },
   {
     "recordId": "STR-STRL-2025-00062",
@@ -1032,12 +1058,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00062.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00062",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.241Z"
+    "generatedAt": "2026-10-15T16:10:26.736Z"
   },
   {
     "recordId": "STR-STRL-2025-00082",
@@ -1045,12 +1071,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00082.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00082",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.245Z"
+    "generatedAt": "2026-10-15T16:10:26.737Z"
   },
   {
     "recordId": "STR-STRL-2025-00047",
@@ -1058,12 +1084,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-10-14",
-    "framingStageWindow": "Nov 12, 2026 - Dec 27, 2026",
-    "warrantyExpirationTarget": "Sep 8, 2027",
+    "framingStageWindow": "Nov 13, 2026 - Dec 28, 2026",
+    "warrantyExpirationTarget": "Sep 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00047.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00047",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.254Z"
+    "generatedAt": "2026-10-15T16:10:26.737Z"
   },
   {
     "recordId": "ALP-BR240621",
@@ -1071,12 +1097,12 @@
     "permitType": "Residential Porch",
     "jobValue": 275000,
     "permitDate": "2024-11-11",
-    "framingStageWindow": "Dec 10, 2024 - Jan 24, 2025",
-    "warrantyExpirationTarget": "Oct 6, 2025",
+    "framingStageWindow": "Dec 11, 2024 - Jan 25, 2025",
+    "warrantyExpirationTarget": "Oct 7, 2025",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR240621.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.259Z"
+    "generatedAt": "2026-10-15T16:10:26.738Z"
   },
   {
     "recordId": "ALP-PLR240045",
@@ -1084,12 +1110,12 @@
     "permitType": "Residential Pool",
     "jobValue": 275000,
     "permitDate": "2024-12-13",
-    "framingStageWindow": "Jan 11, 2025 - Feb 25, 2025",
-    "warrantyExpirationTarget": "Nov 7, 2025",
+    "framingStageWindow": "Jan 12, 2025 - Feb 26, 2025",
+    "warrantyExpirationTarget": "Nov 8, 2025",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-PLR240045.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.264Z"
+    "generatedAt": "2026-10-15T16:10:26.738Z"
   },
   {
     "recordId": "ALP-BR250006",
@@ -1097,12 +1123,12 @@
     "permitType": "Residential Deck",
     "jobValue": 275000,
     "permitDate": "2025-01-07",
-    "framingStageWindow": "Feb 5, 2025 - Mar 22, 2025",
-    "warrantyExpirationTarget": "Dec 2, 2025",
+    "framingStageWindow": "Feb 6, 2025 - Mar 23, 2025",
+    "warrantyExpirationTarget": "Dec 3, 2025",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250006.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.268Z"
+    "generatedAt": "2026-10-15T16:10:26.739Z"
   },
   {
     "recordId": "ALP-PLR250008",
@@ -1110,12 +1136,12 @@
     "permitType": "Residential Pool",
     "jobValue": 275000,
     "permitDate": "2025-02-20",
-    "framingStageWindow": "Mar 21, 2025 - May 5, 2025",
-    "warrantyExpirationTarget": "Jan 15, 2026",
+    "framingStageWindow": "Mar 22, 2025 - May 6, 2025",
+    "warrantyExpirationTarget": "Jan 16, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-PLR250008.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.272Z"
+    "generatedAt": "2026-10-15T16:10:26.740Z"
   },
   {
     "recordId": "ALP-BR250098",
@@ -1123,12 +1149,12 @@
     "permitType": "Residential New Construction Detached",
     "jobValue": 275000,
     "permitDate": "2025-02-24",
-    "framingStageWindow": "Mar 25, 2025 - May 9, 2025",
-    "warrantyExpirationTarget": "Jan 19, 2026",
+    "framingStageWindow": "Mar 26, 2025 - May 10, 2025",
+    "warrantyExpirationTarget": "Jan 20, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250098.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.276Z"
+    "generatedAt": "2026-10-15T16:10:26.740Z"
   },
   {
     "recordId": "ALP-BR250102",
@@ -1136,12 +1162,12 @@
     "permitType": "Residential Deck",
     "jobValue": 275000,
     "permitDate": "2025-02-28",
-    "framingStageWindow": "Mar 29, 2025 - May 13, 2025",
-    "warrantyExpirationTarget": "Jan 23, 2026",
+    "framingStageWindow": "Mar 30, 2025 - May 14, 2025",
+    "warrantyExpirationTarget": "Jan 24, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250102.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.285Z"
+    "generatedAt": "2026-10-15T16:10:26.741Z"
   },
   {
     "recordId": "ALP-BR250109",
@@ -1149,12 +1175,12 @@
     "permitType": "Residential Addition",
     "jobValue": 275000,
     "permitDate": "2025-03-01",
-    "framingStageWindow": "Mar 30, 2025 - May 14, 2025",
-    "warrantyExpirationTarget": "Jan 24, 2026",
+    "framingStageWindow": "Mar 31, 2025 - May 15, 2025",
+    "warrantyExpirationTarget": "Jan 25, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250109.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.290Z"
+    "generatedAt": "2026-10-15T16:10:26.741Z"
   },
   {
     "recordId": "ALP-BR250155",
@@ -1162,12 +1188,12 @@
     "permitType": "Residential Porch",
     "jobValue": 275000,
     "permitDate": "2025-03-18",
-    "framingStageWindow": "Apr 16, 2025 - May 31, 2025",
-    "warrantyExpirationTarget": "Feb 10, 2026",
+    "framingStageWindow": "Apr 17, 2025 - Jun 1, 2025",
+    "warrantyExpirationTarget": "Feb 11, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250155.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.292Z"
+    "generatedAt": "2026-10-15T16:10:26.743Z"
   },
   {
     "recordId": "ALP-BR250191",
@@ -1175,12 +1201,12 @@
     "permitType": "Residential New Construction Detached",
     "jobValue": 275000,
     "permitDate": "2025-03-27",
-    "framingStageWindow": "Apr 25, 2025 - Jun 9, 2025",
-    "warrantyExpirationTarget": "Feb 19, 2026",
+    "framingStageWindow": "Apr 26, 2025 - Jun 10, 2025",
+    "warrantyExpirationTarget": "Feb 20, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250191.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.297Z"
+    "generatedAt": "2026-10-15T16:10:26.743Z"
   },
   {
     "recordId": "ALP-BR250198",
@@ -1188,12 +1214,12 @@
     "permitType": "Residential Deck",
     "jobValue": 275000,
     "permitDate": "2025-03-29",
-    "framingStageWindow": "Apr 27, 2025 - Jun 11, 2025",
-    "warrantyExpirationTarget": "Feb 21, 2026",
+    "framingStageWindow": "Apr 28, 2025 - Jun 12, 2025",
+    "warrantyExpirationTarget": "Feb 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250198.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.302Z"
+    "generatedAt": "2026-10-15T16:10:26.744Z"
   },
   {
     "recordId": "ALP-BR250207",
@@ -1201,12 +1227,12 @@
     "permitType": "Residential New Construction Detached",
     "jobValue": 275000,
     "permitDate": "2025-04-01",
-    "framingStageWindow": "Apr 30, 2025 - Jun 14, 2025",
-    "warrantyExpirationTarget": "Feb 24, 2026",
+    "framingStageWindow": "May 1, 2025 - Jun 15, 2025",
+    "warrantyExpirationTarget": "Feb 25, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250207.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.307Z"
+    "generatedAt": "2026-10-15T16:10:26.744Z"
   },
   {
     "recordId": "BB-202600800",
@@ -1214,12 +1240,12 @@
     "permitType": "Residential New",
     "jobValue": 520000,
     "permitDate": "2026-01-28",
-    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
-    "warrantyExpirationTarget": "Dec 23, 2026",
+    "framingStageWindow": "Feb 27, 2026 - Apr 13, 2026",
+    "warrantyExpirationTarget": "Dec 24, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600800.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600800",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.310Z"
+    "generatedAt": "2026-10-15T16:10:26.745Z"
   },
   {
     "recordId": "BB-202600797",
@@ -1227,12 +1253,12 @@
     "permitType": "Residential New",
     "jobValue": 250000,
     "permitDate": "2026-01-28",
-    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
-    "warrantyExpirationTarget": "Dec 23, 2026",
+    "framingStageWindow": "Feb 27, 2026 - Apr 13, 2026",
+    "warrantyExpirationTarget": "Dec 24, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600797.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600797",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.313Z"
+    "generatedAt": "2026-10-15T16:10:26.745Z"
   },
   {
     "recordId": "BB-202600778",
@@ -1240,12 +1266,12 @@
     "permitType": "Residential New",
     "jobValue": 500000,
     "permitDate": "2026-01-28",
-    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
-    "warrantyExpirationTarget": "Dec 23, 2026",
+    "framingStageWindow": "Feb 27, 2026 - Apr 13, 2026",
+    "warrantyExpirationTarget": "Dec 24, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600778.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600778",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.319Z"
+    "generatedAt": "2026-10-15T16:10:26.746Z"
   },
   {
     "recordId": "ALP-BR250247",
@@ -1253,12 +1279,12 @@
     "permitType": "Residential Porch",
     "jobValue": 275000,
     "permitDate": "2025-04-16",
-    "framingStageWindow": "May 15, 2025 - Jun 29, 2025",
-    "warrantyExpirationTarget": "Mar 11, 2026",
+    "framingStageWindow": "May 16, 2025 - Jun 30, 2025",
+    "warrantyExpirationTarget": "Mar 12, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250247.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.324Z"
+    "generatedAt": "2026-10-15T16:10:26.746Z"
   },
   {
     "recordId": "ALP-BR250292",
@@ -1266,12 +1292,12 @@
     "permitType": "Residential Sitewall, retaining wall,etc",
     "jobValue": 275000,
     "permitDate": "2025-05-01",
-    "framingStageWindow": "May 30, 2025 - Jul 14, 2025",
-    "warrantyExpirationTarget": "Mar 26, 2026",
+    "framingStageWindow": "May 31, 2025 - Jul 15, 2025",
+    "warrantyExpirationTarget": "Mar 27, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250292.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.328Z"
+    "generatedAt": "2026-10-15T16:10:26.747Z"
   },
   {
     "recordId": "ALP-BR250308",
@@ -1279,12 +1305,12 @@
     "permitType": "Residential Deck",
     "jobValue": 275000,
     "permitDate": "2025-05-09",
-    "framingStageWindow": "Jun 7, 2025 - Jul 22, 2025",
-    "warrantyExpirationTarget": "Apr 3, 2026",
+    "framingStageWindow": "Jun 8, 2025 - Jul 23, 2025",
+    "warrantyExpirationTarget": "Apr 4, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250308.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.335Z"
+    "generatedAt": "2026-10-15T16:10:26.747Z"
   },
   {
     "recordId": "ALP-BR250354",
@@ -1292,12 +1318,12 @@
     "permitType": "Residential Deck",
     "jobValue": 275000,
     "permitDate": "2025-06-03",
-    "framingStageWindow": "Jul 2, 2025 - Aug 16, 2025",
-    "warrantyExpirationTarget": "Apr 28, 2026",
+    "framingStageWindow": "Jul 3, 2025 - Aug 17, 2025",
+    "warrantyExpirationTarget": "Apr 29, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250354.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.339Z"
+    "generatedAt": "2026-10-15T16:10:26.748Z"
   },
   {
     "recordId": "JCK-BLDR-26-0281",
@@ -1305,12 +1331,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 35150,
     "permitDate": "2026-08-14",
-    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
-    "warrantyExpirationTarget": "Jul 9, 2027",
+    "framingStageWindow": "Sep 13, 2026 - Oct 28, 2026",
+    "warrantyExpirationTarget": "Jul 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0281.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.343Z"
+    "generatedAt": "2026-10-15T16:10:26.748Z"
   },
   {
     "recordId": "JCK-BLDR-26-0294",
@@ -1318,12 +1344,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 81955,
     "permitDate": "2026-08-14",
-    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
-    "warrantyExpirationTarget": "Jul 9, 2027",
+    "framingStageWindow": "Sep 13, 2026 - Oct 28, 2026",
+    "warrantyExpirationTarget": "Jul 10, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0294.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.349Z"
+    "generatedAt": "2026-10-15T16:10:26.749Z"
   },
   {
     "recordId": "JCK-BLDR-26-0307",
@@ -1331,12 +1357,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 71410,
     "permitDate": "2026-08-13",
-    "framingStageWindow": "Sep 11, 2026 - Oct 26, 2026",
-    "warrantyExpirationTarget": "Jul 8, 2027",
+    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
+    "warrantyExpirationTarget": "Jul 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0307.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.355Z"
+    "generatedAt": "2026-10-15T16:10:26.749Z"
   },
   {
     "recordId": "JCK-BLDR-26-0304",
@@ -1344,12 +1370,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 90280,
     "permitDate": "2026-08-13",
-    "framingStageWindow": "Sep 11, 2026 - Oct 26, 2026",
-    "warrantyExpirationTarget": "Jul 8, 2027",
+    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
+    "warrantyExpirationTarget": "Jul 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0304.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.363Z"
+    "generatedAt": "2026-10-15T16:10:26.750Z"
   },
   {
     "recordId": "JCK-BLDR-26-0306",
@@ -1357,12 +1383,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 70670,
     "permitDate": "2026-08-13",
-    "framingStageWindow": "Sep 11, 2026 - Oct 26, 2026",
-    "warrantyExpirationTarget": "Jul 8, 2027",
+    "framingStageWindow": "Sep 12, 2026 - Oct 27, 2026",
+    "warrantyExpirationTarget": "Jul 9, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0306.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.369Z"
+    "generatedAt": "2026-10-15T16:10:26.750Z"
   },
   {
     "recordId": "JCK-BLDR-26-0310",
@@ -1370,12 +1396,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 351500,
     "permitDate": "2026-08-12",
-    "framingStageWindow": "Sep 10, 2026 - Oct 25, 2026",
-    "warrantyExpirationTarget": "Jul 7, 2027",
+    "framingStageWindow": "Sep 11, 2026 - Oct 26, 2026",
+    "warrantyExpirationTarget": "Jul 8, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0310.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.374Z"
+    "generatedAt": "2026-10-15T16:10:26.751Z"
   },
   {
     "recordId": "JCK-BLDR-26-0247",
@@ -1383,12 +1409,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 311725,
     "permitDate": "2026-08-11",
-    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
-    "warrantyExpirationTarget": "Jul 6, 2027",
+    "framingStageWindow": "Sep 10, 2026 - Oct 25, 2026",
+    "warrantyExpirationTarget": "Jul 7, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0247.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.386Z"
+    "generatedAt": "2026-10-15T16:10:26.751Z"
   },
   {
     "recordId": "JCK-BLDR-26-0265",
@@ -1396,12 +1422,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 74555,
     "permitDate": "2026-08-10",
-    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
-    "warrantyExpirationTarget": "Jul 5, 2027",
+    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
+    "warrantyExpirationTarget": "Jul 6, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0265.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.391Z"
+    "generatedAt": "2026-10-15T16:10:26.752Z"
   },
   {
     "recordId": "JCK-BLDR-26-0295",
@@ -1409,12 +1435,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 108780,
     "permitDate": "2026-08-10",
-    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
-    "warrantyExpirationTarget": "Jul 5, 2027",
+    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
+    "warrantyExpirationTarget": "Jul 6, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0295.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.397Z"
+    "generatedAt": "2026-10-15T16:10:26.752Z"
   },
   {
     "recordId": "JCK-BLDR-26-0272",
@@ -1422,12 +1448,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 526880,
     "permitDate": "2026-08-10",
-    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
-    "warrantyExpirationTarget": "Jul 5, 2027",
+    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
+    "warrantyExpirationTarget": "Jul 6, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0272.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.403Z"
+    "generatedAt": "2026-10-15T16:10:26.753Z"
   },
   {
     "recordId": "JCK-BLDR-26-0297",
@@ -1435,12 +1461,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 23680,
     "permitDate": "2026-08-10",
-    "framingStageWindow": "Sep 8, 2026 - Oct 23, 2026",
-    "warrantyExpirationTarget": "Jul 5, 2027",
+    "framingStageWindow": "Sep 9, 2026 - Oct 24, 2026",
+    "warrantyExpirationTarget": "Jul 6, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0297.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.408Z"
+    "generatedAt": "2026-10-15T16:10:26.753Z"
   },
   {
     "recordId": "JCK-BLDR-26-0298",
@@ -1448,12 +1474,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 36260,
     "permitDate": "2026-08-07",
-    "framingStageWindow": "Sep 5, 2026 - Oct 20, 2026",
-    "warrantyExpirationTarget": "Jul 2, 2027",
+    "framingStageWindow": "Sep 6, 2026 - Oct 21, 2026",
+    "warrantyExpirationTarget": "Jul 3, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0298.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.416Z"
+    "generatedAt": "2026-10-15T16:10:26.754Z"
   },
   {
     "recordId": "JCK-BLDR-26-0255",
@@ -1461,12 +1487,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 425315,
     "permitDate": "2026-08-07",
-    "framingStageWindow": "Sep 5, 2026 - Oct 20, 2026",
-    "warrantyExpirationTarget": "Jul 2, 2027",
+    "framingStageWindow": "Sep 6, 2026 - Oct 21, 2026",
+    "warrantyExpirationTarget": "Jul 3, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0255.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.422Z"
+    "generatedAt": "2026-10-15T16:10:26.754Z"
   },
   {
     "recordId": "JCK-BLDR-26-0270",
@@ -1474,12 +1500,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 63640,
     "permitDate": "2026-08-05",
-    "framingStageWindow": "Sep 3, 2026 - Oct 18, 2026",
-    "warrantyExpirationTarget": "Jun 30, 2027",
+    "framingStageWindow": "Sep 4, 2026 - Oct 19, 2026",
+    "warrantyExpirationTarget": "Jul 1, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0270.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.435Z"
+    "generatedAt": "2026-10-15T16:10:26.755Z"
   },
   {
     "recordId": "JCK-BLDR-26-0293",
@@ -1487,12 +1513,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 4625,
     "permitDate": "2026-08-05",
-    "framingStageWindow": "Sep 3, 2026 - Oct 18, 2026",
-    "warrantyExpirationTarget": "Jun 30, 2027",
+    "framingStageWindow": "Sep 4, 2026 - Oct 19, 2026",
+    "warrantyExpirationTarget": "Jul 1, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0293.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.441Z"
+    "generatedAt": "2026-10-15T16:10:26.755Z"
   },
   {
     "recordId": "JCK-BLDR-26-0153",
@@ -1500,12 +1526,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 51800,
     "permitDate": "2026-08-05",
-    "framingStageWindow": "Sep 3, 2026 - Oct 18, 2026",
-    "warrantyExpirationTarget": "Jun 30, 2027",
+    "framingStageWindow": "Sep 4, 2026 - Oct 19, 2026",
+    "warrantyExpirationTarget": "Jul 1, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0153.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.450Z"
+    "generatedAt": "2026-10-15T16:10:26.756Z"
   },
   {
     "recordId": "JCK-BLDR-26-0288",
@@ -1513,12 +1539,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 40700,
     "permitDate": "2026-08-03",
-    "framingStageWindow": "Sep 1, 2026 - Oct 16, 2026",
-    "warrantyExpirationTarget": "Jun 28, 2027",
+    "framingStageWindow": "Sep 2, 2026 - Oct 17, 2026",
+    "warrantyExpirationTarget": "Jun 29, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0288.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.461Z"
+    "generatedAt": "2026-10-15T16:10:26.756Z"
   },
   {
     "recordId": "JCK-BLDR-26-0166",
@@ -1526,12 +1552,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 97125,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0166.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.473Z"
+    "generatedAt": "2026-10-15T16:10:26.757Z"
   },
   {
     "recordId": "JCK-BLDR-26-0291",
@@ -1539,12 +1565,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 100640,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0291.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.489Z"
+    "generatedAt": "2026-10-15T16:10:26.757Z"
   },
   {
     "recordId": "JCK-BLDR-26-0090",
@@ -1552,12 +1578,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 92500,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0090.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.499Z"
+    "generatedAt": "2026-10-15T16:10:26.758Z"
   },
   {
     "recordId": "JCK-BLDR-26-0285",
@@ -1565,12 +1591,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 39960,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0285.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.505Z"
+    "generatedAt": "2026-10-15T16:10:26.758Z"
   },
   {
     "recordId": "JCK-BLDR-26-0292",
@@ -1578,12 +1604,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 92500,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0292.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.511Z"
+    "generatedAt": "2026-10-15T16:10:26.759Z"
   },
   {
     "recordId": "JCK-BLDR-26-0282",
@@ -1591,12 +1617,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 169830,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0282.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.516Z"
+    "generatedAt": "2026-10-15T16:10:26.760Z"
   },
   {
     "recordId": "JCK-BLDR-26-0283",
@@ -1604,12 +1630,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 128760,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0283.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.527Z"
+    "generatedAt": "2026-10-15T16:10:26.760Z"
   },
   {
     "recordId": "JCK-BLDR-26-0296",
@@ -1617,12 +1643,12 @@
     "permitType": "Residential Construction (Residential)",
     "jobValue": 9250,
     "permitDate": "2026-07-31",
-    "framingStageWindow": "Aug 29, 2026 - Oct 13, 2026",
-    "warrantyExpirationTarget": "Jun 25, 2027",
+    "framingStageWindow": "Aug 30, 2026 - Oct 14, 2026",
+    "warrantyExpirationTarget": "Jun 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/JCK-BLDR-26-0296.html",
     "acaLink": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.533Z"
+    "generatedAt": "2026-10-15T16:10:26.761Z"
   },
   {
     "recordId": "BB-202600767",
@@ -1630,12 +1656,12 @@
     "permitType": "Residential Addition",
     "jobValue": 15000,
     "permitDate": "2026-01-28",
-    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
-    "warrantyExpirationTarget": "Dec 23, 2026",
+    "framingStageWindow": "Feb 27, 2026 - Apr 13, 2026",
+    "warrantyExpirationTarget": "Dec 24, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600767.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600767",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.539Z"
+    "generatedAt": "2026-10-15T16:10:26.761Z"
   },
   {
     "recordId": "BB-202600764",
@@ -1643,12 +1669,12 @@
     "permitType": "Residential New",
     "jobValue": 373000,
     "permitDate": "2026-01-28",
-    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
-    "warrantyExpirationTarget": "Dec 23, 2026",
+    "framingStageWindow": "Feb 27, 2026 - Apr 13, 2026",
+    "warrantyExpirationTarget": "Dec 24, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600764.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600764",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.544Z"
+    "generatedAt": "2026-10-15T16:10:26.764Z"
   },
   {
     "recordId": "BB-202600777",
@@ -1656,12 +1682,12 @@
     "permitType": "Residential Addition",
     "jobValue": 12000,
     "permitDate": "2026-01-28",
-    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
-    "warrantyExpirationTarget": "Dec 23, 2026",
+    "framingStageWindow": "Feb 27, 2026 - Apr 13, 2026",
+    "warrantyExpirationTarget": "Dec 24, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600777.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600777",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.550Z"
+    "generatedAt": "2026-10-15T16:10:26.764Z"
   },
   {
     "recordId": "BB-202600759",
@@ -1669,12 +1695,12 @@
     "permitType": "Residential Addition",
     "jobValue": 500000,
     "permitDate": "2026-01-27",
-    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
-    "warrantyExpirationTarget": "Dec 22, 2026",
+    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
+    "warrantyExpirationTarget": "Dec 23, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600759.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600759",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.555Z"
+    "generatedAt": "2026-10-15T16:10:26.765Z"
   },
   {
     "recordId": "BB-202600752",
@@ -1682,12 +1708,12 @@
     "permitType": "Residential Addition",
     "jobValue": 19800,
     "permitDate": "2026-01-27",
-    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
-    "warrantyExpirationTarget": "Dec 22, 2026",
+    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
+    "warrantyExpirationTarget": "Dec 23, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600752.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600752",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.560Z"
+    "generatedAt": "2026-10-15T16:10:26.765Z"
   },
   {
     "recordId": "BB-202600749",
@@ -1695,12 +1721,12 @@
     "permitType": "Residential Addition",
     "jobValue": 115000,
     "permitDate": "2026-01-27",
-    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
-    "warrantyExpirationTarget": "Dec 22, 2026",
+    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
+    "warrantyExpirationTarget": "Dec 23, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600749.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600749",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.566Z"
+    "generatedAt": "2026-10-15T16:10:26.766Z"
   },
   {
     "recordId": "BB-202600757",
@@ -1708,12 +1734,12 @@
     "permitType": "Residential Addition",
     "jobValue": 368040,
     "permitDate": "2026-01-27",
-    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
-    "warrantyExpirationTarget": "Dec 22, 2026",
+    "framingStageWindow": "Feb 26, 2026 - Apr 12, 2026",
+    "warrantyExpirationTarget": "Dec 23, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600757.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600757",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.571Z"
+    "generatedAt": "2026-10-15T16:10:26.766Z"
   },
   {
     "recordId": "BB-202600735",
@@ -1721,12 +1747,12 @@
     "permitType": "Residential Addition",
     "jobValue": 12000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600735.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600735",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.576Z"
+    "generatedAt": "2026-10-15T16:10:26.767Z"
   },
   {
     "recordId": "BB-202600729",
@@ -1734,12 +1760,12 @@
     "permitType": "Residential Addition",
     "jobValue": 65000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600729.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600729",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.581Z"
+    "generatedAt": "2026-10-15T16:10:26.767Z"
   },
   {
     "recordId": "BB-202600727",
@@ -1747,12 +1773,12 @@
     "permitType": "Residential Addition",
     "jobValue": 75000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600727.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600727",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.586Z"
+    "generatedAt": "2026-10-15T16:10:26.768Z"
   },
   {
     "recordId": "BB-202600725",
@@ -1760,12 +1786,12 @@
     "permitType": "Residential Addition",
     "jobValue": 15000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600725.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600725",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.591Z"
+    "generatedAt": "2026-10-15T16:10:26.768Z"
   },
   {
     "recordId": "BB-202600722",
@@ -1773,12 +1799,12 @@
     "permitType": "Residential Addition",
     "jobValue": 5000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600722.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600722",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.596Z"
+    "generatedAt": "2026-10-15T16:10:26.769Z"
   },
   {
     "recordId": "BB-202600721",
@@ -1786,12 +1812,12 @@
     "permitType": "Residential Addition",
     "jobValue": 275000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600721.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600721",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.602Z"
+    "generatedAt": "2026-10-15T16:10:26.769Z"
   },
   {
     "recordId": "BB-202600713",
@@ -1799,12 +1825,12 @@
     "permitType": "Residential Addition",
     "jobValue": 50000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600713.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600713",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.607Z"
+    "generatedAt": "2026-10-15T16:10:26.770Z"
   },
   {
     "recordId": "BB-202600702",
@@ -1812,12 +1838,12 @@
     "permitType": "Residential Addition",
     "jobValue": 200000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600702.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600702",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.612Z"
+    "generatedAt": "2026-10-15T16:10:26.770Z"
   },
   {
     "recordId": "BB-202600697",
@@ -1825,12 +1851,12 @@
     "permitType": "Residential Addition",
     "jobValue": 50000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600697.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600697",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.617Z"
+    "generatedAt": "2026-10-15T16:10:26.770Z"
   },
   {
     "recordId": "BB-202600716",
@@ -1838,12 +1864,12 @@
     "permitType": "Residential Addition",
     "jobValue": 236000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600716.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600716",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.626Z"
+    "generatedAt": "2026-10-15T16:10:26.771Z"
   },
   {
     "recordId": "BB-202600718",
@@ -1851,12 +1877,12 @@
     "permitType": "Residential Addition",
     "jobValue": 75000,
     "permitDate": "2026-01-26",
-    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
-    "warrantyExpirationTarget": "Dec 21, 2026",
+    "framingStageWindow": "Feb 25, 2026 - Apr 11, 2026",
+    "warrantyExpirationTarget": "Dec 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600718.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600718",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.630Z"
+    "generatedAt": "2026-10-15T16:10:26.771Z"
   },
   {
     "recordId": "BB-202600696",
@@ -1864,12 +1890,12 @@
     "permitType": "Residential Addition",
     "jobValue": 4500,
     "permitDate": "2026-01-25",
-    "framingStageWindow": "Feb 23, 2026 - Apr 9, 2026",
-    "warrantyExpirationTarget": "Dec 20, 2026",
+    "framingStageWindow": "Feb 24, 2026 - Apr 10, 2026",
+    "warrantyExpirationTarget": "Dec 21, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600696.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600696",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.635Z"
+    "generatedAt": "2026-10-15T16:10:26.772Z"
   },
   {
     "recordId": "BB-202600694",
@@ -1877,12 +1903,12 @@
     "permitType": "Residential Addition",
     "jobValue": 600000,
     "permitDate": "2026-01-24",
-    "framingStageWindow": "Feb 22, 2026 - Apr 8, 2026",
-    "warrantyExpirationTarget": "Dec 19, 2026",
+    "framingStageWindow": "Feb 23, 2026 - Apr 9, 2026",
+    "warrantyExpirationTarget": "Dec 20, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600694.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600694",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.640Z"
+    "generatedAt": "2026-10-15T16:10:26.772Z"
   },
   {
     "recordId": "BB-202600693",
@@ -1890,12 +1916,12 @@
     "permitType": "Residential New",
     "jobValue": 205000,
     "permitDate": "2026-01-24",
-    "framingStageWindow": "Feb 22, 2026 - Apr 8, 2026",
-    "warrantyExpirationTarget": "Dec 19, 2026",
+    "framingStageWindow": "Feb 23, 2026 - Apr 9, 2026",
+    "warrantyExpirationTarget": "Dec 20, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600693.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600693",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.644Z"
+    "generatedAt": "2026-10-15T16:10:26.773Z"
   },
   {
     "recordId": "BB-202600666",
@@ -1903,12 +1929,12 @@
     "permitType": "Residential New",
     "jobValue": 150000,
     "permitDate": "2026-01-23",
-    "framingStageWindow": "Feb 21, 2026 - Apr 7, 2026",
-    "warrantyExpirationTarget": "Dec 18, 2026",
+    "framingStageWindow": "Feb 22, 2026 - Apr 8, 2026",
+    "warrantyExpirationTarget": "Dec 19, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600666.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=BB-202600666",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.649Z"
+    "generatedAt": "2026-10-15T16:10:26.773Z"
   },
   {
     "recordId": "ALP-BR250387",
@@ -1916,12 +1942,12 @@
     "permitType": "Residential Sitewall, retaining wall,etc",
     "jobValue": 275000,
     "permitDate": "2025-06-13",
-    "framingStageWindow": "Jul 12, 2025 - Aug 26, 2025",
-    "warrantyExpirationTarget": "May 8, 2026",
+    "framingStageWindow": "Jul 13, 2025 - Aug 27, 2025",
+    "warrantyExpirationTarget": "May 9, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250387.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.653Z"
+    "generatedAt": "2026-10-15T16:10:26.774Z"
   },
   {
     "recordId": "ALP-BR250390",
@@ -1929,12 +1955,12 @@
     "permitType": "Residential Deck",
     "jobValue": 275000,
     "permitDate": "2025-06-17",
-    "framingStageWindow": "Jul 16, 2025 - Aug 30, 2025",
-    "warrantyExpirationTarget": "May 12, 2026",
+    "framingStageWindow": "Jul 17, 2025 - Aug 31, 2025",
+    "warrantyExpirationTarget": "May 13, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250390.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.658Z"
+    "generatedAt": "2026-10-15T16:10:26.774Z"
   },
   {
     "recordId": "ALP-PLR250021",
@@ -1942,12 +1968,12 @@
     "permitType": "Residential Pool",
     "jobValue": 275000,
     "permitDate": "2025-06-26",
-    "framingStageWindow": "Jul 25, 2025 - Sep 8, 2025",
-    "warrantyExpirationTarget": "May 21, 2026",
+    "framingStageWindow": "Jul 26, 2025 - Sep 9, 2025",
+    "warrantyExpirationTarget": "May 22, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-PLR250021.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.663Z"
+    "generatedAt": "2026-10-15T16:10:26.775Z"
   },
   {
     "recordId": "ALP-BR250416",
@@ -1955,12 +1981,12 @@
     "permitType": "Residential Sitewall, retaining wall,etc",
     "jobValue": 275000,
     "permitDate": "2025-07-08",
-    "framingStageWindow": "Aug 6, 2025 - Sep 20, 2025",
-    "warrantyExpirationTarget": "Jun 2, 2026",
+    "framingStageWindow": "Aug 7, 2025 - Sep 21, 2025",
+    "warrantyExpirationTarget": "Jun 3, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250416.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.668Z"
+    "generatedAt": "2026-10-15T16:10:26.775Z"
   },
   {
     "recordId": "ALP-BR250424",
@@ -1968,12 +1994,12 @@
     "permitType": "Residential Addition",
     "jobValue": 275000,
     "permitDate": "2025-07-17",
-    "framingStageWindow": "Aug 15, 2025 - Sep 29, 2025",
-    "warrantyExpirationTarget": "Jun 11, 2026",
+    "framingStageWindow": "Aug 16, 2025 - Sep 30, 2025",
+    "warrantyExpirationTarget": "Jun 12, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250424.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.673Z"
+    "generatedAt": "2026-10-15T16:10:26.776Z"
   },
   {
     "recordId": "ALP-BR250431",
@@ -1981,12 +2007,12 @@
     "permitType": "Residential Porch",
     "jobValue": 275000,
     "permitDate": "2025-07-21",
-    "framingStageWindow": "Aug 19, 2025 - Oct 3, 2025",
-    "warrantyExpirationTarget": "Jun 15, 2026",
+    "framingStageWindow": "Aug 20, 2025 - Oct 4, 2025",
+    "warrantyExpirationTarget": "Jun 16, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250431.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.678Z"
+    "generatedAt": "2026-10-15T16:10:26.776Z"
   },
   {
     "recordId": "ALP-BR250439",
@@ -1994,12 +2020,12 @@
     "permitType": "Residential New Construction Detached",
     "jobValue": 275000,
     "permitDate": "2025-07-24",
-    "framingStageWindow": "Aug 22, 2025 - Oct 6, 2025",
-    "warrantyExpirationTarget": "Jun 18, 2026",
+    "framingStageWindow": "Aug 23, 2025 - Oct 7, 2025",
+    "warrantyExpirationTarget": "Jun 19, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250439.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.683Z"
+    "generatedAt": "2026-10-15T16:10:26.776Z"
   },
   {
     "recordId": "ALP-BR250440",
@@ -2007,12 +2033,12 @@
     "permitType": "Residential New Construction Detached",
     "jobValue": 275000,
     "permitDate": "2025-07-24",
-    "framingStageWindow": "Aug 22, 2025 - Oct 6, 2025",
-    "warrantyExpirationTarget": "Jun 18, 2026",
+    "framingStageWindow": "Aug 23, 2025 - Oct 7, 2025",
+    "warrantyExpirationTarget": "Jun 19, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250440.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.688Z"
+    "generatedAt": "2026-10-15T16:10:26.777Z"
   },
   {
     "recordId": "ALP-BR250441",
@@ -2020,12 +2046,12 @@
     "permitType": "Residential New Construction Detached",
     "jobValue": 275000,
     "permitDate": "2025-07-24",
-    "framingStageWindow": "Aug 22, 2025 - Oct 6, 2025",
-    "warrantyExpirationTarget": "Jun 18, 2026",
+    "framingStageWindow": "Aug 23, 2025 - Oct 7, 2025",
+    "warrantyExpirationTarget": "Jun 19, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250441.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.693Z"
+    "generatedAt": "2026-10-15T16:10:26.778Z"
   },
   {
     "recordId": "ALP-BR250442",
@@ -2033,12 +2059,12 @@
     "permitType": "Residential Other, shed, arbor, gazebo",
     "jobValue": 275000,
     "permitDate": "2025-07-28",
-    "framingStageWindow": "Aug 26, 2025 - Oct 10, 2025",
-    "warrantyExpirationTarget": "Jun 22, 2026",
+    "framingStageWindow": "Aug 27, 2025 - Oct 11, 2025",
+    "warrantyExpirationTarget": "Jun 23, 2026",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/ALP-BR250442.html",
     "acaLink": "https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.698Z"
+    "generatedAt": "2026-10-15T16:10:26.778Z"
   },
   {
     "recordId": "STR-STRL-2025-00086",
@@ -2046,12 +2072,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00086.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00086",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.702Z"
+    "generatedAt": "2026-10-15T16:10:26.779Z"
   },
   {
     "recordId": "STR-STRL-2025-00088",
@@ -2059,12 +2085,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00088.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00088",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.707Z"
+    "generatedAt": "2026-10-15T16:10:26.779Z"
   },
   {
     "recordId": "STR-STRL-2025-00064",
@@ -2072,12 +2098,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00064.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00064",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.712Z"
+    "generatedAt": "2026-10-15T16:10:26.780Z"
   },
   {
     "recordId": "STR-STRL-2025-00057",
@@ -2085,12 +2111,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00057.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00057",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.717Z"
+    "generatedAt": "2026-10-15T16:10:26.780Z"
   },
   {
     "recordId": "STR-STRL-2025-00079",
@@ -2098,12 +2124,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00079.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00079",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.721Z"
+    "generatedAt": "2026-10-15T16:10:26.781Z"
   },
   {
     "recordId": "STR-STRL-2025-00071",
@@ -2111,12 +2137,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00071.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00071",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.726Z"
+    "generatedAt": "2026-10-15T16:10:26.784Z"
   },
   {
     "recordId": "STR-STRL-2025-00054",
@@ -2124,12 +2150,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00054.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00054",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.731Z"
+    "generatedAt": "2026-10-15T16:10:26.784Z"
   },
   {
     "recordId": "STR-STRL-2025-00039",
@@ -2137,12 +2163,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00039.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00039",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.736Z"
+    "generatedAt": "2026-10-15T16:10:26.785Z"
   },
   {
     "recordId": "STR-STRL-2025-00037",
@@ -2150,12 +2176,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00037.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00037",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.741Z"
+    "generatedAt": "2026-10-15T16:10:26.785Z"
   },
   {
     "recordId": "STR-STRL-2025-00035",
@@ -2163,12 +2189,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00035.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00035",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.746Z"
+    "generatedAt": "2026-10-15T16:10:26.786Z"
   },
   {
     "recordId": "STR-STRL-2025-00019",
@@ -2176,12 +2202,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00019.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00019",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.758Z"
+    "generatedAt": "2026-10-15T16:10:26.786Z"
   },
   {
     "recordId": "STR-STRL-2025-00006",
@@ -2189,12 +2215,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00006.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00006",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.763Z"
+    "generatedAt": "2026-10-15T16:10:26.787Z"
   },
   {
     "recordId": "STR-STRL-2025-00213",
@@ -2202,12 +2228,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00213.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00213",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.767Z"
+    "generatedAt": "2026-10-15T16:10:26.787Z"
   },
   {
     "recordId": "STR-STRL-2025-00018",
@@ -2215,12 +2241,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00018.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00018",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.774Z"
+    "generatedAt": "2026-10-15T16:10:26.788Z"
   },
   {
     "recordId": "STR-STRL-2025-00013",
@@ -2228,12 +2254,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00013.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00013",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.778Z"
+    "generatedAt": "2026-10-15T16:10:26.788Z"
   },
   {
     "recordId": "STR-STRL-2025-00025",
@@ -2241,12 +2267,12 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00025.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00025",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.784Z"
+    "generatedAt": "2026-10-15T16:10:26.789Z"
   },
   {
     "recordId": "STR-STRL-2025-00083",
@@ -2254,11 +2280,11 @@
     "permitType": "Short-Term Rental Ordinance 20-O-1656 License",
     "jobValue": 125000,
     "permitDate": "2026-09-30",
-    "framingStageWindow": "Oct 29, 2026 - Dec 13, 2026",
-    "warrantyExpirationTarget": "Aug 25, 2027",
+    "framingStageWindow": "Oct 30, 2026 - Dec 14, 2026",
+    "warrantyExpirationTarget": "Aug 26, 2027",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/STR-STRL-2025-00083.html",
     "acaLink": "https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=STRL-2025-00083",
     "status": "Active Pipeline",
-    "generatedAt": "2026-10-14T22:17:15.788Z"
+    "generatedAt": "2026-10-15T16:10:26.789Z"
   }
 ]
