@@ -13,6 +13,33 @@ const ENV_LOCAL_FILE = path.join(ROOT_DIR, '.env.local');
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
 const UNSUBSCRIBED_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
 const PERMIT_SUPPRESSION_FILE = path.join(ROOT_DIR, 'data', 'permit-suppression.json');
+const LOCK_FILE = path.join(ROOT_DIR, 'data', 'permit_outreach_dispatch.lock');
+
+function acquireLock() {
+  if (fs.existsSync(LOCK_FILE)) {
+    try {
+      const raw = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
+      const ageMs = Date.now() - (raw.timestamp || 0);
+      if (ageMs < 30 * 60 * 1000) {
+        console.log(`🔒 [Outreach Engine] Active lock held by PID ${raw.pid} (${Math.round(ageMs / 1000)}s old). Exiting cleanly to prevent duplicate sends.`);
+        return false;
+      }
+    } catch (_) {}
+  }
+  try {
+    fs.writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, timestamp: Date.now() }), 'utf8');
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+function releaseLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE)) fs.unlinkSync(LOCK_FILE);
+  } catch (_) {}
+}
+
 
 /**
  * Emails that must never be contacted again (global unsubscribes + permit opt-outs).
@@ -107,12 +134,14 @@ async function dispatchSmartphoneAlert(lead, emailData) {
 
 async function main() {
   console.log('🚀 [Outreach Engine] Initializing Municipal Lead Outreach Engine...');
+  if (!acquireLock()) return;
 
   const { user, pass } = getEmailCredentials();
   if (!pass) {
     console.warn('⚠️ [Outreach Engine] EMAIL_PASSWORD not found in environment or .env.local.');
     console.warn('   To enable live email dispatch in GitHub Actions, add EMAIL_PASSWORD to repository secrets.');
     console.log('🏁 [Outreach Engine] Skipping email transmission for this run.');
+    releaseLock();
     return;
   }
 
@@ -131,11 +160,13 @@ async function main() {
   } catch (verifyErr) {
     console.warn('⚠️ [Outreach Engine] SMTP temporarily in Gmail rolling 24-hr cooldown:', verifyErr.message);
     transporter.close();
+    releaseLock();
     return;
   }
 
   if (!fs.existsSync(LEADS_FILE)) {
     console.error('❌ [Outreach Engine] Leads file not found:', LEADS_FILE);
+    releaseLock();
     process.exit(1);
   }
 
@@ -276,6 +307,7 @@ async function main() {
   }
 
   transporter.close();
+  releaseLock();
   console.log(`\n🏁 [Outreach Engine] Outreach run completed.`);
 }
 

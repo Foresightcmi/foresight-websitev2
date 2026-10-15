@@ -348,7 +348,42 @@ function buildPreDueDiligenceEmail(realtor) {
 // -------------------------------------------------------------
 // MAIN ORCHESTRATION ENGINE
 // -------------------------------------------------------------
+const LOCK_FILE = path.join(ROOT_DIR, 'data', 'due_diligence_dispatch.lock');
+
+function isProcessRunning(pid) {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function main() {
+  if (fs.existsSync(LOCK_FILE)) {
+    try {
+      const lockData = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
+      const lockAgeMs = Date.now() - (lockData.timestamp || 0);
+      if (lockData.pid && isProcessRunning(lockData.pid) && lockAgeMs < 30 * 60 * 1000) {
+        console.log(`🛡️ [Concurrency Guard] Another Due Diligence Scout instance is actively running (PID ${lockData.pid}). Exiting cleanly to prevent duplicate sends.`);
+        return;
+      }
+      fs.unlinkSync(LOCK_FILE);
+    } catch {
+      try { fs.unlinkSync(LOCK_FILE); } catch {}
+    }
+  }
+  fs.writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, timestamp: Date.now() }), 'utf8');
+  const releaseLock = () => {
+    try {
+      if (fs.existsSync(LOCK_FILE)) {
+        const cur = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
+        if (cur.pid === process.pid) fs.unlinkSync(LOCK_FILE);
+      }
+    } catch {}
+  };
+  process.on('exit', releaseLock);
+
   console.log('⚡ [Due Diligence Engine] Initializing Autonomous Scout & Dossier Transmission...');
 
   // 1. Check Email Credentials
@@ -472,6 +507,7 @@ async function main() {
             date: r.date,
             timestamp: new Date().toISOString()
           });
+          fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
 
           sentUnderContractCount++;
           console.log(`  ✓ Transmitted successfully to ${r.name} for ${r.address}`);
@@ -533,6 +569,7 @@ async function main() {
             city: lo.city,
             timestamp: new Date().toISOString()
           });
+          fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
 
           sentLendersCount++;
           console.log(`  ✓ Transmitted successfully to ${lo.name}`);
@@ -575,11 +612,14 @@ async function main() {
   }
 
   if (transporter) transporter.close();
+  releaseLock();
   console.log('🏁 [Due Diligence Engine] Execution complete!');
   console.log(`Summary: ${sentUnderContractCount} Active Under-Contract Due Diligence, ${sentLendersCount} Lenders dispatched.`);
 }
 
 main().catch(async (err) => {
+  releaseLock();
   console.error('⚠️ [Due Diligence Engine] Engine completed with warning:', err.message);
   process.exit(0);
 });
+
