@@ -43,6 +43,14 @@ export default async function sitemap() {
     { loc: '/faq', changefreq: 'monthly', priority: 0.7 },
     { loc: '/videos', changefreq: 'weekly', priority: 0.85 },
     { loc: '/videos/complete-home-systems-diagnostic', changefreq: 'monthly', priority: 0.9 },
+    { loc: '/videos/new-construction-inspections', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/videos/11-month-warranty-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/videos/pool-and-spa-inspections', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/videos/sewer-scope-inspections', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/videos/termite-and-wdo-inspections', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/videos/radon-gas-testing', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/videos/mold-indoor-air-quality-testing', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/videos/short-term-rental-str-compliance-inspection', changefreq: 'monthly', priority: 0.85 },
     { loc: '/privacy', changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', changefreq: 'yearly', priority: 0.3 }
   ];

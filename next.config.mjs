@@ -39,6 +39,19 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: 'frame-ancestors *',
           },
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow, noimageindex',
+          },
+        ],
+      },
+      {
+        source: '/videos/chris-avatar(.*)',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
         ],
       },
       {

@@ -104,6 +104,7 @@ function buildLoanOfficerEmail(lo) {
           <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal audit in under 2.5 hours.</li>
           <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as GAR Form F404) for licensed broker or attorney review.</li>
           <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
+          <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site 1.28 GPF fixture verification and official signed county certificate for pre-1993 DeKalb homes to prevent closing delays.</li>
         </ul>
       </div>
 
@@ -220,7 +221,7 @@ function buildUnderContractEmail(realtor) {
           <li><strong>Georgia Contract-Ready Defect Language:</strong> Clear diagnostic summaries structured for seamless review and transfer onto standard Georgia repair amendments.</li>
           <li><strong>Active SUPRA eKEY Access:</strong> Seamless entry with zero hassle for listing agents.</li>
           <li><strong>$35,000 in Buyer Warranties:</strong> Includes InterNACHI's "We'll Buy Your Home Back" Guarantee.</li>
-          ${isDeKalb ? '<li><strong>DeKalb Low-Flow Plumbing Certificate ($100):</strong> County compliance certificate issued on-site to eliminate closing table delays.</li>' : ''}
+          <li><strong>DeKalb Low-Flow Plumbing Certificate ($100 Flat):</strong> Official signed county compliance certificate issued on-site for pre-1993 DeKalb homes to eliminate closing table delays.</li>
         </ul>
       </div>
 
@@ -312,6 +313,7 @@ function buildPreDueDiligenceEmail(realtor) {
           <li><strong>Active SUPRA eKEY Access:</strong> We inspect smoothly without burdening the listing agent.</li>
           <li><strong>Georgia Contract-Ready Repair Summaries:</strong> Clean diagnostic language compatible with standard Georgia repair amendments that keeps deals intact.</li>
           <li><strong>$35,000 Client Protection Guarantees:</strong> 90-Day Structural Warranty &amp; InterNACHI Buy-Back Guarantee.</li>
+          <li><strong>DeKalb Low-Flow Plumbing Certificate ($100 Flat):</strong> Official signed county compliance certificate issued on-site for pre-1993 DeKalb homes.</li>
         </ul>
       </div>
 

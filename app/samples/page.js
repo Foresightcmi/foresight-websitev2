@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import SampleReportPreview from './SampleReportPreview';
 
 export const metadata = {
   title: 'Sample Home Inspection Reports | Foresight Home Inspections Atlanta',
@@ -68,7 +69,7 @@ export default function SampleReports() {
                 <a
                   href="/sample-report/index.html"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="btn btn-primary"
                   style={{ padding: '0.85rem 1.75rem', fontSize: '1rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                 >
@@ -98,46 +99,15 @@ export default function SampleReports() {
                 <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Infrared Thermal Scan Included
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
-                <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> HomeGauge CRL™ Repair List
+                <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> Prioritized Summary Action List
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#0F172A', fontWeight: 600 }}>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span> $10,000 Warranty Backed
               </div>
             </div>
 
-            {/* Embedded Live Iframe Preview */}
-            <div style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', border: '1px solid #CBD5E1', boxShadow: '0 10px 30px rgba(0,0,0,0.15)', background: '#0F172A' }}>
-              <div style={{ background: '#1E293B', padding: '0.75rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #334155' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444', display: 'inline-block' }}></span>
-                  <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#F59E0B', display: 'inline-block' }}></span>
-                  <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#10B981', display: 'inline-block' }}></span>
-                  <span style={{ color: '#94A3B8', fontSize: '0.85rem', marginLeft: '0.75rem', fontFamily: 'monospace' }}>
-                    https://www.fhinspectionsatl.com/sample-report/index.html
-                  </span>
-                </div>
-                <a
-                  href="/sample-report/index.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none' }}
-                >
-                  Open in New Window ↗
-                </a>
-              </div>
-              <iframe
-                src="/sample-report/index.html"
-                title="Foresight Home Inspections Official Sample Report"
-                style={{
-                  width: '100%',
-                  height: '680px',
-                  border: 'none',
-                  display: 'block',
-                  backgroundColor: '#ffffff',
-                }}
-                loading="lazy"
-              />
-            </div>
+            {/* Interactive Client-Activated Sample Report Preview */}
+            <SampleReportPreview />
           </div>
 
           <div className="card card-premium" style={{ marginBottom: '3rem', padding: '2.5rem' }}>

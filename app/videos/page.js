@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { SERVICE_VIDEOS } from './[slug]/page';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -24,31 +25,28 @@ export const metadata = {
 export default function VideosHub() {
   const videoHubSchema = {
     '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    '@id': `${SITE_URL}/videos#featured-video`,
-    name: 'Complete Home Systems Diagnostic Field Demonstration - Foresight Home Inspections',
-    description: 'Lead Certified Master Inspector® Christopher Boykin evaluates HVAC, 200A electrical distribution, crawlspace foundations, and infrared thermal scans under real field conditions in Metro Atlanta.',
-    thumbnailUrl: [`${SITE_URL}/images/home-systems-poster.webp`],
-    uploadDate: '2026-09-13T22:00:00Z',
-    duration: 'PT1M19S',
-    contentUrl: `${SITE_URL}/videos/foresight-home-systems.mp4`,
-    embedUrl: `${SITE_URL}/videos/complete-home-systems-diagnostic`,
-    inLanguage: 'en-US',
-    author: {
-      '@type': 'Person',
-      name: 'Christopher Boykin',
-      jobTitle: 'Certified Master Inspector® (CMI)',
-      url: `${SITE_URL}/about`
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}/videos#collection`,
+    name: 'Foresight Home Inspections Field Video Library',
+    description: 'Dedicated watch pages featuring Certified Master Inspector® Christopher Boykin evaluating Metro Atlanta residential systems, thermal imaging, sewer scopes, radon, and new construction.',
+    url: `${SITE_URL}/videos`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Complete Home Systems Diagnostic Field Demonstration',
+          url: `${SITE_URL}/videos/complete-home-systems-diagnostic`,
+        },
+        ...SERVICE_VIDEOS.map((v, idx) => ({
+          '@type': 'ListItem',
+          position: idx + 2,
+          name: v.title,
+          url: `${SITE_URL}/videos/${v.slug}`,
+        })),
+      ],
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Foresight Home Inspections',
-      url: SITE_URL,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/images/Logopng.png`
-      }
-    }
   };
 
   return (
@@ -164,54 +162,66 @@ export default function VideosHub() {
           </div>
         </div>
 
-        {/* Video Topic Library Grid */}
+        {/* Dedicated Service Video Watch Pages Grid */}
         <section>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.25rem' }}>
-            Inspection Video Topics &amp; Procedures
+            Specialty Inspection Video Briefings (Dedicated Watch Pages)
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {/* Card 1 */}
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
-              <span className="font-mono text-xs font-bold text-primary px-2 py-1 rounded bg-primary/10 border border-primary/20">DRONE</span>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.5rem 0 0.4rem 0' }}>
-                4K Aerial Drone Roof Audits
-              </h3>
-              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6, margin: '0 0 1rem 0' }}>
-                High-resolution FAA-compliant drone footage evaluates steep-pitch architectural shingles, chimney flashing, and drip edges inaccessible by ladder.
-              </p>
-              <Link href="/services/buyer-inspection" style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600 }}>
-                Learn About Drone Roof Scans →
-              </Link>
-            </div>
-
-            {/* Card 2 */}
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
-              <span className="font-mono text-xs font-bold text-primary px-2 py-1 rounded bg-primary/10 border border-primary/20">SYSTEMS</span>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.5rem 0 0.4rem 0' }}>
-                High-Resolution Infrared Thermal Scans
-              </h3>
-              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6, margin: '0 0 1rem 0' }}>
-                Detect hidden plumbing leaks behind drywall, missing ceiling insulation, and overheated circuit breakers using thermal emissivity differentials.
-              </p>
-              <Link href="/defects" style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600 }}>
-                Explore Defect Diagnostics →
-              </Link>
-            </div>
-
-            {/* Card 3 */}
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
-              <span className="font-mono text-xs font-bold text-primary px-2 py-1 rounded bg-primary/10 border border-primary/20">THERMAL</span>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.5rem 0 0.4rem 0' }}>
-                Fiber-Optic Sewer Scope Audits
-              </h3>
-              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6, margin: '0 0 1rem 0' }}>
-                200-foot continuous video camera inspection traverses main sewer lateral lines to identify tree root intrusions, bellies, and cracked cast-iron pipes.
-              </p>
-              <Link href="/services/sewer-scope-inspection" style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600 }}>
-                Sewer Scope Inspection Details →
-              </Link>
-            </div>
+            {SERVICE_VIDEOS.map((video) => (
+              <div
+                key={video.slug}
+                style={{
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                <Link
+                  href={`/videos/${video.slug}`}
+                  style={{ position: 'relative', aspectRatio: '16/9', display: 'block', background: '#000' }}
+                >
+                  <Image
+                    src={video.posterUrl}
+                    alt={video.shortTitle}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 350px"
+                    loading="lazy"
+                    style={{ objectFit: 'cover' }}
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--color-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0F172A' }}>
+                      ▶
+                    </div>
+                  </div>
+                  <span style={{ position: 'absolute', bottom: '8px', right: '8px', background: 'rgba(0,0,0,0.8)', color: '#FFFFFF', padding: '0.15rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
+                    {video.durationDisplay}
+                  </span>
+                </Link>
+                <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--color-gold)', fontFamily: 'monospace' }}>
+                      {video.startingPrice}
+                    </span>
+                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FFFFFF', margin: '0.35rem 0 0.5rem 0' }}>
+                      <Link href={`/videos/${video.slug}`} style={{ color: '#FFFFFF', textDecoration: 'none' }}>
+                        {video.shortTitle}
+                      </Link>
+                    </h3>
+                    <p style={{ fontSize: '0.86rem', color: '#94A3B8', lineHeight: 1.55, margin: '0 0 1rem 0' }}>
+                      {video.description}
+                    </p>
+                  </div>
+                  <Link href={`/videos/${video.slug}`} style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 700, textDecoration: 'none' }}>
+                    Watch Video Briefing &rarr;
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
