@@ -413,8 +413,9 @@ async function main() {
     if (suppressedEmails.has(cleanEmail)) return true;
     if (cleanEmail.includes('ansleyre.com') || cleanEmail.includes('ansley')) return true;
     if (cleanEmail.includes('amyfuchs') || cleanEmail.includes('amy.fuchs')) return true;
-    if (cleanName.includes('amy fuchs')) return true;
-    if (cleanBrokerage.includes('ansley')) return true;
+    if (cleanEmail.includes('cgrealtyinc.com') || cleanEmail.includes('joe@cgrealtyinc.com')) return true;
+    if (cleanName.includes('amy fuchs') || cleanName.includes('joe chapman')) return true;
+    if (cleanBrokerage.includes('ansley') || cleanBrokerage.includes('chapman group realty')) return true;
 
     return false;
   }
