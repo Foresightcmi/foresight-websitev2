@@ -120,5 +120,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 13,
+    "title": "Stucco & EIFS Moisture Intrusion Across Georgia Luxury Homes",
+    "publishedAt": "2026-10-15T18:01:07.302Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection"
   }
 ]

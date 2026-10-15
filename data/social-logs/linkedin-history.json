@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-15T18:01:07.103Z",
+    "post_id": 4,
+    "topic": "Atlanta Foundation & Crawlspace Inspection: Hydrostatic Red Clay Deflection",
+    "type": "deposit",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
     "timestamp": "2026-10-14T18:20:04.810Z",
     "post_id": 3,
     "topic": "Atlanta Pre-Drywall Inspection: Severed Trusses in New Construction",

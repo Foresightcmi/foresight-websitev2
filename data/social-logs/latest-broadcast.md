@@ -1,9 +1,9 @@
-# 📣 Active Multi-Channel Broadcast: Post #12
-**Title:** HVAC Heat Exchanger Cracking & Carbon Monoxide Risks  
-**Topic:** HVAC Safety Diagnostics  
-**Generated At:** 2026-10-14T18:20:05.651Z  
-**Target Booking Link:** [https://www.fhinspectionsatl.com/quote](https://www.fhinspectionsatl.com/quote)  
-**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/hvac-inspection.webp](https://www.fhinspectionsatl.com/images/hvac-inspection.webp)  
+# 📣 Active Multi-Channel Broadcast: Post #13
+**Title:** Stucco & EIFS Moisture Intrusion Across Georgia Luxury Homes  
+**Topic:** Stucco & EIFS Diagnostics  
+**Generated At:** 2026-10-15T18:01:07.302Z  
+**Target Booking Link:** [https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection)  
+**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/stucco-inspection.webp](https://www.fhinspectionsatl.com/images/stucco-inspection.webp)  
 **Webhook Status:** `skipped`
 
 ---
@@ -12,23 +12,23 @@
 *Optimized for Local 3-Pack, local municipal entities, and direct phone/online booking.*
 
 ```text
-Is your home's furnace safe? A cracked heat exchanger can leak odorless, deadly carbon monoxide gas directly into your living spaces.
+Considering a stucco or synthetic EIFS home in Metro Atlanta? Moisture intrusion behind stucco is one of the most financially catastrophic defects in Georgia real estate.
 
-In older Metro Atlanta gas furnaces, metal fatigue and thermal cycling cause microscopic cracks in heat exchanger cells that standard quick inspections miss.
+In our humid climate, improperly installed kickout flashings, missing window casing wraps, and uncaulked control joints allow rainwater to seep behind the synthetic stucco cladding, silently rotting wood framing and OSB sheathing from within.
 
-At Foresight Home Inspections:
-• Two Certified Inspectors on every job thoroughly audit combustion chambers, flue venting, flame patterns, and safety shut-offs.
-• Calibrated infrared thermal diagnostics detect heat exchanger stress points and duct leakage.
-• $10,000 warranty protection covering HVAC heating and cooling systems is included free.
+Foresight Home Inspections provides specialized moisture scanning and thermal infrared evaluations for stucco properties across Buckhead, Sandy Springs, Alpharetta, and North Georgia.
 
-Protect your home and family. Choose Certified Master Inspector thoroughness.
+• Advanced radiometric thermal imaging
+• Non-invasive moisture meter boundary mapping
+• Two Certified Inspectors on every job
+• Up to $35,000 in combined warranty protection
 
-Call 678-480-2110 or get an instant fee estimate online.
+Call 678-480-2110 or get your instant quote online.
 ```
 
 **GBP Call to Action:** Book Online or Call (678) 480-2110  
-**Link:** https://www.fhinspectionsatl.com/quote  
-**Photo:** Attach `https://www.fhinspectionsatl.com/images/hvac-inspection.webp`
+**Link:** https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection  
+**Photo:** Attach `https://www.fhinspectionsatl.com/images/stucco-inspection.webp`
 
 ---
 
@@ -36,22 +36,21 @@ Call 678-480-2110 or get an instant fee estimate online.
 *Optimized for social engagement, visual storytelling, consumer trust, and homebuyer education.*
 
 ```text
-Is your furnace silently leaking carbon monoxide? ⚠️🔥
+Buying a stucco home in Atlanta? Here is what every homebuyer MUST know... 🏛️💧
 
-Inside your gas furnace sits a metal chamber called the heat exchanger. It separates toxic combustion gases (including carbon monoxide) from the warm air that blows through your living room and bedrooms.
+Synthetic stucco (EIFS) and traditional hardcoat stucco look stunning on luxury estates across Buckhead, Sandy Springs, and Alpharetta. But in Georgia’s humid climate, improperly installed stucco can be a financial disaster.
 
-As furnaces age, metal expands and contracts hundreds of times every winter. Eventually, cracks develop in the metal cells—allowing poisonous, odorless carbon monoxide gas to mix into your indoor air.
+When water gets behind stucco through missing kickout flashings or unsealed window joints, it has NO way to escape. The water becomes trapped against your home's wood sheathing, silently rotting the framing while the exterior looks brand new.
 
-During Foresight's dual-inspector evaluations, our secondary inspector audits furnace chambers, draft inducer motors, and thermal exhaust venting with precision diagnostics.
-
-🛡️ Plus: Every full inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) covering HVAC systems for 90 days after closing!
+Foresight Home Inspections deploys advanced infrared thermal cameras and non-invasive moisture diagnostics on every stucco home to detect trapped moisture before you close.
 
 "Hindsight is expensive... Choose Foresight!"
 
-👉 Calculate your instant inspection quote in 60 seconds:
-https://www.fhinspectionsatl.com/quote
+👉 Read our complete Stucco & EIFS Inspection Guide:
+https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection
+📞 Call our CMI team: 678-480-2110
 
-#HVACSafety #CarbonMonoxide #HomeInspection #AtlantaHomes #CertifiedMasterInspector #ForesightHomeInspections
+#StuccoInspection #EIFS #LuxuryHomesAtlanta #BuckheadHomes #AtlantaRealEstate #ForesightHomeInspections
 ```
 
 ---
@@ -60,23 +59,23 @@ https://www.fhinspectionsatl.com/quote
 *Optimized for Real Estate Agents, GAR Contract Due Diligence, Investors, Attorneys, and Building Science Authority.*
 
 ```text
-Atlanta HVAC & Furnace Safety Inspection: Residential heating system evaluation is one of the most critical life-safety checkpoints in Georgia property due diligence. Gas-fired forced-air furnaces rely on a sealed heat exchanger to isolate combustion byproducts (including Carbon Monoxide, Nitrous Oxides, and unburned hydrocarbons) from the conditioned supply air stream.
+Atlanta Stucco & EIFS Moisture Inspection: Exterior Insulation and Finish Systems (EIFS) and hardcoat stucco clad thousands of luxury estates across Buckhead, Sandy Springs, and Alpharetta. However, without proper drainage mats and flashing details, barrier-type stucco systems represent extreme structural moisture liabilities.
 
-Corrosion, persistent flame impingement, or reduced airflow across the evaporator coil lead to metal fatigue and cell breach. When a heat exchanger crack develops, the blower fan pressurizes the combustion chamber, creating flame rollout and venting CO directly into living quarters.
+Rainwater penetrating uncaulked fenestration perimeters, missing chimney kickout flashings, or roof-wall transitions becomes trapped between the EPS insulation board and the oriented strand board (OSB) substrate. In Georgia's humid subtropical climate, fungal rot can decompose structural perimeter framing in under 36 months without visible exterior cracking.
 
-At Foresight Home Inspections, our Two-Inspector Protocol ensures comprehensive mechanical diagnostics:
-1. Blower Plenum & Evaporator Coil Static Pressure Audit
-2. Flue Gas Draft Inducer & Venting Integrity Analysis
-3. Combustible Gas & Ambient Carbon Monoxide Electronic Sniffing
-4. Infrared Thermography of Plenum Transitions and Duct Leakage
+Foresight Home Inspections executes specialized stucco diagnostic protocols:
+• Calibrated High-Resolution Radiometric Infrared Thermal Boundary Scans
+• Non-Invasive Radio Frequency Capacitance Moisture Profiling
+• Kick-out Flashing & Diverter Geometry Inspection (IRC R905.2.8.3 compliance)
+• Sub-Surface Substrate Sounding & Expansion Joint Audit
 
-In addition, all clients receive our $10,000 Elite Master Inspection Warranty ($0 deductible) covering HVAC heating and cooling components for 90 days post-closing.
+Equip luxury buyers and portfolio managers with authoritative building science reporting before closing.
 
-Ensure your clients are protected with CMI-level mechanical diagnostics:
-https://www.fhinspectionsatl.com/quote
+Review our Stucco & EIFS defect guide:
+https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection
 
-#HVACDiagnostics #BuildingSafety #LifeSafety #RealEstateDueDiligence #CertifiedMasterInspector #AtlantaRealtors
+#LuxuryRealEstate #StuccoInspection #BuildingScience #AssetManagement #AtlantaLuxuryHomes #DueDiligence
 ```
 
 ---
-*Next post in rotation:* **Post #13: "Stucco & EIFS Moisture Intrusion Across Georgia Luxury Homes"**
+*Next post in rotation:* **Post #14: "Pre-Listing Seller Inspections: Eliminating Deal-Killing Surprises"**
