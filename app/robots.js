@@ -7,6 +7,10 @@ export default function robots() {
         disallow: ['/private/', '/api/chat', '/api/voice', '/dashboard'],
       },
       {
+        userAgent: 'Googlebot-Video',
+        disallow: ['/videos/chris-avatar', '/videos/agent-avatar', '/sample-report/'],
+      },
+      {
         userAgent: 'GPTBot',
         allow: '/',
       },

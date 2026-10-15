@@ -186,14 +186,16 @@ export default function LiveAvatar3D({
           />
         </picture>
 
-        {/* Photorealistic Office Video Loop - Activated during Christopher speaking */}
-        {persona === 'chris' && !videoError && (
+        {/* Photorealistic Office Video Loop - Activated strictly when Christopher is actively speaking */}
+        {persona === 'chris' && isSpeaking && !videoError && (
           <video
             ref={videoRef}
             src="/videos/chris-avatar-office-loop.mp4"
             loop
             muted
             playsInline
+            data-nosnippet
+            aria-hidden="true"
             onLoadedData={() => setVideoLoaded(true)}
             onError={() => setVideoError(true)}
             style={{
@@ -204,7 +206,7 @@ export default function LiveAvatar3D({
               height: '100%',
               objectFit: 'cover',
               objectPosition: 'center 15%',
-              opacity: isSpeaking && videoLoaded ? 1 : 0,
+              opacity: videoLoaded ? 1 : 0,
               transition: 'opacity 0.35s ease',
               pointerEvents: 'none',
               zIndex: 4
