@@ -697,5 +697,71 @@
     "email": "gina@ginasellsgeorgia.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-14T21:54:35.939Z"
+  },
+  {
+    "key": "CONTRACT_card_9910807d96_betsymeagher@atlantafinehomes.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Betsy Meagher",
+    "brokerage": "Atlanta Fine Homes Sotheby's International",
+    "address": "1582 Alder Court SE",
+    "city": "Atlanta",
+    "email": "betsymeagher@atlantafinehomes.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-15T12:00:51.383Z"
+  },
+  {
+    "key": "CONTRACT_card_a557167277_brianmejiaestates@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Brian Mejia",
+    "brokerage": "Southern Realty",
+    "address": "509 College Street",
+    "city": "Douglasville",
+    "email": "brianmejiaestates@gmail.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-15T12:00:56.804Z"
+  },
+  {
+    "key": "CONTRACT_card_2425d898cd_ben@gahomehub.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Ben Dings",
+    "brokerage": "Swanson & Associates Realty, LLC",
+    "address": "2523 Andover Drive",
+    "city": "Eastman",
+    "email": "ben@gahomehub.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-15T12:01:02.202Z"
+  },
+  {
+    "key": "CONTRACT_card_339646a173_carolyncarnes@kw.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "CAROLYN CARNES",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "address": "2316 Acorn Way",
+    "city": "Monroe",
+    "email": "carolyncarnes@kw.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-15T12:01:09.951Z"
+  },
+  {
+    "key": "CONTRACT_card_154e1285f6_doug.s@mainstay.io",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Doug Smith",
+    "brokerage": "Mainstay Brokerage LLC",
+    "address": "6489 Lynndale",
+    "city": "Woodstock",
+    "email": "doug.s@mainstay.io",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-15T12:01:17.722Z"
+  },
+  {
+    "key": "CONTRACT_card_96acbbce8e_robin.blass@harrynorman.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "targetName": "Robin Blass",
+    "brokerage": "Harry Norman Realtors",
+    "address": "565 Old Lathemtown Road",
+    "city": "Atlanta",
+    "email": "robin.blass@harrynorman.com",
+    "date": "2026-10-02",
+    "timestamp": "2026-10-15T12:01:23.250Z"
   }
 ]
