@@ -13,34 +13,34 @@ export const dynamicParams = false;
 
 const SERVICE_MAP = {
   'buyer-inspection': {
-    name: 'Standard Buyer & Seller Inspection',
+    name: 'Full Home Inspection & Buyer Due Diligence',
     price: 'From $345',
     icon: '01',
-    headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
-    metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
-    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, infrared thermal imaging, aerial drone scanning & $10,000 warranty.',
-    description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
+    headline: 'Full Home Inspection Services & Certified Home Inspectors Across Metro Atlanta',
+    metaTitle: 'Full Home Inspection Services Atlanta GA | 2 Inspectors $345',
+    metaDescription: '4.9★ Full home inspection in Atlanta, GA from $345 ($295 condos). 2 certified home inspectors on every job led by a CMI. Free thermal, 4K drones & $35k warranty protection!',
+    description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
-      'infrared thermal imaging and moisture meter diagnostics included free',
+      'Infrared thermal imaging and moisture meter diagnostics included free',
       'Aerial camera drone roof scanning for high or steep roofs',
-      '$10,000 Master Protection Warranty with $0 deductible included free',
+      'Up to $35,000 in combined warranty protection ($10,000 Elite Warranty + $25,000 InterNACHI Honor Guarantee, $0 deductible)',
       'Free Utilities Plus VIP utility setup concierge ($150 value)'
     ]
   },
   'home-buyer-inspection': {
-    name: 'Standard Buyer & Seller Inspection',
+    name: 'Full Home Inspection & Buyer Due Diligence',
     price: 'From $345',
     icon: '01',
-    headline: 'Two Certified Inspectors on Every Home Inspection Across Metro Atlanta',
-    metaTitle: 'Atlanta Home Inspection | 2 Inspectors From $345 | Foresight',
-    metaDescription: 'Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, infrared thermal imaging, aerial drone scanning & $10,000 warranty.',
-    description: 'Every Foresight home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by a $10,000 Elite Warranty.',
+    headline: 'Full Home Inspection Services & Certified Home Inspectors Across Metro Atlanta',
+    metaTitle: 'Full Home Inspection Services Atlanta GA | 2 Inspectors $345',
+    metaDescription: '4.9★ Full home inspection in Atlanta, GA from $345 ($295 condos). 2 certified home inspectors on every job led by a CMI. Free thermal, 4K drones & $35k warranty protection!',
+    description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
-      'infrared thermal imaging and moisture meter diagnostics included free',
+      'Infrared thermal imaging and moisture meter diagnostics included free',
       'Aerial camera drone roof scanning for high or steep roofs',
-      '$10,000 Master Protection Warranty with $0 deductible included free',
+      'Up to $35,000 in combined warranty protection ($10,000 Elite Warranty + $25,000 InterNACHI Honor Guarantee, $0 deductible)',
       'Free Utilities Plus VIP utility setup concierge ($150 value)'
     ]
   },
@@ -224,6 +224,38 @@ const SERVICE_MAP = {
       'Spore trap cassette analysis for toxigenic & allergenic fungal species',
       'Certified independent microbiology laboratory report within 24–48 hours',
       'Actionable remediation protocol recommendations if elevated spore counts are detected'
+    ]
+  },
+  'commercial-property-inspection': {
+    name: 'Commercial Real Estate Due Diligence & Property Condition Assessments',
+    price: 'From $750',
+    icon: '10',
+    headline: 'Commercial Real Estate Due Diligence Inspection Services in Metro Atlanta',
+    metaTitle: 'Commercial Real Estate Due Diligence Inspection Services Atlanta GA',
+    metaDescription: '4.9★ Commercial real estate due diligence inspection services and ASTM E2018 Property Condition Assessments (PCA) in Metro Atlanta led by a CMI. Fast quotes!',
+    description: 'Commercial real estate acquisitions carry substantial capital expenditure liabilities. From flat commercial roofing membranes and 3-phase high-voltage electrical switchgear to multi-zone rooftop HVAC units and ADA accessibility compliance, Foresight Home Inspections delivers forensic Property Condition Assessments adhering to ASTM E2018-15 standards.',
+    included: [
+      'ASTM E2018-15 compliant Property Condition Assessment (PCA) & Baseline Report',
+      'Evaluation of commercial roof membranes, rooftop HVAC package units, and 3-phase electrical switchgear',
+      'Immediate life-safety repair vs. 1-to-5 year capital replacement reserve cost tables',
+      'ADA Title III accessibility compliance checklist and building envelope moisture diagnostics',
+      'Full digital engineer-ready report delivered within 24–48 hours for investor underwriting'
+    ]
+  },
+  'pre-drywall-inspection': {
+    name: 'Pre-Drywall Framing & Mechanical Inspection',
+    price: 'From $275',
+    icon: '11',
+    headline: 'Independent Pre-Drywall Inspections for New Builds Across Metro Atlanta',
+    metaTitle: 'Pre-Drywall Inspections for New Builds Atlanta GA | From $275',
+    metaDescription: '4.9★ Independent pre-drywall inspections for new builds in Metro Atlanta from $275. 2 certified inspectors audit structural framing, rough plumbing, electrical & HVAC!',
+    description: 'Once drywall is hung, over 80% of your home structural framing, rough plumbing stacks, electrical loops, and HVAC ductwork become permanently sealed behind walls. Our two-inspector team conducts a comprehensive Phase 1 pre-drywall framing and mechanical audit before sheetrock concealment.',
+    included: [
+      'Two certified inspectors on site evaluating structural framing, roof trusses, and load headers',
+      'Rough-in plumbing DWV, supply line pressure, and nail plate puncture safety audit',
+      'Electrical rough-in wire routing, junction box placement, and circuit arc protection checks',
+      'Attic and wall HVAC duct routing, airflow volume checks, and exterior air barrier alignment',
+      'Builder-ready digital punch list with high-definition photos delivered within 24 hours'
     ]
   }
 };

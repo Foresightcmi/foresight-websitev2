@@ -2,8 +2,8 @@
   {
     "slug": "radon-testing",
     "name": "Radon Gas Testing",
-    "metaTitle": "{city} Radon Testing GA | 48-Hr EPA Monitor $275 | Foresight",
-    "metaDescription": "48-hour continuous electronic radon testing in {city}, GA. Precision hourly pCi/L readings & same-day report. EPA compliant. Flat $275 rate. Instant booking!",
+    "metaTitle": "{city}, GA Radon Testing & Radon Inspection |  EPA",
+    "metaDescription": "4.9★ Residential & commercial 48-hour electronic radon testing and radon inspection in {city}, GA. Flat  rate. Hourly EPA pCi/L graph & 24-hr report!",
     "price": "$275",
     "priceDetails": "$275 continuous 48-hour electronic monitoring test",
     "icon": "☢️",
@@ -31,13 +31,14 @@
       }
     ],
     "riskContext": "Radon levels in Georgia can spike unexpectedly during heavy rainfall and winter heating seasons when soil gases are drawn upward into living spaces.",
-    "relatedBlogSlug": "hidden-dangers-of-radon-gas-georgia"
+    "relatedBlogSlug": "hidden-dangers-of-radon-gas-georgia",
+    "h1Title": "{city}, GA Continuous 48-Hour Radon Testing & Inspection"
   },
   {
     "slug": "termite-inspection",
     "name": "Termite & WDO Inspection",
-    "metaTitle": "{city} Termite Inspection GA | Official WDO $125 | Foresight",
-    "metaDescription": "Official Georgia WDO termite clearance inspection in {city}, GA. Licensed structural wood infestation report for mortgage closings from $125. Fast scheduling!",
+    "metaTitle": "{city}, GA Termite & WDO Inspection | Official Report ",
+    "metaDescription": "4.9★ Official Georgia WDO (Wood Destroying Organisms) termite letter & inspection in {city}, GA ( slab/basement,  crawlspace). Fast closing clearance!",
     "price": "$125+",
     "priceDetails": "$125 when bundled with a home inspection ($165 crawlspace)",
     "icon": "🐜",
@@ -65,19 +66,20 @@
       }
     ],
     "riskContext": "Georgia ranks among the highest termite pressure zones in the nation. Crawlspace homes in {city} with elevated moisture levels are particularly vulnerable to subterranean termite mud tubes.",
-    "relatedBlogSlug": "crawlspace-moisture-silent-threat-georgia-foundations"
+    "relatedBlogSlug": "crawlspace-moisture-silent-threat-georgia-foundations",
+    "h1Title": "{city}, GA Termite & WDO Wood Destroying Organism Inspection"
   },
   {
     "slug": "sewer-scope-inspection",
     "name": "Sewer Scope Inspection",
-    "metaTitle": "{city} Sewer Camera Inspection | HD Video $450 | Foresight",
-    "metaDescription": "HD sewer camera inspection in {city}, GA. Avoid $15,000 underground repairs! Detect root intrusion & cracked pipes before closing. Flat $450 with HD video.",
+    "metaTitle": "{city}, GA Sewer Scope & Video Camera Inspection | ",
+    "metaDescription": "4.9★ HD sewer video & camera scope inspection in {city}, GA ( flat rate). Fiber-optic plumbing line camera audit from cleanout to main. 24-hr video report!",
     "price": "$450",
     "priceDetails": "$450 flat rate inspection with high-definition digital video report",
     "icon": "🚾",
     "badge": "HD Video Included",
     "heroSub": "Replacing a collapsed sewer line can cost $5,000 to $15,000+. Inspect the underground sewer pipe from house to street in {city} before you close.",
-    "overview": "A standard home inspection does not see inside underground pipes buried 4 to 10 feet below ground. In {city}, mature tree roots, clay pipe shifts, cast iron corrosion, and collapsed PVC can cause catastrophic backups shortly after moving in. Foresight Home Inspections inserts a self-leveling HD fiber-optic camera down the main sewer line from the cleanout to the municipal sewer main or septic tank entry, capturing full video footage of the pipe's internal condition.",
+    "overview": "A standard home inspection does not see inside underground pipes buried 4 to 10 feet below ground. In {city}, mature tree roots, clay pipe shifts, cast iron corrosion, and collapsed PVC can cause catastrophic backups shortly after moving in. Foresight Home Inspections performs a comprehensive sewer scope inspection (sewer video inspection and plumbing line camera inspection), inserting a self-leveling HD fiber-optic video camera down the main sewer line from the cleanout to the municipal sewer main or septic tank entry.",
     "standards": "Evaluates pipe material (cast iron, clay, PVC, Orangeburg), joint integrity, slope bellies, root intrusions, cracks, offset joints, and mineral buildup per InterNACHI Standards of Practice.",
     "equipment": "200-foot rigid push-rod fiber-optic HD camera with self-leveling head, digital distance counter, and wireless video recording transmitter.",
     "faqs": [
@@ -99,13 +101,14 @@
       }
     ],
     "riskContext": "Homes built prior to 1985 in {city} often contain aging cast iron or clay tile sewer pipes that are reaching the end of their functional lifespan.",
-    "relatedBlogSlug": "sewer-scope-inspection-guide"
+    "relatedBlogSlug": "sewer-scope-inspection-guide",
+    "h1Title": "{city}, GA Sewer Scope, Video & Camera Inspection"
   },
   {
     "slug": "new-construction-inspection",
     "name": "New Construction Inspection",
-    "metaTitle": "{city} New Construction Inspection | From $400 | Foresight",
-    "metaDescription": "Independent new build inspection in {city}, GA. 2 certified inspectors uncover defects municipal code checks miss. infrared thermal included. From $400.",
+    "metaTitle": "{city}, GA New Construction & Final Home Inspections | ",
+    "metaDescription": "4.9★ Certified new construction & new home final inspections in {city}, GA from . 2 inspectors, free thermal & 4K drone scans + ,000 warranty!",
     "price": "$400+",
     "priceDetails": "New construction inspections from $400+ based on square footage",
     "icon": "🏗️",
@@ -133,13 +136,14 @@
       }
     ],
     "riskContext": "Rapid development in {city} often results in unsealed roof penetration flashings, missing attic baffles, and improper grading that directs rainwater toward fresh foundations.",
-    "relatedBlogSlug": "why-new-construction-needs-inspections"
+    "relatedBlogSlug": "why-new-construction-needs-inspections",
+    "h1Title": "{city}, GA New Construction & New Home Final Inspections"
   },
   {
     "slug": "pool-inspection",
     "name": "Pool & Spa Inspection",
-    "metaTitle": "{city} Pool & Spa Inspection | $300 Flat Rate | Foresight",
-    "metaDescription": "Certified pool & spa inspection in {city}, GA. Pumps, heaters, electrical GFCI bonding & safety barriers evaluated. Flat $300 rate. Fast 24-hr reports!",
+    "metaTitle": "{city}, GA Swimming Pool & Spa Inspection |  Flat",
+    "metaDescription": "4.9★ Certified swimming pool & spa inspection in {city}, GA ( flat rate). Pumps, heaters, pool chemical & GFCI electrical bonding audit. 24-hr report!",
     "price": "$300",
     "priceDetails": "$300 flat rate for residential pools & attached spas",
     "icon": "🏊‍♂️",
@@ -167,13 +171,14 @@
       }
     ],
     "riskContext": "Improperly grounded pool lighting and aging GFCI breakers in older {city} pools pose severe electrical shock risks if not inspected prior to occupancy.",
-    "relatedBlogSlug": "pool-and-spa-inspection-guide"
+    "relatedBlogSlug": "pool-and-spa-inspection-guide",
+    "h1Title": "{city}, GA Swimming Pool & Spa Inspection"
   },
   {
     "slug": "pre-listing-inspection",
     "name": "Pre-Listing Seller Inspection",
-    "metaTitle": "{city} Pre-Listing Inspection GA | From $365 | Foresight",
-    "metaDescription": "Pre-listing seller inspection in {city}, GA. Prevent deal-killing surprises, protect your asking price & close faster. 2 inspectors from $365. 24-hr report.",
+    "metaTitle": "{city}, GA Pre-Listing Home Inspections & Checklist | ",
+    "metaDescription": "4.9★ Pre-listing home inspections & seller checklist in {city}, GA from  ( condos). 2 certified inspectors, free thermal & 4K drone scans. Close faster!",
     "price": "$295+",
     "priceDetails": "Condos from $295 | Single Family Homes from $365+",
     "icon": "📋",
@@ -201,13 +206,14 @@
       }
     ],
     "riskContext": "Surprise buyer findings like HVAC heat exchanger cracks or hidden crawlspace rot in {city} can trigger $10,000+ price drop requests just days before closing.",
-    "relatedBlogSlug": "pre-listing-seller-inspection-guide"
+    "relatedBlogSlug": "pre-listing-seller-inspection-guide",
+    "h1Title": "{city}, GA Pre-Listing Seller Home Inspections & Checklist"
   },
   {
     "slug": "buyer-inspection",
     "name": "Buyer Home Inspection",
-    "metaTitle": "{city} Home Inspection GA | 2 Certified Inspectors | $345",
-    "metaDescription": "Top-rated {city}, GA home inspection from $345. Two certified inspectors on every job led by a CMI. Free infrared thermal, 4K drones & $10,000 warranty included!",
+    "metaTitle": "{city}, GA Full Home Inspection & Home Inspectors | ",
+    "metaDescription": "4.9★ Full home inspection in {city}, GA from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones & ,000 warranty protection!",
     "price": "$345+",
     "priceDetails": "Condos from $295 | Single Family Homes from $345 based on square footage",
     "icon": "🏡",
@@ -231,19 +237,20 @@
       }
     ],
     "riskContext": "Georgia does not license home inspectors. Hiring an unvetted solo inspector puts your earnest money and due diligence deposit at severe risk.",
-    "relatedBlogSlug": "first-time-home-buyer-inspection-checklist-atlanta"
+    "relatedBlogSlug": "first-time-home-buyer-inspection-checklist-atlanta",
+    "h1Title": "{city}, GA Full Home Inspection & Buyer Inspection Services"
   },
   {
     "slug": "commercial-property-inspection",
     "name": "Commercial Property Inspection",
-    "metaTitle": "{city} Commercial Inspection | CMI Due Diligence | Foresight",
-    "metaDescription": "Commercial property condition assessment (PCA) in {city}, GA led by a Certified Master Inspector®. Retail, office, industrial & multi-family due diligence.",
+    "metaTitle": "{city}, GA Commercial Inspection & Real Estate Due Diligence",
+    "metaDescription": "4.9★ Commercial property inspections & commercial real estate due diligence inspection services in {city}, GA. ASTM E2018 PCA by a Certified Master Inspector®.",
     "price": "$750+",
     "priceDetails": "Custom quote based on square footage, use type, and mechanical complexity",
     "icon": "🏢",
     "badge": "ASTM E2018 Standard",
     "heroSub": "Protect your commercial real estate capital in {city}. Comprehensive Property Condition Assessments (PCA) for investors, lenders, and tenants.",
-    "overview": "Commercial real estate acquisitions in {city} carry substantial capital expenditure liabilities. From flat commercial roofing membranes and 3-phase high-voltage electrical switchgear to multi-zone rooftop HVAC units and ADA accessibility compliance, Foresight Home Inspections delivers forensic Property Condition Assessments adhering to ASTM E2018-15 standards.",
+    "overview": "Commercial real estate acquisitions in {city} carry substantial capital expenditure liabilities. Foresight Home Inspections provides institutional-grade commercial real estate due diligence inspection services and Property Condition Assessments (PCA) adhering to ASTM E2018-15 standards—evaluating flat commercial roofing membranes, 3-phase high-voltage electrical switchgear, multi-zone rooftop HVAC units, plumbing infrastructure, and ADA accessibility compliance.",
     "standards": "Conducted to ASTM E2018 Standard Guide for Property Condition Assessments (PCA) and CCPIA guidelines with clear immediate repair vs. reserve study cost tables.",
     "equipment": "High-resolution thermal drones for flat roof ponding, 3-phase power analyzers, industrial moisture meters, and fiber-optic pipe cameras.",
     "faqs": [
@@ -257,13 +264,14 @@
       }
     ],
     "riskContext": "Deferred maintenance on commercial HVAC chillers or flat TPO roofs in {city} can easily exceed $50,000 to $100,000 in unbudgeted capital expenditures post-closing.",
-    "relatedBlogSlug": "metro-atlanta-residential-defect-index-building-science-study"
+    "relatedBlogSlug": "metro-atlanta-residential-defect-index-building-science-study",
+    "h1Title": "{city}, GA Commercial Property & Real Estate Due Diligence Inspections"
   },
   {
     "slug": "pre-drywall-inspection",
     "name": "Pre-Drywall Framing Inspection",
-    "metaTitle": "{city} Pre-Drywall Inspection | Phase 2 From $275 | Foresight",
-    "metaDescription": "Pre-drywall framing & mechanical inspection in {city}, GA. Inspect framing, rough plumbing, electrical & HVAC rough-ins before drywall from $275.",
+    "metaTitle": "{city}, GA Pre-Drywall Inspections for New Builds | ",
+    "metaDescription": "4.9★ Independent pre-drywall inspections for new builds in {city}, GA from . 2 certified inspectors audit framing, rough plumbing, electrical & HVAC!",
     "price": "$275+",
     "priceDetails": "$275 up to 2,500 sq ft | $300 for 2,500+ sq ft",
     "icon": "📐",
@@ -283,19 +291,20 @@
       }
     ],
     "riskContext": "Subcontractors frequently notch or over-bore load-bearing joists for plumbing pipes, compromising structural integrity in new {city} framing.",
-    "relatedBlogSlug": "pre-drywall-framing-inspection-georgia-new-construction"
+    "relatedBlogSlug": "pre-drywall-framing-inspection-georgia-new-construction",
+    "h1Title": "{city}, GA Pre-Drywall Framing Inspections for New Builds"
   },
   {
     "slug": "11-month-warranty-inspection",
     "name": "11-Month Builder Warranty Inspection",
-    "metaTitle": "{city} 11-Month Warranty Inspection | From $335 | Foresight",
-    "metaDescription": "Beat your 1-year builder deadline in {city}, GA! Certified Master Inspector punch list with infrared thermal scans from $335. Builder-ready report in 24 hrs.",
+    "metaTitle": "{city}, GA 11-Month Builder Warranty Inspection | ",
+    "metaDescription": "4.9★ Builder 11-month (eleven-month / eleventh-month) warranty home inspections in {city}, GA from . 2 certified inspectors, free thermal & drone scans!",
     "price": "$335+",
     "priceDetails": "11-month warranty audits from $335+ based on home square footage",
     "icon": "⏳",
     "badge": "One-Year Deadline",
     "heroSub": "Your builder's one-year warranty is about to expire. Uncover structural settlement, HVAC leaks, and roof flaws before the repair bill becomes yours in {city}.",
-    "overview": "During the first year of living in a new home in {city}, seasonal temperature swings, foundation settling, and everyday living reveal hidden construction defects. An 11-Month Warranty Inspection gives you an independent Certified Master Inspector report documenting code deficiencies, drywall nail pops, truss uplift, and drainage issues to submit directly to your builder for mandatory repairs before your warranty coverage ends.",
+    "overview": "During the first year of living in a new home in {city}, seasonal temperature swings, foundation settling, and everyday living reveal hidden construction defects. Our 11-Month Builder Warranty Inspection (also known as an eleven-month or eleventh-month home warranty inspection) gives you an independent Certified Master Inspector report documenting code deficiencies, drywall nail pops, truss uplift, and drainage issues to submit directly to your builder for mandatory repairs before your 1-year builder warranty coverage ends.",
     "standards": "Complete 1,600-point InterNACHI evaluation with thermal imaging, roof drone scans, and cosmetic/structural settlement audit.",
     "equipment": "infrared thermal cameras, roof drones, laser leveling devices, and circuit analyzers.",
     "faqs": [
@@ -309,13 +318,14 @@
       }
     ],
     "riskContext": "Once your 365-day builder warranty window closes, any undiscovered defects become the sole financial responsibility of the homeowner.",
-    "relatedBlogSlug": "11-month-warranty-inspection-guide"
+    "relatedBlogSlug": "11-month-warranty-inspection-guide",
+    "h1Title": "{city}, GA 11-Month (Eleven-Month) Builder Warranty Home Inspection"
   },
   {
     "slug": "mold-testing",
     "name": "Mold & Air Quality Inspection",
-    "metaTitle": "{city} Mold & Air Quality Testing | Lab Analysis $450 | Foresight",
-    "metaDescription": "Certified mold inspection & indoor air quality testing in {city}, GA. 3-sample spore trap air cassettes & accredited independent lab analysis. Flat $450 rate.",
+    "metaTitle": "{city}, GA Mold Inspection & Indoor Air Quality Testing ",
+    "metaDescription": "4.9★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA ( flat rate). 3 spore-trap air samples + accredited lab!",
     "price": "$450",
     "priceDetails": "$450 flat rate includes 3 calibrated air samples (indoor living zones vs outdoor control baseline) + independent accredited lab report",
     "icon": "🧫",
@@ -339,6 +349,7 @@
       }
     ],
     "riskContext": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture threshold required for active fungal growth and spore transmission into living areas.",
-    "relatedBlogSlug": "crawlspace-moisture-silent-threat-georgia-foundations"
+    "relatedBlogSlug": "crawlspace-moisture-silent-threat-georgia-foundations",
+    "h1Title": "{city}, GA Mold Inspection & Indoor Air Quality Testing Services"
   }
 ]

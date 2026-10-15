@@ -3,14 +3,14 @@ import Image from 'next/image';
 import SampleReportPreview from './SampleReportPreview';
 
 export const metadata = {
-  title: 'Sample Home Inspection Reports | Foresight Home Inspections Atlanta',
-  description: 'View sample home inspection reports from Foresight Home Inspections. See how our dual-inspector model, infrared thermal imaging, and 3-step reporting system deliver clear, buyer-friendly insights.',
-  keywords: ['sample home inspection report Atlanta', 'HomeGauge sample report', 'home inspection sample Georgia', 'dual inspector report format'],
+  title: 'Sample Written Inspection Reports & Checklist Atlanta GA | Foresight',
+  description: 'View real sample written inspection reports & checklists from Foresight in Atlanta, GA. Photo-documented HomeGauge reports delivered within 24 hours!',
+  keywords: ['sample home inspection report Atlanta', 'written inspection reports georgia', 'inspection checklist atlanta ga', 'HomeGauge sample report', 'home inspection sample Georgia', 'dual inspector report format'],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/samples',
   },
   openGraph: {
-    title: 'Sample Home Inspection Reports | Foresight Atlanta',
+    title: 'Sample Written Inspection Reports & Checklist Atlanta GA | Foresight',
     description: 'Explore interactive sample home inspection reports. Clear, photo-documented reports delivered within 24 hours.',
     url: 'https://www.fhinspectionsatl.com/samples',
     type: 'website',
@@ -41,7 +41,7 @@ export default function SampleReports() {
       <section className="section bg-dark text-white text-center" style={{ padding: '5rem 0' }}>
         <div className="container">
           <span className="badge" style={{ marginBottom: '1rem', background: 'rgba(212,175,55,0.15)', color: 'var(--color-gold)', border: '1px solid rgba(212,175,55,0.45)', backdropFilter: 'blur(8px)' }}>Transparent Quality Assurance</span>
-          <h1 style={{ color: '#FFFFFF', marginBottom: '1rem', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>Sample Home Inspection Reports</h1>
+          <h1 style={{ color: '#FFFFFF', marginBottom: '1rem', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>Sample Written Inspection Reports &amp; Checklists</h1>
           <p style={{ color: '#F1F5F9', maxWidth: '750px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.65, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             See exactly what you will receive before you book. Every Foresight report is delivered within 24 hours in an easy-to-read digital format with high-resolution photos, thermal imaging, and prioritized repair action items.
           </p>

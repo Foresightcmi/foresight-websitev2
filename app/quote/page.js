@@ -2,13 +2,13 @@ import Script from 'next/script';
 import QuoteClient from './QuoteClient';
 
 export const metadata = {
-  title: 'Instant Home Inspection Quote Atlanta | Rates From $345',
-  description: 'Get an instant Atlanta home inspection quote in 30 seconds. Transparent flat rates from $345 ($295 condos). 2 inspectors, free thermal & 4K drone included!',
-  keywords: ['home inspection cost calculator Atlanta', 'home inspection price quote Georgia', 'Atlanta home inspector cost', 'instant home inspection quote'],
+  title: 'Home Inspection Cost Calculator & Quote Atlanta GA | $345',
+  description: 'Calculate your exact Atlanta home inspection cost in 30 seconds. Flat rates from $345 ($295 condos). 2 certified inspectors, thermal & 4K drones included!',
+  keywords: ['home inspection cost calculator', 'home inspection cost calculator Atlanta', 'home inspection price quote Georgia', 'Atlanta home inspector cost', 'instant home inspection quote'],
   alternates: { canonical: 'https://www.fhinspectionsatl.com/quote' },
   openGraph: {
-    title: 'Instant Home Inspection Quote & Fee Calculator | Foresight Atlanta',
-    description: '100% transparent pricing based on square footage. Two certified inspectors on every job.',
+    title: 'Home Inspection Cost Calculator & Quote Atlanta GA | Foresight',
+    description: 'Calculate your exact home inspection cost in 30 seconds. Two certified inspectors on every job from $345.',
     url: 'https://www.fhinspectionsatl.com/quote',
   },
 };

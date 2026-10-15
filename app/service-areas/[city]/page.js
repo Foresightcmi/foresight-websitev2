@@ -502,14 +502,14 @@ export default async function CityPage({ params }) {
           </p>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1rem', color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
-              {cityName} Home Inspections:{' '}
+              {cityName}, GA Home Inspections &amp; Certified Home Inspectors:{' '}
               <br />
-              <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)' }}>Two Certified Inspectors on Every Job</span>
+              <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)' }}>Two Certified Inspectors on Every Job (From $345)</span>
             </h1>
             <p style={{ maxWidth: '750px', margin: '0 auto 2rem', fontSize: '1.15rem', lineHeight: 1.7, color: '#F1F5F9', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
               {introParagraph}
               <span style={{ display: 'block', marginTop: '0.75rem', fontSize: '1rem', color: '#E2E8F0', fontWeight: '500' }}>
-                Certified Master Inspector® leadership, two certified inspectors per job, infrared thermal imaging &amp; included $10,000 Elite Warranty ($0 deductible).
+                Certified Master Inspector® leadership, two certified inspectors per job, infrared thermal imaging &amp; up to $35,000 in combined warranty protection ($0 deductible).
               </span>
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

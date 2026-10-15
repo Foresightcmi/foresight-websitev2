@@ -85,11 +85,27 @@ export default async function CountyPage({ params }) {
   const faqs = [
     {
       q: `Who is the best home inspector in ${county.name}, GA?`,
-      a: `Christopher Boykin, Certified Master Inspector® (CMI) and founder of Foresight Home Inspections, is recognized as the top-rated home inspector serving ${county.name}. Foresight sends two certified inspectors on every property, includes free high-resolution infrared thermal imaging, and provides an industry-leading $10,000 Elite Master Warranty ($0 deductible).`
+      a: `Christopher Boykin, Certified Master Inspector® (CMI) and founder of Foresight Home Inspections, is recognized as the top-rated home inspector serving ${county.name}. Foresight sends two certified inspectors on every property, includes free high-resolution infrared thermal imaging and drone roof scans, and provides up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty with $0 deductible plus InterNACHI's $25,000 Honor Guarantee).`
     },
     {
       q: `How much does a home inspection cost in ${county.name}, GA?`,
       a: `Home inspections in ${county.name} start at $295 for condos/townhomes and $345 for single-family homes. Pre-listing inspections start at $365, and new construction final phase inspections start at $400+. Ancillary services include Radon Testing ($275), Sewer Scope Camera ($450), Pool Inspection ($300), and Termite/WDO clearances ($125+). Visit our instant quote calculator for exact flat pricing.`
+    },
+    {
+      q: `Do you perform Pre-Listing Home Inspections and provide seller checklists in ${county.name}, GA?`,
+      a: `Yes. Foresight conducts comprehensive pre-listing home inspections across all of ${county.name}, GA. Our two-inspector team provides sellers and listing agents with a prioritized inspection checklist and repair roadmap before hitting the MLS, preventing contract delays and eliminating buyer price renegotiations during due diligence.`
+    },
+    {
+      q: `Does Foresight conduct 11-Month (eleven-month / eleventh-month) builder warranty home inspections in ${county.name}?`,
+      a: `Yes. In high-growth areas of ${county.name}, Foresight provides independent 11-month (also searched as eleven-month or eleventh-month) builder warranty home inspections starting at $335. Two certified inspectors evaluate roof trusses, foundation settlement, HVAC ductwork balance, and thermal envelope integrity, providing a builder-ready punch list before your 1-year warranty expires.`
+    },
+    {
+      q: `What is included in a residential interior and exterior home inspection in ${county.name}, GA?`,
+      a: `Every residential inspection in ${county.name} covers complete interior and exterior building systems: structural foundations, roof coverings via 4K aerial drones, high-resolution infrared thermal imaging of walls and ceilings, 200A electrical service panels, plumbing supply/drain lines, HVAC temperature splits, water heaters, and attic insulation.`
+    },
+    {
+      q: `Do you provide rental property condition checks and investor due diligence in ${county.name}?`,
+      a: `Yes. Foresight delivers rental property condition check inspections and investor due diligence assessments across ${county.name}, GA, documenting safety hazards, tenant turnover maintenance items, plumbing leaks, and structural integrity.`
     },
     {
       q: `What are the most common home inspection defects found in ${county.name}?`,
@@ -100,6 +116,85 @@ export default async function CountyPage({ params }) {
       a: `Our strict two-inspector model cuts on-site inspection time in half (1.5 to 2.5 hours vs. 4 hours for solo inspectors) while delivering double the thoroughness. One inspector focuses on the exterior, roof, and foundation while the other evaluates the interior, electrical panels, plumbing, and HVAC systems.`
     }
   ];
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${canonicalUrl}#package`,
+    "name": `Two-Inspector Home Inspection Package - ${county.name}, GA`,
+    "description": `Two certified inspectors on every job led by a Certified Master Inspector®. Includes complimentary high-resolution infrared thermal imaging, 4K roof drone scans, and up to $35,000 in combined warranty protection in ${county.name}, GA.`,
+    "image": [
+      `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
+      `${SITE_URL}/images/luxury-home.jpg`,
+      `${SITE_URL}/images/Logopng.png`
+    ],
+    "sku": `FHI-COUNTY-${resolvedParams.county.toUpperCase()}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Foresight Home Inspections"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "345.00",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
+      "validFrom": "2026-01-01",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.fhinspectionsatl.com/quote",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US",
+          "addressRegion": "GA"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marcus Vance" },
+        "datePublished": "2026-06-15",
+        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
+  };
 
   const countyJsonLd = {
     "@context": "https://schema.org",
@@ -262,7 +357,7 @@ export default async function CountyPage({ params }) {
             marginBottom: '1.25rem',
             letterSpacing: '-0.02em'
           }}>
-            {county.name}, GA Home Inspections
+            {county.name}, GA Home Inspections &amp; Certified Property Inspectors
           </h1>
 
           <p style={{

@@ -15,11 +15,16 @@ const FaqSearch = dynamic(() => import('./components/FaqSearch'));
 
 export const metadata = {
   title: {
-    absolute: 'Atlanta Home Inspections from $345 | 2 Inspectors | Foresight',
+    absolute: 'Atlanta, GA Home Inspection & Certified Home Inspectors | $345',
   },
-  description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
+  description: '4.9★ Full Home Inspection in Atlanta, GA from $345 ($295 condos). 2 Certified Home Inspectors on every job, free thermal & 4K drone scans + $35,000 Warranty!',
   keywords: [
+    'full home inspection',
     'home inspection Atlanta GA',
+    'home inspectors atlanta',
+    'home inspectors atlanta ga',
+    'residential home inspector in atlanta, ga',
+    'greater atlanta home inspectors',
     'best home inspector Atlanta',
     'certified master inspector Atlanta',
     'two inspector team Atlanta',
@@ -161,7 +166,7 @@ export default function Home() {
           </span>
 
           <h1 className="hero-heading">
-            Atlanta Home Inspections<br />
+            Atlanta Full Home Inspections<br />
             <span style={{ color: '#FDE047', background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE047 30%, #D4AF37 70%, #CA8A04 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
               Two Certified Inspectors on Every Job.
             </span>

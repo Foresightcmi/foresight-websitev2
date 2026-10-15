@@ -355,7 +355,7 @@ export default async function ServiceCityPage({ params }) {
             {serviceData.icon} {serviceData.badge}
           </span>
           <h1 style={{ fontSize: '2.75rem', marginBottom: '1.25rem', lineHeight: 1.2, color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
-            {cityName} {serviceName}: <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)' }}>Certified 2-Inspector Team</span>
+            {serviceData.h1Title ? serviceData.h1Title.replace(/{city}/g, cityName) : `${cityName}, GA ${serviceName}`}: <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)' }}>Certified 2-Inspector Team</span>
           </h1>
           <p style={{ maxWidth: '750px', margin: '0 auto 2.5rem', fontSize: '1.2rem', lineHeight: 1.6, color: '#F1F5F9', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             {serviceData.heroSub.replace(/{city}/g, cityName)}
@@ -396,13 +396,13 @@ export default async function ServiceCityPage({ params }) {
               </span>
             </div>
             <p style={{ fontSize: '1rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
-              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Led by Certified Master Inspector® Christopher Boykin with two certified inspectors on every appointment, evaluations include high-tech diagnostic equipment, digital reports delivered within 24 hours, and our included $10,000 Elite Warranty with $0 deductible.
+              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA ({county} County) starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Led by Certified Master Inspector® Christopher Boykin with two certified inspectors on every appointment, evaluations include high-tech diagnostic equipment, digital reports delivered within 24 hours, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#475569' }}>
               <div><strong>Price:</strong> {serviceData.price}</div>
               <div><strong>Inspectors:</strong> 2 Certified on Site</div>
               <div><strong>⭐ Rating:</strong> 4.9★ (48 Reviews)</div>
-              <div><strong>Warranty:</strong> $10,000 Included</div>
+              <div><strong>Protection:</strong> Up to $35,000 Included</div>
             </div>
           </div>
         </div>
@@ -417,7 +417,7 @@ export default async function ServiceCityPage({ params }) {
                 Service Overview
               </span>
               <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
-                Professional {serviceName} Services for {cityName} Homeowners
+                Professional {serviceName} Services in {cityName}, GA ({county} County)
               </h2>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem', lineHeight: 1.7 }}>
                 {serviceData.overview.replace(/{city}/g, cityName)}
