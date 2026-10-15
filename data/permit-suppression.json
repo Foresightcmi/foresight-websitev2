@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "email": "scwelch11@gmail.com",
+    "name": "Sarah Welch (Sarah Roberts)",
+    "phone": "(703)973-8508",
+    "address": "5644 BEND CREEK RD, DeKalb County, GA",
+    "permitId": "DKB-3189914",
+    "reason": "Homeowner opt-out / Low-flow compliance already completed / Email verbiage feedback",
+    "suppressedAt": "2026-10-15T16:35:00.000Z"
+  }
+]

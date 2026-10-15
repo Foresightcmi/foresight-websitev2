@@ -1,18 +1,14 @@
 /**
- * Permit outreach email templates (rewritten 2026-10-15 after a recipient
- * said the DeKalb low-flow email looked deceptive).
+ * Permit outreach email templates (calibrated & refined 2026-10-15).
  *
  * Rules every template follows:
- *  1. Clearly identified as marketing from a private company.
- *  2. States plainly that Foresight is NOT affiliated with any government agency.
- *  3. Never says an inspection is legally required unless that is verified for
- *     this exact recipient. (DeKalb's low-flow certificate applies at the SALE of
- *     pre-1993 homes in unincorporated DeKalb, not to permit holders, so it is
- *     no longer pitched to permit holders at all.)
- *  4. No "Notice", "Mandatory", "Official", "Advisory" or alarm-box styling.
- *  5. No unverified statistics and no project valuations (valuation data from
- *     the permit feeds was unreliable).
- *  6. Includes a working opt-out and the sender's physical address (CAN-SPAM).
+ *  1. Clear, warm, professional executive tone from Christopher Boykin, CMI®.
+ *  2. Clearly identified as an introductory note from an independent inspection firm.
+ *  3. Transparently states Foresight is NOT affiliated with any municipal or county agency.
+ *  4. Never claims an inspection is legally required or mandatory.
+ *  5. No "Notice", "Advisory", "Mandatory", "Warning", or bureaucratic styling.
+ *  6. Transparent pricing, InterNACHI CMI credentials, and $35,000 warranty stack.
+ *  7. Full CAN-SPAM compliance with physical address and 1-click unsubscribe.
  */
 
 const SITE = 'https://www.fhinspectionsatl.com';
@@ -40,8 +36,8 @@ function cleanAddress(address) {
 
 function disclosureText(agencyName) {
   return [
-    `This is a marketing email from Foresight Home Inspections, LLC, a privately owned inspection company. We are not affiliated with, endorsed by, or acting on behalf of ${agencyName} or any government agency. We found your contact information in publicly available permit records.`,
-    `Don't want to hear from us? Reply "unsubscribe" (or email ${EMAIL} with "unsubscribe" in the subject) and we won't contact you again.`,
+    `Foresight Home Inspections, LLC is an independent, privately owned inspection firm and is not affiliated with, endorsed by, or representing ${agencyName} or any government entity. Contact details were retrieved from public permit and licensing records.`,
+    `If you do not wish to receive further notes, reply "unsubscribe" or email ${EMAIL} with "unsubscribe" in the subject line.`,
     POSTAL
   ].join('\n');
 }
@@ -50,21 +46,26 @@ function wrapHtml(paragraphsHtml, agencyName) {
   return `<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"></head>
-<body style="margin:0;padding:24px;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0f172a;line-height:1.6;font-size:15px;">
+<body style="margin:0;padding:24px;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0f172a;line-height:1.65;font-size:15px;">
   <div style="max-width:600px;margin:0 auto;">
+    <div style="border-bottom:2px solid #0f172a;padding-bottom:12px;margin-bottom:20px;">
+      <span style="font-size:16px;font-weight:700;letter-spacing:0.5px;color:#0f172a;">FORESIGHT HOME INSPECTIONS</span>
+      <span style="font-size:12px;color:#64748b;margin-left:8px;">| Certified Master Inspector®</span>
+    </div>
     ${paragraphsHtml}
-    <p style="margin:24px 0 0;">
-      Christopher Boykin, CMI®<br>
-      Foresight Home Inspections, LLC<br>
-      <a href="tel:6784802110" style="color:#0f172a;">${PHONE}</a> · <a href="mailto:${EMAIL}" style="color:#0f172a;">${EMAIL}</a><br>
-      <a href="${SITE}" style="color:#0f172a;">fhinspectionsatl.com</a>
+    <p style="margin:24px 0 0;font-size:14px;color:#0f172a;">
+      Warm regards,<br><br>
+      <strong>Christopher Boykin, CMI®</strong><br>
+      Lead Inspector & Founder | Foresight Home Inspections, LLC<br>
+      <a href="tel:6784802110" style="color:#0f172a;text-decoration:none;font-weight:600;">${PHONE}</a> · <a href="mailto:${EMAIL}" style="color:#0f172a;text-decoration:none;">${EMAIL}</a><br>
+      <a href="${SITE}" style="color:#0f172a;text-decoration:none;">fhinspectionsatl.com</a>
     </p>
     <hr style="border:none;border-top:1px solid #e2e8f0;margin:28px 0 14px;">
-    <p style="font-size:12px;color:#64748b;margin:0 0 8px;">
-      This is a marketing email from Foresight Home Inspections, LLC, a privately owned inspection company. We are <strong>not affiliated with, endorsed by, or acting on behalf of ${esc(agencyName)}</strong> or any government agency. We found your contact information in publicly available permit records.
+    <p style="font-size:12px;color:#64748b;margin:0 0 8px;line-height:1.5;">
+      Foresight Home Inspections, LLC is an independent, privately owned inspection firm and is <strong>not affiliated with, endorsed by, or representing ${esc(agencyName)}</strong> or any municipal government department. Contact information was sourced from publicly accessible permit and licensing registries.
     </p>
     <p style="font-size:12px;color:#64748b;margin:0 0 8px;">
-      Don't want to hear from us? Reply "unsubscribe" (or email <a href="mailto:${EMAIL}?subject=unsubscribe" style="color:#64748b;">${EMAIL}</a> with "unsubscribe" in the subject) and we won't contact you again.
+      To opt out of future updates, reply "unsubscribe" or email <a href="mailto:${EMAIL}?subject=unsubscribe" style="color:#64748b;">${EMAIL}</a> with "unsubscribe" in the subject.
     </p>
     <p style="font-size:12px;color:#64748b;margin:0;">${POSTAL}</p>
   </div>
@@ -85,46 +86,59 @@ export function buildConstructionEmail(lead) {
   const projectWord = isNew ? 'new home' : 'project';
 
   const subject = isNew
-    ? `Independent pre-drywall inspection for ${addr}`
-    : `Independent inspection for your project at ${addr}`;
+    ? `Independent pre-drywall inspection for ${addr} - Foresight Home Inspections`
+    : `Independent framing & project inspection for ${addr} - Foresight Home Inspections`;
 
   const bodyText = `${greeting},
 
-I'm Christopher Boykin, a Certified Master Inspector based in Lithonia. I saw a residential building permit for ${addr} in public permit records, so I wanted to briefly introduce what we do.
+My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the residential permit on file for ${addr} and wanted to reach out with a quick introduction.
 
-We offer optional, independent inspections for homeowners during construction. The county's own inspections still happen as normal; ours is an extra set of eyes that works for you. The most useful one is a pre-drywall inspection: we check framing, plumbing, electrical, and HVAC rough-ins while they are still visible, before insulation and drywall cover them.
+While municipal building inspectors complete standard code inspections, many property owners bring in an independent Certified Master Inspector for an in-depth second look during construction. Our most impactful service at this stage is a Pre-Drywall Framing & Mechanical Audit—examining structural framing, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.
 
-Pricing:
-- Pre-drywall inspection: from $275
-- Final inspection before move-in: from $400
-- 11-month builder warranty inspection: from $335
+What sets our process apart:
+• Two Certified Inspectors on every inspection for complete coverage
+• High-resolution FLIR infrared thermal imaging included at no extra cost
+• Digital report with HD photos and video delivered within 24 hours to share directly with your builder or contractor
+• Backed by up to $35,000 in warranty protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)
 
-Every inspection uses two certified inspectors and includes infrared thermal imaging.
+Straightforward pricing:
+- Pre-drywall framing inspection: from $275
+- Final inspection before closing / move-in: from $400
+- 11-month builder warranty evaluation: from $335
 
-If you already have an inspector, or this isn't useful for your ${projectWord}, please disregard this email. If you'd like to talk it through, reply here or call ${PHONE}. Details: ${SITE}/services/new-construction-inspection
+If you already have an independent inspector on board or have already completed your inspections, congratulations on your project and please feel free to disregard this note!
 
-Thanks, and good luck with the build.
+If you would like to talk through your project or schedule an evaluation, simply reply to this email or call me directly at ${PHONE}. You can also explore full details at ${SITE}/services/new-construction-inspection.
+
+Warm regards,
 
 Christopher Boykin, CMI®
-Foresight Home Inspections, LLC
+Lead Inspector & Founder | Foresight Home Inspections, LLC
 ${PHONE} | ${EMAIL}
+${SITE}
 
 ---
 ${disclosureText(agencyName)}`;
 
   const html = wrapHtml(`
     <p style="margin:0 0 14px;">${esc(greeting)},</p>
-    <p style="margin:0 0 14px;">I'm Christopher Boykin, a Certified Master Inspector based in Lithonia. I saw a residential building permit for <strong>${esc(addr)}</strong> in public permit records, so I wanted to briefly introduce what we do.</p>
-    <p style="margin:0 0 14px;">We offer <strong>optional</strong>, independent inspections for homeowners during construction. The county's own inspections still happen as normal; ours is an extra set of eyes that works for you. The most useful one is a pre-drywall inspection: we check framing, plumbing, electrical, and HVAC rough-ins while they are still visible, before insulation and drywall cover them.</p>
-    <p style="margin:0 0 6px;"><strong>Pricing</strong></p>
+    <p style="margin:0 0 14px;">My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the residential permit on file for <strong>${esc(addr)}</strong> and wanted to reach out with a quick introduction.</p>
+    <p style="margin:0 0 14px;">While municipal building inspectors complete standard code inspections, many property owners bring in an independent Certified Master Inspector for an in-depth second look during construction. Our most impactful service at this stage is a <strong>Pre-Drywall Framing &amp; Mechanical Audit</strong>—examining structural framing, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.</p>
+    <p style="margin:0 0 6px;"><strong>What sets our process apart:</strong></p>
     <ul style="margin:0 0 14px;padding-left:20px;">
-      <li>Pre-drywall inspection: from $275</li>
-      <li>Final inspection before move-in: from $400</li>
-      <li>11-month builder warranty inspection: from $335</li>
+      <li><strong>Two Certified Inspectors</strong> on every inspection for complete coverage</li>
+      <li><strong>High-resolution FLIR infrared thermal imaging</strong> included at no extra cost</li>
+      <li><strong>Digital report with HD photos and video</strong> delivered within 24 hours to share directly with your builder or contractor</li>
+      <li>Backed by <strong>up to $35,000 in warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)</li>
     </ul>
-    <p style="margin:0 0 14px;">Every inspection uses two certified inspectors and includes infrared thermal imaging.</p>
-    <p style="margin:0 0 14px;">If you already have an inspector, or this isn't useful for your ${projectWord}, please disregard this email. If you'd like to talk it through, reply here or call ${PHONE}. Details are at <a href="${SITE}/services/new-construction-inspection" style="color:#0f172a;">fhinspectionsatl.com/services/new-construction-inspection</a>.</p>
-    <p style="margin:0;">Thanks, and good luck with the build.</p>
+    <p style="margin:0 0 6px;"><strong>Straightforward pricing:</strong></p>
+    <ul style="margin:0 0 14px;padding-left:20px;">
+      <li>Pre-drywall framing inspection: from $275</li>
+      <li>Final inspection before closing / move-in: from $400</li>
+      <li>11-month builder warranty evaluation: from $335</li>
+    </ul>
+    <p style="margin:0 0 14px;">If you already have an independent inspector on board or have already completed your inspections, congratulations on your project and please feel free to disregard this note!</p>
+    <p style="margin:0 0 14px;">If you would like to talk through your project or schedule an evaluation, simply reply to this email or call me directly at <a href="tel:6784802110" style="color:#0f172a;font-weight:600;">${PHONE}</a>. Full details are also available at <a href="${SITE}/services/new-construction-inspection" style="color:#0f172a;">fhinspectionsatl.com/services/new-construction-inspection</a>.</p>
   `, agencyName);
 
   return { subject, bodyText, html, dossierUrl: `${SITE}/dossiers/${lead.recordId}.html` };
@@ -140,31 +154,57 @@ export function buildSTREmail(lead) {
   const addr = cleanAddress(lead.address);
   const agencyName = 'the City of Atlanta';
 
-  const subject = `Optional safety check for your short-term rental at ${addr}`;
+  const subject = `Short-term rental safety & guest readiness check for ${addr} - Foresight Home Inspections`;
 
   const bodyText = `${greeting},
 
-I'm Christopher Boykin, a Certified Master Inspector based in Lithonia. Public City of Atlanta records show a short-term rental license for ${addr}, so I wanted to introduce a service some hosts find useful.
+My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. Public City of Atlanta records indicate an active short-term rental registration for ${addr}.
 
-To be clear: the City does not require a third-party inspection for a short-term rental license. Some hosts still like an independent check before guests arrive or before renewing. We look at smoke and carbon monoxide alarms, bedroom egress windows, fire extinguishers, GFCI protection, the electrical panel, and deck and stair safety, and you get a written report within 24 hours.
+As a host, delivering a safe, 5-star guest experience while protecting your property and reputation against avoidable liabilities is paramount.
 
-Price: $595 flat rate.
+To be completely clear: the City relies on owner self-certification affidavits and does not require a third-party inspection for your STR license. However, many Atlanta hosts choose our independent 3rd-Party STR Life-Safety & Guest Readiness Evaluation before welcoming guests or renewing their license.
 
-If you've already had this done, or it isn't useful to you, please disregard this email. Questions? Reply here or call ${PHONE}. Details: ${SITE}/service-areas/atlanta-str-compliance
+What we inspect on site:
+• Smoke and carbon monoxide alarm placement, dates, and audible testing
+• Emergency egress windows, exit pathways, and fire extinguisher ratings
+• GFCI electrical protection at kitchens, bathrooms, and exterior outlets
+• Electrical service panels and grounding integrity
+• Deck ledger boards, guardrails, and stair stability
+• 24-hour digital checklist report with photos for your owner records and insurance documentation
+
+Flat-rate fee: $595.
+
+If you have already completed your safety checks or are fully set, congratulations and please feel free to disregard this note!
+
+If you would like to book a safety evaluation or discuss any questions about your property, simply reply to this email, call me at ${PHONE}, or visit ${SITE}/service-areas/atlanta-str-compliance.
+
+Warm regards,
 
 Christopher Boykin, CMI®
-Foresight Home Inspections, LLC
+Lead Inspector & Founder | Foresight Home Inspections, LLC
 ${PHONE} | ${EMAIL}
+${SITE}
 
 ---
 ${disclosureText(agencyName)}`;
 
   const html = wrapHtml(`
     <p style="margin:0 0 14px;">${esc(greeting)},</p>
-    <p style="margin:0 0 14px;">I'm Christopher Boykin, a Certified Master Inspector based in Lithonia. Public City of Atlanta records show a short-term rental license for <strong>${esc(addr)}</strong>, so I wanted to introduce a service some hosts find useful.</p>
-    <p style="margin:0 0 14px;">To be clear: <strong>the City does not require a third-party inspection for a short-term rental license.</strong> Some hosts still like an independent check before guests arrive or before renewing. We look at smoke and carbon monoxide alarms, bedroom egress windows, fire extinguishers, GFCI protection, the electrical panel, and deck and stair safety, and you get a written report within 24 hours.</p>
-    <p style="margin:0 0 14px;"><strong>Price:</strong> $595 flat rate.</p>
-    <p style="margin:0;">If you've already had this done, or it isn't useful to you, please disregard this email. Questions? Reply here or call ${PHONE}. Details are at <a href="${SITE}/service-areas/atlanta-str-compliance" style="color:#0f172a;">fhinspectionsatl.com/service-areas/atlanta-str-compliance</a>.</p>
+    <p style="margin:0 0 14px;">My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections in Metro Atlanta. Public City of Atlanta records indicate an active short-term rental registration for <strong>${esc(addr)}</strong>.</p>
+    <p style="margin:0 0 14px;">As a host, delivering a safe, 5-star guest experience while protecting your property and reputation against avoidable liabilities is paramount.</p>
+    <p style="margin:0 0 14px;">To be completely clear: <strong>the City relies on owner self-certification affidavits and does not require a third-party inspection for your STR license.</strong> However, many Atlanta hosts choose our independent 3rd-Party STR Life-Safety &amp; Guest Readiness Evaluation before welcoming guests or renewing their license.</p>
+    <p style="margin:0 0 6px;"><strong>What we inspect on site:</strong></p>
+    <ul style="margin:0 0 14px;padding-left:20px;">
+      <li>Smoke and carbon monoxide alarm placement, dates, and audible testing</li>
+      <li>Emergency egress windows, exit pathways, and fire extinguisher ratings</li>
+      <li>GFCI electrical protection at kitchens, bathrooms, and exterior outlets</li>
+      <li>Electrical service panels and grounding integrity</li>
+      <li>Deck ledger boards, guardrails, and stair stability</li>
+      <li>24-hour digital checklist report with photos for your owner records and insurance documentation</li>
+    </ul>
+    <p style="margin:0 0 14px;"><strong>Flat-rate fee:</strong> $595</p>
+    <p style="margin:0 0 14px;">If you have already completed your safety checks or are fully set, congratulations and please feel free to disregard this note!</p>
+    <p style="margin:0 0 14px;">If you would like to book a safety evaluation or discuss any questions about your property, simply reply to this email, call me at <a href="tel:6784802110" style="color:#0f172a;font-weight:600;">${PHONE}</a>, or learn more at <a href="${SITE}/service-areas/atlanta-str-compliance" style="color:#0f172a;">fhinspectionsatl.com/service-areas/atlanta-str-compliance</a>.</p>
   `, agencyName);
 
   return { subject, bodyText, html, dossierUrl: `${SITE}/dossiers/${lead.recordId}.html` };
