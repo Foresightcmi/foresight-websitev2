@@ -9,7 +9,7 @@ const SCHEDULE_URL = 'https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-
 export async function generateMetadata() {
   const title = 'DeKalb County Low-Flow Compliance Inspection | Foresight Home Inspections';
   const description =
-    'Need a DeKalb County low-flow plumbing compliance certificate? Foresight Home Inspections provides certified compliance inspections for property transfers in DeKalb County, GA.';
+    'Selling or buying a pre-1993 home in unincorporated DeKalb County? We check plumbing fixtures and sign the county low-flow Certificate of Compliance for a $100 flat rate.';
 
   return {
     title,
@@ -45,19 +45,23 @@ export async function generateMetadata() {
 const faqs = [
   {
     q: 'Who needs a DeKalb County low-flow compliance certificate?',
-    a: 'Any property transferring ownership in unincorporated DeKalb County or participating municipalities is required to obtain a low-flow plumbing compliance certificate. This applies to residential sales, and the certificate must be presented at closing to confirm that all plumbing fixtures meet DeKalb County water conservation standards.',
+    a: 'Homes in unincorporated DeKalb County that were built before January 1, 1993 need a signed Certificate of Compliance when they are sold. DeKalb County Department of Watershed Management asks for it before water service can be set up in the new owner\'s name. It is tied to the sale of an older home, not to building permits, renovations, or new construction. If your property is inside a city, confirm with DeKalb Watershed Management whether it applies to your address.',
   },
   {
-    q: 'What happens if my property fails the low-flow inspection?',
-    a: 'If your property does not pass the low-flow compliance inspection, non-compliant fixtures must be replaced before closing. We provide a detailed, itemized list of every fixture that needs updating — including the exact location, current flow rate, and the required specification — so you or your plumber can address the issues quickly and efficiently.',
+    q: 'Which homes are exempt?',
+    a: 'Homes built on or after January 1, 1993 do not need the certificate. Other common exemptions include foreclosure sales, transfers between spouses or between parents and children, and properties that will be fully demolished after the sale. Exempt properties typically file the county\'s exemption form instead. If you already have a certificate for this sale, you do not need another one.',
+  },
+  {
+    q: 'What happens if a fixture does not meet the limit?',
+    a: 'We list each fixture that is over the limit, with its location, so it can be replaced. Once the replacements are in, we confirm them and sign the certificate.',
   },
   {
     q: 'Can I get the compliance inspection as a standalone service?',
-    a: 'Yes, the DeKalb County low-flow compliance inspection is available as a standalone service for a flat rate of $100, or bundled with any comprehensive home inspection. We deliver the official signed certificate directly to you and your closing attorney within 24 hours.',
+    a: 'Yes. The fixture check and signed Certificate of Compliance cost a flat $100, either on their own or added to a home inspection. We send the signed certificate to you, and to your closing attorney if you like, within 24 hours.',
   },
   {
-    q: 'How long does the compliance inspection take?',
-    a: 'The low-flow compliance check adds approximately 30–45 minutes to a standard home inspection. We systematically test every toilet, showerhead, and faucet in the property against DeKalb County\'s water conservation requirements and document our findings in a clear compliance report.',
+    q: 'Is Foresight part of DeKalb County?',
+    a: 'No. Foresight Home Inspections is a private, independently owned company. The county allows a licensed plumber, a certified home inspector, or a DeKalb County Watershed inspector to sign the certificate, and we are certified home inspectors.',
   },
 ];
 
@@ -73,7 +77,7 @@ export default function DeKalbCountyCompliancePage() {
     '@id': `${SITE_URL}/#business`,
     name: 'Foresight Home Inspections, LLC',
     description:
-      'Certified low-flow plumbing compliance inspections for property transfers in DeKalb County, GA. Official compliance certificates issued on-site.',
+      'Low-flow plumbing fixture checks and signed Certificates of Compliance for pre-1993 homes being sold in unincorporated DeKalb County, GA.',
     telephone: '+1-678-480-2110',
     email: 'inspect@foresightcmi.com',
     url: SITE_URL,
@@ -110,7 +114,8 @@ export default function DeKalbCountyCompliancePage() {
   const fixtures = [
     { icon: '01', label: 'Toilets', spec: '1.6 GPF or less' },
     { icon: '02', label: 'Showerheads', spec: '2.5 GPM or less' },
-    { icon: '03', label: 'Faucets', spec: '2.2 GPM or less' },
+    { icon: '03', label: 'Bathroom Faucets', spec: '2.0 GPM or less' },
+    { icon: '04', label: 'Kitchen Faucets', spec: '2.2 GPM or less' },
   ];
 
   // ── Inspection cards ────────────────────────────────────────────────
@@ -118,22 +123,22 @@ export default function DeKalbCountyCompliancePage() {
     {
       icon: '01',
       title: 'Toilet Flow Rate Verification',
-      desc: 'Every toilet is checked to confirm it meets the 1.6 gallons-per-flush (GPF) maximum required by DeKalb County.',
+      desc: 'Every toilet is checked against the 1.6 gallons-per-flush (GPF) limit.',
     },
     {
       icon: '02',
       title: 'Showerhead GPM Testing',
-      desc: 'All showerheads are tested to verify they do not exceed the 2.5 gallons-per-minute (GPM) threshold.',
+      desc: 'All showerheads are checked against the 2.5 gallons-per-minute (GPM) limit.',
     },
     {
       icon: '03',
-      title: 'Faucet Aerator Compliance',
-      desc: 'Kitchen and bathroom faucets are inspected for compliant aerators at or below 2.2 GPM.',
+      title: 'Faucet Aerator Check',
+      desc: 'Bathroom faucets are checked against 2.0 GPM and kitchen faucets against 2.2 GPM.',
     },
     {
       icon: '04',
-      title: 'Official Compliance Certificate',
-      desc: 'Upon passing, we issue the official low-flow compliance certificate required for your DeKalb County property transfer.',
+      title: 'Signed Certificate of Compliance',
+      desc: 'When every fixture meets the limits, we sign the county Certificate of Compliance so the new owner can set up water service.',
     },
   ];
 
@@ -199,8 +204,8 @@ export default function DeKalbCountyCompliancePage() {
               lineHeight: 1.7,
             }}
           >
-            Certified compliance certificates for property transfers in DeKalb County, GA.
-            Required for real estate closings on qualifying properties.
+            For pre-1993 homes being sold in unincorporated DeKalb County, GA. We check every
+            fixture and sign the county Certificate of Compliance for a $100 flat rate.
           </p>
           <div
             style={{
@@ -256,10 +261,11 @@ export default function DeKalbCountyCompliancePage() {
                   marginBottom: '1.5rem',
                 }}
               >
-                DeKalb County requires that all residential properties meet strict water
-                conservation fixture standards before a property transfer can be completed. This
-                ordinance ensures that toilets, showerheads, and faucets meet maximum flow-rate
-                limits designed to reduce water consumption across the county.
+                In unincorporated DeKalb County, homes built before January 1, 1993 need a signed
+                Certificate of Compliance when they are sold. DeKalb County Department of Watershed
+                Management asks for it before water service can be set up in the new owner&apos;s name.
+                Homes built in 1993 or later are exempt, and it does not apply to building permits,
+                renovations, or new construction.
               </p>
               <p
                 style={{
@@ -269,10 +275,8 @@ export default function DeKalbCountyCompliancePage() {
                   marginBottom: '1.5rem',
                 }}
               >
-                During the compliance inspection, every plumbing fixture in the home is tested
-                against DeKalb County&apos;s specific thresholds. Fixtures that exceed the maximum
-                gallons-per-flush (GPF) or gallons-per-minute (GPM) must be replaced or retrofitted
-                with compliant components before the property sale can close.
+                We check every toilet, showerhead, and faucet against the county limits. Any fixture
+                over the limit is listed with its location so it can be replaced.
               </p>
               <p
                 style={{
@@ -281,9 +285,10 @@ export default function DeKalbCountyCompliancePage() {
                   lineHeight: 1.75,
                 }}
               >
-                Once all fixtures pass inspection, we issue an official compliance certificate that
-                satisfies DeKalb County&apos;s property transfer requirements and can be presented at
-                closing.
+                When every fixture meets the limits, we sign the Certificate of Compliance. Foresight
+                Home Inspections is a private company, not part of DeKalb County; the county allows
+                certified home inspectors to sign this certificate. For official forms, contact DeKalb
+                County Department of Watershed Management.
               </p>
             </div>
 
@@ -350,7 +355,7 @@ export default function DeKalbCountyCompliancePage() {
                 }}
               >
                 <strong style={{ color: 'var(--color-red)' }}>Important:</strong> Non-compliant
-                fixtures must be replaced before the property transfer can close.
+                fixtures must be replaced before the certificate can be signed.
               </div>
             </div>
           </div>
@@ -488,8 +493,8 @@ export default function DeKalbCountyCompliancePage() {
                 lineHeight: 1.6,
               }}
             >
-              Includes full fixture testing, detailed compliance report, and official certificate
-              issuance for DeKalb County property transfers.
+              Includes a check of every fixture, a short written report, and a signed Certificate of Compliance
+              for pre-1993 homes being sold in unincorporated DeKalb County.
             </p>
             <div
               style={{
@@ -605,8 +610,8 @@ export default function DeKalbCountyCompliancePage() {
               margin: '0 auto 2.5rem',
             }}
           >
-            Don&apos;t let a missing low-flow compliance certificate delay your DeKalb County
-            property closing. Schedule your inspection today.
+            Selling or buying a pre-1993 home in unincorporated DeKalb County? Get the certificate
+            handled during due diligence so water service setup is simple after closing.
           </p>
           <div
             style={{

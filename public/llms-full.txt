@@ -64,7 +64,7 @@ Professional radon measurement using continuous electronic radon monitors over 4
 Professional mold inspection and airborne fungal spore testing across Metro Atlanta. Includes 3 calibrated spore-trap air cassettes (two interior living zones compared against one outdoor control baseline) plus surface tape-lift sampling where visible microbial growth is observed. Samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports and species identification (Stachybotrys chartarum, Aspergillus, Penicillium, Cladosporium) delivered in 24 to 48 hours. In addition, Foresight's included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage. Strictly $450 flat rate.
 
 ### DeKalb County Low-Flow Plumbing Compliance Certificate — $100 flat rate
-Mandatory DeKalb County water conservation compliance audit and certificate issuance required prior to property transfer or title deed recording.
+Fixture check and signed DeKalb County Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County being sold (needed before the new owner sets up water service). Not required for homes built 1993 or later, or for permits and new construction.
 
 ### Short-Term Rental (STR) Safety Compliance Audit — $595
 Safety compliance inspection for Airbnb, Vrbo, and other short-term rental properties. Verifies smoke and carbon monoxide detectors, fire extinguishers, exit route safety, required entryway signage, and other municipal/county requirements.
@@ -158,9 +158,9 @@ Most of the time, inspection reports are delivered the very same day—and defin
 
 ## Educational Resources and Blog Articles
 
-### DeKalb County Water Conservation Certificate: Mandatory Plumbing Standards & Closing Compliance Guide [2026]
+### DeKalb County Low-Flow Certificate: Who Needs One When Buying or Selling (2026 Guide)
 URL: https://www.fhinspectionsatl.com/blog/dekalb-county-water-conservation-certificate-inspection-guide
-A definitive legal and technical guide to DeKalb County Code § 25-132 (Water Conservation Standards) for homebuyers, sellers, real estate agents, and closing attorneys. Explains mandatory flow thresholds (&le; 1.6 GPF toilets, &le; 2.5 GPM showerheads, &le; 2.2 GPM lavatory and kitchen faucets), why missing compliance certificates block deed recording and municipal water utility transfer in escrow, common failure points in older Atlanta/DeKalb homes, and how Certified Master Inspectors verify fixture flow rates and issue same-day signed Certificates of Compliance for a flat $100 rate.
+Plain-English guide to the DeKalb County low-flow Certificate of Compliance: required for pre-1993 homes in unincorporated DeKalb County at sale before the new owner sets up water service; not triggered by permits or new construction. Fixture limits (toilets 1.6 GPF, showerheads 2.5 GPM, lavatory faucets 2.0 GPM, kitchen faucets 2.2 GPM), exemptions, and who can sign. Foresight signs certificates for a $100 flat rate.
 
 ### How Much Does a Home Inspection Cost in Atlanta? 2026 Guide
 URL: https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide
@@ -454,7 +454,7 @@ Detailed comparison guides:
 - [Georgia Property Risk & Age Diagnostic Scanner](https://www.fhinspectionsatl.com/risk-scanner): Comprehensive interactive building science scanner that cross-references year built, foundation type, siding material, and county geology to compute overall property defect liability, era-specific code hazards (Polybutylene, Aluminum Wiring, FPE panels, EIFS Stucco), EPA Radon Zone 1 ratings, and generates tailored inspection packages with instant quote deep-links.
 - [Georgia Due Diligence Defense System & Calculator](https://www.fhinspectionsatl.com/due-diligence): Interactive deadline calculator for GAR contract inspection windows, trade quote deadlines, and age-specific building science risk alerts.
 - [Realtor Partner VIP Portal](https://www.fhinspectionsatl.com/realtors): Priority scheduling, SUPRA lockbox entry, 1-click digital repair request amendment builder, and embeddable partner trust badges.
-- [DeKalb County Low-Flow Compliance Dossier](https://www.fhinspectionsatl.com/dossiers/dekalb-low-flow-compliance.html): Official regulatory compliance standards, fixture flow rate thresholds (1.6 GPF / 2.5 GPM), and $100 flat-rate on-site certificate issuance for DeKalb County property transfers.
+- [DeKalb County Low-Flow Certificate Overview](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance): Fixture flow limits and $100 flat-rate certificate inspections for pre-1993 homes in unincorporated DeKalb County being sold.
 - [Live Concierge Consultation](https://www.fhinspectionsatl.com/concierge): Real-time interactive building science and instant quote consultation led by Certified Master Inspector Christopher Boykin via hands-free live voice and intelligent text chat.
 - [Digital PR & Media Kit Center](https://www.fhinspectionsatl.com/press): Official media room for Christopher Boykin, CMI® with on-record expert quotes on Georgia red clay foundation movement, polybutylene pipe failure, and radon gas in the Piedmont granite belt.
 

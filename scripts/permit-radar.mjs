@@ -133,7 +133,7 @@ async function fetchDeKalbPermits() {
         permitName: a.applicationName || a.primaryContactName || 'DeKalb Residential Project',
         permitType: typeDesc,
         address: a.locationLine1 ? `${a.locationLine1.trim()}, DeKalb County, GA` : 'DeKalb County, GA',
-        jobValue: valuation > 0 ? valuation : 185000,
+        jobValue: valuation > 0 ? valuation : null, // never invent a valuation
         status: a.status || 'Active',
         statusDate: date,
         parcel: a.commonId || 'N/A',
@@ -146,9 +146,9 @@ async function fetchDeKalbPermits() {
         acaLink: `https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=${a.applicationNumber || a.id}`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.locationLine1 || 'DeKalb County, GA')}`,
         inspectionOpportunity: isNew
-          ? 'Pre-Drywall Framing Inspection + DeKalb Low-Flow Certificate ($100)'
-          : 'DeKalb Low-Flow Compliance Certificate ($100) + Structural Renovation Audit',
-        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : '$100 Low-Flow / From $345 Full Audit',
+          ? 'Optional Pre-Drywall Inspection'
+          : 'Optional Renovation Inspection',
+        estimatedInspectionFee: isNew ? 'From $275' : 'From $275',
         harvestedAt: new Date().toISOString()
       };
     });
