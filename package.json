@@ -22,7 +22,8 @@
     "colony:audit": "node scripts/colony-audit-engine.mjs",
     "dispatch:build": "node scripts/generate-vip-dispatch-v6.mjs",
     "permits:sweep": "node scripts/permit-radar.mjs",
-    "permits:outreach": "node scripts/permit-outreach-engine.mjs --all"
+    "permits:outreach": "node scripts/permit-outreach-engine.mjs --all",
+    "scout:due-diligence": "node scripts/autonomous-due-diligence-engine.mjs && node scripts/permit-radar.mjs && node scripts/new-construction-radar.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

@@ -216,7 +216,7 @@ async function main() {
   const limitArg = args.find(a => a.startsWith('--limit='));
   const batchLimit = sendAll ? Infinity : (limitArg ? parseInt(limitArg.split('=')[1], 10) : 50);
 
-  const TRADE_SUBCONTRACTOR_REGEX = /plumb|electr|hvac|heat|air|roof|solar|drain|rooter|sewer|mech|generator|dekalbcountyga\.gov|expedit|sign|pool|fence|paving|grading|demo|fire|alarm|sprinkler|restore|remediat|mitigat/i;
+  const TRADE_SUBCONTRACTOR_REGEX = /plumb|electr|hvac|heat|air|roof|solar|drain|rooter|sewer|mech|generator|dekalbcountyga\.gov|expedit|sign|pool|fence|paving|grading|demo|fire|alarm|sprinkler|restore|remediat|mitigat|llc|inc\b|corp|homes|builders|construction|development|holdings|mhp|boavida/i;
   const seenEmailsInQueue = new Set();
   const suppressedEmails = loadSuppressedEmails();
   console.log(`🛡️ [Outreach Engine] Loaded ${suppressedEmails.size} suppressed contacts.`);
@@ -226,12 +226,15 @@ async function main() {
     const normEmail = l.ownerEmail.trim().toLowerCase();
     if (contactedEmails.has(normEmail) || seenEmailsInQueue.has(normEmail)) return false;
     if (suppressedEmails.has(normEmail)) return false;
-    if (!routePermitLead(l)) return false; // no honest, relevant offer for this permit type
+    if (!routePermitLead(l)) return false; // Strictly New Construction or STR only (remodels/additions excluded)
+
+    const type = (l.permitType || '').toLowerCase();
+    if (/addition|alteration|remodel|repair|renovation/i.test(type)) return false;
 
     const isDeKalb = (l.jurisdiction || '').includes('DeKalb') || (l.recordId || '').startsWith('DKB-');
     if (dekalbOnly && !isDeKalb) return false;
 
-    // Strict guard: never email trade subcontractors or government emails
+    // Strict guard: never email trade subcontractors, builder LLCs, or government emails
     if (isDeKalb) {
       if (l.primaryContactType && String(l.primaryContactType) !== '1') return false;
       const combinedText = `${l.ownerName || ''} ${l.ownerEmail || ''} ${l.permitName || ''}`;
@@ -240,17 +243,15 @@ async function main() {
       return true;
     }
 
-    const val = Number(l.jobValue || 0);
-    const type = (l.permitType || '').toLowerCase();
-    const isHighValue = val >= 15000;
-    const isStructural = type.includes('addition') || type.includes('new') || type.includes('alteration') || type.includes('repair') || type.includes('structure');
-    if (isHighValue || isStructural) {
+    const isSTR = (l.jurisdiction || '').includes('Short-Term Rental') || (l.recordId || '').startsWith('STR-');
+    const isNewBuild = type.includes('new');
+    if (isSTR || isNewBuild) {
       seenEmailsInQueue.add(normEmail);
       return true;
     }
     return false;
   }).slice(0, batchLimit);
-  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable high-intent verified Property Owner leads in queue (Batch Limit: ${batchLimit === Infinity ? 'ALL' : batchLimit}).`);
+  console.log(`📬 [Outreach Engine] Found ${queue.length} actionable high-intent verified New Construction / STR Property Owner leads in queue (Batch Limit: ${batchLimit === Infinity ? 'ALL' : batchLimit}).`);
 
   for (const lead of queue) {
     const emailData = buildDueDiligenceEmail(lead);

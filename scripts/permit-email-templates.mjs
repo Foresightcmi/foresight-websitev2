@@ -74,41 +74,38 @@ function wrapHtml(paragraphsHtml, agencyName) {
 }
 
 /**
- * New construction / addition / alteration permits (any jurisdiction).
+ * /**
+ * New construction permits ONLY (remodels, additions, and alterations excluded).
  * Optional third-party inspection pitch. No legal-requirement claims.
  */
 export function buildConstructionEmail(lead) {
   const greeting = firstNameOrGreeting(lead.ownerName);
   const addr = cleanAddress(lead.address);
-  const type = String(lead.permitType || '').toLowerCase();
-  const isNew = type.includes('new');
   const agencyName = (lead.jurisdiction || '').includes('DeKalb') ? 'DeKalb County' : 'the City of Atlanta or Fulton County';
-  const projectWord = isNew ? 'new home' : 'project';
 
-  const subject = isNew
-    ? `Independent pre-drywall inspection for ${addr} - Foresight Home Inspections`
-    : `Independent framing & project inspection for ${addr} - Foresight Home Inspections`;
+  const subject = `Independent pre-drywall & new construction inspection for ${addr} - Foresight Home Inspections`;
 
   const bodyText = `${greeting},
 
-My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the residential permit on file for ${addr} and wanted to reach out with a quick introduction.
+My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the new construction residential permit on file for ${addr} and wanted to reach out with a quick introduction.
 
-While municipal building inspectors complete standard code inspections, many property owners bring in an independent Certified Master Inspector for an in-depth second look during construction. Our most impactful service at this stage is a Pre-Drywall Framing & Mechanical Audit—examining structural framing, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.
+While municipal building inspectors complete standard code inspections, many new-build buyers and custom homeowners bring in an independent Certified Master Inspector for an in-depth evaluation at each phase of construction. Our most impactful service during active framing is a Pre-Drywall Framing & Mechanical Audit—examining structural framing, load paths, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.
 
 What sets our process apart:
 • Two Certified Inspectors on every inspection for complete coverage
 • High-resolution FLIR infrared thermal imaging included at no extra cost
-• Digital report with HD photos and video delivered within 24 hours to share directly with your builder or contractor
+• Digital report with HD photos and video delivered within 24 hours to share directly with your builder's superintendent
 • Backed by up to $35,000 in warranty protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)
 
-Straightforward pricing:
+Straightforward flat-rate pricing:
 - Pre-drywall framing inspection: from $275
-- Final inspection before closing / move-in: from $400
-- 11-month builder warranty evaluation: from $335
+- New construction final walkthrough inspection: from $345
+- 11-month builder warranty evaluation (before Day 365): from $345
+- DeKalb County Low-Flow Plumbing Fixture Certificate (Official CMI Sign-Off): $100 Flat Fee
 
-If you already have an independent inspector on board or have already completed your inspections, congratulations on your project and please feel free to disregard this note!
+If you already have an independent inspector on board or have already completed your inspections, congratulations on your new build and please feel free to disregard this note!
 
-If you would like to talk through your project or schedule an evaluation, simply reply to this email or call me directly at ${PHONE}. You can also explore full details at ${SITE}/services/new-construction-inspection.
+If you would like to talk through your build schedule or lock in a pre-drywall, final, or 11-month warranty evaluation, simply reply to this email or call me directly at ${PHONE}. You can also explore full details at ${SITE}/services/new-construction-inspection.
 
 Warm regards,
 
@@ -122,23 +119,24 @@ ${disclosureText(agencyName)}`;
 
   const html = wrapHtml(`
     <p style="margin:0 0 14px;">${esc(greeting)},</p>
-    <p style="margin:0 0 14px;">My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the residential permit on file for <strong>${esc(addr)}</strong> and wanted to reach out with a quick introduction.</p>
-    <p style="margin:0 0 14px;">While municipal building inspectors complete standard code inspections, many property owners bring in an independent Certified Master Inspector for an in-depth second look during construction. Our most impactful service at this stage is a <strong>Pre-Drywall Framing &amp; Mechanical Audit</strong>—examining structural framing, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.</p>
+    <p style="margin:0 0 14px;">My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the new construction residential permit on file for <strong>${esc(addr)}</strong> and wanted to reach out with a quick introduction.</p>
+    <p style="margin:0 0 14px;">While municipal building inspectors complete standard code inspections, many new-build buyers and custom homeowners bring in an independent Certified Master Inspector for an in-depth evaluation at each phase of construction. Our most impactful service during active framing is a <strong>Pre-Drywall Framing &amp; Mechanical Audit</strong>—examining structural framing, load paths, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.</p>
     <p style="margin:0 0 6px;"><strong>What sets our process apart:</strong></p>
     <ul style="margin:0 0 14px;padding-left:20px;">
       <li><strong>Two Certified Inspectors</strong> on every inspection for complete coverage</li>
       <li><strong>High-resolution FLIR infrared thermal imaging</strong> included at no extra cost</li>
-      <li><strong>Digital report with HD photos and video</strong> delivered within 24 hours to share directly with your builder or contractor</li>
+      <li><strong>Digital report with HD photos and video</strong> delivered within 24 hours to share directly with your builder's superintendent</li>
       <li>Backed by <strong>up to $35,000 in warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)</li>
     </ul>
-    <p style="margin:0 0 6px;"><strong>Straightforward pricing:</strong></p>
+    <p style="margin:0 0 6px;"><strong>Straightforward flat-rate pricing:</strong></p>
     <ul style="margin:0 0 14px;padding-left:20px;">
       <li>Pre-drywall framing inspection: from $275</li>
-      <li>Final inspection before closing / move-in: from $400</li>
-      <li>11-month builder warranty evaluation: from $335</li>
+      <li>New construction final walkthrough inspection: from $345</li>
+      <li>11-month builder warranty evaluation (before Day 365): from $345</li>
+      <li><strong>DeKalb County Low-Flow Plumbing Fixture Certificate: $100 Flat Fee</strong></li>
     </ul>
-    <p style="margin:0 0 14px;">If you already have an independent inspector on board or have already completed your inspections, congratulations on your project and please feel free to disregard this note!</p>
-    <p style="margin:0 0 14px;">If you would like to talk through your project or schedule an evaluation, simply reply to this email or call me directly at <a href="tel:6784802110" style="color:#0f172a;font-weight:600;">${PHONE}</a>. Full details are also available at <a href="${SITE}/services/new-construction-inspection" style="color:#0f172a;">fhinspectionsatl.com/services/new-construction-inspection</a>.</p>
+    <p style="margin:0 0 14px;">If you already have an independent inspector on board or have already completed your inspections, congratulations on your new build and please feel free to disregard this note!</p>
+    <p style="margin:0 0 14px;">If you would like to talk through your build schedule or lock in an evaluation, simply reply to this email or call me directly at <a href="tel:6784802110" style="color:#0f172a;font-weight:600;">${PHONE}</a>. Full details are also available at <a href="${SITE}/services/new-construction-inspection" style="color:#0f172a;">fhinspectionsatl.com/services/new-construction-inspection</a>.</p>
   `, agencyName);
 
   return { subject, bodyText, html, dossierUrl: `${SITE}/dossiers/${lead.recordId}.html` };
@@ -212,17 +210,19 @@ ${disclosureText(agencyName)}`;
 
 /**
  * Decides whether a permit lead should get an email at all, and which one.
- * Returns null when there is no honest, relevant offer for that permit.
+ * Strictly restricted to New Construction (or City of Atlanta STR).
+ * Remodels, additions, alterations, and repairs are permanently excluded.
  */
 export function routePermitLead(lead) {
   const isSTR = (lead.jurisdiction || '').includes('Short-Term Rental') || (lead.recordId || '').startsWith('STR-');
   if (isSTR) return buildSTREmail(lead);
 
   const type = String(lead.permitType || '').toLowerCase();
-  // Only permits where an in-progress construction inspection is actually relevant.
-  const relevant = /new construction|new residential|residential new|addition|alteration/.test(type);
-  const irrelevant = /demolition|water meter|sewer tap|sign|fence|pool|roof|solar|generator/.test(type);
-  if (!relevant || irrelevant) return null;
+  // Strictly New Construction ONLY — never additions, alterations, remodels, or repairs.
+  const isNewConstruction = /new construction|new residential|residential new/.test(type);
+  const isExcluded = /addition|alteration|remodel|repair|renovation|demolition|water meter|sewer tap|sign|fence|pool|roof|solar|generator|mobile home|accessory/i.test(type);
+  if (!isNewConstruction || isExcluded) return null;
 
   return buildConstructionEmail(lead);
 }
+

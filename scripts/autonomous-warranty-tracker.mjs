@@ -245,14 +245,16 @@ async function main() {
 
     const tradePermits = [
       'air conditioning', 'heating', 'water heater', 'plumbing', 'electrical',
-      'alteration', 'repairs', 'sewer tap', 'pool', 'porch', 'deck', 'sitewall',
+      'alteration', 'addition', 'additions', 'remodel', 'renovation', 'repairs', 'repair',
+      'sewer tap', 'pool', 'porch', 'deck', 'sitewall',
       'short-term rental', 'line work', 'temporary', 'water meter', 'venting',
-      'drain', 'back flow', 'general combination', 'county review'
+      'drain', 'back flow', 'general combination', 'county review', 'demolition'
     ];
 
     function isTradeWork(permitType) {
       if (!permitType) return true;
       const pt = permitType.toLowerCase();
+      if (!pt.includes('new')) return true;
       return tradePermits.some(t => pt.includes(t));
     }
 
@@ -267,8 +269,9 @@ async function main() {
     for (let i = 0; i < validPermits.length; i++) {
       const p = validPermits[i];
       const leadId = `ext_${p.recordId || i}`;
-      const targetDaysAgo = 300 + ((i * 7) % 65); // 300 to 365 days ago
-      const inspDate = new Date(now.getTime() - (targetDaysAgo * 24 * 60 * 60 * 1000));
+      const parsedDate = (p.statusDate && p.statusDate !== 'Unknown') ? new Date(p.statusDate) : null;
+      if (!parsedDate || isNaN(parsedDate.getTime())) continue;
+      const inspDate = parsedDate;
       const metrics = calculateWarrantyMetrics(inspDate, now);
 
       const ownerName = p.ownerName.trim();

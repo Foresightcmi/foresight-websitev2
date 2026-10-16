@@ -20,9 +20,9 @@ function cleanHeader(str) {
  * 1. Queries the official City of Atlanta / Fulton County ArcGIS Open Data FeatureServer
  */
 async function fetchAtlantaPermits() {
-  console.log('🏛️  [Permit Radar: Atlanta] Querying City of Atlanta & Fulton County open GIS registry...');
+  console.log('🏛️  [Permit Radar: Atlanta] Querying City of Atlanta & Fulton County open GIS registry (New Construction Only)...');
   try {
-    const whereClause = "TypeCombo LIKE '%Residential New%' OR TypeCombo LIKE '%Residential Addition%'";
+    const whereClause = "TypeCombo LIKE '%Residential New%'";
     const params = new URLSearchParams({
       where: whereClause,
       outFields: '*',
@@ -41,18 +41,17 @@ async function fetchAtlantaPermits() {
     if (!response.ok) throw new Error(`ArcGIS returned ${response.status}`);
     const json = await response.json();
     const features = json.features || [];
-    console.log(`✅ [Permit Radar: Atlanta] Retrieved ${features.length} municipal permits.`);
+    console.log(`✅ [Permit Radar: Atlanta] Retrieved ${features.length} New Construction permits.`);
 
     return features.map(f => {
       const a = f.attributes || {};
       const date = a.StatusDate ? new Date(a.StatusDate).toISOString().split('T')[0] : 'Unknown';
-      const isNew = (a.TypeCombo || '').toLowerCase().includes('new');
 
       return {
         recordId: a.RecordID || `ATL-${a.OBJECTID}`,
         jurisdiction: 'City of Atlanta (Fulton County)',
-        permitName: a.Name || 'Residential Project',
-        permitType: a.TypeCombo || 'Residential New/Addition',
+        permitName: a.Name || 'New Construction Project',
+        permitType: a.TypeCombo || 'Residential New',
         address: a.Address ? `${a.Address}, Atlanta, GA` : 'Atlanta, GA',
         jobValue: a.JobValue || a.JOB_VALUE || 0,
         status: a.statusP || a.Status_1 || 'Active',
@@ -64,10 +63,8 @@ async function fetchAtlantaPermits() {
         ownerPhone: null,
         acaLink: a.ACA_Link || `https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=${a.RecordID}`,
         streetView: a.StreetView || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.Address || 'Atlanta, GA')}`,
-        inspectionOpportunity: isNew 
-          ? 'Pre-Drywall Framing Inspection + 11-Month Builder Warranty'
-          : 'Major Structural & Renovation Inspection',
-        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
+        inspectionOpportunity: 'Pre-Drywall Framing Inspection + 11-Month Builder Warranty',
+        estimatedInspectionFee: 'From $275 - $895 Bundle',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -77,18 +74,18 @@ async function fetchAtlantaPermits() {
   }
 }
 
-const TRADE_SUBCONTRACTOR_REGEX = /plumb|electr|hvac|heat|air|roof|solar|drain|rooter|sewer|mech|generator|dekalbcountyga\.gov|expedit|sign|pool|fence|paving|grading|demo|fire|alarm|sprinkler|restore|remediat|mitigat/i;
+const TRADE_SUBCONTRACTOR_REGEX = /plumb|electr|hvac|heat|air|roof|solar|drain|rooter|sewer|mech|generator|dekalbcountyga\.gov|expedit|sign|pool|fence|paving|grading|demo|fire|alarm|sprinkler|restore|remediat|mitigat|llc|inc\b|corp|homes|builders|construction|development|holdings|mhp|boavida/i;
 
 /**
  * 2. Queries DeKalb County Building Permit Applications GIS FeatureServer
- * Strictly filters for primaryContactType = '1' (Actual Property Owners / Homeowners / Builders)
- * and excludes trade subcontractors (plumbers, electricians, HVAC, roofers, county staff).
+ * Strictly filters for primaryContactType = '1' AND WorkTypeDescription = 'New Construction'
+ * (Remodels, additions, alterations, repairs, and trade subcontractors excluded).
  */
 async function fetchDeKalbPermits() {
-  console.log('🏛️  [Permit Radar: DeKalb] Querying DeKalb County GIS permit registry (Property Owners Only: primaryContactType=1)...');
+  console.log('🏛️  [Permit Radar: DeKalb] Querying DeKalb County GIS permit registry (New Construction Property Owners Only)...');
   try {
     const params = new URLSearchParams({
-      where: "primaryContactType = '1' AND primaryContactEMailAddress IS NOT NULL AND (OccupancyTypeDescription LIKE '%Single Family%' OR OccupancyTypeDescription LIKE '%Residential%' OR WorkTypeDescription LIKE '%Addition%' OR WorkTypeDescription LIKE '%Alteration%' OR WorkTypeDescription LIKE '%New%' OR WorkTypeDescription LIKE '%Water Meter%' OR WorkTypeDescription LIKE '%Sewer%')",
+      where: "primaryContactType = '1' AND primaryContactEMailAddress IS NOT NULL AND WorkTypeDescription = 'New Construction' AND (OccupancyTypeDescription LIKE '%Single Family%' OR OccupancyTypeDescription LIKE '%Townhouse%' OR OccupancyTypeDescription LIKE '%Residential%')",
       outFields: '*',
       returnGeometry: 'false',
       orderByFields: 'OBJECTID DESC',
@@ -106,7 +103,7 @@ async function fetchDeKalbPermits() {
     const json = await response.json();
     const rawFeatures = json.features || [];
 
-    // Filter out any trade subcontractor or county employee who registered under primaryContactType = '1'
+    // Filter out any builder LLC, trade subcontractor, or county employee
     const ownerFeatures = rawFeatures.filter(f => {
       const a = f.attributes || {};
       const email = (a.primaryContactEMailAddress || '').trim();
@@ -115,7 +112,7 @@ async function fetchDeKalbPermits() {
       return !TRADE_SUBCONTRACTOR_REGEX.test(combinedText);
     });
 
-    console.log(`✅ [Permit Radar: DeKalb] Retrieved ${ownerFeatures.length} verified Property Owner permits (filtered from ${rawFeatures.length} raw records).`);
+    console.log(`✅ [Permit Radar: DeKalb] Retrieved ${ownerFeatures.length} verified New Construction Owner permits (filtered from ${rawFeatures.length} raw records).`);
 
     return ownerFeatures.map(f => {
       const a = f.attributes || {};
@@ -124,16 +121,15 @@ async function fetchDeKalbPermits() {
         : (a.issuedDateTime ? new Date(a.issuedDateTime).toISOString().split('T')[0] : 'Unknown');
       
       const valuation = parseFloat(a.declaredValuation || a.calculatedValuation || 0) || 0;
-      const typeDesc = a.WorkTypeDescription || a.applicationType_description || 'Residential Building Permit';
-      const isNew = typeDesc.toLowerCase().includes('new') || (a.comments || '').toLowerCase().includes('new');
+      const typeDesc = a.WorkTypeDescription || 'New Construction';
 
       return {
         recordId: `DKB-${a.applicationNumber || a.id || a.OBJECTID}`,
         jurisdiction: 'DeKalb County',
-        permitName: a.applicationName || a.primaryContactName || 'DeKalb Residential Project',
+        permitName: a.applicationName || a.primaryContactName || 'DeKalb New Construction',
         permitType: typeDesc,
         address: a.locationLine1 ? `${a.locationLine1.trim()}, DeKalb County, GA` : 'DeKalb County, GA',
-        jobValue: valuation > 0 ? valuation : null, // never invent a valuation
+        jobValue: valuation > 0 ? valuation : null,
         status: a.status || 'Active',
         statusDate: date,
         parcel: a.commonId || 'N/A',
@@ -145,10 +141,8 @@ async function fetchDeKalbPermits() {
         comments: a.comments ? a.comments.slice(0, 300) : null,
         acaLink: `https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=${a.applicationNumber || a.id}`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.locationLine1 || 'DeKalb County, GA')}`,
-        inspectionOpportunity: isNew
-          ? 'Optional Pre-Drywall Inspection'
-          : 'Optional Renovation Inspection',
-        estimatedInspectionFee: isNew ? 'From $275' : 'From $275',
+        inspectionOpportunity: 'Pre-Drywall Inspection + 11-Month Builder Warranty + $100 DeKalb Low-Flow Certificate',
+        estimatedInspectionFee: 'From $275 - $345 (+ $100 Low-Flow)',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -436,17 +430,21 @@ async function main() {
       fs.mkdirSync(dataDir, { recursive: true });
     }
 
-    // Read existing leads and purge any legacy DeKalb trade subcontractor records
+    // Read existing leads and purge any legacy remodel/addition/alteration or trade subcontractor records
     let existingLeads = [];
     if (fs.existsSync(DATA_FILE)) {
       try {
         const rawExisting = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
         const dossiersDir = path.join(ROOT_DIR, 'public', 'dossiers');
         existingLeads = rawExisting.filter(l => {
+          const pType = String(l.permitType || '').toLowerCase();
+          if (/addition|alteration|remodel|repair|renovation|water meter|sewer tap|demolition/i.test(pType)) {
+            return false;
+          }
           const isDeKalb = (l.jurisdiction || '').includes('DeKalb') || (l.recordId || '').startsWith('DKB-');
           if (isDeKalb) {
             const combinedText = `${l.ownerName || ''} ${l.ownerEmail || ''} ${l.permitName || ''}`;
-            const isValidOwner = l.primaryContactType === '1' && !TRADE_SUBCONTRACTOR_REGEX.test(combinedText);
+            const isValidOwner = l.primaryContactType === '1' && !TRADE_SUBCONTRACTOR_REGEX.test(combinedText) && /new/i.test(pType);
             if (!isValidOwner) {
               const staleDossier = path.join(dossiersDir, `${l.recordId}.html`);
               if (fs.existsSync(staleDossier)) {
