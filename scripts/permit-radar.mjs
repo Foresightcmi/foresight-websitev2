@@ -334,7 +334,7 @@ async function fetchAtlantaSTRPermits() {
         acaLink: `https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=${encodeURIComponent(a.USER_RECORD_ID || a.USER_ADDRESS || '')}`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`,
         inspectionOpportunity: 'City of Atlanta STR Annual Life-Safety & Smoke/CO Inspection',
-        estimatedInspectionFee: '$495 - $595 Flat Fee',
+        estimatedInspectionFee: 'From $395',
         harvestedAt: new Date().toISOString()
       };
     });
