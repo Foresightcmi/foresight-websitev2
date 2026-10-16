@@ -1,52 +1,52 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #4
+# 🚀 Foresight LinkedIn Growth Engine: Post #5
 
-**Schedule Slot:** Thursday - Deposit (The Georgia Red Clay Enemy) (10:00 AM Weekday Cadence)  
-**Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
-**Topic:** Atlanta Foundation & Crawlspace Inspection: Hydrostatic Red Clay Deflection  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp`  
-**Generated At:** 2026-10-15T18:01:07.103Z  
+**Schedule Slot:** Friday - Withdrawal (The High-Ticket Lead Funnel) (10:00 AM Weekday Cadence)  
+**Strategy Type:** WITHDRAWAL (1:4 High-Ticket Withdrawal)  
+**Topic:** Atlanta Real Estate Due Diligence Inspection: Same-Evening 2-Inspector Reports  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/drone-2.webp`  
+**Generated At:** 2026-10-16T17:48:49.228Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-Atlanta Foundation & Crawlspace Inspection: Georgia red clay looks solid until it drinks 1,000 gallons of rain.
+Atlanta Real Estate Due Diligence Inspection: Why top buyer agents refuse 5-hour solo inspections.
 
-Then it acts like an expanding hydraulic jack against your basement walls.
+When your client only has 5 to 7 days of due diligence, every hour counts.
 
-Last w... [see more]
+Most solo inspector... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-Atlanta Foundation & Crawlspace Inspection: Georgia red clay looks solid until it drinks 1,000 gallons of rain.
+Atlanta Real Estate Due Diligence Inspection: Why top buyer agents refuse 5-hour solo inspections.
 
-Then it acts like an expanding hydraulic jack against your basement walls.
+When your client only has 5 to 7 days of due diligence, every hour counts.
 
-Last week in Marietta, a buyer was told 'that small hairline crack is just settling.'
+Most solo inspectors take 4 to 5 hours on-site and deliver 90-page PDFs that overwhelm buyers.
 
-We put laser levels and digital moisture meters on the stem wall.
+Our Two-Inspector Protocol cuts on-site inspection time in half (1.5 to 2.5 hours).
 
-The foundation wall was deflecting inward by 1.75 inches.
+One inspector audits the roof, structure, and crawlspace while the second tests electrical, HVAC, and plumbing.
 
-Hydrostatic clay pressure had sheared the mortar joints below the grade.
+Calibrated infrared thermal imaging and 4K aerial drone scans are included standard.
 
-Cost to install carbon fiber reinforcement straps: $16,500.
+We deliver same-evening digital reports that clearly separate cosmetic items from major structural defects.
 
-Hairline cracks are rarely 'just settling' in Atlanta's Piedmont soil.
+Plus, every full inspection includes up to $35,000 in combined warranty and guarantee protection.
 
-Always measure the deflection before your due diligence expires.
+Partner with our Certified Master Inspector team at the link below.
 
-Building science doesn't guess.
+Let's make due diligence smooth again.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-Read our building science guide on Georgia clay & foundations: https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations
+Explore our Realtor VIP Due Diligence Program in Metro Atlanta: https://www.fhinspectionsatl.com/realtors
 ```
 
 ---

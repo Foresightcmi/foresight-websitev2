@@ -130,5 +130,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection"
+  },
+  {
+    "postId": 14,
+    "title": "Pre-Listing Seller Inspections: Eliminating Deal-Killing Surprises",
+    "publishedAt": "2026-10-16T17:48:49.425Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/services/buyer-inspection"
   }
 ]
