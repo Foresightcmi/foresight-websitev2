@@ -488,6 +488,13 @@ async function main() {
       try {
         const { execSync } = await import('node:child_process');
         execSync('node scripts/generate-permit-dossiers.mjs', { stdio: 'inherit', cwd: ROOT_DIR });
+        try {
+          execSync('git add data/ public/dossiers/', { stdio: 'ignore', cwd: ROOT_DIR });
+          execSync('git diff --cached --quiet || (git commit -m "chore(dossiers): auto-deploy newly harvested dossiers [skip ci]" && git pull --rebase origin main && git push origin main)', { stdio: 'ignore', cwd: ROOT_DIR });
+          console.log('🚀 [Permit Radar] Successfully synced and deployed new dossiers to production.');
+        } catch (syncErr) {
+          console.warn('ℹ️ [Permit Radar] Git sync note:', syncErr.message);
+        }
       } catch (genErr) {
         console.warn('⚠️ [Permit Radar] Dossier generation error:', genErr.message);
       }
