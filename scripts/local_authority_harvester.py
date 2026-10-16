@@ -31,7 +31,7 @@ BUSINESS_ENTITY = {
         "Certified Master Inspector® (CMI) #176873",
         "InterNACHI Certified Professional Inspector (CPI)",
         "Certified Infrared Thermographer (Building Science)",
-        "FAA Part 107 Licensed Commercial Drone Pilot",
+        "Certified Moisture Intrusion Inspector",
         "Georgia Residential & New Construction Inspection Specialist"
     ],
     "hours": "Mon-Sat: 8:00 AM - 8:00 PM | Sun: By Appointment Only",
