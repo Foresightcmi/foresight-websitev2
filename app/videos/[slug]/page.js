@@ -145,7 +145,7 @@ export const SERVICE_VIDEOS = [
     slug: 'short-term-rental-str-compliance-inspection',
     title: 'Airbnb & Short-Term Rental (STR) Compliance Inspection in Atlanta — CMI® Video Briefing',
     shortTitle: 'Short-Term Rental (STR) Safety & Code Compliance',
-    description: 'See how Foresight Home Inspections conducts municipal Short-Term Rental (STR) life-safety, egress, occupancy load, and electrical compliance inspections with a signed CMI® Affidavit ($595 flat rate).',
+    description: 'See how Foresight Home Inspections conducts municipal Short-Term Rental (STR) life-safety, egress, occupancy load, and electrical compliance inspections with a signed CMI® Affidavit (starts at $395).',
     videoUrl: '/videos/services/short-term-rental.mp4',
     posterUrl: '/images/services/short-term-rental-poster.webp',
     durationIso: 'PT31S',
@@ -155,7 +155,7 @@ export const SERVICE_VIDEOS = [
     serviceHref: '/services',
     startingPrice: '$595 Flat Rate',
     takeaways: [
-      'Complete municipal STR life-safety and building code audit for Atlanta, Fulton, DeKalb, and Metro Atlanta hosts ($595 flat rate).',
+      'Complete municipal STR life-safety and building code audit for Atlanta, Fulton, DeKalb, and Metro Atlanta hosts (starts at $395).',
       'Verifies interconnected smoke and carbon monoxide alarms, bedroom emergency egress window dimensions, fire extinguisher mounting, GFCI/AFCI protection, and deck load safety.',
       'Includes a stamped Certified Master Inspector® (CMI®) Compliance Affidavit delivered within 24 hours.'
     ]

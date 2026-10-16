@@ -26,7 +26,7 @@ function calculateQuoteDetails(input = {}) {
   const parsedSqft = Number(sqft) || 2000;
 
   if (serviceType === 'str') {
-    base = 595;
+    base = 395;
   } else if (serviceType === 'drywall') {
     base = parsedSqft <= 2500 ? 275 : 300;
   } else if (propertyType === 'condo' || serviceType === 'condo') {
@@ -253,7 +253,7 @@ async function handleToolCall(name, args) {
         'air-quality': { name: 'Mold & Indoor Air Quality Testing', base: '$450 flat rate', details: 'Certified mold inspection with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) and surface tape lifts, analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours.' },
         'crawlspace-complexity': { name: 'Unfinished Crawlspace Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished crawlspace subfloor, pier, and vapor barrier inspection labor.' },
         'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
-        'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: '$595 flat rate', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
+        'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: 'Starts at $395', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
         'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Mandatory toilet, shower, and faucet flow rate verification for pre-1993 property transfers.' },
         'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional regional contractor repair labor and materials estimate formatted for standard Georgia repair amendment negotiation. Available as $99 add-on or standalone audit for outside reports.' }
       };

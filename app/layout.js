@@ -597,7 +597,7 @@ export default function RootLayout({ children }) {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing (48-Hr Continuous Monitor)" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "275" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "300" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite and WDO Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "125" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) City Compliance Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "595" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) City Compliance Inspection" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "395" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DeKalb County Plumbing Low-Flow Compliance Certificate" }, "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "100" } }
       ]
     },

@@ -7,7 +7,7 @@ const SCHEDULE_URL = 'https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-
 // SEO Metadata
 // ---------------------------------------------------------------------------
 export async function generateMetadata() {
-  const title = 'City of Atlanta Short-Term Rental Inspection | Airbnb Permit Compliance $495';
+  const title = 'City of Atlanta Short-Term Rental Inspection | Airbnb Permit Compliance From $395';
   const description =
     'Certified Master Inspector life-safety affidavits & STR license compliance inspections for City of Atlanta Airbnb & Vrbo hosts under Ordinance 20-O-1656. Fast 24-hr turnaround.';
 
@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: 'How much does an Atlanta Short-Term Rental compliance inspection cost?',
-    a: 'Our flat-rate City of Atlanta STR Compliance Inspection is $495 for properties up to 2,500 square feet and $595 for larger luxury properties (2,500+ sq ft). This includes our full inspection, on-site testing, photographic documentation, and official signed compliance affidavit for instant upload to the City of Atlanta Accela Citizen Access portal.',
+    a: 'Our flat-rate City of Atlanta STR Compliance Inspection starts at $395 for standard properties and from $495 for larger luxury properties (2,500+ sq ft). This includes our full inspection, on-site testing, photographic documentation, and official signed compliance affidavit for instant upload to the City of Atlanta Accela Citizen Access portal.',
   },
   {
     q: 'How fast will I receive my signed affidavit for the Atlanta city portal?',
@@ -392,10 +392,10 @@ export default function AtlantaSTRCompliancePage() {
               </ul>
               <div style={{ marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-gold)', marginBottom: '0.25rem' }}>
-                  Flat Fee: $495 Complete
+                  Starts at $395 Complete
                 </div>
                 <div style={{ fontSize: '0.825rem', color: '#94A3B8', marginBottom: '1.25rem' }}>
-                  Properties up to 2,500 sq ft &bull; Luxury STRs (2,500+ sq ft) $595
+                  Properties up to 2,500 sq ft &bull; Larger estates from $495
                 </div>
                 <Link
                   href="/quote"

@@ -319,7 +319,7 @@ export default function RiskScannerClient() {
         price: 'FREE ($125 Value)',
         cost: 0,
         included: true,
-        desc: 'FAA Part 107 licensed drone inspection of steep roof planes, flashings, and boots.'
+        desc: '4K aerial drone inspection of steep roof planes, flashings, and boots.'
       },
       {
         name: 'Up to $35,000 Combined Warranty Protection',

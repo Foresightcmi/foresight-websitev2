@@ -87,7 +87,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/short-term-rental-str-compliance-inspection`,
       title: 'Airbnb & STR Safety Compliance Inspection in Metro Atlanta - Foresight Video Briefing',
-      description: 'Life-safety, mechanical load capacity, and municipal code compliance inspections for Metro Atlanta Airbnb and VRBO properties ($595 flat rate). Egress, smoke/CO alarms, and electrical panels.',
+      description: 'Life-safety, mechanical load capacity, and municipal code compliance inspections for Metro Atlanta Airbnb and VRBO properties (starts at $395). Egress, smoke/CO alarms, and electrical panels.',
       thumbnail: `${SITE_URL}/images/services/short-term-rental-poster.webp`,
       content: `${SITE_URL}/videos/services/short-term-rental.mp4`,
       player: `${SITE_URL}/videos/short-term-rental-str-compliance-inspection`,

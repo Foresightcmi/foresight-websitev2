@@ -1437,7 +1437,7 @@ export default function DashboardClient({
                       <span style={{ color: '#4ade80', fontWeight: 700, fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>✓ FORESIGHT STANDARD</span>
                       <ul style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: 0, paddingLeft: '1rem', lineHeight: 1.5 }}>
                         <li>1.5–2.5 hours parallel audit</li>
-                        <li>4K FAA aerial drone scan</li>
+                        <li>4K aerial drone roof scan</li>
                         <li>calibrated infrared thermal included</li>
                         <li>Same-day digital report</li>
                         <li>$35,000 warranty underwriting</li>
@@ -1508,7 +1508,7 @@ export default function DashboardClient({
                         trackedUrl: 'https://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier',
                         dmScript: 'Hey {firstName}! Here is the official EPA Radon Zone 1 risk dossier for Fulton, Cobb, Gwinnett, and Cherokee counties:\n\nhttps://www.fhinspectionsatl.com/services/radon-testing?utm_source=social_dm&utm_medium=comment&utm_campaign=radon_dossier\n\nIt covers continuous 48-hour electronic testing standards and when a seller must credit active mitigation ($1,500+ value).\n\nQuick question: Is the home you\'re evaluating built on a slab, crawlspace, or basement?',
                         followUpQuestion: 'Is the home you\'re evaluating built on a slab, crawlspace, or basement?',
-                        estimatedDealValue: 595,
+                        estimatedDealValue: 395,
                         tag: 'Radon Diagnostic Lead'
                       },
                       {

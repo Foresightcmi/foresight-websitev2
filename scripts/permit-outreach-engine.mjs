@@ -272,7 +272,7 @@ async function main() {
 
       const isDeKalbLead = (lead.jurisdiction || '').includes('DeKalb') || (lead.recordId || '').startsWith('DKB-');
       const isSTRLead = (lead.jurisdiction || '').includes('Short-Term Rental') || (lead.recordId || '').startsWith('STR-');
-      const inspectionTarget = isSTRLead ? 'Optional STR Safety Check ($595)' : 'Optional Construction Inspection (Pre-Drywall from $275)';
+      const inspectionTarget = isSTRLead ? 'Optional STR Safety Check (Starts at $395)' : 'Optional Construction Inspection (Pre-Drywall from $275)';
 
       const entry = {
         recordId: lead.recordId,

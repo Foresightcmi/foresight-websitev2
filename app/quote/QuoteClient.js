@@ -88,7 +88,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     const parsedSqft = Number(sqft) || 2000;
 
     if (serviceType === 'str') {
-      base = 595; // Official PDF Page 6: SHORT-TERM RENTAL COMPLIANCE INSPECTION $595.00
+      base = 395; // Official PDF Page 6: SHORT-TERM RENTAL COMPLIANCE INSPECTION (Starts at $395.00)
     } else if (serviceType === 'drywall') {
       // Official PDF Page 5: PRE-DRYWALL/FRAMING INSPECTION $275.00 / $300.00
       base = parsedSqft <= 2500 ? 275 : 300;
@@ -460,7 +460,7 @@ export default function QuoteClient({ showValueComparison = true }) {
               }}>
                 <strong>Short-Term Rental (STR) Compliance Inspection:</strong>
                 <p style={{ margin: '0.25rem 0 0.5rem 0', fontSize: '0.825rem', color: 'var(--color-gray-dark)', lineHeight: 1.4 }}>
-                  Surrounding Atlanta counties require strict compliance. Our service assists hosts by inspecting standard safety benchmarks ($595 flat rate):
+                  Surrounding Atlanta counties require strict compliance. Our service assists hosts by inspecting standard safety benchmarks (starts at $395):
                 </p>
                 <ul style={{ paddingLeft: '1.25rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                   <li>Smoke detector placement & functional testing (each level & sleeping area).</li>
@@ -987,7 +987,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       {serviceType === 'str' ? 'County Safety Compliance' : 'Negotiating Leverage'}
                     </span>
                     <strong style={{ fontSize: '1.4rem', color: '#34d399', letterSpacing: '-0.02em' }}>
-                      {serviceType === 'str' ? 'Flat Fee $595' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
+                      {serviceType === 'str' ? 'Starts at $395' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
                     </strong>
                   </div>
                   <div style={{ textAlign: 'right' }}>

@@ -170,7 +170,7 @@ What we inspect on site:
 • Deck ledger boards, guardrails, and stair stability
 • 24-hour digital checklist report with photos for your owner records and insurance documentation
 
-Flat-rate fee: $595.
+Inspection fee: Starts at $395.
 
 If you have already completed your safety checks or are fully set, congratulations and please feel free to disregard this note!
 
@@ -200,7 +200,7 @@ ${disclosureText(agencyName)}`;
       <li>Deck ledger boards, guardrails, and stair stability</li>
       <li>24-hour digital checklist report with photos for your owner records and insurance documentation</li>
     </ul>
-    <p style="margin:0 0 14px;"><strong>Flat-rate fee:</strong> $595</p>
+    <p style="margin:0 0 14px;"><strong>Inspection fee:</strong> Starts at $395</p>
     <p style="margin:0 0 14px;">If you have already completed your safety checks or are fully set, congratulations and please feel free to disregard this note!</p>
     <p style="margin:0 0 14px;">If you would like to book a safety evaluation or discuss any questions about your property, simply reply to this email, call me at <a href="tel:6784802110" style="color:#0f172a;font-weight:600;">${PHONE}</a>, or learn more at <a href="${SITE}/service-areas/atlanta-str-compliance" style="color:#0f172a;">fhinspectionsatl.com/service-areas/atlanta-str-compliance</a>.</p>
   `, agencyName);

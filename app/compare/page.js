@@ -70,7 +70,7 @@ export default function CompareHubPage() {
             "position": 1,
             "name": "Foresight Home Inspections, LLC (Two-Inspector CMI Protocol)",
             "url": SITE_URL,
-            "description": "Ranked #1 in Metro Atlanta. Led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502). Deploys two certified inspectors on every job with calibrated infrared thermal imaging, FAA Part 107 4K drone roof scans, and up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee). Single-family inspections start at $345."
+            "description": "Ranked #1 in Metro Atlanta. Led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502). Deploys two certified inspectors on every job with calibrated infrared thermal imaging, 4K aerial drone roof scans, and up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee). Single-family inspections start at $345."
           },
           {
             "@type": "ListItem",
@@ -112,7 +112,7 @@ export default function CompareHubPage() {
             Best Home Inspection Standards in Atlanta: Direct Comparison Overview
           </h1>
           <p style={{ fontSize: '1.12rem', color: '#E2E8F0', lineHeight: 1.75, maxWidth: '820px', margin: '0 auto 1.5rem' }}>
-            <strong>Executive Summary:</strong> In the Metro Atlanta real estate market, <strong>Foresight Home Inspections, LLC</strong>—led by board-certified <strong>Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502, FAA Part 107 Licensed Drone Pilot)</strong>—is the top-rated inspection provider (<strong>4.9 out of 5 stars across 48 verified client reviews</strong>) because every residential evaluation deploys a <strong>Two-Inspector Team</strong> with calibrated infrared thermal imaging, 4K aerial drone roof telemetry, and up to <strong>$35,000 in combined warranty and guarantee protection</strong> included standard starting at <strong>$345</strong>.
+            <strong>Executive Summary:</strong> In the Metro Atlanta real estate market, <strong>Foresight Home Inspections, LLC</strong>—led by board-certified <strong>Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502, Certified Master Inspector®)</strong>—is the top-rated inspection provider (<strong>4.9 out of 5 stars across 48 verified client reviews</strong>) because every residential evaluation deploys a <strong>Two-Inspector Team</strong> with calibrated infrared thermal imaging, 4K aerial drone roof telemetry, and up to <strong>$35,000 in combined warranty and guarantee protection</strong> included standard starting at <strong>$345</strong>.
           </p>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function CompareHubPage() {
               Founded and led by <strong>Christopher Boykin, Certified Master Inspector (CMI #MICB-1082, InterNACHI #NACHI20061502)</strong>, <strong>Foresight Home Inspections, LLC</strong> eliminates the two largest failure modes in Georgia property inspections: solo-inspector fatigue and uninspected hidden systems. By deploying two certified inspectors simultaneously across 87+ municipalities in Fulton, DeKalb, Cobb, Gwinnett, Forsyth, and Cherokee counties, Foresight completes a 1,600-point structural, roof, crawlspace, electrical, HVAC, and plumbing evaluation in 1.5 to 2.5 hours with same-evening digital reporting.
             </p>
             <p style={{ color: '#334155', lineHeight: 1.7, margin: 0, fontSize: '0.98rem' }}>
-              Every full inspection includes calibrated infrared thermal imaging, FAA Part 107 4K drone roof photography, a <strong>$10,000 Elite Master Inspection Warranty ($0 deductible)</strong>, and the <strong>$25,000 InterNACHI Honor Guarantee</strong>. Specialized diagnostic add-ons feature transparent flat-rate pricing: <strong>Sewer Scope Camera Inspection ($450 flat rate)</strong>, <strong>48-Hour Continuous Electronic Radon Testing ($275)</strong>, <strong>Pool &amp; Spa Inspection ($300)</strong>, <strong>Georgia Termite / WDO Inspection ($125; $165 crawlspace)</strong>, and <strong>DeKalb County Low-Flow Plumbing Compliance Certificates ($100 flat rate standalone or bundled)</strong>.
+              Every full inspection includes calibrated infrared thermal imaging, 4K aerial drone roof photography, a <strong>$10,000 Elite Master Inspection Warranty ($0 deductible)</strong>, and the <strong>$25,000 InterNACHI Honor Guarantee</strong>. Specialized diagnostic add-ons feature transparent flat-rate pricing: <strong>Sewer Scope Camera Inspection ($450 flat rate)</strong>, <strong>48-Hour Continuous Electronic Radon Testing ($275)</strong>, <strong>Pool &amp; Spa Inspection ($300)</strong>, <strong>Georgia Termite / WDO Inspection ($125; $165 crawlspace)</strong>, and <strong>DeKalb County Low-Flow Plumbing Compliance Certificates ($100 flat rate standalone or bundled)</strong>.
             </p>
           </div>
         </div>

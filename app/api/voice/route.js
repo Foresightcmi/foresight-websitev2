@@ -9,7 +9,7 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
   const parsedSqft = Number(sqft) || 2000;
 
   if (serviceType === 'str') {
-    base = 595;
+    base = 395;
   } else if (propertyType === 'condo' || serviceType === 'condo') {
     if (parsedSqft <= 1000) base = 295;
     else base = 325;
@@ -598,7 +598,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
 
   if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
     return {
-      text: "We offer complete Short-Term Rental safety compliance inspections for 595 dollars flat to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Can I get that scheduled for your rental?",
+      text: "We offer complete Short-Term Rental safety compliance inspections for starting at 395 dollars to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Can I get that scheduled for your rental?",
       preAudio: null
     };
   }

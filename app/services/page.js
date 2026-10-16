@@ -212,7 +212,7 @@ export default function Services() {
     },
     {
       title: 'Short-Term Rental (STR) Compliance Inspection',
-      price: '$595',
+      price: 'From $395',
       priceNote: 'Airbnb & VRBO Safety & County Code Compliance',
       description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, egress clearances, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
       details: ['Life-safety & egress clearance audit', 'High-occupancy mechanical load check', 'Thermal imaging of electrical & HVAC', 'Municipal STR compliance checklist support'],
@@ -280,7 +280,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis." }, "price": "450", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "595", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "395", "priceCurrency": "USD" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for GAR Form F404 negotiation. Available as $99 add-on or standalone outside audit." }, "price": "99", "priceCurrency": "USD" }
       ]
     }

@@ -201,7 +201,7 @@ https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta
 Most inspectors mark the roof section as "Viewed from ground with binoculars" or "Too steep to inspect safely", leaving you completely blind to damaged architectural shingles, missing valley flashings, and cracked plumbing boots.
 
 At Foresight Home Inspections:
-✅ FAA Part 107 Commercial Drone Aerial Scans are INCLUDED FREE on every full inspection.
+✅ 4K Aerial Drone Roof Scans are INCLUDED FREE on every full inspection.
 ✅ We capture 4K ultra-high-definition imaging of every roof plane, chimney cap, and plumbing penetration.
 ✅ Two Certified Inspectors on every job.
 ✅ Up to $35,000 in Combined Warranty & Guarantee Protection included ($0 deductible).
@@ -213,7 +213,7 @@ Don’t buy a home with an uninspected roof. Choose the technology and thoroughn
 👉 Get your instant price online 24/7:
 https://www.fhinspectionsatl.com/quote
 
-#DroneRoofInspection #FAAPart107 #AtlantaHomeInspection #RoofingInspection #CertifiedMasterInspector #ForesightHomeInspections`,
+#DroneRoofInspection #DroneRoofInspection #AtlantaHomeInspection #RoofingInspection #CertifiedMasterInspector #ForesightHomeInspections`,
     link: 'https://www.fhinspectionsatl.com/quote',
     imageUrl: 'https://www.fhinspectionsatl.com/images/drone-2.webp',
   }

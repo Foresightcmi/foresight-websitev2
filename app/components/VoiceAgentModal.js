@@ -907,7 +907,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   addons: {
                     type: "ARRAY",
                     items: { type: "STRING" },
-                    description: "Addon services: radon ($275), sewer ($450), termite ($125/$165), pool ($300), lowFlow ($100), str ($595)"
+                    description: "Addon services: radon ($275), sewer ($450), termite ($125/$165), pool ($300), lowFlow ($100), str (from $395)"
                   }
                 },
                 required: ["sqft"]
@@ -2757,7 +2757,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             + Pool ($300)
           </button>
           <button
-            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Audit', 595)}
+            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Audit', 395)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -2770,7 +2770,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + STR Compliance ($595)
+            + STR Compliance (From $395)
           </button>
         </div>
 

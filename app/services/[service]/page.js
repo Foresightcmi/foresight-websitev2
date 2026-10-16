@@ -184,8 +184,8 @@ const SERVICE_MAP = {
     price: '$595',
     icon: '08',
     headline: 'Safety, Code Compliance & Due Diligence for Airbnb & STR Investments',
-    metaTitle: 'Airbnb & STR Inspection Atlanta GA | Flat $595 | Foresight',
-    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. Flat $595.',
+    metaTitle: 'Airbnb & STR Inspection Atlanta GA | From $395 | Foresight',
+    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. From $395.',
     description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, electrical load capacities, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
     included: [
       'Life-safety audit (egress windows, smoke/CO interconnectivity, handrails)',
