@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
+import StrComplianceChecklist from '../components/StrComplianceChecklist';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
@@ -184,8 +184,8 @@ const SERVICE_MAP = {
     price: '$595',
     icon: '08',
     headline: 'Safety, Code Compliance & Due Diligence for Airbnb & STR Investments',
-    metaTitle: 'Airbnb & STR Inspection Atlanta GA | From $395 | Foresight',
-    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. From $395.',
+    metaTitle: 'Airbnb & STR Inspection Atlanta GA | $595 Flat | Foresight',
+    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit. Flat $595.',
     description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, electrical load capacities, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
     included: [
       'Life-safety audit (egress windows, smoke/CO interconnectivity, handrails)',
@@ -348,7 +348,7 @@ export default async function ServiceHubPage({ params }) {
       }))
     : defaultFaqs;
 
-  const jsonLd = {
+  const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": serviceData.name,
@@ -363,6 +363,54 @@ export default async function ServiceHubPage({ params }) {
       "@type": "Offer",
       "price": serviceData.price.replace(/[^0-9]/g, '') || "345",
       "priceCurrency": "USD"
+    }
+  };
+
+  const serviceImages = {
+    'sewer-scope-inspection': `${SITE_URL}/images/sewer-scope.png`,
+    'pool-spa-inspection': `${SITE_URL}/images/pool-inspecting.png`,
+    'pool-inspection': `${SITE_URL}/images/pool-inspecting.png`,
+    'thermal-imaging': `${SITE_URL}/images/thermal-1.png`,
+    'termite-inspection': `${SITE_URL}/images/crawlspace.png`,
+    'termite-wdo-inspection': `${SITE_URL}/images/crawlspace.png`,
+    '11-month-warranty-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'pre-listing-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'new-construction-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
+    'home-buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`
+  };
+  const primaryProductImage = serviceImages[canonicalService] || `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`;
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${serviceData.name} Package in Metro Atlanta`,
+    "description": `Comprehensive ${serviceData.name.toLowerCase()} in Metro Atlanta by Certified Master Inspector Christopher Boykin of Foresight Home Inspections. Includes professional testing equipment, full digital report within 24 hours, and up to $35,000 in warranty protection.`,
+    "image": [
+      primaryProductImage,
+      `${SITE_URL}/images/luxury-home.jpg`,
+      `${SITE_URL}/images/Logopng.png`
+    ],
+    "sku": `FHI-HUB-${canonicalService.toUpperCase()}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Foresight Home Inspections"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": `${serviceData.price.replace(/[^0-9]/g, '') || "345"}.00`,
+      "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
+      "validFrom": "2026-01-01",
+      "availability": "https://schema.org/InStock",
+      "url": `${SITE_URL}/services/${canonicalService}`
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   };
 
@@ -381,13 +429,15 @@ export default async function ServiceHubPage({ params }) {
 
   return (
     <>
-      <Script
-        id="service-hub-jsonld"
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <Script
-        id="service-hub-faq-jsonld"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
@@ -485,6 +535,10 @@ export default async function ServiceHubPage({ params }) {
                   </p>
                 </div>
               </div>
+            )}
+
+            {canonicalService === 'str-short-term-rental-inspection' && (
+              <StrComplianceChecklist />
             )}
 
             <div style={{ background: '#F8FAFC', padding: '2rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-gold)' }}>

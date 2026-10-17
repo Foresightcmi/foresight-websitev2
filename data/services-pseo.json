@@ -2,8 +2,8 @@
   {
     "slug": "radon-testing",
     "name": "Radon Gas Testing",
-    "metaTitle": "{city}, GA Radon Testing & Radon Inspection |  EPA",
-    "metaDescription": "4.9★ Residential & commercial 48-hour electronic radon testing and radon inspection in {city}, GA. Flat  rate. Hourly EPA pCi/L graph & 24-hr report!",
+    "metaTitle": "{city}, GA Radon Testing & Radon Inspection | $275 EPA",
+    "metaDescription": "4.9★ Residential & commercial 48-hour electronic radon testing and radon inspection in {city}, GA. Flat $275 rate. Hourly EPA pCi/L graph & 24-hr report!",
     "price": "$275",
     "priceDetails": "$275 continuous 48-hour electronic monitoring test",
     "icon": "☢️",
@@ -27,7 +27,7 @@
       },
       {
         "q": "How much does radon testing cost in {city}, GA?",
-        "a": "Radon testing in {city} costs $275 flat rate continuous electronic testing. Every inspection also includes our $10,000 Elite Master Inspection Warranty."
+        "a": "Electronic 48-hour continuous radon testing in {city} is a flat rate of $275 (compared to $350 to $375+ charged by many standalone Atlanta radon testing providers). Every inspection includes an hourly EPA pCi/L graph, same-day digital reporting, and our $10,000 Elite Master Inspection Warranty."
       }
     ],
     "riskContext": "Radon levels in Georgia can spike unexpectedly during heavy rainfall and winter heating seasons when soil gases are drawn upward into living spaces.",
@@ -37,8 +37,8 @@
   {
     "slug": "termite-inspection",
     "name": "Termite & WDO Inspection",
-    "metaTitle": "{city}, GA Termite & WDO Inspection | Official Report ",
-    "metaDescription": "4.9★ Official Georgia WDO (Wood Destroying Organisms) termite letter & inspection in {city}, GA ( slab/basement,  crawlspace). Fast closing clearance!",
+    "metaTitle": "{city}, GA Termite & WDO Inspection | Official Report $125+",
+    "metaDescription": "4.9★ Official Georgia WDO (Wood Destroying Organisms) termite letter & inspection in {city}, GA ($125 slab/basement, $165 crawlspace). Fast closing clearance!",
     "price": "$125+",
     "priceDetails": "$125 when bundled with a home inspection ($165 crawlspace)",
     "icon": "🐜",
@@ -46,7 +46,7 @@
     "heroSub": "Subterranean termites cause over $5 billion in property damage annually. Get an Official Georgia Wood Infestation Clearance Report in {city}.",
     "overview": "Georgia's warm, humid climate creates an ideal environment for eastern subterranean termites and wood-decay fungi. In {city}, termite damage can compromise main floor joists, sills, support posts, and roof structures without obvious surface signs. Through our licensed pest control partners, Foresight Home Inspections delivers an Official Georgia Wood Infestation Report (WDO Report) required by FHA, VA, and conventional lenders prior to closing.",
     "standards": "Inspections cover active termites, past termite activity, evidence of previous chemical treatments, powderpost beetles, carpenter ants, and wood-rot decay fungi following Georgia Structural Pest Control Commission regulations.",
-    "equipment": "High-powered diagnostic flashlights, moisture probes, sounding hammers, and digital thermal cameras.",
+    "equipment": "High-powered diagnostic flashlights, moisture probes, sounding hammers, and calibrated infrared cameras.",
     "faqs": [
       {
         "q": "Is a termite inspection required to buy a house in {city}, GA?",
@@ -58,7 +58,7 @@
       },
       {
         "q": "How much is a termite inspection in {city}, GA?",
-        "a": "An Official Georgia WDO termite inspection in {city} is $125 ($165 for crawlspace foundations) when bundled with your primary home inspection."
+        "a": "An Official Georgia WDO termite inspection in {city} is $125 for slab or basement homes ($165 for crawlspace foundations) when bundled with your primary home inspection."
       },
       {
         "q": "What if termites or wood damage are found?",
@@ -72,8 +72,8 @@
   {
     "slug": "sewer-scope-inspection",
     "name": "Sewer Scope Inspection",
-    "metaTitle": "{city}, GA Sewer Scope & Video Camera Inspection | ",
-    "metaDescription": "4.9★ HD sewer video & camera scope inspection in {city}, GA ( flat rate). Fiber-optic plumbing line camera audit from cleanout to main. 24-hr video report!",
+    "metaTitle": "{city}, GA Sewer Scope & Video Camera Inspection | $450",
+    "metaDescription": "4.9★ HD sewer video & camera scope inspection in {city}, GA ($450 flat rate). Fiber-optic plumbing line camera audit from cleanout to main. 24-hr video report!",
     "price": "$450",
     "priceDetails": "$450 flat rate inspection with high-definition digital video report",
     "icon": "🚾",
@@ -97,7 +97,7 @@
       },
       {
         "q": "How much does a sewer camera scope cost in {city}, GA?",
-        "a": "Our sewer scope camera evaluation in {city} is a flat rate of $450, which includes the complete HD video inspection, distance mapping, and report."
+        "a": "Our sewer scope camera evaluation in {city} is a flat rate of $450, which includes the complete 100+ foot HD video inspection from cleanout to municipal main, defect distance mapping, and 24-hour digital report."
       }
     ],
     "riskContext": "Homes built prior to 1985 in {city} often contain aging cast iron or clay tile sewer pipes that are reaching the end of their functional lifespan.",
@@ -107,16 +107,16 @@
   {
     "slug": "new-construction-inspection",
     "name": "New Construction Inspection",
-    "metaTitle": "{city}, GA New Construction & Final Home Inspections | ",
-    "metaDescription": "4.9★ Certified new construction & new home final inspections in {city}, GA from . 2 inspectors, free thermal & 4K drone scans + ,000 warranty!",
+    "metaTitle": "{city}, GA New Construction & Final Home Inspections | $400+",
+    "metaDescription": "4.9★ Certified new construction & new home final inspections in {city}, GA from $400. 2 inspectors, free thermal & 4K drone scans + $35,000 warranty!",
     "price": "$400+",
-    "priceDetails": "New construction inspections from $400+ based on square footage",
+    "priceDetails": "New construction inspections from $400+ based on square footage ($275+ Pre-Drywall)",
     "icon": "🏗️",
     "badge": "Builder Punch-List Ready",
     "heroSub": "Don't assume a new home is defect-free. Municipal inspectors only spend 15 minutes on site. Our two-inspector team performs a multi-hour audit in {city}.",
     "overview": "Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in {city} frequently have major concealed defects. From missing attic insulation and improperly wired subpanels to unsealed roof flashings and reversed HVAC ducting, our independent two-inspector team evaluates every system in your new {city} build before final closing.",
     "standards": "Full multi-system evaluation covering structural framing, roof coverings, electrical subpanels, plumbing roughs, HVAC airflow balance, insulation depth, and exterior drainage against IRC and Georgia Residential Energy Code guidelines.",
-    "equipment": "infrared thermal imaging, aerial inspection drones, circuit load testers, laser levels, and digital moisture meters.",
+    "equipment": "Calibrated infrared cameras, aerial inspection drones, circuit load testers, laser levels, and digital moisture meters.",
     "faqs": [
       {
         "q": "Doesn't the city inspector in {city} inspect my new home?",
@@ -124,7 +124,7 @@
       },
       {
         "q": "When should a new construction inspection be scheduled in {city}?",
-        "a": "Schedule the final phase inspection 3 to 5 days before your final builder walkthrough. This gives the builder time to complete items on our inspection report before your official closing date."
+        "a": "We recommend two phases: Phase 1 Pre-Drywall Framing Inspection ($275+) before insulation and sheetrock are hung, and Phase 2 Final New Construction Inspection ($400+) scheduled 3 to 5 days before your final builder walkthrough."
       },
       {
         "q": "Will the builder fix issues found on Foresight's report in {city}?",
@@ -132,7 +132,7 @@
       },
       {
         "q": "How much is a new build inspection in {city}, GA?",
-        "a": "New construction final phase inspections in {city} start at $400+ for single-family homes, based on square footage. All inspections include thermal imaging and our $10,000 warranty."
+        "a": "New construction final phase inspections in {city} start at $400+ for single-family homes ($275+ for pre-drywall framing inspections). Every final inspection includes two certified inspectors, infrared thermal imaging, 4K drone roof scanning, and up to $35,000 in combined warranty protection ($10,000 Elite Warranty + $25,000 InterNACHI Honor Guarantee, vs. the $10,000 cap offered by national competitors)."
       }
     ],
     "riskContext": "Rapid development in {city} often results in unsealed roof penetration flashings, missing attic baffles, and improper grading that directs rainwater toward fresh foundations.",
@@ -142,8 +142,8 @@
   {
     "slug": "pool-inspection",
     "name": "Pool & Spa Inspection",
-    "metaTitle": "{city}, GA Swimming Pool & Spa Inspection |  Flat",
-    "metaDescription": "4.9★ Certified swimming pool & spa inspection in {city}, GA ( flat rate). Pumps, heaters, pool chemical & GFCI electrical bonding audit. 24-hr report!",
+    "metaTitle": "{city}, GA Swimming Pool & Spa Inspection | $300 Flat",
+    "metaDescription": "4.9★ Certified swimming pool & spa inspection in {city}, GA ($300 flat rate). Pumps, heaters, pool chemical & GFCI electrical bonding audit. 24-hr report!",
     "price": "$300",
     "priceDetails": "$300 flat rate for residential pools & attached spas",
     "icon": "🏊‍♂️",
@@ -177,8 +177,8 @@
   {
     "slug": "pre-listing-inspection",
     "name": "Pre-Listing Seller Inspection",
-    "metaTitle": "{city}, GA Pre-Listing Home Inspections & Checklist | ",
-    "metaDescription": "4.9★ Pre-listing home inspections & seller checklist in {city}, GA from  ( condos). 2 certified inspectors, free thermal & 4K drone scans. Close faster!",
+    "metaTitle": "{city}, GA Pre-Listing Home Inspections & Checklist | $365+",
+    "metaDescription": "4.9★ Pre-listing home inspections & seller checklist in {city}, GA from $365 ($295 condos). 2 certified inspectors, free thermal & 4K drone scans. Close faster!",
     "price": "$295+",
     "priceDetails": "Condos from $295 | Single Family Homes from $365+",
     "icon": "📋",
@@ -186,7 +186,7 @@
     "heroSub": "Avoid deal-killing surprises during buyer due diligence. Inspect your {city} home before putting it on the market to sell faster and for top dollar.",
     "overview": "When a buyer's inspector finds unexpected major defects in {city}, negotiations stall, price concessions skyrocket, or buyers walk away entirely. A Pre-Listing Seller Inspection by Foresight Home Inspections gives you complete transparency into your property's condition before hitting the MLS. You can make targeted repairs on your timeline or reflect known conditions accurately in your seller disclosures.",
     "standards": "Full InterNACHI standard evaluation covering all structural, mechanical, electrical, plumbing, roof, and HVAC systems with thermal imaging included.",
-    "equipment": "infrared thermal cameras, aerial drones, moisture detectors, and digital circuit analyzers.",
+    "equipment": "Calibrated infrared cameras, aerial drones, moisture detectors, and digital circuit analyzers.",
     "faqs": [
       {
         "q": "Why should I get a pre-listing inspection in {city}, GA?",
@@ -212,8 +212,8 @@
   {
     "slug": "buyer-inspection",
     "name": "Buyer Home Inspection",
-    "metaTitle": "{city}, GA Full Home Inspection & Home Inspectors | ",
-    "metaDescription": "4.9★ Full home inspection in {city}, GA from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones & ,000 warranty protection!",
+    "metaTitle": "{city}, GA Full Home Inspection & Home Inspectors | $345+",
+    "metaDescription": "4.9★ Full home inspection in {city}, GA from $345 ($295 condos). 2 certified home inspectors on every job, free thermal, 4K drones & $35,000 warranty protection!",
     "price": "$345+",
     "priceDetails": "Condos from $295 | Single Family Homes from $345 based on square footage",
     "icon": "🏡",
@@ -221,7 +221,7 @@
     "heroSub": "Don't buy a home in {city} with blind spots. Our two-inspector team evaluates every system from roof to foundation with same-day digital reporting.",
     "overview": "Purchasing a home in {city} is one of the largest financial investments of your life. Standard single-inspector companies take 4+ hours and often miss concealed defects. Foresight dispatches two certified inspectors—led by board-certified Certified Master Inspector® Christopher Boykin—cutting time to 1.5–2.5 hours while delivering double verification across structural, mechanical, plumbing, electrical, and roofing systems.",
     "standards": "Conducted strictly to InterNACHI Standards of Practice with complimentary infrared thermal scans, 4K aerial roof drone evaluations, and up to $35,000 in warranty protection.",
-    "equipment": "infrared thermal cameras, aerial inspection drones, digital moisture meters, circuit load testers, and combustible gas sniffers.",
+    "equipment": "Calibrated infrared cameras, aerial inspection drones, digital moisture meters, circuit load testers, and combustible gas sniffers.",
     "faqs": [
       {
         "q": "Why do you send two certified inspectors to a buyer inspection in {city}?",
@@ -233,7 +233,7 @@
       },
       {
         "q": "How fast do I receive my inspection report in {city}?",
-        "a": "We guarantee digital delivery within 24 hours of inspection completion (often same-day evening). The interactive HomeGauge CRL tool allows you and your realtor to create a formal repair amendment in minutes."
+        "a": "We guarantee digital delivery within 24 hours of inspection completion (often same-day evening). Our interactive digital repair request list allows you and your realtor to create a formal repair amendment in minutes."
       }
     ],
     "riskContext": "Georgia does not license home inspectors. Hiring an unvetted solo inspector puts your earnest money and due diligence deposit at severe risk.",
@@ -270,8 +270,8 @@
   {
     "slug": "pre-drywall-inspection",
     "name": "Pre-Drywall Framing Inspection",
-    "metaTitle": "{city}, GA Pre-Drywall Inspections for New Builds | ",
-    "metaDescription": "4.9★ Independent pre-drywall inspections for new builds in {city}, GA from . 2 certified inspectors audit framing, rough plumbing, electrical & HVAC!",
+    "metaTitle": "{city}, GA Pre-Drywall Inspections for New Builds | $275+",
+    "metaDescription": "4.9★ Independent pre-drywall inspections for new builds in {city}, GA from $275. 2 certified inspectors audit framing, rough plumbing, electrical & HVAC!",
     "price": "$275+",
     "priceDetails": "$275 up to 2,500 sq ft | $300 for 2,500+ sq ft",
     "icon": "📐",
@@ -297,8 +297,8 @@
   {
     "slug": "11-month-warranty-inspection",
     "name": "11-Month Builder Warranty Inspection",
-    "metaTitle": "{city}, GA 11-Month Builder Warranty Inspection | ",
-    "metaDescription": "4.9★ Builder 11-month (eleven-month / eleventh-month) warranty home inspections in {city}, GA from . 2 certified inspectors, free thermal & drone scans!",
+    "metaTitle": "{city}, GA 11-Month Builder Warranty Inspection | $335+",
+    "metaDescription": "4.9★ Builder 11-month (eleven-month / eleventh-month) warranty home inspections in {city}, GA from $335. 2 certified inspectors, free thermal & drone scans!",
     "price": "$335+",
     "priceDetails": "11-month warranty audits from $335+ based on home square footage",
     "icon": "⏳",
@@ -306,7 +306,7 @@
     "heroSub": "Your builder's one-year warranty is about to expire. Uncover structural settlement, HVAC leaks, and roof flaws before the repair bill becomes yours in {city}.",
     "overview": "During the first year of living in a new home in {city}, seasonal temperature swings, foundation settling, and everyday living reveal hidden construction defects. Our 11-Month Builder Warranty Inspection (also known as an eleven-month or eleventh-month home warranty inspection) gives you an independent Certified Master Inspector report documenting code deficiencies, drywall nail pops, truss uplift, and drainage issues to submit directly to your builder for mandatory repairs before your 1-year builder warranty coverage ends.",
     "standards": "Complete 1,600-point InterNACHI evaluation with thermal imaging, roof drone scans, and cosmetic/structural settlement audit.",
-    "equipment": "infrared thermal cameras, roof drones, laser leveling devices, and circuit analyzers.",
+    "equipment": "Calibrated infrared cameras, roof drones, laser leveling devices, and circuit analyzers.",
     "faqs": [
       {
         "q": "Why shouldn't I just do the 11-month walkthrough myself in {city}?",
@@ -324,8 +324,8 @@
   {
     "slug": "mold-testing",
     "name": "Mold & Air Quality Inspection",
-    "metaTitle": "{city}, GA Mold Inspection & Indoor Air Quality Testing ",
-    "metaDescription": "4.9★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA ( flat rate). 3 spore-trap air samples + accredited lab!",
+    "metaTitle": "{city}, GA Mold Inspection & Indoor Air Quality Testing | $450",
+    "metaDescription": "4.9★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA ($450 flat rate). 3 spore-trap air samples + accredited lab!",
     "price": "$450",
     "priceDetails": "$450 flat rate includes 3 calibrated air samples (indoor living zones vs outdoor control baseline) + independent accredited lab report",
     "icon": "🧫",
@@ -345,7 +345,7 @@
       },
       {
         "q": "How much does mold testing cost in {city}, GA?",
-        "a": "Professional mold and air quality testing in {city} is a flat rate of $450, which includes 3 calibrated spore-trap air samples (interior living zones tested against an outdoor control baseline) and full accredited microbiology laboratory analysis."
+        "a": "Professional mold and air quality testing in {city} is a flat rate of $450 (saving homeowners $50 to $200 compared to standalone Atlanta mold testing services that charge $498 to $650+). Foresight's flat rate includes 3 calibrated spore-trap air samples (interior living zones tested against an outdoor control baseline), infrared thermal moisture mapping, and full accredited independent microbiology laboratory analysis delivered within 24 to 48 hours."
       }
     ],
     "riskContext": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture threshold required for active fungal growth and spore transmission into living areas.",

@@ -1,0 +1,693 @@
+{
+  "audit_metadata": {
+    "business": "Foresight Home Inspections (fhinspectionsatl.com)",
+    "retrieved_on": "2026-10-17T09:02:45.933868+00:00",
+    "queries_scraped": 10,
+    "urls_http_verified": 19,
+    "urls_http_passed": 15,
+    "urls_http_failed": 4,
+    "competitor_pages_with_visible_dollar_prices": 8,
+    "competitor_pages_with_product_or_faq_schema": 6
+  },
+  "top_ranking_domains_across_queries": [
+    {
+      "domain": "fhinspectionsatl.com",
+      "appearances_in_top_10": 3
+    },
+    {
+      "domain": "allypropertyinspections.com",
+      "appearances_in_top_10": 2
+    },
+    {
+      "domain": "angi.com",
+      "appearances_in_top_10": 2
+    },
+    {
+      "domain": "dreamhomeinspection.org",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "atlanta.residentialinspector.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "erasemold.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "fastmoldtesting.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "bpginspections.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "inspectatlanta.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "choosesuperiorinspection.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "rentstellar.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "atlantaga.gov",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "aca-prod.accela.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "atlantapremierhomeinspections.com",
+      "appearances_in_top_10": 1
+    },
+    {
+      "domain": "airmd.com",
+      "appearances_in_top_10": 1
+    }
+  ],
+  "query_audits": [
+    {
+      "query": "home inspection Atlanta",
+      "service": "Single-Family Home Inspection",
+      "foresight_price": "$345+",
+      "foresight_target_url": "https://fhinspectionsatl.com/",
+      "foresight_in_top_10": false,
+      "organic_count": 2,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://dreamhomeinspection.org",
+          "url": "https://dreamhomeinspection.org/",
+          "domain": "dreamhomeinspection.org",
+          "snippet": "Top rated home inspection companies in Atlanta . Get same-day reports, transparent fixed pricing, and certified inspectors. Check our fixed rates & book online 24/7!",
+          "source_url": "https://search.yahoo.com/search?p=home+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:02:45.933895+00:00",
+          "page_audit": {
+            "url": "https://dreamhomeinspection.org/",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://dreamhomeinspection.org/",
+            "retrieved_on": "2026-10-17T09:02:50.431506+00:00"
+          }
+        },
+        {
+          "position": 2,
+          "title": "https://allypropertyinspections.com › home-inspection",
+          "url": "https://allypropertyinspections.com/home-inspection-atlanta-ga/",
+          "domain": "allypropertyinspections.com",
+          "snippet": "Edifice Inspections services the Greater Atlanta Area. Our inspection reports include a detailed description of issues along with pictures to illustrate a clear message. At Edifice Inspections, we offer more than just a simple home inspection .",
+          "source_url": "https://search.yahoo.com/search?p=home+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:02:45.933895+00:00",
+          "page_audit": {
+            "url": "https://allypropertyinspections.com/home-inspection-atlanta-ga/",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$350"
+            ],
+            "has_product_or_faq_schema": true,
+            "source_url": "https://allypropertyinspections.com/home-inspection-atlanta-ga/",
+            "retrieved_on": "2026-10-17T09:02:51.295945+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [
+          "home inspection atlanta",
+          "home inspection atlanta ga",
+          "home inspection atlanta cost",
+          "home inspection atlanta reddit",
+          "home inspectors atlanta",
+          "home inspector atlanta ga",
+          "home inspectors atlanta jobs",
+          "home inspectors atlanta reddit",
+          "home inspection jobs atlanta",
+          "home inspection pros atlanta"
+        ],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=home+inspection+Atlanta",
+        "retrieved_on": "2026-10-17T09:02:49.656788+00:00"
+      }
+    },
+    {
+      "query": "sewer scope inspection Atlanta",
+      "service": "Sewer Scope Inspection",
+      "foresight_price": "$450 flat rate",
+      "foresight_target_url": "https://fhinspectionsatl.com/services/sewer-scope-inspection",
+      "foresight_in_top_10": false,
+      "organic_count": 2,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://www.atlanta.residentialinspector.com › sewer-line",
+          "url": "https://www.atlanta.residentialinspector.com/sewer-line-inspections/",
+          "domain": "atlanta.residentialinspector.com",
+          "snippet": "With a sewer scope inspection from NPI Atlanta , you'll get peace of mind knowing your new home's sewer line is in great shape. Schedule today.",
+          "source_url": "https://search.yahoo.com/search?p=sewer+scope+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:02:52.848806+00:00",
+          "page_audit": {
+            "url": "https://www.atlanta.residentialinspector.com/sewer-line-inspections/",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$20"
+            ],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://www.atlanta.residentialinspector.com/sewer-line-inspections/",
+            "retrieved_on": "2026-10-17T09:02:58.346417+00:00"
+          }
+        },
+        {
+          "position": 2,
+          "title": "https://allypropertyinspections.com › sewer-scope-inspection",
+          "url": "https://allypropertyinspections.com/sewer-scope-inspection/",
+          "domain": "allypropertyinspections.com",
+          "snippet": "What is a Sewer Scope Inspection & Why Is It Necessary? All Atlanta sewer scope inspectors use high-tech reels and camera equipment to inspect the condition of your property’s sewer line.",
+          "source_url": "https://search.yahoo.com/search?p=sewer+scope+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:02:52.848806+00:00",
+          "page_audit": {
+            "url": "https://allypropertyinspections.com/sewer-scope-inspection/",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$215"
+            ],
+            "has_product_or_faq_schema": true,
+            "source_url": "https://allypropertyinspections.com/sewer-scope-inspection/",
+            "retrieved_on": "2026-10-17T09:02:59.462543+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [
+          "sewer scope inspection atlanta",
+          "how much is a sewer scope inspection",
+          "sewer scope inspection near me",
+          "sewer scope inspection cost",
+          "should you do a sewer scope inspection"
+        ],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=sewer+scope+inspection+Atlanta",
+        "retrieved_on": "2026-10-17T09:02:57.211314+00:00"
+      }
+    },
+    {
+      "query": "mold inspection Atlanta",
+      "service": "Mold & Air Quality Testing",
+      "foresight_price": "$450 flat rate",
+      "foresight_target_url": "https://fhinspectionsatl.com/services/mold-air-quality-testing",
+      "foresight_in_top_10": false,
+      "organic_count": 2,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://erasemold.com",
+          "url": "https://erasemold.com/",
+          "domain": "erasemold.com",
+          "snippet": "Get peace of mind with mold inspections in Atlanta, GA. Mold Warrior identifies hidden moisture and mold growth with professional testing and reports.",
+          "source_url": "https://search.yahoo.com/search?p=mold+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:00.954742+00:00",
+          "page_audit": {
+            "url": "https://erasemold.com/",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://erasemold.com/",
+            "retrieved_on": "2026-10-17T09:03:04.554974+00:00"
+          }
+        },
+        {
+          "position": 2,
+          "title": "https://fastmoldtesting.com › atlanta",
+          "url": "https://fastmoldtesting.com/atlanta",
+          "domain": "fastmoldtesting.com",
+          "snippet": "Our Mold Testing Atlanta will tell the real story about what is going on with your indoor air quality. We collect air and surface samples that are sent off to an independent laboratory for analysis.",
+          "source_url": "https://search.yahoo.com/search?p=mold+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:00.954742+00:00",
+          "page_audit": {
+            "url": "https://fastmoldtesting.com/atlanta",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$498",
+              "$650"
+            ],
+            "has_product_or_faq_schema": true,
+            "source_url": "https://fastmoldtesting.com/atlanta",
+            "retrieved_on": "2026-10-17T09:03:05.435144+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [
+          "mold inspection atlanta",
+          "mold inspection atlanta ga",
+          "mold inspection atlanta cost",
+          "mold inspector atlanta",
+          "mold remediation atlanta",
+          "home inspection atlanta",
+          "mold removal atlanta",
+          "mold remediation atlanta ga",
+          "mold remediation atlanta cost",
+          "home inspection atlanta cost"
+        ],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=mold+inspection+Atlanta",
+        "retrieved_on": "2026-10-17T09:03:03.980700+00:00"
+      }
+    },
+    {
+      "query": "new construction home inspection Atlanta",
+      "service": "New Construction / Pre-Drywall",
+      "foresight_price": "$400 / $275 Pre-Drywall",
+      "foresight_target_url": "https://fhinspectionsatl.com/services/new-construction-inspection",
+      "foresight_in_top_10": false,
+      "organic_count": 2,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://www.bpginspections.com › region › atlanta",
+          "url": "https://www.bpginspections.com/region/atlanta",
+          "domain": "bpginspections.com",
+          "snippet": "New construction final phase inspections in Atlanta start at $400+ for single-family homes, based on square footage. All inspections include thermal imaging and our $10,000 warranty.",
+          "source_url": "https://search.yahoo.com/search?p=new+construction+home+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:06.449879+00:00",
+          "page_audit": {
+            "url": "https://www.bpginspections.com/region/atlanta",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://www.bpginspections.com/region/atlanta",
+            "retrieved_on": "2026-10-17T09:03:10.511241+00:00"
+          }
+        },
+        {
+          "position": 2,
+          "title": "https://inspectatlanta.com › new-construction-inspection",
+          "url": "https://inspectatlanta.com/atlanta-ga/new-construction-inspection/",
+          "domain": "inspectatlanta.com",
+          "snippet": "Brand new homes can still have incomplete work, installation issues, missing pieces, or details that were simply overlooked. We inspect the finished home on your behalf, independent of the builder, so items can be addressed while they are still the builder's responsibility.",
+          "source_url": "https://search.yahoo.com/search?p=new+construction+home+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:06.449879+00:00",
+          "page_audit": {
+            "url": "https://inspectatlanta.com/atlanta-ga/new-construction-inspection/",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://inspectatlanta.com/atlanta-ga/new-construction-inspection/",
+            "retrieved_on": "2026-10-17T09:03:11.632207+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=new+construction+home+inspection+Atlanta",
+        "retrieved_on": "2026-10-17T09:03:09.473993+00:00"
+      }
+    },
+    {
+      "query": "11 month warranty inspection Atlanta",
+      "service": "11-Month Builder Warranty Inspection",
+      "foresight_price": "$335",
+      "foresight_target_url": "https://fhinspectionsatl.com/services/11-month-warranty-inspection",
+      "foresight_in_top_10": true,
+      "organic_count": 3,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://www.fhinspectionsatl.com › services › 11-month",
+          "url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta",
+          "domain": "fhinspectionsatl.com",
+          "snippet": "Independent 11th month builder warranty inspection in Atlanta, GA. 2 certified inspectors uncover hidden defects before your 1-year warranty expires. Call 678-480-2110 !",
+          "source_url": "https://search.yahoo.com/search?p=11+month+warranty+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:12.592510+00:00",
+          "page_audit": {
+            "url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$10,000",
+              "$125",
+              "$150",
+              "$25,000",
+              "$250",
+              "$275",
+              "$300",
+              "$335"
+            ],
+            "has_product_or_faq_schema": true,
+            "source_url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta",
+            "retrieved_on": "2026-10-17T09:03:16.517587+00:00"
+          }
+        },
+        {
+          "position": 2,
+          "title": "https://www.fhinspectionsatl.com › services › 11-month",
+          "url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection",
+          "domain": "fhinspectionsatl.com",
+          "snippet": "Need 11 - month warranty inspection in Atlanta , GA? Review the inspection purpose, timing, property context, FAQs, and request details.",
+          "source_url": "https://search.yahoo.com/search?p=11+month+warranty+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:12.592510+00:00",
+          "page_audit": {
+            "url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$10,000",
+              "$125",
+              "$150",
+              "$25,000",
+              "$250",
+              "$275",
+              "$300",
+              "$335"
+            ],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection",
+            "retrieved_on": "2026-10-17T09:03:17.317652+00:00"
+          }
+        },
+        {
+          "position": 3,
+          "title": "https://www.choosesuperiorinspection.com › services › new",
+          "url": "https://www.choosesuperiorinspection.com/services/new-construction-11-month-warranty-inspections/",
+          "domain": "choosesuperiorinspection.com",
+          "snippet": "Take advantage of your builder’s 11-month warranty with a detailed inspection from BluTape Solutions . Our warranty inspection services in Metro Atlanta help identify issues before your coverage ends.",
+          "source_url": "https://search.yahoo.com/search?p=11+month+warranty+inspection+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:12.592510+00:00",
+          "page_audit": {
+            "url": "https://www.choosesuperiorinspection.com/services/new-construction-11-month-warranty-inspections/",
+            "http_status": null,
+            "reachable": false,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://www.choosesuperiorinspection.com/services/new-construction-11-month-warranty-inspections/",
+            "retrieved_on": "2026-10-17T09:03:18.284926+00:00",
+            "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=11+month+warranty+inspection+Atlanta",
+        "retrieved_on": "2026-10-17T09:03:15.728897+00:00"
+      }
+    },
+    {
+      "query": "DeKalb County low flow toilet certificate",
+      "service": "DeKalb Low-Flow Toilet Certificate",
+      "foresight_price": "$100 flat rate",
+      "foresight_target_url": "https://fhinspectionsatl.com/services/dekalb-low-flow-compliance",
+      "foresight_in_top_10": true,
+      "organic_count": 1,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://www.fhinspectionsatl.com › service-areas › dekalb",
+          "url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
+          "domain": "fhinspectionsatl.com",
+          "snippet": "We verify that your home or commercial meets your local municipality's low flow compliance for sellers and buyers. As of 2008, any residential properties built prior to 1993 in unincorporated DeKalb County must have a low - flow toilet and plumbing fixtures installed upon resale before the new homeo",
+          "source_url": "https://search.yahoo.com/search?p=DeKalb+County+low+flow+toilet+certificate",
+          "retrieved_on": "2026-10-17T09:03:19.138417+00:00",
+          "page_audit": {
+            "url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$100",
+              "$125",
+              "$150",
+              "$250",
+              "$275",
+              "$300",
+              "$35",
+              "$450"
+            ],
+            "has_product_or_faq_schema": true,
+            "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
+            "retrieved_on": "2026-10-17T09:03:22.746159+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=DeKalb+County+low+flow+toilet+certificate",
+        "retrieved_on": "2026-10-17T09:03:22.031171+00:00"
+      }
+    },
+    {
+      "query": "Atlanta short term rental inspection",
+      "service": "Atlanta STR Life-Safety Inspection",
+      "foresight_price": "$595 flat rate",
+      "foresight_target_url": "https://fhinspectionsatl.com/services/short-term-rental-inspection",
+      "foresight_in_top_10": false,
+      "organic_count": 3,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://rentstellar.com › compliance-check",
+          "url": "https://rentstellar.com/compliance-check",
+          "domain": "rentstellar.com",
+          "snippet": "Two-minute self-serve health check for Atlanta short-term rental compliance. Permit status, zoning, HOA, insurance. Get a personalized fix-it checklist — no email required.",
+          "source_url": "https://search.yahoo.com/search?p=Atlanta+short+term+rental+inspection",
+          "retrieved_on": "2026-10-17T09:03:23.815986+00:00",
+          "page_audit": {
+            "url": "https://rentstellar.com/compliance-check",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://rentstellar.com/compliance-check",
+            "retrieved_on": "2026-10-17T09:03:28.009586+00:00"
+          }
+        },
+        {
+          "position": 2,
+          "title": "https://www.atlantaga.gov › government › departments",
+          "url": "https://www.atlantaga.gov/government/departments/city-planning/zoning-development-permitting-services/online-permitting",
+          "domain": "atlantaga.gov",
+          "snippet": "You will find most of our services are digital only, however, in-person submittals are allowed for certain projects listed below. If you have questions on how to request inspections or submit code complaints digitally, visit our Inspections & Code Enforcement page.",
+          "source_url": "https://search.yahoo.com/search?p=Atlanta+short+term+rental+inspection",
+          "retrieved_on": "2026-10-17T09:03:23.815986+00:00",
+          "page_audit": {
+            "url": "https://www.atlantaga.gov/government/departments/city-planning/zoning-development-permitting-services/online-permitting",
+            "http_status": 403,
+            "reachable": false,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://www.atlantaga.gov/government/departments/city-planning/zoning-development-permitting-services/online-permitting",
+            "retrieved_on": "2026-10-17T09:03:28.683572+00:00"
+          }
+        },
+        {
+          "position": 3,
+          "title": "https://aca-prod.accela.com › atlanta_ga › default",
+          "url": "https://aca-prod.accela.com/atlanta_ga/default.aspx",
+          "domain": "aca-prod.accela.com",
+          "snippet": "Everything you need to know about operating a legal short - term rental in Atlanta, Georgia. Complete guide to permitting, taxes, zoning, safety inspections , and compliance requirements updated for 2026.",
+          "source_url": "https://search.yahoo.com/search?p=Atlanta+short+term+rental+inspection",
+          "retrieved_on": "2026-10-17T09:03:23.815986+00:00",
+          "page_audit": {
+            "url": "https://aca-prod.accela.com/atlanta_ga/default.aspx",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://aca-prod.accela.com/atlanta_ga/default.aspx",
+            "retrieved_on": "2026-10-17T09:03:29.317954+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=Atlanta+short+term+rental+inspection",
+        "retrieved_on": "2026-10-17T09:03:27.436204+00:00"
+      }
+    },
+    {
+      "query": "radon testing Atlanta",
+      "service": "Radon Gas Testing",
+      "foresight_price": "$275",
+      "foresight_target_url": "https://fhinspectionsatl.com/services/radon-testing",
+      "foresight_in_top_10": false,
+      "organic_count": 2,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://www.atlantapremierhomeinspections.com › radon",
+          "url": "https://www.atlantapremierhomeinspections.com/radon-inspections",
+          "domain": "atlantapremierhomeinspections.com",
+          "snippet": "Erase Radon provides professional radon testing, expert mitigation system installation, and full-service radon reduction for homes and commercial properties throughout Metro Atlanta and Georgia.",
+          "source_url": "https://search.yahoo.com/search?p=radon+testing+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:30.053514+00:00",
+          "page_audit": {
+            "url": "https://www.atlantapremierhomeinspections.com/radon-inspections",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": true,
+            "detected_prices": [
+              "$150",
+              "$375"
+            ],
+            "has_product_or_faq_schema": true,
+            "source_url": "https://www.atlantapremierhomeinspections.com/radon-inspections",
+            "retrieved_on": "2026-10-17T09:03:33.598295+00:00"
+          }
+        },
+        {
+          "position": 2,
+          "title": "https://airmd.com › areas-served › georgia",
+          "url": "https://airmd.com/areas-served/georgia/atlanta/radon-testing/",
+          "domain": "airmd.com",
+          "snippet": "(770) 341-1987. EPA-certified radon testing in Atlanta , GA. 48-hour test kits, professional monitoring, mitigation referrals available. Schedule today.",
+          "source_url": "https://search.yahoo.com/search?p=radon+testing+Atlanta",
+          "retrieved_on": "2026-10-17T09:03:30.053514+00:00",
+          "page_audit": {
+            "url": "https://airmd.com/areas-served/georgia/atlanta/radon-testing/",
+            "http_status": 200,
+            "reachable": true,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://airmd.com/areas-served/georgia/atlanta/radon-testing/",
+            "retrieved_on": "2026-10-17T09:03:34.407548+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [
+          "radon testing atlanta",
+          "radon testing atlanta ga",
+          "radon testing atlanta cost",
+          "radon mitigation atlanta",
+          "radon mitigation atlanta ga",
+          "radon testing and mitigation atlanta",
+          "is radon testing free",
+          "who does radon testing in my area"
+        ],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=radon+testing+Atlanta",
+        "retrieved_on": "2026-10-17T09:03:33.037259+00:00"
+      }
+    },
+    {
+      "query": "home inspector Lithonia GA",
+      "service": "Local Hub: Lithonia, GA",
+      "foresight_price": "$345+",
+      "foresight_target_url": "https://fhinspectionsatl.com/service-areas/lithonia",
+      "foresight_in_top_10": false,
+      "organic_count": 2,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://www.angi.com › us › ga",
+          "url": "https://www.angi.com/companylist/us/ga/lithonia/home-inspection.htm",
+          "domain": "angi.com",
+          "snippet": "Read real reviews and see ratings for Lithonia , GA home inspectors for free! This list will help you pick the right pro home inspection in Lithonia , GA .",
+          "source_url": "https://search.yahoo.com/search?p=home+inspector+Lithonia+GA",
+          "retrieved_on": "2026-10-17T09:03:36.225341+00:00"
+        },
+        {
+          "position": 2,
+          "title": "https://www.zillow.com › profile › plsinspectnow",
+          "url": "https://www.zillow.com/profile/plsinspectnow",
+          "domain": "zillow.com",
+          "snippet": "Precision Home Inspection and Services is a family-owned and -operated business based in Lithonia, Georgia. Dedicated to providing you with the ability to make the best decisions for your home, we offer reasonably priced property inspections and cleaning solutions.",
+          "source_url": "https://search.yahoo.com/search?p=home+inspector+Lithonia+GA",
+          "retrieved_on": "2026-10-17T09:03:36.225341+00:00",
+          "page_audit": {
+            "url": "https://www.zillow.com/profile/plsinspectnow",
+            "http_status": 403,
+            "reachable": false,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://www.zillow.com/profile/plsinspectnow",
+            "retrieved_on": "2026-10-17T09:03:41.540654+00:00"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [
+          "home inspector lithonia ga",
+          "how to become a home inspector in georgia",
+          "how much do home inspectors make in georgia"
+        ],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=home+inspector+Lithonia+GA",
+        "retrieved_on": "2026-10-17T09:03:40.619517+00:00"
+      }
+    },
+    {
+      "query": "home inspector Decatur GA",
+      "service": "Local Hub: Decatur, GA",
+      "foresight_price": "$345+",
+      "foresight_target_url": "https://fhinspectionsatl.com/service-areas/decatur",
+      "foresight_in_top_10": false,
+      "organic_count": 2,
+      "organic_results": [
+        {
+          "position": 1,
+          "title": "https://www.angi.com › us › ga",
+          "url": "https://www.angi.com/companylist/us/ga/decatur/home-inspection.htm",
+          "domain": "angi.com",
+          "snippet": "Trusted Decatur , GA home inspections in Oakhurst, Winnona Park & 30030. Specializing in historic homes, crawlspaces & radon scans. Schedule online 24/7!",
+          "source_url": "https://search.yahoo.com/search?p=home+inspector+Decatur+GA",
+          "retrieved_on": "2026-10-17T09:03:42.521694+00:00"
+        },
+        {
+          "position": 2,
+          "title": "https://maxpropertyinspections.com › decatur-ga",
+          "url": "https://maxpropertyinspections.com/home-inspections/decatur-ga/",
+          "domain": "maxpropertyinspections.com",
+          "snippet": "Compare 27 home inspection companies in Decatur , GA . View reviews, phone numbers, and hours for Home-Probe, Inc., Comprehensive Home Inspections , Safe House Inspection, and more.",
+          "source_url": "https://search.yahoo.com/search?p=home+inspector+Decatur+GA",
+          "retrieved_on": "2026-10-17T09:03:42.521694+00:00",
+          "page_audit": {
+            "url": "https://maxpropertyinspections.com/home-inspections/decatur-ga/",
+            "http_status": null,
+            "reachable": false,
+            "shows_dollar_price_in_html": false,
+            "detected_prices": [],
+            "has_product_or_faq_schema": false,
+            "source_url": "https://maxpropertyinspections.com/home-inspections/decatur-ga/",
+            "retrieved_on": "2026-10-17T09:03:46.730570+00:00",
+            "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+          }
+        }
+      ],
+      "google_autocomplete": {
+        "suggestions": [
+          "home inspector decatur ga",
+          "home inspection decatur ga",
+          "how to become a home inspector in georgia",
+          "how to become a home inspector in ky",
+          "how much do home inspectors make in georgia"
+        ],
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=home+inspector+Decatur+GA",
+        "retrieved_on": "2026-10-17T09:03:46.105295+00:00"
+      }
+    }
+  ]
+}
