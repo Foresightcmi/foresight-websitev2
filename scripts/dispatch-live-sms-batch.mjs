@@ -9,11 +9,42 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const UNDER_CONTRACT_FILE = path.join(ROOT_DIR, 'data', 'under-contract-realtors.json');
 const OPENSMS_LOG_FILE = path.join(ROOT_DIR, 'data', 'opensms-outreach-log.json');
 const OUTREACH_LOG_FILE = path.join(ROOT_DIR, 'data', 'due-diligence-outreach-log.json');
+const OPENSMS_CONFIG_FILE = path.join(ROOT_DIR, 'data', 'opensms-config.json');
+const ENV_LOCAL_FILE = path.join(ROOT_DIR, '.env.local');
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
 
-const GATEWAY_URL = 'http://192.168.1.71:9292/sms/';
-const API_KEY = 'osms_N4M32OxKt0NeBRr0ATFqKVy4eWQZ2NwAR6alBJTQG-o';
-const BATCH_SIZE = 6;
+function getOpenSmsConfig() {
+  let apiKey = (process.env.OPENSMS_API_KEY || '').trim();
+  let gatewayUrl = (process.env.OPENSMS_URL || '').trim();
+
+  if (fs.existsSync(ENV_LOCAL_FILE)) {
+    const content = fs.readFileSync(ENV_LOCAL_FILE, 'utf8');
+    const km = content.match(/OPENSMS_API_KEY=(.+)/);
+    const um = content.match(/OPENSMS_URL=(.+)/);
+    if (!apiKey && km) apiKey = km[1].trim();
+    if (!gatewayUrl && um) gatewayUrl = um[1].trim();
+  }
+  if (fs.existsSync(OPENSMS_CONFIG_FILE)) {
+    try {
+      const cfg = JSON.parse(fs.readFileSync(OPENSMS_CONFIG_FILE, 'utf8'));
+      if (!apiKey && cfg.apiKey) apiKey = cfg.apiKey.trim();
+      if (!gatewayUrl && cfg.gatewayUrl) gatewayUrl = cfg.gatewayUrl.trim();
+    } catch {}
+  }
+  return {
+    apiKey: apiKey || 'osms_N4M32OxKt0NeBRr0ATFqKVy4eWQZ2NwAR6alBJTQG-o',
+    gatewayUrl: gatewayUrl || 'http://192.168.1.71:9292/sms/'
+  };
+}
+
+const args = process.argv.slice(2);
+let batchLimit = 10;
+const batchArg = args.find(a => a.startsWith('--batch=') || a.startsWith('-b='));
+if (batchArg) {
+  const parsed = parseInt(batchArg.split('=')[1], 10);
+  if (!isNaN(parsed) && parsed > 0) batchLimit = parsed;
+}
+
 const SPACING_MS = 20000; // 20s carrier-safe spacing
 
 function sleep(ms) {
@@ -26,9 +57,9 @@ async function dispatchPushAlert(sentList) {
     await fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
       method: 'POST',
       headers: {
-        'Title': `📱 ${sentList.length} Due Diligence SMS Sent via OpenSMS`,
+        'Title': `${sentList.length} Due Diligence SMS Sent via OpenSMS`,
         'Priority': 'default',
-        'Tags': 'iphone,speech_balloon,briefcase'
+        'Tags': 'speech_balloon,briefcase'
       },
       body: `Successfully dispatched live VIP SMS to ${sentList.length} Buyer Agents:\n${summary}`
     });
@@ -38,8 +69,10 @@ async function dispatchPushAlert(sentList) {
 }
 
 async function run() {
+  const { apiKey, gatewayUrl } = getOpenSmsConfig();
   console.log('🚀 [Live SMS Dispatcher] Initializing Batch Run via Android OpenSMS...');
-  console.log(`📱 Gateway: ${GATEWAY_URL}`);
+  console.log(`📱 Gateway: ${gatewayUrl}`);
+  console.log(`📦 Batch Limit: ${batchLimit}`);
 
   if (!fs.existsSync(UNDER_CONTRACT_FILE)) {
     console.error('❌ Missing data/under-contract-realtors.json');
@@ -72,7 +105,7 @@ async function run() {
     return true;
   });
 
-  const targets = candidateDeals.slice(0, BATCH_SIZE);
+  const targets = candidateDeals.slice(0, batchLimit);
   console.log(`📋 Found ${candidateDeals.length} uncontacted deals. Dispatching top ${targets.length} in this batch.\n`);
 
   const sentSuccessfully = [];
@@ -89,11 +122,11 @@ async function run() {
     console.log(`     Property: ${r.address}, ${r.city}`);
 
     try {
-      const res = await fetch(GATEWAY_URL, {
+      const res = await fetch(gatewayUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${API_KEY}`
+          'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
           number: `+1${cleanPhone}`,
