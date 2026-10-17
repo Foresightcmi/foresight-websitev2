@@ -5,6 +5,7 @@ import Image from 'next/image';
 import AuthorBio from '../../components/AuthorBio';
 import TableOfContents from '../../components/TableOfContents';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
+import BlogRiskScannerWidget from '../../components/BlogRiskScannerWidget';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
@@ -323,8 +324,8 @@ export default async function BlogPost({ params }) {
                 <strong style={{ display: 'block', fontSize: '0.9rem', color: '#64748b', marginBottom: '0.5rem' }}>Defect Audits:</strong>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.9rem' }}>
                   <li><Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Stucco (EIFS) Moisture Audit</Link></li>
-                  <li><Link href="/defects/polybutylene-pipe-inspection" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Polybutylene Plumbing Risks</Link></li>
-                  <li><Link href="/defects/foundation-crack-settlement-inspection" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Red Clay Foundation Settlement</Link></li>
+                  <li><Link href="/defects/polybutylene-pipe-plumbing-defect-inspection" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Polybutylene Plumbing Risks</Link></li>
+                  <li><Link href="/blog/atlanta-red-clay-soil-foundation-settlement" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Red Clay Foundation Settlement</Link></li>
                 </ul>
               </div>
               <div>
@@ -332,7 +333,7 @@ export default async function BlogPost({ params }) {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.9rem' }}>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; 2-Inspector Team vs Single Inspector</Link></li>
                   <li><Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; 11-Month Warranty vs Builder Walkthrough</Link></li>
-                  <li><Link href="/ask-twin" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Ask Foresight AI Twin (Instant Answers)</Link></li>
+                  <li><Link href="/concierge" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Concierge Inspection Advisor</Link></li>
                 </ul>
               </div>
             </div>
@@ -342,6 +343,9 @@ export default async function BlogPost({ params }) {
           <div style={{ marginTop: '2.5rem' }}>
             <GooglePreferredSource />
           </div>
+
+          {/* Interactive Property Risk & Era Scanner Widget */}
+          <BlogRiskScannerWidget />
 
           {/* Conversion Call to Action */}
           <div className="card card-premium" style={{ marginTop: '2rem', textAlign: 'center', background: 'var(--color-dark)', color: 'var(--color-white)' }}>

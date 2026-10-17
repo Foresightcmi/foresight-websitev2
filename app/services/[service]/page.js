@@ -357,7 +357,13 @@ export default async function ServiceHubPage({ params }) {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
       "telephone": "+1-678-480-2110",
-      "url": SITE_URL
+      "email": "inspect@foresightcmi.com",
+      "url": SITE_URL,
+      "hasMap": "https://maps.google.com/?cid=10862078652033010531",
+      "sameAs": [
+        "https://maps.google.com/?cid=10862078652033010531",
+        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
+      ]
     },
     "offers": {
       "@type": "Offer",

@@ -1,0 +1,696 @@
+{
+  "metadata": {
+    "retrieved_on": "2026-10-17T10:03:23.672621+00:00",
+    "total_competitors_audited": 7,
+    "total_urls_checked": 15,
+    "passed_urls": 13,
+    "failed_urls": 2
+  },
+  "competitors": [
+    {
+      "name": "BPG Inspections",
+      "domain": "bpginspections.com",
+      "model_type": "Corporate National Franchise / Dispatch",
+      "scraped_pages": [
+        {
+          "url": "https://www.bpginspections.com/region/atlanta",
+          "source_url": "https://www.bpginspections.com/region/atlanta",
+          "retrieved_on": "2026-10-17T10:03:23.672658+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Home - BPG Inspections",
+          "meta_description": "",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 16569,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": false
+          },
+          "response_time_ms": 902
+        },
+        {
+          "url": "https://www.bpginspections.com/pricing-packages",
+          "source_url": "https://www.bpginspections.com/pricing-packages",
+          "retrieved_on": "2026-10-17T10:03:25.595448+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Home - BPG Inspections",
+          "meta_description": "",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 16569,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": false
+          },
+          "response_time_ms": 645
+        }
+      ],
+      "summary": {
+        "transparent_pricing_visible": false,
+        "two_inspector_model": false,
+        "has_product_schema": false,
+        "has_faq_schema": false,
+        "vulnerabilities": [
+          "Opaque Pricing: Forces buyers into quote forms / phone calls rather than showing transparent upfront rates.",
+          "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+          "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+          "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+        ]
+      }
+    },
+    {
+      "name": "Home-Probe, Inc.",
+      "domain": "home-probe.com",
+      "model_type": "Regional Solo Inspector Dispatch",
+      "scraped_pages": [
+        {
+          "url": "https://home-probe.com/",
+          "source_url": "https://home-probe.com/",
+          "retrieved_on": "2026-10-17T10:03:27.254282+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Home-Probe, Inc. - Professional Home Inspections",
+          "meta_description": "Home Probe, Inc. is a home inspection company serving Charleston, South Carolina and metro Atlanta, Georgia areas. Schedule a home inspection today!",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 89667,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": true,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": false
+          },
+          "response_time_ms": 1689
+        },
+        {
+          "url": "https://home-probe.com/services/",
+          "source_url": "https://home-probe.com/services/",
+          "retrieved_on": "2026-10-17T10:03:29.969628+00:00",
+          "http_status": 404,
+          "reachable": false,
+          "title": "",
+          "meta_description": "",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 0,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": false
+          },
+          "response_time_ms": 2042
+        }
+      ],
+      "summary": {
+        "transparent_pricing_visible": false,
+        "two_inspector_model": false,
+        "has_product_schema": false,
+        "has_faq_schema": false,
+        "vulnerabilities": [
+          "Opaque Pricing: Forces buyers into quote forms / phone calls rather than showing transparent upfront rates.",
+          "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+          "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+          "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+        ]
+      }
+    },
+    {
+      "name": "Inspect-All Services",
+      "domain": "inspectallatlanta.com",
+      "model_type": "Pest Control & Multi-Service Cross-Sell",
+      "scraped_pages": [
+        {
+          "url": "https://inspectallatlanta.com/",
+          "source_url": "https://inspectallatlanta.com/",
+          "retrieved_on": "2026-10-17T10:03:33.015231+00:00",
+          "http_status": null,
+          "reachable": false,
+          "title": "",
+          "meta_description": "",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 0,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": false
+          },
+          "error": "HTTPSConnectionPool(host='inspectallatlanta.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionE"
+        },
+        {
+          "url": "https://inspectallservices.com/",
+          "source_url": "https://inspectallservices.com/",
+          "retrieved_on": "2026-10-17T10:03:45.086363+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Pest Control Company in Atlanta GA | Local Exterminators",
+          "meta_description": "Inspect-All Pest Services - Dealing with a pest issue in your home or business? Our pest control experts in the Atlanta Metro area can help. Call us!",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [
+            "AggregateOffer",
+            "BreadcrumbList",
+            "City",
+            "EntryPoint",
+            "GeoCoordinates",
+            "ImageObject",
+            "ListItem",
+            "LocalBusiness",
+            "Offer",
+            "OfferCatalog",
+            "OpeningHoursSpecification",
+            "Organization",
+            "PostalAddress",
+            "PropertyValueSpecification",
+            "ReadAction",
+            "SearchAction",
+            "Service",
+            "WebPage",
+            "WebSite",
+            "city"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 455356,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": true,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": false
+          },
+          "response_time_ms": 830
+        }
+      ],
+      "summary": {
+        "transparent_pricing_visible": false,
+        "two_inspector_model": false,
+        "has_product_schema": false,
+        "has_faq_schema": false,
+        "vulnerabilities": [
+          "Opaque Pricing: Forces buyers into quote forms / phone calls rather than showing transparent upfront rates.",
+          "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+          "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+          "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+        ]
+      }
+    },
+    {
+      "name": "Residential Inspector of America (RIA)",
+      "domain": "atlanta.residentialinspector.com",
+      "model_type": "Private Equity Owned Regional Dispatch",
+      "scraped_pages": [
+        {
+          "url": "https://www.atlanta.residentialinspector.com/",
+          "source_url": "https://www.atlanta.residentialinspector.com/",
+          "retrieved_on": "2026-10-17T10:03:46.929064+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Home Inspectors in Atlanta, GA | 8000+ Local Reviews | RIA - Atlanta",
+          "meta_description": "(770) 341-1987. RIA has completed 600,000+ home inspections across Atlanta and the surrounding area. Same-day reports. Same/next-day availability. Book now.",
+          "detected_prices": [
+            "$20"
+          ],
+          "shows_transparent_pricing": true,
+          "schema_types": [
+            "BreadcrumbList",
+            "EntryPoint",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "PropertyValueSpecification",
+            "ReadAction",
+            "SearchAction",
+            "WebPage",
+            "WebSite"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 825002,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 664
+        },
+        {
+          "url": "https://www.atlanta.residentialinspector.com/sewer-line-inspections/",
+          "source_url": "https://www.atlanta.residentialinspector.com/sewer-line-inspections/",
+          "retrieved_on": "2026-10-17T10:03:48.618829+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Sewer Scope Inspection Atlanta | Sewer Line Inspection | RIA",
+          "meta_description": "(770) 341-1987. Video sewer scope inspections in Atlanta, GA. Detect cracks, root intrusion, and blockages before closing. Same-day reports. Book now.",
+          "detected_prices": [
+            "$20"
+          ],
+          "shows_transparent_pricing": true,
+          "schema_types": [
+            "BreadcrumbList",
+            "EntryPoint",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "PropertyValueSpecification",
+            "ReadAction",
+            "SearchAction",
+            "WebPage",
+            "WebSite"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 606482,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": true,
+            "mentions_drone": true,
+            "mentions_warranty": true,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 750
+        }
+      ],
+      "summary": {
+        "transparent_pricing_visible": true,
+        "two_inspector_model": false,
+        "has_product_schema": false,
+        "has_faq_schema": false,
+        "vulnerabilities": [
+          "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+          "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+          "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+        ]
+      }
+    },
+    {
+      "name": "Champia Real Estate Inspections",
+      "domain": "champia.com",
+      "model_type": "Longstanding Local Multi-Inspector Firm",
+      "scraped_pages": [
+        {
+          "url": "https://champia.com/",
+          "source_url": "https://champia.com/",
+          "retrieved_on": "2026-10-17T10:03:50.383493+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Choose Your Location | Champia Inspections",
+          "meta_description": "Trusted home inspections by certified professionals—detailed reports, fast service, and peace of mind with every inspection.",
+          "detected_prices": [
+            "$300"
+          ],
+          "shows_transparent_pricing": true,
+          "schema_types": [
+            "Article",
+            "HomeAndConstructionBusiness",
+            "ImageObject",
+            "Organization",
+            "Person",
+            "Place",
+            "PostalAddress",
+            "SearchAction",
+            "WebPage",
+            "WebSite"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 255886,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 725
+        },
+        {
+          "url": "https://champia.com/services/",
+          "source_url": "https://champia.com/services/",
+          "retrieved_on": "2026-10-17T10:03:52.136945+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Services Georgia | Champia Inspections",
+          "meta_description": "Explore Champia’s expert home inspection services in Georgia—detailed, professional inspections to protect your investment.",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [
+            "Article",
+            "BreadcrumbList",
+            "HomeAndConstructionBusiness",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Place",
+            "PostalAddress",
+            "WebPage",
+            "WebSite"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 319289,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 1215
+        }
+      ],
+      "summary": {
+        "transparent_pricing_visible": true,
+        "two_inspector_model": false,
+        "has_product_schema": false,
+        "has_faq_schema": false,
+        "vulnerabilities": [
+          "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+          "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+          "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+        ]
+      }
+    },
+    {
+      "name": "Ally Property Inspections",
+      "domain": "allypropertyinspections.com",
+      "model_type": "Independent Local Inspection Firm",
+      "scraped_pages": [
+        {
+          "url": "https://allypropertyinspections.com/",
+          "source_url": "https://allypropertyinspections.com/",
+          "retrieved_on": "2026-10-17T10:03:54.364955+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Home Inspections in Birmingham & Atlanta | Ally",
+          "meta_description": "Home inspections in Birmingham and Atlanta from Ally Property Inspections — clear, thorough reports by qualified inspectors across AL and GA.",
+          "detected_prices": [],
+          "shows_transparent_pricing": false,
+          "schema_types": [
+            "AdministrativeArea",
+            "AggregateRating",
+            "City",
+            "CollegeOrUniversity",
+            "EducationalOccupationalCredential",
+            "GeoCoordinates",
+            "ImageObject",
+            "LocalBusiness",
+            "Offer",
+            "OpeningHoursSpecification",
+            "Organization",
+            "Person",
+            "Place",
+            "PostalAddress",
+            "PriceSpecification",
+            "ProfessionalService",
+            "QuantitativeValue",
+            "SearchAction",
+            "Service",
+            "SpeakableSpecification",
+            "State",
+            "WebPage",
+            "WebSite"
+          ],
+          "has_aggregate_rating": true,
+          "has_product_schema": false,
+          "has_faq_schema": false,
+          "raw_text_length": 368831,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": true,
+            "mentions_drone": false,
+            "mentions_warranty": true,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 1170
+        },
+        {
+          "url": "https://allypropertyinspections.com/home-inspection-atlanta-ga/",
+          "source_url": "https://allypropertyinspections.com/home-inspection-atlanta-ga/",
+          "retrieved_on": "2026-10-17T10:03:56.553650+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Home Inspections in Atlanta, GA | Ally Property Inspections",
+          "meta_description": "Choose Ally Property Inspections for trusted Atlanta home inspection services. We give homebuyers clear insights for confident decisions.",
+          "detected_prices": [
+            "$350"
+          ],
+          "shows_transparent_pricing": true,
+          "schema_types": [
+            "AdministrativeArea",
+            "Answer",
+            "BreadcrumbList",
+            "City",
+            "EducationalOccupationalCredential",
+            "EntryPoint",
+            "FAQPage",
+            "GeoCoordinates",
+            "ImageObject",
+            "ListItem",
+            "OpeningHoursSpecification",
+            "Organization",
+            "Person",
+            "PostalAddress",
+            "ProfessionalService",
+            "PropertyValueSpecification",
+            "QuantitativeValue",
+            "Question",
+            "ReadAction",
+            "SearchAction",
+            "SpeakableSpecification",
+            "State",
+            "WebPage",
+            "WebSite"
+          ],
+          "has_aggregate_rating": true,
+          "has_product_schema": false,
+          "has_faq_schema": true,
+          "raw_text_length": 247753,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": true,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 1149
+        },
+        {
+          "url": "https://allypropertyinspections.com/sewer-scope-inspection/",
+          "source_url": "https://allypropertyinspections.com/sewer-scope-inspection/",
+          "retrieved_on": "2026-10-17T10:03:58.714247+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Sewer Scope Inspection | Ally Property Inspections",
+          "meta_description": "Schedule a sewer scope inspection with Ally before you buy in Atlanta. Camera footage of the sewer line plus a written, negotiation-ready report",
+          "detected_prices": [
+            "$215"
+          ],
+          "shows_transparent_pricing": true,
+          "schema_types": [
+            "Answer",
+            "BreadcrumbList",
+            "EducationalOccupationalCredential",
+            "EntryPoint",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "PropertyValueSpecification",
+            "Question",
+            "ReadAction",
+            "SearchAction",
+            "SpeakableSpecification",
+            "WebPage",
+            "WebSite"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": true,
+          "raw_text_length": 382355,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": false
+          },
+          "response_time_ms": 1113
+        }
+      ],
+      "summary": {
+        "transparent_pricing_visible": true,
+        "two_inspector_model": false,
+        "has_product_schema": false,
+        "has_faq_schema": true,
+        "vulnerabilities": [
+          "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+          "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs."
+        ]
+      }
+    },
+    {
+      "name": "Atlanta Premier Home Inspections",
+      "domain": "atlantapremierhomeinspections.com",
+      "model_type": "Local Multi-Inspector Firm",
+      "scraped_pages": [
+        {
+          "url": "https://www.atlantapremierhomeinspections.com/",
+          "source_url": "https://www.atlantapremierhomeinspections.com/",
+          "retrieved_on": "2026-10-17T10:04:00.837603+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Atlanta Home Inspection | Same-Day Reports & Fixed Pricing",
+          "meta_description": "Top rated home inspection companies in Atlanta. Get same-day reports, transparent fixed pricing, and certified inspectors. Check our fixed rates & book online 24/7!",
+          "detected_prices": [
+            "$150",
+            "$200",
+            "$285",
+            "$375",
+            "$50",
+            "$525",
+            "$775",
+            "$85"
+          ],
+          "shows_transparent_pricing": true,
+          "schema_types": [
+            "Answer",
+            "CollegeOrUniversity",
+            "EducationalOccupationalCredential",
+            "FAQPage",
+            "Offer",
+            "OfferCatalog",
+            "Person",
+            "PostalAddress",
+            "PriceSpecification",
+            "ProfessionalService",
+            "Question",
+            "ReserveAction",
+            "Service",
+            "WebSite"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": true,
+          "raw_text_length": 2793174,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": true,
+            "mentions_drone": false,
+            "mentions_warranty": true,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 850
+        },
+        {
+          "url": "https://www.atlantapremierhomeinspections.com/radon-inspections",
+          "source_url": "https://www.atlantapremierhomeinspections.com/radon-inspections",
+          "retrieved_on": "2026-10-17T10:04:02.742570+00:00",
+          "http_status": 200,
+          "reachable": true,
+          "title": "Radon Testing Atlanta | Stone Mountain & Metro Area Radon Testing",
+          "meta_description": "1 in 5 Atlanta homes has dangerous radon levels due to local granite. Don",
+          "detected_prices": [
+            "$150",
+            "$375"
+          ],
+          "shows_transparent_pricing": true,
+          "schema_types": [
+            "AdministrativeArea",
+            "Answer",
+            "Audience",
+            "BreadcrumbList",
+            "City",
+            "FAQPage",
+            "ListItem",
+            "Offer",
+            "PostalAddress",
+            "ProfessionalService",
+            "Question",
+            "Service",
+            "WebPage"
+          ],
+          "has_aggregate_rating": false,
+          "has_product_schema": false,
+          "has_faq_schema": true,
+          "raw_text_length": 1743543,
+          "key_claims": {
+            "mentions_two_inspectors": false,
+            "mentions_thermal": false,
+            "mentions_drone": false,
+            "mentions_warranty": false,
+            "warranty_amount_detected": null,
+            "mentions_turnaround": true
+          },
+          "response_time_ms": 724
+        }
+      ],
+      "summary": {
+        "transparent_pricing_visible": true,
+        "two_inspector_model": false,
+        "has_product_schema": false,
+        "has_faq_schema": true,
+        "vulnerabilities": [
+          "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+          "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs."
+        ]
+      }
+    }
+  ]
+}

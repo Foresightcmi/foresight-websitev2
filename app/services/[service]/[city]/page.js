@@ -33,6 +33,146 @@ function normalizeServiceSlug(slug) {
   return slug;
 }
 
+const SERVICE_DEFECT_MAP = {
+  'sewer-scope-inspection': [
+    {
+      title: 'Polybutylene (Quest) Plumbing Defect Audit',
+      slug: '/defects/polybutylene-pipe-plumbing-defect-inspection',
+      desc: 'Micro-fractures, acetal insert fitting degradation, and interior burst hazards in Georgia homes.'
+    },
+    {
+      title: 'Atlanta Red Clay Soil & Foundation Settlement',
+      slug: '/blog/atlanta-red-clay-soil-foundation-settlement',
+      desc: 'Expansive red clay soil shear forces causing underground sewer lateral bellies and joint offsets.'
+    }
+  ],
+  'radon-testing': [
+    {
+      title: 'Hidden Dangers of Radon Gas in Georgia Granite',
+      slug: '/blog/hidden-dangers-of-radon-gas-georgia',
+      desc: 'Radioactive decay across Georgia Piedmont granite belts entering homes through slabs and crawlspaces.'
+    },
+    {
+      title: 'Crawlspace Moisture, Wood Rot & Fungus Diagnostics',
+      slug: '/defects/crawlspace-fungus-joist-rot-inspection',
+      desc: 'Vented crawlspaces concentrating high humidity, microbial spores, and subterranean soil gases.'
+    }
+  ],
+  'termite-inspection': [
+    {
+      title: 'Crawlspace Moisture, Wood Rot & Joist Defect Audit',
+      slug: '/defects/crawlspace-fungus-joist-rot-inspection',
+      desc: 'Subterranean termite entry vectors, shelter tubes, and fungal rot compromising structural framing.'
+    },
+    {
+      title: 'Synthetic Stucco (EIFS) & Hard-Coat Moisture Audit',
+      slug: '/defects/stucco-eifs-moisture-inspection',
+      desc: 'Zero-clearance grade penetrations allowing hidden termite transit behind exterior cladding systems.'
+    }
+  ],
+  'new-construction-inspection': [
+    {
+      title: 'Roof Flashing & Chimney Water Intrusion Diagnostics',
+      slug: '/defects/unsealed-roof-flashing-water-leak-inspection',
+      desc: 'Rushed builder shortcuts, missing kickout flashing, and unsealed valley transitions.'
+    },
+    {
+      title: 'HVAC Heat Exchanger & Air Duct Defect Inspection',
+      slug: '/defects/heat-exchanger-hvac-inspection',
+      desc: 'Subcontractor flex duct constriction, unbalanced static pressure, and equipment commissioning flaws.'
+    }
+  ],
+  'buyer-inspection': [
+    {
+      title: 'Federal Pacific & Zinsco Electrical Panel Hazards',
+      slug: '/defects/federal-pacific-zinsco-panel-inspection',
+      desc: 'Breakers failing to trip under overcurrent load, buss bar arcing, and panel fire hazards.'
+    },
+    {
+      title: 'Synthetic Stucco (EIFS) Hidden Substrate Moisture',
+      slug: '/defects/stucco-eifs-moisture-inspection',
+      desc: 'Infrared thermal and pin-probe diagnostics identifying concealed wood framing rot behind stucco.'
+    },
+    {
+      title: 'Polybutylene Pipe Plumbing Failure Risks',
+      slug: '/defects/polybutylene-pipe-plumbing-defect-inspection',
+      desc: 'Pre-1996 residential plumbing systems subject to sudden catastrophic pressure failure.'
+    }
+  ],
+  'pre-listing-inspection': [
+    {
+      title: 'Federal Pacific & Zinsco Breaker Fire Risks',
+      slug: '/defects/federal-pacific-zinsco-panel-inspection',
+      desc: 'Identify obsolete panels prior to buyer discovery and negotiation repair escrow demands.'
+    },
+    {
+      title: 'Roof Flashing & Chimney Water Intrusion Analysis',
+      slug: '/defects/unsealed-roof-flashing-water-leak-inspection',
+      desc: 'Eliminate roof leaks before the buyer submits an inspection contingency amendment.'
+    }
+  ],
+  '11-month-warranty-inspection': [
+    {
+      title: 'Roof Flashing & Envelope Water Intrusion Audits',
+      slug: '/defects/unsealed-roof-flashing-water-leak-inspection',
+      desc: 'Document builder envelope defects and missing flashing while builder warranties remain in force.'
+    },
+    {
+      title: 'HVAC Heat Exchanger & Airflow Balancing',
+      slug: '/defects/heat-exchanger-hvac-inspection',
+      desc: 'Verify builder HVAC installations meet manufacturer specifications and supply airflow requirements.'
+    }
+  ],
+  'mold-testing': [
+    {
+      title: 'Crawlspace Moisture, Wood Rot & Fungus Diagnostics',
+      slug: '/defects/crawlspace-fungus-joist-rot-inspection',
+      desc: 'Spore concentration sources in humid crawlspaces venting upward into living quarters via stack effect.'
+    },
+    {
+      title: 'Synthetic Stucco (EIFS) Moisture Intrusion Audit',
+      slug: '/defects/stucco-eifs-moisture-inspection',
+      desc: 'Trapped moisture in exterior wall envelopes breeding mold colonies behind interior drywall.'
+    }
+  ],
+  'pool-inspection': [
+    {
+      title: 'Roof Flashing & Ground Drainage Defect Analysis',
+      slug: '/defects/unsealed-roof-flashing-water-leak-inspection',
+      desc: 'Grade drainage vectors, retaining wall hydrostatic pressure, and patio slope moisture intrusion.'
+    },
+    {
+      title: 'Atlanta Red Clay Soil & Foundation Movement',
+      slug: '/blog/atlanta-red-clay-soil-foundation-settlement',
+      desc: 'Expansive soils affecting pool shells, underground plumbing runs, and surrounding decking.'
+    }
+  ],
+  'pre-drywall-inspection': [
+    {
+      title: 'Roof Flashing & Wall Sheathing Water Intrusion',
+      slug: '/defects/unsealed-roof-flashing-water-leak-inspection',
+      desc: 'Inspect weather-resistive barriers, flashing kickouts, and window pan flashing before drywall seals them.'
+    },
+    {
+      title: 'Aluminum & Branch Circuit Electrical Inspection',
+      slug: '/defects/aluminum-wiring-inspection',
+      desc: 'Inspect electrical framing runs, box installation, rough-in wire routing, and nail plate protection.'
+    }
+  ],
+  'commercial-property-inspection': [
+    {
+      title: 'HVAC Heat Exchanger & Commercial Roof Top Units',
+      slug: '/defects/heat-exchanger-hvac-inspection',
+      desc: 'Commercial packaged HVAC inspection, thermal combustion audits, and distribution efficiency.'
+    },
+    {
+      title: 'Commercial Roof Flashing & Parapet Water Intrusion',
+      slug: '/defects/unsealed-roof-flashing-water-leak-inspection',
+      desc: 'Low-slope roof drainage, scupper flashing, and commercial envelope leak diagnostics.'
+    }
+  ]
+};
+
 // ---------------------------------------------------------------------------
 // Static params – generates 462 routes (6 services x 77 cities)
 // ---------------------------------------------------------------------------
@@ -174,6 +314,11 @@ export default async function ServiceCityPage({ params }) {
       "name": "Foresight Home Inspections, LLC",
       "telephone": "+1-678-480-2110",
       "email": "inspect@foresightcmi.com",
+      "hasMap": "https://maps.google.com/?cid=10862078652033010531",
+      "sameAs": [
+        "https://maps.google.com/?cid=10862078652033010531",
+        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1816 South Deshon Road",
@@ -651,6 +796,120 @@ export default async function ServiceCityPage({ params }) {
           </div>
         </section>
       )}
+
+      {/* ── TARGETED BUILDING SCIENCE & DEFECT AUDITS ───────────────── */}
+      <section className="section bg-white" style={{ borderTop: '1px solid #e2e8f0', padding: '3.5rem 0' }}>
+        <div className="container" style={{ maxWidth: '960px' }}>
+          <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
+            <span style={{
+              display: 'inline-block',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              color: 'var(--color-gold, #D4AF37)',
+              background: '#0F172A',
+              padding: '0.3rem 0.75rem',
+              borderRadius: '4px',
+              marginBottom: '0.75rem'
+            }}>
+              Forensic Building Science Diagnostic Silo
+            </span>
+            <h2 style={{ fontSize: '1.85rem', color: '#0F172A', margin: '0.5rem 0' }}>
+              Targeted Building Science &amp; Defect Audits for <span style={{ color: 'var(--color-red)' }}>{cityName}</span>
+            </h2>
+            <p style={{ color: '#64748B', maxWidth: '680px', margin: '0.5rem auto 0', fontSize: '1.05rem', lineHeight: 1.6 }}>
+              In {county} County, specific geological and construction era factors directly influence property integrity. Review critical forensic defect guides relevant to your {serviceName.toLowerCase()} inspection.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem'
+          }}>
+            {(SERVICE_DEFECT_MAP[normalizedService] || SERVICE_DEFECT_MAP['buyer-inspection']).map((item, idx) => (
+              <div
+                key={idx}
+                style={{
+                  background: '#F8FAFC',
+                  border: '1px solid #E2E8F0',
+                  borderRadius: 'var(--radius-md, 8px)',
+                  padding: '1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                    <span style={{
+                      display: 'inline-block',
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      background: 'var(--color-red, #D32F2F)'
+                    }}></span>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      Diagnostic Guide
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: '1.15rem', color: '#0F172A', fontWeight: 700, margin: '0 0 0.5rem', lineHeight: 1.4 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.6, margin: '0 0 1.25rem' }}>
+                    {item.desc}
+                  </p>
+                </div>
+                <Link
+                  href={item.slug}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    color: 'var(--color-red, #D32F2F)',
+                    fontWeight: 700,
+                    fontSize: '0.92rem',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Read Forensic Audit &rarr;
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            marginTop: '2rem',
+            padding: '1.25rem 1.5rem',
+            background: '#F1F5F9',
+            borderRadius: 'var(--radius-md, 8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1rem',
+            borderLeft: '4px solid var(--color-gold, #D4AF37)'
+          }}>
+            <div>
+              <strong style={{ display: 'block', fontSize: '0.95rem', color: '#0F172A' }}>
+                Need a multi-point risk scan before scheduling?
+              </strong>
+              <span style={{ fontSize: '0.85rem', color: '#64748B' }}>
+                Use our interactive Georgia Due Diligence Matrix to identify required inspection add-ons by era.
+              </span>
+            </div>
+            <Link
+              href="/risk-scanner"
+              className="btn btn-outline"
+              style={{ fontSize: '0.85rem', padding: '0.5rem 1rem', background: '#FFFFFF' }}
+            >
+              Launch Era Scanner &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ── FOOTER CROSS-LINKING ────────────────────────────────────── */}
       <section className="section bg-gray-light" style={{ borderTop: '1px solid var(--color-gray-mid)' }}>
