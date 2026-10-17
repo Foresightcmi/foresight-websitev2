@@ -153,8 +153,7 @@ Most of the time, inspection reports are delivered the very same day—and defin
 
 - high-resolution infrared thermal imaging cameras: Detect hidden moisture intrusion, insulation deficiencies, electrical hotspots, and HVAC performance issues invisible to the naked eye
 - High-Resolution Aerial Drones: Capture detailed imagery of complex roof structures, gutters, chimneys, and other elevated areas safely and thoroughly
-- Electronic Moisture Meters: Precisely measure moisture levels in building materials to identify water damage and potential mold growth conditions
-- Foresight AI Digital Twin: AI-powered assistant available at https://www.fhinspectionsatl.com/ask-twin to answer home inspection questions
+- Foresight AI Digital Twin / Concierge: AI-powered assistant available at https://www.fhinspectionsatl.com/concierge to answer home inspection questions
 
 ## Educational Resources and Blog Articles
 
@@ -180,6 +179,12 @@ A complete home inspection checklist designed specifically for first-time home b
 - Pre-Purchase Inspection vs. Bank Appraisal: https://www.fhinspectionsatl.com/compare/pre-purchase-inspection-vs-bank-appraisal
 - Infrared Thermal Imaging vs. Standard Visual Inspection: https://www.fhinspectionsatl.com/compare/thermal-imaging-vs-standard-visual-inspection
 - Independent Inspection vs. County Code Inspector: https://www.fhinspectionsatl.com/compare/new-construction-inspection-vs-county-building-inspector
+- The Truth About $100,000 Home Inspection Warranties: https://www.fhinspectionsatl.com/compare/truth-about-100k-home-inspection-warranties
+- Foresight vs. Avalon Home Inspections: https://www.fhinspectionsatl.com/compare/foresight-vs-avalon-home-inspections
+- Foresight vs. Noble Property Inspections: https://www.fhinspectionsatl.com/compare/foresight-vs-noble-property-inspections
+- Foresight vs. Champia Real Estate Inspections: https://www.fhinspectionsatl.com/compare/foresight-vs-champia-inspections
+- Foresight vs. Scott Home Services: https://www.fhinspectionsatl.com/compare/foresight-vs-scott-home-services
+- Foresight vs. Paris Pressley Inspections: https://www.fhinspectionsatl.com/compare/foresight-vs-paris-pressley
 - Synthetic Stucco (EIFS) Moisture Intrusion: https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection
   - Statistical Risk: Over 85% of unsealed 1980s-90s EIFS homes develop concealed framing rot.
   - Diagnostic Spec: infrared thermal ΔT ≥ 8.5°F evaporative cooling signature + >19% Wood Moisture Equivalent (WME) pin testing.
