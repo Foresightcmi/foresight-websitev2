@@ -1,7 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import net from 'node:net';
+import os from 'node:os';
+import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import nodemailer from 'nodemailer';
+import { harvestLiveDueDiligence } from './harvest-live-due-diligence.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,9 +14,73 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const LOAN_OFFICERS_FILE = path.join(ROOT_DIR, 'data', 'loan-officers.json');
 const UNDER_CONTRACT_FILE = path.join(ROOT_DIR, 'data', 'under-contract-realtors.json');
 const OUTREACH_LOG_FILE = path.join(ROOT_DIR, 'data', 'due-diligence-outreach-log.json');
+const OPENSMS_LOG_FILE = path.join(ROOT_DIR, 'data', 'opensms-outreach-log.json');
+const OPENSMS_CONFIG_FILE = path.join(ROOT_DIR, 'data', 'opensms-config.json');
 const ENV_LOCAL_FILE = path.join(ROOT_DIR, '.env.local');
 const UNSUBSCRIBED_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
+
+function getOpenSmsConfig() {
+  let apiKey = process.env.OPENSMS_API_KEY ? process.env.OPENSMS_API_KEY.trim() : '';
+  let gatewayUrl = process.env.OPENSMS_URL ? process.env.OPENSMS_URL.trim() : '';
+
+  if (fs.existsSync(ENV_LOCAL_FILE)) {
+    const content = fs.readFileSync(ENV_LOCAL_FILE, 'utf8');
+    const keyMatch = content.match(/OPENSMS_API_KEY=(.+)/);
+    const urlMatch = content.match(/OPENSMS_URL=(.+)/);
+    if (!apiKey && keyMatch && keyMatch[1].trim()) apiKey = keyMatch[1].trim();
+    if (!gatewayUrl && urlMatch && urlMatch[1].trim()) gatewayUrl = urlMatch[1].trim();
+  }
+  if (fs.existsSync(OPENSMS_CONFIG_FILE)) {
+    try {
+      const cfg = JSON.parse(fs.readFileSync(OPENSMS_CONFIG_FILE, 'utf8'));
+      if (!apiKey && cfg.apiKey) apiKey = String(cfg.apiKey).trim();
+      if (!gatewayUrl && cfg.gatewayUrl) gatewayUrl = String(cfg.gatewayUrl).trim();
+    } catch {}
+  }
+  return { apiKey, gatewayUrl };
+}
+
+async function discoverLocalOpenSmsPhone(port = 9292) {
+  const prefixes = new Set(['192.168.1']);
+  const nets = os.networkInterfaces();
+  for (const name of Object.keys(nets)) {
+    for (const iface of nets[name] || []) {
+      if (iface.family === 'IPv4' && !iface.internal && (iface.address.startsWith('192.168.') || iface.address.startsWith('10.0.'))) {
+        prefixes.add(iface.address.split('.').slice(0, 3).join('.'));
+      }
+    }
+  }
+  for (const prefix of prefixes) {
+    const found = [];
+    await Promise.all(
+      Array.from({ length: 254 }, (_, i) => i + 1).map(
+        i =>
+          new Promise(resolve => {
+            const ip = `${prefix}.${i}`;
+            const sock = new net.Socket();
+            sock.setTimeout(500);
+            sock.once('connect', () => {
+              found.push(`http://${ip}:${port}/sms/`);
+              sock.destroy();
+              resolve();
+            });
+            sock.once('timeout', () => {
+              sock.destroy();
+              resolve();
+            });
+            sock.once('error', () => {
+              sock.destroy();
+              resolve();
+            });
+            sock.connect(port, ip);
+          })
+      )
+    );
+    if (found.length > 0) return found[0];
+  }
+  return '';
+}
 
 function getEmailCredentials() {
   let pass = process.env.EMAIL_PASSWORD;
@@ -384,10 +452,22 @@ async function main() {
   };
   process.on('exit', releaseLock);
 
-  console.log('⚡ [Due Diligence Engine] Initializing Autonomous Scout & Dossier Transmission...');
+  console.log('⚡ [Due Diligence Engine] Initializing Autonomous Scout, Email & OpenSMS Transmission...');
 
-  // 1. Check Email Credentials
+  // 0. Harvest Live FMLS Pending / Under-Contract Deals First & Rebuild VIP Dispatch
+  let newPendingHarvested = 0;
+  try {
+    const harvestRes = await harvestLiveDueDiligence(1400);
+    newPendingHarvested = harvestRes.newPendingDeals || 0;
+    execSync('node scripts/generate-due-diligence-dispatch.mjs', { cwd: ROOT_DIR, stdio: 'ignore' });
+    console.log(`🔄 [Due Diligence Engine] Synced public/vip-dispatch.html with ${newPendingHarvested} newly harvested FMLS Pending deals.`);
+  } catch (err) {
+    console.warn('⚠️ [Due Diligence Engine] Live FMLS harvest warning:', err.message);
+  }
+
+  // 1. Check Email & OpenSMS Credentials
   const { user, pass } = getEmailCredentials();
+  const { apiKey: openSmsKey, gatewayUrl: configuredSmsUrl } = getOpenSmsConfig();
   let transporter = null;
   let canSendEmail = false;
 
@@ -424,6 +504,17 @@ async function main() {
   }
   const contactedKeys = new Set(outreachLog.map(o => o.key));
 
+  // Load OpenSMS Logs
+  let openSmsLog = [];
+  if (fs.existsSync(OPENSMS_LOG_FILE)) {
+    try {
+      openSmsLog = JSON.parse(fs.readFileSync(OPENSMS_LOG_FILE, 'utf8'));
+    } catch {
+      openSmsLog = [];
+    }
+  }
+  const smsContactedPhones = new Set(openSmsLog.map(o => String(o.to || '').replace(/\D/g, '').slice(-10)));
+
   // Load Unsubscribed / Suppressions
   const suppressedEmails = new Set();
   if (fs.existsSync(UNSUBSCRIBED_FILE)) {
@@ -459,10 +550,10 @@ async function main() {
 
   let sentLendersCount = 0;
   let sentUnderContractCount = 0;
+  let sentOpenSmsCount = 0;
 
   // -----------------------------------------------------------
   // PRIORITY #1 (TASK A): Dispatch to Active Under-Contract / Due Diligence Properties First
-  // (Premature Pre-Due Diligence active listings disabled so 100% of realtor allocation targets active contracts)
   // -----------------------------------------------------------
   let totalUnderContract = 0;
   if (fs.existsSync(UNDER_CONTRACT_FILE)) {
@@ -470,10 +561,9 @@ async function main() {
     totalUnderContract = underContractRealtors.length;
     console.log(`📋 [Due Diligence Engine] Priority #1: Loaded ${underContractRealtors.length} Active Under-Contract / Due Diligence Realtors.`);
 
-    if (canSendEmail && transporter) {
-      // Sort newest contracts first
-      const sorted = [...underContractRealtors].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    const sorted = [...underContractRealtors].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
+    if (canSendEmail && transporter) {
       for (const r of sorted) {
         if (quotaCeilingHit) break;
         if (!r.email || !r.email.includes('@')) continue;
@@ -499,6 +589,7 @@ async function main() {
           outreachLog.push({
             key,
             type: 'UNDER_CONTRACT_DUE_DILIGENCE',
+            role: r.role || 'LIST_AGENT',
             targetName: r.name,
             brokerage: r.brokerage,
             address: r.address,
@@ -521,11 +612,74 @@ async function main() {
           }
         }
 
-        // Priority allocation: 6 active under-contract due diligence properties per run (0 wasted on premature active listings)
         if (sentUnderContractCount >= 6) break;
       }
     } else {
       console.log('  ℹ️ Email dispatch inactive; under-contract due diligence directory is verified and current.');
+    }
+
+    // Autonomous OpenSMS Dispatch for Top Uncontacted Due Diligence Deals
+    // Supports BOTH DasLearning Local OpenSMS (http://<PHONE_IP>:9292/sms/) AND opensms.dev cloud queue
+    const discoveredLocalUrl = configuredSmsUrl || (await discoverLocalOpenSmsPhone(9292));
+    if (discoveredLocalUrl || openSmsKey) {
+      const targetEndpoint = discoveredLocalUrl || 'https://opensms.dev/api/v1/messages';
+      const isLocalDasLearning = targetEndpoint.includes(':9292') || !targetEndpoint.includes('opensms.dev');
+      console.log(`🤖 [OpenSMS Engine] Dispatching automated Due Diligence SMS via ${targetEndpoint}...`);
+
+      for (const r of sorted) {
+        const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
+        if (cleanPhone.length !== 10 || cleanPhone === '6788780215') continue;
+        if (smsContactedPhones.has(cleanPhone)) continue;
+        if (r.email && isSuppressed(r.email, r.name, r.brokerage)) continue;
+        if (/ansley|chapman group/i.test(r.brokerage || '') || /amy fuchs|joe chapman/i.test(r.name || '')) continue;
+
+        const smsMessage = r.text_body || `Hi ${r.first || 'there'}, Christopher Boykin with Foresight Home Inspections here! Saw ${r.address} in ${r.city} just went under contract—congratulations! If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report, we have a slot open in ${r.city}: https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(r.address || '')} — (678) 480-2110`;
+
+        const headers = { 'Content-Type': 'application/json' };
+        if (openSmsKey) headers['Authorization'] = `Bearer ${openSmsKey}`;
+
+        const bodyPayload = isLocalDasLearning
+          ? { number: `+1${cleanPhone}`, text: smsMessage }
+          : { to: `+1${cleanPhone}`, message: smsMessage };
+
+        try {
+          const smsRes = await fetch(targetEndpoint, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(bodyPayload)
+          });
+          if (smsRes.ok) {
+            const smsData = await smsRes.json().catch(() => ({}));
+            smsContactedPhones.add(cleanPhone);
+            openSmsLog.push({
+              id: smsData.id || `sms_${Date.now()}`,
+              leadId: r.id,
+              to: `+1${cleanPhone}`,
+              targetName: r.name,
+              address: r.address,
+              city: r.city,
+              role: r.role || 'LIST_AGENT',
+              gateway: isLocalDasLearning ? 'DasLearning-Local-9292' : 'OpenSMS-Cloud',
+              status: smsData.stat === true ? 'sent' : (smsData.status || 'pending'),
+              timestamp: new Date().toISOString()
+            });
+            fs.writeFileSync(OPENSMS_LOG_FILE, JSON.stringify(openSmsLog, null, 2), 'utf8');
+            sentOpenSmsCount++;
+            console.log(`  📱 [OpenSMS] Dispatched SMS to ${r.name} (+1${cleanPhone}) for ${r.address}`);
+            await sleep(25000); // 25s carrier-safe spacing
+          } else {
+            console.warn(`  ⚠️ [OpenSMS] HTTP ${smsRes.status} for +1${cleanPhone}`);
+            break;
+          }
+        } catch (smsErr) {
+          console.warn(`  ⚠️ [OpenSMS] Dispatch error:`, smsErr.message);
+          break;
+        }
+
+        if (sentOpenSmsCount >= 8) break;
+      }
+    } else {
+      console.log('  ℹ️ [OpenSMS Engine] Waiting for OpenSMS Android server (:9292 on Wi-Fi) or OPENSMS_API_KEY.');
     }
   }
 
@@ -596,14 +750,14 @@ async function main() {
   console.log(`💾 [Due Diligence Engine] Updated outreach log (${outreachLog.length} total historical communications).`);
 
   // 4. Send Mobile Summary Alert
-  const totalSentThisRun = sentUnderContractCount + sentLendersCount;
-  if (canSendEmail && totalSentThisRun > 0) {
-    const pushTitle = `⚡ Due Diligence Scout: ${totalSentThisRun} Dossiers Dispatched`;
-    const pushMsg = `Autonomous Scout Run Complete:\n• Priority #1 (Active Under-Contract Due Diligence): ${sentUnderContractCount}\n• Priority #2 (Mortgage Loan Officers): ${sentLendersCount}\nTotal Historical Dispatched: ${outreachLog.length}`;
+  const totalSentThisRun = sentUnderContractCount + sentLendersCount + sentOpenSmsCount;
+  if ((canSendEmail || sentOpenSmsCount > 0) && (totalSentThisRun > 0 || newPendingHarvested > 0)) {
+    const pushTitle = `⚡ Due Diligence Engine: ${sentUnderContractCount} Emails, ${sentOpenSmsCount} SMS`;
+    const pushMsg = `Autonomous Scout & OpenSMS Run Complete:\n• Live FMLS Pending Harvested: ${newPendingHarvested}\n• Active Due Diligence Emails: ${sentUnderContractCount}\n• OpenSMS Dispatched: ${sentOpenSmsCount}\n• Mortgage Loan Officers: ${sentLendersCount}\nTotal Historical Dispatched: ${outreachLog.length}`;
     await sendPushNotification(pushTitle, pushMsg, 'high');
   } else if (!canSendEmail) {
-    const pushTitle = `🛡️ Due Diligence Scout: Directory Verified`;
-    const pushMsg = `Autonomous Scout Directory Verified:\n• ${totalUnderContract} Active Under-Contract Due Diligence Listings Verified\n• ${totalLoanOfficers} Loan Officers Verified\n• Email dispatch handled by local daemon engine`;
+    const pushTitle = `🛡️ Due Diligence Scout: ${newPendingHarvested} New Pending Homes`;
+    const pushMsg = `Autonomous Scout Directory Verified:\n• ${newPendingHarvested} New FMLS Pending Listings Harvested\n• ${totalUnderContract} Total Under-Contract Agents Ready\n• ${sentOpenSmsCount} OpenSMS Sent`;
     await sendPushNotification(pushTitle, pushMsg, 'default');
   } else {
     const pushTitle = `⚡ Due Diligence Scout: Roster Current`;
@@ -614,7 +768,7 @@ async function main() {
   if (transporter) transporter.close();
   releaseLock();
   console.log('🏁 [Due Diligence Engine] Execution complete!');
-  console.log(`Summary: ${sentUnderContractCount} Active Under-Contract Due Diligence, ${sentLendersCount} Lenders dispatched.`);
+  console.log(`Summary: ${newPendingHarvested} New Pending Harvested, ${sentUnderContractCount} Due Diligence Emails, ${sentOpenSmsCount} OpenSMS Texts, ${sentLendersCount} Lenders dispatched.`);
 }
 
 main().catch(async (err) => {

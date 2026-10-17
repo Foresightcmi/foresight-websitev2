@@ -7,6 +7,7 @@ const fullFilers = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 // Minify the data payload by keeping only core fields
 const minifiedFilers = fullFilers.map(f => ({
   id: f.id,
+  role: f.role || 'LIST_AGENT',
   name: f.name,
   first: f.first || (f.name ? f.name.trim().split(' ')[0] : 'there'),
   phone: f.phone,
@@ -495,6 +496,31 @@ const htmlContent = `<!DOCTYPE html>
       <span class="arrow-tag">GAR Form F404 Tool ↗</span>
     </a>
 
+    <!-- Autonomous OpenSMS Gateway Control Bar -->
+    <div class="stats-card" style="border-color: rgba(16, 185, 129, 0.45); background: linear-gradient(135deg, rgba(6, 78, 59, 0.35), rgba(15, 23, 42, 0.95));">
+      <div class="stats-row" style="margin-bottom: 6px;">
+        <span style="font-size: 12px; font-weight: 800; color: #34d399; display: flex; align-items: center; gap: 5px;">
+          🤖 Autonomous OpenSMS Engine (:9292 / Cloud)
+        </span>
+        <span id="openSmsStatusBadge" style="font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 12px; background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4);">
+          Checking Gateway...
+        </span>
+      </div>
+      <div style="display: flex; gap: 6px; margin-bottom: 6px;">
+        <input type="password" id="openSmsKeyInput" class="search-input" style="padding: 6px 10px; font-size: 11.5px; flex: 1;" placeholder="Paste OpenSMS API Key (from Start Server)">
+        <input type="text" id="openSmsUrlInput" class="search-input" style="padding: 6px 8px; font-size: 11px; width: 145px;" placeholder="Phone IP (e.g. 192.168.1.50)">
+        <button type="button" onclick="saveOpenSmsKey()" style="background: #10b981; color: #0b0f19; font-weight: 800; font-size: 11.5px; padding: 6px 10px; border: none; border-radius: 6px; cursor: pointer; white-space: nowrap;">
+          Connect
+        </button>
+      </div>
+      <div style="display: flex; gap: 6px;">
+        <button type="button" id="btnAutoPilot" onclick="toggleAutoPilotBatch()" style="flex: 1; background: linear-gradient(135deg, #f59e0b, #d97706); color: #0b0f19; font-weight: 800; font-size: 12px; padding: 8px 10px; border: none; border-radius: 6px; cursor: pointer;">
+          ⚡ Auto-Dispatch Top 10 Due Diligence SMS Now
+        </button>
+      </div>
+      <div id="autoPilotLog" style="font-size: 11px; color: #a7f3d0; margin-top: 5px; display: none;"></div>
+    </div>
+
     <!-- Stats Bar -->
     <div class="stats-card">
       <div class="stats-row">
@@ -539,7 +565,7 @@ const htmlContent = `<!DOCTYPE html>
   </div>
 
   <div class="filter-notice" id="filterNotice">
-    <span>Showing <b>recent under-contract listings</b> in active due diligence. Tapping sends & archives card.</span>
+    <span>Showing <b>live FMLS Pending / Under-Contract listings</b> in active due diligence (Buyer &amp; Listing Agents).</span>
   </div>
 
   <div id="cardsContainer"></div>
@@ -549,14 +575,19 @@ const htmlContent = `<!DOCTYPE html>
 
     // State Persistence across localStorage
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
+    const OPENSMS_KEY_STORAGE = 'foresight_opensms_api_key';
+    const OPENSMS_URL_STORAGE = 'foresight_opensms_gateway_url';
     let sentMap = {}; // { cardId: timestamp }
+    let openSmsKey = localStorage.getItem(OPENSMS_KEY_STORAGE) || '';
+    let openSmsGatewayUrl = localStorage.getItem(OPENSMS_URL_STORAGE) || '';
+    let openSmsServerConfigured = false;
+    let autoPilotRunning = false;
 
     try {
       const loaded = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
       if (typeof loaded === 'object' && loaded !== null && !Array.isArray(loaded)) {
         sentMap = loaded;
       }
-      // Also migrate from legacy array if present
       const legacy = localStorage.getItem('foresight_sent_sms');
       if (legacy) {
         try {
@@ -579,6 +610,61 @@ const htmlContent = `<!DOCTYPE html>
     let searchQuery = '';
     let displayLimit = 60;
 
+    async function checkOpenSmsStatus() {
+      const badge = document.getElementById('openSmsStatusBadge');
+      const input = document.getElementById('openSmsKeyInput');
+      const urlInput = document.getElementById('openSmsUrlInput');
+      if (openSmsKey && input) input.value = openSmsKey;
+      if (openSmsGatewayUrl && urlInput) urlInput.value = openSmsGatewayUrl;
+      try {
+        const res = await fetch('/api/open-sms');
+        const data = await res.json();
+        if (data.configured || openSmsKey) {
+          openSmsServerConfigured = true;
+          badge.textContent = '🟢 OpenSMS Active (' + (data.maskedKey || 'Connected') + ')';
+          badge.style.background = 'rgba(16, 185, 129, 0.2)';
+          badge.style.color = '#6ee7b7';
+          badge.style.borderColor = '#10b981';
+        } else {
+          badge.textContent = '🟡 Paste OpenSMS Key to Enable Auto-Pilot';
+        }
+      } catch {
+        if (openSmsKey) {
+          badge.textContent = '🟢 OpenSMS Key Saved Locally';
+          badge.style.background = 'rgba(16, 185, 129, 0.2)';
+          badge.style.color = '#6ee7b7';
+          badge.style.borderColor = '#10b981';
+        } else {
+          badge.textContent = '🟡 Native SMS Mode';
+        }
+      }
+    }
+
+    async function saveOpenSmsKey() {
+      const val = (document.getElementById('openSmsKeyInput').value || '').trim();
+      let rawUrl = (document.getElementById('openSmsUrlInput').value || '').trim();
+      if (!val || val.length < 4) {
+        alert('Please paste the API Key from your OpenSMS Android app (shown when you tap Start Server).');
+        return;
+      }
+      if (rawUrl && !rawUrl.startsWith('http')) {
+        rawUrl = 'http://' + rawUrl + (rawUrl.includes(':') ? '' : ':9292') + '/sms/';
+      }
+      openSmsKey = val;
+      openSmsGatewayUrl = rawUrl;
+      localStorage.setItem(OPENSMS_KEY_STORAGE, val);
+      localStorage.setItem(OPENSMS_URL_STORAGE, rawUrl);
+      try {
+        await fetch('/api/open-sms', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'save_key', apiKey: val, gatewayUrl: rawUrl })
+        });
+      } catch {}
+      await checkOpenSmsStatus();
+      renderCards();
+    }
+
     function saveState() {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(sentMap));
@@ -589,8 +675,57 @@ const htmlContent = `<!DOCTYPE html>
       return Boolean(sentMap[id]);
     }
 
-    function markSent(id, smsLink) {
+    async function markSent(id, smsLink, cleanPhone, textBody, name, address, role) {
       const nowStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+      if (openSmsServerConfigured || openSmsKey) {
+        // 1. Try direct local Android phone OpenSMS server first if running on phone or same LAN
+        const directTarget = openSmsGatewayUrl || 'http://127.0.0.1:9292/sms/';
+        try {
+          const directRes = await fetch(directTarget, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + openSmsKey
+            },
+            body: JSON.stringify({ number: '+1' + cleanPhone, text: textBody })
+          });
+          if (directRes.ok) {
+            sentMap[id] = 'OpenSMS Sent ' + nowStr;
+            saveState();
+            renderStats();
+            renderCards();
+            return true;
+          }
+        } catch {}
+
+        // 2. Fallback to Next.js /api/open-sms bridge
+        try {
+          const res = await fetch('/api/open-sms', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              apiKey: openSmsKey,
+              gatewayUrl: openSmsGatewayUrl,
+              to: cleanPhone,
+              message: textBody,
+              leadId: id,
+              targetName: name,
+              address: address,
+              role: role
+            })
+          });
+          const data = await res.json();
+          if (res.ok && data.ok) {
+            sentMap[id] = 'OpenSMS Sent ' + nowStr;
+            saveState();
+            renderStats();
+            renderCards();
+            return true;
+          }
+        } catch (e) {
+          console.warn('OpenSMS fallback to native:', e);
+        }
+      }
       sentMap[id] = 'Sent ' + nowStr;
       saveState();
       renderStats();
@@ -598,6 +733,53 @@ const htmlContent = `<!DOCTYPE html>
       if (smsLink) {
         window.location.href = smsLink;
       }
+      return false;
+    }
+
+    async function toggleAutoPilotBatch() {
+      if (autoPilotRunning) {
+        autoPilotRunning = false;
+        document.getElementById('btnAutoPilot').textContent = '⚡ Auto-Dispatch Top 10 Due Diligence SMS Now';
+        return;
+      }
+      if (!openSmsServerConfigured && !openSmsKey) {
+        alert('Paste the API key from your OpenSMS Android app (when you tap Start Server) in the box above first!');
+        return;
+      }
+      const uncontacted = underContractFilers.filter(c => !isSent(c.id) && c.clean_phone && c.clean_phone.length === 10).slice(0, 10);
+      if (uncontacted.length === 0) {
+        alert('All Due Diligence listings have already been contacted!');
+        return;
+      }
+      autoPilotRunning = true;
+      const logEl = document.getElementById('autoPilotLog');
+      const btn = document.getElementById('btnAutoPilot');
+      logEl.style.display = 'block';
+
+      for (let i = 0; i < uncontacted.length; i++) {
+        if (!autoPilotRunning) break;
+        const f = uncontacted[i];
+        const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i.test(f.city || '') || /dekalb/i.test(f.address || '');
+        const dekalbTag = isDeKalb ? ', plus on-site DeKalb Low-Flow Certificate ($100)' : '';
+        const textBody = f.role === 'BUYER_AGENT'
+          ? 'Hi ' + f.first + ', congrats on getting your buyers under contract at ' + f.address + ' in ' + f.city + '! Christopher Boykin, CMI with Foresight Home Inspections here. If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report' + dekalbTag + ', we have a slot open in ' + f.city + ': https://fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' — (678) 480-2110'
+          : 'Hi ' + f.first + ', Christopher Boykin with Foresight Home Inspections here! Saw ' + f.address + ' in ' + f.city + ' is under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report delivery' + dekalbTag + ', we have a slot open in ' + f.city + ' this week. Best wishes on a smooth closing! — (678) 480-2110 | https://fhinspectionsatl.com/realtors';
+
+        btn.textContent = '⏹️ Stop Auto-Pilot (' + (i + 1) + '/' + uncontacted.length + ' Dispatched)';
+        logEl.textContent = '📤 Dispatching via OpenSMS to ' + f.name + ' (' + f.address + ')...';
+        await markSent(f.id, '', f.clean_phone, textBody, f.name, f.address, f.role);
+
+        if (i < uncontacted.length - 1 && autoPilotRunning) {
+          for (let sec = 35; sec > 0; sec--) {
+            if (!autoPilotRunning) break;
+            logEl.textContent = '✅ Sent to ' + f.name + '. Safe carrier pacing: next text in ' + sec + 's...';
+            await new Promise(r => setTimeout(r, 1000));
+          }
+        }
+      }
+      autoPilotRunning = false;
+      btn.textContent = '⚡ Auto-Dispatch Top 10 Due Diligence SMS Now';
+      logEl.textContent = '🎉 Auto-Pilot Batch Complete! All queued via OpenSMS.';
     }
 
     function toggleSent(id) {
@@ -748,13 +930,23 @@ const htmlContent = `<!DOCTYPE html>
         // Dynamically synthesize text and links
         const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i.test(f.city || '') || /dekalb/i.test(f.address || '');
         const dekalbTag = isDeKalb ? ' + DeKalb Low-Flow Certificate ($100)' : '';
+        const isBuyerAgent = f.role === 'BUYER_AGENT';
 
-        const textBody = 'Hi ' + f.first + ', Christopher Boykin with Foresight Home Inspections here! Saw ' + f.address + ' in ' + f.city + ' is under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report delivery' + dekalbTag + ', we have a slot open in ' + f.city + ' this week. Best wishes on a smooth closing! — (678) 480-2110 | https://fhinspectionsatl.com/realtors';
+        const textBody = isBuyerAgent
+          ? 'Hi ' + f.first + ', congrats on getting your buyers under contract at ' + f.address + ' in ' + f.city + '! Christopher Boykin, CMI with Foresight Home Inspections here. If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report' + dekalbTag + ', we have a slot open in ' + f.city + ': https://fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' — (678) 480-2110'
+          : 'Hi ' + f.first + ', Christopher Boykin with Foresight Home Inspections here! Saw ' + f.address + ' in ' + f.city + ' is under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report delivery' + dekalbTag + ', we have a slot open in ' + f.city + ' this week. Best wishes on a smooth closing! — (678) 480-2110 | https://fhinspectionsatl.com/realtors';
         const smsLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(textBody);
-
 
         const buyerBody = 'Hi ' + f.first + ', here is our 1-click due diligence scheduler and $35,000 warranty certificate for your buyers at ' + f.address + ': https://fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' — Includes our two-inspector team, same-day report' + (isDeKalb ? ', official DeKalb Low-Flow Certificate ($100),' : '') + ', and free utility setup concierge. Feel free to pass this directly to your buyers so they can lock in their inspection date today!';
         const buyerLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(buyerBody);
+
+        const roleBadge = isBuyerAgent
+          ? '<span style="background:rgba(16,185,129,0.2); border:1px solid #10b981; color:#6ee7b7; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:800; margin-left:4px;">🎯 BUYER\\\'S AGENT</span>'
+          : '<span style="background:rgba(245,158,11,0.18); border:1px solid #f59e0b; color:#fcd34d; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:4px;">🏡 LISTING AGENT</span>';
+
+        const safeTextJs = textBody.replace(/\\\\/g, '\\\\\\\\').replace(/'/g, "\\\\'");
+        const safeNameJs = (f.name || '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, "\\\\'");
+        const safeAddrJs = (f.address || '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, "\\\\'");
 
         return \`
           <div class="card \\\${sent ? 'sent' : ''}" id="\\\${f.id}">
@@ -762,6 +954,7 @@ const htmlContent = `<!DOCTYPE html>
               <div>
                 <div class="agent-name">
                   👤 \\\${f.name}
+                  \\\${roleBadge}
                   \\\${isDeKalb ? '<span style="background:rgba(59,130,246,0.18); border:1px solid #3b82f6; color:#93c5fd; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:4px;">🏛️ DeKalb Low-Flow ($100)</span>' : ''}
                 </div>
                 <div class="agent-brokerage">\\\${f.brokerage || 'Real Estate Professional'}</div>
@@ -780,7 +973,7 @@ const htmlContent = `<!DOCTYPE html>
             <!-- Due Diligence Message Preview -->
             <div class="preview-box">
               <div class="preview-tag">⚡ Under Contract Due Diligence SMS:</div>
-              "\${textBody.replace('https://fhinspectionsatl.com/realtors', '<a href=\"https://fhinspectionsatl.com/realtors\" target=\"_blank\">fhinspectionsatl.com/realtors</a>')}"
+              "\${textBody}"
             </div>
 
             \${sent ? \`
@@ -791,8 +984,8 @@ const htmlContent = `<!DOCTYPE html>
             \` : ''}
 
             <!-- Primary Action: 1-Tap Due Diligence SMS -->
-            <button class="btn-primary-sms \${sent ? 'sent' : ''}" onclick="markSent('\${f.id}', '\${smsLink}')">
-              \${sent ? '✓ Resend Due Diligence SMS (' + f.phone + ')' : '📱 1-Tap Due Diligence Text ' + f.first + ' (' + f.phone + ')'}
+            <button class="btn-primary-sms \${sent ? 'sent' : ''}" onclick="markSent('\${f.id}', '\${smsLink}', '\${f.clean_phone}', '\${safeTextJs}', '\${safeNameJs}', '\${safeAddrJs}', '\${f.role || 'LIST_AGENT'}')">
+              \${sent ? '✓ Resend Due Diligence SMS (' + f.phone + ')' : ((openSmsServerConfigured || openSmsKey) ? '🤖 Silent OpenSMS Dispatch to ' + f.first + ' (' + f.phone + ')' : '📱 1-Tap Due Diligence Text ' + f.first + ' (' + f.phone + ')')}
             </button>
 
             <!-- Secondary Actions: Buyer Forward Pass & Call -->
@@ -827,6 +1020,7 @@ const htmlContent = `<!DOCTYPE html>
     populateCityFilter();
     renderStats();
     renderCards();
+    checkOpenSmsStatus();
   </script>
 </body>
 </html>`;
