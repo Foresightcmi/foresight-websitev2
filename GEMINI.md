@@ -81,6 +81,12 @@ The entrepreneur demands the **absolute best strategies, architectures, and engi
   2. If data is missing or inaccessible (e.g. video audio, spoken transcripts, offline files, private databases), state plainly: *"I do not know"*, *"I do not have access to this audio/transcript"*, or *"I only have surface metadata"*.
   3. Never synthesize an elaborate breakdown or critique unless the actual content has been fully inspected, verified, and ground-truthed.
   4. Always separate Verified Ground Truth from Surface Metadata and Known Unknowns.
-  5. Direct, humble accountability: If corrected, acknowledge it immediately, plainly, and without defensiveness or spin. Never justify a guess after the fact.
+### ⚡ Production Hosting Tier: Vercel Pro Active (/learn):
+- **Active Subscription**: Team `christopher-boykin-s-projects` is officially upgraded to **Vercel Pro**.
+- **1,000 GB (1 Terabyte) Bandwidth Allowance**: Fast Origin Transfer and Edge Data Transfer expanded 100x from 10 GB to 1,000 GB/month.
+- **Zero Automatic Pausing**: Vercel will never pause or take `fhinspectionsatl.com` offline due to traffic spikes or background transfers.
+- **Extended Serverless Timeout**: Maximum execution duration unlocked up to 300 seconds (5 minutes) compared to the 10-15s Hobby ceiling, enabling robust background processing in API routes without premature termination.
+- **Pro Performance Capabilities**: Integrated Edge Web Analytics, Core Web Vitals Speed Insights, preview deployment protection, and branch-level testing environments are active and available for use.
+
 
 
