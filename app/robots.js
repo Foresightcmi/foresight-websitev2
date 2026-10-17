@@ -4,11 +4,25 @@ export default function robots() {
       {
         userAgent: '*',
         allow: ['/', '/api/mcp'],
-        disallow: ['/private/', '/api/chat', '/api/voice', '/dashboard'],
+        disallow: [
+          '/private/',
+          '/api/chat',
+          '/api/voice',
+          '/dashboard',
+          '/vip-dispatch',
+          '/vip-dispatch.html',
+          '/dispatch',
+          '/dispatch.html',
+          '/warranty-dispatch',
+          '/warranty-dispatch.html',
+          '/videos/',
+          '/audio/',
+          '/sample-report/'
+        ],
       },
       {
         userAgent: 'Googlebot-Video',
-        disallow: ['/videos/chris-avatar', '/videos/agent-avatar', '/sample-report/'],
+        disallow: ['/videos/', '/sample-report/'],
       },
       {
         userAgent: 'GPTBot',
@@ -61,7 +75,6 @@ export default function robots() {
     ],
     sitemap: [
       'https://www.fhinspectionsatl.com/sitemap.xml',
-      'https://www.fhinspectionsatl.com/sitemap-video.xml',
     ],
   }
 }
