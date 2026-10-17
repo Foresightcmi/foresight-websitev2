@@ -619,12 +619,11 @@ async function main() {
     }
 
     // Autonomous OpenSMS Dispatch for Top Uncontacted Due Diligence Deals
-    // Supports BOTH DasLearning Local OpenSMS (http://<PHONE_IP>:9292/sms/) AND opensms.dev cloud queue
+    // Strictly targets DasLearning Local OpenSMS on Android phone (http://<PHONE_IP>:9292/sms/)
     const discoveredLocalUrl = configuredSmsUrl || (await discoverLocalOpenSmsPhone(9292));
-    if (discoveredLocalUrl || openSmsKey) {
-      const targetEndpoint = discoveredLocalUrl || 'https://opensms.dev/api/v1/messages';
-      const isLocalDasLearning = targetEndpoint.includes(':9292') || !targetEndpoint.includes('opensms.dev');
-      console.log(`🤖 [OpenSMS Engine] Dispatching automated Due Diligence SMS via ${targetEndpoint}...`);
+    if (discoveredLocalUrl) {
+      const targetEndpoint = discoveredLocalUrl;
+      console.log(`🤖 [OpenSMS Engine] Connected to Android OpenSMS Gateway: ${targetEndpoint}`);
 
       for (const r of sorted) {
         const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
@@ -679,7 +678,7 @@ async function main() {
         if (sentOpenSmsCount >= 8) break;
       }
     } else {
-      console.log('  ℹ️ [OpenSMS Engine] Waiting for OpenSMS Android server (:9292 on Wi-Fi) or OPENSMS_API_KEY.');
+      console.log('  ℹ️ [OpenSMS Engine] OpenSMS phone server (:9292) was not detected on local Wi-Fi. (Ensure your Android phone is connected to home Wi-Fi with OpenSMS "Start Server" active, or use VIP Dispatch on your phone).');
     }
   }
 
