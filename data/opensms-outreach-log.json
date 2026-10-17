@@ -1,0 +1,74 @@
+[
+  {
+    "id": "sms_1792267597440_4044085567",
+    "leadId": "card_88a8924a48",
+    "to": "+14044085567",
+    "targetName": "Kristin Carpenter",
+    "address": "1103 Lanier Boulevard NE",
+    "city": "Atlanta",
+    "role": "BUYER_AGENT",
+    "gateway": "DasLearning-Local-9292",
+    "status": "sent",
+    "timestamp": "2026-10-17T20:06:37.440Z"
+  },
+  {
+    "id": "sms_1792267617498_6784638106",
+    "leadId": "card_c76893c38a",
+    "to": "+16784638106",
+    "targetName": "Lurline Craig-Burke",
+    "address": "10376 Royal Terrace",
+    "city": "Alpharetta",
+    "role": "BUYER_AGENT",
+    "gateway": "DasLearning-Local-9292",
+    "status": "sent",
+    "timestamp": "2026-10-17T20:06:57.498Z"
+  },
+  {
+    "id": "sms_1792267637638_6787335730",
+    "leadId": "card_1d2d4e9745",
+    "to": "+16787335730",
+    "targetName": "Shyamala Bhagavathula",
+    "address": "2080 Poplar Ridge Place",
+    "city": "Cumming",
+    "role": "BUYER_AGENT",
+    "gateway": "DasLearning-Local-9292",
+    "status": "sent",
+    "timestamp": "2026-10-17T20:07:17.638Z"
+  },
+  {
+    "id": "sms_1792267657743_6782362660",
+    "leadId": "card_fe6a950fc0",
+    "to": "+16782362660",
+    "targetName": "Jiang Chen(Thomas)",
+    "address": "265 Beech Tree Hollow NW",
+    "city": "Sugar Hill",
+    "role": "BUYER_AGENT",
+    "gateway": "DasLearning-Local-9292",
+    "status": "sent",
+    "timestamp": "2026-10-17T20:07:37.743Z"
+  },
+  {
+    "id": "sms_1792267677877_6783371371",
+    "leadId": "card_d2b16284d7",
+    "to": "+16783371371",
+    "targetName": "Yasmina Dodi",
+    "address": "469 Timberlea Lake Drive SE",
+    "city": "Marietta",
+    "role": "BUYER_AGENT",
+    "gateway": "DasLearning-Local-9292",
+    "status": "sent",
+    "timestamp": "2026-10-17T20:07:57.877Z"
+  },
+  {
+    "id": "sms_1792267698044_6786626351",
+    "leadId": "card_72ca676766",
+    "to": "+16786626351",
+    "targetName": "Caroline Millar",
+    "address": "3194 Isoline Way SE",
+    "city": "Smyrna",
+    "role": "BUYER_AGENT",
+    "gateway": "DasLearning-Local-9292",
+    "status": "sent",
+    "timestamp": "2026-10-17T20:08:18.044Z"
+  }
+]

@@ -763,5 +763,77 @@
     "email": "robin.blass@harrynorman.com",
     "date": "2026-10-02",
     "timestamp": "2026-10-15T12:01:23.250Z"
+  },
+  {
+    "key": "SMS_card_88a8924a48_4044085567",
+    "type": "UNDER_CONTRACT_SMS",
+    "role": "BUYER_AGENT",
+    "targetName": "Kristin Carpenter",
+    "brokerage": "Dorsey Alston Realtors",
+    "address": "1103 Lanier Boulevard NE",
+    "city": "Atlanta",
+    "phone": "4044085567",
+    "date": "2026-10-17",
+    "timestamp": "2026-10-17T20:06:37.443Z"
+  },
+  {
+    "key": "SMS_card_c76893c38a_6784638106",
+    "type": "UNDER_CONTRACT_SMS",
+    "role": "BUYER_AGENT",
+    "targetName": "Lurline Craig-Burke",
+    "brokerage": "Harry Norman Realtors",
+    "address": "10376 Royal Terrace",
+    "city": "Alpharetta",
+    "phone": "6784638106",
+    "date": "2026-10-17",
+    "timestamp": "2026-10-17T20:06:57.499Z"
+  },
+  {
+    "key": "SMS_card_1d2d4e9745_6787335730",
+    "type": "UNDER_CONTRACT_SMS",
+    "role": "BUYER_AGENT",
+    "targetName": "Shyamala Bhagavathula",
+    "brokerage": "AllTrust Realty, Inc.",
+    "address": "2080 Poplar Ridge Place",
+    "city": "Cumming",
+    "phone": "6787335730",
+    "date": "2026-10-17",
+    "timestamp": "2026-10-17T20:07:17.639Z"
+  },
+  {
+    "key": "SMS_card_fe6a950fc0_6782362660",
+    "type": "UNDER_CONTRACT_SMS",
+    "role": "BUYER_AGENT",
+    "targetName": "Jiang Chen(Thomas)",
+    "brokerage": "Homecraft Realty, Inc.",
+    "address": "265 Beech Tree Hollow NW",
+    "city": "Sugar Hill",
+    "phone": "6782362660",
+    "date": "2026-10-17",
+    "timestamp": "2026-10-17T20:07:37.744Z"
+  },
+  {
+    "key": "SMS_card_d2b16284d7_6783371371",
+    "type": "UNDER_CONTRACT_SMS",
+    "role": "BUYER_AGENT",
+    "targetName": "Yasmina Dodi",
+    "brokerage": "Keller Williams Realty Peachtree Rd.",
+    "address": "469 Timberlea Lake Drive SE",
+    "city": "Marietta",
+    "phone": "6783371371",
+    "date": "2026-10-17",
+    "timestamp": "2026-10-17T20:07:57.878Z"
+  },
+  {
+    "key": "SMS_card_72ca676766_6786626351",
+    "type": "UNDER_CONTRACT_SMS",
+    "role": "BUYER_AGENT",
+    "targetName": "Caroline Millar",
+    "brokerage": "Bolst",
+    "address": "3194 Isoline Way SE",
+    "city": "Smyrna",
+    "phone": "6786626351",
+    "date": "2026-10-17",
+    "timestamp": "2026-10-17T20:08:18.044Z"
   }
 ]
