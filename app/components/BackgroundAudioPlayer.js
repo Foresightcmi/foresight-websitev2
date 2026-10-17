@@ -1,98 +1,244 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function BackgroundAudioPlayer() {
+  const pathname = usePathname();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+
   const audioRef = useRef(null);
+  const pausedByConciergeRef = useRef(false);
+  const fadeTimerRef = useRef(null);
 
+  // Target ambient volume (luxurious background presence without overwhelming speech)
+  const TARGET_VOLUME = 0.20;
 
+  // Clean fade helper
+  const fadeVolume = useCallback((startVol, endVol, durationMs, onComplete) => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const dismissed = sessionStorage.getItem('foresight_bg_audio_dismissed');
-      if (dismissed === 'true') {
-        setIsDismissed(true);
-        return;
+    if (fadeTimerRef.current) {
+      clearInterval(fadeTimerRef.current);
+      fadeTimerRef.current = null;
+    }
+
+    const steps = 15;
+    const stepDuration = durationMs / steps;
+    let currentStep = 0;
+    audio.volume = Math.max(0, Math.min(1, startVol));
+
+    fadeTimerRef.current = setInterval(() => {
+      currentStep++;
+      const ratio = currentStep / steps;
+      const newVol = startVol + (endVol - startVol) * ratio;
+      audio.volume = Math.max(0, Math.min(1, newVol));
+
+      if (currentStep >= steps) {
+        clearInterval(fadeTimerRef.current);
+        fadeTimerRef.current = null;
+        if (onComplete) onComplete();
       }
+    }, stepDuration);
+  }, []);
+
+  // Safe Play helper
+  const startPlayback = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    // Do not play on concierge or admin routes
+    if (typeof window !== 'undefined' && window.location.pathname.startsWith('/concierge')) {
+      return;
+    }
+
+    if (!audio.src || audio.src === window.location.href) {
+      audio.src = '/audio/foresight-anthem.mp3';
+    }
+
+    audio.volume = 0.04;
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+          fadeVolume(0.04, TARGET_VOLUME, 450);
+        })
+        .catch((err) => {
+          // Browser Autoplay Policy blocked unmuted playback without user gesture
+          console.log('ℹ️ Ambient theme waiting for first user interaction:', err?.name || 'AutoplayPolicy');
+          setupFirstGestureTrigger();
+        });
+    }
+  }, [fadeVolume]);
+
+  // Fallback: Autoplay as soon as visitor touches, scrolls, or clicks anything on the site
+  const setupFirstGestureTrigger = useCallback(() => {
+    const gestureEvents = ['click', 'touchstart', 'pointerdown', 'scroll', 'keydown'];
+
+    const handleFirstGesture = () => {
+      gestureEvents.forEach((evt) => window.removeEventListener(evt, handleFirstGesture));
+
+      const isDismissedCheck = sessionStorage.getItem('foresight_bg_audio_dismissed') === 'true';
+      const isPausedCheck = sessionStorage.getItem('foresight_bg_audio_paused') === 'true';
+      const isConciergeActive = pausedByConciergeRef.current || (typeof window !== 'undefined' && window.location.pathname.startsWith('/concierge'));
+
+      if (!isDismissedCheck && !isPausedCheck && !isConciergeActive) {
+        const audio = audioRef.current;
+        if (audio && audio.paused) {
+          if (!audio.src || audio.src === window.location.href) {
+            audio.src = '/audio/foresight-anthem.mp3';
+          }
+          audio.volume = 0.04;
+          audio.play()
+            .then(() => {
+              setIsPlaying(true);
+              fadeVolume(0.04, TARGET_VOLUME, 450);
+            })
+            .catch(() => {});
+        }
+      }
+    };
+
+    gestureEvents.forEach((evt) => {
+      window.addEventListener(evt, handleFirstGesture, { once: true, passive: true });
+    });
+  }, [fadeVolume]);
+
+  // Main lifecycle & Concierge Coordination
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Check saved preferences
+    if (sessionStorage.getItem('foresight_bg_audio_dismissed') === 'true') {
+      setIsDismissed(true);
+      return;
     }
 
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.volume = 0.22;
+    audio.src = '/audio/foresight-anthem.mp3';
+    audio.loop = true;
+    audio.preload = 'auto';
 
-    // 1. Audio remains idle (preload="none") until user explicitly taps play to save bandwidth
+    // 1. Attempt immediate playback if not previously paused by visitor
+    const userManuallyPaused = sessionStorage.getItem('foresight_bg_audio_paused') === 'true';
+    const isConciergeRoute = window.location.pathname.startsWith('/concierge');
 
-    // 2. Listen to voice modal coordination events
+    if (!userManuallyPaused && !isConciergeRoute) {
+      startPlayback();
+    }
+
+    // 2. CONCIERGE INTEGRATION: Instant pause when concierge opens or activates
     const handlePauseBgMusic = () => {
       if (audio && !audio.paused) {
-        audio.pause();
-        setIsPlaying(false);
+        pausedByConciergeRef.current = true;
+        fadeVolume(audio.volume, 0, 120, () => {
+          audio.pause();
+          setIsPlaying(false);
+        });
+      } else {
+        pausedByConciergeRef.current = true;
       }
     };
 
+    // 3. CONCIERGE INTEGRATION: Smooth resume when concierge closes
     const handleResumeBgMusic = () => {
-      const userPaused = sessionStorage.getItem('foresight_bg_audio_paused');
-      if (userPaused !== 'true' && audio && audio.paused) {
-        audio.play().then(() => setIsPlaying(true)).catch(() => {});
+      const isStillPaused = sessionStorage.getItem('foresight_bg_audio_paused') === 'true';
+      const onConcierge = window.location.pathname.startsWith('/concierge');
+
+      if (pausedByConciergeRef.current && !isStillPaused && !onConcierge && audio && audio.paused) {
+        pausedByConciergeRef.current = false;
+        audio.volume = 0.04;
+        audio.play()
+          .then(() => {
+            setIsPlaying(true);
+            fadeVolume(0.04, TARGET_VOLUME, 500);
+          })
+          .catch(() => {});
+      } else {
+        pausedByConciergeRef.current = false;
       }
     };
 
+    // Listen to custom Foresight concierge coordination events
     window.addEventListener('foresight_pause_bg_music', handlePauseBgMusic);
+    window.addEventListener('open_foresight_live_consultation', handlePauseBgMusic);
     window.addEventListener('foresight_resume_bg_music', handleResumeBgMusic);
 
-    // 3. Global media conflict prevention (Capture Phase)
-    // If a visitor clicks on any video or plays any video, stop background music instantly.
-    const handleCapturePlay = (e) => {
-      if (e.target && e.target.tagName === 'VIDEO') {
+    // 4. Global Media Conflict Prevention (Capture Phase)
+    // If any video or other audio begins playing on the page (VSL, field video), pause background anthem
+    const handleGlobalMediaPlay = (e) => {
+      if (!e.target) return;
+      if (e.target.tagName === 'VIDEO' || (e.target.tagName === 'AUDIO' && e.target !== audio)) {
         if (audio && !audio.paused) {
-          audio.pause();
-          setIsPlaying(false);
-        }
-        // Also ensure all other audio elements on the page are paused
-        document.querySelectorAll('audio').forEach((aud) => {
-          if (aud !== e.target && !aud.paused) {
-            aud.pause();
-          }
-        });
-      } else if (e.target && e.target.tagName === 'AUDIO' && e.target !== audio) {
-        // If inline audio (or any other audio) starts playing, stop this background audio
-        if (audio && !audio.paused) {
+          pausedByConciergeRef.current = true;
           audio.pause();
           setIsPlaying(false);
         }
       }
     };
 
-    const handleCaptureClick = (e) => {
-      const isVideo = e.target && (e.target.tagName === 'VIDEO' || e.target.closest('video'));
-      if (isVideo) {
+    // 5. Page Visibility: pause when tab is minimized or switched, resume when returning
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
         if (audio && !audio.paused) {
           audio.pause();
           setIsPlaying(false);
         }
-        document.querySelectorAll('audio').forEach((aud) => {
-          if (!aud.paused) {
-            aud.pause();
-          }
-        });
+      } else {
+        const isManuallyPaused = sessionStorage.getItem('foresight_bg_audio_paused') === 'true';
+        const isDismissedNow = sessionStorage.getItem('foresight_bg_audio_dismissed') === 'true';
+        const onConciergeNow = window.location.pathname.startsWith('/concierge');
+        if (!isManuallyPaused && !isDismissedNow && !onConciergeNow && !pausedByConciergeRef.current) {
+          audio.play().then(() => setIsPlaying(true)).catch(() => {});
+        }
       }
     };
 
-    document.addEventListener('play', handleCapturePlay, true);
-    document.addEventListener('click', handleCaptureClick, true);
+    document.addEventListener('play', handleGlobalMediaPlay, true);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       window.removeEventListener('foresight_pause_bg_music', handlePauseBgMusic);
+      window.removeEventListener('open_foresight_live_consultation', handlePauseBgMusic);
       window.removeEventListener('foresight_resume_bg_music', handleResumeBgMusic);
-      document.removeEventListener('play', handleCapturePlay, true);
-      document.removeEventListener('click', handleCaptureClick, true);
+      document.removeEventListener('play', handleGlobalMediaPlay, true);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (fadeTimerRef.current) clearInterval(fadeTimerRef.current);
     };
-  }, []);
+  }, [fadeVolume, startPlayback]);
 
+  // Route protection: If navigated to /concierge, mute immediately
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (pathname && (pathname.startsWith('/concierge') || pathname.startsWith('/admin') || pathname.startsWith('/dashboard'))) {
+      if (audio && !audio.paused) {
+        audio.pause();
+        setIsPlaying(false);
+        pausedByConciergeRef.current = true;
+      }
+    } else if (pausedByConciergeRef.current) {
+      // Navigated back from concierge
+      const userPaused = sessionStorage.getItem('foresight_bg_audio_paused') === 'true';
+      if (!userPaused && audio && audio.paused) {
+        pausedByConciergeRef.current = false;
+        audio.volume = 0.04;
+        audio.play()
+          .then(() => {
+            setIsPlaying(true);
+            fadeVolume(0.04, TARGET_VOLUME, 500);
+          })
+          .catch(() => {});
+      }
+    }
+  }, [pathname, fadeVolume]);
+
+  // User Interactive Controls
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -100,19 +246,22 @@ export default function BackgroundAudioPlayer() {
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
+      pausedByConciergeRef.current = false;
       sessionStorage.setItem('foresight_bg_audio_paused', 'true');
     } else {
+      pausedByConciergeRef.current = false;
+      sessionStorage.setItem('foresight_bg_audio_paused', 'false');
       if (!audio.src || audio.src === window.location.href) {
         audio.src = '/audio/foresight-anthem.mp3';
       }
-      audio.volume = 0.22;
+      audio.volume = 0.04;
       audio.play()
         .then(() => {
           setIsPlaying(true);
-          sessionStorage.setItem('foresight_bg_audio_paused', 'false');
+          fadeVolume(0.04, TARGET_VOLUME, 400);
         })
         .catch((err) => {
-          console.warn('Audio play request interrupted:', err);
+          console.warn('Audio play interrupted:', err);
         });
     }
   };
@@ -121,7 +270,6 @@ export default function BackgroundAudioPlayer() {
     e.stopPropagation();
     const audio = audioRef.current;
     if (!audio) return;
-
     audio.muted = !audio.muted;
     setIsMuted(audio.muted);
   };
@@ -138,13 +286,17 @@ export default function BackgroundAudioPlayer() {
     sessionStorage.setItem('foresight_bg_audio_paused', 'true');
   };
 
+  // Do not render on administrative or dedicated concierge pages
+  if (pathname && (pathname.startsWith('/dashboard') || pathname.startsWith('/admin') || pathname.startsWith('/concierge'))) {
+    return null;
+  }
+
   if (isDismissed) return null;
 
   return (
     <>
       <audio
         ref={audioRef}
-        preload="none"
         loop
         playsInline
         onPlay={() => setIsPlaying(true)}
@@ -162,25 +314,25 @@ export default function BackgroundAudioPlayer() {
           alignItems: 'center',
           gap: '8px',
           background: 'rgba(15, 23, 42, 0.94)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: isPlaying ? '1px solid rgba(212, 175, 55, 0.6)' : '1px solid rgba(255, 255, 255, 0.15)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
+          border: isPlaying ? '1px solid rgba(212, 175, 55, 0.65)' : '1px solid rgba(255, 255, 255, 0.16)',
           boxShadow: isPlaying
-            ? '0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.3)'
-            : '0 8px 20px -4px rgba(0, 0, 0, 0.4)',
+            ? '0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.35)'
+            : '0 8px 20px -4px rgba(0, 0, 0, 0.45)',
           borderRadius: '9999px',
           padding: '6px 12px 6px 10px',
           color: '#ffffff',
           cursor: 'pointer',
-          transition: 'all 0.25s ease',
+          transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
           userSelect: 'none',
           fontFamily: 'inherit',
           fontSize: '0.82rem',
         }}
         onClick={togglePlay}
-        title={isPlaying ? 'Pause Background Theme' : 'Play Background Theme'}
+        title={isPlaying ? 'Pause Foresight Theme' : 'Play Foresight Theme'}
       >
-        {/* Play / Equalizer Icon */}
+        {/* Play / Animated Equalizer Icon */}
         <div
           style={{
             width: '28px',
@@ -210,11 +362,11 @@ export default function BackgroundAudioPlayer() {
 
         {/* Text Status */}
         <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15, paddingRight: '4px' }}>
-          <span style={{ fontWeight: 600, fontSize: '0.8rem', color: isPlaying ? '#f8fafc' : '#cbd5e1' }}>
-            {isPlaying ? 'Theme Song' : 'Play Theme'}
+          <span style={{ fontWeight: 700, fontSize: '0.8rem', color: isPlaying ? '#f8fafc' : '#cbd5e1' }}>
+            {isPlaying ? 'Foresight Anthem' : 'Play Anthem'}
           </span>
-          <span style={{ fontSize: '0.68rem', color: isPlaying ? 'var(--color-gold, #d4af37)' : '#94a3b8' }}>
-            {isPlaying ? 'Playing Ambient' : 'Tap to Listen'}
+          <span style={{ fontSize: '0.67rem', color: isPlaying ? 'var(--color-gold, #d4af37)' : '#94a3b8' }}>
+            {isPlaying ? 'Official Theme Song' : 'Tap to Listen'}
           </span>
         </div>
 
@@ -307,10 +459,12 @@ export default function BackgroundAudioPlayer() {
             left: 10px !important;
             padding: 5px 8px 5px 8px !important;
             font-size: 0.72rem !important;
-            max-width: 140px !important;
+            max-width: 155px !important;
           }
           .foresight-bg-music-pill span {
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       ` }} />

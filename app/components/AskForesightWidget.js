@@ -11,7 +11,12 @@ export default function AskForesightWidget() {
   const [isVoiceOpen, setIsVoiceOpen] = useState(false);
 
   useEffect(() => {
-    const handleOpen = () => setIsVoiceOpen(true);
+    const handleOpen = () => {
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+      }
+      setIsVoiceOpen(true);
+    };
     if (typeof window !== 'undefined') {
       window.addEventListener('open_foresight_live_consultation', handleOpen);
       return () => window.removeEventListener('open_foresight_live_consultation', handleOpen);
@@ -26,7 +31,12 @@ export default function AskForesightWidget() {
           {/* Primary LiveRep Circular Avatar Launcher */}
           <div style={{ position: 'relative' }}>
             <button
-              onClick={() => setIsVoiceOpen(true)}
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+                }
+                setIsVoiceOpen(true);
+              }}
               aria-label="Live Concierge Consultation with Christopher Boykin, Certified Master Inspector"
               className="ask-foresight-voice-launcher"
               style={{

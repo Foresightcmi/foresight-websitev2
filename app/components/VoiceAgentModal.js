@@ -103,6 +103,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
         window.dispatchEvent(new CustomEvent('foresight_resume_bg_music'));
       }
     }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('foresight_resume_bg_music'));
+      }
+    };
   }, [isOpen]);
 
   useEffect(() => {

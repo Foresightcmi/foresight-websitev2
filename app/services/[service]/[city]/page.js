@@ -212,7 +212,10 @@ export async function generateMetadata({ params }) {
   const county = cityData.County || 'Georgia';
   const serviceName = serviceData.name;
 
-  const title = serviceData.metaTitle.replace(/{city}/g, cityName);
+  let title = serviceData.metaTitle.replace(/{city}/g, cityName);
+  if (title.length > 62) {
+    title = `${cityName}, GA ${serviceName} | ${serviceData.price}`;
+  }
   const description = serviceData.metaDescription.replace(/{city}/g, cityName);
   const canonicalUrl = `${SITE_URL}/services/${normalizedService}/${resolvedParams.city}`;
 
@@ -243,22 +246,52 @@ export async function generateMetadata({ params }) {
 }
 
 // ---------------------------------------------------------------------------
-// County Context Helper
+// County Context Helper (20-County Geotech, Era & Municipal Code Matrix)
 // ---------------------------------------------------------------------------
 function getCountyContext(county, cityName, serviceName) {
   switch (county) {
     case 'Fulton':
-      return `Fulton County features a mix of historic homes and dense modern developments. Performing ${serviceName.toLowerCase()} in ${cityName} requires careful attention to North Fulton granite soil formations and local municipal building codes.`;
+      return `Fulton County spans historic Intown unreinforced masonry homes to dense North Fulton luxury estates built over uranium-bearing granite bedrock (EPA Zone 1 radon). Performing ${serviceName.toLowerCase()} in ${cityName} requires evaluating Piedmont red clay foundation hydrostatic pressure, legacy electrical panels, and City of Atlanta municipal compliance standards.`;
     case 'DeKalb':
-      return `DeKalb County properties are subject to specific municipal guidelines, including low-flow plumbing standards and legacy infrastructure checks. Our ${serviceName.toLowerCase()} in ${cityName} helps homeowners navigate county compliance seamlessly.`;
+      return `DeKalb County enforces mandatory Low-Flow Plumbing Retrofit Certificates ($100 flat fee through Foresight) on pre-1993 residential sales and sits directly atop the Stone Mountain granite formation (EPA Zone 1 radon). Our ${serviceName.toLowerCase()} in ${cityName} targets mature tree-root intrusion in cast-iron and terracotta sewer laterals alongside mid-century crawlspace moisture.`;
     case 'Gwinnett':
-      return `As one of Metro Atlanta's fastest-expanding areas, Gwinnett County homes range from 1990s subdivisions to rapid new builds. We tailor our ${serviceName.toLowerCase()} in ${cityName} to identify polybutylene piping, rapid-build defects, and regional environmental factors.`;
+      return `As one of Georgia's largest suburban corridors, Gwinnett County features a high density of 1978–1995 subdivisions with polybutylene (PB2110) supply piping and synthetic stucco (EIFS) cladding alongside rapid 2020s new construction. We tailor our ${serviceName.toLowerCase()} in ${cityName} to catch hidden plumbing micro-fractures, rushed builder framing, and granite soil radon gas.`;
     case 'Cobb':
-      return `Cobb County's rolling topography and red clay soil create unique structural and drainage challenges. Our ${serviceName.toLowerCase()} in ${cityName} evaluates how soil settlement and moisture impact your home's integrity.`;
+      return `Cobb County's rolling Piedmont topography and expansive Cecil red clay soils create significant seasonal shrink-swell foundation stress and basement retaining wall deflection. Our ${serviceName.toLowerCase()} in ${cityName} utilizes calibrated infrared thermal imaging and pin-probe hygrometers to detect sub-surface moisture and structural settlement.`;
     case 'Forsyth':
-      return `Forsyth County features premier luxury estates and lakefront homes. We utilize high-tech diagnostic gear during ${serviceName.toLowerCase()} in ${cityName} to verify high-end systems meet rigid safety standards.`;
+      return `Forsyth County's Lake Lanier watershed slopes and custom multi-system estates demand rigorous mechanical and structural verification. During ${serviceName.toLowerCase()} in ${cityName}, our two-inspector team audits multi-zone HVAC static pressure, steep-slope roof flashings via 4K drone telemetry, and North Georgia granite radon gas accumulation.`;
+    case 'Cherokee':
+      return `Cherokee County combines Etowah River basin humidity with steep-grade foothill lots where improper builder lot grading frequently drives water into crawlspaces and slab footings. Our ${serviceName.toLowerCase()} in ${cityName} focuses on retaining wall drainage, wood-destroying organism (WDO) vectors, and production builder warranty defects.`;
+    case 'Clayton':
+      return `Clayton County contains a high concentration of 1950s–1980s ranch and split-level homes where obsolete Federal Pacific or Zinsco electrical panels, aging galvanized water lines, and clay sewer lateral bellies are frequently uncovered during our ${serviceName.toLowerCase()} in ${cityName}.`;
+    case 'Henry':
+      return `Henry County's rapid Southern Crescent expansion includes thousands of post-tension slab-on-grade builds and master-planned subdivisions. Performing ${serviceName.toLowerCase()} in ${cityName} requires close inspection of attic truss bracing, unsealed roof valley flashings, and underground sewer line compaction from heavy grading equipment.`;
+    case 'Fayette':
+      return `Fayette County's custom acreage estates and established executive subdivisions frequently feature complex roofline geometries, synthetic or hard-coat stucco envelopes, and expansive crawlspaces. Our ${serviceName.toLowerCase()} in ${cityName} verifies envelope moisture integrity, septic/sewer transition lines, and multi-unit HVAC performance.`;
+    case 'Coweta':
+      return `Coweta County blends historic Newnan-area mill architecture with high-velocity I-85 corridor new construction. Our two-inspector ${serviceName.toLowerCase()} in ${cityName} evaluates historic pier-and-curtain foundation movement, subterranean termite shelter tubes, and builder framing compliance.`;
+    case 'Douglas':
+      return `Douglas County's Sweetwater Creek basin and steep Piedmont ridges subject residential foundations to heavy stormwater runoff and hydrostatic soil pressure. During ${serviceName.toLowerCase()} in ${cityName}, we closely audit crawlspace vapor barriers, floor joist moisture levels, and electrical grounding systems.`;
+    case 'Paulding':
+      return `Paulding County is one of Metro Atlanta's fastest-growing new construction markets, where tight builder schedules frequently result in missing kickout flashings, disconnected attic ductwork, and crushed PVC sewer laterals. Our ${serviceName.toLowerCase()} in ${cityName} protects buyers before closing or 11-month builder warranty expiration.`;
+    case 'Rockdale':
+      return `Rockdale County sits over prominent granite gneiss outcroppings that elevate indoor radon potential and create perched water tables beneath residential slabs and basements. Our ${serviceName.toLowerCase()} in ${cityName} combines thermal moisture mapping with thorough structural and mechanical diagnostics.`;
+    case 'Newton':
+      return `Newton County spans historic Covington masonry properties to fast-expanding eastern corridor subdivisions near the Alcovy and Yellow River watersheds. Performing ${serviceName.toLowerCase()} in ${cityName} requires targeted diagnostics for high crawlspace relative humidity, fungal joist decay, and roof flashing longevity.`;
+    case 'Walton':
+      return `Walton County's transition from agricultural tracts to residential subdivisions places modern slab and crawlspace foundations over high-plasticity red clay soils. Our ${serviceName.toLowerCase()} in ${cityName} checks for differential foundation settlement, grading drainage slope, and complete MEP code compliance.`;
+    case 'Barrow':
+      return `Barrow County's booming Northeast I-85 and Highway 316 corridors feature dense production-built neighborhoods where our ${serviceName.toLowerCase()} in ${cityName} routinely identifies improper roof shingle fastening, unbalanced HVAC supply airflow, and unsealed exterior wall penetrations.`;
+    case 'Bartow':
+      return `Bartow County's North Georgia valley and ridge geology introduces mixed clay and limestone soil movement alongside high seasonal moisture. Our two-inspector ${serviceName.toLowerCase()} in ${cityName} evaluates foundation stability, attic insulation thermal bypasses, and electrical panel safety.`;
+    case 'Carroll':
+      return `Carroll County properties experience heavy West Georgia red clay shrink-swell cycles and intense subterranean termite pressure. Performing ${serviceName.toLowerCase()} in ${cityName} involves thorough crawlspace structural framing checks, brick veneer lintel inspection, and moisture intrusion scanning.`;
+    case 'Hall':
+      return `Hall County's Lake Lanier shoreline microclimates and steep hillside lots require specialized evaluation of foundation footing stability, multi-level deck ledger attachments, and high-elevation roof slopes during every ${serviceName.toLowerCase()} in ${cityName}.`;
+    case 'Spalding':
+      return `Spalding County features a mix of early-20th-century historic residences and modern suburban infill, where our ${serviceName.toLowerCase()} in ${cityName} targets aging cast-iron drain stacks, ungrounded branch circuit wiring, and crawlspace wood-rot remediation needs.`;
     default:
-      return `${county} County properties are influenced by Georgia's humid climate and regional soil conditions. Our ${serviceName.toLowerCase()} in ${cityName} ensures your property meets all safety and performance standards.`;
+      return `${county} County properties are directly impacted by Georgia's humid subtropical climate and expansive Piedmont red clay soils. Our two-inspector ${serviceName.toLowerCase()} in ${cityName} ensures your property's structural, roof, electrical, plumbing, and HVAC systems are thoroughly verified.`;
   }
 }
 
@@ -541,13 +574,13 @@ export default async function ServiceCityPage({ params }) {
               </span>
             </div>
             <p style={{ fontSize: '1rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
-              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA ({county} County) starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Led by Certified Master Inspector® Christopher Boykin with two certified inspectors on every appointment, evaluations include high-tech diagnostic equipment, digital reports delivered within 24 hours, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
+              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA ({county} County) starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Governed directly by Board-Certified Master Inspector® Christopher Boykin (CMI #MICB-1082) with <strong>two certified inspectors on every appointment</strong>, our dual-audit protocol cuts on-site time in half (1.5–2.5 hours vs. 4+ hours for solo competitors) while eliminating late-stage inspector fatigue. Every evaluation includes calibrated infrared thermal imaging ($0 upcharge vs. $150 competitor fees), 24-hour digital reporting, and up to <strong>$35,000 in zero-deductible warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#475569' }}>
               <div><strong>Price:</strong> {serviceData.price}</div>
               <div><strong>Inspectors:</strong> 2 Certified on Site</div>
               <div><strong>⭐ Rating:</strong> 4.9★ (48 Reviews)</div>
-              <div><strong>Protection:</strong> Up to $35,000 Included</div>
+              <div><strong>Protection:</strong> $35,000 ($0 Deductible)</div>
             </div>
           </div>
         </div>

@@ -13,7 +13,15 @@ export default function ConciergePage() {
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
 
   useEffect(() => {
-    const handleOpen = () => setIsVoiceModalOpen(true);
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+    }
+    const handleOpen = () => {
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+      }
+      setIsVoiceModalOpen(true);
+    };
     window.addEventListener('open_foresight_live_consultation', handleOpen);
     return () => window.removeEventListener('open_foresight_live_consultation', handleOpen);
   }, []);
@@ -167,7 +175,12 @@ export default function ConciergePage() {
           {/* Dual Action Buttons */}
           <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
             <button
-              onClick={() => setIsVoiceModalOpen(true)}
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+                }
+                setIsVoiceModalOpen(true);
+              }}
               style={{
                 background: 'linear-gradient(135deg, #D4AF37 0%, #B89528 100%)',
                 color: '#0F172A',
@@ -263,7 +276,12 @@ export default function ConciergePage() {
             
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
               <button
-                onClick={() => setIsVoiceModalOpen(true)}
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+                  }
+                  setIsVoiceModalOpen(true);
+                }}
                 style={{
                   background: 'rgba(212, 175, 55, 0.15)',
                   border: '1px solid rgba(212, 175, 55, 0.4)',
@@ -394,7 +412,12 @@ export default function ConciergePage() {
           >
             <button
               type="button"
-              onClick={() => setIsVoiceModalOpen(true)}
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('foresight_pause_bg_music'));
+                }
+                setIsVoiceModalOpen(true);
+              }}
               aria-label="Switch to Hands-Free Voice"
               title="Launch Live Voice Consultation"
               style={{

@@ -9,17 +9,25 @@ const AskForesightWidget = dynamic(
   { ssr: false }
 );
 
+const BackgroundAudioPlayer = dynamic(
+  () => import('./BackgroundAudioPlayer'),
+  { ssr: false }
+);
+
 export default function WidgetWrapper() {
   const pathname = usePathname();
-  const [shouldLoad, setShouldLoad] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [shouldLoadConcierge, setShouldLoadConcierge] = useState(false);
 
   useEffect(() => {
-    // If user explicitly triggers the live concierge consultation, load immediately
-    const handleImmediateOpen = () => setShouldLoad(true);
+    setIsMounted(true);
+
+    // If user explicitly triggers the live concierge consultation, load concierge immediately
+    const handleImmediateOpen = () => setShouldLoadConcierge(true);
     window.addEventListener('open_foresight_live_consultation', handleImmediateOpen, { once: true });
 
-    // Otherwise, defer loading until after initial paint / first interaction
-    const trigger = () => setShouldLoad(true);
+    // Otherwise, defer heavy concierge widget until after initial paint / first interaction
+    const trigger = () => setShouldLoadConcierge(true);
 
     const interactionEvents = ['scroll', 'touchstart', 'mousemove', 'click'];
     const handleFirstInteraction = () => {
@@ -29,7 +37,7 @@ export default function WidgetWrapper() {
 
     interactionEvents.forEach(e => window.addEventListener(e, handleFirstInteraction, { once: true, passive: true }));
 
-    // Fallback: If no interaction occurs, load smoothly when idle after 3.5s
+    // Fallback: If no interaction occurs, load concierge smoothly when idle after 3.5s
     let idleId;
     let timerId;
     if ('requestIdleCallback' in window) {
@@ -52,9 +60,14 @@ export default function WidgetWrapper() {
     return null;
   }
 
-  if (!shouldLoad) {
+  if (!isMounted) {
     return null;
   }
 
-  return <AskForesightWidget />;
+  return (
+    <>
+      <BackgroundAudioPlayer />
+      {shouldLoadConcierge && <AskForesightWidget />}
+    </>
+  );
 }
