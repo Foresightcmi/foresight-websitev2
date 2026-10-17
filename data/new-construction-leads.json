@@ -8292,5 +8292,34 @@
       "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
     ],
     "harvestedAt": "2026-10-17T14:50:28.390Z"
+  },
+  {
+    "recordId": "NC-7855670",
+    "mlsId": "7855670",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "1485 North Morningside Dr NE",
+    "address": "1485 North Morningside Dr NE, Atlanta, GA 30306",
+    "city": "Atlanta",
+    "zip": "30306",
+    "price": 3495000,
+    "sqft": 5846,
+    "yearBuilt": 2026,
+    "beds": 6,
+    "baths": 6,
+    "mlsStatus": "Coming Soon",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 14,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/1485-N-Morningside-Dr-NE-30306/home/24841702",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Audit (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $335)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
+    ],
+    "harvestedAt": "2026-10-17T19:59:10.812Z"
   }
 ]
