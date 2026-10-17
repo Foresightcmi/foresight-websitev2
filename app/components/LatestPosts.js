@@ -53,7 +53,7 @@ export default function LatestPosts() {
                   </span>
                 )}
                 <h3 style={{ fontSize: '1.15rem', color: 'var(--color-dark)', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>
-                  <Link href={`/blog/${post.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <Link prefetch={false} href={`/blog/${post.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
                     {post.title}
                   </Link>
                 </h3>
@@ -63,7 +63,7 @@ export default function LatestPosts() {
                   </div>
                 )}
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-                  <Link href={`/blog/${post.slug}`} aria-label={`Read full article: ${post.title}`} style={{ color: 'var(--color-red)', fontWeight: 'bold', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                  <Link prefetch={false} href={`/blog/${post.slug}`} aria-label={`Read full article: ${post.title}`} style={{ color: 'var(--color-red)', fontWeight: 'bold', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
                     Read More <span style={{ marginLeft: '4px' }}>&rarr;</span>
                   </Link>
                 </div>
@@ -73,7 +73,7 @@ export default function LatestPosts() {
         </div>
 
         <div style={{ textAlign: 'center' }}>
-          <Link href="/blog" style={{ 
+          <Link prefetch={false} href="/blog" style={{ 
             display: 'inline-block', 
             padding: '0.75rem 1.5rem', 
             backgroundColor: 'transparent', 

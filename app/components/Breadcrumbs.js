@@ -88,7 +88,7 @@ export default function Breadcrumbs({ items }) {
                 {isLast ? (
                   <span style={{ color: 'var(--color-dark)', fontWeight: 600 }}>{item.label}</span>
                 ) : (
-                  <Link href={item.href} style={{ color: 'var(--color-red)', textDecoration: 'none' }}>
+                  <Link prefetch={false} href={item.href} style={{ color: 'var(--color-red)', textDecoration: 'none' }}>
                     {item.label}
                   </Link>
                 )}

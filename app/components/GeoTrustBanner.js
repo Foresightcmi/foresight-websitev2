@@ -141,9 +141,9 @@ export default function GeoTrustBanner() {
     };
 
     if ('requestIdleCallback' in window) {
-      requestIdleCallback(function() { setTimeout(fetchLocation, 3000); });
+      requestIdleCallback(function() { setTimeout(fetchLocation, 7500); });
     } else {
-      setTimeout(fetchLocation, 4000);
+      setTimeout(fetchLocation, 8500);
     }
   }, []);
 
@@ -180,6 +180,7 @@ export default function GeoTrustBanner() {
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
           {geoCity ? (
             <Link
+              prefetch={false}
               href={`/service-areas/${geoCity.slug}`}
               style={{
                 display: 'inline-flex',
@@ -200,6 +201,7 @@ export default function GeoTrustBanner() {
             </Link>
           ) : (
             <Link
+              prefetch={false}
               href="/service-areas"
               style={{
                 display: 'inline-flex',

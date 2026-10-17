@@ -230,6 +230,7 @@ export default function TrueValueComparison() {
               Schedule Two-Inspector Team
             </a>
             <Link
+              prefetch={false}
               href="/quote"
               className="btn btn-outline-light"
               style={{ padding: '0.85rem 1.85rem', fontSize: '0.95rem', fontWeight: 700 }}

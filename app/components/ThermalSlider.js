@@ -238,7 +238,7 @@ export default function ThermalSlider() {
           <strong style={{ color: '#FFFFFF', fontSize: '1rem' }}>72.4°F (Ambient)</strong>
         </div>
         <div>
-          <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.75rem' }}>Thermal Anomaly ΔT</span>
+          <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.75rem' }}>Thermal Anomaly ∆T</span>
           <strong style={{ color: '#60A5FA', fontSize: '1rem' }}>63.8°F (-8.6°F Delta)</strong>
         </div>
         <div>

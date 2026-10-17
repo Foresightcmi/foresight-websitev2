@@ -37,15 +37,15 @@ export default function WidgetWrapper() {
 
     interactionEvents.forEach(e => window.addEventListener(e, handleFirstInteraction, { once: true, passive: true }));
 
-    // Fallback: If no interaction occurs, load concierge smoothly when idle after 3.5s
+    // Fallback: If no interaction occurs, load concierge smoothly when idle after 8.5s
     let idleId;
     let timerId;
     if ('requestIdleCallback' in window) {
       idleId = window.requestIdleCallback(() => {
-        timerId = setTimeout(trigger, 3000);
+        timerId = setTimeout(trigger, 8500);
       });
     } else {
-      timerId = setTimeout(trigger, 4000);
+      timerId = setTimeout(trigger, 9500);
     }
 
     return () => {
@@ -60,14 +60,14 @@ export default function WidgetWrapper() {
     return null;
   }
 
-  if (!isMounted) {
+  if (!isMounted || !shouldLoadConcierge) {
     return null;
   }
 
   return (
     <>
       <BackgroundAudioPlayer />
-      {shouldLoadConcierge && <AskForesightWidget />}
+      <AskForesightWidget />
     </>
   );
 }

@@ -110,7 +110,7 @@ export default function RiskScannerClient() {
         standard: 'U.S. CPSC Publication #516 (55x Fire Hazard Rating) / NEC Art. 310',
         description: 'Single-strand aluminum wiring expands at a higher thermal rate than copper, loosening connections at switches and outlets. Terminal oxidation causes resistive micro-arcing that can ignite structural wall framing.',
         exposure: '$2,500 – $6,500 (COPALUM / AlumiConn Pig-tailing or Rewiring)',
-        foresightProtocol: 'Every electrical breaker and junction box is scanned with infrared thermal radiometric thermal infrared to detect ΔT ≥ 15°F thermal anomalies.'
+        foresightProtocol: 'Every electrical breaker and junction box is scanned with infrared thermal radiometric thermal infrared to detect ∆T ≥ 15°F thermal anomalies.'
       });
     } else if (year < 1990) {
       score += 20;
@@ -141,7 +141,7 @@ export default function RiskScannerClient() {
         standard: 'ASTM E2110 / Moisture Intrusion Diagnostic SOP',
         description: 'Barrier EIFS systems lack an integrated secondary drainage plane. Unsealed kickout flashing, window headers, and deck ledgers allow rainwater behind the synthetic foam, quietly rotting OSB sheathing and studs with zero surface signs.',
         exposure: '$15,000 – $55,000+ (Cladding Replacement & Structural Reframing)',
-        foresightProtocol: 'infrared thermal scans pinpoint evaporative cooling ΔT ≥ 8.5°F anomalies, followed by non-destructive dielectric pin moisture verification.'
+        foresightProtocol: 'infrared thermal scans pinpoint evaporative cooling ∆T ≥ 8.5°F anomalies, followed by non-destructive dielectric pin moisture verification.'
       });
     } else if (siding === 'wood' && year < 2000) {
       score += 12;

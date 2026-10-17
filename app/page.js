@@ -151,6 +151,8 @@ export default function Home() {
           <img
             src="/images/luxury-home-mobile.webp"
             alt="Luxury Atlanta GA Estate Home Inspected by Foresight Home Inspections"
+            width={400}
+            height={222}
             fetchPriority="high"
             loading="eager"
             decoding="async"
@@ -167,7 +169,7 @@ export default function Home() {
 
           <h1 className="hero-heading">
             Atlanta Full Home Inspections<br />
-            <span style={{ color: '#FDE047', background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE047 30%, #D4AF37 70%, #CA8A04 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+            <span style={{ color: '#FDE047', display: 'inline-block' }}>
               Two Certified Inspectors on Every Job.
             </span>
           </h1>
@@ -212,7 +214,7 @@ export default function Home() {
                     height={150}
                     sizes="(max-width: 768px) 110px, 145px"
                     className="hero-cred-img-primary"
-                    priority
+                    loading="eager"
                   />
                   <div className="hero-cred-caption">
                     <span className="hero-cred-title">Certified Master Inspector®</span>
@@ -236,7 +238,7 @@ export default function Home() {
                     height={150}
                     sizes="(max-width: 768px) 110px, 145px"
                     className="hero-cred-img-primary"
-                    priority
+                    loading="eager"
                   />
                   <div className="hero-cred-caption">
                     <span className="hero-cred-title">InterNACHI® Certified</span>

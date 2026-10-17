@@ -75,9 +75,9 @@ export default function BackgroundAudioPlayer() {
     }
   }, [fadeVolume]);
 
-  // Fallback: Autoplay as soon as visitor touches, scrolls, or clicks anything on the site
+  // Fallback: Autoplay as soon as visitor clicks, taps, or presses a key (valid Web Audio activation gestures)
   const setupFirstGestureTrigger = useCallback(() => {
-    const gestureEvents = ['click', 'touchstart', 'pointerdown', 'scroll', 'keydown'];
+    const gestureEvents = ['click', 'touchstart', 'pointerdown', 'keydown'];
 
     const handleFirstGesture = () => {
       gestureEvents.forEach((evt) => window.removeEventListener(evt, handleFirstGesture));
@@ -106,6 +106,10 @@ export default function BackgroundAudioPlayer() {
     gestureEvents.forEach((evt) => {
       window.addEventListener(evt, handleFirstGesture, { once: true, passive: true });
     });
+
+    return () => {
+      gestureEvents.forEach((evt) => window.removeEventListener(evt, handleFirstGesture));
+    };
   }, [fadeVolume]);
 
   // Main lifecycle & Concierge Coordination
@@ -121,16 +125,16 @@ export default function BackgroundAudioPlayer() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.src = '/audio/foresight-anthem.mp3';
     audio.loop = true;
-    audio.preload = 'auto';
+    audio.preload = 'none';
 
-    // 1. Attempt immediate playback if not previously paused by visitor
+    // 1. Wait for first valid user activation gesture before setting audio.src (prevents 2.45 MB MP3 download during initial page load / Lighthouse)
     const userManuallyPaused = sessionStorage.getItem('foresight_bg_audio_paused') === 'true';
     const isConciergeRoute = window.location.pathname.startsWith('/concierge');
 
+    let cleanupGestures = null;
     if (!userManuallyPaused && !isConciergeRoute) {
-      startPlayback();
+      cleanupGestures = setupFirstGestureTrigger();
     }
 
     // 2. CONCIERGE INTEGRATION: Instant pause when concierge opens or activates
@@ -204,6 +208,7 @@ export default function BackgroundAudioPlayer() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
+      if (cleanupGestures) cleanupGestures();
       window.removeEventListener('foresight_pause_bg_music', handlePauseBgMusic);
       window.removeEventListener('open_foresight_live_consultation', handlePauseBgMusic);
       window.removeEventListener('foresight_resume_bg_music', handleResumeBgMusic);
@@ -211,7 +216,7 @@ export default function BackgroundAudioPlayer() {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (fadeTimerRef.current) clearInterval(fadeTimerRef.current);
     };
-  }, [fadeVolume, startPlayback]);
+  }, [fadeVolume, setupFirstGestureTrigger]);
 
   // Route protection: If navigated to /concierge, mute immediately
   useEffect(() => {
@@ -225,7 +230,7 @@ export default function BackgroundAudioPlayer() {
     } else if (pausedByConciergeRef.current) {
       // Navigated back from concierge
       const userPaused = sessionStorage.getItem('foresight_bg_audio_paused') === 'true';
-      if (!userPaused && audio && audio.paused) {
+      if (!userPaused && audio && audio.paused && audio.src) {
         pausedByConciergeRef.current = false;
         audio.volume = 0.04;
         audio.play()
@@ -299,6 +304,7 @@ export default function BackgroundAudioPlayer() {
         ref={audioRef}
         loop
         playsInline
+        preload="none"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />

@@ -230,7 +230,7 @@ export default function WatchPage() {
               <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem' }}>
                 <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: '0.85rem' }}>SYSTEM 01</span>
                 <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#FFFFFF', margin: '0.35rem 0 0.5rem 0' }}>
-                  Mechanical & HVAC Temperature Differential (ΔT)
+                  Mechanical & HVAC Temperature Differential (∆T)
                 </h3>
                 <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>
                   We test cooling splits and heating performance across supply and return plenums using calibrated digital psychrometers, verifying correct compressor draw and condensate line drainage.
