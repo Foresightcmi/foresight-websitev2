@@ -740,6 +740,8 @@ export default function RootLayout({ children }) {
                     <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector Certification" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
                     <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
                     <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={95} height={95} sizes="95px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
+                    <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified Inspector" width={95} height={95} sizes="95px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
+                    <Image src="/images/11-month-warranty-logo.webp" alt="InterNACHI Certified 11th Month Warranty Inspector" width={95} height={95} sizes="95px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
                 </div>
                 <div className="footer-socials">
                   <a href="https://facebook.com/fhinspectionsatl" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer-social-link" title="Facebook">

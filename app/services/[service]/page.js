@@ -520,12 +520,27 @@ export default async function ServiceHubPage({ params }) {
             )}
 
             {canonicalService === '11-month-warranty-inspection' && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#0F172A', color: '#FFFFFF', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', border: '1px solid rgba(212,175,55,0.3)' }}>
-                <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={140} height={95} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
-                <div>
-                  <h4 style={{ color: 'var(--color-gold)', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Certified New Construction Inspector</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#0F172A', color: '#FFFFFF', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', border: '1px solid rgba(212,175,55,0.3)', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                  <Image src="/images/11-month-warranty-logo.webp" alt="InterNACHI Certified 11th Month Warranty Inspector" width={100} height={100} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+                  <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={140} height={95} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+                </div>
+                <div style={{ flex: 1, minWidth: '240px' }}>
+                  <h4 style={{ color: 'var(--color-gold)', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Certified 11th Month Warranty Inspector</h4>
                   <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                    Specialized builder warranty verification. We audit structural settlement, roof truss movement, and envelope seal integrity to generate an airtight punch list before your 1-year builder warranty expires.
+                    Specialized builder warranty verification. We audit structural settlement, roof truss movement, and envelope seal integrity to generate an airtight, photo-documented punch list formatted directly for your builder&apos;s warranty portal before month 12.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {(canonicalService === 'thermal-imaging-inspection' || canonicalService === 'buyer-inspection' || canonicalService === 'home-buyer-inspection') && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#0F172A', color: '#FFFFFF', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', border: '1px solid rgba(212,175,55,0.3)', flexWrap: 'wrap' }}>
+                <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified Inspector" width={100} height={100} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+                <div style={{ flex: 1, minWidth: '240px' }}>
+                  <h4 style={{ color: 'var(--color-gold)', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Infrared Certified® Inspector</h4>
+                  <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.5 }}>
+                    Certified high-resolution radiometric infrared thermal imaging. We detect hidden plumbing seepage behind tile, electrical breaker hot spots, and missing attic insulation voids with zero drywall damage. Included on every inspection.
                   </p>
                 </div>
               </div>

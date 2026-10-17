@@ -197,6 +197,33 @@ export default async function ComparisonPage({ params }) {
         </section>
       )}
 
+      {/* 11-Month Warranty Certification Showcase */}
+      {item.slug === '11-month-warranty-vs-builder-walkthrough' && (
+        <section className="section" style={{ background: '#0F172A', padding: '3.5rem 0', borderBottom: '1px solid rgba(212,175,55,0.3)', color: '#FFFFFF' }}>
+          <div className="container" style={{ maxWidth: '850px', display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+            <Image
+              src="/images/11-month-warranty-logo.webp"
+              alt="InterNACHI Certified 11th Month Warranty Inspector"
+              width={140}
+              height={140}
+              sizes="140px"
+              style={{ height: '120px', width: 'auto', objectFit: 'contain' }}
+            />
+            <div style={{ flex: 1, minWidth: '260px' }}>
+              <span className="badge" style={{ background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', fontSize: '0.8rem', padding: '0.25rem 0.75rem', marginBottom: '0.5rem', display: 'inline-block' }}>
+                National Credential Verification
+              </span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>
+                InterNACHI® Certified 11th Month Warranty Inspector
+              </h3>
+              <p style={{ color: '#CBD5E1', fontSize: '1rem', lineHeight: 1.6, margin: 0 }}>
+                Foresight Home Inspections is certified by the International Association of Certified Home Inspectors (InterNACHI®) specifically for 11th-month builder warranty audits. We cross-examine one full year of foundation settlement, attic truss uplift, and building envelope thermal expansion to deliver a legally actionable punch list for your builder&apos;s warranty portal.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Comparison Table */}
       <section className="section bg-white">
         <div className="container" style={{ maxWidth: '900px' }}>

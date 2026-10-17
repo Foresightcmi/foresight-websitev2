@@ -201,6 +201,8 @@ export default function Home() {
                <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={110} height={80} sizes="110px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
                <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={100} height={80} sizes="100px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
                <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={80} height={80} sizes="80px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified Inspector" width={80} height={80} sizes="80px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+               <Image src="/images/11-month-warranty-logo.webp" alt="InterNACHI Certified 11th Month Warranty Inspector" width={80} height={80} sizes="80px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
                
                {/* 10+ Years Experience Badge */}
                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.65)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.5rem 1rem', height: '80px', minWidth: '110px', backdropFilter: 'blur(8px)' }}>
@@ -578,7 +580,10 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Infrared Thermal Imaging</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+                  <h3 style={{ margin: 0, fontWeight: 700 }}>Infrared Thermal Imaging</h3>
+                  <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified" width={40} height={40} sizes="40px" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
+                </div>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Our professional thermal cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation without damaging any drywall. Included on every inspection at no extra charge.
                 </p>
