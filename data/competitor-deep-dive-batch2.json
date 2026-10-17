@@ -1,0 +1,382 @@
+{
+  "Avalon Home Inspections": {
+    "homepage": {
+      "status": 403,
+      "source_url": "https://avaloninspections.com/",
+      "retrieved_on": "2026-10-17T10:48:21.649486+00:00"
+    },
+    "services_page": {
+      "status": 403,
+      "source_url": "https://avaloninspections.com/services/",
+      "retrieved_on": "2026-10-17T10:48:21.833557+00:00"
+    }
+  },
+  "Scott Home Services": {
+    "homepage": {
+      "source_url": "https://scotthomeservices.com/",
+      "retrieved_on": "2026-10-17T10:48:22.135798+00:00",
+      "title": "Scott Home Services | Atlanta&#039;s #1 Home Inspection Company",
+      "meta_description": "",
+      "h1s": [
+        "Atlanta's #1 Home Inspectors",
+        "Please text or call the number below, or send a message from this site to ask any questions or to schedule your inspection today.",
+        "(770) 394-8952"
+      ],
+      "h2s": [
+        "Ensuring all aspects are inspected."
+      ],
+      "schemas": [],
+      "prices_found": [],
+      "warranty_mentions": [],
+      "team_mentions": [],
+      "services_detected": [
+        "radon",
+        "11-month",
+        "new construction",
+        "pre-drywall",
+        "commercial"
+      ],
+      "turnaround_mentions": []
+    },
+    "services_page": {
+      "status": 404,
+      "source_url": "https://scotthomeservices.com/services/",
+      "retrieved_on": "2026-10-17T10:48:34.904949+00:00"
+    }
+  },
+  "Paris Pressley Real Estate Inspector": {
+    "homepage": {
+      "source_url": "https://www.ppinspect.com/",
+      "retrieved_on": "2026-10-17T10:48:35.344677+00:00",
+      "title": "Home Inspector Atlanta, GA | Paris Pressley Real Estate Inspector",
+      "meta_description": "Buying a new home? Paris Pressley Real Estate Inspector will make sure your dream house is in good condition. Call us in Atlanta at (404) 755-9556.",
+      "h1s": [],
+      "h2s": [
+        "Providing Quality Home Inspections&nbsp;",
+        "Committed to Protecting Homebuyers",
+        "New Home Inspections in Atlanta",
+        "Professional Consulting Services for Homeowner-contractor Disputes",
+        "Certified, Licensed &amp; Insured Master Home Inspector",
+        "Schedule Your Inspection Today"
+      ],
+      "schemas": [
+        "WebSite",
+        "LocalBusiness"
+      ],
+      "prices_found": [],
+      "warranty_mentions": [
+        "This is not a warranty but is a visual inspection and survey of the materials and components that were repaired, replaced and installed based on National Professional Guidelines.",
+        "This is not a warranty but it is a visual inspection and survey of the systems and components of this property based on National Professional Guidelines.",
+        "This is not a warranty but it is a visual inspection and survey of the systems and components of this property based on National Professional Guidelines."
+      ],
+      "team_mentions": [],
+      "services_detected": [
+        "radon",
+        "thermal",
+        "infrared",
+        "new construction",
+        "pre-drywall",
+        "pool"
+      ],
+      "turnaround_mentions": []
+    },
+    "services_page": {
+      "status": 404,
+      "source_url": "https://www.ppinspect.com/pricing-fees/",
+      "retrieved_on": "2026-10-17T10:49:26.246414+00:00"
+    }
+  },
+  "The BrickKicker Greater Atlanta": {
+    "homepage": {
+      "source_url": "https://www.georgia.brickkicker.com/",
+      "retrieved_on": "2026-10-17T10:49:26.584887+00:00",
+      "title": "Home Inspections | The BrickKicker of Georgia",
+      "meta_description": "Protect your investment with expert home inspections from The BrickKicker. We provide thorough property inspections for buyers and sellers.",
+      "h1s": [
+        "GEORGIA'S PREMIER HOME INSPECTION COMPANY"
+      ],
+      "h2s": [
+        "The BrickKicker of Georgia",
+        "Home Inspections",
+        "Commercial Inspections",
+        "Why Work with Us?",
+        "Our Team",
+        "Community",
+        "Learn More About Our Targeted Tests For Home Inspections:",
+        "Why Do I Need a Commercial Inspector?"
+      ],
+      "schemas": [
+        "Unknown",
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Product",
+        "Product",
+        "WebPage",
+        "Organization"
+      ],
+      "prices_found": [],
+      "warranty_mentions": [
+        "default\">\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t\nFast booking\nSame-day reports\nFree infrared thermography\nFree mold assesments\nRepair cost estimates\nFree 30-day Guard home warranty\n200% Satisfaction Guarantee\nAnd more\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\n\t\t\t\t\t\n\t\t\n\t\t\t\t\t\n\t\t\n\t\t\t\t\t\n\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-4c4b0e8 yourLeader elementor-widget elementor-widget-heading\" data-id=\"4c4b0e8\" data-element_type=\"widget\" data-widget_type=\"heading.",
+        "com/residential-inspections/11-month-warranty-inspections/\">11-month warranty<a href=\"https://www."
+      ],
+      "team_mentions": [
+        "org/SiteNavigationElement\" id=\"menu-item-531\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-531 nav-item\"><a title=\"Meet the Team\" href=\"https://www.",
+        "com/meet-the-inspection-team/\" class=\"nav-link\">Meet the Team\n<li itemscope=\"itemscope\" itemtype=\"https://www.",
+        "jpg\" title=\"Home and Commercial inspections in Athens, Atlanta, Gwinnett, Gainesville, Greensboro, Hartwell and northeast Georgia communities with The BrickKicker of\u00a0Georgia Team\" alt=\"Home and Commercial inspections in Athens, Atlanta, Gwinnett, Gainesville, Greensboro, Hartwell and northeast Georgia communities with The BrickKicker of\u00a0Georgia Team\" loading=\"lazy\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-5984824 elementor-widget elementor-widget-heading\" data-id=\"5984824\" data-element_type=\"widget\" data-widget_type=\"heading.",
+        "default\">\n\t\t\t\t\n\t\t\t\t\tOur Team\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"elementor-element elementor-element-05a54d6 elementor-widget elementor-widget-text-editor\" data-id=\"05a54d6\" data-element_type=\"widget\" data-widget_type=\"text-editor.",
+        "default\">\n\t\t\t\t\n\t\t\t\t\t\t\t\t\tMeet our friendly inspectors and learn about career opportunities with our experienced team."
+      ],
+      "services_detected": [
+        "radon",
+        "infrared",
+        "mold",
+        "11-month",
+        "new construction",
+        "pre-drywall",
+        "pool",
+        "commercial"
+      ],
+      "turnaround_mentions": []
+    },
+    "services_page": {
+      "status": 404,
+      "source_url": "https://brickkicker.com/greater-atlanta/",
+      "retrieved_on": "2026-10-17T10:49:36.044996+00:00"
+    }
+  },
+  "Noble Property Inspections": {
+    "homepage": {
+      "source_url": "https://www.noble-pi.com/",
+      "retrieved_on": "2026-10-17T10:49:36.280433+00:00",
+      "title": "Home Inspections | Noble Property Inspections | TX, FL, GA",
+      "meta_description": "Engineer-owned inspections in TX, FL, GA, CO, CA &#38; AL. Same-day reports, 1,100+ five-star reviews. Book your home inspection online today.",
+      "h1s": [
+        "Professional Home &amp; Commercial Inspection Services"
+      ],
+      "h2s": [
+        "Family Owned | Family Operated",
+        "Total Inspection Services",
+        "Get In Touch",
+        "All Inspections Come with these FREE!",
+        "Markets We Serve",
+        "Ready to Schedule Your Inspection?",
+        "Frequently Asked Questions"
+      ],
+      "schemas": [
+        "WebSite",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "WebPage"
+      ],
+      "prices_found": [
+        "$350",
+        "$395"
+      ],
+      "warranty_mentions": [
+        "414z\" clip-rule=\"evenodd\">      Home Inspections  11-Month Warranty  Mold Inspections  Commercial Inspections  Other Inspections  Engineering Services  Add-Ons      Locations      Pricing      Info <svg class=\"inline-block ml-1 h-4 w-4\" xmlns=\"http://www.",
+        "5 rounded-full bg-gray-300 shrink-0\"> 11-Month Warranty <a href=\"/mold-inspections\" class=\"flex items-center gap-3 py-2.",
+        "svg\" alt=\"Moisture\" class=\"w-full aspect-square\" loading=\"lazy\" decoding=\"async\">  <img src=\"/images/icons/warranty.",
+        "svg\" alt=\"Warranty\" class=\"w-full aspect-square\" loading=\"lazy\" decoding=\"async\">        <svg xmlns=\"http://www.",
+        "jpg\" alt=\"Phased Inspections\" class=\"absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500\" loading=\"lazy\" decoding=\"async\">   Phased Inspections   <img src=\"/images/services/warranty-inspection."
+      ],
+      "team_mentions": [
+        "414z\" clip-rule=\"evenodd\">      Sample Reports  Team  Join the Team  Qualifications  Defect Cost Report  Contact Us      <!",
+        "5 rounded-full bg-gray-300 shrink-0\"> Sample Reports <a href=\"/team\" class=\"flex items-center gap-3 py-2.",
+        "5 rounded-full bg-gray-300 shrink-0\"> Team <a href=\"/careers\" class=\"flex items-center gap-3 py-2.",
+        "5 rounded-full bg-gray-300 shrink-0\"> Join the Team <a href=\"/experience\" class=\"flex items-center gap-3 py-2.",
+        "<img src=\"/images/team/phil-bullock-pro."
+      ],
+      "services_detected": [
+        "radon",
+        "sewer scope",
+        "thermal",
+        "termite",
+        "mold",
+        "11-month",
+        "pool",
+        "commercial"
+      ],
+      "turnaround_mentions": []
+    },
+    "services_page": {
+      "source_url": "https://www.noble-pi.com/services",
+      "retrieved_on": "2026-10-17T10:49:43.091465+00:00",
+      "title": "Home Inspections | Noble Property Inspections | TX, FL, GA",
+      "meta_description": "Engineer-owned inspections in TX, FL, GA, CO, CA &#38; AL. Same-day reports, 1,100+ five-star reviews. Book your home inspection online today.",
+      "h1s": [
+        "Professional Home &amp; Commercial Inspection Services"
+      ],
+      "h2s": [
+        "Family Owned | Family Operated",
+        "Total Inspection Services",
+        "Get In Touch",
+        "All Inspections Come with these FREE!",
+        "Markets We Serve",
+        "Ready to Schedule Your Inspection?",
+        "Frequently Asked Questions"
+      ],
+      "schemas": [
+        "WebSite",
+        [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
+        "WebPage"
+      ],
+      "prices_found": [
+        "$350",
+        "$395"
+      ],
+      "warranty_mentions": [
+        "414z\" clip-rule=\"evenodd\">      Home Inspections  11-Month Warranty  Mold Inspections  Commercial Inspections  Other Inspections  Engineering Services  Add-Ons      Locations      Pricing      Info <svg class=\"inline-block ml-1 h-4 w-4\" xmlns=\"http://www.",
+        "5 rounded-full bg-gray-300 shrink-0\"> 11-Month Warranty <a href=\"/mold-inspections\" class=\"flex items-center gap-3 py-2.",
+        "svg\" alt=\"Moisture\" class=\"w-full aspect-square\" loading=\"lazy\" decoding=\"async\">  <img src=\"/images/icons/warranty.",
+        "svg\" alt=\"Warranty\" class=\"w-full aspect-square\" loading=\"lazy\" decoding=\"async\">        <svg xmlns=\"http://www.",
+        "jpg\" alt=\"Phased Inspections\" class=\"absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500\" loading=\"lazy\" decoding=\"async\">   Phased Inspections   <img src=\"/images/services/warranty-inspection."
+      ],
+      "team_mentions": [
+        "414z\" clip-rule=\"evenodd\">      Sample Reports  Team  Join the Team  Qualifications  Defect Cost Report  Contact Us      <!",
+        "5 rounded-full bg-gray-300 shrink-0\"> Sample Reports <a href=\"/team\" class=\"flex items-center gap-3 py-2.",
+        "5 rounded-full bg-gray-300 shrink-0\"> Team <a href=\"/careers\" class=\"flex items-center gap-3 py-2.",
+        "5 rounded-full bg-gray-300 shrink-0\"> Join the Team <a href=\"/experience\" class=\"flex items-center gap-3 py-2.",
+        "<img src=\"/images/team/phil-bullock-pro."
+      ],
+      "services_detected": [
+        "radon",
+        "sewer scope",
+        "thermal",
+        "termite",
+        "mold",
+        "11-month",
+        "pool",
+        "commercial"
+      ],
+      "turnaround_mentions": []
+    }
+  },
+  "John Mease Home Inspections": {
+    "homepage": {
+      "source_url": "https://johnmeasehomeinspections.com/",
+      "retrieved_on": "2026-10-17T10:49:48.887559+00:00",
+      "title": "Home - John Mease Home Inspections",
+      "meta_description": "Call John today at: (770) 597-8052 for a quote on your multi-family unit business license inspection, to make an appointment or just ask a question. As a certified inspector, I have performed over 50,000 apartment multi-family inspections for complexes to obtain their business licenses. I have inspected buildings built during each generation of Atlanta including",
+      "h1s": [],
+      "h2s": [],
+      "schemas": [
+        "Unknown",
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite",
+        "HomeAndConstructionBusiness"
+      ],
+      "prices_found": [],
+      "warranty_mentions": [],
+      "team_mentions": [],
+      "services_detected": [],
+      "turnaround_mentions": []
+    },
+    "services_page": {
+      "status": 404,
+      "source_url": "https://johnmeasehomeinspections.com/pricing/",
+      "retrieved_on": "2026-10-17T10:49:52.841807+00:00"
+    }
+  },
+  "Superior Home Inspections": {
+    "homepage": {
+      "status": 403,
+      "source_url": "https://choosesuperiorinspection.com/",
+      "retrieved_on": "2026-10-17T10:49:53.088653+00:00"
+    },
+    "services_page": {
+      "status": 403,
+      "source_url": "https://choosesuperiorinspection.com/services/",
+      "retrieved_on": "2026-10-17T10:49:53.312304+00:00"
+    }
+  },
+  "Conley Home Inspections": {
+    "homepage": {
+      "source_url": "https://conleyhomeinspections.com/",
+      "retrieved_on": "2026-10-17T10:49:54.895113+00:00",
+      "title": "Home Inspector &amp; Inspection Services in Alpharetta GA | Conley Home Inspections",
+      "meta_description": "Are you buying a home and need a home inspection? Conley Home Inspections has reputable home inspectors that provide residential home inspections throughout the Alpharetta, GA area including Johns Creek, Cumming, and Duluth. Click to learn more or book a home inspection today!",
+      "h1s": [
+        "Welcome to Conley Home Inspections Fulton County, GA"
+      ],
+      "h2s": [
+        "&#8220;We inspect your home as if it were our own&#8221;",
+        "This thorough inspection includes:",
+        "Additional Services"
+      ],
+      "schemas": [
+        "Unknown",
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization",
+        "HomeAndConstructionBusiness"
+      ],
+      "prices_found": [],
+      "warranty_mentions": [
+        "com/inspections-offered/11th-month-builder-warranty-inspection/\" itemprop=\"url\">11th-month Builder Warranty Inspection\n\t<a href=\"https://www.",
+        "com/inspections-offered/11th-month-builder-warranty-inspection/\" itemprop=\"url\">11th-month Builder Warranty Inspection<a class=\"shiftnav-target\"  href=\"https://www."
+      ],
+      "team_mentions": [
+        "com/wp-content/plugins/gravityforms\",\"number_formats\":[],\"version_hash\":\"7251fe45a34ae4eadcb9ec571e238fb1\",\"countries\":{\"AF\":\"Afghanistan\",\"AX\":\"\\u00c5land Islands\",\"AL\":\"Albania\",\"DZ\":\"Algeria\",\"AS\":\"American Samoa\",\"AD\":\"Andorra\",\"AO\":\"Angola\",\"AI\":\"Anguilla\",\"AQ\":\"Antarctica\",\"AG\":\"Antigua and Barbuda\",\"AR\":\"Argentina\",\"AM\":\"Armenia\",\"AW\":\"Aruba\",\"AU\":\"Australia\",\"AT\":\"Austria\",\"AZ\":\"Azerbaijan\",\"BS\":\"Bahamas\",\"BH\":\"Bahrain\",\"BD\":\"Bangladesh\",\"BB\":\"Barbados\",\"BY\":\"Belarus\",\"BE\":\"Belgium\",\"BZ\":\"Belize\",\"BJ\":\"Benin\",\"BM\":\"Bermuda\",\"BT\":\"Bhutan\",\"BO\":\"Bolivia\",\"BQ\":\"Bonaire, Sint Eustatius and Saba\",\"BA\":\"Bosnia and Herzegovina\",\"BW\":\"Botswana\",\"BV\":\"Bouvet Island\",\"BR\":\"Brazil\",\"IO\":\"British Indian Ocean Territory\",\"BN\":\"Brunei Darussalam\",\"BG\":\"Bulgaria\",\"BF\":\"Burkina Faso\",\"BI\":\"Burundi\",\"CV\":\"Cabo Verde\",\"KH\":\"Cambodia\",\"CM\":\"Cameroon\",\"CA\":\"Canada\",\"KY\":\"Cayman Islands\",\"CF\":\"Central African Republic\",\"TD\":\"Chad\",\"CL\":\"Chile\",\"CN\":\"China\",\"CX\":\"Christmas Island\",\"CC\":\"Cocos Islands\",\"CO\":\"Colombia\",\"KM\":\"Comoros\",\"CD\":\"Congo, Democratic Republic of the\",\"CG\":\"Congo\",\"CK\":\"Cook Islands\",\"CR\":\"Costa Rica\",\"CI\":\"C\\u00f4te d'Ivoire\",\"HR\":\"Croatia\",\"CU\":\"Cuba\",\"CW\":\"Cura\\u00e7ao\",\"CY\":\"Cyprus\",\"CZ\":\"Czechia\",\"DK\":\"Denmark\",\"DJ\":\"Djibouti\",\"DM\":\"Dominica\",\"DO\":\"Dominican Republic\",\"EC\":\"Ecuador\",\"EG\":\"Egypt\",\"SV\":\"El Salvador\",\"GQ\":\"Equatorial Guinea\",\"ER\":\"Eritrea\",\"EE\":\"Estonia\",\"SZ\":\"Eswatini\",\"ET\":\"Ethiopia\",\"FK\":\"Falkland Islands\",\"FO\":\"Faroe Islands\",\"FJ\":\"Fiji\",\"FI\":\"Finland\",\"FR\":\"France\",\"GF\":\"French Guiana\",\"PF\":\"French Polynesia\",\"TF\":\"French Southern Territories\",\"GA\":\"Gabon\",\"GM\":\"Gambia\",\"GE\":\"Georgia\",\"DE\":\"Germany\",\"GH\":\"Ghana\",\"GI\":\"Gibraltar\",\"GR\":\"Greece\",\"GL\":\"Greenland\",\"GD\":\"Grenada\",\"GP\":\"Guadeloupe\",\"GU\":\"Guam\",\"GT\":\"Guatemala\",\"GG\":\"Guernsey\",\"GN\":\"Guinea\",\"GW\":\"Guinea-Bissau\",\"GY\":\"Guyana\",\"HT\":\"Haiti\",\"HM\":\"Heard Island and McDonald Islands\",\"VA\":\"Holy See\",\"HN\":\"Honduras\",\"HK\":\"Hong Kong\",\"HU\":\"Hungary\",\"IS\":\"Iceland\",\"IN\":\"India\",\"ID\":\"Indonesia\",\"IR\":\"Iran\",\"IQ\":\"Iraq\",\"IE\":\"Ireland\",\"IM\":\"Isle of Man\",\"IL\":\"Israel\",\"IT\":\"Italy\",\"JM\":\"Jamaica\",\"JP\":\"Japan\",\"JE\":\"Jersey\",\"JO\":\"Jordan\",\"KZ\":\"Kazakhstan\",\"KE\":\"Kenya\",\"KI\":\"Kiribati\",\"KP\":\"Korea, Democratic People's Republic of\",\"KR\":\"Korea, Republic of\",\"KW\":\"Kuwait\",\"KG\":\"Kyrgyzstan\",\"LA\":\"Lao People's Democratic Republic\",\"LV\":\"Latvia\",\"LB\":\"Lebanon\",\"LS\":\"Lesotho\",\"LR\":\"Liberia\",\"LY\":\"Libya\",\"LI\":\"Liechtenstein\",\"LT\":\"Lithuania\",\"LU\":\"Luxembourg\",\"MO\":\"Macao\",\"MG\":\"Madagascar\",\"MW\":\"Malawi\",\"MY\":\"Malaysia\",\"MV\":\"Maldives\",\"ML\":\"Mali\",\"MT\":\"Malta\",\"MH\":\"Marshall Islands\",\"MQ\":\"Martinique\",\"MR\":\"Mauritania\",\"MU\":\"Mauritius\",\"YT\":\"Mayotte\",\"MX\":\"Mexico\",\"FM\":\"Micronesia\",\"MD\":\"Moldova\",\"MC\":\"Monaco\",\"MN\":\"Mongolia\",\"ME\":\"Montenegro\",\"MS\":\"Montserrat\",\"MA\":\"Morocco\",\"MZ\":\"Mozambique\",\"MM\":\"Myanmar\",\"NA\":\"Namibia\",\"NR\":\"Nauru\",\"NP\":\"Nepal\",\"NL\":\"Netherlands\",\"NC\":\"New Caledonia\",\"NZ\":\"New Zealand\",\"NI\":\"Nicaragua\",\"NE\":\"Niger\",\"NG\":\"Nigeria\",\"NU\":\"Niue\",\"NF\":\"Norfolk Island\",\"MK\":\"North Macedonia\",\"MP\":\"Northern Mariana Islands\",\"NO\":\"Norway\",\"OM\":\"Oman\",\"PK\":\"Pakistan\",\"PW\":\"Palau\",\"PS\":\"Palestine, State of\",\"PA\":\"Panama\",\"PG\":\"Papua New Guinea\",\"PY\":\"Paraguay\",\"PE\":\"Peru\",\"PH\":\"Philippines\",\"PN\":\"Pitcairn\",\"PL\":\"Poland\",\"PT\":\"Portugal\",\"PR\":\"Puerto Rico\",\"QA\":\"Qatar\",\"RE\":\"R\\u00e9union\",\"RO\":\"Romania\",\"RU\":\"Russian Federation\",\"RW\":\"Rwanda\",\"BL\":\"Saint Barth\\u00e9lemy\",\"SH\":\"Saint Helena, Ascension and Tristan da Cunha\",\"KN\":\"Saint Kitts and Nevis\",\"LC\":\"Saint Lucia\",\"MF\":\"Saint Martin\",\"PM\":\"Saint Pierre and Miquelon\",\"VC\":\"Saint Vincent and the Grenadines\",\"WS\":\"Samoa\",\"SM\":\"San Marino\",\"ST\":\"Sao Tome and Principe\",\"SA\":\"Saudi Arabia\",\"SN\":\"Senegal\",\"RS\":\"Serbia\",\"SC\":\"Seychelles\",\"SL\":\"Sierra Leone\",\"SG\":\"Singapore\",\"SX\":\"Sint Maarten\",\"SK\":\"Slovakia\",\"SI\":\"Slovenia\",\"SB\":\"Solomon Islands\",\"SO\":\"Somalia\",\"ZA\":\"South Africa\",\"GS\":\"South Georgia and the South Sandwich Islands\",\"SS\":\"South Sudan\",\"ES\":\"Spain\",\"LK\":\"Sri Lanka\",\"SD\":\"Sudan\",\"SR\":\"Suriname\",\"SJ\":\"Svalbard and Jan Mayen\",\"SE\":\"Sweden\",\"CH\":\"Switzerland\",\"SY\":\"Syria Arab Republic\",\"TW\":\"Taiwan\",\"TJ\":\"Tajikistan\",\"TZ\":\"Tanzania, the United Republic of\",\"TH\":\"Thailand\",\"TL\":\"Timor-Leste\",\"TG\":\"Togo\",\"TK\":\"Tokelau\",\"TO\":\"Tonga\",\"TT\":\"Trinidad and Tobago\",\"TN\":\"Tunisia\",\"TR\":\"T\\u00fcrkiye\",\"TM\":\"Turkmenistan\",\"TC\":\"Turks and Caicos Islands\",\"TV\":\"Tuvalu\",\"UG\":\"Uganda\",\"UA\":\"Ukraine\",\"AE\":\"United Arab Emirates\",\"GB\":\"United Kingdom\",\"US\":\"United States\",\"UY\":\"Uruguay\",\"UM\":\"US Minor Outlying Islands\",\"UZ\":\"Uzbekistan\",\"VU\":\"Vanuatu\",\"VE\":\"Venezuela\",\"VN\":\"Viet Nam\",\"VG\":\"Virgin Islands, British\",\"VI\":\"Virgin Islands, U."
+      ],
+      "services_detected": [
+        "radon",
+        "sewer scope",
+        "thermal",
+        "termite",
+        "mold",
+        "pre-drywall",
+        "pool",
+        "commercial"
+      ],
+      "turnaround_mentions": [
+        "This thorough inspection includes:\n\nCompetitive Pricing\nWalk on the vast majority of roofs for close-up assessments\nExamination of details with each client during and after inspection\nAn easy-to-read comprehensive report to help clients understand in detail any resulting issues, problems, or concerns\nReports are delivered usually same day or by the next day\nAll types of homes from 700SF Condos to 15,000 SF Mansions\nA variety of ancillary services as requested, such as, radon testing, mold testing, septic evaluation and pool inspection."
+      ]
+    },
+    "services_page": {
+      "status": 404,
+      "source_url": "https://conleyhomeinspections.com/services/",
+      "retrieved_on": "2026-10-17T10:50:13.422507+00:00"
+    }
+  },
+  "Sherlock Homes Inspection Co.": {
+    "homepage": {
+      "source_url": "http://sherlockhic.com/",
+      "retrieved_on": "2026-10-17T10:50:13.648122+00:00",
+      "title": "Bot Verification",
+      "meta_description": "",
+      "h1s": [],
+      "h2s": [],
+      "schemas": [],
+      "prices_found": [],
+      "warranty_mentions": [],
+      "team_mentions": [],
+      "services_detected": [],
+      "turnaround_mentions": []
+    },
+    "services_page": {
+      "source_url": "http://sherlockhic.com/services.html",
+      "retrieved_on": "2026-10-17T10:50:21.604589+00:00",
+      "title": "Bot Verification",
+      "meta_description": "",
+      "h1s": [],
+      "h2s": [],
+      "schemas": [],
+      "prices_found": [],
+      "warranty_mentions": [],
+      "team_mentions": [],
+      "services_detected": [],
+      "turnaround_mentions": []
+    }
+  }
+}
