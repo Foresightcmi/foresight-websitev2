@@ -626,6 +626,11 @@ async function main() {
       console.log(`🤖 [OpenSMS Engine] Connected to Android OpenSMS Gateway: ${targetEndpoint}`);
 
       for (const r of sorted) {
+        // Strict Freshness Gate: ONLY contracts signed in the last 4 days (active 5-day due diligence window)
+        if (!r.date) continue;
+        const dealAgeDays = (Date.now() - new Date(r.date).getTime()) / (1000 * 60 * 60 * 24);
+        if (dealAgeDays < 0 || dealAgeDays > 4.5) continue;
+
         const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
         if (cleanPhone.length !== 10 || cleanPhone === '6788780215') continue;
         if (smsContactedPhones.has(cleanPhone)) continue;

@@ -234,17 +234,17 @@ const htmlContent = `<!DOCTYPE html>
       text-align: center;
       transition: all 0.15s ease;
     }
-    .tab-btn.active.uncontacted {
-      background: #1e3a8a;
-      color: #93c5fd;
+    .tab-btn.active.live {
+      background: #7f1d1d;
+      color: #fca5a5;
     }
     .tab-btn.active.contacted {
       background: #064e3b;
       color: #6ee7b7;
     }
-    .tab-btn.active.all {
-      background: var(--card-border);
-      color: #fff;
+    .tab-btn.active.archive {
+      background: #334155;
+      color: #cbd5e1;
     }
 
     .filter-notice {
@@ -552,14 +552,14 @@ const htmlContent = `<!DOCTYPE html>
 
     <!-- Smart Tabs -->
     <div class="tabs-nav">
-      <button class="tab-btn active uncontacted" id="tabUncontacted" onclick="setTab('uncontacted')">
-        🔥 Ready to Text (<span id="uncontactedTabCount">0</span>)
+      <button class="tab-btn active live" id="tabLive" onclick="setTab('live')">
+        🔥 Live Due Diligence (<span id="liveTabCount">0</span>)
       </button>
       <button class="tab-btn" id="tabContacted" onclick="setTab('contacted')">
         ✅ Sent (<span id="contactedTabCount">0</span>)
       </button>
-      <button class="tab-btn" id="tabAll" onclick="setTab('all')">
-        All (<span id="allTabCount">0</span>)
+      <button class="tab-btn" id="tabArchive" onclick="setTab('archive')">
+        📁 Archive (Past Deals) (<span id="archiveTabCount">0</span>)
       </button>
     </div>
   </div>
@@ -604,7 +604,7 @@ const htmlContent = `<!DOCTYPE html>
       console.warn('Storage error', e);
     }
 
-    let currentTab = 'uncontacted';
+    let currentTab = 'live';
     let currentCity = 'ALL';
     let currentSort = 'date_desc';
     let searchQuery = '';
@@ -746,9 +746,16 @@ const htmlContent = `<!DOCTYPE html>
         alert('Paste the API key from your OpenSMS Android app (when you tap Start Server) in the box above first!');
         return;
       }
-      const uncontacted = underContractFilers.filter(c => !isSent(c.id) && c.clean_phone && c.clean_phone.length === 10).slice(0, 10);
+      const nowMs = Date.now();
+      const uncontacted = underContractFilers.filter(c => {
+        if (isSent(c.id) || !c.clean_phone || c.clean_phone.length !== 10) return false;
+        if (!c.date) return false;
+        const ageDays = (nowMs - new Date(c.date).getTime()) / (1000 * 60 * 60 * 24);
+        return ageDays >= 0 && ageDays <= 4.5;
+      }).slice(0, 10);
+
       if (uncontacted.length === 0) {
-        alert('All Due Diligence listings have already been contacted!');
+        alert('All active Due Diligence listings (≤ 4 days old) have already been contacted!');
         return;
       }
       autoPilotRunning = true;
@@ -770,7 +777,7 @@ const htmlContent = `<!DOCTYPE html>
         await markSent(f.id, '', f.clean_phone, textBody, f.name, f.address, f.role);
 
         if (i < uncontacted.length - 1 && autoPilotRunning) {
-          for (let sec = 35; sec > 0; sec--) {
+          for (let sec = 25; sec > 0; sec--) {
             if (!autoPilotRunning) break;
             logEl.textContent = '✅ Sent to ' + f.name + '. Safe carrier pacing: next text in ' + sec + 's...';
             await new Promise(r => setTimeout(r, 1000));
@@ -796,17 +803,17 @@ const htmlContent = `<!DOCTYPE html>
 
     function setTab(tab) {
       currentTab = tab;
-      document.getElementById('tabUncontacted').className = 'tab-btn' + (tab === 'uncontacted' ? ' active uncontacted' : '');
+      document.getElementById('tabLive').className = 'tab-btn' + (tab === 'live' ? ' active live' : '');
       document.getElementById('tabContacted').className = 'tab-btn' + (tab === 'contacted' ? ' active contacted' : '');
-      document.getElementById('tabAll').className = 'tab-btn' + (tab === 'all' ? ' active all' : '');
+      document.getElementById('tabArchive').className = 'tab-btn' + (tab === 'archive' ? ' active archive' : '');
       
       const notice = document.getElementById('filterNotice');
-      if (tab === 'uncontacted') {
-        notice.innerHTML = 'Showing <b>uncontacted under-contract agents</b>. Tapping opens native SMS and marks as sent.';
+      if (tab === 'live') {
+        notice.innerHTML = 'Showing <b>live under-contract listings in active 5-day due diligence window (0–4 days old)</b>. High conversion priority.';
       } else if (tab === 'contacted') {
         notice.innerHTML = 'Showing <b>contacted agents</b>. Timestamp shown below.';
       } else {
-        notice.innerHTML = 'Showing <b>all active under-contract agents</b>.';
+        notice.innerHTML = 'Showing <b>historical contracts (&gt;5 days ago)</b>. Due diligence on these properties has already closed. Use these contacts for general agent relationship building or your 1-Click GAR F404 tool.';
       }
       displayLimit = 60;
       renderCards();

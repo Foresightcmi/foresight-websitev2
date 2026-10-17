@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const UNDER_CONTRACT_FILE = path.join(ROOT_DIR, 'data', 'under-contract-realtors.json');
+const ARCHIVE_FILE = path.join(ROOT_DIR, 'data', 'archive-under-contract-realtors.json');
 const UNSUBSCRIBED_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
 
 const METRO_COUNTIES = new Set([
@@ -173,7 +174,50 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
     }
   }
 
-  const merged = Array.from(byKey.values()).sort((a, b) => {
+  const allDeals = Array.from(byKey.values());
+
+  // Strict 5-day rolling due diligence window (Georgia 5-7 day diligence period)
+  const nowMs = Date.now();
+  const maxAgeMs = 5 * 24 * 60 * 60 * 1000;
+  const cutoffDateStr = new Date(nowMs - maxAgeMs).toISOString().slice(0, 10);
+
+  const active = [];
+  const stale = [];
+
+  for (const item of allDeals) {
+    const itemDate = (item.date || '').slice(0, 10);
+    if (itemDate >= cutoffDateStr) {
+      active.push(item);
+    } else {
+      stale.push(item);
+    }
+  }
+
+  // If there are stale deals, archive them so no historical data is lost
+  if (stale.length > 0) {
+    let archive = [];
+    if (fs.existsSync(ARCHIVE_FILE)) {
+      try {
+        archive = JSON.parse(fs.readFileSync(ARCHIVE_FILE, 'utf8'));
+      } catch {
+        archive = [];
+      }
+    }
+    const archiveMap = new Map();
+    for (const item of archive) {
+      const k = item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+      archiveMap.set(k, item);
+    }
+    for (const item of stale) {
+      const k = item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+      archiveMap.set(k, item);
+    }
+    const mergedArchive = Array.from(archiveMap.values()).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    fs.writeFileSync(ARCHIVE_FILE, JSON.stringify(mergedArchive, null, 2), 'utf8');
+  }
+
+  // Sort active records: freshest dates first, Buyer Agent first, highest list price first
+  active.sort((a, b) => {
     const dCmp = (b.date || '').localeCompare(a.date || '');
     if (dCmp !== 0) return dCmp;
     if (a.role === 'BUYER_AGENT' && b.role !== 'BUYER_AGENT') return -1;
@@ -181,9 +225,9 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
     return (b.raw_price || 0) - (a.raw_price || 0);
   });
 
-  fs.writeFileSync(UNDER_CONTRACT_FILE, JSON.stringify(merged, null, 2), 'utf8');
-  console.log(`✅ [Live FMLS Harvester] Discovered ${newPendingDeals} new Metro Atlanta Pending/Due Diligence agent targets (${merged.length} total active records).`);
-  return { newPendingDeals, totalRecords: merged.length };
+  fs.writeFileSync(UNDER_CONTRACT_FILE, JSON.stringify(active, null, 2), 'utf8');
+  console.log(`✅ [Live FMLS Harvester] Discovered ${newPendingDeals} new deals. Active pool maintained at ${active.length} records (rolling 5-day freshness window; ${stale.length} archived).`);
+  return { newPendingDeals, totalRecords: active.length };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {

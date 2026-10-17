@@ -96,12 +96,23 @@ async function run() {
     } catch {}
   }
 
-  // Filter for uncontacted Buyer Agents first (highest intent)
+  // Filter for uncontacted Buyer Agents in active 0-4 day Due Diligence window (strict freshness gate)
+  const nowMs = Date.now();
   const candidateDeals = filers.filter(f => {
+    // 1. Strict Freshness Gate: ONLY contracts signed in the last 4 days (active 5-day due diligence window)
+    if (!f.date) return false;
+    const dealDate = new Date(f.date).getTime();
+    const ageDays = (nowMs - dealDate) / (1000 * 60 * 60 * 24);
+    if (ageDays < 0 || ageDays > 4.5) return false;
+
+    // 2. Valid Phone & Not Self
     const p = (f.clean_phone || f.raw_phone || f.phone || '').replace(/\D/g, '').slice(-10);
     if (p.length !== 10 || p === '6788780215' || p === '6784802110') return false;
     if (contactedPhones.has(p)) return false;
+
+    // 3. Suppression List
     if (/ansley|chapman group/i.test(f.brokerage || '') || /amy fuchs|joe chapman/i.test(f.name || '')) return false;
+
     return true;
   });
 
