@@ -977,27 +977,252 @@ img {
   }
 }
 
-/* Credentials Dock */
-.hero-credentials-dock {
+/* Credentials Showcase & Dock */
+.hero-credentials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.hero-credentials-eyebrow {
+  margin-bottom: 0.85rem;
+}
+
+.hero-credentials-eyebrow span {
   display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 0.35rem 1.15rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.hero-credentials-dock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  padding: 1.75rem 2rem 1.5rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), 0 0 30px rgba(212, 175, 55, 0.1);
+  margin: 0 auto;
+}
+
+/* Primary Tier: Certified Master Inspector, 10+ Years, InterNACHI CPI */
+.hero-credentials-primary-row {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.75rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  width: 100%;
+}
+
+.hero-cred-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.hero-cred-card:hover {
+  transform: translateY(-3px);
+}
+
+.hero-cred-featured {
+  padding: 0.6rem 1rem;
   border-radius: 16px;
-  padding: 1.25rem 2rem;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-  margin: 0 auto;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.14) 0%, rgba(15, 23, 42, 0.3) 70%, transparent 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.hero-cred-img-primary {
+  height: 135px;
+  width: auto;
+  max-width: 155px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.7));
+}
+
+.hero-cred-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.65rem;
+}
+
+.hero-cred-title {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.015em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hero-cred-sub {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #CBD5E1;
+  margin-top: 0.15rem;
+}
+
+.hero-cred-tag {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 0.15rem 0.55rem;
+  border-radius: 1rem;
+}
+
+/* 10+ Years Experience Card */
+.hero-cred-exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95));
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  min-height: 135px;
+  min-width: 145px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.hero-cred-exp-num {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1;
+  text-shadow: 0 2px 14px rgba(212, 175, 55, 0.45);
+}
+
+.hero-cred-exp-text {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #F1F5F9;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-top: 0.45rem;
+  line-height: 1.25;
+}
+
+/* Golden Divider */
+.hero-credentials-divider {
+  width: 88%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35) 20%, rgba(212, 175, 55, 0.35) 80%, transparent);
+  margin: 1.35rem 0 1.15rem;
+}
+
+/* Secondary Tier: Specialized Diagnostic Credentials */
+.hero-credentials-secondary-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.25rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hero-cred-subcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.hero-cred-subcard:hover {
+  transform: translateY(-2px);
+}
+
+.hero-cred-img-secondary {
+  height: 105px;
+  width: auto;
+  max-width: 135px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.55));
+}
+
+.hero-cred-sublabel {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  margin-top: 0.45rem;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 768px) {
   .hero-credentials-dock {
-    padding: 1rem !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
+  }
+  .hero-credentials-primary-row {
     gap: 1rem !important;
-    width: 100% !important;
+  }
+  .hero-cred-featured {
+    padding: 0.4rem 0.6rem !important;
+  }
+  .hero-cred-img-primary {
+    height: 95px !important;
+  }
+  .hero-cred-exp {
+    min-height: 95px !important;
+    min-width: 115px !important;
+    padding: 0.65rem 0.85rem !important;
+  }
+  .hero-cred-exp-num {
+    font-size: 2rem !important;
+  }
+  .hero-cred-exp-text {
+    font-size: 0.65rem !important;
+  }
+  .hero-cred-title {
+    font-size: 0.82rem !important;
+  }
+  .hero-cred-sub {
+    font-size: 0.68rem !important;
+  }
+  .hero-credentials-divider {
+    margin: 1rem 0 0.85rem !important;
+    width: 95% !important;
+  }
+  .hero-credentials-secondary-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.15rem 0.75rem !important;
+    align-items: center !important;
+  }
+  .hero-cred-img-secondary {
+    height: 85px !important;
+  }
+  .hero-cred-sublabel {
+    font-size: 0.68rem !important;
+    line-height: 1.2 !important;
   }
 }
 

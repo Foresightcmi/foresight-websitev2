@@ -195,20 +195,115 @@ export default function Home() {
             ✓ Includes Free Utilities Plus Concierge Setup ($150 Value)
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="hero-credentials-container">
+            <div className="hero-credentials-eyebrow">
+              <span>★ Board-Certified Master Accreditations ★</span>
+            </div>
+
             <div className="hero-credentials-dock">
-               <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector" width={110} height={80} sizes="110px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-               <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector" width={110} height={80} sizes="110px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-               <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={100} height={80} sizes="100px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-               <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={80} height={80} sizes="80px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-               <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified Inspector" width={80} height={80} sizes="80px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-               <Image src="/images/11-month-warranty-logo.webp" alt="InterNACHI Certified 11th Month Warranty Inspector" width={80} height={80} sizes="80px" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-               
-               {/* 10+ Years Experience Badge */}
-               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'rgba(15,23,42,0.65)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 'var(--radius-md)', padding: '0.5rem 1rem', height: '80px', minWidth: '110px', backdropFilter: 'blur(8px)' }}>
-                  <span style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--color-gold)', lineHeight: 1, textShadow: '0 2px 10px rgba(212,175,55,0.3)' }}>10+</span>
-                  <span style={{ fontSize: '0.72rem', fontWeight: 600, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center', marginTop: '0.25rem', lineHeight: 1.15 }}>Years Trusted<br/>Experience</span>
-               </div>
+              {/* PRIMARY TIER: Certified Master Inspector (CMI), 10+ Years Experience, InterNACHI CPI */}
+              <div className="hero-credentials-primary-row">
+                {/* Certified Master Inspector (CMI) */}
+                <div className="hero-cred-card hero-cred-featured">
+                  <Image
+                    src="/images/cmi_logo.webp"
+                    alt="Certified Master Inspector Christopher Boykin"
+                    width={150}
+                    height={150}
+                    sizes="(max-width: 768px) 110px, 145px"
+                    className="hero-cred-img-primary"
+                    priority
+                  />
+                  <div className="hero-cred-caption">
+                    <span className="hero-cred-title">Certified Master Inspector®</span>
+                    <span className="hero-cred-sub">Highest Designation in North America</span>
+                    <span className="hero-cred-tag">Top 3% In Nation</span>
+                  </div>
+                </div>
+
+                {/* 10+ Years Experience Badge */}
+                <div className="hero-cred-card hero-cred-exp">
+                  <span className="hero-cred-exp-num">10+</span>
+                  <span className="hero-cred-exp-text">Years Trusted<br />Metro Atlanta Experience</span>
+                </div>
+
+                {/* InterNACHI Certified Professional Inspector (CPI) */}
+                <div className="hero-cred-card hero-cred-featured">
+                  <Image
+                    src="/images/cpi_logo.webp"
+                    alt="InterNACHI Certified Professional Inspector"
+                    width={150}
+                    height={150}
+                    sizes="(max-width: 768px) 110px, 145px"
+                    className="hero-cred-img-primary"
+                    priority
+                  />
+                  <div className="hero-cred-caption">
+                    <span className="hero-cred-title">InterNACHI® Certified</span>
+                    <span className="hero-cred-sub">World&apos;s Elite Inspection Standard</span>
+                    <span className="hero-cred-tag">Board-Accredited</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Golden Accent Divider */}
+              <div className="hero-credentials-divider" />
+
+              {/* SECONDARY TIER: Specialized Diagnostic Certifications */}
+              <div className="hero-credentials-secondary-row">
+                {/* Infrared Certified - High Contrast White Text */}
+                <div className="hero-cred-subcard">
+                  <Image
+                    src="/images/infrared-certified-white-text.webp"
+                    alt="InterNACHI Infrared Certified Inspector"
+                    width={130}
+                    height={130}
+                    sizes="(max-width: 768px) 95px, 120px"
+                    className="hero-cred-img-secondary"
+                  />
+                  <span className="hero-cred-sublabel">Infrared Thermal Diagnostic</span>
+                </div>
+
+                {/* Moisture Intrusion Specialist */}
+                <div className="hero-cred-subcard">
+                  <Image
+                    src="/images/internachi_moisture_intrusion_inspector.webp"
+                    alt="InterNACHI Certified Moisture Intrusion Inspector"
+                    width={125}
+                    height={125}
+                    sizes="(max-width: 768px) 90px, 115px"
+                    className="hero-cred-img-secondary"
+                  />
+                  <span className="hero-cred-sublabel">Moisture Intrusion Specialist</span>
+                </div>
+
+                {/* New Construction Inspector */}
+                <div className="hero-cred-subcard">
+                  <Image
+                    src="/images/internachi_new_construction_inspector.webp"
+                    alt="InterNACHI Certified New Construction Inspector"
+                    width={145}
+                    height={100}
+                    sizes="(max-width: 768px) 100px, 130px"
+                    className="hero-cred-img-secondary"
+                    style={{ height: '90px', width: 'auto' }}
+                  />
+                  <span className="hero-cred-sublabel">New Construction Certified</span>
+                </div>
+
+                {/* 11th Month Warranty Inspector */}
+                <div className="hero-cred-subcard">
+                  <Image
+                    src="/images/11-month-warranty-white-text.webp"
+                    alt="InterNACHI Certified 11th Month Warranty Inspector"
+                    width={130}
+                    height={130}
+                    sizes="(max-width: 768px) 95px, 120px"
+                    className="hero-cred-img-secondary"
+                  />
+                  <span className="hero-cred-sublabel">11-Month Warranty Inspector</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -582,7 +677,7 @@ export default function Home() {
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
                   <h3 style={{ margin: 0, fontWeight: 700 }}>Infrared Thermal Imaging</h3>
-                  <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified" width={40} height={40} sizes="40px" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
+                  <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified" width={48} height={48} sizes="48px" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} />
                 </div>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
                   Our professional thermal cameras scan walls, ceilings, and electrical panels to locate hidden plumbing leaks, electrical fire hazards, and missing insulation without damaging any drywall. Included on every inspection at no extra charge.
