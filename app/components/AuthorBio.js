@@ -15,9 +15,10 @@ export default function AuthorBio() {
     }}>
       <div style={{ position: 'relative', width: '100px', height: '100px', flexShrink: 0, borderRadius: '50%', overflow: 'hidden', border: '3px solid var(--color-red)' }}>
         <Image
-          src="/images/Christopher_Boykin.jpg"
+          src="/images/Christopher_Boykin.webp"
           alt="Christopher Boykin, Certified Master Inspector"
           fill
+          sizes="100px"
           style={{ objectFit: 'cover' }}
         />
       </div>

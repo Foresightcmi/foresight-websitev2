@@ -561,7 +561,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
             <div>
-              <Image src="/images/Christopher_Boykin.webp" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={400} sizes="(max-width: 768px) 100vw, 600px" style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+              <Image src="/images/Christopher_Boykin.webp" alt="Christopher Boykin - Certified Master Inspector performing a home inspection in Atlanta GA" width={600} height={347} sizes="(max-width: 768px) 100vw, 600px" style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
             </div>
             <div style={{ padding: '0 1rem' }}>
               <span className="badge" style={{ background: 'rgba(15, 23, 42, 0.08)', color: '#0F172A', border: '1px solid #0F172A', marginBottom: '1rem', fontWeight: 600 }}>

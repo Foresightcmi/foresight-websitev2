@@ -169,10 +169,11 @@ export default function About() {
           <div className="grid grid-2" style={{ alignItems: 'center' }}>
             <div>
               <Image
-                src="/images/Christopher_Boykin.jpg"
+                src="/images/Christopher_Boykin.webp"
                 alt="Christopher Boykin, Certified Master Inspector (CMI) — Founder of Foresight Home Inspections in Atlanta GA"
                 width={600}
-                height={400}
+                height={347}
+                sizes="(max-width: 768px) 100vw, 600px"
                 style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}
                 priority
               />
