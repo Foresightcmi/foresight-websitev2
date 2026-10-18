@@ -157,11 +157,84 @@ export default function DueDiligenceCalculator() {
   const [auditNotes, setAuditNotes] = useState('');
   const [auditLoading, setAuditLoading] = useState(false);
   const [auditMsg, setAuditMsg] = useState('');
+  const [auditAnalyzing, setAuditAnalyzing] = useState(false);
+  const [parsedAuditResult, setParsedAuditResult] = useState(null);
+
+  const handleAuditFileUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setAuditAnalyzing(true);
+    setAuditMsg('');
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('purchasePrice', purchasePrice || 485000);
+      const zipMatch = (auditAddress || propertyAddress || '').match(/\b\d{5}\b/);
+      formData.append('zipCode', zipMatch ? zipMatch[0] : '30005');
+      formData.append('loanType', 'conventional');
+      formData.append('downPaymentPercent', 10);
+
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAuditMsg(data.error || 'Could not parse report file. Please upload a text-accessible PDF or paste findings.');
+      } else {
+        setParsedAuditResult(data);
+        const auditPayload = {
+          propertyInfo: {
+            address: auditAddress || propertyAddress,
+            purchasePrice: purchasePrice || 485000,
+            loanType: 'conventional',
+            downPaymentPercent: 10,
+            buyerName: auditName || 'Valued Buyer',
+          },
+          defects: data.defects,
+          calculations: data.calculations,
+          pricingIndex: data.pricingIndex,
+        };
+        try {
+          localStorage.setItem('foresight:last_audit:v1', JSON.stringify(auditPayload));
+        } catch (storageErr) {
+          console.warn('localStorage error:', storageErr);
+        }
+        setAuditMsg(`✓ Successfully analyzed ${data.defectsCount} defect items (${data.pricingIndex.region})! Your complete repair schedule and GAR Form F404 exhibit are ready for instant download upon payment.`);
+      }
+    } catch (err) {
+      setAuditMsg('Failed to process file upload. You can still enter your cloud link or paste notes below.');
+    } finally {
+      setAuditAnalyzing(false);
+    }
+  };
 
   const handleStartAuditCheckout = async (e) => {
     e.preventDefault();
     setAuditLoading(true);
     setAuditMsg('');
+
+    // Ensure localStorage is updated with final inputs
+    if (parsedAuditResult) {
+      try {
+        const auditPayload = {
+          propertyInfo: {
+            address: auditAddress || propertyAddress,
+            purchasePrice: purchasePrice || 485000,
+            loanType: 'conventional',
+            downPaymentPercent: 10,
+            buyerName: auditName || 'Valued Buyer',
+          },
+          defects: parsedAuditResult.defects,
+          calculations: parsedAuditResult.calculations,
+          pricingIndex: parsedAuditResult.pricingIndex,
+        };
+        localStorage.setItem('foresight:last_audit:v1', JSON.stringify(auditPayload));
+      } catch (err) {
+        console.warn('Could not update localStorage before checkout:', err);
+      }
+    }
+
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
@@ -171,9 +244,9 @@ export default function DueDiligenceCalculator() {
           name: auditName,
           email: auditEmail,
           phone: auditPhone,
-          address: auditAddress,
+          address: auditAddress || propertyAddress,
           reportLink: auditReportLink,
-          notes: auditNotes,
+          notes: `${auditNotes || ''}${parsedAuditResult ? ` [Parsed ${parsedAuditResult.defectsCount} defects: $${parsedAuditResult.calculations.totalMedian} median]` : ''}`,
           amount: 99
         })
       });
@@ -1282,8 +1355,52 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
               </div>
 
               <div>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#D4AF37', marginBottom: '4px' }}>
+                  Upload Inspection Report (PDF or TXT) for Instant Extraction
+                </label>
+                <input
+                  type="file"
+                  accept=".pdf,.txt"
+                  onChange={handleAuditFileUpload}
+                  style={{
+                    width: '100%',
+                    padding: '8px 12px',
+                    borderRadius: '8px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px dashed rgba(212, 175, 55, 0.5)',
+                    color: '#CBD5E1',
+                    fontSize: '0.8rem',
+                    boxSizing: 'border-box',
+                    cursor: 'pointer'
+                  }}
+                />
+                <span style={{ fontSize: '0.7rem', color: '#94A3B8', marginTop: '2px', display: 'block' }}>
+                  Automatic defect isolation • Atlanta contractor trade labor schedules • Instant fulfillment
+                </span>
+                {auditAnalyzing && (
+                  <div style={{ fontSize: '0.75rem', color: '#D4AF37', marginTop: '4px', fontWeight: 700 }}>
+                    ⏳ Parsing inspection findings and pricing contractor assemblies...
+                  </div>
+                )}
+                {parsedAuditResult && (
+                  <div style={{
+                    marginTop: '6px',
+                    padding: '6px 10px',
+                    borderRadius: '6px',
+                    background: 'rgba(16, 185, 129, 0.15)',
+                    border: '1px solid rgba(16, 185, 129, 0.35)',
+                    color: '#34D399',
+                    fontSize: '0.75rem',
+                    fontWeight: 700
+                  }}>
+                    ✓ {parsedAuditResult.defectsCount} items priced (${Number(parsedAuditResult.calculations.totalMedian).toLocaleString()} median demand). Ready for instant unlock!
+                  </div>
+                )}
+              </div>
+
+              <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
-                  Inspection Report Link / Cloud URL (Optional)
+                  Or Inspection Report Link / Cloud URL (Optional)
                 </label>
                 <input
                   type="url"

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import InstantAuditDelivery from '../../components/InstantAuditDelivery';
 
 export const metadata = {
   title: 'Order Confirmed | Foresight Home Inspections Atlanta',
@@ -9,7 +10,7 @@ export const metadata = {
 export default function CheckoutSuccessPage() {
   return (
     <main style={{ backgroundColor: '#0B1120', color: '#F8FAFC', minHeight: '100vh', padding: '4rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ maxWidth: '640px', width: '100%', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '16px', padding: '2.5rem 2rem', textAlign: 'center', boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}>
+      <div style={{ maxWidth: '680px', width: '100%', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '16px', padding: '2.5rem 2rem', textAlign: 'center', boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}>
         
         {/* Animated Checkmark Circle */}
         <div style={{ width: '64px', height: '64px', borderRadius: '50%', backgroundColor: 'rgba(16, 185, 129, 0.15)', border: '2px solid #10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: '#10B981', fontSize: '2rem' }}>
@@ -21,12 +22,15 @@ export default function CheckoutSuccessPage() {
         </div>
 
         <h1 style={{ fontSize: '2rem', fontWeight: 900, margin: '0 0 1rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-          Your Due Diligence Audit Is Underway
+          Your Due Diligence Audit Is Confirmed
         </h1>
 
         <p style={{ fontSize: '0.95rem', color: '#CBD5E1', lineHeight: 1.6, margin: '0 0 2rem' }}>
-          Thank you for choosing Foresight Home Inspections. Our Certified Master Inspector® (CMI) team has received your order and is cross-referencing your defect findings against <strong>regional Metro Atlanta contractor pricing indices</strong>.
+          Thank you for choosing Foresight Home Inspections. Your findings have been processed against <strong>regional Metro Atlanta contractor pricing indices</strong>.
         </p>
+
+        {/* Dynamic Instant Delivery Card (if pre-analyzed in browser) */}
+        <InstantAuditDelivery />
 
         {/* 4-Step Process Timeline */}
         <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1.5rem', textAlign: 'left', marginBottom: '2rem' }}>
