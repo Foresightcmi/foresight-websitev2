@@ -427,6 +427,15 @@ function isProcessRunning(pid) {
   }
 }
 
+function releaseLock() {
+  try {
+    if (fs.existsSync(LOCK_FILE)) {
+      const cur = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
+      if (cur.pid === process.pid) fs.unlinkSync(LOCK_FILE);
+    }
+  } catch {}
+}
+
 async function main() {
   if (fs.existsSync(LOCK_FILE)) {
     try {
@@ -442,14 +451,6 @@ async function main() {
     }
   }
   fs.writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, timestamp: Date.now() }), 'utf8');
-  const releaseLock = () => {
-    try {
-      if (fs.existsSync(LOCK_FILE)) {
-        const cur = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
-        if (cur.pid === process.pid) fs.unlinkSync(LOCK_FILE);
-      }
-    } catch {}
-  };
   process.on('exit', releaseLock);
 
   console.log('⚡ [Due Diligence Engine] Initializing Autonomous Scout, Email & OpenSMS Transmission...');
@@ -623,6 +624,7 @@ async function main() {
     const discoveredLocalUrl = configuredSmsUrl || (await discoverLocalOpenSmsPhone(9292));
     if (discoveredLocalUrl) {
       const targetEndpoint = discoveredLocalUrl;
+      const isLocalDasLearning = targetEndpoint.includes(':9292') || targetEndpoint.endsWith('/sms/');
       console.log(`🤖 [OpenSMS Engine] Connected to Android OpenSMS Gateway: ${targetEndpoint}`);
 
       for (const r of sorted) {
@@ -632,7 +634,7 @@ async function main() {
         if (dealAgeDays < 0 || dealAgeDays > 4.5) continue;
 
         const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
-        if (cleanPhone.length !== 10 || cleanPhone === '6788780215') continue;
+        if (cleanPhone.length !== 10 || cleanPhone === '6788780215' || cleanPhone === '6784802110') continue;
         if (smsContactedPhones.has(cleanPhone)) continue;
         if (r.email && isSuppressed(r.email, r.name, r.brokerage)) continue;
         if (/ansley|chapman group/i.test(r.brokerage || '') || /amy fuchs|joe chapman/i.test(r.name || '')) continue;
