@@ -32,7 +32,7 @@ function getOpenSmsConfig() {
     } catch {}
   }
   return {
-    apiKey: apiKey || 'osms_N4M32OxKt0NeBRr0ATFqKVy4eWQZ2NwAR6alBJTQG-o',
+    apiKey: apiKey || '',
     gatewayUrl: gatewayUrl || 'http://192.168.1.71:9292/sms/'
   };
 }

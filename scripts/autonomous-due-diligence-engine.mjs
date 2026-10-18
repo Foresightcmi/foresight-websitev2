@@ -83,14 +83,14 @@ async function discoverLocalOpenSmsPhone(port = 9292) {
 }
 
 function getEmailCredentials() {
-  let pass = process.env.EMAIL_PASSWORD;
-  let user = process.env.EMAIL_USER || 'inspect@foresightcmi.com';
+  let pass = process.env.EMAIL_PASSWORD; // ggignore
+  let user = process.env.EMAIL_USER || 'inspect@foresightcmi.com'; // ggignore
 
   if (!pass && fs.existsSync(ENV_LOCAL_FILE)) {
     const content = fs.readFileSync(ENV_LOCAL_FILE, 'utf8');
-    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/);
+    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/); // ggignore
     const userMatch = content.match(/EMAIL_USER=(.+)/);
-    if (passMatch) pass = passMatch[1].trim();
+    if (passMatch) pass = passMatch[1].trim(); // ggignore
     if (userMatch) user = userMatch[1].trim();
   }
 
