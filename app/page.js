@@ -96,7 +96,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing ($450), 48-hour continuous electronic radon testing ($275), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
+              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing (starts at $450), 48-hour continuous electronic radon testing ($275), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
             }
           },
           {
@@ -104,7 +104,7 @@ export default function Home() {
             "name": "Does Foresight Home Inspections do mold testing in Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline) and surface tape lifts for visible fungal growth. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
+              "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Baseline testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
             }
           },
           {
@@ -967,11 +967,11 @@ export default function Home() {
             faqs={[
               {
                 q: "How much does a certified home inspection cost in Metro Atlanta?",
-                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include certified mold & indoor air quality lab testing for $450, sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $275, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
+                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include certified mold & indoor air quality lab testing starting at $450, sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $275, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
               },
               {
                 q: "Does Foresight Home Inspections provide mold testing and air quality sampling?",
-                a: "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline) and surface tape lifts for visible fungal growth. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
+                a: "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Baseline testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
               },
               {
                 q: "Why does Foresight send two home inspectors on every job?",

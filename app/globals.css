@@ -324,6 +324,8 @@ a:hover {
 /* Accessibility & High-Contrast Safeguards */
 .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6,
 .hero h1, .hero h2, .hero h3, .hero h4,
+.card[style*="color: white"] h2, .card[style*="color: white"] h3, .card[style*="color: white"] h4,
+.card[style*="color: #fff"] h2, .card[style*="color: #fff"] h3, .card[style*="color: #fff"] h4,
 [style*="background: #0F172A"] h1, [style*="background: #0F172A"] h2, [style*="background: #0F172A"] h3, [style*="background: #0F172A"] h4,
 [style*="background: #1E293B"] h1, [style*="background: #1E293B"] h2, [style*="background: #1E293B"] h3, [style*="background: #1E293B"] h4,
 [style*="background: #111827"] h1, [style*="background: #111827"] h2, [style*="background: #111827"] h3, [style*="background: #111827"] h4,
@@ -334,6 +336,8 @@ section[style*="linear-gradient"] h1, section[style*="linear-gradient"] h2, sect
 
 .bg-dark p, .bg-dark li,
 .hero p, .hero li,
+.card[style*="color: white"] p, .card[style*="color: white"] li,
+.card[style*="color: #fff"] p, .card[style*="color: #fff"] li,
 [style*="background: #0F172A"] p, [style*="background: #0F172A"] li,
 [style*="background: #1E293B"] p, [style*="background: #1E293B"] li,
 [style*="background: #111827"] p, [style*="background: #111827"] li,
@@ -370,11 +374,11 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
 }
 
 /* Card typography clarity on light backgrounds */
-.card p, .card li {
+.card:not(.bg-dark) p, .card:not(.bg-dark) li {
   color: #334155;
   line-height: 1.65;
 }
-.card h2, .card h3, .card h4 {
+.card:not(.bg-dark) h2, .card:not(.bg-dark) h3, .card:not(.bg-dark) h4 {
   color: #0F172A;
   letter-spacing: -0.015em;
 }

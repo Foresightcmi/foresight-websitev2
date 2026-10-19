@@ -324,10 +324,10 @@
   {
     "slug": "mold-testing",
     "name": "Mold & Air Quality Inspection",
-    "metaTitle": "{city}, GA Mold Inspection & Indoor Air Quality Testing | $450",
-    "metaDescription": "4.9★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA ($450 flat rate). 3 spore-trap air samples + accredited lab!",
-    "price": "$450",
-    "priceDetails": "$450 flat rate includes 3 calibrated air samples (indoor living zones vs outdoor control baseline) + independent accredited lab report",
+    "metaTitle": "{city}, GA Mold Inspection & Indoor Air Quality Testing | $450+",
+    "metaDescription": "4.9★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA (starts at $450). 3 spore-trap air samples + accredited lab!",
+    "price": "$450+",
+    "priceDetails": "Starts at $450 for 3 calibrated air samples (indoor living zones vs outdoor control baseline) + independent accredited lab report (additional surface swabs or extra samples billed if taken)",
     "icon": "🧫",
     "badge": "Certified Lab Analysis",
     "heroSub": "Hidden mold triggers severe respiratory allergies and indicates active water leaks. Protect your family's health in {city} with certified air quality testing.",
@@ -345,7 +345,7 @@
       },
       {
         "q": "How much does mold testing cost in {city}, GA?",
-        "a": "Professional mold and air quality testing in {city} is a flat rate of $450 (saving homeowners $50 to $200 compared to standalone Atlanta mold testing services that charge $498 to $650+). Foresight's flat rate includes 3 calibrated spore-trap air samples (interior living zones tested against an outdoor control baseline), infrared thermal moisture mapping, and full accredited independent microbiology laboratory analysis delivered within 24 to 48 hours."
+        "a": "Professional mold and air quality testing in {city} starts at $450. Our baseline $450 package includes 3 calibrated spore-trap air samples (interior living zones tested against an outdoor control baseline), infrared thermal moisture mapping, and full accredited independent microbiology laboratory analysis delivered within 24 to 48 hours. If additional surface swabs or extra zone samples are taken, additional lab fees apply."
       }
     ],
     "riskContext": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture threshold required for active fungal growth and spore transmission into living areas.",

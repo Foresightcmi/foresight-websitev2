@@ -196,32 +196,34 @@ const SERVICE_MAP = {
   },
   'mold-testing': {
     name: 'Mold & Indoor Air Quality Testing',
-    price: '$450',
+    price: 'From $450',
     icon: '09',
     headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
-    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality Lab Analysis $450',
-    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & accredited lab report. Call 678-480-2110!',
-    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Led by Certified Master Inspector® Christopher Boykin, Foresight combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, delivering court-admissible, objective lab reports within 24 to 48 hours.',
+    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality From $450',
+    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta from $450. Spore trap air cassettes, moisture mapping & lab report. Call 678-480-2110!',
+    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Starting at $450, Certified Master Inspector® Christopher Boykin combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, with optional surface swabs or extra samples available as needed.',
     included: [
       'Comprehensive moisture intrusion & thermal infrared wall/ceiling scan',
-      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline)',
+      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline, starts at $450)',
       'Spore trap cassette analysis for toxigenic & allergenic fungal species',
+      'Optional surface swabs or additional zone air samples available (additional lab fees apply)',
       'Certified independent microbiology laboratory report within 24–48 hours',
       'Actionable remediation protocol recommendations if elevated spore counts are detected'
     ]
   },
   'mold-inspection': {
     name: 'Mold & Indoor Air Quality Testing',
-    price: '$450',
+    price: 'From $450',
     icon: '09',
     headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
-    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality Lab Analysis $450',
-    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & accredited lab report. Call 678-480-2110!',
-    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Led by Certified Master Inspector® Christopher Boykin, Foresight combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, delivering court-admissible, objective lab reports within 24 to 48 hours.',
+    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality From $450',
+    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta from $450. Spore trap air cassettes, moisture mapping & lab report. Call 678-480-2110!',
+    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Starting at $450, Certified Master Inspector® Christopher Boykin combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, with optional surface swabs or extra samples available as needed.',
     included: [
       'Comprehensive moisture intrusion & thermal infrared wall/ceiling scan',
-      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline)',
+      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline, starts at $450)',
       'Spore trap cassette analysis for toxigenic & allergenic fungal species',
+      'Optional surface swabs or additional zone air samples available (additional lab fees apply)',
       'Certified independent microbiology laboratory report within 24–48 hours',
       'Actionable remediation protocol recommendations if elevated spore counts are detected'
     ]
@@ -457,7 +459,7 @@ export default async function ServiceHubPage({ params }) {
             {serviceData.name} in Metro Atlanta
           </h1>
           <p style={{ fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, maxWidth: '750px', margin: '0 auto 2rem' }}>
-            {serviceData.headline}. Flat-rate pricing starting at <strong style={{ color: 'var(--color-gold)' }}>{serviceData.price}</strong>.
+            {serviceData.headline}. Transparent pricing starting at <strong style={{ color: 'var(--color-gold)' }}>{serviceData.price.replace(/^From\s+/i, '')}</strong>.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
@@ -483,7 +485,7 @@ export default async function ServiceHubPage({ params }) {
               </span>
             </div>
             <p style={{ fontSize: '0.975rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
-              <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties starting at <strong>{serviceData.price}</strong>. Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, cutting on-site disruption to 1.5–2.5 hours while delivering double verification. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
+              <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties starting at <strong>{serviceData.price.replace(/^From\s+/i, '')}</strong>. Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, cutting on-site disruption to 1.5–2.5 hours while delivering double verification. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #F1F5F9', fontSize: '0.85rem', color: '#475569' }}>
               <div><strong>Lead Credential:</strong> Certified Master Inspector® (CMI)</div>

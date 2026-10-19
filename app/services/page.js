@@ -190,10 +190,10 @@ export default function Services() {
     },
     {
       title: 'Mold & Indoor Air Quality Testing',
-      price: '$450',
-      priceNote: 'Certified Independent Microbiology Lab Analysis',
-      description: 'Georgia\'s humid subtropical climate and vented crawlspaces make toxic mold a serious hidden health hazard. We perform calibrated spore trap air sampling (indoor samples compared against outdoor baseline) and surface tape lifts, analyzed by an accredited microbiology laboratory with certified spore count reports.',
-      details: ['InterNACHI® Certified Moisture Intrusion Inspector', 'Calibrated spore trap air sampling', 'Outdoor control baseline comparison', 'Accredited microbiology lab report', 'Infrared moisture mapping included', 'Toxigenic species identification (Stachybotrys, etc.)'],
+      price: 'From $450',
+      priceNote: 'Certified Independent Microbiology Lab Analysis (Starts at $450)',
+      description: 'Georgia\'s humid subtropical climate and vented crawlspaces make toxic mold a serious hidden health hazard. Starting at $450, we perform calibrated spore trap air sampling (indoor samples compared against outdoor baseline) analyzed by an accredited microbiology laboratory, with optional surface swabs or additional zone samples available if needed.',
+      details: ['InterNACHI® Certified Moisture Intrusion Inspector', 'Calibrated spore trap air sampling (starts at $450)', 'Outdoor control baseline comparison', 'Accredited microbiology lab report', 'Infrared moisture mapping included', 'Optional surface swabs & species ID (Stachybotrys, etc.)'],
       image: '/images/crawlspace.png',
       slug: 'mold-testing-atlanta-indoor-air-quality-inspection-guide',
       serviceSlug: 'mold-testing',
@@ -335,7 +335,7 @@ export default function Services() {
         "name": "Does Foresight Home Inspections do mold testing in Atlanta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Our testing protocol includes calibrated spore-trap air sampling (2 indoor living zones compared against an outdoor control baseline) and surface tape-lift sampling where visible microbial growth is observed. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered within 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
+          "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Our baseline testing protocol includes calibrated spore-trap air sampling (2 indoor living zones compared against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered within 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
         }
       }
     ]
@@ -909,7 +909,7 @@ export default function Services() {
           <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
             <summary className="faq-question" style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Do you provide mold testing and indoor air quality assessments in Atlanta?</summary>
             <p className="speakable-answer" style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
-              Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of $450. Our protocol includes calibrated spore-trap air sampling (2 interior living zones compared against an outdoor control baseline) and surface tape-lift sampling where visible microbial growth is observed. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage.
+              Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Our baseline protocol includes calibrated spore-trap air sampling (2 interior living zones compared against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage.
             </p>
           </details>
 

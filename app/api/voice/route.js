@@ -366,7 +366,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // Certified Mold & Indoor Air Quality Testing
   if (matchesAny(['mold', 'air quality', 'spore', 'black mold', 'fungus', 'mold test', 'mold testing', 'air sampling'])) {
     return {
-      text: "Yes, we provide certified mold testing and indoor air quality assessments across Metro Atlanta for a flat rate of 450 dollars. That includes calibrated spore-trap air sampling with two indoor zones compared against an outdoor baseline, plus surface tape lifts, analyzed by an independent accredited microbiology lab with certified reports in 24 to 48 hours. In addition, our included 10,000 dollar warranty covers up to 2,250 dollars in mold remediation. Would you like to add mold testing to your inspection?",
+      text: "Yes, we provide certified mold testing and indoor air quality assessments across Metro Atlanta starting at 450 dollars. That baseline includes calibrated spore-trap air sampling with two indoor zones compared against an outdoor baseline, analyzed by an independent accredited microbiology lab with certified reports in 24 to 48 hours. If additional surface swabs or extra room air samples are taken, additional lab fees apply. In addition, our included 10,000 dollar warranty covers up to 2,250 dollars in mold remediation. Would you like to add mold testing to your inspection?",
       preAudio: null
     };
   }

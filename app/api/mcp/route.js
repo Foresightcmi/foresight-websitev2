@@ -143,7 +143,7 @@ const MCP_TOOLS = [
             sewer: { type: 'boolean', description: 'High-definition underground lateral sewer scope camera inspection ($450 flat rate)' },
             lowFlow: { type: 'boolean', description: 'DeKalb County Mandatory Low-Flow Plumbing Certificate ($100)' },
             buildfax: { type: 'boolean', description: 'Historical municipal permit and renovation record audit ($15)' },
-            airQuality: { type: 'boolean', description: 'Indoor Air Quality & Mold Lab Testing ($450)' },
+            airQuality: { type: 'boolean', description: 'Indoor Air Quality & Mold Lab Testing (starts at $450; additional swabs/samples billed if taken)' },
             detachedBuilding: { type: 'boolean', description: 'Detached Building or Workshop Inspection ($100)' }
           }
         }
@@ -249,8 +249,8 @@ async function handleToolCall(name, args) {
         'radon': { name: 'Continuous Radon Gas Monitoring', base: '$275', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
         'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
         'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
-        'mold': { name: 'Mold & Indoor Air Quality Testing', base: '$450 flat rate', details: 'Certified mold inspection with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) and surface tape lifts, analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours.' },
-        'air-quality': { name: 'Mold & Indoor Air Quality Testing', base: '$450 flat rate', details: 'Certified mold inspection with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) and surface tape lifts, analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours.' },
+        'mold': { name: 'Mold & Indoor Air Quality Testing', base: 'Starts at $450', details: 'Certified mold inspection starting at $450 with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours. Additional surface swabs or extra samples billed if taken.' },
+        'air-quality': { name: 'Mold & Indoor Air Quality Testing', base: 'Starts at $450', details: 'Certified mold inspection starting at $450 with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours. Additional surface swabs or extra samples billed if taken.' },
         'crawlspace-complexity': { name: 'Unfinished Crawlspace Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished crawlspace subfloor, pier, and vapor barrier inspection labor.' },
         'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
         'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: 'Starts at $395', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },

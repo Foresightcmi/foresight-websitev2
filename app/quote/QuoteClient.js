@@ -295,7 +295,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           if (k === 'termite') return foundation === 'crawlspace' ? 'Termite / WDO Crawlspace ($165)' : 'Termite / WDO Slab/Basement ($125)';
           if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance ($100)';
           if (k === 'buildfax') return 'BuildFax Report ($15)';
-          if (k === 'airQuality') return 'Indoor Air Quality & Mold Lab Testing ($450)';
+          if (k === 'airQuality') return 'Indoor Air Quality & Mold Lab Testing (Starts at $450)';
           if (k === 'detachedBuilding') return 'Detached Building / Workshop Inspection ($100)';
           if (k === 'repairEstimates') return 'Contractor Repair Cost & Pricing Estimates ($99)';
           return k;
@@ -617,8 +617,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('airQuality')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Indoor Air Quality / Mold Lab Testing (+ $450)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>3 air samples using spore trap cassettes with certified laboratory concentration report.</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Indoor Air Quality / Mold Lab Testing (Starts at +$450)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>3 baseline spore trap air samples + certified lab report (additional surface swabs or extra samples billed if taken).</span>
                   </div>
                 </label>
 
@@ -913,8 +913,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                       )}
                       {addons.airQuality && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>Mold &amp; Air Quality Lab Testing</span>
-                          <span>+$450</span>
+                          <span>Mold &amp; Air Quality Lab Testing (Base)</span>
+                          <span>+$450+</span>
                         </div>
                       )}
                       {addons.detachedBuilding && (
