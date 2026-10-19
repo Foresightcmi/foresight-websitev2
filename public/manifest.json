@@ -1,7 +1,7 @@
 {
   "name": "Foresight Home Inspections",
   "short_name": "Foresight",
-  "description": "Certified home inspections across Metro Atlanta with a lead Certified Master Inspector® and $10,000 protection warranty.",
+  "description": "Certified home inspections across Metro Atlanta with a lead Certified Master Inspector® and $35,000 protection warranty.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#121212",
@@ -9,15 +9,15 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "/images/Logopng.png",
+      "src": "/images/Logopng_small.webp",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/Logopng.png",
+      "src": "/images/Logopng.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     }
   ]

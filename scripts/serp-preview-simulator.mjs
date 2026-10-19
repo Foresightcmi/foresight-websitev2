@@ -101,9 +101,9 @@ export function runSerpSimulation() {
       },
       ratingSnippet: {
         stars: '★★★★★',
-        ratingValue: '5.0',
-        reviewCount: '150+',
-        priceRange: '$315 - $1,895'
+        ratingValue: '4.9',
+        reviewCount: '48',
+        priceRange: '$295 - $1,200'
       },
       sitelinks: [
         { label: 'Instant Fee Calculator', path: '/quote' },
@@ -119,7 +119,7 @@ export function runSerpSimulation() {
     console.log(`${statusBadge} | ${page.targetName}`);
     console.log(`   Desktop SERP: ${sim.desktop.renderedTitle} (${titlePx}px / 600px)`);
     console.log(`   Snippet: "${sim.desktop.renderedSnippet}" (${rawDesc.length} chars / ${descPx}px)`);
-    console.log(`   Rich Snippet: ⭐⭐⭐⭐⭐ 5.0 (150+ Google Reviews) | ${sim.ratingSnippet.priceRange}\n`);
+    console.log(`   Rich Snippet: ⭐⭐⭐⭐⭐ 4.9 (48 Google Reviews) | ${sim.ratingSnippet.priceRange}\n`);
   }
 
   const output = {

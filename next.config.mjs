@@ -25,9 +25,6 @@ const nextConfig = {
   turbopack: {
     root: process.cwd(),
   },
-  experimental: {
-    inlineCss: true,
-  },
   // Security Headers to boost SEO trust scores and technical robustness
   async headers() {
     return [

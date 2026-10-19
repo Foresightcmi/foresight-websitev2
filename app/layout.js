@@ -659,8 +659,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/images/Logopng.webp" type="image/webp" sizes="96x96" />
-        <link rel="apple-touch-icon" href="/images/Logopng.webp" />
+        <link rel="icon" href="/images/Logopng_small.webp" type="image/webp" sizes="96x96" />
+        <link rel="apple-touch-icon" href="/images/Logopng_small.webp" />
         <link rel="preload" as="image" href="/images/luxury-home-mobile.webp" type="image/webp" media="(max-width: 640px)" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/luxury-home.webp" type="image/webp" media="(min-width: 641px)" fetchPriority="high" />
         <meta name="geo.region" content="US-GA" />
@@ -789,7 +789,7 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/services/new-construction-inspection">New Construction Phased</Link></li>
                   <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($300)</Link></li>
                   <li><Link prefetch={false} href="/services/pre-listing-inspection">Pre-Listing Seller Inspection</Link></li>
-                  <li><Link prefetch={false} href="/service-areas/atlanta-str-compliance" style={{ color: 'var(--color-gold)' }}>Atlanta STR Permit Inspection ($495)</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/atlanta-str-compliance" style={{ color: 'var(--color-gold)' }}>Atlanta STR Permit Inspection ($395+)</Link></li>
                   <li><Link prefetch={false} href="/service-areas/south-fulton-rental-compliance" style={{ color: 'var(--color-gold)' }}>South Fulton Rental Compliance ($250)</Link></li>
                   <li><Link prefetch={false} href="/service-areas/dekalb-county-compliance">DeKalb Low-Flow Compliance</Link></li>
                   <li><Link prefetch={false} href="/services">View All Services &amp; Pricing &rarr;</Link></li>

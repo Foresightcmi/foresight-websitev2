@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-01T10:21:24.042Z",
+  "timestamp": "2026-10-19T09:33:16.849Z",
   "overallScore": 86,
   "grade": "GOOD",
   "totalAuditedPages": 10,
@@ -10,15 +10,15 @@
       "score": 92,
       "scoreGrade": "EXCELLENT",
       "meta": {
-        "title": "Atlanta Home Inspections | Certified Master Inspector® | Foresight",
-        "metaDescription": "4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal &amp; 4K drones. Instant quote!",
+        "title": "Atlanta, GA Home Inspection &amp; Certified Home Inspectors | $345",
+        "metaDescription": "4.9★ Full Home Inspection in Atlanta, GA from $345 ($295 condos). 2 Certified Home Inspectors on every job, free thermal &amp; 4K drone scans + $35,000 Warranty!",
         "canonical": "https://www.fhinspectionsatl.com",
-        "h1": "Atlanta Home InspectionsTwo Certified Inspectors on Every Job.",
-        "wordCount": 3908,
+        "h1": "Atlanta Full Home InspectionsTwo Certified Inspectors on Every Job.",
+        "wordCount": 3494,
         "keywordDensity": "0.49%",
-        "titlePixelWidth": "530px",
-        "descPixelWidth": "1095px",
-        "fleschScore": "37/100",
+        "titlePixelWidth": "554px",
+        "descPixelWidth": "1117px",
+        "fleschScore": "32/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite"
@@ -31,7 +31,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Atlanta Home Inspections | Certified Master Inspector® | Foresight\""
+          "detail": "Found in title: \"Atlanta, GA Home Inspection &amp; Certified Home Inspectors | $345\""
         },
         {
           "category": "Basic SEO",
@@ -39,7 +39,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"4.9★ Atlanta Home Inspections led by a Certified Master Insp...\""
+          "detail": "Found in description: \"4.9★ Full Home Inspection in Atlanta, GA from $345 ($295 con...\""
         },
         {
           "category": "Basic SEO",
@@ -63,7 +63,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Keyword occurred 19 times in page body"
+          "detail": "Keyword occurred 17 times in page body"
         },
         {
           "category": "Basic SEO",
@@ -71,7 +71,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "3908 words detected (Threshold: >=600 words)"
+          "detail": "3494 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -79,7 +79,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Keywords present across 16 H2s and 40 H3s"
+          "detail": "Keywords present across 14 H2s and 37 H3s"
         },
         {
           "category": "Additional SEO",
@@ -87,7 +87,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "15/15 images have Alt tags (7 keyword-optimized)"
+          "detail": "25/25 images have Alt tags (7 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -111,7 +111,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "17 external references detected (InterNACHI / ICC / EPA)"
+          "detail": "15 external references detected (InterNACHI / ICC / EPA)"
         },
         {
           "category": "Additional SEO",
@@ -119,7 +119,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "71 internal links connected across site network"
+          "detail": "74 internal links connected across site network"
         },
         {
           "category": "Title Readability",
@@ -127,7 +127,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "530px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "554px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -135,7 +135,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "161 chars / ~1095px (Target: 135-160 chars)"
+          "detail": "161 chars / ~1117px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
@@ -151,7 +151,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "1 H1 tag(s) found: \"Atlanta Home InspectionsTwo Certified Inspectors on Every Job.\""
+          "detail": "1 H1 tag(s) found: \"Atlanta Full Home InspectionsTwo Certified Inspectors on Every Job.\""
         },
         {
           "category": "Content Readability",
@@ -159,7 +159,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 37/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 32/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -167,7 +167,7 @@
           "pointsMax": 3,
           "pointsAwarded": 3,
           "status": "PASS",
-          "detail": "16 H2 sections and 40 H3 subsections"
+          "detail": "14 H2 sections and 37 H3 subsections"
         },
         {
           "category": "Schema & Social",
@@ -198,18 +198,18 @@
     {
       "targetName": "Atlanta Service Area (Fulton County Hub)",
       "route": "/service-areas/atlanta",
-      "score": 92,
+      "score": 90,
       "scoreGrade": "EXCELLENT",
       "meta": {
-        "title": "Atlanta Home Inspections | Certified Master Inspector® | Foresight",
-        "metaDescription": "4.9★ Rated Atlanta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free infrared thermal, drone scans &amp; $10k warranty!",
+        "title": "Atlanta, GA Home Inspection &amp; Home Inspectors | ",
+        "metaDescription": "4.9★ Atlanta, GA full home inspection from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp;  warranty protection!",
         "canonical": "https://www.fhinspectionsatl.com/service-areas/atlanta",
-        "h1": "Atlanta Home Inspections: Two Certified Inspectors on Every Job",
-        "wordCount": 2413,
+        "h1": "Atlanta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)",
+        "wordCount": 2392,
         "keywordDensity": "0.08%",
-        "titlePixelWidth": "530px",
-        "descPixelWidth": "1305px",
-        "fleschScore": "37/100",
+        "titlePixelWidth": "440px",
+        "descPixelWidth": "1003px",
+        "fleschScore": "32/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
@@ -218,7 +218,8 @@
           "Product",
           "BreadcrumbList",
           "HomeAndConstructionBusiness",
-          "FAQPage"
+          "FAQPage",
+          "ItemList"
         ]
       },
       "tests": [
@@ -228,7 +229,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Atlanta Home Inspections | Certified Master Inspector® | Foresight\""
+          "detail": "Found in title: \"Atlanta, GA Home Inspection &amp; Home Inspectors | \""
         },
         {
           "category": "Basic SEO",
@@ -236,7 +237,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"4.9★ Rated Atlanta home inspections led by Certified Master ...\""
+          "detail": "Found in description: \"4.9★ Atlanta, GA full home inspection from  ( condos). 2 cer...\""
         },
         {
           "category": "Basic SEO",
@@ -268,7 +269,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "2413 words detected (Threshold: >=600 words)"
+          "detail": "2392 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -284,7 +285,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "7/7 images have Alt tags (2 keyword-optimized)"
+          "detail": "11/11 images have Alt tags (2 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -324,7 +325,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "530px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "440px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -332,15 +333,15 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "192 chars / ~1305px (Target: 135-160 chars)"
+          "detail": "148 chars / ~1003px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
           "factor": "CTR Emotional Hook & Power Word",
           "pointsMax": 3,
-          "pointsAwarded": 3,
-          "status": "PASS",
-          "detail": "Contains high-CTR power tokens in title"
+          "pointsAwarded": 1,
+          "status": "WARN",
+          "detail": "Add power word or year to boost CTR"
         },
         {
           "category": "Content Readability",
@@ -348,7 +349,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "1 H1 tag(s) found: \"Atlanta Home Inspections: Two Certified Inspectors on Every Job\""
+          "detail": "1 H1 tag(s) found: \"Atlanta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)\""
         },
         {
           "category": "Content Readability",
@@ -356,7 +357,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 37/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 32/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -372,7 +373,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, BreadcrumbList, HomeAndConstructionBusiness, FAQPage"
+          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, BreadcrumbList, HomeAndConstructionBusiness, FAQPage, ItemList"
         },
         {
           "category": "Schema & Social",
@@ -395,18 +396,18 @@
     {
       "targetName": "Marietta Service Area (Cobb County Hub)",
       "route": "/service-areas/marietta",
-      "score": 88,
+      "score": 86,
       "scoreGrade": "GOOD",
       "meta": {
-        "title": "Marietta Home Inspections | Certified Master Inspector® | Foresight",
-        "metaDescription": "4.9★ Rated Marietta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free infrared thermal, drone scans &amp; $10k warranty!",
+        "title": "Marietta, GA Home Inspection &amp; Home Inspectors | ",
+        "metaDescription": "4.9★ Marietta, GA full home inspection from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp;  warranty protection!",
         "canonical": "https://www.fhinspectionsatl.com/service-areas/marietta",
-        "h1": "Marietta Home Inspections: Two Certified Inspectors on Every Job",
-        "wordCount": 2451,
+        "h1": "Marietta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)",
+        "wordCount": 2459,
         "keywordDensity": "0.04%",
-        "titlePixelWidth": "545px",
-        "descPixelWidth": "1317px",
-        "fleschScore": "35/100",
+        "titlePixelWidth": "455px",
+        "descPixelWidth": "1016px",
+        "fleschScore": "32/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
@@ -415,7 +416,8 @@
           "Product",
           "BreadcrumbList",
           "HomeAndConstructionBusiness",
-          "FAQPage"
+          "FAQPage",
+          "ItemList"
         ]
       },
       "tests": [
@@ -425,7 +427,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Marietta Home Inspections | Certified Master Inspector® | Foresight\""
+          "detail": "Found in title: \"Marietta, GA Home Inspection &amp; Home Inspectors | \""
         },
         {
           "category": "Basic SEO",
@@ -433,7 +435,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"4.9★ Rated Marietta home inspections led by Certified Master...\""
+          "detail": "Found in description: \"4.9★ Marietta, GA full home inspection from  ( condos). 2 ce...\""
         },
         {
           "category": "Basic SEO",
@@ -465,7 +467,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "2451 words detected (Threshold: >=600 words)"
+          "detail": "2459 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -481,7 +483,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "7/7 images have Alt tags (2 keyword-optimized)"
+          "detail": "11/11 images have Alt tags (2 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -521,7 +523,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "545px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "455px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -529,15 +531,15 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "193 chars / ~1317px (Target: 135-160 chars)"
+          "detail": "149 chars / ~1016px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
           "factor": "CTR Emotional Hook & Power Word",
           "pointsMax": 3,
-          "pointsAwarded": 3,
-          "status": "PASS",
-          "detail": "Contains high-CTR power tokens in title"
+          "pointsAwarded": 1,
+          "status": "WARN",
+          "detail": "Add power word or year to boost CTR"
         },
         {
           "category": "Content Readability",
@@ -545,7 +547,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "1 H1 tag(s) found: \"Marietta Home Inspections: Two Certified Inspectors on Every Job\""
+          "detail": "1 H1 tag(s) found: \"Marietta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)\""
         },
         {
           "category": "Content Readability",
@@ -553,7 +555,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 35/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 32/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -569,7 +571,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, BreadcrumbList, HomeAndConstructionBusiness, FAQPage"
+          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, BreadcrumbList, HomeAndConstructionBusiness, FAQPage, ItemList"
         },
         {
           "category": "Schema & Social",
@@ -592,18 +594,18 @@
     {
       "targetName": "Alpharetta Service Area (North Fulton Hub)",
       "route": "/service-areas/alpharetta",
-      "score": 84,
+      "score": 82,
       "scoreGrade": "GOOD",
       "meta": {
-        "title": "Alpharetta Home Inspections | Certified Master Inspector® | Foresight",
-        "metaDescription": "4.9★ Rated Alpharetta home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free infrared thermal, drone scans &amp; $10k warranty!",
+        "title": "Alpharetta, GA Home Inspection &amp; Home Inspectors | ",
+        "metaDescription": "4.9★ Alpharetta, GA full home inspection from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp;  warranty protection!",
         "canonical": "https://www.fhinspectionsatl.com/service-areas/alpharetta",
-        "h1": "Alpharetta Home Inspections: Two Certified Inspectors on Every Job",
-        "wordCount": 2456,
+        "h1": "Alpharetta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)",
+        "wordCount": 2451,
         "keywordDensity": "0.04%",
-        "titlePixelWidth": "557px",
-        "descPixelWidth": "1327px",
-        "fleschScore": "33/100",
+        "titlePixelWidth": "467px",
+        "descPixelWidth": "1025px",
+        "fleschScore": "29/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
@@ -612,7 +614,8 @@
           "Product",
           "BreadcrumbList",
           "HomeAndConstructionBusiness",
-          "FAQPage"
+          "FAQPage",
+          "ItemList"
         ]
       },
       "tests": [
@@ -622,7 +625,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Alpharetta Home Inspections | Certified Master Inspector® | Foresight\""
+          "detail": "Found in title: \"Alpharetta, GA Home Inspection &amp; Home Inspectors | \""
         },
         {
           "category": "Basic SEO",
@@ -630,7 +633,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"4.9★ Rated Alpharetta home inspections led by Certified Mast...\""
+          "detail": "Found in description: \"4.9★ Alpharetta, GA full home inspection from  ( condos). 2 ...\""
         },
         {
           "category": "Basic SEO",
@@ -662,7 +665,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "2456 words detected (Threshold: >=600 words)"
+          "detail": "2451 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -678,7 +681,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "7/7 images have Alt tags (1 keyword-optimized)"
+          "detail": "11/11 images have Alt tags (1 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -718,7 +721,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "557px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "467px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -726,15 +729,15 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "195 chars / ~1327px (Target: 135-160 chars)"
+          "detail": "151 chars / ~1025px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
           "factor": "CTR Emotional Hook & Power Word",
           "pointsMax": 3,
-          "pointsAwarded": 3,
-          "status": "PASS",
-          "detail": "Contains high-CTR power tokens in title"
+          "pointsAwarded": 1,
+          "status": "WARN",
+          "detail": "Add power word or year to boost CTR"
         },
         {
           "category": "Content Readability",
@@ -742,7 +745,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "1 H1 tag(s) found: \"Alpharetta Home Inspections: Two Certified Inspectors on Every Job\""
+          "detail": "1 H1 tag(s) found: \"Alpharetta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)\""
         },
         {
           "category": "Content Readability",
@@ -750,7 +753,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 33/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 29/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -766,7 +769,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, BreadcrumbList, HomeAndConstructionBusiness, FAQPage"
+          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, BreadcrumbList, HomeAndConstructionBusiness, FAQPage, ItemList"
         },
         {
           "category": "Schema & Social",
@@ -789,22 +792,25 @@
     {
       "targetName": "Buyer Inspection (Core Service Pillar)",
       "route": "/services/buyer-inspection",
-      "score": 82,
+      "score": 84,
       "scoreGrade": "GOOD",
       "meta": {
-        "title": "Buyer &amp; Seller Home Inspection Atlanta | 2 Inspectors From $345 | Foresight",
-        "metaDescription": "Premier home inspections led by a Certified Master Inspector®. Two inspectors on every job, infrared thermal imaging, aerial drone scanning &amp; $10,000 warranty.",
+        "title": "Full Home Inspection Services Atlanta GA | 2 Inspectors $345 | Foresight",
+        "metaDescription": "4.9★ Full home inspection in Atlanta, GA from $345 ($295 condos). 2 certified home inspectors on every job led by a CMI. Free thermal, 4K drones &amp; $35k warranty protection!",
         "canonical": "https://www.fhinspectionsatl.com/services/buyer-inspection",
-        "h1": "Standard Buyer &amp; Seller Inspection in Metro Atlanta",
-        "wordCount": 607,
-        "keywordDensity": "0.16%",
-        "titlePixelWidth": "644px",
-        "descPixelWidth": "1097px",
-        "fleschScore": "22/100",
+        "h1": "Full Home Inspection &amp; Buyer Due Diligence in Metro Atlanta",
+        "wordCount": 930,
+        "keywordDensity": "0.11%",
+        "titlePixelWidth": "575px",
+        "descPixelWidth": "1210px",
+        "fleschScore": "27/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
-          "BreadcrumbList"
+          "BreadcrumbList",
+          "Service",
+          "Product",
+          "FAQPage"
         ]
       },
       "tests": [
@@ -814,7 +820,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Buyer &amp; Seller Home Inspection Atlanta | 2 Inspectors From $345 | Foresight\""
+          "detail": "Found in title: \"Full Home Inspection Services Atlanta GA | 2 Inspectors $345 | Foresight\""
         },
         {
           "category": "Basic SEO",
@@ -822,7 +828,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"Premier home inspections led by a Certified Master Inspector...\""
+          "detail": "Found in description: \"4.9★ Full home inspection in Atlanta, GA from $345 ($295 con...\""
         },
         {
           "category": "Basic SEO",
@@ -854,7 +860,7 @@
           "pointsMax": 7,
           "pointsAwarded": 5,
           "status": "PASS",
-          "detail": "607 words detected (Threshold: >=600 words)"
+          "detail": "930 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -862,7 +868,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Keywords present across 2 H2s and 5 H3s"
+          "detail": "Keywords present across 4 H2s and 5 H3s"
         },
         {
           "category": "Additional SEO",
@@ -870,7 +876,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "3/3 images have Alt tags (2 keyword-optimized)"
+          "detail": "8/8 images have Alt tags (2 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -878,7 +884,7 @@
           "pointsMax": 6,
           "pointsAwarded": 4,
           "status": "WARN",
-          "detail": "Density is 0.16% (Target: 0.8% - 2.5%, no keyword stuffing)"
+          "detail": "Density is 0.11% (Target: 0.8% - 2.5%, no keyword stuffing)"
         },
         {
           "category": "Additional SEO",
@@ -902,15 +908,15 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "144 internal links connected across site network"
+          "detail": "146 internal links connected across site network"
         },
         {
           "category": "Title Readability",
           "factor": "Google SERP Title Pixel Width",
           "pointsMax": 4,
-          "pointsAwarded": 2,
-          "status": "WARN",
-          "detail": "644px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "pointsAwarded": 4,
+          "status": "PASS",
+          "detail": "575px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -918,7 +924,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "159 chars / ~1097px (Target: 135-160 chars)"
+          "detail": "176 chars / ~1210px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
@@ -934,7 +940,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "1 H1 tag(s) found: \"Standard Buyer &amp; Seller Inspection in Metro Atlanta\""
+          "detail": "1 H1 tag(s) found: \"Full Home Inspection &amp; Buyer Due Diligence in Metro Atlanta\""
         },
         {
           "category": "Content Readability",
@@ -942,7 +948,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 22/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 27/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -950,7 +956,7 @@
           "pointsMax": 3,
           "pointsAwarded": 3,
           "status": "PASS",
-          "detail": "2 H2 sections and 5 H3 subsections"
+          "detail": "4 H2 sections and 5 H3 subsections"
         },
         {
           "category": "Schema & Social",
@@ -958,7 +964,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList"
+          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, FAQPage"
         },
         {
           "category": "Schema & Social",
@@ -981,22 +987,25 @@
     {
       "targetName": "Radon Testing (Diagnostic Service Pillar)",
       "route": "/services/radon-testing",
-      "score": 83,
-      "scoreGrade": "GOOD",
+      "score": 90,
+      "scoreGrade": "EXCELLENT",
       "meta": {
-        "title": "Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $250 | Foresight",
-        "metaDescription": "EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph &amp; same-day report. Flat $250. Call 678-480-2110!",
+        "title": "Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $275 | Foresight",
+        "metaDescription": "EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph &amp; same-day report. Flat $275. Call 678-480-2110!",
         "canonical": "https://www.fhinspectionsatl.com/services/radon-testing",
         "h1": "Radon Gas Testing in Metro Atlanta",
-        "wordCount": 573,
-        "keywordDensity": "0.52%",
+        "wordCount": 907,
+        "keywordDensity": "0.88%",
         "titlePixelWidth": "580px",
         "descPixelWidth": "1096px",
-        "fleschScore": "21/100",
+        "fleschScore": "28/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
-          "BreadcrumbList"
+          "BreadcrumbList",
+          "Service",
+          "Product",
+          "FAQPage"
         ]
       },
       "tests": [
@@ -1006,7 +1015,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $250 | Foresight\""
+          "detail": "Found in title: \"Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $275 | Foresight\""
         },
         {
           "category": "Basic SEO",
@@ -1038,23 +1047,23 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Keyword occurred 3 times in page body"
+          "detail": "Keyword occurred 8 times in page body"
         },
         {
           "category": "Basic SEO",
           "factor": "Content Depth (Word Count)",
           "pointsMax": 7,
-          "pointsAwarded": 2,
-          "status": "WARN",
-          "detail": "573 words detected (Threshold: >=600 words)"
+          "pointsAwarded": 5,
+          "status": "PASS",
+          "detail": "907 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
           "factor": "Focus Keyword in H2/H3 Subheadings",
           "pointsMax": 6,
-          "pointsAwarded": 2,
-          "status": "WARN",
-          "detail": "Missing keywords in subheadings"
+          "pointsAwarded": 6,
+          "status": "PASS",
+          "detail": "Keywords present across 4 H2s and 5 H3s"
         },
         {
           "category": "Additional SEO",
@@ -1062,7 +1071,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "3/3 images have Alt tags (1 keyword-optimized)"
+          "detail": "7/7 images have Alt tags (1 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -1070,7 +1079,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Density is 0.52% (Target: 0.8% - 2.5%, no keyword stuffing)"
+          "detail": "Density is 0.88% (Target: 0.8% - 2.5%, no keyword stuffing)"
         },
         {
           "category": "Additional SEO",
@@ -1094,7 +1103,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "144 internal links connected across site network"
+          "detail": "146 internal links connected across site network"
         },
         {
           "category": "Title Readability",
@@ -1134,7 +1143,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 21/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 28/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -1142,7 +1151,7 @@
           "pointsMax": 3,
           "pointsAwarded": 3,
           "status": "PASS",
-          "detail": "2 H2 sections and 5 H3 subsections"
+          "detail": "4 H2 sections and 5 H3 subsections"
         },
         {
           "category": "Schema & Social",
@@ -1150,7 +1159,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList"
+          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, FAQPage"
         },
         {
           "category": "Schema & Social",
@@ -1173,22 +1182,25 @@
     {
       "targetName": "New Construction Inspection (Pre-Drywall & Final)",
       "route": "/services/new-construction-inspection",
-      "score": 79,
-      "scoreGrade": "NEEDS_WORK",
+      "score": 84,
+      "scoreGrade": "GOOD",
       "meta": {
-        "title": "New Construction Inspection Atlanta GA | Phased &amp; Final From $400 | Foresight",
+        "title": "New Construction Inspection Atlanta GA | From $400 | Foresight | Foresight",
         "metaDescription": "Independent new construction &amp; pre-drywall home inspections in Metro Atlanta. Two certified inspectors, infrared thermal scans &amp; builder-ready punch lists. From $400.",
         "canonical": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
         "h1": "New Construction &amp; Phased Inspection in Metro Atlanta",
-        "wordCount": 591,
-        "keywordDensity": "0.34%",
-        "titlePixelWidth": "672px",
-        "descPixelWidth": "1170px",
-        "fleschScore": "23/100",
+        "wordCount": 954,
+        "keywordDensity": "0.42%",
+        "titlePixelWidth": "597px",
+        "descPixelWidth": "1195px",
+        "fleschScore": "27/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
-          "BreadcrumbList"
+          "BreadcrumbList",
+          "Service",
+          "Product",
+          "FAQPage"
         ]
       },
       "tests": [
@@ -1198,7 +1210,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"New Construction Inspection Atlanta GA | Phased &amp; Final From $400 | Foresight\""
+          "detail": "Found in title: \"New Construction Inspection Atlanta GA | From $400 | Foresight | Foresight\""
         },
         {
           "category": "Basic SEO",
@@ -1230,15 +1242,15 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Keyword occurred 2 times in page body"
+          "detail": "Keyword occurred 4 times in page body"
         },
         {
           "category": "Basic SEO",
           "factor": "Content Depth (Word Count)",
           "pointsMax": 7,
-          "pointsAwarded": 2,
-          "status": "WARN",
-          "detail": "591 words detected (Threshold: >=600 words)"
+          "pointsAwarded": 5,
+          "status": "PASS",
+          "detail": "954 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -1254,7 +1266,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "3/3 images have Alt tags (0 keyword-optimized)"
+          "detail": "8/8 images have Alt tags (0 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -1262,7 +1274,7 @@
           "pointsMax": 6,
           "pointsAwarded": 4,
           "status": "WARN",
-          "detail": "Density is 0.34% (Target: 0.8% - 2.5%, no keyword stuffing)"
+          "detail": "Density is 0.42% (Target: 0.8% - 2.5%, no keyword stuffing)"
         },
         {
           "category": "Additional SEO",
@@ -1286,15 +1298,15 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "144 internal links connected across site network"
+          "detail": "146 internal links connected across site network"
         },
         {
           "category": "Title Readability",
           "factor": "Google SERP Title Pixel Width",
           "pointsMax": 4,
-          "pointsAwarded": 2,
-          "status": "WARN",
-          "detail": "672px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "pointsAwarded": 4,
+          "status": "PASS",
+          "detail": "597px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -1302,7 +1314,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "170 chars / ~1170px (Target: 135-160 chars)"
+          "detail": "174 chars / ~1195px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
@@ -1326,7 +1338,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 23/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 27/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -1334,7 +1346,7 @@
           "pointsMax": 3,
           "pointsAwarded": 3,
           "status": "PASS",
-          "detail": "2 H2 sections and 5 H3 subsections"
+          "detail": "4 H2 sections and 5 H3 subsections"
         },
         {
           "category": "Schema & Social",
@@ -1342,7 +1354,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList"
+          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Service, Product, FAQPage"
         },
         {
           "category": "Schema & Social",
@@ -1372,11 +1384,11 @@
         "metaDescription": "Discover why a two-inspector team provides 2x coverage, faster reporting, and zero missed defects compared to single-person home inspections in Atlanta.",
         "canonical": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
         "h1": "Two-Inspector Team vs. Single Inspector | Foresight Advantage",
-        "wordCount": 756,
-        "keywordDensity": "0.79%",
+        "wordCount": 714,
+        "keywordDensity": "0.70%",
         "titlePixelWidth": "591px",
         "descPixelWidth": "1047px",
-        "fleschScore": "39/100",
+        "fleschScore": "37/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
@@ -1424,7 +1436,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Keyword occurred 6 times in page body"
+          "detail": "Keyword occurred 5 times in page body"
         },
         {
           "category": "Basic SEO",
@@ -1432,7 +1444,7 @@
           "pointsMax": 7,
           "pointsAwarded": 5,
           "status": "PASS",
-          "detail": "756 words detected (Threshold: >=600 words)"
+          "detail": "714 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -1448,7 +1460,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "4/4 images have Alt tags (0 keyword-optimized)"
+          "detail": "8/8 images have Alt tags (0 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -1456,7 +1468,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Density is 0.79% (Target: 0.8% - 2.5%, no keyword stuffing)"
+          "detail": "Density is 0.70% (Target: 0.8% - 2.5%, no keyword stuffing)"
         },
         {
           "category": "Additional SEO",
@@ -1480,7 +1492,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "59 internal links connected across site network"
+          "detail": "61 internal links connected across site network"
         },
         {
           "category": "Title Readability",
@@ -1520,7 +1532,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 39/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 37/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -1559,24 +1571,25 @@
     {
       "targetName": "Residential Defect Index (E-E-A-T Pillar Study)",
       "route": "/blog/metro-atlanta-residential-defect-index-building-science-study",
-      "score": 84,
-      "scoreGrade": "GOOD",
+      "score": 73,
+      "scoreGrade": "NEEDS_WORK",
       "meta": {
-        "title": "Metro Atlanta Residential Defect Index: 2026 Building Science &amp; Due Diligence Field Study | Foresight",
-        "metaDescription": "Empirical 2026 field study analyzing HVAC thermal load failures, crawlspace fungal thresholds, and radon penetration across 20 Metro Atlanta counties.",
+        "title": "Atlanta Home Inspection Statistics &amp; Defect Study (2026 Report) | Foresight",
+        "metaDescription": "Comprehensive 2026 Metro Atlanta home inspection statistics &amp; defect study. Over 82% HVAC failures, 68% crawlspace moisture &amp; 31% radon risk. Verified data for media.",
         "canonical": "https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study",
-        "h1": "Metro Atlanta Residential Defect Index: 2026 Building Science &amp; Due Diligence Field Study",
-        "wordCount": 1552,
-        "keywordDensity": "0.19%",
-        "titlePixelWidth": "855px",
-        "descPixelWidth": "1011px",
-        "fleschScore": "31/100",
+        "h1": "Atlanta Home Inspection Statistics &amp; Defect Study (2026 Report)",
+        "wordCount": 1957,
+        "keywordDensity": "0.05%",
+        "titlePixelWidth": "650px",
+        "descPixelWidth": "1206px",
+        "fleschScore": "29/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
           "BreadcrumbList",
           "Article",
-          "BreadcrumbList"
+          "BreadcrumbList",
+          "Dataset"
         ]
       },
       "tests": [
@@ -1584,9 +1597,9 @@
           "category": "Basic SEO",
           "factor": "Focus Keyword in SEO Title",
           "pointsMax": 7,
-          "pointsAwarded": 7,
-          "status": "PASS",
-          "detail": "Found in title: \"Metro Atlanta Residential Defect Index: 2026 Building Science &amp; Due Diligence Field Study | Foresight\""
+          "pointsAwarded": 0,
+          "status": "FAIL",
+          "detail": "Missing primary keyword \"residential defect\" in title"
         },
         {
           "category": "Basic SEO",
@@ -1616,9 +1629,9 @@
           "category": "Basic SEO",
           "factor": "Focus Keyword in Content Body",
           "pointsMax": 7,
-          "pointsAwarded": 7,
-          "status": "PASS",
-          "detail": "Keyword occurred 3 times in page body"
+          "pointsAwarded": 3,
+          "status": "WARN",
+          "detail": "Keyword occurred 1 times in page body"
         },
         {
           "category": "Basic SEO",
@@ -1626,7 +1639,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "1552 words detected (Threshold: >=600 words)"
+          "detail": "1957 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -1634,7 +1647,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Keywords present across 8 H2s and 10 H3s"
+          "detail": "Keywords present across 8 H2s and 11 H3s"
         },
         {
           "category": "Additional SEO",
@@ -1642,7 +1655,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "4/4 images have Alt tags (0 keyword-optimized)"
+          "detail": "8/8 images have Alt tags (0 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
@@ -1650,7 +1663,7 @@
           "pointsMax": 6,
           "pointsAwarded": 4,
           "status": "WARN",
-          "detail": "Density is 0.19% (Target: 0.8% - 2.5%, no keyword stuffing)"
+          "detail": "Density is 0.05% (Target: 0.8% - 2.5%, no keyword stuffing)"
         },
         {
           "category": "Additional SEO",
@@ -1674,7 +1687,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "74 internal links connected across site network"
+          "detail": "79 internal links connected across site network"
         },
         {
           "category": "Title Readability",
@@ -1682,7 +1695,7 @@
           "pointsMax": 4,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "855px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "650px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -1690,7 +1703,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "150 chars / ~1011px (Target: 135-160 chars)"
+          "detail": "174 chars / ~1206px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
@@ -1706,7 +1719,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "1 H1 tag(s) found: \"Metro Atlanta Residential Defect Index: 2026 Building Science &amp; Due Diligence Field Study\""
+          "detail": "1 H1 tag(s) found: \"Atlanta Home Inspection Statistics &amp; Defect Study (2026 Report)\""
         },
         {
           "category": "Content Readability",
@@ -1714,7 +1727,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 31/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 29/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -1722,7 +1735,7 @@
           "pointsMax": 3,
           "pointsAwarded": 3,
           "status": "PASS",
-          "detail": "8 H2 sections and 10 H3 subsections"
+          "detail": "8 H2 sections and 11 H3 subsections"
         },
         {
           "category": "Schema & Social",
@@ -1730,7 +1743,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Article, BreadcrumbList"
+          "detail": "Schemas detected: HomeAndConstructionBusiness, WebSite, BreadcrumbList, Article, BreadcrumbList, Dataset"
         },
         {
           "category": "Schema & Social",
@@ -1753,18 +1766,18 @@
     {
       "targetName": "Realtor VIP Partner Hub (B2B Lead Magnet)",
       "route": "/realtors",
-      "score": 90,
+      "score": 92,
       "scoreGrade": "EXCELLENT",
       "meta": {
         "title": "Realtor VIP Program | Home Inspector Atlanta | Foresight",
         "metaDescription": "Join Foresight Home Inspections&#x27; exclusive Realtor VIP Program. SUPRA lockbox access, priority scheduling, and $10,000 warranty protection for your buyers. Serving 163+ Metro Atlanta cities.",
         "canonical": "https://www.fhinspectionsatl.com/realtors",
         "h1": "Your Negotiation Asset.Never a Deal Killer.",
-        "wordCount": 2067,
-        "keywordDensity": "0.48%",
+        "wordCount": 2160,
+        "keywordDensity": "0.51%",
         "titlePixelWidth": "445px",
         "descPixelWidth": "1334px",
-        "fleschScore": "38/100",
+        "fleschScore": "36/100",
         "schemas": [
           "HomeAndConstructionBusiness",
           "WebSite",
@@ -1810,7 +1823,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Keyword occurred 10 times in page body"
+          "detail": "Keyword occurred 11 times in page body"
         },
         {
           "category": "Basic SEO",
@@ -1818,7 +1831,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "2067 words detected (Threshold: >=600 words)"
+          "detail": "2160 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -1826,7 +1839,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Keywords present across 8 H2s and 20 H3s"
+          "detail": "Keywords present across 8 H2s and 22 H3s"
         },
         {
           "category": "Additional SEO",
@@ -1834,15 +1847,15 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "3/3 images have Alt tags (1 keyword-optimized)"
+          "detail": "7/7 images have Alt tags (1 keyword-optimized)"
         },
         {
           "category": "Additional SEO",
           "factor": "Keyword Density Calibration",
           "pointsMax": 6,
-          "pointsAwarded": 4,
-          "status": "WARN",
-          "detail": "Density is 0.48% (Target: 0.8% - 2.5%, no keyword stuffing)"
+          "pointsAwarded": 6,
+          "status": "PASS",
+          "detail": "Density is 0.51% (Target: 0.8% - 2.5%, no keyword stuffing)"
         },
         {
           "category": "Additional SEO",
@@ -1866,7 +1879,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "58 internal links connected across site network"
+          "detail": "62 internal links connected across site network"
         },
         {
           "category": "Title Readability",
@@ -1906,7 +1919,7 @@
           "pointsMax": 3,
           "pointsAwarded": 1,
           "status": "WARN",
-          "detail": "Score: 38/100 (Accessible, homeowner-friendly prose)"
+          "detail": "Score: 36/100 (Accessible, homeowner-friendly prose)"
         },
         {
           "category": "Content Readability",
@@ -1914,7 +1927,7 @@
           "pointsMax": 3,
           "pointsAwarded": 3,
           "status": "PASS",
-          "detail": "8 H2 sections and 20 H3 subsections"
+          "detail": "8 H2 sections and 22 H3 subsections"
         },
         {
           "category": "Schema & Social",
