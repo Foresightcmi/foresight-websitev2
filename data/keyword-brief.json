@@ -1,56 +1,52 @@
 {
-  "targetKeyword": "who is the best home inspector near me",
+  "targetKeyword": "termite inspection cost near me",
   "relatedKeywords": [
-    "mold inspection near me cost",
-    "termite inspection cost near me",
-    "thermal imaging home inspection near me",
-    "hvac inspection cost near me",
-    "who is the best home inspector"
+    "do i need a home inspection to buy a house",
+    "do i need a home inspection on a new build",
+    "do i need a home inspection on new construction",
+    "do i need home inspection for new house",
+    "do i need a home inspection to refinance my house"
   ],
-  "score": 51,
+  "score": 42,
   "allOpportunities": [
-    {
-      "keyword": "who is the best home inspector near me",
-      "score": 51
-    },
-    {
-      "keyword": "mold inspection near me cost",
-      "score": 42
-    },
     {
       "keyword": "termite inspection cost near me",
       "score": 42
     },
     {
-      "keyword": "thermal imaging home inspection near me",
-      "score": 41
+      "keyword": "do i need a home inspection to buy a house",
+      "score": 42
     },
     {
-      "keyword": "hvac inspection cost near me",
-      "score": 41
+      "keyword": "do i need a home inspection on a new build",
+      "score": 38
     },
     {
-      "keyword": "who is the best home inspector",
-      "score": 36
+      "keyword": "do i need a home inspection on new construction",
+      "score": 38
+    },
+    {
+      "keyword": "do i need home inspection for new house",
+      "score": 37
+    },
+    {
+      "keyword": "do i need a home inspection to refinance my house",
+      "score": 37
+    },
+    {
+      "keyword": "pre listing home inspection near me",
+      "score": 35
     },
     {
       "keyword": "how to price a home inspection",
       "score": 35
     },
     {
-      "keyword": "mold inspection near me",
-      "score": 34
-    },
-    {
-      "keyword": "mold inspection company near me",
-      "score": 34
-    },
-    {
       "keyword": "termite inspection near me",
       "score": 34
     },
     {
-      "keyword": "termite inspection companies near me",
+      "keyword": "mold inspection near me",
       "score": 34
     },
     {
@@ -58,23 +54,23 @@
       "score": 34
     },
     {
+      "keyword": "home inspection near me",
+      "score": 33
+    },
+    {
+      "keyword": "home inspector near me",
+      "score": 33
+    },
+    {
       "keyword": "roof inspection near me",
       "score": 33
     },
     {
-      "keyword": "home inspections near me",
+      "keyword": "should i get a home inspection on new construction",
       "score": 33
     },
     {
-      "keyword": "home inspection companies near me",
-      "score": 33
-    },
-    {
-      "keyword": "hvac inspection near me",
-      "score": 33
-    },
-    {
-      "keyword": "when to do home inspection on new construction",
+      "keyword": "what is the best home inspection company",
       "score": 33
     },
     {
@@ -88,8 +84,12 @@
     {
       "keyword": "what is the best home inspection school",
       "score": 33
+    },
+    {
+      "keyword": "what is the best home inspection course in ontario",
+      "score": 33
     }
   ],
-  "discoveredAt": "2026-10-19T19:11:03.696Z",
+  "discoveredAt": "2026-10-19T14:00:10.487Z",
   "source": "google-suggest"
 }

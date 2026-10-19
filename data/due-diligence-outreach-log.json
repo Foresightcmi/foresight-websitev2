@@ -835,5 +835,77 @@
     "phone": "6786626351",
     "date": "2026-10-17",
     "timestamp": "2026-10-17T20:08:18.044Z"
+  },
+  {
+    "key": "CONTRACT_card_dbcda1970e_erinyabroudy@atlantafinehomes.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Erin Yabroudy",
+    "brokerage": "Atlanta Fine Homes Sotheby's International",
+    "address": "70 Maddox Drive NE",
+    "city": "Atlanta",
+    "email": "erinyabroudy@atlantafinehomes.com",
+    "date": "2026-10-19",
+    "timestamp": "2026-10-19T14:15:28.460Z"
+  },
+  {
+    "key": "CONTRACT_card_c48a450e91_donna@hestergrouprealtors.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Donna Deeb",
+    "brokerage": "Hester Group REALTORS",
+    "address": "680 Americas Cup Cove",
+    "city": "Alpharetta",
+    "email": "donna@hestergrouprealtors.com",
+    "date": "2026-10-19",
+    "timestamp": "2026-10-19T14:15:48.567Z"
+  },
+  {
+    "key": "CONTRACT_card_f56edb34ab_lmerck.rd@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "LAURA MERCK",
+    "brokerage": "CMC Realty ERA Powered",
+    "address": "370 Majestic Cove",
+    "city": "Milton",
+    "email": "lmerck.rd@gmail.com",
+    "date": "2026-10-19",
+    "timestamp": "2026-10-19T14:16:07.597Z"
+  },
+  {
+    "key": "CONTRACT_card_0bdac1982b_simonrealtygroup@hotmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Simon Istakhorov",
+    "brokerage": "Realty Professionals of Georgia, LLC",
+    "address": "110 Valley Summit Court",
+    "city": "Roswell",
+    "email": "simonrealtygroup@hotmail.com",
+    "date": "2026-10-19",
+    "timestamp": "2026-10-19T14:16:27.431Z"
+  },
+  {
+    "key": "CONTRACT_card_ab2cc8a586_patriciamallmann@kw.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Patricia Mallmann",
+    "brokerage": "Keller Williams Realty Chattahoochee North, LLC",
+    "address": "4674 Lakeway Place",
+    "city": "Alpharetta",
+    "email": "patriciamallmann@kw.com",
+    "date": "2026-10-19",
+    "timestamp": "2026-10-19T14:16:47.907Z"
+  },
+  {
+    "key": "CONTRACT_card_f641d03973_jefftubo@atlantafinehomes.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Jeff Tubo",
+    "brokerage": "Atlanta Fine Homes Sotheby's International",
+    "address": "443 Sterling Street NE",
+    "city": "Atlanta",
+    "email": "jefftubo@atlantafinehomes.com",
+    "date": "2026-10-19",
+    "timestamp": "2026-10-19T14:17:07.209Z"
   }
 ]
