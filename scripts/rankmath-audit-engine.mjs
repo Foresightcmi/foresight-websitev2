@@ -151,13 +151,15 @@ function auditHtml(target, rawHtml) {
   const tests = [];
   let score = 0;
 
+  const decodeEntities = (s) => (s || '').replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&rsquo;/g, "'").replace(/&mdash;/g, '—');
+
   // Extract metadata
   const titleMatch = rawHtml.match(/<title>([^<]*)<\/title>/i);
-  const title = titleMatch ? titleMatch[1] : '';
+  const title = titleMatch ? decodeEntities(titleMatch[1]) : '';
 
   const metaDescMatch = rawHtml.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i) ||
                         rawHtml.match(/<meta\s+content=["']([^"']*)["']\s+name=["']description["']/i);
-  const metaDescription = metaDescMatch ? metaDescMatch[1] : '';
+  const metaDescription = metaDescMatch ? decodeEntities(metaDescMatch[1]) : '';
 
   const canonicalMatch = rawHtml.match(/<link\b[^>]*?\brel=["']canonical["'][^>]*?\bhref=["']([^"']*)["']/i) ||
                         rawHtml.match(/<link\b[^>]*?\bhref=["']([^"']*)["'][^>]*?\brel=["']canonical["']/i);
@@ -471,7 +473,7 @@ function auditHtml(target, rawHtml) {
   });
 
   // Test 21: Canonical Tag Integrity (3 pts)
-  const canonicalOk = canonical.startsWith('https://fhinspectionsatl.com');
+  const canonicalOk = /^https:\/\/(www\.)?fhinspectionsatl\.com/.test(canonical);
   tests.push({
     category: 'Schema & Social',
     factor: 'Canonical Tag Integrity',

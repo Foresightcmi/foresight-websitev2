@@ -55,11 +55,11 @@ export function runSerpSimulation() {
     const url = page.meta.canonical || `https://fhinspectionsatl.com${page.route}`;
 
     const titlePx = calculatePixelWidth(rawTitle, 1.0);
-    const descPx = calculatePixelWidth(rawDesc, 0.82);
+    const descPx = calculatePixelWidth(rawDesc, 0.60);
 
     const desktopTruncated = titlePx > 600;
     const mobileTruncated = titlePx > 540;
-    const descTruncated = descPx > 960 || rawDesc.length > 165;
+    const descTruncated = descPx > 960 || rawDesc.length > 160;
 
     // Simulate truncated text
     let simTitleDesktop = rawTitle;

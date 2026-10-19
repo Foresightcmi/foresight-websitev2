@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
   const canonicalUrl = `${SITE_URL}/compare/${resolvedParams.slug}`;
 
   return {
-    title: item.metaTitle,
+    title: { absolute: item.metaTitle },
     description: item.metaDescription,
     keywords: [
       item.title.toLowerCase(),

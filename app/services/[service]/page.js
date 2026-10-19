@@ -18,7 +18,7 @@ const SERVICE_MAP = {
     icon: '01',
     headline: 'Full Home Inspection Services & Certified Home Inspectors Across Metro Atlanta',
     metaTitle: 'Full Home Inspection Services Atlanta GA | 2 Inspectors $345',
-    metaDescription: '4.9★ Full home inspection in Atlanta, GA from $345 ($295 condos). 2 certified home inspectors on every job led by a CMI. Free thermal, 4K drones & $35k warranty protection!',
+    metaDescription: '4.9★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
     description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
@@ -34,7 +34,7 @@ const SERVICE_MAP = {
     icon: '01',
     headline: 'Full Home Inspection Services & Certified Home Inspectors Across Metro Atlanta',
     metaTitle: 'Full Home Inspection Services Atlanta GA | 2 Inspectors $345',
-    metaDescription: '4.9★ Full home inspection in Atlanta, GA from $345 ($295 condos). 2 certified home inspectors on every job led by a CMI. Free thermal, 4K drones & $35k warranty protection!',
+    metaDescription: '4.9★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
     description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
@@ -140,7 +140,7 @@ const SERVICE_MAP = {
     icon: '06',
     headline: 'Independent Phased & Final New Construction Inspections in Metro Atlanta',
     metaTitle: 'New Construction Inspection Atlanta GA | From $400',
-    metaDescription: 'Independent new construction & pre-drywall home inspections in Metro Atlanta. Two certified inspectors, infrared thermal scans & builder-ready punch lists. From $400.',
+    metaDescription: 'Independent new construction & pre-drywall inspections in Metro Atlanta. 2 certified inspectors, thermal scans & builder punch lists. From $400.',
     description: 'Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in Metro Atlanta frequently have major concealed defects. Municipal code inspectors only spend 15 minutes on site. Our independent two-inspector team evaluates every system before final closing.',
     included: [
       'Pre-drywall framing, rough plumbing, electrical and HVAC audit',
