@@ -10,8 +10,8 @@ import HomeVideoPlayer from './components/HomeVideoPlayer';
 
 import TrueValueComparison from './components/TrueValueComparison';
 import Testimonials from './components/Testimonials';
-const ThermalSlider = dynamic(() => import('./components/ThermalSlider'));
-const FaqSearch = dynamic(() => import('./components/FaqSearch'));
+import LazyThermalSlider from './components/LazyThermalSlider';
+import FaqSearch from './components/FaqSearch';
 
 export const metadata = {
   title: {
@@ -653,7 +653,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <ThermalSlider />
+      <LazyThermalSlider />
 
       <section className="section" style={{ background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-mid)', borderBottom: '1px solid var(--color-gray-mid)' }}>
         <div className="container">

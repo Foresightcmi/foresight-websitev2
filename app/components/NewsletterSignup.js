@@ -34,7 +34,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section style={{ 
+    <section className="section" style={{ 
       width: '100%', 
       background: 'linear-gradient(135deg, #0F172A, #1E293B)', 
       padding: '5rem 1rem',

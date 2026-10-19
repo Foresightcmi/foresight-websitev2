@@ -873,10 +873,6 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
   }
 }
 
-img {
-  content-visibility: auto;
-}
-
 /* ═══════════════════════════════════════════
    AGENCY UI/UX & SPATIAL HARMONY ENHANCEMENTS
 ═══════════════════════════════════════════ */
@@ -1181,9 +1177,18 @@ img {
 }
 
 @media (max-width: 768px) {
+  .hero-eyebrow-badge,
+  .hero-credentials-eyebrow span,
+  .vsl-trigger-btn {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
   .hero-credentials-dock {
     padding: 1.25rem 1rem !important;
     border-radius: 14px !important;
+    background: rgba(15, 23, 42, 0.92) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
   .hero-credentials-primary-row {
     gap: 1rem !important;
@@ -1193,6 +1198,7 @@ img {
   }
   .hero-cred-img-primary {
     height: 95px !important;
+    filter: none !important;
   }
   .hero-cred-exp {
     min-height: 95px !important;
@@ -1223,6 +1229,7 @@ img {
   }
   .hero-cred-img-secondary {
     height: 85px !important;
+    filter: none !important;
   }
   .hero-cred-sublabel {
     font-size: 0.68rem !important;

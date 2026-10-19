@@ -41,8 +41,13 @@ export default function Header() {
                     }
                   }}
                   style={{
-                    color: '#D4AF37',
+                    background: '#0F172A',
+                    color: '#FDE047',
+                    padding: '0.38rem 0.8rem',
+                    borderRadius: '6px',
+                    border: '1px solid rgba(212, 175, 55, 0.45)',
                     fontWeight: '700',
+                    fontSize: '0.9rem',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px'
