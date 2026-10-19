@@ -10,7 +10,7 @@ export default function StickyCallBar() {
     <div className="sticky-call-bar">
       <a
         href="tel:678-480-2110"
-        aria-label="Call Foresight Home Inspections at 678-480-2110"
+        aria-label="Call 678-480-2110 — Foresight Home Inspections"
         className="sticky-call-btn sticky-call-btn--call"
         onClick={() => {
           if (typeof window !== 'undefined' && window.gtag) {
@@ -31,7 +31,7 @@ export default function StickyCallBar() {
         href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Book your home inspection online 24/7"
+        aria-label="Book Online 24/7 — Foresight Home Inspections"
         className="sticky-call-btn sticky-call-btn--schedule"
         onClick={() => {
           if (typeof window !== 'undefined' && window.gtag) {

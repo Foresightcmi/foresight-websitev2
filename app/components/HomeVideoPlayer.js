@@ -50,7 +50,6 @@ export default function HomeVideoPlayer() {
           <button
             type="button"
             onClick={() => setIsPlaying(true)}
-            aria-label="Play Atlanta Home Systems Field Audit Video"
             style={{
               position: 'relative',
               width: '100%',

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -29,9 +29,9 @@ export default function VslTriggerButton() {
           backdropFilter: 'blur(8px)',
           transition: 'all 0.2s ease'
         }}
-        aria-label="Watch 60-second video briefing about our dual inspection standard"
+        aria-label="Watch 60-Sec Briefing video about our dual inspection standard"
       >
-        <span style={{ fontSize: '1.2rem', color: '#D4AF37' }}>▶️</span>
+        <span style={{ fontSize: '1.2rem', color: '#D4AF37' }} aria-hidden="true">▶️</span>
         <span>Watch 60-Sec Briefing</span>
       </button>
 

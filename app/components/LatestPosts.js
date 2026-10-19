@@ -63,8 +63,8 @@ export default function LatestPosts() {
                   </div>
                 )}
                 <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
-                  <Link prefetch={false} href={`/blog/${post.slug}`} aria-label={`Read full article: ${post.title}`} style={{ color: 'var(--color-red)', fontWeight: 'bold', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
-                    Read More <span style={{ marginLeft: '4px' }}>&rarr;</span>
+                  <Link prefetch={false} href={`/blog/${post.slug}`} aria-label={`Read More: ${post.title}`} style={{ color: 'var(--color-red)', fontWeight: 'bold', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                    Read More <span style={{ marginLeft: '4px' }} aria-hidden="true">&rarr;</span>
                   </Link>
                 </div>
               </div>

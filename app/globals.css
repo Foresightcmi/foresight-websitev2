@@ -275,8 +275,6 @@ a:hover {
 /* Cards & Sections */
 .section {
   padding: 6rem 0;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 600px;
 }
 
 .section-title {
@@ -387,8 +385,6 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
   color: #CBD5E1;
   padding: 4rem 0 2rem;
   margin-top: 4rem;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
 }
 
 .footer-grid {
