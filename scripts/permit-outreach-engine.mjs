@@ -132,9 +132,39 @@ async function dispatchSmartphoneAlert(lead, emailData) {
   }
 }
 
+const SHARED_COOLDOWN_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'smtp_cooldown_state.json');
+
+function getSharedCooldown() {
+  try {
+    if (!fs.existsSync(SHARED_COOLDOWN_FILE)) return { active: false };
+    const d = JSON.parse(fs.readFileSync(SHARED_COOLDOWN_FILE, 'utf8'));
+    if (d && d.cooldownUntil && new Date(d.cooldownUntil).getTime() > Date.now()) {
+      return { active: true, cooldownUntil: d.cooldownUntil };
+    }
+  } catch {}
+  return { active: false };
+}
+
+function setSharedCooldown(reason) {
+  try {
+    fs.writeFileSync(SHARED_COOLDOWN_FILE, JSON.stringify({
+      triggeredAt: new Date().toISOString(),
+      cooldownUntil: new Date(Date.now() + 24.25 * 3600 * 1000).toISOString(),
+      reason
+    }, null, 2), 'utf8');
+  } catch {}
+}
+
 async function main() {
   console.log('🚀 [Outreach Engine] Initializing Municipal Lead Outreach Engine...');
   if (!acquireLock()) return;
+
+  const smtpCooldown = getSharedCooldown();
+  if (smtpCooldown.active) {
+    console.log(`🛡️ [Outreach Engine] Shared SMTP Circuit Breaker active until ${smtpCooldown.cooldownUntil}. Skipping SMTP to protect 24h reset.`);
+    releaseLock();
+    return;
+  }
 
   const { user, pass } = getEmailCredentials();
   if (!pass) {
@@ -150,7 +180,7 @@ async function main() {
     service: 'gmail',
     pool: true,
     maxConnections: 1,
-    maxMessages: 200,
+    maxMessages: 45,
     auth: { user, pass }
   });
 
@@ -159,6 +189,9 @@ async function main() {
     console.log(`✅ [Outreach Engine] SMTP connection verified for ${user}`);
   } catch (verifyErr) {
     console.warn('⚠️ [Outreach Engine] SMTP temporarily in Gmail rolling 24-hr cooldown:', verifyErr.message);
+    if (verifyErr.message.includes('454') || verifyErr.message.includes('550')) {
+      setSharedCooldown(`Permit Outreach Verify Error: ${verifyErr.message}`);
+    }
     transporter.close();
     releaseLock();
     return;
@@ -295,13 +328,14 @@ async function main() {
       await dispatchSmartphoneAlert(lead, emailData);
       console.log(`📱 [Outreach Engine] Live confirmation pinged to your phone for ${lead.ownerName}`);
 
-      // Respect Google SMTP pacing with 2.5s delay between sends
-      await new Promise(r => setTimeout(r, 2500));
+      // Respect Google SMTP pacing with 20s delay between sends
+      await new Promise(r => setTimeout(r, 20000));
 
     } catch (sendErr) {
       console.error(`❌ [Outreach Engine] Failed to send email to ${lead.ownerEmail}:`, sendErr.message);
-      if (sendErr.message.includes('550-5.4.5') || sendErr.message.includes('454') || sendErr.message.includes('Daily user sending limit exceeded')) {
-        console.warn('\n⚠️ [Outreach Engine] Google SMTP daily quota reached. Pausing remaining queue until rolling 24-hr window resets.');
+      if (sendErr.message.includes('550') || sendErr.message.includes('454') || sendErr.message.includes('Daily user sending limit exceeded')) {
+        setSharedCooldown(`Permit Outreach 550/454 limit reached (${lead.ownerEmail}): ${sendErr.message}`);
+        console.warn('\n⚠️ [Outreach Engine] Google SMTP daily quota reached. Locked shared 24h circuit breaker and halting immediately.');
         break;
       }
     }

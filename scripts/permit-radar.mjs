@@ -156,10 +156,10 @@ async function fetchDeKalbPermits() {
  * 3. Queries City of Alpharetta (North Fulton) Open Data FeatureServer
  */
 async function fetchAlpharettaPermits() {
-  console.log('🏛️  [Permit Radar: Alpharetta] Querying City of Alpharetta Open Data GIS registry...');
+  console.log('🏛️  [Permit Radar: Alpharetta] Querying City of Alpharetta Open Data GIS registry (New Construction Only)...');
   try {
     const params = new URLSearchParams({
-      where: "CASE_TYPE_DESC LIKE '%Residential%'",
+      where: "CASE_TYPE_DESC LIKE '%Residential%' AND CASE_TYPE_DESC LIKE '%New%'",
       outFields: '*',
       returnGeometry: 'false',
       orderByFields: 'created_date DESC',
@@ -175,8 +175,11 @@ async function fetchAlpharettaPermits() {
 
     if (!response.ok) throw new Error(`Alpharetta ArcGIS returned ${response.status}`);
     const json = await response.json();
-    const features = json.features || [];
-    console.log(`✅ [Permit Radar: Alpharetta] Retrieved ${features.length} municipal permits.`);
+    const features = (json.features || []).filter(f => {
+      const desc = String(f.attributes?.CASE_TYPE_DESC || '').toLowerCase();
+      return desc.includes('new') && !/addition|remodel|alteration|porch|deck|pool|shed|arbor|gazebo|sitewall|retaining|fence/i.test(desc);
+    });
+    console.log(`✅ [Permit Radar: Alpharetta] Retrieved ${features.length} New Construction permits.`);
 
     return features.map(f => {
       const a = f.attributes || {};
@@ -184,16 +187,15 @@ async function fetchAlpharettaPermits() {
         ? new Date(a.DATE_ENTERED).toISOString().split('T')[0] 
         : (a.created_date ? new Date(a.created_date).toISOString().split('T')[0] : 'Unknown');
       
-      const typeDesc = a.CASE_TYPE_DESC || 'Residential Permit';
-      const isNew = typeDesc.toLowerCase().includes('new') || typeDesc.toLowerCase().includes('whole');
+      const typeDesc = a.CASE_TYPE_DESC || 'Residential New Construction';
 
       return {
         recordId: `ALP-${a.CASE_NUMBER || a.CWID || a.CA_OBJECT_ID}`,
         jurisdiction: 'City of Alpharetta (North Fulton)',
-        permitName: a.CASE_NAME || 'Alpharetta Residential Project',
+        permitName: a.CASE_NAME || 'Alpharetta New Construction Project',
         permitType: typeDesc,
         address: a.Location || 'Alpharetta, GA 30009',
-        jobValue: 275000, // Benchmark luxury Alpharetta residential valuation
+        jobValue: 275000,
         status: a.RESULT_DISPLAY || a.STATUS_CODE || 'Issued',
         statusDate: date,
         parcel: a.Facility_Id || 'N/A',
@@ -203,10 +205,8 @@ async function fetchAlpharettaPermits() {
         ownerPhone: null,
         acaLink: `https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.Location || 'Alpharetta, GA')}`,
-        inspectionOpportunity: isNew
-          ? 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty'
-          : 'High-End Remodel, Addition & Foundation Audit',
-        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
+        inspectionOpportunity: 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty',
+        estimatedInspectionFee: 'From $275 - $895 Bundle',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -220,10 +220,10 @@ async function fetchAlpharettaPermits() {
  * 4. Queries City of Johns Creek (North Fulton) Open Data FeatureServer
  */
 async function fetchJohnsCreekPermits() {
-  console.log('🏛️  [Permit Radar: Johns Creek] Querying City of Johns Creek Open Data GIS registry...');
+  console.log('🏛️  [Permit Radar: Johns Creek] Querying City of Johns Creek Open Data GIS registry (New Construction >= 2,000 sq ft Only)...');
   try {
     const params = new URLSearchParams({
-      where: "JobTypeDescription LIKE '%Residential%'",
+      where: "JobTypeDescription LIKE '%Residential%' AND JobSquareFootage >= 2000",
       outFields: '*',
       returnGeometry: 'false',
       orderByFields: 'ISSUE_DATE DESC',
@@ -239,22 +239,21 @@ async function fetchJohnsCreekPermits() {
 
     if (!response.ok) throw new Error(`Johns Creek ArcGIS returned ${response.status}`);
     const json = await response.json();
-    const features = json.features || [];
-    console.log(`✅ [Permit Radar: Johns Creek] Retrieved ${features.length} municipal permits.`);
+    const features = (json.features || []).filter(f => (f.attributes?.JobSquareFootage || 0) >= 2000);
+    console.log(`✅ [Permit Radar: Johns Creek] Retrieved ${features.length} New Construction permits.`);
 
     return features.map(f => {
       const a = f.attributes || {};
       const date = a.ISSUE_DATE ? new Date(a.ISSUE_DATE).toISOString().split('T')[0] : 'Unknown';
       const sqft = a.JobSquareFootage || 0;
-      const isNew = sqft > 1500;
 
       return {
         recordId: `JCK-${a.JobID || a.OBJECTID}`,
         jurisdiction: 'City of Johns Creek (North Fulton)',
-        permitName: `Residential Project (${sqft ? sqft + ' sq ft' : 'Custom'})`,
-        permitType: `Residential Construction (${a.JobTypeDescription || 'Single Family'})`,
+        permitName: `New Construction Home (${sqft} sq ft)`,
+        permitType: `Residential New Construction (${a.JobTypeDescription || 'Single Family'})`,
         address: a.JobAddress ? `${a.JobAddress}, Johns Creek, GA` : 'Johns Creek, GA',
-        jobValue: sqft > 0 ? sqft * 185 : 350000,
+        jobValue: sqft > 0 ? sqft * 185 : 370000,
         status: 'Issued',
         statusDate: date,
         parcel: a.AddrLocationID || 'N/A',
@@ -264,10 +263,8 @@ async function fetchJohnsCreekPermits() {
         ownerPhone: null,
         acaLink: `https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.JobAddress ? a.JobAddress + ', Johns Creek, GA' : 'Johns Creek, GA')}`,
-        inspectionOpportunity: isNew
-          ? 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty'
-          : 'Structural Addition, Mechanical & Framing Inspection',
-        estimatedInspectionFee: isNew ? 'From $275 - $895 Bundle' : 'From $345 - $650',
+        inspectionOpportunity: 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty',
+        estimatedInspectionFee: 'From $275 - $895 Bundle',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -438,7 +435,12 @@ async function main() {
         const dossiersDir = path.join(ROOT_DIR, 'public', 'dossiers');
         existingLeads = rawExisting.filter(l => {
           const pType = String(l.permitType || '').toLowerCase();
-          if (/addition|alteration|remodel|repair|renovation|water meter|sewer tap|demolition/i.test(pType)) {
+          const pOpp = String(l.inspectionOpportunity || '').toLowerCase();
+          if (/addition|alteration|remodel|repair|renovation|water meter|sewer tap|demolition|porch|deck|pool|sitewall|retaining|shed|arbor|gazebo|fence/i.test(pType) || /remodel|addition/i.test(pOpp)) {
+            const staleDossier = path.join(dossiersDir, `${l.recordId}.html`);
+            if (fs.existsSync(staleDossier)) {
+              try { fs.unlinkSync(staleDossier); } catch (_) {}
+            }
             return false;
           }
           const isDeKalb = (l.jurisdiction || '').includes('DeKalb') || (l.recordId || '').startsWith('DKB-');

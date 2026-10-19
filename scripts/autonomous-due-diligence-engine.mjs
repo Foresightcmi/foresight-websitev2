@@ -227,108 +227,50 @@ function buildUnderContractEmail(realtor) {
   const address = realtor.address || 'your property';
   const city = realtor.city || 'Metro Atlanta';
   const price = realtor.price ? ` (${realtor.price})` : '';
-  const quoteUrl = `https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)}`;
+  const quoteUrl = `https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)}`;
 
-  const subject = `⚡ Due Diligence Inspection Advisory: ${address} (${city}) | 24-Hr Turnaround`;
+  const subject = `Congrats on ${address} (${city}) — 24-hr due diligence slot`;
 
-  const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i.test(city) || /dekalb/i.test(address);
+  const text = [
+    `Hi ${firstName},`,
+    ``,
+    `Congratulations on getting ${address} in ${city}${price} under contract! Wanted to reach out in case your buyers or co-op agent need a rapid 24-hour due diligence inspection while the 5-to-7 day contingency clock is running.`,
+    ``,
+    `My partner and I inspect every property as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access:`,
+    `• 2-Inspector Team Starting at $345: Full structural, roof, MEP & FLIR thermal sweep in half the time with same-day calm, objective digital reports.`,
+    `• New Construction & 11-Month Builder Warranty: Pre-Drywall (from $275) and Final / 11-Month Warranty (from $345) inspections.`,
+    `• DeKalb County Low-Flow Plumbing Fixture Certificate ($100 Flat Fee): Official signed Certificate of Compliance for DeKalb Watershed water turn-on.`,
+    `• $35,000+ Buyer Protection Warranties + Free Utility Setup Concierge.`,
+    ``,
+    `Feel free to pass this 1-click quote link to your buyers or text/call me directly at (678) 480-2110: ${quoteUrl}`,
+    ``,
+    `Best regards,`,
+    `Christopher Boykin, CMI`,
+    `Foresight Home Inspections`,
+    `(678) 480-2110 | https://fhinspectionsatl.com`,
+    `1816 South Deshon Road, Lithonia, GA 30058`,
+    `Reply stop anytime to opt out.`
+  ].join('\n');
 
-  const deKalbBox = isDeKalb ? `
-      <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 14px 16px; margin: 15px 0; border-radius: 4px; font-size: 14px; color: #1e3a8a;">
-        <strong>🏛️ DeKalb County Mandatory Closing Requirement:</strong><br>
-        Under DeKalb County Water Conservation Ordinance § 25-41, pre-1993 homes require an official signed <strong>Certificate of Compliance</strong> verifying 1.28 GPF low-flow plumbing fixtures to transfer title at closing. Foresight conducts the fixture audit on-site and issues the official signed certificate for a <strong>$100 flat fee</strong>.
-      </div>
-  ` : '';
+  const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1f2937;max-width:600px;">
+<p>Hi ${firstName},</p>
+<p>Congratulations on getting <strong>${address}</strong> in ${city}${price} under contract! Wanted to reach out in case your buyers or co-op agent need a rapid 24-hour due diligence inspection while the contingency clock is running.</p>
+<p>My partner and I inspect every property as a <strong>two-inspector Certified Master Inspector (CMI) team</strong> with active SUPRA eKEY access:</p>
+<ul style="padding-left:20px;margin:14px 0;">
+<li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345:</strong> Full structural, roof, MEP &amp; FLIR thermal sweep in half the time with same-day calm, objective digital reports.</li>
+<li style="margin-bottom:8px;"><strong>New Construction &amp; 11-Month Builder Warranty:</strong> Pre-Drywall (from $275) and Final / 11-Month Warranty (from $345) inspections.</li>
+<li style="margin-bottom:8px;"><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee):</strong> Official signed Certificate of Compliance for DeKalb Watershed water service activation.</li>
+<li style="margin-bottom:8px;"><strong>$35,000+ Buyer Warranties</strong> + Free Utility Setup Concierge.</li>
+</ul>
+<p>Feel free to pass this pre-filled quote link to your buyers: <a href="${quoteUrl}" style="color:#0f52ba;text-decoration:underline;">fhinspectionsatl.com/quote</a> or text/call me directly at <strong>(678) 480-2110</strong>.</p>
+<p style="margin-top:20px;">Best regards,<br>
+<strong>Christopher Boykin, CMI</strong><br>
+Foresight Home Inspections<br>
+(678) 480-2110 | <a href="https://fhinspectionsatl.com" style="color:#0f52ba;">fhinspectionsatl.com</a><br>
+<span style="font-size:12px;color:#6b7280;">1816 South Deshon Road, Lithonia, GA 30058 &bull; Reply stop anytime to opt out.</span></p>
+</div>`;
 
-  const html = `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; padding: 20px; line-height: 1.6; }
-    .card { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-    .header { background: #0f172a; padding: 25px 30px; text-align: center; }
-    .header img { height: 65px; width: auto; }
-    .banner { background: #10b981; color: #ffffff; padding: 8px 15px; font-size: 13px; font-weight: 800; text-align: center; letter-spacing: 0.5px; }
-    .content { padding: 35px 30px; }
-    .property-bar { background: #f1f5f9; border-left: 4px solid #10b981; padding: 12px 16px; margin: 15px 0; border-radius: 4px; font-size: 15px; }
-    .highlight-box { background: #fffdf5; border-left: 4px solid #d4af37; padding: 18px; margin: 20px 0; border-radius: 4px; font-size: 14.5px; }
-    .forward-box { background: #eff6ff; border: 1px dashed #3b82f6; padding: 15px; border-radius: 6px; margin: 20px 0; font-size: 13.5px; color: #1e3a8a; }
-    .btn { display: inline-block; background: #10b981; color: #ffffff !important; font-weight: 800; font-size: 14px; padding: 13px 26px; text-decoration: none; border-radius: 6px; margin: 15px 0; text-align: center; }
-    .footer { background: #0f172a; color: #94a3b8; padding: 25px 30px; font-size: 12px; text-align: center; line-height: 1.5; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="header">
-      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections">
-    </div>
-    <div class="banner">
-      ⚡ ACTIVE DUE DILIGENCE &amp; EARNEST MONEY PROTECTION
-    </div>
-    <div class="content">
-      <p style="font-size: 16px; margin-top: 0;">Hi <strong>${firstName}</strong>,</p>
-
-      <p>Congratulations! Saw that your listing at <strong>${address}</strong> in <strong>${city}</strong>${price} is officially under contract.</p>
-
-      <div class="property-bar">
-        📍 <strong>Property:</strong> ${address}, ${city}, GA<br>
-        📅 <strong>Due Diligence Window:</strong> Active (5-to-7 Day Contingency Clock Running)
-      </div>
-
-      ${deKalbBox}
-
-      <p>With Georgia due diligence timelines as tight as 5 to 7 days, your buyers or co-op agent cannot afford inspection delays or confusing reports that derail negotiations.</p>
-
-      <div class="highlight-box">
-        <strong>The Foresight Dual-Master Inspector Advantage:</strong>
-        <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
-          <li><strong>Two Certified Master Inspectors Concurrency:</strong> Full structural, roof, MEP, and foundation sweep completed in under 2.5 hours.</li>
-          <li><strong>Same-Day Digital Report (Delivered by 8 PM):</strong> Zero waiting; negotiation begins immediately.</li>
-          <li><strong>Georgia Contract-Ready Defect Language:</strong> Clear diagnostic summaries structured for seamless review and transfer onto standard Georgia repair amendments.</li>
-          <li><strong>Active SUPRA eKEY Access:</strong> Seamless entry with zero hassle for listing agents.</li>
-          <li><strong>$35,000 in Buyer Warranties:</strong> Includes InterNACHI's "We'll Buy Your Home Back" Guarantee.</li>
-          <li><strong>DeKalb Low-Flow Plumbing Certificate ($100 Flat):</strong> Official signed county compliance certificate issued on-site for pre-1993 DeKalb homes to eliminate closing table delays.</li>
-        </ul>
-      </div>
-
-      <div class="forward-box">
-        <strong>📲 1-Tap Buyer Forward Pass:</strong><br>
-        Feel free to pass this 1-click scheduler link directly to your buyers so they can lock in their inspection date today:<br>
-        <div style="margin-top:8px; font-weight:bold;">
-          <a href="${quoteUrl}" style="color: #2563eb;">${quoteUrl}</a>
-        </div>
-        <div style="font-size:12px; color:#64748b; margin-top:4px;">
-          (Address pre-filled with instant pricing and schedule selection)
-        </div>
-      </div>
-
-      <div style="text-align: center;">
-        <a href="${quoteUrl}" class="btn">⚡ View Due Diligence Reservation for ${address} &rarr;</a>
-      </div>
-
-      <p style="margin-bottom: 0;">
-        Best wishes on a fast, smooth closing!<br><br>
-        <strong>Christopher Boykin, CMI®</strong><br>
-        Lead Inspector &amp; Founder | Foresight Home Inspections, LLC<br>
-        <em>Certified Master Inspector® #MICB-1082 • InterNACHI #NACHI20061502</em><br>
-        Direct: <a href="tel:6784802110" style="color: #0f172a; font-weight: bold;">(678) 480-2110</a> | Email: <a href="mailto:inspect@foresightcmi.com" style="color: #0f172a;">inspect@foresightcmi.com</a><br>
-        <a href="https://www.fhinspectionsatl.com/realtors" style="color: #10b981; font-weight: bold;">Agent VIP Portal: fhinspectionsatl.com/realtors</a>
-      </p>
-    </div>
-    <div class="footer">
-      Foresight Home Inspections, LLC | 1816 South Deshon Road, Lithonia, GA 30058<br>
-      Serving Metro Atlanta &amp; 77+ Municipalities across 20 Counties.<br>
-      Professional notification based on Georgia public MLS contract status.<br>
-      <span style="font-size: 10px; color: #94a3b8;">Foresight Home Inspections is an independent inspection firm and is not affiliated with or endorsed by the Georgia Association of Realtors (GAR). Diagnostic summaries are provided for informational review by licensed real estate brokers and legal counsel.</span>
-    </div>
-  </div>
-</body>
-</html>
-  `;
-
-  return { subject, html };
+  return { subject, text, html };
 }
 
 // -------------------------------------------------------------
@@ -466,13 +408,38 @@ async function main() {
     console.warn('⚠️ [Due Diligence Engine] Live FMLS harvest warning:', err.message);
   }
 
-  // 1. Check Email & OpenSMS Credentials
+  // 1. Check Email & OpenSMS Credentials + Shared Cross-Engine SMTP Circuit Breaker
+  const SHARED_COOLDOWN_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'smtp_cooldown_state.json');
+  function getSharedCooldown() {
+    try {
+      if (!fs.existsSync(SHARED_COOLDOWN_FILE)) return { active: false };
+      const d = JSON.parse(fs.readFileSync(SHARED_COOLDOWN_FILE, 'utf8'));
+      if (d && d.cooldownUntil && new Date(d.cooldownUntil).getTime() > Date.now()) {
+        return { active: true, cooldownUntil: d.cooldownUntil, reason: d.reason };
+      }
+    } catch {}
+    return { active: false };
+  }
+  function setSharedCooldown(reason) {
+    try {
+      const payload = {
+        triggeredAt: new Date().toISOString(),
+        cooldownUntil: new Date(Date.now() + 24.25 * 3600 * 1000).toISOString(),
+        reason
+      };
+      fs.writeFileSync(SHARED_COOLDOWN_FILE, JSON.stringify(payload, null, 2), 'utf8');
+    } catch {}
+  }
+
   const { user, pass } = getEmailCredentials();
   const { apiKey: openSmsKey, gatewayUrl: configuredSmsUrl } = getOpenSmsConfig();
   let transporter = null;
   let canSendEmail = false;
+  const smtpCooldown = getSharedCooldown();
 
-  if (!pass) {
+  if (smtpCooldown.active) {
+    console.log(`🛡️ [Due Diligence Engine] Shared SMTP Circuit Breaker active until ${smtpCooldown.cooldownUntil}. Skipping SMTP to protect 24h reset (FMLS Harvest & OpenSMS remain active).`);
+  } else if (!pass) {
     console.warn('⚠️ [Due Diligence Engine] EMAIL_PASSWORD not found in environment/secrets.');
     console.log('ℹ️ [Due Diligence Engine] Running in Directory Scout & Verification mode (email dispatch handled by authenticated local daemon).');
   } else {
@@ -481,7 +448,7 @@ async function main() {
         service: 'gmail',
         pool: true,
         maxConnections: 1,
-        maxMessages: 200,
+        maxMessages: 45,
         auth: { user, pass }
       });
       await testTransporter.verify();
@@ -490,6 +457,9 @@ async function main() {
       console.log(`✅ [Due Diligence Engine] SMTP connection verified for ${user}`);
     } catch (err) {
       console.warn(`⚠️ [Due Diligence Engine] SMTP connection failed (${err.message}).`);
+      if (err.message.includes('454') || err.message.includes('550')) {
+        setSharedCooldown(`Due Diligence Verify Error: ${err.message}`);
+      }
       console.log('ℹ️ [Due Diligence Engine] Running in Directory Scout & Verification mode.');
     }
   }
@@ -576,13 +546,14 @@ async function main() {
         }
 
         console.log(`📤 [Due Diligence Engine] Dispatching Active Due Diligence Dossier to ${r.name} (${r.address}) <${r.email}>...`);
-        const { subject, html } = buildUnderContractEmail(r);
+        const { subject, text, html } = buildUnderContractEmail(r);
 
         try {
           await transporter.sendMail({
-            from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
+            from: `"Christopher Boykin, CMI" <${user}>`,
             to: r.email,
             subject,
+            text,
             html
           });
 
@@ -603,11 +574,12 @@ async function main() {
 
           sentUnderContractCount++;
           console.log(`  ✓ Transmitted successfully to ${r.name} for ${r.address}`);
-          await sleep(3000); // 3s safe spacing
+          await sleep(18000); // 18s safe spacing
         } catch (e) {
           console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
           if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
+            setSharedCooldown(`Due Diligence 550/454 limit reached (${r.email}): ${e.message}`);
+            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Locked shared 24h circuit breaker and halting cleanly.');
             quotaCeilingHit = true;
             break;
           }
