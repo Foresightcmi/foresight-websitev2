@@ -1,52 +1,52 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #5
+# 🚀 Foresight LinkedIn Growth Engine: Post #6
 
-**Schedule Slot:** Friday - Withdrawal (The High-Ticket Lead Funnel) (10:00 AM Weekday Cadence)  
-**Strategy Type:** WITHDRAWAL (1:4 High-Ticket Withdrawal)  
-**Topic:** Atlanta Real Estate Due Diligence Inspection: Same-Evening 2-Inspector Reports  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/drone-2.webp`  
-**Generated At:** 2026-10-16T17:48:49.228Z  
+**Schedule Slot:** Monday - Deposit (The Odorless Killer Enemy) (10:00 AM Weekday Cadence)  
+**Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
+**Topic:** Atlanta Radon Testing ($275): Silent Radon Spike in Alpharetta  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/radon-testing-banner.webp`  
+**Generated At:** 2026-10-19T19:39:51.239Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-Atlanta Real Estate Due Diligence Inspection: Why top buyer agents refuse 5-hour solo inspections.
+Atlanta Radon Testing ($275): This 2023 home on a hill in Alpharetta tested at nearly 3X the EPA action limit.
 
-When your client only has 5 to 7 days of due diligence, every hour counts.
+The buyer assumed high elevation meant zero environmental risk.
 
-Most solo inspector... [see more]
+We placed our cont... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-Atlanta Real Estate Due Diligence Inspection: Why top buyer agents refuse 5-hour solo inspections.
+Atlanta Radon Testing ($275): This 2023 home on a hill in Alpharetta tested at nearly 3X the EPA action limit.
 
-When your client only has 5 to 7 days of due diligence, every hour counts.
+The buyer assumed high elevation meant zero environmental risk.
 
-Most solo inspectors take 4 to 5 hours on-site and deliver 90-page PDFs that overwhelm buyers.
+We placed our continuous electronic radon monitor in the basement for 48 hours.
 
-Our Two-Inspector Protocol cuts on-site inspection time in half (1.5 to 2.5 hours).
+The reading came back at 11.4 pCi/L.
 
-One inspector audits the roof, structure, and crawlspace while the second tests electrical, HVAC, and plumbing.
+The EPA action guideline is 4.0 pCi/L.
 
-Calibrated infrared thermal imaging and 4K aerial drone scans are included standard.
+11.4 pCi/L is equivalent to smoking half a pack of cigarettes inside the home every day.
 
-We deliver same-evening digital reports that clearly separate cosmetic items from major structural defects.
+North Georgia sits on granite bedrock loaded with decaying uranium.
 
-Plus, every full inspection includes up to $35,000 in combined warranty and guarantee protection.
+You cannot smell radon. You cannot see it. You cannot taste it.
 
-Partner with our Certified Master Inspector team at the link below.
+The seller paid $1,800 to install an active sub-slab mitigation system before closing.
 
-Let's make due diligence smooth again.
+Never waive an environmental radon screen in North Metro Atlanta.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-Explore our Realtor VIP Due Diligence Program in Metro Atlanta: https://www.fhinspectionsatl.com/realtors
+Learn about EPA Radon Zone 1 risks & 48-hour continuous electronic testing ($275): https://www.fhinspectionsatl.com/services/radon-testing
 ```
 
 ---

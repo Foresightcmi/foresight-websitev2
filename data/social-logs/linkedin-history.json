@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-19T19:39:51.239Z",
+    "post_id": 6,
+    "topic": "Atlanta Radon Testing ($275): Silent Radon Spike in Alpharetta",
+    "type": "deposit",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
     "timestamp": "2026-10-16T17:48:49.228Z",
     "post_id": 5,
     "topic": "Atlanta Real Estate Due Diligence Inspection: Same-Evening 2-Inspector Reports",

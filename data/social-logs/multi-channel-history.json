@@ -140,5 +140,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/services/buyer-inspection"
+  },
+  {
+    "postId": 1,
+    "title": "The Two-Inspector Standard vs Solo Operators",
+    "publishedAt": "2026-10-19T19:39:51.596Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]
