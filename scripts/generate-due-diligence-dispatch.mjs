@@ -4,8 +4,24 @@ import path from 'path';
 const dataPath = path.resolve('data/under-contract-realtors.json');
 const fullFilers = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-// Minify the data payload by keeping only core fields
-const minifiedFilers = fullFilers.map(f => ({
+// Filter valid 10-digit phone agents (excluding NON-MLS placeholders) and keep the first 100 freshest Due Diligence deals
+const validFilers = fullFilers
+  .filter(f => {
+    const cleanPhone = (f.clean_phone || f.raw_phone || f.phone || '').replace(/[^0-9]/g, '');
+    if (cleanPhone.length !== 10) return false;
+    if (!f.name || /non-mls|nmls|unrepresented/i.test(f.name)) return false;
+    return true;
+  })
+  .sort((a, b) => {
+    const dCmp = (b.date || '').localeCompare(a.date || '');
+    if (dCmp !== 0) return dCmp;
+    if (a.role === 'BUYER_AGENT' && b.role !== 'BUYER_AGENT') return -1;
+    if (b.role === 'BUYER_AGENT' && a.role !== 'BUYER_AGENT') return 1;
+    return (b.raw_price || 0) - (a.raw_price || 0);
+  })
+  .slice(0, 100);
+
+const minifiedFilers = validFilers.map(f => ({
   id: f.id,
   role: f.role || 'LIST_AGENT',
   name: f.name,
@@ -20,7 +36,7 @@ const minifiedFilers = fullFilers.map(f => ({
   date: f.date || ''
 }));
 
-console.log(`Minified ${minifiedFilers.length} records for lightweight delivery.`);
+console.log(`Minified top ${minifiedFilers.length} due diligence records for lightweight delivery.`);
 
 const htmlContent = `<!DOCTYPE html>
 <html lang="en">
@@ -553,19 +569,19 @@ const htmlContent = `<!DOCTYPE html>
     <!-- Smart Tabs -->
     <div class="tabs-nav">
       <button class="tab-btn active live" id="tabLive" onclick="setTab('live')">
-        🔥 Live Due Diligence (<span id="liveTabCount">0</span>)
+        🔥 Top 100 Due Diligence (<span id="liveTabCount">0</span>)
       </button>
       <button class="tab-btn" id="tabContacted" onclick="setTab('contacted')">
         ✅ Sent (<span id="contactedTabCount">0</span>)
       </button>
       <button class="tab-btn" id="tabArchive" onclick="setTab('archive')">
-        📁 Archive (Past Deals) (<span id="archiveTabCount">0</span>)
+        📋 All 100 (<span id="archiveTabCount">0</span>)
       </button>
     </div>
   </div>
 
   <div class="filter-notice" id="filterNotice">
-    <span>Showing <b>live FMLS Pending / Under-Contract listings</b> in active due diligence (Buyer &amp; Listing Agents).</span>
+    <span>Showing the <b>first 100 freshest FMLS Pending / Under-Contract listings</b> in active due diligence (Buyer &amp; Listing Agents).</span>
   </div>
 
   <div id="cardsContainer"></div>
@@ -608,7 +624,7 @@ const htmlContent = `<!DOCTYPE html>
     let currentCity = 'ALL';
     let currentSort = 'date_desc';
     let searchQuery = '';
-    let displayLimit = 60;
+    let displayLimit = 100;
 
     async function checkOpenSmsStatus() {
       const badge = document.getElementById('openSmsStatusBadge');
@@ -809,19 +825,19 @@ const htmlContent = `<!DOCTYPE html>
       
       const notice = document.getElementById('filterNotice');
       if (tab === 'live') {
-        notice.innerHTML = 'Showing <b>live under-contract listings in active 5-day due diligence window (0–4 days old)</b>. High conversion priority.';
+        notice.innerHTML = 'Showing the <b>first 100 freshest under-contract listings in active 5-day due diligence window</b>. High conversion priority.';
       } else if (tab === 'contacted') {
         notice.innerHTML = 'Showing <b>contacted agents</b>. Timestamp shown below.';
       } else {
-        notice.innerHTML = 'Showing <b>historical contracts (&gt;5 days ago)</b>. Due diligence on these properties has already closed. Use these contacts for general agent relationship building or your 1-Click GAR F404 tool.';
+        notice.innerHTML = 'Showing <b>all 100 active due diligence listings</b> (both uncontacted and sent).';
       }
-      displayLimit = 60;
+      displayLimit = 100;
       renderCards();
     }
 
     function setCity(city) {
       currentCity = city;
-      displayLimit = 60;
+      displayLimit = 100;
       renderCards();
     }
 
@@ -832,12 +848,12 @@ const htmlContent = `<!DOCTYPE html>
 
     function handleSearch(val) {
       searchQuery = (val || '').toLowerCase().trim();
-      displayLimit = 60;
+      displayLimit = 100;
       renderCards();
     }
 
     function loadMore() {
-      displayLimit += 60;
+      displayLimit += 100;
       renderCards();
     }
 
@@ -863,14 +879,21 @@ const htmlContent = `<!DOCTYPE html>
       });
       const uncontactedCount = total - sentCount;
 
-      document.getElementById('sentCountDisplay').textContent = sentCount.toLocaleString();
-      document.getElementById('totalCountDisplay').textContent = total.toLocaleString();
-      document.getElementById('uncontactedTabCount').textContent = uncontactedCount.toLocaleString();
-      document.getElementById('contactedTabCount').textContent = sentCount.toLocaleString();
-      document.getElementById('allTabCount').textContent = total.toLocaleString();
+      const sentEl = document.getElementById('sentCountDisplay');
+      const totalEl = document.getElementById('totalCountDisplay');
+      const liveEl = document.getElementById('liveTabCount');
+      const contactedEl = document.getElementById('contactedTabCount');
+      const archiveEl = document.getElementById('archiveTabCount');
 
-      const pct = Math.round((sentCount / total) * 100);
-      document.getElementById('progressBar').style.width = pct + '%';
+      if (sentEl) sentEl.textContent = sentCount.toLocaleString();
+      if (totalEl) totalEl.textContent = total.toLocaleString();
+      if (liveEl) liveEl.textContent = uncontactedCount.toLocaleString();
+      if (contactedEl) contactedEl.textContent = sentCount.toLocaleString();
+      if (archiveEl) archiveEl.textContent = total.toLocaleString();
+
+      const pct = total > 0 ? Math.round((sentCount / total) * 100) : 0;
+      const barEl = document.getElementById('progressBar');
+      if (barEl) barEl.style.width = pct + '%';
     }
 
     function renderCards() {
@@ -878,7 +901,7 @@ const htmlContent = `<!DOCTYPE html>
       let filtered = underContractFilers;
 
       // 1. Tab filter
-      if (currentTab === 'uncontacted') {
+      if (currentTab === 'live' || currentTab === 'uncontacted') {
         filtered = filtered.filter(c => !isSent(c.id));
       } else if (currentTab === 'contacted') {
         filtered = filtered.filter(c => isSent(c.id));
