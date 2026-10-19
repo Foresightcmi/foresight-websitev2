@@ -659,8 +659,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/images/Logopng_small.webp" type="image/webp" sizes="96x96" />
-        <link rel="apple-touch-icon" href="/images/Logopng_small.webp" />
+        <link rel="icon" href="/images/Logopng-small.webp" type="image/webp" sizes="96x96" />
+        <link rel="apple-touch-icon" href="/images/Logopng-small.webp" />
         <link rel="preload" as="image" href="/images/luxury-home-mobile.webp" type="image/webp" media="(max-width: 640px)" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/luxury-home.webp" type="image/webp" media="(min-width: 641px)" fetchPriority="high" />
         <meta name="geo.region" content="US-GA" />

@@ -9,7 +9,7 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "/images/Logopng_small.webp",
+      "src": "/images/Logopng-small.webp",
       "sizes": "192x192",
       "type": "image/webp",
       "purpose": "any maskable"

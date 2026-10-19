@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    inlineCss: true,
+  },
   // Normalize URLs to remove trailing slashes for duplicate content SEO safety
   trailingSlash: false,
   // Automatic compression of static assets (gzip, brotli)
