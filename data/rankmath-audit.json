@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-19T09:33:16.849Z",
+  "timestamp": "2026-10-19T09:36:35.076Z",
   "overallScore": 86,
   "grade": "GOOD",
   "totalAuditedPages": 10,
@@ -201,14 +201,14 @@
       "score": 90,
       "scoreGrade": "EXCELLENT",
       "meta": {
-        "title": "Atlanta, GA Home Inspection &amp; Home Inspectors | ",
-        "metaDescription": "4.9★ Atlanta, GA full home inspection from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp;  warranty protection!",
+        "title": "Atlanta, GA Home Inspection &amp; Home Inspectors | $345",
+        "metaDescription": "4.9★ Atlanta, GA full home inspection from $345 ($295 condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp; $35k warranty protection!",
         "canonical": "https://www.fhinspectionsatl.com/service-areas/atlanta",
         "h1": "Atlanta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)",
-        "wordCount": 2392,
+        "wordCount": 2394,
         "keywordDensity": "0.08%",
-        "titlePixelWidth": "440px",
-        "descPixelWidth": "1003px",
+        "titlePixelWidth": "479px",
+        "descPixelWidth": "1100px",
         "fleschScore": "32/100",
         "schemas": [
           "HomeAndConstructionBusiness",
@@ -229,7 +229,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Atlanta, GA Home Inspection &amp; Home Inspectors | \""
+          "detail": "Found in title: \"Atlanta, GA Home Inspection &amp; Home Inspectors | $345\""
         },
         {
           "category": "Basic SEO",
@@ -237,7 +237,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"4.9★ Atlanta, GA full home inspection from  ( condos). 2 cer...\""
+          "detail": "Found in description: \"4.9★ Atlanta, GA full home inspection from $345 ($295 condos...\""
         },
         {
           "category": "Basic SEO",
@@ -269,7 +269,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "2392 words detected (Threshold: >=600 words)"
+          "detail": "2394 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -325,7 +325,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "440px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "479px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -333,7 +333,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "148 chars / ~1003px (Target: 135-160 chars)"
+          "detail": "160 chars / ~1100px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
@@ -399,14 +399,14 @@
       "score": 86,
       "scoreGrade": "GOOD",
       "meta": {
-        "title": "Marietta, GA Home Inspection &amp; Home Inspectors | ",
-        "metaDescription": "4.9★ Marietta, GA full home inspection from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp;  warranty protection!",
+        "title": "Marietta, GA Home Inspection &amp; Home Inspectors | $345",
+        "metaDescription": "4.9★ Marietta, GA full home inspection from $345 ($295 condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp; $35k warranty protection!",
         "canonical": "https://www.fhinspectionsatl.com/service-areas/marietta",
         "h1": "Marietta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)",
-        "wordCount": 2459,
+        "wordCount": 2460,
         "keywordDensity": "0.04%",
-        "titlePixelWidth": "455px",
-        "descPixelWidth": "1016px",
+        "titlePixelWidth": "494px",
+        "descPixelWidth": "1112px",
         "fleschScore": "32/100",
         "schemas": [
           "HomeAndConstructionBusiness",
@@ -427,7 +427,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Marietta, GA Home Inspection &amp; Home Inspectors | \""
+          "detail": "Found in title: \"Marietta, GA Home Inspection &amp; Home Inspectors | $345\""
         },
         {
           "category": "Basic SEO",
@@ -435,7 +435,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"4.9★ Marietta, GA full home inspection from  ( condos). 2 ce...\""
+          "detail": "Found in description: \"4.9★ Marietta, GA full home inspection from $345 ($295 condo...\""
         },
         {
           "category": "Basic SEO",
@@ -467,7 +467,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "2459 words detected (Threshold: >=600 words)"
+          "detail": "2460 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -523,7 +523,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "455px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "494px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -531,7 +531,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "149 chars / ~1016px (Target: 135-160 chars)"
+          "detail": "161 chars / ~1112px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
@@ -597,14 +597,14 @@
       "score": 82,
       "scoreGrade": "GOOD",
       "meta": {
-        "title": "Alpharetta, GA Home Inspection &amp; Home Inspectors | ",
-        "metaDescription": "4.9★ Alpharetta, GA full home inspection from  ( condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp;  warranty protection!",
+        "title": "Alpharetta, GA Home Inspection &amp; Home Inspectors | $345",
+        "metaDescription": "4.9★ Alpharetta, GA full home inspection from $345 ($295 condos). 2 certified home inspectors on every job, free thermal, 4K drones &amp; $35k warranty protection!",
         "canonical": "https://www.fhinspectionsatl.com/service-areas/alpharetta",
         "h1": "Alpharetta, GA Home Inspections &amp; Certified Home Inspectors: Two Certified Inspectors on Every Job (From $345)",
-        "wordCount": 2451,
+        "wordCount": 2452,
         "keywordDensity": "0.04%",
-        "titlePixelWidth": "467px",
-        "descPixelWidth": "1025px",
+        "titlePixelWidth": "506px",
+        "descPixelWidth": "1121px",
         "fleschScore": "29/100",
         "schemas": [
           "HomeAndConstructionBusiness",
@@ -625,7 +625,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"Alpharetta, GA Home Inspection &amp; Home Inspectors | \""
+          "detail": "Found in title: \"Alpharetta, GA Home Inspection &amp; Home Inspectors | $345\""
         },
         {
           "category": "Basic SEO",
@@ -633,7 +633,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"4.9★ Alpharetta, GA full home inspection from  ( condos). 2 ...\""
+          "detail": "Found in description: \"4.9★ Alpharetta, GA full home inspection from $345 ($295 con...\""
         },
         {
           "category": "Basic SEO",
@@ -665,7 +665,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "2451 words detected (Threshold: >=600 words)"
+          "detail": "2452 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -721,7 +721,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "467px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "506px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -729,7 +729,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "151 chars / ~1025px (Target: 135-160 chars)"
+          "detail": "163 chars / ~1121px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
@@ -1185,13 +1185,13 @@
       "score": 84,
       "scoreGrade": "GOOD",
       "meta": {
-        "title": "New Construction Inspection Atlanta GA | From $400 | Foresight | Foresight",
+        "title": "New Construction Inspection Atlanta GA | From $400 | Foresight",
         "metaDescription": "Independent new construction &amp; pre-drywall home inspections in Metro Atlanta. Two certified inspectors, infrared thermal scans &amp; builder-ready punch lists. From $400.",
         "canonical": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
         "h1": "New Construction &amp; Phased Inspection in Metro Atlanta",
-        "wordCount": 954,
+        "wordCount": 953,
         "keywordDensity": "0.42%",
-        "titlePixelWidth": "597px",
+        "titlePixelWidth": "507px",
         "descPixelWidth": "1195px",
         "fleschScore": "27/100",
         "schemas": [
@@ -1210,7 +1210,7 @@
           "pointsMax": 7,
           "pointsAwarded": 7,
           "status": "PASS",
-          "detail": "Found in title: \"New Construction Inspection Atlanta GA | From $400 | Foresight | Foresight\""
+          "detail": "Found in title: \"New Construction Inspection Atlanta GA | From $400 | Foresight\""
         },
         {
           "category": "Basic SEO",
@@ -1250,7 +1250,7 @@
           "pointsMax": 7,
           "pointsAwarded": 5,
           "status": "PASS",
-          "detail": "954 words detected (Threshold: >=600 words)"
+          "detail": "953 words detected (Threshold: >=600 words)"
         },
         {
           "category": "Additional SEO",
@@ -1306,7 +1306,7 @@
           "pointsMax": 4,
           "pointsAwarded": 4,
           "status": "PASS",
-          "detail": "597px (Google Desktop Limit: 600px, Mobile: 540px)"
+          "detail": "507px (Google Desktop Limit: 600px, Mobile: 540px)"
         },
         {
           "category": "Title Readability",
@@ -1770,13 +1770,13 @@
       "scoreGrade": "EXCELLENT",
       "meta": {
         "title": "Realtor VIP Program | Home Inspector Atlanta | Foresight",
-        "metaDescription": "Join Foresight Home Inspections&#x27; exclusive Realtor VIP Program. SUPRA lockbox access, priority scheduling, and $10,000 warranty protection for your buyers. Serving 163+ Metro Atlanta cities.",
+        "metaDescription": "Join Foresight Home Inspections&#x27; Realtor VIP Program in Metro Atlanta. Active SUPRA eKEY access, 2-inspector CMI team, GAR F404 builder &amp; $35,000 warranty.",
         "canonical": "https://www.fhinspectionsatl.com/realtors",
         "h1": "Your Negotiation Asset.Never a Deal Killer.",
         "wordCount": 2160,
         "keywordDensity": "0.51%",
         "titlePixelWidth": "445px",
-        "descPixelWidth": "1334px",
+        "descPixelWidth": "1150px",
         "fleschScore": "36/100",
         "schemas": [
           "HomeAndConstructionBusiness",
@@ -1799,7 +1799,7 @@
           "pointsMax": 6,
           "pointsAwarded": 6,
           "status": "PASS",
-          "detail": "Found in description: \"Join Foresight Home Inspections&#x27; exclusive Realtor VIP ...\""
+          "detail": "Found in description: \"Join Foresight Home Inspections&#x27; Realtor VIP Program in...\""
         },
         {
           "category": "Basic SEO",
@@ -1895,7 +1895,7 @@
           "pointsMax": 3,
           "pointsAwarded": 2,
           "status": "WARN",
-          "detail": "195 chars / ~1334px (Target: 135-160 chars)"
+          "detail": "164 chars / ~1150px (Target: 135-160 chars)"
         },
         {
           "category": "Title Readability",
