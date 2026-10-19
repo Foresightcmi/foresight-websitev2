@@ -364,7 +364,7 @@ export default function Home() {
 
             {/* Video Feature & Direct-Response Summary */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div style={{ background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: 'var(--radius-md)', padding: '1.75rem', backdropFilter: 'blur(8px)' }}>
+              <div style={{ background: '#0F172A', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: 'var(--radius-md)', padding: '1.75rem' }}>
                 <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   What You Will See In This Field Audit
                 </span>
