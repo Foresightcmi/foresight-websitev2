@@ -345,8 +345,10 @@ export default async function ServiceCityPage({ params }) {
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
+      "image": "https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg",
       "telephone": "+1-678-480-2110",
       "email": "inspect@foresightcmi.com",
+      "priceRange": "$$$",
       "hasMap": "https://maps.google.com/?cid=10862078652033010531",
       "sameAs": [
         "https://maps.google.com/?cid=10862078652033010531",

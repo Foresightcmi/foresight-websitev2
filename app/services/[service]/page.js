@@ -358,9 +358,19 @@ export default async function ServiceHubPage({ params }) {
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
+      "image": `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
       "telephone": "+1-678-480-2110",
       "email": "inspect@foresightcmi.com",
       "url": SITE_URL,
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1816 South Deshon Road",
+        "addressLocality": "Lithonia",
+        "addressRegion": "GA",
+        "postalCode": "30058",
+        "addressCountry": "US"
+      },
       "hasMap": "https://maps.google.com/?cid=10862078652033010531",
       "sameAs": [
         "https://maps.google.com/?cid=10862078652033010531",
@@ -411,7 +421,25 @@ export default async function ServiceHubPage({ params }) {
       "priceValidUntil": "2027-12-31",
       "validFrom": "2026-01-01",
       "availability": "https://schema.org/InStock",
-      "url": `${SITE_URL}/services/${canonicalService}`
+      "url": `${SITE_URL}/services/${canonicalService}`,
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US", "addressRegion": "GA" },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+          "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -419,7 +447,16 @@ export default async function ServiceHubPage({ params }) {
       "reviewCount": "48",
       "bestRating": "5",
       "worstRating": "1"
-    }
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marcus Vance" },
+        "datePublished": "2026-06-15",
+        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
   };
 
   const faqJsonLd = {

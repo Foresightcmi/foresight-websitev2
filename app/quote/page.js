@@ -28,7 +28,17 @@ const webAppSchema = {
   },
   "author": {
     "@type": "HomeAndConstructionBusiness",
-    "name": "Foresight Home Inspections, LLC"
+    "name": "Foresight Home Inspections, LLC",
+    "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
+    "telephone": "+1-678-480-2110",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1816 South Deshon Road",
+      "addressLocality": "Lithonia",
+      "addressRegion": "GA",
+      "postalCode": "30058",
+      "addressCountry": "US"
+    }
   }
 };
 

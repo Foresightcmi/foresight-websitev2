@@ -24,6 +24,7 @@ export default function QuoteLayout({ children }) {
     "publisher": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
+      "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
       "telephone": "678-480-2110",
       "email": "inspect@foresightcmi.com",
       "priceRange": "$$$",

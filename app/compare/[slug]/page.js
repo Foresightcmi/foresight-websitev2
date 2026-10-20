@@ -72,7 +72,7 @@ export default async function ComparisonPage({ params }) {
     "headline": item.title,
     "description": item.metaDescription,
     "url": canonicalUrl,
-    ...(item.image ? { "image": `${SITE_URL}${item.image}` } : {}),
+    "image": item.image ? `${SITE_URL}${item.image}` : `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
     "author": {
       "@type": "Person",
       "name": "Christopher Boykin",

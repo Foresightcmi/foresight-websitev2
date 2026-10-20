@@ -162,10 +162,12 @@ export default async function CityPage({ params }) {
     "url": `https://www.fhinspectionsatl.com/service-areas/${slug}`,
     "serviceType": "Home Inspection",
     "provider": {
-      "@type": "ProfessionalService",
+      "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
+      "image": "https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg",
       "telephone": "+1-678-480-2110",
       "email": "inspect@foresightcmi.com",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1816 South Deshon Road",

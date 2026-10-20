@@ -71,6 +71,7 @@ export default async function DefectPage({ params }) {
     "headline": defect.title,
     "description": defect.metaDescription,
     "url": canonicalUrl,
+    "image": defect.image ? `${SITE_URL}${defect.image}` : `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": [".ai-citation-bluf", "h1", "h2"]

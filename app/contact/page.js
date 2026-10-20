@@ -29,8 +29,10 @@ const contactSchema = {
         '@type': 'HomeAndConstructionBusiness',
         '@id': 'https://www.fhinspectionsatl.com/#business',
         name: 'Foresight Home Inspections, LLC',
+        image: 'https://www.fhinspectionsatl.com/images/Logopng.png',
         telephone: '+1-678-480-2110',
         email: 'inspect@foresightcmi.com',
+        priceRange: '$$$',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '1816 South Deshon Road',

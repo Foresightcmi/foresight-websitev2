@@ -104,8 +104,18 @@ export default function AtlantaSTRCompliancePage() {
     'provider': {
       '@type': 'HomeAndConstructionBusiness',
       'name': 'Foresight Home Inspections, LLC',
+      'image': `${SITE_URL}/images/Logopng.png`,
       'telephone': '+1-678-480-2110',
-      'url': SITE_URL
+      'url': SITE_URL,
+      'priceRange': '$$$',
+      'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': '1816 South Deshon Road',
+        'addressLocality': 'Lithonia',
+        'addressRegion': 'GA',
+        'postalCode': '30058',
+        'addressCountry': 'US'
+      }
     },
     'areaServed': {
       '@type': 'City',

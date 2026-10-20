@@ -42,8 +42,18 @@ const pressSchema = {
       worksFor: {
         '@type': 'HomeAndConstructionBusiness',
         name: 'Foresight Home Inspections, LLC',
+        image: `${SITE_URL}/images/Logopng.png`,
         url: SITE_URL,
         telephone: '+1-678-480-2110',
+        priceRange: '$$$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '1816 South Deshon Road',
+          addressLocality: 'Lithonia',
+          addressRegion: 'GA',
+          postalCode: '30058',
+          addressCountry: 'US',
+        },
       },
       hasCredential: [
         {

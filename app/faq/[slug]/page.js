@@ -90,6 +90,7 @@ export default async function ColonyQuestionPage({ params }) {
     '@type': 'Article',
     headline: item.question,
     description: item.metaDescription,
+    image: `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
     author: {
       '@type': 'Person',
       name: 'Christopher Boykin',

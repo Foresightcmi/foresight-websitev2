@@ -301,6 +301,11 @@ export default async function CountyPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(countyJsonLd) }}
       />
       <Script
+        id={`county-product-${county.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <Script
         id={`county-faq-${county.slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

@@ -89,10 +89,11 @@ export default async function BlogPost({ params }) {
         "sameAs": "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
       },
       "publisher": {
-        "@type": "Organization",
+        "@type": "HomeAndConstructionBusiness",
         "@id": "https://www.fhinspectionsatl.com/#business",
         "name": "Foresight Home Inspections, LLC",
         "url": "https://www.fhinspectionsatl.com",
+        "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.fhinspectionsatl.com/images/Logopng.png"

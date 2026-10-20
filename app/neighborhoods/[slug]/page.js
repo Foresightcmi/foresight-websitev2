@@ -86,6 +86,7 @@ export default async function NeighborhoodPage({ params }) {
     provider: {
       '@type': 'HomeAndConstructionBusiness',
       name: 'Foresight Home Inspections, LLC',
+      image: `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
       telephone: '+1-678-480-2110',
       priceRange: '$$$',
       address: {
