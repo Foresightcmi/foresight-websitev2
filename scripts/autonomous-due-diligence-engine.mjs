@@ -727,6 +727,21 @@ async function main() {
   fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
   console.log(`💾 [Due Diligence Engine] Updated outreach log (${outreachLog.length} total historical communications).`);
 
+  // 3b. Auto-Deploy Refreshed VIP Dispatcher & Due Diligence Pool to Live Site
+  try {
+    execSync('node scripts/generate-due-diligence-dispatch.mjs', { cwd: ROOT_DIR, stdio: 'ignore' });
+    execSync('git add public/vip-dispatch.html data/under-contract-realtors.json data/archive-under-contract-realtors.json data/due-diligence-outreach-log.json', { cwd: ROOT_DIR, stdio: 'ignore' });
+    const diffStatus = execSync('git diff --cached --name-only', { cwd: ROOT_DIR, encoding: 'utf8' }).trim();
+    if (diffStatus) {
+      const todayIso = new Date().toISOString().split('T')[0];
+      execSync(`git commit -m "chore(dispatch): auto-sync ${todayIso} FMLS due diligence harvest & vip-dispatch.html"`, { cwd: ROOT_DIR, stdio: 'ignore' });
+      execSync('git push origin main', { cwd: ROOT_DIR, stdio: 'ignore' });
+      console.log('🚀 [Due Diligence Engine] Auto-deployed refreshed public/vip-dispatch.html to origin/main.');
+    }
+  } catch (gitErr) {
+    console.warn('⚠️ [Due Diligence Engine] Git auto-deploy warning:', gitErr.message);
+  }
+
   // 4. Send Mobile Summary Alert
   const totalSentThisRun = sentUnderContractCount + sentLendersCount + sentOpenSmsCount;
   if ((canSendEmail || sentOpenSmsCount > 0) && (totalSentThisRun > 0 || newPendingHarvested > 0)) {
