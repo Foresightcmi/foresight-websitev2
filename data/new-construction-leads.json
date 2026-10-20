@@ -8408,5 +8408,34 @@
       "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
     ],
     "harvestedAt": "2026-10-19T18:13:04.140Z"
+  },
+  {
+    "recordId": "NC-7856292",
+    "mlsId": "7856292",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "1715 Eastside Parc St",
+    "address": "1715 Eastside Parc St, Atlanta, GA 30316",
+    "city": "Atlanta",
+    "zip": "30316",
+    "price": 685900,
+    "sqft": 2830,
+    "yearBuilt": 2026,
+    "beds": 5,
+    "baths": 4,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/1715-Eastside-Parc-St-SE-30316/home/199596979",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Audit (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $335)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
+    ],
+    "harvestedAt": "2026-10-20T16:13:28.226Z"
   }
 ]
