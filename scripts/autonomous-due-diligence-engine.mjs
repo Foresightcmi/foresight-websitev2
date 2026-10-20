@@ -464,7 +464,8 @@ async function main() {
     }
   }
 
-  // 2. Load Logs
+  // 2. Load Logs & Strict Person-Level Deduplication (Never Contact the Same Person Twice)
+  const PERMIT_LOG_FILE = path.join(ROOT_DIR, 'data', 'permit-outreach-log.json');
   let outreachLog = [];
   if (fs.existsSync(OUTREACH_LOG_FILE)) {
     try {
@@ -473,7 +474,14 @@ async function main() {
       outreachLog = [];
     }
   }
-  const contactedKeys = new Set(outreachLog.map(o => o.key));
+  let permitLog = [];
+  if (fs.existsSync(PERMIT_LOG_FILE)) {
+    try {
+      permitLog = JSON.parse(fs.readFileSync(PERMIT_LOG_FILE, 'utf8'));
+    } catch {
+      permitLog = [];
+    }
+  }
 
   // Load OpenSMS Logs
   let openSmsLog = [];
@@ -484,7 +492,21 @@ async function main() {
       openSmsLog = [];
     }
   }
-  const smsContactedPhones = new Set(openSmsLog.map(o => String(o.to || '').replace(/\D/g, '').slice(-10)));
+
+  const contactedKeys = new Set(outreachLog.map(o => o.key).filter(Boolean));
+  const contactedEmails = new Set([
+    ...outreachLog.map(o => String(o.email || '').trim().toLowerCase()).filter(Boolean),
+    ...permitLog.map(o => String(o.recipientEmail || '').trim().toLowerCase()).filter(Boolean)
+  ]);
+  const contactedNames = new Set([
+    ...outreachLog.map(o => String(o.targetName || '').trim().toLowerCase()).filter(Boolean),
+    ...openSmsLog.map(o => String(o.targetName || '').trim().toLowerCase()).filter(Boolean),
+    ...permitLog.map(o => String(o.recipientName || '').trim().toLowerCase()).filter(Boolean)
+  ]);
+  const smsContactedPhones = new Set([
+    ...openSmsLog.map(o => String(o.to || '').replace(/\D/g, '').slice(-10)).filter(p => p.length === 10),
+    ...outreachLog.map(o => String(o.phone || '').replace(/\D/g, '').slice(-10)).filter(p => p.length === 10)
+  ]);
 
   // Load Unsubscribed / Suppressions
   const suppressedEmails = new Set();
@@ -538,8 +560,18 @@ async function main() {
       for (const r of sorted) {
         if (quotaCeilingHit) break;
         if (!r.email || !r.email.includes('@')) continue;
+        const normEmail = String(r.email).trim().toLowerCase();
+        const normName = String(r.name || '').trim().toLowerCase();
+        const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
         const key = `CONTRACT_${r.id}_${r.email}`;
-        if (contactedKeys.has(key)) continue;
+        if (
+          contactedKeys.has(key) ||
+          contactedEmails.has(normEmail) ||
+          (normName && contactedNames.has(normName)) ||
+          (cleanPhone.length === 10 && smsContactedPhones.has(cleanPhone))
+        ) {
+          continue;
+        }
         if (isSuppressed(r.email, r.name, r.brokerage)) {
           console.log(`  🛡️ [Suppression Gate] Bypassed suppressed contact: ${r.name} (${r.email}) [Ansley / Unsubscribed Lockout]`);
           continue;
@@ -558,6 +590,9 @@ async function main() {
           });
 
           contactedKeys.add(key);
+          contactedEmails.add(normEmail);
+          if (normName) contactedNames.add(normName);
+          if (cleanPhone.length === 10) smsContactedPhones.add(cleanPhone);
           outreachLog.push({
             key,
             type: 'UNDER_CONTRACT_DUE_DILIGENCE',
@@ -567,6 +602,7 @@ async function main() {
             address: r.address,
             city: r.city,
             email: r.email,
+            phone: cleanPhone,
             date: r.date,
             timestamp: new Date().toISOString()
           });
@@ -606,8 +642,16 @@ async function main() {
         if (dealAgeDays < 0 || dealAgeDays > 4.5) continue;
 
         const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
+        const normName = String(r.name || '').trim().toLowerCase();
+        const normEmail = String(r.email || '').trim().toLowerCase();
         if (cleanPhone.length !== 10 || cleanPhone === '6788780215' || cleanPhone === '6784802110') continue;
-        if (smsContactedPhones.has(cleanPhone)) continue;
+        if (
+          smsContactedPhones.has(cleanPhone) ||
+          (normName && contactedNames.has(normName)) ||
+          (normEmail && contactedEmails.has(normEmail))
+        ) {
+          continue;
+        }
         if (r.email && isSuppressed(r.email, r.name, r.brokerage)) continue;
         if (/ansley|chapman group/i.test(r.brokerage || '') || /amy fuchs|joe chapman/i.test(r.name || '')) continue;
 
@@ -629,6 +673,8 @@ async function main() {
           if (smsRes.ok) {
             const smsData = await smsRes.json().catch(() => ({}));
             smsContactedPhones.add(cleanPhone);
+            if (normName) contactedNames.add(normName);
+            if (normEmail) contactedEmails.add(normEmail);
             openSmsLog.push({
               id: smsData.id || `sms_${Date.now()}`,
               leadId: r.id,
@@ -673,8 +719,16 @@ async function main() {
     if (canSendEmail && transporter) {
       for (const lo of loanOfficers) {
         if (quotaCeilingHit) break;
+        const normEmail = String(lo.email || '').trim().toLowerCase();
+        const normName = String(lo.name || '').trim().toLowerCase();
         const key = `LO_${lo.id}_${lo.email}`;
-        if (contactedKeys.has(key)) continue;
+        if (
+          contactedKeys.has(key) ||
+          (normEmail && contactedEmails.has(normEmail)) ||
+          (normName && contactedNames.has(normName))
+        ) {
+          continue;
+        }
         if (isSuppressed(lo.email, lo.name, lo.company)) {
           console.log(`  🛡️ [Suppression Gate] Bypassed suppressed loan officer: ${lo.name} (${lo.email})`);
           continue;
@@ -692,6 +746,8 @@ async function main() {
           });
 
           contactedKeys.add(key);
+          if (normEmail) contactedEmails.add(normEmail);
+          if (normName) contactedNames.add(normName);
           outreachLog.push({
             key,
             type: 'LOAN_OFFICER',

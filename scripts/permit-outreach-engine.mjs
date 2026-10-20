@@ -215,9 +215,35 @@ async function main() {
     }
   }
 
-  const contactedEmails = new Set(
-    outreachLog.filter(o => o.status === 'SENT').map(o => o.recipientEmail)
-  );
+  const DUE_DILIGENCE_LOG_FILE = path.join(ROOT_DIR, 'data', 'due-diligence-outreach-log.json');
+  let dueDiligenceLog = [];
+  if (fs.existsSync(DUE_DILIGENCE_LOG_FILE)) {
+    try {
+      dueDiligenceLog = JSON.parse(fs.readFileSync(DUE_DILIGENCE_LOG_FILE, 'utf8'));
+    } catch {
+      dueDiligenceLog = [];
+    }
+  }
+
+  const contactedEmails = new Set([
+    ...outreachLog
+      .filter(o => o.status === 'SENT')
+      .map(o => String(o.recipientEmail || '').trim().toLowerCase())
+      .filter(Boolean),
+    ...dueDiligenceLog
+      .map(o => String(o.email || '').trim().toLowerCase())
+      .filter(Boolean)
+  ]);
+
+  const contactedNames = new Set([
+    ...outreachLog
+      .filter(o => o.status === 'SENT')
+      .map(o => String(o.recipientName || '').trim().toLowerCase())
+      .filter(Boolean),
+    ...dueDiligenceLog
+      .map(o => String(o.targetName || '').trim().toLowerCase())
+      .filter(Boolean)
+  ]);
 
   // Enriched contact intelligence for verified permits
   const enrichedLeads = leads.map(l => {
@@ -251,13 +277,16 @@ async function main() {
 
   const TRADE_SUBCONTRACTOR_REGEX = /plumb|electr|hvac|heat|air|roof|solar|drain|rooter|sewer|mech|generator|dekalbcountyga\.gov|expedit|sign|pool|fence|paving|grading|demo|fire|alarm|sprinkler|restore|remediat|mitigat|llc|inc\b|corp|homes|builders|construction|development|holdings|mhp|boavida/i;
   const seenEmailsInQueue = new Set();
+  const seenNamesInQueue = new Set();
   const suppressedEmails = loadSuppressedEmails();
   console.log(`🛡️ [Outreach Engine] Loaded ${suppressedEmails.size} suppressed contacts.`);
 
   const queue = enrichedLeads.filter(l => {
     if (!l.ownerEmail) return false;
     const normEmail = l.ownerEmail.trim().toLowerCase();
+    const normName = String(l.ownerName || '').trim().toLowerCase();
     if (contactedEmails.has(normEmail) || seenEmailsInQueue.has(normEmail)) return false;
+    if (normName && (contactedNames.has(normName) || seenNamesInQueue.has(normName))) return false;
     if (suppressedEmails.has(normEmail)) return false;
     if (!routePermitLead(l)) return false; // Strictly New Construction or STR only (remodels/additions excluded)
 
@@ -273,6 +302,7 @@ async function main() {
       const combinedText = `${l.ownerName || ''} ${l.ownerEmail || ''} ${l.permitName || ''}`;
       if (TRADE_SUBCONTRACTOR_REGEX.test(combinedText)) return false;
       seenEmailsInQueue.add(normEmail);
+      if (normName) seenNamesInQueue.add(normName);
       return true;
     }
 
@@ -280,6 +310,7 @@ async function main() {
     const isNewBuild = type.includes('new');
     if (isSTR || isNewBuild) {
       seenEmailsInQueue.add(normEmail);
+      if (normName) seenNamesInQueue.add(normName);
       return true;
     }
     return false;

@@ -4,22 +4,57 @@ import path from 'path';
 const dataPath = path.resolve('data/under-contract-realtors.json');
 const fullFilers = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-// Filter valid 10-digit phone agents (excluding NON-MLS placeholders) and keep the first 100 freshest Due Diligence deals
-const validFilers = fullFilers
-  .filter(f => {
-    const cleanPhone = (f.clean_phone || f.raw_phone || f.phone || '').replace(/[^0-9]/g, '');
-    if (cleanPhone.length !== 10) return false;
-    if (!f.name || /non-mls|nmls|unrepresented/i.test(f.name)) return false;
-    return true;
-  })
-  .sort((a, b) => {
-    const dCmp = (b.date || '').localeCompare(a.date || '');
-    if (dCmp !== 0) return dCmp;
-    if (a.role === 'BUYER_AGENT' && b.role !== 'BUYER_AGENT') return -1;
-    if (b.role === 'BUYER_AGENT' && a.role !== 'BUYER_AGENT') return 1;
-    return (b.raw_price || 0) - (a.raw_price || 0);
-  })
-  .slice(0, 100);
+// Load historical outreach logs so we NEVER display or text the same person twice
+const outreachLogPath = path.resolve('data/due-diligence-outreach-log.json');
+const openSmsLogPath = path.resolve('data/opensms-outreach-log.json');
+const outreachLog = fs.existsSync(outreachLogPath) ? JSON.parse(fs.readFileSync(outreachLogPath, 'utf8')) : [];
+const openSmsLog = fs.existsSync(openSmsLogPath) ? JSON.parse(fs.readFileSync(openSmsLogPath, 'utf8')) : [];
+
+const contactedPhones = new Set([
+  ...openSmsLog.map(o => String(o.to || '').replace(/\D/g, '').slice(-10)).filter(p => p.length === 10),
+  ...outreachLog.map(o => String(o.phone || '').replace(/\D/g, '').slice(-10)).filter(p => p.length === 10)
+]);
+const contactedNames = new Set([
+  ...outreachLog.map(o => String(o.targetName || '').trim().toLowerCase()).filter(Boolean),
+  ...openSmsLog.map(o => String(o.targetName || '').trim().toLowerCase()).filter(Boolean)
+]);
+const contactedEmails = new Set([
+  ...outreachLog.map(o => String(o.email || '').trim().toLowerCase()).filter(Boolean)
+]);
+
+const sortedFilers = [...fullFilers].sort((a, b) => {
+  const dCmp = (b.date || '').localeCompare(a.date || '');
+  if (dCmp !== 0) return dCmp;
+  if (a.role === 'BUYER_AGENT' && b.role !== 'BUYER_AGENT') return -1;
+  if (b.role === 'BUYER_AGENT' && a.role !== 'BUYER_AGENT') return 1;
+  return (b.raw_price || 0) - (a.raw_price || 0);
+});
+
+const seenPhones = new Set();
+const seenNames = new Set();
+const seenEmails = new Set();
+
+// Filter valid 10-digit phone agents, strictly deduplicate per person, and keep up to 150 brand-new Due Diligence deals
+const validFilers = [];
+for (const f of sortedFilers) {
+  const cleanPhone = (f.clean_phone || f.raw_phone || f.phone || '').replace(/[^0-9]/g, '').slice(-10);
+  if (cleanPhone.length !== 10 || cleanPhone === '6788780215' || cleanPhone === '6784802110') continue;
+  if (!f.name || /non-mls|nmls|unrepresented/i.test(f.name)) continue;
+  if (/ansley|chapman group/i.test(f.brokerage || '') || /amy fuchs|joe chapman/i.test(f.name || '')) continue;
+
+  const normName = f.name.trim().toLowerCase();
+  const normEmail = String(f.email || '').trim().toLowerCase();
+
+  // Exclude if already contacted in historical logs or already added in this batch
+  if (contactedPhones.has(cleanPhone) || contactedNames.has(normName) || (normEmail && contactedEmails.has(normEmail))) continue;
+  if (seenPhones.has(cleanPhone) || seenNames.has(normName) || (normEmail && seenEmails.has(normEmail))) continue;
+
+  seenPhones.add(cleanPhone);
+  seenNames.add(normName);
+  if (normEmail) seenEmails.add(normEmail);
+  validFilers.push(f);
+  if (validFilers.length >= 150) break;
+}
 
 const minifiedFilers = validFilers.map(f => ({
   id: f.id,
@@ -569,19 +604,19 @@ const htmlContent = `<!DOCTYPE html>
     <!-- Smart Tabs -->
     <div class="tabs-nav">
       <button class="tab-btn active live" id="tabLive" onclick="setTab('live')">
-        🔥 Top 100 Due Diligence (<span id="liveTabCount">0</span>)
+        🔥 Top 150 Due Diligence (<span id="liveTabCount">0</span>)
       </button>
       <button class="tab-btn" id="tabContacted" onclick="setTab('contacted')">
         ✅ Sent (<span id="contactedTabCount">0</span>)
       </button>
       <button class="tab-btn" id="tabArchive" onclick="setTab('archive')">
-        📋 All 100 (<span id="archiveTabCount">0</span>)
+        📋 All 150 (<span id="archiveTabCount">0</span>)
       </button>
     </div>
   </div>
 
   <div class="filter-notice" id="filterNotice">
-    <span>Showing the <b>first 100 freshest FMLS Pending / Under-Contract listings</b> in active due diligence (Buyer &amp; Listing Agents).</span>
+    <span>Showing <b>up to 150 brand-new unique FMLS Pending / Under-Contract agents</b> in active due diligence (100% deduplicated per person).</span>
   </div>
 
   <div id="cardsContainer"></div>
@@ -593,7 +628,7 @@ const htmlContent = `<!DOCTYPE html>
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
     const OPENSMS_KEY_STORAGE = 'foresight_opensms_api_key';
     const OPENSMS_URL_STORAGE = 'foresight_opensms_gateway_url';
-    let sentMap = {}; // { cardId: timestamp }
+    let sentMap = {}; // { cardId / PHONE_xxx / NAME_xxx: timestamp }
     let openSmsKey = localStorage.getItem(OPENSMS_KEY_STORAGE) || '';
     let openSmsGatewayUrl = localStorage.getItem(OPENSMS_URL_STORAGE) || '';
     let openSmsServerConfigured = false;
@@ -624,7 +659,7 @@ const htmlContent = `<!DOCTYPE html>
     let currentCity = 'ALL';
     let currentSort = 'date_desc';
     let searchQuery = '';
-    let displayLimit = 100;
+    let displayLimit = 150;
 
     async function checkOpenSmsStatus() {
       const badge = document.getElementById('openSmsStatusBadge');
@@ -688,7 +723,20 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     function isSent(id) {
+      const card = underContractFilers.find(c => c.id === id);
+      if (card) {
+        const phoneKey = card.clean_phone ? 'PHONE_' + card.clean_phone : '';
+        const nameKey = card.name ? 'NAME_' + card.name.toLowerCase().trim() : '';
+        if (phoneKey && sentMap[phoneKey]) return true;
+        if (nameKey && sentMap[nameKey]) return true;
+      }
       return Boolean(sentMap[id]);
+    }
+
+    function recordPersonSent(id, cleanPhone, name, statusText) {
+      sentMap[id] = statusText;
+      if (cleanPhone) sentMap['PHONE_' + cleanPhone] = statusText;
+      if (name) sentMap['NAME_' + String(name).toLowerCase().trim()] = statusText;
     }
 
     async function markSent(id, smsLink, cleanPhone, textBody, name, address, role) {
@@ -706,7 +754,7 @@ const htmlContent = `<!DOCTYPE html>
             body: JSON.stringify({ number: '+1' + cleanPhone, text: textBody })
           });
           if (directRes.ok) {
-            sentMap[id] = 'OpenSMS Sent ' + nowStr;
+            recordPersonSent(id, cleanPhone, name, 'OpenSMS Sent ' + nowStr);
             saveState();
             renderStats();
             renderCards();
@@ -732,7 +780,7 @@ const htmlContent = `<!DOCTYPE html>
           });
           const data = await res.json();
           if (res.ok && data.ok) {
-            sentMap[id] = 'OpenSMS Sent ' + nowStr;
+            recordPersonSent(id, cleanPhone, name, 'OpenSMS Sent ' + nowStr);
             saveState();
             renderStats();
             renderCards();
@@ -742,7 +790,7 @@ const htmlContent = `<!DOCTYPE html>
           console.warn('OpenSMS fallback to native:', e);
         }
       }
-      sentMap[id] = 'Sent ' + nowStr;
+      recordPersonSent(id, cleanPhone, name, 'Sent ' + nowStr);
       saveState();
       renderStats();
       renderCards();
@@ -806,11 +854,16 @@ const htmlContent = `<!DOCTYPE html>
     }
 
     function toggleSent(id) {
-      if (sentMap[id]) {
+      const card = underContractFilers.find(c => c.id === id);
+      const phoneKey = card && card.clean_phone ? 'PHONE_' + card.clean_phone : '';
+      const nameKey = card && card.name ? 'NAME_' + card.name.toLowerCase().trim() : '';
+      if (isSent(id)) {
         delete sentMap[id];
+        if (phoneKey) delete sentMap[phoneKey];
+        if (nameKey) delete sentMap[nameKey];
       } else {
         const nowStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
-        sentMap[id] = 'Sent ' + nowStr;
+        recordPersonSent(id, card ? card.clean_phone : '', card ? card.name : '', 'Sent ' + nowStr);
       }
       saveState();
       renderStats();
@@ -825,19 +878,19 @@ const htmlContent = `<!DOCTYPE html>
       
       const notice = document.getElementById('filterNotice');
       if (tab === 'live') {
-        notice.innerHTML = 'Showing the <b>first 100 freshest under-contract listings in active 5-day due diligence window</b>. High conversion priority.';
+        notice.innerHTML = 'Showing <b>up to 150 brand-new unique FMLS under-contract agents in active 5-day due diligence window</b> (100% deduplicated per person).';
       } else if (tab === 'contacted') {
         notice.innerHTML = 'Showing <b>contacted agents</b>. Timestamp shown below.';
       } else {
-        notice.innerHTML = 'Showing <b>all 100 active due diligence listings</b> (both uncontacted and sent).';
+        notice.innerHTML = 'Showing <b>all 150 brand-new unique due diligence listings</b> (both uncontacted and sent).';
       }
-      displayLimit = 100;
+      displayLimit = 150;
       renderCards();
     }
 
     function setCity(city) {
       currentCity = city;
-      displayLimit = 100;
+      displayLimit = 150;
       renderCards();
     }
 
@@ -848,12 +901,12 @@ const htmlContent = `<!DOCTYPE html>
 
     function handleSearch(val) {
       searchQuery = (val || '').toLowerCase().trim();
-      displayLimit = 100;
+      displayLimit = 150;
       renderCards();
     }
 
     function loadMore() {
-      displayLimit += 100;
+      displayLimit += 150;
       renderCards();
     }
 

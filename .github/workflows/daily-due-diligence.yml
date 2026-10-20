@@ -34,10 +34,13 @@ jobs:
           EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
 
-      - name: Commit and Push Outreach Logs & CRM Records
+      - name: Regenerate & Deploy Top 150 Brand-New VIP Due Diligence Dispatcher
+        run: node scripts/generate-due-diligence-dispatch.mjs
+
+      - name: Commit and Push Outreach Logs & VIP Dispatcher
         run: |
           git config user.name "Foresight Scout Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/due-diligence-outreach-log.json data/loan-officers.json data/under-contract-realtors.json
-          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily due diligence scout and dispatch [skip ci]" && git pull --rebase origin main && git push origin main) || echo "Outreach logs clean or push bypassed."
+          git add public/vip-dispatch.html data/due-diligence-outreach-log.json data/loan-officers.json data/under-contract-realtors.json data/archive-under-contract-realtors.json
+          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily 150 brand-new due diligence scout and vip-dispatch sync" && git pull --rebase origin main && git push origin main) || echo "Outreach logs clean or push bypassed."
 
