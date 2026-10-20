@@ -3,7 +3,7 @@ export default function robots() {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/api/mcp'],
+        allow: ['/', '/api/mcp', '/videos', '/videos/'],
         disallow: [
           '/private/',
           '/api/chat',
@@ -15,14 +15,15 @@ export default function robots() {
           '/dispatch.html',
           '/warranty-dispatch',
           '/warranty-dispatch.html',
-          '/videos/',
+          '/videos/chris-avatar*',
           '/audio/',
           '/sample-report/'
         ],
       },
       {
         userAgent: 'Googlebot-Video',
-        disallow: ['/videos/', '/sample-report/'],
+        allow: ['/videos', '/videos/'],
+        disallow: ['/videos/chris-avatar*', '/sample-report/'],
       },
       {
         userAgent: 'GPTBot',
