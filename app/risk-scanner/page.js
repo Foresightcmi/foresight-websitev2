@@ -79,6 +79,7 @@ const softwareAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'Georgia Property Risk & Age Diagnostic Scanner',
+  image: `${SITE_URL}/images/Logopng.png`,
   applicationCategory: 'RealEstateApplication',
   operatingSystem: 'All',
   url: `${SITE_URL}/risk-scanner`,
@@ -87,6 +88,9 @@ const softwareAppSchema = {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
+    priceValidUntil: '2027-12-31',
+    validThrough: '2027-12-31',
+    validFrom: '2026-01-01',
   },
   provider: {
     '@type': 'HomeAndConstructionBusiness',

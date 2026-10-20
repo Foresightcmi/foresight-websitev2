@@ -18,13 +18,17 @@ const webAppSchema = {
   "@type": "WebApplication",
   "name": "Foresight Home Inspection Fee & Leverage Calculator",
   "url": "https://www.fhinspectionsatl.com/quote",
+  "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "All",
   "description": "Interactive fee estimator and buyer negotiation leverage calculator for Metro Atlanta home inspections.",
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD"
+    "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31",
+    "validThrough": "2027-12-31",
+    "validFrom": "2026-01-01"
   },
   "author": {
     "@type": "HomeAndConstructionBusiness",

@@ -335,12 +335,32 @@ export default async function ServiceCityPage({ params }) {
     ]
   };
 
+  const serviceImages = {
+    'sewer-scope-inspection': `${SITE_URL}/images/sewer-scope.png`,
+    'pool-spa-inspection': `${SITE_URL}/images/pool-inspecting.png`,
+    'pool-inspection': `${SITE_URL}/images/pool-inspecting.png`,
+    'thermal-imaging': `${SITE_URL}/images/thermal-1.png`,
+    'mold-testing': `${SITE_URL}/images/thermal-1.png`,
+    'mold-inspection': `${SITE_URL}/images/thermal-1.png`,
+    'termite-inspection': `${SITE_URL}/images/crawlspace.png`,
+    'termite-wdo-inspection': `${SITE_URL}/images/crawlspace.png`,
+    '11-month-warranty-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'pre-listing-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'new-construction-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'pre-drywall-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'commercial-property-inspection': `${SITE_URL}/images/luxury-home.jpg`,
+    'buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
+    'home-buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`
+  };
+  const primaryProductImage = serviceImages[normalizedService] || serviceImages[resolvedParams.service] || `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`;
+
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${canonicalUrl}#service`,
     "name": `${serviceName} in ${cityName}, GA`,
     "url": canonicalUrl,
+    "image": primaryProductImage,
     "serviceType": serviceName,
     "provider": {
       "@type": "HomeAndConstructionBusiness",
@@ -379,30 +399,19 @@ export default async function ServiceCityPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      "price": serviceData.price.replace(/[^0-9]/g, '') || "200",
+      "price": `${serviceData.price.replace(/[^0-9]/g, '') || "200"}.00`,
       "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
+      "validThrough": "2027-12-31",
+      "validFrom": "2026-01-01",
       "availability": "https://schema.org/InStock",
+      "url": canonicalUrl,
       "areaServed": {
         "@type": "City",
         "name": cityName
       }
     }
   };
-
-  const serviceImages = {
-    'sewer-scope-inspection': `${SITE_URL}/images/sewer-scope.png`,
-    'pool-spa-inspection': `${SITE_URL}/images/pool-inspecting.png`,
-    'pool-inspection': `${SITE_URL}/images/pool-inspecting.png`,
-    'thermal-imaging': `${SITE_URL}/images/thermal-1.png`,
-    'termite-inspection': `${SITE_URL}/images/crawlspace.png`,
-    'termite-wdo-inspection': `${SITE_URL}/images/crawlspace.png`,
-    '11-month-warranty-inspection': `${SITE_URL}/images/luxury-home.jpg`,
-    'pre-listing-inspection': `${SITE_URL}/images/luxury-home.jpg`,
-    'new-construction-inspection': `${SITE_URL}/images/luxury-home.jpg`,
-    'buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
-    'home-buyer-inspection': `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`
-  };
-  const primaryProductImage = serviceImages[resolvedParams.service] || `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`;
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -424,6 +433,7 @@ export default async function ServiceCityPage({ params }) {
       "price": `${serviceData.price.replace(/[^0-9]/g, '') || "200"}.00`,
       "priceCurrency": "USD",
       "priceValidUntil": "2027-12-31",
+      "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
       "availability": "https://schema.org/InStock",
       "url": canonicalUrl,

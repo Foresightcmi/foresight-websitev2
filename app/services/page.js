@@ -255,6 +255,8 @@ export default function Services() {
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "name": "Foresight Home Inspection Services",
+    "image": "https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg",
     "serviceType": "Home Inspection",
     "provider": {
       "@type": "HomeAndConstructionBusiness",
@@ -280,18 +282,18 @@ export default function Services() {
       "@type": "OfferCatalog",
       "name": "Home Inspection Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Home Inspection", "description": "Comprehensive inspection covering structure, roof, electrical, plumbing, HVAC, and all major systems with two certified inspectors and $10,000 warranty." }, "price": "345", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Condo & Townhome Inspection", "description": "Focused interior and mechanical systems inspection tailored for condominium units." }, "price": "295", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "365", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Independent third-party quality assurance for your newly built home with complete builder punch list." }, "price": "355", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional code-referenced punch list before your 1-year builder warranty expires." }, "price": "335", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis." }, "price": "450", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "395", "priceCurrency": "USD" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for GAR Form F404 negotiation. Available as $99 add-on or standalone outside audit." }, "price": "99", "priceCurrency": "USD" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Home Inspection", "description": "Comprehensive inspection covering structure, roof, electrical, plumbing, HVAC, and all major systems with two certified inspectors and $10,000 warranty." }, "price": "345.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Condo & Townhome Inspection", "description": "Focused interior and mechanical systems inspection tailored for condominium units." }, "price": "295.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "365.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Independent third-party quality assurance for your newly built home with complete builder punch list." }, "price": "355.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional code-referenced punch list before your 1-year builder warranty expires." }, "price": "335.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "395.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for GAR Form F404 negotiation. Available as $99 add-on or standalone outside audit." }, "price": "99.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" }
       ]
     }
   };
@@ -373,6 +375,7 @@ export default function Services() {
       "priceCurrency": "USD",
       "offerCount": "10",
       "priceValidUntil": "2027-12-31",
+      "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
       "availability": "https://schema.org/InStock",
       "url": "https://www.fhinspectionsatl.com/services",
