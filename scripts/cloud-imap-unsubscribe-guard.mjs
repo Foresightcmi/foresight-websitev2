@@ -56,7 +56,7 @@ async function scanImapOptOuts(user, pass) {
         step = 3;
         buffer = '';
         const sinceDate = new Date(Date.now() - 5 * 86400000).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
-        sock.write(`A3 SEARCH SINCE ${sinceDate} OR BODY "unsubscribe" BODY "stop"\r\n`);
+        sock.write(`A3 SEARCH SINCE ${sinceDate} SUBJECT "Re:" BODY "stop"\r\n`);
       } else if (step === 3 && buffer.includes('A3 OK')) {
         const match = buffer.match(/\* SEARCH([0-9 ]+)/);
         const ids = match ? match[1].trim().split(/\s+/).filter(Boolean).slice(-25) : [];
@@ -66,13 +66,15 @@ async function scanImapOptOuts(user, pass) {
         }
         step = 4;
         buffer = '';
-        sock.write(`A4 FETCH ${ids.join(',')} (BODY.PEEK[HEADER.FIELDS (FROM SUBJECT)])\r\n`);
+        sock.write(`A4 FETCH ${ids.join(',')} (BODY.PEEK[HEADER.FIELDS (FROM SUBJECT)] BODY.PEEK[TEXT]<0.250>)\r\n`);
       } else if (step === 4 && buffer.includes('A4 OK')) {
-        const emailRegex = /<([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})>/g;
-        let m;
-        while ((m = emailRegex.exec(buffer)) !== null) {
-          const e = m[1].toLowerCase().trim();
-          if (e !== user.toLowerCase() && !e.includes('google.com') && !e.includes('foresightcmi.com')) {
+        const blocks = buffer.split(/\* \d+ FETCH/);
+        for (const blk of blocks) {
+          const fromMatch = blk.match(/From:.*<([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})>/i);
+          if (!fromMatch) continue;
+          const e = fromMatch[1].toLowerCase().trim();
+          const topText = blk.replace(/Reply stop anytime to opt out/gi, '');
+          if (/\b(stop|unsubscribe|remove me|opt out|take me off|do not email)\b/i.test(topText)) {
             foundEmails.add(e);
           }
         }
