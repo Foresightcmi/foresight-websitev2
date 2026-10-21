@@ -494,7 +494,7 @@ async function main() {
           execSync('git add public/dossiers/ data/permit-leads.json data/permit-leads-crm.json', { stdio: 'ignore', cwd: ROOT_DIR });
           const status = execSync('git status --porcelain public/dossiers data/permit-leads.json data/permit-leads-crm.json', { cwd: ROOT_DIR }).toString().trim();
           if (status) {
-            execSync('git commit -m "chore(dossiers): auto-deploy newly harvested dossiers [skip ci]"', { stdio: 'ignore', cwd: ROOT_DIR });
+            execSync('git commit -m "chore(dossiers): auto-deploy newly harvested dossiers"', { stdio: 'ignore', cwd: ROOT_DIR });
             execSync('git pull --no-rebase -X ours origin main', { stdio: 'ignore', cwd: ROOT_DIR });
             execSync('git push origin main', { stdio: 'ignore', cwd: ROOT_DIR });
             console.log('🚀 [Permit Radar] Successfully synced and deployed new dossiers to production.');

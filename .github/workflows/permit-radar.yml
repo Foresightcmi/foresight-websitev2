@@ -51,4 +51,4 @@ jobs:
           git config user.name "Foresight Revenue Radar Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/ public/dossiers/
-          git diff --cached --quiet || (git commit -m "chore(radar): automated metro atlanta new construction harvest and dossiers [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "chore(radar): automated metro atlanta new construction harvest and dossiers" && git push)
