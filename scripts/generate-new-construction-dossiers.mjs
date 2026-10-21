@@ -521,13 +521,13 @@ function generateNewConstructionDossierHtml(lead) {
 
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap;">
             <strong style="color: #0F172A; font-size: 1.1rem;">Phase 2: Final Pre-Closing Inspection + Infrared Thermal Imaging</strong>
-            <span style="color: var(--color-gold); font-weight: 700;">From $400</span>
+            <span style="color: var(--color-gold); font-weight: 700;">From $345</span>
           </div>
           <p style="color: #64748B; font-size: 0.85rem; margin-bottom: 1rem;">Full system operational verification (roof, attic, crawlspace/basement, appliances, GFCI/AFCI circuits) with calibrated infrared thermal imaging and 4K drone scans to arm you for the Blue-Tape walkthrough.</p>
 
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap;">
             <strong style="color: #0F172A; font-size: 1.1rem;">Phase 3: 11-Month Builder Warranty Inspection</strong>
-            <span style="color: var(--color-gold); font-weight: 700;">From $335</span>
+            <span style="color: var(--color-gold); font-weight: 700;">From $345</span>
           </div>
           <p style="color: #64748B; font-size: 0.85rem;">Conducted at month 11 before your 1-year builder warranty expires, catching drywall cracks, foundation settling, and roof leaks for free builder remediation.</p>
         </div>

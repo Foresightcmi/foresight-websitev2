@@ -650,7 +650,7 @@ function generateWarrantyDossierHtml(client) {
           <h3 style="color:#6EE7B7;">✅ The Foresight CMI® Punch List</h3>
           <p>
             • Prepared by InterNACHI Certified Master Inspector® (Top 1% in US).<br>
-            • Backed by calibrated calibrated infrared thermal imaging and drone photography.<br>
+            • Backed by calibrated infrared thermal imaging and drone photography.<br>
             • Cites specific building science structural and mechanical standards.<br>
             • Formal engineering format that superintendents cannot dismiss.
           </p>
@@ -708,8 +708,8 @@ function generateWarrantyDossierHtml(client) {
       <div class="deliverable-item">
         <span class="check-icon">✓</span>
         <div>
-          <div class="deliv-title">$100,000 InterNACHI Buy-Back Guarantee & $35,000 Structural Protection</div>
-          <div class="deliv-desc">Foresight stands behind every inspection with the highest third-party underwriting and guarantees in the home inspection industry.</div>
+          <div class="deliv-title">Up to $35,000 Combined Warranty &amp; Guarantee Protection</div>
+          <div class="deliv-desc">Every full inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI's $25,000 Honor Guarantee.</div>
         </div>
       </div>
 
@@ -770,7 +770,7 @@ function generateWarrantyDossierHtml(client) {
 
       document.getElementById('cdDays').innerText = days;
       document.getElementById('cdHours').innerText = hours;
-      document.getElementById('cdMins').innerText = seconds < 10 ? '0' + minutes : minutes;
+      document.getElementById('cdMins').innerText = minutes < 10 ? '0' + minutes : minutes;
       document.getElementById('cdSecs').innerText = seconds < 10 ? '0' + seconds : seconds;
     }
 

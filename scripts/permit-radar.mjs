@@ -432,15 +432,10 @@ async function main() {
     if (fs.existsSync(DATA_FILE)) {
       try {
         const rawExisting = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-        const dossiersDir = path.join(ROOT_DIR, 'public', 'dossiers');
         existingLeads = rawExisting.filter(l => {
           const pType = String(l.permitType || '').toLowerCase();
           const pOpp = String(l.inspectionOpportunity || '').toLowerCase();
           if (/addition|alteration|remodel|repair|renovation|water meter|sewer tap|demolition|porch|deck|pool|sitewall|retaining|shed|arbor|gazebo|fence/i.test(pType) || /remodel|addition/i.test(pOpp)) {
-            const staleDossier = path.join(dossiersDir, `${l.recordId}.html`);
-            if (fs.existsSync(staleDossier)) {
-              try { fs.unlinkSync(staleDossier); } catch (_) {}
-            }
             return false;
           }
           const isDeKalb = (l.jurisdiction || '').includes('DeKalb') || (l.recordId || '').startsWith('DKB-');
@@ -448,10 +443,6 @@ async function main() {
             const combinedText = `${l.ownerName || ''} ${l.ownerEmail || ''} ${l.permitName || ''}`;
             const isValidOwner = l.primaryContactType === '1' && !TRADE_SUBCONTRACTOR_REGEX.test(combinedText) && /new/i.test(pType);
             if (!isValidOwner) {
-              const staleDossier = path.join(dossiersDir, `${l.recordId}.html`);
-              if (fs.existsSync(staleDossier)) {
-                try { fs.unlinkSync(staleDossier); } catch (_) {}
-              }
               return false;
             }
           }

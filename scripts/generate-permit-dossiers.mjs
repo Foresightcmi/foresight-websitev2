@@ -478,14 +478,58 @@ function generateBrandDossierHtml(lead) {
         ${''}
 
         ${isSTR ? `
-        <div style="background: #FFFDF7; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.75rem; margin-bottom: 2rem;">
+        <div style="background: #FFFDF7; border: 2px solid var(--color-gold); border-radius: 12px; padding: 1.75rem; margin-bottom: 2rem;">
           <h3 style="font-size: 1.3rem; color: #0F172A; margin-bottom: 0.5rem; font-family: var(--font-heading);">
-            Optional Short-Term Rental Safety Check (Starts at $395)
+            Optional 3rd-Party Short-Term Rental Safety &amp; Guest Readiness Check (Starts at $395)
           </h3>
           <p style="font-size: 0.95rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
-            The City of Atlanta does not require a third-party inspection for a short-term rental license. Some hosts still choose an independent check of smoke and CO alarms, egress windows, fire extinguishers, GFCI protection, the electrical panel, and deck and stair safety, with a written report in 24 hours.
+            The City of Atlanta relies on owner self-certification affidavits and does not require a third-party inspection for your STR license. However, many Atlanta Airbnb and VRBO hosts choose an independent CMI evaluation to verify guest life-safety systems and document property condition for insurance and liability protection.
           </p>
           <a href="https://www.fhinspectionsatl.com/service-areas/atlanta-str-compliance" class="btn-large btn-gold" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">STR Safety Check Details &rarr;</a>
+        </div>
+
+        <h2 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-slate-dark);">
+          🛡️ Short-Term Rental Safety &amp; Guest Readiness Scope
+        </h2>
+        <div class="milestone-grid">
+          <div class="milestone-card featured">
+            <div class="card-badge">Pillar 1: Life-Safety &amp; Alarms</div>
+            <div class="card-title">Smoke, CO &amp; Egress Audit</div>
+            <div class="card-dates">Turnaround: <strong>Same-Day / 24-Hr Report</strong></div>
+            <div class="card-price">Included in $395 STR Check</div>
+            <p style="font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem;">
+              Verification of smoke and carbon monoxide alarm placement, manufacture dates, audible testing, fire extinguisher ratings, and bedroom emergency egress windows.
+            </p>
+          </div>
+          <div class="milestone-card">
+            <div class="card-badge">Pillar 2: Electrical &amp; Exterior</div>
+            <div class="card-title">GFCI, Panel &amp; Deck Safety</div>
+            <div class="card-dates">Scope: <strong>Interior &amp; Exterior</strong></div>
+            <div class="card-price">Included in $395 STR Check</div>
+            <p style="font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem;">
+              Testing of kitchen, bath, and exterior GFCI outlets, main electrical panel grounding, plus deck ledger boards, guardrails, handrails, and stair stability.
+            </p>
+          </div>
+          <div class="milestone-card">
+            <div class="card-badge">Pillar 3: Host Documentation</div>
+            <div class="card-title">Thermal Scan &amp; Photo Report</div>
+            <div class="card-dates">Deliverable: <strong>Digital PDF + HD Photos</strong></div>
+            <div class="card-price">Starts at $395 Flat Rate</div>
+            <p style="font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem;">
+              Includes high-resolution infrared thermal scanning for hidden plumbing or roof leaks and a 24-hour digital checklist report for your host and insurance records.
+            </p>
+          </div>
+        </div>
+        ` : `
+        ${isDeKalb ? `
+        <div style="background: #FFFDF7; border: 2px solid var(--color-gold); border-radius: 12px; padding: 1.75rem; margin-bottom: 2rem;">
+          <h3 style="font-size: 1.3rem; color: #0F172A; margin-bottom: 0.5rem; font-family: var(--font-heading);">
+            DeKalb County Low-Flow Plumbing Fixture Certificate ($100 Flat Fee)
+          </h3>
+          <p style="font-size: 0.95rem; color: #334155; line-height: 1.6; margin-bottom: 1rem;">
+            Need an official Certified Master Inspector sign-off on DeKalb County's Water Conservation &amp; Low-Flow Plumbing Fixture Certificate (toilets &le;1.28 GPF, lavatory faucets &le;1.5 GPM, kitchen faucets &le;2.0 GPM, showerheads &le;2.0 GPM)? We provide same-day verification and signed certification for $100 flat.
+          </p>
+          <a href="https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance" class="btn-large btn-gold" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">DeKalb $100 Low-Flow Certificate Details &rarr;</a>
         </div>
         ` : ''}
 
@@ -513,7 +557,7 @@ function generateBrandDossierHtml(lead) {
             <div class="card-badge">Phase 2: Final Walkthrough</div>
             <div class="card-title">Pre-Closing Final Inspection</div>
             <div class="card-dates">Typical window (estimate): <strong>${finalStart} – ${finalEnd}</strong></div>
-            <div class="card-price">From $400 Base</div>
+            <div class="card-price">From $345 Base</div>
             <p style="font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem;">
               Comprehensive operational test of HVAC, appliances, electrical panels, plumbing fixtures, roof, and crawlspace/basement before signing final closing documents.
             </p>
@@ -522,12 +566,13 @@ function generateBrandDossierHtml(lead) {
             <div class="card-badge">Phase 3: Warranty Protection</div>
             <div class="card-title">11th-Month Builder Warranty</div>
             <div class="card-dates">Typical window (estimate): <strong>${warrantyDate}</strong></div>
-            <div class="card-price">From $335 Base</div>
+            <div class="card-price">From $345 Base</div>
             <p style="font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem;">
               Comprehensive diagnostic sweep conducted at Month 11 so you can hand the builder an indisputable repair punchlist before your 1-year warranty expires.
             </p>
           </div>
         </div>
+        `}
 
         <h2 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-slate-dark);">
           🛡️ The Foresight Certified Master Inspector® Advantage
@@ -589,9 +634,9 @@ function generateBrandDossierHtml(lead) {
       <div>
         <h3>Inspection Services</h3>
         <ul>
-          <li><a href="https://www.fhinspectionsatl.com/services/new-construction-inspection">New Construction Phased (From $400)</a></li>
+          <li><a href="https://www.fhinspectionsatl.com/services/new-construction-inspection">New Construction Phased (From $345)</a></li>
           <li><a href="https://www.fhinspectionsatl.com/services/new-construction-inspection">Pre-Drywall Rough-In (From $275)</a></li>
-          <li><a href="https://www.fhinspectionsatl.com/services/11-month-warranty-inspection">11-Month Warranty (From $335)</a></li>
+          <li><a href="https://www.fhinspectionsatl.com/services/11-month-warranty-inspection">11-Month Warranty (From $345)</a></li>
           <li><a href="https://www.fhinspectionsatl.com/services/buyer-inspection">Buyer Home Inspection (From $345)</a></li>
           <li><a href="https://www.fhinspectionsatl.com/services/radon-testing">Radon Gas Testing ($275)</a></li>
           <li><a href="https://www.fhinspectionsatl.com/services/sewer-scope-inspection">Sewer Scope Camera ($450)</a></li>
@@ -634,7 +679,45 @@ async function main() {
   }
 
   const rawLeads = JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8'));
-  console.log(`🎨 [Dossier Generator] Rendering brand-matched dossiers for ${rawLeads.length} leads...`);
+  const LOG_FILE = path.join(ROOT_DIR, 'data', 'permit-outreach-log.json');
+  const loggedLeads = fs.existsSync(LOG_FILE) ? JSON.parse(fs.readFileSync(LOG_FILE, 'utf8')) : [];
+  const leadMap = new Map();
+  for (const l of rawLeads) {
+    if (l.recordId) leadMap.set(l.recordId, l);
+  }
+  for (const entry of loggedLeads) {
+    if (entry.recordId && !leadMap.has(entry.recordId)) {
+      leadMap.set(entry.recordId, {
+        recordId: entry.recordId,
+        address: entry.address || 'Metro Atlanta, GA',
+        jurisdiction: entry.recordId.startsWith('DKB-') ? 'DeKalb County' : entry.recordId.startsWith('STR-') ? 'City of Atlanta (Short-Term Rental)' : 'Metro Atlanta',
+        permitType: entry.inspectionTarget || 'Residential Permit',
+        jobValue: entry.jobValue || 0,
+        statusDate: (entry.dispatchedAt || new Date().toISOString()).split('T')[0],
+      });
+    }
+  }
+  if (fs.existsSync(DOSSIERS_DIR)) {
+    for (const file of fs.readdirSync(DOSSIERS_DIR)) {
+      if (!file.endsWith('.html')) continue;
+      const recId = file.replace(/\.html$/, '');
+      if (/^(ALP|BB|DKB|JCK|STR)-/.test(recId) && !leadMap.has(recId)) {
+        const oldHtml = fs.readFileSync(path.join(DOSSIERS_DIR, file), 'utf8');
+        const h1Match = oldHtml.match(/<h1>([^<]+)<\/h1>/);
+        const addr = h1Match ? h1Match[1].trim() : 'Metro Atlanta, GA';
+        leadMap.set(recId, {
+          recordId: recId,
+          address: addr,
+          jurisdiction: recId.startsWith('DKB-') ? 'DeKalb County' : recId.startsWith('STR-') ? 'City of Atlanta (Short-Term Rental)' : recId.startsWith('ALP-') ? 'City of Alpharetta (North Fulton)' : recId.startsWith('JCK-') ? 'City of Johns Creek (North Fulton)' : 'City of Atlanta (Fulton County)',
+          permitType: recId.startsWith('STR-') ? 'Short-Term Rental License' : 'Residential New Construction',
+          jobValue: 0,
+          statusDate: new Date().toISOString().split('T')[0],
+        });
+      }
+    }
+  }
+
+  console.log(`🎨 [Dossier Generator] Rendering brand-matched dossiers for ${leadMap.size} active & historical leads...`);
 
   if (!fs.existsSync(DOSSIERS_DIR)) {
     fs.mkdirSync(DOSSIERS_DIR, { recursive: true });
@@ -642,7 +725,7 @@ async function main() {
 
   const crmRecords = [];
 
-  for (const lead of rawLeads) {
+  for (const lead of leadMap.values()) {
     const filename = `${lead.recordId}.html`;
     const filepath = path.join(DOSSIERS_DIR, filename);
     const html = generateBrandDossierHtml(lead);

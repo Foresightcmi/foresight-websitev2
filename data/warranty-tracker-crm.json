@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T19:19:11.572Z",
+  "updatedAt": "2026-10-21T12:40:27.778Z",
   "filterCriteria": "External New Construction & Municipal Permit Homeowners (Past Clients Excluded)",
   "stats": {
     "totalLeadsAudited": 95,
@@ -27,7 +27,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3173612.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3173612.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3173612.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3173612.html",
         "metrics": {
           "diffDays": 395,
           "diffMonths": 13,
@@ -65,7 +65,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250561.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250561.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250561.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250561.html",
         "metrics": {
           "diffDays": 383,
           "diffMonths": 12,
@@ -103,7 +103,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250562.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250562.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250562.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250562.html",
         "metrics": {
           "diffDays": 383,
           "diffMonths": 12,
@@ -141,7 +141,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250563.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250563.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250563.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250563.html",
         "metrics": {
           "diffDays": 383,
           "diffMonths": 12,
@@ -179,7 +179,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250564.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250564.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250564.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250564.html",
         "metrics": {
           "diffDays": 383,
           "diffMonths": 12,
@@ -217,7 +217,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250565.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250565.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250565.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250565.html",
         "metrics": {
           "diffDays": 383,
           "diffMonths": 12,
@@ -255,7 +255,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250566.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250566.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250566.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250566.html",
         "metrics": {
           "diffDays": 383,
           "diffMonths": 12,
@@ -293,7 +293,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250567.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250567.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250567.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250567.html",
         "metrics": {
           "diffDays": 383,
           "diffMonths": 12,
@@ -331,7 +331,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250570.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250570.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250570.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250570.html",
         "metrics": {
           "diffDays": 382,
           "diffMonths": 12,
@@ -369,7 +369,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3175824.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3175824.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3175824.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3175824.html",
         "metrics": {
           "diffDays": 349,
           "diffMonths": 11,
@@ -408,7 +408,7 @@
         "redfinUrl": "https://www.redfin.com/GA/South-Fulton/5606-Rosehall-Pl-30349/home/193680326",
         "dossierFilename": "warranty-nc_7847530.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847530.html",
-        "dossierPath": "./dossiers/warranty-nc_7847530.html",
+        "dossierPath": "/dossiers/warranty-nc_7847530.html",
         "metrics": {
           "diffDays": 345,
           "diffMonths": 11,
@@ -447,7 +447,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1123-Hodgepodge-Way-30316/unit-12/home/202155083",
         "dossierFilename": "warranty-nc_7847939.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847939.html",
-        "dossierPath": "./dossiers/warranty-nc_7847939.html",
+        "dossierPath": "/dossiers/warranty-nc_7847939.html",
         "metrics": {
           "diffDays": 345,
           "diffMonths": 11,
@@ -486,7 +486,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/125-Lamar-Ave-NW-30314/home/188593744",
         "dossierFilename": "warranty-nc_7847979.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847979.html",
-        "dossierPath": "./dossiers/warranty-nc_7847979.html",
+        "dossierPath": "/dossiers/warranty-nc_7847979.html",
         "metrics": {
           "diffDays": 345,
           "diffMonths": 11,
@@ -525,7 +525,7 @@
         "redfinUrl": "https://www.redfin.com/GA/South-Fulton/5675-Rosehall-Pl-30349/home/193680345",
         "dossierFilename": "warranty-nc_7847542.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847542.html",
-        "dossierPath": "./dossiers/warranty-nc_7847542.html",
+        "dossierPath": "/dossiers/warranty-nc_7847542.html",
         "metrics": {
           "diffDays": 340,
           "diffMonths": 11,
@@ -564,7 +564,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1490-Brooklyn-Ave-NW-30309/home/24593431",
         "dossierFilename": "warranty-nc_7847629.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847629.html",
-        "dossierPath": "./dossiers/warranty-nc_7847629.html",
+        "dossierPath": "/dossiers/warranty-nc_7847629.html",
         "metrics": {
           "diffDays": 340,
           "diffMonths": 11,
@@ -603,7 +603,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1669-Stanton-Rd-SW-30311/home/24605629",
         "dossierFilename": "warranty-nc_7848087.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7848087.html",
-        "dossierPath": "./dossiers/warranty-nc_7848087.html",
+        "dossierPath": "/dossiers/warranty-nc_7848087.html",
         "metrics": {
           "diffDays": 340,
           "diffMonths": 11,
@@ -642,7 +642,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/223-Polar-Rock-Rd-SW-30315/home/24576330",
         "dossierFilename": "warranty-nc_7846208.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7846208.html",
-        "dossierPath": "./dossiers/warranty-nc_7846208.html",
+        "dossierPath": "/dossiers/warranty-nc_7846208.html",
         "metrics": {
           "diffDays": 335,
           "diffMonths": 11,
@@ -681,7 +681,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/3504-Dacite-Ct-30349/unit-99/home/206037777",
         "dossierFilename": "warranty-nc_10857618.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_10857618.html",
-        "dossierPath": "./dossiers/warranty-nc_10857618.html",
+        "dossierPath": "/dossiers/warranty-nc_10857618.html",
         "metrics": {
           "diffDays": 335,
           "diffMonths": 11,
@@ -720,7 +720,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/3778-Wynn-Walk-30341/home/177695835",
         "dossierFilename": "warranty-nc_7847623.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847623.html",
-        "dossierPath": "./dossiers/warranty-nc_7847623.html",
+        "dossierPath": "/dossiers/warranty-nc_7847623.html",
         "metrics": {
           "diffDays": 335,
           "diffMonths": 11,
@@ -759,7 +759,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/6210-Ripple-WAY-30349/unit-90/home/192567558",
         "dossierFilename": "warranty-nc_7845402.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845402.html",
-        "dossierPath": "./dossiers/warranty-nc_7845402.html",
+        "dossierPath": "/dossiers/warranty-nc_7845402.html",
         "metrics": {
           "diffDays": 330,
           "diffMonths": 11,
@@ -798,7 +798,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Brookhaven/3775-Wasson-Way-NE-30319/home/112024392",
         "dossierFilename": "warranty-nc_7848235.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7848235.html",
-        "dossierPath": "./dossiers/warranty-nc_7848235.html",
+        "dossierPath": "/dossiers/warranty-nc_7848235.html",
         "metrics": {
           "diffDays": 330,
           "diffMonths": 11,
@@ -837,7 +837,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/3117-Hallsley-Dr-30349/home/206027357",
         "dossierFilename": "warranty-nc_7847792.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847792.html",
-        "dossierPath": "./dossiers/warranty-nc_7847792.html",
+        "dossierPath": "/dossiers/warranty-nc_7847792.html",
         "metrics": {
           "diffDays": 330,
           "diffMonths": 11,
@@ -876,7 +876,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/6170-Ripple-Way-30349/unit-80/home/201000684",
         "dossierFilename": "warranty-nc_7845418.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845418.html",
-        "dossierPath": "./dossiers/warranty-nc_7845418.html",
+        "dossierPath": "/dossiers/warranty-nc_7845418.html",
         "metrics": {
           "diffDays": 325,
           "diffMonths": 11,
@@ -915,7 +915,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Brookhaven/3762-Wasson-Way-NE-30319/home/112024310",
         "dossierFilename": "warranty-nc_7848231.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7848231.html",
-        "dossierPath": "./dossiers/warranty-nc_7848231.html",
+        "dossierPath": "/dossiers/warranty-nc_7848231.html",
         "metrics": {
           "diffDays": 325,
           "diffMonths": 11,
@@ -954,7 +954,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/3125-Hallsley-Dr-30349/home/206027358",
         "dossierFilename": "warranty-nc_7847791.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847791.html",
-        "dossierPath": "./dossiers/warranty-nc_7847791.html",
+        "dossierPath": "/dossiers/warranty-nc_7847791.html",
         "metrics": {
           "diffDays": 325,
           "diffMonths": 11,
@@ -993,7 +993,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/6178-Ripple-Way-30349/unit-82/home/198724628",
         "dossierFilename": "warranty-nc_7845424.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845424.html",
-        "dossierPath": "./dossiers/warranty-nc_7845424.html",
+        "dossierPath": "/dossiers/warranty-nc_7845424.html",
         "metrics": {
           "diffDays": 320,
           "diffMonths": 10,
@@ -1032,7 +1032,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1165-Penny-Ln-30324/home/199600633",
         "dossierFilename": "warranty-nc_7834331.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7834331.html",
-        "dossierPath": "./dossiers/warranty-nc_7834331.html",
+        "dossierPath": "/dossiers/warranty-nc_7834331.html",
         "metrics": {
           "diffDays": 320,
           "diffMonths": 10,
@@ -1071,7 +1071,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/318-Sandy-Springs-Cir-30328/unit-270/home/188107156",
         "dossierFilename": "warranty-nc_7847635.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847635.html",
-        "dossierPath": "./dossiers/warranty-nc_7847635.html",
+        "dossierPath": "/dossiers/warranty-nc_7847635.html",
         "metrics": {
           "diffDays": 320,
           "diffMonths": 10,
@@ -1110,7 +1110,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/496-Burroughs-St-SE-30315/home/205706113",
         "dossierFilename": "warranty-nc_7845206.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845206.html",
-        "dossierPath": "./dossiers/warranty-nc_7845206.html",
+        "dossierPath": "/dossiers/warranty-nc_7845206.html",
         "metrics": {
           "diffDays": 315,
           "diffMonths": 10,
@@ -1149,7 +1149,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/2499-Warren-Rd-NW-30318/home/24804121",
         "dossierFilename": "warranty-nc_7841779.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7841779.html",
-        "dossierPath": "./dossiers/warranty-nc_7841779.html",
+        "dossierPath": "/dossiers/warranty-nc_7841779.html",
         "metrics": {
           "diffDays": 315,
           "diffMonths": 10,
@@ -1188,7 +1188,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1631-Burton-St-SE-30315/home/197019585",
         "dossierFilename": "warranty-nc_7847786.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847786.html",
-        "dossierPath": "./dossiers/warranty-nc_7847786.html",
+        "dossierPath": "/dossiers/warranty-nc_7847786.html",
         "metrics": {
           "diffDays": 315,
           "diffMonths": 10,
@@ -1227,7 +1227,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/3404-Ripple-Loop-30349/unit-130/home/201000645",
         "dossierFilename": "warranty-nc_7845411.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845411.html",
-        "dossierPath": "./dossiers/warranty-nc_7845411.html",
+        "dossierPath": "/dossiers/warranty-nc_7845411.html",
         "metrics": {
           "diffDays": 310,
           "diffMonths": 10,
@@ -1266,7 +1266,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1872-Hickory-Rd-30341/home/23723832",
         "dossierFilename": "warranty-nc_7848293.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7848293.html",
-        "dossierPath": "./dossiers/warranty-nc_7848293.html",
+        "dossierPath": "/dossiers/warranty-nc_7848293.html",
         "metrics": {
           "diffDays": 310,
           "diffMonths": 10,
@@ -1305,7 +1305,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1323-Lakota-PL-30315/home/201546883",
         "dossierFilename": "warranty-nc_7847816.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847816.html",
-        "dossierPath": "./dossiers/warranty-nc_7847816.html",
+        "dossierPath": "/dossiers/warranty-nc_7847816.html",
         "metrics": {
           "diffDays": 310,
           "diffMonths": 10,
@@ -1344,7 +1344,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/147-E-Lake-Ter-SE-30317/home/23721509",
         "dossierFilename": "warranty-nc_7845523.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845523.html",
-        "dossierPath": "./dossiers/warranty-nc_7845523.html",
+        "dossierPath": "/dossiers/warranty-nc_7845523.html",
         "metrics": {
           "diffDays": 305,
           "diffMonths": 10,
@@ -1383,7 +1383,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1319-Lakota-PL-30315/home/201546083",
         "dossierFilename": "warranty-nc_10856755.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_10856755.html",
-        "dossierPath": "./dossiers/warranty-nc_10856755.html",
+        "dossierPath": "/dossiers/warranty-nc_10856755.html",
         "metrics": {
           "diffDays": 305,
           "diffMonths": 10,
@@ -1422,7 +1422,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1355-Breezy-St-SE-30315/home/206028994",
         "dossierFilename": "warranty-nc_7847873.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847873.html",
-        "dossierPath": "./dossiers/warranty-nc_7847873.html",
+        "dossierPath": "/dossiers/warranty-nc_7847873.html",
         "metrics": {
           "diffDays": 305,
           "diffMonths": 10,
@@ -1461,7 +1461,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1105-Ralph-Rd-NE-30324/home/23806572",
         "dossierFilename": "warranty-nc_7845316.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845316.html",
-        "dossierPath": "./dossiers/warranty-nc_7845316.html",
+        "dossierPath": "/dossiers/warranty-nc_7845316.html",
         "metrics": {
           "diffDays": 300,
           "diffMonths": 10,
@@ -1500,7 +1500,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1570-Flat-Shoals-Rd-SE-30316/unit-4/home/188921506",
         "dossierFilename": "warranty-nc_7846838.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7846838.html",
-        "dossierPath": "./dossiers/warranty-nc_7846838.html",
+        "dossierPath": "/dossiers/warranty-nc_7846838.html",
         "metrics": {
           "diffDays": 300,
           "diffMonths": 10,
@@ -1539,7 +1539,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1329-Lakota-PL-30315/home/202335510",
         "dossierFilename": "warranty-nc_7847860.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847860.html",
-        "dossierPath": "./dossiers/warranty-nc_7847860.html",
+        "dossierPath": "/dossiers/warranty-nc_7847860.html",
         "metrics": {
           "diffDays": 300,
           "diffMonths": 10,
@@ -1578,7 +1578,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Sandy-Springs/6200-Ferry-Dr-30328/home/24805117",
         "dossierFilename": "warranty-nc_7845754.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845754.html",
-        "dossierPath": "./dossiers/warranty-nc_7845754.html",
+        "dossierPath": "/dossiers/warranty-nc_7845754.html",
         "metrics": {
           "diffDays": 295,
           "diffMonths": 10,
@@ -1617,7 +1617,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/926-Hughley-Cir-SE-30316/unit-3/home/201390073",
         "dossierFilename": "warranty-nc_7846810.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7846810.html",
-        "dossierPath": "./dossiers/warranty-nc_7846810.html",
+        "dossierPath": "/dossiers/warranty-nc_7846810.html",
         "metrics": {
           "diffDays": 295,
           "diffMonths": 10,
@@ -1656,7 +1656,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/4680-Orkney-Ln-SW-30331/home/169583194",
         "dossierFilename": "warranty-nc_7847869.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847869.html",
-        "dossierPath": "./dossiers/warranty-nc_7847869.html",
+        "dossierPath": "/dossiers/warranty-nc_7847869.html",
         "metrics": {
           "diffDays": 295,
           "diffMonths": 10,
@@ -1696,7 +1696,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3006657.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3006657.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3006657.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3006657.html",
         "metrics": {
           "diffDays": 2986,
           "diffMonths": 98,
@@ -1734,7 +1734,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3112351.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3112351.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3112351.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3112351.html",
         "metrics": {
           "diffDays": 1538,
           "diffMonths": 50,
@@ -1772,7 +1772,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3111411.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3111411.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3111411.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3111411.html",
         "metrics": {
           "diffDays": 1435,
           "diffMonths": 47,
@@ -1810,7 +1810,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3111583.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3111583.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3111583.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3111583.html",
         "metrics": {
           "diffDays": 1230,
           "diffMonths": 40,
@@ -1848,7 +1848,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3101587.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3101587.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3101587.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3101587.html",
         "metrics": {
           "diffDays": 960,
           "diffMonths": 31,
@@ -1886,7 +1886,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3156946.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3156946.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3156946.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3156946.html",
         "metrics": {
           "diffDays": 851,
           "diffMonths": 28,
@@ -1924,7 +1924,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3156919.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3156919.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3156919.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3156919.html",
         "metrics": {
           "diffDays": 851,
           "diffMonths": 28,
@@ -1962,7 +1962,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3155181.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3155181.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3155181.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3155181.html",
         "metrics": {
           "diffDays": 841,
           "diffMonths": 28,
@@ -2000,7 +2000,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3156208.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3156208.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3156208.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3156208.html",
         "metrics": {
           "diffDays": 839,
           "diffMonths": 27,
@@ -2038,7 +2038,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3150976.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3150976.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3150976.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3150976.html",
         "metrics": {
           "diffDays": 637,
           "diffMonths": 21,
@@ -2076,7 +2076,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3159824.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3159824.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3159824.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3159824.html",
         "metrics": {
           "diffDays": 624,
           "diffMonths": 20,
@@ -2114,7 +2114,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250098.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250098.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250098.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250098.html",
         "metrics": {
           "diffDays": 603,
           "diffMonths": 20,
@@ -2152,7 +2152,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250207.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250207.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250207.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250207.html",
         "metrics": {
           "diffDays": 567,
           "diffMonths": 19,
@@ -2190,7 +2190,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3168176.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3168176.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3168176.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3168176.html",
         "metrics": {
           "diffDays": 553,
           "diffMonths": 18,
@@ -2228,7 +2228,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3167121.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3167121.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3167121.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3167121.html",
         "metrics": {
           "diffDays": 543,
           "diffMonths": 18,
@@ -2266,7 +2266,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3169175.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3169175.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3169175.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3169175.html",
         "metrics": {
           "diffDays": 519,
           "diffMonths": 17,
@@ -2304,7 +2304,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250538.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250538.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250538.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250538.html",
         "metrics": {
           "diffDays": 482,
           "diffMonths": 16,
@@ -2342,7 +2342,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3169719.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3169719.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3169719.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3169719.html",
         "metrics": {
           "diffDays": 482,
           "diffMonths": 16,
@@ -2380,7 +2380,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3170079.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3170079.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3170079.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3170079.html",
         "metrics": {
           "diffDays": 463,
           "diffMonths": 15,
@@ -2418,7 +2418,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250439.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250439.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250439.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250439.html",
         "metrics": {
           "diffDays": 453,
           "diffMonths": 15,
@@ -2456,7 +2456,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250440.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250440.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250440.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250440.html",
         "metrics": {
           "diffDays": 453,
           "diffMonths": 15,
@@ -2494,7 +2494,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250441.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250441.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250441.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250441.html",
         "metrics": {
           "diffDays": 453,
           "diffMonths": 15,
@@ -2532,7 +2532,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250468.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250468.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250468.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250468.html",
         "metrics": {
           "diffDays": 438,
           "diffMonths": 14,
@@ -2570,7 +2570,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250568.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250568.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250568.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250568.html",
         "metrics": {
           "diffDays": 427,
           "diffMonths": 14,
@@ -2608,7 +2608,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_ALP-BR250569.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_ALP-BR250569.html",
-        "dossierPath": "./dossiers/warranty-ext_ALP-BR250569.html",
+        "dossierPath": "/dossiers/warranty-ext_ALP-BR250569.html",
         "metrics": {
           "diffDays": 427,
           "diffMonths": 14,
@@ -2647,7 +2647,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1000-Liman-Ave-SE-30315/home/110131857",
         "dossierFilename": "warranty-nc_10855158.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_10855158.html",
-        "dossierPath": "./dossiers/warranty-nc_10855158.html",
+        "dossierPath": "/dossiers/warranty-nc_10855158.html",
         "metrics": {
           "diffDays": 290,
           "diffMonths": 9,
@@ -2686,7 +2686,7 @@
         "redfinUrl": "https://www.redfin.com/GA/East-Point/3138-Cherry-Blossom-Ln-30344/home/206016915",
         "dossierFilename": "warranty-nc_7847111.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847111.html",
-        "dossierPath": "./dossiers/warranty-nc_7847111.html",
+        "dossierPath": "/dossiers/warranty-nc_7847111.html",
         "metrics": {
           "diffDays": 290,
           "diffMonths": 9,
@@ -2725,7 +2725,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1355-Breezy-St-SE-30315/unit-110/home/206030287",
         "dossierFilename": "warranty-nc_10857232.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_10857232.html",
-        "dossierPath": "./dossiers/warranty-nc_10857232.html",
+        "dossierPath": "/dossiers/warranty-nc_10857232.html",
         "metrics": {
           "diffDays": 290,
           "diffMonths": 9,
@@ -2764,7 +2764,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1033-Reeder-Cir-NE-30306/home/24769119",
         "dossierFilename": "warranty-nc_7846306.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7846306.html",
-        "dossierPath": "./dossiers/warranty-nc_7846306.html",
+        "dossierPath": "/dossiers/warranty-nc_7846306.html",
         "metrics": {
           "diffDays": 285,
           "diffMonths": 9,
@@ -2803,7 +2803,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/2202-Carlton-Ct-NW-30318/home/193540757",
         "dossierFilename": "warranty-nc_7847259.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847259.html",
-        "dossierPath": "./dossiers/warranty-nc_7847259.html",
+        "dossierPath": "/dossiers/warranty-nc_7847259.html",
         "metrics": {
           "diffDays": 285,
           "diffMonths": 9,
@@ -2842,7 +2842,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1117-Hodgepodge-Way-30316/unit-9/home/202140318",
         "dossierFilename": "warranty-nc_7847926.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847926.html",
-        "dossierPath": "./dossiers/warranty-nc_7847926.html",
+        "dossierPath": "/dossiers/warranty-nc_7847926.html",
         "metrics": {
           "diffDays": 285,
           "diffMonths": 9,
@@ -2881,7 +2881,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1273-Longreen-Ter-NW-30318/unit-8/home/193681845",
         "dossierFilename": "warranty-nc_7846354.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7846354.html",
-        "dossierPath": "./dossiers/warranty-nc_7846354.html",
+        "dossierPath": "/dossiers/warranty-nc_7846354.html",
         "metrics": {
           "diffDays": 280,
           "diffMonths": 9,
@@ -2920,7 +2920,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1840-Wells-Dr-SW-30311/home/180169008",
         "dossierFilename": "warranty-nc_7847203.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847203.html",
-        "dossierPath": "./dossiers/warranty-nc_7847203.html",
+        "dossierPath": "/dossiers/warranty-nc_7847203.html",
         "metrics": {
           "diffDays": 280,
           "diffMonths": 9,
@@ -2959,7 +2959,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1335-Lakota-PL-30315/home/202335369",
         "dossierFilename": "warranty-nc_7847886.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847886.html",
-        "dossierPath": "./dossiers/warranty-nc_7847886.html",
+        "dossierPath": "/dossiers/warranty-nc_7847886.html",
         "metrics": {
           "diffDays": 280,
           "diffMonths": 9,
@@ -2997,7 +2997,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_BB-202600384.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_BB-202600384.html",
-        "dossierPath": "./dossiers/warranty-ext_BB-202600384.html",
+        "dossierPath": "/dossiers/warranty-ext_BB-202600384.html",
         "metrics": {
           "diffDays": 279,
           "diffMonths": 9,
@@ -3035,7 +3035,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_BB-202600379.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_BB-202600379.html",
-        "dossierPath": "./dossiers/warranty-ext_BB-202600379.html",
+        "dossierPath": "/dossiers/warranty-ext_BB-202600379.html",
         "metrics": {
           "diffDays": 279,
           "diffMonths": 9,
@@ -3073,7 +3073,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_BB-202600419.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_BB-202600419.html",
-        "dossierPath": "./dossiers/warranty-ext_BB-202600419.html",
+        "dossierPath": "/dossiers/warranty-ext_BB-202600419.html",
         "metrics": {
           "diffDays": 278,
           "diffMonths": 9,
@@ -3112,7 +3112,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1073-Benteen-Ave-SE-30312/home/206002885",
         "dossierFilename": "warranty-nc_7846389.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7846389.html",
-        "dossierPath": "./dossiers/warranty-nc_7846389.html",
+        "dossierPath": "/dossiers/warranty-nc_7846389.html",
         "metrics": {
           "diffDays": 275,
           "diffMonths": 9,
@@ -3151,7 +3151,7 @@
         "redfinUrl": "https://www.redfin.com/GA/South-Fulton/5618-Rosehall-Pl-30349/home/193680323",
         "dossierFilename": "warranty-nc_7847519.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847519.html",
-        "dossierPath": "./dossiers/warranty-nc_7847519.html",
+        "dossierPath": "/dossiers/warranty-nc_7847519.html",
         "metrics": {
           "diffDays": 275,
           "diffMonths": 9,
@@ -3190,7 +3190,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1337-Lakota-PL-30315/home/202278394",
         "dossierFilename": "warranty-nc_7847918.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847918.html",
-        "dossierPath": "./dossiers/warranty-nc_7847918.html",
+        "dossierPath": "/dossiers/warranty-nc_7847918.html",
         "metrics": {
           "diffDays": 275,
           "diffMonths": 9,
@@ -3229,7 +3229,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1281-Felix-Ct-30318/unit-9/home/206084638",
         "dossierFilename": "warranty-nc_7848817.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7848817.html",
-        "dossierPath": "./dossiers/warranty-nc_7848817.html",
+        "dossierPath": "/dossiers/warranty-nc_7848817.html",
         "metrics": {
           "diffDays": 275,
           "diffMonths": 9,
@@ -3267,7 +3267,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_BB-202600551.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_BB-202600551.html",
-        "dossierPath": "./dossiers/warranty-ext_BB-202600551.html",
+        "dossierPath": "/dossiers/warranty-ext_BB-202600551.html",
         "metrics": {
           "diffDays": 273,
           "diffMonths": 9,
@@ -3305,7 +3305,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_BB-202600566.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_BB-202600566.html",
-        "dossierPath": "./dossiers/warranty-ext_BB-202600566.html",
+        "dossierPath": "/dossiers/warranty-ext_BB-202600566.html",
         "metrics": {
           "diffDays": 272,
           "diffMonths": 9,
@@ -3344,7 +3344,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/843-Yorkshire-Rd-NE-30306/home/24609511",
         "dossierFilename": "warranty-nc_7846640.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7846640.html",
-        "dossierPath": "./dossiers/warranty-nc_7846640.html",
+        "dossierPath": "/dossiers/warranty-nc_7846640.html",
         "metrics": {
           "diffDays": 270,
           "diffMonths": 9,
@@ -3383,7 +3383,7 @@
         "redfinUrl": "https://www.redfin.com/GA/South-Fulton/5622-Rosehall-Pl-30349/home/193680322",
         "dossierFilename": "warranty-nc_7847493.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847493.html",
-        "dossierPath": "./dossiers/warranty-nc_7847493.html",
+        "dossierPath": "/dossiers/warranty-nc_7847493.html",
         "metrics": {
           "diffDays": 270,
           "diffMonths": 9,
@@ -3422,7 +3422,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1107-Hodgepodge-Way-30316/unit-4/home/201056491",
         "dossierFilename": "warranty-nc_7847896.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7847896.html",
-        "dossierPath": "./dossiers/warranty-nc_7847896.html",
+        "dossierPath": "/dossiers/warranty-nc_7847896.html",
         "metrics": {
           "diffDays": 270,
           "diffMonths": 9,
@@ -3461,7 +3461,7 @@
         "redfinUrl": "https://www.redfin.com/GA/Atlanta/1332-Wayne-Ave-NE-30306/home/24770512",
         "dossierFilename": "warranty-nc_7845264.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-nc_7845264.html",
-        "dossierPath": "./dossiers/warranty-nc_7845264.html",
+        "dossierPath": "/dossiers/warranty-nc_7845264.html",
         "metrics": {
           "diffDays": 270,
           "diffMonths": 9,
@@ -3499,7 +3499,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3151237.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3151237.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3151237.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3151237.html",
         "metrics": {
           "diffDays": 263,
           "diffMonths": 9,
@@ -3537,7 +3537,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3183433.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3183433.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3183433.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3183433.html",
         "metrics": {
           "diffDays": 155,
           "diffMonths": 5,
@@ -3575,7 +3575,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3160084.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3160084.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3160084.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3160084.html",
         "metrics": {
           "diffDays": 153,
           "diffMonths": 5,
@@ -3613,7 +3613,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3187263.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3187263.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3187263.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3187263.html",
         "metrics": {
           "diffDays": 67,
           "diffMonths": 2,
@@ -3651,7 +3651,7 @@
         "source": "Georgia Municipal Building Department / County Permit Registry",
         "dossierFilename": "warranty-ext_DKB-3190301.html",
         "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3190301.html",
-        "dossierPath": "./dossiers/warranty-ext_DKB-3190301.html",
+        "dossierPath": "/dossiers/warranty-ext_DKB-3190301.html",
         "metrics": {
           "diffDays": 13,
           "diffMonths": 0,
@@ -4166,5 +4166,6 @@
       "dossierUrl": "https://fhinspectionsatl.com/dossiers/NC-7847886.html",
       "dossierPath": "/dossiers/NC-7847886.html"
     }
-  ]
+  ],
+  "dossiersGenerated": 95
 }
