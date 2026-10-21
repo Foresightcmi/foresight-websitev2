@@ -69,9 +69,9 @@ const MEDIA_TARGETS = [
     queryTypes: ["GAR contract due diligence", "inspection repair negotiation", "agent closing tools"],
     idealPitches: [
       {
-        topic: "Free Interactive GAR Form F404 Repair Addendum Generator",
-        subject: "Free Brokerage Tool: 1-Click GAR F404 Repair Addendum & Due Diligence Deadline Calculator",
-        soundbite: "We developed a free interactive tool for Georgia agents that calculates strict O.C.G.A. due diligence contract deadlines and formats official GAR Form F404 repair amendment language in seconds, saving agents 30–45 minutes of manual contract typing per deal.",
+        topic: "Free Interactive Georgia Inspection Repair Addendum & Due Diligence Calculator",
+        subject: "Free Brokerage Tool: 1-Click Georgia Inspection Repair Addendum & Due Diligence Deadline Calculator",
+        soundbite: "We developed a free interactive tool for Georgia agents that calculates strict O.C.G.A. due diligence contract deadlines and formats clean, objective inspection repair amendment language in seconds, saving agents 30–45 minutes of manual contract typing per deal.",
         citationUrl: "https://www.fhinspectionsatl.com/due-diligence",
         keyStat: "Eliminates due diligence contract deadline disputes and streamlines repair negotiations."
       }

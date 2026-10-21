@@ -64,10 +64,12 @@ function executeHighestImpactTask() {
     if (!servicesHtml.toLowerCase().includes(exactPhrase)) {
       const bullet = `<li>Certified <strong>${exactPhrase}</strong> and full residential property diagnostics ($345+ homes, $450 flat-rate sewer camera scope, 2-inspector CMI team)</li>`;
       matchedCity['Services HTML'] = servicesHtml.replace('</ul>', `${bullet}</ul>`);
+      matchedCity['Meta Title'] = `Home Inspection in ${matchedCity['City Name']}, GA | $345+ (2 Inspectors)`;
+      matchedCity['Meta Description'] = `4.9★ Home inspection in ${matchedCity['City Name']}, GA from $345 ($295 condos, $450 sewer scope). 2 certified CMI inspectors, free thermal/drone & $35,000 warranty!`;
       matchedCity['Last Refreshed'] = today;
       updatedCities++;
       optimizedTargets.push(`${matchedCity['City Name']} ("${exactPhrase}", Pos ${item.position.toFixed(1)}, ${item.impressions} impr)`);
-      if (updatedCities >= 3) break; // Cap at top 3 highest-impact city hubs per daily run
+      if (updatedCities >= 15) break; // Enrich up to 15 striking-distance city hubs per run
     }
   }
 
@@ -103,6 +105,7 @@ async function main() {
   const s2 = runStep('2. Page-1 Structural & Schema Guard', 'python scripts/page1-guard.py');
   const s3 = runStep('3. Live AI Mention & Autocomplete Tracker', 'node scripts/firstindex-ai-mention-tracker.mjs');
   const s4 = runStep('4. AI Fanning Surface Area Engine', 'node scripts/ai-fanning-engine.mjs');
+  const s5 = runStep('5. Off-Site Authority, Link-Magnet & Directory Verifier', 'node scripts/firstindex-authority-outreach.mjs');
 
   const worklogPath = path.join(ROOT, 'data', 'firstindex-worklog.json');
   const existingLog = fs.existsSync(worklogPath) ? JSON.parse(fs.readFileSync(worklogPath, 'utf8')) : [];

@@ -1,5 +1,37 @@
 [
   {
+    "timestamp": "2026-10-21T04:21:20.419Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-21",
+    "truthGuardPassed": true,
+    "page1GuardPassed": true,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 15,
+      "targets": [
+        "Johns Creek (\"home inspection johns creek ga\", Pos 20.7, 126 impr)",
+        "Lilburn (\"home inspection lilburn ga\", Pos 14.3, 123 impr)",
+        "Buford (\"home inspections buford ga\", Pos 19.9, 123 impr)",
+        "Tyrone (\"home inspection tyrone ga\", Pos 17.9, 119 impr)",
+        "Snellville (\"home inspection snellville ga\", Pos 18.2, 117 impr)",
+        "Smyrna (\"home inspection smyrna ga\", Pos 21.3, 108 impr)",
+        "Milton (\"home inspection milton ga\", Pos 12.8, 106 impr)",
+        "Peachtree City (\"home inspection peachtree city ga\", Pos 20.7, 106 impr)",
+        "Alpharetta (\"sewer camera inspection alpharetta\", Pos 8.4, 105 impr)",
+        "Chattahoochee Hills (\"home inspections chattahoochee hills ga\", Pos 9.1, 103 impr)",
+        "Sandy Springs (\"home inspection sandy springs ga\", Pos 19.7, 98 impr)",
+        "Tyrone (\"home inspector tyrone ga\", Pos 14.4, 97 impr)",
+        "Tyrone (\"home inspectors tyrone ga\", Pos 13.7, 97 impr)",
+        "Buford (\"home inspection buford ga\", Pos 18.0, 96 impr)",
+        "Fairburn (\"home inspections fairburn ga\", Pos 14.1, 95 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 15 city hubs: Johns Creek (\"home inspection johns creek ga\", Pos 20.7, 126 impr) | Lilburn (\"home inspection lilburn ga\", Pos 14.3, 123 impr) | Buford (\"home inspections buford ga\", Pos 19.9, 123 impr) | Tyrone (\"home inspection tyrone ga\", Pos 17.9, 119 impr) | Snellville (\"home inspection snellville ga\", Pos 18.2, 117 impr) | Smyrna (\"home inspection smyrna ga\", Pos 21.3, 108 impr) | Milton (\"home inspection milton ga\", Pos 12.8, 106 impr) | Peachtree City (\"home inspection peachtree city ga\", Pos 20.7, 106 impr) | Alpharetta (\"sewer camera inspection alpharetta\", Pos 8.4, 105 impr) | Chattahoochee Hills (\"home inspections chattahoochee hills ga\", Pos 9.1, 103 impr) | Sandy Springs (\"home inspection sandy springs ga\", Pos 19.7, 98 impr) | Tyrone (\"home inspector tyrone ga\", Pos 14.4, 97 impr) | Tyrone (\"home inspectors tyrone ga\", Pos 13.7, 97 impr) | Buford (\"home inspection buford ga\", Pos 18.0, 96 impr) | Fairburn (\"home inspections fairburn ga\", Pos 14.1, 95 impr)"
+    }
+  },
+  {
     "timestamp": "2026-10-21T04:00:37.952Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-21",

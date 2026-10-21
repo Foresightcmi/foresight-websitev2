@@ -97,13 +97,13 @@ const BUSINESS_NAP = {
   phone: "678-480-2110",
   email: "inspect@foresightcmi.com",
   website: "https://www.fhinspectionsatl.com",
-  address: "Atlanta, GA",
-  serviceArea: "Metro Atlanta and surrounding areas",
+  address: "1816 South Deshon Road, Lithonia, GA 30058",
+  serviceArea: "Metro Atlanta and 87+ cities across 20 Georgia counties",
   owner: "Christopher Boykin",
-  credentials: "Certified Master Inspector (CMI), Certified Professional Inspector (CPI)",
-  certBody: "InterNACHI",
-  description: "Premium home inspection services in Metro Atlanta with two certified inspectors on every job. Led by Christopher Boykin, CMI. Every inspection includes thermal imaging, drone technology, and a $10,000 warranty. Serving 87+ cities across Georgia.",
-  shortDescription: "Certified Master Inspector serving Metro Atlanta. Two inspectors on every job. $10,000 warranty included.",
+  credentials: "Certified Master Inspector (CMI #MICB-1082), InterNACHI #NACHI20061502",
+  certBody: "Master Inspector Certification Board (MICB) & InterNACHI",
+  description: "Premium home inspection services in Metro Atlanta with two certified inspectors on every job. Led by Christopher Boykin, CMI. Every inspection includes calibrated infrared thermal imaging, 4K drone roof technology, and up to $35,000 in combined warranty protection ($10,000 Elite Master Inspection Warranty + $25,000 InterNACHI Honor Guarantee). Starting at $345 for homes ($295 condos, $450 flat-rate sewer camera scope, $100 DeKalb low-flow certificate).",
+  shortDescription: "Certified Master Inspector serving Metro Atlanta. Two inspectors on every job from $345. $35,000 warranty protection included.",
   categories: ["Home Inspector", "Home Inspection Service", "Real Estate Inspection", "Building Inspector"],
   hours: "Mon-Sat: 8:00 AM - 8:00 PM, Sun: By Advance Appointment Only",
   socialLinks: {
@@ -240,7 +240,16 @@ async function main() {
   };
 
   fs.writeFileSync(OPPORTUNITIES_FILE, JSON.stringify(output, null, 2), 'utf8');
-  console.log(`💾 Saved to ${OPPORTUNITIES_FILE}`);
+  const trackerFile = path.join(__dirname, '..', 'data', 'directory-citations-tracker.json');
+  const todayStr = new Date().toISOString().split('T')[0];
+  fs.writeFileSync(trackerFile, JSON.stringify({
+    lastVerified: new Date().toISOString(),
+    source_url: 'https://www.fhinspectionsatl.com',
+    retrieved_on: todayStr,
+    canonicalNap: BUSINESS_NAP,
+    directories: CITATION_CHECKLIST.map(d => ({ ...d, source_url: d.url, retrieved_on: todayStr }))
+  }, null, 2), 'utf8');
+  console.log(`💾 Saved to ${OPPORTUNITIES_FILE} and ${trackerFile}`);
 
   // Print summary
   console.log('\n📊 Citation Checklist Summary:');

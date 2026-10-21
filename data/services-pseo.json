@@ -72,8 +72,8 @@
   {
     "slug": "sewer-scope-inspection",
     "name": "Sewer Scope Inspection",
-    "metaTitle": "{city}, GA Sewer Scope & Video Camera Inspection | $450",
-    "metaDescription": "4.9★ HD sewer video & camera scope inspection in {city}, GA ($450 flat rate). Fiber-optic plumbing line camera audit from cleanout to main. 24-hr video report!",
+    "metaTitle": "Sewer Camera & Scope Inspection in {city}, GA | $450 Flat",
+    "metaDescription": "4.9★ HD sewer camera, sewer video & plumbing line scope inspection in {city}, GA ($450 flat rate, no hidden fees). 200-ft fiber-optic camera & same-day video!",
     "price": "$450",
     "priceDetails": "$450 flat rate inspection with high-definition digital video report",
     "icon": "🚾",
@@ -212,8 +212,8 @@
   {
     "slug": "buyer-inspection",
     "name": "Buyer Home Inspection",
-    "metaTitle": "{city}, GA Full Home Inspection & Home Inspectors | $345+",
-    "metaDescription": "4.9★ Full home inspection in {city}, GA from $345 ($295 condos). 2 certified home inspectors on every job, free thermal, 4K drones & $35,000 warranty protection!",
+    "metaTitle": "Home Inspection in {city}, GA | $345+ (2-Inspector Team)",
+    "metaDescription": "4.9★ Certified home inspection in {city}, GA from $345 ($295 condos). 2 inspectors on every home, free infrared thermal, 4K drone & $35,000 warranty!",
     "price": "$345+",
     "priceDetails": "Condos from $295 | Single Family Homes from $345 based on square footage",
     "icon": "🏡",
@@ -243,8 +243,8 @@
   {
     "slug": "commercial-property-inspection",
     "name": "Commercial Property Inspection",
-    "metaTitle": "{city}, GA Commercial Inspection & Real Estate Due Diligence",
-    "metaDescription": "4.9★ Commercial property inspections & commercial real estate due diligence inspection services in {city}, GA. ASTM E2018 PCA by a Certified Master Inspector®.",
+    "metaTitle": "Commercial Property Inspection in {city}, GA | $750+ PCA",
+    "metaDescription": "4.9★ Commercial inspection & ASTM E2018 Property Condition Assessments (PCA) in {city}, GA from $750+. 2-inspector CMI team, thermal drone roof & HVAC audit!",
     "price": "$750+",
     "priceDetails": "Custom quote based on square footage, use type, and mechanical complexity",
     "icon": "🏢",

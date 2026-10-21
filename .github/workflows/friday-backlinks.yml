@@ -28,11 +28,12 @@ jobs:
         run: |
           node scripts/scout-backlinks.mjs
           node scripts/digital-pr-scout.mjs
+          node scripts/firstindex-authority-outreach.mjs
           python scripts/realtor_partner_engine.py
 
       - name: Commit and push
         run: |
           git config user.name "Foresight Backlink Scout"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/backlink-opportunities.json data/pr-pitches-ready.json data/pr-dispatch-brief.md data/realtor-outreach-campaign.json data/realtor-dispatch-brief.md
+          git add data/backlink-opportunities.json data/directory-citations-tracker.json data/pr-pitches-ready.json data/pr-dispatch-brief.md data/realtor-outreach-campaign.json data/realtor-dispatch-brief.md
           git diff --cached --quiet || (git commit -m "scout: backlink & digital PR opportunities $(date +%Y-%m-%d) [skip ci]" && git push)

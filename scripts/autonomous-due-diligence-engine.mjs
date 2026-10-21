@@ -222,27 +222,37 @@ Priority Desk: (678) 480-2110 | inspect@foresightcmi.com"</div>
 // -------------------------------------------------------------
 // 2. Dossier Email Builder: Under Due Diligence (New Contracts)
 // -------------------------------------------------------------
+const DEKALB_MUNICIPALITIES_REGEX = /\b(lithonia|stone mountain|tucker|decatur|redan|stonecrest|chamblee|dunwoody|brookhaven|avondale estates|clarkston|doraville|pine lake|ellenwood|scottdale|conley|belvedere park|candler-mcafee|gresham park|north decatur|north druid hills|panthersville|dekalb)\b/i;
+
 function buildUnderContractEmail(realtor) {
   const firstName = realtor.first || 'there';
   const address = realtor.address || 'your property';
   const city = realtor.city || 'Metro Atlanta';
   const price = realtor.price ? ` (${realtor.price})` : '';
   const quoteUrl = `https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)}`;
+  const isDeKalb = DEKALB_MUNICIPALITIES_REGEX.test(city) || DEKALB_MUNICIPALITIES_REGEX.test(address);
 
-  const subject = `Congrats on ${address} (${city}) — 24-hr due diligence slot`;
+  const subject = isDeKalb
+    ? `Congrats on ${address} (${city}) — 24-hr due diligence + $100 DeKalb Low-Flow Cert`
+    : `Congrats on ${address} (${city}) — 24-hr due diligence slot`;
+
+  const dekalbLeadLine = isDeKalb
+    ? `• Mandatory DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee): Same-day signed Certificate of Compliance required by DeKalb Watershed for water service activation on pre-1993 properties (standalone or bundled).`
+    : `• DeKalb County Low-Flow Plumbing Fixture Certificate ($100 Flat Fee): Official signed Certificate of Compliance for DeKalb Watershed water turn-on.`;
 
   const text = [
     `Hi ${firstName},`,
     ``,
-    `Congratulations on getting ${address} in ${city}${price} under contract! Wanted to reach out in case your buyers or co-op agent need a rapid 24-hour due diligence inspection while the 5-to-7 day contingency clock is running.`,
+    `Congratulations on getting ${address} in ${city}${price} under contract! Wanted to reach out in case your buyers or the co-op buyer's agent need a rapid 24-hour due diligence inspection while the 5-to-7 day contingency clock is running.`,
     ``,
     `My partner and I inspect every property as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access:`,
-    `• 2-Inspector Team Starting at $345: Full structural, roof, MEP & calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.`,
-    `• New Construction & 11-Month Builder Warranty: Pre-Drywall (from $275) and Final / 11-Month Warranty (from $345) inspections.`,
-    `• DeKalb County Low-Flow Plumbing Fixture Certificate ($100 Flat Fee): Official signed Certificate of Compliance for DeKalb Watershed water turn-on.`,
-    `• $35,000+ Buyer Protection Warranties + Free Utility Setup Concierge.`,
+    `• 2-Inspector Team Starting at $345 ($295 Condos): Full structural, roof, MEP & calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.`,
+    dekalbLeadLine,
+    `• New Construction, 11-Month Warranty ($335+) & Sewer Camera Scope ($450 Flat Rate): Complete underground lateral camera diagnostics and builder punch-list audits.`,
+    `• Pre-Listing Seller Inspections (from $365): Representing the seller? Book a pre-listing inspection on your next listing to eliminate surprise buyer repair credits before hitting FMLS.`,
+    `• $35,000 Combined Buyer Protection Warranties ($10,000 Elite Warranty + $25,000 Honor Guarantee).`,
     ``,
-    `Feel free to pass this 1-click quote link to your buyers or text/call me directly at (678) 480-2110: ${quoteUrl}`,
+    `Feel free to pass this 1-click quote link to your buyers or the co-op agent, or text/call me directly at (678) 480-2110: ${quoteUrl}`,
     ``,
     `Best regards,`,
     `Christopher Boykin, CMI`,
@@ -254,15 +264,16 @@ function buildUnderContractEmail(realtor) {
 
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1f2937;max-width:600px;">
 <p>Hi ${firstName},</p>
-<p>Congratulations on getting <strong>${address}</strong> in ${city}${price} under contract! Wanted to reach out in case your buyers or co-op agent need a rapid 24-hour due diligence inspection while the contingency clock is running.</p>
+<p>Congratulations on getting <strong>${address}</strong> in ${city}${price} under contract! Wanted to reach out in case your buyers or the co-op buyer's agent need a rapid 24-hour due diligence inspection while the contingency clock is running.</p>
 <p>My partner and I inspect every property as a <strong>two-inspector Certified Master Inspector (CMI) team</strong> with active SUPRA eKEY access:</p>
 <ul style="padding-left:20px;margin:14px 0;">
-<li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345:</strong> Full structural, roof, MEP &amp; calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.</li>
-<li style="margin-bottom:8px;"><strong>New Construction &amp; 11-Month Builder Warranty:</strong> Pre-Drywall (from $275) and Final / 11-Month Warranty (from $345) inspections.</li>
-<li style="margin-bottom:8px;"><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee):</strong> Official signed Certificate of Compliance for DeKalb Watershed water service activation.</li>
-<li style="margin-bottom:8px;"><strong>$35,000+ Buyer Warranties</strong> + Free Utility Setup Concierge.</li>
+<li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345 ($295 Condos):</strong> Full structural, roof, MEP &amp; calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.</li>
+<li style="margin-bottom:8px;"><strong>${isDeKalb ? 'Mandatory DeKalb County Low-Flow Certificate ($100 Flat Fee):' : 'DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee):'}</strong> Official signed Certificate of Compliance required by DeKalb Watershed for water service activation${isDeKalb ? ' on pre-1993 homes (available standalone or bundled)' : ''}.</li>
+<li style="margin-bottom:8px;"><strong>Sewer Camera Scope ($450 Flat Rate) &amp; New Construction:</strong> Pre-Drywall (from $275), Final ($400+), and 11-Month Warranty ($335+) inspections.</li>
+<li style="margin-bottom:8px;"><strong>Listing Agent Bridge ($365+ Pre-Listing Inspections):</strong> Representing the seller? Forward this link to the buyer's agent or use us on your next listing to eliminate surprise due-diligence renegotiations.</li>
+<li style="margin-bottom:8px;"><strong>$35,000 Buyer Protection Warranties</strong> ($10,000 Elite Master Warranty + $25,000 Honor Guarantee).</li>
 </ul>
-<p>Feel free to pass this pre-filled quote link to your buyers: <a href="${quoteUrl}" style="color:#0f52ba;text-decoration:underline;">fhinspectionsatl.com/quote</a> or text/call me directly at <strong>(678) 480-2110</strong>.</p>
+<p>Feel free to pass this pre-filled quote link to your buyers or co-op agent: <a href="${quoteUrl}" style="color:#0f52ba;text-decoration:underline;">fhinspectionsatl.com/quote</a> or text/call me directly at <strong>(678) 480-2110</strong>.</p>
 <p style="margin-top:20px;">Best regards,<br>
 <strong>Christopher Boykin, CMI</strong><br>
 Foresight Home Inspections<br>
@@ -621,7 +632,8 @@ async function main() {
           }
         }
 
-        if (sentUnderContractCount >= 6) break;
+        const maxUnderContractPerRun = Number(process.env.DD_BATCH_LIMIT || 25);
+        if (sentUnderContractCount >= maxUnderContractPerRun) break;
       }
     } else {
       console.log('  ℹ️ Email dispatch inactive; under-contract due diligence directory is verified and current.');

@@ -163,7 +163,7 @@ async function fetchAlpharettaPermits() {
       outFields: '*',
       returnGeometry: 'false',
       orderByFields: 'created_date DESC',
-      resultRecordCount: '25',
+      resultRecordCount: '75',
       f: 'json'
     });
 
@@ -226,8 +226,8 @@ async function fetchJohnsCreekPermits() {
       where: "JobTypeDescription LIKE '%Residential%' AND JobSquareFootage >= 2000",
       outFields: '*',
       returnGeometry: 'false',
-      orderByFields: 'ISSUE_DATE DESC',
-      resultRecordCount: '25',
+      orderByFields: 'ISSUE_DATE DESC, OBJECTID DESC',
+      resultRecordCount: '75',
       f: 'json'
     });
 
@@ -285,7 +285,7 @@ async function fetchAtlantaSTRPermits() {
       outFields: '*',
       returnGeometry: 'false',
       orderByFields: 'OBJECTID DESC',
-      resultRecordCount: '25',
+      resultRecordCount: '75',
       f: 'json'
     });
 
