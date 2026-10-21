@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-10-21T04:00:37.952Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-21",
+    "truthGuardPassed": true,
+    "page1GuardPassed": true,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 3,
+      "targets": [
+        "Cumming (\"commercial inspection cumming ga\", Pos 7.6, 220 impr)",
+        "Austell (\"home inspection austell ga\", Pos 9.8, 184 impr)",
+        "Fairburn (\"home inspection fairburn ga\", Pos 19.0, 172 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 3 city hubs: Cumming (\"commercial inspection cumming ga\", Pos 7.6, 220 impr) | Austell (\"home inspection austell ga\", Pos 9.8, 184 impr) | Fairburn (\"home inspection fairburn ga\", Pos 19.0, 172 impr)"
+    }
+  },
+  {
+    "timestamp": "2026-10-21T03:57:22.856Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-21",
+    "truthGuardPassed": true,
+    "page1GuardPassed": true,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "selectedImpactTask": {
+      "priority": "P2_GSC_STRIKING_DISTANCE",
+      "task": "Promote query \"sewer camera inspection alpharetta\" (Pos 9.5, 130 impr) into H2/FAQ & internal links",
+      "query": "sewer camera inspection alpharetta",
+      "position": 9.515384615384615,
+      "impressions": 130
+    }
+  }
+]

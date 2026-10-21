@@ -1,0 +1,78 @@
+{
+  "version": "2026.10.20",
+  "engine": "FirstIndex Autonomous Truth & AEO Operating System",
+  "business": {
+    "legalName": "Foresight Home Inspections, LLC",
+    "brandName": "Foresight Home Inspections",
+    "domain": "https://www.fhinspectionsatl.com",
+    "phone": "678-480-2110",
+    "email": "inspect@foresightcmi.com",
+    "primaryGbpCategory": "Home inspector",
+    "leadInspector": "Christopher Boykin",
+    "credentials": ["CMI #MICB-1082", "InterNACHI #NACHI20061502", "InterNACHI Member #176873"],
+    "inspectorsPerProperty": 2,
+    "onSiteDuration": "1.5 to 2.5 hours",
+    "reportTurnaround": "Same-day / Within 24 hours",
+    "operatingRadiusMiles": 50,
+    "countiesServed": 20,
+    "municipalitiesServed": 87,
+    "sundayHours": "By Appointment Only",
+    "schemaOnlyStreetAddress": "1816 South Deshon Road",
+    "rating": {
+      "ratingValue": "4.9",
+      "reviewCount": "48"
+    },
+    "warranties": {
+      "eliteMasterWarranty": "$10,000",
+      "internachiHonorGuarantee": "$25,000",
+      "combinedProtection": "$35,000",
+      "deductible": "$0"
+    }
+  },
+  "pricing": {
+    "singleFamily": "$345",
+    "condoTownhome": "$295",
+    "newConstruction": "$400",
+    "preListing": "$365",
+    "elevenMonthWarranty": "$335",
+    "preDrywall": "$275",
+    "poolSpa": "$300",
+    "termiteWdoSlab": "$125",
+    "termiteWdoCrawlspace": "$165",
+    "radon": "$275",
+    "moldAirQuality": "$450",
+    "shortTermRental": "$395",
+    "sewerScope": "$450",
+    "dekalbLowFlow": "$100",
+    "repairCostEstimate": "$99",
+    "unfinishedCrawlspaceFee": "+$75",
+    "unfinishedBasementFee": "+$75",
+    "vintageHome50PlusFee": "+$75",
+    "maxDiscount": "-$25"
+  },
+  "guardrails": {
+    "zeroVisibleAsterisks": true,
+    "hideStreetAddressInVisibleCopy": true,
+    "maxInternalLinksPerPost": 20,
+    "bannedLegalAndBrandTerms": [
+      { "term": "GAR Form F404", "replacement": "Georgia Repair Amendment" },
+      { "term": "GAR F404", "replacement": "Georgia Repair Amendment" },
+      { "term": "Form F404", "replacement": "Repair Amendment" },
+      { "term": "F404", "replacement": "Repair Amendment" },
+      { "term": "F201", "replacement": "Purchase Agreement" },
+      { "term": "RSMeans", "replacement": "regional contractor cost data" },
+      { "term": "HomeGauge CRL", "replacement": "Digital Repair Request Builder" },
+      { "term": "HomeGauge", "replacement": "interactive digital report" },
+      { "term": "FLIR", "replacement": "calibrated infrared thermal camera" }
+    ],
+    "bannedAiSlop": [
+      "delve",
+      "tapestry",
+      "game-changer",
+      "pivotal",
+      "testament",
+      "beacon",
+      "in today's fast-paced world"
+    ]
+  }
+}

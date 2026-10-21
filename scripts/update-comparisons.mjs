@@ -111,7 +111,7 @@ const newComparisons = [
       },
       {
         feature: "Repair Amendment Tool",
-        foresight: "Create Request List (CRL) Interactive Generator",
+        foresight: "Digital Repair Request List Builder Interactive Generator",
         competitors: "Standard PDF Report Summary"
       }
     ],

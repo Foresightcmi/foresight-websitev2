@@ -375,7 +375,7 @@ export default async function NeighborhoodPage({ params }) {
             Protect Your {hood.name} Investment
           </h2>
           <p style={{ color: '#F1F5F9', fontSize: '1.15rem', lineHeight: 1.6, marginBottom: '2rem', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
-            Schedule with Georgia's premier two-inspector team led by Certified Master Inspector Christopher Boykin. Reports delivered within 24 hours with the Create Request List (CRL) repair tool included.
+            Schedule with Georgia's premier two-inspector team led by Certified Master Inspector Christopher Boykin. Reports delivered within 24 hours with the Digital Repair Request List Builder repair tool included.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a

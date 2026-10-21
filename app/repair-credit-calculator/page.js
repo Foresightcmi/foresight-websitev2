@@ -36,7 +36,7 @@ const calculatorFaqSchema = {
       name: 'How does a home inspection repair credit work in Georgia?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In Georgia Association of Realtors (GAR) contracts, buyers can request a financial closing cost credit from the seller in lieu of physical repairs. The agreed credit is written into an Amendment to Address Concerns (GAR Form F404) and applied directly toward buyer closing costs, prepaids, or loan rate buydowns at closing.',
+        text: 'In Georgia Association of Realtors (GAR) contracts, buyers can request a financial closing cost credit from the seller in lieu of physical repairs. The agreed credit is written into an Amendment to Address Concerns (Georgia repair amendment) and applied directly toward buyer closing costs, prepaids, or loan rate buydowns at closing.',
       },
     },
     {
@@ -52,7 +52,7 @@ const calculatorFaqSchema = {
       name: 'Can I get an official repair cost audit if I hired another home inspector?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Foresight Home Inspections offers a standalone $99 Due Diligence Repair Cost Audit. You can upload an inspection report from any outside inspection company, and our Certified Master Inspector team will extract contractor repair ranges and generate a structured GAR Form F404 exhibit within 4 hours.',
+        text: 'Yes. Foresight Home Inspections offers a standalone $99 Due Diligence Repair Cost Audit. You can upload an inspection report from any outside inspection company, and our Certified Master Inspector team will extract contractor repair ranges and generate a structured REPAIR AMENDMENT EXHIBIT within 4 hours.',
       },
     },
     {
@@ -60,7 +60,7 @@ const calculatorFaqSchema = {
       name: 'Does Foresight provide contractor repair estimates for every inspection?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice, which do not include cost estimates. However, Foresight offers an optional $99 Due Diligence Contractor Repair Cost & Pricing Estimate for clients who specifically request line-item contractor estimates and trade schedules for their GAR Form F404 negotiation. We also offer this service as a standalone $99 audit for buyers who hired an outside inspection company.',
+        text: 'No. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice, which do not include cost estimates. However, Foresight offers an optional $99 Due Diligence Contractor Repair Cost & Pricing Estimate for clients who specifically request line-item contractor estimates and trade schedules for their Georgia repair amendment negotiation. We also offer this service as a standalone $99 audit for buyers who hired an outside inspection company.',
       },
     },
     {
@@ -139,7 +139,7 @@ export default function RepairCreditCalculatorPage() {
           </h1>
 
           <p style={{ fontSize: '1.05rem', color: '#CBD5E1', maxWidth: '820px', lineHeight: 1.6, margin: '0 0 1.5rem' }}>
-            Under contract on an Atlanta home with an inspection report full of defect findings? Quantify contractor repair outlays using regional trade indices, formulate your optimal cash-in-lieu settlement, and generate sample repair request wording compatible with standard Georgia contracts (such as GAR Form F404) before your contingency deadline expires.
+            Under contract on an Atlanta home with an inspection report full of defect findings? Quantify contractor repair outlays using regional trade indices, formulate your optimal cash-in-lieu settlement, and generate sample repair request wording compatible with standard Georgia contracts (such as Georgia repair amendment) before your contingency deadline expires.
           </p>
 
           <GooglePreferredSource
@@ -241,7 +241,7 @@ export default function RepairCreditCalculatorPage() {
         {/* Statutory Legal Disclaimer */}
         <section style={{ maxWidth: '1280px', margin: '3rem auto 0', padding: '0 1.5rem', textAlign: 'center' }}>
           <div style={{ padding: '1.25rem', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', fontSize: '0.75rem', color: '#64748B', lineHeight: 1.5 }}>
-            <strong>Legal, Due Diligence &amp; Trademark Notice:</strong> Foresight Home Inspections, LLC is an independent diagnostic property inspection firm and not a licensed general contractor, law firm, or real estate brokerage. Repair cost calculations reflect regional construction benchmarks and trade labor averages for preliminary negotiation planning only. Sample repair amendment text is diagnostic summary language provided strictly for review, modification, and preparation by the consumer&apos;s licensed Georgia Real Estate Broker or closing attorney on official standard contract forms. Foresight does not draft binding legal contracts and disclaims all liability for contract disputes, seller negotiations, or contractor pricing variances. Georgia Association of REALTORS&reg; and GAR&reg; are registered trademarks of the Georgia Association of REALTORS&reg;. RSMeans&reg; is a registered trademark of The Gordian Group, Inc. Foresight Home Inspections, LLC is not affiliated with, sponsored by, or endorsed by the Georgia Association of REALTORS&reg; or The Gordian Group, Inc.
+            <strong>Legal, Due Diligence &amp; Trademark Notice:</strong> Foresight Home Inspections, LLC is an independent diagnostic property inspection firm and not a licensed general contractor, law firm, or real estate brokerage. Repair cost calculations reflect regional construction benchmarks and trade labor averages for preliminary negotiation planning only. Sample repair amendment text is diagnostic summary language provided strictly for review, modification, and preparation by the consumer&apos;s licensed Georgia Real Estate Broker or closing attorney on official standard contract forms. Foresight does not draft binding legal contracts and disclaims all liability for contract disputes, seller negotiations, or contractor pricing variances. Georgia Association of REALTORS&reg; and GAR&reg; are registered trademarks of the Georgia Association of REALTORS&reg;. regional contractor cost data&reg; is a registered trademark of The Gordian Group, Inc. Foresight Home Inspections, LLC is not affiliated with, sponsored by, or endorsed by the Georgia Association of REALTORS&reg; or The Gordian Group, Inc.
           </div>
         </section>
       </main>

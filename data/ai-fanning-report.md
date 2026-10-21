@@ -1,8 +1,8 @@
 # 🌐 Cody Schneider AI Fanning & GEO Surface Area Audit
 
-**Generated**: October 19, 2026  
+**Generated**: October 21, 2026  
 **Framework**: Generative Engine Optimization (GEO) & AI Fan-Out Modeling  
-**Overall Surface Area Score**: **97%** (36/37 Subqueries Covered)
+**Overall Surface Area Score**: **100%** (37/37 Subqueries Covered)
 
 ---
 
@@ -56,8 +56,8 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 | **home inspection cost Atlanta 2026 guide** | [/blog/home-inspection-cost-atlanta-2026-guide](https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide) | Dynamic Blog | ✅ COVERED |
 | **instant home inspection quote calculator Atlanta** | [/quote](https://www.fhinspectionsatl.com/quote) | Static Page | ✅ COVERED |
 | **sewer scope inspection cost Atlanta $450 flat rate** | [/services/sewer-scope-inspection](https://www.fhinspectionsatl.com/services/sewer-scope-inspection) | Dynamic Service | ✅ COVERED |
-| **radon testing cost Atlanta $250** | [/services/radon-testing](https://www.fhinspectionsatl.com/services/radon-testing) | Dynamic Service | ✅ COVERED |
-| **pool and spa inspection cost Atlanta $275** | [/services/pool-spa-inspection](https://www.fhinspectionsatl.com/services/pool-spa-inspection) | Dynamic Service | ✅ COVERED |
+| **radon testing cost Atlanta $275** | [/services/radon-testing](https://www.fhinspectionsatl.com/services/radon-testing) | Dynamic Service | ✅ COVERED |
+| **pool and spa inspection cost Atlanta $300** | [/services/pool-spa-inspection](https://www.fhinspectionsatl.com/services/pool-spa-inspection) | Dynamic Service | ✅ COVERED |
 | **termite letter cost Georgia $125 crawlspace $165** | [/services/termite-wdo-inspection](https://www.fhinspectionsatl.com/services/termite-wdo-inspection) | Dynamic Service | ✅ COVERED |
 | **DeKalb County low-flow toilet certificate $100** | [/service-areas/dekalb-county-compliance](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance) | Static Page | ✅ COVERED |
 | **condo inspection cost Atlanta starting $295** | [/quote](https://www.fhinspectionsatl.com/quote) | Static Page | ✅ COVERED |
@@ -65,7 +65,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 ---
 
 ### 📡 Fan Cluster: "What are the biggest structural and environmental red flags in Georgia homes?"
-- **Coverage**: **88%** (7/8 nodes)
+- **Coverage**: **100%** (8/8 nodes)
 - **Cluster ID**: `building-science-defects`
 
 | Derivative Subquery | Target URL | Coverage Type | Status |
@@ -73,7 +73,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 | **Atlanta red clay soil foundation settlement cracking** | [/blog/atlanta-red-clay-soil-foundation-settlement](https://www.fhinspectionsatl.com/blog/atlanta-red-clay-soil-foundation-settlement) | Dynamic Blog | ✅ COVERED |
 | **polybutylene pipe failure Atlanta homes 1980s 1990s** | [/defects/polybutylene-pipe-plumbing-defect-inspection](https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection) | Defect Guide | ✅ COVERED |
 | **radon gas levels North Georgia granite bedrock** | [/blog/hidden-dangers-of-radon-gas-georgia](https://www.fhinspectionsatl.com/blog/hidden-dangers-of-radon-gas-georgia) | Dynamic Blog | ✅ COVERED |
-| **crawlspace humidity fungal mold Southeast summer** | [/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations) | None | ⚠️ GAP |
+| **crawlspace humidity fungal mold Southeast summer** | [/blog/crawlspace-moisture-silent-threat-georgia-foundations](https://www.fhinspectionsatl.com/blog/crawlspace-moisture-silent-threat-georgia-foundations) | Dynamic Blog | ✅ COVERED |
 | **stucco EIFS moisture intrusion inspection Georgia** | [/defects/stucco-eifs-moisture-inspection](https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection) | Defect Guide | ✅ COVERED |
 | **Federal Pacific Zinsco electrical panel hazards** | [/defects/federal-pacific-zinsco-panel-inspection](https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection) | Defect Guide | ✅ COVERED |
 | **11-month builder warranty inspection Atlanta** | [/blog/11-month-warranty-inspection-guide](https://www.fhinspectionsatl.com/blog/11-month-warranty-inspection-guide) | Dynamic Blog | ✅ COVERED |
@@ -88,7 +88,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 | Derivative Subquery | Target URL | Coverage Type | Status |
 | :--- | :--- | :--- | :---: |
 | **realtor SUPRA lockbox key home inspector Atlanta** | [/realtors](https://www.fhinspectionsatl.com/realtors) | Static Page | ✅ COVERED |
-| **HomeGauge CRL create repair list addendum Georgia** | [/realtors](https://www.fhinspectionsatl.com/realtors) | Static Page | ✅ COVERED |
+| **digital repair request list builder addendum Georgia** | [/realtors](https://www.fhinspectionsatl.com/realtors) | Static Page | ✅ COVERED |
 | **Christopher Boykin Certified Master Inspector press media kit** | [/press](https://www.fhinspectionsatl.com/press) | Static Page | ✅ COVERED |
 | **Atlanta real estate building science expert quotes** | [/press](https://www.fhinspectionsatl.com/press) | Static Page | ✅ COVERED |
 | **preferred inspection partner badge real estate brokerages** | [/realtors](https://www.fhinspectionsatl.com/realtors) | Static Page | ✅ COVERED |
@@ -100,7 +100,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 ## 💡 Cody Schneider Tactical Recommendations for Foresight
 
 1. **Entity Grounding in Direct Answers**:
-   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (`AeoDirectAnswer`) with deterministic prices ($450 sewer scope, $250 radon, $275 pool) so AI models quote Foresight verbatim.
+   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (`AeoDirectAnswer`) with deterministic prices ($450 sewer scope, $275 radon, $300 pool) so AI models quote Foresight verbatim.
 2. **Double-Layer Schema Distribution**:
    - Each fan node contains rich FAQPage, Service, and BreadcrumbList structured data, preventing LLMs from confusing pricing or service boundaries.
 3. **Machine-Readable AI Context**:

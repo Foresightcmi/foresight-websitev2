@@ -106,13 +106,13 @@ if (fs.existsSync(comparePagePath)) {
 }
 
 // 4. REALTOR PRODUCT SURFACE & INTERACTIVE BUILDER AUDIT
-console.log('\n4. REALTOR GAR F404 INTERACTIVE BUILDER AUDIT');
+console.log('\n4. REALTOR Georgia repair amendment INTERACTIVE BUILDER AUDIT');
 const realtorClientPath = path.join(ROOT, 'app', 'realtors', 'RealtorsClient.js');
 
 if (fs.existsSync(realtorClientPath)) {
   const realtorCode = fs.readFileSync(realtorClientPath, 'utf8');
-  check('Realtor portal has interactive GAR Form F404 builder',
-    realtorCode.includes('GAR Form F404 Interactive Builder') || realtorCode.includes('GAR_PRESETS'));
+  check('Realtor portal has interactive Georgia repair amendment builder',
+    realtorCode.includes('Interactive Repair Amendment Builder') || realtorCode.includes('GAR_PRESETS'));
   check('Realtor builder supports Contractor Repair vs Closing Credit toggling',
     realtorCode.includes('requestMode') && realtorCode.includes('repair') && realtorCode.includes('credit'));
   check('Realtor builder includes 1-click clipboard copy with gtag tracking',

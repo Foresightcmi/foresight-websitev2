@@ -322,7 +322,7 @@ export default function ConciergePage() {
               { label: '2-Inspector Standard', q: 'Why do you send two certified inspectors on every inspection?' },
               { label: 'Up to $35k Warranties', q: 'What warranties and guarantees are included with my inspection?' },
               { label: 'Included Thermal & Drones', q: 'Do you include infrared thermal imaging and aerial drone scans?' },
-              { label: 'Negotiation Leverage', q: 'How does your 24-hour CRL report help me negotiate seller repairs?' },
+              { label: 'Negotiation Leverage', q: 'How does your 24-hour interactive digital report help me negotiate seller repairs?' },
               { label: 'Firm Comparison', q: 'How does Foresight compare to national franchises and discount solo inspectors?' },
               { label: 'InterNACHI SOP', q: 'What are the official InterNACHI Standards of Practice that you inspect?' }
             ].map((chip, idx) => (
@@ -495,7 +495,7 @@ export default function ConciergePage() {
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '1.2rem', textAlign: 'center' }}>
             <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', fontWeight: 800, color: '#D4AF37', letterSpacing: '0.1em', marginBottom: '0.5rem', display: 'inline-flex', padding: '3px 8px', borderRadius: '4px', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)' }}>04</div>
             <h3 style={{ color: '#ffffff', fontSize: '0.95rem', margin: '0 0 0.3rem 0', fontWeight: 700 }}>24-Hour Reports</h3>
-            <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>Create Request List (CRL) for fast, effortless seller repair negotiation addenda.</p>
+            <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>Digital Repair Request List Builder for fast, effortless seller repair negotiation addenda.</p>
           </div>
         </div>
       </div>

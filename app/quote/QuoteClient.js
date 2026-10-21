@@ -555,7 +555,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       Contractor Repair Cost &amp; Pricing Estimate (+ $99)
                     </span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '2px', lineHeight: 1.45 }}>
-                      <strong>Optional Due Diligence Add-On:</strong> Detailed contractor labor ($95–$165/hr) and materials estimates for every reported defect, formatted for GAR Form F404 amendment negotiation. <em>(Standard home inspections are diagnostic only per InterNACHI SOP; we do not provide repair estimates unless specifically requested).</em>
+                      <strong>Optional Due Diligence Add-On:</strong> Detailed contractor labor ($95–$165/hr) and materials estimates for every reported defect, formatted for Georgia repair amendment negotiation. <em>(Standard home inspections are diagnostic only per InterNACHI SOP; we do not provide repair estimates unless specifically requested).</em>
                     </span>
                   </div>
                 </label>

@@ -170,7 +170,7 @@ function buildLoanOfficerEmail(lo) {
         <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
           <li><strong>Guaranteed 24-Hr Scheduling SLA:</strong> Same-day digital reports delivered by 8:00 PM.</li>
           <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal audit in under 2.5 hours.</li>
-          <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as GAR Form F404) for licensed broker or attorney review.</li>
+          <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as Georgia repair amendment) for licensed broker or attorney review.</li>
           <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
           <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site 1.28 GPF fixture verification and official signed county certificate for pre-1993 DeKalb homes to prevent closing delays.</li>
         </ul>
@@ -237,7 +237,7 @@ function buildUnderContractEmail(realtor) {
     `Congratulations on getting ${address} in ${city}${price} under contract! Wanted to reach out in case your buyers or co-op agent need a rapid 24-hour due diligence inspection while the 5-to-7 day contingency clock is running.`,
     ``,
     `My partner and I inspect every property as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access:`,
-    `• 2-Inspector Team Starting at $345: Full structural, roof, MEP & FLIR thermal sweep in half the time with same-day calm, objective digital reports.`,
+    `• 2-Inspector Team Starting at $345: Full structural, roof, MEP & calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.`,
     `• New Construction & 11-Month Builder Warranty: Pre-Drywall (from $275) and Final / 11-Month Warranty (from $345) inspections.`,
     `• DeKalb County Low-Flow Plumbing Fixture Certificate ($100 Flat Fee): Official signed Certificate of Compliance for DeKalb Watershed water turn-on.`,
     `• $35,000+ Buyer Protection Warranties + Free Utility Setup Concierge.`,
@@ -257,7 +257,7 @@ function buildUnderContractEmail(realtor) {
 <p>Congratulations on getting <strong>${address}</strong> in ${city}${price} under contract! Wanted to reach out in case your buyers or co-op agent need a rapid 24-hour due diligence inspection while the contingency clock is running.</p>
 <p>My partner and I inspect every property as a <strong>two-inspector Certified Master Inspector (CMI) team</strong> with active SUPRA eKEY access:</p>
 <ul style="padding-left:20px;margin:14px 0;">
-<li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345:</strong> Full structural, roof, MEP &amp; FLIR thermal sweep in half the time with same-day calm, objective digital reports.</li>
+<li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345:</strong> Full structural, roof, MEP &amp; calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.</li>
 <li style="margin-bottom:8px;"><strong>New Construction &amp; 11-Month Builder Warranty:</strong> Pre-Drywall (from $275) and Final / 11-Month Warranty (from $345) inspections.</li>
 <li style="margin-bottom:8px;"><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee):</strong> Official signed Certificate of Compliance for DeKalb Watershed water service activation.</li>
 <li style="margin-bottom:8px;"><strong>$35,000+ Buyer Warranties</strong> + Free Utility Setup Concierge.</li>

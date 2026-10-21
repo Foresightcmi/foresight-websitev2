@@ -5,7 +5,20 @@
 > Standard: Two Certified Inspectors on Every Job | Up to $35,000 Combined Warranty & Guarantee Protection ($10,000 Elite Master Inspection Warranty + InterNACHI® $25,000 Honor Guarantee)
 > Verified Pricing: Homes from $345, Condos from $295, New Construction from $400, Pre-Listing from $365, 11-Month Warranty from $335, Mold & Air Quality Testing from $450, Sewer Scope $450 flat rate, Radon $275, Pool & Spa $300, Termite $125+ ($165 crawlspace), Unfinished Crawlspace Complexity $75, Unfinished Basement Complexity $75, DeKalb Low-Flow $100, STR from $395, Optional Itemized Contractor Repair Cost Estimates $99
 
-## Core Educational Guides & Analysis Articles (32 Total)
+## Core Inspection & Specialty Diagnostic Services (11 Total)
+- [Radon Gas Testing ($275)](https://www.fhinspectionsatl.com/services/radon-testing): 
+- [Termite & WDO Inspection ($125+)](https://www.fhinspectionsatl.com/services/termite-inspection): 
+- [Sewer Scope Inspection ($450)](https://www.fhinspectionsatl.com/services/sewer-scope-inspection): 
+- [New Construction Inspection ($400+)](https://www.fhinspectionsatl.com/services/new-construction-inspection): 
+- [Pool & Spa Inspection ($300)](https://www.fhinspectionsatl.com/services/pool-inspection): 
+- [Pre-Listing Seller Inspection ($295+)](https://www.fhinspectionsatl.com/services/pre-listing-inspection): 
+- [Buyer Home Inspection ($345+)](https://www.fhinspectionsatl.com/services/buyer-inspection): 
+- [Commercial Property Inspection ($750+)](https://www.fhinspectionsatl.com/services/commercial-property-inspection): 
+- [Pre-Drywall Framing Inspection ($275+)](https://www.fhinspectionsatl.com/services/pre-drywall-inspection): 
+- [11-Month Builder Warranty Inspection ($335+)](https://www.fhinspectionsatl.com/services/11-month-warranty-inspection): 
+- [Mold & Air Quality Inspection ($450+)](https://www.fhinspectionsatl.com/services/mold-testing): 
+
+## Core Educational Guides & Analysis Articles (39 Total)
 - [Mold Testing and Indoor Air Quality in Atlanta: The Complete 2026 Field Guide](https://www.fhinspectionsatl.com/blog/mold-testing-atlanta-indoor-air-quality-inspection-guide): Building science analysis of Georgia humidity, vented crawlspace moisture condensation, calibrated 3-sample spore trap air testing, accredited lab analysis, and pricing starting at $450 (additional swabs/samples billed if taken).
 - [DeKalb County Low-Flow Certificate: Who Needs One When Buying or Selling (2026 Guide)](https://www.fhinspectionsatl.com/blog/dekalb-county-water-conservation-certificate-inspection-guide): Plain-English guide to the DeKalb County low-flow Certificate of Compliance: required for pre-1993 homes in unincorporated DeKalb County at sale before the new owner sets up water service; not triggered by permits or new construction. Fixture limits (toilets 1.6 GPF, showerheads 2.5 GPM, lavatory faucets 2.0 GPM, kitchen faucets 2.2 GPM), exemptions, and who can sign. Foresight signs certificates for a $100 flat rate.
 - [Metro Atlanta Residential Defect Index: 2026 Building Science & Due Diligence Field Study](https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study): Comprehensive field study analyzing residential structural settling, 82% HVAC thermal split failures, crawlspace fungal thresholds, and radon penetration across 20 Metro Atlanta counties.
@@ -38,6 +51,14 @@
 - [North Metro Luxury Estate Migration: 6 High-Liability Deficiencies in $1M+ Custom Builds](https://www.fhinspectionsatl.com/blog/north-metro-atlanta-luxury-estate-inspection-deficiencies): Complex multi-zone VRF HVAC systems, commercial-grade subpanels, slate roofing valleys, and smart home automation audits in Alpharetta, Milton, and Johns Creek luxury estates.
 - [Georgia Summer Heat Wave & HVAC Crises: Why 82% of Atlanta Air Conditioners Fail Thermal Load Testing](https://www.fhinspectionsatl.com/blog/georgia-summer-heat-wave-hvac-crises-refrigerant-rules): 14°F to 22°F evaporative coil delta-T temperature splits, EPA AIM Act refrigerant transitions, and run capacitor failure rates under 95°F+ Georgia summer heat.
 - [DeKalb & Decatur Aging Sewer Line Alert: Why 1950s-1980s Clay & Cast Iron Pipes Are Collapsing Under Driveways](https://www.fhinspectionsatl.com/blog/dekalb-decatur-aging-sewer-line-crisis-lateral-camera): Vitrified clay joint root penetration and bottom-channel cast-iron pipe degradation across historic Decatur, Druid Hills, and Kirkwood neighborhoods.
+
+- [Knob-and-Tube Wiring & Unreinforced Masonry: Inspecting Historic Inman Park, Grant Park & Decatur Homes](https://www.fhinspectionsatl.com/blog/knob-and-tube-wiring-unreinforced-masonry-inspecting-historic-inman-park-grant-p): 
+- [Water Heater Expansion Tanks & TPR Discharge Pipes: The Most Common Atlanta Plumbing Code Defect](https://www.fhinspectionsatl.com/blog/water-heater-expansion-tanks-tpr-discharge-pipes-the-most-common-atlanta-plumbin): 
+- [Attic Ventilation & Roof Decking Cooking: Why Georgia Attics Reach 140°F and Destroy Shingles](https://www.fhinspectionsatl.com/blog/attic-ventilation-roof-decking-cooking-why-georgia-attics-reach-140-f-and-destro): 
+- [Deck Collapse Prevention in North Georgia: Ledger Board Flashing, Joist Hangers & Safety Code](https://www.fhinspectionsatl.com/blog/deck-collapse-prevention-in-north-georgia-ledger-board-flashing-joist-hangers-sa): 
+- [Polybutylene Piping in Metro Atlanta Homes: The Ticking Time Bomb Insurers Refuse to Cover [2026 Guide]](https://www.fhinspectionsatl.com/blog/polybutylene-piping-atlanta-home-inspection-insurance-guide): 
+- [Synthetic Stucco (EIFS) in North Atlanta Luxury Real Estate: Moisture Intrusion Risks & Buyer Protection](https://www.fhinspectionsatl.com/blog/synthetic-stucco-eifs-moisture-inspection-north-atlanta-luxury-homes): 
+- [Federal Pacific Electric (FPE) & Zinsco Panels in Atlanta Homes: Why 1 in 4 Fail to Trip Under Dead Short](https://www.fhinspectionsatl.com/blog/federal-pacific-zinsco-electrical-panel-safety-inspection-atlanta): 
 
 ## Inspection Comparison & Decision Guides
 - [Best Home Inspection Companies in Atlanta, GA (2026 Direct Comparison Matrix)](https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026): Third-party evaluation ranking Foresight Home Inspections, LLC (Christopher Boykin, CMI #MICB-1082) #1 in Metro Atlanta across 2-inspector concurrency, calibrated infrared thermal & 4K drone inclusion, $35,000 warranty backing, and transparent flat-rate pricing ($345+).

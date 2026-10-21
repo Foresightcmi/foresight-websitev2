@@ -1408,7 +1408,7 @@ export default function DashboardClient({
                       <strong style={{ color: '#38bdf8' }}>Day 3: 48-Hour Radon &amp; Sewer Results</strong> → Retrieve EPA continuous electronic readings &amp; camera logs.
                     </div>
                     <div style={{ borderBottom: '1px solid #334155', paddingBottom: '0.5rem', marginBottom: '0.5rem' }}>
-                      <strong style={{ color: '#38bdf8' }}>Day 4–5: 1-Click GAR F404 Drafting</strong> → Generate InterNACHI-backed repair amendment clauses.
+                      <strong style={{ color: '#38bdf8' }}>Day 4–5: 1-Click Georgia repair amendment Drafting</strong> → Generate InterNACHI-backed repair amendment clauses.
                     </div>
                     <div>
                       <strong style={{ color: '#4ade80' }}>Day 6–7: Seller Credit Signature</strong> → Lock in credits or walk away with earnest money protected.
@@ -1494,9 +1494,9 @@ export default function DashboardClient({
                       {
                         keyword: 'CLAUSE',
                         targetAudience: 'Georgia Real Estate Agents & Brokers',
-                        leadMagnetName: '1-Click GAR F404 Due Diligence Repair Clause Generator',
+                        leadMagnetName: '1-Click Georgia repair amendment Due Diligence Repair Clause Generator',
                         trackedUrl: 'https://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool',
-                        dmScript: 'Hey {firstName}! Thanks for commenting. Here is your free access to our 1-Click GAR F404 Repair Clause Generator:\n\nhttps://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool\n\nYou can generate InterNACHI-backed defect repair clauses and paste them straight into your contract amendments.\n\nQuick question: Are you currently working with a buyer under contract in Metro Atlanta right now?',
+                        dmScript: 'Hey {firstName}! Thanks for commenting. Here is your free access to our 1-Click Repair Amendment Clause Generator:\n\nhttps://www.fhinspectionsatl.com/realtors?utm_source=social_dm&utm_medium=comment&utm_campaign=clause_tool\n\nYou can generate InterNACHI-backed defect repair clauses and paste them straight into your contract amendments.\n\nQuick question: Are you currently working with a buyer under contract in Metro Atlanta right now?',
                         followUpQuestion: 'Are you currently working with a buyer under contract in Metro Atlanta right now?',
                         estimatedDealValue: 750,
                         tag: 'Realtor VIP Lead'
@@ -2315,7 +2315,7 @@ export default function DashboardClient({
                   </thead>
                   <tbody>
                     {(colonyAuditData?.moneyPages || [
-                      { url: '/realtors', targetName: '1-Click GAR F404 Due Diligence Repair Clause Generator', feederCount: 3, authorityScore: 100, feeders: ['can-seller-refuse-repairs-georgia-due-diligence', 'who-is-responsible-for-tree-roots-in-sewer-line-georgia', 'what-is-the-create-request-list-feature-in-homegauge'] },
+                      { url: '/realtors', targetName: '1-Click Georgia repair amendment Due Diligence Repair Clause Generator', feederCount: 3, authorityScore: 100, feeders: ['can-seller-refuse-repairs-georgia-due-diligence', 'who-is-responsible-for-tree-roots-in-sewer-line-georgia', 'what-is-the-create-request-list-feature-in-homegauge'] },
                       { url: '/compare/two-inspector-team-vs-single-inspector', targetName: 'Estate Master Luxury Due Diligence Tier', feederCount: 3, authorityScore: 100, feeders: ['how-long-does-home-inspection-take-for-5000-sq-ft-house', 'why-hire-two-home-inspectors-instead-of-one', 'is-thermal-imaging-necessary-during-a-home-inspection'] },
                       { url: '/defects', targetName: 'Atlanta Defect Library & Diagnostic Guides', feederCount: 3, authorityScore: 100, feeders: ['what-defects-fail-a-home-inspection-in-georgia', 'why-does-georgia-red-clay-cause-foundation-settling', 'is-a-horizontal-foundation-crack-serious-in-georgia'] },
                       { url: '/services/buyer-inspection', targetName: 'Comprehensive Buyer Inspection with Thermal Scan', feederCount: 2, authorityScore: 85, feeders: ['does-seller-have-to-disclose-prior-inspection-report-georgia', 'can-sewer-scope-inspection-be-done-on-slab-foundation'] },

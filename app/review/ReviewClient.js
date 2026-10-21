@@ -202,7 +202,7 @@ export default function ReviewClient() {
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Atlanta Suburb &amp; CRL Report:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Atlanta Suburb &amp; Digital Repair List Report:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
                 Mentioning your neighborhood and how the same-day report helped during negotiations.
               </p>

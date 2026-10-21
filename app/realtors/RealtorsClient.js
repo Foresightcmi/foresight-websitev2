@@ -54,7 +54,7 @@ export default function RealtorsClient() {
   const [copiedBadgeId, setCopiedBadgeId] = useState(null);
   const [grecError, setGrecError] = useState('');
   
-  // GAR Form F404 Interactive Builder State
+  // Interactive Repair Amendment Builder State
   const [requestMode, setRequestMode] = useState('repair'); // 'repair' | 'credit'
   const [selectedPresetId, setSelectedPresetId] = useState('hvac');
   const [propertyAddress, setPropertyAddress] = useState('');
@@ -75,7 +75,7 @@ export default function RealtorsClient() {
     }
 
     if (includeHeader && (propertyAddress || buyerName)) {
-      const headerParts = ['GEORGIA ASSOCIATION OF REALTORS® (GAR) FORM F404 AMENDMENT'];
+      const headerParts = ['GEORGIA REAL ESTATE REPAIR & CREDIT AMENDMENT REQUEST'];
       if (propertyAddress) headerParts.push(`Property: ${propertyAddress}`);
       if (buyerName) headerParts.push(`Buyer(s): ${buyerName}`);
       headerParts.push('Special Stipulation / Amendment Language:');
@@ -177,7 +177,7 @@ export default function RealtorsClient() {
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#gar-tool" className="btn" style={{ padding: '1rem 2.25rem', fontSize: '1.125rem', background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1.5px solid var(--color-gold)', fontWeight: 700, boxShadow: '0 4px 14px rgba(212, 175, 55, 0.25)' }}>
-              Try GAR Form F404 Amendment Builder ↓
+              Try Repair Amendment Builder ↓
             </a>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '1rem 2.25rem', fontSize: '1.125rem', borderColor: 'var(--color-gold)', color: 'var(--color-gold)', fontWeight: 700 }}>
               Priority Schedule for My Client
@@ -193,7 +193,7 @@ export default function RealtorsClient() {
           {/* Instant Realtor Fast-Actions Bar */}
           <div style={{ marginTop: '2rem', display: 'inline-flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(212, 175, 55, 0.3)', borderRadius: '999px', padding: '0.75rem 2rem', backdropFilter: 'blur(8px)' }}>
             <a href="#gar-tool" style={{ color: 'var(--color-gold)', textDecoration: 'none', fontWeight: 600, fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <span>Interactive GAR F404 Builder</span>
+              <span>Interactive Repair Amendment Builder</span>
             </a>
             <span style={{ color: '#475569' }}>|</span>
             <span style={{ color: '#E2E8F0', fontSize: '0.925rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
@@ -291,7 +291,7 @@ export default function RealtorsClient() {
                 Agent Efficiency Tool
               </span>
               <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.25rem' }}>
-                Build Custom GAR Form F404 Repair Amendments in Minutes
+                Build Custom Georgia Repair Amendments in Minutes
               </h2>
               <p style={{ color: '#94A3B8', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                 Never waste hours copying and pasting inspection report findings into amendment contracts again. Foresight digital reports include interactive <strong>1-Click Repair Amendment Builder</strong>, built specifically for real estate agents.
@@ -317,7 +317,7 @@ export default function RealtorsClient() {
 
             <div style={{ background: '#1E293B', border: '2px solid var(--color-gold)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid #334155', paddingBottom: '1rem' }}>
-                <div className="font-mono text-sm font-bold text-primary mb-2">[GAR F404]</div>
+                <div className="font-mono text-sm font-bold text-primary mb-2">[REPAIR AMENDMENT]</div>
                 <div>
                   <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem' }}>Interactive Repair Amendment Preview</h3>
                   <span style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 600 }}>Included Standard on Every Foresight Report</span>
@@ -339,18 +339,18 @@ export default function RealtorsClient() {
         </div>
       </section>
 
-      {/* ZERO-CLICK AGENT TOOL: INSTANT GAR FORM F404 REPAIR & CREDIT BUILDER */}
+      {/* ZERO-CLICK AGENT TOOL: INSTANT Georgia repair amendment REPAIR & CREDIT BUILDER */}
       <section id="gar-tool" className="section" style={{ background: '#0F172A', borderBottom: '1px solid #1E293B', padding: '4.5rem 0' }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem', fontWeight: 600 }}>
-              GAR Form F404 Interactive Builder
+              Interactive Repair Amendment Builder
             </span>
             <h2 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>
               Georgia REALTOR® Repair &amp; Credit Amendment Builder
             </h2>
             <p style={{ color: '#94A3B8', maxWidth: '750px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
-              Drafting repair requests during your due diligence period? Choose whether your client wants certified contractor repairs or a closing cost credit, select the defect category, and generate ready-to-paste GAR Form F404 addendum copy.
+              Drafting repair requests during your due diligence period? Choose whether your client wants certified contractor repairs or a closing cost credit, select the defect category, and generate ready-to-paste Georgia repair amendment addendum copy.
             </p>
           </div>
 
@@ -539,7 +539,7 @@ export default function RealtorsClient() {
                     style={{ accentColor: 'var(--color-gold)', width: '16px', height: '16px', cursor: 'pointer' }}
                   />
                   <label htmlFor="includeHeader" style={{ color: '#94A3B8', fontSize: '0.85rem', cursor: 'pointer' }}>
-                    Include GAR F404 Document Header block above clause
+                    Include Repair Amendment Document Header block above clause
                   </label>
                 </div>
               )}
@@ -550,7 +550,7 @@ export default function RealtorsClient() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <span style={{ fontSize: '0.8rem', color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Generated GAR F404 Clause
+                    Generated Repair Amendment Clause
                   </span>
                   <span style={{ background: requestMode === 'repair' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(34, 197, 94, 0.2)', color: requestMode === 'repair' ? '#60A5FA' : '#4ADE80', fontSize: '0.75rem', fontWeight: 700, padding: '0.15rem 0.5rem', borderRadius: '4px' }}>
                     {requestMode === 'repair' ? 'Contractor Repair' : 'Closing Credit'}
@@ -590,7 +590,7 @@ export default function RealtorsClient() {
                     {copiedClause ? 'Copied to Clipboard!' : 'Copy Full GAR Clause'}
                   </button>
                   <a
-                    href={`mailto:?subject=${encodeURIComponent(`GAR F404 Repair Clause - ${currentPreset.label}`)}&body=${encodeURIComponent(`GAR Form F404 Special Stipulation:\n\n${generatedClause}\n\nGenerated via Foresight Home Inspections Realtor VIP Portal (www.fhinspectionsatl.com/realtors).`)}`}
+                    href={`mailto:?subject=${encodeURIComponent(`Repair Amendment Clause - ${currentPreset.label}`)}&body=${encodeURIComponent(`Repair Amendment Special Stipulation:\n\n${generatedClause}\n\nGenerated via Foresight Home Inspections Realtor VIP Portal (www.fhinspectionsatl.com/realtors).`)}`}
                     style={{
                       background: 'rgba(255, 255, 255, 0.08)',
                       color: '#F1F5F9',
@@ -619,7 +619,7 @@ export default function RealtorsClient() {
               </div>
 
               <p style={{ color: '#64748B', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
-                Aligned with Georgia Association of REALTORS® (GAR) Form F404 standards. Certified Master Inspector Christopher Boykin recommends attaching the corresponding Foresight inspection report defect page and contractor estimate to eliminate seller pushback.
+                Aligned with Georgia real estate repair amendment standards. Certified Master Inspector Christopher Boykin recommends attaching the corresponding Foresight inspection report defect page and contractor estimate to eliminate seller pushback.
               </p>
             </div>
           </div>

@@ -96,7 +96,7 @@ export async function POST(req) {
         calc.excessPriceReduction > 0 ? `Excess Over Lender Cap (Price Reduction): ${fmt(calc.excessPriceReduction)}` : '',
         '',
         '--------------------------------------------------------------------------------',
-        'SAMPLE GAR FORM F404 SPECIAL STIPULATION (FOR LICENSED AGENT DRAFTING)',
+        'SAMPLE Georgia repair amendment SPECIAL STIPULATION (FOR LICENSED AGENT DRAFTING)',
         '--------------------------------------------------------------------------------',
         calc.garF404Stipulation,
         '',

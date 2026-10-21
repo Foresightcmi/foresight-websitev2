@@ -93,7 +93,7 @@ While municipal building inspectors complete standard code inspections, many new
 
 What sets our process apart:
 • Two Certified Inspectors on every inspection for complete coverage
-• High-resolution FLIR infrared thermal imaging included at no extra cost
+• High-resolution calibrated infrared thermal imaging included at no extra cost
 • Digital report with HD photos and video delivered within 24 hours to share directly with your builder's superintendent
 • Backed by up to $35,000 in warranty protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)
 
@@ -124,7 +124,7 @@ ${disclosureText(agencyName)}`;
     <p style="margin:0 0 6px;"><strong>What sets our process apart:</strong></p>
     <ul style="margin:0 0 14px;padding-left:20px;">
       <li><strong>Two Certified Inspectors</strong> on every inspection for complete coverage</li>
-      <li><strong>High-resolution FLIR infrared thermal imaging</strong> included at no extra cost</li>
+      <li><strong>High-resolution calibrated infrared thermal imaging</strong> included at no extra cost</li>
       <li><strong>Digital report with HD photos and video</strong> delivered within 24 hours to share directly with your builder's superintendent</li>
       <li>Backed by <strong>up to $35,000 in warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)</li>
     </ul>

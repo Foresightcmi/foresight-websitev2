@@ -247,7 +247,7 @@ export default function ThermalSlider() {
         </div>
         <div>
           <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.75rem' }}>Foresight Action</span>
-          <strong style={{ color: 'var(--color-gold)', fontSize: '0.9rem' }}>Flagged on GAR F404</strong>
+          <strong style={{ color: 'var(--color-gold)', fontSize: '0.9rem' }}>Flagged on Georgia repair amendment</strong>
         </div>
       </div>
 

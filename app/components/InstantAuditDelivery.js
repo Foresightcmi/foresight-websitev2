@@ -164,7 +164,7 @@ export default function InstantAuditDelivery() {
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
             <span style={{ fontSize: '0.75rem', color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase' }}>
-              GAR Form F404 Special Stipulation (For Your Realtor):
+              Repair Amendment Special Stipulation (For Your Realtor):
             </span>
             <button
               type="button"

@@ -108,7 +108,7 @@ export default function TwoPossibilities() {
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: '#22C55E', fontWeight: 800, fontSize: '1.1rem', lineHeight: 1 }}>✓</span>
                   <div>
-                    <strong style={{ color: '#FFFFFF' }}>Same-Day Delivery &amp; 1-Click GAR Repair List:</strong> Comprehensive digital reports delivered most of the time the same day (definitely within 24 hours) with 1-click GAR F404 Amendment generator to lock in seller concessions fast.
+                    <strong style={{ color: '#FFFFFF' }}>Same-Day Delivery &amp; 1-Click GAR Repair List:</strong> Comprehensive digital reports delivered most of the time the same day (definitely within 24 hours) with 1-click Georgia repair amendment Amendment generator to lock in seller concessions fast.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

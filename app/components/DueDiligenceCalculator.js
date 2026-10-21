@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 
-// RSMeans 2026 Regional Cost Index for Metro Atlanta / Georgia (1.08x baseline)
+// 2026 Metro Atlanta Regional Contractor Cost Index for Metro Atlanta / Georgia (1.08x baseline)
 const DEFECT_ITEMS = [
   // 1. ELECTRICAL
   {
@@ -200,7 +200,7 @@ export default function DueDiligenceCalculator() {
         } catch (storageErr) {
           console.warn('localStorage error:', storageErr);
         }
-        setAuditMsg(`✓ Successfully analyzed ${data.defectsCount} defect items (${data.pricingIndex.region})! Your complete repair schedule and GAR Form F404 exhibit are ready for instant download upon payment.`);
+        setAuditMsg(`✓ Successfully analyzed ${data.defectsCount} defect items (${data.pricingIndex.region})! Your complete repair schedule and REPAIR AMENDMENT EXHIBIT are ready for instant download upon payment.`);
       }
     } catch (err) {
       setAuditMsg('Failed to process file upload. You can still enter your cloud link or paste notes below.');
@@ -296,7 +296,7 @@ export default function DueDiligenceCalculator() {
 
     // Amendment Text Generator
     const amendmentClause = `
-SAMPLE DUE DILIGENCE NEGOTIATION LANGUAGE (FOR REALTOR / CLOSING ATTORNEY REVIEW - GAR FORM F404 EXHIBIT)
+SAMPLE DUE DILIGENCE NEGOTIATION LANGUAGE (FOR REALTOR / CLOSING ATTORNEY REVIEW - REPAIR AMENDMENT EXHIBIT)
 PROPERTY: ${propertyAddress}
 DATE: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
 
@@ -311,7 +311,7 @@ In lieu of Seller performing actual physical repairs prior to closing, Seller ag
 
 All other terms and conditions of the Purchase and Sale Agreement remain in full force and effect.
 
-*DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic property inspection firm and not a licensed general contractor, law firm, or real estate brokerage. This sample wording is diagnostic summary text provided strictly for review, modification, and preparation by the consumer's licensed Georgia Real Estate Broker or closing attorney on official standard contract forms (such as GAR Form F404). Foresight does not draft binding legal contracts and disclaims all liability for contract negotiations, seller disputes, or contractor price variances. All defect remediations must be independently evaluated, quoted, and confirmed by licensed, insured trade specialists prior to contract closing. Georgia Association of REALTORS® and GAR® are registered trademarks of the Georgia Association of REALTORS®. RSMeans® is a registered trademark of The Gordian Group, Inc. Foresight Home Inspections, LLC is not affiliated with, sponsored by, or endorsed by the Georgia Association of REALTORS® or The Gordian Group, Inc.
+DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic property inspection firm and not a licensed general contractor, law firm, or real estate brokerage. This sample wording is diagnostic summary text provided strictly for review, modification, and preparation by the consumer's licensed Georgia Real Estate Broker or closing attorney on official standard contract forms (such as Georgia repair amendment). Foresight does not draft binding legal contracts and disclaims all liability for contract negotiations, seller disputes, or contractor price variances. All defect remediations must be independently evaluated, quoted, and confirmed by licensed, insured trade specialists prior to contract closing. Georgia Association of REALTORS® and GAR® are registered trademarks of the Georgia Association of REALTORS®. regional contractor cost data® is a registered trademark of The Gordian Group, Inc. Foresight Home Inspections, LLC is not affiliated with, sponsored by, or endorsed by the Georgia Association of REALTORS® or The Gordian Group, Inc.
 `.trim();
 
     return {
@@ -743,7 +743,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                     Get the Official Foresight Repair Cost &amp; GAR Exhibit Audit ($99 Flat)
                   </div>
                   <p style={{ fontSize: '0.74rem', color: '#94A3B8', margin: 0, lineHeight: 1.4 }}>
-                    Hired a competitor who handed you an un-priced PDF? Upload your report to have our Certified Master Inspector engine extract contractor repair costs and generate your GAR Form F404 amendment exhibit in 4 hours.
+                    Hired a competitor who handed you an un-priced PDF? Upload your report to have our Certified Master Inspector engine extract contractor repair costs and generate your Georgia repair amendment exhibit in 4 hours.
                   </p>
                   <button
                     type="button"
@@ -780,7 +780,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
                   <strong style={{ color: '#94A3B8', display: 'block', marginBottom: '3px' }}>
                     Statutory Due Diligence, Trademark &amp; Legal Disclaimer:
                   </strong>
-                  Foresight Home Inspections, LLC is an independent diagnostic property inspection firm and not a licensed general contractor, law firm, or real estate brokerage. Repair cost calculations reflect regional construction benchmarks and trade labor averages for preliminary negotiation planning. Sample repair amendment text is diagnostic summary language provided strictly for review, modification, and formal submission by the consumer&apos;s licensed Georgia Real Estate Broker or closing attorney on official standard contract forms. Foresight does not draft binding legal contracts and disclaims all liability for contract disputes, seller negotiations, or contractor pricing variances. Georgia Association of REALTORS&reg; and GAR&reg; are registered trademarks of the Georgia Association of REALTORS&reg;. RSMeans&reg; is a registered trademark of The Gordian Group, Inc. Foresight Home Inspections, LLC is not affiliated with, sponsored by, or endorsed by the Georgia Association of REALTORS&reg; or The Gordian Group, Inc.
+                  Foresight Home Inspections, LLC is an independent diagnostic property inspection firm and not a licensed general contractor, law firm, or real estate brokerage. Repair cost calculations reflect regional construction benchmarks and trade labor averages for preliminary negotiation planning. Sample repair amendment text is diagnostic summary language provided strictly for review, modification, and formal submission by the consumer&apos;s licensed Georgia Real Estate Broker or closing attorney on official standard contract forms. Foresight does not draft binding legal contracts and disclaims all liability for contract disputes, seller negotiations, or contractor pricing variances. Georgia Association of REALTORS&reg; and GAR&reg; are registered trademarks of the Georgia Association of REALTORS&reg;. regional contractor cost data&reg; is a registered trademark of The Gordian Group, Inc. Foresight Home Inspections, LLC is not affiliated with, sponsored by, or endorsed by the Georgia Association of REALTORS&reg; or The Gordian Group, Inc.
                 </div>
               </div>
             </div>
@@ -1103,7 +1103,7 @@ All other terms and conditions of the Purchase and Sale Agreement remain in full
 
                 <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '1.25rem 1rem', borderTop: '3px solid #10B981' }}>
                   <span style={{ fontSize: '0.75rem', color: '#6EE7B7', fontWeight: 700, textTransform: 'uppercase' }}>
-                    Stage 2: Report &amp; CRL
+                    Stage 2: Report &amp; Repair List
                   </span>
                   <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', margin: '4px 0' }}>
                     {timeline.reportTarget}

@@ -37,13 +37,13 @@ assert(quoteClientCode.includes("foundation === 'crawlspace'") && quoteClientCod
 assert(quoteClientCode.includes("foundation === 'basement'") && quoteClientCode.includes("extra += 75"), 'Finished/Unfinished Basement surcharge is +$75');
 assert(quoteClientCode.includes("serviceType === 'str'") && quoteClientCode.includes("base = 395"), 'Short-Term Rental (STR) compliance is $595');
 
-// 2. AUDIT REPAIR CREDIT & GAR F404 AMENDMENT CALCULATOR
+// 2. AUDIT REPAIR CREDIT & Georgia repair amendment AMENDMENT CALCULATOR
 console.log('\n2. AUDITING REPAIR CREDIT CALCULATOR (app/components/DueDiligenceCalculator.js)...');
 const ddCalcCode = fs.readFileSync(path.join(ROOT, 'app', 'components', 'DueDiligenceCalculator.js'), 'utf8');
 
-assert(ddCalcCode.includes("SAMPLE DUE DILIGENCE NEGOTIATION LANGUAGE (FOR REALTOR / CLOSING ATTORNEY REVIEW - GAR FORM F404 EXHIBIT)"), 'Generates formatted GAR Form F404 amendment wording');
-assert(ddCalcCode.includes("handleCopyAmendment"), 'Includes 1-click clipboard copy for Realtors to paste into GAR F404');
-assert(ddCalcCode.includes("RSMeans 2026 Regional Cost Index"), 'Grounded in RSMeans 2026 contractor pricing index');
+assert(ddCalcCode.includes("SAMPLE DUE DILIGENCE NEGOTIATION LANGUAGE (FOR REALTOR / CLOSING ATTORNEY REVIEW - REPAIR AMENDMENT EXHIBIT)"), 'Generates formatted Georgia repair amendment wording');
+assert(ddCalcCode.includes("handleCopyAmendment"), 'Includes 1-click clipboard copy for Realtors to paste into Georgia repair amendment');
+assert(ddCalcCode.includes("2026 Metro Atlanta Regional Contractor Cost Index"), 'Grounded in regional contractor cost data 2026 contractor pricing index');
 assert(ddCalcCode.includes("targetSettlement = Math.round(totalMedian * 0.75)"), 'Applies 75% target cash credit settlement negotiation strategy');
 assert(ddCalcCode.includes("fpe_zinsco_panel") && ddCalcCode.includes("polybutylene_plumbing"), 'Contains critical Georgia defect items (FPE panels, Polybutylene, Sewer roots, etc.)');
 

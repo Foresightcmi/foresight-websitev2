@@ -48,7 +48,7 @@ export default function CheckoutSuccessPage() {
             </div>
             <div style={{ display: 'flex', gap: '10px' }}>
               <span style={{ color: '#10B981', fontWeight: 800 }}>3.</span>
-              <span><strong>GAR Form F404 Exhibit Creation:</strong> Clean amendment language formatted for your Realtor and closing attorney.</span>
+              <span><strong>REPAIR AMENDMENT EXHIBIT Creation:</strong> Clean amendment language formatted for your Realtor and closing attorney.</span>
             </div>
             <div style={{ display: 'flex', gap: '10px' }}>
               <span style={{ color: '#10B981', fontWeight: 800 }}>4.</span>

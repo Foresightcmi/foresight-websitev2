@@ -3,7 +3,7 @@ import RealtorsClient from './RealtorsClient';
 
 export const metadata = {
   title: 'Realtor VIP Program | Home Inspector Atlanta',
-  description: 'Join Foresight Home Inspections\' Realtor VIP Program in Metro Atlanta. Active SUPRA eKEY access, 2-inspector CMI team, GAR F404 builder & $35,000 warranty.',
+  description: 'Join Foresight Home Inspections\' Realtor VIP Program in Metro Atlanta. Active SUPRA eKEY access, 2-inspector CMI team, Georgia repair amendment builder & $35,000 warranty.',
   keywords: ['Realtor Partner Program', 'Atlanta real estate agent inspections', 'SUPRA key access home inspector Atlanta', 'Certified Master Inspector Georgia', 'Utility Concierge real estate', 'Foresight Home Inspections realtors', 'Metro Atlanta home inspector'],
   alternates: { canonical: 'https://www.fhinspectionsatl.com/realtors' },
   openGraph: {

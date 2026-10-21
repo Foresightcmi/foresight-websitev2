@@ -51,7 +51,7 @@ const dueDiligenceFaqSchema = {
       name: 'When will I receive my digital inspection report?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Guaranteed within 24 hours of inspection completion (and frequently the same evening). Our reports include high-definition photos, infrared thermal imaging scans, drone footage, and the interactive Create Request List (CRL) tool to generate repair amendments in one click.',
+        text: 'Guaranteed within 24 hours of inspection completion (and frequently the same evening). Our reports include high-definition photos, infrared thermal imaging scans, drone footage, and the interactive Digital Repair Request List Builder tool to generate repair amendments in one click.',
       },
     },
     {
@@ -187,7 +187,7 @@ export default function DueDiligencePage() {
                 Same-Day Digital Report Delivery
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '1rem', lineHeight: 1.6, flexGrow: 1 }}>
-                Your complete digital report is delivered within 24 hours of inspection (usually the same evening). Complete with HD photos, infrared thermal imaging, drone captures, and the 1-click Create Request List (CRL) tool for instant GAR repair addendums.
+                Your complete digital report is delivered within 24 hours of inspection (usually the same evening). Complete with HD photos, infrared thermal imaging, drone captures, and the 1-click Digital Repair Request List Builder tool for instant GAR repair addendums.
               </p>
             </div>
 
@@ -239,7 +239,7 @@ export default function DueDiligencePage() {
                 <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                   <span style={{ background: 'var(--color-red)', color: '#fff', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, flexShrink: 0 }}>3</span>
                   <div>
-                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0 0 0.35rem' }}>Day 3 Evening: Same-Day Report &amp; CRL™ Tool</h3>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0 0 0.35rem' }}>Day 3 Evening: Same-Day Report &amp; Repair List Builder</h3>
                     <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }}>
                       You receive your digital report with prioritized defects, repair estimates, and 1-click clause generation for your agent's GAR amendment.
                     </p>

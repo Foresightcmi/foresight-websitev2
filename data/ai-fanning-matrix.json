@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-19T13:00:11.741Z",
+  "generatedAt": "2026-10-21T04:00:37.865Z",
   "framework": "Cody Schneider AI Fanning & GEO Surface Area Model",
-  "overallSurfaceAreaScore": "97%",
+  "overallSurfaceAreaScore": "100%",
   "totalSubqueriesFanned": 37,
-  "coveredSubqueries": 36,
+  "coveredSubqueries": 37,
   "fanClusters": [
     {
       "clusterId": "cmi-authority",
@@ -157,14 +157,14 @@
           "surfaceAreaScore": 100
         },
         {
-          "query": "radon testing cost Atlanta $250",
+          "query": "radon testing cost Atlanta $275",
           "targetUrl": "/services/radon-testing",
           "status": "COVERED",
           "coverageType": "Dynamic Service",
           "surfaceAreaScore": 100
         },
         {
-          "query": "pool and spa inspection cost Atlanta $275",
+          "query": "pool and spa inspection cost Atlanta $300",
           "targetUrl": "/services/pool-spa-inspection",
           "status": "COVERED",
           "coverageType": "Dynamic Service",
@@ -196,9 +196,9 @@
     {
       "clusterId": "building-science-defects",
       "rootIntent": "What are the biggest structural and environmental red flags in Georgia homes?",
-      "clusterCoverage": "88%",
+      "clusterCoverage": "100%",
       "subqueriesCount": 8,
-      "coveredCount": 7,
+      "coveredCount": 8,
       "subqueries": [
         {
           "query": "Atlanta red clay soil foundation settlement cracking",
@@ -223,10 +223,10 @@
         },
         {
           "query": "crawlspace humidity fungal mold Southeast summer",
-          "targetUrl": "/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations",
-          "status": "GAP",
-          "coverageType": "None",
-          "surfaceAreaScore": 0
+          "targetUrl": "/blog/crawlspace-moisture-silent-threat-georgia-foundations",
+          "status": "COVERED",
+          "coverageType": "Dynamic Blog",
+          "surfaceAreaScore": 100
         },
         {
           "query": "stucco EIFS moisture intrusion inspection Georgia",
@@ -273,7 +273,7 @@
           "surfaceAreaScore": 100
         },
         {
-          "query": "HomeGauge CRL create repair list addendum Georgia",
+          "query": "digital repair request list builder addendum Georgia",
           "targetUrl": "/realtors",
           "status": "COVERED",
           "coverageType": "Static Page",

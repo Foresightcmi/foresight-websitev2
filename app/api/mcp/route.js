@@ -268,7 +268,7 @@ async function handleToolCall(name, args) {
           'infrared thermal scans revealing hidden moisture and insulation voids',
           'Detailed crawlspace and structural framing evaluations',
           'Prioritized repair list categorized into Safety Hazards, Major Defects, and Maintenance Items',
-          'HomeGauge Create Request List (CRL) integration for rapid real estate repair amendments',
+          'HomeGauge Digital Repair Request List Builder integration for rapid real estate repair amendments',
           'Backing by up to $35,000 in combined warranty & guarantee protection ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee)'
         ],
         privacy: 'Client names and physical address redacted for homeowner privacy.'

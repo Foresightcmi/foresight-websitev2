@@ -24,7 +24,10 @@
     "permits:sweep": "node scripts/permit-radar.mjs",
     "permits:outreach": "node scripts/permit-outreach-engine.mjs --all",
     "sms:dispatch": "node scripts/dispatch-live-sms-batch.mjs",
-    "scout:due-diligence": "node scripts/autonomous-due-diligence-engine.mjs && node scripts/permit-radar.mjs && node scripts/new-construction-radar.mjs"
+    "scout:due-diligence": "node scripts/autonomous-due-diligence-engine.mjs && node scripts/permit-radar.mjs && node scripts/new-construction-radar.mjs",
+    "firstindex:guard": "node scripts/firstindex-truth-guard.mjs --fix",
+    "firstindex:mentions": "node scripts/firstindex-ai-mention-tracker.mjs",
+    "firstindex:run": "node scripts/firstindex-daily-dispatcher.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

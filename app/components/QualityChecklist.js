@@ -56,9 +56,9 @@ export default function QualityChecklist() {
     },
     {
       id: 'crl',
-      label: '24-Hour Digital Report with Create Request List (CRL™)',
+      label: '24-Hour Digital Report with Digital Repair Request List Builder',
       description: 'Allows agents and buyers to click items directly inside the report to generate standard repair amendments in minutes.',
-      foresight: 'Included (Interactive HomeGauge CRL™ reports delivered within 24hr)',
+      foresight: 'Included (Interactive digital reports with 1-click repair list builder delivered within 24hr)',
       others: 'Not Included (Static PDF reports requiring manual copying and pasting)'
     }
   ];

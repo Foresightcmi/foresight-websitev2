@@ -508,7 +508,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* OPTIONAL $99 ITEMIZED CONTRACTOR REPAIR ESTIMATES & GAR F404 AMENDMENT EXHIBIT */}
+          {/* OPTIONAL $99 ITEMIZED CONTRACTOR REPAIR ESTIMATES & Georgia repair amendment AMENDMENT EXHIBIT */}
           <div style={{
             marginTop: '2.5rem',
             background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%)',

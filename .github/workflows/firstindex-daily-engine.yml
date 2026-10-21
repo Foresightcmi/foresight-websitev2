@@ -1,0 +1,39 @@
+name: FirstIndex Autonomous Daily SEO & AEO Dispatcher
+
+on:
+  schedule:
+    # 12:30 UTC = 8:30 AM EDT daily
+    - cron: '30 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  firstindex-daily-loop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute FirstIndex Daily Truth Guard, AI Mention Tracker & Impact Dispatcher
+        run: npm run firstindex:run
+
+      - name: Commit & Push Verified Truth & AI Visibility Updates
+        run: |
+          git config user.name "Foresight FirstIndex Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/ public/
+          git diff --cached --quiet || (git commit -m "chore(firstindex): daily truth-doc validation, AI mention tracking & llms.txt sync [skip ci]" && git push)

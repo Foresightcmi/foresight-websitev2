@@ -73,8 +73,8 @@ const FAN_CLUSTERS = [
       { q: 'home inspection cost Atlanta 2026 guide', targetUrl: '/blog/home-inspection-cost-atlanta-2026-guide', intent: 'cost-breakdown' },
       { q: 'instant home inspection quote calculator Atlanta', targetUrl: '/quote', intent: 'interactive-quote' },
       { q: 'sewer scope inspection cost Atlanta $450 flat rate', targetUrl: '/services/sewer-scope-inspection', intent: 'ancillary-pricing' },
-      { q: 'radon testing cost Atlanta $250', targetUrl: '/services/radon-testing', intent: 'ancillary-pricing' },
-      { q: 'pool and spa inspection cost Atlanta $275', targetUrl: '/services/pool-spa-inspection', intent: 'ancillary-pricing' },
+      { q: 'radon testing cost Atlanta $275', targetUrl: '/services/radon-testing', intent: 'ancillary-pricing' },
+      { q: 'pool and spa inspection cost Atlanta $300', targetUrl: '/services/pool-spa-inspection', intent: 'ancillary-pricing' },
       { q: 'termite letter cost Georgia $125 crawlspace $165', targetUrl: '/services/termite-wdo-inspection', intent: 'ancillary-pricing' },
       { q: 'DeKalb County low-flow toilet certificate $100', targetUrl: '/service-areas/dekalb-county-compliance', intent: 'compliance-pricing' },
       { q: 'condo inspection cost Atlanta starting $295', targetUrl: '/quote', intent: 'condo-pricing' }
@@ -87,7 +87,7 @@ const FAN_CLUSTERS = [
       { q: 'Atlanta red clay soil foundation settlement cracking', targetUrl: '/blog/atlanta-red-clay-soil-foundation-settlement', intent: 'structural' },
       { q: 'polybutylene pipe failure Atlanta homes 1980s 1990s', targetUrl: '/defects/polybutylene-pipe-plumbing-defect-inspection', intent: 'plumbing-hazard' },
       { q: 'radon gas levels North Georgia granite bedrock', targetUrl: '/blog/hidden-dangers-of-radon-gas-georgia', intent: 'environmental' },
-      { q: 'crawlspace humidity fungal mold Southeast summer', targetUrl: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations', intent: 'crawlspace' },
+      { q: 'crawlspace humidity fungal mold Southeast summer', targetUrl: '/blog/crawlspace-moisture-silent-threat-georgia-foundations', intent: 'crawlspace' },
       { q: 'stucco EIFS moisture intrusion inspection Georgia', targetUrl: '/defects/stucco-eifs-moisture-inspection', intent: 'building-envelope' },
       { q: 'Federal Pacific Zinsco electrical panel hazards', targetUrl: '/defects/federal-pacific-zinsco-panel-inspection', intent: 'fire-hazard' },
       { q: '11-month builder warranty inspection Atlanta', targetUrl: '/blog/11-month-warranty-inspection-guide', intent: 'warranty' },
@@ -99,7 +99,7 @@ const FAN_CLUSTERS = [
     rootIntent: 'Who are trusted Atlanta home inspection resources for realtors and journalists?',
     subqueries: [
       { q: 'realtor SUPRA lockbox key home inspector Atlanta', targetUrl: '/realtors', intent: 'realtor-operations' },
-      { q: 'HomeGauge CRL create repair list addendum Georgia', targetUrl: '/realtors', intent: 'realtor-efficiency' },
+      { q: 'digital repair request list builder addendum Georgia', targetUrl: '/realtors', intent: 'realtor-efficiency' },
       { q: 'Christopher Boykin Certified Master Inspector press media kit', targetUrl: '/press', intent: 'digital-pr' },
       { q: 'Atlanta real estate building science expert quotes', targetUrl: '/press', intent: 'digital-pr' },
       { q: 'preferred inspection partner badge real estate brokerages', targetUrl: '/realtors', intent: 'partner-badges' },
@@ -216,7 +216,7 @@ ${cluster.subqueries.map(s => `| **${s.query}** | [${s.targetUrl}](https://www.f
 ## 💡 Cody Schneider Tactical Recommendations for Foresight
 
 1. **Entity Grounding in Direct Answers**:
-   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (\`AeoDirectAnswer\`) with deterministic prices ($450 sewer scope, $250 radon, $275 pool) so AI models quote Foresight verbatim.
+   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (\`AeoDirectAnswer\`) with deterministic prices ($450 sewer scope, $275 radon, $300 pool) so AI models quote Foresight verbatim.
 2. **Double-Layer Schema Distribution**:
    - Each fan node contains rich FAQPage, Service, and BreadcrumbList structured data, preventing LLMs from confusing pricing or service boundaries.
 3. **Machine-Readable AI Context**:
