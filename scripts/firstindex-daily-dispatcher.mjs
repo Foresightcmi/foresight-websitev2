@@ -14,6 +14,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
+import { matchCity, applyQueryToCity } from './lib/gsc-city-injector.mjs';
 
 const ROOT = process.cwd();
 const NTFY_TOPIC = 'https://ntfy.sh/fores-antigravity-alerts-77';
@@ -55,20 +56,16 @@ function executeHighestImpactTask() {
   let updatedCities = 0;
   const optimizedTargets = [];
 
+  // Natural, deduplicated enrichment (scripts/lib/gsc-city-injector.mjs).
+  // One sentence per city per service intent, max 2 per city, correct per-service pricing,
+  // never overwrites Meta Title/Description (owned by the weekly engine), skips "Manual Override" hubs.
   for (const item of striking) {
-    const matchedCity = cities.find((c) => item.query.includes(c['City Name'].toLowerCase()));
+    const matchedCity = matchCity(item.query, cities);
     if (!matchedCity) continue;
-
-    const exactPhrase = item.query;
-    const servicesHtml = matchedCity['Services HTML'] || '';
-    if (!servicesHtml.toLowerCase().includes(exactPhrase)) {
-      const bullet = `<li>Certified <strong>${exactPhrase}</strong> and full residential property diagnostics ($345+ homes, $450 flat-rate sewer camera scope, 2-inspector CMI team)</li>`;
-      matchedCity['Services HTML'] = servicesHtml.replace('</ul>', `${bullet}</ul>`);
-      matchedCity['Meta Title'] = `Home Inspection in ${matchedCity['City Name']}, GA | $345+ (2 Inspectors)`;
-      matchedCity['Meta Description'] = `4.9★ Home inspection in ${matchedCity['City Name']}, GA from $345 ($295 condos, $450 sewer scope). 2 certified CMI inspectors, free thermal/drone & $35,000 warranty!`;
+    if (applyQueryToCity(matchedCity, item.query)) {
       matchedCity['Last Refreshed'] = today;
       updatedCities++;
-      optimizedTargets.push(`${matchedCity['City Name']} ("${exactPhrase}", Pos ${item.position.toFixed(1)}, ${item.impressions} impr)`);
+      optimizedTargets.push(`${matchedCity['City Name']} ("${item.query}", Pos ${item.position.toFixed(1)}, ${item.impressions} impr)`);
       if (updatedCities >= 15) break; // Enrich up to 15 striking-distance city hubs per run
     }
   }
