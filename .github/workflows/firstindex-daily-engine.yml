@@ -2,8 +2,8 @@ name: FirstIndex Autonomous Daily SEO & AEO Dispatcher
 
 on:
   schedule:
-    # 12:30 UTC = 8:30 AM EDT daily
-    - cron: '30 12 * * *'
+    # 13:30 UTC = 9:30 AM EDT / 8:30 AM EST daily
+    - cron: '30 13 * * *'
   workflow_dispatch:
 
 permissions:
@@ -36,4 +36,4 @@ jobs:
           git config user.name "Foresight FirstIndex Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/ public/
-          git diff --cached --quiet || (git commit -m "chore(firstindex): daily truth-doc validation, AI mention tracking & llms.txt sync [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "chore(firstindex): daily truth-doc validation, AI mention tracking & llms.txt sync [skip ci]" && git pull --rebase origin main && git push origin main) || echo "Clean"
