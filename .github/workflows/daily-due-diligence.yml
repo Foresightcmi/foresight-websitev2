@@ -2,8 +2,8 @@ name: Autonomous Daily Due Diligence & Loan Officer Scouting Engine
 
 on:
   schedule:
-    # 12:00 UTC = 8:00 AM EST (Daily)
-    - cron: '0 12 * * *'
+    # Twice daily inside 9 AM - 6 PM Eastern year-round (14:30 UTC & 19:30 UTC)
+    - cron: '30 14,19 * * *'
   workflow_dispatch: # Allows 1-click manual trigger anytime from GitHub Actions tab
 
 permissions:

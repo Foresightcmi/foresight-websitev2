@@ -2,8 +2,8 @@ name: Autonomous New Construction Radar & Advisory Engine
 
 on:
   schedule:
-    # Run twice daily at 12:00 UTC (8:00 AM EST) and 18:00 UTC (2:00 PM EST)
-    - cron: '0 12,18 * * *'
+    # Twice daily inside 9 AM - 6 PM Eastern year-round (14:00 UTC & 19:00 UTC)
+    - cron: '0 14,19 * * *'
   workflow_dispatch: # Allows 1-click manual trigger from GitHub Actions tab
 
 permissions:

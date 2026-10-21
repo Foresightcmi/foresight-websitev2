@@ -1,0 +1,43 @@
+name: Cloud Realtor Nurture Campaign (24/7 PC-Off Autonomous Engine)
+
+on:
+  schedule:
+    # 3x daily inside 9 AM - 6 PM Eastern year-round (14:15, 17:15, 20:15 UTC)
+    - cron: '15 14,17,20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cloud-realtor-nurture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Cloud Realtor Nurture Pulse
+        run: node scripts/cloud-realtor-nurture-pulse.mjs
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+      - name: Commit and Push Cloud Nurture State
+        run: |
+          git config user.name "Foresight Cloud Nurture Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/cloud-realtor-nurture-state.json
+          git diff --cached --quiet || (git commit -m "chore(nurture): cloud realtor nurture pulse state sync [skip ci]" && git pull --rebase origin main && git push origin main) || echo "Clean"

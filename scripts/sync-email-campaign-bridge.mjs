@@ -72,9 +72,20 @@ function syncUnderContractToCampaign(unsubSet) {
   if (added > 0) {
     fs.writeFileSync(activeFilersPath, JSON.stringify(existingArr.slice(0, 5000), null, 2), 'utf8');
   }
-  return { added, totalActiveFilers: existingArr.length };
+
+  // Export cloud-ready realtor nurture queue into foresight-website/data/ for 24/7 GitHub Actions execution when PC is off
+  const cloudQueuePath = path.join(WEB_ROOT, 'data', 'cloud-realtor-nurture-queue.json');
+  const cloudQueue = existingArr
+    .filter((r) => {
+      const e = String(r.email || '').trim().toLowerCase();
+      return e && e.includes('@') && !unsubSet.has(e) && !/@ansleyre\.com$|@ansleyatlanta\.com$/i.test(e);
+    })
+    .slice(0, 1500);
+  fs.writeFileSync(cloudQueuePath, JSON.stringify(cloudQueue, null, 2), 'utf8');
+
+  return { added, totalActiveFilers: existingArr.length, cloudQueueCount: cloudQueue.length };
 }
 
 const unsub = syncUnsubscribes();
 const ucSync = syncUnderContractToCampaign(unsub.set);
-console.log(`🔗 [WEBSITE <-> CAMPAIGN BRIDGE] Mirrored ${unsub.totalSuppressedEmails} suppressed opt-outs | Synced ${ucSync.added} new FMLS under-contract realtors (${ucSync.totalActiveFilers} active filers total)`);
+console.log(`🔗 [WEBSITE <-> CAMPAIGN BRIDGE] Mirrored ${unsub.totalSuppressedEmails} suppressed opt-outs | Synced ${ucSync.added} new FMLS under-contract realtors | Cloud Queue: ${ucSync.cloudQueueCount} ready`);
