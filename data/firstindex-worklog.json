@@ -1,5 +1,37 @@
 [
   {
+    "timestamp": "2026-10-21T18:10:43.445Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-21",
+    "truthGuardPassed": true,
+    "page1GuardPassed": false,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 15,
+      "targets": [
+        "Acworth (\"home inspection acworth ga\", Pos 20.9, 79 impr)",
+        "East Point (\"home inspection east point ga\", Pos 17.2, 79 impr)",
+        "Lawrenceville (\"home inspector lawrenceville ga\", Pos 16.9, 78 impr)",
+        "Tucker (\"home inspection tucker ga\", Pos 16.0, 76 impr)",
+        "Powder Springs (\"pre-listing home inspections in powder springs, ga\", Pos 8.2, 76 impr)",
+        "Doraville (\"home inspection doraville ga\", Pos 9.2, 75 impr)",
+        "Hapeville (\"home inspection hapeville ga\", Pos 7.5, 75 impr)",
+        "Acworth (\"home inspector in acworth, ga\", Pos 16.8, 73 impr)",
+        "College Park (\"indoor air quality testing service college park\", Pos 5.1, 73 impr)",
+        "Woodstock (\"home inspection woodstock ga\", Pos 19.7, 72 impr)",
+        "Peachtree Corners (\"commercial inspections peachtree corners ga\", Pos 17.4, 71 impr)",
+        "Avondale Estates (\"home inspection avondale estates ga\", Pos 6.5, 71 impr)",
+        "Lawrenceville (\"home inspection lawrenceville ga\", Pos 20.3, 71 impr)",
+        "Senoia (\"home inspector senoia ga\", Pos 17.7, 70 impr)",
+        "Dallas (\"dallas pre drywall inspection\", Pos 8.9, 69 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 15 city hubs: Acworth (\"home inspection acworth ga\", Pos 20.9, 79 impr) | East Point (\"home inspection east point ga\", Pos 17.2, 79 impr) | Lawrenceville (\"home inspector lawrenceville ga\", Pos 16.9, 78 impr) | Tucker (\"home inspection tucker ga\", Pos 16.0, 76 impr) | Powder Springs (\"pre-listing home inspections in powder springs, ga\", Pos 8.2, 76 impr) | Doraville (\"home inspection doraville ga\", Pos 9.2, 75 impr) | Hapeville (\"home inspection hapeville ga\", Pos 7.5, 75 impr) | Acworth (\"home inspector in acworth, ga\", Pos 16.8, 73 impr) | College Park (\"indoor air quality testing service college park\", Pos 5.1, 73 impr) | Woodstock (\"home inspection woodstock ga\", Pos 19.7, 72 impr) | Peachtree Corners (\"commercial inspections peachtree corners ga\", Pos 17.4, 71 impr) | Avondale Estates (\"home inspection avondale estates ga\", Pos 6.5, 71 impr) | Lawrenceville (\"home inspection lawrenceville ga\", Pos 20.3, 71 impr) | Senoia (\"home inspector senoia ga\", Pos 17.7, 70 impr) | Dallas (\"dallas pre drywall inspection\", Pos 8.9, 69 impr)"
+    }
+  },
+  {
     "timestamp": "2026-10-21T13:38:25.791Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-21",
