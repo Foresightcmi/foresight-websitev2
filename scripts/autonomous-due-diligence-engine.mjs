@@ -17,7 +17,9 @@ const OUTREACH_LOG_FILE = path.join(ROOT_DIR, 'data', 'due-diligence-outreach-lo
 const OPENSMS_LOG_FILE = path.join(ROOT_DIR, 'data', 'opensms-outreach-log.json');
 const OPENSMS_CONFIG_FILE = path.join(ROOT_DIR, 'data', 'opensms-config.json');
 const ENV_LOCAL_FILE = path.join(ROOT_DIR, '.env.local');
-const UNSUBSCRIBED_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
+const LOCAL_UNSUB_FILE = path.join(ROOT_DIR, 'data', 'unsubscribed_contacts.json');
+const LEGACY_UNSUB_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
+const UNSUBSCRIBED_FILE = fs.existsSync(LOCAL_UNSUB_FILE) ? LOCAL_UNSUB_FILE : LEGACY_UNSUB_FILE;
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
 
 function getOpenSmsConfig() {

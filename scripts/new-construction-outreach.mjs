@@ -11,7 +11,9 @@ const LEADS_FILE = path.join(ROOT_DIR, 'data', 'new-construction-leads.json');
 const OUTREACH_FILE = path.join(ROOT_DIR, 'data', 'new-construction-outreach-log.json');
 const HOT_SHEET_CSV = path.join(ROOT_DIR, 'data', 'new-construction-hot-sheet.csv');
 const ENV_LOCAL_FILE = path.join(ROOT_DIR, '.env.local');
-const UNSUBSCRIBED_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
+const LOCAL_UNSUB_FILE = path.join(ROOT_DIR, 'data', 'unsubscribed_contacts.json');
+const LEGACY_UNSUB_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
+const UNSUBSCRIBED_FILE = fs.existsSync(LOCAL_UNSUB_FILE) ? LOCAL_UNSUB_FILE : LEGACY_UNSUB_FILE;
 const PERMIT_SUPPRESSION_FILE = path.join(ROOT_DIR, 'data', 'permit-suppression.json');
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
 

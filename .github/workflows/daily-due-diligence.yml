@@ -28,6 +28,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Scan Inbox for Opt-Out Replies Before Sending
+        run: node scripts/cloud-imap-unsubscribe-guard.mjs
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER || 'inspect@foresightcmi.com' }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
       - name: Execute Autonomous Due Diligence & Loan Officer Scout
         run: node scripts/autonomous-due-diligence-engine.mjs
         env:
@@ -41,6 +47,6 @@ jobs:
         run: |
           git config user.name "Foresight Scout Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add public/vip-dispatch.html data/due-diligence-outreach-log.json data/loan-officers.json data/under-contract-realtors.json data/archive-under-contract-realtors.json
-          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily 150 brand-new due diligence scout and vip-dispatch sync" && git pull --rebase origin main && git push origin main) || echo "Outreach logs clean or push bypassed."
+          git add public/vip-dispatch.html data/unsubscribed_contacts.json data/due-diligence-outreach-log.json data/loan-officers.json data/under-contract-realtors.json data/archive-under-contract-realtors.json
+          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily due diligence scout and vip-dispatch sync [skip ci]" && git pull --rebase origin main && git push origin main) || echo "Outreach logs clean or push bypassed."
 
