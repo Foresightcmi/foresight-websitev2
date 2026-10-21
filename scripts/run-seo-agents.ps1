@@ -8,9 +8,12 @@ Write-Host "==================================================" -ForegroundColor
 Write-Host "   Foresight Home Inspections SEO Pipeline Runner  " -ForegroundColor Cyan
 Write-Host "==================================================" -ForegroundColor Cyan
 
-# 0. Pre-Flight SEO Health Check
+# 0. Pre-Flight SEO Health Check & FirstIndex Truth Guard
 Write-Host ""
-Write-Host "[Step 0/7] Running Pre-Flight SEO and Pricing Health Check..." -ForegroundColor Yellow
+Write-Host "[Step 0/7] Running Pre-Flight SEO, Truth-Doc Guard & Email Campaign Bridge..." -ForegroundColor Yellow
+node scripts/firstindex-truth-guard.mjs --fix
+node scripts/sync-email-campaign-bridge.mjs
+node scripts/firstindex-daily-dispatcher.mjs --no-notify
 node scripts/seo-health-check.mjs
 
 # 1. Discover keywords and Striking-Distance Queries

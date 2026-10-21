@@ -3,13 +3,13 @@
 
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -WakeToRun -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 3)
 
-# 1. Daily Due Diligence & Loan Officer Scout (Daily at 8:00 AM)
+# 1. Daily Due Diligence, FirstIndex SEO & Campaign Bridge (Daily at 9:30 AM — inside 9 AM-6 PM SMTP window)
 $actionDD = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/c C:\Users\fores\.gemini\antigravity\scratch\foresight-website\run_due_diligence_service.bat' -WorkingDirectory 'C:\Users\fores\.gemini\antigravity\scratch\foresight-website'
-$triggerDaily8AM = New-ScheduledTaskTrigger -Daily -At '08:00AM'
+$triggerDaily930AM = New-ScheduledTaskTrigger -Daily -At '09:30AM'
 $triggerLogon = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 
-Register-ScheduledTask -TaskName 'Foresight_Daily_DueDiligence_Scout' -Action $actionDD -Trigger @($triggerDaily8AM, $triggerLogon) -Settings $settings -Description 'Autonomous Daily Due Diligence & Mortgage Loan Officer Scout for Foresight Home Inspections' -Force | Out-Null
-Write-Host "Registered Foresight_Daily_DueDiligence_Scout (Daily 8:00 AM + Auto Catch-Up)"
+Register-ScheduledTask -TaskName 'Foresight_Daily_DueDiligence_Scout' -Action $actionDD -Trigger @($triggerDaily930AM, $triggerLogon) -Settings $settings -Description 'Autonomous Daily Due Diligence, FirstIndex SEO Dispatcher & Email Campaign Bridge for Foresight Home Inspections' -Force | Out-Null
+Write-Host "Registered Foresight_Daily_DueDiligence_Scout (Daily 9:30 AM + Auto Catch-Up)"
 
 # 2. Weekly SEO Dominance Engine (Mondays at 9:00 AM)
 $actionSEO = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/c C:\Users\fores\.gemini\antigravity\scratch\foresight-website\run_weekly_seo_service.bat' -WorkingDirectory 'C:\Users\fores\.gemini\antigravity\scratch\foresight-website'

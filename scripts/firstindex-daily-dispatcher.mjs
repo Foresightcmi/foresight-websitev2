@@ -106,6 +106,7 @@ async function main() {
   const s3 = runStep('3. Live AI Mention & Autocomplete Tracker', 'node scripts/firstindex-ai-mention-tracker.mjs');
   const s4 = runStep('4. AI Fanning Surface Area Engine', 'node scripts/ai-fanning-engine.mjs');
   const s5 = runStep('5. Off-Site Authority, Link-Magnet & Directory Verifier', 'node scripts/firstindex-authority-outreach.mjs');
+  const s6 = runStep('6. Website <-> Email Campaign Bidirectional Bridge', 'node scripts/sync-email-campaign-bridge.mjs');
 
   const worklogPath = path.join(ROOT, 'data', 'firstindex-worklog.json');
   const existingLog = fs.existsSync(worklogPath) ? JSON.parse(fs.readFileSync(worklogPath, 'utf8')) : [];

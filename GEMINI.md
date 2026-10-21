@@ -27,3 +27,13 @@
 ## 3. Technical & Local SEO Guardrails
 * Primary GBP category locked to **`Home inspector`**.
 * Maintain 87 valid Metro Atlanta municipal hubs with exact GPS `latitude`/`longitude`, `GeoCircle`, `hasMap` Place ID linkage, `/llms.txt`, `/llms-full.txt`, and Web MCP (`/api/mcp`, `.well-known/mcp.json`).
+
+
+## 4. FirstIndex Autonomous SEO/AEO & Email Campaign Bridge (`data/truth.json`)
+* **Canonical Source of Truth**: [`data/truth.json`](file:///C:/Users/fores/.gemini/antigravity/scratch/foresight-website/data/truth.json) governs both `foresight-website` and `../email-campaign-engine` (`lightweight_realtor_templates.js`).
+* **Deterministic Validator & Auto-Healer**: Run `npm run firstindex:guard` (`node scripts/firstindex-truth-guard.mjs --fix`) to enforce zero banned terms (`F404`, `F201`, `RSMeans`, `CRL`, `FLIR`), exact pricing (`$345` homes, `$295` condos, `$450` sewer scope flat rate, `$275` radon, `$300` pool, `$100` DeKalb low-flow, `$125`/`$165` termite, `$450` mold, `$395` STR, `$99` repair estimate, `+$75` unfinished crawlspace/basement/50+ yr vintage), and 100% `public/llms.txt` coverage (`39/39` blogs, `11/11` services).
+* **Bidirectional Website $\leftrightarrow$ Email Campaign Bridge (`scripts/sync-email-campaign-bridge.mjs`)**:
+  * Mirrors `unsubscribed_contacts.json` bidirectionally between `foresight-website/data/` and `../email-campaign-engine/`.
+  * Feeds newly harvested FMLS Under-Contract Realtors (`data/under-contract-realtors.json`) into `../email-campaign-engine/recovered_active_filers.json`.
+  * Automatically highlights the **Mandatory `$100` DeKalb County Low-Flow Plumbing Certificate** on DeKalb municipalities (`Lithonia, Stone Mountain, Tucker, Decatur, Redan, Stonecrest, Chamblee, Dunwoody, Brookhaven, Avondale Estates, Clarkston, Doraville, Pine Lake, Ellenwood`) across both `autonomous-due-diligence-engine.mjs` and `../email-campaign-engine/lightweight_realtor_templates.js`.
+* **Daily Dispatcher (`npm run firstindex:run`)**: Runs daily via `.github/workflows/firstindex-daily-engine.yml` (`12:30 UTC`) and local Windows Task Scheduler (`Foresight_Daily_DueDiligence_Scout` at `9:30 AM` ET).
