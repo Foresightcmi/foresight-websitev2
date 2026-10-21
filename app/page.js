@@ -96,7 +96,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing (starts at $450), 48-hour continuous electronic radon testing ($275), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
+              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing (starts at $450), 48-hour continuous electronic radon testing ($250), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
             }
           },
           {
@@ -120,7 +120,7 @@ export default function Home() {
             "name": "What is the difference between a standard solo inspection and Foresight's Dual-Team CMI Protocol?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This cuts on-site disruption to 1.5–2.5 hours, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with 1-click GAR repair lists, and includes up to $35,000 in combined warranty and guarantee protection."
+              "text": "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This cuts on-site disruption to 1.5–2.5 hours, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with interactive repair request lists, and includes up to $35,000 in combined warranty and guarantee protection."
             }
           },
           {
@@ -967,7 +967,7 @@ export default function Home() {
             faqs={[
               {
                 q: "How much does a certified home inspection cost in Metro Atlanta?",
-                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include certified mold & indoor air quality lab testing starting at $450, sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $275, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
+                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include certified mold & indoor air quality lab testing starting at $450, sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $250, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
               },
               {
                 q: "Does Foresight Home Inspections provide mold testing and air quality sampling?",

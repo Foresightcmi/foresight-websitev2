@@ -170,7 +170,7 @@ export default function Services() {
     },
     {
       title: 'Radon Gas Testing',
-      price: '$275',
+      price: '$250',
       description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
       details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Strict EPA protocol compliance'],
       slug: 'hidden-dangers-of-radon-gas-georgia',
@@ -289,7 +289,7 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional code-referenced punch list before your 1-year builder warranty expires." }, "price": "335.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "275.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "250.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "395.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },

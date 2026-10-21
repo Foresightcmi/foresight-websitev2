@@ -86,7 +86,7 @@ function calculateQuoteDetails(input = {}) {
   }
 
   const addonBreakdown = [];
-  if (addons.radon) { extra += 275; addonBreakdown.push({ name: 'Radon Gas Testing', price: 275 }); }
+  if (addons.radon) { extra += 250; addonBreakdown.push({ name: 'Radon Gas Testing', price: 250 }); }
   if (addons.termite) {
     const termitePrice = foundation === 'crawlspace' ? 165 : 125;
     extra += termitePrice;
@@ -137,7 +137,7 @@ const MCP_TOOLS = [
         addons: {
           type: 'object',
           properties: {
-            radon: { type: 'boolean', description: 'Continuous Radon Monitor testing ($275)' },
+            radon: { type: 'boolean', description: 'Continuous Radon Monitor testing ($250)' },
             termite: { type: 'boolean', description: 'Official Georgia WDO/Termite clearance ($125 slab/basement, $165 crawlspace)' },
             pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety audit ($300)' },
             sewer: { type: 'boolean', description: 'High-definition underground lateral sewer scope camera inspection ($450 flat rate)' },
@@ -246,7 +246,7 @@ async function handleToolCall(name, args) {
         'new-construction': { name: 'New Construction Final Phase Inspection', base: 'From $400', details: 'Comprehensive pre-closing quality control audit covering all major home components.' },
         'warranty': { name: '11-Month Builder Warranty Inspection', base: 'From $335', details: 'Comprehensive audit before builder 1-year warranty expires to ensure warranty items are addressed.' },
         'sewer-scope': { name: 'Sewer Scope Camera Inspection', base: '$450 flat rate', details: 'High-definition camera scan through main cleanout to municipal lateral or septic tank.' },
-        'radon': { name: 'Continuous Radon Gas Monitoring', base: '$275', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
+        'radon': { name: 'Continuous Radon Gas Monitoring', base: '$250', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
         'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
         'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
         'mold': { name: 'Mold & Indoor Air Quality Testing', base: 'Starts at $450', details: 'Certified mold inspection starting at $450 with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours. Additional surface swabs or extra samples billed if taken.' },

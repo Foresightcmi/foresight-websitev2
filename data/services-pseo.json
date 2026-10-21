@@ -2,10 +2,10 @@
   {
     "slug": "radon-testing",
     "name": "Radon Gas Testing",
-    "metaTitle": "{city}, GA Radon Testing & Radon Inspection | $275 EPA",
-    "metaDescription": "4.9★ Residential & commercial 48-hour electronic radon testing and radon inspection in {city}, GA. Flat $275 rate. Hourly EPA pCi/L graph & 24-hr report!",
-    "price": "$275",
-    "priceDetails": "$275 continuous 48-hour electronic monitoring test",
+    "metaTitle": "{city}, GA Radon Testing & Radon Inspection | $250 EPA",
+    "metaDescription": "4.9★ Residential & commercial 48-hour electronic radon testing and radon inspection in {city}, GA. Flat $250 rate. Hourly EPA pCi/L graph & 24-hr report!",
+    "price": "$250",
+    "priceDetails": "$250 continuous 48-hour electronic monitoring test",
     "icon": "☢️",
     "badge": "EPA Recommended",
     "heroSub": "Radon is an invisible, odorless radioactive gas and the #1 cause of lung cancer in non-smokers. Protect your family in {city} with continuous electronic monitoring.",
@@ -27,7 +27,7 @@
       },
       {
         "q": "How much does radon testing cost in {city}, GA?",
-        "a": "Electronic 48-hour continuous radon testing in {city} is a flat rate of $275 (compared to $350 to $375+ charged by many standalone Atlanta radon testing providers). Every inspection includes an hourly EPA pCi/L graph, same-day digital reporting, and our $10,000 Elite Master Inspection Warranty."
+        "a": "Electronic 48-hour continuous radon testing in {city} is a flat rate of $250 (compared to $350 to $375+ charged by many standalone Atlanta radon testing providers). Every inspection includes an hourly EPA pCi/L graph, same-day digital reporting, and our $10,000 Elite Master Inspection Warranty."
       }
     ],
     "riskContext": "Radon levels in Georgia can spike unexpectedly during heavy rainfall and winter heating seasons when soil gases are drawn upward into living spaces.",

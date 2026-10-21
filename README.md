@@ -6,7 +6,7 @@
 > **Headquarters (JSON-LD Grounding):** 1816 South Deshon Road, Lithonia, GA 30058  
 > **Phone:** 678-480-2110 | **Email:** inspect@foresightcmi.com  
 > **Operating Footprint:** Exact 50-Mile Radius (20 Georgia Counties & 87 Municipalities)  
-> **Total Static Pages:** 703 Pre-Rendered SSG Routes (0 Compilation Errors)
+> **Total Static Pages:** 1,235 Pre-Rendered SSG Routes (0 Compilation Errors)
 
 ---
 
@@ -15,7 +15,7 @@
 Foresight Home Inspections, LLC is Georgia's premier Certified Master Inspector-led home inspection company operating on a strict **Two-Inspector Standard**:
 * **Two Certified Inspectors on Every Job:** Cuts on-site inspection time by 50% (1.5–2.5 hours vs. 4+ hours for solo operators) while providing double the verification on roofs, crawlspaces, electrical panels, and HVAC systems.
 * **$10,000 Elite Master Inspection Warranty ($0 Deductible):** Included free on every standard inspection, covering appliances, mechanicals, structure, mold remediation ($2,250), and roof leaks ($1,000).
-* **Advanced Diagnostics Included Free:** High-resolution high-resolution infrared thermal imaging, aerial camera roof drones, and electronic moisture scanners.
+* **Advanced Diagnostics Included Free:** High-resolution infrared thermal imaging, aerial camera roof drones, and electronic moisture scanners.
 * **Under 24-Hour Digital Report Delivery:** Comprehensive HTML/PDF reports with embedded high-definition photos, video clips, and prioritized repair action items.
 
 ---
@@ -28,12 +28,12 @@ Foresight Home Inspections, LLC is Georgia's premier Certified Master Inspector-
 | **Single-Family Home Buyer Inspection** | **$345** | 2 Inspectors, roof, foundation, attic, HVAC, electrical, $10k warranty |
 | **Pre-Listing Seller Inspection** | **$365** | Full pre-MLS audit to prevent negotiation surprises & speed closing |
 | **11-Month Builder Warranty Audit** | **$335** | Comprehensive punch list before 1-year builder coverage expires |
-| **New Construction (Phased & Final)** | **$355 / $375** | Pre-drywall framing audit ($355) / Final closing audit ($375) |
-| **Continuous 48-Hour Radon Testing** | **$200** | Professional electronic continuous monitor (EPA compliant) |
-| **HD Sewer Scope Camera Inspection** | **$465** | Fiber-optic underground lateral pipe line inspection |
+| **New Construction (Pre-Drywall & Final)** | **$275 / $400** | Pre-drywall framing audit ($275) / Final closing audit ($400) |
+| **Continuous 48-Hour Radon Testing** | **$250** | Professional electronic continuous monitor (EPA compliant) |
+| **HD Sewer Scope Camera Inspection** | **$450** | Fiber-optic underground lateral pipe line inspection |
 | **Swimming Pool & Spa Evaluation** | **$300** | Pumps, filters, heaters, hydraulic pressure, electrical bonding |
-| **Termite & WDO Clearance Letter** | **$110+** | Official Georgia Wood Infestation Report for lender closing |
-| **Short-Term Rental (STR) Compliance** | **$355** | Airbnb/Vrbo municipal safety checklist & egress verification |
+| **Termite & WDO Clearance Letter** | **$125** | Official Georgia Wood Infestation Report ($165 crawlspace) |
+| **Short-Term Rental (STR) Compliance** | **$395** | Airbnb/Vrbo municipal safety checklist & egress verification |
 
 ---
 
@@ -154,7 +154,7 @@ The website is maintained by **4 scheduled background daemons**:
 * **Framework:** Next.js 16 (App Router) + Turbopack SSG
 * **Styling:** Responsive Custom CSS with high-contrast color tokens and mobile sticky CTAs
 * **Structured Data:** Full Schema.org JSON-LD (`HomeAndConstructionBusiness`, `FAQPage`, `BreadcrumbList`, `Service`, `OfferCatalog`, `GeoCircle`)
-* **Build Status:** 703 static routes compiled with **0 errors**.
+* **Build Status:** 1,235 static routes compiled with **0 errors**.
 
 ```bash
 # Run local development server

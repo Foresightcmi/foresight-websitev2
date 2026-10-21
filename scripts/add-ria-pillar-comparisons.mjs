@@ -142,7 +142,7 @@ const newComparisons = [
       },
       {
         q: "Does Foresight offer the same diagnostic services as RIA?",
-        a: "Yes, and more. We provide full pre-purchase inspections, high-resolution infrared thermal imaging (included free), HD fiber-optic sewer scopes ($450 flat), 48-hour continuous radon testing ($250), pool and spa inspections ($275), and Georgia WDO termite letters ($125-$165), all backed by up to $35,000 in warranty coverage."
+        a: "Yes, and more. We provide full pre-purchase inspections, high-resolution infrared thermal imaging (included free), HD fiber-optic sewer scopes ($450 flat), 48-hour continuous radon testing ($250), pool and spa inspections ($300), and Georgia WDO termite letters ($125-$165), all backed by up to $35,000 in warranty coverage."
       }
     ]
   }

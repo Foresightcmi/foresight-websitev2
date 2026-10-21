@@ -29,7 +29,7 @@ const quoteClientCode = fs.readFileSync(path.join(ROOT, 'app', 'quote', 'QuoteCl
 
 assert(quoteClientCode.includes("parsedSqft <= 1000 ? 295 : 325"), 'Condo pricing correctly starts at $295');
 assert(quoteClientCode.includes("parsedSqft <= 1000 ? 345 : 375") || quoteClientCode.includes("if (parsedSqft <= 1000) base = 345;"), 'Single-family starts at $345');
-assert(quoteClientCode.includes("addons.radon") && quoteClientCode.includes("extra += 275"), 'Continuous Radon Monitoring addon is strictly $275');
+assert(quoteClientCode.includes("addons.radon") && quoteClientCode.includes("extra += 250"), 'Continuous Radon Monitoring addon is strictly $250');
 assert(quoteClientCode.includes("addons.sewer") && quoteClientCode.includes("extra += 450"), 'Sewer Scope Video Inspection is strictly $450 flat rate');
 assert(quoteClientCode.includes("addons.pool") && quoteClientCode.includes("extra += 300"), 'Pool & Spa Inspection is strictly $300');
 assert(quoteClientCode.includes("addons.termite") && quoteClientCode.includes("165 : 125"), 'Georgia Termite / WDO is strictly $125 ($165 crawlspace)');

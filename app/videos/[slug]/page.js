@@ -107,7 +107,7 @@ export const SERVICE_VIDEOS = [
     slug: 'radon-gas-testing',
     title: 'Continuous 48-Hour Electronic Radon Testing in Atlanta GA — CMI® Video Briefing',
     shortTitle: '48-Hour Continuous Electronic Radon Testing',
-    description: 'Learn why North Georgia’s granite bedrock places Fulton, DeKalb, Gwinnett, and Cobb counties in EPA Radon Zone 1, and how Foresight performs 48-hour continuous electronic radon monitoring ($275).',
+    description: 'Learn why North Georgia’s granite bedrock places Fulton, DeKalb, Gwinnett, and Cobb counties in EPA Radon Zone 1, and how Foresight performs 48-hour continuous electronic radon monitoring ($250).',
     videoUrl: '/videos/services/radon-testing.mp4',
     posterUrl: '/images/services/radon-testing-poster.webp',
     durationIso: 'PT30S',
@@ -117,7 +117,7 @@ export const SERVICE_VIDEOS = [
     serviceHref: '/services/radon-testing',
     startingPrice: '$275 Flat Rate',
     takeaways: [
-      'Deploys calibrated continuous electronic radon monitors for a minimum 48-hour closed-building test period ($275 flat rate).',
+      'Deploys calibrated continuous electronic radon monitors for a minimum 48-hour closed-building test period ($250 flat rate).',
       'Produces hour-by-hour pCi/L barometric and tamper-verified telemetry rather than delayed charcoal mail-in canisters.',
       'Identifies properties exceeding the 4.0 pCi/L EPA action threshold so buyers can negotiate sub-slab depressurization mitigation ($1,200–$1,800) prior to closing.'
     ]

@@ -69,7 +69,7 @@ flowchart TD
 
 - Single-family home inspections: Starting from **$345** (condos from **$295**)
 - Sewer Scope inspection: Strictly **$450 flat rate** (Zero asterisks)
-- Radon Gas testing: Strictly **$275**
+- Radon Gas testing: Strictly **$250**
 - Pool & Spa inspection: Strictly **$300**
 - DeKalb County Low-Flow Compliance: Strictly **$100**
 - Georgia Termite / WDO: Strictly **$125** ($165 crawlspace)

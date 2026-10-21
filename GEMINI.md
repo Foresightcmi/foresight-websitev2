@@ -7,7 +7,7 @@
 * **Standard Residential Homes**: Starting at **`$345`**
 * **Condos & Townhomes**: Starting at **`$295`**
 * **Sewer Scope Camera Inspection**: Strictly **`$450` flat rate** (never alter or discount)
-* **Radon Continuous Monitoring**: **`$275`**
+* **Radon Continuous Monitoring**: **`$250`**
 * **Swimming Pool & Spa Inspection**: **`$300`**
 * **DeKalb County Low-Flow Plumbing Certificate**: **`$100`**
 * **Termite / Official Georgia Wood Infestation Report**: **`$125`** slab (`$165` crawlspace)
@@ -31,7 +31,7 @@
 
 ## 4. FirstIndex Autonomous SEO/AEO & Email Campaign Bridge (`data/truth.json`)
 * **Canonical Source of Truth**: [`data/truth.json`](file:///C:/Users/fores/.gemini/antigravity/scratch/foresight-website/data/truth.json) governs both `foresight-website` and `../email-campaign-engine` (`lightweight_realtor_templates.js`).
-* **Deterministic Validator & Auto-Healer**: Run `npm run firstindex:guard` (`node scripts/firstindex-truth-guard.mjs --fix`) to enforce zero banned terms (`F404`, `F201`, `RSMeans`, `CRL`, `FLIR`), exact pricing (`$345` homes, `$295` condos, `$450` sewer scope flat rate, `$275` radon, `$300` pool, `$100` DeKalb low-flow, `$125`/`$165` termite, `$450` mold, `$395` STR, `$99` repair estimate, `+$75` unfinished crawlspace/basement/50+ yr vintage), and 100% `public/llms.txt` coverage (`39/39` blogs, `11/11` services).
+* **Deterministic Validator & Auto-Healer**: Run `npm run firstindex:guard` (`node scripts/firstindex-truth-guard.mjs --fix`) to enforce zero banned terms (`F404`, `F201`, `RSMeans`, `CRL`, `FLIR`), exact pricing (`$345` homes, `$295` condos, `$450` sewer scope flat rate, `$250` radon, `$300` pool, `$100` DeKalb low-flow, `$125`/`$165` termite, `$450` mold, `$395` STR, `$99` repair estimate, `+$75` unfinished crawlspace/basement/50+ yr vintage), and 100% `public/llms.txt` coverage (`39/39` blogs, `11/11` services).
 * **Bidirectional Website $\leftrightarrow$ Email Campaign Bridge (`scripts/sync-email-campaign-bridge.mjs`)**:
   * Mirrors `unsubscribed_contacts.json` bidirectionally between `foresight-website/data/` and `../email-campaign-engine/`.
   * Feeds newly harvested FMLS Under-Contract Realtors (`data/under-contract-realtors.json`) into `../email-campaign-engine/recovered_active_filers.json`.

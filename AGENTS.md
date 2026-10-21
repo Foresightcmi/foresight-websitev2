@@ -7,7 +7,7 @@
 * **Standard Residential Homes**: Starting at **`$345`**
 * **Condos & Townhomes**: Starting at **`$295`**
 * **Sewer Scope Camera Inspection**: Strictly **`$450` flat rate** (never alter or discount)
-* **Radon Continuous Monitoring**: **`$275`**
+* **Radon Continuous Monitoring**: **`$250`**
 * **Swimming Pool & Spa Inspection**: **`$300`**
 * **DeKalb County Low-Flow Plumbing Certificate**: **`$100`**
 * **Termite / Official Georgia Wood Infestation Report**: **`$125`** slab (`$165` crawlspace)

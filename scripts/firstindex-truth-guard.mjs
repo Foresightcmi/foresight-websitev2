@@ -5,7 +5,7 @@
  *
  * Implements Josh Pigford's FirstIndex Truth-Document Architecture:
  * 1. Validates all data JSONs, app templates, scripts, and /llms.txt against data/truth.json
- * 2. Detects and deterministically heals stale pricing ($250 radon -> $275, $275 pool -> $300)
+ * 2. Detects and deterministically heals stale pricing ($275 radon -> $250, $275 pool -> $300)
  * 3. Strips banned legal/trademark terms (F404, F201, RSMeans, CRL, FLIR) from visible copy
  * 4. Enforces zero visible asterisks, link-count ceilings, and 100% /llms.txt inventory coverage
  */
@@ -36,8 +36,8 @@ function record(title, passed, detail = '') {
 
 // 1. Deterministic Replacement Rules for Visible Copy & Data Files
 const COPY_REPLACEMENTS = [
-  { pattern: /radon testing cost Atlanta \$250/gi, replacement: 'radon testing cost Atlanta $275', label: 'Radon $250 -> $275' },
-  { pattern: /\$250 radon/gi, replacement: '$275 radon', label: 'Radon $250 -> $275' },
+  { pattern: /radon testing cost Atlanta \$275/gi, replacement: 'radon testing cost Atlanta $250', label: 'Radon $275 -> $250' },
+  { pattern: /\$275 radon/gi, replacement: '$250 radon', label: 'Radon $275 -> $250' },
   { pattern: /pool and spa inspection cost Atlanta \$275/gi, replacement: 'pool and spa inspection cost Atlanta $300', label: 'Pool $275 -> $300' },
   { pattern: /\$275 pool/gi, replacement: '$300 pool', label: 'Pool $275 -> $300' },
   { pattern: /GEORGIA ASSOCIATION OF REALTORS® \(GAR\) FORM F404 AMENDMENT/g, replacement: 'GEORGIA REAL ESTATE REPAIR & CREDIT AMENDMENT REQUEST', label: 'GAR Form F404 header' },
@@ -120,13 +120,13 @@ for (const rel of TARGET_FILES) {
   let modified = false;
 
   for (const rule of COPY_REPLACEMENTS) {
-    if (rule.pattern.test(content)) {
+    if ((rule.pattern.lastIndex = 0, rule.pattern.test(content))) {
       if (FIX_MODE) {
         content = content.replace(rule.pattern, rule.replacement);
         modified = true;
         fixedItems++;
       } else {
-        driftFiles++;
+        console.log(`    [DRIFT] ${rel}: ${rule.label}`); driftFiles++;
       }
     }
   }

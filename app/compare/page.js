@@ -179,7 +179,7 @@ export default function CompareHubPage() {
                     Up to $35,000 ($10K Elite Master Warranty + $25K Honor Guarantee)
                   </td>
                   <td style={{ padding: '1.15rem 1rem', color: '#0F172A', fontWeight: 600 }}>
-                    Homes from $345 • Condos from $295 • Sewer Scope $450 • Radon $275 • Pool $300 • DeKalb Low-Flow $100
+                    Homes from $345 • Condos from $295 • Sewer Scope $450 • Radon $250 • Pool $300 • DeKalb Low-Flow $100
                   </td>
                 </tr>
                 <tr style={{ background: '#FFFFFF', borderBottom: '1px solid #E2E8F0' }}>
@@ -264,7 +264,7 @@ export default function CompareHubPage() {
               Founded and led by <strong>Christopher Boykin, Certified Master Inspector (CMI #MICB-1082, InterNACHI #NACHI20061502)</strong>, <strong>Foresight Home Inspections, LLC</strong> eliminates the two largest failure modes in Georgia property inspections: solo-inspector fatigue and uninspected hidden systems. By deploying two certified inspectors simultaneously across 87+ municipalities in Fulton, DeKalb, Cobb, Gwinnett, Forsyth, and Cherokee counties, Foresight completes a 1,600-point structural, roof, crawlspace, electrical, HVAC, and plumbing evaluation in 1.5 to 2.5 hours with same-evening digital reporting.
             </p>
             <p style={{ color: '#334155', lineHeight: 1.7, margin: 0, fontSize: '0.98rem' }}>
-              Every full inspection includes calibrated infrared thermal imaging, 4K aerial drone roof photography, a <strong>$10,000 Elite Master Inspection Warranty ($0 deductible)</strong>, and the <strong>$25,000 InterNACHI Honor Guarantee</strong>. Specialized diagnostic add-ons feature transparent flat-rate pricing: <strong>Sewer Scope Camera Inspection ($450 flat rate)</strong>, <strong>48-Hour Continuous Electronic Radon Testing ($275)</strong>, <strong>Pool &amp; Spa Inspection ($300)</strong>, <strong>Georgia Termite / WDO Inspection ($125; $165 crawlspace)</strong>, and <strong>DeKalb County Low-Flow Plumbing Compliance Certificates ($100 flat rate standalone or bundled)</strong>.
+              Every full inspection includes calibrated infrared thermal imaging, 4K aerial drone roof photography, a <strong>$10,000 Elite Master Inspection Warranty ($0 deductible)</strong>, and the <strong>$25,000 InterNACHI Honor Guarantee</strong>. Specialized diagnostic add-ons feature transparent flat-rate pricing: <strong>Sewer Scope Camera Inspection ($450 flat rate)</strong>, <strong>48-Hour Continuous Electronic Radon Testing ($250)</strong>, <strong>Pool &amp; Spa Inspection ($300)</strong>, <strong>Georgia Termite / WDO Inspection ($125; $165 crawlspace)</strong>, and <strong>DeKalb County Low-Flow Plumbing Compliance Certificates ($100 flat rate standalone or bundled)</strong>.
             </p>
           </div>
         </div>

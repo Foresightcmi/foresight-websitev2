@@ -912,7 +912,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   addons: {
                     type: "ARRAY",
                     items: { type: "STRING" },
-                    description: "Addon services: radon ($275), sewer ($450), termite ($125/$165), pool ($300), lowFlow ($100), str (from $395)"
+                    description: "Addon services: radon ($250), sewer ($450), termite ($125/$165), pool ($300), lowFlow ($100), str (from $395)"
                   }
                 },
                 required: ["sqft"]
@@ -2190,7 +2190,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                 <span style={{ fontSize: '0.68rem', color: '#94a3b8', fontWeight: 700 }}>Add-ons:</span>
                 {[
                   { key: 'sewer', label: 'Sewer Scope ($450)' },
-                  { key: 'radon', label: 'Radon ($275)' },
+                  { key: 'radon', label: 'Radon ($250)' },
                   { key: 'termite', label: 'Termite ($125+)' },
                   { key: 'pool', label: 'Pool/Spa ($300)' },
                   { key: 'lowFlow', label: 'DeKalb Low-Flow ($100)' }
@@ -2698,7 +2698,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             Quick Add-ons:
           </span>
           <button
-            onClick={() => handleToggleAddon('radon', '48-Hour Electronic Radon Testing', 275)}
+            onClick={() => handleToggleAddon('radon', '48-Hour Electronic Radon Testing', 250)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -2711,7 +2711,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Radon ($275)
+            + Radon ($250)
           </button>
           <button
             onClick={() => handleToggleAddon('termite', 'Termite / WDO Inspection', 125)}

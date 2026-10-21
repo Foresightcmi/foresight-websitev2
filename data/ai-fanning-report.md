@@ -56,7 +56,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 | **home inspection cost Atlanta 2026 guide** | [/blog/home-inspection-cost-atlanta-2026-guide](https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide) | Dynamic Blog | ✅ COVERED |
 | **instant home inspection quote calculator Atlanta** | [/quote](https://www.fhinspectionsatl.com/quote) | Static Page | ✅ COVERED |
 | **sewer scope inspection cost Atlanta $450 flat rate** | [/services/sewer-scope-inspection](https://www.fhinspectionsatl.com/services/sewer-scope-inspection) | Dynamic Service | ✅ COVERED |
-| **radon testing cost Atlanta $275** | [/services/radon-testing](https://www.fhinspectionsatl.com/services/radon-testing) | Dynamic Service | ✅ COVERED |
+| **radon testing cost Atlanta $250** | [/services/radon-testing](https://www.fhinspectionsatl.com/services/radon-testing) | Dynamic Service | ✅ COVERED |
 | **pool and spa inspection cost Atlanta $300** | [/services/pool-spa-inspection](https://www.fhinspectionsatl.com/services/pool-spa-inspection) | Dynamic Service | ✅ COVERED |
 | **termite letter cost Georgia $125 crawlspace $165** | [/services/termite-wdo-inspection](https://www.fhinspectionsatl.com/services/termite-wdo-inspection) | Dynamic Service | ✅ COVERED |
 | **DeKalb County low-flow toilet certificate $100** | [/service-areas/dekalb-county-compliance](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance) | Static Page | ✅ COVERED |
@@ -100,7 +100,7 @@ Foresight Home Inspections' 727-route matrix was audited against the top 5 home 
 ## 💡 Cody Schneider Tactical Recommendations for Foresight
 
 1. **Entity Grounding in Direct Answers**:
-   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (`AeoDirectAnswer`) with deterministic prices ($450 sewer scope, $275 radon, $300 pool) so AI models quote Foresight verbatim.
+   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (`AeoDirectAnswer`) with deterministic prices ($450 sewer scope, $250 radon, $300 pool) so AI models quote Foresight verbatim.
 2. **Double-Layer Schema Distribution**:
    - Each fan node contains rich FAQPage, Service, and BreadcrumbList structured data, preventing LLMs from confusing pricing or service boundaries.
 3. **Machine-Readable AI Context**:

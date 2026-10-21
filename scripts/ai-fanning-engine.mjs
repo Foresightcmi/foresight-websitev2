@@ -73,7 +73,7 @@ const FAN_CLUSTERS = [
       { q: 'home inspection cost Atlanta 2026 guide', targetUrl: '/blog/home-inspection-cost-atlanta-2026-guide', intent: 'cost-breakdown' },
       { q: 'instant home inspection quote calculator Atlanta', targetUrl: '/quote', intent: 'interactive-quote' },
       { q: 'sewer scope inspection cost Atlanta $450 flat rate', targetUrl: '/services/sewer-scope-inspection', intent: 'ancillary-pricing' },
-      { q: 'radon testing cost Atlanta $275', targetUrl: '/services/radon-testing', intent: 'ancillary-pricing' },
+      { q: 'radon testing cost Atlanta $250', targetUrl: '/services/radon-testing', intent: 'ancillary-pricing' },
       { q: 'pool and spa inspection cost Atlanta $300', targetUrl: '/services/pool-spa-inspection', intent: 'ancillary-pricing' },
       { q: 'termite letter cost Georgia $125 crawlspace $165', targetUrl: '/services/termite-wdo-inspection', intent: 'ancillary-pricing' },
       { q: 'DeKalb County low-flow toilet certificate $100', targetUrl: '/service-areas/dekalb-county-compliance', intent: 'compliance-pricing' },
@@ -216,7 +216,7 @@ ${cluster.subqueries.map(s => `| **${s.query}** | [${s.targetUrl}](https://www.f
 ## 💡 Cody Schneider Tactical Recommendations for Foresight
 
 1. **Entity Grounding in Direct Answers**:
-   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (\`AeoDirectAnswer\`) with deterministic prices ($450 sewer scope, $275 radon, $300 pool) so AI models quote Foresight verbatim.
+   - Every target URL in the fan must feature an exact-match H2 or H3 heading and a direct 40-to-60 word answer box (\`AeoDirectAnswer\`) with deterministic prices ($450 sewer scope, $250 radon, $300 pool) so AI models quote Foresight verbatim.
 2. **Double-Layer Schema Distribution**:
    - Each fan node contains rich FAQPage, Service, and BreadcrumbList structured data, preventing LLMs from confusing pricing or service boundaries.
 3. **Machine-Readable AI Context**:

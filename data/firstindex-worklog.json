@@ -1,5 +1,37 @@
 [
   {
+    "timestamp": "2026-10-21T13:38:25.791Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-21",
+    "truthGuardPassed": true,
+    "page1GuardPassed": true,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 15,
+      "targets": [
+        "Brookhaven (\"home inspection brookhaven ga\", Pos 13.0, 94 impr)",
+        "Fairburn (\"home inspector fairburn ga\", Pos 15.6, 94 impr)",
+        "Norcross (\"home inspection norcross ga\", Pos 8.3, 92 impr)",
+        "Tyrone (\"home inspections tyrone ga\", Pos 14.2, 91 impr)",
+        "Redan (\"home inspection redan ga\", Pos 9.1, 87 impr)",
+        "Sandy Springs (\"home inspector sandy springs ga\", Pos 21.0, 87 impr)",
+        "Fairburn (\"home inspectors fairburn ga\", Pos 15.3, 86 impr)",
+        "Chamblee (\"home inspection chamblee ga\", Pos 8.9, 84 impr)",
+        "Morrow (\"home inspection morrow ga\", Pos 11.7, 84 impr)",
+        "Dunwoody (\"home inspection dunwoody ga\", Pos 17.0, 83 impr)",
+        "Senoia (\"home inspection senoia ga\", Pos 12.6, 83 impr)",
+        "Stone Mountain (\"home inspection stone mountain ga\", Pos 13.6, 83 impr)",
+        "Woodstock (\"home inspector woodstock ga\", Pos 21.6, 83 impr)",
+        "Clarkston (\"home inspection clarkston ga\", Pos 11.6, 80 impr)",
+        "Peachtree City (\"home inspections peachtree city ga\", Pos 20.0, 80 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 15 city hubs: Brookhaven (\"home inspection brookhaven ga\", Pos 13.0, 94 impr) | Fairburn (\"home inspector fairburn ga\", Pos 15.6, 94 impr) | Norcross (\"home inspection norcross ga\", Pos 8.3, 92 impr) | Tyrone (\"home inspections tyrone ga\", Pos 14.2, 91 impr) | Redan (\"home inspection redan ga\", Pos 9.1, 87 impr) | Sandy Springs (\"home inspector sandy springs ga\", Pos 21.0, 87 impr) | Fairburn (\"home inspectors fairburn ga\", Pos 15.3, 86 impr) | Chamblee (\"home inspection chamblee ga\", Pos 8.9, 84 impr) | Morrow (\"home inspection morrow ga\", Pos 11.7, 84 impr) | Dunwoody (\"home inspection dunwoody ga\", Pos 17.0, 83 impr) | Senoia (\"home inspection senoia ga\", Pos 12.6, 83 impr) | Stone Mountain (\"home inspection stone mountain ga\", Pos 13.6, 83 impr) | Woodstock (\"home inspector woodstock ga\", Pos 21.6, 83 impr) | Clarkston (\"home inspection clarkston ga\", Pos 11.6, 80 impr) | Peachtree City (\"home inspections peachtree city ga\", Pos 20.0, 80 impr)"
+    }
+  },
+  {
     "timestamp": "2026-10-21T04:21:20.419Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-21",

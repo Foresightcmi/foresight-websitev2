@@ -56,8 +56,8 @@ const serviceOptimizations = {
     metaDescription: 'HD sewer camera inspection in {city}, GA. Avoid $15,000 underground repairs! Detect root intrusion & cracked pipes before closing. Flat $450 with HD video.'
   },
   'radon-testing': {
-    metaTitle: '{city} Radon Testing GA | 48-Hr EPA Monitor $275 | Foresight',
-    metaDescription: '48-hour continuous electronic radon testing in {city}, GA. Precision hourly pCi/L readings & same-day report. EPA compliant. Flat $275 rate. Instant booking!'
+    metaTitle: '{city} Radon Testing GA | 48-Hr EPA Monitor $250 | Foresight',
+    metaDescription: '48-hour continuous electronic radon testing in {city}, GA. Precision hourly pCi/L readings & same-day report. EPA compliant. Flat $250 rate. Instant booking!'
   },
   'pool-inspection': {
     metaTitle: '{city} Pool & Spa Inspection | $300 Flat Rate | Foresight',
@@ -132,7 +132,7 @@ if (fs.existsSync(GSC_SNAPSHOT_FILE)) {
       enrichmentHook = 'Flat-Rate $450 HD Sewer Camera Inspection: Preventing $15,000 Main Line Replacements';
     } else if (query.includes('radon')) {
       targetPage = '/services/radon-testing';
-      enrichmentHook = 'Continuous 48-Hour Electronic Radon Monitoring ($275) Across Georgia Granite Belt';
+      enrichmentHook = 'Continuous 48-Hour Electronic radon monitoring ($250) Across Georgia Granite Belt';
     } else if (query.includes('pool')) {
       targetPage = '/services/pool-inspection';
       enrichmentHook = 'Complete Swimming Pool & Spa Safety & Equipment Diagnostics ($300 Flat)';

@@ -67,7 +67,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/radon-gas-testing`,
       title: 'Continuous 48-Hour Electronic Radon Testing in Atlanta GA - Foresight Video Briefing',
-      description: 'EPA-certified 48-hour continuous electronic active radon monitor placement for Georgia granite bedrock ($275 flat rate). Hourly pCi/L graph and official mitigation report.',
+      description: 'EPA-certified 48-hour continuous electronic active radon monitor placement for Georgia granite bedrock ($250 flat rate). Hourly pCi/L graph and official mitigation report.',
       thumbnail: `${SITE_URL}/images/services/radon-testing-poster.webp`,
       content: `${SITE_URL}/videos/services/radon-testing.mp4`,
       player: `${SITE_URL}/videos/radon-gas-testing`,

@@ -38,7 +38,7 @@ function calculateQuoteDetails({ propertyType = 'single-family', serviceType = '
   }
 
   const addonBreakdown = [];
-  if (addons.radon) { extra += 275; addonBreakdown.push({ name: 'Radon Gas Testing', price: 275 }); }
+  if (addons.radon) { extra += 250; addonBreakdown.push({ name: 'Radon Gas Testing', price: 250 }); }
   if (addons.termite) { 
     const termitePrice = foundation === 'crawlspace' ? 165 : 125;
     extra += termitePrice; 
@@ -547,7 +547,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // Radon (Contextual Upsell & Info)
   if (matchesAny(['radon'])) {
     return {
-      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 275 dollars. Would you like to add that to your estimate, or keep it as is?",
+      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 250 dollars. Would you like to add that to your estimate, or keep it as is?",
       preAudio: '/audio/receptionist-upsell-radon.mp3'
     };
   }

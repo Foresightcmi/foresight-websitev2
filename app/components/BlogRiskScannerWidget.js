@@ -7,7 +7,7 @@ const ERA_PROFILES = {
   'pre-1975': {
     label: 'Pre-1975 Historic / Vintage',
     risks: 'Cast iron sewer decay, galvanized water lines, ungrounded 2-prong electrical, potential asbestos/lead, and historic foundation settlement.',
-    highPriorityAddons: ['Sewer Scope ($450)', 'Radon Testing ($275)', 'Termite WDO ($125+)']
+    highPriorityAddons: ['Sewer Scope ($450)', 'Radon Testing ($250)', 'Termite WDO ($125+)']
   },
   '1978-1995': {
     label: '1978–1995 High-Liability Era',
