@@ -505,7 +505,7 @@ export default async function CityPage({ params }) {
           </p>
           <div className="hero-content">
             <h1 style={{ marginBottom: '1rem', color: '#FFFFFF', textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
-              {cityName}, GA Home Inspections &amp; Certified Home Inspectors:{' '}
+              {cityName}, GA Local Housing Risks &amp; Inspection Services:{' '}
               <br />
               <span style={{ color: 'var(--color-gold)', textShadow: '0 2px 14px rgba(212, 175, 55, 0.35)' }}>Two Certified Inspectors on Every Job (From $345)</span>
             </h1>
@@ -912,7 +912,7 @@ export default async function CityPage({ params }) {
           <div className="grid grid-3" style={{ gap: '1.5rem' }}>
             <Link href={`/services/buyer-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[HOME]</div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Buyer Home Inspection</h3>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Home Inspection in {cityName}</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Full 2-inspector buyer evaluation with infrared thermal scan and same-day report in {cityName}.</p>
             </Link>
             <Link href={`/services/radon-testing/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>

@@ -28,15 +28,24 @@ test('caps managed sentences per city at 2', () => {
   assert.equal(managedIntents(city['Services HTML']).length, 2);
 });
 
+test('every template links the service, including capitalized sentence starts', () => {
+  for (const c of ['Tucker', 'Sandy Springs', 'Dallas', 'Cumming', 'Morrow', 'Acworth']) {
+    for (const q of ['home inspection', 'pre drywall', 'commercial inspection']) {
+      assert.ok(buildSentence(c, detectIntent(q), 'x').includes('<a href="/services/'), `${c} / ${q}`);
+    }
+  }
+});
+
 test('manual override hubs are never touched', () => {
   const city = { 'City Name': 'Lithonia', 'Services HTML': '<ul></ul>', 'Manual Override': true };
   assert.equal(applyQueryToCity(city, 'home inspection lithonia ga'), false);
 });
 
 test('sentence has no asterisks and links the service page', () => {
-  const s = buildSentence('College Park', detectIntent('indoor air quality testing'));
+  const s = buildSentence('College Park', detectIntent('indoor air quality testing'), 'college-park');
   assert.ok(!s.includes('*'));
-  assert.ok(s.includes('href="/services/mold-testing"'));
+  assert.ok(s.includes('href="/services/mold-testing/college-park"'));
+  assert.ok(buildSentence('Acworth', detectIntent('home inspection acworth ga'), 'acworth').includes('href="/services/buyer-inspection/acworth"'));
 });
 
 test('city matching uses whole words and prefers the longest name', () => {

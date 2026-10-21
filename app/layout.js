@@ -100,12 +100,11 @@ export default function RootLayout({ children }) {
           "https://maps.google.com/?cid=10862078652033010531",
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
           "https://certifiedmasterinspector.org/verify/christopher-boykin",
-          "https://www.bbb.org/us/ga/lithonia/profile/home-inspection/foresight-home-inspections-llc",
-          "https://www.zillow.com/profile/Foresight-Home-Inspections-LLC/",
+          "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
+          "https://nextdoor.com/pages/foresight-home-inspections-llc-lithonia-ga/",
           "https://www.linkedin.com/company/foresight-home-inspections-llc/",
           "https://facebook.com/fhinspectionsatl",
           "https://www.instagram.com/fhinspectionsatl/",
-          "https://www.youtube.com/@ForesightHomeInspections-t6r",
           "https://www.tiktok.com/@fhinspectionsatl"
         ],
         "priceRange": "$$$",
@@ -499,12 +498,11 @@ export default function RootLayout({ children }) {
       "https://maps.google.com/?cid=10862078652033010531",
       "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
       "https://certifiedmasterinspector.org/verify/christopher-boykin",
-      "https://www.bbb.org/us/ga/lithonia/profile/home-inspection/foresight-home-inspections-llc",
-      "https://www.zillow.com/profile/Foresight-Home-Inspections-LLC/",
+      "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
+      "https://nextdoor.com/pages/foresight-home-inspections-llc-lithonia-ga/",
       "https://www.linkedin.com/company/foresight-home-inspections-llc/",
       "https://facebook.com/fhinspectionsatl",
       "https://www.instagram.com/fhinspectionsatl/",
-      "https://www.youtube.com/@ForesightHomeInspections-t6r",
       "https://www.tiktok.com/@fhinspectionsatl"
     ],
     "knowsAbout": [
@@ -758,11 +756,6 @@ export default function RootLayout({ children }) {
                   <a href="https://www.tiktok.com/@fhinspectionsatl" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="footer-social-link" title="TikTok">
                     <svg viewBox="0 0 24 24">
                       <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.95-1.72-.1-.09-.17-.14-.26-.24V15c.02 3.01-1.65 5.96-4.52 7.07-2.92 1.17-6.47.67-8.86-1.45-2.58-2.3-3.23-6.27-1.53-9.28 1.63-2.95 5.21-4.59 8.52-3.87v4.11c-1.92-.51-4.09.12-5.26 1.71-.99 1.35-.98 3.32.02 4.65 1.01 1.34 2.84 1.93 4.47 1.44 1.52-.45 2.54-1.9 2.51-3.48V.02z"/>
-                    </svg>
-                  </a>
-                  <a href="https://www.youtube.com/@ForesightHomeInspections-t6r" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="footer-social-link" title="YouTube">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.5 12 3.5 12 3.5s-7.518 0-9.388.553a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.553 9.388.553 9.388.553s7.518 0 9.388-.553a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                     </svg>
                   </a>
                   <a href="https://www.linkedin.com/company/foresight-home-inspections-llc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-link" title="LinkedIn">

@@ -135,6 +135,24 @@ export async function fetchGSCAnalytics() {
 
   const pageData = await pageRes.json();
 
+  // 3b. Query x Page for core "home inspect..." queries (city scoreboard + cannibalization check)
+  const qpRes = await fetch(queryUrl, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      startDate: startDateStr,
+      endDate: endDateStr,
+      dimensions: ['query', 'page'],
+      dimensionFilterGroups: [{ filters: [{ dimension: 'query', operator: 'contains', expression: 'inspect' }] }],
+      rowLimit: 25000
+    })
+  });
+  const qpData = await qpRes.json();
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'gsc-query-page-latest.json'), JSON.stringify({
+    retrievedAt: new Date().toISOString(), siteUrl, dateRange: { startDate: startDateStr, endDate: endDateStr }, rows: qpData.rows || []
+  }, null, 2), 'utf8');
+  console.log(`[GSC ENGINE] Saved ${(qpData.rows || []).length} query x page rows`);
+
   // Save raw snapshot
   const rawSnapshot = {
     retrievedAt: new Date().toISOString(),

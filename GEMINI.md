@@ -37,3 +37,10 @@
   * Feeds newly harvested FMLS Under-Contract Realtors (`data/under-contract-realtors.json`) into `../email-campaign-engine/recovered_active_filers.json`.
   * Automatically highlights the **Mandatory `$100` DeKalb County Low-Flow Plumbing Certificate** on DeKalb municipalities (`Lithonia, Stone Mountain, Tucker, Decatur, Redan, Stonecrest, Chamblee, Dunwoody, Brookhaven, Avondale Estates, Clarkston, Doraville, Pine Lake, Ellenwood`) across both `autonomous-due-diligence-engine.mjs` and `../email-campaign-engine/lightweight_realtor_templates.js`.
 * **Daily Dispatcher (`npm run firstindex:run`)**: Runs daily via `.github/workflows/firstindex-daily-engine.yml` (`12:30 UTC`) and local Windows Task Scheduler (`Foresight_Daily_DueDiligence_Scout` at `9:30 AM` ET).
+
+## 5. City Page Ownership (anti-cannibalization, set 2026-10-21 from GSC query x page data)
+* **`/services/buyer-inspection/{city}`** is the ONLY page that targets "home inspection {city}" (title `Home Inspection in {City}, GA | ...`). Google already ranked it in 78 cities vs. 33 for the hub.
+* **`/service-areas/{city}`** hubs are local guides: title `{City}, GA Inspection Guide: Local Risks & Services` (`Title Strategy: hub-local-guide-v1` in `data/cities.json`). Never retitle a hub to "Home Inspection in {City}" and never add exact "home inspection {city} ga" keyword bullets to hubs.
+* Hub GSC sentences (`scripts/lib/gsc-city-injector.mjs`) link to the city-specific service page; "home" intent links to `/services/buyer-inspection/{city}`.
+* Goal metric: `node scripts/city-rank-scoreboard.mjs` (cities on page 1 for core queries). Map pack is not visible in GSC; target the home ring (Lithonia, Stonecrest, Redan, Conyers, Stone Mountain, Snellville, Decatur, Tucker, Covington, Lilburn).
+* Review requests: `scripts/review-request-engine.mjs` (client PII only in gitignored `data/private/`). Weekly GBP post: `scripts/gbp-weekly-kit.mjs`.

@@ -46,9 +46,12 @@ const TEMPLATES = [
   (c, i) => `${c} buyers and agents use our ${i.label} (${i.price}) to clear due diligence on time, backed by up to $35,000 in warranty and guarantee protection.`
 ];
 
-export function buildSentence(cityName, intent) {
+export function buildSentence(cityName, intent, slug) {
   const tpl = TEMPLATES[hash(`${cityName}:${intent.id}`) % TEMPLATES.length];
-  const text = tpl(cityName, intent).replace(intent.label, `<a href="${intent.path}">${intent.label}</a>`);
+  // City-specific link; "home" intent -> /services/buyer-inspection/<city>, the URL Google already ranks
+  // for "home inspection <city>" (GSC query x page, Oct 2026). City hubs must not compete for that query.
+  const href = slug ? `/services/${intent.id === 'home' ? 'buyer-inspection' : intent.path.split('/').pop()}/${slug}` : intent.path;
+  const text = tpl(cityName, intent).replace(new RegExp(intent.label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'), (m) => `<a href="${href}">${m}</a>`);
   return `<li data-gsc="${intent.id}">${text}</li>`;
 }
 
@@ -73,7 +76,7 @@ export function applyQueryToCity(city, query) {
     if (html !== city['Services HTML']) { city['Services HTML'] = html; return true; }
     return false;
   }
-  city['Services HTML'] = html.replace('</ul>', `${buildSentence(city['City Name'], intent)}</ul>`);
+  city['Services HTML'] = html.replace('</ul>', `${buildSentence(city['City Name'], intent, city.Slug)}</ul>`);
   return true;
 }
 
