@@ -7,3 +7,4 @@ echo ======================================================================== >>
 "C:\Program Files\nodejs\node.exe" scripts/autonomous-due-diligence-engine.mjs >> "due_diligence_scout.log" 2>&1
 "C:\Program Files\nodejs\node.exe" scripts/sync-email-campaign-bridge.mjs >> "due_diligence_scout.log" 2>&1
 "C:\Program Files\nodejs\node.exe" scripts/firstindex-daily-dispatcher.mjs >> "due_diligence_scout.log" 2>&1
+"C:\Program Files\nodejs\node.exe" scripts/review-request-engine.mjs run >> "review_requests.log" 2>&1

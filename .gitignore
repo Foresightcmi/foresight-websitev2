@@ -44,3 +44,7 @@ secrets/
 *.key.json
 *.log
 data/opensms-config.json
+
+# Client PII for review request engine (local only)
+data/private/
+review_requests.log
