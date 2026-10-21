@@ -79,5 +79,55 @@
     "email": "wenchi512@hotmail.com",
     "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3190177.html",
     "timestamp": "2026-10-10T17:36:53.718Z"
+  },
+  {
+    "leadId": "ext_DKB-3173612",
+    "name": "Ermias Nida",
+    "address": "644 WARREN AVE, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "ermiasgnida@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3173612.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-21T18:54:34.028Z"
+  },
+  {
+    "leadId": "ext_DKB-3175824",
+    "name": "Ana Pacheco Perez",
+    "address": "4543 WELLSPRING WAY, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "abbypacheco678@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3175824.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-21T18:54:37.720Z"
+  },
+  {
+    "leadId": "ext_DKB-3006657",
+    "name": "John Lydon",
+    "address": "1365 Montreal RD E, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "jlydon@minerva-usa.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3006657.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-21T18:54:41.651Z"
+  },
+  {
+    "leadId": "ext_DKB-3112351",
+    "name": "AMIN E TEJANI*",
+    "address": "1674 STONECLIFF DR, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "aatejani@hotmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3112351.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-21T18:54:45.332Z"
+  },
+  {
+    "leadId": "ext_DKB-3111411",
+    "name": "Roger Holloway",
+    "address": "2555 Henderson Mill RD, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "holloway_10@yahoo.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3111411.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-21T18:54:48.995Z"
   }
 ]
