@@ -35,7 +35,7 @@
 * **Bidirectional Website $\leftrightarrow$ Email Campaign Bridge (`scripts/sync-email-campaign-bridge.mjs`)**:
   * Mirrors `unsubscribed_contacts.json` bidirectionally between `foresight-website/data/` and `../email-campaign-engine/`.
   * Feeds newly harvested FMLS Under-Contract Realtors (`data/under-contract-realtors.json`) into `../email-campaign-engine/recovered_active_filers.json`.
-  * Automatically highlights the **Mandatory `$100` DeKalb County Low-Flow Plumbing Certificate** on DeKalb municipalities (`Lithonia, Stone Mountain, Tucker, Decatur, Redan, Stonecrest, Chamblee, Dunwoody, Brookhaven, Avondale Estates, Clarkston, Doraville, Pine Lake, Ellenwood`) across both `autonomous-due-diligence-engine.mjs` and `../email-campaign-engine/lightweight_realtor_templates.js`.
+  * Highlights the `$100` DeKalb County Low-Flow Plumbing Certificate in outreach as applying to **unincorporated DeKalb only** (source: DeKalb County water service application and Exemption Form, verified 2026-10-22). Never call it "mandatory" for a named city. Emails say we confirm applicability per address (county Tax District field). Mailing city names (Decatur, Lithonia, Stone Mountain) do NOT decide it across both `autonomous-due-diligence-engine.mjs` and `../email-campaign-engine/lightweight_realtor_templates.js`.
 * **Daily Dispatcher (`npm run firstindex:run`)**: Runs daily via `.github/workflows/firstindex-daily-engine.yml` (`12:30 UTC`) and local Windows Task Scheduler (`Foresight_Daily_DueDiligence_Scout` at `9:30 AM` ET).
 
 ## 5. City Page Ownership (anti-cannibalization, set 2026-10-21 from GSC query x page data)

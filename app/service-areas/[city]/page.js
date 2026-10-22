@@ -336,7 +336,7 @@ export default async function CityPage({ params }) {
   const getCountyContext = (c) => {
     switch(c) {
       case 'Fulton': return "Fulton County requires specific environmental reviews and adheres to strict urban building codes, especially for properties near the BeltLine or historic districts. Our inspections are calibrated to identify common Fulton County compliance hurdles before you close.";
-      case 'DeKalb': return "DeKalb County enforces unique requirements, including the mandatory low-flow plumbing fixture certificate for properties built before 1993. We evaluate these items to ensure your transaction proceeds smoothly without municipal delays.";
+      case 'DeKalb': return "DeKalb County requires a low-flow plumbing fixture certificate when a pre-1993 home in unincorporated DeKalb is sold. If your address is inside a city, we help you confirm whether it applies, so your transaction proceeds without delays.";
       case 'Gwinnett': return "As one of the fastest-growing areas, Gwinnett County properties range from massive new developments to established 1990s subdivisions. We focus heavily on polybutylene plumbing risks and rapid-build structural issues common in this county.";
       case 'Cobb': return "Cobb County's varied topography means properties are highly susceptible to foundation settlement and basement moisture intrusion. Our thermal imaging and structural expertise are specifically tailored to Cobb County terrain challenges.";
       case 'Cherokee': return "Cherokee County combines rapid residential growth with Lake Allatoona watershed conditions. We conduct thorough radon screenings and pre-drywall framing assessments across Woodstock and Canton.";

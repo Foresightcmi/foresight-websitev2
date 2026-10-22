@@ -1,0 +1,161 @@
+[
+  {
+    "name": "Redan CDP, Georgia",
+    "population": 30426,
+    "medianYearBuilt": 1985,
+    "housingUnits": 12250,
+    "pctBuiltBefore1980": 28.1,
+    "medianHomeValue": 197600,
+    "pctOwner": 58.6,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Candler-McAfee CDP, Georgia",
+    "population": 21316,
+    "medianYearBuilt": 1963,
+    "housingUnits": 10097,
+    "pctBuiltBefore1980": 82.7,
+    "medianHomeValue": 239400,
+    "pctOwner": 66.6,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "North Decatur CDP, Georgia",
+    "population": 18460,
+    "medianYearBuilt": 1974,
+    "housingUnits": 9575,
+    "pctBuiltBefore1980": 54.9,
+    "medianHomeValue": 459000,
+    "pctOwner": 56.7,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "North Druid Hills CDP, Georgia",
+    "population": 18172,
+    "medianYearBuilt": 1985,
+    "housingUnits": 9787,
+    "pctBuiltBefore1980": 39.6,
+    "medianHomeValue": 486200,
+    "pctOwner": 40.2,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Belvedere Park CDP, Georgia",
+    "population": 14422,
+    "medianYearBuilt": 1961,
+    "housingUnits": 7222,
+    "pctBuiltBefore1980": 73.6,
+    "medianHomeValue": 266000,
+    "pctOwner": 62.4,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Scottdale CDP, Georgia",
+    "population": 10398,
+    "medianYearBuilt": 1984,
+    "housingUnits": 4514,
+    "pctBuiltBefore1980": 45.2,
+    "medianHomeValue": 319400,
+    "pctOwner": 55.3,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Panthersville CDP, Georgia",
+    "population": 8840,
+    "medianYearBuilt": 1976,
+    "housingUnits": 5612,
+    "pctBuiltBefore1980": 65.2,
+    "medianHomeValue": 207600,
+    "pctOwner": 46.4,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Druid Hills CDP, Georgia",
+    "population": 8278,
+    "medianYearBuilt": 1964,
+    "housingUnits": 3893,
+    "pctBuiltBefore1980": 55.9,
+    "medianHomeValue": 790900,
+    "pctOwner": 59.2,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Gresham Park CDP, Georgia",
+    "population": 7544,
+    "medianYearBuilt": 1967,
+    "housingUnits": 3651,
+    "pctBuiltBefore1980": 69.4,
+    "medianHomeValue": 261800,
+    "pctOwner": 65.9,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Ellenwood",
+    "found": false
+  },
+  {
+    "name": "Conley CDP, Georgia",
+    "population": 5404,
+    "medianYearBuilt": 1983,
+    "housingUnits": 2611,
+    "pctBuiltBefore1980": 46.2,
+    "medianHomeValue": 130900,
+    "pctOwner": 67.1,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Embry Hills",
+    "found": false
+  },
+  {
+    "name": "Northlake",
+    "found": false
+  },
+  {
+    "name": "Snapfinger",
+    "found": false
+  },
+  {
+    "name": "Stone Mountain city, Georgia",
+    "population": 6639,
+    "medianYearBuilt": 1978,
+    "housingUnits": 2854,
+    "pctBuiltBefore1980": 56.8,
+    "medianHomeValue": 190700,
+    "pctOwner": 52.6,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Lithonia city, Georgia",
+    "population": 2614,
+    "medianYearBuilt": 1974,
+    "housingUnits": 1115,
+    "pctBuiltBefore1980": 62.7,
+    "medianHomeValue": 171500,
+    "pctOwner": 33,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Decatur city, Georgia",
+    "population": 24470,
+    "medianYearBuilt": 1975,
+    "housingUnits": 10475,
+    "pctBuiltBefore1980": 53.8,
+    "medianHomeValue": 655900,
+    "pctOwner": 66.1,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B01003_001E,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22"
+  }
+]

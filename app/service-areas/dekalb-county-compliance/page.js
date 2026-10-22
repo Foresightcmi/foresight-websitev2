@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import UnincorporatedAreas from './UnincorporatedAreas';
 
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 const SCHEDULE_URL = 'https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule';
@@ -46,6 +47,10 @@ const faqs = [
   {
     q: 'Who needs a DeKalb County low-flow compliance certificate?',
     a: 'Homes in unincorporated DeKalb County that were built before January 1, 1993 need a signed Certificate of Compliance when they are sold. DeKalb County Department of Watershed Management asks for it before water service can be set up in the new owner\'s name. It is tied to the sale of an older home, not to building permits, renovations, or new construction. If your property is inside a city, confirm with DeKalb Watershed Management whether it applies to your address.',
+  },
+  {
+    q: 'How do I know if my address is in unincorporated DeKalb County?',
+    a: 'Do not rely on the mailing address. A Decatur, Lithonia or Stone Mountain mailing address can be in unincorporated DeKalb. DeKalb County tells buyers to look the address up in its online property search: the Tax District field says "unincorporated" when the certificate applies, and shows a city name when it does not. If you are unsure, call DeKalb Watershed Management before closing, or ask us and we will help you check.',
   },
   {
     q: 'Which homes are exempt?',
@@ -541,6 +546,8 @@ export default function DeKalbCountyCompliancePage() {
           </div>
         </div>
       </section>
+
+      <UnincorporatedAreas />
 
       {/* ═══════════════════════════════════════════════════════════════
           5. FAQ

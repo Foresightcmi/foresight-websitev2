@@ -253,7 +253,7 @@ function getCountyContext(county, cityName, serviceName) {
     case 'Fulton':
       return `Fulton County spans historic Intown unreinforced masonry homes to dense North Fulton luxury estates built over uranium-bearing granite bedrock (EPA Zone 1 radon). Performing ${serviceName.toLowerCase()} in ${cityName} requires evaluating Piedmont red clay foundation hydrostatic pressure, legacy electrical panels, and City of Atlanta municipal compliance standards.`;
     case 'DeKalb':
-      return `DeKalb County enforces mandatory Low-Flow Plumbing Retrofit Certificates ($100 flat fee through Foresight) on pre-1993 residential sales and sits directly atop the Stone Mountain granite formation (EPA Zone 1 radon). Our ${serviceName.toLowerCase()} in ${cityName} targets mature tree-root intrusion in cast-iron and terracotta sewer laterals alongside mid-century crawlspace moisture.`;
+      return `DeKalb County requires a Low-Flow Plumbing Certificate ($100 flat fee through Foresight) on pre-1993 home sales in unincorporated areas, and the county sits directly atop the Stone Mountain granite formation (EPA Zone 1 radon). Our ${serviceName.toLowerCase()} in ${cityName} targets mature tree-root intrusion in cast-iron and terracotta sewer laterals alongside mid-century crawlspace moisture.`;
     case 'Gwinnett':
       return `As one of Georgia's largest suburban corridors, Gwinnett County features a high density of 1978–1995 subdivisions with polybutylene (PB2110) supply piping and synthetic stucco (EIFS) cladding alongside rapid 2020s new construction. We tailor our ${serviceName.toLowerCase()} in ${cityName} to catch hidden plumbing micro-fractures, rushed builder framing, and granite soil radon gas.`;
     case 'Cobb':

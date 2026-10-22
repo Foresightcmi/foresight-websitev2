@@ -68,7 +68,7 @@ function buildCloudEmail(contact) {
     ``,
     `My partner and I inspect every property as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access:`,
     `• 2-Inspector Team Starting at $345 ($295 Condos): Half the inspection time, same-day digital reports, and a calm walk-through separating real defects from normal wear.`,
-    `• Mandatory DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee): Same-day signed Certificate of Compliance for DeKalb Watershed water turn-on.`,
+    `• DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee): Same-day signed Certificate of Compliance for DeKalb Watershed water turn-on on pre-1993 homes in unincorporated DeKalb. We confirm whether it applies to your address.`,
     `• Sewer Camera Scope ($450 Flat Rate), Pre-Drywall ($275+) & 11-Month Builder Warranty ($335+): Calibrated infrared thermal imaging & 4K aerial drone roof scans included.`,
     `• Pre-Listing Seller Inspections (From $365) & Free Due Diligence Calculator: https://fhinspectionsatl.com/due-diligence`,
     `• $35,000 Combined Buyer Protection Warranties ($10,000 Elite Warranty + $25,000 Honor Guarantee).`,
@@ -89,7 +89,7 @@ function buildCloudEmail(contact) {
 <p>My partner and I inspect every property as a <strong>two-inspector Certified Master Inspector (CMI) team</strong> with active SUPRA eKEY access:</p>
 <ul style="padding-left:20px;margin:14px 0;">
 <li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345 ($295 Condos):</strong> Half the inspection time, same-day digital reports, and a calm walk-through.</li>
-<li style="margin-bottom:8px;"><strong>${isDeKalb ? 'Mandatory DeKalb County Low-Flow Certificate ($100 Flat Fee):' : 'DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee):'}</strong> Same-day signed Certificate of Compliance for DeKalb Watershed water turn-on.</li>
+<li style="margin-bottom:8px;"><strong>DeKalb County Low-Flow Certificate ($100 Flat Fee):</strong> Same-day signed Certificate of Compliance for DeKalb Watershed water turn-on on pre-1993 homes in unincorporated DeKalb. We confirm whether it applies to your address.</li>
 <li style="margin-bottom:8px;"><strong>Sewer Camera Scope ($450 Flat Rate), New Build &amp; 11-Month Warranty ($335+):</strong> Pre-Drywall ($275+), Final ($400+), calibrated infrared thermal imaging, and 4K drone roof scans.</li>
 <li style="margin-bottom:8px;"><strong>Pre-Listing Seller Inspections ($365+) &amp; Free Tool:</strong> <a href="https://fhinspectionsatl.com/due-diligence" style="color:#0f52ba;text-decoration:underline;">Georgia Due Diligence &amp; Repair Addendum Builder</a> + $35,000 warranty protection.</li>
 </ul>

@@ -174,7 +174,7 @@ function buildLoanOfficerEmail(lo) {
           <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal audit in under 2.5 hours.</li>
           <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as Georgia repair amendment) for licensed broker or attorney review.</li>
           <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
-          <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site 1.28 GPF fixture verification and official signed county certificate for pre-1993 DeKalb homes to prevent closing delays.</li>
+          <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site fixture verification (toilets 1.6 GPF max) and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
         </ul>
       </div>
 
@@ -239,7 +239,7 @@ function buildUnderContractEmail(realtor) {
     : `Congrats on ${address} (${city}) — 24-hr due diligence slot`;
 
   const dekalbLeadLine = isDeKalb
-    ? `• Mandatory DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee): Same-day signed Certificate of Compliance required by DeKalb Watershed for water service activation on pre-1993 properties (standalone or bundled).`
+    ? `• DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee): Same-day signed Certificate of Compliance, required by DeKalb Watershed for water service on pre-1993 homes in unincorporated DeKalb. We confirm whether it applies to your address (standalone or bundled).`
     : `• DeKalb County Low-Flow Plumbing Fixture Certificate ($100 Flat Fee): Official signed Certificate of Compliance for DeKalb Watershed water turn-on.`;
 
   const text = [
@@ -270,7 +270,7 @@ function buildUnderContractEmail(realtor) {
 <p>My partner and I inspect every property as a <strong>two-inspector Certified Master Inspector (CMI) team</strong> with active SUPRA eKEY access:</p>
 <ul style="padding-left:20px;margin:14px 0;">
 <li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345 ($295 Condos):</strong> Full structural, roof, MEP &amp; calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.</li>
-<li style="margin-bottom:8px;"><strong>${isDeKalb ? 'Mandatory DeKalb County Low-Flow Certificate ($100 Flat Fee):' : 'DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee):'}</strong> Official signed Certificate of Compliance required by DeKalb Watershed for water service activation${isDeKalb ? ' on pre-1993 homes (available standalone or bundled)' : ''}.</li>
+<li style="margin-bottom:8px;"><strong>DeKalb County Low-Flow Certificate ($100 Flat Fee):</strong> Signed Certificate of Compliance that DeKalb Watershed requires for water service on pre-1993 homes in unincorporated DeKalb County. We confirm whether it applies to your address${isDeKalb ? ' (available standalone or bundled)' : ''}.</li>
 <li style="margin-bottom:8px;"><strong>Sewer Camera Scope ($450 Flat Rate) &amp; New Construction:</strong> Pre-Drywall (from $275), Final ($400+), and 11-Month Warranty ($335+) inspections.</li>
 <li style="margin-bottom:8px;"><strong>Listing Agent Bridge ($365+ Pre-Listing Inspections):</strong> Representing the seller? Forward this link to the buyer's agent or use us on your next listing to eliminate surprise due-diligence renegotiations.</li>
 <li style="margin-bottom:8px;"><strong>$35,000 Buyer Protection Warranties</strong> ($10,000 Elite Master Warranty + $25,000 Honor Guarantee).</li>

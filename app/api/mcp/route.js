@@ -141,7 +141,7 @@ const MCP_TOOLS = [
             termite: { type: 'boolean', description: 'Official Georgia WDO/Termite clearance ($125 slab/basement, $165 crawlspace)' },
             pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety audit ($300)' },
             sewer: { type: 'boolean', description: 'High-definition underground lateral sewer scope camera inspection ($450 flat rate)' },
-            lowFlow: { type: 'boolean', description: 'DeKalb County Mandatory Low-Flow Plumbing Certificate ($100)' },
+            lowFlow: { type: 'boolean', description: 'DeKalb County Low-Flow Plumbing Certificate ($100; applies to pre-1993 homes in unincorporated DeKalb)' },
             buildfax: { type: 'boolean', description: 'Historical municipal permit and renovation record audit ($15)' },
             airQuality: { type: 'boolean', description: 'Indoor Air Quality & Mold Lab Testing (starts at $450; additional swabs/samples billed if taken)' },
             detachedBuilding: { type: 'boolean', description: 'Detached Building or Workshop Inspection ($100)' }
@@ -254,7 +254,7 @@ async function handleToolCall(name, args) {
         'crawlspace-complexity': { name: 'Unfinished Crawlspace Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished crawlspace subfloor, pier, and vapor barrier inspection labor.' },
         'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
         'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: 'Starts at $395', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
-        'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Mandatory toilet, shower, and faucet flow rate verification for pre-1993 property transfers.' },
+        'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Toilet, shower, and faucet flow rate verification and signed Certificate of Compliance for pre-1993 property transfers in unincorporated DeKalb County. We confirm whether it applies to a given address.' },
         'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional regional contractor repair labor and materials estimate formatted for standard Georgia repair amendment negotiation. Available as $99 add-on or standalone audit for outside reports.' }
       };
       return serviceMap[args.serviceKey] || { error: `Service key '${args.serviceKey}' not found.` };

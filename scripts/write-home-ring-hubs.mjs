@@ -13,6 +13,7 @@ const ROOT = process.cwd();
 const citiesFile = path.join(ROOT, 'data', 'cities.json');
 const cities = JSON.parse(fs.readFileSync(citiesFile, 'utf8'));
 const census = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'census-home-ring.json'), 'utf8')).map((r) => [r.city, r]));
+const LITHONIA_POP = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'census-dekalb-places.json'), 'utf8')).find((p) => p.name === 'Lithonia city, Georgia').population;
 const money = (n) => `$${Number(n).toLocaleString('en-US')}`;
 const nf = (n) => Number(n).toLocaleString('en-US');
 const link = (href, text) => `<a href="${href}">${text}</a>`;
@@ -23,7 +24,7 @@ const FACTS = (c) => `<ul><li>Median year homes were built: <strong>${c.medianYe
 
 const ANGLES = {
   Lithonia: (c) => ({
-    intro: `Lithonia is where our team is based, and its housing stock is among the oldest in east DeKalb. The median home here was built in ${c.medianYearBuilt}, and ${c.pctBuiltBefore1980}% of homes predate 1980. Only ${c.pctOwnerOccupied}% of homes are owner-occupied, so many buyers here are investors purchasing rental houses. We inspect Lithonia homes with that age, and that buyer, in mind.`,
+    intro: `Lithonia is where our team is based. The figures on this page describe the City of Lithonia itself (population ${nf(LITHONIA_POP)}), and many addresses with a Lithonia mailing address are actually in unincorporated DeKalb, Stonecrest or Redan. Inside the city, the median home was built in ${c.medianYearBuilt}, ${c.pctBuiltBefore1980}% of homes predate 1980, and only ${c.pctOwnerOccupied}% are owner-occupied, so many buyers are investors purchasing rental houses. We inspect Lithonia-area homes with that age, and that buyer, in mind.`,
     risks: `<p>At a median build year of ${c.medianYearBuilt}, the typical Lithonia house has original or partly updated systems. Federal lead-paint rules took effect in 1978, so any home built before then deserves a paint question. Original electrical panels, aged water heaters and HVAC, and older sewer laterals are the items that most often turn a low price into a large repair bill.</p><p>With a median value of ${money(c.medianHomeValue)}, an unexpected repair is a larger share of the purchase price than it would be in a higher-priced area. We pair the standard inspection with a ${link('/services/sewer-scope-inspection/lithonia', 'sewer scope ($450)')} and ${link('/services/radon-testing/lithonia', 'radon test ($250)')} when the age of the home calls for it.</p>${FACTS(c)}${SOURCE(c)}`,
     benefits: `<ul><li>Two inspectors on site, so older houses with attics and crawlspaces are covered in about two hours</li><li>Investor-friendly reports: defects ranked by repair urgency so you can price rent-ready costs</li><li>Same-day digital report, with the DeKalb low-flow certificate available for $100 when your property qualifies</li></ul>`
   }),
