@@ -306,7 +306,7 @@ export default function DeKalbCountyCompliancePage() {
               }}
             >
               <h3 style={{ marginBottom: '1.5rem', fontSize: '1.35rem' }}>
-                DeKalb County Fixture Requirements
+                Fixture Standards We Verify
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {fixtures.map((f, i) => (
@@ -348,6 +348,9 @@ export default function DeKalbCountyCompliancePage() {
                   </li>
                 ))}
               </ul>
+              <p style={{ fontSize: '0.85rem', opacity: 0.8, margin: '1rem 0 0' }}>
+                These are the flow-rate maximums DeKalb-area inspectors use for the certificate. The county&apos;s forms say only &quot;water conserving plumbing fixtures&quot; and do not print numbers, so confirm the current figures with DeKalb Watershed Management.
+              </p>
               <div
                 style={{
                   marginTop: '1.5rem',
