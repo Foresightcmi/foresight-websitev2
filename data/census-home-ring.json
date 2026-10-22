@@ -1,0 +1,122 @@
+[
+  {
+    "city": "Lithonia",
+    "acsName": "Lithonia city, Georgia",
+    "medianYearBuilt": 1974,
+    "housingUnits": 1115,
+    "pctBuiltBefore1980": 62.7,
+    "medianHomeValue": 171500,
+    "pctOwnerOccupied": 33,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Stonecrest",
+    "acsName": "Stonecrest city, Georgia",
+    "medianYearBuilt": 1999,
+    "housingUnits": 24053,
+    "pctBuiltBefore1980": 19.5,
+    "medianHomeValue": 223100,
+    "pctOwnerOccupied": 53.2,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Redan",
+    "acsName": "Redan CDP, Georgia",
+    "medianYearBuilt": 1985,
+    "housingUnits": 12250,
+    "pctBuiltBefore1980": 28.1,
+    "medianHomeValue": 197600,
+    "pctOwnerOccupied": 58.6,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Conyers",
+    "acsName": "Conyers city, Georgia",
+    "medianYearBuilt": 1989,
+    "housingUnits": 7902,
+    "pctBuiltBefore1980": 34.4,
+    "medianHomeValue": 218000,
+    "pctOwnerOccupied": 39.6,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Stone Mountain",
+    "acsName": "Stone Mountain city, Georgia",
+    "medianYearBuilt": 1978,
+    "housingUnits": 2854,
+    "pctBuiltBefore1980": 56.8,
+    "medianHomeValue": 190700,
+    "pctOwnerOccupied": 52.6,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Snellville",
+    "acsName": "Snellville city, Georgia",
+    "medianYearBuilt": 1989,
+    "housingUnits": 7492,
+    "pctBuiltBefore1980": 30.1,
+    "medianHomeValue": 293400,
+    "pctOwnerOccupied": 80.5,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Decatur",
+    "acsName": "Decatur city, Georgia",
+    "medianYearBuilt": 1975,
+    "housingUnits": 10475,
+    "pctBuiltBefore1980": 53.8,
+    "medianHomeValue": 655900,
+    "pctOwnerOccupied": 66.1,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Tucker",
+    "acsName": "Tucker city, Georgia",
+    "medianYearBuilt": 1980,
+    "housingUnits": 16305,
+    "pctBuiltBefore1980": 50.4,
+    "medianHomeValue": 359300,
+    "pctOwnerOccupied": 64.4,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Covington",
+    "acsName": "Covington city, Georgia",
+    "medianYearBuilt": 1987,
+    "housingUnits": 5967,
+    "pctBuiltBefore1980": 41.6,
+    "medianHomeValue": 242700,
+    "pctOwnerOccupied": 46.2,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  },
+  {
+    "city": "Lilburn",
+    "acsName": "Lilburn city, Georgia",
+    "medianYearBuilt": 1987,
+    "housingUnits": 5075,
+    "pctBuiltBefore1980": 28,
+    "medianHomeValue": 278600,
+    "pctOwnerOccupied": 61.2,
+    "source_url": "https://api.census.gov/data/2023/acs/acs5?get=NAME,B25035_001E,B25034_001E,B25034_007E,B25034_008E,B25034_009E,B25034_010E,B25034_011E,B25077_001E,B25003_001E,B25003_002E&for=place:*&in=state:13",
+    "retrieved_on": "2026-10-22",
+    "acsYear": "2019-2023 5-year"
+  }
+]

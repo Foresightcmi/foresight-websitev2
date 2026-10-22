@@ -11,7 +11,7 @@ let updatedCitiesCount = 0;
 for (const city of cities) {
   const name = city['City Name'];
   city['Meta Title'] = `${name} Home Inspections | Certified Master Inspector® | Foresight`;
-  city['Meta Description'] = `4.9★ Rated ${name} home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free infrared thermal, drone scans & $10k warranty!`;
+  city['Meta Description'] = `4.8★ Rated ${name} home inspections led by Certified Master Inspector Christopher Boykin. 2 certified inspectors on every job from $345 with free infrared thermal, drone scans & $10k warranty!`;
   updatedCitiesCount++;
 }
 

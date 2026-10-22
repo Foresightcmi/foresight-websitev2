@@ -172,7 +172,7 @@ export default function VslModal({ isOpen, onClose }) {
               &ldquo;Because hindsight is expensive... <span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Choose Foresight!</span>&rdquo;
             </p>
             <span style={{ fontSize: '0.78rem', color: '#94A3B8', marginTop: '0.25rem', display: 'block' }}>
-              Google &ldquo;Foresight Home Inspections&rdquo; to explore our 4.9-star verified client track record.
+              Google &ldquo;Foresight Home Inspections&rdquo; to explore our 4.8-star verified client track record.
             </span>
           </div>
 

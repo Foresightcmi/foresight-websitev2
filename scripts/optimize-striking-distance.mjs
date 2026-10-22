@@ -30,11 +30,11 @@ function formatCityTitle(name) {
 }
 
 function formatCityDesc(name) {
-  const base = `4.9★ ${name} home inspection from $345. Two certified inspectors on every job led by a CMI. Free infrared thermal, 4K drones & $10k warranty. Fast 24-hr reports!`;
+  const base = `4.8★ ${name} home inspection from $345. Two certified inspectors on every job led by a CMI. Free infrared thermal, 4K drones & $10k warranty. Fast 24-hr reports!`;
   if (base.length <= 158) return base;
-  const opt2 = `4.9★ ${name} home inspection from $345. 2 certified inspectors on every job led by a CMI. Free thermal, 4K drones & $10k warranty. Fast 24-hr reports!`;
+  const opt2 = `4.8★ ${name} home inspection from $345. 2 certified inspectors on every job led by a CMI. Free thermal, 4K drones & $10k warranty. Fast 24-hr reports!`;
   if (opt2.length <= 158) return opt2;
-  return `4.9★ ${name} home inspection from $345. 2 certified inspectors led by a CMI. Free thermal, 4K drones & $10k warranty. 24-hr report!`;
+  return `4.8★ ${name} home inspection from $345. 2 certified inspectors led by a CMI. Free thermal, 4K drones & $10k warranty. 24-hr report!`;
 }
 
 for (const city of cities) {

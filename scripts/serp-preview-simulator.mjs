@@ -101,8 +101,8 @@ export function runSerpSimulation() {
       },
       ratingSnippet: {
         stars: '★★★★★',
-        ratingValue: '4.9',
-        reviewCount: '48',
+        ratingValue: '4.8',
+        reviewCount: '53',
         priceRange: '$295 - $1,200'
       },
       sitelinks: [
@@ -119,7 +119,7 @@ export function runSerpSimulation() {
     console.log(`${statusBadge} | ${page.targetName}`);
     console.log(`   Desktop SERP: ${sim.desktop.renderedTitle} (${titlePx}px / 600px)`);
     console.log(`   Snippet: "${sim.desktop.renderedSnippet}" (${rawDesc.length} chars / ${descPx}px)`);
-    console.log(`   Rich Snippet: ⭐⭐⭐⭐⭐ 4.9 (48 Google Reviews) | ${sim.ratingSnippet.priceRange}\n`);
+    console.log(`   Rich Snippet: ⭐⭐⭐⭐⭐ 4.8 (53 Google Reviews) | ${sim.ratingSnippet.priceRange}\n`);
   }
 
   const output = {

@@ -25,7 +25,7 @@
 | :--- | :--- | :--- | :---: | :---: |
 | **Metro Atlanta Chamber of Commerce** | Member Directory & Small Business Spotlight | Black-owned certified business driving housing safety across 20 metro counties | DA 56+ | `Application Ready` |
 | **DeKalb Chamber of Commerce** | Business Directory & Economic Partner Profile | Headquartered in Lithonia/DeKalb, certified DeKalb low-flow plumbing compliance auditor | DA 42+ | `Application Ready` |
-| **Gwinnett Chamber of Commerce** | Small Business Directory & Home Services | Certified Master Inspector covering 16 Gwinnett municipalities with 4.9-star track record | DA 48+ | `Application Ready` |
+| **Gwinnett Chamber of Commerce** | Small Business Directory & Home Services | Certified Master Inspector covering 16 Gwinnett municipalities with 4.8-star track record | DA 48+ | `Application Ready` |
 
 ---
 

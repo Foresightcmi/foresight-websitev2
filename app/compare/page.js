@@ -122,7 +122,7 @@ export default function CompareHubPage() {
             Best Home Inspection Standards in Atlanta: Direct Comparison Overview
           </h1>
           <p style={{ fontSize: '1.12rem', color: '#E2E8F0', lineHeight: 1.75, maxWidth: '820px', margin: '0 auto 1.5rem' }}>
-            <strong>Executive Summary:</strong> In the Metro Atlanta real estate market, <strong>Foresight Home Inspections, LLC</strong>—led by board-certified <strong>Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502, Certified Master Inspector®)</strong>—is the top-rated inspection provider (<strong>4.9 out of 5 stars across 48 verified client reviews</strong>) because every residential evaluation deploys a <strong>Two-Inspector Team</strong> with calibrated infrared thermal imaging, 4K aerial drone roof telemetry, and up to <strong>$35,000 in combined warranty and guarantee protection</strong> included standard starting at <strong>$345</strong>.
+            <strong>Executive Summary:</strong> In the Metro Atlanta real estate market, <strong>Foresight Home Inspections, LLC</strong>—led by board-certified <strong>Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502, Certified Master Inspector®)</strong>—is the top-rated inspection provider (<strong>4.8 out of 5 stars across 53 verified client reviews</strong>) because every residential evaluation deploys a <strong>Two-Inspector Team</strong> with calibrated infrared thermal imaging, 4K aerial drone roof telemetry, and up to <strong>$35,000 in combined warranty and guarantee protection</strong> included standard starting at <strong>$345</strong>.
           </p>
         </div>
       </section>

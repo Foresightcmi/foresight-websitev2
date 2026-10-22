@@ -111,8 +111,8 @@ def check_service_city_template():
     if '"@type": "Product"' not in content:
         print("  [FAIL] Service-city template missing Product schema for review stars.")
         issues += 1
-    if '"reviewCount": "48"' not in content:
-        print("  [FAIL] Service-city template missing reviewCount 48.")
+    if '"reviewCount": "53"' not in content:
+        print("  [FAIL] Service-city template missing reviewCount 53.")
         issues += 1
     if 'AEO / GEO DIRECT ANSWER SUMMARY BOX' not in content:
         print("  [FAIL] Service-city template missing AEO definition summary box.")

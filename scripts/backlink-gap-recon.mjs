@@ -132,7 +132,7 @@ const CHAMBER_TARGETS = [
     category: 'Regional Chamber',
     domain: 'gwinnettchamber.org',
     targetPage: 'Small Business Directory & Home Services',
-    pitchAngle: 'Certified Master Inspector covering 16 Gwinnett municipalities with 4.9-star track record',
+    pitchAngle: 'Certified Master Inspector covering 16 Gwinnett municipalities with 4.8-star track record',
     linkMagnet: 'https://www.fhinspectionsatl.com/service-areas/lawrenceville',
     estimatedAuthority: 'DA 48+',
     status: 'Application Ready'

@@ -51,7 +51,7 @@ const MEDIA_QUOTES = [
 const BIOS = {
   short: 'Christopher Boykin is a Certified Master Inspector (CMI®)—the highest credential in North American property inspection—and founder of Foresight Home Inspections, LLC in Atlanta, Georgia. He leads a pioneering dual-inspector diagnostic team serving home buyers, sellers, and real estate professionals across 163+ Metro Atlanta municipalities.',
   medium: 'Christopher Boykin is a Certified Master Inspector (CMI®) and the founder of Foresight Home Inspections, LLC, based in Metro Atlanta. Holding credentials earned by fewer than 1% of inspectors in North America, Christopher brings deep expertise in residential building science, thermal imaging diagnostics, environmental hazards, and Georgia real estate contract due diligence. Through Foresight\'s dual-inspector operational model, Christopher and his team provide same-day comprehensive reporting and up to $35,000 in combined warranty protection.',
-  full: 'Christopher Boykin is a Certified Master Inspector (CMI®) and founder of Foresight Home Inspections, LLC, Atlanta\'s premier residential inspection firm. Board-certified by the Master Inspector Certification Board and accredited by InterNACHI, Christopher represents the top tier of building diagnostic professionals in North America. With extensive hands-on experience in Southeastern structural framing, roof forensics, sewer scope diagnostics, and environmental testing (radon and mold), he frequently advises real estate agents, home buyers, and journalists on navigating Georgia\'s strict due diligence periods. He holds a 4.9-star rating across 48 verified reviews and has served property owners in more than 163 Metro Atlanta cities.'
+  full: 'Christopher Boykin is a Certified Master Inspector (CMI®) and founder of Foresight Home Inspections, LLC, Atlanta\'s premier residential inspection firm. Board-certified by the Master Inspector Certification Board and accredited by InterNACHI, Christopher represents the top tier of building diagnostic professionals in North America. With extensive hands-on experience in Southeastern structural framing, roof forensics, sewer scope diagnostics, and environmental testing (radon and mold), he frequently advises real estate agents, home buyers, and journalists on navigating Georgia\'s strict due diligence periods. He holds a 4.8-star rating across 53 verified reviews and has served property owners in more than 163 Metro Atlanta cities.'
 };
 
 export default function PressClient() {
@@ -213,7 +213,7 @@ export default function PressClient() {
               <div style={{ fontSize: '1.5rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>03</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>Regional Field Scope</h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
-                Deep regional experience across 163+ municipalities in DeKalb, Fulton, Gwinnett, Cobb, Forsyth, Cherokee, Clayton, and Henry counties, with an average 4.9-star rating across 48 verified client reviews.
+                Deep regional experience across 163+ municipalities in DeKalb, Fulton, Gwinnett, Cobb, Forsyth, Cherokee, Clayton, and Henry counties, with an average 4.8-star rating across 53 verified client reviews.
               </p>
             </div>
           </div>

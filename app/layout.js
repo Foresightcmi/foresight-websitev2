@@ -29,7 +29,7 @@ export const metadata = {
     default: 'Atlanta Home Inspections | Certified Master Inspector® | Foresight',
     template: '%s | Foresight',
   },
-  description: '4.9★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
+  description: '4.8★ Atlanta Home Inspections led by a Certified Master Inspector®. Two certified inspectors on every job from $345. Free thermal & 4K drones. Instant quote!',
   keywords: ['Home Inspection Atlanta', 'Certified Master Inspector', 'InterNACHI', 'Foresight Home Inspections', 'home inspector near me', 'Atlanta home inspection cost', 'Certified Master Inspector Georgia', 'home inspection Atlanta GA', 'two inspector team home inspection', 'home inspection warranty', 'best home inspector in Metro Atlanta', 'thermal imaging home inspection Atlanta', '11-month new construction warranty inspection', 'Foresight Home Inspections reviews'],
   robots: {
     index: true,
@@ -560,11 +560,11 @@ export default function RootLayout({ children }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
+      "ratingValue": "4.8",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "48",
-      "reviewCount": "48"
+      "ratingCount": "53",
+      "reviewCount": "53"
     },
     "review": [
       {

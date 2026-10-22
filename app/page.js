@@ -17,7 +17,7 @@ export const metadata = {
   title: {
     absolute: 'Atlanta, GA Home Inspection & Certified Home Inspectors | $345',
   },
-  description: '4.9★ Full Home Inspection in Atlanta, GA from $345 ($295 condos). 2 Certified Home Inspectors on every job, free thermal & 4K drone scans + $35,000 Warranty!',
+  description: '4.8★ Full Home Inspection in Atlanta, GA from $345 ($295 condos). 2 Certified Home Inspectors on every job, free thermal & 4K drone scans + $35,000 Warranty!',
   keywords: [
     'full home inspection',
     'home inspection Atlanta GA',
@@ -190,7 +190,7 @@ export default function Home() {
 
           <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: '#E2E8F0', fontSize: '0.92rem', flexWrap: 'wrap' }}>
             <span style={{ color: 'var(--color-gold)', letterSpacing: '2px' }}>★★★★★</span>
-            <span>4.9/5 Rating &bull; Google <strong style={{ color: '#FFFFFF' }}>&ldquo;Foresight Home Inspections&rdquo;</strong> to read 40+ verified 5-star reviews</span>
+            <span>4.8/5 Rating &bull; Google <strong style={{ color: '#FFFFFF' }}>&ldquo;Foresight Home Inspections&rdquo;</strong> to read 40+ verified 5-star reviews</span>
           </div>
 
           <div style={{ display: 'inline-block', background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.3)', color: '#34d399', padding: '0.45rem 1.25rem', borderRadius: '2rem', fontSize: '0.88rem', fontWeight: 600, marginBottom: '2rem', backdropFilter: 'blur(4px)' }}>

@@ -181,8 +181,8 @@ export default async function CountyPage({ params }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "48",
+      "ratingValue": "4.8",
+      "reviewCount": "53",
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -239,8 +239,8 @@ export default async function CountyPage({ params }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "48",
+      "ratingValue": "4.8",
+      "reviewCount": "53",
       "bestRating": "5",
       "worstRating": "1"
     },

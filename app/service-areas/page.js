@@ -5,10 +5,10 @@ import CitySearch from '../components/CitySearch';
 
 export const metadata = {
   title: 'Home Inspection Service Areas Atlanta | 87 Cities | Foresight',
-  description: '4.9★ home inspections across 87 Metro Atlanta municipalities. 2-inspector team led by a CMI from $345. Free thermal & 4K drones. Select your city today!',
+  description: '4.8★ home inspections across 87 Metro Atlanta municipalities. 2-inspector team led by a CMI from $345. Free thermal & 4K drones. Select your city today!',
   openGraph: {
     title: 'Metro Atlanta Home Inspection Service Areas | Foresight',
-    description: '4.9★ home inspections across 87 Metro Atlanta cities with two certified inspectors on every job led by a Certified Master Inspector®.',
+    description: '4.8★ home inspections across 87 Metro Atlanta cities with two certified inspectors on every job led by a Certified Master Inspector®.',
     url: 'https://www.fhinspectionsatl.com/service-areas',
     type: 'website',
   },

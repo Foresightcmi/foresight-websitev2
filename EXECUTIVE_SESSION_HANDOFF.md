@@ -46,7 +46,7 @@ flowchart TD
 ### Phase 4: Hyper-Local SAB Dominance (Whitespark / Darren Shaw Standard)
 - Deep municipal radius schemas (`GeoCircle`, exact GPS coordinates for all 87 cities).
 - Permanent Google Maps Place ID and CID linkage (`hasMap`).
-- Review velocity integration and review schema markup (`4.9★ / 48 reviews`).
+- Review velocity integration and review schema markup (`4.8★ / 53 reviews`).
 
 ### Phase 5: Information Gain & AI Citations (Bernard Huang US Patent 10,956,488 B2)
 - Zero generic boilerplate. Infuse proprietary field data: exact infrared thermal differential ($\Delta T$), local building code quirks (Fulton, DeKalb, Cobb, Gwinnett), and Certified Master Inspector field notes.

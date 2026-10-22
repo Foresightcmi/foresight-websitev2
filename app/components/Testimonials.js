@@ -102,7 +102,7 @@ export default function Testimonials() {
         {/* Small Trust Badge under reviews */}
         <div style={{ textAlign: 'center', marginTop: '3.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', color: '#0F172A', fontSize: '1rem', fontWeight: 500 }}>
           <span style={{ color: '#B45309', fontSize: '1.25rem' }}>★★★★★</span>
-          <span>Rated <strong style={{ color: '#0F172A' }}>4.9 out of 5 stars</strong> across 48+ verified Google Reviews. <a href="/review" style={{ color: '#854D0E', fontWeight: 700, textDecoration: 'underline' }}>Share your experience →</a></span>
+          <span>Rated <strong style={{ color: '#0F172A' }}>4.8 out of 5 stars</strong> across 53+ verified Google Reviews. <a href="/review" style={{ color: '#854D0E', fontWeight: 700, textDecoration: 'underline' }}>Share your experience →</a></span>
         </div>
 
         {/* Review Velocity & Social Proof CTA */}

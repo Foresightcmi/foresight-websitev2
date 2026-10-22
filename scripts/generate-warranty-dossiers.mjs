@@ -736,7 +736,7 @@ function generateWarrantyDossierHtml(client) {
     <!-- Trust Footer -->
     <div class="footer-trust">
       <div class="trust-badges">
-        <span>⭐ 5.0 Google Verified (48 Reviews)</span>
+        <span>⭐ 5.0 Google Verified (53 Reviews)</span>
         <span>🛡️ InterNACHI Certified Master Inspector®</span>
         <span>🚁 4K Aerial Drone Roof Scans</span>
         <span>🔍 2-Inspector Team Protocol</span>

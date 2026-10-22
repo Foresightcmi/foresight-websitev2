@@ -476,8 +476,8 @@ export default async function ServiceCityPage({ params }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "48",
+      "ratingValue": "4.8",
+      "reviewCount": "53",
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -591,7 +591,7 @@ export default async function ServiceCityPage({ params }) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#475569' }}>
               <div><strong>Price:</strong> {serviceData.price}</div>
               <div><strong>Inspectors:</strong> 2 Certified on Site</div>
-              <div><strong>⭐ Rating:</strong> 4.9★ (48 Reviews)</div>
+              <div><strong>⭐ Rating:</strong> 4.8★ (53 Reviews)</div>
               <div><strong>Protection:</strong> $35,000 ($0 Deductible)</div>
             </div>
           </div>

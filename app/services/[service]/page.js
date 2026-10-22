@@ -18,7 +18,7 @@ const SERVICE_MAP = {
     icon: '01',
     headline: 'Full Home Inspection Services & Certified Home Inspectors Across Metro Atlanta',
     metaTitle: 'Full Home Inspection Services Atlanta GA | 2 Inspectors $345',
-    metaDescription: '4.9★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
+    metaDescription: '4.8★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
     description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
@@ -34,7 +34,7 @@ const SERVICE_MAP = {
     icon: '01',
     headline: 'Full Home Inspection Services & Certified Home Inspectors Across Metro Atlanta',
     metaTitle: 'Full Home Inspection Services Atlanta GA | 2 Inspectors $345',
-    metaDescription: '4.9★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
+    metaDescription: '4.8★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
     description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
       'Two certified inspectors on site for 2x thoroughness in half the time',
@@ -234,7 +234,7 @@ const SERVICE_MAP = {
     icon: '10',
     headline: 'Commercial Real Estate Due Diligence Inspection Services in Metro Atlanta',
     metaTitle: 'Commercial Real Estate Due Diligence Inspection Services Atlanta GA',
-    metaDescription: '4.9★ Commercial real estate due diligence inspection services and ASTM E2018 Property Condition Assessments (PCA) in Metro Atlanta led by a CMI. Fast quotes!',
+    metaDescription: '4.8★ Commercial real estate due diligence inspection services and ASTM E2018 Property Condition Assessments (PCA) in Metro Atlanta led by a CMI. Fast quotes!',
     description: 'Commercial real estate acquisitions carry substantial capital expenditure liabilities. From flat commercial roofing membranes and 3-phase high-voltage electrical switchgear to multi-zone rooftop HVAC units and ADA accessibility compliance, Foresight Home Inspections delivers forensic Property Condition Assessments adhering to ASTM E2018-15 standards.',
     included: [
       'ASTM E2018-15 compliant Property Condition Assessment (PCA) & Baseline Report',
@@ -250,7 +250,7 @@ const SERVICE_MAP = {
     icon: '11',
     headline: 'Independent Pre-Drywall Inspections for New Builds Across Metro Atlanta',
     metaTitle: 'Pre-Drywall Inspections for New Builds Atlanta GA | From $275',
-    metaDescription: '4.9★ Independent pre-drywall inspections for new builds in Metro Atlanta from $275. 2 certified inspectors audit structural framing, rough plumbing, electrical & HVAC!',
+    metaDescription: '4.8★ Independent pre-drywall inspections for new builds in Metro Atlanta from $275. 2 certified inspectors audit structural framing, rough plumbing, electrical & HVAC!',
     description: 'Once drywall is hung, over 80% of your home structural framing, rough plumbing stacks, electrical loops, and HVAC ductwork become permanently sealed behind walls. Our two-inspector team conducts a comprehensive Phase 1 pre-drywall framing and mechanical audit before sheetrock concealment.',
     included: [
       'Two certified inspectors on site evaluating structural framing, roof trusses, and load headers',
@@ -454,8 +454,8 @@ export default async function ServiceHubPage({ params }) {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "48",
+      "ratingValue": "4.8",
+      "reviewCount": "53",
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -540,7 +540,7 @@ export default async function ServiceHubPage({ params }) {
               <div><strong>Deployment:</strong> 2 Certified Inspectors (100% of jobs)</div>
               <div><strong>⏱️ Duration:</strong> 1.5–2.5 Hours (50% faster than solo)</div>
               <div><strong>Turnaround:</strong> Under 24 Hours (Same-Day Evening Avg.)</div>
-              <div><strong>⭐ Rating:</strong> 4.9/5.0 (48+ Verified 5-Star Reviews)</div>
+              <div><strong>⭐ Rating:</strong> 4.8/5.0 (53+ Verified 5-Star Reviews)</div>
               <div><strong>Protection:</strong> $35,000 Warranty / Guarantee ($0 Deductible)</div>
             </div>
           </div>

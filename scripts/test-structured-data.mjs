@@ -36,7 +36,7 @@ if (productBlockMatch) {
   assert(productBlock.includes('"image":'), 'productJsonLd in services/[service]/[city] includes required "image" field');
   assert(productBlock.includes('"offers":'), 'productJsonLd in services/[service]/[city] includes required "offers" field');
   assert(productBlock.includes('"aggregateRating":'), 'productJsonLd in services/[service]/[city] includes "aggregateRating" for review stars');
-  assert(productBlock.includes('"reviewCount": "48"'), 'productJsonLd in services/[service]/[city] has verified reviewCount 48');
+  assert(productBlock.includes('"reviewCount": "53"'), 'productJsonLd in services/[service]/[city] has verified reviewCount 53');
   assert(productBlock.includes('"sku":'), 'productJsonLd in services/[service]/[city] includes "sku" field');
 } else {
   assert(false, 'productJsonLd defined in services/[service]/[city]/page.js');
@@ -60,7 +60,7 @@ if (cityProductBlockMatch) {
   assert(cityProductBlock.includes('"image":'), 'productJsonLd in service-areas/[city] includes required "image" field');
   assert(cityProductBlock.includes('"offers":'), 'productJsonLd in service-areas/[city] includes required "offers" field');
   assert(cityProductBlock.includes('"aggregateRating":'), 'productJsonLd in service-areas/[city] includes "aggregateRating"');
-  assert(cityProductBlock.includes('"reviewCount": "48"'), 'productJsonLd in service-areas/[city] has verified reviewCount 48');
+  assert(cityProductBlock.includes('"reviewCount": "53"'), 'productJsonLd in service-areas/[city] has verified reviewCount 53');
   assert(cityProductBlock.includes('"sku":'), 'productJsonLd in service-areas/[city] includes "sku" field');
 } else {
   assert(false, 'productJsonLd defined in service-areas/[city]/page.js');

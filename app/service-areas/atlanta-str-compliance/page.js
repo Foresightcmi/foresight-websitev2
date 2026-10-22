@@ -279,7 +279,7 @@ export default function AtlantaSTRCompliancePage() {
           >
             <span>Certified Master Inspector® (CMI)</span>
             <span>24-Hour Portal Affidavit Delivery</span>
-            <span>⭐ 4.9-Star Highest Rated in Atlanta</span>
+            <span>⭐ 4.8-Star Highest Rated in Atlanta</span>
           </div>
         </div>
       </section>

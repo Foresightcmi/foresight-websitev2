@@ -1087,7 +1087,7 @@ export default function RealtorsClient() {
                   <span className="font-mono text-xs font-bold text-primary mr-1">[VERIFIED]</span>
                   <div style={{ textAlign: 'left', lineHeight: 1.2 }}>
                     <div style={{ color: '#FFFFFF', fontSize: '0.75rem', fontWeight: 700 }}>PREFERRED INSPECTION PARTNER</div>
-                    <div style={{ color: 'var(--color-gold)', fontSize: '0.7rem' }}>Foresight CMI® &bull; 4.9★ (48 Reviews)</div>
+                    <div style={{ color: 'var(--color-gold)', fontSize: '0.7rem' }}>Foresight CMI® &bull; 4.8★ (53 Reviews)</div>
                   </div>
                 </div>
               </div>
