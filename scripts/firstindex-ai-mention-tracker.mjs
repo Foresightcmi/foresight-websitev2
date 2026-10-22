@@ -39,7 +39,7 @@ const BUYER_PROMPTS = [
     prompt: 'DeKalb County low-flow plumbing compliance certificate inspector',
     autocompleteSeed: 'dekalb county low flow certificate',
     canonicalUrl: 'https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance',
-    requiredTruthFacts: ['$100', 'DeKalb', '1.6 GPF']
+    requiredTruthFacts: ['$100', 'DeKalb', 'unincorporated']
   },
   {
     id: '11-month-builder-warranty',

@@ -174,7 +174,7 @@ function buildLoanOfficerEmail(lo) {
           <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal audit in under 2.5 hours.</li>
           <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as Georgia repair amendment) for licensed broker or attorney review.</li>
           <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
-          <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site fixture verification (toilets 1.6 GPF max) and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
+          <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site fixture verification and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
         </ul>
       </div>
 
