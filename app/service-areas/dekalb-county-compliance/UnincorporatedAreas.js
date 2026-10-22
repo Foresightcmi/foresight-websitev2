@@ -52,7 +52,17 @@ export default function UnincorporatedAreas() {
           Tax District field reads &quot;unincorporated&quot; when the certificate applies, and shows a city name when it does not.
         </p>
         <p style={{ fontSize: '0.85rem', opacity: 0.8 }}>
-          Sources: DeKalb County water service application (dekalbcountyga.gov, 2026); U.S. Census Bureau, American Community Survey{' '}
+          Sources: DeKalb County water service application (dekalbcountyga.gov, 2026), which limits the Certificate of Compliance to
+          unincorporated DeKalb County;{' '}
+          <a
+            href="https://www.dekalbcountyga.gov/sites/default/files/2026-01/Capacity%20Credits%20Allocation%20Policy%2003%2025%202022.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DeKalb County Capacity Credits Allocation Policy
+          </a>
+          , section 5.1, which states that Code of Ordinances Sections 25-45 through 25-49 require water-conserving plumbing fixtures for
+          all properties in unincorporated DeKalb County; U.S. Census Bureau, American Community Survey{' '}
           {rows[0].acsYear || '2019-2023 5-year'} estimates, tables B01003, B25034, B25035, retrieved {retrieved}. Other unincorporated
           communities exist beyond these nine.
         </p>
