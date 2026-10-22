@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-22T18:18:29.648Z",
+    "post_id": 9,
+    "topic": "Atlanta Sewer Scope Inspection ($450): Crushed Sewer Line Under Tree Roots",
+    "type": "deposit",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
     "timestamp": "2026-10-21T18:23:26.802Z",
     "post_id": 8,
     "topic": "Atlanta Electrical & Thermal Home Inspection: Bootleg Grounds in Flipped Kitchens",
