@@ -57,8 +57,8 @@ const faqs = [
     a: 'Homes built on or after January 1, 1993 do not need the certificate. Other common exemptions include foreclosure sales, transfers between spouses or between parents and children, and properties that will be fully demolished after the sale. Exempt properties typically file the county\'s exemption form instead. If you already have a certificate for this sale, you do not need another one.',
   },
   {
-    q: 'What happens if a fixture is not water-conserving?',
-    a: 'We list each fixture that is not water-conserving, with its location, so it can be replaced. Once the replacements are in, we confirm them and sign the certificate.',
+    q: 'What happens if a fixture does not meet the limit?',
+    a: 'We list each fixture that is over the limit, with its location, so it can be replaced. Once the replacements are in, we confirm them and sign the certificate.',
   },
   {
     q: 'Can I get the compliance inspection as a standalone service?',
@@ -117,10 +117,10 @@ export default function DeKalbCountyCompliancePage() {
 
   // ── Fixture requirement data ────────────────────────────────────────
   const fixtures = [
-    { icon: '01', label: 'Toilets', spec: 'Water-conserving model' },
-    { icon: '02', label: 'Showerheads', spec: 'Water-conserving model' },
-    { icon: '03', label: 'Bathroom Faucets', spec: 'Water-conserving model' },
-    { icon: '04', label: 'Kitchen Faucets', spec: 'Water-conserving model' },
+    { icon: '01', label: 'Toilets', spec: '1.6 GPF or less' },
+    { icon: '02', label: 'Showerheads', spec: '2.5 GPM or less' },
+    { icon: '03', label: 'Bathroom Faucets', spec: '2.0 GPM or less' },
+    { icon: '04', label: 'Kitchen Faucets', spec: '2.2 GPM or less' },
   ];
 
   // ── Inspection cards ────────────────────────────────────────────────
@@ -128,22 +128,22 @@ export default function DeKalbCountyCompliancePage() {
     {
       icon: '01',
       title: 'Toilet Flow Rate Verification',
-      desc: 'Every toilet is checked to confirm it is a water-conserving model.',
+      desc: 'Every toilet is checked against the 1.6 gallons-per-flush (GPF) limit.',
     },
     {
       icon: '02',
       title: 'Showerhead GPM Testing',
-      desc: 'All showerheads are checked to confirm they are water-conserving models.',
+      desc: 'All showerheads are checked against the 2.5 gallons-per-minute (GPM) limit.',
     },
     {
       icon: '03',
       title: 'Faucet Aerator Check',
-      desc: 'Bathroom and kitchen faucets are checked to confirm they are water-conserving, and aerators are inspected.',
+      desc: 'Bathroom faucets are checked against 2.0 GPM and kitchen faucets against 2.2 GPM.',
     },
     {
       icon: '04',
       title: 'Signed Certificate of Compliance',
-      desc: 'When every fixture is water-conserving, we sign the county Certificate of Compliance so the new owner can set up water service.',
+      desc: 'When every fixture meets the limits, we sign the county Certificate of Compliance so the new owner can set up water service.',
     },
   ];
 
@@ -280,7 +280,7 @@ export default function DeKalbCountyCompliancePage() {
                   marginBottom: '1.5rem',
                 }}
               >
-                We check every toilet, showerhead, and faucet to confirm it is water-conserving. Any fixture
+                We check every toilet, showerhead, and faucet against the county limits. Any fixture
                 over the limit is listed with its location so it can be replaced.
               </p>
               <p
@@ -290,7 +290,7 @@ export default function DeKalbCountyCompliancePage() {
                   lineHeight: 1.75,
                 }}
               >
-                When every fixture is water-conserving, we sign the Certificate of Compliance. Foresight
+                When every fixture meets the limits, we sign the Certificate of Compliance. Foresight
                 Home Inspections is a private company, not part of DeKalb County; the county allows
                 certified home inspectors to sign this certificate. For official forms, contact DeKalb
                 County Department of Watershed Management.
