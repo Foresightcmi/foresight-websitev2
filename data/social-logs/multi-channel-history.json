@@ -170,5 +170,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations"
+  },
+  {
+    "postId": 4,
+    "title": "EPA Radon Zone 1 Warning for North Metro Atlanta",
+    "publishedAt": "2026-10-22T18:18:29.940Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/services/radon-testing"
   }
 ]
