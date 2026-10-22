@@ -1,5 +1,37 @@
 [
   {
+    "timestamp": "2026-10-22T13:38:46.588Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-22",
+    "truthGuardPassed": true,
+    "page1GuardPassed": true,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 15,
+      "targets": [
+        "Atlanta (\"sewer video inspection atlanta\", Pos 11.0, 73 impr)",
+        "Fayetteville (\"home inspection fayetteville ga\", Pos 21.3, 69 impr)",
+        "Peachtree Corners (\"home inspection peachtree corners ga\", Pos 18.8, 68 impr)",
+        "Palmetto (\"home inspection palmetto ga\", Pos 13.6, 67 impr)",
+        "Acworth (\"new construction inspections in acworth, ga\", Pos 7.6, 66 impr)",
+        "Powder Springs (\"home inspection powder springs ga\", Pos 13.3, 63 impr)",
+        "Grayson (\"home inspector grayson ga\", Pos 13.5, 63 impr)",
+        "Winder (\"indoor air quality services winder ga\", Pos 8.3, 61 impr)",
+        "McDonough (\"home inspector mcdonough ga\", Pos 18.5, 59 impr)",
+        "Marietta (\"builder eleven month warranty inspections in marietta, ga\", Pos 5.9, 58 impr)",
+        "Forest Park (\"home inspection forest park ga\", Pos 5.6, 58 impr)",
+        "Locust Grove (\"home inspection locust grove ga\", Pos 16.7, 58 impr)",
+        "Stockbridge (\"home inspection stockbridge ga\", Pos 19.3, 56 impr)",
+        "Suwanee (\"home inspection suwanee ga\", Pos 21.0, 56 impr)",
+        "Union City (\"home inspection union city ga\", Pos 18.5, 56 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 15 city hubs: Atlanta (\"sewer video inspection atlanta\", Pos 11.0, 73 impr) | Fayetteville (\"home inspection fayetteville ga\", Pos 21.3, 69 impr) | Peachtree Corners (\"home inspection peachtree corners ga\", Pos 18.8, 68 impr) | Palmetto (\"home inspection palmetto ga\", Pos 13.6, 67 impr) | Acworth (\"new construction inspections in acworth, ga\", Pos 7.6, 66 impr) | Powder Springs (\"home inspection powder springs ga\", Pos 13.3, 63 impr) | Grayson (\"home inspector grayson ga\", Pos 13.5, 63 impr) | Winder (\"indoor air quality services winder ga\", Pos 8.3, 61 impr) | McDonough (\"home inspector mcdonough ga\", Pos 18.5, 59 impr) | Marietta (\"builder eleven month warranty inspections in marietta, ga\", Pos 5.9, 58 impr) | Forest Park (\"home inspection forest park ga\", Pos 5.6, 58 impr) | Locust Grove (\"home inspection locust grove ga\", Pos 16.7, 58 impr) | Stockbridge (\"home inspection stockbridge ga\", Pos 19.3, 56 impr) | Suwanee (\"home inspection suwanee ga\", Pos 21.0, 56 impr) | Union City (\"home inspection union city ga\", Pos 18.5, 56 impr)"
+    }
+  },
+  {
     "timestamp": "2026-10-21T18:10:43.445Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-21",

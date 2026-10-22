@@ -2597,7 +2597,7 @@
     "messageId": "<e3fdcd04-494b-a874-1113-61cd40bac520@foresightcmi.com>",
     "status": "SENT",
     "dispatchedAt": "2026-09-28T13:24:35.379Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   },
   {
     "recordId": "DKB-3189821",
@@ -2610,7 +2610,7 @@
     "messageId": "<060f1b46-e83a-faca-fc63-6a5859d1b9c7@foresightcmi.com>",
     "status": "SENT",
     "dispatchedAt": "2026-09-28T13:24:33.493Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   },
   {
     "recordId": "DKB-3189822",
@@ -2623,7 +2623,7 @@
     "messageId": "<36bee74f-8ce5-ef45-9e4d-675bee3c37e3@foresightcmi.com>",
     "status": "SENT",
     "dispatchedAt": "2026-09-28T13:24:31.768Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   },
   {
     "recordId": "DKB-3189824",
@@ -2636,7 +2636,7 @@
     "messageId": "<2095232a-69dc-bada-1e04-f8542a52fec1@foresightcmi.com>",
     "status": "SENT",
     "dispatchedAt": "2026-09-28T13:24:29.790Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   },
   {
     "recordId": "DKB-3189834",
@@ -2649,7 +2649,7 @@
     "messageId": "<0b42ba0a-251c-1bbc-b1f2-768e8776f4c3@foresightcmi.com>",
     "status": "SENT",
     "dispatchedAt": "2026-09-28T13:24:27.544Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   },
   {
     "recordId": "BB-202600778",
@@ -2662,7 +2662,7 @@
     "messageId": "<ff3e5002-b100-5b73-13a1-88b9fbbe2a6d@foresightcmi.com>",
     "status": "SENT",
     "dispatchedAt": "2026-09-28T03:30:21.893Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   },
   {
     "recordId": "BB-202600800",
@@ -2675,7 +2675,7 @@
     "messageId": "<6a8f62be-e775-6775-980b-cd4435c25675@foresightcmi.com>",
     "status": "SENT",
     "dispatchedAt": "2026-09-28T03:22:26.996Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   },
   {
     "recordId": "BB-202600800",
@@ -2688,6 +2688,6 @@
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/BB-202600800.html",
     "status": "DISPATCHED",
     "dispatchedAt": "2026-09-28T03:02:55.045Z",
-    "inspectionTarget": "Pre-Drywall Rough-In ($475 - $850)"
+    "inspectionTarget": "Pre-Drywall Rough-In (From $275)"
   }
 ]
