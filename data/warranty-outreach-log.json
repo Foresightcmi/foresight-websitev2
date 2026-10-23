@@ -129,5 +129,55 @@
     "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3111411.html",
     "type": "permit_homeowner",
     "timestamp": "2026-10-21T18:54:48.995Z"
+  },
+  {
+    "leadId": "ext_DKB-3111583",
+    "name": "BUILDING BY GRACE",
+    "address": "3178 GRANBY AVE, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "amy.rogers777@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3111583.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-22T18:47:30.646Z"
+  },
+  {
+    "leadId": "ext_DKB-3101587",
+    "name": "Michael Clark",
+    "address": "3158 Robinson AVE, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "mclark90@icloud.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3101587.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-22T18:47:34.381Z"
+  },
+  {
+    "leadId": "ext_DKB-3156946",
+    "name": "CHRISTINA ROBERTS",
+    "address": "724 REVEREND D L EDWARDS DR, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "cmoroberts@hotmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3156946.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-22T18:47:38.607Z"
+  },
+  {
+    "leadId": "ext_DKB-3156919",
+    "name": "Emily-Micaela Martinez-Munoz",
+    "address": "504 RAVEN SPRINGS TRL, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "mem971219@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3156919.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-22T18:47:42.542Z"
+  },
+  {
+    "leadId": "ext_DKB-3155181",
+    "name": "TERRELL HOPE",
+    "address": "808 EAST AVE, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "hello@kickstandinvestments.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3155181.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-22T18:47:46.815Z"
   }
 ]
