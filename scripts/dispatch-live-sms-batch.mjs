@@ -96,14 +96,14 @@ async function run() {
     } catch {}
   }
 
-  // Filter for uncontacted Buyer Agents in active 0-4 day Due Diligence window (strict freshness gate)
+  // Filter for uncontacted Buyer Agents in active 0-48h Due Diligence window (strict freshness gate)
   const nowMs = Date.now();
   const candidateDeals = filers.filter(f => {
-    // 1. Strict Freshness Gate: ONLY contracts signed in the last 4 days (active 5-day due diligence window)
-    if (!f.date) return false;
-    const dealDate = new Date(f.date).getTime();
+    // 1. Strict Freshness Gate: ONLY contracts signed in the last 48 hours (active 2-day due diligence window)
+    if (!f.date || f.closed || f.close_date) return false;
+    const dealDate = new Date(f.pending_timestamp || f.date).getTime();
     const ageDays = (nowMs - dealDate) / (1000 * 60 * 60 * 24);
-    if (ageDays < 0 || ageDays > 4.5) return false;
+    if (isNaN(ageDays) || ageDays < 0 || ageDays > 2.0) return false;
 
     // 2. Valid Phone & Not Self
     const p = (f.clean_phone || f.raw_phone || f.phone || '').replace(/\D/g, '').slice(-10);

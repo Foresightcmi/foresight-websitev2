@@ -89,7 +89,9 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
       for (const row of data) {
         const src = row?._source || {};
         const status = String(src.StandardStatus || src.MlsStatus || '');
+        if (/closed|sold|terminate|withdraw|expired/i.test(status)) continue;
         if (!/pending|under contract|contingent/i.test(status)) continue;
+        if (src.CloseDate) continue;
 
         const county = String(src.CountyOrParish || '').toLowerCase().trim();
         if (county && !METRO_COUNTIES.has(county)) continue;
@@ -100,7 +102,13 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
 
         const rawPrice = Number(src.ListPrice || 0);
         const priceStr = rawPrice > 0 ? `$${rawPrice.toLocaleString()}` : '';
-        const pendingTs = String(src.PendingTimestamp || src.StatusChangeTimestamp || src.PurchaseContractDate || new Date().toISOString());
+        const pendingTs = String(src.PurchaseContractDate || src.PendingTimestamp || src.StatusChangeTimestamp || new Date().toISOString());
+        const pendingMs = new Date(pendingTs).getTime();
+        const nowMs = Date.now();
+        const ageDays = (nowMs - pendingMs) / (1000 * 60 * 60 * 24);
+
+        // Strict 48-hour cutoff: Never harvest contracts older than 2 days or already closed
+        if (isNaN(ageDays) || ageDays < 0 || ageDays > 2) continue;
         const dateStr = pendingTs.slice(0, 10);
 
         const targets = [
@@ -176,9 +184,9 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
 
   const allDeals = Array.from(byKey.values());
 
-  // Strict 5-day rolling due diligence window (Georgia 5-7 day diligence period)
+  // Strict 2-day (48-hour) rolling due diligence window (Georgia 0-48h rapid diligence outreach)
   const nowMs = Date.now();
-  const maxAgeMs = 5 * 24 * 60 * 60 * 1000;
+  const maxAgeMs = 2 * 24 * 60 * 60 * 1000;
   const cutoffDateStr = new Date(nowMs - maxAgeMs).toISOString().slice(0, 10);
 
   const active = [];
@@ -186,7 +194,9 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
 
   for (const item of allDeals) {
     const itemDate = (item.date || '').slice(0, 10);
-    if (itemDate >= cutoffDateStr) {
+    const itemTimestamp = new Date(item.pending_timestamp || item.date || 0).getTime();
+    const isClosedOrStale = item.closed || item.close_date || (nowMs - itemTimestamp > maxAgeMs);
+    if (!isClosedOrStale && itemDate >= cutoffDateStr) {
       active.push(item);
     } else {
       stale.push(item);

@@ -9,7 +9,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const UNDER_CONTRACT_FILE = path.join(ROOT_DIR, 'data', 'under-contract-realtors.json');
 const ARCHIVE_FILE = path.join(ROOT_DIR, 'data', 'archive-under-contract-realtors.json');
 
-export function pruneStaleDueDiligence(maxAgeDays = 5) {
+export function pruneStaleDueDiligence(maxAgeDays = 2) {
   if (!fs.existsSync(UNDER_CONTRACT_FILE)) {
     console.error('❌ File not found:', UNDER_CONTRACT_FILE);
     return { activeCount: 0, archivedCount: 0 };
@@ -18,18 +18,20 @@ export function pruneStaleDueDiligence(maxAgeDays = 5) {
   const all = JSON.parse(fs.readFileSync(UNDER_CONTRACT_FILE, 'utf8'));
   console.log(`📊 Total records before pruning: ${all.length}`);
 
-  // Calculate cutoff timestamp for rolling freshness window
-  const now = new Date('2026-10-17T23:59:59Z').getTime(); // Grounded to current date
+  // Calculate cutoff timestamp for rolling freshness window (strictly max 48 hours / 2 days)
+  const now = Date.now();
   const cutoffTime = now - (maxAgeDays * 24 * 60 * 60 * 1000);
   const cutoffDateStr = new Date(cutoffTime).toISOString().slice(0, 10);
-  console.log(`🗓️ Freshness Cutoff Date: ${cutoffDateStr} (retention: last ${maxAgeDays} days)`);
+  console.log(`🗓️ Freshness Cutoff Date: ${cutoffDateStr} (retention: last ${maxAgeDays} days / 48 hours)`);
 
   const active = [];
   const stale = [];
 
   for (const item of all) {
     const itemDate = (item.date || '').slice(0, 10);
-    if (itemDate >= cutoffDateStr) {
+    const itemTimestamp = new Date(item.date || 0).getTime();
+    const isClosedOrStale = item.closed || item.close_date || (itemTimestamp < cutoffTime);
+    if (!isClosedOrStale && itemDate >= cutoffDateStr) {
       active.push(item);
     } else {
       stale.push(item);

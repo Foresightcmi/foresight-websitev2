@@ -41,6 +41,12 @@ for (const f of sortedFilers) {
   if (cleanPhone.length !== 10 || cleanPhone === '6788780215' || cleanPhone === '6784802110') continue;
   if (!f.name || /non-mls|nmls|unrepresented/i.test(f.name)) continue;
   if (/ansley|chapman group/i.test(f.brokerage || '') || /amy fuchs|joe chapman/i.test(f.name || '')) continue;
+  if (f.closed || f.close_date) continue;
+
+  // Strict 48-hour freshness guard: never dispatch deals older than 2.0 days or past active due diligence
+  const dealTimestamp = new Date(f.pending_timestamp || f.date || 0).getTime();
+  const dealAgeDays = (Date.now() - dealTimestamp) / (1000 * 60 * 60 * 24);
+  if (isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
 
   const normName = f.name.trim().toLowerCase();
   const normEmail = String(f.email || '').trim().toLowerCase();
@@ -815,7 +821,7 @@ const htmlContent = `<!DOCTYPE html>
         if (isSent(c.id) || !c.clean_phone || c.clean_phone.length !== 10) return false;
         if (!c.date) return false;
         const ageDays = (nowMs - new Date(c.date).getTime()) / (1000 * 60 * 60 * 24);
-        return ageDays >= 0 && ageDays <= 4.5;
+        return !c.closed && !c.close_date && ageDays >= 0 && ageDays <= 2.0;
       }).slice(0, 10);
 
       if (uncontacted.length === 0) {
@@ -878,7 +884,7 @@ const htmlContent = `<!DOCTYPE html>
       
       const notice = document.getElementById('filterNotice');
       if (tab === 'live') {
-        notice.innerHTML = 'Showing <b>up to 150 brand-new unique FMLS under-contract agents in active 5-day due diligence window</b> (100% deduplicated per person).';
+        notice.innerHTML = 'Showing <b>up to 150 brand-new unique FMLS under-contract agents in active 48-hour due diligence window</b> (100% deduplicated per person).';
       } else if (tab === 'contacted') {
         notice.innerHTML = 'Showing <b>contacted agents</b>. Timestamp shown below.';
       } else {

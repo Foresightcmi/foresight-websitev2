@@ -573,6 +573,10 @@ async function main() {
       for (const r of sorted) {
         if (quotaCeilingHit) break;
         if (!r.email || !r.email.includes('@')) continue;
+        if (r.closed || r.close_date) continue;
+        const dealTimestamp = new Date(r.pending_timestamp || r.date || 0).getTime();
+        const dealAgeDays = (Date.now() - dealTimestamp) / (1000 * 60 * 60 * 24);
+        if (isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
         const normEmail = String(r.email).trim().toLowerCase();
         const normName = String(r.name || '').trim().toLowerCase();
         const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
@@ -650,10 +654,10 @@ async function main() {
       console.log(`🤖 [OpenSMS Engine] Connected to Android OpenSMS Gateway: ${targetEndpoint}`);
 
       for (const r of sorted) {
-        // Strict Freshness Gate: ONLY contracts signed in the last 4 days (active 5-day due diligence window)
+        // Strict Freshness Gate: ONLY contracts signed in the last 48 hours (active 2-day due diligence window)
         if (!r.date) continue;
         const dealAgeDays = (Date.now() - new Date(r.date).getTime()) / (1000 * 60 * 60 * 24);
-        if (dealAgeDays < 0 || dealAgeDays > 4.5) continue;
+        if (r.closed || r.close_date || isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
 
         const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
         const normName = String(r.name || '').trim().toLowerCase();
