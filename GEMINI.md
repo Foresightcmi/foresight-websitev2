@@ -44,3 +44,12 @@
 * Hub GSC sentences (`scripts/lib/gsc-city-injector.mjs`) link to the city-specific service page; "home" intent links to `/services/buyer-inspection/{city}`.
 * Goal metric: `node scripts/city-rank-scoreboard.mjs` (cities on page 1 for core queries). Map pack is not visible in GSC; target the home ring (Lithonia, Stonecrest, Redan, Conyers, Stone Mountain, Snellville, Decatur, Tucker, Covington, Lilburn).
 * Review requests: `scripts/review-request-engine.mjs` (client PII only in gitignored `data/private/`). Weekly GBP post: `scripts/gbp-weekly-kit.mjs`.
+
+
+## 6. Always-On Page-1 SEO Autopilot (Zero-Dashboard Executive Standard)
+* **Zero Manual Dashboard Required**: The entrepreneur does not need to open `/dashboard` or `localhost:3800` to trigger SEO upgrades. `scripts/firstindex-daily-dispatcher.mjs` and the AI team autonomously run:
+  1. `node scripts/fetch-gsc-analytics.mjs` + `node scripts/striking-distance-engine.mjs` (live query-by-page striking-distance queue).
+  2. `node scripts/firstindex-truth-guard.mjs --fix` + `python scripts/page1-guard.py` (enforcing 4+ FAQs across all 10 `services-pseo.json` services and 957 `service × city` routes).
+  3. Automatic `git commit` + `git push origin main` (Vercel live deploy) + `node scripts/ping-indexnow.mjs` whenever daily GSC city enrichments pass both guards.
+* **Service-to-Service De-Cannibalization (`app/services/[service]/[city]/page.js`)**:
+  * Every non-buyer `/services/[service]/[city]` page includes a top-30% canonical de-cannibalization link and exact-match sibling anchor (`🏡 Home Inspection in {City}, GA ($345+)`) pointing to `/services/buyer-inspection/{city}` so specialty pages (`11-month-warranty-inspection`, `pre-drywall-inspection`, `sewer-scope-inspection`) never cannibalize core `"home inspection {city} ga"` queries.
