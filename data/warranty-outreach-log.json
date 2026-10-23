@@ -179,5 +179,55 @@
     "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3155181.html",
     "type": "permit_homeowner",
     "timestamp": "2026-10-22T18:47:46.815Z"
+  },
+  {
+    "leadId": "ext_DKB-3156208",
+    "name": "Matthew Bittner",
+    "address": "2269 CHRYSLER TER, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "thirdvector@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3156208.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-23T18:42:26.310Z"
+  },
+  {
+    "leadId": "ext_DKB-3150976",
+    "name": "JAIMEN RODRIGUEZ*",
+    "address": "1915 GLEN MORA CT, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "jaimentrodriguez@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3150976.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-23T18:42:30.178Z"
+  },
+  {
+    "leadId": "ext_DKB-3159824",
+    "name": "ALEKSANDAR FOTE",
+    "address": "1758 BOYCE DR, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "alekfote@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3159824.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-23T18:42:34.077Z"
+  },
+  {
+    "leadId": "ext_DKB-3168176",
+    "name": "DEADRIC   HOLLINS",
+    "address": "1371 CERRO VISTA DR, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "deadric@hollinscompany.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3168176.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-23T18:42:38.600Z"
+  },
+  {
+    "leadId": "ext_DKB-3167121",
+    "name": "Robert R Douglas",
+    "address": "2406 LYNN IRIS DR, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "Rob@douglas-group.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3167121.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-23T18:42:42.515Z"
   }
 ]
