@@ -56,20 +56,41 @@ function syncUnderContractToCampaign(unsubSet) {
     if (!email || !email.includes('@') || seenEmails.has(email) || unsubSet.has(email)) continue;
     if (/@ansleyre\.com$|@ansleyatlanta\.com$/i.test(email) || /ansley|chapman group/i.test(r.brokerage || '')) continue;
     seenEmails.add(email);
+    const dealDate = r.date || today;
+    let isFresh = false;
+    try {
+      const ageDays = (Date.now() - new Date(dealDate).getTime()) / (1000 * 60 * 60 * 24);
+      isFresh = ageDays >= 0 && ageDays <= 5;
+    } catch {}
     existingArr.unshift({
       email,
       first_name: r.first || (r.name || '').split(' ')[0] || 'there',
       full_name: r.name || '',
       brokerage: r.brokerage || '',
       city: r.city || 'Metro Atlanta',
-      listing_address: r.address || '',
+      listing_address: isFresh ? (r.address || '') : '',
       source_url: r.source_url || 'https://www.fmls.com',
-      retrieved_on: r.date || today
+      retrieved_on: dealDate
     });
     added++;
   }
 
-  if (added > 0) {
+  // Purge any stale listings (>5 days old) so realtors are never sent emails after closing
+  for (const item of existingArr) {
+    const d = item.retrieved_on || item.date;
+    if (d) {
+      try {
+        const age = (Date.now() - new Date(d).getTime()) / (1000 * 60 * 60 * 24);
+        if (age > 5 || age < 0) item.listing_address = '';
+      } catch {
+        item.listing_address = '';
+      }
+    } else {
+      item.listing_address = '';
+    }
+  }
+
+  if (added > 0 || existingArr.length > 0) {
     fs.writeFileSync(activeFilersPath, JSON.stringify(existingArr.slice(0, 5000), null, 2), 'utf8');
   }
 

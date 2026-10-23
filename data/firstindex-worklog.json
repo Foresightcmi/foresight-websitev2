@@ -1,5 +1,37 @@
 [
   {
+    "timestamp": "2026-10-23T13:38:42.446Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-23",
+    "truthGuardPassed": true,
+    "page1GuardPassed": true,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 15,
+      "targets": [
+        "Canton (\"indoor air quality services canton ga\", Pos 11.5, 46 impr)",
+        "Duluth (\"commercial inspection duluth ga\", Pos 11.5, 43 impr)",
+        "Alpharetta (\"pre-drywall inspections alpharetta, ga\", Pos 4.9, 42 impr)",
+        "Hampton (\"home inspection hampton ga\", Pos 12.6, 40 impr)",
+        "Woodstock (\"mold inspection woodstock\", Pos 8.4, 40 impr)",
+        "Jonesboro (\"home inspection jonesboro ga\", Pos 16.9, 39 impr)",
+        "Kennesaw (\"property inspection company in kennesaw, ga\", Pos 14.6, 39 impr)",
+        "Cumming (\"11 month warranty inspection cumming ga\", Pos 9.1, 38 impr)",
+        "Buford (\"commercial inspection buford ga\", Pos 14.5, 38 impr)",
+        "Carrollton (\"commercial inspections carrollton, ga\", Pos 5.3, 36 impr)",
+        "Milton (\"commercial inspections milton, ga\", Pos 6.6, 36 impr)",
+        "Atlanta (\"inspection checklist atlanta ga\", Pos 6.9, 35 impr)",
+        "Douglasville (\"property inspections douglasville, ga\", Pos 13.8, 35 impr)",
+        "Porterdale (\"home inspection porterdale\", Pos 8.4, 34 impr)",
+        "Marietta (\"marietta ga sewer inspection\", Pos 6.6, 34 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 15 city hubs: Canton (\"indoor air quality services canton ga\", Pos 11.5, 46 impr) | Duluth (\"commercial inspection duluth ga\", Pos 11.5, 43 impr) | Alpharetta (\"pre-drywall inspections alpharetta, ga\", Pos 4.9, 42 impr) | Hampton (\"home inspection hampton ga\", Pos 12.6, 40 impr) | Woodstock (\"mold inspection woodstock\", Pos 8.4, 40 impr) | Jonesboro (\"home inspection jonesboro ga\", Pos 16.9, 39 impr) | Kennesaw (\"property inspection company in kennesaw, ga\", Pos 14.6, 39 impr) | Cumming (\"11 month warranty inspection cumming ga\", Pos 9.1, 38 impr) | Buford (\"commercial inspection buford ga\", Pos 14.5, 38 impr) | Carrollton (\"commercial inspections carrollton, ga\", Pos 5.3, 36 impr) | Milton (\"commercial inspections milton, ga\", Pos 6.6, 36 impr) | Atlanta (\"inspection checklist atlanta ga\", Pos 6.9, 35 impr) | Douglasville (\"property inspections douglasville, ga\", Pos 13.8, 35 impr) | Porterdale (\"home inspection porterdale\", Pos 8.4, 34 impr) | Marietta (\"marietta ga sewer inspection\", Pos 6.6, 34 impr)"
+    }
+  },
+  {
     "timestamp": "2026-10-22T18:07:21.175Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-22",
