@@ -7,6 +7,10 @@ on:
   workflow_dispatch:
     # Allows manual 1-click publishing from GitHub Actions tab
 
+concurrency:
+  group: foresight-main-branch-commit
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -41,9 +45,4 @@ jobs:
           git config --global user.name "Foresight Social Bot"
           git config --global user.email "social-bot@fhinspectionsatl.com"
           git add data/social-logs/ data/
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(social): autonomous 10 AM weekday LinkedIn & multi-channel rotation [skip ci]"
-            git push
-          else
-            echo "No state changes to commit."
-          fi
+          git diff --cached --quiet || (git commit -m "chore(social): autonomous 10 AM weekday LinkedIn & multi-channel rotation [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "No state changes to commit."

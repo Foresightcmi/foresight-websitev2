@@ -809,6 +809,7 @@ async function main() {
     if (diffStatus) {
       const todayIso = new Date().toISOString().split('T')[0];
       execSync(`git commit -m "chore(dispatch): auto-sync ${todayIso} FMLS due diligence harvest & vip-dispatch.html"`, { cwd: ROOT_DIR, stdio: 'ignore' });
+      execSync('git pull --rebase origin main', { cwd: ROOT_DIR, stdio: 'ignore' });
       execSync('git push origin main', { cwd: ROOT_DIR, stdio: 'ignore' });
       console.log('🚀 [Due Diligence Engine] Auto-deployed refreshed public/vip-dispatch.html to origin/main.');
     }

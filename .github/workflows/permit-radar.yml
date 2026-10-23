@@ -6,6 +6,10 @@ on:
     - cron: '0 14,19 * * *'
   workflow_dispatch: # Allows 1-click manual trigger from GitHub Actions tab
 
+concurrency:
+  group: foresight-main-branch-commit
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -51,4 +55,4 @@ jobs:
           git config user.name "Foresight Revenue Radar Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/ public/dossiers/
-          git diff --cached --quiet || (git commit -m "chore(radar): automated metro atlanta new construction harvest and dossiers" && git push)
+          git diff --cached --quiet || (git commit -m "chore(radar): automated metro atlanta new construction harvest and dossiers [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Radar records clean or push bypassed."

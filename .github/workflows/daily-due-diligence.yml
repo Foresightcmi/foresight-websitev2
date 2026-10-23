@@ -6,6 +6,10 @@ on:
     - cron: '30 14,19 * * *'
   workflow_dispatch: # Allows 1-click manual trigger anytime from GitHub Actions tab
 
+concurrency:
+  group: foresight-main-branch-commit
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -48,5 +52,4 @@ jobs:
           git config user.name "Foresight Scout Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add public/vip-dispatch.html data/unsubscribed_contacts.json data/due-diligence-outreach-log.json data/loan-officers.json data/under-contract-realtors.json data/archive-under-contract-realtors.json
-          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily due diligence scout and vip-dispatch sync" && git pull --rebase origin main && git push origin main) || echo "Outreach logs clean or push bypassed."
-
+          git diff --cached --quiet || (git commit -m "chore(due-diligence): daily due diligence scout and vip-dispatch sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Outreach logs clean or push bypassed."

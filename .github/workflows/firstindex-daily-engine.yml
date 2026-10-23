@@ -6,6 +6,10 @@ on:
     - cron: '30 13 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: foresight-main-branch-commit
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -36,4 +40,4 @@ jobs:
           git config user.name "Foresight FirstIndex Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/ public/
-          git diff --cached --quiet || (git commit -m "chore(firstindex): daily truth-doc validation, AI mention tracking & llms.txt sync [skip ci]" && git pull --rebase origin main && git push origin main) || echo "Clean"
+          git diff --cached --quiet || (git commit -m "chore(firstindex): daily truth-doc validation, AI mention tracking & llms.txt sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Clean"
