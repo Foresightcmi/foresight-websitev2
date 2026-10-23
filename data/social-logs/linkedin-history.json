@@ -1,5 +1,15 @@
 [
   {
+    "timestamp": "2026-10-23T18:06:17.817Z",
+    "post_id": 10,
+    "topic": "Luxury Home Inspection Buckhead & Alpharetta: Estate Master Due Diligence",
+    "type": "withdrawal",
+    "webhook": {
+      "status": "skipped",
+      "reason": "manual_or_local_mode"
+    }
+  },
+  {
     "timestamp": "2026-10-22T18:18:29.648Z",
     "post_id": 9,
     "topic": "Atlanta Sewer Scope Inspection ($450): Crushed Sewer Line Under Tree Roots",
