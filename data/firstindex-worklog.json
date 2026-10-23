@@ -1,5 +1,38 @@
 [
   {
+    "timestamp": "2026-10-23T17:56:31.540Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-23",
+    "truthGuardPassed": true,
+    "page1GuardPassed": false,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "deployedToVercel": false,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 15,
+      "targets": [
+        "Dallas (\"11 month warranty inspection dallas ga\", Pos 11.9, 33 impr)",
+        "Douglasville (\"commercial inspections douglasville, ga\", Pos 5.2, 33 impr)",
+        "Gainesville (\"commercial inspections gainesville ga\", Pos 12.4, 33 impr)",
+        "Norcross (\"commercial property inspection norcross\", Pos 12.6, 33 impr)",
+        "Pine Lake (\"home inspection pine lake ga\", Pos 7.3, 33 impr)",
+        "Roswell (\"sewer camera inspection roswell ga\", Pos 8.5, 33 impr)",
+        "Johns Creek (\"commercial inspection johns creek ga\", Pos 11.6, 32 impr)",
+        "Carrollton (\"sewer inspection carrollton ga\", Pos 6.0, 31 impr)",
+        "Dunwoody (\"commercial inspections dunwoody, ga\", Pos 10.8, 30 impr)",
+        "Kennesaw (\"mold inspections kennesaw\", Pos 10.4, 29 impr)",
+        "Cartersville (\"mold inspections cartersville\", Pos 4.8, 28 impr)",
+        "Griffin (\"sewer camera inspection griffin\", Pos 5.1, 28 impr)",
+        "Griffin (\"home inspection griffin ga\", Pos 16.0, 27 impr)",
+        "Senoia (\"termite inspections senoia ga\", Pos 20.0, 27 impr)",
+        "Newnan (\"commercial inspections newnan, ga\", Pos 4.0, 26 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 15 city hubs: Dallas (\"11 month warranty inspection dallas ga\", Pos 11.9, 33 impr) | Douglasville (\"commercial inspections douglasville, ga\", Pos 5.2, 33 impr) | Gainesville (\"commercial inspections gainesville ga\", Pos 12.4, 33 impr) | Norcross (\"commercial property inspection norcross\", Pos 12.6, 33 impr) | Pine Lake (\"home inspection pine lake ga\", Pos 7.3, 33 impr) | Roswell (\"sewer camera inspection roswell ga\", Pos 8.5, 33 impr) | Johns Creek (\"commercial inspection johns creek ga\", Pos 11.6, 32 impr) | Carrollton (\"sewer inspection carrollton ga\", Pos 6.0, 31 impr) | Dunwoody (\"commercial inspections dunwoody, ga\", Pos 10.8, 30 impr) | Kennesaw (\"mold inspections kennesaw\", Pos 10.4, 29 impr) | Cartersville (\"mold inspections cartersville\", Pos 4.8, 28 impr) | Griffin (\"sewer camera inspection griffin\", Pos 5.1, 28 impr) | Griffin (\"home inspection griffin ga\", Pos 16.0, 27 impr) | Senoia (\"termite inspections senoia ga\", Pos 20.0, 27 impr) | Newnan (\"commercial inspections newnan, ga\", Pos 4.0, 26 impr)"
+    }
+  },
+  {
     "timestamp": "2026-10-23T13:38:42.446Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-23",
