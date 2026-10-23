@@ -3,12 +3,13 @@
  * FirstIndex Daily Autonomous Dispatcher ("Highest-Impact Task" Execution Engine)
  * Foresight Home Inspections (https://www.fhinspectionsatl.com)
  *
- * Implements Josh Pigford's Daily Dispatcher Loop ([10:57-12:08]):
+ * Implements Autonomous Page-1 Search OS Loop (Zero-Dashboard Executive Standard):
  * 1. Syncs live Google Search Console telemetry (fetch-gsc-analytics.mjs)
- * 2. Runs Truth-Doc Guard & Auto-Healer (firstindex-truth-guard.mjs --fix)
- * 3. Runs Live AI Mention & Autocomplete Tracker (firstindex-ai-mention-tracker.mjs)
- * 4. Runs AI Fanning Surface Area Audit (ai-fanning-engine.mjs)
- * 5. Selects AND EXECUTES the #1 highest-impact GSC striking-distance optimization on data/cities.json
+ * 2. Refreshes query-by-page striking-distance queue (striking-distance-engine.mjs)
+ * 3. Runs Truth-Doc Guard & Auto-Healer (firstindex-truth-guard.mjs --fix)
+ * 4. Selects AND EXECUTES the #1 highest-impact GSC striking-distance optimization on data/cities.json
+ * 5. Validates via Page-1 Guard (page1-guard.py), AI Mention Tracker, and AI Fanning Engine
+ * 6. Auto-commits, pushes to origin/main (Vercel Production), and pings IndexNow
  */
 
 import fs from 'fs';
@@ -43,7 +44,6 @@ function executeHighestImpactTask() {
   const cities = JSON.parse(fs.readFileSync(citiesPath, 'utf8'));
   const queries = gsc.topQueries || gsc.queries || [];
 
-  // Find striking-distance queries (Pos 4-22, impressions >= 15) matching a Metro Atlanta city hub
   const striking = queries
     .map((q) => ({
       query: (q.query || q.keys?.[0] || '').toLowerCase(),
@@ -56,9 +56,6 @@ function executeHighestImpactTask() {
   let updatedCities = 0;
   const optimizedTargets = [];
 
-  // Natural, deduplicated enrichment (scripts/lib/gsc-city-injector.mjs).
-  // One sentence per city per service intent, max 2 per city, correct per-service pricing,
-  // never overwrites Meta Title/Description (owned by the weekly engine), skips "Manual Override" hubs.
   for (const item of striking) {
     const matchedCity = matchCity(item.query, cities);
     if (!matchedCity) continue;
@@ -66,7 +63,7 @@ function executeHighestImpactTask() {
       matchedCity['Last Refreshed'] = today;
       updatedCities++;
       optimizedTargets.push(`${matchedCity['City Name']} ("${item.query}", Pos ${item.position.toFixed(1)}, ${item.impressions} impr)`);
-      if (updatedCities >= 15) break; // Enrich up to 15 striking-distance city hubs per run
+      if (updatedCities >= 15) break;
     }
   }
 
@@ -95,6 +92,7 @@ async function main() {
   console.log('════════════════════════════════════════════════════════════════════');
 
   runStep('0. Sync Live Google Search Console Telemetry', 'node scripts/fetch-gsc-analytics.mjs');
+  runStep('0.5. Refresh Live Query-by-Page Striking-Distance Queue', 'node scripts/striking-distance-engine.mjs');
   const s1 = runStep('1. Truth Document Guard & Auto-Healer', 'node scripts/firstindex-truth-guard.mjs --fix');
   const topAction = executeHighestImpactTask();
   console.log('\n🎯 [HIGHEST-IMPACT TASK EXECUTED]:', JSON.stringify(topAction, null, 2));
@@ -107,6 +105,24 @@ async function main() {
 
   const worklogPath = path.join(ROOT, 'data', 'firstindex-worklog.json');
   const existingLog = fs.existsSync(worklogPath) ? JSON.parse(fs.readFileSync(worklogPath, 'utf8')) : [];
+
+  let deployedToVercel = false;
+  if (s1.ok && s2.ok && !process.argv.includes('--no-push')) {
+    const stageCmd = 'git add data/cities.json data/striking-distance-queue.json data/city-rank-scoreboard.json data/firstindex-ai-mentions.json data/ai-fanning-matrix.json';
+    runStep('7a. Stage Autonomous SEO Telemetry & City Enrichments', stageCmd);
+    const diffCheck = runStep('7b. Check Staged SEO Diff', 'git diff --cached --name-only');
+    if (diffCheck.output) {
+      const pushRes = runStep(
+        '7c. Auto-Commit & Push to Vercel Production (origin/main)',
+        `git commit -m "chore(seo): autonomous daily GSC striking-distance & Page-1 sync (${today})" && git push origin main`
+      );
+      deployedToVercel = pushRes.ok;
+      if (deployedToVercel) {
+        runStep('7d. Ping IndexNow Instant Indexing', 'node scripts/ping-indexnow.mjs');
+      }
+    }
+  }
+
   const entry = {
     timestamp: new Date().toISOString(),
     source_url: 'https://www.fhinspectionsatl.com',
@@ -115,6 +131,7 @@ async function main() {
     page1GuardPassed: s2.ok,
     aiMentionTrackerPassed: s3.ok,
     aiFanningPassed: s4.ok,
+    deployedToVercel,
     executedImpactTask: topAction
   };
   existingLog.unshift(entry);
@@ -129,7 +146,7 @@ async function main() {
           Priority: 'default',
           Tags: 'white_check_mark,mag,chart_with_upwards_trend'
         },
-        body: `Truth: PASS | Page1: PASS | AI Mentions: 100% | Fanning: 100%\nExecuted: ${topAction.task}`
+        body: `Truth: PASS | Page1: PASS | AI Mentions: 100% | Vercel Deploy: ${deployedToVercel ? 'LIVE' : 'UNCHANGED'}\nExecuted: ${topAction.task}`
       });
     } catch {
       // Ignore network notification drop in offline environments

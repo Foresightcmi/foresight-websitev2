@@ -212,65 +212,77 @@
   {
     "slug": "buyer-inspection",
     "name": "Buyer Home Inspection",
-    "metaTitle": "Home Inspection in {city}, GA | $345+ (2-Inspector Team)",
-    "metaDescription": "4.8★ Certified home inspection in {city}, GA from $345 ($295 condos). 2 inspectors on every home, free infrared thermal, 4K drone & $35,000 warranty!",
+    "metaTitle": "Home Inspection {city}, GA | $345+ (2-Inspector Team)",
+    "metaDescription": "4.8★ Certified home inspection & home inspector in {city}, GA from $345 ($295 condos). 2 inspectors on every home, free thermal, 4K drone & $35,000 warranty!",
     "price": "$345+",
     "priceDetails": "Condos from $295 | Single Family Homes from $345 based on square footage",
     "icon": "🏡",
     "badge": "Most Popular",
     "heroSub": "Don't buy a home in {city} with blind spots. Our two-inspector team evaluates every system from roof to foundation with same-day digital reporting.",
-    "overview": "Purchasing a home in {city} is one of the largest financial investments of your life. Standard single-inspector companies take 4+ hours and often miss concealed defects. Foresight dispatches two certified inspectors—led by board-certified Certified Master Inspector® Christopher Boykin—cutting time to 1.5–2.5 hours while delivering double verification across structural, mechanical, plumbing, electrical, and roofing systems.",
+    "overview": "Searching for a trusted home inspection or certified home inspector in {city}, GA? Standard single-inspector companies take 4+ hours and often miss concealed defects. Foresight Home Inspections dispatches two certified home inspectors—led by board-certified Certified Master Inspector® Christopher Boykin—cutting on-site time to 1.5–2.5 hours while delivering double verification across structural, mechanical, plumbing, electrical, and roofing systems in {city}.",
     "standards": "Conducted strictly to InterNACHI Standards of Practice with complimentary infrared thermal scans, 4K aerial roof drone evaluations, and up to $35,000 in warranty protection.",
     "equipment": "Calibrated infrared cameras, aerial inspection drones, digital moisture meters, circuit load testers, and combustible gas sniffers.",
     "faqs": [
       {
-        "q": "Why do you send two certified inspectors to a buyer inspection in {city}?",
-        "a": "Our Two-Inspector Standard ensures complete, uncompromised coverage in half the time (1.5 to 2.5 hours vs. 4+ hours solo). One inspector focuses on the exterior, roof, and foundation while the other inspects mechanicals, electrical panels, and interiors, eliminating inspector fatigue."
+        "q": "How much does a home inspection cost in {city}, GA?",
+        "a": "A certified home inspection in {city}, GA starts at $295 for condos and townhomes and $345 for single-family homes based on square footage. Every inspection includes two certified home inspectors on site, calibrated infrared thermal imaging, 4K drone roof photography, same-day digital report delivery, and $35,000 in combined warranty and guarantee protection."
       },
       {
-        "q": "What warranties are included with a buyer inspection in {city}, GA?",
-        "a": "Every buyer inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) covering major appliances, structural components, HVAC, plumbing, electrical, mold remediation, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee."
+        "q": "Why do you send two certified home inspectors to every home inspection in {city}?",
+        "a": "Our Two-Inspector Standard ensures complete, uncompromised coverage in half the time (1.5 to 2.5 hours vs. 4+ hours solo). One home inspector focuses on the exterior, roof, and foundation while the second inspector evaluates mechanicals, electrical panels, plumbing, and interiors, eliminating inspector fatigue."
       },
       {
-        "q": "How fast do I receive my inspection report in {city}?",
-        "a": "We guarantee digital delivery within 24 hours of inspection completion (often same-day evening). Our interactive digital repair request list allows you and your realtor to create a formal repair amendment in minutes."
+        "q": "What warranties are included with a home inspection in {city}, GA?",
+        "a": "Every buyer home inspection in {city} includes our $10,000 Elite Master Inspection Warranty ($0 deductible) covering major appliances, structural components, HVAC, plumbing, electrical, mold remediation, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee."
+      },
+      {
+        "q": "How fast do I receive my {city} home inspection report?",
+        "a": "We guarantee digital delivery within 24 hours of inspection completion (often same-day evening). Our interactive Digital Repair Request Builder allows you and your realtor to create a formal Georgia Repair Amendment in minutes."
       }
     ],
     "riskContext": "Georgia does not license home inspectors. Hiring an unvetted solo inspector puts your earnest money and due diligence deposit at severe risk.",
     "relatedBlogSlug": "first-time-home-buyer-inspection-checklist-atlanta",
-    "h1Title": "{city}, GA Full Home Inspection & Buyer Inspection Services"
+    "h1Title": "{city}, GA Home Inspection & Certified Home Inspectors"
   },
   {
     "slug": "commercial-property-inspection",
     "name": "Commercial Property Inspection",
-    "metaTitle": "Commercial Property Inspection in {city}, GA | $750+ PCA",
-    "metaDescription": "4.8★ Commercial inspection & ASTM E2018 Property Condition Assessments (PCA) in {city}, GA from $750+. 2-inspector CMI team, thermal drone roof & HVAC audit!",
+    "metaTitle": "Commercial Inspection {city}, GA | $750+ CMI Team",
+    "metaDescription": "4.8★ Commercial inspection & ASTM E2018 Property Condition Assessments in {city}, GA from $750+. 2-inspector CMI team, thermal drone roof & 3-phase HVAC audit!",
     "price": "$750+",
     "priceDetails": "Custom quote based on square footage, use type, and mechanical complexity",
     "icon": "🏢",
     "badge": "ASTM E2018 Standard",
     "heroSub": "Protect your commercial real estate capital in {city}. Comprehensive Property Condition Assessments (PCA) for investors, lenders, and tenants.",
-    "overview": "Commercial real estate acquisitions in {city} carry substantial capital expenditure liabilities. Foresight Home Inspections provides institutional-grade commercial real estate due diligence inspection services and Property Condition Assessments (PCA) adhering to ASTM E2018-15 standards—evaluating flat commercial roofing membranes, 3-phase high-voltage electrical switchgear, multi-zone rooftop HVAC units, plumbing infrastructure, and ADA accessibility compliance.",
+    "overview": "Commercial real estate acquisitions in {city}, GA carry substantial capital expenditure liabilities. Foresight Home Inspections provides institutional-grade commercial inspections, commercial building inspections, and Property Condition Assessments (PCA) adhering to ASTM E2018-15 standards—evaluating flat commercial roofing membranes, 3-phase high-voltage electrical switchgear, multi-zone rooftop HVAC units, plumbing infrastructure, and ADA accessibility compliance across {city}.",
     "standards": "Conducted to ASTM E2018 Standard Guide for Property Condition Assessments (PCA) and CCPIA guidelines with clear immediate repair vs. reserve study cost tables.",
     "equipment": "High-resolution thermal drones for flat roof ponding, 3-phase power analyzers, industrial moisture meters, and fiber-optic pipe cameras.",
     "faqs": [
       {
         "q": "What commercial property types do you inspect in {city}, GA?",
-        "a": "We inspect retail storefronts, office complexes, medical suites, light industrial warehouses, mixed-use buildings, strip centers, and multi-family apartment communities throughout {city} and surrounding Metro Atlanta counties."
+        "a": "We perform commercial inspections for retail storefronts, office buildings, medical suites, light industrial warehouses, flex spaces, strip centers, and multi-family apartment communities throughout {city} and surrounding Metro Atlanta counties."
       },
       {
-        "q": "Do your commercial inspection reports include cost estimates for {city} properties?",
-        "a": "Yes. Our Property Condition Reports include tables categorizing immediate life-safety defects, short-term maintenance needs (1-2 years), and long-term capital replacement forecasts to assist in purchase price negotiations."
+        "q": "How much does a commercial inspection cost in {city}, GA?",
+        "a": "Commercial property inspections in {city}, GA start at $750+ depending on total square footage, building age, roof access, and mechanical system complexity. Every commercial inspection dispatches two certified inspectors led by a Certified Master Inspector (CMI) with thermal drone flat-roof scanning included."
+      },
+      {
+        "q": "Do your commercial inspection reports include capital reserve cost tables for {city} properties?",
+        "a": "Yes. Our ASTM E2018 Property Condition Reports include tables categorizing immediate life-safety defects, short-term maintenance needs (1 to 2 years), and long-term capital replacement forecasts for rooftop HVAC units, TPO/EPDM roofs, and parking lots to support purchase price negotiations."
+      },
+      {
+        "q": "How fast is commercial inspection report turnaround in {city}, GA?",
+        "a": "Standard commercial inspection reports for {city} retail, office, and warehouse properties are delivered digitally within 24 to 48 hours so commercial buyers and SBA lenders never miss a due diligence deadline."
       }
     ],
     "riskContext": "Deferred maintenance on commercial HVAC chillers or flat TPO roofs in {city} can easily exceed $50,000 to $100,000 in unbudgeted capital expenditures post-closing.",
     "relatedBlogSlug": "metro-atlanta-residential-defect-index-building-science-study",
-    "h1Title": "{city}, GA Commercial Property & Real Estate Due Diligence Inspections"
+    "h1Title": "{city}, GA Commercial Inspection & Building Condition Assessments"
   },
   {
     "slug": "pre-drywall-inspection",
     "name": "Pre-Drywall Framing Inspection",
-    "metaTitle": "{city}, GA Pre-Drywall Inspections for New Builds | $275+",
+    "metaTitle": "{city}, GA Pre-Drywall Inspection | $275+ Framing Audit",
     "metaDescription": "4.8★ Independent pre-drywall inspections for new builds in {city}, GA from $275. 2 certified inspectors audit framing, rough plumbing, electrical & HVAC!",
     "price": "$275+",
     "priceDetails": "$275 up to 2,500 sq ft | $300 for 2,500+ sq ft",
@@ -283,11 +295,19 @@
     "faqs": [
       {
         "q": "When should a pre-drywall inspection be scheduled in {city}?",
-        "a": "Schedule the inspection after all framing, electrical rough-ins, plumbing supply/waste lines, and HVAC ductwork are installed, and after municipal rough-in code approval, but BEFORE insulation and drywall installation begins."
+        "a": "Schedule the pre-drywall inspection after all framing, electrical rough-ins, plumbing supply/waste lines, and HVAC ductwork are installed, and after municipal rough-in code approval, but BEFORE insulation and drywall installation begins."
+      },
+      {
+        "q": "How much does a pre-drywall inspection cost in {city}, GA?",
+        "a": "Independent pre-drywall framing inspections in {city}, GA start at $275 for homes up to 2,500 sq ft and $300 for larger homes. Every pre-drywall audit dispatches two certified inspectors and includes a builder-ready punch list delivered within 24 hours."
       },
       {
         "q": "Will the builder allow an independent inspector for pre-drywall in {city}?",
-        "a": "Yes. Georgia builders routinely accommodate independent third-party inspections. We coordinate with your builder's site superintendent and provide a builder-ready punch list report with photo documentation."
+        "a": "Yes. Georgia builders routinely accommodate independent third-party pre-drywall inspections. We coordinate with your site superintendent and document structural framing, shear walls, and rough-ins with photo evidence."
+      },
+      {
+        "q": "What defects are commonly found during a pre-drywall inspection in {city}?",
+        "a": "Common pre-drywall defects in {city} new builds include over-bored or notched load-bearing floor joists, missing hurricane framing ties, unsealed roof deck penetrations, loose electrical rough-in boxes, and unstrapped PEX plumbing lines."
       }
     ],
     "riskContext": "Subcontractors frequently notch or over-bore load-bearing joists for plumbing pipes, compromising structural integrity in new {city} framing.",
@@ -297,7 +317,7 @@
   {
     "slug": "11-month-warranty-inspection",
     "name": "11-Month Builder Warranty Inspection",
-    "metaTitle": "{city}, GA 11-Month Builder Warranty Inspection | $335+",
+    "metaTitle": "{city}, GA 11-Month Warranty Inspection | $335+ Audit",
     "metaDescription": "4.8★ Builder 11-month (eleven-month / eleventh-month) warranty home inspections in {city}, GA from $335. 2 certified inspectors, free thermal & drone scans!",
     "price": "$335+",
     "priceDetails": "11-month warranty audits from $335+ based on home square footage",
@@ -313,18 +333,26 @@
         "a": "Homeowners catch cosmetic items like paint scuffs, but miss major issues like roof flashing leaks, improperly pitched gutters, missing attic insulation, unglued drain lines, and HVAC refrigerant leaks that require specialized diagnostic equipment."
       },
       {
+        "q": "How much does an 11-month builder warranty inspection cost in {city}, GA?",
+        "a": "An independent 11-month builder warranty inspection in {city}, GA starts at $335+ based on square footage. It includes two certified inspectors, calibrated infrared thermal imaging, 4K drone roof scanning, and a builder-ready repair punch list within 24 hours."
+      },
+      {
+        "q": "When should I schedule my 11-month warranty inspection in {city}, GA?",
+        "a": "Schedule your inspection during Month 10 or Month 11 of ownership—at least 2 to 4 weeks before your 365-day builder warranty expires—so you can submit the documented punch list to your builder warranty portal before the deadline."
+      },
+      {
         "q": "How does the builder receive the 11-month warranty report in {city}?",
-        "a": "Our digital reports are formatted with high-resolution photos and specific technical descriptions that can be uploaded directly to your builder's warranty portal or emailed to your warranty representative."
+        "a": "Our digital reports are formatted with high-resolution photos, thermal images, and technical descriptions that can be uploaded directly to your builder warranty portal or emailed to your warranty representative."
       }
     ],
     "riskContext": "Once your 365-day builder warranty window closes, any undiscovered defects become the sole financial responsibility of the homeowner.",
     "relatedBlogSlug": "11-month-warranty-inspection-guide",
-    "h1Title": "{city}, GA 11-Month (Eleven-Month) Builder Warranty Home Inspection"
+    "h1Title": "{city}, GA 11-Month (Eleven-Month) Builder Warranty Inspection"
   },
   {
     "slug": "mold-testing",
     "name": "Mold & Air Quality Inspection",
-    "metaTitle": "{city}, GA Mold Inspection & Indoor Air Quality Testing | $450+",
+    "metaTitle": "Mold Inspection & Testing {city}, GA | $450+ Lab",
     "metaDescription": "4.8★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA (starts at $450). 3 spore-trap air samples + accredited lab!",
     "price": "$450+",
     "priceDetails": "Starts at $450 for 3 calibrated air samples (indoor living zones vs outdoor control baseline) + independent accredited lab report (additional surface swabs or extra samples billed if taken)",
@@ -338,6 +366,10 @@
       {
         "q": "When is mold testing recommended in {city}, GA?",
         "a": "Mold testing is strongly recommended if you notice musty odors, see visible fungal growth, have a history of plumbing or roof leaks, are buying a home with a crawlspace or basement, or if occupants suffer from asthma or unexplained respiratory allergies."
+      },
+      {
+        "q": "What types of mold does your air quality test detect in {city}?",
+        "a": "Our accredited microbiology lab analysis identifies and quantifies airborne spore concentrations across Stachybotrys chartarum (toxic black mold), Aspergillus/Penicillium, Cladosporium, Chaetomium, Alternaria, and Basidiospores—comparing indoor living rooms against an outdoor control baseline."
       },
       {
         "q": "How long do mold lab results take in {city}?",

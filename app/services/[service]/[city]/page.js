@@ -594,6 +594,15 @@ export default async function ServiceCityPage({ params }) {
               <div><strong>⭐ Rating:</strong> 4.8★ (53 Reviews)</div>
               <div><strong>Protection:</strong> $35,000 ($0 Deductible)</div>
             </div>
+            {serviceData.slug !== 'buyer-inspection' && (
+              <div style={{ marginTop: '0.75rem', paddingTop: '0.65rem', borderTop: '1px dashed #e2e8f0', fontSize: '0.875rem', color: '#334155' }}>
+                🏡 Buying a home in {cityName}? View our primary{' '}
+                <Link href={`/services/buyer-inspection/${resolvedParams.city}`} style={{ color: 'var(--color-red)', fontWeight: 700, textDecoration: 'underline' }}>
+                  Home Inspection &amp; Home Inspector in {cityName}, GA ($345+)
+                </Link>{' '}
+                guide.
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -714,7 +723,7 @@ export default async function ServiceCityPage({ params }) {
                   className="btn btn-outline"
                   style={{ fontSize: '0.875rem', background: 'white' }}
                 >
-                  {s.icon} {s.name} in {cityName}
+                  {s.slug === 'buyer-inspection' ? `🏡 Home Inspection in ${cityName}, GA ($345+)` : `${s.icon} ${s.name} in ${cityName}`}
                 </Link>
               ))}
             </div>

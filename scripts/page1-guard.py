@@ -123,8 +123,13 @@ def check_service_city_template():
         print(f"  [FAIL] Sewer scope price mismatch: expected $450, got {sewer.get('price') if sewer else 'None'}")
         issues += 1
 
+    for s in services:
+        if len(s.get('faqs', [])) < 4:
+            print(f"  [FAIL] Service '{s['slug']}' has fewer than 4 FAQs ({len(s.get('faqs', []))}).")
+            issues += 1
+
     if issues == 0:
-        print("  [PASS] All 522 service-city routes have verified Product review schemas, $450 sewer scope & AEO boxes.")
+        print(f"  [PASS] All {len(services) * 87} service-city routes have verified Product review schemas, 4+ FAQs, $450 sewer scope & AEO boxes.")
     return issues == 0
 
 def check_structured_data_compliance():
@@ -136,7 +141,6 @@ def check_structured_data_compliance():
     with open(city_template, 'r', encoding='utf-8') as f:
         ct_content = f.read()
         
-    # Service node must never contain aggregateRating
     if 'const serviceJsonLd' in sc_content and 'aggregateRating' in sc_content.split('const productJsonLd')[0]:
         print("  [FAIL] Service-city template illegally attaches aggregateRating to Service node.")
         issues += 1
