@@ -1197,7 +1197,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   className="btn btn-outline" 
                   style={{ width: '100%', fontSize: '0.95rem', padding: '0.75rem', textAlign: 'center', display: 'block', borderColor: 'rgba(255,255,255,0.3)', color: 'var(--color-white)' }}
                 >
-                  Open HomeGauge Automated Scheduler
+                  Open 24/7 Automated Online Scheduler
                 </a>
               </div>
               

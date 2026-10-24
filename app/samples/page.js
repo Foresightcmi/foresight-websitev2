@@ -4,8 +4,8 @@ import SampleReportPreview from './SampleReportPreview';
 
 export const metadata = {
   title: 'Sample Written Inspection Reports & Checklist Atlanta GA | Foresight',
-  description: 'View real sample written inspection reports & checklists from Foresight in Atlanta, GA. Photo-documented HomeGauge reports delivered within 24 hours!',
-  keywords: ['sample home inspection report Atlanta', 'written inspection reports georgia', 'inspection checklist atlanta ga', 'HomeGauge sample report', 'home inspection sample Georgia', 'dual inspector report format'],
+  description: 'View real sample written inspection reports & checklists from Foresight in Atlanta, GA. Photo-documented interactive digital reports delivered within 24 hours!',
+  keywords: ['sample home inspection report Atlanta', 'written inspection reports georgia', 'inspection checklist atlanta ga', 'interactive digital sample report', 'home inspection sample Georgia', 'dual inspector report format'],
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/samples',
   },
@@ -270,7 +270,7 @@ export default function SampleReports() {
                 className="btn btn-primary"
                 style={{ padding: '0.85rem 2rem' }}
               >
-                Schedule Now via HomeGauge &rarr;
+                Schedule Online 24/7 &rarr;
               </a>
               <Link href="/quote" className="btn btn-outline" style={{ padding: '0.85rem 2rem' }}>
                 Instant Quote Calculator &rarr;

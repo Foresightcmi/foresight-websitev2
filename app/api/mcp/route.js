@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { recordLead } from '../../../lib/leads';
 import citiesData from '../../../data/cities.json';
 
-// Foresight Official HomeGauge Fee Schedule Calculation Logic
+// Foresight Official Fee Schedule Calculation Logic
 function calculateQuoteDetails(input = {}) {
   const sqft = input.sqft || input.square_feet || input.squareFeet || input.size || 2000;
   const propertyType = (input.propertyType || input.property_type || 'single-family').toLowerCase();
@@ -179,7 +179,7 @@ const MCP_TOOLS = [
   },
   {
     name: 'get_sample_report_summary',
-    description: 'Retrieve details about the authentic 220-photo redacted HomeGauge inspection report delivered by Foresight Home Inspections.',
+    description: 'Retrieve details about the authentic 220-photo redacted interactive digital inspection report delivered by Foresight Home Inspections.',
     inputSchema: {
       type: 'object',
       properties: {}
@@ -268,7 +268,7 @@ async function handleToolCall(name, args) {
           'infrared thermal scans revealing hidden moisture and insulation voids',
           'Detailed crawlspace and structural framing evaluations',
           'Prioritized repair list categorized into Safety Hazards, Major Defects, and Maintenance Items',
-          'HomeGauge Digital Repair Request List Builder integration for rapid real estate repair amendments',
+          'Interactive Digital Repair Request List Builder integration for rapid real estate repair amendments',
           'Backing by up to $35,000 in combined warranty & guarantee protection ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee)'
         ],
         privacy: 'Client names and physical address redacted for homeowner privacy.'

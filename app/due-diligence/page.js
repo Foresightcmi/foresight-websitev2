@@ -43,7 +43,7 @@ const dueDiligenceFaqSchema = {
       name: 'How quickly can Foresight conduct an inspection after contract binding?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Through our dual-inspector operational model, we guarantee scheduling availability within 48 hours of contract binding. You can also self-schedule online 24/7 directly through our HomeGauge scheduling portal.',
+        text: 'Through our dual-inspector operational model, we guarantee scheduling availability within 48 hours of contract binding. You can also self-schedule online 24/7 directly through our automated online scheduling portal.',
       },
     },
     {
