@@ -9423,5 +9423,34 @@
       "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
     ],
     "harvestedAt": "2026-10-24T17:19:45.135Z"
+  },
+  {
+    "recordId": "NC-7858979",
+    "mlsId": "7858979",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "516 Woodcreek Cir SW #10",
+    "address": "516 Woodcreek Cir SW #10, Atlanta, GA 30331",
+    "city": "Atlanta",
+    "zip": "30331",
+    "price": 298990,
+    "sqft": 1508,
+    "yearBuilt": 2026,
+    "beds": 3,
+    "baths": 2.5,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/516-Woodcreek-CIR-SW-30331/unit-10/home/206668002",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $335)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
+    ],
+    "harvestedAt": "2026-10-24T21:29:00.674Z"
   }
 ]
