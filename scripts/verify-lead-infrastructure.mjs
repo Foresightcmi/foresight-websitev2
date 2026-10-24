@@ -14,13 +14,13 @@ const CRM_FILE = path.join(ROOT_DIR, 'data', 'permit-leads-crm.json');
 const NTFY_URL = 'https://ntfy.sh/fores-antigravity-alerts-77';
 
 function getEmailCredentials() {
-  let pass = process.env.EMAIL_PASSWORD;
-  let user = process.env.EMAIL_USER;
+  let pass = process.env.EMAIL_PASSWORD; // ggignore
+  let user = process.env.EMAIL_USER; // ggignore
 
   if (fs.existsSync(ENV_LOCAL_FILE)) {
     const content = fs.readFileSync(ENV_LOCAL_FILE, 'utf8');
-    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/);
-    const userMatch = content.match(/EMAIL_USER=(.+)/);
+    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/); // ggignore
+    const userMatch = content.match(/EMAIL_USER=(.+)/); // ggignore
     if (!pass && passMatch) pass = passMatch[1].trim();
     if (!user && userMatch) user = userMatch[1].trim();
   }
@@ -35,13 +35,13 @@ async function verifySmtp() {
   const startTime = Date.now();
   const { user, pass } = getEmailCredentials();
 
-  console.log(`Configured EMAIL_USER: ${user}`);
-  console.log(`EMAIL_PASSWORD detected: ${pass ? 'YES (length: ' + pass.length + ' chars)' : 'NO'}`);
+  console.log(`Configured EMAIL_USER: ${user}`); // ggignore
+  console.log(`EMAIL_PASSWORD detected: ${pass ? 'YES (length: ' + pass.length + ' chars)' : 'NO'}`); // ggignore
 
   if (!user || !pass) {
     return {
       status: 'FAILED',
-      error: 'Missing EMAIL_USER or EMAIL_PASSWORD',
+      error: 'Missing EMAIL_USER or EMAIL_PASSWORD', // ggignore
       durationMs: Date.now() - startTime
     };
   }

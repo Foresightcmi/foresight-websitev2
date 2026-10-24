@@ -34,11 +34,11 @@ const directories = [
     claim_url: "https://businessconnect.apple.com/",
     domain_authority: 96,
     da: 96,
-    status: "ACTIVE_VERIFIED",
+    status: "ACTION_NEEDED_UNCLAIMED",
     link_type: "Direct Entity Link",
     impact: "CRITICAL",
     tier: "Core Search & Map Packs",
-    notes: "Powers Siri Voice Search and iOS Apple Maps local navigation"
+    notes: "Not yet claimed — claim free at https://businessconnect.apple.com/ to power Siri Voice Search and iOS Apple Maps local navigation"
   },
   // 3. Bing Places
   {
@@ -55,7 +55,7 @@ const directories = [
     link_type: "Direct Entity Link",
     impact: "HIGH",
     tier: "Core Search & Map Packs",
-    notes: "Powers Microsoft Copilot, Windows Search & Bing Local AI Overviews"
+    notes: "Claimed & active — powers Microsoft Copilot, Windows Search & Bing Local AI Overviews"
   },
   // 4. Georgia Secretary of State
   {

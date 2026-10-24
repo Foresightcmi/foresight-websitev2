@@ -58,13 +58,13 @@ const LINK_MAGNET_ASSETS = [
 ];
 
 const HIGH_TRUST_DIRECTORIES = [
-  { name: 'InterNACHI Certified Master Inspector Directory', url: 'https://www.nachi.org' },
-  { name: 'Better Business Bureau (Atlanta & NE Georgia)', url: 'https://www.bbb.org' },
-  { name: 'Metro Atlanta Chamber of Commerce', url: 'https://www.metroatlantachamber.com' },
-  { name: 'Bing Places for Business (ChatGPT Search Index)', url: 'https://www.bingplaces.com' },
-  { name: 'Apple Business Connect (Siri & Apple Maps)', url: 'https://businessconnect.apple.com' },
-  { name: 'Nextdoor Neighborhood Business Directory', url: 'https://business.nextdoor.com' },
-  { name: 'Patch Local Atlanta Community Hubs', url: 'https://patch.com/georgia/atlanta' }
+  { name: 'InterNACHI Certified Master Inspector Directory', url: 'https://www.nachi.org', claimStatus: 'CLAIMED_ACTIVE' },
+  { name: 'Better Business Bureau (Atlanta & NE Georgia)', url: 'https://www.bbb.org', claimStatus: 'CLAIMED_ACTIVE' },
+  { name: 'Metro Atlanta Chamber of Commerce', url: 'https://www.metroatlantachamber.com', claimStatus: 'ACTION_NEEDED_UNCLAIMED' },
+  { name: 'Bing Places for Business (ChatGPT Search Index)', url: 'https://www.bingplaces.com', claimStatus: 'CLAIMED_ACTIVE' },
+  { name: 'Apple Business Connect (Siri & Apple Maps)', url: 'https://businessconnect.apple.com', claimStatus: 'ACTION_NEEDED_UNCLAIMED' },
+  { name: 'Nextdoor Neighborhood Business Directory', url: 'https://business.nextdoor.com', claimStatus: 'CLAIMED_ACTIVE' },
+  { name: 'Patch Local Atlanta Community Hubs', url: 'https://patch.com/georgia/atlanta', claimStatus: 'CLAIMED_ACTIVE' }
 ];
 
 async function verifyUrlReachable(targetUrl) {

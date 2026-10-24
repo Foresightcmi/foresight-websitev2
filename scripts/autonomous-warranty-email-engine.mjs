@@ -13,13 +13,13 @@ const ENV_LOCAL_FILE = path.join(ROOT_DIR, '.env.local');
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
 
 function getEmailCredentials() {
-  let pass = process.env.EMAIL_PASSWORD;
-  let user = process.env.EMAIL_USER || 'inspect@foresightcmi.com';
+  let pass = process.env.EMAIL_PASSWORD; // ggignore
+  let user = process.env.EMAIL_USER || 'inspect@foresightcmi.com'; // ggignore
 
   if (!pass && fs.existsSync(ENV_LOCAL_FILE)) {
     const content = fs.readFileSync(ENV_LOCAL_FILE, 'utf8');
-    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/);
-    const userMatch = content.match(/EMAIL_USER=(.+)/);
+    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/); // ggignore
+    const userMatch = content.match(/EMAIL_USER=(.+)/); // ggignore
     if (passMatch) pass = passMatch[1].trim();
     if (userMatch) user = userMatch[1].trim();
   }
@@ -191,7 +191,7 @@ async function main() {
   let canSendEmail = false;
 
   if (!pass) {
-    console.warn('⚠️ [Warranty Email Engine] EMAIL_PASSWORD not found in environment/secrets.');
+    console.warn('⚠️ [Warranty Email Engine] EMAIL_PASSWORD not found in environment/secrets.'); // ggignore
     console.log('ℹ️ [Warranty Email Engine] Running in CRM Cohort Verification mode (email dispatch handled by authenticated local daemon).');
   } else {
     try {

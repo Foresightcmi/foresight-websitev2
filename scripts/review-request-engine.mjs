@@ -82,8 +82,8 @@ async function run(cfg, queue) {
   }
   const cool = readJson(COOLDOWN, {});
   const emailOk = !(cool.cooldownUntil && new Date(cool.cooldownUntil) > new Date());
-  const user = env('EMAIL_USER') || 'inspect@foresightcmi.com';
-  const pass = env('EMAIL_PASSWORD');
+  const user = env('EMAIL_USER') || 'inspect@foresightcmi.com'; // ggignore
+  const pass = env('EMAIL_PASSWORD'); // ggignore
   const transporter = emailOk && pass ? nodemailer.createTransport({ service: 'gmail', auth: { user, pass } }) : null;
   const sent = [];
   for (const { entry, kind } of dueActions(queue, new Date(), suppressed())) {

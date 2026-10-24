@@ -28,6 +28,12 @@ export function pruneStaleDueDiligence(maxAgeDays = 2) {
   const stale = [];
 
   for (const item of all) {
+    if ((item.raw_price || 0) < 75000 || /^0\s+/i.test(item.address || '') || /non-mls/i.test(item.name || '') || item.clean_phone === '0000000000') {
+      continue;
+    }
+    const ref = item.listing_ref || item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+    delete item.listing_key;
+    item.listing_ref = ref;
     const itemDate = (item.date || '').slice(0, 10);
     const itemTimestamp = new Date(item.date || 0).getTime();
     const isClosedOrStale = item.closed || item.close_date || (itemTimestamp < cutoffTime);
@@ -53,11 +59,18 @@ export function pruneStaleDueDiligence(maxAgeDays = 2) {
 
   const archiveMap = new Map();
   for (const item of archive) {
-    const key = item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+    if ((item.raw_price || 0) < 75000 || /^0\s+/i.test(item.address || '') || /non-mls/i.test(item.name || '') || item.clean_phone === '0000000000') {
+      continue;
+    }
+    const key = item.listing_ref || item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+    delete item.listing_key;
+    item.listing_ref = key;
     archiveMap.set(key, item);
   }
   for (const item of stale) {
-    const key = item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+    const key = item.listing_ref || item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+    delete item.listing_key;
+    item.listing_ref = key;
     archiveMap.set(key, item);
   }
 

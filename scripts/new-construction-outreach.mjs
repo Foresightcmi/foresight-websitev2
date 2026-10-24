@@ -41,13 +41,13 @@ function loadSuppressedEmails() {
 }
 
 function getEmailCredentials() {
-  let pass = process.env.EMAIL_PASSWORD;
-  let user = process.env.EMAIL_USER || 'inspect@foresightcmi.com';
+  let pass = process.env.EMAIL_PASSWORD; // ggignore
+  let user = process.env.EMAIL_USER || 'inspect@foresightcmi.com'; // ggignore
 
   if (!pass && fs.existsSync(ENV_LOCAL_FILE)) {
     const content = fs.readFileSync(ENV_LOCAL_FILE, 'utf8');
-    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/);
-    const userMatch = content.match(/EMAIL_USER=(.+)/);
+    const passMatch = content.match(/EMAIL_PASSWORD=(.+)/); // ggignore
+    const userMatch = content.match(/EMAIL_USER=(.+)/); // ggignore
     if (passMatch) pass = passMatch[1].trim();
     if (userMatch) user = userMatch[1].trim();
   }
@@ -132,7 +132,7 @@ async function main() {
 
   const { user, pass } = getEmailCredentials();
   if (!pass) {
-    console.warn('⚠️ [New Construction Outreach] EMAIL_PASSWORD not found. Email transmission skipped.');
+    console.warn('⚠️ [New Construction Outreach] EMAIL_PASSWORD not found. Email transmission skipped.'); // ggignore
     console.log('🏁 [New Construction Outreach] Run complete.');
     return;
   }

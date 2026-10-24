@@ -231,7 +231,7 @@ function buildUnderContractEmail(realtor) {
   const address = realtor.address || 'your property';
   const city = realtor.city || 'Metro Atlanta';
   const price = realtor.price ? ` (${realtor.price})` : '';
-  const quoteUrl = `https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)}`;
+  const quoteUrl = `https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)}`;
   const isDeKalb = DEKALB_MUNICIPALITIES_REGEX.test(city) || DEKALB_MUNICIPALITIES_REGEX.test(address);
 
   const subject = isDeKalb
@@ -259,7 +259,7 @@ function buildUnderContractEmail(realtor) {
     `Best regards,`,
     `Christopher Boykin, CMI`,
     `Foresight Home Inspections`,
-    `(678) 480-2110 | https://fhinspectionsatl.com`,
+    `(678) 480-2110 | https://www.fhinspectionsatl.com`,
     `1816 South Deshon Road, Lithonia, GA 30058`,
     `Reply stop anytime to opt out.`
   ].join('\n');
@@ -279,7 +279,7 @@ function buildUnderContractEmail(realtor) {
 <p style="margin-top:20px;">Best regards,<br>
 <strong>Christopher Boykin, CMI</strong><br>
 Foresight Home Inspections<br>
-(678) 480-2110 | <a href="https://fhinspectionsatl.com" style="color:#0f52ba;">fhinspectionsatl.com</a><br>
+(678) 480-2110 | <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;">fhinspectionsatl.com</a><br>
 <span style="font-size:12px;color:#6b7280;">1816 South Deshon Road, Lithonia, GA 30058 &bull; Reply stop anytime to opt out.</span></p>
 </div>`;
 
@@ -574,6 +574,7 @@ async function main() {
         if (quotaCeilingHit) break;
         if (!r.email || !r.email.includes('@')) continue;
         if (r.closed || r.close_date) continue;
+        if ((r.raw_price || 0) < 75000 || /^0\s+/i.test(r.address || '') || /non-mls/i.test(r.name || '') || r.clean_phone === '0000000000') continue;
         const dealTimestamp = new Date(r.pending_timestamp || r.date || 0).getTime();
         const dealAgeDays = (Date.now() - dealTimestamp) / (1000 * 60 * 60 * 24);
         if (isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
@@ -656,6 +657,7 @@ async function main() {
       for (const r of sorted) {
         // Strict Freshness Gate: ONLY contracts signed in the last 48 hours (active 2-day due diligence window)
         if (!r.date) continue;
+        if ((r.raw_price || 0) < 75000 || /^0\s+/i.test(r.address || '') || /non-mls/i.test(r.name || '') || r.clean_phone === '0000000000') continue;
         const dealAgeDays = (Date.now() - new Date(r.date).getTime()) / (1000 * 60 * 60 * 24);
         if (r.closed || r.close_date || isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
 
@@ -673,7 +675,7 @@ async function main() {
         if (r.email && isSuppressed(r.email, r.name, r.brokerage)) continue;
         if (/ansley|chapman group/i.test(r.brokerage || '') || /amy fuchs|joe chapman/i.test(r.name || '')) continue;
 
-        const smsMessage = r.text_body || `Hi ${r.first || 'there'}, Christopher Boykin with Foresight Home Inspections here! Saw ${r.address} in ${r.city} just went under contract—congratulations! If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report, we have a slot open in ${r.city}: https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(r.address || '')} — (678) 480-2110`;
+        const smsMessage = r.text_body || `Hi ${r.first || 'there'}, Christopher Boykin with Foresight Home Inspections here! Saw ${r.address} in ${r.city} just went under contract—congratulations! If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report, we have a slot open in ${r.city}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(r.address || '')} — (678) 480-2110`;
 
         const headers = { 'Content-Type': 'application/json' };
         if (openSmsKey) headers['Authorization'] = `Bearer ${openSmsKey}`;

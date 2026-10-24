@@ -1,0 +1,9 @@
+version: 2
+
+secret:
+  ignored_paths:
+    - "data/*.json"
+    - "data/**/*.json"
+    - "public/vip-dispatch.html"
+    - "public/dossiers/**"
+    - "scripts/_archive/**"

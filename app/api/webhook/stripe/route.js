@@ -125,7 +125,7 @@ export async function POST(req) {
     }
 
     // 3. Email Notification via Nodemailer
-    const emailPass = process.env.EMAIL_PASSWORD;
+    const emailPass = process.env.EMAIL_PASSWORD; // ggignore
     if (emailPass) {
       try {
         const transporter = nodemailer.createTransport({

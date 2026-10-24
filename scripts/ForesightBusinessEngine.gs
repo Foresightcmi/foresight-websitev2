@@ -103,6 +103,21 @@ function doPost(e) {
       var source = payload.source || 'Website Form';
       var notes = payload.notes || '';
       
+      // 0. Anti-Spam & Bot Guard (Prevents Google 69585 outbound spam bounces from contact-form bots)
+      var combinedCheck = (name + ' ' + address + ' ' + message).toLowerCase();
+      if (
+        /\bp\.?\s*o\.?\s*box\b/i.test(address) ||
+        /\bp\.?\s*o\.?\s*box\b/i.test(message) ||
+        (/\b(florida|jacksonville|california|texas|new york|united states)\b/i.test(address) && !/\b(ga|georgia|atlanta|alpharetta|roswell|marietta|cumming)\b/i.test(address)) ||
+        /https?:\/\/(?!www\.fhinspectionsatl\.com|fhinspectionsatl\.com)/i.test(combinedCheck) ||
+        combinedCheck.indexOf('seo service') !== -1 ||
+        combinedCheck.indexOf('virtual assistant') !== -1
+      ) {
+        Logger.log("🛡 [ANTI-SPAM] Dropped automated bot payload in doPost: " + name + " (" + address + ")");
+        return ContentService.createTextOutput(JSON.stringify({ success: true, spamBlocked: true }))
+                             .setMimeType(ContentService.MimeType.JSON);
+      }
+
       // Save the lead to our sheet database
       var sheet = getOrCreateLeadsSheet();
       var timestamp = new Date();

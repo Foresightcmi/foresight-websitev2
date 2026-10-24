@@ -36,16 +36,16 @@ function buildSmsCopy(first, address, city, role) {
   const isDeKalb = DEKALB_REGEX.test(city || '') || DEKALB_REGEX.test(address || '');
   const dekalbBonus = isDeKalb ? ', plus on-site DeKalb Low-Flow Certificate ($100)' : '';
   if (role === 'BUYER_AGENT') {
-    return `Hi ${first}, congrats on getting your buyers under contract at ${address} in ${city}! Christopher Boykin, CMI with Foresight Home Inspections here. If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report${dekalbBonus}, we have a slot open in ${city}: https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)} — (678) 480-2110`;
+    return `Hi ${first}, congrats on getting your buyers under contract at ${address} in ${city}! Christopher Boykin, CMI with Foresight Home Inspections here. If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report${dekalbBonus}, we have a slot open in ${city}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)} — (678) 480-2110`;
   }
-  return `Hi ${first}, Christopher Boykin with Foresight Home Inspections here! Saw ${address} in ${city} just went under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day report delivery${dekalbBonus}, we have a slot open in ${city} this week. Best wishes on a smooth closing! — (678) 480-2110 | https://fhinspectionsatl.com/realtors`;
+  return `Hi ${first}, Christopher Boykin with Foresight Home Inspections here! Saw ${address} in ${city} just went under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day report delivery${dekalbBonus}, we have a slot open in ${city} this week. Best wishes on a smooth closing! — (678) 480-2110 | https://www.fhinspectionsatl.com/realtors`;
 }
 
 export async function harvestLiveDueDiligence(maxOffset = 1400) {
   console.log('🔍 [Live FMLS Due Diligence Harvester] Scanning live FMLS feed for Pending / Under-Contract homes...');
 
   const suppressedEmails = new Set();
-  const suppressedPhones = new Set(['6788780215']);
+  const suppressedPhones = new Set(['6788780215', '0000000000']);
   if (fs.existsSync(UNSUBSCRIBED_FILE)) {
     try {
       const unsubs = JSON.parse(fs.readFileSync(UNSUBSCRIBED_FILE, 'utf8'));
@@ -67,7 +67,12 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
 
   const byKey = new Map();
   for (const item of existing) {
-    const k = item.listing_key || `${(item.email || item.clean_phone || '').toLowerCase()}::${(item.address || '').toLowerCase()}`;
+    if ((item.raw_price || 0) < 75000 || /^0\s+/i.test(item.address || '') || /non-mls/i.test(item.name || '') || item.clean_phone === '0000000000') {
+      continue;
+    }
+    const k = item.listing_ref || item.listing_key || `${(item.email || item.clean_phone || '').toLowerCase()}::${(item.address || '').toLowerCase()}`;
+    delete item.listing_key;
+    item.listing_ref = k;
     byKey.set(k, item);
   }
 
@@ -93,15 +98,20 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
         if (!/pending|under contract|contingent/i.test(status)) continue;
         if (src.CloseDate) continue;
 
+        const propType = String(src.PropertyType || src.PropertySubType || '');
+        if (/lease|rental|land|lot|acreage|farm/i.test(propType)) continue;
+
         const county = String(src.CountyOrParish || '').toLowerCase().trim();
         if (county && !METRO_COUNTIES.has(county)) continue;
 
         const address = String(src.UnparsedAddress || '').trim();
         const city = String(src.City || 'Atlanta').trim();
-        if (!address) continue;
+        if (!address || /^0\s+/i.test(address)) continue;
 
         const rawPrice = Number(src.ListPrice || 0);
-        const priceStr = rawPrice > 0 ? `$${rawPrice.toLocaleString()}` : '';
+        // Purchase-Only Quality Gate: Reject rentals (<$75,000) and unpriced lots
+        if (rawPrice < 75000) continue;
+        const priceStr = `$${rawPrice.toLocaleString()}`;
         const pendingTs = String(src.PurchaseContractDate || src.PendingTimestamp || src.StatusChangeTimestamp || new Date().toISOString());
         const pendingMs = new Date(pendingTs).getTime();
         const nowMs = Date.now();
@@ -132,6 +142,7 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
 
         for (const t of targets) {
           if (!t.name && !t.phone && !t.email) continue;
+          if (/non-mls/i.test(t.name) || t.phone === '0000000000') continue;
           if (t.phone.length !== 10 && !t.email.includes('@')) continue;
 
           const domain = t.email.split('@')[1] || '';
@@ -140,16 +151,16 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
           if (/ansley|chapman group/i.test(t.brokerage) || /amy fuchs|joe chapman/i.test(t.name)) continue;
 
           const first = t.first || t.name.split(' ')[0] || 'there';
-          const listingKey = `${t.role}::${t.email || t.phone}::${address.toLowerCase()}`;
-          if (byKey.has(listingKey)) continue;
+          const listingRef = `${t.role}::${t.email || t.phone}::${address.toLowerCase()}`;
+          if (byKey.has(listingRef)) continue;
 
-          const idHash = crypto.createHash('md5').update(listingKey).digest('hex').slice(0, 10);
+          const idHash = crypto.createHash('md5').update(listingRef).digest('hex').slice(0, 10);
           const textBody = buildSmsCopy(first, address, city, t.role);
-          const buyerForwardBody = `Hi ${first}, here is our 1-click due diligence scheduler and $35,000 warranty certificate for your buyers at ${address}: https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)} — Includes our two-inspector team, same-day report, and free utility setup concierge. Feel free to pass this directly to your buyers!`;
+          const buyerForwardBody = `Hi ${first}, here is our 1-click due diligence scheduler and $35,000 warranty certificate for your buyers at ${address}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)} — Includes our two-inspector team, same-day report, and free utility setup concierge. Feel free to pass this directly to your buyers!`;
 
           const record = {
             id: `card_${idHash}`,
-            listing_key: listingKey,
+            listing_ref: listingRef,
             role: t.role,
             email: t.email,
             name: t.name,
@@ -173,7 +184,7 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
             in_cooldown: false
           };
 
-          byKey.set(listingKey, record);
+          byKey.set(listingRef, record);
           newPendingDeals++;
         }
       }
@@ -215,11 +226,15 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
     }
     const archiveMap = new Map();
     for (const item of archive) {
-      const k = item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+      const k = item.listing_ref || item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+      delete item.listing_key;
+      item.listing_ref = k;
       archiveMap.set(k, item);
     }
     for (const item of stale) {
-      const k = item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+      const k = item.listing_ref || item.listing_key || item.id || `${item.email || ''}::${item.clean_phone || ''}::${item.address || ''}`;
+      delete item.listing_key;
+      item.listing_ref = k;
       archiveMap.set(k, item);
     }
     const mergedArchive = Array.from(archiveMap.values()).sort((a, b) => (b.date || '').localeCompare(a.date || ''));

@@ -1,5 +1,5 @@
 {
-  "last_audited": "2026-09-29T03:07:05.647Z",
+  "last_audited": "2026-10-24T03:46:06.687Z",
   "audit_version": "2026.2-verified-ecosystem",
   "entity_profile": {
     "business_name": "Foresight Home Inspections, LLC",
@@ -33,11 +33,11 @@
     "long_description": "Foresight Home Inspections is Metro Atlanta's premier Certified Master Inspector®-led home inspection firm. We deploy our signature Two-Inspector Standard to every property, delivering thorough, non-invasive evaluations in half the on-site time. Services include residential pre-purchase home inspections, pre-listing seller inspections, new construction pre-drywall and 11-month warranty checks, continuous radon gas testing, fiber-optic sewer scope video inspections, Georgia WDO/termite reports, pool and spa assessments, and short-term rental (STR) compliance inspections. Every standard inspection is backed by our $10,000 Elite Master Inspection Warranty."
   },
   "directories_count": 25,
-  "active_verified_count": 14,
+  "active_verified_count": 13,
   "opportunity_count": 11,
-  "average_active_da": 88.6,
-  "weighted_authority_score": 59.6,
-  "core_verified_count": 8,
+  "average_active_da": 88.1,
+  "weighted_authority_score": 55,
+  "core_verified_count": 7,
   "core_total_count": 8,
   "directories": [
     {
@@ -66,11 +66,11 @@
       "claim_url": "https://businessconnect.apple.com/",
       "domain_authority": 96,
       "da": 96,
-      "status": "ACTIVE_VERIFIED",
+      "status": "ACTION_NEEDED_UNCLAIMED",
       "link_type": "Direct Entity Link",
       "impact": "CRITICAL",
       "tier": "Core Search & Map Packs",
-      "notes": "Powers Siri Voice Search and iOS Apple Maps local navigation"
+      "notes": "Not yet claimed — claim free at https://businessconnect.apple.com/ to power Siri Voice Search and iOS Apple Maps local navigation"
     },
     {
       "id": "bing_places",
@@ -86,7 +86,7 @@
       "link_type": "Direct Entity Link",
       "impact": "HIGH",
       "tier": "Core Search & Map Packs",
-      "notes": "Powers Microsoft Copilot, Windows Search & Bing Local AI Overviews"
+      "notes": "Claimed & active — powers Microsoft Copilot, Windows Search & Bing Local AI Overviews"
     },
     {
       "id": "ga_sos",

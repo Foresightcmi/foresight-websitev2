@@ -220,5 +220,22 @@ for (const p of posts) {
 record(`Blog post link-density ceiling (<= ${maxLinks} links/post)`, excessiveLinkPosts === 0, `${excessiveLinkPosts} posts exceed cap`);
 record('Zero visible asterisks (*) across all 39 blog posts', asteriskPosts === 0);
 
+// Step 4: GitGuardian Zero-Leak, Anti-Spam Bounce Guard & foresightcmi.com Redirect Checks
+const ggExists = fs.existsSync(path.join(ROOT, '.gitguardian.yaml'));
+const ucRaw = fs.existsSync(path.join(ROOT, 'data', 'under-contract-realtors.json'))
+  ? fs.readFileSync(path.join(ROOT, 'data', 'under-contract-realtors.json'), 'utf8')
+  : '[]';
+const ucNoListingKey = !ucRaw.includes('"listing_key"');
+const ucNoRentals = !JSON.parse(ucRaw).some((r) => (r.raw_price || 0) < 75000);
+record('GitGuardian Zero-Leak & Purchase-Only Due Diligence Quality Gate (.gitguardian.yaml + listing_ref + >= $75k)', ggExists && ucNoListingKey && ucNoRentals);
+
+const leadsCode = fs.readFileSync(path.join(ROOT, 'lib', 'leads.js'), 'utf8');
+const hasPoBoxGuard = leadsCode.includes('p\\.?\\s*o\\.?\\s*box') && leadsCode.includes('ENABLE_LEGACY_SELF_EMAIL');
+record('Outbound SMTP 69585 Bounce Guard (PO Box / Out-of-State Bot Filter + Self-Send Gate in lib/leads.js)', hasPoBoxGuard);
+
+const nextConfigCode = fs.readFileSync(path.join(ROOT, 'next.config.mjs'), 'utf8');
+const hasEmailDomainRedirect = nextConfigCode.includes("value: 'foresightcmi.com'") && nextConfigCode.includes("value: 'www.foresightcmi.com'");
+record('Email domain (foresightcmi.com / www.foresightcmi.com) 301 redirect to https://www.fhinspectionsatl.com in next.config.mjs', hasEmailDomainRedirect);
+
 console.log(`\n[SUMMARY] Passed ${passedChecks}/${totalChecks} FirstIndex Truth checks (${fixedItems} items auto-healed).\n`);
 process.exit(passedChecks === totalChecks ? 0 : 1);

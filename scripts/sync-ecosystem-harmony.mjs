@@ -31,7 +31,7 @@ const STRIKING_SOCIAL_POSTS = [
     targetPage: '/services/buyer-inspection/norcross',
     title: 'Norcross, GA Home Inspections — 2 Certified Inspectors & Same-Day Report',
     topic: 'GSC Page-1 Booster: Norcross Buyer Inspection',
-    imageUrl: 'https://fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg',
+    imageUrl: 'https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg',
     city: 'Norcross',
     serviceName: 'Buyer Home Inspection',
     priceHook: 'starting at $345 for single-family homes and $295 for condos'
@@ -40,7 +40,7 @@ const STRIKING_SOCIAL_POSTS = [
     targetPage: '/services/commercial-property-inspection/cumming',
     title: 'Cumming, GA Commercial Property Inspections & PCA Audits',
     topic: 'GSC Page-1 Booster: Cumming Commercial Inspection',
-    imageUrl: 'https://fhinspectionsatl.com/images/drone-2.webp',
+    imageUrl: 'https://www.fhinspectionsatl.com/images/drone-2.webp',
     city: 'Cumming',
     serviceName: 'Commercial Property Inspection',
     priceHook: 'starting at $750 with 24–48 hour ASTM E2018 digital report turnaround'
@@ -49,7 +49,7 @@ const STRIKING_SOCIAL_POSTS = [
     targetPage: '/services/buyer-inspection/lilburn',
     title: 'Lilburn, GA Home Inspections — Dual-Inspector Due Diligence',
     topic: 'GSC Page-1 Booster: Lilburn Buyer Inspection',
-    imageUrl: 'https://fhinspectionsatl.com/images/crawlspace-inspection.webp',
+    imageUrl: 'https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp',
     city: 'Lilburn',
     serviceName: 'Buyer Home Inspection',
     priceHook: 'starting at $345 with free thermal imaging and 4K drone roof scans'
@@ -58,7 +58,7 @@ const STRIKING_SOCIAL_POSTS = [
     targetPage: '/services/pre-drywall-inspection/dallas',
     title: 'Dallas, GA Pre-Drywall Framing Inspections (Starting at $275)',
     topic: 'GSC Page-1 Booster: Dallas Pre-Drywall Inspection',
-    imageUrl: 'https://fhinspectionsatl.com/images/roof-1.webp',
+    imageUrl: 'https://www.fhinspectionsatl.com/images/roof-1.webp',
     city: 'Dallas',
     serviceName: 'Pre-Drywall Framing Inspection',
     priceHook: 'starting at $275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, and $400 for 3,501+ sq ft'
@@ -67,7 +67,7 @@ const STRIKING_SOCIAL_POSTS = [
     targetPage: '/services/buyer-inspection/snellville',
     title: 'Snellville, GA Home Inspections — 4.8★ CMI-Led 2-Inspector Team',
     topic: 'GSC Page-1 Booster: Snellville Buyer Inspection',
-    imageUrl: 'https://fhinspectionsatl.com/images/thermal-ceiling.webp',
+    imageUrl: 'https://www.fhinspectionsatl.com/images/thermal-ceiling.webp',
     city: 'Snellville',
     serviceName: 'Buyer Home Inspection',
     priceHook: 'starting at $345 with same-day interactive digital reporting'
@@ -76,7 +76,7 @@ const STRIKING_SOCIAL_POSTS = [
     targetPage: '/services/buyer-inspection/acworth',
     title: 'Acworth, GA Home Inspections — Two Certified Inspectors on Every Home',
     topic: 'GSC Page-1 Booster: Acworth Buyer Inspection',
-    imageUrl: 'https://fhinspectionsatl.com/images/hvac-inspection.webp',
+    imageUrl: 'https://www.fhinspectionsatl.com/images/hvac-inspection.webp',
     city: 'Acworth',
     serviceName: 'Buyer Home Inspection',
     priceHook: 'starting at $345 backed by up to $35,000 in warranty and guarantee protection'
@@ -97,7 +97,7 @@ export function auditAndSyncEcosystemHarmony() {
   if (fs.existsSync(socialQueuePath)) {
     let rawQueue = fs.readFileSync(socialQueuePath, 'utf8');
     rawQueue = rawQueue.replace(/\}\s*,\s*\}\s*\]\s*$/, '}\n]');
-    rawQueue = rawQueue.replace(/https:\/\/www\.fhinspectionsatl\.com/g, 'https://fhinspectionsatl.com');
+    rawQueue = rawQueue.replace(/https:\/\/fhinspectionsatl\.com/g, 'https://www.fhinspectionsatl.com');
     rawQueue = rawQueue.replace(/\/services\/dekalb-low-flow-water-certificate/g, '/service-areas/dekalb-county-compliance');
     rawQueue = rawQueue.replace(/\/services\/mold-air-quality-testing/g, '/services/mold-testing');
     rawQueue = rawQueue.replace(/\/blog\/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-29/g, '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance');
@@ -107,7 +107,7 @@ export function auditAndSyncEcosystemHarmony() {
     let addedStriking = 0;
     for (const sp of STRIKING_SOCIAL_POSTS) {
       if (!strikingTargets.has(sp.targetPage)) continue;
-      const link = `https://fhinspectionsatl.com${sp.targetPage}`;
+      const link = `https://www.fhinspectionsatl.com${sp.targetPage}`;
       const isCommercial = sp.targetPage.includes('commercial-property-inspection');
       const turnaroundBullet = isCommercial
         ? '• Comprehensive ASTM E2018 digital report delivered in 24 to 48 hours.'
@@ -238,6 +238,19 @@ export function auditAndSyncEcosystemHarmony() {
     });
     fs.writeFileSync(path.join(WEBSITE_ROOT, 'data', 'unified-studio-packets.json'), JSON.stringify(packets, null, 2), 'utf8');
     console.log(`  🎬 [STUDIO SYNC] Indexed ${packets.length} Foresight Video & Carousel packets into data/unified-studio-packets.json`);
+  }
+
+  // Zero-Leak Secret & GitGuardian False-Positive Guard
+  const ggConfigPath = path.join(WEBSITE_ROOT, '.gitguardian.yaml');
+  const ucPath = path.join(WEBSITE_ROOT, 'data', 'under-contract-realtors.json');
+  const ucRaw = fs.existsSync(ucPath) ? fs.readFileSync(ucPath, 'utf8') : '[]';
+  const hasListingKey = ucRaw.includes('"listing_key"');
+  const hasLowPriceRental = JSON.parse(ucRaw).some(r => (r.raw_price || 0) < 75000);
+  if (!fs.existsSync(ggConfigPath) || hasListingKey || hasLowPriceRental) {
+    issues += 1;
+    console.error(`  ❌ [DRIFT] GitGuardian / Due Diligence Quality Gate failed (ggConfig=${fs.existsSync(ggConfigPath)}, listing_key=${hasListingKey}, lowPriceRental=${hasLowPriceRental})`);
+  } else {
+    console.log(`  ✅ [HARMONIZED] GitGuardian Zero-Leak & Purchase-Only Due Diligence Quality Gate (>= $75,000, listing_ref)`);
   }
 
   console.log(`\n[SUMMARY] Ecosystem Harmony Check complete: ${issues} drift issues across connected engines.\n`);

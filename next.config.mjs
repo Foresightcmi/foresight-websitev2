@@ -194,6 +194,19 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Email domain (foresightcmi.com / www.foresightcmi.com) -> Primary Canonical Website (https://www.fhinspectionsatl.com)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'foresightcmi.com' }],
+        destination: 'https://www.fhinspectionsatl.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.foresightcmi.com' }],
+        destination: 'https://www.fhinspectionsatl.com/:path*',
+        permanent: true,
+      },
       // Concierge unification redirect
       {
         source: '/ask-twin',
