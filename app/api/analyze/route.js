@@ -28,6 +28,9 @@ export async function POST(req) {
       strategy = String(formData.get('strategy') || strategy);
 
       if (file && typeof file === 'object' && 'arrayBuffer' in file) {
+        if (file.size && file.size > 10 * 1024 * 1024) {
+          return NextResponse.json({ error: 'File exceeds 10 MB maximum upload limit.' }, { status: 413 });
+        }
         const buffer = Buffer.from(await file.arrayBuffer());
         const fileName = (file.name || '').toLowerCase();
 
@@ -65,6 +68,7 @@ export async function POST(req) {
       );
     }
 
+    rawText = String(rawText).slice(0, 250000);
     const defects = parseInspectionText(rawText, zipCode);
     const regional = getRegionalMultiplier(zipCode);
 

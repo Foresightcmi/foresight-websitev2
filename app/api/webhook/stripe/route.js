@@ -4,6 +4,15 @@ import fs from 'fs';
 import path from 'path';
 import nodemailer from 'nodemailer';
 
+function escapeHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export async function POST(req) {
   const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -19,10 +28,11 @@ export async function POST(req) {
   let event;
 
   try {
+    if (!webhookSecret || !sig) return NextResponse.json({ error: 'Missing Stripe webhook secret or signature' }, { status: 400 });
     if (webhookSecret && sig) {
       event = stripe.webhooks.constructEvent(payload, sig, webhookSecret);
     } else {
-      event = JSON.parse(payload);
+      return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
     }
   } catch (err) {
     console.error('Stripe Webhook signature verification failed:', err.message);
@@ -138,12 +148,12 @@ export async function POST(req) {
               </div>
               <p>A new <strong>$99 Standalone Due Diligence Repair Cost Audit</strong> has been paid on Stripe. The 4-hour SLA delivery clock has started.</p>
               <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                <tr><td style="padding: 8px; font-weight: bold; width: 140px; border-bottom: 1px solid #eee;">Client Name:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${clientName}</td></tr>
+                <tr><td style="padding: 8px; font-weight: bold; width: 140px; border-bottom: 1px solid #eee;">Client Name:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${escapeHtml(clientName)}</td></tr>
                 <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Phone:</td><td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="tel:${clientPhone}">${clientPhone}</a></td></tr>
                 <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Email:</td><td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${clientEmail}">${clientEmail}</a></td></tr>
-                <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Property Address:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${propertyAddress}</td></tr>
+                <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Property Address:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${escapeHtml(propertyAddress)}</td></tr>
                 ${reportLink ? `<tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Report Link:</td><td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="${reportLink}" target="_blank">${reportLink}</a></td></tr>` : ''}
-                ${notes ? `<tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Client Notes:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${notes}</td></tr>` : ''}
+                ${notes ? `<tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Client Notes:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${escapeHtml(notes)}</td></tr>` : ''}
               </table>
               <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px; border-radius: 6px; font-size: 0.85rem; color: #64748B;">
                 Next Step: Cross-reference findings with regional contractor data and formulate the sample repair amendment exhibit for client delivery.

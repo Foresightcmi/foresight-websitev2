@@ -30,7 +30,7 @@ export async function POST(request) {
       const role = msg.role === 'user' ? 'user' : 'model';
       return {
         role,
-        parts: [{ text: msg.content }]
+        parts: [{ text: String(msg.content || '').slice(0, 2000) }]
       };
     });
 

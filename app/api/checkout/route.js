@@ -17,7 +17,13 @@ export async function POST(req) {
       amount = 99
     } = body;
 
-    const origin = req.headers.get('origin') || 'https://www.fhinspectionsatl.com';
+    const rawOrigin = req.headers.get('origin') || '';
+    const allowedOrigins = new Set([
+      'https://www.fhinspectionsatl.com',
+      'https://fhinspectionsatl.com',
+      'http://localhost:3000'
+    ]);
+    const origin = allowedOrigins.has(rawOrigin) ? rawOrigin : 'https://www.fhinspectionsatl.com';
 
     // Log the audit intake lead locally for immediate dispatch
     try {
@@ -76,7 +82,7 @@ export async function POST(req) {
               description: productDescription,
               images: ['https://www.fhinspectionsatl.com/images/Logopng.png'],
             },
-            unit_amount: Math.round(Number(amount) * 100),
+            unit_amount: Math.round((isAudit ? 99 : Math.max(99, Math.min(5000, Number(amount) || 99))) * 100),
           },
           quantity: 1,
         },

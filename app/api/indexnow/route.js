@@ -21,7 +21,10 @@ export async function POST(request) {
       host: HOST,
       key: INDEXNOW_KEY,
       keyLocation: KEY_LOCATION,
-      urlList: Array.isArray(urlList) ? urlList : [urlList]
+      urlList: (Array.isArray(urlList) ? urlList : [urlList])
+        .map(u => String(u || '').trim())
+        .filter(u => u.startsWith('https://www.fhinspectionsatl.com') || u.startsWith('https://fhinspectionsatl.com'))
+        .slice(0, 50)
     };
 
     // Ping Bing IndexNow endpoint

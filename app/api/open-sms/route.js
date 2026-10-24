@@ -26,6 +26,13 @@ function normalizePhoneE164(phone) {
   return null;
 }
 
+function isAllowedGatewayUrl(rawUrl) {
+  if (!rawUrl) return true;
+  const trimmed = String(rawUrl).trim();
+  if (trimmed.startsWith('https://opensms.dev/')) return true;
+  return /^http:\/\/(127\.0\.0\.1|192\.168\.\d{1,3}\.\d{1,3}|10\.\d{1,3}\.\d{1,3}\.\d{1,3}):9292(\/sms\/?)?$/i.test(trimmed);
+}
+
 export async function GET() {
   const { apiKey, gatewayUrl } = getOpenSmsConfig();
   let totalDispatched = 0;
@@ -38,8 +45,8 @@ export async function GET() {
 
   return NextResponse.json({
     configured: Boolean(apiKey || gatewayUrl),
-    maskedKey: apiKey ? `${apiKey.slice(0, 6)}...${apiKey.slice(-4)}` : null,
-    gatewayUrl: gatewayUrl || null,
+    maskedKey: apiKey ? 'Connected' : null,
+    gatewayUrl: null,
     totalDispatched
   });
 }
@@ -52,6 +59,9 @@ export async function POST(request) {
     if (action === 'save_key') {
       const cleanKey = String(apiKey || '').trim();
       const cleanUrl = String(gatewayUrl || '').trim();
+      if (!isAllowedGatewayUrl(cleanUrl)) {
+        return NextResponse.json({ error: 'Invalid OpenSMS gateway URL.' }, { status: 400 });
+      }
       if (!cleanKey && !cleanUrl) {
         return NextResponse.json(
           { error: 'Provide your OpenSMS API key (and optional Phone IP:9292 URL).' },
@@ -97,6 +107,9 @@ export async function POST(request) {
       ? (cfg.gatewayUrl.endsWith('/sms/') ? cfg.gatewayUrl : `${cfg.gatewayUrl.replace(/\/+$/, '')}/sms/`)
       : 'https://opensms.dev/api/v1/messages';
 
+    if (!isAllowedGatewayUrl(targetEndpoint)) {
+      return NextResponse.json({ error: 'Blocked disallowed gateway endpoint.' }, { status: 403 });
+    }
     const isDasLearning = targetEndpoint.includes(':9292') || targetEndpoint.endsWith('/sms/');
     const headers = { 'Content-Type': 'application/json' };
     if (cfg.apiKey) headers['Authorization'] = `Bearer ${cfg.apiKey}`;
