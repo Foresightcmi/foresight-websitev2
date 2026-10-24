@@ -1,6 +1,6 @@
-# 🌐 Cody Schneider AI Fanning & GEO Surface Area Audit
+# 🌐 Cody Schneider AI Fanning & GEO Surface Area Evaluation
 
-**Generated**: October 23, 2026  
+**Generated**: October 24, 2026  
 **Framework**: Generative Engine Optimization (GEO) & AI Fan-Out Modeling  
 **Overall Surface Area Score**: **100%** (37/37 Subqueries Covered)
 
@@ -9,7 +9,7 @@
 ## 🎯 Executive Summary
 Modern LLMs (Perplexity, ChatGPT Search, Gemini Live, Google AI Overviews) do not execute simple single-keyword searches. They expand every user prompt into a **"fan" of 20 to 50 derivative subqueries**, scrape the top-ranking web results across those nodes, and synthesize answers citing the brands with the largest **surface area**.
 
-Foresight Home Inspections' 727-route matrix was audited against the top 5 home inspection fanning clusters.
+Foresight Home Inspections' 727-route matrix was evaluated against the top 5 home inspection fanning clusters.
 
 ---
 

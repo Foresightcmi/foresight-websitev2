@@ -1,5 +1,36 @@
 [
   {
+    "timestamp": "2026-10-24T16:48:56.064Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-24",
+    "truthGuardPassed": true,
+    "page1GuardPassed": false,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "deployedToVercel": false,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 13,
+      "targets": [
+        "Monroe (\"home inspection monroe ga\", Pos 16.3, 26 impr)",
+        "Cartersville (\"11 month warranty inspection cartersville ga\", Pos 13.9, 24 impr)",
+        "Loganville (\"home inspectors loganville ga\", Pos 17.3, 23 impr)",
+        "Roswell (\"11 month warranty inspection roswell ga\", Pos 12.5, 22 impr)",
+        "Lawrenceville (\"mold inspection lawrenceville ga\", Pos 9.1, 20 impr)",
+        "Fairburn (\"air quality test fairburn\", Pos 4.5, 19 impr)",
+        "Covington (\"home inspection covington ga\", Pos 15.2, 18 impr)",
+        "Moreland (\"home inspection moreland ga\", Pos 5.6, 18 impr)",
+        "Stockbridge (\"indoor air quality services stockbridge\", Pos 8.2, 18 impr)",
+        "Grantville (\"home inspections grantville ga\", Pos 6.0, 17 impr)",
+        "Dacula (\"home inspectors dacula ga\", Pos 15.1, 17 impr)",
+        "Walnut Grove (\"sewer camera inspection walnut grove\", Pos 5.2, 17 impr)",
+        "Monroe (\"indoor air quality services monroe ga\", Pos 7.0, 15 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 13 city hubs: Monroe (\"home inspection monroe ga\", Pos 16.3, 26 impr) | Cartersville (\"11 month warranty inspection cartersville ga\", Pos 13.9, 24 impr) | Loganville (\"home inspectors loganville ga\", Pos 17.3, 23 impr) | Roswell (\"11 month warranty inspection roswell ga\", Pos 12.5, 22 impr) | Lawrenceville (\"mold inspection lawrenceville ga\", Pos 9.1, 20 impr) | Fairburn (\"air quality test fairburn\", Pos 4.5, 19 impr) | Covington (\"home inspection covington ga\", Pos 15.2, 18 impr) | Moreland (\"home inspection moreland ga\", Pos 5.6, 18 impr) | Stockbridge (\"indoor air quality services stockbridge\", Pos 8.2, 18 impr) | Grantville (\"home inspections grantville ga\", Pos 6.0, 17 impr) | Dacula (\"home inspectors dacula ga\", Pos 15.1, 17 impr) | Walnut Grove (\"sewer camera inspection walnut grove\", Pos 5.2, 17 impr) | Monroe (\"indoor air quality services monroe ga\", Pos 7.0, 15 impr)"
+    }
+  },
+  {
     "timestamp": "2026-10-23T17:56:31.540Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-23",

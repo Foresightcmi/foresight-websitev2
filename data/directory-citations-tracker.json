@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-24T03:46:21.933Z",
+  "generatedAt": "2026-10-24T16:48:55.982Z",
   "source_url": "https://www.fhinspectionsatl.com",
   "retrieved_on": "2026-10-24",
-  "withinDaytimeWindow": false,
+  "withinDaytimeWindow": true,
   "remainingDailyEmailQuota": 1200,
   "verifiedLinkMagnetAssets": [
     {
@@ -38,7 +38,7 @@
       "name": "InterNACHI Certified Master Inspector Directory",
       "url": "https://www.nachi.org",
       "claimStatus": "CLAIMED_ACTIVE",
-      "httpStatus": 403,
+      "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.nachi.org",
       "retrieved_on": "2026-10-24"
@@ -47,7 +47,7 @@
       "name": "Better Business Bureau (Atlanta & NE Georgia)",
       "url": "https://www.bbb.org",
       "claimStatus": "CLAIMED_ACTIVE",
-      "httpStatus": 403,
+      "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.bbb.org",
       "retrieved_on": "2026-10-24"
