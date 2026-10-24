@@ -229,7 +229,7 @@ export default function DueDiligencePage() {
                 <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                   <span style={{ background: 'var(--color-red)', color: '#fff', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, flexShrink: 0 }}>2</span>
                   <div>
-                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0 0 0.35rem' }}>Day 2–3: Dual-Inspector Diagnostic Audit</h3>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0 0 0.35rem' }}>Day 2–3: Dual-Inspector Diagnostic Evaluation</h3>
                     <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }}>
                       Two certified inspectors evaluate structure, electrical, HVAC, plumbing, roof, and foundation in 1.5–2.5 hours with infrared thermal and drones.
                     </p>

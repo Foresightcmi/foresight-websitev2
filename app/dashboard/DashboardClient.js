@@ -906,7 +906,7 @@ export default function DashboardClient({
               {/* Page Archetype Selector */}
               <div style={{ borderTop: '1px solid #334155', paddingTop: '1.25rem' }}>
                 <span style={{ color: '#94a3b8', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '0.75rem' }}>
-                  Select Audited Page Archetype:
+                  Select Evaluated Page Archetype:
                 </span>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {(rankMathData?.pages || []).map((p, idx) => (
@@ -1059,7 +1059,7 @@ export default function DashboardClient({
                   <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 'var(--radius-lg)', padding: '1.5rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                       <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>
-                        30-Point On-Page Audit Checklist
+                        30-Point On-Page Evaluation Checklist
                       </h4>
                       <span style={{ background: curPage.score >= 90 ? 'rgba(34, 197, 94, 0.2)' : 'rgba(234, 179, 8, 0.2)', color: curPage.score >= 90 ? '#4ade80' : '#fbbf24', border: curPage.score >= 90 ? '1px solid #22c55e' : '1px solid #eab308', padding: '0.2rem 0.65rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 700 }}>
                         Score: {curPage.score}/100
@@ -1339,7 +1339,7 @@ export default function DashboardClient({
                       </div>
                       <ul style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: 0, paddingLeft: '1.2rem', lineHeight: 1.6 }}>
                         <li>Two Certified Inspectors on Every Job</li>
-                        <li>1.5–2.5 Hour On-Site Audit (Same-Day Digital Reports)</li>
+                        <li>1.5–2.5 Hour On-Site Evaluation (Same-Day Digital Reports)</li>
                         <li>Infrared Thermal Imaging Thermal &amp; 4K Aerial Drones Included Standard</li>
                         <li>Up to $35,000 in Combined Warranty Protection</li>
                       </ul>
@@ -1402,7 +1402,7 @@ export default function DashboardClient({
                       <strong style={{ color: '#38bdf8' }}>Day 1: Contract Acceptance</strong> → Deploy 2-Inspector team immediately.
                     </div>
                     <div style={{ borderBottom: '1px solid #334155', paddingBottom: '0.5rem', marginBottom: '0.5rem' }}>
-                      <strong style={{ color: '#38bdf8' }}>Day 2: On-Site Audit &amp; Same-Day Report</strong> → Receive 1,600-point InterNACHI digital report by 8:00 PM.
+                      <strong style={{ color: '#38bdf8' }}>Day 2: On-Site Evaluation &amp; Same-Day Report</strong> → Receive 1,600-point InterNACHI digital report by 8:00 PM.
                     </div>
                     <div style={{ borderBottom: '1px solid #334155', paddingBottom: '0.5rem', marginBottom: '0.5rem' }}>
                       <strong style={{ color: '#38bdf8' }}>Day 3: 48-Hour Radon &amp; Sewer Results</strong> → Retrieve EPA continuous electronic readings &amp; camera logs.
@@ -1436,7 +1436,7 @@ export default function DashboardClient({
                     <div style={{ background: '#0f172a', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid #22c55e' }}>
                       <span style={{ color: '#4ade80', fontWeight: 700, fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>✓ FORESIGHT STANDARD</span>
                       <ul style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: 0, paddingLeft: '1rem', lineHeight: 1.5 }}>
-                        <li>1.5–2.5 hours parallel audit</li>
+                        <li>1.5–2.5 hours parallel evaluation</li>
                         <li>4K aerial drone roof scan</li>
                         <li>calibrated infrared thermal included</li>
                         <li>Same-day digital report</li>
@@ -1536,7 +1536,7 @@ export default function DashboardClient({
                         targetAudience: 'First-Time Homebuyers & Property Investors',
                         leadMagnetName: '1,600-Point InterNACHI Home Inspection Checklist',
                         trackedUrl: 'https://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist',
-                        dmScript: 'Hey {firstName}! Here is the complete 1,600-point InterNACHI defect checklist we use on our dual-inspector audits:\n\nhttps://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist\n\nYou can use this to spot red flags on foundation settling, electrical panels, and attic ventilation during your initial walkthroughs.\n\nWhen is your scheduled closing or due diligence deadline?',
+                        dmScript: 'Hey {firstName}! Here is the complete 1,600-point InterNACHI defect checklist we use on our dual-inspector evaluates:\n\nhttps://www.fhinspectionsatl.com/blog/metro-atlanta-residential-defect-index-building-science-study?utm_source=social_dm&utm_medium=comment&utm_campaign=internachi_checklist\n\nYou can use this to spot red flags on foundation settling, electrical panels, and attic ventilation during your initial walkthroughs.\n\nWhen is your scheduled closing or due diligence deadline?',
                         followUpQuestion: 'When is your scheduled closing or due diligence deadline?',
                         estimatedDealValue: 475,
                         tag: 'Buyer Checklist Lead'
@@ -2038,7 +2038,7 @@ export default function DashboardClient({
               <div style={{ background: '#0f172a', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid #334155' }}>
                 <span style={{ color: '#4ade80', fontSize: '0.75rem', fontWeight: 700 }}>CRON: 0 9 * * 1 (Mondays 9:00 AM)</span>
                 <h4 style={{ color: '#ffffff', margin: '0.35rem 0', fontSize: '1rem' }}>Weekly SEO Dominance Engine</h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>Runs health check, audits striking distance keywords, builds, commits and pushes to main.</p>
+                <p style={{ color: '#94a3b8', fontSize: '0.8rem', margin: 0 }}>Runs health check, evaluates striking distance keywords, builds, commits and pushes to main.</p>
               </div>
 
               <div style={{ background: '#0f172a', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid #334155' }}>
@@ -2209,7 +2209,7 @@ export default function DashboardClient({
                       cursor: 'pointer'
                     }}
                   >
-                    {copiedKey === 'cmd-colony-audit' ? 'Copied Audit Command' : 'Copy `npm run colony:audit`'}
+                    {copiedKey === 'cmd-colony-audit' ? 'Copied Evaluation Command' : 'Copy `npm run colony:audit`'}
                   </button>
                   <Link
                     href="/faq"
@@ -2298,7 +2298,7 @@ export default function DashboardClient({
                   </p>
                 </div>
                 <span style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#4ade80', padding: '0.25rem 0.65rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 700 }}>
-                  Audit Score: 100% Pass
+                  Evaluation Score: 100% Pass
                 </span>
               </div>
 
@@ -2320,7 +2320,7 @@ export default function DashboardClient({
                       { url: '/defects', targetName: 'Atlanta Defect Library & Diagnostic Guides', feederCount: 3, authorityScore: 100, feeders: ['what-defects-fail-a-home-inspection-in-georgia', 'why-does-georgia-red-clay-cause-foundation-settling', 'is-a-horizontal-foundation-crack-serious-in-georgia'] },
                       { url: '/services/buyer-inspection', targetName: 'Comprehensive Buyer Inspection with Thermal Scan', feederCount: 2, authorityScore: 85, feeders: ['does-seller-have-to-disclose-prior-inspection-report-georgia', 'can-sewer-scope-inspection-be-done-on-slab-foundation'] },
                       { url: '/services/radon-testing', targetName: 'Continuous 48-Hour Electronic Radon Diagnostic Testing', feederCount: 2, authorityScore: 85, feeders: ['is-radon-common-in-metro-atlanta-homes', 'what-radon-level-requires-mitigation-in-georgia'] },
-                      { url: '/compare/11-month-warranty-vs-builder-walkthrough', targetName: '11-Month Builder Warranty Forensic Audit', feederCount: 2, authorityScore: 85, feeders: ['do-new-construction-homes-in-georgia-need-home-inspection', 'what-is-an-11-month-builder-warranty-inspection'] },
+                      { url: '/compare/11-month-warranty-vs-builder-walkthrough', targetName: '11-Month Builder Warranty Inspection', feederCount: 2, authorityScore: 85, feeders: ['do-new-construction-homes-in-georgia-need-home-inspection', 'what-is-an-11-month-builder-warranty-inspection'] },
                       { url: '/quote', targetName: '60-Second Transparent Fee Calculator', feederCount: 1, authorityScore: 70, feeders: ['who-pays-for-home-inspection-in-georgia'] }
                     ]).map((mp, mIdx) => (
                       <tr key={mIdx} style={{ borderBottom: '1px solid #334155' }}>

@@ -322,9 +322,9 @@ export default async function BlogPost({ params }) {
             </h3>
             <div className="grid grid-2" style={{ gap: '1rem' }}>
               <div>
-                <strong style={{ display: 'block', fontSize: '0.9rem', color: '#64748b', marginBottom: '0.5rem' }}>Defect Audits:</strong>
+                <strong style={{ display: 'block', fontSize: '0.9rem', color: '#64748b', marginBottom: '0.5rem' }}>Defect Evaluations:</strong>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.9rem' }}>
-                  <li><Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Stucco (EIFS) Moisture Audit</Link></li>
+                  <li><Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Stucco (EIFS) Moisture Evaluation</Link></li>
                   <li><Link href="/defects/polybutylene-pipe-plumbing-defect-inspection" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Polybutylene Plumbing Risks</Link></li>
                   <li><Link href="/blog/atlanta-red-clay-soil-foundation-settlement" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Red Clay Foundation Settlement</Link></li>
                 </ul>

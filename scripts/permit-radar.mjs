@@ -205,7 +205,7 @@ async function fetchAlpharettaPermits() {
         ownerPhone: null,
         acaLink: `https://open-alpharetta.opendata.arcgis.com/datasets/948431fae5cf463e82139da09b6e432c_3/data`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.Location || 'Alpharetta, GA')}`,
-        inspectionOpportunity: 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty',
+        inspectionOpportunity: 'Luxury Pre-Drywall Framing Evaluation + 11-Month Warranty',
         estimatedInspectionFee: 'From $275 - $895 Bundle',
         harvestedAt: new Date().toISOString()
       };
@@ -263,7 +263,7 @@ async function fetchJohnsCreekPermits() {
         ownerPhone: null,
         acaLink: `https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.JobAddress ? a.JobAddress + ', Johns Creek, GA' : 'Johns Creek, GA')}`,
-        inspectionOpportunity: 'Luxury Pre-Drywall Framing Audit + 11-Month Warranty',
+        inspectionOpportunity: 'Luxury Pre-Drywall Framing Evaluation + 11-Month Warranty',
         estimatedInspectionFee: 'From $275 - $895 Bundle',
         harvestedAt: new Date().toISOString()
       };

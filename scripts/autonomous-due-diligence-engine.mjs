@@ -171,7 +171,7 @@ function buildLoanOfficerEmail(lo) {
         <strong>The Foresight CMI® Lender Protection Standard:</strong>
         <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
           <li><strong>Guaranteed 24-Hr Scheduling SLA:</strong> Same-day digital reports delivered by 8:00 PM.</li>
-          <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal audit in under 2.5 hours.</li>
+          <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal inspection in under 2.5 hours.</li>
           <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as Georgia repair amendment) for licensed broker or attorney review.</li>
           <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
           <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site fixture verification (toilets 1.6 GPF max) and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
@@ -231,56 +231,48 @@ function buildUnderContractEmail(realtor) {
   const address = realtor.address || 'your property';
   const city = realtor.city || 'Metro Atlanta';
   const price = realtor.price ? ` (${realtor.price})` : '';
-  const quoteUrl = `https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)}`;
   const isDeKalb = DEKALB_MUNICIPALITIES_REGEX.test(city) || DEKALB_MUNICIPALITIES_REGEX.test(address);
 
   const subject = isDeKalb
-    ? `Congrats on ${address} (${city}) — 24-hr due diligence + $100 DeKalb Low-Flow Cert`
-    : `Congrats on ${address} (${city}) — 24-hr due diligence slot`;
+    ? `Quick congrats on ${address} in ${city}`
+    : `Congrats on getting ${address} under contract`;
 
-  const dekalbLeadLine = isDeKalb
-    ? `• DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee): Same-day signed Certificate of Compliance, required by DeKalb Watershed for water service on pre-1993 homes in unincorporated DeKalb. We confirm whether it applies to your address (standalone or bundled).`
-    : `• DeKalb County Low-Flow Plumbing Fixture Certificate ($100 Flat Fee): Official signed Certificate of Compliance for DeKalb Watershed water turn-on.`;
+  const dekalbPara = isDeKalb
+    ? `Since ${address} is in the DeKalb area, if it was built before 1993 in unincorporated DeKalb County, we also sign the official DeKalb Watershed Low-Flow Plumbing Certificate ($100 flat fee) on the spot so water service turn-on is never delayed. We can confirm right away whether it applies to this address.`
+    : `We also handle main sewer line camera scopes ($450 flat rate), pre-drywall and 11-month builder warranty inspections, and signed DeKalb County Low-Flow Plumbing Certificates ($100 flat fee) whenever a closing needs one.`;
 
   const text = [
     `Hi ${firstName},`,
     ``,
-    `Congratulations on getting ${address} in ${city}${price} under contract! Wanted to reach out in case your buyers or the co-op buyer's agent need a rapid 24-hour due diligence inspection while the 5-to-7 day contingency clock is running.`,
+    `Congratulations on getting ${address} in ${city}${price} under contract. I wanted to reach out personally in case your buyers or the co-op agent need a fast 24-hour inspection slot while the due diligence clock is running.`,
     ``,
-    `My partner and I inspect every property as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access:`,
-    `• 2-Inspector Team Starting at $345 ($295 Condos): Full structural, roof, MEP & calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.`,
-    dekalbLeadLine,
-    `• New Construction, 11-Month Warranty ($335+) & Sewer Camera Scope ($450 Flat Rate): Complete underground lateral camera diagnostics and builder punch-list audits.`,
-    `• Pre-Listing Seller Inspections (from $365): Representing the seller? Book a pre-listing inspection on your next listing to eliminate surprise buyer repair credits before hitting FMLS.`,
-    `• $35,000 Combined Buyer Protection Warranties ($10,000 Elite Warranty + $25,000 Honor Guarantee).`,
+    `My partner and I inspect every property together as a two-inspector team with active SUPRA eKEY access, starting at $345 ($295 for condos). Having two Certified Master Inspectors on site means we finish the full roof, structure, mechanical, and infrared thermal evaluation in about half the time and get the clean digital report back the same evening, backed by $35,000 in buyer protection warranties.`,
     ``,
-    `Feel free to pass this 1-click quote link to your buyers or the co-op agent, or text/call me directly at (678) 480-2110: ${quoteUrl}`,
+    dekalbPara,
+    ``,
+    `If you are representing the seller here, feel free to pass my direct cell to the buyer's agent, or keep us in mind for a pre-listing inspection ($365+) on your next listing so there are no surprise repair requests during due diligence.`,
+    ``,
+    `You can text or call me directly anytime at (678) 480-2110.`,
     ``,
     `Best regards,`,
     `Christopher Boykin, CMI`,
     `Foresight Home Inspections`,
-    `(678) 480-2110 | https://www.fhinspectionsatl.com`,
+    `(678) 480-2110 | www.fhinspectionsatl.com`,
     `1816 South Deshon Road, Lithonia, GA 30058`,
-    `Reply stop anytime to opt out.`
+    `Just reply stop if you prefer I don't reach out.`
   ].join('\n');
 
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1f2937;max-width:600px;">
-<p>Hi ${firstName},</p>
-<p>Congratulations on getting <strong>${address}</strong> in ${city}${price} under contract! Wanted to reach out in case your buyers or the co-op buyer's agent need a rapid 24-hour due diligence inspection while the contingency clock is running.</p>
-<p>My partner and I inspect every property as a <strong>two-inspector Certified Master Inspector (CMI) team</strong> with active SUPRA eKEY access:</p>
-<ul style="padding-left:20px;margin:14px 0;">
-<li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345 ($295 Condos):</strong> Full structural, roof, MEP &amp; calibrated infrared thermal sweep in half the time with same-day calm, objective digital reports.</li>
-<li style="margin-bottom:8px;"><strong>DeKalb County Low-Flow Certificate ($100 Flat Fee):</strong> Signed Certificate of Compliance that DeKalb Watershed requires for water service on pre-1993 homes in unincorporated DeKalb County. We confirm whether it applies to your address${isDeKalb ? ' (available standalone or bundled)' : ''}.</li>
-<li style="margin-bottom:8px;"><strong>Sewer Camera Scope ($450 Flat Rate) &amp; New Construction:</strong> Pre-Drywall (from $275), Final ($400+), and 11-Month Warranty ($335+) inspections.</li>
-<li style="margin-bottom:8px;"><strong>Listing Agent Bridge ($365+ Pre-Listing Inspections):</strong> Representing the seller? Forward this link to the buyer's agent or use us on your next listing to eliminate surprise due-diligence renegotiations.</li>
-<li style="margin-bottom:8px;"><strong>$35,000 Buyer Protection Warranties</strong> ($10,000 Elite Master Warranty + $25,000 Honor Guarantee).</li>
-</ul>
-<p>Feel free to pass this pre-filled quote link to your buyers or co-op agent: <a href="${quoteUrl}" style="color:#0f52ba;text-decoration:underline;">fhinspectionsatl.com/quote</a> or text/call me directly at <strong>(678) 480-2110</strong>.</p>
-<p style="margin-top:20px;">Best regards,<br>
+<p style="margin:0 0 14px 0;">Hi ${firstName},</p>
+<p style="margin:0 0 14px 0;">Congratulations on getting <strong>${address}</strong> in ${city}${price} under contract. I wanted to reach out personally in case your buyers or the co-op agent need a fast 24-hour inspection slot while the due diligence clock is running.</p>
+<p style="margin:0 0 14px 0;">My partner and I inspect every property together as a two-inspector team with active SUPRA eKEY access, starting at $345 ($295 for condos). Having two Certified Master Inspectors on site means we finish the full roof, structure, mechanical, and infrared thermal evaluation in about half the time and get the clean digital report back the same evening, backed by $35,000 in buyer protection warranties.</p>
+<p style="margin:0 0 14px 0;">${dekalbPara}</p>
+<p style="margin:0 0 14px 0;">If you are representing the seller here, feel free to pass my direct cell to the buyer's agent, or keep us in mind for a pre-listing inspection ($365+) on your next listing so there are no surprise repair requests during due diligence. You can text or call me directly anytime at <strong>(678) 480-2110</strong>.</p>
+<p style="margin:18px 0 0 0;">Best regards,<br>
 <strong>Christopher Boykin, CMI</strong><br>
 Foresight Home Inspections<br>
-(678) 480-2110 | <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;">fhinspectionsatl.com</a><br>
-<span style="font-size:12px;color:#6b7280;">1816 South Deshon Road, Lithonia, GA 30058 &bull; Reply stop anytime to opt out.</span></p>
+(678) 480-2110 | <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;text-decoration:none;">www.fhinspectionsatl.com</a><br>
+<span style="font-size:12px;color:#6b7280;">1816 South Deshon Road, Lithonia, GA 30058 &bull; Just reply stop if you prefer I don't reach out.</span></p>
 </div>`;
 
   return { subject, text, html };
@@ -536,13 +528,25 @@ async function main() {
     }
   }
 
+  const EXCLUDED_DOMAINS = new Set([
+    'ansleyre.com', 'ansleyatlanta.com', 'metrobrokers.com', 'cbcmetrobrokers.com',
+    'peachtreetc.com', 'drhorton.com', 'pulte.com', 'lennar.com', 'ashtonwoods.com',
+    'stanleymartin.com', 'centurycommunities.com', 'beazer.com', 'adamshomes.com',
+    'rocklynhomes.com', 'meritagehomes.com', 'tollbrothers.com', 'kbhome.com',
+    'taylormorrison.com', 'smithdouglas.com', 'chafincommunities.com',
+    'chafinrealtyinc.com', 'paranhomes.com', 'dwhomes.com', 'theprovidencegroup.com',
+    'relianthomes.com', 'odwyerhomes.com', 'cstonega.com'
+  ]);
+
   function isSuppressed(email, name = '', brokerage = '') {
     if (!email) return true;
     const cleanEmail = String(email).toLowerCase().trim();
+    const domain = cleanEmail.split('@')[1] || '';
     const cleanName = String(name).toLowerCase().trim();
     const cleanBrokerage = String(brokerage).toLowerCase().trim();
 
     if (suppressedEmails.has(cleanEmail)) return true;
+    if (EXCLUDED_DOMAINS.has(domain)) return true;
     if (cleanEmail.includes('ansleyre.com') || cleanEmail.includes('ansley')) return true;
     if (cleanEmail.includes('amyfuchs') || cleanEmail.includes('amy.fuchs')) return true;
     if (cleanEmail.includes('cgrealtyinc.com') || cleanEmail.includes('joe@cgrealtyinc.com')) return true;

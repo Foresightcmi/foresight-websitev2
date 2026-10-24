@@ -27,7 +27,7 @@ export async function generateMetadata({ params }) {
   const defect = defects.find(d => d.slug === resolvedParams.slug);
 
   if (!defect) {
-    return { title: 'Defect Audit Not Found' };
+    return { title: 'Defect Evaluation Not Found' };
   }
 
   const canonicalUrl = `${SITE_URL}/defects/${resolvedParams.slug}`;
@@ -220,7 +220,7 @@ export default async function DefectPage({ params }) {
                 boxShadow: '0 4px 14px rgba(220, 38, 38, 0.4)'
               }}
             >
-              Schedule Stucco & Defect Audit
+              Schedule Stucco & Defect Inspection
             </a>
             <a
               href="tel:6784802110"

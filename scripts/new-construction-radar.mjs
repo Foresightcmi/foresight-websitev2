@@ -114,7 +114,7 @@ async function fetchNewBuildsForRegion(region) {
         ownerEmail: null,
         ownerPhone: null,
         inspectionPackages: [
-          'Pre-Drywall Framing & Mechanical Rough-In Audit (From $275)',
+          'Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)',
           'New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)',
           '11-Month Builder Warranty Inspection (From $335)',
           'HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)'

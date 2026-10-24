@@ -320,7 +320,7 @@ async function testPushAlert() {
   console.log('========================================');
   const startTime = Date.now();
 
-  const title = 'System Audit: Permit Radar & SMTP Verified';
+  const title = 'System Evaluation: Permit Radar & SMTP Verified';
   const timestamp = new Date().toISOString();
   const bodyText = [
     `Autonomous Infrastructure Health Check Completed:`,
@@ -381,7 +381,7 @@ async function testPushAlert() {
 
 async function runFullVerification() {
   console.log('🔎 ========================================================');
-  console.log('   FORESIGHT HOME INSPECTIONS - PERMIT RADAR & SMTP AUDIT   ');
+  console.log('   FORESIGHT HOME INSPECTIONS - PERMIT RADAR & SMTP INSPECTION   ');
   console.log('========================================================\n');
 
   const smtpResult = await verifySmtp();
@@ -411,15 +411,15 @@ async function runFullVerification() {
   console.log(`🏁 OPERATIONAL READINESS SCORE: ${summary.operationalReadinessScore}`);
   console.log('========================================================');
 
-  // Save audit log
-  const auditPath = path.join(ROOT_DIR, 'data', 'permit-infrastructure-audit.json');
+  // Save evaluation log
+  const auditPath = path.join(ROOT_DIR, 'data', 'permit-infrastructure-evaluation.json');
   fs.writeFileSync(auditPath, JSON.stringify(summary, null, 2), 'utf8');
-  console.log(`Audit report persisted to: ${auditPath}\n`);
+  console.log(`Evaluation report persisted to: ${auditPath}\n`);
 
   return summary;
 }
 
 runFullVerification().catch(err => {
-  console.error('Fatal audit failure:', err);
+  console.error('Fatal evaluation failure:', err);
   process.exit(1);
 });

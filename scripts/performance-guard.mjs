@@ -144,7 +144,7 @@ function checkVideoPlayerFacade() {
   }
 }
 
-console.log('\n🛡️  Foresight Mobile Performance Guard — Running Automated Audit...\n');
+console.log('\n🛡️  Foresight Mobile Performance Guard — Running Automated Evaluation...\n');
 
 checkVoiceAgentModalImport();
 checkThermalSliderLayoutThrashing();
@@ -159,7 +159,7 @@ console.log('\n------------------------------------------------------------');
 const failures = checks.filter(c => c.status === 'FAIL');
 
 if (failures.length > 0) {
-  console.error(`\x1b[31m💥 AUDIT FAILED: ${failures.length} performance invariant violation(s) detected!\x1b[0m\n`);
+  console.error(`\x1b[31m💥 INSPECTION FAILED: ${failures.length} performance invariant violation(s) detected!\x1b[0m\n`);
   process.exit(1);
 } else {
   console.log(`\x1b[32m✨ ALL 8 PERFORMANCE INVARIANTS SATISFIED! Mobile 90+ Range Guaranteed.\x1b[0m\n`);

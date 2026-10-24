@@ -138,7 +138,7 @@ if (fs.existsSync(GSC_SNAPSHOT_FILE)) {
       enrichmentHook = 'Complete Swimming Pool & Spa Safety & Equipment Diagnostics ($300 Flat)';
     } else if (query.includes('warranty') || query.includes('11 month')) {
       targetPage = '/services/11-month-warranty-inspection';
-      enrichmentHook = 'Independent 11-Month Builder Warranty Audit: Finding Concealed Omissions Before Month 12';
+      enrichmentHook = 'Independent 11-Month Builder Warranty Inspection: Finding Concealed Omissions Before Month 12';
     } else if (query.includes('new construction') || query.includes('pre-drywall')) {
       targetPage = '/services/new-construction-inspection';
       enrichmentHook = 'Independent New Construction Phased Inspections from $400';

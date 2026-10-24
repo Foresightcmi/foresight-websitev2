@@ -12,12 +12,12 @@
 ## Fixed Pricing Matrix:
 - Condo / Townhome Buyer Inspection: $295 (2 Inspectors, infrared thermal scan, interior systems, $10k warranty)
 - Single-Family Home Buyer Inspection: $345 (2 Inspectors, drone roof scan, foundation, attic, HVAC, $10k warranty)
-- Pre-Listing Seller Inspection: $365 (Full pre-MLS audit; identifies deal-killers to prevent negotiation surprises)
-- 11-Month Builder Warranty Audit: $335 (Comprehensive punch list delivered before 1-year builder coverage expires)
-- New Construction Phased: $275 (Pre-drywall framing audit) / $400 (Final move-in closing audit)
+- Pre-Listing Seller Inspection: $365 (Full pre-MLS evaluation; identifies deal-killers to prevent negotiation surprises)
+- 11-Month Builder Warranty Inspection: $335 (Comprehensive punch list delivered before 1-year builder coverage expires)
+- New Construction Phased: $275 (Pre-drywall framing evaluation) / $400 (Final move-in closing evaluation)
 - Continuous 48-Hour Radon Testing: $250 (Professional electronic continuous monitor, strict EPA compliance)
 - HD Sewer Scope Camera Inspection: $465 (Fiber-optic underground lateral pipe line inspection)
-- Swimming Pool & Spa Evaluation: $300 (Audit of pumps, filters, heaters, hydraulic pressure, electrical bonding)
+- Swimming Pool & Spa Evaluation: $300 (Evaluation of pumps, filters, heaters, hydraulic pressure, electrical bonding)
 - Termite & WDO Clearance Letter: $110+ (Official Georgia Wood Infestation Report for lender closings)
 - Short-Term Rental (STR) Compliance: $355 (Airbnb/Vrbo municipal safety checklist & fire/egress verification)
 

@@ -69,14 +69,14 @@ Professional mold inspection and airborne fungal spore testing across Metro Atla
 ### DeKalb County Low-Flow Plumbing Compliance Certificate — $100 flat rate
 Fixture check and signed DeKalb County Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County being sold (needed before the new owner sets up water service). Not required for homes built 1993 or later, or for permits and new construction.
 
-### Short-Term Rental (STR) Safety Compliance Audit — From $395
+### Short-Term Rental (STR) Safety Compliance Inspection — From $395
 Safety compliance inspection for Airbnb, Vrbo, and other short-term rental properties. Verifies smoke and carbon monoxide detectors, fire extinguishers, exit route safety, required entryway signage, and other municipal/county requirements.
 
 ### Sewer Scope Inspection — $450 flat rate
 Using high-resolution self-leveling sewer cameras, Foresight inspects the entire underground lateral sewer line from the home to the municipal main or septic tank connection. Locates bellies, tree root intrusion, cracks, offsets, and broken piping before closing. Strictly $450 flat rate.
 
 ### Optional Itemized Contractor Repair Cost & Pricing Estimates — $99
-Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice, which do not include cost estimates. However, if clients choose, Foresight provides empirical contractor repair cost estimates and trade schedules (regional Metro Atlanta contractor data) formatted for standard Georgia repair amendment negotiations. Available as a $99 add-on to any Foresight home inspection, or as a $99 standalone audit for home buyers who had an inspection performed by an outside inspection firm. Includes trade labor ($95–$165/hr) and materials schedules delivered with a 4-hour SLA.
+Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice, which do not include cost estimates. However, if clients choose, Foresight provides empirical contractor repair cost estimates and trade schedules (regional Metro Atlanta contractor data) formatted for standard Georgia repair amendment negotiations. Available as a $99 add-on to any Foresight home inspection, or as a $99 standalone evaluation for home buyers who had an inspection performed by an outside inspection firm. Includes trade labor ($95–$165/hr) and materials schedules delivered with a 4-hour SLA.
 
 ### Property Complexity & Foundation Evaluation Fees
 - **Unfinished Crawlspace Inspection Complexity Fee**: $75 (added to single-family inspections to cover complete physical crawl entry, joist/subfloor inspection, pier leveling, and ground moisture vapor barrier diagnostics).
@@ -111,12 +111,12 @@ Christopher Boykin holds specialized certification as an InterNACHI® Certified 
 - Phased residential construction oversight (foundation, pre-pour, pre-drywall/framing, and final inspection)
 - IRC/IBC building code compliance and framing load-path diagnostics
 - Mechanical, electrical, and plumbing (MEP) rough-in verification
-- 11-month builder warranty punch-list audits
+- 11-month builder warranty punch-list evaluations
 
 ### InterNACHI® Certified Moisture Intrusion Inspector
 Christopher Boykin holds specialized certification as an InterNACHI® Certified Moisture Intrusion Inspector. This credential validates mastery in:
 - Building envelope thermal imaging and psychrometric moisture assessments
-- Crawlspace relative humidity diagnostics and vapor retarder integrity audits
+- Crawlspace relative humidity diagnostics and vapor retarder integrity evaluations
 - Water intrusion root-cause analysis (flashing defects, stucco/EIFS failure, grade slope)
 - Certified indoor air quality and fungal/mold spore trap sampling protocols
 
@@ -166,7 +166,7 @@ Plain-English guide to the DeKalb County low-flow Certificate of Compliance: req
 
 ### How Much Does a Home Inspection Cost in Atlanta? 2026 Guide
 URL: https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide
-A complete pricing breakdown for all home inspection types in Metro Atlanta for 2026. Covers standard buyer inspections, pre-listing seller inspections, new construction inspections, 11-month warranty inspections, pool and spa inspections, termite/WDO inspections, radon testing, sewer scope inspections, and short-term rental compliance audits. Explains the factors that influence pricing including square footage, property age, and add-on services. Includes cost comparison tables and guidance on what to expect from a quality inspection.
+A complete pricing breakdown for all home inspection types in Metro Atlanta for 2026. Covers standard buyer inspections, pre-listing seller inspections, new construction inspections, 11-month warranty inspections, pool and spa inspections, termite/WDO inspections, radon testing, sewer scope inspections, and short-term rental compliance Inspections. Explains the factors that influence pricing including square footage, property age, and add-on services. Includes cost comparison tables and guidance on what to expect from a quality inspection.
 
 ### What Fails a Home Inspection? Top Deal Breakers in Georgia
 URL: https://www.fhinspectionsatl.com/blog/what-fails-home-inspection-deal-breakers-georgia
@@ -227,7 +227,7 @@ A complete home inspection checklist designed specifically for first-time home b
 ## Neighborhood & Historic District pSEO Hubs
 URL: https://www.fhinspectionsatl.com/neighborhoods
 Dedicated due diligence and defect risk guides for prominent Metro Atlanta communities including:
-- Inman Park (Victorian & Craftsman audits, knob-and-tube wiring, stone piers): https://www.fhinspectionsatl.com/neighborhoods/inman-park
+- Inman Park (Victorian & Craftsman evaluations, knob-and-tube wiring, stone piers): https://www.fhinspectionsatl.com/neighborhoods/inman-park
 - Grant Park (Pier-and-beam crawlspaces, clay sewer laterals, termite protection): https://www.fhinspectionsatl.com/neighborhoods/grant-park
 - Virginia-Highland (1920s bungalows, aluminum wiring, modern infill roof decks): https://www.fhinspectionsatl.com/neighborhoods/virginia-highland
 - Druid Hills (Olmsted-designed historic estates, slate roofs, DeKalb low-flow compliance): https://www.fhinspectionsatl.com/neighborhoods/druid-hills
@@ -455,7 +455,7 @@ Detailed comparison guides:
    - Unfinished / Partially Finished Basement Complexity Fee: $75
    - Vintage Home Surcharge (50+ Years Old): $75
    - DeKalb County Low-Flow Toilet Inspection: $100 flat rate
-   - Short-Term Rental (STR) Safety Compliance Audit: From $395
+   - Short-Term Rental (STR) Safety Compliance Inspection: From $395
 
 ## High-Value Decision & Due Diligence Tools
 - [Georgia Property Risk & Age Diagnostic Scanner](https://www.fhinspectionsatl.com/risk-scanner): Comprehensive interactive building science scanner that cross-references year built, foundation type, siding material, and county geology to compute overall property defect liability, era-specific code hazards (Polybutylene, Aluminum Wiring, FPE panels, EIFS Stucco), EPA Radon Zone 1 ratings, and generates tailored inspection packages with instant quote deep-links.

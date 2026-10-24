@@ -147,7 +147,7 @@ export default function DueDiligenceCalculator() {
   const [foundation, setFoundation] = useState('crawlspace');
   const [copiedEmbed, setCopiedEmbed] = useState(false);
 
-  // $99 Outside Report Audit Modal & Stripe Checkout State
+  // $99 Outside Report Review Modal & Stripe Checkout State
   const [showAuditModal, setShowAuditModal] = useState(false);
   const [auditName, setAuditName] = useState('');
   const [auditEmail, setAuditEmail] = useState('');
@@ -723,7 +723,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                   Book Certified Master Inspection with infrared thermal scan (From $345) →
                 </a>
 
-                {/* Standalone $99 Second-Opinion Audit Door */}
+                {/* Standalone $99 Second-Opinion Evaluation Door */}
                 <div style={{
                   marginTop: '0.75rem',
                   background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%)',
@@ -740,7 +740,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                     </span>
                   </div>
                   <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#ffffff' }}>
-                    Get the Official Foresight Repair Cost &amp; GAR Exhibit Audit ($99 Flat)
+                    Get the Official Foresight Repair Cost &amp; GAR Exhibit Review ($99 Flat)
                   </div>
                   <p style={{ fontSize: '0.74rem', color: '#94A3B8', margin: 0, lineHeight: 1.4 }}>
                     Hired a competitor who handed you an un-priced PDF? Upload your report to have our Certified Master Inspector engine extract contractor repair costs and generate your Georgia repair amendment exhibit in 4 hours.
@@ -762,7 +762,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                       boxShadow: '0 4px 12px rgba(212, 175, 55, 0.25)'
                     }}
                   >
-                    Order $99 Outside Report Audit (Stripe Checkout) →
+                    Order $99 Outside Report Review (Stripe Checkout) →
                   </button>
                 </div>
 
@@ -1195,7 +1195,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
         </button>
       </div>
 
-      {/* $99 Outside Report Audit Stripe Intake Modal */}
+      {/* $99 Outside Report Review Stripe Intake Modal */}
       {showAuditModal && (
         <div style={{
           position: 'fixed',
@@ -1248,12 +1248,12 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
 
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(212, 175, 55, 0.12)', border: '1px solid rgba(212, 175, 55, 0.35)', borderRadius: '9999px', padding: '4px 10px', marginBottom: '0.75rem' }}>
               <span style={{ fontSize: '0.72rem', color: '#FDE047', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                Standalone Outside Report Audit
+                Standalone Outside Report Review
               </span>
             </div>
 
             <h3 style={{ fontSize: '1.35rem', fontWeight: 900, color: '#FFFFFF', margin: '0 0 0.5rem', letterSpacing: '-0.01em' }}>
-              4-Hour Due Diligence Repair Cost Audit ($99 Flat)
+              4-Hour Due Diligence Repair Cost Evaluation ($99 Flat)
             </h3>
 
             <p style={{ fontSize: '0.8rem', color: '#94A3B8', margin: '0 0 1.25rem', lineHeight: 1.5 }}>

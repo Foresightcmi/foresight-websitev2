@@ -36,7 +36,7 @@ function normalizeServiceSlug(slug) {
 const SERVICE_DEFECT_MAP = {
   'sewer-scope-inspection': [
     {
-      title: 'Polybutylene (Quest) Plumbing Defect Audit',
+      title: 'Polybutylene (Quest) Plumbing Defect Evaluation',
       slug: '/defects/polybutylene-pipe-plumbing-defect-inspection',
       desc: 'Micro-fractures, acetal insert fitting degradation, and interior burst hazards in Georgia homes.'
     },
@@ -60,12 +60,12 @@ const SERVICE_DEFECT_MAP = {
   ],
   'termite-inspection': [
     {
-      title: 'Crawlspace Moisture, Wood Rot & Joist Defect Audit',
+      title: 'Crawlspace Moisture, Wood Rot & Joist Defect Evaluation',
       slug: '/defects/crawlspace-fungus-joist-rot-inspection',
       desc: 'Subterranean termite entry vectors, shelter tubes, and fungal rot compromising structural framing.'
     },
     {
-      title: 'Synthetic Stucco (EIFS) & Hard-Coat Moisture Audit',
+      title: 'Synthetic Stucco (EIFS) & Hard-Coat Moisture Evaluation',
       slug: '/defects/stucco-eifs-moisture-inspection',
       desc: 'Zero-clearance grade penetrations allowing hidden termite transit behind exterior cladding systems.'
     }
@@ -113,7 +113,7 @@ const SERVICE_DEFECT_MAP = {
   ],
   '11-month-warranty-inspection': [
     {
-      title: 'Roof Flashing & Envelope Water Intrusion Audits',
+      title: 'Roof Flashing & Envelope Water Intrusion Inspections',
       slug: '/defects/unsealed-roof-flashing-water-leak-inspection',
       desc: 'Document builder envelope defects and missing flashing while builder warranties remain in force.'
     },
@@ -130,7 +130,7 @@ const SERVICE_DEFECT_MAP = {
       desc: 'Spore concentration sources in humid crawlspaces venting upward into living quarters via stack effect.'
     },
     {
-      title: 'Synthetic Stucco (EIFS) Moisture Intrusion Audit',
+      title: 'Synthetic Stucco (EIFS) Moisture Intrusion Inspection',
       slug: '/defects/stucco-eifs-moisture-inspection',
       desc: 'Trapped moisture in exterior wall envelopes breeding mold colonies behind interior drywall.'
     }
@@ -163,7 +163,7 @@ const SERVICE_DEFECT_MAP = {
     {
       title: 'HVAC Heat Exchanger & Commercial Roof Top Units',
       slug: '/defects/heat-exchanger-hvac-inspection',
-      desc: 'Commercial packaged HVAC inspection, thermal combustion audits, and distribution efficiency.'
+      desc: 'Commercial packaged HVAC inspection, thermal combustion evaluations, and distribution efficiency.'
     },
     {
       title: 'Commercial Roof Flashing & Parapet Water Intrusion',
@@ -259,7 +259,7 @@ function getCountyContext(county, cityName, serviceName) {
     case 'Cobb':
       return `Cobb County's rolling Piedmont topography and expansive Cecil red clay soils create significant seasonal shrink-swell foundation stress and basement retaining wall deflection. Our ${serviceName.toLowerCase()} in ${cityName} utilizes calibrated infrared thermal imaging and pin-probe hygrometers to detect sub-surface moisture and structural settlement.`;
     case 'Forsyth':
-      return `Forsyth County's Lake Lanier watershed slopes and custom multi-system estates demand rigorous mechanical and structural verification. During ${serviceName.toLowerCase()} in ${cityName}, our two-inspector team audits multi-zone HVAC static pressure, steep-slope roof flashings via 4K drone telemetry, and North Georgia granite radon gas accumulation.`;
+      return `Forsyth County's Lake Lanier watershed slopes and custom multi-system estates demand rigorous mechanical and structural verification. During ${serviceName.toLowerCase()} in ${cityName}, our two-inspector team evaluates multi-zone HVAC static pressure, steep-slope roof flashings via 4K drone telemetry, and North Georgia granite radon gas accumulation.`;
     case 'Cherokee':
       return `Cherokee County combines Etowah River basin humidity with steep-grade foothill lots where improper builder lot grading frequently drives water into crawlspaces and slab footings. Our ${serviceName.toLowerCase()} in ${cityName} focuses on retaining wall drainage, wood-destroying organism (WDO) vectors, and production builder warranty defects.`;
     case 'Clayton':
@@ -271,7 +271,7 @@ function getCountyContext(county, cityName, serviceName) {
     case 'Coweta':
       return `Coweta County blends historic Newnan-area mill architecture with high-velocity I-85 corridor new construction. Our two-inspector ${serviceName.toLowerCase()} in ${cityName} evaluates historic pier-and-curtain foundation movement, subterranean termite shelter tubes, and builder framing compliance.`;
     case 'Douglas':
-      return `Douglas County's Sweetwater Creek basin and steep Piedmont ridges subject residential foundations to heavy stormwater runoff and hydrostatic soil pressure. During ${serviceName.toLowerCase()} in ${cityName}, we closely audit crawlspace vapor barriers, floor joist moisture levels, and electrical grounding systems.`;
+      return `Douglas County's Sweetwater Creek basin and steep Piedmont ridges subject residential foundations to heavy stormwater runoff and hydrostatic soil pressure. During ${serviceName.toLowerCase()} in ${cityName}, we closely evaluation crawlspace vapor barriers, floor joist moisture levels, and electrical grounding systems.`;
     case 'Paulding':
       return `Paulding County is one of Metro Atlanta's fastest-growing new construction markets, where tight builder schedules frequently result in missing kickout flashings, disconnected attic ductwork, and crushed PVC sewer laterals. Our ${serviceName.toLowerCase()} in ${cityName} protects buyers before closing or 11-month builder warranty expiration.`;
     case 'Rockdale':
@@ -586,7 +586,7 @@ export default async function ServiceCityPage({ params }) {
               </span>
             </div>
             <p style={{ fontSize: '1rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
-              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA ({county} County) starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Governed directly by Board-Certified Master Inspector® Christopher Boykin (CMI #MICB-1082) with <strong>two certified inspectors on every appointment</strong>, our dual-audit protocol cuts on-site time in half (1.5–2.5 hours vs. 4+ hours for solo competitors) while eliminating late-stage inspector fatigue. Every evaluation includes calibrated infrared thermal imaging ($0 upcharge vs. $150 competitor fees), 24-hour digital reporting, and up to <strong>$35,000 in zero-deductible warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).
+              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA ({county} County) starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails}). Governed directly by Board-Certified Master Inspector® Christopher Boykin (CMI #MICB-1082) with <strong>two certified inspectors on every appointment</strong>, our dual-evaluation protocol cuts on-site time in half (1.5–2.5 hours vs. 4+ hours for solo competitors) while eliminating late-stage inspector fatigue. Every evaluation includes calibrated infrared thermal imaging ($0 upcharge vs. $150 competitor fees), 24-hour digital reporting, and up to <strong>$35,000 in zero-deductible warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#475569' }}>
               <div><strong>Price:</strong> {serviceData.price}</div>
@@ -851,7 +851,7 @@ export default async function ServiceCityPage({ params }) {
         </section>
       )}
 
-      {/* ── TARGETED BUILDING SCIENCE & DEFECT AUDITS ───────────────── */}
+      {/* ── TARGETED BUILDING SCIENCE & DEFECT EVALUATIONS ───────────────── */}
       <section className="section bg-white" style={{ borderTop: '1px solid #e2e8f0', padding: '3.5rem 0' }}>
         <div className="container" style={{ maxWidth: '960px' }}>
           <div className="section-title text-center" style={{ marginBottom: '2.5rem' }}>
@@ -870,7 +870,7 @@ export default async function ServiceCityPage({ params }) {
               Forensic Building Science Diagnostic Silo
             </span>
             <h2 style={{ fontSize: '1.85rem', color: '#0F172A', margin: '0.5rem 0' }}>
-              Targeted Building Science &amp; Defect Audits for <span style={{ color: 'var(--color-red)' }}>{cityName}</span>
+              Targeted Building Science &amp; Defect Evaluations for <span style={{ color: 'var(--color-red)' }}>{cityName}</span>
             </h2>
             <p style={{ color: '#64748B', maxWidth: '680px', margin: '0.5rem auto 0', fontSize: '1.05rem', lineHeight: 1.6 }}>
               In {county} County, specific geological and construction era factors directly influence property integrity. Review critical forensic defect guides relevant to your {serviceName.toLowerCase()} inspection.
@@ -928,7 +928,7 @@ export default async function ServiceCityPage({ params }) {
                     textDecoration: 'none'
                   }}
                 >
-                  Read Forensic Audit &rarr;
+                  Read Inspection Guide &rarr;
                 </Link>
               </div>
             ))}

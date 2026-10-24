@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-console.log('🔍 Auditing Structured Data (JSON-LD) against Google Search Console Standards...\n');
+console.log('🔍 Evaluating Structured Data (JSON-LD) against Google Search Console Standards...\n');
 
 let errors = 0;
 let passes = 0;
@@ -97,7 +97,7 @@ for (const city of citiesData) {
 assert(citiesWithImage === citiesData.length, `All ${citiesData.length} cities in cities.json include "image" in LocalBusiness schema`);
 assert(citiesWithInvalidParent === 0, 'Zero cities in cities.json place aggregateRating on a Service node');
 
-console.log(`\nStructured Data Audit Summary: ${passes} passed, ${errors} failed.`);
+console.log(`\nStructured Data Evaluation Summary: ${passes} passed, ${errors} failed.`);
 if (errors > 0) {
   process.exit(1);
 } else {

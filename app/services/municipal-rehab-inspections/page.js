@@ -10,7 +10,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Municipal & Pre-Rehab Property Inspections | Foresight Atlanta',
-    description: 'Third-party milestone and pre/post-rehab compliance audits for municipal agencies, housing authorities, and affordable housing developers.',
+    description: 'Third-party milestone and pre/post-rehab compliance Inspections for municipal agencies, housing authorities, and affordable housing developers.',
     url: 'https://www.fhinspectionsatl.com/services/municipal-rehab-inspections',
     type: 'website',
   },
@@ -21,7 +21,7 @@ export default function MunicipalRehabInspections() {
     "@context": "https://schema.org",
     "@type": "GovernmentService",
     "name": "Municipal & Pre-Rehab Compliance Property Inspections",
-    "serviceType": "Property Rehabilitation Audit",
+    "serviceType": "Property Rehabilitation Evaluation",
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
@@ -56,7 +56,7 @@ export default function MunicipalRehabInspections() {
           <span className="badge" style={{ marginBottom: '1rem' }}>DeKalb Housing Bond & B2G Solutions</span>
           <h1 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Municipal & Pre-Rehab Property Inspections</h1>
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.6 }}>
-            Providing independent third-party property audits, pre-rehab scope assessments, and post-rehab contractor compliance sign-offs for municipal programs, housing authorities, and non-profit development partners across DeKalb County and Metro Atlanta.
+            Providing independent third-party property evaluations, pre-rehab scope assessments, and post-rehab contractor compliance sign-offs for municipal programs, housing authorities, and non-profit development partners across DeKalb County and Metro Atlanta.
           </p>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function MunicipalRehabInspections() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span>
-                  <span><strong>Pre-Rehab Baseline Audits:</strong> Documenting existing structural, electrical, roof, and plumbing defects to establish accurate scope of work.</span>
+                  <span><strong>Pre-Rehab Baseline Evaluations:</strong> Documenting existing structural, electrical, roof, and plumbing defects to establish accurate scope of work.</span>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span>
@@ -91,7 +91,7 @@ export default function MunicipalRehabInspections() {
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span>
-                  <span><strong>DeKalb Low-Flow Plumbing Certificates:</strong> Official plumbing compliance audits for DeKalb County property transactions.</span>
+                  <span><strong>DeKalb Low-Flow Plumbing Certificates:</strong> Official plumbing compliance Inspections for DeKalb County property transactions.</span>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>✓</span>

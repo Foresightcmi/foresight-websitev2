@@ -445,7 +445,7 @@ function generateNewConstructionDossierHtml(lead) {
             <tr>
               <td><strong>Inspection Scope</strong></td>
               <td>Minimum life-safety code checklist only</td>
-              <td class="highlight-col"><strong>400+ Point Building Science</strong> structural, MEP &amp; envelope audit</td>
+              <td class="highlight-col"><strong>400+ Point Building Science</strong> structural, MEP &amp; envelope evaluation</td>
             </tr>
             <tr>
               <td><strong>Thermal Infrared Scans</strong></td>
@@ -517,7 +517,7 @@ function generateNewConstructionDossierHtml(lead) {
             <strong style="color: #0F172A; font-size: 1.1rem;">Phase 1: Pre-Drywall Framing &amp; Rough-In Evaluation</strong>
             <span style="color: var(--color-gold); font-weight: 700;">From $275</span>
           </div>
-          <p style="color: #64748B; font-size: 0.85rem; margin-bottom: 1rem;">The critical rough-in audit. Comprehensive review of structural framing, load paths, HVAC ductwork, electrical wiring, and plumbing before sheetrock installation.</p>
+          <p style="color: #64748B; font-size: 0.85rem; margin-bottom: 1rem;">The critical rough-in evaluation. Comprehensive review of structural framing, load paths, HVAC ductwork, electrical wiring, and plumbing before sheetrock installation.</p>
 
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap;">
             <strong style="color: #0F172A; font-size: 1.1rem;">Phase 2: Final Pre-Closing Inspection + Infrared Thermal Imaging</strong>
@@ -544,7 +544,7 @@ function generateNewConstructionDossierHtml(lead) {
 
         <!-- Call to Action Banner -->
         <div class="cta-banner">
-          <h2>Secure Your Pre-Drywall or Final Walkthrough Audit</h2>
+          <h2>Secure Your Pre-Drywall or Final Walkthrough Evaluation</h2>
           <p>
             Do not let your builder hang drywall or schedule your blue-tape walkthrough without an independent Certified Master Inspector® in your corner.
           </p>

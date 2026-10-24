@@ -235,9 +235,9 @@ export default function RiskScannerClient() {
         badge: '⏱️ DRYWALL CONCEALMENT TIMELINE RISK',
         title: 'New Construction Framing & Subcontractor Coordination Errors',
         standard: 'Georgia State Minimum Standard One and Two Family Dwelling Code (IRC 2018)',
-        description: 'Building science audits show that 82% of structural framing alterations, improperly cut load-bearing headers, unglued PVC drain lines, and disconnected attic ducts occur during rapid modern builds. County inspectors spend less than 15 minutes on site.',
+        description: 'Building science evaluations show that 82% of structural framing alterations, improperly cut load-bearing headers, unglued PVC drain lines, and disconnected attic ducts occur during rapid modern builds. County inspectors spend less than 15 minutes on site.',
         exposure: '$3,000 – $10,000 (Post-Closing Defect Rectification)',
-        foresightProtocol: 'Two Certified Master Inspectors conduct full pre-drywall framing audits and pre-closing operational punchlists.'
+        foresightProtocol: 'Two Certified Master Inspectors conduct full pre-drywall framing evaluations and pre-closing operational punchlists.'
       });
     }
 
@@ -254,7 +254,7 @@ export default function RiskScannerClient() {
         level: 'CRITICAL',
         color: '#EF4444',
         label: 'CRITICAL - High Defect Vulnerability & Life-Safety Exposure',
-        summary: 'Multiple high-liability building code hazards detected (hazardous wiring, recalled plumbing, or high moisture trap risk). Full forensic dual-inspector audit is essential.'
+        summary: 'Multiple high-liability building code hazards detected (hazardous wiring, recalled plumbing, or high moisture trap risk). Full forensic dual-inspector evaluate is essential.'
       };
     } else if (clampedScore >= 50) {
       tier = {
@@ -305,7 +305,7 @@ export default function RiskScannerClient() {
         price: `From $${basePrice}`,
         cost: basePrice,
         included: true,
-        desc: 'Two Certified Inspectors on site concurrently. Full 1,600-point InterNACHI SOP audit.'
+        desc: 'Two Certified Inspectors on site concurrently. Full 1,600-point InterNACHI SOP evaluation.'
       },
       {
         name: 'High-Resolution Infrared Thermal Imaging Scan',

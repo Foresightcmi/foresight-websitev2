@@ -222,7 +222,7 @@ export default function WatchPage() {
           {/* Diagnostic Checkpoints Breakdown */}
           <section style={{ marginBottom: '3.5rem' }}>
             <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.75rem' }}>
-              Technical Checkpoints Demonstrated in This Field Audit
+              Technical Checkpoints Demonstrated in This Field Inspection
             </h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
@@ -266,7 +266,7 @@ export default function WatchPage() {
                   Two-Inspector Operational Synergy
                 </h3>
                 <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>
-                  While the Lead Certified Master Inspector audits complex roof, attic, and MEP systems, the Senior Inspector methodically tests every interior window, GFCI/AFCI receptacle, and plumbing fixture.
+                  While the Lead Certified Master Inspector evaluates complex roof, attic, and MEP systems, the Senior Inspector methodically tests every interior window, GFCI/AFCI receptacle, and plumbing fixture.
                 </p>
               </div>
             </div>

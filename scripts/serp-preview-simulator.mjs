@@ -42,7 +42,7 @@ export function runSerpSimulation() {
   console.log('================================================================\n');
 
   if (!fs.existsSync(AUDIT_FILE)) {
-    console.error('❌ Audit file not found. Run "npm run seo:audit" first.');
+    console.error('❌ Evaluation file not found. Run "npm run seo:evaluation" first.');
     process.exit(1);
   }
 

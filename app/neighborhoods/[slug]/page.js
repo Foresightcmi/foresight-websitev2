@@ -235,7 +235,7 @@ export default async function NeighborhoodPage({ params }) {
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red-light)', fontSize: '1.2rem' }}>✓</span>
                   <div>
-                    <strong>Active SUPRA eKEY Access:</strong> Seamless, autonomous entry with zero scheduling friction for agents.
+                    <strong>Active SUPRA eKEY Access:</strong> smooth, autonomous entry with zero scheduling friction for agents.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
@@ -259,7 +259,7 @@ export default async function NeighborhoodPage({ params }) {
               Top Defect Risks Evaluated in {hood.name} Homes
             </h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '650px', margin: '0.5rem auto 0', fontSize: '1rem' }}>
-              Based on empirical field audits conducted by Certified Master Inspector Christopher Boykin across {hood.county} County.
+              Based on empirical field inspections conducted by Certified Master Inspector Christopher Boykin across {hood.county} County.
             </p>
           </div>
 
@@ -303,8 +303,8 @@ export default async function NeighborhoodPage({ params }) {
                 'sewer-scope-inspection': 'Sewer Scope HD Camera',
                 'radon-testing': '48-Hour Continuous Radon Test',
                 'termite-inspection': 'Official GA WDO Termite Letter',
-                'pool-inspection': 'Pool & Spa Diagnostic Audit',
-                'new-construction-inspection': 'New Build / 11-Month Audit'
+                'pool-inspection': 'Pool & Spa Diagnostic Evaluation',
+                'new-construction-inspection': 'New Build / 11-Month Inspection'
               };
               const descriptions = {
                 'sewer-scope-inspection': '200ft high-def camera scan through main lateral line to detect root blockages, offset joints, and cracked clay pipes.',

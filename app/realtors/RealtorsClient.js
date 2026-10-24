@@ -248,7 +248,7 @@ export default function RealtorsClient() {
               <div className="font-mono text-sm font-bold text-primary mb-3">[DIAGNOSTICS]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>Free Utility Concierge Service</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                Help your clients transition seamlessly. Through our partnership with <strong>Utilities Plus</strong>, all Foresight buyers receive complimentary, high-touch utility connection services (water, gas, electric, internet, security) at the best available market rates.
+                Help your clients transition smoothly. Through our partnership with <strong>Utilities Plus</strong>, all Foresight buyers receive complimentary, high-touch utility connection services (water, gas, electric, internet, security) at the best available market rates.
               </p>
             </div>
 
@@ -307,7 +307,7 @@ export default function RealtorsClient() {
                 </div>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: '1.2rem' }}>✓</span>
-                  <p style={{ color: '#CBD5E1', margin: 0, fontSize: '1rem' }}><strong>Seamless PDF Export:</strong> Generate a polished PDF addendum ready to attach directly to your GAR amendment form.</p>
+                  <p style={{ color: '#CBD5E1', margin: 0, fontSize: '1rem' }}><strong>smooth PDF Export:</strong> Generate a polished PDF addendum ready to attach directly to your GAR amendment form.</p>
                 </div>
               </div>
               <a href="#partner-form" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
@@ -669,7 +669,7 @@ export default function RealtorsClient() {
             </Link>
           </div>
 
-          {/* Realtor Tool Spotlight: $99 Contractor Repair Estimates & Outside Report Audits */}
+          {/* Realtor Tool Spotlight: $99 Contractor Repair Estimates & Outside Report Reviews */}
           <div style={{
             marginTop: '1.5rem',
             background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%)',
@@ -687,10 +687,10 @@ export default function RealtorsClient() {
                 Optional Realtor Negotiation Service &bull; $99 Flat Fee
               </span>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
-                Itemized Contractor Repair Cost Estimates &amp; Outside Report Audits ($99)
+                Itemized Contractor Repair Cost Estimates &amp; Outside Report Reviews ($99)
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                Standard Georgia home inspections are diagnostic only per InterNACHI standards. When your clients need empirical trade numbers for repair amendment negotiations, Foresight provides an optional <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with regional Atlanta trade schedules. <em>Also available as a 4-hour standalone audit if your client already hired an outside inspection company!</em>
+                Standard Georgia home inspections are diagnostic only per InterNACHI standards. When your clients need empirical trade numbers for repair amendment negotiations, Foresight provides an optional <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with regional Atlanta trade schedules. <em>Also available as a 4-hour standalone evaluation if your client already hired an outside inspection company!</em>
               </p>
             </div>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -883,7 +883,7 @@ export default function RealtorsClient() {
               <div>
                 <div style={{ color: '#fbbf24', fontSize: '1.15rem', marginBottom: '1.25rem', letterSpacing: '0.08em' }}>★★★★★</div>
                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, fontStyle: 'italic', margin: '0 0 1.5rem 0' }}>
-                  "Having a Certified Master Inspector lead the audit is great, but the complimentary $10,000 warranty is what really shields my buyers. When a water heater failed weeks after closing, the warranty covered it 100%. No stress, no angry buyer phone calls, and zero post-closing agent liability."
+                  "Having a Certified Master Inspector lead the evaluation is great, but the complimentary $10,000 warranty is what really shields my buyers. When a water heater failed weeks after closing, the warranty covered it 100%. No stress, no angry buyer phone calls, and zero post-closing agent liability."
                 </p>
               </div>
               <div style={{ borderTop: '1px solid var(--color-gray-mid)', paddingTop: '1.25rem', marginTop: 'auto' }}>

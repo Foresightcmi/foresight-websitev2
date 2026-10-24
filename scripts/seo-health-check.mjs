@@ -82,10 +82,10 @@ cities.forEach(city => {
     }
   }
 });
-console.log('✅ Pricing audit complete.');
+console.log('✅ Pricing evaluation complete.');
 
 // 3. Validate Meta Tag & Schema integrity
-console.log('\n🔍 Auditing Service Areas SEO & Schema Structure...');
+console.log('\n🔍 Evaluating Service Areas SEO & Schema Structure...');
 const seenSlugs = new Set();
 const seenPhoneNumbers = new Set();
 
@@ -142,7 +142,7 @@ cities.forEach(city => {
 });
 
 // 4. Validate Blog Posts Structure & Canonical Targets
-console.log('\n📚 Auditing Blog Posts & Anti-Cannibalization...');
+console.log('\n📚 Evaluating Blog Posts & Anti-Cannibalization...');
 const seenPostSlugs = new Set();
 
 posts.forEach(post => {

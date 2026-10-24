@@ -12,12 +12,12 @@ const ERA_PROFILES = {
   '1978-1995': {
     label: '1978–1995 High-Liability Era',
     risks: 'Polybutylene (PB2110) plumbing pipe micro-fractures, Federal Pacific / Zinsco circuit breaker failure, and unsealed EIFS synthetic stucco moisture rot.',
-    highPriorityAddons: ['Infrared Thermal Scan (Included Free)', 'Sewer Scope ($450)', 'HVAC Load Audit']
+    highPriorityAddons: ['Infrared Thermal Scan (Included Free)', 'Sewer Scope ($450)', 'HVAC Load Evaluation']
   },
   '1996-2015': {
     label: '1996–2015 Rapid Suburban Expansion',
     risks: 'Aging 15–20 yr architectural shingles, aging original HVAC compressors (R-22 phased out), vented crawlspace fungal growth, and deck ledger flashing leaks.',
-    highPriorityAddons: ['Crawlspace Fungal Audit', 'HVAC Thermal Delta-T', 'Termite Clearance ($125+)']
+    highPriorityAddons: ['Crawlspace Fungal Evaluation', 'HVAC Thermal Delta-T', 'Termite Clearance ($125+)']
   },
   '2016-present': {
     label: '2016–Present Modern & New Builds',
@@ -104,7 +104,7 @@ export default function BlogRiskScannerWidget() {
         </p>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', fontSize: '0.85rem', color: '#CBD5E1' }}>
-          <strong style={{ color: '#FFFFFF' }}>Recommended Specialized Audits:</strong>
+          <strong style={{ color: '#FFFFFF' }}>Recommended Specialized Evaluations:</strong>
           {profile.highPriorityAddons.map((addon, idx) => (
             <span key={idx} style={{
               background: '#334155',

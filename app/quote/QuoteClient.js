@@ -535,7 +535,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)',
                 lineHeight: 1.5
               }}>
-                <strong>Specialty Service Scheduling:</strong> Specialized auxiliary inspections (Pool &amp; Spa, Termite/WDO, Radon Gas Testing, and Sewer Scope) are coordinated alongside your main home inspection. When requested, our office coordinates the dedicated equipment and specialized schedules to ensure seamless on-site execution.
+                <strong>Specialty Service Scheduling:</strong> Specialized auxiliary inspections (Pool &amp; Spa, Termite/WDO, Radon Gas Testing, and Sewer Scope) are coordinated alongside your main home inspection. When requested, our office coordinates the dedicated equipment and specialized schedules to ensure smooth on-site execution.
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

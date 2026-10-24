@@ -494,7 +494,7 @@ function generateBrandDossierHtml(lead) {
         <div class="milestone-grid">
           <div class="milestone-card featured">
             <div class="card-badge">Pillar 1: Life-Safety &amp; Alarms</div>
-            <div class="card-title">Smoke, CO &amp; Egress Audit</div>
+            <div class="card-title">Smoke, CO &amp; Egress Evaluation</div>
             <div class="card-dates">Turnaround: <strong>Same-Day / 24-Hr Report</strong></div>
             <div class="card-price">Included in $395 STR Check</div>
             <p style="font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem;">
@@ -546,7 +546,7 @@ function generateBrandDossierHtml(lead) {
         <div class="milestone-grid">
           <div class="milestone-card featured">
             <div class="card-badge">Phase 1: Before Drywall</div>
-            <div class="card-title">Pre-Drywall Rough-In Audit</div>
+            <div class="card-title">Pre-Drywall Rough-In Evaluation</div>
             <div class="card-dates">Typical window (estimate): <strong>${framingStart} – ${framingEnd}</strong></div>
             <div class="card-price">From $275 Base</div>
             <p style="font-size: 0.85rem; color: var(--color-gray); margin-top: 0.5rem;">

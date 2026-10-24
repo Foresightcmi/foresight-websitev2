@@ -183,17 +183,17 @@ export default function AiFactSheet() {
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Pre-Listing Seller Inspection</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$365</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Full pre-MLS audit; identifies deal-killers to prevent negotiation surprises</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Full pre-MLS evaluation; identifies deal-killers to prevent negotiation surprises</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
-                    <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>11-Month Builder Warranty Audit</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>11-Month Builder Warranty Inspection</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$335</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Comprehensive punch list delivered before 1-year builder coverage expires</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>New Construction (Phased &amp; Final)</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$275 / $400+</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Pre-drywall framing structural audit ($275-$300) / Final move-in closing audit ($400+)</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Pre-drywall framing structural evaluation ($275-$300) / Final move-in closing evaluation ($400+)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Continuous 48-Hour Radon Testing</td>
@@ -213,7 +213,7 @@ export default function AiFactSheet() {
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Swimming Pool &amp; Spa Evaluation</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$300</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Audit of pumps, filters, heaters, hydraulic pressure, and electrical bonding</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Evaluation of pumps, filters, heaters, hydraulic pressure, and electrical bonding</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Termite &amp; WDO Clearance Letter</td>

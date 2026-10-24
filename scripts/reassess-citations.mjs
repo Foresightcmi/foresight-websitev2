@@ -497,7 +497,7 @@ const payload = {
 
 fs.writeFileSync(auditFilePath, JSON.stringify(payload, null, 2), 'utf8');
 
-console.log('=== CITATION AUDIT REASSESSMENT COMPLETE ===');
+console.log('=== CITATION INSPECTION REASSESSMENT COMPLETE ===');
 console.log(`Total Directories Evaluated: ${totalCount}`);
 console.log(`Active Verified Profiles: ${activeCount} (${((activeCount/totalCount)*100).toFixed(1)}%)`);
 console.log(`Average Active Domain Authority: ${avgActiveDa} / 100`);

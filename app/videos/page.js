@@ -5,8 +5,8 @@ import { SERVICE_VIDEOS } from './[slug]/page';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
-  title: 'Home Inspection Field Videos & Systems Audits | Foresight Home Inspections',
-  description: 'Watch Certified Master Inspector® Christopher Boykin evaluate Metro Atlanta residential properties. Explore field diagnostic videos, thermal imaging audits, and inspection procedures.',
+  title: 'Home Inspection Field Videos & Systems Evaluations | Foresight Home Inspections',
+  description: 'Watch Certified Master Inspector® Christopher Boykin evaluate Metro Atlanta residential properties. Explore field diagnostic videos, thermal imaging evaluations, and inspection procedures.',
   keywords: [
     'home inspection videos Atlanta',
     'certified master inspector videos Georgia',
@@ -17,7 +17,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/videos` },
   openGraph: {
     title: 'Home Inspection Field Videos & Diagnostics | Foresight Home Inspections',
-    description: 'Explore on-site inspection demonstrations, thermal diagnostic videos, and technical system audits across Metro Atlanta.',
+    description: 'Explore on-site inspection demonstrations, thermal diagnostic videos, and technical system Evaluations across Metro Atlanta.',
     url: `${SITE_URL}/videos`,
   }
 };
@@ -73,7 +73,7 @@ export default function VideosHub() {
             Foresight Field Inspections &amp; Diagnostic Videos
           </h1>
           <p style={{ fontSize: '1.15rem', color: '#94A3B8', maxWidth: '780px', margin: '0 auto', lineHeight: 1.6 }}>
-            Watch real on-site home inspection audits led by Certified Master Inspector® Christopher Boykin across Metro Atlanta.
+            Watch real on-site home inspection Evaluations led by Certified Master Inspector® Christopher Boykin across Metro Atlanta.
           </p>
         </header>
 
@@ -131,7 +131,7 @@ export default function VideosHub() {
             {/* Description & CTAs */}
             <div>
               <span style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                Commercial &amp; Field Audit
+                Commercial &amp; Field Inspection
               </span>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFFFFF', margin: '0.5rem 0 0.85rem 0' }}>
                 <Link href="/videos/complete-home-systems-diagnostic" style={{ color: '#FFFFFF', textDecoration: 'none' }}>

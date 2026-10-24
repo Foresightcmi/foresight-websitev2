@@ -6,7 +6,7 @@
  * Implements Josh Pigford's FirstIndex AI Visibility Tracking Loop ([05:01-05:20], [22:48-23:39]):
  * 1. Tests non-branded Metro Atlanta buyer prompts & brand-fact verification queries
  * 2. Scrapes live Google Autocomplete intent expansions & verifies live fhinspectionsatl.com endpoints
- * 3. Audits factual alignment against data/truth.json ($345 homes, $450 sewer, $250 radon, $300 pool)
+ * 3. Evaluations factual alignment against data/truth.json ($345 homes, $450 sewer, $250 radon, $300 pool)
  * 4. Saves timestamped, source-attributed dossier to data/firstindex-ai-mentions.json
  */
 

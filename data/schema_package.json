@@ -167,7 +167,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Short-Term Rental (STR) Compliance Assist",
-              "description": "Safety pre-screening audits (egress, alarms, fire extinguishers) aligned with Metro Atlanta county licensing regulations."
+              "description": "Safety pre-screening evaluations (egress, alarms, fire extinguishers) aligned with Metro Atlanta county licensing regulations."
             },
             "priceSpecification": {
               "@type": "UnitPriceSpecification",

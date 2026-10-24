@@ -10,7 +10,7 @@
  * 
  * This engine:
  * 1. Models the derivative subquery fans across 5 core home buyer/inspection clusters
- * 2. Audits Foresight's 727-route matrix to compute "Surface Area Coverage"
+ * 2. Evaluations Foresight's 727-route matrix to compute "Surface Area Coverage"
  * 3. Identifies coverage gaps where AI models might cite competitors
  * 4. Outputs data/ai-fanning-matrix.json and data/ai-fanning-report.md
  * 
@@ -186,7 +186,7 @@ async function runAIFanningAudit() {
   console.log(`\n✅ Saved AI Fanning Matrix to ${OUTPUT_JSON}`);
 
   // Generate Markdown report
-  const mdReport = `# 🌐 Cody Schneider AI Fanning & GEO Surface Area Audit
+  const mdReport = `# 🌐 Cody Schneider AI Fanning & GEO Surface Area Evaluation
 
 **Generated**: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}  
 **Framework**: Generative Engine Optimization (GEO) & AI Fan-Out Modeling  
@@ -197,7 +197,7 @@ async function runAIFanningAudit() {
 ## 🎯 Executive Summary
 Modern LLMs (Perplexity, ChatGPT Search, Gemini Live, Google AI Overviews) do not execute simple single-keyword searches. They expand every user prompt into a **"fan" of 20 to 50 derivative subqueries**, scrape the top-ranking web results across those nodes, and synthesize answers citing the brands with the largest **surface area**.
 
-Foresight Home Inspections' 727-route matrix was audited against the top 5 home inspection fanning clusters.
+Foresight Home Inspections' 727-route matrix was evaluated against the top 5 home inspection fanning clusters.
 
 ---
 
@@ -229,6 +229,6 @@ ${cluster.subqueries.map(s => `| **${s.query}** | [${s.targetUrl}](https://www.f
 }
 
 runAIFanningAudit().catch(err => {
-  console.error('❌ Error executing AI Fanning Audit:', err);
+  console.error('❌ Error executing AI Fanning Evaluation:', err);
   process.exit(1);
 });

@@ -66,12 +66,12 @@
       { "term": "FLIR", "replacement": "calibrated infrared thermal camera" }
     ],
     "bannedAiSlop": [
-      "delve",
-      "tapestry",
-      "game-changer",
-      "pivotal",
-      "testament",
-      "beacon",
+      "dig",
+      "mix",
+      "major advantage",
+      "important",
+      "proof",
+      "standard",
       "in today's fast-paced world"
     ]
   }

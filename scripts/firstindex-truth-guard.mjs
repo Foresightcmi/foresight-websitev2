@@ -237,5 +237,17 @@ const nextConfigCode = fs.readFileSync(path.join(ROOT, 'next.config.mjs'), 'utf8
 const hasEmailDomainRedirect = nextConfigCode.includes("value: 'foresightcmi.com'") && nextConfigCode.includes("value: 'www.foresightcmi.com'");
 record('Email domain (foresightcmi.com / www.foresightcmi.com) 301 redirect to https://www.fhinspectionsatl.com in next.config.mjs', hasEmailDomainRedirect);
 
+// Step 5: Inspector Terminology (Zero "audit") & Humanization / MetroBrokers Barracuda Guard
+const postsRaw = fs.readFileSync(postsPath, 'utf8');
+const servicesRaw = fs.readFileSync(servicesPath, 'utf8');
+const zeroAuditInContent = !/\baudit(s|ed|ing)?\b/i.test(postsRaw) && !/\baudit(s|ed|ing)?\b/i.test(servicesRaw);
+const zeroSlopInContent = !/\b(delve|tapestry|game-changer|pivotal|testament|seamlessly|seamless)\b/i.test(postsRaw);
+record('Authentic Inspector Terminology (Zero "audit" & Zero AI-slop words across blog posts & services)', zeroAuditInContent && zeroSlopInContent);
+
+const ddEngineCode = fs.readFileSync(path.join(ROOT, 'scripts', 'autonomous-due-diligence-engine.mjs'), 'utf8');
+const cloudPulseCode = fs.readFileSync(path.join(ROOT, 'scripts', 'cloud-realtor-nurture-pulse.mjs'), 'utf8');
+const hasMetroBrokersGuard = ddEngineCode.includes('metrobrokers.com') && cloudPulseCode.includes('metrobrokers');
+record('Barracuda Gateway & MetroBrokers Domain Suppression Guard (metrobrokers.com / cbcmetrobrokers.com / peachtreetc.com)', hasMetroBrokersGuard);
+
 console.log(`\n[SUMMARY] Passed ${passedChecks}/${totalChecks} FirstIndex Truth checks (${fixedItems} items auto-healed).\n`);
 process.exit(passedChecks === totalChecks ? 0 : 1);

@@ -97,7 +97,7 @@ function buildWarrantyEmailHtml(lead) {
       <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections">
     </div>
     <div class="banner">
-      🏛️ INDEPENDENT BUILDING SCIENCE &amp; BUILDER WARRANTY AUDIT
+      🏛️ INDEPENDENT BUILDING SCIENCE &amp; BUILDER WARRANTY INSPECTION
     </div>
     <div class="content">
       <h2 style="margin-top:0; font-size:20px; color:#0f172a;">

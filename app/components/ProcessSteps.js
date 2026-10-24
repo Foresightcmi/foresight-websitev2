@@ -23,7 +23,7 @@ export default function ProcessSteps() {
           <line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       ),
-      title: "Dual-Inspector Audit",
+      title: "Dual-Inspector evaluate",
       description: "Two certified inspectors examine every system—roof, structure, HVAC, electrical, plumbing—using infrared thermal and drone technology."
     },
     {

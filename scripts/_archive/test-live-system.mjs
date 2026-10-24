@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 async function runTests() {
   console.log('====================================================');
-  console.log('🚀 [FORESIGHT QUALITY AUDIT] Production API Testing');
+  console.log('🚀 [FORESIGHT QUALITY INSPECTION] Production API Testing');
   console.log('====================================================');
 
   const routes = [
@@ -10,7 +10,7 @@ async function runTests() {
     { name: 'Voice Token (Jordan)', url: 'https://www.fhinspectionsatl.com/api/voice/token', method: 'POST', body: { persona: 'jordan' } },
     { name: 'Gemini Chat API', url: 'https://www.fhinspectionsatl.com/api/chat', method: 'POST', body: { messages: [{ role: 'user', content: 'How much is an inspection?' }] } },
     { name: 'Voice Turn API (Chris)', url: 'https://www.fhinspectionsatl.com/api/voice', method: 'POST', body: { messages: [{ role: 'user', content: 'What is your warranty?' }], persona: 'chris' } },
-    { name: 'Lead Capture API', url: 'https://www.fhinspectionsatl.com/api/lead-capture', method: 'POST', body: { name: 'Audit Inspector', email: 'audit@foresightcmi.com', phone: '678-480-2110' } },
+    { name: 'Lead Capture API', url: 'https://www.fhinspectionsatl.com/api/lead-capture', method: 'POST', body: { name: 'Evaluation Inspector', email: 'evaluation@foresightcmi.com', phone: '678-480-2110' } },
     { name: 'MCP Server Endpoint', url: 'https://www.fhinspectionsatl.com/api/mcp', method: 'GET' }
   ];
 
@@ -47,7 +47,7 @@ async function runTests() {
   }
 
   console.log('\n----------------------------------------------------');
-  console.log(`Audit Summary: ${passed} passed, ${failed} failed out of ${routes.length} tests.`);
+  console.log(`Evaluation Summary: ${passed} passed, ${failed} failed out of ${routes.length} tests.`);
   console.log('----------------------------------------------------');
 }
 

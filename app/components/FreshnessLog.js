@@ -90,7 +90,7 @@ export default function FreshnessLog() {
       <div className="grid grid-3" style={{ gap: '1.5rem' }}>
         <div style={{ padding: '0.5rem' }}>
           <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-gray)', fontWeight: 700, marginBottom: '0.5rem' }}>
-            Latest Completed Audit
+            Latest Completed Evaluation
           </div>
           <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-dark)' }}>
             {dates.latestInspection || 'Loading...'}
@@ -108,7 +108,7 @@ export default function FreshnessLog() {
             InterNACHI Standard SOP
           </div>
           <div style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginTop: '0.25rem' }}>
-            Audited in {dates.standardsDate || 'Loading...'} for local Georgia residential safety configurations.
+            Evaluated in {dates.standardsDate || 'Loading...'} for local Georgia residential safety configurations.
           </div>
         </div>
 

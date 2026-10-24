@@ -68,7 +68,7 @@ const newComparisons = [
       },
       {
         q: "Why is a two-inspector team better than a solo corporate inspector?",
-        a: "A solo inspector spending four hours alone in attics and crawlspaces naturally experiences cognitive fatigue. Foresight deploys two certified inspectors who simultaneously cross-audit roof, electrical, foundation, and plumbing systems, delivering a more thorough report in half the time."
+        a: "A solo inspector spending four hours alone in attics and crawlspaces naturally experiences cognitive fatigue. Foresight deploys two certified inspectors who simultaneously cross-evaluation roof, electrical, foundation, and plumbing systems, delivering a more thorough report in half the time."
       }
     ]
   },
@@ -81,7 +81,7 @@ const newComparisons = [
     badge: "Competitor Comparison",
     image: "/images/thermal-1.webp",
     imageAlt: "Calibrated infrared thermal imaging scan of electrical circuit panel during Atlanta home inspection",
-    headline: "Certified Master Inspector Dual-Audit vs. Single-Inspector Atlanta Models",
+    headline: "Certified Master Inspector Dual-Evaluation vs. Single-Inspector Atlanta Models",
     summary: "Home-Probe Inc is a well-known local inspection company in Metro Atlanta. However, when evaluating the thoroughness of your inspection, the operational model matters. Foresight deploys two certified inspectors on every residential inspection, includes infrared thermal imaging standard, and backs every client with up to $35,000 in complimentary warranty coverage.",
     comparisonTable: [
       {
@@ -91,7 +91,7 @@ const newComparisons = [
       },
       {
         feature: "Thermal Imaging",
-        foresight: "Included FREE on Every Audit",
+        foresight: "Included FREE on Every Evaluation",
         competitors: "Variable or Package Add-On"
       },
       {
@@ -117,7 +117,7 @@ const newComparisons = [
     ],
     benefits: [
       "Comprehensive Warranty Shield: Protects your wallet after closing with 90-day structural/mechanical, SewerGuard, MoldSafe, and roof leak coverage with zero deductible.",
-      "Dual-Audited Electrical & HVAC: Two sets of certified eyes systematically audit subpanels, disconnects, heat exchangers, and refrigerant lines.",
+      "Dual-Evaluated Electrical & HVAC: Two sets of certified eyes systematically evaluate subpanels, disconnects, heat exchangers, and refrigerant lines.",
       "Fast Due Diligence Delivery: Same-day cloud reports delivered within hours of inspection completion, giving realtors maximum contract negotiation leverage."
     ],
     faqs: [
@@ -139,7 +139,7 @@ const newComparisons = [
     icon: "🏛️",
     badge: "Competitor Comparison",
     image: "/images/christopher-boykin-certified-master-inspector.jpg",
-    imageAlt: "Christopher Boykin Certified Master Inspector lead audit vs high-volume cross-sell inspection models",
+    imageAlt: "Christopher Boykin Certified Master Inspector lead evaluation vs high-volume cross-sell inspection models",
     headline: "Pure Forensic Building Science vs. High-Volume Pest Cross-Selling",
     summary: "Inspect-All Services operates a large regional operation combining home inspections with pest control, termite baiting, and wildlife exclusion. Foresight Home Inspections focuses 100% of its diagnostic engineering on pure building science, structural forensics, and mechanical integrity, ensuring your inspection is never an upsell vehicle for recurring extermination contracts.",
     comparisonTable: [
@@ -198,7 +198,7 @@ const newComparisons = [
     icon: "🛡️",
     badge: "Franchise vs Independent",
     image: "/images/two-inspectors-electrical-panel-inspection.jpg",
-    imageAlt: "Two Certified Inspectors providing comprehensive dual-audit home inspection in Metro Atlanta",
+    imageAlt: "Two Certified Inspectors providing comprehensive dual-evaluation home inspection in Metro Atlanta",
     headline: "Certified Master Inspector Ownership vs. National Franchise Territories",
     summary: "National franchise networks like Pillar to Post, WIN Home Inspection, and HouseMaster operate via territory licenses where brand royalties and territory fees are built into customer pricing. Foresight Home Inspections is an independent, locally owned Atlanta firm led by Certified Master Inspector Christopher Boykin, delivering two-inspector teams, unmatched warranty coverage, and deep local building code expertise.",
     comparisonTable: [

@@ -5,7 +5,7 @@
     "metaTitle": "EIFS Synthetic Stucco Inspection Atlanta GA | Moisture Scan",
     "metaDescription": "Specialized EIFS synthetic stucco and hard-coat stucco inspection in Metro Atlanta. Advanced moisture metering and thermal camera evaluation for hidden wood rot.",
     "icon": "🧱",
-    "badge": "Stucco & EIFS Audit",
+    "badge": "Stucco & EIFS Evaluation",
     "blufSummary": "Synthetic EIFS stucco traps moisture behind exterior wall assemblies when kick-out flashings or window sealants fail. In Georgia's humid climate, trapped moisture causes structural framing rot without visible surface signs. Non-invasive calibrated infrared thermal scanning identifies thermal evaporative cooling patterns where subsurface moisture exceeds 19% wood moisture equivalent.",
     "statisticalBenchmarks": {
       "riskMetric": "Over 85% of unsealed 1980s–90s EIFS homes develop concealed framing rot",
@@ -49,7 +49,7 @@
     "metaTitle": "Aluminum Wiring Inspection Atlanta GA | Electrical Fire Hazard",
     "metaDescription": "Specialized aluminum branch wiring electrical safety inspection in Metro Atlanta. Identify 1960s-70s aluminum wiring hazards and COPALUM remediation needs.",
     "icon": "⚡",
-    "badge": "Electrical Safety Audit",
+    "badge": "Electrical Safety Inspection",
     "blufSummary": "Single-strand aluminum branch circuit wiring installed in Georgia homes between 1965 and 1973 poses 55 times higher fire risk at outlet connections than copper (U.S. CPSC). Aluminum's high thermal expansion coefficient causes terminal screws to loosen, creating resistive micro-arcing and overheating behind switch plates.",
     "statisticalBenchmarks": {
       "riskMetric": "55x greater fire hazard at receptacle terminals vs. copper (U.S. CPSC)",
@@ -93,7 +93,7 @@
     "metaTitle": "FPE & Zinsco Electrical Panel Inspection Atlanta GA",
     "metaDescription": "Federal Pacific Stab-Lok and Zinsco electrical panel safety inspection in Metro Atlanta. Identify breaker failure risks and replacement requirements.",
     "icon": "🔥",
-    "badge": "Hazardous Panel Audit",
+    "badge": "Hazardous Panel Evaluation",
     "blufSummary": "Federal Pacific Electric (FPE) Stab-Lok and Zinsco circuit breaker panels fail to trip during electrical overloads at rates between 25% and 60% in independent testing (NJIT/IEEE). In Georgia, these obsolete panels represent an immediate hazard, voiding many homeowners insurance policies and risking structural fires.",
     "statisticalBenchmarks": {
       "riskMetric": "25% to 60% failure-to-trip rate under overcurrent conditions (Dr. J. Aronstein / IEEE)",
@@ -135,9 +135,9 @@
     "slug": "crawlspace-fungus-joist-rot-inspection",
     "title": "Crawlspace Moisture, Wood Rot & Fungus Inspection in Georgia",
     "metaTitle": "Atlanta Crawlspace Moisture & Joist Rot Inspection",
-    "metaDescription": "Crawlspace moisture, wood decay rot, and standing water inspection in Metro Atlanta. Thermal camera and moisture meter audit for floor framing integrity.",
+    "metaDescription": "Crawlspace moisture, wood decay rot, and standing water inspection in Metro Atlanta. Thermal camera and moisture meter evaluation for floor framing integrity.",
     "icon": "🪵",
-    "badge": "Crawlspace Safety Audit",
+    "badge": "Crawlspace Safety Inspection",
     "blufSummary": "In Georgia's Piedmont red clay region, unsealed crawlspaces trap ground water evaporation, raising wood moisture above 20%—the critical biological threshold where wood-decay fungi (Serpula lacrymans and Coniophora puteana) digest cellulose, causing floor joists to sag and subflooring to collapse.",
     "statisticalBenchmarks": {
       "riskMetric": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture decay threshold",
@@ -181,7 +181,7 @@
     "metaTitle": "Cracked Heat Exchanger HVAC Inspection Atlanta GA",
     "metaDescription": "HVAC gas furnace heat exchanger crack and carbon monoxide safety inspection in Metro Atlanta. Advanced diagnostic heating system evaluation.",
     "icon": "🔥",
-    "badge": "HVAC Safety Audit",
+    "badge": "HVAC Safety Inspection",
     "blufSummary": "Gas furnace heat exchangers older than 12–15 years in Metro Atlanta develop metal fatigue cracks along flame roll-out crimps. A cracked heat exchanger allows toxic combustion byproducts—specifically carbon monoxide (CO)—to enter the supply air ductwork, creating an immediate life-safety hazard.",
     "statisticalBenchmarks": {
       "riskMetric": "Furnaces >12 years old exhibit an exponentially higher rate of stress corrosion cracking",
@@ -225,11 +225,11 @@
     "metaTitle": "Roof Flashing & Chimney Leak Inspection Atlanta GA",
     "metaDescription": "Aerial drone and thermal imaging roof flashing leak inspection in Metro Atlanta. Identify chimney, valley, and penetration water intrusion.",
     "icon": "🏠",
-    "badge": "Roof & Envelope Audit",
+    "badge": "Roof & Envelope Evaluation",
     "blufSummary": "Over 80% of roof leaks in Metro Atlanta originate at flashing junctures (chimneys, valleys, plumbing boots, roof-to-wall intersections) rather than shingle failure. Unsealed flashings channel stormwater behind roof decking, rotting structural rafters and attic insulation undetected for years.",
     "statisticalBenchmarks": {
       "riskMetric": "80%+ of residential roof water leaks occur at flashing transitions (NRCA)",
-      "diagnosticThreshold": "Infrared Thermal evaporative delta ΔT ≥ 6.0°F in attic sheathing + aerial 4K drone audit",
+      "diagnosticThreshold": "Infrared Thermal evaporative delta ΔT ≥ 6.0°F in attic sheathing + aerial 4K drone evaluation",
       "authorityCitation": "National Roofing Contractors Association (NRCA) & IRC Section R905",
       "remediationCost": "$300 – $1,500 (Flashing retrofit) to $8,000+ (if decking is rotted)"
     },
@@ -269,7 +269,7 @@
     "metaTitle": "Polybutylene Pipe Inspection Atlanta GA | Quest Plumbing Hazard",
     "metaDescription": "Specialized polybutylene plumbing pipe inspection in Metro Atlanta. Identify brittle blue/gray Quest pipes, acetal fitting micro-fractures, and hidden leak risks.",
     "icon": "🚰",
-    "badge": "Plumbing Integrity Audit",
+    "badge": "Plumbing Integrity Evaluation",
     "blufSummary": "Polybutylene (commonly branded as Quest) is a flexible plastic plumbing pipe installed in millions of American homes built between 1978 and 1995. In Metro Atlanta, chlorine and oxidants in municipal drinking water react with polybutylene resin, causing microscopic structural flaking, brittle joint fractures, and sudden catastrophic water leaks inside walls and crawlspaces.",
     "statisticalBenchmarks": {
       "riskMetric": "Subject of $950M national class action settlement (Cox v. Shell Oil) due to widespread bursting",

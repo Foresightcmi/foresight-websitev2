@@ -95,10 +95,10 @@ export async function POST(req) {
 
     // 2. Real-Time Push Notification via ntfy.sh ($0 Cost)
     try {
-      const pushTitle = `$${amountTotal} PAID: ${clientName} (4-Hr Audit)`;
+      const pushTitle = `$${amountTotal} PAID: ${clientName} (4-Hr Evaluation)`;
       const pushLines = [
         `STRIPE PAYMENT CONFIRMED: $${amountTotal}`,
-        `Service: ${serviceType === 'outside-report-audit' ? '$99 Due Diligence Report Audit' : 'Inspection Deposit'}`,
+        `Service: ${serviceType === 'outside-report-audit' ? '$99 Due Diligence report evaluation' : 'Inspection Deposit'}`,
         `Client: ${clientName}`,
         `Phone: ${clientPhone}`,
         `Email: ${clientEmail}`,
@@ -139,14 +139,14 @@ export async function POST(req) {
         await transporter.sendMail({
           from: 'inspect@foresightcmi.com',
           to: 'inspect@foresightcmi.com, plsinspectnow@gmail.com',
-          subject: `[PAID $${amountTotal}] Due Diligence Audit Order - ${clientName}`,
+          subject: `[PAID $${amountTotal}] Due Diligence Evaluation Order - ${clientName}`,
           html: `
             <div style="font-family: Arial, sans-serif; padding: 24px; border: 2px solid #10B981; border-radius: 8px; background: #ffffff; max-width: 650px;">
               <div style="background: #10B981; color: #ffffff; padding: 12px 16px; border-radius: 6px 6px 0 0; margin: -24px -24px 20px -24px;">
                 <h2 style="margin: 0; font-size: 1.25rem;">Payment Confirmed • $${amountTotal}</h2>
                 <p style="margin: 4px 0 0; font-size: 0.85rem; opacity: 0.95;">Stripe Checkout Session: ${session.id}</p>
               </div>
-              <p>A new <strong>$99 Standalone Due Diligence Repair Cost Audit</strong> has been paid on Stripe. The 4-hour SLA delivery clock has started.</p>
+              <p>A new <strong>$99 Standalone Due Diligence Repair Cost Evaluation</strong> has been paid on Stripe. The 4-hour SLA delivery clock has started.</p>
               <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                 <tr><td style="padding: 8px; font-weight: bold; width: 140px; border-bottom: 1px solid #eee;">Client Name:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${escapeHtml(clientName)}</td></tr>
                 <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Phone:</td><td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="tel:${clientPhone}">${clientPhone}</a></td></tr>

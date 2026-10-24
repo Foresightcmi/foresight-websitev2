@@ -8,7 +8,7 @@ export default function QualityChecklist() {
     {
       id: 'cmi',
       label: 'Lead Inspector is a Certified Master Inspector® (CMI)',
-      description: 'The highest designation in North America, representing the top 2% of elite, audit-verified inspectors.',
+      description: 'The highest designation in North America, representing the top 2% of elite, board-verified inspectors.',
       foresight: 'Included (Christopher Boykin is a credentialed CMI®)',
       others: 'Not Included (Often rookie or uncertified solo operators)'
     },

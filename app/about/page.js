@@ -205,7 +205,7 @@ export default function About() {
                 In <strong>September 2024</strong>, Christopher earned the prestigious <strong>Certified Master Inspector (CMI)</strong> designation &mdash; the highest professional credential awarded by the Master Inspector Certification Board (top 3% of the industry). This distinction is reserved for inspectors who have completed at least 1,000 paid inspections or equivalent hours of verified education, maintain an impeccable professional record, and adhere strictly to the InterNACHI Standards of Practice, meaning you never have to gamble on your biggest investment.
               </p>
               <p style={{ marginBottom: '1.5rem', fontSize: '1.05rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
-                Christopher also holds the <strong>Certified Professional Inspector (CPI)</strong> credential, along with specialized designations as an <strong>InterNACHI® Certified New Construction Inspector</strong>, <strong>InterNACHI® Certified Moisture Intrusion Inspector</strong>, <strong>InterNACHI® Infrared Certified® Inspector</strong>, and <strong>InterNACHI® Certified 11th Month Warranty Inspector</strong> through InterNACHI, the International Association of Certified Home Inspectors &mdash; the world&rsquo;s largest home inspection organization. These specialized credentials provide rigorous technical oversight across foundation framing, pre-drywall audits, builder warranties, crawlspace moisture science, certified mold/air quality diagnostics, and building envelope thermal imaging.
+                Christopher also holds the <strong>Certified Professional Inspector (CPI)</strong> credential, along with specialized designations as an <strong>InterNACHI® Certified New Construction Inspector</strong>, <strong>InterNACHI® Certified Moisture Intrusion Inspector</strong>, <strong>InterNACHI® Infrared Certified® Inspector</strong>, and <strong>InterNACHI® Certified 11th Month Warranty Inspector</strong> through InterNACHI, the International Association of Certified Home Inspectors &mdash; the world&rsquo;s largest home inspection organization. These specialized credentials provide rigorous technical oversight across foundation framing, pre-drywall evaluations, builder warranties, crawlspace moisture science, certified mold/air quality diagnostics, and building envelope thermal imaging.
               </p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -238,7 +238,7 @@ export default function About() {
               <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>01</div>
               <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>Dual Coverage</h3>
               <p style={{ color: 'var(--color-gray-dark)' }}>
-                One inspector audits the roof, structure, and exterior while the second simultaneously reviews interior plumbing, electrical, and HVAC. Two sets of expert eyes dramatically reduce the chance of missed defects.
+                One inspector evaluates the roof, structure, and exterior while the second simultaneously reviews interior plumbing, electrical, and HVAC. Two sets of expert eyes dramatically reduce the chance of missed defects.
               </p>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
@@ -465,7 +465,7 @@ export default function About() {
               {
                 year: '2024',
                 title: 'InterNACHI® Certified New Construction & Moisture Intrusion Inspector',
-                description: 'Christopher Boykin achieves dual specialized certifications for phased new construction framing, IRC code compliance, pre-closing builder audits, and building envelope moisture intrusion diagnostics.',
+                description: 'Christopher Boykin achieves dual specialized certifications for phased new construction framing, IRC code compliance, pre-closing builder evaluations, and building envelope moisture intrusion diagnostics.',
                 highlight: true,
               },
               {
@@ -534,7 +534,7 @@ export default function About() {
             <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', marginBottom: '1rem' }}>Exclusive VIP Partnership</span>
             <h2 style={{ fontSize: '2.25rem', marginBottom: '1.5rem' }}>Free Utilities Plus Concierge Setup</h2>
             <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '2rem', maxWidth: '700px' }}>
-              We believe our job doesn't end when the inspection report is delivered. To make your move as seamless as possible, every Foresight client receives a complimentary VIP introduction to the <strong>Utilities Plus Concierge</strong> team. With one quick phone call, they'll find the best local rates and connect your power, water, gas, and high-speed internet. 
+              We believe our job doesn't end when the inspection report is delivered. To make your move as smooth as possible, every Foresight client receives a complimentary VIP introduction to the <strong>Utilities Plus Concierge</strong> team. With one quick phone call, they'll find the best local rates and connect your power, water, gas, and high-speed internet. 
             </p>
             <Link href="/free-utility-setup" className="btn btn-gold" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderRadius: 'var(--radius-md)' }}>
               Learn About This Free Perk ($150 Value)

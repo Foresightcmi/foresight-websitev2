@@ -18,7 +18,7 @@ export default function InstantAuditDelivery() {
         }
       }
     } catch (e) {
-      console.warn('Could not read audit data from localStorage:', e);
+      console.warn('Could not read evaluation data from localStorage:', e);
     }
   }, []);
 

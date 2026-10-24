@@ -113,7 +113,7 @@
     "priceDetails": "New construction inspections from $400+ based on square footage ($275+ Pre-Drywall)",
     "icon": "🏗️",
     "badge": "Builder Punch-List Ready",
-    "heroSub": "Don't assume a new home is defect-free. Municipal inspectors only spend 15 minutes on site. Our two-inspector team performs a multi-hour audit in {city}.",
+    "heroSub": "Don't assume a new home is defect-free. Municipal inspectors only spend 15 minutes on site. Our two-inspector team performs a multi-hour evaluation in {city}.",
     "overview": "Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in {city} frequently have major concealed defects. From missing attic insulation and improperly wired subpanels to unsealed roof flashings and reversed HVAC ducting, our independent two-inspector team evaluates every system in your new {city} build before final closing.",
     "standards": "Full multi-system evaluation covering structural framing, roof coverings, electrical subpanels, plumbing roughs, HVAC airflow balance, insulation depth, and exterior drainage against IRC and Georgia Residential Energy Code guidelines.",
     "equipment": "Calibrated infrared cameras, aerial inspection drones, circuit load testers, laser levels, and digital moisture meters.",
@@ -143,11 +143,11 @@
     "slug": "pool-inspection",
     "name": "Pool & Spa Inspection",
     "metaTitle": "{city}, GA Swimming Pool & Spa Inspection | $300 Flat",
-    "metaDescription": "4.8★ Certified swimming pool & spa inspection in {city}, GA ($300 flat rate). Pumps, heaters, pool chemical & GFCI electrical bonding audit. 24-hr report!",
+    "metaDescription": "4.8★ Certified swimming pool & spa inspection in {city}, GA ($300 flat rate). Pumps, heaters, pool chemical & GFCI electrical bonding Check. 24-hr report!",
     "price": "$300",
     "priceDetails": "$300 flat rate for residential pools & attached spas",
     "icon": "🏊‍♂️",
-    "badge": "Electrical & Safety Audit",
+    "badge": "Electrical & Safety Inspection",
     "heroSub": "Pool repairs can cost thousands in hidden pump, liner, or electrical failures. Protect your backyard oasis in {city} with a specialized pool evaluation.",
     "overview": "A residential swimming pool in {city} is both a luxury amenity and a complex mechanical facility. In partnership with certified pool specialist partners, our specialized pool and spa inspection evaluates the structural pool shell, plaster/liner condition, circulation pumps, filtration units, pool heaters, automated valve actuators, GFCI electrical bonding, and safety barrier compliance (fence latches and alarms).",
     "standards": "Evaluates equipment against APSP (Association of Pool & Spa Professionals) standards, NEC Article 680 electrical safety codes, and local Georgia barrier regulations.",
@@ -159,7 +159,7 @@
       },
       {
         "q": "Can a general home inspector in {city} inspect a pool?",
-        "a": "Most general home inspectors exclude pools entirely or perform only a cursory visual check. Foresight coordinates a dedicated, technical pool audit with certified pool specialist partners for specialized testing of high-voltage equipment and hydraulic pressure systems."
+        "a": "Most general home inspectors exclude pools entirely or perform only a cursory visual check. Foresight coordinates a dedicated, technical pool evaluation with certified pool specialist partners for specialized testing of high-voltage equipment and hydraulic pressure systems."
       },
       {
         "q": "How much does a pool inspection cost in {city}, GA?",
@@ -248,7 +248,7 @@
     "slug": "commercial-property-inspection",
     "name": "Commercial Property Inspection",
     "metaTitle": "Commercial Inspection {city}, GA | $750+ CMI Team",
-    "metaDescription": "4.8★ Commercial inspection & ASTM E2018 Property Condition Assessments in {city}, GA from $750+. 2-inspector CMI team, thermal drone roof & 3-phase HVAC audit!",
+    "metaDescription": "4.8★ Commercial inspection & ASTM E2018 Property Condition Assessments in {city}, GA from $750+. 2-inspector CMI team, thermal drone roof & 3-phase HVAC evaluation!",
     "price": "$750+",
     "priceDetails": "Custom quote based on square footage, use type, and mechanical complexity",
     "icon": "🏢",
@@ -282,12 +282,12 @@
   {
     "slug": "pre-drywall-inspection",
     "name": "Pre-Drywall Framing Inspection",
-    "metaTitle": "{city}, GA Pre-Drywall Inspection | $275+ Framing Audit",
-    "metaDescription": "4.8★ Independent pre-drywall inspections for new builds in {city}, GA from $275. 2 certified inspectors audit framing, rough plumbing, electrical & HVAC!",
+    "metaTitle": "{city}, GA Pre-Drywall Inspection | $275+ Framing Evaluation",
+    "metaDescription": "4.8★ Independent pre-drywall inspections for new builds in {city}, GA from $275. 2 certified inspectors evaluate framing, rough plumbing, electrical & HVAC!",
     "price": "$275+",
     "priceDetails": "$275 up to 1,500 sq ft | $300 for 1,501–2,500 sq ft | $350 for 2,501–3,500 sq ft | $400 for 3,501+ sq ft",
     "icon": "📐",
-    "badge": "Phase 2 Framing Audit",
+    "badge": "Phase 2 Framing Evaluation",
     "heroSub": "Drywall permanently hides structural, electrical, and plumbing defects. Inspect the bare bones of your new {city} home before walls are closed.",
     "overview": "Once drywall is hung, you can never see the structural skeleton of your home again. In {city}'s booming new construction subdivisions, framing crews rush through production builds. Our Certified Master Inspector team inspects load-bearing studs, engineered roof trusses, shear walls, foundation anchor bolts, and rough-in plumbing/electrical runs before sheetrock is installed.",
     "standards": "Evaluated against the International Residential Code (IRC), Georgia amendments, and manufacturer engineered truss specification sheets.",
@@ -299,7 +299,7 @@
       },
       {
         "q": "How much does a pre-drywall inspection cost in {city}, GA?",
-        "a": "Independent pre-drywall framing inspections in {city}, GA follow a transparent 4-tier rate: $275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, and $400 for 3,501+ sq ft. Every pre-drywall audit dispatches two certified inspectors and includes a builder-ready punch list delivered within 24 hours."
+        "a": "Independent pre-drywall framing inspections in {city}, GA follow a transparent 4-tier rate: $275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, and $400 for 3,501+ sq ft. Every pre-drywall evaluation dispatches two certified inspectors and includes a builder-ready punch list delivered within 24 hours."
       },
       {
         "q": "Will the builder allow an independent inspector for pre-drywall in {city}?",
@@ -317,15 +317,15 @@
   {
     "slug": "11-month-warranty-inspection",
     "name": "11-Month Builder Warranty Inspection",
-    "metaTitle": "{city}, GA 11-Month Warranty Inspection | $335+ Audit",
+    "metaTitle": "{city}, GA 11-Month Warranty Inspection | $335+ Evaluation",
     "metaDescription": "4.8★ Builder 11-month (eleven-month / eleventh-month) warranty home inspections in {city}, GA from $335. 2 certified inspectors, free thermal & drone scans!",
     "price": "$335+",
-    "priceDetails": "11-month warranty audits from $335+ based on home square footage",
+    "priceDetails": "11-month warranty evaluations from $335+ based on home square footage",
     "icon": "⏳",
     "badge": "One-Year Deadline",
     "heroSub": "Your builder's one-year warranty is about to expire. Uncover structural settlement, HVAC leaks, and roof flaws before the repair bill becomes yours in {city}.",
     "overview": "During the first year of living in a new home in {city}, seasonal temperature swings, foundation settling, and everyday living reveal hidden construction defects. Our 11-Month Builder Warranty Inspection (also known as an eleven-month or eleventh-month home warranty inspection) gives you an independent Certified Master Inspector report documenting code deficiencies, drywall nail pops, truss uplift, and drainage issues to submit directly to your builder for mandatory repairs before your 1-year builder warranty coverage ends.",
-    "standards": "Complete 1,600-point InterNACHI evaluation with thermal imaging, roof drone scans, and cosmetic/structural settlement audit.",
+    "standards": "Complete 1,600-point InterNACHI evaluation with thermal imaging, roof drone scans, and cosmetic/structural settlement evaluation.",
     "equipment": "Calibrated infrared cameras, roof drones, laser leveling devices, and circuit analyzers.",
     "faqs": [
       {

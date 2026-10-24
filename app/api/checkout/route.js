@@ -25,7 +25,7 @@ export async function POST(req) {
     ]);
     const origin = allowedOrigins.has(rawOrigin) ? rawOrigin : 'https://www.fhinspectionsatl.com';
 
-    // Log the audit intake lead locally for immediate dispatch
+    // Log the evaluation intake lead locally for immediate dispatch
     try {
       const leadsPath = path.join(process.cwd(), 'data', 'leads.json');
       let leads = [];
@@ -46,7 +46,7 @@ export async function POST(req) {
       });
       fs.writeFileSync(leadsPath, JSON.stringify(leads, null, 2));
     } catch (logErr) {
-      console.error('Error logging audit intake lead:', logErr);
+      console.error('Error logging evaluation intake lead:', logErr);
     }
 
     const stripeKey = process.env.STRIPE_SECRET_KEY;
@@ -55,7 +55,7 @@ export async function POST(req) {
       // Setup Mode: When Stripe key is awaiting configuration by the user
       return NextResponse.json({
         setupMode: true,
-        message: 'Stripe keys are pending live activation. Your audit request has been registered and our office will contact you immediately.',
+        message: 'Stripe keys are pending live activation. Your evaluation request has been registered and our office will contact you immediately.',
         contactPhone: '678-480-2110',
         directEmail: 'inspect@foresightcmi.com'
       });
@@ -65,7 +65,7 @@ export async function POST(req) {
 
     const isAudit = serviceType === 'outside-report-audit';
     const productName = isAudit
-      ? 'Foresight 4-Hour Due Diligence Repair Cost Audit'
+      ? 'Foresight 4-Hour Due Diligence Repair Cost Evaluation'
       : 'Foresight Home Inspection Service Deposit';
 
     const productDescription = isAudit

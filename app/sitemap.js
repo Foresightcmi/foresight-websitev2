@@ -133,7 +133,7 @@ export default async function sitemap() {
     }
   }
 
-  // 5. Dynamic Defect Audit Pages
+  // 5. Dynamic Defect Evaluation Pages
   const DEFECTS_FILE = path.join(process.cwd(), 'data', 'defects-pseo.json');
   if (fs.existsSync(DEFECTS_FILE)) {
     try {

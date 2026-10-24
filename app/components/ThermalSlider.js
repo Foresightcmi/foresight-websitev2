@@ -252,7 +252,7 @@ export default function ThermalSlider() {
       </div>
 
       <p style={{ color: '#CBD5E1', fontSize: '0.8rem', marginTop: '0.85rem', marginBottom: 0, textAlign: 'center' }}>
-        <strong>Included Free:</strong> While other Atlanta inspection firms charge $75–$150 extra for thermal scans or omit them entirely, Foresight includes full Infrared Thermal Imaging audits on every full home inspection.
+        <strong>Included Free:</strong> While other Atlanta inspection firms charge $75–$150 extra for thermal scans or omit them entirely, Foresight includes full Infrared Thermal Imaging evaluations on every full home inspection.
       </p>
     </div>
   );

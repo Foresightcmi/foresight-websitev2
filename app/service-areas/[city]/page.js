@@ -341,17 +341,17 @@ export default async function CityPage({ params }) {
       case 'Cobb': return "Cobb County's varied topography means properties are highly susceptible to foundation settlement and basement moisture intrusion. Our thermal imaging and structural expertise are specifically tailored to Cobb County terrain challenges.";
       case 'Cherokee': return "Cherokee County combines rapid residential growth with Lake Allatoona watershed conditions. We conduct thorough radon screenings and pre-drywall framing assessments across Woodstock and Canton.";
       case 'Forsyth': return "Forsyth County features many luxury lakefront properties and large-scale new constructions. We bring advanced drone technology and specialized knowledge of high-end systems required by Forsyth County building standards.";
-      case 'Henry': return "Henry County is South Metro Atlanta's premier growth engine. Our two-inspector teams systematically audit crawlspaces, roofs, HVAC units, and foundation settlement across McDonough and Stockbridge.";
+      case 'Henry': return "Henry County is South Metro Atlanta's premier growth engine. Our two-inspector teams systematically evaluate crawlspaces, roofs, HVAC units, and foundation settlement across McDonough and Stockbridge.";
       case 'Fayette': return "Fayette County is renowned for master-planned golf communities and custom estates. We deliver meticulous inspections evaluating private septic systems, roof integrity, and crawlspace moisture management in Peachtree City and Fayetteville.";
       case 'Clayton': return "Clayton County properties benefit from thorough checks of mid-century electrical panels, plumbing supply lines, and foundation stability. We help homebuyers in Forest Park, Jonesboro, Morrow, and Rex navigate older housing systems with confidence.";
       case 'Douglas': return "Douglas County's rolling West Metro terrain requires specialized inspection of hillside lot drainage, retaining walls, and crawlspace moisture across Douglasville and Lithia Springs.";
       case 'Coweta': return "Coweta County features historic Victorian homes in Newnan alongside modern equestrian estates. We inspect historic framing, electrical updates, and crawlspace humidity across Senoia and Newnan.";
       case 'Paulding': return "Paulding County is a high-velocity new construction hub. Our inspectors provide rigorous phase framing, pre-drywall checks, and 11-month builder warranty evaluations in Dallas and Hiram.";
-      case 'Rockdale': return "Rockdale County properties around Conyers benefit from comprehensive audits targeting granite bedrock radon risks, aging water heaters, and roof drainage lines.";
+      case 'Rockdale': return "Rockdale County properties around Conyers benefit from comprehensive evaluations targeting granite bedrock radon risks, aging water heaters, and roof drainage lines.";
       case 'Newton': return "Newton County blends historic Covington architecture with new developments. We provide specialized historic framing inspections and new construction punch list evaluations.";
       case 'Walton': return "Walton County blends rural acreages with suburban growth in Monroe and Loganville. We inspect private wells, septic drainage fields, and crawlspace moisture barriers.";
       case 'Hall': return "Hall County features scenic Lake Lanier shorelines and rapid Gainesville expansion. We inspect lakefront moisture intrusion, dock power safety, and new construction HVAC systems.";
-      case 'Barrow': return "Barrow County along Highway 316 features fast-paced residential construction. We audit framing alignments, foundation grading, and water heating systems in Winder and Auburn.";
+      case 'Barrow': return "Barrow County along Highway 316 features fast-paced residential construction. We evaluate framing alignments, foundation grading, and water heating systems in Winder and Auburn.";
       case 'Bartow': return "Bartow County's geological terrain around Cartersville calls for expert foundation inspections, sinkhole risk assessments, and older electrical panel safety checks.";
       case 'Carroll': return "Carroll County combines university neighborhoods in Carrollton with rural homesteads. We evaluate crawlspace floor joists, aging roof structures, and private septic systems.";
       case 'Spalding': return "Spalding County features historic Southern homes in Griffin. Foresight delivers thorough dual-inspector evaluations identifying vintage plumbing, electrical panels, and termite risks.";
@@ -542,7 +542,7 @@ export default async function CityPage({ params }) {
               </Link>
             </div>
             <p className="city-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
-              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, reducing on-site inspection time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary high-resolution infrared thermal imaging, aerial roof drone audits, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
+              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, reducing on-site inspection time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary high-resolution infrared thermal imaging, aerial roof drone evaluations, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.15rem' }}>
               <div><strong>Standard:</strong> 2 Certified Inspectors</div>
@@ -938,7 +938,7 @@ export default async function CityPage({ params }) {
             <Link href={`/services/pool-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[POOL]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pool &amp; Spa Evaluation</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Safety barrier, pump, filter, heater, and electrical bonding audits in {cityName}.</p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Safety barrier, pump, filter, heater, and electrical bonding Checks in {cityName}.</p>
             </Link>
             <Link href={`/services/new-construction-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[REPAIR]</div>
@@ -948,7 +948,7 @@ export default async function CityPage({ params }) {
             <Link href={`/services/pre-drywall-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[STRUCTURE]</div>
               <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pre-Drywall Framing</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Load-bearing studs, trusses, rough-in plumbing, HVAC, and wiring audit in {cityName}.</p>
+              <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Load-bearing studs, trusses, rough-in plumbing, HVAC, and wiring evaluation in {cityName}.</p>
             </Link>
             <Link href={`/services/11-month-warranty-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[WARRANTY]</div>
@@ -962,7 +962,7 @@ export default async function CityPage({ params }) {
             </Link>
             <Link href={`/services/pre-listing-inspection/${slug}`} className="card card-premium" style={{ textDecoration: 'none', color: 'inherit', padding: '1.5rem', borderTop: '4px solid var(--color-red)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[COMPLIANCE]</div>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pre-Listing Seller Audit</h3>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem', color: 'var(--color-dark)' }}>Pre-Listing Seller Inspection</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0 }}>Uncover repair issues before listing your {cityName} home to protect equity and speed closing.</p>
             </Link>
           </div>
@@ -1058,7 +1058,7 @@ export default async function CityPage({ params }) {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 <li>
                   <Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
-                    &rarr; Stucco (EIFS) Moisture Intrusion Audit
+                    &rarr; Stucco (EIFS) Moisture Intrusion Inspection
                   </Link>
                 </li>
                 <li>
@@ -1091,7 +1091,7 @@ export default async function CityPage({ params }) {
                 </li>
                 <li>
                   <Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
-                    &rarr; 11-Month Warranty Audit vs. Builder Walkthrough
+                    &rarr; 11-Month Warranty Inspection vs. Builder Walkthrough
                   </Link>
                 </li>
                 <li>

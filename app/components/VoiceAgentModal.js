@@ -2762,7 +2762,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             + Pool ($300)
           </button>
           <button
-            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Audit', 395)}
+            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Inspection', 395)}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',

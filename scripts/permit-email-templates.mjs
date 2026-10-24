@@ -89,7 +89,7 @@ export function buildConstructionEmail(lead) {
 
 My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the new construction residential permit on file for ${addr} and wanted to reach out with a quick introduction.
 
-While municipal building inspectors complete standard code inspections, many new-build buyers and custom homeowners bring in an independent Certified Master Inspector for an in-depth evaluation at each phase of construction. Our most impactful service during active framing is a Pre-Drywall Framing & Mechanical Audit—examining structural framing, load paths, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.
+While municipal building inspectors complete standard code inspections, many new-build buyers and custom homeowners bring in an independent Certified Master Inspector for an in-depth evaluation at each phase of construction. Our most impactful service during active framing is a Pre-Drywall Framing & Mechanical Evaluation—examining structural framing, load paths, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.
 
 What sets our process apart:
 • Two Certified Inspectors on every inspection for complete coverage
@@ -120,7 +120,7 @@ ${disclosureText(agencyName)}`;
   const html = wrapHtml(`
     <p style="margin:0 0 14px;">${esc(greeting)},</p>
     <p style="margin:0 0 14px;">My name is Christopher Boykin, and I am the lead Certified Master Inspector at Foresight Home Inspections, based in Metro Atlanta. I noticed the new construction residential permit on file for <strong>${esc(addr)}</strong> and wanted to reach out with a quick introduction.</p>
-    <p style="margin:0 0 14px;">While municipal building inspectors complete standard code inspections, many new-build buyers and custom homeowners bring in an independent Certified Master Inspector for an in-depth evaluation at each phase of construction. Our most impactful service during active framing is a <strong>Pre-Drywall Framing &amp; Mechanical Audit</strong>—examining structural framing, load paths, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.</p>
+    <p style="margin:0 0 14px;">While municipal building inspectors complete standard code inspections, many new-build buyers and custom homeowners bring in an independent Certified Master Inspector for an in-depth evaluation at each phase of construction. Our most impactful service during active framing is a <strong>Pre-Drywall Framing &amp; Mechanical Evaluation</strong>—examining structural framing, load paths, rough plumbing, electrical runs, and HVAC ductwork while they are still fully visible, before insulation and drywall conceal them.</p>
     <p style="margin:0 0 6px;"><strong>What sets our process apart:</strong></p>
     <ul style="margin:0 0 14px;padding-left:20px;">
       <li><strong>Two Certified Inspectors</strong> on every inspection for complete coverage</li>

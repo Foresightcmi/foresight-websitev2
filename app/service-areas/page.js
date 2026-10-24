@@ -120,7 +120,7 @@ export default function ServiceAreasDirectory() {
 
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-red)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[NEW BUILD]</div>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>New Construction Audits</h3>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>New Construction Inspections</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 Independent builder punch-list inspections for pre-drywall and final phase.
               </p>
@@ -142,12 +142,12 @@ export default function ServiceAreasDirectory() {
 
             <div className="card" style={{ padding: '1.5rem', borderLeft: '4px solid var(--color-dark)' }}>
               <div className="font-mono text-xs font-bold text-primary mb-2">[PRE-LIST]</div>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Pre-Listing Seller Audits</h3>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Pre-Listing Seller Inspections</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', marginBottom: '1rem' }}>
                 Identify defects before hitting MLS to protect asking price and speed closing.
               </p>
               <Link href="/services/pre-listing-inspection/marietta" style={{ color: 'var(--color-red)', fontWeight: 600, fontSize: '0.875rem' }}>
-                View Marietta Pre-Listing Audits &rarr;
+                View Marietta Pre-Listing Inspections &rarr;
               </Link>
             </div>
           </div>

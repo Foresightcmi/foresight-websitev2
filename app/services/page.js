@@ -67,8 +67,8 @@ export default function Services() {
       title: 'New Construction Inspections',
       price: 'From $275',
       priceNote: 'Pre-Drywall From $275 | Final Move-In From $400',
-      description: 'Independent third-party quality assurance for your newly built home. We collaborate professionally with site superintendents to perform structural pre-drywall audits and comprehensive final move-in inspections.',
-      details: ['InterNACHI® Certified New Construction Inspector', 'Pre-drywall framing & mechanical audit', 'Final phase move-in inspection', 'Objective builder punch list', 'Workmanship & code-reference review'],
+      description: 'Independent third-party quality assurance for your newly built home. We collaborate professionally with site superintendents to perform structural pre-drywall evaluations and comprehensive final move-in inspections.',
+      details: ['InterNACHI® Certified New Construction Inspector', 'Pre-drywall framing & mechanical evaluation', 'Final phase move-in inspection', 'Objective builder punch list', 'Workmanship & code-reference review'],
       image: '/images/drone-2.png',
       slug: 'why-you-need-home-inspection-new-build',
       serviceSlug: 'new-construction-inspection',
@@ -79,7 +79,7 @@ export default function Services() {
         videoSrc: '/videos/services/new-construction.mp4',
         poster: '/images/services/new-construction-poster.webp',
         takeaways: [
-          'Pre-drywall framing and rough-in audit to catch plumbing/electrical issues before walls close.',
+          'Pre-drywall framing and rough-in evaluation to catch plumbing/electrical issues before walls close.',
           'Final move-in inspection validating HVAC balance, envelope seal, and code compliance.',
           'Objective, photo-documented builder punch list formatted for superintendent sign-off.'
         ]
@@ -138,7 +138,7 @@ export default function Services() {
       briefing: {
         title: 'Sewer Scope Inspections',
         duration: '36-Sec Briefing',
-        tagline: 'High-Definition Video Audit of Main Underground Lateral Line',
+        tagline: 'High-Definition Video Inspection of Main Underground Lateral Line',
         videoSrc: '/videos/services/sewer-scope.mp4',
         poster: '/images/services/sewer-scope-poster.webp',
         takeaways: [
@@ -215,28 +215,28 @@ export default function Services() {
       price: 'From $395',
       priceNote: 'Airbnb & VRBO Safety & County Code Compliance',
       description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, egress clearances, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
-      details: ['Life-safety & egress clearance audit', 'High-occupancy mechanical load check', 'Thermal imaging of electrical & HVAC', 'Municipal STR compliance checklist support'],
+      details: ['Life-safety & egress clearance evaluation', 'High-occupancy mechanical load check', 'Thermal imaging of electrical & HVAC', 'Municipal STR compliance checklist support'],
       image: '/images/luxury-home.jpg',
       serviceSlug: 'str-short-term-rental-inspection',
       briefing: {
         title: 'Short-Term Rental (STR) Inspection',
         duration: '30-Sec Briefing',
-        tagline: 'Life-Safety, Mechanical Capacity & Municipal Compliance Audits',
+        tagline: 'Life-Safety, Mechanical Capacity & Municipal Compliance Inspections',
         videoSrc: '/videos/services/short-term-rental.mp4',
         poster: '/images/services/short-term-rental-poster.webp',
         takeaways: [
           'Pre-screens properties against Metro Atlanta city and county STR regulations.',
           'Evaluates smoke/CO interconnected detectors, egress routes, and handrail code compliance.',
-          'Delivers an investor-ready safety audit documentation package within 24 hours.'
+          'Delivers an investor-ready safety Inspection documentation package within 24 hours.'
         ]
       }
     },
     {
       title: 'Contractor Repair Cost & Pricing Estimates',
       price: '$99',
-      priceNote: 'Optional Inspection Add-On or Standalone Outside Report Audit',
+      priceNote: 'Optional Inspection Add-On or Standalone Outside Report Review',
       description: 'Standard home inspections are diagnostic only per InterNACHI Standards of Practice. When requested, Foresight provides empirical contractor repair cost estimates and trade schedules (regional Metro Atlanta contractor data) formatted for standard Georgia repair amendment negotiation.',
-      details: ['Trade labor ($95–$165/hr) & materials breakdowns', 'Sample Georgia repair amendment language', 'Available as $99 add-on for Foresight clients', 'Available as $99 standalone audit for outside reports'],
+      details: ['Trade labor ($95–$165/hr) & materials breakdowns', 'Sample Georgia repair amendment language', 'Available as $99 add-on for Foresight clients', 'Available as $99 standalone evaluation for outside reports'],
       image: '/images/ac-pic.png',
       slug: 'repair-credit-calculator',
       briefing: {
@@ -292,8 +292,8 @@ export default function Services() {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "250.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety audits, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "395.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for Georgia repair amendment negotiation. Available as $99 add-on or standalone outside audit." }, "price": "99.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety Inspections, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "395.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for Georgia repair amendment negotiation. Available as $99 add-on or standalone outside evaluation." }, "price": "99.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" }
       ]
     }
   };
@@ -623,7 +623,7 @@ export default function Services() {
             <span className="badge" style={{ marginBottom: '1rem' }}>Metro Atlanta Short-Term Rental (STR) Support</span>
             <h2>Short-Term Rental (STR) Compliance Assist</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '800px', margin: '1rem auto 0', fontSize: '1.1rem', lineHeight: 1.6 }}>
-              Surrounding counties and cities across the Metro Atlanta area (including DeKalb, Fulton, Gwinnett, Cobb, and more) are requiring active compliance inspections for short-term rental (STR) operators on Airbnb and Vrbo. Since every county features unique local ordinances, zoning requirements, and safety checklists, Foresight provides standard third-party safety audits starting at our base rate to ensure your property remains active and compliant.
+              Surrounding counties and cities across the Metro Atlanta area (including DeKalb, Fulton, Gwinnett, Cobb, and more) are requiring active compliance inspections for short-term rental (STR) operators on Airbnb and Vrbo. Since every county features unique local ordinances, zoning requirements, and safety checklists, Foresight provides standard third-party safety Inspections starting at our base rate to ensure your property remains active and compliant.
             </p>
           </div>
 
@@ -662,7 +662,7 @@ export default function Services() {
                   Estimate Short-Term Rental (STR) Price
                 </Link>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.75rem 2rem', color: 'var(--color-red)', borderColor: 'var(--color-red)' }}>
-                  Schedule Audit
+                  Schedule Inspection
                 </a>
                 <Link href="/blog/metro-atlanta-short-term-rental-str-compliance-assist" className="btn btn-outline" style={{ padding: '0.75rem 2rem' }}>
                   Read STR Guide
@@ -818,7 +818,7 @@ export default function Services() {
             <span className="badge" style={{ marginBottom: '1rem' }}>Foresight Client & Agent Perks</span>
             <h2>Added Value & Realtor Conveniences</h2>
             <p style={{ color: 'var(--color-gray-dark)', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.1rem' }}>
-              We partner with elite service providers and equip our inspectors with the right tools to make every transaction seamless.
+              We partner with elite service providers and equip our inspectors with the right tools to make every transaction smooth.
             </p>
           </div>
 
@@ -838,7 +838,7 @@ export default function Services() {
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontWeight: 700 }}>Complimentary Utility Concierge Service</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '0.975rem', lineHeight: 1.6 }}>
-                  Moving is stressful enough. That's why every Foresight Home Inspection includes an exclusive partnership with <a href="https://utilities-plus.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'underline' }}>Utilities Plus</a>. Once your inspection is booked and paid for, you'll receive a VIP email introduction to their concierge team. With one phone call, their experts will help you find the best rates and seamlessly set up your electricity, water, gas, internet, and home security at no further charge (with an easy opt-out if you prefer to handle utilities yourself).
+                  Moving is stressful enough. That's why every Foresight Home Inspection includes an exclusive partnership with <a href="https://utilities-plus.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'underline' }}>Utilities Plus</a>. Once your inspection is booked and paid for, you'll receive a VIP email introduction to their concierge team. With one phone call, their experts will help you find the best rates and smoothly set up your electricity, water, gas, internet, and home security at no further charge (with an easy opt-out if you prefer to handle utilities yourself).
                 </p>
               </div>
             </div>

@@ -337,7 +337,7 @@ export default function SouthFultonRentalCompliancePage() {
                   fontSize: '1.05rem',
                 }}
               >
-                Foresight Home Inspections delivers fast, reliable compliance evaluations tailored specifically to South Fulton’s checklist. Led by Certified Master Inspector Christopher Boykin, our team identifies any potential violations before they become municipal code enforcement citations, ensuring full regulatory compliance and seamless tenant move-ins.
+                Foresight Home Inspections delivers fast, reliable compliance evaluations tailored specifically to South Fulton’s checklist. Led by Certified Master Inspector Christopher Boykin, our team identifies any potential violations before they become municipal code enforcement citations, ensuring full regulatory compliance and smooth tenant move-ins.
               </p>
 
               <div
@@ -444,7 +444,7 @@ export default function SouthFultonRentalCompliancePage() {
                 marginBottom: '1rem',
               }}
             >
-              Comprehensive 6-Point Habitability & Safety Audit
+              Comprehensive 6-Point Habitability & Safety Inspection
             </h2>
             <p style={{ color: 'var(--color-gray)', fontSize: '1.05rem', lineHeight: 1.7 }}>
               Our Certified Master Inspector dual-inspector teams thoroughly evaluate every system so your property passes municipal licensing on the first try.

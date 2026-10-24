@@ -576,9 +576,9 @@ export default async function CountyPage({ params }) {
             </h2>
             <div className="grid grid-2" style={{ gap: '1.25rem' }}>
               <div className="card" style={{ background: '#f8fafc', padding: '1.5rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
-                <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>Common Defect Audits</h3>
+                <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>Common Defect Evaluations</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li><Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Stucco (EIFS) Moisture Intrusion Audit</Link></li>
+                  <li><Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Stucco (EIFS) Moisture Intrusion Inspection</Link></li>
                   <li><Link href="/defects/polybutylene-pipe-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Polybutylene Plumbing Pipe Risk Guide</Link></li>
                   <li><Link href="/defects/foundation-crack-settlement-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Georgia Red Clay Foundation Settling Guide</Link></li>
                 </ul>
@@ -588,7 +588,7 @@ export default async function CountyPage({ params }) {
                 <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>Decision Frameworks</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Two-Inspector Team vs. Single Solo Inspector</Link></li>
-                  <li><Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; 11-Month Warranty Audit vs. Builder Walkthrough</Link></li>
+                  <li><Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; 11-Month Warranty Inspection vs. Builder Walkthrough</Link></li>
                   <li><Link href="/compare/thermal-imaging-vs-standard-visual-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Infrared Thermal Scans vs. Visual Inspection</Link></li>
                 </ul>
               </div>

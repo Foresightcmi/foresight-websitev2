@@ -22,7 +22,7 @@ export const SERVICE_VIDEOS = [
     serviceHref: '/services/new-construction-inspection',
     startingPrice: 'From $275 (Pre-Drywall) / From $400 (Final)',
     takeaways: [
-      'Phase 1 Pre-Drywall Rough-In Inspection (from $275) audits load-bearing framing, shear walls, PEX plumbing manifolds, HVAC ductwork, and rough electrical wiring before insulation and drywall conceal defects.',
+      'Phase 1 Pre-Drywall Rough-In Inspection (from $275) evaluates load-bearing framing, shear walls, PEX plumbing manifolds, HVAC ductwork, and rough electrical wiring before insulation and drywall conceal defects.',
       'Phase 2 Final Walkthrough Inspection (from $400) deploys two certified inspectors with calibrated infrared thermal cameras and 4K aerial drones to verify full mechanical, roof, and structural completion prior to closing.',
       'Backed by our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI® $25,000 Honor Guarantee.'
     ]
@@ -99,7 +99,7 @@ export const SERVICE_VIDEOS = [
     startingPrice: '$125 ($165 Crawlspace)',
     takeaways: [
       'Provides the Official Georgia Wood Infestation Inspection Report required by mortgage lenders for VA, FHA, and conventional real estate closings ($125 slab/basement; $165 crawlspace).',
-      'Audits foundation stem walls, sill plates, rim joists, subfloor framing, and exterior earth-to-wood contact zones for Eastern Subterranean Termite mud tubes.',
+      'evaluates foundation stem walls, sill plates, rim joists, subfloor framing, and exterior earth-to-wood contact zones for Eastern Subterranean Termite mud tubes.',
       'Identifies active infestations, conducive moisture conditions, and structural wood-decay fungus.'
     ]
   },
@@ -155,7 +155,7 @@ export const SERVICE_VIDEOS = [
     serviceHref: '/services',
     startingPrice: '$595 Flat Rate',
     takeaways: [
-      'Complete municipal STR life-safety and building code audit for Atlanta, Fulton, DeKalb, and Metro Atlanta hosts (starts at $395).',
+      'Complete municipal STR life-safety and building code evaluation for Atlanta, Fulton, DeKalb, and Metro Atlanta hosts (starts at $395).',
       'Verifies interconnected smoke and carbon monoxide alarms, bedroom emergency egress window dimensions, fire extinguisher mounting, GFCI/AFCI protection, and deck load safety.',
       'Includes a stamped Certified Master Inspector® (CMI®) Compliance Affidavit delivered within 24 hours.'
     ]

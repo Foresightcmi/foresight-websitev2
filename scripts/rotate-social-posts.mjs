@@ -25,7 +25,7 @@ In real estate, your due diligence window is strictly ticking, and your time is 
 
 That’s why Foresight Home Inspections deploys Two Certified Inspectors on Every Single Job:
 
-👥 Double the Scrutiny: One inspector thoroughly evaluates the roof, exterior grading, foundation, and crawlspace, while the second audits electrical panels, mechanicals, plumbing fixtures, and attic insulation simultaneously.
+👥 Double the Scrutiny: One inspector thoroughly evaluates the roof, exterior grading, foundation, and crawlspace, while the second evaluates electrical panels, mechanicals, plumbing fixtures, and attic insulation simultaneously.
 ⚡ Half the On-Site Time: Comprehensive 1,600-point InterNACHI SOP evaluations completed in 1.5 to 2.5 hours—with same-day digital reporting.
 🔥 infrared thermal Infrared & 4K Aerial Drones Included FREE: Zero extra fees for the advanced diagnostic technology that protects your investment.
 🛡️ Up to $35,000 in Warranty Protection: Every full inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI’s $25,000 Honor Guarantee.

@@ -96,7 +96,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing (starts at $450), 48-hour continuous electronic radon testing ($250), fiber-optic sewer scope camera audits ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
+              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing (starts at $450), 48-hour continuous electronic radon testing ($250), fiber-optic sewer scope camera Inspections ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
             }
           },
           {
@@ -128,7 +128,7 @@ export default function Home() {
             "name": "Can I get an itemized contractor repair cost estimate for inspection defects?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller credit negotiations. It is available as a $99 add-on to any Foresight inspection or as a standalone $99 audit for outside inspection reports."
+              "text": "Yes. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller credit negotiations. It is available as a $99 add-on to any Foresight inspection or as a standalone $99 evaluation for outside inspection reports."
             }
           }
         ]
@@ -366,7 +366,7 @@ export default function Home() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div style={{ background: '#0F172A', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: 'var(--radius-md)', padding: '1.75rem' }}>
                 <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  What You Will See In This Field Audit
+                  What You Will See In This Field Inspection
                 </span>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '1rem 0 0 0', display: 'flex', flexDirection: 'column', gap: '0.9rem', color: '#E2E8F0', fontSize: '0.95rem' }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
@@ -423,7 +423,7 @@ export default function Home() {
                     textUnderlineOffset: '3px'
                   }}
                 >
-                  Open Dedicated Watch Page &amp; Full Audit Transcript →
+                  Open Dedicated Watch Page &amp; Full Inspection Transcript →
                 </Link>
               </div>
             </div>
@@ -540,7 +540,7 @@ export default function Home() {
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> Optional $99 add-on to any Foresight inspection
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Available as a standalone $99 audit for outside reports
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Available as a standalone $99 evaluation for outside reports
                 </span>
               </div>
             </div>
@@ -1007,7 +1007,7 @@ export default function Home() {
               },
               {
                 q: "Can I get an itemized repair cost estimate for contractor repairs?",
-                a: "Yes. While standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair estimates by default), Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate if you choose to add it. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller repair credit negotiations. It is also available as a standalone 4-hour audit for buyers who hired an outside inspection company."
+                a: "Yes. While standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair estimates by default), Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate if you choose to add it. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller repair credit negotiations. It is also available as a standalone 4-hour evaluation for buyers who hired an outside inspection company."
               }
             ]}
           />

@@ -145,7 +145,7 @@ export default function HomeVideoPlayer() {
                   border: '1px solid rgba(255,255,255,0.15)',
                 }}
               >
-                Watch Field Audit (1:19)
+                Watch Field Inspection (1:19)
               </span>
             </div>
 

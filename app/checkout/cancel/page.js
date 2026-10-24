@@ -50,7 +50,7 @@ export default function CheckoutCancelPage() {
               textDecoration: 'none'
             }}
           >
-            Try Again ($99 Audit)
+            Try Again ($99 Evaluation)
           </Link>
           <Link
             href="/quote"

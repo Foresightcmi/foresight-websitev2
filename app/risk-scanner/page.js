@@ -21,7 +21,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/risk-scanner` },
   openGraph: {
     title: 'Georgia Property Risk & Age Diagnostic Scanner | Foresight Home Inspections',
-    description: 'Instant building science diagnostic audit. Enter year built, foundation, and county to uncover hidden electrical, plumbing, radon, and structural risks before closing.',
+    description: 'Instant building science diagnostic Evaluation. Enter year built, foundation, and county to uncover hidden electrical, plumbing, radon, and structural risks before closing.',
     url: `${SITE_URL}/risk-scanner`,
     type: 'website',
   },
@@ -69,7 +69,7 @@ const scannerFaqSchema = {
       name: 'How does Foresight evaluate newly constructed homes built in 2024 to 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Field data indicates that over 82% of structural framing alterations, improperly notched load-bearing headers, detached attic HVAC ducts, and unglued plumbing lines occur during new construction. Because county code officials spend only 10 to 15 minutes per site, Foresight dispatches two Certified Master Inspectors to conduct comprehensive multi-hour pre-drywall framing audits and pre-closing final inspections.'
+        text: 'Field data indicates that over 82% of structural framing alterations, improperly notched load-bearing headers, detached attic HVAC ducts, and unglued plumbing lines occur during new construction. Because county code officials spend only 10 to 15 minutes per site, Foresight dispatches two Certified Master Inspectors to conduct comprehensive multi-hour pre-drywall framing evaluations and pre-closing final inspections.'
       },
     },
   ],

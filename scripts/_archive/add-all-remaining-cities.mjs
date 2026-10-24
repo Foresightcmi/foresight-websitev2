@@ -25,7 +25,7 @@ const remainingCities = [
     "Type": "rural",
     "Desc": "a serene, wooded lakeside enclave characterized by rustic cottages and custom cabin-style architecture",
     "Risks": "topography challenges causing active foundation drainage strain, structural shifting, and elevated wood rot due to dense tree cover",
-    "Services": "Lakeside home structural audits, slope-stability assessments, chimney and wood-stove safety checks"
+    "Services": "Lakeside home structural evaluations, slope-stability assessments, chimney and wood-stove safety checks"
   },
   {
     "City Name": "East Point",
@@ -35,7 +35,7 @@ const remainingCities = [
     "Type": "historic",
     "Desc": "a historic community featuring a rich collection of craftsman bungalows and mid-century cottages near downtown Atlanta",
     "Risks": "aging knob-and-tube or legacy wiring, outdated galvanized piping, and crawlspace moisture problems leading to active wood decay",
-    "Services": "Craftsman bungalow preservation audits, comprehensive plumbing line scopes, legacy wiring safety reviews"
+    "Services": "Craftsman bungalow preservation evaluations, comprehensive plumbing line scopes, legacy wiring safety reviews"
   },
   {
     "City Name": "College Park",
@@ -45,7 +45,7 @@ const remainingCities = [
     "Type": "historic",
     "Desc": "a historic city boasting one of Georgia's largest historic residential districts with beautiful craftsman and Victorian homes",
     "Risks": "settling foundation piers, structural sagging, outdated electrical panels, and aged sewer lines prone to tree root intrusions",
-    "Services": "Historic district structural audits, full sewer lateral scoping, legacy mechanical systems testing"
+    "Services": "Historic district structural evaluations, full sewer lateral scoping, legacy mechanical systems testing"
   },
   {
     "City Name": "Hapeville",
@@ -75,7 +75,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "a historic yet expanding suburb characterized by stable neighborhoods and master-planned residential growth",
     "Risks": "soil settling affecting foundation block walls, roof shingle weather damage, and attic moisture from poor soffit ventilation",
-    "Services": "Foundation stability audits, roof and attic ventilation checks, 11-month builder warranty inspections"
+    "Services": "Foundation stability evaluations, roof and attic ventilation checks, 11-month builder warranty inspections"
   },
   {
     "City Name": "Palmetto",
@@ -85,7 +85,7 @@ const remainingCities = [
     "Type": "rural",
     "Desc": "a peaceful rural-suburban enclave with acreage lots, older ranch homes, and agricultural properties",
     "Risks": "aging well-water pump systems, wood rot along deck supports, and crawlspace framing insects wood-destroying infestations",
-    "Services": "Crawlspace structural audits, acreage property reviews, termite WDO inspection reports"
+    "Services": "Crawlspace structural evaluations, acreage property reviews, termite WDO inspection reports"
   },
   {
     "City Name": "South Fulton",
@@ -95,7 +95,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "a major newly incorporated suburban city with extensive master-planned communities and modern developments",
     "Risks": "builder oversights on newer residential models, incomplete attic insulation coverage, and localized erosion affecting lot grading",
-    "Services": "Pre-drywall inspections, final warranty reviews, extensive master-planned residential audits"
+    "Services": "Pre-drywall inspections, final warranty reviews, extensive master-planned residential evaluations"
   },
   {
     "City Name": "Chattahoochee Hills",
@@ -105,7 +105,7 @@ const remainingCities = [
     "Type": "luxury",
     "Desc": "a unique eco-conscious luxury and equestrian community bordered by the Chattahoochee River",
     "Risks": "custom green-building mechanical systems, river-proximity high humidity, and structural grading issues on varied topography",
-    "Services": "Eco-home systems audits, green-building insulation inspections, equestrian structure checks"
+    "Services": "Eco-home systems Evaluations, green-building insulation inspections, equestrian structure checks"
   },
 
   // --- DEKALB COUNTY ---
@@ -127,7 +127,7 @@ const remainingCities = [
     "Type": "rural",
     "Desc": "a charming, artistic lakeside enclave known for its ecological focus and historic cottage architecture",
     "Risks": "elevated moisture profiles near foundation piers, sloping site runoff erosion, and legacy plumbing updates challenges",
-    "Services": "Lakeside structural audits, crawlspace moisture reviews, legacy cottage plumbing checks"
+    "Services": "Lakeside structural evaluations, crawlspace moisture reviews, legacy cottage plumbing checks"
   },
 
   // --- COBB COUNTY ---
@@ -139,7 +139,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "an established Cobb County suburb showing rapid residential growth and beautiful parks",
     "Risks": "rushed roof framing in newer subdivisions, foundation settling in shifting clay, and aging HVAC components",
-    "Services": "Subdivision structural inspections, roof framing checks, 11-month builder warranty audits"
+    "Services": "Subdivision structural inspections, roof framing checks, 11-month builder warranty evaluations"
   },
   {
     "City Name": "Austell",
@@ -149,7 +149,7 @@ const remainingCities = [
     "Type": "historic",
     "Desc": "a historic rail town featuring classic craftsman bungalows and mature residential neighborhoods",
     "Risks": "crawlspace wood decay from moisture pooling, outdated wiring infrastructure, and active soil erosion around foundation walls",
-    "Services": "Historic rail home structural checks, crawlspace encapsulation audits, legacy wiring updates assessments"
+    "Services": "Historic rail home structural checks, crawlspace encapsulation evaluations, legacy wiring updates assessments"
   },
 
   // --- GWINNETT COUNTY ---
@@ -161,7 +161,7 @@ const remainingCities = [
     "Type": "luxury",
     "Desc": "an award-winning planned suburb renowned for its executive properties and luxury developments",
     "Risks": "high-end dual mechanical systems complex configurations, attic ventilation imbalances, and retaining wall structural shifts",
-    "Services": "Executive planned home inspections, luxury mechanicals audits, landscape retaining walls reviews"
+    "Services": "Executive planned home inspections, luxury mechanicals evaluations, landscape retaining walls reviews"
   },
   {
     "City Name": "Buford",
@@ -181,7 +181,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "a rapidly developing suburb with massive new subdivision projects and a growing family community",
     "Risks": "new build construction defects, incomplete structural flashing around windows, and attic insulation gaps",
-    "Services": "New subdivision inspections, window/envelope flashing reviews, attic thermal performance audits"
+    "Services": "New subdivision inspections, window/envelope flashing reviews, attic thermal performance evaluations"
   },
   {
     "City Name": "Peachtree Corners",
@@ -191,7 +191,7 @@ const remainingCities = [
     "Type": "luxury",
     "Desc": "a premier, master-planned technology city showcasing custom upscale homes and sleek smart-home layouts",
     "Risks": "smart HVAC automation systems configuration, custom luxury finish durability, and crawlspace humidity control issues",
-    "Services": "Smart-home mechanical inspections, crawlspace humidity diagnostics, luxury structural audits"
+    "Services": "Smart-home mechanical inspections, crawlspace humidity diagnostics, luxury structural evaluations"
   },
   {
     "City Name": "Berkeley Lake",
@@ -201,7 +201,7 @@ const remainingCities = [
     "Type": "luxury",
     "Desc": "a peaceful, highly affluent lakeside retreat featuring custom-designed luxury estates around Lake Berkeley",
     "Risks": "lakeside high-moisture framing wood decay, retaining walls structural degradation, and complex custom foundation engineering reviews",
-    "Services": "Lakeside custom estate audits, landscape structural reviews, moisture thermal-scanning mappings"
+    "Services": "Lakeside custom estate evaluations, landscape structural reviews, moisture thermal-scanning mappings"
   },
 
   // --- HENRY COUNTY ---
@@ -213,7 +213,7 @@ const remainingCities = [
     "Type": "historic",
     "Desc": "a historic city anchored by agricultural history and the famous Atlanta Motor Speedway",
     "Risks": "older historic masonry structural decay, ungrounded legacy electrical branch lines, and crawlspace dampness",
-    "Services": "Historic masonry structural audits, legacy mechanicals safety checks, crawlspace evaluations"
+    "Services": "Historic masonry structural evaluations, legacy mechanicals safety checks, crawlspace evaluations"
   },
   {
     "City Name": "Locust Grove",
@@ -223,7 +223,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "a fast-growing family suburb featuring extensive new subdivisions and shopping complexes",
     "Risks": "improper roof truss bracing in fast-track builds, poor exterior landscape grading causing foundation pooling, and HVAC system undersizing",
-    "Services": "Fast-track build structural checks, exterior landscape grading audits, HVAC performance testing"
+    "Services": "Fast-track build structural checks, exterior landscape grading evaluations, HVAC performance testing"
   },
 
   // --- FAYETTE COUNTY ---
@@ -235,7 +235,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "a cozy Fayette County community connected by beautiful parks and standard golf cart path links",
     "Risks": "garage golf-cart charging electrical load, driveway concrete cracking, and aging mechanical components in mid-80s properties",
-    "Services": "Garage and cart-charger electrical audits, concrete driveway evaluations, home systems diagnostics"
+    "Services": "Garage and cart-charger electrical evaluations, concrete driveway evaluations, home systems diagnostics"
   },
   {
     "City Name": "Brooks",
@@ -267,7 +267,7 @@ const remainingCities = [
     "Type": "historic",
     "Desc": "a famous historic community known for its beautifully preserved town center and movie-set charm",
     "Risks": "aging brick-pier crawlspace structural settling, knob-and-tube or legacy wiring elements, and aging metal roof structures",
-    "Services": "Preservation structure checks, historic brick-pier crawlspace audits, legacy utilities safety checks"
+    "Services": "Preservation structure checks, historic brick-pier crawlspace evaluations, legacy utilities safety checks"
   },
   {
     "City Name": "Sharpsburg",
@@ -277,7 +277,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "a growing Coweta suburb with quiet neighborhoods and expanding custom residential builds",
     "Risks": "new build framing imperfections, attic ventilation airflow restrictions, and grading slopes causing foundation water retention",
-    "Services": "Subdivision structural reviews, attic airflow performance checks, 11-month builder warranty audits"
+    "Services": "Subdivision structural reviews, attic airflow performance checks, 11-month builder warranty evaluations"
   },
   {
     "City Name": "Haralson",
@@ -297,7 +297,7 @@ const remainingCities = [
     "Type": "rural",
     "Desc": "a serene rural-suburban crossroads featuring spacious acreage and classic ranch designs",
     "Risks": "wood-destroying insect decay in crawlspaces, outdated mechanical systems, and foundation shifting in sandy clay",
-    "Services": "Walton clay soil foundation checks, termite insect decay audits, full home systems reviews"
+    "Services": "Walton clay soil foundation checks, termite insect decay evaluations, full home systems reviews"
   },
   {
     "City Name": "Moreland",
@@ -329,7 +329,7 @@ const remainingCities = [
     "Type": "rural",
     "Desc": "a peaceful rural community situated in southeastern Newton County, surrounded by woodlands and farms",
     "Risks": "older structural framing shifts, private well-water systems decay, and crawlspace structural wood damage",
-    "Services": "Spacious rural structural audits, well-pump diagnostics, crawlspace wood rot checks"
+    "Services": "Spacious rural structural evaluations, well-pump diagnostics, crawlspace wood rot checks"
   },
   {
     "City Name": "Newborn",
@@ -339,7 +339,7 @@ const remainingCities = [
     "Type": "historic",
     "Desc": "a quiet historic enclave with well-preserved historic homes and a peaceful rural landscape",
     "Risks": "legacy brick masonry settling, obsolete electrical panel assemblies, and damp crawlspaces causing framing decay",
-    "Services": "Historic residential brick audits, crawlspace moisture reviews, legacy electrical panel checks"
+    "Services": "Historic residential brick evaluations, crawlspace moisture reviews, legacy electrical panel checks"
   },
 
   // --- WALTON COUNTY ---
@@ -351,7 +351,7 @@ const remainingCities = [
     "Type": "suburban",
     "Desc": "a growing rural suburb featuring spacious family properties and excellent local schools",
     "Risks": "grading slope foundation water pooling, attic thermal insulation gaps, and roof shingles weathering",
-    "Services": "Suburban property inspections, attic insulation audits, 11-month builder warranty checks"
+    "Services": "Suburban property inspections, attic insulation evaluations, 11-month builder warranty checks"
   },
   {
     "City Name": "Between",
@@ -361,7 +361,7 @@ const remainingCities = [
     "Type": "rural",
     "Desc": "a historic, famously named rural crossroads with established single-family acreage lots",
     "Risks": "outbuilding framing safety, aging private water delivery components, and crawlspace ventilation problems",
-    "Services": "Acreage home structural reviews, well-water components visual checks, crawlspace ventilation audits"
+    "Services": "Acreage home structural reviews, well-water components visual checks, crawlspace ventilation evaluations"
   },
   {
     "City Name": "Good Hope",
@@ -381,7 +381,7 @@ const remainingCities = [
     "Type": "historic",
     "Desc": "a quiet, historic Walton crossroads celebrating its classic rural heritage and historic properties",
     "Risks": "legacy brick-pier foundation settling, outdated knob-and-tube or legacy wiring elements, and active framing dampness",
-    "Services": "Legacy brick-pier inspections, outdated wiring safety assessments, crawlspace moisture audits"
+    "Services": "Legacy brick-pier inspections, outdated wiring safety assessments, crawlspace moisture Evaluations"
   }
 ];
 
@@ -407,7 +407,7 @@ for (const city of remainingCities) {
     "Slug": city.Slug,
     "County": county,
     "Zip": zip,
-    "Intro": `${name} is ${desc}. Our dual-inspector home inspection teams deliver highly advanced, thermal-assisted audits to protect your significant residential investments in this beautiful community.`,
+    "Intro": `${name} is ${desc}. Our dual-inspector home inspection teams deliver highly advanced, thermal-assisted evaluations to protect your significant residential investments in this beautiful community.`,
     "Local Risks HTML": `<p>Properties in ${name} commonly face specialized local conditions. ${risks.charAt(0).toUpperCase() + risks.slice(1)}. We trace these defects using high-tech thermal and moisture diagnostic tools before they become expensive problems.</p>`,
     "Services HTML": `<ul><li>${services.split(', ')[0]}</li><li>${services.split(', ')[1]}</li><li>${services.split(', ')[2] || 'Pre-listing and new construction checks'}</li></ul>`,
     "Benefits HTML": `<ul><li>Two certified home inspectors on every single ${name} site visit</li><li>infrared thermal cameras and aerial drone scans included at no extra cost</li><li>$10,000 Elite Master warranty protection withexactly $0 deductible</li></ul>`,

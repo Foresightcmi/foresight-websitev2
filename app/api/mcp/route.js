@@ -139,10 +139,10 @@ const MCP_TOOLS = [
           properties: {
             radon: { type: 'boolean', description: 'Continuous Radon Monitor testing ($250)' },
             termite: { type: 'boolean', description: 'Official Georgia WDO/Termite clearance ($125 slab/basement, $165 crawlspace)' },
-            pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety audit ($300)' },
+            pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety Inspection ($300)' },
             sewer: { type: 'boolean', description: 'High-definition underground lateral sewer scope camera inspection ($450 flat rate)' },
             lowFlow: { type: 'boolean', description: 'DeKalb County Low-Flow Plumbing Certificate ($100; applies to pre-1993 homes in unincorporated DeKalb)' },
-            buildfax: { type: 'boolean', description: 'Historical municipal permit and renovation record audit ($15)' },
+            buildfax: { type: 'boolean', description: 'Historical municipal permit and renovation record evaluation ($15)' },
             airQuality: { type: 'boolean', description: 'Indoor Air Quality & Mold Lab Testing (starts at $450; additional swabs/samples billed if taken)' },
             detachedBuilding: { type: 'boolean', description: 'Detached Building or Workshop Inspection ($100)' }
           }
@@ -241,21 +241,21 @@ async function handleToolCall(name, args) {
     }
     case 'get_service_pricing': {
       const serviceMap = {
-        'buyer': { name: 'Full Buyer Home Inspection', base: 'From $345 ($295 for condos)', details: 'Complete structural, mechanical, electrical, plumbing, roof, attic, and foundation audit. 2 certified inspectors on site.' },
+        'buyer': { name: 'Full Buyer Home Inspection', base: 'From $345 ($295 for condos)', details: 'Complete structural, mechanical, electrical, plumbing, roof, attic, and foundation evaluation. 2 certified inspectors on site.' },
         'condo': { name: 'Condominium & Townhome Inspection', base: 'From $295', details: 'Interior systems, HVAC, plumbing, electrical, balconies, and accessible common areas.' },
-        'new-construction': { name: 'New Construction Final Phase Inspection', base: 'From $400', details: 'Comprehensive pre-closing quality control audit covering all major home components.' },
-        'warranty': { name: '11-Month Builder Warranty Inspection', base: 'From $335', details: 'Comprehensive audit before builder 1-year warranty expires to ensure warranty items are addressed.' },
+        'new-construction': { name: 'New Construction Final Phase Inspection', base: 'From $400', details: 'Comprehensive pre-closing quality control evaluation covering all major home components.' },
+        'warranty': { name: '11-Month Builder Warranty Inspection', base: 'From $335', details: 'Comprehensive evaluation before builder 1-year warranty expires to ensure warranty items are addressed.' },
         'sewer-scope': { name: 'Sewer Scope Camera Inspection', base: '$450 flat rate', details: 'High-definition camera scan through main cleanout to municipal lateral or septic tank.' },
         'radon': { name: 'Continuous Radon Gas Monitoring', base: '$250', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
-        'pool': { name: 'Pool & Spa Safety & Equipment Audit', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
+        'pool': { name: 'Pool & Spa Safety & Equipment Evaluation', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
         'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
         'mold': { name: 'Mold & Indoor Air Quality Testing', base: 'Starts at $450', details: 'Certified mold inspection starting at $450 with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours. Additional surface swabs or extra samples billed if taken.' },
         'air-quality': { name: 'Mold & Indoor Air Quality Testing', base: 'Starts at $450', details: 'Certified mold inspection starting at $450 with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours. Additional surface swabs or extra samples billed if taken.' },
         'crawlspace-complexity': { name: 'Unfinished Crawlspace Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished crawlspace subfloor, pier, and vapor barrier inspection labor.' },
         'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
-        'str': { name: 'Short-Term Rental (STR) Compliance Safety Audit', base: 'Starts at $395', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
+        'str': { name: 'Short-Term Rental (STR) Compliance Safety Inspection', base: 'Starts at $395', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
         'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Toilet, shower, and faucet flow rate verification and signed Certificate of Compliance for pre-1993 property transfers in unincorporated DeKalb County. We confirm whether it applies to a given address.' },
-        'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional regional contractor repair labor and materials estimate formatted for standard Georgia repair amendment negotiation. Available as $99 add-on or standalone audit for outside reports.' }
+        'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional regional contractor repair labor and materials estimate formatted for standard Georgia repair amendment negotiation. Available as $99 add-on or standalone evaluation for outside reports.' }
       };
       return serviceMap[args.serviceKey] || { error: `Service key '${args.serviceKey}' not found.` };
     }

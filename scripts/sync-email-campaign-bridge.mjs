@@ -6,7 +6,7 @@
  * 1. Mirrors `unsubscribed_contacts.json` bidirectionally (100% opt-out & Ansley suppression)
  * 2. Feeds newly harvested FMLS Under-Contract Realtors (`data/under-contract-realtors.json`)
  *    into `../email-campaign-engine/recovered_active_filers.json` for long-term nurture
- * 3. Audits `../email-campaign-engine/lightweight_realtor_templates.js` against `data/truth.json`
+ * 3. Evaluations `../email-campaign-engine/lightweight_realtor_templates.js` against `data/truth.json`
  */
 
 import fs from 'fs';

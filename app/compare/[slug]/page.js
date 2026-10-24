@@ -172,7 +172,7 @@ export default async function ComparisonPage({ params }) {
                   Two Trained Experts. Double the Technical Oversight.
                 </h2>
                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.025rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>
-                  While one certified inspector audits major mechanicals, electrical panels, and HVAC performance, our second inspector conducts deep structural, roof, and foundation evaluations.
+                  While one certified inspector evaluates major mechanicals, electrical panels, and HVAC performance, our second inspector conducts deep structural, roof, and foundation evaluations.
                 </p>
                 <div style={{ padding: '1rem 1.25rem', background: '#FFFFFF', borderRadius: '8px', borderLeft: '4px solid var(--color-gold)', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
                   <strong style={{ color: '#0F172A', display: 'block', marginBottom: '0.25rem' }}>
@@ -217,7 +217,7 @@ export default async function ComparisonPage({ params }) {
                 InterNACHI® Certified 11th Month Warranty Inspector
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '1rem', lineHeight: 1.6, margin: 0 }}>
-                Foresight Home Inspections is certified by the International Association of Certified Home Inspectors (InterNACHI®) specifically for 11th-month builder warranty audits. We cross-examine one full year of foundation settlement, attic truss uplift, and building envelope thermal expansion to deliver a legally actionable punch list for your builder&apos;s warranty portal.
+                Foresight Home Inspections is certified by the International Association of Certified Home Inspectors (InterNACHI®) specifically for 11th-month builder warranty evaluations. We cross-examine one full year of foundation settlement, attic truss uplift, and building envelope thermal expansion to deliver a legally actionable punch list for your builder&apos;s warranty portal.
               </p>
             </div>
           </div>

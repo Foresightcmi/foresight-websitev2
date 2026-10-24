@@ -22,7 +22,7 @@ const DD_LOG_FILE = path.join(ROOT, 'data', 'due-diligence-outreach-log.json');
 const ENV_LOCAL = path.join(ROOT, '.env.local');
 
 const DEKALB_REGEX = /\b(lithonia|stone mountain|tucker|decatur|redan|stonecrest|chamblee|dunwoody|brookhaven|avondale estates|clarkston|doraville|pine lake|ellenwood|scottdale|conley|dekalb)\b/i;
-const EXCLUDED_DOMAINS = /@(ansleyre|ansleyatlanta|drhorton|pulte|lennar|ashtonwoods|stanleymartin|centurycommunities|beazer|adamshomes|rocklynhomes|meritagehomes|tollbrothers|kbhome|taylormorrison|smithdouglas|chafincommunities|chafinrealtyinc|paranhomes)\.com$/i;
+const EXCLUDED_DOMAINS = /@(ansleyre|ansleyatlanta|metrobrokers|cbcmetrobrokers|peachtreetc|drhorton|pulte|lennar|ashtonwoods|stanleymartin|centurycommunities|beazer|adamshomes|rocklynhomes|meritagehomes|tollbrothers|kbhome|taylormorrison|smithdouglas|chafincommunities|chafinrealtyinc|paranhomes|dwhomes|theprovidencegroup|relianthomes|odwyerhomes|cstonega)\.com$/i;
 
 function getCredentials() {
   let user = process.env.EMAIL_USER || 'inspect@foresightcmi.com'; // ggignore
@@ -49,52 +49,45 @@ function buildCloudEmail(contact) {
   const city = (contact.city || 'Metro Atlanta').trim();
   const addr = (contact.listing_address || '').trim();
   const isDeKalb = DEKALB_REGEX.test(city) || DEKALB_REGEX.test(addr);
-  const quoteUrl = addr
-    ? `https://fhinspectionsatl.com/quote?prop=${encodeURIComponent(addr)}`
-    : `https://fhinspectionsatl.com/quote`;
 
   const subject = addr
-    ? (isDeKalb ? `Congrats on ${addr} (${city}) — 24-hr due diligence + $100 DeKalb Low-Flow Cert` : `Congrats on ${addr} (${city}) — 2-inspector due diligence slot ($345+)`)
-    : (isDeKalb ? `${firstName} — $100 DeKalb Low-Flow Certificates & 2-inspector due diligence in ${city}` : `${firstName} — keeping your ${city} deals together during due diligence`);
+    ? (isDeKalb ? `Quick congrats on ${addr} in ${city}` : `Congrats on ${addr} in ${city}`)
+    : (isDeKalb ? `Quick intro — DeKalb Low-Flow certs & 2-inspector team in ${city}` : `Quick intro — 2-inspector due diligence team in ${city}`);
 
   const opener = addr
-    ? `Congrats on your recent activity at ${addr} in ${city}! Wanted to reach out in case your buyers or the co-op agent need a rapid 24-hour due diligence inspection.`
-    : `I work closely with agents across ${city} and wanted to introduce myself in case you need a fast, level-headed two-inspector team during due diligence.`;
+    ? `Congrats on your recent activity at ${addr} in ${city}. I wanted to reach out personally in case your buyers or the co-op agent need a fast 24-hour inspection slot during due diligence.`
+    : `I work closely with agents across ${city} and wanted to introduce myself in case you ever need a fast, level-headed two-inspector team during a tight due diligence window.`;
+
+  const dekalbPara = isDeKalb
+    ? `Since you work in the DeKalb area, if you ever have a closing on a pre-1993 home in unincorporated DeKalb County, we also sign the official DeKalb Watershed Low-Flow Plumbing Certificate ($100 flat fee) on the spot so your buyer's water turn-on is never held up. We also handle main sewer line camera scopes ($450 flat rate), pre-drywall and 11-month builder warranty inspections ($335+), and pre-listing seller inspections ($365+).`
+    : `Alongside buyer inspections, we also handle main sewer line camera scopes ($450 flat rate), pre-drywall and 11-month builder warranty inspections ($335+), pre-listing seller inspections ($365+), and signed DeKalb County Low-Flow Plumbing Certificates ($100 flat fee).`;
 
   const text = [
     `Hi ${firstName},`,
     ``,
     opener,
     ``,
-    `My partner and I inspect every property as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access:`,
-    `• 2-Inspector Team Starting at $345 ($295 Condos): Half the inspection time, same-day digital reports, and a calm walk-through separating real defects from normal wear.`,
-    `• DeKalb County Low-Flow Plumbing Certificate ($100 Flat Fee): Same-day signed Certificate of Compliance for DeKalb Watershed water turn-on on pre-1993 homes in unincorporated DeKalb. We confirm whether it applies to your address.`,
-    `• Sewer Camera Scope ($450 Flat Rate), Pre-Drywall ($275+) & 11-Month Builder Warranty ($335+): Calibrated infrared thermal imaging & 4K aerial drone roof scans included.`,
-    `• Pre-Listing Seller Inspections (From $365) & Free Due Diligence Calculator: https://fhinspectionsatl.com/due-diligence`,
-    `• $35,000 Combined Buyer Protection Warranties ($10,000 Elite Warranty + $25,000 Honor Guarantee).`,
+    `My partner and I inspect every home together as a two-inspector Certified Master Inspector team with active SUPRA eKEY access, starting at $345 ($295 for condos). Having both of us on site cuts the inspection time in half, includes infrared thermal imaging and a 4K drone roof check, and gets the report back the same evening with a calm walk-through that separates real structural or mechanical issues from minor cosmetic wear.`,
     ``,
-    `Grab an instant quote at ${quoteUrl} or text/call me directly at (678) 480-2110.`,
+    dekalbPara,
+    ``,
+    `Every full inspection includes $35,000 in buyer protection warranties. Keep my cell handy and text or call me anytime at (678) 480-2110 if you need a quick slot.`,
     ``,
     `Best regards,`,
     `Christopher Boykin, CMI`,
     `Foresight Home Inspections`,
-    `(678) 480-2110 | https://fhinspectionsatl.com`,
+    `(678) 480-2110 | www.fhinspectionsatl.com`,
     `1816 South Deshon Road, Lithonia, GA 30058`,
-    `Reply stop anytime to opt out.`
+    `Just reply stop if you prefer I don't reach out.`
   ].join('\n');
 
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1f2937;max-width:600px;">
-<p>Hi ${firstName},</p>
-<p>${opener}</p>
-<p>My partner and I inspect every property as a <strong>two-inspector Certified Master Inspector (CMI) team</strong> with active SUPRA eKEY access:</p>
-<ul style="padding-left:20px;margin:14px 0;">
-<li style="margin-bottom:8px;"><strong>2-Inspector Team Starting at $345 ($295 Condos):</strong> Half the inspection time, same-day digital reports, and a calm walk-through.</li>
-<li style="margin-bottom:8px;"><strong>DeKalb County Low-Flow Certificate ($100 Flat Fee):</strong> Same-day signed Certificate of Compliance for DeKalb Watershed water turn-on on pre-1993 homes in unincorporated DeKalb. We confirm whether it applies to your address.</li>
-<li style="margin-bottom:8px;"><strong>Sewer Camera Scope ($450 Flat Rate), New Build &amp; 11-Month Warranty ($335+):</strong> Pre-Drywall ($275+), Final ($400+), calibrated infrared thermal imaging, and 4K drone roof scans.</li>
-<li style="margin-bottom:8px;"><strong>Pre-Listing Seller Inspections ($365+) &amp; Free Tool:</strong> <a href="https://fhinspectionsatl.com/due-diligence" style="color:#0f52ba;text-decoration:underline;">Georgia Due Diligence &amp; Repair Addendum Builder</a> + $35,000 warranty protection.</li>
-</ul>
-<p>Check availability or grab an instant quote at <a href="${quoteUrl}" style="color:#0f52ba;text-decoration:underline;">fhinspectionsatl.com/quote</a> or text/call me at <strong>(678) 480-2110</strong>.</p>
-<p style="margin-top:20px;">Best regards,<br><strong>Christopher Boykin, CMI</strong><br>Foresight Home Inspections<br>(678) 480-2110 | <a href="https://fhinspectionsatl.com" style="color:#0f52ba;">fhinspectionsatl.com</a><br><span style="font-size:12px;color:#6b7280;">1816 South Deshon Road, Lithonia, GA 30058 &bull; Reply stop anytime to opt out.</span></p>
+<p style="margin:0 0 14px 0;">Hi ${firstName},</p>
+<p style="margin:0 0 14px 0;">${opener}</p>
+<p style="margin:0 0 14px 0;">My partner and I inspect every home together as a two-inspector Certified Master Inspector team with active SUPRA eKEY access, starting at $345 ($295 for condos). Having both of us on site cuts the inspection time in half, includes infrared thermal imaging and a 4K drone roof check, and gets the report back the same evening with a calm walk-through that separates real structural or mechanical issues from minor cosmetic wear.</p>
+<p style="margin:0 0 14px 0;">${dekalbPara}</p>
+<p style="margin:0 0 14px 0;">Every full inspection includes $35,000 in buyer protection warranties. Keep my cell handy and text or call me anytime at <strong>(678) 480-2110</strong> if you need a quick slot.</p>
+<p style="margin:18px 0 0 0;">Best regards,<br><strong>Christopher Boykin, CMI</strong><br>Foresight Home Inspections<br>(678) 480-2110 | <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;text-decoration:none;">www.fhinspectionsatl.com</a><br><span style="font-size:12px;color:#6b7280;">1816 South Deshon Road, Lithonia, GA 30058 &bull; Just reply stop if you prefer I don't reach out.</span></p>
 </div>`;
 
   return { subject, text, html };
@@ -109,7 +102,7 @@ async function main() {
 
   const queue = fs.existsSync(QUEUE_FILE) ? JSON.parse(fs.readFileSync(QUEUE_FILE, 'utf8')) : [];
   const unsubArr = fs.existsSync(UNSUB_FILE) ? JSON.parse(fs.readFileSync(UNSUB_FILE, 'utf8')) : [];
-  const unsubSet = new Set((Array.isArray(unsubArr) ? unsubArr : []).map((e) => String(e).toLowerCase()));
+  const unsubSet = new Set((Array.isArray(unsubArr) ? unsubArr : []).map((e) => (typeof e === 'string' ? e : e?.email || '').toLowerCase().trim()).filter(Boolean));
   const ddLog = fs.existsSync(DD_LOG_FILE) ? JSON.parse(fs.readFileSync(DD_LOG_FILE, 'utf8')) : {};
   const ddSent = new Set((ddLog.sentEmails || []).map((e) => String(e).toLowerCase()));
   const state = fs.existsSync(STATE_FILE) ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')) : { lastSentByEmail: {}, totalCloudSent: 0 };

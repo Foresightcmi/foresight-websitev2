@@ -63,8 +63,8 @@ const SERVICE_MAP = {
     name: 'Sewer Scope Camera Inspection',
     price: '$450',
     icon: '03',
-    headline: 'HD Fiber-Optic Main Drain & Lateral Sewer Scope Camera Audits',
-    metaTitle: 'Sewer Scope Camera Inspection Atlanta GA | HD Pipe Audit $450',
+    headline: 'HD Fiber-Optic Main Drain & Lateral Sewer Scope Camera Inspections',
+    metaTitle: 'Sewer Scope Camera Inspection Atlanta GA | HD Pipe Inspection $450',
     metaDescription: 'HD fiber-optic sewer scope camera inspection in Metro Atlanta. Detect root intrusions, crushed pipes & blockages before closing. Flat $450. Video report included.',
     description: 'Replacing a broken underground sewer lateral costs between $5,000 and $25,000 and is not covered by standard homeowners insurance. Foresight pushes a self-leveling HD fiber-optic camera through the entire line to the municipal connection or septic tank, pinpointing root intrusions, crushed pipes, low-pitch bellies, and joint separations.',
     included: [
@@ -80,12 +80,12 @@ const SERVICE_MAP = {
     icon: '04',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
     metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat',
-    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety Inspections. Flat $300 rate with 24-hr report.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
       'Pump, filtration, and circulation system pressure testing',
       'Pool heater ignition, burner, and heat exchanger evaluation',
-      'Electrical safety, GFCI, and equipotential bonding audit',
+      'Electrical safety, GFCI, and equipotential bonding Check',
       'Safety barriers, self-latching gates, and anti-entrapment drains'
     ]
   },
@@ -95,12 +95,12 @@ const SERVICE_MAP = {
     icon: '04',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
     metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat',
-    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety audits. Flat $300 rate with 24-hr report.',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety Inspections. Flat $300 rate with 24-hr report.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
       'Pump, filtration, and circulation system pressure testing',
       'Pool heater ignition, burner, and heat exchanger evaluation',
-      'Electrical safety, GFCI, and equipotential bonding audit',
+      'Electrical safety, GFCI, and equipotential bonding Check',
       'Safety barriers, self-latching gates, and anti-entrapment drains'
     ]
   },
@@ -143,7 +143,7 @@ const SERVICE_MAP = {
     metaDescription: 'Independent new construction & pre-drywall inspections in Metro Atlanta. 2 certified inspectors, thermal scans & builder punch lists. From $400.',
     description: 'Rushed building schedules, subcontractor turnover, and supply chain substitutions mean even custom brand-new homes in Metro Atlanta frequently have major concealed defects. Municipal code inspectors only spend 15 minutes on site. Our independent two-inspector team evaluates every system before final closing.',
     included: [
-      'Pre-drywall framing, rough plumbing, electrical and HVAC audit',
+      'Pre-drywall framing, rough plumbing, electrical and HVAC evaluation',
       'Final phase complete mechanical, structural and cosmetic evaluation',
       'infrared thermal imaging to verify attic and wall insulation integrity',
       'Builder-ready digital punch list with photos and technical citations'
@@ -185,10 +185,10 @@ const SERVICE_MAP = {
     icon: '08',
     headline: 'Safety, Code Compliance & Due Diligence for Airbnb & STR Investments',
     metaTitle: 'Airbnb & STR Inspection Atlanta GA | From $395',
-    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety audit from $395.',
+    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety Inspection from $395.',
     description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, electrical load capacities, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
     included: [
-      'Life-safety audit (egress windows, smoke/CO interconnectivity, handrails)',
+      'Life-safety Inspection (egress windows, smoke/CO interconnectivity, handrails)',
       'High-occupancy mechanical load capacity verification',
       'Thermal imaging of electrical panels and HVAC distribution',
       'Municipal STR compliance checklist support'
@@ -250,11 +250,11 @@ const SERVICE_MAP = {
     icon: '11',
     headline: 'Independent Pre-Drywall Inspections for New Builds Across Metro Atlanta',
     metaTitle: 'Pre-Drywall Inspections for New Builds Atlanta GA | From $275',
-    metaDescription: '4.8★ Independent pre-drywall inspections for new builds in Metro Atlanta from $275. 2 certified inspectors audit structural framing, rough plumbing, electrical & HVAC!',
-    description: 'Once drywall is hung, over 80% of your home structural framing, rough plumbing stacks, electrical loops, and HVAC ductwork become permanently sealed behind walls. Our two-inspector team conducts a comprehensive Phase 1 pre-drywall framing and mechanical audit before sheetrock concealment.',
+    metaDescription: '4.8★ Independent pre-drywall inspections for new builds in Metro Atlanta from $275. 2 certified inspectors evaluate structural framing, rough plumbing, electrical & HVAC!',
+    description: 'Once drywall is hung, over 80% of your home structural framing, rough plumbing stacks, electrical loops, and HVAC ductwork become permanently sealed behind walls. Our two-inspector team conducts a comprehensive Phase 1 pre-drywall framing and mechanical evaluation before sheetrock concealment.',
     included: [
       'Two certified inspectors on site evaluating structural framing, roof trusses, and load headers',
-      'Rough-in plumbing DWV, supply line pressure, and nail plate puncture safety audit',
+      'Rough-in plumbing DWV, supply line pressure, and nail plate puncture safety Inspection',
       'Electrical rough-in wire routing, junction box placement, and circuit arc protection checks',
       'Attic and wall HVAC duct routing, airflow volume checks, and exterior air barrier alignment',
       'Builder-ready digital punch list with high-definition photos delivered within 24 hours'
@@ -578,7 +578,7 @@ export default async function ServiceHubPage({ params }) {
                 <div style={{ flex: 1, minWidth: '240px' }}>
                   <h4 style={{ color: 'var(--color-gold)', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Certified 11th Month Warranty Inspector</h4>
                   <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                    Specialized builder warranty verification. We audit structural settlement, roof truss movement, and envelope seal integrity to generate an airtight, photo-documented punch list formatted directly for your builder&apos;s warranty portal before month 12.
+                    Specialized builder warranty verification. We evaluate structural settlement, roof truss movement, and envelope seal integrity to generate an airtight, photo-documented punch list formatted directly for your builder&apos;s warranty portal before month 12.
                   </p>
                 </div>
               </div>

@@ -3,7 +3,7 @@ import InstantAuditDelivery from '../../components/InstantAuditDelivery';
 
 export const metadata = {
   title: 'Order Confirmed | Foresight Home Inspections Atlanta',
-  description: 'Your payment has been received. Our Certified Master Inspector team is processing your report audit.',
+  description: 'Your payment has been received. Our Certified Master Inspector team is processing your report evaluation.',
   robots: { index: false, follow: false },
 };
 
@@ -18,11 +18,11 @@ export default function CheckoutSuccessPage() {
         </div>
 
         <div style={{ display: 'inline-block', padding: '4px 12px', background: 'rgba(16, 185, 129, 0.12)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '9999px', fontSize: '0.75rem', color: '#34D399', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '1rem', textTransform: 'uppercase' }}>
-          Payment Confirmed • $99 Due Diligence Audit
+          Payment Confirmed • $99 Due Diligence Evaluation
         </div>
 
         <h1 style={{ fontSize: '2rem', fontWeight: 900, margin: '0 0 1rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-          Your Due Diligence Audit Is Confirmed
+          Your Due Diligence Evaluation Is Confirmed
         </h1>
 
         <p style={{ fontSize: '0.95rem', color: '#CBD5E1', lineHeight: 1.6, margin: '0 0 2rem' }}>
@@ -52,7 +52,7 @@ export default function CheckoutSuccessPage() {
             </div>
             <div style={{ display: 'flex', gap: '10px' }}>
               <span style={{ color: '#10B981', fontWeight: 800 }}>4.</span>
-              <span><strong>Email &amp; SMS Delivery:</strong> Complete PDF audit package delivered straight to your inbox within 4 hours.</span>
+              <span><strong>Email &amp; SMS Delivery:</strong> Complete PDF evaluation package delivered straight to your inbox within 4 hours.</span>
             </div>
           </div>
         </div>

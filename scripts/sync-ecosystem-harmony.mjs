@@ -38,7 +38,7 @@ const STRIKING_SOCIAL_POSTS = [
   },
   {
     targetPage: '/services/commercial-property-inspection/cumming',
-    title: 'Cumming, GA Commercial Property Inspections & PCA Audits',
+    title: 'Cumming, GA Commercial Property Inspections & PCA Evaluations',
     topic: 'GSC Page-1 Booster: Cumming Commercial Inspection',
     imageUrl: 'https://www.fhinspectionsatl.com/images/drone-2.webp',
     city: 'Cumming',

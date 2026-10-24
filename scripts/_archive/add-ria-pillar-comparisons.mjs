@@ -16,7 +16,7 @@ const newComparisons = [
     icon: "🏛️",
     badge: "Competitor Comparison",
     image: "/images/two-inspectors-electrical-panel-inspection.jpg",
-    imageAlt: "Two Certified Inspectors from Foresight cross-auditing electrical systems vs Pillar to Post single-inspector franchise model",
+    imageAlt: "Two Certified Inspectors from Foresight cross-evaluating electrical systems vs Pillar to Post single-inspector franchise model",
     headline: "Two Certified Master Inspectors vs. Tiered National Franchise Packages",
     summary: "Pillar to Post is one of the largest national franchise home inspection networks in North America. While they operate via local territory licensees with tiered packages (Plus, Premium, Prestige), Foresight Home Inspections is an elite Atlanta-owned firm led by Certified Master Inspector Christopher Boykin. We deploy two certified inspectors to every property with up to $35,000 in warranty protection, flat-rate $450 sewer scopes, and zero corporate franchise royalty markups.",
     comparisonTable: [
@@ -47,7 +47,7 @@ const newComparisons = [
       },
       {
         feature: "Thermal Imaging Scan",
-        foresight: "FREE infrared thermal on Every Audit",
+        foresight: "FREE infrared thermal on Every Evaluation",
         competitors: "Only in Higher-Tier Packages"
       },
       {
@@ -73,7 +73,7 @@ const newComparisons = [
       },
       {
         q: "Why is a two-inspector team better than a franchise inspector?",
-        a: "Franchise territories typically send a single inspector who spends 3.5 to 4.5 hours alone navigating attics, crawlspaces, and mechanical rooms. Fatigue sets in. Foresight sends two certified inspectors who simultaneously cross-audit the property, delivering a superior, cross-verified report in half the time."
+        a: "Franchise territories typically send a single inspector who spends 3.5 to 4.5 hours alone navigating attics, crawlspaces, and mechanical rooms. Fatigue sets in. Foresight sends two certified inspectors who simultaneously cross-evaluation the property, delivering a superior, cross-verified report in half the time."
       }
     ]
   },
@@ -85,7 +85,7 @@ const newComparisons = [
     icon: "🔍",
     badge: "Competitor Comparison",
     image: "/images/christopher-boykin-certified-master-inspector.jpg",
-    imageAlt: "Christopher Boykin Certified Master Inspector lead audit vs high-volume corporate inspection models in Atlanta",
+    imageAlt: "Christopher Boykin Certified Master Inspector lead evaluation vs high-volume corporate inspection models in Atlanta",
     headline: "Elite Certified Master Inspector Team vs. High-Volume Private Equity Dispatch",
     summary: "Residential Inspector of America (RIA) is one of the largest corporate multi-inspector conglomerates in Georgia, operating under private equity backing (Launchpad Home Group) with dozens of rotating employee inspectors. While RIA handles high volume, Foresight Home Inspections provides elite craftsmanship: two certified inspectors on every job, direct leadership by Certified Master Inspector Christopher Boykin, up to $35,000 in warranty coverage, and flat-rate $450 sewer scopes.",
     comparisonTable: [
@@ -106,7 +106,7 @@ const newComparisons = [
       },
       {
         feature: "Inspection Duration",
-        foresight: "90 to 120 Minutes (High-Efficiency Dual Audit)",
+        foresight: "90 to 120 Minutes (High-Efficiency Dual Evaluation)",
         competitors: "3 to 4 Hours (Single Inspector)"
       },
       {
@@ -132,7 +132,7 @@ const newComparisons = [
     ],
     benefits: [
       "Guaranteed CMI Excellence: Large multi-inspector firms assign whoever is open on the schedule—often recently hired inspectors. At Foresight, every inspection is supervised directly by a Certified Master Inspector with proven field credentials.",
-      "Dual-Audited Mechanicals & Structure: Two inspectors cross-verify subpanels, HVAC load splits, and crawlspaces, ensuring high-dollar Georgia foundation settlement and moisture issues are never overlooked.",
+      "Dual-Evaluated Mechanicals & Structure: Two inspectors cross-verify subpanels, HVAC load splits, and crawlspaces, ensuring high-dollar Georgia foundation settlement and moisture issues are never overlooked.",
       "Transparent Flat Pricing: Single-family homes start from $345, sewer scopes are strictly $450 flat rate, and radon testing is strictly $250. Zero hidden dispatch surcharges."
     ],
     faqs: [

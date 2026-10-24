@@ -96,7 +96,7 @@ export default function DefectsHubPage() {
               >
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-                    <span style={{ fontSize: '2rem' }}>'AUDIT'</span>
+                    <span style={{ fontSize: '2rem' }}>'INSPECT'</span>
                     <span style={{ fontSize: '0.75rem', fontWeight: 700, background: 'rgba(211, 47, 47, 0.1)', color: 'var(--color-red)', padding: '0.25rem 0.65rem', borderRadius: '1rem' }}>
                       {d.badge || 'Defect Alert'}
                     </span>

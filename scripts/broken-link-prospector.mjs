@@ -70,7 +70,7 @@ Direct: 678-480-2110 | info@fhinspectionsatl.com`,
 
 During tight 5-to-7 day Georgia GAR due diligence periods, one of the biggest friction points for buyers and agents is waiting 4 hours for a solo inspector, plus another 48 hours for the report.
 
-At Foresight Home Inspections, we send two certified inspectors to every single home. This allows us to complete a comprehensive, dual-audited inspection in 90 to 120 minutes with zero inspector fatigue and deliver the report the very same afternoon—complete with an interactive Create Request List (CRL) amendment tool.
+At Foresight Home Inspections, we send two certified inspectors to every single home. This allows us to complete a comprehensive, dual-evaluated inspection in 90 to 120 minutes with zero inspector fatigue and deliver the report the very same afternoon—complete with an interactive Create Request List (CRL) amendment tool.
 
 We also include up to $35,000 in complimentary warranty coverage ($0 deductible) and free infrared thermal imaging on every inspection starting at $345.
 
@@ -128,14 +128,14 @@ Certified Master Inspector | Foresight Home Inspections
     targetContact: "Managing Broker & Relocation Services",
     contactEmail: "buckhead@harrynorman.com",
     prospectType: "Luxury Brokerage Due Diligence Guide",
-    hook: "Luxury homes over 4,000 sq ft require specialized multi-system audits; corporate single-inspector models take 6+ hours.",
+    hook: "Luxury homes over 4,000 sq ft require specialized multi-system Evaluations; corporate single-inspector models take 6+ hours.",
     suggestedAssetUrl: "https://www.fhinspectionsatl.com/compare/foresight-vs-bpg-inspections",
-    pitchSubject: "Dual-Inspector Master Audits for Luxury Estates in Buckhead & North Atlanta",
+    pitchSubject: "Dual-Inspector Master Evaluations for Luxury Estates in Buckhead & North Atlanta",
     pitchBody: `Dear Harry Norman Buckhead Leadership,
 
 Large luxury estates in Buckhead, Sandy Springs, and Chastain Park present complex mechanical systems—multiple HVAC zones, commercial subpanels, elaborate roof valleys, and extensive sewer laterals—that easily overwhelm a single inspector.
 
-Foresight Home Inspections provides an executive two-inspector team led by a Certified Master Inspector (CMI®). We conduct deep forensic audits with commercial infrared thermal cameras and flat-rate $450 high-definition sewer scopes, delivering same-day interactive reports with zero disruption to high-net-worth clients.
+Foresight Home Inspections provides an executive two-inspector team led by a Certified Master Inspector (CMI®). We conduct deep forensic evaluations with commercial infrared thermal cameras and flat-rate $450 high-definition sewer scopes, delivering same-day interactive reports with zero disruption to high-net-worth clients.
 
 Here is our comparative framework detailing why two certified inspectors are essential for multi-million dollar transactions:
 https://www.fhinspectionsatl.com/compare/foresight-vs-bpg-inspections
