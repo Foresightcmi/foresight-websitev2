@@ -30,9 +30,9 @@ async function sendPushNotification(title, message, priority = 'default') {
       },
       body: message
     });
-    console.log(`📱 [Push Alert] Sent to ntfy.sh/${NTFY_TOPIC}: "${title}"`);
+    console.log(`ðŸ“± [Push Alert] Sent to ntfy.sh/${NTFY_TOPIC}: "${title}"`);
   } catch (err) {
-    console.warn('⚠️ [Push Alert] Failed to send ntfy alert:', err.message);
+    console.warn('âš ï¸ [Push Alert] Failed to send ntfy alert:', err.message);
   }
 }
 
@@ -102,11 +102,11 @@ function calculateWarrantyMetrics(refDate, now = new Date()) {
   if (diffMonths >= 10 && diffMonths <= 13) {
     urgencyTier = 'urgent';
     badgeColor = '#ef4444'; // Red
-    badgeLabel = 'DUE NOW (Months 10–12)';
+    badgeLabel = 'DUE NOW (Months 10â€“12)';
   } else if (diffMonths >= 7 && diffMonths < 10) {
     urgencyTier = 'upcoming';
     badgeColor = '#f59e0b'; // Gold
-    badgeLabel = 'UPCOMING (Months 7–10)';
+    badgeLabel = 'UPCOMING (Months 7â€“10)';
   } else {
     urgencyTier = 'upcoming';
     badgeColor = '#f59e0b';
@@ -132,13 +132,13 @@ function generateSmsPresets(firstName, address, city, daysUntilDeadline, deadlin
   const greeting = firstName ? `Hi ${firstName},` : `Hello,`;
 
   // Preset 1: Urgent 30-Day Builder Expiration Notice (Recommended)
-  const preset1 = `${greeting} Christopher Boykin with Foresight Home Inspections. Checking in on your home at ${address} in ${city}! Your 1-year builder warranty expires ${deadlineText}. Before that deadline passes and your builder is officially off the hook, we prepared an 11-Month Warranty Building Science Dossier for your property: ${dossierUrl} — Let's compile your InterNACHI punch list so the builder repairs settling items on their dime! Reply here or call (678) 480-2110`;
+  const preset1 = `${greeting} Christopher Boykin with Foresight Home Inspections. Checking in on your home at ${address} in ${city}! Your 1-year builder warranty expires ${deadlineText}. Before that deadline passes and your builder is officially off the hook, we prepared an 11-Month Warranty Building Science Dossier for your property: ${dossierUrl} â€” Let's compile your InterNACHI punch list so the builder repairs settling items on their dime! Reply here or call (678) 480-2110`;
 
   // Preset 2: Punch List & Latent Settlement Focus
-  const preset2 = `${greeting} Christopher Boykin here with Foresight Home Inspections. Don't let your builder dismiss drywall cracks, reverse grading, or HVAC duct leaks at ${address} as "normal settling." Review your property's 11-Month Warranty settlement dossier here: ${dossierUrl} — Happy to help hold your builder accountable before day 365! (678) 480-2110`;
+  const preset2 = `${greeting} Christopher Boykin here with Foresight Home Inspections. Don't let your builder dismiss drywall cracks, reverse grading, or HVAC duct leaks at ${address} as "normal settling." Review your property's 11-Month Warranty settlement dossier here: ${dossierUrl} â€” Happy to help hold your builder accountable before day 365! (678) 480-2110`;
 
   // Preset 3: Ultra-Concise Direct Touchpoint
-  const preset3 = `${greeting} Christopher Boykin with Foresight Home Inspections. Your 1-year builder warranty cutoff at ${address} in ${city} is approaching. Tap here to review your property's 11-month punch list: ${dossierUrl} — Let me know if you have any questions! (678) 480-2110`;
+  const preset3 = `${greeting} Christopher Boykin with Foresight Home Inspections. Your 1-year builder warranty cutoff at ${address} in ${city} is approaching. Tap here to review your property's 11-month punch list: ${dossierUrl} â€” Let me know if you have any questions! (678) 480-2110`;
 
   return { preset1, preset2, preset3 };
 }
@@ -160,11 +160,11 @@ I hope you've been settling in wonderfully at ${address} in ${city}!
 
 Because your home's 1-year builder warranty reaches its official 365-day cutoff ${deadlineText}, our building science team prepared a confidential 11-Month Warranty Due Diligence Dossier specifically for your property:
 
-👉 View Your Property Dossier: ${dossierUrl}
+ðŸ‘‰ View Your Property Dossier: ${dossierUrl}
 
 In Georgia, builders provide a 1-year builder warranty covering structural settlement, plumbing line deflections, drywall truss uplift, and HVAC duct plenum imbalances. However, once day 365 passes, the builder is legally released from financial liability, transferring all repair costs directly to the homeowner.
 
-Builders routinely dismiss informal homeowner checklists as "normal cosmetic settling"—but they legally must respond to an official InterNACHI Certified Master Inspector® engineering punch list backed by calibrated infrared thermal imaging and building code citations.
+Builders routinely dismiss informal homeowner checklists as "normal cosmetic settling"â€”but they legally must respond to an official InterNACHI Certified Master InspectorÂ® engineering punch list backed by calibrated infrared thermal imaging and building code citations.
 
 You can review your complete settlement diagnostic and reserve your 11-month inspection date directly inside your dossier:
 ${dossierUrl}
@@ -173,9 +173,9 @@ Feel free to reply directly to this email or call/text me at (678) 480-2110 if y
 
 Warm regards,
 
-Christopher Boykin, CMI®
+Christopher Boykin, CMIÂ®
 Foresight Home Inspections
-Certified Master Inspector® | InterNACHI®
+Certified Master InspectorÂ® | InterNACHIÂ®
 Direct: (678) 480-2110
 Web: https://fhinspectionsatl.com`;
 
@@ -183,7 +183,7 @@ Web: https://fhinspectionsatl.com`;
 }
 
 async function main() {
-  console.log('🛡️ [Warranty Tracker] Scanning external leads & loading email dispatch history...');
+  console.log('ðŸ›¡ï¸ [Warranty Tracker] Scanning external leads & loading email dispatch history...');
 
   // Load Email Outreach Log
   const emailedIds = new Set();
@@ -195,14 +195,14 @@ async function main() {
         if (l.leadId) emailedIds.add(l.leadId);
         if (l.email) emailedAddresses.add(l.email.toLowerCase().trim());
       });
-      console.log(`✉️ Indexed ${emailedIds.size} leads already emailed by autonomous engine.`);
+      console.log(`âœ‰ï¸ Indexed ${emailedIds.size} leads already emailed by autonomous engine.`);
     } catch {}
   }
 
   const now = new Date();
   const cohorts = {
-    urgent: [],      // Due now (10–12 months window)
-    upcoming: [],    // Upcoming (7–10 months window)
+    urgent: [],      // Due now (10â€“12 months window)
+    upcoming: [],    // Upcoming (7â€“10 months window)
     pipeline: []     // Pipeline
   };
 
@@ -394,6 +394,59 @@ async function main() {
     }
   }
 
+  // Ingest Completed HomeGauge New Construction & Pre-Drywall Clients (IMAP / CSV Auto-Intake)
+  const HG_WARRANTY_FILE = path.join(ROOT_DIR, 'data', 'private', 'homegauge-warranty-clients.json');
+  if (fs.existsSync(HG_WARRANTY_FILE)) {
+    const hgClients = JSON.parse(fs.readFileSync(HG_WARRANTY_FILE, 'utf8'));
+    for (let i = 0; i < hgClients.length; i++) {
+      const hg = hgClients[i];
+      const inspDate = hg.completedAt ? new Date(hg.completedAt) : now;
+      if (isNaN(inspDate.getTime())) continue;
+      const metrics = calculateWarrantyMetrics(inspDate, now);
+      const leadId = hg.id || `hg_nc_${i}`;
+      const firstName = extractCleanFirstName(hg.name) || 'Homeowner';
+      const city = hg.city || 'Atlanta';
+      const address = hg.address || `${city}, GA`;
+      const cleanOwnerPhone = cleanPhone(hg.phone);
+      const dossierFilename = `warranty-${leadId}.html`;
+      const dossierUrl = `https://www.fhinspectionsatl.com/dossiers/${dossierFilename}`;
+      const presets = generateSmsPresets(firstName, address, city, metrics.daysUntilDeadline, metrics.deadlineStr, dossierUrl);
+      const smsDigits = cleanOwnerPhone ? (cleanOwnerPhone.length === 10 ? '1' + cleanOwnerPhone : cleanOwnerPhone) : '';
+      const { subject: homeownerSubject, body: homeownerBody } = generateHomeownerEmail(
+        firstName, address, city, metrics.daysUntilDeadline, metrics.deadlineStr, dossierUrl
+      );
+      const item = {
+        id: leadId,
+        recordId: hg.reportId || leadId,
+        name: hg.name,
+        firstName,
+        email: hg.email || '',
+        emailAutomatedSent: emailedIds.has(leadId) || (hg.email && emailedAddresses.has(hg.email.toLowerCase())),
+        phone: formatPhoneDisplay(hg.phone),
+        cleanPhone: cleanOwnerPhone,
+        address,
+        city,
+        date: inspDate.toLocaleDateString('en-US'),
+        service: hg.service || 'New Construction Inspection',
+        isNewConstruction: true,
+        source: 'HomeGauge Completed Inspection (Auto-Ingested)',
+        dossierFilename,
+        dossierUrl,
+        dossierPath: `./dossiers/${dossierFilename}`,
+        metrics,
+        presets,
+        clientSmsBody: presets.preset1,
+        clientSmsLink: smsDigits ? `sms:${smsDigits}?body=${encodeURIComponent(presets.preset1)}` : '',
+        clientCallLink: smsDigits ? `tel:+${smsDigits}` : '',
+        clientEmailSubject: homeownerSubject,
+        clientEmailBody: homeownerBody
+      };
+      processedLeads.push(item);
+      if (metrics.urgencyTier === 'urgent') cohorts.urgent.push(item);
+      else cohorts.upcoming.push(item);
+    }
+  }
+
   // Sort cohorts
   cohorts.urgent.sort((a, b) => a.metrics.daysUntilDeadline - b.metrics.daysUntilDeadline);
   cohorts.upcoming.sort((a, b) => a.metrics.daysUntilDeadline - b.metrics.daysUntilDeadline);
@@ -451,7 +504,7 @@ async function main() {
   };
 
   fs.writeFileSync(OUTPUT_CRM_FILE, JSON.stringify(crmData, null, 2), 'utf8');
-  console.log(`💾 Saved structured CRM data to: ${OUTPUT_CRM_FILE}`);
+  console.log(`ðŸ’¾ Saved structured CRM data to: ${OUTPUT_CRM_FILE}`);
 
   // Build Interactive Mobile Dispatch HTML
   const htmlContent = `<!DOCTYPE html>
@@ -729,7 +782,7 @@ async function main() {
 
   <header>
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-      <span class="badge badge-emerald">📱 1-Click SMS Command Dispatcher</span>
+      <span class="badge badge-emerald">ðŸ“± 1-Click SMS Command Dispatcher</span>
       <span class="badge badge-gold">External Market Radar</span>
     </div>
     <h1>11-Month Warranty Lead Dispatcher</h1>
@@ -757,13 +810,13 @@ async function main() {
     </div>
   </header>
 
-  <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search by homeowner, street, city, or phone..." onkeyup="filterCards()">
+  <input type="text" id="searchBar" class="search-bar" placeholder="ðŸ” Search by homeowner, street, city, or phone..." onkeyup="filterCards()">
 
   <div class="tabs">
-    <button class="tab-btn active tab-sms-ready" data-tab="ready_to_text">📱 Ready to Text (${readyToTextCount})</button>
-    <button class="tab-btn" data-tab="all_leads">🔥 All Leads (${cohorts.urgent.length})</button>
-    <button class="tab-btn" data-tab="texted">✅ Text Sent</button>
-    <button class="tab-btn" data-tab="clusters">🏗️ Builder Clusters (${newConstructionClusters.length})</button>
+    <button class="tab-btn active tab-sms-ready" data-tab="ready_to_text">ðŸ“± Ready to Text (${readyToTextCount})</button>
+    <button class="tab-btn" data-tab="all_leads">ðŸ”¥ All Leads (${cohorts.urgent.length})</button>
+    <button class="tab-btn" data-tab="texted">âœ… Text Sent</button>
+    <button class="tab-btn" data-tab="clusters">ðŸ—ï¸ Builder Clusters (${newConstructionClusters.length})</button>
   </div>
 
   <div id="cardsContainer"></div>
@@ -826,13 +879,13 @@ async function main() {
       }).length;
       
       const readyBtn = document.querySelector('.tab-btn[data-tab="ready_to_text"]');
-      if (readyBtn) readyBtn.innerText = '📱 Ready to Text (' + readyCount + ')';
+      if (readyBtn) readyBtn.innerText = 'ðŸ“± Ready to Text (' + readyCount + ')';
       
       const textedBtn = document.querySelector('.tab-btn[data-tab="texted"]');
-      if (textedBtn) textedBtn.innerText = '✅ Text Sent (' + textedCount + ')';
+      if (textedBtn) textedBtn.innerText = 'âœ… Text Sent (' + textedCount + ')';
 
       const clusterBtn = document.querySelector('.tab-btn[data-tab="clusters"]');
-      if (clusterBtn) clusterBtn.innerText = '🏗️ Builder Clusters (' + (clusters ? clusters.length : 0) + ')';
+      if (clusterBtn) clusterBtn.innerText = 'ðŸ—ï¸ Builder Clusters (' + (clusters ? clusters.length : 0) + ')';
     }
 
     function toggleStatus(id) {
@@ -847,7 +900,7 @@ async function main() {
         const badge = card.querySelector('.btn-toggle-status');
         if (badge) {
           badge.className = 'status-badge status-' + next + ' btn-toggle-status';
-          badge.innerText = next === 'text_sent' ? '📱 TEXT SENT' : (next === 'booked' ? '⭐ BOOKED' : 'PENDING ⟳');
+          badge.innerText = next === 'text_sent' ? 'ðŸ“± TEXT SENT' : (next === 'booked' ? 'â­ BOOKED' : 'PENDING âŸ³');
         }
       }
       updateTabCounts();
@@ -860,7 +913,7 @@ async function main() {
         const badge = card.querySelector('.btn-toggle-status');
         if (badge) {
           badge.className = 'status-badge status-' + newStatus + ' btn-toggle-status';
-          badge.innerText = newStatus === 'text_sent' ? '📱 TEXT SENT' : (newStatus === 'booked' ? '⭐ BOOKED' : 'PENDING ⟳');
+          badge.innerText = newStatus === 'text_sent' ? 'ðŸ“± TEXT SENT' : (newStatus === 'booked' ? 'â­ BOOKED' : 'PENDING âŸ³');
         }
       }
       updateTabCounts();
@@ -869,7 +922,7 @@ async function main() {
     function copyToClipboard(text, label) {
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(function() {
-          showToast('📋 Copied ' + label + ' to clipboard!');
+          showToast('ðŸ“‹ Copied ' + label + ' to clipboard!');
         }).catch(function() {
           fallbackCopyText(text, label);
         });
@@ -891,12 +944,12 @@ async function main() {
         const successful = document.execCommand('copy');
         document.body.removeChild(textArea);
         if (successful) {
-          showToast('📋 Copied ' + label + ' to clipboard!');
+          showToast('ðŸ“‹ Copied ' + label + ' to clipboard!');
         } else {
-          showToast('❌ Copy failed');
+          showToast('âŒ Copy failed');
         }
       } catch (err) {
-        showToast('❌ Copy failed: ' + err.message);
+        showToast('âŒ Copy failed: ' + err.message);
       }
     }
 
@@ -998,9 +1051,9 @@ async function main() {
             '</p>' +
             '<div class="actions-grid" style="display:flex; gap:10px; margin-top:12px;">' +
               '<a href="' + c.dossierPath + '" target="_blank" class="action-btn btn-dossier" style="flex:1;">' +
-                '📄 View Subdivision Dossier' +
+                'ðŸ“„ View Subdivision Dossier' +
               '</a>' +
-              (c.redfinUrl ? '<a href="' + c.redfinUrl + '" target="_blank" class="action-btn btn-secondary" style="flex:1;">🌐 View Neighborhood Map</a>' : '') +
+              (c.redfinUrl ? '<a href="' + c.redfinUrl + '" target="_blank" class="action-btn btn-secondary" style="flex:1;">ðŸŒ View Neighborhood Map</a>' : '') +
             '</div>' +
           '</div>';
         }).join('');
@@ -1036,7 +1089,7 @@ async function main() {
       container.innerHTML = filtered.map(function(item) {
         const st = getStatus(item.id);
         const statusClass = 'status-' + st;
-        const statusLabel = st === 'text_sent' ? '📱 TEXT SENT' : (st === 'booked' ? '⭐ BOOKED' : 'PENDING ⟳');
+        const statusLabel = st === 'text_sent' ? 'ðŸ“± TEXT SENT' : (st === 'booked' ? 'â­ BOOKED' : 'PENDING âŸ³');
 
         const activePreset = activePresets[item.id] || 'preset1';
         const activeSms = getActiveSmsText(item);
@@ -1044,8 +1097,8 @@ async function main() {
         const phoneDisplay = item.phone || item.cleanPhone;
 
         const emailBadge = item.emailAutomatedSent
-          ? '<span class="badge badge-emerald" style="margin-left:6px;">✉️ Email Dossier: Sent by AI</span>'
-          : (item.email ? '<span class="badge badge-blue" style="margin-left:6px;">✉️ Email Dossier: Queued</span>' : '');
+          ? '<span class="badge badge-emerald" style="margin-left:6px;">âœ‰ï¸ Email Dossier: Sent by AI</span>'
+          : (item.email ? '<span class="badge badge-blue" style="margin-left:6px;">âœ‰ï¸ Email Dossier: Queued</span>' : '');
 
         return '<div class="card ' + item.metrics.urgencyTier + '" id="card_' + item.id + '">' +
           '<div class="card-top">' +
@@ -1081,7 +1134,7 @@ async function main() {
                   '<span style="font-size:11px; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Homeowner Phone:</span> ' +
                   '<span class="sms-phone-display">' + phoneDisplay + '</span>' +
                 '</div>' +
-                '<button type="button" class="action-btn btn-secondary btn-copy-phone" data-phone="' + phoneDisplay + '" style="padding:4px 8px; font-size:11px;">📋 Copy Phone</button>' +
+                '<button type="button" class="action-btn btn-secondary btn-copy-phone" data-phone="' + phoneDisplay + '" style="padding:4px 8px; font-size:11px;">ðŸ“‹ Copy Phone</button>' +
               '</div>' +
 
               '<div class="preset-selector">' +
@@ -1095,21 +1148,21 @@ async function main() {
 
               '<div class="sms-actions-grid">' +
                 '<a href="' + smsLink + '" class="action-btn btn-sms-primary btn-send-sms" data-id="' + item.id + '" data-phone="' + phoneDisplay + '">' +
-                  '📱 Text ' + phoneDisplay +
+                  'ðŸ“± Text ' + phoneDisplay +
                 '</a>' +
                 '<button type="button" class="action-btn btn-secondary btn-copy-sms" data-id="' + item.id + '">' +
-                  '📋 Copy Text' +
+                  'ðŸ“‹ Copy Text' +
                 '</button>' +
-                (item.clientCallLink ? '<a href="' + item.clientCallLink + '" class="action-btn btn-secondary">📞 Call</a>' : '') +
+                (item.clientCallLink ? '<a href="' + item.clientCallLink + '" class="action-btn btn-secondary">ðŸ“ž Call</a>' : '') +
                 '<a href="' + item.dossierPath + '" target="_blank" class="action-btn btn-dossier">' +
-                  '📄 Dossier' +
+                  'ðŸ“„ Dossier' +
                 '</a>' +
               '</div>' +
             '</div>'
           ) : (
             '<div style="background:rgba(255,255,255,0.03); border:1px solid #1F2937; border-radius:8px; padding:10px; margin-top:8px; display:flex; justify-content:space-between; align-items:center;">' +
               '<span style="font-size:12px; color:var(--text-muted);">Phone not in permit filing (Email/Deed match)</span>' +
-              '<a href="' + item.dossierPath + '" target="_blank" class="action-btn btn-dossier" style="padding:6px 12px; font-size:11px;">📄 View Dossier</a>' +
+              '<a href="' + item.dossierPath + '" target="_blank" class="action-btn btn-dossier" style="padding:6px 12px; font-size:11px;">ðŸ“„ View Dossier</a>' +
             '</div>'
           )) +
 
@@ -1141,7 +1194,7 @@ async function main() {
         return;
       }
 
-      // 3. Send SMS (User taps "📱 Text (XXX) XXX-XXXX")
+      // 3. Send SMS (User taps "ðŸ“± Text (XXX) XXX-XXXX")
       const sendSmsBtn = e.target.closest('.btn-send-sms');
       if (sendSmsBtn) {
         const id = sendSmsBtn.getAttribute('data-id');
@@ -1156,10 +1209,10 @@ async function main() {
             const badge = card.querySelector('.btn-toggle-status');
             if (badge) {
               badge.className = 'status-badge status-text_sent btn-toggle-status';
-              badge.innerText = '📱 TEXT SENT';
+              badge.innerText = 'ðŸ“± TEXT SENT';
             }
           }
-          showToast('📱 Launching text to ' + (phone || client.phone) + '...');
+          showToast('ðŸ“± Launching text to ' + (phone || client.phone) + '...');
           updateTabCounts();
         }
         // Native href="sms:..." will be followed without interruption
@@ -1199,14 +1252,14 @@ async function main() {
 </html>`;
 
   fs.writeFileSync(OUTPUT_HTML_FILE, htmlContent, 'utf8');
-  console.log(`🌐 Deployed SMS command center to: ${OUTPUT_HTML_FILE}`);
+  console.log(`ðŸŒ Deployed SMS command center to: ${OUTPUT_HTML_FILE}`);
 
   // Push alert
-  const pushTitle = `📱 11-Month Warranty SMS Dispatcher Ready: ${readyToTextCount} Leads Queue!`;
-  const pushMsg = `SMS Dispatcher Ready:\n• Ready to Text: ${readyToTextCount} leads\n• Emailed by AI: ${emailedIds.size} dossiers\n• Total Due Now: ${cohorts.urgent.length}\n\nTap to open 1-click mobile SMS dispatcher:\nhttps://fhinspectionsatl.com/warranty-dispatch.html`;
+  const pushTitle = `ðŸ“± 11-Month Warranty SMS Dispatcher Ready: ${readyToTextCount} Leads Queue!`;
+  const pushMsg = `SMS Dispatcher Ready:\nâ€¢ Ready to Text: ${readyToTextCount} leads\nâ€¢ Emailed by AI: ${emailedIds.size} dossiers\nâ€¢ Total Due Now: ${cohorts.urgent.length}\n\nTap to open 1-click mobile SMS dispatcher:\nhttps://fhinspectionsatl.com/warranty-dispatch.html`;
 
   await sendPushNotification(pushTitle, pushMsg, 'default');
-  console.log('🏁 [Warranty Tracker] Execution completed successfully!');
+  console.log('ðŸ [Warranty Tracker] Execution completed successfully!');
 }
 
 main().catch(err => {

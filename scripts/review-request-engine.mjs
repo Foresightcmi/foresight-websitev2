@@ -12,6 +12,7 @@ import path from 'path';
 import crypto from 'crypto';
 import nodemailer from 'nodemailer';
 import { parseIntake, upsert, dueActions, buildEmail, buildSms, digits10 } from './lib/review-requests.mjs';
+import { ingestHomeGaugeJobs } from './lib/homegauge-intake.mjs';
 
 const ROOT = process.cwd();
 const PRIV = path.join(ROOT, 'data', 'private');
@@ -75,15 +76,19 @@ const push = (title, body) => fetch(ALERTS, { method: 'POST', headers: { Title: 
 
 async function run(cfg, queue) {
   const added = await pollIntake(cfg, queue);
+  const user = env('EMAIL_USER') || 'inspect@foresightcmi.com'; // ggignore
+  const pass = env('EMAIL_PASSWORD'); // ggignore
+  const hg = await ingestHomeGaugeJobs({ privDir: PRIV, user, pass, cfg });
+  for (const job of hg.jobs) {
+    if (upsert(queue, job)) added.push(`${job.name} [HomeGauge]`);
+  }
   const hour = new Date().getHours();
   if (hour < 9 || hour >= 18) {
-    console.log(`[Review Engine] Outside 9 AM-6 PM window. Queued ${added.length} new client(s); sends deferred.`);
-    return { added, sent: [] };
+    console.log(`[Review Engine] Outside 9 AM-6 PM window. Queued ${added.length} new client(s) (${hg.newWarrantyCount} warranty); sends deferred.`);
+    return { added, sent: [], newWarrantyCount: hg.newWarrantyCount };
   }
   const cool = readJson(COOLDOWN, {});
   const emailOk = !(cool.cooldownUntil && new Date(cool.cooldownUntil) > new Date());
-  const user = env('EMAIL_USER') || 'inspect@foresightcmi.com'; // ggignore
-  const pass = env('EMAIL_PASSWORD'); // ggignore
   const transporter = emailOk && pass ? nodemailer.createTransport({ service: 'gmail', auth: { user, pass } }) : null;
   const sent = [];
   for (const { entry, kind } of dueActions(queue, new Date(), suppressed())) {

@@ -5,6 +5,7 @@
  */
 
 export const REMINDER_AFTER_DAYS = 4;
+export const HOMEGAUGE_INITIAL_DELAY_MS = 24 * 3600000; // 24h after HomeGauge report upload
 const DAY_MS = 86400000;
 
 export const digits10 = (s) => String(s || '').replace(/\D/g, '').slice(-10);
@@ -33,7 +34,11 @@ export function dueActions(queue, now = new Date(), suppressed = new Set()) {
   for (const e of queue) {
     if (e.optedOut || e.reviewedAt) continue;
     if ((e.email && suppressed.has(e.email)) || (e.phone && suppressed.has(e.phone))) continue;
-    if (!e.sentAt) out.push({ entry: e, kind: 'initial' });
+    if (!e.sentAt) {
+      const isHgAuto = String(e.source || '').startsWith('homegauge_');
+      if (isHgAuto && e.addedAt && now - new Date(e.addedAt) < HOMEGAUGE_INITIAL_DELAY_MS) continue;
+      out.push({ entry: e, kind: 'initial' });
+    }
     else if (!e.reminderSentAt && now - new Date(e.sentAt) >= REMINDER_AFTER_DAYS * DAY_MS) out.push({ entry: e, kind: 'reminder' });
   }
   return out;
