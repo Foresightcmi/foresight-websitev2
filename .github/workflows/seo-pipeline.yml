@@ -1,11 +1,10 @@
-name: Automated Weekly SEO Pipeline
+name: Sunday — Keyword Discovery, Ecosystem Harmony & Rank Math Audit
 
 on:
   schedule:
     # Run every Sunday at 2:00 AM UTC (10:00 PM EST Saturday)
     - cron: '0 2 * * 0'
   workflow_dispatch:
-    # Allows manual triggering from the GitHub Actions tab
 
 concurrency:
   group: foresight-main-branch-commit
@@ -36,28 +35,24 @@ jobs:
     - name: Run Keyword Discovery Agent
       run: node scripts/discover-keywords.mjs
 
-    - name: Run Blog Post Generator Agent
-      run: node scripts/generate-blog-post.mjs
-      env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: Run Unified Ecosystem Harmony & Truth Sync
+      run: node scripts/sync-ecosystem-harmony.mjs
 
-    - name: Run City Page Refresher Agent
-      run: node scripts/refresh-city-pages.mjs
-      env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-
-    - name: Commit and Push Updated Data Files
-      run: |
-        git config --global user.name "Foresight SEO Bot"
-        git config --global user.email "seo-bot@fhinspectionsatl.com"
-        git add data/posts.json data/cities.json data/refresh-log.json data/rankmath-audit.json data/serp-simulation.json
-        git diff --cached --quiet || (git commit -m "chore(seo): automated weekly blog post, city refresh & Rank Math audit [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "No changes to commit."
+    - name: Run FirstIndex Truth & Persona Guard
+      run: node scripts/firstindex-truth-guard.mjs
 
     - name: Run Native Rank Math & TruSEO Audit Engine
       run: node scripts/rankmath-audit-engine.mjs
 
     - name: Run SERP Simulator (Desktop & Mobile Pixel Check)
       run: node scripts/serp-preview-simulator.mjs
+
+    - name: Commit and Push Updated Audit & Keyword Files
+      run: |
+        git config --global user.name "Foresight SEO Bot"
+        git config --global user.email "seo-bot@fhinspectionsatl.com"
+        git add data/
+        git diff --cached --quiet || (git commit -m "chore(seo): automated Sunday keyword discovery, ecosystem harmony & Rank Math audit" && git pull --rebase -X theirs origin main && git push origin main) || echo "No changes to commit."
 
     - name: Run Search Engine Pinger (IndexNow & Google)
       run: node scripts/ping-indexnow.mjs

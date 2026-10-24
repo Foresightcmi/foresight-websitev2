@@ -50,13 +50,13 @@ export default function UnifiedForesightStudioPage() {
         <header style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', borderBottom: '1px solid rgba(212,175,55,0.25)', paddingBottom: '1.25rem', marginBottom: '1.75rem' }}>
           <div>
             <span style={{ display: 'inline-block', background: 'rgba(212,175,55,0.15)', color: '#d4af37', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '999px', padding: '0.25rem 0.75rem', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
-              VERCEL PRO UNIFIED COMMAND HUB • SINGLE SOURCE OF TRUTH (v{data?.truth?.version || '2026.10.20'})
+              PRIORITY #1: FHINSPECTIONSATL.COM • VERCEL PRO COMMAND HUB (v{data?.truth?.version || '2026.10.20'})
             </span>
             <h1 style={{ fontSize: '1.85rem', fontWeight: 800, margin: 0, color: '#ffffff' }}>
               Foresight Unified Email, Social &amp; Video Marketing Studio
             </h1>
             <p style={{ color: '#94a3b8', margin: '0.35rem 0 0', fontSize: '0.92rem' }}>
-              One harmonized brain governing Email Campaigns, 48h VIP Due Diligence OpenSMS, 7-Platform Social/GBP Posts, and @plsinspectnow Video Studio.
+              Website-First Operations Engine: Email Campaigns, 48h VIP Due Diligence OpenSMS, 7-Platform Social/GBP Posts, and @plsinspectnow Video Studio all drive traffic &amp; bookings directly to https://fhinspectionsatl.com.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>

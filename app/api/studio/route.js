@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'node:fs';
 import path from 'node:path';
+import { FORESIGHT_UNIFIED_PERSONA } from '../../../lib/foresight-persona.mjs';
 
 // Vercel Pro Extended Serverless Execution (up to 300s / 800s)
 export const maxDuration = 300;
@@ -26,9 +27,12 @@ export async function GET() {
   const linkedInPosts = readJsonSafe('data/linkedin-tobi-engine.json', []);
   const studioPackets = readJsonSafe('data/unified-studio-packets.json', []);
   const outreachLog = readJsonSafe('data/due-diligence-outreach-log.json', []);
+  const socialQueue = readJsonSafe('data/social-queue.json', []);
 
   return NextResponse.json({
     ok: true,
+    priorityOneHub: FORESIGHT_UNIFIED_PERSONA.priorityOneHub,
+    persona: FORESIGHT_UNIFIED_PERSONA,
     plan: 'Vercel Pro Unified Command Hub',
     maxDurationSeconds: 300,
     truth,
@@ -40,8 +44,10 @@ export async function GET() {
       suppressedOptOuts: Array.isArray(unsubscribed) ? unsubscribed.length : 0,
       linkedInStoriesReady: Array.isArray(linkedInPosts) ? linkedInPosts.length : (linkedInPosts.posts?.length || 0),
       videoStudioPacketsReady: Array.isArray(studioPackets) ? studioPackets.length : 0,
-      dueDiligenceDispatchedTotal: Array.isArray(outreachLog) ? outreachLog.length : 0
+      dueDiligenceDispatchedTotal: Array.isArray(outreachLog) ? outreachLog.length : 0,
+      socialQueueOmnichannelCount: Array.isArray(socialQueue) ? socialQueue.length : 0
     },
+    socialQueue: Array.isArray(socialQueue) ? socialQueue : [],
     recentUnderContract: underContract.slice(0, 12),
     studioPackets: Array.isArray(studioPackets) ? studioPackets.slice(0, 12) : [],
     linkedInPosts: (Array.isArray(linkedInPosts) ? linkedInPosts : (linkedInPosts.posts || [])).slice(0, 8)
@@ -90,13 +96,13 @@ export async function POST(request) {
         `Slide 5 (Action): Backed by $35,000 in Combined Warranty & Guarantee Protection. Instant quote at fhinspectionsatl.com/quote | (678) 480-2110`
       ],
       socialPosts: {
-        gbp: `🏡 ${topic} in ${city}, GA\n\nAt Foresight Home Inspections, LLC, we send two certified inspectors to every job—including free calibrated infrared thermal imaging, free 4K drone roof scans, and same-day interactive digital reports.${dekalbNote}\n\n✅ Homes from ${p.singleFamily || '$345'} | Condos from ${p.condoTownhome || '$295'} | Pre-Drywall from ${p.preDrywall || '$275'}\n🛡️ Backed by $35,000 in Combined Warranty & Guarantee Protection\n👉 Instant Quote: https://www.fhinspectionsatl.com/quote | (678) 480-2110`,
-        linkedin: `Most buyers and agents in ${city} assume a standard municipal or 1-inspector walkthrough catches everything on ${topic}.\n\nHere is what our 2-inspector Certified Master Inspector (CMI) team actually sees in the field across Metro Atlanta:\n\n1. Two pairs of certified eyes on every property (complete in 1.5–2.5 hours with zero inspector fatigue).\n2. Free calibrated infrared thermal imaging & 4K aerial drone roof scans on every full inspection.\n3. Transparent starting rates: Single-Family Homes (${p.singleFamily || '$345'}), Condos/Townhomes (${p.condoTownhome || '$295'}), Phase 1 Pre-Drywall (${p.preDrywall || '$275'}), and 11-Month Builder Warranty (${p.elevenMonthWarranty || '$335'}).${dekalbNote}\n4. Up to $35,000 in combined warranty & guarantee protection ($0 deductible).\n\nNeed a rapid 24-hour due diligence slot in ${city}? Grab an instant quote at https://www.fhinspectionsatl.com/quote or text/call (678) 480-2110.`,
+        gbp: `🏡 ${topic} in ${city}, GA\n\nAt Foresight Home Inspections, LLC, we send two certified inspectors to every job—including free calibrated infrared thermal imaging, free 4K drone roof scans, and same-day interactive digital reports.${dekalbNote}\n\n✅ Homes from ${p.singleFamily || '$345'} | Condos from ${p.condoTownhome || '$295'} | Pre-Drywall from ${p.preDrywall || '$275'}\n🛡️ Backed by $35,000 in Combined Warranty & Guarantee Protection\n👉 Instant Quote: https://fhinspectionsatl.com/quote | (678) 480-2110`,
+        linkedin: `Most buyers and agents in ${city} assume a standard municipal or 1-inspector walkthrough catches everything on ${topic}.\n\nHere is what our 2-inspector Certified Master Inspector (CMI) team actually sees in the field across Metro Atlanta:\n\n1. Two pairs of certified eyes on every property (complete in 1.5–2.5 hours with zero inspector fatigue).\n2. Free calibrated infrared thermal imaging & 4K aerial drone roof scans on every full inspection.\n3. Transparent starting rates: Single-Family Homes (${p.singleFamily || '$345'}), Condos/Townhomes (${p.condoTownhome || '$295'}), Phase 1 Pre-Drywall (${p.preDrywall || '$275'}), and 11-Month Builder Warranty (${p.elevenMonthWarranty || '$335'}).${dekalbNote}\n4. Up to $35,000 in combined warranty & guarantee protection ($0 deductible).\n\nNeed a rapid 24-hour due diligence slot in ${city}? Grab an instant quote at https://fhinspectionsatl.com/quote or text/call (678) 480-2110.`,
         instagramReels: `${topic} in ${city}, GA 🔍🏡 Two Certified Inspectors on every home + Free Infrared Thermal Imaging + Free 4K Drone Roof Scan! Homes from ${p.singleFamily || '$345'}, Condos from ${p.condoTownhome || '$295'}, Pre-Drywall from ${p.preDrywall || '$275'}. Backed by $35,000 in protection. Link in bio or visit fhinspectionsatl.com/quote #AtlantaRealEstate #AtlantaRealtor #HomeInspection #${city.replace(/\s+/g, '')}GA`
       },
       emailCampaignSnippet: {
         subject: `Quick note on ${topic} for your ${city} buyers (2-Inspector CMI Team)`,
-        body: `Hi {{FirstName}},\n\nI work closely with agents in ${city} on ${topic} and wanted to share our current 24-hour due diligence availability.\n\nMy partner and I inspect every home as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access and same-day digital reports:\n• Single-Family Homes (From ${p.singleFamily || '$345'}) & Condos/Townhomes (From ${p.condoTownhome || '$295'})\n• Phase 1 Pre-Drywall (From ${p.preDrywall || '$275'}), New Construction Final (From ${p.newConstruction || '$400'}) & 11-Month Warranty (From ${p.elevenMonthWarranty || '$335'})\n• Free Calibrated Infrared Thermal Imaging, Free 4K Drone Roof Scans & $35,000 Combined Protection${dekalbNote ? '\n• ' + dekalbNote.trim() : ''}\n\nInstant Quote: https://www.fhinspectionsatl.com/quote\nDirect Priority Desk: (678) 480-2110\n\nBest regards,\nChristopher Boykin, CMI`
+        body: `Hi {{FirstName}},\n\nI work closely with agents in ${city} on ${topic} and wanted to share our current 24-hour due diligence availability.\n\nMy partner and I inspect every home as a two-inspector Certified Master Inspector (CMI) team with active SUPRA eKEY access and same-day digital reports:\n• Single-Family Homes (From ${p.singleFamily || '$345'}) & Condos/Townhomes (From ${p.condoTownhome || '$295'})\n• Phase 1 Pre-Drywall (From ${p.preDrywall || '$275'}), New Construction Final (From ${p.newConstruction || '$400'}) & 11-Month Warranty (From ${p.elevenMonthWarranty || '$335'})\n• Free Calibrated Infrared Thermal Imaging, Free 4K Drone Roof Scans & $35,000 Combined Protection${dekalbNote ? '\n• ' + dekalbNote.trim() : ''}\n\nInstant Quote: https://fhinspectionsatl.com/quote\nDirect Priority Desk: (678) 480-2110\n\nBest regards,\nChristopher Boykin, CMI`
       }
     };
 

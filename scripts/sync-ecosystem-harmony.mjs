@@ -13,15 +13,25 @@ const VIDEO_STUDIO_DIR = path.join(SCRATCH_ROOT, 'omni-video-publisher');
 const GBP_ENGINE_DIR = path.join(SCRATCH_ROOT, 'foresight-gbp-automation');
 
 const TARGET_FILES = [
+  { project: 'foresight-website (AI Concierge Brain)', file: path.join(WEBSITE_ROOT, 'lib', 'chris-brain-prompt.js') },
+  { project: 'foresight-website (Unified Persona)', file: path.join(WEBSITE_ROOT, 'lib', 'foresight-persona.mjs') },
+  { project: 'foresight-website (Social Queue)', file: path.join(WEBSITE_ROOT, 'data', 'social-queue.json') },
   { project: 'email-campaign-engine', file: path.join(EMAIL_ENGINE_DIR, 'lightweight_realtor_templates.js') },
   { project: 'omni-video-publisher (Foresight)', file: path.join(VIDEO_STUDIO_DIR, 'core', 'foresight_knowledge.py') },
-  { project: 'foresight-gbp-automation', file: path.join(GBP_ENGINE_DIR, 'gbp_content_engine.js') },
   { project: 'foresight-website (Social/LinkedIn)', file: path.join(WEBSITE_ROOT, 'scripts', 'linkedin-content-engine.mjs') },
   { project: 'foresight-website (Multi-Channel)', file: path.join(WEBSITE_ROOT, 'scripts', 'multi-channel-publisher.mjs') }
 ];
 
 export function auditAndSyncEcosystemHarmony() {
   const truth = JSON.parse(fs.readFileSync(TRUTH_FILE, 'utf8'));
+  const socialQueuePath = path.join(WEBSITE_ROOT, 'data', 'social-queue.json');
+  if (fs.existsSync(socialQueuePath)) {
+    let rawQueue = fs.readFileSync(socialQueuePath, 'utf8');
+    rawQueue = rawQueue.replace(/\}\s*,\s*\}\s*\]\s*$/, '}\n]');
+    rawQueue = rawQueue.replace(/https:\/\/www\.fhinspectionsatl\.com/g, 'https://fhinspectionsatl.com');
+    const parsedQueue = JSON.parse(rawQueue);
+    fs.writeFileSync(socialQueuePath, JSON.stringify(parsedQueue, null, 2) + '\n', 'utf8');
+  }
   console.log(`\n════════════════════════════════════════════════════════════════════`);
   console.log(`  FORESIGHT UNIFIED ECOSYSTEM HARMONY & TRUTH BRIDGE (v${truth.version})`);
   console.log(`════════════════════════════════════════════════════════════════════\n`);
@@ -41,6 +51,12 @@ export function auditAndSyncEcosystemHarmony() {
     }
     if (/\b(F404|F201|RSMeans|HomeGauge)\b/.test(content)) {
       fileIssues.push('Banned legal/trademark term detected (F404/F201/RSMeans/HomeGauge)');
+    }
+    if ((t.file.endsWith('foresight_knowledge.py') || t.file.endsWith('social-queue.json') || t.file.endsWith('chris-brain-prompt.js')) && !content.includes('$275')) {
+      fileIssues.push('Missing $275 Pre-Drywall starting price');
+    }
+    if (t.file.endsWith('social-queue.json') && /(\(From \)|With ,000|\( Flat Rate\)|psychrometric moisture loads|parallel return paths on grounding conductors)/i.test(content)) {
+      fileIssues.push('Corrupted $ regex token or banned academic jargon detected in social-queue.json');
     }
     if (t.file.endsWith('foresight_knowledge.py') && !content.includes('$275')) {
       fileIssues.push('Missing $275 Pre-Drywall starting price');
