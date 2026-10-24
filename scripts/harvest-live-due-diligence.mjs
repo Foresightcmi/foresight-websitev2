@@ -18,11 +18,13 @@ const METRO_COUNTIES = new Set([
 ]);
 
 const EXCLUDED_DOMAINS = new Set([
-  'ansleyre.com', 'ansleyatlanta.com', 'cgrealtyinc.com', 'drhorton.com',
-  'pulte.com', 'lennar.com', 'ashtonwoods.com', 'stanleymartin.com',
+  'ansleyre.com', 'ansleyatlanta.com', 'cgrealtyinc.com',
+  'metrobrokers.com', 'cbcmetrobrokers.com', 'peachtreetc.com',
+  'drhorton.com', 'pulte.com', 'lennar.com', 'ashtonwoods.com', 'stanleymartin.com',
   'centurycommunities.com', 'beazer.com', 'adamshomes.com', 'rocklynhomes.com',
   'meritagehomes.com', 'tollbrothers.com', 'kbhome.com', 'taylormorrison.com',
-  'smithdouglas.com', 'chafincommunities.com', 'paranhomes.com'
+  'smithdouglas.com', 'chafincommunities.com', 'chafinrealtyinc.com', 'paranhomes.com',
+  'dwhomes.com', 'theprovidencegroup.com', 'relianthomes.com', 'odwyerhomes.com', 'cstonega.com'
 ]);
 
 const DEKALB_REGEX = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i;
@@ -34,11 +36,11 @@ function formatPhone(digits) {
 
 function buildSmsCopy(first, address, city, role) {
   const isDeKalb = DEKALB_REGEX.test(city || '') || DEKALB_REGEX.test(address || '');
-  const dekalbBonus = isDeKalb ? ', plus on-site DeKalb Low-Flow Certificate ($100)' : '';
+  const dekalbNote = isDeKalb ? ', plus signed DeKalb Low-Flow certs ($100)' : '';
   if (role === 'BUYER_AGENT') {
-    return `Hi ${first}, congrats on getting your buyers under contract at ${address} in ${city}! Christopher Boykin, CMI with Foresight Home Inspections here. If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report${dekalbBonus}, we have a slot open in ${city}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)} — (678) 480-2110`;
+    return `Hi ${first}, congrats on getting your buyers under contract at ${address} in ${city}! This is Chris Boykin with Foresight Home Inspections. If your buyers need a fast 24-hr inspection slot during due diligence, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, active SUPRA eKEY, same-day report${dekalbNote}). You can check times here: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(address)} or text me at (678) 480-2110.`;
   }
-  return `Hi ${first}, Christopher Boykin with Foresight Home Inspections here! Saw ${address} in ${city} just went under contract—congratulations! If your buyers or co-op agent need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day report delivery${dekalbBonus}, we have a slot open in ${city} this week. Best wishes on a smooth closing! — (678) 480-2110 | https://www.fhinspectionsatl.com/realtors`;
+  return `Hi ${first}, Chris Boykin with Foresight Home Inspections here. Saw ${address} in ${city} just went under contract, congrats! If the buyers or co-op agent need a fast 24-hr due diligence slot, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, SUPRA eKEY, same-day report${dekalbNote}) or we can help with a pre-listing inspection ($365+) on your next listing. My cell is (678) 480-2110 | https://www.fhinspectionsatl.com/realtors`;
 }
 
 export async function harvestLiveDueDiligence(maxOffset = 1400) {
@@ -70,6 +72,18 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
     if ((item.raw_price || 0) < 75000 || /^0\s+/i.test(item.address || '') || /non-mls/i.test(item.name || '') || item.clean_phone === '0000000000') {
       continue;
     }
+    const itemEmail = String(item.email || '').toLowerCase().trim();
+    const itemDomain = itemEmail.split('@')[1] || '';
+    if (EXCLUDED_DOMAINS.has(itemDomain) || suppressedEmails.has(itemEmail) || suppressedPhones.has(item.clean_phone)) {
+      continue;
+    }
+    const first = item.first || (item.name ? item.name.split(' ')[0] : 'there');
+    const textBody = buildSmsCopy(first, item.address, item.city, item.role);
+    const buyerForwardBody = `Hi ${first}, here is our 1-click due diligence quote link and $35,000 warranty info for your buyers at ${item.address}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(item.address)} . Includes our 2-inspector team, same-day report, and free utility setup concierge. Feel free to pass this along to your buyers!`;
+    item.text_body = textBody;
+    item.sms_link = item.clean_phone ? `sms:+1${item.clean_phone}?&body=${encodeURIComponent(textBody)}` : '';
+    item.buyer_forward_body = buyerForwardBody;
+    item.buyer_forward_link = item.clean_phone ? `sms:+1${item.clean_phone}?&body=${encodeURIComponent(buyerForwardBody)}` : '';
     const k = item.listing_ref || item.listing_key || `${(item.email || item.clean_phone || '').toLowerCase()}::${(item.address || '').toLowerCase()}`;
     delete item.listing_key;
     item.listing_ref = k;
