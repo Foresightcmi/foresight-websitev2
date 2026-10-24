@@ -64,6 +64,35 @@ export function auditAndSyncEcosystemHarmony() {
     }
   }
 
+  // Sync Foresight Video & Carousel Studio packets metadata into data/unified-studio-packets.json
+  const outboxDir = path.join(VIDEO_STUDIO_DIR, 'brands', 'plsinspectnow-atl', 'outbox_ready');
+  if (fs.existsSync(outboxDir)) {
+    const jobs = fs.readdirSync(outboxDir).filter(d => fs.statSync(path.join(outboxDir, d)).isDirectory()).sort().reverse();
+    const packets = jobs.map(jobId => {
+      const jp = path.join(outboxDir, jobId);
+      const files = fs.readdirSync(jp);
+      let title = jobId;
+      if (files.includes('companion_guide.html')) {
+        const html = fs.readFileSync(path.join(jp, 'companion_guide.html'), 'utf8');
+        const m = html.match(/<title>([^<]+)<\/title>/i) || html.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+        if (m) title = m[1].trim();
+      }
+      return {
+        jobId,
+        title,
+        date: jobId.replace(/^job-(\d{4})(\d{2})(\d{2}).*$/, '$1-$2-$3'),
+        hasMasterVideo: files.includes('master_9x16.mp4'),
+        hasGbp30sVideo: files.includes('gbp_30s.mp4'),
+        hasCarouselPdf: files.includes('linkedin_carousel_deck.pdf'),
+        slideCount: files.filter(f => f.startsWith('slide_')).length,
+        fieldPhotoCount: files.filter(f => f.startsWith('field_photo_')).length,
+        localPath: jp
+      };
+    });
+    fs.writeFileSync(path.join(WEBSITE_ROOT, 'data', 'unified-studio-packets.json'), JSON.stringify(packets, null, 2), 'utf8');
+    console.log(`  🎬 [STUDIO SYNC] Indexed ${packets.length} Foresight Video & Carousel packets into data/unified-studio-packets.json`);
+  }
+
   console.log(`\n[SUMMARY] Ecosystem Harmony Check complete: ${issues} drift issues across connected engines.\n`);
   if (issues > 0) process.exitCode = 1;
   return { issues };
