@@ -999,6 +999,26 @@ const nextConfig = {
         destination: '/realtors',
         permanent: true,
       },
+      {
+        source: '/services/dekalb-low-flow-water-certificate',
+        destination: '/service-areas/dekalb-county-compliance',
+        permanent: true,
+      },
+      {
+        source: '/services/mold-air-quality-testing',
+        destination: '/services/mold-testing',
+        permanent: true,
+      },
+      {
+        source: '/services/mold-air-quality-testing/:city',
+        destination: '/services/mold-testing/:city',
+        permanent: true,
+      },
+      {
+        source: '/services/str-compliance-inspection',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
     ];
   },
 };

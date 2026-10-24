@@ -17,6 +17,8 @@ const TARGET_FILES = [
   { project: 'foresight-website (Unified Persona)', file: path.join(WEBSITE_ROOT, 'lib', 'foresight-persona.mjs') },
   { project: 'foresight-website (Dashboard Client)', file: path.join(WEBSITE_ROOT, 'app', 'dashboard', 'DashboardClient.js') },
   { project: 'foresight-website (Review Client)', file: path.join(WEBSITE_ROOT, 'app', 'review', 'ReviewClient.js') },
+  { project: 'foresight-website (AI Knowledge Graph)', file: path.join(WEBSITE_ROOT, 'public', 'llms.txt') },
+  { project: 'foresight-website (Comparisons Matrix)', file: path.join(WEBSITE_ROOT, 'data', 'comparisons-pseo.json') },
   { project: 'foresight-website (Social Queue)', file: path.join(WEBSITE_ROOT, 'data', 'social-queue.json') },
   { project: 'email-campaign-engine', file: path.join(EMAIL_ENGINE_DIR, 'lightweight_realtor_templates.js') },
   { project: 'omni-video-publisher (Foresight)', file: path.join(VIDEO_STUDIO_DIR, 'core', 'foresight_knowledge.py') },
@@ -32,7 +34,7 @@ const STRIKING_SOCIAL_POSTS = [
     imageUrl: 'https://fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg',
     city: 'Norcross',
     serviceName: 'Buyer Home Inspection',
-    priceHook: 'starting at $345 (Condos from $295)'
+    priceHook: 'starting at $345 for single-family homes and $295 for condos'
   },
   {
     targetPage: '/services/commercial-property-inspection/cumming',
@@ -41,7 +43,7 @@ const STRIKING_SOCIAL_POSTS = [
     imageUrl: 'https://fhinspectionsatl.com/images/drone-2.webp',
     city: 'Cumming',
     serviceName: 'Commercial Property Inspection',
-    priceHook: 'starting at $750 with 24–48 hour digital report turnaround'
+    priceHook: 'starting at $750 with 24–48 hour ASTM E2018 digital report turnaround'
   },
   {
     targetPage: '/services/buyer-inspection/lilburn',
@@ -59,7 +61,7 @@ const STRIKING_SOCIAL_POSTS = [
     imageUrl: 'https://fhinspectionsatl.com/images/roof-1.webp',
     city: 'Dallas',
     serviceName: 'Pre-Drywall Framing Inspection',
-    priceHook: 'starting at $275 ($275 up to 1,500 sq ft | $300 for 1,501–2,500 sq ft | $350 for 2,501–3,500 sq ft | $400 for 3,501+ sq ft)'
+    priceHook: 'starting at $275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, and $400 for 3,501+ sq ft'
   },
   {
     targetPage: '/services/buyer-inspection/snellville',
@@ -83,29 +85,49 @@ const STRIKING_SOCIAL_POSTS = [
 
 export function auditAndSyncEcosystemHarmony() {
   const truth = JSON.parse(fs.readFileSync(TRUTH_FILE, 'utf8'));
+  const strikingQueuePath = path.join(WEBSITE_ROOT, 'data', 'striking-distance-queue.json');
+  const strikingTargets = new Set(STRIKING_SOCIAL_POSTS.map(s => s.targetPage));
+  if (fs.existsSync(strikingQueuePath)) {
+    const strikingData = JSON.parse(fs.readFileSync(strikingQueuePath, 'utf8'));
+    for (const opp of (strikingData.opportunities || [])) {
+      if (opp.targetPage) strikingTargets.add(opp.targetPage);
+    }
+  }
   const socialQueuePath = path.join(WEBSITE_ROOT, 'data', 'social-queue.json');
   if (fs.existsSync(socialQueuePath)) {
     let rawQueue = fs.readFileSync(socialQueuePath, 'utf8');
     rawQueue = rawQueue.replace(/\}\s*,\s*\}\s*\]\s*$/, '}\n]');
     rawQueue = rawQueue.replace(/https:\/\/www\.fhinspectionsatl\.com/g, 'https://fhinspectionsatl.com');
+    rawQueue = rawQueue.replace(/\/services\/dekalb-low-flow-water-certificate/g, '/service-areas/dekalb-county-compliance');
+    rawQueue = rawQueue.replace(/\/services\/mold-air-quality-testing/g, '/services/mold-testing');
+    rawQueue = rawQueue.replace(/\/blog\/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-29/g, '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance');
+    rawQueue = rawQueue.replace(/\/blog\/crawlspace-moisture-the-silent-threat-to-georgia-foundations/g, '/blog/crawlspace-moisture-silent-threat-georgia-foundations');
     const parsedQueue = JSON.parse(rawQueue);
     let maxId = parsedQueue.reduce((acc, item) => Math.max(acc, Number(item.id) || 0), 0);
     let addedStriking = 0;
     for (const sp of STRIKING_SOCIAL_POSTS) {
+      if (!strikingTargets.has(sp.targetPage)) continue;
       const link = `https://fhinspectionsatl.com${sp.targetPage}`;
-      if (!parsedQueue.some(item => item.link === link)) {
+      const isCommercial = sp.targetPage.includes('commercial-property-inspection');
+      const turnaroundBullet = isCommercial
+        ? '• Comprehensive ASTM E2018 digital report delivered in 24 to 48 hours.'
+        : '• Same-day digital report delivered after a 1.5 to 2.5 hour on-site evaluation.';
+      const postPayload = {
+        title: sp.title,
+        topic: sp.topic,
+        link,
+        imageUrl: sp.imageUrl,
+        gbp: `Buying or building in ${sp.city}, GA? Foresight Home Inspections deploys Two Certified Inspectors on every ${sp.serviceName.toLowerCase()} in ${sp.city} (${sp.priceHook}).\n\n• Led by Certified Master Inspector® Christopher Boykin (4.8★ across 53 verified Google reviews).\n• Free calibrated infrared thermal imaging and 4K aerial drone roof scans included on full inspections.\n• Up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).\n${turnaroundBullet}\n\nCall (678) 480-2110 or book online 24/7: ${link}`,
+        facebook: `Buying or building in ${sp.city}, GA? 🏡🔍\n\nDon't rely on a solo inspector rushing through your due diligence window. Foresight Home Inspections puts Two Certified Inspectors on every ${sp.serviceName.toLowerCase()} in ${sp.city}, GA (${sp.priceHook})!\n\n✅ 4.8★ Across 53 Verified Google Reviews\n✅ Led by Certified Master Inspector® Christopher Boykin\n✅ Free Calibrated Infrared Thermal & 4K Drone Roof Scans\n✅ Up to $35,000 in Combined Warranty & Guarantee Protection\n\n👉 Check instant pricing and book online 24/7:\n${link}\n📞 Direct CMI Hotline: (678) 480-2110\n\n#${sp.city}GA #AtlantaRealEstate #HomeInspection #CertifiedMasterInspector #ForesightHomeInspections`,
+        linkedin: `${sp.city}, GA ${sp.serviceName}: Why ${sp.city} homebuyers, commercial investors, and realtors trust Foresight Home Inspections (${sp.priceHook}).\n\nLed by board-certified Certified Master Inspector® Christopher Boykin (4.8★ across 53 verified Google reviews), our Two-Inspector team completes cross-checked evaluations with free infrared thermal imaging, 4K drone roof scans, and up to $35,000 in combined warranty and guarantee protection.\n\nSchedule your ${sp.city}, GA inspection online 24/7:\n${link}\n\n#${sp.city}RealEstate #AtlantaRealtors #DueDiligence #CertifiedMasterInspector #ForesightHomeInspections`
+      };
+      const existingIdx = parsedQueue.findIndex(item => item.link === link);
+      if (existingIdx === -1) {
         maxId += 1;
-        parsedQueue.push({
-          id: maxId,
-          title: sp.title,
-          topic: sp.topic,
-          link,
-          imageUrl: sp.imageUrl,
-          gbp: `Buying or building in ${sp.city}, GA? Foresight Home Inspections deploys Two Certified Inspectors on every ${sp.serviceName.toLowerCase()} in ${sp.city} (${sp.priceHook}).\n\n• Led by Certified Master Inspector® Christopher Boykin (4.8★ across 53 verified Google reviews).\n• Free calibrated infrared thermal imaging and 4K aerial drone roof scans included on full inspections.\n• Up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).\n• Same-day digital report delivered in 1.5 to 2.5 hours.\n\nCall (678) 480-2110 or book online 24/7: ${link}`,
-          facebook: `Buying or building in ${sp.city}, GA? 🏡🔍\n\nDon't rely on a solo inspector rushing through your due diligence window. Foresight Home Inspections puts Two Certified Inspectors on every ${sp.serviceName.toLowerCase()} in ${sp.city}, GA (${sp.priceHook})!\n\n✅ 4.8★ Across 53 Verified Google Reviews\n✅ Led by Certified Master Inspector® Christopher Boykin\n✅ Free Calibrated Infrared Thermal & 4K Drone Roof Scans\n✅ Up to $35,000 in Combined Warranty & Guarantee Protection\n\n👉 Check instant pricing and book online 24/7:\n${link}\n📞 Direct CMI Hotline: (678) 480-2110\n\n#${sp.city}GA #AtlantaRealEstate #HomeInspection #CertifiedMasterInspector #ForesightHomeInspections`,
-          linkedin: `${sp.city}, GA ${sp.serviceName}: Why ${sp.city} homebuyers, commercial investors, and realtors trust Foresight Home Inspections (${sp.priceHook}).\n\nLed by board-certified Certified Master Inspector® Christopher Boykin (4.8★ across 53 verified Google reviews), our Two-Inspector team completes cross-checked evaluations in 1.5 to 2.5 hours with same-day digital reports, free infrared thermal imaging, 4K drone roof scans, and up to $35,000 in combined warranty and guarantee protection.\n\nSchedule your ${sp.city}, GA inspection online 24/7:\n${link}\n\n#${sp.city}RealEstate #AtlantaRealtors #DueDiligence #CertifiedMasterInspector #ForesightHomeInspections`
-        });
+        parsedQueue.push({ id: maxId, ...postPayload });
         addedStriking += 1;
+      } else {
+        parsedQueue[existingIdx] = { id: parsedQueue[existingIdx].id, ...postPayload };
       }
     }
     fs.writeFileSync(socialQueuePath, JSON.stringify(parsedQueue, null, 2) + '\n', 'utf8');
@@ -133,14 +155,17 @@ export function auditAndSyncEcosystemHarmony() {
     if (/\b(F404|F201|RSMeans|HomeGauge)\b/.test(content)) {
       fileIssues.push('Banned legal/trademark term detected (F404/F201/RSMeans/HomeGauge)');
     }
-    if ((t.file.endsWith('foresight_knowledge.py') || t.file.endsWith('social-queue.json') || t.file.endsWith('chris-brain-prompt.js')) && !content.includes('$275')) {
+    if (/\/services\/(dekalb-low-flow-water-certificate|mold-air-quality-testing|str-compliance-inspection)\b/.test(content)) {
+      fileIssues.push('Non-canonical service URL slug detected (must use /service-areas/dekalb-county-compliance, /services/mold-testing, or /blog/metro-atlanta-short-term-rental-str-compliance-guide)');
+    }
+    if ((t.file.endsWith('foresight_knowledge.py') || t.file.endsWith('social-queue.json') || t.file.endsWith('chris-brain-prompt.js') || t.file.endsWith('llms.txt') || t.file.endsWith('comparisons-pseo.json')) && !content.includes('$275')) {
       fileIssues.push('Missing $275 Pre-Drywall starting price');
+    }
+    if ((t.file.endsWith('llms.txt') || t.file.endsWith('comparisons-pseo.json')) && (!content.includes('4.8★ Across 53 Verified Google Reviews') || !content.includes('Pre-Drywall from $275'))) {
+      fileIssues.push('Missing 4.8★ Across 53 Verified Google Reviews or Pre-Drywall from $275 summary');
     }
     if (t.file.endsWith('social-queue.json') && /(\(From \)|With ,000|\( Flat Rate\)|psychrometric moisture loads|parallel return paths on grounding conductors)/i.test(content)) {
       fileIssues.push('Corrupted $ regex token or banned academic jargon detected in social-queue.json');
-    }
-    if (t.file.endsWith('foresight_knowledge.py') && !content.includes('$275')) {
-      fileIssues.push('Missing $275 Pre-Drywall starting price');
     }
     if (t.file.endsWith('lightweight_realtor_templates.js') && !content.includes('MAX_DUE_DILIGENCE_AGE_DAYS = 2')) {
       fileIssues.push('Due diligence ceiling out of sync with 48-hour (2-day) standard');
@@ -162,6 +187,9 @@ export function auditAndSyncEcosystemHarmony() {
       }
       if (!content.includes('$35,000')) {
         fileIssues.push('ReviewClient.js missing $35,000 combined warranty protection');
+      }
+      if (!content.includes('message: activeSms')) {
+        fileIssues.push('ReviewClient.js missing canonical message: activeSms key in /api/open-sms payload');
       }
       if (/\bCRL\b/.test(content)) {
         fileIssues.push('Banned trademark term CRL detected in ReviewClient.js');

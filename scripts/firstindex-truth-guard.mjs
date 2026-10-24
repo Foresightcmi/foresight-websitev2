@@ -143,38 +143,70 @@ const llmsPath = path.join(ROOT, 'public', 'llms.txt');
 const posts = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
 let llmsContent = fs.readFileSync(llmsPath, 'utf8');
 
+const getPostSummary = (p) => (p.excerpt || p.metaDescription || p.description || '').replace(/\*/g, '').trim();
+const getServiceSummary = (s) => {
+  const details = (s.priceDetails || '').replace(/\{city\}/gi, 'Metro Atlanta').trim();
+  const sub = (s.heroSub || s.overview || s.shortDesc || s.description || '')
+    .replace(/\{city\}'s/gi, "Metro Atlanta's")
+    .replace(/\{city\},\s*GA/gi, 'Metro Atlanta, GA')
+    .replace(/\{city\}/gi, 'Metro Atlanta')
+    .replace(/\*/g, '')
+    .trim();
+  return details ? `${details}. ${sub}` : sub;
+};
+
+if (FIX_MODE) {
+  for (const p of posts) {
+    const emptyLineRe = new RegExp(`^(- \\[.+\\]\\(https://www\\.fhinspectionsatl\\.com/blog/${p.slug}\\):)[ \\t]*\\r?$`, 'm');
+    if (emptyLineRe.test(llmsContent)) {
+      llmsContent = llmsContent.replace(emptyLineRe, (_, prefix) => `${prefix} ${getPostSummary(p)}`);
+      fixedItems++;
+    }
+  }
+}
+
 let missingPosts = posts.filter((p) => !llmsContent.includes(`/blog/${p.slug}`));
 if (missingPosts.length > 0 && FIX_MODE) {
   const newLines = missingPosts.map(
-    (p) => `- [${p.title.replace(/\*/g, '')}](https://www.fhinspectionsatl.com/blog/${p.slug}): ${(p.excerpt || p.metaDescription || '').replace(/\*/g, '').trim()}`
+    (p) => `- [${p.title.replace(/\*/g, '')}](https://www.fhinspectionsatl.com/blog/${p.slug}): ${getPostSummary(p)}`
   );
   llmsContent = llmsContent.replace(
     /## Core Educational Guides & Analysis Articles \(\d+ Total\)/,
     `## Core Educational Guides & Analysis Articles (${posts.length} Total)`
   );
   const marker = '## Inspection Comparison & Decision Guides';
-  llmsContent = llmsContent.replace(marker, `${newLines.join('\n')}\n\n${marker}`);
-  fs.writeFileSync(llmsPath, llmsContent, 'utf8');
+  llmsContent = llmsContent.replace(marker, () => `${newLines.join('\n')}\n\n${marker}`);
   fixedItems += missingPosts.length;
   missingPosts = posts.filter((p) => !llmsContent.includes(`/blog/${p.slug}`));
 }
-record(`100% of canonical blog articles (${posts.length}/${posts.length}) indexed in public/llms.txt`, missingPosts.length === 0, `${posts.length - missingPosts.length}/${posts.length} indexed`);
 
 const servicesPath = path.join(ROOT, 'data', 'services-pseo.json');
 const services = JSON.parse(fs.readFileSync(servicesPath, 'utf8'));
+if (FIX_MODE) {
+  for (const s of services) {
+    const svcRe = new RegExp(`^(- \\[.+\\]\\(https://www\\.fhinspectionsatl\\.com/services/${s.slug}\\):)(?:[ \\t]*|.*- \\[[^\\]]+\\].*)\\r?$`, 'm');
+    if (svcRe.test(llmsContent)) {
+      llmsContent = llmsContent.replace(svcRe, (_, prefix) => `${prefix} ${getServiceSummary(s)}`);
+      fixedItems++;
+    }
+  }
+  fs.writeFileSync(llmsPath, llmsContent, 'utf8');
+}
 let missingServices = services.filter((s) => !llmsContent.includes(`/services/${s.slug}`));
 if (missingServices.length > 0 && FIX_MODE) {
   const svcLines = services.map(
-    (s) => `- [${s.name} (${s.price})](https://www.fhinspectionsatl.com/services/${s.slug}): ${(s.shortDesc || s.description || '').replace(/\*/g, '').trim()}`
+    (s) => `- [${s.name} (${s.price})](https://www.fhinspectionsatl.com/services/${s.slug}): ${getServiceSummary(s)}`
   );
   const svcBlock = `## Core Inspection & Specialty Diagnostic Services (${services.length} Total)\n${svcLines.join('\n')}\n\n`;
   const marker = '## Core Educational Guides & Analysis Articles';
-  llmsContent = llmsContent.replace(marker, `${svcBlock}${marker}`);
+  llmsContent = llmsContent.replace(marker, () => `${svcBlock}${marker}`);
   fs.writeFileSync(llmsPath, llmsContent, 'utf8');
   fixedItems += missingServices.length;
   missingServices = services.filter((s) => !llmsContent.includes(`/services/${s.slug}`));
 }
-record(`100% of canonical services (${services.length}/${services.length}) indexed in public/llms.txt`, missingServices.length === 0, `${services.length - missingServices.length}/${services.length} indexed`);
+const emptyLlmsDescriptions = (llmsContent.match(/^- \[.+\]\(https:\/\/www\.fhinspectionsatl\.com\/(blog|services)\/[^)]+\):[ \t]*\r?$/gm) || []).length;
+record(`100% of canonical blog articles (${posts.length}/${posts.length}) indexed in public/llms.txt`, missingPosts.length === 0 && emptyLlmsDescriptions === 0, `${posts.length - missingPosts.length}/${posts.length} indexed, ${emptyLlmsDescriptions} empty descriptions`);
+record(`100% of canonical services (${services.length}/${services.length}) indexed in public/llms.txt`, missingServices.length === 0 && emptyLlmsDescriptions === 0, `${services.length - missingServices.length}/${services.length} indexed`);
 
 // Step 3: Validate Link Counts & Zero Asterisks in data/posts.json (Pigford Link-Density Guard)
 const maxLinks = truth.guardrails.maxInternalLinksPerPost || 20;

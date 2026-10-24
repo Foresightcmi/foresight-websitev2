@@ -64,10 +64,17 @@ export default function ReviewClient() {
       const res = await fetch('/api/open-sms', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ to: cleanPhone, body: activeSms })
+        body: JSON.stringify({
+          to: cleanPhone,
+          message: activeSms,
+          body: activeSms,
+          targetName: clientName,
+          address: propertyAddress,
+          role: 'CLIENT_REVIEW_DISPATCH'
+        })
       });
       const json = await res.json();
-      setCopiedType(json.ok ? 'opensms_sent' : 'opensms_err');
+      setCopiedType(res.ok && json.ok ? 'opensms_sent' : 'opensms_err');
     } catch {
       setCopiedType('opensms_err');
     }
@@ -376,7 +383,7 @@ export default function ReviewClient() {
                     <button
                       onClick={handleOpenSmsSend}
                       style={{
-                        background: copiedType === 'opensms_sent' ? '#22C55E' : '#D97706',
+                        background: copiedType === 'opensms_sent' ? '#22C55E' : copiedType === 'opensms_err' ? '#EF4444' : '#D97706',
                         color: '#FFFFFF',
                         border: 'none',
                         padding: '0.4rem 0.85rem',
@@ -386,7 +393,7 @@ export default function ReviewClient() {
                         cursor: 'pointer'
                       }}
                     >
-                      {copiedType === 'opensms_sending' ? 'Sending...' : copiedType === 'opensms_sent' ? '✓ Sent via OpenSMS' : '📲 OpenSMS Direct'}
+                      {copiedType === 'opensms_sending' ? 'Sending...' : copiedType === 'opensms_sent' ? '✓ Sent via OpenSMS' : copiedType === 'opensms_err' ? '⚠️ OpenSMS Error' : '📲 OpenSMS Direct'}
                     </button>
                     <button
                       onClick={handleSendSMS}

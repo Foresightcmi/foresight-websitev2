@@ -55,6 +55,7 @@ export async function POST(request) {
   try {
     const body = await request.json();
     const { action, apiKey, gatewayUrl, to, message, leadId, targetName, address, role } = body || {};
+    const resolvedMessage = message || body?.body || body?.text;
 
     if (action === 'save_key') {
       const cleanKey = String(apiKey || '').trim();
@@ -96,7 +97,7 @@ export async function POST(request) {
     }
 
     const e164 = normalizePhoneE164(to);
-    if (!e164 || !message) {
+    if (!e164 || !resolvedMessage) {
       return NextResponse.json(
         { error: 'Valid 10-digit US phone number and message are required.' },
         { status: 400 }
@@ -115,8 +116,8 @@ export async function POST(request) {
     if (cfg.apiKey) headers['Authorization'] = `Bearer ${cfg.apiKey}`;
 
     const payload = isDasLearning
-      ? { number: e164, text: String(message).trim() }
-      : { to: e164, message: String(message).trim() };
+      ? { number: e164, text: String(resolvedMessage).trim() }
+      : { to: e164, message: String(resolvedMessage).trim() };
 
     const res = await fetch(targetEndpoint, {
       method: 'POST',

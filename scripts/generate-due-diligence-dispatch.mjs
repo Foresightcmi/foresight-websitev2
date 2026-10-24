@@ -1037,6 +1037,7 @@ const htmlContent = `<!DOCTYPE html>
           : '<span style="background:rgba(245,158,11,0.18); border:1px solid #f59e0b; color:#fcd34d; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:4px;">🏡 LISTING AGENT</span>';
 
         const safeTextJs = textBody.replace(/\\\\/g, '\\\\\\\\').replace(/'/g, "\\\\'");
+        const safePreDrywallJs = preDrywallBody.replace(/\\\\/g, '\\\\\\\\').replace(/'/g, "\\\\'");
         const safeNameJs = (f.name || '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, "\\\\'");
         const safeAddrJs = (f.address || '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, "\\\\'");
 
@@ -1085,7 +1086,7 @@ const htmlContent = `<!DOCTYPE html>
               <a class="btn-buyer-pass" href="\${buyerLink}">
                 📲 Buyer Forward
               </a>
-              <a class="btn-buyer-pass" style="background:#3b0764; border-color:#a855f7; color:#e9d5ff;" href="\${preDrywallLink}">
+              <a class="btn-buyer-pass" style="background:#3b0764; border-color:#a855f7; color:#e9d5ff; cursor:pointer;" href="\${preDrywallLink}" onclick="event.preventDefault(); markSent('\${f.id}', '\${preDrywallLink}', '\${f.clean_phone}', '\${safePreDrywallJs}', '\${safeNameJs}', '\${safeAddrJs}', 'PRE_DRYWALL_OUTREACH')">
                 📐 $275 Pre-Drywall
               </a>
               <a class="btn-call" href="tel:\${f.clean_phone}">
