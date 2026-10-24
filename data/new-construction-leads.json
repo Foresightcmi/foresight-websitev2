@@ -9365,5 +9365,63 @@
       "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
     ],
     "harvestedAt": "2026-10-23T21:58:12.594Z"
+  },
+  {
+    "recordId": "NC-7858890",
+    "mlsId": "7858890",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "631 Flat Shoals Ave",
+    "address": "631 Flat Shoals Ave, Atlanta, GA 30316",
+    "city": "Atlanta",
+    "zip": "30316",
+    "price": 675000,
+    "sqft": 0,
+    "yearBuilt": 2026,
+    "beds": 3,
+    "baths": 2.5,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/631-Flat-Shoals-Ave-SE-30316/home/23700223",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $335)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
+    ],
+    "harvestedAt": "2026-10-24T17:19:45.135Z"
+  },
+  {
+    "recordId": "NC-7858527",
+    "mlsId": "7858527",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "4578 N Elizabeth Ln SE",
+    "address": "4578 N Elizabeth Ln SE, Atlanta, GA 30339",
+    "city": "Atlanta",
+    "zip": "30339",
+    "price": 3795000,
+    "sqft": 7947,
+    "yearBuilt": 2024,
+    "beds": 8,
+    "baths": 8,
+    "mlsStatus": "Coming Soon",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 14,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/4578-N-Elizabeth-Ln-SE-30339/home/177874449",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $335)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
+    ],
+    "harvestedAt": "2026-10-24T17:19:45.135Z"
   }
 ]
