@@ -27,7 +27,8 @@
     "scout:due-diligence": "node scripts/autonomous-due-diligence-engine.mjs && node scripts/permit-radar.mjs && node scripts/new-construction-radar.mjs",
     "firstindex:guard": "node scripts/firstindex-truth-guard.mjs --fix",
     "firstindex:mentions": "node scripts/firstindex-ai-mention-tracker.mjs",
-    "firstindex:run": "node scripts/firstindex-daily-dispatcher.mjs"
+    "firstindex:run": "node scripts/firstindex-daily-dispatcher.mjs",
+    "ecosystem:sync": "node scripts/sync-ecosystem-harmony.mjs && node scripts/sync-email-campaign-bridge.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",
