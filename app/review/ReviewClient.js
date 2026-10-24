@@ -25,7 +25,7 @@ export default function ReviewClient() {
   // Dynamic 5-Star SMS Templates
   const previousClientSms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home at ${address}. As an independent Atlanta local business, our reputation is built on 5-star reviews from valued clients like you. Could you please take 30 seconds to give us a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - It means the world to our team! Thank you so much! Christopher Boykin, CMI® (678) 480-2110`;
 
-  const sameDaySms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! Thank you for trusting our two-inspector team on ${address} today! Your digital CRL report is ready. As an Atlanta local family business, our reputation is built on 5-star client experiences. If our thoroughness and thermal scan gave you peace of mind, could you take 30 seconds to share a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - Christopher Boykin, CMI® (678) 480-2110`;
+  const sameDaySms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! Thank you for trusting our two-inspector team on ${address} today! Your interactive digital inspection report is ready. As an Atlanta local family business, our reputation is built on 5-star client experiences. If our thoroughness and thermal scan gave you peace of mind, could you take 30 seconds to share a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - Christopher Boykin, CMI® (678) 480-2110`;
 
   const activeSms = dispatchMode === 'previous' ? previousClientSms : sameDaySms;
 
@@ -34,7 +34,7 @@ export default function ReviewClient() {
   const previousClientEmailBody = `Dear ${clientName || 'Valued Client'},\n\nI hope you and your family are settling in wonderfully at ${address}!\n\nChristopher Boykin here, founder of Foresight Home Inspections. It was a true pleasure inspecting your home during your due diligence.\n\nAs an independent, Georgia-certified small business, 5-star Google reviews from previous clients are the lifeblood of our company—they are how local Atlanta homebuyers know they can trust our two-inspector team to protect their investment.\n\nIf you had a great experience with our inspection thoroughness, infrared thermal scans, and detailed report, would you take 30 seconds to leave us a 5-star review on Google?\n\n⭐⭐⭐⭐⭐ Tap here to leave your 5-Star Review:\n${directGoogleReviewUrl}\n\nIf there is anything you ever need regarding home maintenance, contractor recommendations, or building questions, my direct cell is always open to you at (678) 480-2110.\n\nWith sincere gratitude,\n\nChristopher Boykin, CMI®\nCertified Master Inspector\nForesight Home Inspections LLC\nPhone: (678) 480-2110\nWebsite: https://www.fhinspectionsatl.com`;
 
   const sameDayEmailSubject = `Your Inspection Report + Quick Favor for Christopher Boykin ⭐⭐⭐⭐⭐`;
-  const sameDayEmailBody = `Dear ${clientName || 'Valued Client'},\n\nThank you for trusting Foresight Home Inspections to evaluate ${address} today. Our mission is to give you complete clarity and peace of mind during your home buying journey.\n\nYour complete digital inspection report and infrared thermal photos are now ready.\n\nAs a locally-owned Atlanta business, 5-star Google reviews from valued clients mean the world to our inspection team. If you appreciated our two-inspector thoroughness, detailed walkthrough, and $10,000 warranty protection, could you take 30 seconds to leave us a 5-star review on Google?\n\n⭐⭐⭐⭐⭐ Tap here to leave your 5-Star Review:\n${directGoogleReviewUrl}\n\nPlease don't hesitate to reach out if you have any questions about your report or contractor repair priorities.\n\nWarm regards,\n\nChristopher Boykin, CMI®\nCertified Master Inspector\nForesight Home Inspections LLC\nPhone: (678) 480-2110\nWebsite: https://www.fhinspectionsatl.com`;
+  const sameDayEmailBody = `Dear ${clientName || 'Valued Client'},\n\nThank you for trusting Foresight Home Inspections to evaluate ${address} today. Our mission is to give you complete clarity and peace of mind during your home buying journey.\n\nYour complete digital inspection report and infrared thermal photos are now ready.\n\nAs a locally-owned Atlanta business, 5-star Google reviews from valued clients mean the world to our inspection team. If you appreciated our two-inspector thoroughness, detailed walkthrough, and up to $35,000 in combined warranty and guarantee protection, could you take 30 seconds to leave us a 5-star review on Google?\n\n⭐⭐⭐⭐⭐ Tap here to leave your 5-Star Review:\n${directGoogleReviewUrl}\n\nPlease don't hesitate to reach out if you have any questions about your report or contractor repair priorities.\n\nWarm regards,\n\nChristopher Boykin, CMI®\nCertified Master Inspector\nForesight Home Inspections LLC\nPhone: (678) 480-2110\nWebsite: https://fhinspectionsatl.com`;
 
   const activeEmailSubject = dispatchMode === 'previous' ? previousClientEmailSubject : sameDayEmailSubject;
   const activeEmailBody = dispatchMode === 'previous' ? previousClientEmailBody : sameDayEmailBody;
@@ -54,6 +54,24 @@ export default function ReviewClient() {
   const handleSendSMS = () => {
     const cleanPhone = (clientPhone || '').replace(/[^0-9]/g, '');
     window.location.href = `sms:${cleanPhone}?body=${encodeURIComponent(activeSms)}`;
+  };
+
+  const handleOpenSmsSend = async () => {
+    const cleanPhone = (clientPhone || '').replace(/[^0-9]/g, '');
+    if (!cleanPhone) return;
+    setCopiedType('opensms_sending');
+    try {
+      const res = await fetch('/api/open-sms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ to: cleanPhone, body: activeSms })
+      });
+      const json = await res.json();
+      setCopiedType(json.ok ? 'opensms_sent' : 'opensms_err');
+    } catch {
+      setCopiedType('opensms_err');
+    }
+    setTimeout(() => setCopiedType(null), 3500);
   };
 
   const handleSendEmail = () => {
@@ -355,6 +373,21 @@ export default function ReviewClient() {
                     SMS Message Preview (5-Star Request Expressed)
                   </span>
                   <div style={{ display: 'flex', gap: '6px' }}>
+                    <button
+                      onClick={handleOpenSmsSend}
+                      style={{
+                        background: copiedType === 'opensms_sent' ? '#22C55E' : '#D97706',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        padding: '0.4rem 0.85rem',
+                        borderRadius: '0.35rem',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        cursor: 'pointer'
+                      }}
+                    >
+                      {copiedType === 'opensms_sending' ? 'Sending...' : copiedType === 'opensms_sent' ? '✓ Sent via OpenSMS' : '📲 OpenSMS Direct'}
+                    </button>
                     <button
                       onClick={handleSendSMS}
                       style={{

@@ -467,9 +467,9 @@
     </div>
 
     <!-- Quick Access to VIP Realtor Perks Hub -->
-    <a href="/realtors#gar-tool" class="realtor-portal-banner" target="_blank">
-      <span class="gold-text">🏛️ VIP Realtor Partner Perks Portal</span>
-      <span class="arrow-tag">GAR Form F404 Tool ↗</span>
+    <a href="/realtors" class="realtor-portal-banner" target="_blank">
+      <span class="gold-text">🏛️ VIP Realtor Partner Perks • $275 Pre-Drywall &amp; $345 Homes</span>
+      <span class="arrow-tag">Repair Amendment Tool ↗</span>
     </a>
 
     <!-- Autonomous OpenSMS Gateway Control Bar -->
@@ -948,6 +948,9 @@
         const buyerBody = 'Hi ' + f.first + ', here is our 1-click due diligence scheduler and $35,000 warranty certificate for your buyers at ' + f.address + ': https://fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' — Includes our two-inspector team, same-day report' + (isDeKalb ? ', official DeKalb Low-Flow Certificate ($100),' : '') + ', and free utility setup concierge. Feel free to pass this directly to your buyers so they can lock in their inspection date today!';
         const buyerLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(buyerBody);
 
+        const preDrywallBody = 'Hi ' + f.first + ', Christopher Boykin, CMI with Foresight Home Inspections here! Quick heads-up for your new-build buyers in ' + f.city + ': our 2-Inspector Pre-Drywall Framing Inspection starts at just $275 ($275 up to 1,500 sq ft | $300 for 1,501–2,500 | $350 for 2,501–3,500 | $400 for 3,501+ sq ft), plus Final New Construction ($400+) and 11-Month Warranty ($335+). Book 24/7: https://fhinspectionsatl.com/services/pre-drywall-inspection — (678) 480-2110';
+        const preDrywallLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(preDrywallBody);
+
         const roleBadge = isBuyerAgent
           ? '<span style="background:rgba(16,185,129,0.2); border:1px solid #10b981; color:#6ee7b7; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:800; margin-left:4px;">🎯 BUYER\'S AGENT</span>'
           : '<span style="background:rgba(245,158,11,0.18); border:1px solid #f59e0b; color:#fcd34d; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:4px;">🏡 LISTING AGENT</span>';
@@ -996,10 +999,13 @@
               ${sent ? '✓ Resend Due Diligence SMS (' + f.phone + ')' : ((openSmsServerConfigured || openSmsKey) ? '🤖 Silent OpenSMS Dispatch to ' + f.first + ' (' + f.phone + ')' : '📱 1-Tap Due Diligence Text ' + f.first + ' (' + f.phone + ')')}
             </button>
 
-            <!-- Secondary Actions: Buyer Forward Pass & Call -->
-            <div class="btn-action-row">
+            <!-- Secondary Actions: Buyer Forward Pass, $275 Pre-Drywall & Call -->
+            <div class="btn-action-row" style="grid-template-columns: 1fr 1fr auto auto;">
               <a class="btn-buyer-pass" href="${buyerLink}">
-                📲 1-Tap Buyer Forward Pass
+                📲 Buyer Forward
+              </a>
+              <a class="btn-buyer-pass" style="background:#3b0764; border-color:#a855f7; color:#e9d5ff;" href="${preDrywallLink}">
+                📐 $275 Pre-Drywall
               </a>
               <a class="btn-call" href="tel:${f.clean_phone}">
                 📞 Call

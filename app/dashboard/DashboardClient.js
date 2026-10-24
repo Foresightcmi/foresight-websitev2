@@ -1012,9 +1012,9 @@ export default function DashboardClient({
 
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: '#70757a', marginBottom: '0.4rem' }}>
                         <span style={{ color: '#e37400' }}>★★★★★</span>
-                        <span style={{ fontWeight: 600, color: '#3c4043' }}>Rating: 5.0</span>
-                        <span>· 150+ reviews</span>
-                        <span>· $315 - $1,895</span>
+                        <span style={{ fontWeight: 600, color: '#3c4043' }}>Rating: 4.8</span>
+                        <span>· 53 reviews</span>
+                        <span>· From $295 Condos / $345 Homes</span>
                       </div>
 
                       <div style={{ fontSize: '0.85rem', color: '#4d5156', lineHeight: 1.45, marginBottom: '0.75rem' }}>
@@ -1952,14 +1952,14 @@ export default function DashboardClient({
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                 <span style={{ color: '#38bdf8', fontSize: '0.85rem', fontWeight: 700 }}>High-Converting SMS Template</span>
                 <button
-                  onClick={() => handleCopyText(`Hi ${reviewClientName}, this is Christopher with Foresight Home Inspections. Thank you for trusting us with your home inspection in ${reviewClientCity}! If our 2-inspector team gave you peace of mind, would you take 45 seconds to leave us a quick review on Google? It means the world to our local family business: https://g.page/r/CbGjW894Yg5pEAI/review`, 'sms_review')}
+                  onClick={() => handleCopyText(`Hi ${reviewClientName}, this is Christopher with Foresight Home Inspections. Thank you for trusting us with your home inspection in ${reviewClientCity}! If our 2-inspector team gave you peace of mind, would you take 45 seconds to leave us a quick review on Google? It means the world to our local family business: https://g.page/r/CaK5MZOz_FBtEBM/review`, 'sms_review')}
                   style={{ background: '#334155', color: copiedKey === 'sms_review' ? '#4ade80' : '#ffffff', border: 'none', padding: '0.35rem 0.75rem', borderRadius: '4px', cursor: 'pointer', fontSize: '0.8rem' }}
                 >
                   {copiedKey === 'sms_review' ? '✓ Copied' : 'Copy SMS'}
                 </button>
               </div>
               <p style={{ color: '#cbd5e1', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
-                &ldquo;Hi {reviewClientName}, this is Christopher with Foresight Home Inspections. Thank you for trusting us with your home inspection in {reviewClientCity}! If our 2-inspector team gave you peace of mind, would you take 45 seconds to leave us a quick review on Google? It means the world to our local family business: <strong style={{ color: '#38bdf8' }}>https://g.page/r/CbGjW894Yg5pEAI/review</strong>&rdquo;
+                &ldquo;Hi {reviewClientName}, this is Christopher with Foresight Home Inspections. Thank you for trusting us with your home inspection in {reviewClientCity}! If our 2-inspector team gave you peace of mind, would you take 45 seconds to leave us a quick review on Google? It means the world to our local family business: <strong style={{ color: '#38bdf8' }}>https://g.page/r/CaK5MZOz_FBtEBM/review</strong>&rdquo;
               </p>
             </div>
           </div>

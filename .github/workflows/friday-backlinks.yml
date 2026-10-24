@@ -1,9 +1,9 @@
-name: Friday — Backlink Scout
+name: Mon/Wed/Fri — Backlink Scout
 
 on:
   schedule:
-    # Every Friday at 11:00 AM EST (15:00 UTC)
-    - cron: '0 15 * * 5'
+    # Every Monday, Wednesday, and Friday at 11:00 AM EST (15:00 UTC)
+    - cron: '0 15 * * 1,3,5'
   workflow_dispatch:
 
 concurrency:

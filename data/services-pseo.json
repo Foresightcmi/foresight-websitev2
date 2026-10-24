@@ -285,7 +285,7 @@
     "metaTitle": "{city}, GA Pre-Drywall Inspection | $275+ Framing Audit",
     "metaDescription": "4.8★ Independent pre-drywall inspections for new builds in {city}, GA from $275. 2 certified inspectors audit framing, rough plumbing, electrical & HVAC!",
     "price": "$275+",
-    "priceDetails": "$275 up to 2,500 sq ft | $300 for 2,500+ sq ft",
+    "priceDetails": "$275 up to 1,500 sq ft | $300 for 1,501–2,500 sq ft | $350 for 2,501–3,500 sq ft | $400 for 3,501+ sq ft",
     "icon": "📐",
     "badge": "Phase 2 Framing Audit",
     "heroSub": "Drywall permanently hides structural, electrical, and plumbing defects. Inspect the bare bones of your new {city} home before walls are closed.",
@@ -299,7 +299,7 @@
       },
       {
         "q": "How much does a pre-drywall inspection cost in {city}, GA?",
-        "a": "Independent pre-drywall framing inspections in {city}, GA start at $275 for homes up to 2,500 sq ft and $300 for larger homes. Every pre-drywall audit dispatches two certified inspectors and includes a builder-ready punch list delivered within 24 hours."
+        "a": "Independent pre-drywall framing inspections in {city}, GA follow a transparent 4-tier rate: $275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, and $400 for 3,501+ sq ft. Every pre-drywall audit dispatches two certified inspectors and includes a builder-ready punch list delivered within 24 hours."
       },
       {
         "q": "Will the builder allow an independent inspector for pre-drywall in {city}?",
