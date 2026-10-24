@@ -253,6 +253,27 @@ export function auditAndSyncEcosystemHarmony() {
     console.log(`  ✅ [HARMONIZED] GitGuardian Zero-Leak & Purchase-Only Due Diligence Quality Gate (>= $75,000, listing_ref)`);
   }
 
+  // Enforce 1,200/day Shared Workspace Quota Cap & HomeGauge Auto-Intake Wiring
+  const watchdogPath = path.join(EMAIL_ENGINE_DIR, 'catchup_nurture_watchdog.js');
+  const loopPath = path.join(EMAIL_ENGINE_DIR, 'run_master_nurture_loop.js');
+  if (fs.existsSync(watchdogPath) && fs.existsSync(loopPath)) {
+    const wRaw = fs.readFileSync(watchdogPath, 'utf8');
+    const lRaw = fs.readFileSync(loopPath, 'utf8');
+    if (!wRaw.includes('MAX_24H_GLOBAL_LIMIT = 1200') || !lRaw.includes('MAX_24H_GLOBAL_LIMIT = 1200')) {
+      issues += 1;
+      console.error('  ❌ [DRIFT] email-campaign-engine MAX_24H_GLOBAL_LIMIT drifted from 1200/day!');
+    } else {
+      console.log('  ✅ [HARMONIZED] Shared Google Workspace Quota Guard (1,200/day cap + 800/day reserve buffer)');
+    }
+  }
+  const hgIntakePath = path.join(WEBSITE_ROOT, 'scripts', 'lib', 'homegauge-intake.mjs');
+  if (!fs.existsSync(hgIntakePath)) {
+    issues += 1;
+    console.error('  ❌ [DRIFT] HomeGauge Auto-Intake module missing!');
+  } else {
+    console.log('  ✅ [HARMONIZED] HomeGauge IMAP/CSV Auto-Intake -> 24h Google Review & 11-Month Warranty Engine');
+  }
+
   console.log(`\n[SUMMARY] Ecosystem Harmony Check complete: ${issues} drift issues across connected engines.\n`);
   if (issues > 0) process.exitCode = 1;
   return { issues };
