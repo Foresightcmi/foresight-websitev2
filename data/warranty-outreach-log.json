@@ -279,5 +279,35 @@
     "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3183433.html",
     "type": "permit_homeowner",
     "timestamp": "2026-10-24T17:41:50.929Z"
+  },
+  {
+    "leadId": "ext_DKB-3160084",
+    "name": "Rock Coddington",
+    "address": "3179 ALSTON DR, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "rockcoddington@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3160084.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-25T17:54:11.370Z"
+  },
+  {
+    "leadId": "ext_DKB-3187263",
+    "name": "Kyaw Soe",
+    "address": "4587 ABERDEEN LN, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "marmedrahim7@gmail.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3187263.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-25T17:54:15.038Z"
+  },
+  {
+    "leadId": "ext_DKB-3190301",
+    "name": "PAULINA W BEHNK",
+    "address": "4216 CONNOR DR, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "paulina_behnk@yahoo.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3190301.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-10-25T17:54:18.780Z"
   }
 ]
