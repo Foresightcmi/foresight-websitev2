@@ -9452,5 +9452,34 @@
       "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
     ],
     "harvestedAt": "2026-10-24T21:29:00.674Z"
+  },
+  {
+    "recordId": "NC-7859038",
+    "mlsId": "7859038",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "1787 Pennington Pl SE",
+    "address": "1787 Pennington Pl SE, Atlanta, GA 30316",
+    "city": "Atlanta",
+    "zip": "30316",
+    "price": 699000,
+    "sqft": 2655,
+    "yearBuilt": 2026,
+    "beds": 4,
+    "baths": 3,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/1787-Pennington-Pl-SE-30316/home/23769561",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $335)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)"
+    ],
+    "harvestedAt": "2026-10-25T17:33:42.946Z"
   }
 ]
