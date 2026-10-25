@@ -14,7 +14,7 @@
 const SITE = 'https://www.fhinspectionsatl.com';
 const PHONE = '(678) 480-2110';
 const EMAIL = 'inspect@foresightcmi.com';
-const POSTAL = 'Foresight Home Inspections, LLC | 1816 South Deshon Road, Lithonia, GA 30058';
+const POSTAL = 'Foresight Home Inspections, LLC | Serving Metro Atlanta • ';
 
 export const LIST_UNSUBSCRIBE_HEADER = `<mailto:${EMAIL}?subject=unsubscribe>`;
 

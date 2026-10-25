@@ -1,5 +1,1165 @@
 [
   {
+    "email": "kaseyprince@gmail.com",
+    "first_name": "KASEY",
+    "full_name": "KASEY PRINCE",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "city": "Loganville",
+    "listing_address": "4894 Watson Mill Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "hannah@anchorhomeadvisors.com",
+    "first_name": "Hannah",
+    "full_name": "Hannah Branham",
+    "brokerage": "Anchor Real Estate Advisors, LLC",
+    "city": "Smyrna",
+    "listing_address": "461 Highview Drive SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "upwardsrealestate@gmail.com",
+    "first_name": "Yu",
+    "full_name": "Yu Zhou",
+    "brokerage": "Upwards Real Estate, LLC",
+    "city": "Johns Creek",
+    "listing_address": "150 Ocee View Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "kristencardinal88@gmail.com",
+    "first_name": "Kristen",
+    "full_name": "Kristen Cardinal",
+    "brokerage": "Virtual Properties Realty. Biz",
+    "city": "Buford",
+    "listing_address": "3566 Bendleton Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "lauriem@anchorhomeadvisors.com",
+    "first_name": "LAURIE",
+    "full_name": "LAURIE MCWHORTER",
+    "brokerage": "Anchor Real Estate Advisors, LLC",
+    "city": "Talmo",
+    "listing_address": "3807 Al Mangum Road",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "bballard@kw.com",
+    "first_name": "Brennan",
+    "full_name": "Brennan Ballard",
+    "brokerage": "Keller Williams Realty Peachtree Rd.",
+    "city": "Acworth",
+    "listing_address": "2006 Chelsea Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "jenna.smith@kw.com",
+    "first_name": "Jenna",
+    "full_name": "Jenna Smith",
+    "brokerage": "Keller Williams Realty Community Partners",
+    "city": "Gainesville",
+    "listing_address": "2951 Crystal Springs Point 154",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "marymcgahren@bolst.homes",
+    "first_name": "Mary",
+    "full_name": "Mary McGahren",
+    "brokerage": "Bolst",
+    "city": "Loganville",
+    "listing_address": "4894 Watson Mill Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "phil.houston@bhhsgeorgia.com",
+    "first_name": "Philip",
+    "full_name": "Philip Houston",
+    "brokerage": "Berkshire Hathaway HomeServices Georgia Properties",
+    "city": "Johns Creek",
+    "listing_address": "150 Ocee View Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "sara@turnkeyglobalrealty.com",
+    "first_name": "SARA",
+    "full_name": "SARA KIM",
+    "brokerage": "Turnkey Global Realty",
+    "city": "Buford",
+    "listing_address": "3566 Bendleton Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "merguiaraujo@mcarealtor.com",
+    "first_name": "Mergui",
+    "full_name": "Mergui Carolina Castillo",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Talmo",
+    "listing_address": "3807 Al Mangum Road",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "email": "kim.russell@coldwellbankeratlanta.com",
+    "first_name": "Kim",
+    "full_name": "Kim Russell",
+    "brokerage": "Coldwell Banker Realty",
+    "city": "Atlanta",
+    "listing_address": "1790 Stanton Road SW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "msmith@joinsanders.com",
+    "first_name": "MICHELLE",
+    "full_name": "MICHELLE SMITH",
+    "brokerage": "Sanders RE, LLC",
+    "city": "Atlanta",
+    "listing_address": "5898 San Gabriel Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "sherrilsellshomes@yahoo.com",
+    "first_name": "SHERRIL",
+    "full_name": "SHERRIL MCINTYRE",
+    "brokerage": "HomeSmart",
+    "city": "Atlanta",
+    "listing_address": "1761 Liberty",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "caitlin@hestergrouprealtors.com",
+    "first_name": "Caitlin",
+    "full_name": "Caitlin Moon",
+    "brokerage": "Hester Group REALTORS",
+    "city": "Douglasville",
+    "listing_address": "1731 Dogwood Trail",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "scollins@youneedresults.com",
+    "first_name": "Stacy",
+    "full_name": "Stacy Collins",
+    "brokerage": "Century 21 Results",
+    "city": "Oakwood",
+    "listing_address": "4870 Tangerine Circle",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "mike@mikepriceteam.com",
+    "first_name": "Mike",
+    "full_name": "Mike Price",
+    "brokerage": "EXP Realty, LLC.",
+    "city": "Atlanta",
+    "listing_address": "5433 Cascade Ridge SW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "tiffneysriffle@gmail.com",
+    "first_name": "Tiffney",
+    "full_name": "Tiffney Riffle",
+    "brokerage": "Keller Williams Premier",
+    "city": "Buford",
+    "listing_address": "5552 Little Mill Road",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "iwiley@youneedresults.com",
+    "first_name": "Itzel",
+    "full_name": "Itzel Wiley",
+    "brokerage": "Century 21 Results",
+    "city": "Lawrenceville",
+    "listing_address": "541 Carithers Road",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "richard@triforiuminc.com",
+    "first_name": "RICHARD",
+    "full_name": "RICHARD BRYSON",
+    "brokerage": "Triforium, Inc.",
+    "city": "Lawrenceville",
+    "listing_address": "202 Brook Lea Cove",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "boldenca@bellsouth.net",
+    "first_name": "Calvin",
+    "full_name": "Calvin Bolden",
+    "brokerage": "HomeSmart",
+    "city": "Fairburn",
+    "listing_address": "1033 Eldon Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "brookln.sample@metrobrokers.com",
+    "first_name": "Brookln",
+    "full_name": "Brookln Sample",
+    "brokerage": "Better Homes and Gardens Real Estate Metro Brokers",
+    "city": "Conyers",
+    "listing_address": "2871 Weatherstone Circle SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "sturcotte@tratonhomes.com",
+    "first_name": "Sophie",
+    "full_name": "Sophie Turcotte",
+    "brokerage": "Traton Homes Realty, Inc.",
+    "city": "Kennesaw",
+    "listing_address": "1931 Kinnard Alley",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "bblack@kw.com",
+    "first_name": "Brandy",
+    "full_name": "Brandy Black",
+    "brokerage": "Keller Williams Realty Partners",
+    "city": "Dallas",
+    "listing_address": "252 Parkmont Way",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "shannon@shannonstephens.com",
+    "first_name": "Shannon",
+    "full_name": "Shannon Stephens",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Gainesville",
+    "listing_address": "3111 Westchester Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "brianxd01@gmail.com",
+    "first_name": "QUANG",
+    "full_name": "QUANG DUONG",
+    "brokerage": "Milestone Realty, Inc.",
+    "city": "Lawrenceville",
+    "listing_address": "1441 Shady Cove Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "labjhomes@gmail.com",
+    "first_name": "Lauren",
+    "full_name": "Lauren Jones",
+    "brokerage": "HomeSmart",
+    "city": "Atlanta",
+    "listing_address": "1544 Boulder Walk Way SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "raphaelkirby@kw.com",
+    "first_name": "Raphael",
+    "full_name": "Raphael Kirby",
+    "brokerage": "Keller Williams Realty West Atlanta",
+    "city": "Smyrna",
+    "listing_address": "1035 Dell Avenue SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "michelle@c21jasper.com",
+    "first_name": "Michelle",
+    "full_name": "Michelle Godfrey",
+    "brokerage": "Century 21 Lindsey and Pauley",
+    "city": "Ball Ground",
+    "listing_address": "107 Nelson Ridge Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "brianna@bloommaier.com",
+    "first_name": "Brianna",
+    "full_name": "Brianna Smull Maier",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Buford",
+    "listing_address": "3653 Elinburg Cove Trail",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "listings@tamrawaderealestate.com",
+    "first_name": "TAMRA",
+    "full_name": "TAMRA WADE",
+    "brokerage": "RE/MAX Tru",
+    "city": "Flowery Branch",
+    "listing_address": "5667 Evelyn Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "michelle@bahlrealty.com",
+    "first_name": "Michelle",
+    "full_name": "Michelle Bahl",
+    "brokerage": "HomeSmart",
+    "city": "Atlanta",
+    "listing_address": "2669 Derby Walk NE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "homes@mullinaxteam.com",
+    "first_name": "BONNIE",
+    "full_name": "BONNIE B MULLINAX",
+    "brokerage": "Keller Williams Realty Northwest, LLC.",
+    "city": "Cartersville",
+    "listing_address": "7 Sterling Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "lmyf820405@gmail.com",
+    "first_name": "Fan",
+    "full_name": "Fan Yang",
+    "brokerage": "Realty Resources ATL, Inc.",
+    "city": "Lilburn",
+    "listing_address": "832 Brandlwood Way NW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "closedbycarley@gmail.com",
+    "first_name": "Carley",
+    "full_name": "Carley Wilson",
+    "brokerage": "HomeSmart",
+    "city": "Atlanta",
+    "listing_address": "5898 San Gabriel Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "todd.dipaula@theagencyre.com",
+    "first_name": "TODD",
+    "full_name": "TODD DIPAULA",
+    "brokerage": "The Agency Atlanta Metro",
+    "city": "Atlanta",
+    "listing_address": "1761 Liberty",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "homeswithheatherwoods@gmail.com",
+    "first_name": "Heather",
+    "full_name": "Heather Woods",
+    "brokerage": "Market South Properties, Inc.",
+    "city": "Locust Grove",
+    "listing_address": "513 WYLDEROSE LN.",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "claudiarealtor2014@gmail.com",
+    "first_name": "Claudia",
+    "full_name": "Claudia Vega",
+    "brokerage": "Maximum One Realty Partners",
+    "city": "Douglasville",
+    "listing_address": "1731 Dogwood Trail",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "dawnhodgson@remax.net",
+    "first_name": "Dawn",
+    "full_name": "Dawn Hodgson",
+    "brokerage": "REMAX Center",
+    "city": "Oakwood",
+    "listing_address": "4870 Tangerine Circle",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "sheilab@theprodigygroup.net",
+    "first_name": "Sheila",
+    "full_name": "Sheila Bertin",
+    "brokerage": "The Prodigy Group",
+    "city": "Atlanta",
+    "listing_address": "5433 Cascade Ridge SW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "alexaacosta@kw.com",
+    "first_name": "Alexa",
+    "full_name": "Alexa Rodriguez Acosta",
+    "brokerage": "Keller Williams Realty Atlanta Partners",
+    "city": "Buford",
+    "listing_address": "5552 Little Mill Road",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "sosajudith@yahoo.com",
+    "first_name": "Judith",
+    "full_name": "Judith Sosa",
+    "brokerage": "The Suri Group, Inc.",
+    "city": "Lawrenceville",
+    "listing_address": "202 Brook Lea Cove",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "candice@theperfectproperty.com",
+    "first_name": "Candice",
+    "full_name": "Candice Hayes",
+    "brokerage": "Keller Williams Realty Intown ATL",
+    "city": "Fairburn",
+    "listing_address": "1033 Eldon Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "lisa.watt@compass.com",
+    "first_name": "Lisa",
+    "full_name": "Lisa Watt",
+    "brokerage": "Compass",
+    "city": "Conyers",
+    "listing_address": "2871 Weatherstone Circle SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "kronawitter@gmail.com",
+    "first_name": "David",
+    "full_name": "David Kronawitter",
+    "brokerage": "Mendoza Realty, LLC",
+    "city": "Kennesaw",
+    "listing_address": "1931 Kinnard Alley",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "dulcimendoza@gmail.com",
+    "first_name": "Dulce",
+    "full_name": "Dulce Milagro Mendoza",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Dallas",
+    "listing_address": "252 Parkmont Way",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "andrew@pspcontact.com",
+    "first_name": "Andrew",
+    "full_name": "Andrew Alverson",
+    "brokerage": "Property Solutions Partners, LLC.",
+    "city": "Dallas",
+    "listing_address": "176 Easton Park Boulevard",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "udistherealtor@gmail.com",
+    "first_name": "Udis",
+    "full_name": "Udis Calderon",
+    "brokerage": "EXP Realty, LLC.",
+    "city": "Gainesville",
+    "listing_address": "3111 Westchester Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "motomaur@yahoo.com",
+    "first_name": "Mauricio",
+    "full_name": "Mauricio PLATA",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Buford",
+    "listing_address": "3695 Sagecrest Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "dao.tran@simplyhomesatl.com",
+    "first_name": "Dao",
+    "full_name": "Dao Tran",
+    "brokerage": "Simply Homes ATL, LLC",
+    "city": "Lawrenceville",
+    "listing_address": "1441 Shady Cove Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "sunnyhomepm@gmail.com",
+    "first_name": "SUNNY",
+    "full_name": "SUNNY SEO",
+    "brokerage": "Sunny Home Realty",
+    "city": "Lawrenceville",
+    "listing_address": "2692 Dreycott Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "homesbykatey@gmail.com",
+    "first_name": "KATEY",
+    "full_name": "KATEY LOPEZ",
+    "brokerage": "Atlanta Communities",
+    "city": "Powder Springs",
+    "listing_address": "5129 Hill Road SW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "angela@sellsstrong.com",
+    "first_name": "ANGELA",
+    "full_name": "ANGELA HUNTER",
+    "brokerage": "Atlanta Communities",
+    "city": "Ball Ground",
+    "listing_address": "107 Nelson Ridge Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "smchenry83@gmail.com",
+    "first_name": "Samantha",
+    "full_name": "Samantha McHenry",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Buford",
+    "listing_address": "3653 Elinburg Cove Trail",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "rpullin@youneedresults.com",
+    "first_name": "Rushaine",
+    "full_name": "Rushaine Pullin",
+    "brokerage": "Century 21 Results",
+    "city": "Flowery Branch",
+    "listing_address": "5667 Evelyn Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "jonathantew@jasonmitchellgroup.com",
+    "first_name": "Jonathan",
+    "full_name": "Jonathan Tew",
+    "brokerage": "Jason Mitchell Real Estate of Georgia, LLC",
+    "city": "Atlanta",
+    "listing_address": "3324 Henderson Creek Road",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "lindafleetwood@kw.com",
+    "first_name": "Linda",
+    "full_name": "Linda Fleetwood",
+    "brokerage": "Keller Williams Realty Northwest, LLC.",
+    "city": "Cartersville",
+    "listing_address": "7 Sterling Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "email": "nc@nataliecousins.com",
+    "first_name": "Natalie",
+    "full_name": "Natalie Cousins",
+    "brokerage": "Natalie Cousins & Associates, LLC",
+    "city": "Stone Mountain",
+    "listing_address": "4011 Redan Road 5",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "michelle@sure-realty.com",
+    "first_name": "Michelle",
+    "full_name": "Michelle Layne",
+    "brokerage": "Sure Realty Inc.",
+    "city": "Atlanta",
+    "listing_address": "2558 Coventry Street SW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "ronaldeaton30@gmail.com",
+    "first_name": "Ronald",
+    "full_name": "Ronald Eaton",
+    "brokerage": "Keller Williams Realty West Atlanta",
+    "city": "Stone Mountain",
+    "listing_address": "4574 Cedar Ridge Trail",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "jjjjmccall320@gmail.com",
+    "first_name": "Joyce",
+    "full_name": "Joyce McCall",
+    "brokerage": "JNL Smart Realty, LLC",
+    "city": "Johns Creek",
+    "listing_address": "8635 Lake Glen Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "dcg2019@gmail.com",
+    "first_name": "David",
+    "full_name": "David Gray",
+    "brokerage": "Dwayne Walker Realty",
+    "city": "Conyers",
+    "listing_address": "53 Landola Drive NW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "rasmus@rasmusrealestate.com",
+    "first_name": "Jude",
+    "full_name": "Jude Rasmus",
+    "brokerage": "Rasmus Real Estate Group, Inc.",
+    "city": "Atlanta",
+    "listing_address": "2604 Campbellton Road SW A6",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "brokerofhope@gmail.com",
+    "first_name": "JEFF",
+    "full_name": "JEFF STACEY",
+    "brokerage": "EXP Realty, LLC.",
+    "city": "Carrollton",
+    "listing_address": "77 Rock Springs Lake Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "findahomewithcandy@gmail.com",
+    "first_name": "Candace",
+    "full_name": "Candace McClung",
+    "brokerage": "NorthGroup Real Estate",
+    "city": "Jonesboro",
+    "listing_address": "10436 Tara Pointe Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "ben.hitchins@mainstay.io",
+    "first_name": "Benjamin",
+    "full_name": "Benjamin Hitchins",
+    "brokerage": "Mainstay Brokerage LLC",
+    "city": "Decatur",
+    "listing_address": "3679 Mecklinburg Place",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "david@listatl.com",
+    "first_name": "David",
+    "full_name": "David M McCulloch",
+    "brokerage": "List For 1%",
+    "city": "Decatur",
+    "listing_address": "3910 Dalhouise Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "peter.c.webster@hotmail.co.uk",
+    "first_name": "Peter",
+    "full_name": "Peter Webster",
+    "brokerage": "Realty One Group Edge",
+    "city": "Mableton",
+    "listing_address": "615 Charity Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "gahomesbyclaudia@gmail.com",
+    "first_name": "Claudia",
+    "full_name": "Claudia Murillo",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Decatur",
+    "listing_address": "2971 Valley Ridge Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "kerry.k@mainstay.io",
+    "first_name": "Kerry",
+    "full_name": "Kerry Kretchmer",
+    "brokerage": "Mainstay Brokerage LLC",
+    "city": "Stockbridge",
+    "listing_address": "185 Addy Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "nil@nilpatel.net",
+    "first_name": "Nil",
+    "full_name": "Nil Patel",
+    "brokerage": "Keller Williams Realty ATL Part",
+    "city": "Atlanta",
+    "listing_address": "2086 Edgemore Drive SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "offers@phillipspg.com",
+    "first_name": "The",
+    "full_name": "The Phillips Brothers",
+    "brokerage": "Bolst",
+    "city": "Woodstock",
+    "listing_address": "108 Little Brook Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "lorihiltongroup@kw.com",
+    "first_name": "LORI",
+    "full_name": "LORI HILTON",
+    "brokerage": "Keller Williams Realty Signature Partners",
+    "city": "Acworth",
+    "listing_address": "127 Linton Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "stenisha@solutionsfirstrealty.com",
+    "first_name": "Stenisha",
+    "full_name": "Stenisha Reed",
+    "brokerage": "Solutions First Realty, LLC.",
+    "city": "Lawrenceville",
+    "listing_address": "2710 Waterford Park Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "carolyn.calloway@harrynorman.com",
+    "first_name": "CAROLYN",
+    "full_name": "CAROLYN CALLOWAY",
+    "brokerage": "Harry Norman Realtors",
+    "city": "Woodstock",
+    "listing_address": "1228 W Oaks Way",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "transactionbroker@simplylistatlanta.com",
+    "first_name": "Celine",
+    "full_name": "Celine Higgins Evans",
+    "brokerage": "Simply List",
+    "city": "Lawrenceville",
+    "listing_address": "1980 Clinton Place",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "amy.luke@cbrealty.com",
+    "first_name": "Amy",
+    "full_name": "Amy Luke",
+    "brokerage": "Coldwell Banker Realty",
+    "city": "Lawrenceville",
+    "listing_address": "880 The Circle",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "alancanhelp@gmail.com",
+    "first_name": "ALAN",
+    "full_name": "ALAN DANIEL",
+    "brokerage": "Real Broker, LLC",
+    "city": "Lawrenceville",
+    "listing_address": "2780 Jo Beth Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "brandonpinkney@kw.com",
+    "first_name": "Brandon",
+    "full_name": "Brandon Pinkney",
+    "brokerage": "Keller Williams Realty Atlanta Partners",
+    "city": "Lawrenceville",
+    "listing_address": "205 Nash Street",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "hreside@tratonhomes.com",
+    "first_name": "Hunter",
+    "full_name": "Hunter Reside",
+    "brokerage": "Traton Homes Realty, Inc.",
+    "city": "Powder Springs",
+    "listing_address": "4249 Karenwood Circle",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "whutson@youneedresults.com",
+    "first_name": "The",
+    "full_name": "The Hutson Group",
+    "brokerage": "Century 21 Results",
+    "city": "Canton",
+    "listing_address": "337 Meadowcrest Circle",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "hmccoy@relianthomes.com",
+    "first_name": "Holly",
+    "full_name": "Holly McCoy",
+    "brokerage": "Reliant Realty, Inc.",
+    "city": "Monroe",
+    "listing_address": "1425 Willowbend Place",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "natalie@natalieblalockhomes.com",
+    "first_name": "NATALIE",
+    "full_name": "NATALIE BLALOCK",
+    "brokerage": "The Rezerve, LLC",
+    "city": "Brookhaven",
+    "listing_address": "3621 Wood Valley Court NE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "louis.oko@gmail.com",
+    "first_name": "LOUIS",
+    "full_name": "LOUIS OKONIEWSKI",
+    "brokerage": "HomeSmart",
+    "city": "Alpharetta",
+    "listing_address": "150 Clipper Bay Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "heather@heathertell.com",
+    "first_name": "HEATHER",
+    "full_name": "HEATHER TELL",
+    "brokerage": "HomeSmart",
+    "city": "Decatur",
+    "listing_address": "132 Northern Avenue",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "realtorjoanne@gmail.com",
+    "first_name": "JOANNE",
+    "full_name": "JOANNE LEE",
+    "brokerage": "Pinehill Realty Corporation",
+    "city": "Lawrenceville",
+    "listing_address": "2080 Sugarloaf Parkway 230",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "atlantacasas@gmail.com",
+    "first_name": "Agustin",
+    "full_name": "Agustin Brown",
+    "brokerage": "Rambeau Realty LP",
+    "city": "Atlanta",
+    "listing_address": "2558 Coventry Street SW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "sardaraziz@kw.com",
+    "first_name": "Sardar",
+    "full_name": "Sardar Aziz",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "city": "Decatur",
+    "listing_address": "3009 Oakvale Hts",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "lexi@mottorealty.com",
+    "first_name": "Lexi",
+    "full_name": "Lexi Benomar",
+    "brokerage": "Motto",
+    "city": "Atlanta",
+    "listing_address": "932 Gresham Avenue SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "margie@atlantaintown.com",
+    "first_name": "MARGIE",
+    "full_name": "MARGIE YONDORF",
+    "brokerage": "Atlanta Intown Real Estate Services",
+    "city": "Johns Creek",
+    "listing_address": "8635 Lake Glen Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "holanrealty@yahoo.com",
+    "first_name": "Douglas",
+    "full_name": "Douglas Holan",
+    "brokerage": "RE/MAX Tru",
+    "city": "Atlanta",
+    "listing_address": "2604 Campbellton Road SW A6",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "bellabarone@kw.com",
+    "first_name": "Bella",
+    "full_name": "Bella Barone",
+    "brokerage": "Keller Williams Realty Signature Partners",
+    "city": "Carrollton",
+    "listing_address": "77 Rock Springs Lake Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "tanyalane007@gmail.com",
+    "first_name": "Tanya",
+    "full_name": "Tanya Lane",
+    "brokerage": "Property Place RE Group",
+    "city": "Jonesboro",
+    "listing_address": "10436 Tara Pointe Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "hannahfleshel@kw.com",
+    "first_name": "Hannah",
+    "full_name": "Hannah Fleshel",
+    "brokerage": "Keller Williams Realty Peachtree Rd.",
+    "city": "Decatur",
+    "listing_address": "3640 Oregon Trail",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "wanda@faithandrealestate.com",
+    "first_name": "Wanda",
+    "full_name": "Wanda Langley",
+    "brokerage": "Seed Faith Realty, LLC",
+    "city": "Decatur",
+    "listing_address": "3910 Dalhouise Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "offers2tobias@gmail.com",
+    "first_name": "Tobias",
+    "full_name": "Tobias Graham",
+    "brokerage": "Prophet 9, LLC",
+    "city": "Mableton",
+    "listing_address": "615 Charity Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "contracts@rhondaduffy.com",
+    "first_name": "RHONDA",
+    "full_name": "RHONDA DUFFY",
+    "brokerage": "Duffy Realty of Atlanta",
+    "city": "Decatur",
+    "listing_address": "2971 Valley Ridge Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "tuhogarengeorgia@gmail.com",
+    "first_name": "Freddy",
+    "full_name": "Freddy Pena Castillo",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Covington",
+    "listing_address": "65 Mills Landing",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "cherylsellsatlanta@yahoo.com",
+    "first_name": "Cheryl",
+    "full_name": "Cheryl Taylor Anderson",
+    "brokerage": "Cheryl Taylor Real Estate",
+    "city": "Atlanta",
+    "listing_address": "2086 Edgemore Drive SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "jose.rosario@cbrealty.com",
+    "first_name": "Jose",
+    "full_name": "Jose Rosario",
+    "brokerage": "Coldwell Banker Realty",
+    "city": "Woodstock",
+    "listing_address": "108 Little Brook Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "triston@gaileyenterprises.com",
+    "first_name": "Triston",
+    "full_name": "Triston Brewer Tackett",
+    "brokerage": "Gailey Enterprises, LLC",
+    "city": "Acworth",
+    "listing_address": "127 Linton Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "erika@gahomeswithpurpose.com",
+    "first_name": "Erika",
+    "full_name": "Erika Andrade",
+    "brokerage": "Virtual Properties Realty. Biz",
+    "city": "Lawrenceville",
+    "listing_address": "2710 Waterford Park Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "carrolltaylorc@gmail.com",
+    "first_name": "Taylor",
+    "full_name": "Taylor Carroll",
+    "brokerage": "Watch Realty Co.",
+    "city": "Fairburn",
+    "listing_address": "7834 Marie Way",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "realtoratworkandrea@gmail.com",
+    "first_name": "Andrea",
+    "full_name": "Andrea Reaves",
+    "brokerage": "Atrium Realty, LLC",
+    "city": "Lawrenceville",
+    "listing_address": "1980 Clinton Place",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "felipeh.virtualprealty@gmail.com",
+    "first_name": "Felipe",
+    "full_name": "Felipe Hernandez",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Lilburn",
+    "listing_address": "5314 Delaware Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "contactenvisionrealty@gmail.com",
+    "first_name": "Emmanuella",
+    "full_name": "Emmanuella Belzince",
+    "brokerage": "Keller Williams Realty ATL Part",
+    "city": "Villa Rica",
+    "listing_address": "707 Cargile Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "sheilararias@gmail.com",
+    "first_name": "Sheila",
+    "full_name": "Sheila Arias",
+    "brokerage": "Redfin Corporation",
+    "city": "Lawrenceville",
+    "listing_address": "880 The Circle",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "dat.realtorga@gmail.com",
+    "first_name": "Dat",
+    "full_name": "Dat Nguyen",
+    "brokerage": "Virtual Properties Realty.com",
+    "city": "Lawrenceville",
+    "listing_address": "2780 Jo Beth Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "rstaines@youneedresults.com",
+    "first_name": "Ryan",
+    "full_name": "Ryan Staines",
+    "brokerage": "Century 21 Results",
+    "city": "Lawrenceville",
+    "listing_address": "205 Nash Street",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "glneumann@icloud.com",
+    "first_name": "Gemma",
+    "full_name": "Gemma Neumann",
+    "brokerage": "NorthGroup Real Estate",
+    "city": "Cumming",
+    "listing_address": "4940 Macomber Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "bryanc@sellgeorgia.com",
+    "first_name": "Bryan",
+    "full_name": "Bryan Cherrie",
+    "brokerage": "Real Broker, LLC",
+    "city": "Monroe",
+    "listing_address": "2111 Homer Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "tcooke@youneedresults.com",
+    "first_name": "Thomas",
+    "full_name": "Thomas Cooke",
+    "brokerage": "Century 21 Results",
+    "city": "Canton",
+    "listing_address": "337 Meadowcrest Circle",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "doug12m@yahoo.com",
+    "first_name": "DOUG",
+    "full_name": "DOUG MINTON",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "city": "Monroe",
+    "listing_address": "1425 Willowbend Place",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "lauradew@justdewit.net",
+    "first_name": "Laura",
+    "full_name": "Laura Dew",
+    "brokerage": "Atlanta Fine Homes Sotheby's International",
+    "city": "Brookhaven",
+    "listing_address": "3621 Wood Valley Court NE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "david.lawhon@compass.com",
+    "first_name": "David",
+    "full_name": "David Lawhon",
+    "brokerage": "Compass",
+    "city": "Alpharetta",
+    "listing_address": "150 Clipper Bay Drive",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "email": "derek@derekwoodrealty.com",
+    "first_name": "Derek",
+    "full_name": "Derek Wood",
+    "brokerage": "Knapp Realty",
+    "city": "Decatur",
+    "listing_address": "132 Northern Avenue",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-23"
+  },
+  {
     "email": "sales@sovereignrm.com",
     "first_name": "Karen",
     "full_name": "Karen Hatcher",
@@ -1870,16 +3030,6 @@
     "retrieved_on": "2026-10-22"
   },
   {
-    "email": "johnmcadoo@atlcommunities.net",
-    "first_name": "John",
-    "full_name": "John McAdoo",
-    "brokerage": "Atlanta Communities",
-    "city": "Fairburn",
-    "listing_address": "4195 Merrigold Way",
-    "source_url": "https://www.fmls.com",
-    "retrieved_on": "2026-10-22"
-  },
-  {
     "email": "latreese.bragg@cbrealty.com",
     "first_name": "LATREESE",
     "full_name": "LATREESE STENNISBRAGG",
@@ -2776,16 +3926,6 @@
     "brokerage": "Berkshire Hathaway HomeServices Georgia Properties",
     "city": "Brookhaven",
     "listing_address": "2336 Drew Valley Road NE",
-    "source_url": "https://www.fmls.com",
-    "retrieved_on": "2026-10-22"
-  },
-  {
-    "email": "aman.grover@metrobrokers.com",
-    "first_name": "Aman",
-    "full_name": "Aman Grover",
-    "brokerage": "BHGRE Metro Brokers",
-    "city": "Atlanta",
-    "listing_address": "4267 Olde Mill Lane NE",
     "source_url": "https://www.fmls.com",
     "retrieved_on": "2026-10-22"
   },
