@@ -29,7 +29,8 @@
     "firstindex:guard": "node scripts/firstindex-truth-guard.mjs --fix",
     "firstindex:mentions": "node scripts/firstindex-ai-mention-tracker.mjs",
     "firstindex:run": "node scripts/firstindex-daily-dispatcher.mjs",
-    "ecosystem:sync": "node scripts/sync-ecosystem-harmony.mjs && node scripts/sync-email-campaign-bridge.mjs"
+    "ecosystem:sync": "node scripts/sync-ecosystem-harmony.mjs && node scripts/sync-email-campaign-bridge.mjs",
+    "marketing:cli": "node scripts/gemini-cli-marketing.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",
