@@ -5159,5 +5159,57 @@
     "phone": "4044358218",
     "date": "2026-10-24",
     "timestamp": "2026-10-25T17:53:21.286Z"
+  },
+  {
+    "key": "CONTRACT_card_6b4ae7fe62_martha.realty.mdj@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Martha Reina",
+    "brokerage": "Chattahoochee North, LLC",
+    "address": "4378 Shady Drive NW",
+    "city": "Lilburn",
+    "email": "martha.realty.mdj@gmail.com",
+    "phone": "4049143465",
+    "date": "2026-10-25",
+    "timestamp": "2026-10-25T21:59:43.449Z"
+  },
+  {
+    "key": "CONTRACT_card_ce88b1c297_jasmineshowers@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Jasmine Showers Manning",
+    "brokerage": "HomeSmart",
+    "address": "65 Mabry Place Court",
+    "city": "Covington",
+    "email": "jasmineshowers@gmail.com",
+    "phone": "4042343000",
+    "date": "2026-10-24",
+    "timestamp": "2026-10-25T22:00:03.690Z"
+  },
+  {
+    "key": "CONTRACT_card_6f2fc42d78_jerrickmoton32@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Jerrick Moton",
+    "brokerage": "Virtual Properties Realty.com",
+    "address": "185 Windhaven Trail",
+    "city": "South Fulton",
+    "email": "jerrickmoton32@gmail.com",
+    "phone": "6789332498",
+    "date": "2026-10-24",
+    "timestamp": "2026-10-25T22:00:25.068Z"
+  },
+  {
+    "key": "CONTRACT_card_5d1e43d4f6_vicki@pvhrealestate.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "LIST_AGENT",
+    "targetName": "Vicki Rickett",
+    "brokerage": "PVH Real Estate",
+    "address": "65 Mabry Place Court",
+    "city": "Covington",
+    "email": "vicki@pvhrealestate.com",
+    "phone": "7705448095",
+    "date": "2026-10-24",
+    "timestamp": "2026-10-25T22:00:46.457Z"
   }
 ]
