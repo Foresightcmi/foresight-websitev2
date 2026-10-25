@@ -57,6 +57,43 @@ export default function CheckoutSuccessPage() {
           </div>
         </div>
 
+        {/* Post-Purchase Collection Point: Need a Physical Re-Inspection or Specialty Scan? */}
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(15, 23, 42, 0.85))',
+          border: '1px solid rgba(212, 175, 55, 0.45)',
+          borderRadius: '12px',
+          padding: '1.25rem 1.5rem',
+          textAlign: 'left',
+          marginBottom: '1.75rem'
+        }}>
+          <div style={{ fontSize: '0.75rem', color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
+            🔍 Need Physical Verification Before Due Diligence Expires?
+          </div>
+          <p style={{ fontSize: '0.85rem', color: '#E2E8F0', margin: '0 0 0.85rem 0', lineHeight: 1.5 }}>
+            If your outside inspector did not scope the underground sewer line or test for Radon, mold, or unincorporated DeKalb low-flow compliance, you can apply a <strong>$25 Repeat Client Voucher</strong> toward any on-site Foresight diagnostic:
+          </p>
+          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+            <Link
+              href="/quote?sewer=true&discount=repeat"
+              style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#FFFFFF', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
+            >
+              Sewer Scope Camera ($450 Flat Rate) &rarr;
+            </Link>
+            <Link
+              href="/quote?radon=true&discount=repeat"
+              style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#FFFFFF', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
+            >
+              48-Hr Radon Monitoring ($250) &rarr;
+            </Link>
+            <Link
+              href="/quote?discount=repeat"
+              style={{ background: '#D4AF37', color: '#0F172A', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 800, textDecoration: 'none' }}
+            >
+              Full 2-Inspector Evaluation ($345+ / -$25 Off) &rarr;
+            </Link>
+          </div>
+        </div>
+
         {/* Urgent Questions */}
         <div style={{ fontSize: '0.85rem', color: '#94A3B8', marginBottom: '2rem' }}>
           Need to attach additional photos, disclosures, or have an immediate contingency deadline?<br />

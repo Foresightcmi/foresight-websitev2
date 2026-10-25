@@ -36,11 +36,19 @@ export default function QuoteClient({ showValueComparison = true }) {
   const [leadHp, setLeadHp] = useState('');
   const [leadStatus, setLeadStatus] = useState('idle'); // idle, submitting, success, error
   const [showLeadForm, setShowLeadForm] = useState(false);
+  const [voucherName, setVoucherName] = useState('');
+  const [voucherEmail, setVoucherEmail] = useState('');
+  const [voucherStatus, setVoucherStatus] = useState('idle'); // idle, sending, sent, error
+  const [upsellAdded, setUpsellAdded] = useState({}); // { repairEstimates: true, sewer: true, lowFlow: true }
 
   // Parse URL parameters for initial states
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
+      const discountParam = params.get('discount');
+      if (discountParam && ['first-time', 'repeat', 'realtor', 'promo'].includes(discountParam)) {
+        setDiscount(discountParam);
+      }
       const typeParam = params.get('type');
       const serviceParam = params.get('service');
       const sqftParam = params.get('sqft');
@@ -269,6 +277,70 @@ export default function QuoteClient({ showValueComparison = true }) {
 
   const handleAddonToggle = (addon) => {
     setAddons(prev => ({ ...prev, [addon]: !prev[addon] }));
+  };
+
+  const handleSaveVoucher = async (e) => {
+    e.preventDefault();
+    setVoucherStatus('sending');
+    if (discount === 'none') {
+      setDiscount('first-time');
+    }
+    const lockedPrice = discount === 'none' ? Math.max(0, total - 25) : total;
+    try {
+      const res = await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: voucherName,
+          email: voucherEmail,
+          sqft,
+          propertyType,
+          serviceType,
+          foundation,
+          ageTier,
+          estimatedTotal: lockedPrice,
+          notes: `[Quote Calculator $25 Price-Lock Voucher Saved] Locked Estimate: $${lockedPrice} (${sqft} sq ft ${propertyType}, ${serviceType})`,
+          source: 'Quote Calculator $25 Price Lock Voucher'
+        })
+      });
+      if (res.ok) {
+        setVoucherStatus('sent');
+        if (!leadName) setLeadName(voucherName);
+        if (!leadEmail) setLeadEmail(voucherEmail);
+      } else {
+        setVoucherStatus('error');
+      }
+    } catch (err) {
+      setVoucherStatus('error');
+    }
+  };
+
+  const handlePostSubmitUpsell = async (addonKey, addonLabel, addonPrice) => {
+    setAddons(prev => ({ ...prev, [addonKey]: true }));
+    setUpsellAdded(prev => ({ ...prev, [addonKey]: true }));
+    try {
+      await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: leadName || 'Valued Client',
+          email: leadEmail,
+          phone: leadPhone,
+          address: leadAddress,
+          sqft,
+          propertyType,
+          serviceType,
+          foundation,
+          ageTier,
+          addons: [`1-CLICK POST-BOOKING UPGRADE: ${addonLabel}`],
+          estimatedTotal: total + addonPrice,
+          notes: `Client clicked 1-Click Post-Request Add-On Upgrade to attach ${addonLabel} to their tentative request for ${leadAddress || 'their property'}.`,
+          source: 'Quote Post-Submission 1-Click Upsell'
+        })
+      });
+    } catch (err) {
+      console.error('Upsell update error:', err);
+    }
   };
 
   const handleHoldSlot = async (e) => {
@@ -1058,6 +1130,75 @@ export default function QuoteClient({ showValueComparison = true }) {
                           <li><strong>Sunday Inspection:</strong> Strictly by appointment only.</li>
                         </ul>
                       </div>
+                      {(!addons.repairEstimates || !addons.sewer || !addons.lowFlow) && (
+                        <div style={{
+                          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.92))',
+                          border: '1px solid var(--color-gold)',
+                          borderRadius: '8px',
+                          padding: '1rem',
+                          marginBottom: '1rem',
+                          textAlign: 'left'
+                        }}>
+                          <div style={{ fontSize: '0.75rem', color: 'var(--color-gold)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.35rem' }}>
+                            ⚡ Optional 1-Click Due Diligence Upgrades (Attach to Your Request):
+                          </div>
+                          <p style={{ fontSize: '0.78rem', color: '#cbd5e1', margin: '0 0 0.75rem 0', lineHeight: 1.4 }}>
+                            Want to maximize your closing table leverage before our office finalizes your agreement? Click once to attach any of these high-leverage add-ons to your reservation:
+                          </p>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                            {!addons.repairEstimates && (
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                                <div>
+                                  <strong style={{ fontSize: '0.82rem', color: '#fde047', display: 'block' }}>Itemized Contractor Repair Cost Estimate (+$99)</strong>
+                                  <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Regional trade pricing + sample Georgia repair amendment wording for seller credit demands.</span>
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => handlePostSubmitUpsell('repairEstimates', 'Contractor Repair Cost & Pricing Estimates ($99)', 99)}
+                                  style={{ background: 'var(--color-gold)', color: '#0f172a', border: 'none', borderRadius: '4px', padding: '0.45rem 0.75rem', fontSize: '0.75rem', fontWeight: 800, cursor: 'pointer', flexShrink: 0 }}
+                                >
+                                  + Add ($99)
+                                </button>
+                              </div>
+                            )}
+                            {!addons.sewer && (
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                                <div>
+                                  <strong style={{ fontSize: '0.82rem', color: '#ffffff', display: 'block' }}>Fiber-Optic Sewer Scope Camera Inspection (+$450 Flat Rate)</strong>
+                                  <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Detects hidden root intrusion, bellies, and crushed underground sewer laterals.</span>
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => handlePostSubmitUpsell('sewer', 'Sewer Scope Camera ($450)', 450)}
+                                  style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '4px', padding: '0.45rem 0.75rem', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', flexShrink: 0 }}
+                                >
+                                  + Add ($450)
+                                </button>
+                              </div>
+                            )}
+                            {!addons.lowFlow && (
+                              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                                <div>
+                                  <strong style={{ fontSize: '0.82rem', color: '#ffffff', display: 'block' }}>DeKalb County Low-Flow Plumbing Certificate (+$100)</strong>
+                                  <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Required for water service activation in unincorporated DeKalb County (we verify parcel applicability).</span>
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => handlePostSubmitUpsell('lowFlow', 'DeKalb Low-Flow Compliance ($100)', 100)}
+                                  style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '4px', padding: '0.45rem 0.75rem', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', flexShrink: 0 }}
+                                >
+                                  + Add ($100)
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                      {Object.keys(upsellAdded).length > 0 && (
+                        <div style={{ background: 'rgba(16, 185, 129, 0.25)', border: '1px solid #34d399', borderRadius: '6px', padding: '0.5rem 0.75rem', fontSize: '0.78rem', color: '#ecfdf5', marginBottom: '0.85rem', fontWeight: 700 }}>
+                          ✓ Upgrade attached to your reservation! Updated Estimated Total: ${total}
+                        </div>
+                      )}
                       <p style={{ fontSize: '0.8rem', color: 'var(--color-gray-mid)', margin: 0 }}>
                         Need immediate dispatch or tight 5-day due diligence hold? Call or text Christopher directly at <a href="tel:678-480-2110" style={{ color: '#34d399', fontWeight: 700 }}>678-480-2110</a>.
                       </p>
@@ -1185,6 +1326,85 @@ export default function QuoteClient({ showValueComparison = true }) {
                     </form>
                   )}
                 </div>
+
+                {/* Layer 5 Guestbook: Non-Ready Buyer Price-Lock & Checklist Capture */}
+                {leadStatus !== 'success' && (
+                  <div style={{
+                    background: 'rgba(212, 175, 55, 0.08)',
+                    border: '1px dashed rgba(212, 175, 55, 0.45)',
+                    borderRadius: 'var(--radius-md)',
+                    padding: '1rem',
+                    marginBottom: '1rem',
+                    textAlign: 'left'
+                  }}>
+                    {voucherStatus === 'sent' ? (
+                      <div>
+                        <strong style={{ color: '#34d399', fontSize: '0.88rem', display: 'block', marginBottom: '0.25rem' }}>
+                          ✓ $25 First-Time Buyer Voucher Applied! (Quote Locked at ${total})
+                        </strong>
+                        <p style={{ fontSize: '0.78rem', color: '#e2e8f0', margin: '0 0 0.5rem 0', lineHeight: 1.4 }}>
+                          Your -$25 discount is now active above, and your 25-Point Atlanta Buyer Checklist is unlocked:
+                        </p>
+                        <a
+                          href="/dossiers/atlanta-buyer-inspection-checklist.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: 'var(--color-gold)', fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}
+                        >
+                          📄 Open &amp; Print 25-Point Buyer Inspection Checklist &rarr;
+                        </a>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleSaveVoucher}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                          <strong style={{ color: 'var(--color-gold)', fontSize: '0.85rem' }}>
+                            🎁 Still House Hunting? Lock In -$25 Off + Free Buyer Checklist
+                          </strong>
+                        </div>
+                        <p style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', margin: '0 0 0.6rem 0', lineHeight: 1.35 }}>
+                          Don&apos;t have an address or binding date yet? Enter your email to apply an instant <strong>$25 Voucher</strong> to this quote and unlock our printable 25-Point Atlanta Buyer Checklist.
+                        </p>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.45rem', marginBottom: '0.5rem' }}>
+                          <input
+                            type="text"
+                            required
+                            placeholder="Your First Name"
+                            aria-label="Your First Name"
+                            value={voucherName}
+                            onChange={(e) => setVoucherName(e.target.value)}
+                            style={{ padding: '0.5rem 0.65rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(0,0,0,0.35)', color: '#ffffff', fontSize: '0.8rem', width: '100%' }}
+                          />
+                          <input
+                            type="email"
+                            required
+                            placeholder="Your Email Address"
+                            aria-label="Your Email Address"
+                            value={voucherEmail}
+                            onChange={(e) => setVoucherEmail(e.target.value)}
+                            style={{ padding: '0.5rem 0.65rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(0,0,0,0.35)', color: '#ffffff', fontSize: '0.8rem', width: '100%' }}
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          disabled={voucherStatus === 'sending'}
+                          style={{
+                            width: '100%',
+                            padding: '0.55rem',
+                            borderRadius: '4px',
+                            border: '1px solid var(--color-gold)',
+                            background: 'rgba(212, 175, 55, 0.2)',
+                            color: 'var(--color-gold)',
+                            fontWeight: 800,
+                            fontSize: '0.8rem',
+                            cursor: voucherStatus === 'sending' ? 'not-allowed' : 'pointer'
+                          }}
+                        >
+                          {voucherStatus === 'sending' ? 'Applying Voucher...' : `Apply $25 Voucher & Unlock Checklist (Locks at $${discount === 'none' ? Math.max(0, total - 25) : total})`}
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                )}
 
                 <div style={{ textAlign: 'center', margin: '0.75rem 0' }}>
                   <span style={{ fontSize: '0.8rem', color: 'var(--color-gray-mid)' }}>— OR SCHEDULE VIA HOMESCHEDULER —</span>

@@ -43,6 +43,14 @@ export default function RiskScannerClient() {
   const [siding, setSiding] = useState('eifs');
   const [sqft, setSqft] = useState(2500);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [agentName, setAgentName] = useState('');
+  const [agentPhone, setAgentPhone] = useState('');
+  const [dossierName, setDossierName] = useState('');
+  const [dossierEmail, setDossierEmail] = useState('');
+  const [dossierPhone, setDossierPhone] = useState('');
+  const [dossierAddress, setDossierAddress] = useState('');
+  const [dossierHp, setDossierHp] = useState('');
+  const [dossierStatus, setDossierStatus] = useState('idle'); // idle, sending, sent, error
 
   // Initialize from URL params if present
   useEffect(() => {
@@ -53,6 +61,8 @@ export default function RiskScannerClient() {
       if (p.get('foundation')) setFoundation(p.get('foundation'));
       if (p.get('siding')) setSiding(p.get('siding'));
       if (p.get('sqft')) setSqft(Number(p.get('sqft')) || 2500);
+      if (p.get('agent')) setAgentName(p.get('agent'));
+      if (p.get('agentPhone')) setAgentPhone(p.get('agentPhone'));
     }
   }, []);
 
@@ -377,11 +387,56 @@ export default function RiskScannerClient() {
 
   const handleCopyLink = () => {
     if (typeof window !== 'undefined' && navigator.clipboard) {
-      const url = `${window.location.origin}/risk-scanner?year=${yearBuilt}&county=${county}&foundation=${foundation}&siding=${siding}&sqft=${sqft}`;
+      const params = new URLSearchParams({
+        year: String(yearBuilt),
+        county,
+        foundation,
+        siding,
+        sqft: String(sqft)
+      });
+      if (agentName.trim()) params.set('agent', agentName.trim());
+      if (agentPhone.trim()) params.set('agentPhone', agentPhone.trim());
+      const url = `${window.location.origin}/risk-scanner?${params.toString()}`;
       navigator.clipboard.writeText(url).then(() => {
         setCopiedLink(true);
         setTimeout(() => setCopiedLink(false), 2500);
       });
+    }
+  };
+
+  const handleDossierSave = async (e) => {
+    e.preventDefault();
+    setDossierStatus('sending');
+    try {
+      const hazardList = diagnostic.items.map(i => `${i.title} (${i.exposure})`).join('; ');
+      const res = await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: dossierName,
+          email: dossierEmail,
+          phone: dossierPhone,
+          address: dossierAddress || `${countyInfo.name} (${yearBuilt} Build)`,
+          realtorAgent: agentName ? `${agentName}${agentPhone ? ' (' + agentPhone + ')' : ''}` : '',
+          sqft,
+          propertyType: 'single-family',
+          serviceType: recommendedPackage.baseService,
+          foundation,
+          ageTier: yearBuilt < 1976 ? 'over-50' : yearBuilt <= 2001 ? '25-49' : 'under-25',
+          addons: recommendedPackage.services.map(s => `${s.name} (${s.price})`),
+          estimatedTotal: Math.max(0, recommendedPackage.total - 25),
+          notes: `[Risk Scanner Dossier & $25 Price Lock] Score: ${diagnostic.score}/100 | Exposure: $${diagnostic.minExposure.toLocaleString()}-$${diagnostic.maxExposure.toLocaleString()} | Hazards: ${hazardList}`,
+          _hp: dossierHp,
+          source: 'Property Risk Scanner Dossier + $25 Voucher'
+        })
+      });
+      if (res.ok) {
+        setDossierStatus('sent');
+      } else {
+        setDossierStatus('error');
+      }
+    } catch (err) {
+      setDossierStatus('error');
     }
   };
 
@@ -690,6 +745,52 @@ export default function RiskScannerClient() {
               />
             </div>
 
+            {/* Realtor Co-Branding & Share Box */}
+            <div style={{
+              background: '#F8FAFC',
+              border: '1px solid #E2E8F0',
+              borderRadius: '10px',
+              padding: '0.95rem',
+              marginBottom: '0.85rem'
+            }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                🤝 Realtor Client-Share Co-Branding (Optional)
+              </div>
+              <input
+                type="text"
+                placeholder="Agent Name & Brokerage (e.g. Jane Doe, Keller Williams)"
+                aria-label="Agent Name and Brokerage"
+                value={agentName}
+                onChange={(e) => setAgentName(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.55rem 0.7rem',
+                  borderRadius: '6px',
+                  border: '1px solid #CBD5E1',
+                  fontSize: '0.82rem',
+                  marginBottom: '0.45rem',
+                  background: '#FFFFFF',
+                  color: '#0F172A'
+                }}
+              />
+              <input
+                type="tel"
+                placeholder="Agent Mobile (Optional)"
+                aria-label="Agent Mobile Phone"
+                value={agentPhone}
+                onChange={(e) => setAgentPhone(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.55rem 0.7rem',
+                  borderRadius: '6px',
+                  border: '1px solid #CBD5E1',
+                  fontSize: '0.82rem',
+                  background: '#FFFFFF',
+                  color: '#0F172A'
+                }}
+              />
+            </div>
+
             {/* Share / Copy Button */}
             <button
               type="button"
@@ -711,12 +812,37 @@ export default function RiskScannerClient() {
                 transition: 'all 0.2s'
               }}
             >
-              <span>{copiedLink ? 'Link Copied to Clipboard!' : 'Copy Shareable Link'}</span>
+              <span>{copiedLink ? 'Co-Branded Report Link Copied!' : 'Copy Shareable Client Report Link'}</span>
             </button>
           </div>
 
           {/* RIGHT COLUMN: Diagnostic Results */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            {agentName && (
+              <div style={{
+                background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+                border: '1px solid var(--color-gold)',
+                borderRadius: '1rem',
+                padding: '1rem 1.5rem',
+                color: '#FFFFFF',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '0.75rem'
+              }}>
+                <div>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--color-gold)', textTransform: 'uppercase', fontWeight: 800, letterSpacing: '0.05em', display: 'block' }}>
+                    Client Due Diligence Briefing Prepared Courtesy Of:
+                  </span>
+                  <strong style={{ fontSize: '1.05rem', color: '#FFFFFF' }}>{agentName}</strong>
+                  {agentPhone && <span style={{ color: '#CBD5E1', fontSize: '0.9rem', marginLeft: '0.75rem' }}>• {agentPhone}</span>}
+                </div>
+                <span style={{ fontSize: '0.78rem', background: 'rgba(212,175,55,0.18)', color: 'var(--color-gold)', padding: '0.25rem 0.65rem', borderRadius: '50px', fontWeight: 700 }}>
+                  VIP Partner -$25 Eligible
+                </span>
+              </div>
+            )}
             {/* Risk Gauge Header Card */}
             <div style={{
               background: '#FFFFFF',
@@ -982,6 +1108,134 @@ export default function RiskScannerClient() {
                 >
                   <span>CMI Direct: 678-480-2110</span>
                 </a>
+              </div>
+
+              {/* Layer 5 Guestbook: Email Me This Property Risk Dossier + $25 Price Lock */}
+              <div style={{
+                marginTop: '1.85rem',
+                paddingTop: '1.5rem',
+                borderTop: '1px dashed rgba(255, 255, 255, 0.2)'
+              }}>
+                {dossierStatus === 'sent' ? (
+                  <div style={{
+                    background: 'rgba(16, 185, 129, 0.16)',
+                    border: '1px solid #10B981',
+                    borderRadius: '10px',
+                    padding: '1.25rem',
+                    color: '#FFFFFF'
+                  }}>
+                    <div style={{ fontWeight: 800, color: '#34D399', fontSize: '1.05rem', marginBottom: '0.35rem' }}>
+                      ✓ Property Risk Dossier &amp; $25 Price-Lock Voucher Logged!
+                    </div>
+                    <p style={{ fontSize: '0.86rem', color: '#E2E8F0', margin: '0 0 0.85rem 0', lineHeight: 1.5 }}>
+                      We have registered your <strong>$25 Price-Lock Voucher</strong> (Recommended Package locked at <strong>${Math.max(0, recommendedPackage.total - 25)}</strong>) for {dossierAddress || countyInfo.name}. You can also open our printable 25-Point Atlanta Buyer Checklist right now:
+                    </p>
+                    <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                      <Link
+                        href={`${quoteTargetUrl}&discount=first-time`}
+                        style={{
+                          background: 'var(--color-gold)',
+                          color: '#0F172A',
+                          padding: '0.6rem 1.15rem',
+                          borderRadius: '6px',
+                          fontWeight: 800,
+                          fontSize: '0.85rem',
+                          textDecoration: 'none'
+                        }}
+                      >
+                        Book Online With $25 Voucher Applied &rarr;
+                      </Link>
+                      <a
+                        href="/dossiers/atlanta-buyer-inspection-checklist.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          background: 'rgba(255,255,255,0.1)',
+                          color: '#FFFFFF',
+                          border: '1px solid rgba(255,255,255,0.25)',
+                          padding: '0.6rem 1.15rem',
+                          borderRadius: '6px',
+                          fontWeight: 700,
+                          fontSize: '0.85rem',
+                          textDecoration: 'none'
+                        }}
+                      >
+                        📄 Open 25-Point Buyer Checklist
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <form onSubmit={handleDossierSave} style={{ background: 'rgba(0, 0, 0, 0.28)', padding: '1.25rem', borderRadius: '10px', border: '1px solid rgba(212, 175, 55, 0.35)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                      <strong style={{ color: 'var(--color-gold)', fontSize: '0.95rem' }}>
+                        📩 Not Ready to Book Today? Save This Risk Dossier + Lock In a $25 Voucher
+                      </strong>
+                      <span style={{ fontSize: '0.75rem', color: '#34D399', fontWeight: 700 }}>
+                        Locks Package at ${Math.max(0, recommendedPackage.total - 25)}
+                      </span>
+                    </div>
+                    <p style={{ fontSize: '0.8rem', color: '#CBD5E1', margin: '0 0 0.85rem 0', lineHeight: 1.45 }}>
+                      Still negotiating an offer or comparing properties? Send this {yearBuilt} {countyInfo.name.split('(')[0].trim()} hazard breakdown, our 25-Point Buyer Checklist, and a 30-day <strong>$25 Inspection Voucher</strong> to your inbox.
+                    </p>
+                    <div style={{ display: 'none' }} aria-hidden="true">
+                      <input type="text" name="_hp" tabIndex="-1" autoComplete="off" value={dossierHp} onChange={(e) => setDossierHp(e.target.value)} />
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.6rem', marginBottom: '0.6rem' }}>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Your Name"
+                        aria-label="Your Name"
+                        value={dossierName}
+                        onChange={(e) => setDossierName(e.target.value)}
+                        style={{ padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.08)', color: '#FFFFFF', fontSize: '0.85rem' }}
+                      />
+                      <input
+                        type="email"
+                        required
+                        placeholder="Your Email Address"
+                        aria-label="Your Email Address"
+                        value={dossierEmail}
+                        onChange={(e) => setDossierEmail(e.target.value)}
+                        style={{ padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.08)', color: '#FFFFFF', fontSize: '0.85rem' }}
+                      />
+                      <input
+                        type="tel"
+                        placeholder="Mobile Phone (Optional)"
+                        aria-label="Mobile Phone"
+                        value={dossierPhone}
+                        onChange={(e) => setDossierPhone(e.target.value)}
+                        style={{ padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.08)', color: '#FFFFFF', fontSize: '0.85rem' }}
+                      />
+                    </div>
+                    <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                      <input
+                        type="text"
+                        placeholder="Property Address or Subdivision (Optional)"
+                        aria-label="Property Address or Subdivision"
+                        value={dossierAddress}
+                        onChange={(e) => setDossierAddress(e.target.value)}
+                        style={{ flex: 1, minWidth: '200px', padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.08)', color: '#FFFFFF', fontSize: '0.85rem' }}
+                      />
+                      <button
+                        type="submit"
+                        disabled={dossierStatus === 'sending'}
+                        style={{
+                          padding: '0.6rem 1.25rem',
+                          borderRadius: '6px',
+                          border: '1px solid var(--color-gold)',
+                          background: 'rgba(212, 175, 55, 0.2)',
+                          color: 'var(--color-gold)',
+                          fontWeight: 800,
+                          fontSize: '0.85rem',
+                          cursor: dossierStatus === 'sending' ? 'not-allowed' : 'pointer'
+                        }}
+                      >
+                        {dossierStatus === 'sending' ? 'Saving...' : 'Save Dossier + $25 Voucher'}
+                      </button>
+                    </div>
+                  </form>
+                )}
               </div>
             </div>
 
