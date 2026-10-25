@@ -828,6 +828,34 @@ export default function RootLayout({ children }) {
                 </ul>
               </div>
             </div>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: '1.75rem', paddingTop: '1.25rem', fontSize: '0.78rem', color: '#94A3B8', lineHeight: 1.7 }}>
+              <strong style={{ color: '#CBD5E1' }}>Extended Metro Atlanta Service Hubs:</strong>{' '}
+              <Link prefetch={false} href="/service-areas/lithonia" style={{ color: '#94A3B8' }}>Lithonia</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/stonecrest" style={{ color: '#94A3B8' }}>Stonecrest</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/dunwoody" style={{ color: '#94A3B8' }}>Dunwoody</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/doraville" style={{ color: '#94A3B8' }}>Doraville</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/clarkston" style={{ color: '#94A3B8' }}>Clarkston</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/lilburn" style={{ color: '#94A3B8' }}>Lilburn</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/norcross" style={{ color: '#94A3B8' }}>Norcross</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/conyers" style={{ color: '#94A3B8' }}>Conyers</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/covington" style={{ color: '#94A3B8' }}>Covington</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/oxford" style={{ color: '#94A3B8' }}>Oxford</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/mansfield" style={{ color: '#94A3B8' }}>Mansfield</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/fayetteville" style={{ color: '#94A3B8' }}>Fayetteville</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/tyrone" style={{ color: '#94A3B8' }}>Tyrone</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/brooks" style={{ color: '#94A3B8' }}>Brooks</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/woolsey" style={{ color: '#94A3B8' }}>Woolsey</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/newnan" style={{ color: '#94A3B8' }}>Newnan</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/college-park" style={{ color: '#94A3B8' }}>College Park</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/hapeville" style={{ color: '#94A3B8' }}>Hapeville</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/douglasville" style={{ color: '#94A3B8' }}>Douglasville</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/dallas" style={{ color: '#94A3B8' }}>Dallas</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/acworth" style={{ color: '#94A3B8' }}>Acworth</Link> &bull;{' '}
+              <Link prefetch={false} href="/service-areas/canton" style={{ color: '#94A3B8' }}>Canton</Link> &bull;{' '}
+              <Link prefetch={false} href="/services/sewer-scope-inspection/stone-mountain" style={{ color: '#94A3B8' }}>Stone Mountain Sewer Scope</Link> &bull;{' '}
+              <Link prefetch={false} href="/services/pool-inspection/brooks" style={{ color: '#94A3B8' }}>Brooks Pool Inspection</Link> &bull;{' '}
+              <Link prefetch={false} href="/videos/termite-and-wdo-inspections" style={{ color: '#94A3B8' }}>Termite &amp; WDO Video Guide</Link>
+            </div>
             <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
               <p style={{ margin: 0, fontSize: '0.85rem' }}>
                 &copy; {new Date().getFullYear()} Foresight Home Inspections, LLC. All rights reserved.{' '}

@@ -87,6 +87,36 @@ async function main() {
   ];
   gscValidationUrls.forEach(s => urls.push(`${SITE_URL}${s}`));
 
+  // Add the 24 GSC "Crawled - currently not indexed" real pages
+  const crawledNotIndexedUrls = [
+    '/videos/termite-and-wdo-inspections',
+    '/services/sewer-scope-inspection/stone-mountain',
+    '/services/pool-inspection/brooks',
+    '/service-areas/dallas',
+    '/service-areas/canton',
+    '/service-areas/douglasville',
+    '/service-areas/hapeville',
+    '/service-areas/college-park',
+    '/service-areas/fayetteville',
+    '/service-areas/brooks',
+    '/service-areas/lilburn',
+    '/service-areas/tyrone',
+    '/service-areas/stonecrest',
+    '/service-areas/covington',
+    '/service-areas/lithonia',
+    '/service-areas/dunwoody',
+    '/service-areas/newnan',
+    '/service-areas/acworth',
+    '/service-areas/woolsey',
+    '/service-areas/mansfield',
+    '/service-areas/conyers',
+    '/service-areas/oxford',
+    '/service-areas/clarkston',
+    '/service-areas/norcross',
+    '/service-areas/doraville'
+  ];
+  crawledNotIndexedUrls.forEach(s => urls.push(`${SITE_URL}${s}`));
+
   console.log(`📋 ${urls.length} URLs to submit\n`);
 
   // Submit to IndexNow API (covers Bing, Yandex, Naver, Seznam)
