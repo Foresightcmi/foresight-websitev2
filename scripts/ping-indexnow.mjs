@@ -55,6 +55,21 @@ async function main() {
     comparisons.forEach(c => urls.push(`${SITE_URL}/compare/${c.slug}`));
   }
 
+  // Add video watch pages so IndexNow & crawlers immediately re-crawl /videos/*
+  const videoSlugs = [
+    '',
+    '/complete-home-systems-diagnostic',
+    '/new-construction-inspections',
+    '/11-month-warranty-inspection',
+    '/pool-and-spa-inspections',
+    '/sewer-scope-inspections',
+    '/termite-and-wdo-inspections',
+    '/radon-gas-testing',
+    '/mold-indoor-air-quality-testing',
+    '/short-term-rental-str-compliance-inspection'
+  ];
+  videoSlugs.forEach(s => urls.push(`${SITE_URL}/videos${s}`));
+
   console.log(`📋 ${urls.length} URLs to submit\n`);
 
   // Submit to IndexNow API (covers Bing, Yandex, Naver, Seznam)
