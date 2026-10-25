@@ -70,6 +70,23 @@ async function main() {
   ];
   videoSlugs.forEach(s => urls.push(`${SITE_URL}/videos${s}`));
 
+  // Add the 12 GSC "Video isn't on a watch page" validation URLs (last crawled Sep 16-23)
+  const gscValidationUrls = [
+    '/services/sewer-scope-inspection/morrow',
+    '/services/new-construction-inspection/locust-grove',
+    '/services/termite-inspection/suwanee',
+    '/services/radon-testing/powder-springs',
+    '/services/pre-listing-inspection/senoia',
+    '/services/termite-inspection/tucker',
+    '/services/pre-listing-inspection/east-point',
+    '/service-areas/peachtree-corners',
+    '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+    '/services/termite-inspection/milton',
+    '/service-areas/duluth',
+    '/samples'
+  ];
+  gscValidationUrls.forEach(s => urls.push(`${SITE_URL}${s}`));
+
   console.log(`📋 ${urls.length} URLs to submit\n`);
 
   // Submit to IndexNow API (covers Bing, Yandex, Naver, Seznam)
