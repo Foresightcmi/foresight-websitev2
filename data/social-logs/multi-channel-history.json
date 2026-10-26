@@ -190,5 +190,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/atlanta"
+  },
+  {
+    "postId": 6,
+    "title": "4K Aerial Drone Roof Diagnostics Included Free",
+    "publishedAt": "2026-10-26T19:45:19.894Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]
