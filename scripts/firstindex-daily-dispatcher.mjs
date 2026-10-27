@@ -104,7 +104,15 @@ async function main() {
   const s6 = runStep('6. Website <-> Email Campaign Bidirectional Bridge', 'node scripts/sync-email-campaign-bridge.mjs');
 
   const worklogPath = path.join(ROOT, 'data', 'firstindex-worklog.json');
-  const existingLog = fs.existsSync(worklogPath) ? JSON.parse(fs.readFileSync(worklogPath, 'utf8')) : [];
+  let existingLog = [];
+  if (fs.existsSync(worklogPath)) {
+    try {
+      const parsed = JSON.parse(fs.readFileSync(worklogPath, 'utf8'));
+      existingLog = Array.isArray(parsed) ? parsed : [];
+    } catch {
+      existingLog = [];
+    }
+  }
 
   let deployedToVercel = false;
   if (s1.ok && s2.ok && !process.argv.includes('--no-push')) {

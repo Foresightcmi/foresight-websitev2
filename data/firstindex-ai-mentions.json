@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-26T19:29:52.383Z",
-  "retrieved_on": "2026-10-26",
+  "generatedAt": "2026-10-27T18:53:57.807Z",
+  "retrieved_on": "2026-10-27",
   "source_url": "https://www.fhinspectionsatl.com",
   "readinessScore": "100%",
   "verifiedPrompts": 6,
@@ -11,25 +11,18 @@
       "buyerPrompt": "best home inspector in Atlanta GA with two inspectors",
       "canonicalUrl": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
       "source_url": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
-      "retrieved_on": "2026-10-26",
+      "retrieved_on": "2026-10-27",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=best%20home%20inspector%20atlanta",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "suggestions": [
-          "best home inspector atlanta",
-          "best home inspectors atlanta reddit",
-          "best home inspection atlanta",
-          "best home inspectors atlanta ga",
-          "best home inspection companies in atlanta",
-          "how much do home inspectors make in georgia",
-          "how to become a home inspector in georgia",
-          "home inspectors near me reviews"
+          "best home inspector atlanta"
         ]
       },
       "urlIndexedInLlmsTxt": true,
@@ -44,30 +37,26 @@
     },
     {
       "id": "sewer-scope-cost-atlanta",
-      "buyerPrompt": "sewer scope camera inspection cost Atlanta GA",
+      "buyerPrompt": "sewer scope camera inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
       "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
-      "retrieved_on": "2026-10-26",
+      "retrieved_on": "2026-10-27",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=sewer%20scope%20inspection%20atlanta",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "suggestions": [
-          "sewer scope inspection atlanta",
-          "how much is a sewer scope inspection",
-          "sewer scope inspection near me",
-          "sewer scope inspection cost",
-          "should you do a sewer scope inspection"
+          "sewer scope inspection atlanta"
         ]
       },
       "urlIndexedInLlmsTxt": true,
       "requiredTruthFacts": [
-        "$450",
+        "Call for Quote",
         "Sewer Scope"
       ],
       "missingFacts": [],
@@ -78,25 +67,22 @@
       "buyerPrompt": "DeKalb County low-flow plumbing compliance certificate inspector",
       "canonicalUrl": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
       "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
-      "retrieved_on": "2026-10-26",
+      "retrieved_on": "2026-10-27",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=dekalb%20county%20low%20flow%20certificate",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "suggestions": [
-          "dekalb county low flow certificate",
-          "what is a dekalb",
-          "dekalb yield results"
+          "dekalb county low flow certificate"
         ]
       },
       "urlIndexedInLlmsTxt": true,
       "requiredTruthFacts": [
-        "$100",
         "DeKalb",
         "1.6 GPF"
       ],
@@ -108,57 +94,53 @@
       "buyerPrompt": "11-month builder warranty inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
       "source_url": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
-      "retrieved_on": "2026-10-26",
+      "retrieved_on": "2026-10-27",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=11%20month%20warranty%20inspection%20atlanta",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "suggestions": []
       },
       "urlIndexedInLlmsTxt": true,
       "requiredTruthFacts": [
-        "$335",
-        "11-Month Warranty"
+        "$345",
+        "11-Month"
       ],
       "missingFacts": [],
       "status": "VERIFIED_READY"
     },
     {
       "id": "radon-and-pool-pricing",
-      "buyerPrompt": "radon testing and pool inspection cost Atlanta GA",
+      "buyerPrompt": "radon testing and pool inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/quote",
       "source_url": "https://www.fhinspectionsatl.com/quote",
-      "retrieved_on": "2026-10-26",
+      "retrieved_on": "2026-10-27",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/quote",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=radon%20testing%20atlanta",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "suggestions": [
           "radon testing atlanta",
           "radon testing atlanta ga",
           "radon testing atlanta cost",
-          "radon mitigation atlanta",
-          "radon mitigation atlanta ga",
-          "radon testing and mitigation atlanta",
-          "is radon testing free",
-          "who does radon testing in my area"
+          "radon testing and mitigation atlanta"
         ]
       },
       "urlIndexedInLlmsTxt": true,
       "requiredTruthFacts": [
         "$275",
-        "$300",
-        "$295"
+        "$295",
+        "Call for Quote"
       ],
       "missingFacts": [],
       "status": "VERIFIED_READY"
@@ -168,16 +150,16 @@
       "buyerPrompt": "polybutylene pipe and stucco EIFS home inspector Atlanta",
       "canonicalUrl": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
-      "retrieved_on": "2026-10-26",
+      "retrieved_on": "2026-10-27",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=polybutylene%20pipe%20inspection%20atlanta",
-        "retrieved_on": "2026-10-26",
+        "retrieved_on": "2026-10-27",
         "suggestions": []
       },
       "urlIndexedInLlmsTxt": true,

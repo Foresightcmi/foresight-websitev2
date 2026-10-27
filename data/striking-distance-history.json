@@ -1,238 +1,36 @@
 [
   {
-<<<<<<< Updated upstream
-    "timestamp": "2026-10-26T19:29:49.954Z",
+    "timestamp": "2026-10-27T18:53:52.169Z",
     "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 470,
+    "totalInStrikingDistance": 504,
     "topTargets": [
       "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7, 97 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.5, 94 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.8, 83 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.4, 82 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspector in acworth, ga (Pos 18.4, 80 impr -> /services/buyer-inspection/acworth)",
-      "home inspection austell ga (Pos 4.8, 79 impr -> /services/buyer-inspection/austell)",
-      "home inspections in acworth, ga (Pos 16.8, 73 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.5, 68 impr -> /services/buyer-inspection/acworth)",
-      "home inspection kennesaw ga (Pos 21.1, 68 impr -> /services/11-month-warranty-inspection/kennesaw)"
-=======
-    "timestamp": "2026-10-26T13:00:23.103Z",
+      "home inspection lilburn ga (Pos 7.1, 103 impr -> /services/buyer-inspection/lilburn)",
+      "home inspection snellville ga (Pos 9.3, 103 impr -> /services/buyer-inspection/snellville)",
+      "dallas pre drywall inspection (Pos 8.4, 94 impr -> /services/pre-drywall-inspection/dallas)",
+      "home inspection norcross ga (Pos 3.9, 92 impr -> /services/buyer-inspection/norcross)",
+      "home inspection austell ga (Pos 4.5, 91 impr -> /services/buyer-inspection/austell)",
+      "home inspector in acworth, ga (Pos 18, 89 impr -> /services/buyer-inspection/acworth)",
+      "home inspections in acworth, ga (Pos 16.5, 82 impr -> /services/buyer-inspection/acworth)",
+      "home inspection kennesaw ga (Pos 20.5, 79 impr -> /services/11-month-warranty-inspection/kennesaw)",
+      "home inspection acworth ga (Pos 15.1, 77 impr -> /services/buyer-inspection/acworth)"
+    ]
+  },
+  {
+    "timestamp": "2026-10-27T18:52:11.890Z",
     "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 490,
+    "totalInStrikingDistance": 504,
     "topTargets": [
       "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7.1, 100 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.4, 99 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.9, 88 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.4, 85 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspection austell ga (Pos 4.6, 85 impr -> /services/buyer-inspection/austell)",
-      "home inspector in acworth, ga (Pos 18.1, 84 impr -> /services/buyer-inspection/acworth)",
-      "home inspections in acworth, ga (Pos 16.6, 77 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.3, 74 impr -> /services/buyer-inspection/acworth)",
-      "home inspection kennesaw ga (Pos 20.8, 72 impr -> /services/11-month-warranty-inspection/kennesaw)"
->>>>>>> Stashed changes
-    ]
-  },
-  {
-    "timestamp": "2026-10-25T17:10:21.171Z",
-    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 470,
-    "topTargets": [
-      "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7, 97 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.5, 94 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.8, 83 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.4, 82 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspector in acworth, ga (Pos 18.4, 80 impr -> /services/buyer-inspection/acworth)",
-      "home inspection austell ga (Pos 4.8, 79 impr -> /services/buyer-inspection/austell)",
-      "home inspections in acworth, ga (Pos 16.8, 73 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.5, 68 impr -> /services/buyer-inspection/acworth)",
-      "home inspection kennesaw ga (Pos 21.1, 68 impr -> /services/11-month-warranty-inspection/kennesaw)"
-    ]
-  },
-  {
-    "timestamp": "2026-10-25T12:00:45.196Z",
-    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 470,
-    "topTargets": [
-      "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7, 97 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.5, 94 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.8, 83 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.4, 82 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspector in acworth, ga (Pos 18.4, 80 impr -> /services/buyer-inspection/acworth)",
-      "home inspection austell ga (Pos 4.8, 79 impr -> /services/buyer-inspection/austell)",
-      "home inspections in acworth, ga (Pos 16.8, 73 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.5, 68 impr -> /services/buyer-inspection/acworth)",
-      "home inspection kennesaw ga (Pos 21.1, 68 impr -> /services/11-month-warranty-inspection/kennesaw)"
-    ]
-  },
-  {
-    "timestamp": "2026-10-24T16:48:50.624Z",
-    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 465,
-    "topTargets": [
-      "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7, 90 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.7, 86 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.8, 77 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.6, 75 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspector in acworth, ga (Pos 19, 72 impr -> /services/buyer-inspection/acworth)",
-      "home inspection austell ga (Pos 5, 68 impr -> /services/buyer-inspection/austell)",
-      "sewer video inspection alpharetta (Pos 3.5, 66 impr -> /services/sewer-scope-inspection/alpharetta)",
-      "home inspections in acworth, ga (Pos 17.4, 64 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.8, 62 impr -> /services/buyer-inspection/acworth)"
-    ]
-  },
-  {
-    "timestamp": "2026-10-23T17:56:24.670Z",
-    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 465,
-    "topTargets": [
-      "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7, 90 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.7, 86 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.8, 77 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.6, 75 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspector in acworth, ga (Pos 19, 72 impr -> /services/buyer-inspection/acworth)",
-      "home inspection austell ga (Pos 5, 68 impr -> /services/buyer-inspection/austell)",
-      "sewer video inspection alpharetta (Pos 3.5, 66 impr -> /services/sewer-scope-inspection/alpharetta)",
-      "home inspections in acworth, ga (Pos 17.4, 64 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.8, 62 impr -> /services/buyer-inspection/acworth)"
-    ]
-  },
-  {
-    "timestamp": "2026-10-23T15:54:58.520Z",
-    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 465,
-    "topTargets": [
-      "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7, 90 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.7, 86 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.8, 77 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.6, 75 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspector in acworth, ga (Pos 19, 72 impr -> /services/buyer-inspection/acworth)",
-      "home inspection austell ga (Pos 5, 68 impr -> /services/buyer-inspection/austell)",
-      "sewer video inspection alpharetta (Pos 3.5, 66 impr -> /services/sewer-scope-inspection/alpharetta)",
-      "home inspections in acworth, ga (Pos 17.4, 64 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.8, 62 impr -> /services/buyer-inspection/acworth)"
-    ]
-  },
-  {
-    "timestamp": "2026-10-19T13:00:11.626Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-10-12T16:18:04.440Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-10-12T13:01:01.314Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-10-08T17:11:57.668Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-10-05T13:00:36.175Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-09-27T01:58:33.909Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-09-21T13:01:27.102Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-09-21T13:00:22.721Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
-    ]
-  },
-  {
-    "timestamp": "2026-09-16T08:58:11.533Z",
-    "action": "Cody Schneider Striking-Distance GSC Evaluation",
-    "queriesIdentified": 6,
-    "topTargets": [
-      "/blog/home-inspection-cost-atlanta-2026-guide",
-      "/services/sewer-scope-inspection",
-      "/compare/two-inspector-team-vs-single-inspector",
-      "/services/radon-testing",
-      "/due-diligence",
-      "/services/11-month-warranty-inspection"
+      "home inspection lilburn ga (Pos 7.1, 103 impr -> /services/buyer-inspection/lilburn)",
+      "home inspection snellville ga (Pos 9.3, 103 impr -> /services/buyer-inspection/snellville)",
+      "dallas pre drywall inspection (Pos 8.4, 94 impr -> /services/pre-drywall-inspection/dallas)",
+      "home inspection norcross ga (Pos 3.9, 92 impr -> /services/buyer-inspection/norcross)",
+      "home inspection austell ga (Pos 4.5, 91 impr -> /services/buyer-inspection/austell)",
+      "home inspector in acworth, ga (Pos 18, 89 impr -> /services/buyer-inspection/acworth)",
+      "home inspections in acworth, ga (Pos 16.5, 82 impr -> /services/buyer-inspection/acworth)",
+      "home inspection kennesaw ga (Pos 20.5, 79 impr -> /services/11-month-warranty-inspection/kennesaw)",
+      "home inspection acworth ga (Pos 15.1, 77 impr -> /services/buyer-inspection/acworth)"
     ]
   }
 ]

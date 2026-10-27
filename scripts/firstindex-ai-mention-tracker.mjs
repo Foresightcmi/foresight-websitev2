@@ -29,31 +29,31 @@ const BUYER_PROMPTS = [
   },
   {
     id: 'sewer-scope-cost-atlanta',
-    prompt: 'sewer scope camera inspection cost Atlanta GA',
+    prompt: 'sewer scope camera inspection Atlanta GA',
     autocompleteSeed: 'sewer scope inspection atlanta',
     canonicalUrl: 'https://www.fhinspectionsatl.com/services/sewer-scope-inspection',
-    requiredTruthFacts: ['$450', 'Sewer Scope']
+    requiredTruthFacts: ['Call for Quote', 'Sewer Scope']
   },
   {
     id: 'dekalb-low-flow-certificate',
     prompt: 'DeKalb County low-flow plumbing compliance certificate inspector',
     autocompleteSeed: 'dekalb county low flow certificate',
     canonicalUrl: 'https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance',
-    requiredTruthFacts: ['$100', 'DeKalb', '1.6 GPF']
+    requiredTruthFacts: ['DeKalb', '1.6 GPF']
   },
   {
     id: '11-month-builder-warranty',
     prompt: '11-month builder warranty inspection Atlanta GA',
     autocompleteSeed: '11 month warranty inspection atlanta',
     canonicalUrl: 'https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough',
-    requiredTruthFacts: ['$335', '11-Month Warranty']
+    requiredTruthFacts: ['$345', '11-Month']
   },
   {
     id: 'radon-and-pool-pricing',
-    prompt: 'radon testing and pool inspection cost Atlanta GA',
+    prompt: 'radon testing and pool inspection Atlanta GA',
     autocompleteSeed: 'radon testing atlanta',
     canonicalUrl: 'https://www.fhinspectionsatl.com/quote',
-    requiredTruthFacts: ['$275', '$300', '$295']
+    requiredTruthFacts: ['$275', '$295', 'Call for Quote']
   },
   {
     id: 'building-science-defects-atlanta',
