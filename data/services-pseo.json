@@ -2,10 +2,10 @@
   {
     "slug": "radon-testing",
     "name": "Radon Gas Testing",
-    "metaTitle": "{city}, GA Radon Testing & Radon Inspection | $250 EPA",
-    "metaDescription": "4.8★ Residential & commercial 48-hour electronic radon testing and radon inspection in {city}, GA. Flat $250 rate. Hourly EPA pCi/L graph & 24-hr report!",
-    "price": "$250",
-    "priceDetails": "$250 continuous 48-hour electronic monitoring test",
+    "metaTitle": "{city}, GA Radon Testing & Radon Inspection | 48-Hr EPA",
+    "metaDescription": "4.8★ Residential & commercial 48-hour electronic radon testing and radon inspection in {city}, GA. Hourly EPA pCi/L graph & 24-hr report. Call 678-480-2110!",
+    "price": "Call for Quote",
+    "priceDetails": "Continuous 48-hour electronic monitoring test — Call (678) 480-2110 for Quote",
     "icon": "☢️",
     "badge": "EPA Recommended",
     "heroSub": "Radon is an invisible, odorless radioactive gas and the #1 cause of lung cancer in non-smokers. Protect your family in {city} with continuous electronic monitoring.",
@@ -26,8 +26,8 @@
         "a": "If testing reveals average radon levels at or above 4.0 pCi/L, an active soil depressurization radon mitigation system can be installed by a certified specialist. The inspection report provides the exact evidence needed to negotiate a seller repair credit or mitigation system installation before closing."
       },
       {
-        "q": "How much does radon testing cost in {city}, GA?",
-        "a": "Electronic 48-hour continuous radon testing in {city} is a flat rate of $250 (compared to $350 to $375+ charged by many standalone Atlanta radon testing providers). Every inspection includes an hourly EPA pCi/L graph, same-day digital reporting, and our $10,000 Elite Master Inspection Warranty."
+        "q": "How do I schedule radon testing in {city}, GA?",
+        "a": "Call our office at (678) 480-2110 for a custom quote and to coordinate 48-hour continuous electronic radon testing in {city} alongside your home inspection. Every evaluation includes an hourly EPA pCi/L graph and 24-hour digital reporting."
       }
     ],
     "riskContext": "Radon levels in Georgia can spike unexpectedly during heavy rainfall and winter heating seasons when soil gases are drawn upward into living spaces.",
@@ -37,10 +37,10 @@
   {
     "slug": "termite-inspection",
     "name": "Termite & WDO Inspection",
-    "metaTitle": "{city}, GA Termite & WDO Inspection | Official Report $125+",
-    "metaDescription": "4.8★ Official Georgia WDO (Wood Destroying Organisms) termite letter & inspection in {city}, GA ($125 slab/basement, $165 crawlspace). Fast closing clearance!",
-    "price": "$125+",
-    "priceDetails": "$125 when bundled with a home inspection ($165 crawlspace)",
+    "metaTitle": "{city}, GA Termite & WDO Inspection | Official Report",
+    "metaDescription": "4.8★ Official Georgia WDO (Wood Destroying Organisms) termite letter & inspection in {city}, GA. Fast closing clearance! Call (678) 480-2110 for a quote.",
+    "price": "Call for Quote",
+    "priceDetails": "Official Georgia WDO Clearance Report — Call (678) 480-2110 for Quote",
     "icon": "🐜",
     "badge": "Official GA WDO Report",
     "heroSub": "Subterranean termites cause over $5 billion in property damage annually. Get an Official Georgia Wood Infestation Clearance Report in {city}.",
@@ -57,8 +57,8 @@
         "a": "The official report checks for four primary wood-destroying organisms: subterranean termites, drywood termites, powderpost beetles, and wood-decaying fungi. It identifies active infestations, previous damage, and conducive conditions like soil-to-wood contact or crawlspace moisture."
       },
       {
-        "q": "How much is a termite inspection in {city}, GA?",
-        "a": "An Official Georgia WDO termite inspection in {city} is $125 for slab or basement homes ($165 for crawlspace foundations) when bundled with your primary home inspection."
+        "q": "How do I schedule a termite inspection in {city}, GA?",
+        "a": "Call our office at (678) 480-2110 for a quote and to bundle an Official Georgia WDO termite inspection in {city} with your primary home inspection."
       },
       {
         "q": "What if termites or wood damage are found?",
@@ -72,10 +72,10 @@
   {
     "slug": "sewer-scope-inspection",
     "name": "Sewer Scope Inspection",
-    "metaTitle": "Sewer Camera & Scope Inspection in {city}, GA | $450 Flat",
-    "metaDescription": "4.8★ HD sewer camera, sewer video & plumbing line scope inspection in {city}, GA ($450 flat rate, no hidden fees). 200-ft fiber-optic camera & same-day video!",
-    "price": "$450",
-    "priceDetails": "$450 flat rate inspection with high-definition digital video report",
+    "metaTitle": "Sewer Camera & Scope Inspection in {city}, GA | Call for Quote",
+    "metaDescription": "4.8★ HD sewer camera, sewer video & plumbing line scope inspection in {city}, GA. 200-ft fiber-optic camera & same-day video! Call (678) 480-2110 for a quote.",
+    "price": "Call for Quote",
+    "priceDetails": "Call (678) 480-2110 for a quote on HD fiber-optic sewer camera inspection with digital video report",
     "icon": "🚾",
     "badge": "HD Video Included",
     "heroSub": "Replacing a collapsed sewer line can cost $5,000 to $15,000+. Inspect the underground sewer pipe from house to street in {city} before you close.",
@@ -97,7 +97,7 @@
       },
       {
         "q": "How much does a sewer camera scope cost in {city}, GA?",
-        "a": "Our sewer scope camera evaluation in {city} is a flat rate of $450, which includes the complete 100+ foot HD video inspection from cleanout to municipal main, defect distance mapping, and 24-hour digital report."
+        "a": "Call our office at (678) 480-2110 for a direct quote on our sewer scope camera evaluation in {city}, which includes the complete 100+ foot HD video inspection from cleanout to municipal main, defect distance mapping, and 24-hour digital report."
       }
     ],
     "riskContext": "Homes built prior to 1985 in {city} often contain aging cast iron or clay tile sewer pipes that are reaching the end of their functional lifespan.",
@@ -142,10 +142,10 @@
   {
     "slug": "pool-inspection",
     "name": "Pool & Spa Inspection",
-    "metaTitle": "{city}, GA Swimming Pool & Spa Inspection | $300 Flat",
-    "metaDescription": "4.8★ Certified swimming pool & spa inspection in {city}, GA ($300 flat rate). Pumps, heaters, pool chemical & GFCI electrical bonding Check. 24-hr report!",
-    "price": "$300",
-    "priceDetails": "$300 flat rate for residential pools & attached spas",
+    "metaTitle": "{city}, GA Swimming Pool & Spa Inspection | Call for Quote",
+    "metaDescription": "4.8★ Certified swimming pool & spa inspection in {city}, GA. Pumps, heaters, pool chemical & GFCI electrical bonding check. Call (678) 480-2110 for a quote!",
+    "price": "Call for Quote",
+    "priceDetails": "Call (678) 480-2110 for a quote on residential pools & attached spas",
     "icon": "🏊‍♂️",
     "badge": "Electrical & Safety Inspection",
     "heroSub": "Pool repairs can cost thousands in hidden pump, liner, or electrical failures. Protect your backyard oasis in {city} with a specialized pool evaluation.",
@@ -155,7 +155,7 @@
     "faqs": [
       {
         "q": "What is included in a pool inspection in {city}, GA?",
-        "a": "Our $300 pool inspection covers the pool/spa shell condition, coping and decking, pump and motor operation, filter pressure, heater ignition, salt cell/chlorinator systems, underwater lighting, GFCI ground bonding safety, plumbing leaks, and perimeter safety fencing."
+        "a": "Our pool inspection covers the pool/spa shell condition, coping and decking, pump and motor operation, filter pressure, heater ignition, salt cell/chlorinator systems, underwater lighting, GFCI ground bonding safety, plumbing leaks, and perimeter safety fencing."
       },
       {
         "q": "Can a general home inspector in {city} inspect a pool?",
@@ -163,7 +163,7 @@
       },
       {
         "q": "How much does a pool inspection cost in {city}, GA?",
-        "a": "Our pool and spa inspection in {city} is a flat rate of $300 when performed alongside your primary home inspection."
+        "a": "Call our office at (678) 480-2110 for a custom quote to coordinate a certified pool and spa evaluation alongside your primary home inspection in {city}."
       },
       {
         "q": "What are common pool defects found in {city} homes?",
@@ -177,10 +177,10 @@
   {
     "slug": "pre-listing-inspection",
     "name": "Pre-Listing Seller Inspection",
-    "metaTitle": "{city}, GA Pre-Listing Home Inspections & Checklist | $365+",
-    "metaDescription": "4.8★ Pre-listing home inspections & seller checklist in {city}, GA from $365 ($295 condos). 2 certified inspectors, free thermal & 4K drone scans. Close faster!",
-    "price": "$295+",
-    "priceDetails": "Condos from $295 | Single Family Homes from $365+",
+    "metaTitle": "{city}, GA Pre-Listing Home Inspections & Checklist | $345+",
+    "metaDescription": "4.8★ Pre-listing home inspections & seller checklist in {city}, GA from $345 ($295 condos). 2 certified inspectors, free thermal & 4K drone scans. Close faster!",
+    "price": "$345+",
+    "priceDetails": "Condos from $295 | Single Family Homes from $345+",
     "icon": "📋",
     "badge": "Maximize Sale Price",
     "heroSub": "Avoid deal-killing surprises during buyer due diligence. Inspect your {city} home before putting it on the market to sell faster and for top dollar.",
@@ -198,7 +198,7 @@
       },
       {
         "q": "How much is a pre-listing seller inspection in {city}, GA?",
-        "a": "Pre-listing seller inspections start at $295+ for condos and $365+ for single-family homes in {city}, including thermal imaging and full digital reports within 24 hours."
+        "a": "Pre-listing seller inspections start at $295+ for condos and $345+ for single-family homes in {city} based on square footage, including thermal imaging and full digital reports within 24 hours."
       },
       {
         "q": "Can I share Foresight's pre-listing report with potential buyers in {city}?",
@@ -317,10 +317,10 @@
   {
     "slug": "11-month-warranty-inspection",
     "name": "11-Month Builder Warranty Inspection",
-    "metaTitle": "{city}, GA 11-Month Warranty Inspection | $335+ Evaluation",
-    "metaDescription": "4.8★ Builder 11-month (eleven-month / eleventh-month) warranty home inspections in {city}, GA from $335. 2 certified inspectors, free thermal & drone scans!",
-    "price": "$335+",
-    "priceDetails": "11-month warranty evaluations from $335+ based on home square footage",
+    "metaTitle": "{city}, GA 11-Month Warranty Inspection | $345+ Evaluation",
+    "metaDescription": "4.8★ Builder 11-month (eleven-month / eleventh-month) warranty home inspections in {city}, GA from $345. 2 certified inspectors, free thermal & drone scans!",
+    "price": "$345+",
+    "priceDetails": "11-month warranty evaluations from $345+ based on home square footage",
     "icon": "⏳",
     "badge": "One-Year Deadline",
     "heroSub": "Your builder's one-year warranty is about to expire. Uncover structural settlement, HVAC leaks, and roof flaws before the repair bill becomes yours in {city}.",
@@ -334,7 +334,7 @@
       },
       {
         "q": "How much does an 11-month builder warranty inspection cost in {city}, GA?",
-        "a": "An independent 11-month builder warranty inspection in {city}, GA starts at $335+ based on square footage. It includes two certified inspectors, calibrated infrared thermal imaging, 4K drone roof scanning, and a builder-ready repair punch list within 24 hours."
+        "a": "An independent 11-month builder warranty inspection in {city}, GA starts at $345+ based on square footage. It includes two certified inspectors, calibrated infrared thermal imaging, 4K drone roof scanning, and a builder-ready repair punch list within 24 hours."
       },
       {
         "q": "When should I schedule my 11-month warranty inspection in {city}, GA?",
@@ -352,10 +352,10 @@
   {
     "slug": "mold-testing",
     "name": "Mold & Air Quality Inspection",
-    "metaTitle": "Mold Inspection & Testing {city}, GA | $450+ Lab",
-    "metaDescription": "4.8★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA (starts at $450). 3 spore-trap air samples + accredited lab!",
-    "price": "$450+",
-    "priceDetails": "Starts at $450 for 3 calibrated air samples (indoor living zones vs outdoor control baseline) + independent accredited lab report (additional surface swabs or extra samples billed if taken)",
+    "metaTitle": "Mold Inspection & Testing {city}, GA | Call for Quote",
+    "metaDescription": "4.8★ Certified mold inspection, mold testing & indoor air quality testing services in {city}, GA. 3 spore-trap air samples + accredited lab! Call (678) 480-2110.",
+    "price": "Call for Quote",
+    "priceDetails": "Call (678) 480-2110 for a quote on calibrated spore-trap air samples (indoor living zones vs outdoor control baseline) + independent accredited lab report",
     "icon": "🧫",
     "badge": "Certified Lab Analysis",
     "heroSub": "Hidden mold triggers severe respiratory allergies and indicates active water leaks. Protect your family's health in {city} with certified air quality testing.",
@@ -377,7 +377,7 @@
       },
       {
         "q": "How much does mold testing cost in {city}, GA?",
-        "a": "Professional mold and air quality testing in {city} starts at $450. Our baseline $450 package includes 3 calibrated spore-trap air samples (interior living zones tested against an outdoor control baseline), infrared thermal moisture mapping, and full accredited independent microbiology laboratory analysis delivered within 24 to 48 hours. If additional surface swabs or extra zone samples are taken, additional lab fees apply."
+        "a": "Call our office at (678) 480-2110 for a custom quote on professional mold and air quality testing in {city}. Our testing includes calibrated spore-trap air samples (interior living zones tested against an outdoor control baseline), infrared thermal moisture mapping, and full accredited independent microbiology laboratory analysis delivered within 24 to 48 hours."
       }
     ],
     "riskContext": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture threshold required for active fungal growth and spore transmission into living areas.",

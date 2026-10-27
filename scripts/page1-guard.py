@@ -119,8 +119,8 @@ def check_service_city_template():
         issues += 1
 
     sewer = next((s for s in services if s['slug'] == 'sewer-scope-inspection'), None)
-    if not sewer or sewer.get('price') != '$450':
-        print(f"  [FAIL] Sewer scope price mismatch: expected $450, got {sewer.get('price') if sewer else 'None'}")
+    if not sewer or sewer.get('price') != 'Call for Quote':
+        print(f"  [FAIL] Sewer scope price mismatch: expected Call for Quote, got {sewer.get('price') if sewer else 'None'}")
         issues += 1
 
     for s in services:
@@ -129,7 +129,7 @@ def check_service_city_template():
             issues += 1
 
     if issues == 0:
-        print(f"  [PASS] All {len(services) * 87} service-city routes have verified Product review schemas, 4+ FAQs, $450 sewer scope & AEO boxes.")
+        print(f"  [PASS] All {len(services) * 87} service-city routes have verified Product review schemas, 4+ FAQs, Call for Quote auxiliary pricing & AEO boxes.")
     return issues == 0
 
 def check_structured_data_compliance():

@@ -77,13 +77,13 @@ export default function CheckoutSuccessPage() {
               href="/quote?sewer=true&discount=repeat"
               style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#FFFFFF', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
             >
-              Sewer Scope Camera ($450 Flat Rate) &rarr;
+              Sewer Scope Camera (Call for Quote) &rarr;
             </Link>
             <Link
               href="/quote?radon=true&discount=repeat"
               style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#FFFFFF', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
             >
-              48-Hr Radon Monitoring ($250) &rarr;
+              48-Hr Radon Monitoring (Call for Quote) &rarr;
             </Link>
             <Link
               href="/quote?discount=repeat"

@@ -1,5 +1,75 @@
 [
   {
+    "email": "kelly@kellyrosen.com",
+    "first_name": "Kelly",
+    "full_name": "Kelly B Rosen",
+    "brokerage": "Keller Williams Realty Atlanta Partners",
+    "city": "Milton",
+    "listing_address": "238 Edinburgh Court 238",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-25"
+  },
+  {
+    "email": "grantharris10@gmail.com",
+    "first_name": "GRANT",
+    "full_name": "GRANT HARRIS",
+    "brokerage": "Coldwell Banker Kinard Realty",
+    "city": "Cartersville",
+    "listing_address": "309 Pescara Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-25"
+  },
+  {
+    "email": "lpt83@yahoo.com",
+    "first_name": "Phuongthao",
+    "full_name": "Phuongthao Lam",
+    "brokerage": "JQRH Property Management, , LLC.",
+    "city": "Conyers",
+    "listing_address": "762 Virginia Court SE",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-25"
+  },
+  {
+    "email": "tammy@armontre.com",
+    "first_name": "Tammy",
+    "full_name": "Tammy Weaver",
+    "brokerage": "Armont Real Estate",
+    "city": "Milton",
+    "listing_address": "238 Edinburgh Court 238",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-25"
+  },
+  {
+    "email": "lucy@therealtyqueen.com",
+    "first_name": "Lucy",
+    "full_name": "Lucy Ramos",
+    "brokerage": "Keller Williams Realty Northwest, LLC.",
+    "city": "Cartersville",
+    "listing_address": "309 Pescara Court",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-25"
+  },
+  {
+    "email": "martha.realty.mdj@gmail.com",
+    "first_name": "Martha",
+    "full_name": "Martha Reina",
+    "brokerage": "Chattahoochee North, LLC",
+    "city": "Lilburn",
+    "listing_address": "4378 Shady Drive NW",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-25"
+  },
+  {
+    "email": "natalie@sellinggeorgia.com",
+    "first_name": "Natalie",
+    "full_name": "Natalie Thomas",
+    "brokerage": "Dwelli Inc.",
+    "city": "Sharpsburg",
+    "listing_address": "109 Jolie Lane",
+    "source_url": "https://www.fmls.com",
+    "retrieved_on": "2026-10-25"
+  },
+  {
     "email": "kaseyprince@gmail.com",
     "first_name": "KASEY",
     "full_name": "KASEY PRINCE",

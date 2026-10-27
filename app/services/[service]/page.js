@@ -46,11 +46,11 @@ const SERVICE_MAP = {
   },
   'radon-testing': {
     name: 'Radon Gas Testing',
-    price: '$250',
+    price: 'Call for Quote',
     icon: '02',
     headline: 'Continuous 48-Hour Electronic Radon Testing Across Metro Atlanta',
-    metaTitle: 'Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor $250',
-    metaDescription: 'EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph & same-day report. Flat $250. Call 678-480-2110!',
+    metaTitle: 'Electronic Radon Testing Atlanta GA | 48-Hr EPA Monitor',
+    metaDescription: 'EPA-certified 48-hour continuous electronic radon testing across Metro Atlanta. Precision hourly pCi/L graph & same-day report. Call 678-480-2110 for a quote!',
     description: 'Radon is an odorless, invisible radioactive gas that represents the second leading cause of lung cancer in the United States. Northern Georgia geology contains significant granite bedrock with naturally occurring uranium deposits. Foresight uses state-of-the-art continuous electronic radon monitors delivering precision hourly graphs and EPA-compliant action reports.',
     included: [
       '48-hour continuous electronic active monitor placement',
@@ -61,11 +61,11 @@ const SERVICE_MAP = {
   },
   'sewer-scope-inspection': {
     name: 'Sewer Scope Camera Inspection',
-    price: '$450',
+    price: 'Call for Quote',
     icon: '03',
     headline: 'HD Fiber-Optic Main Drain & Lateral Sewer Scope Camera Inspections',
-    metaTitle: 'Sewer Scope Camera Inspection Atlanta GA | HD Pipe Inspection $450',
-    metaDescription: 'HD fiber-optic sewer scope camera inspection in Metro Atlanta. Detect root intrusions, crushed pipes & blockages before closing. Flat $450. Video report included.',
+    metaTitle: 'Sewer Scope Camera Inspection Atlanta GA | HD Pipe Inspection',
+    metaDescription: 'HD fiber-optic sewer scope camera inspection in Metro Atlanta. Detect root intrusions, crushed pipes & blockages before closing. Call 678-480-2110 for a quote.',
     description: 'Replacing a broken underground sewer lateral costs between $5,000 and $25,000 and is not covered by standard homeowners insurance. Foresight pushes a self-leveling HD fiber-optic camera through the entire line to the municipal connection or septic tank, pinpointing root intrusions, crushed pipes, low-pitch bellies, and joint separations.',
     included: [
       'Full 100+ foot self-leveling color video camera push',
@@ -76,11 +76,11 @@ const SERVICE_MAP = {
   },
   'pool-inspection': {
     name: 'Pool & Spa Inspection',
-    price: '$300',
+    price: 'Call for Quote',
     icon: '04',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
-    metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat',
-    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety Inspections. Flat $300 rate with 24-hr report.',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Evaluation',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety Inspections. Call 678-480-2110 for quote.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
       'Pump, filtration, and circulation system pressure testing',
@@ -91,11 +91,11 @@ const SERVICE_MAP = {
   },
   'pool-spa-inspection': {
     name: 'Pool & Spa Inspection',
-    price: '$300',
+    price: 'Call for Quote',
     icon: '04',
     headline: 'Comprehensive Swimming Pool, Spa & Equipment Diagnostic Evaluations',
-    metaTitle: 'Pool & Spa Inspection Atlanta GA | $300 Flat',
-    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety Inspections. Flat $300 rate with 24-hr report.',
+    metaTitle: 'Pool & Spa Inspection Atlanta GA | Certified Evaluation',
+    metaDescription: 'Certified swimming pool & spa inspection in Metro Atlanta. Pumps, heaters, electrical bonding, filtration & barrier safety Inspections. Call 678-480-2110 for quote.',
     description: 'Swimming pools and integrated spas involve high-voltage electricity, pressurized plumbing, structural gunite/vinyl membranes, and complex heating systems. Our InterNACHI Certified Pool Inspector verifies equipment operation, safety coping, GFCI and bonding compliance, surface integrity, and safety fencing.',
     included: [
       'Pump, filtration, and circulation system pressure testing',
@@ -106,11 +106,11 @@ const SERVICE_MAP = {
   },
   'termite-inspection': {
     name: 'Termite & WDO Clearance Inspection',
-    price: '$125+',
+    price: 'Call for Quote',
     icon: '05',
     headline: 'Official Georgia Wood Destroying Organism (WDO) Clearance Letters',
-    metaTitle: 'Official Termite & WDO Inspection Atlanta GA | $125+',
-    metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. From $125+.',
+    metaTitle: 'Official Termite & WDO Inspection Atlanta GA | Clearance Report',
+    metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. Call 678-480-2110.',
     description: 'Georgia is located in the highest-risk termite zone in North America (Zone 1). Subterranean termites, carpenter ants, and wood-boring beetles cause billions of dollars in structural damage annually. We inspect all crawlspaces, sill plates, foundation perimeters, and framing for active infestations and past damage.',
     included: [
       'Comprehensive crawlspace, basement, and foundation perimeter sweep',
@@ -121,11 +121,11 @@ const SERVICE_MAP = {
   },
   'termite-wdo-inspection': {
     name: 'Termite & WDO Clearance Inspection',
-    price: '$125+',
+    price: 'Call for Quote',
     icon: '05',
     headline: 'Official Georgia Wood Destroying Organism (WDO) Clearance Letters',
-    metaTitle: 'Official Termite & WDO Inspection Atlanta GA | $125+',
-    metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. From $125+.',
+    metaTitle: 'Official Termite & WDO Inspection Atlanta GA | Clearance Report',
+    metaDescription: 'Official Georgia Wood Infestation (WDO) clearance letters for mortgage loans & buyers in Metro Atlanta. Fast scheduling, licensed inspection. Call 678-480-2110.',
     description: 'Georgia is located in the highest-risk termite zone in North America (Zone 1). Subterranean termites, carpenter ants, and wood-boring beetles cause billions of dollars in structural damage annually. We inspect all crawlspaces, sill plates, foundation perimeters, and framing for active infestations and past damage.',
     included: [
       'Comprehensive crawlspace, basement, and foundation perimeter sweep',
@@ -151,11 +151,11 @@ const SERVICE_MAP = {
   },
   'pre-listing-inspection': {
     name: 'Pre-Listing Seller Inspection',
-    price: 'From $365',
+    price: 'From $345',
     icon: '07',
     headline: 'Sell With Confidence: Pre-Listing Inspections for Atlanta Homeowners',
-    metaTitle: 'Pre-Listing Inspection Atlanta GA | From $365',
-    metaDescription: 'Pre-listing seller home inspection in Metro Atlanta. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. From $365.',
+    metaTitle: 'Pre-Listing Inspection Atlanta GA | From $345',
+    metaDescription: 'Pre-listing seller home inspection in Metro Atlanta. Prevent deal-killers, negotiate from strength & close faster with a Certified Master Inspector. From $345.',
     description: 'When a buyer inspector finds unexpected major defects, negotiations stall or contracts fall through. A Pre-Listing Seller Inspection by Foresight gives you total transparency into your home condition before hitting the MLS, letting you make targeted repairs on your timeline.',
     included: [
       'Complete two-inspector evaluation of roof, HVAC, electrical, plumbing & foundation',
@@ -166,10 +166,10 @@ const SERVICE_MAP = {
   },
   '11-month-warranty-inspection': {
     name: '11-Month Builder Warranty Inspection',
-    price: 'From $335',
+    price: 'From $345',
     icon: '06',
     headline: 'Protect Your New Construction Equity Before the 1-Year Builder Warranty Expires',
-    metaTitle: '11-Month Warranty Inspection Atlanta | From $335',
+    metaTitle: '11-Month Warranty Inspection Atlanta | From $345',
     metaDescription: 'Independent 11-month builder warranty inspection in Metro Atlanta. 2 certified inspectors, infrared thermal scans & builder-ready punch lists before warranty expires.',
     description: 'Most new construction homes include a 1-year builder warranty covering materials and workmanship. Over the first year, homes settle, framing contracts, roof shingles experience storm cycles, and HVAC ductwork can detach. Our two-inspector team provides a comprehensive punch list backed by thermal imaging to submit directly to your builder.',
     included: [
@@ -181,11 +181,11 @@ const SERVICE_MAP = {
   },
   'str-short-term-rental-inspection': {
     name: 'Short-Term Rental (STR) Inspection',
-    price: 'From $395',
+    price: 'Call for Quote',
     icon: '08',
     headline: 'Safety, Code Compliance & Due Diligence for Airbnb & STR Investments',
-    metaTitle: 'Airbnb & STR Inspection Atlanta GA | From $395',
-    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Airbnb/VRBO safety Inspection from $395.',
+    metaTitle: 'Airbnb & STR Inspection Atlanta GA | Safety & Compliance',
+    metaDescription: 'Short-term rental (STR) safety, liability & municipal compliance home inspections in Atlanta, DeKalb, Fulton & Gwinnett. Call 678-480-2110 for a quote.',
     description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, electrical load capacities, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
     included: [
       'Life-safety Inspection (egress windows, smoke/CO interconnectivity, handrails)',
@@ -196,34 +196,34 @@ const SERVICE_MAP = {
   },
   'mold-testing': {
     name: 'Mold & Indoor Air Quality Testing',
-    price: 'From $450',
+    price: 'Call for Quote',
     icon: '09',
     headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
-    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality From $450',
-    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta from $450. Spore trap air cassettes, moisture mapping & lab report. Call 678-480-2110!',
-    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Starting at $450, Certified Master Inspector® Christopher Boykin combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, with optional surface swabs or extra samples available as needed.',
+    metaTitle: 'Certified Mold Testing Atlanta GA | Indoor Air Quality Lab',
+    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & lab report. Call 678-480-2110 for a quote!',
+    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Certified Master Inspector® Christopher Boykin combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, with optional surface swabs or extra samples available as needed.',
     included: [
       'Comprehensive moisture intrusion & thermal infrared wall/ceiling scan',
-      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline, starts at $450)',
+      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline)',
       'Spore trap cassette analysis for toxigenic & allergenic fungal species',
-      'Optional surface swabs or additional zone air samples available (additional lab fees apply)',
+      'Optional surface swabs or additional zone air samples available',
       'Certified independent microbiology laboratory report within 24–48 hours',
       'Actionable remediation protocol recommendations if elevated spore counts are detected'
     ]
   },
   'mold-inspection': {
     name: 'Mold & Indoor Air Quality Testing',
-    price: 'From $450',
+    price: 'Call for Quote',
     icon: '09',
     headline: 'Certified Spore Trap Air Quality & Mold Lab Diagnostics in Metro Atlanta',
-    metaTitle: 'Certified Mold Testing Atlanta GA | Air Quality From $450',
-    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta from $450. Spore trap air cassettes, moisture mapping & lab report. Call 678-480-2110!',
-    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Starting at $450, Certified Master Inspector® Christopher Boykin combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, with optional surface swabs or extra samples available as needed.',
+    metaTitle: 'Certified Mold Testing Atlanta GA | Indoor Air Quality Lab',
+    metaDescription: 'Certified mold testing & indoor air quality lab analysis in Metro Atlanta. Spore trap air cassettes, moisture mapping & lab report. Call 678-480-2110 for a quote!',
+    description: 'Georgia\'s high humidity, red clay soil, and vented crawlspaces create optimal conditions for hidden toxic mold blooms (including Stachybotrys, Aspergillus, and Penicillium). Certified Master Inspector® Christopher Boykin combines precision infrared thermal moisture mapping with calibrated spore-trap air sampling analyzed by an accredited independent microbiology laboratory, with optional surface swabs or extra samples available as needed.',
     included: [
       'Comprehensive moisture intrusion & thermal infrared wall/ceiling scan',
-      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline, starts at $450)',
+      'Calibrated baseline sampling (indoor air samples vs. outdoor control baseline)',
       'Spore trap cassette analysis for toxigenic & allergenic fungal species',
-      'Optional surface swabs or additional zone air samples available (additional lab fees apply)',
+      'Optional surface swabs or additional zone air samples available',
       'Certified independent microbiology laboratory report within 24–48 hours',
       'Actionable remediation protocol recommendations if elevated spore counts are detected'
     ]
@@ -339,7 +339,9 @@ export default async function ServiceHubPage({ params }) {
     },
     {
       q: `How much does ${serviceData.name} cost in Metro Atlanta?`,
-      a: `${serviceData.name} pricing starts at ${serviceData.price} with transparent flat-rate pricing and no hidden mileage fees across our 50-mile Metro Atlanta service footprint.`
+      a: serviceData.price === 'Call for Quote'
+        ? `For ${serviceData.name} pricing and same-day scheduling alongside your home inspection, please call our office directly at (678) 480-2110.`
+        : `${serviceData.name} pricing starts at ${serviceData.price} with transparent square-footage pricing across our 50-mile Metro Atlanta service footprint.`
     }
   ];
 
@@ -507,7 +509,7 @@ export default async function ServiceHubPage({ params }) {
             {serviceData.name} in Metro Atlanta
           </h1>
           <p style={{ fontSize: '1.15rem', color: '#E2E8F0', lineHeight: 1.7, maxWidth: '750px', margin: '0 auto 2rem' }}>
-            {serviceData.headline}. Transparent pricing starting at <strong style={{ color: 'var(--color-gold)' }}>{serviceData.price.replace(/^From\s+/i, '')}</strong>.
+            {serviceData.headline}. {serviceData.price === 'Call for Quote' ? <>Call <strong style={{ color: 'var(--color-gold)' }}>(678) 480-2110</strong> for a custom quote.</> : <>Transparent pricing starting at <strong style={{ color: 'var(--color-gold)' }}>{serviceData.price.replace(/^From\s+/i, '')}</strong>.</>}
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
@@ -533,7 +535,7 @@ export default async function ServiceHubPage({ params }) {
               </span>
             </div>
             <p style={{ fontSize: '0.975rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
-              <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties starting at <strong>{serviceData.price.replace(/^From\s+/i, '')}</strong>. Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, cutting on-site disruption to 1.5–2.5 hours while delivering double verification. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
+              <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties ({serviceData.price === 'Call for Quote' ? <>call <strong>(678) 480-2110</strong> for quote</> : <>starting at <strong>{serviceData.price.replace(/^From\s+/i, '')}</strong></>}). Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, cutting on-site disruption to 1.5–2.5 hours while delivering double verification. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #F1F5F9', fontSize: '0.85rem', color: '#475569' }}>
               <div><strong>Lead Credential:</strong> Certified Master Inspector® (CMI)</div>

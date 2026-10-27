@@ -54,8 +54,8 @@ function buildCloudEmail(contact) {
     : `https://www.fhinspectionsatl.com/quote`;
 
   const subject = addr
-    ? (isDeKalb ? `Congrats on ${addr} (${city}) — 24-Hr Priority Due Diligence + $100 DeKalb Low-Flow` : `Congrats on ${addr} (${city}) — 24-Hr Priority Due Diligence Slot`)
-    : (isDeKalb ? `Keeping your ${city} contracts together + $100 DeKalb Low-Flow Certificates` : `Keeping your ${city} contracts together during due diligence`);
+    ? (isDeKalb ? `Congrats on ${addr} (${city}) — 24-Hr Priority Due Diligence + DeKalb Low-Flow` : `Congrats on ${addr} (${city}) — 24-Hr Priority Due Diligence Slot`)
+    : (isDeKalb ? `Keeping your ${city} contracts together + DeKalb Low-Flow Certificates` : `Keeping your ${city} contracts together during due diligence`);
 
   const opener = addr
     ? `Congratulations on your recent activity at <strong>${addr}</strong> in <strong>${city}</strong>. I wanted to reach out personally in case your buyers or the co-op agent need a fast 24-hour inspection slot during due diligence.`
@@ -68,7 +68,7 @@ function buildCloudEmail(contact) {
     ``,
     `My partner and I inspect every home together as a two-inspector Certified Master Inspector team with active SUPRA eKEY access, starting at $345 ($295 for condos). Having both of us on site cuts the inspection time in half, includes calibrated infrared thermal imaging and a 4K drone roof check, and gets the report back the same evening.`,
     ``,
-    `We also handle signed DeKalb County Low-Flow Plumbing Certificates ($100 flat fee), main sewer line camera scopes ($450 flat rate), pre-drywall ($275+) and 11-month builder warranty inspections ($335+), and pre-listing seller inspections ($365+).`,
+    `We also handle signed DeKalb County Low-Flow Plumbing Certificates, main sewer line camera scopes, pre-drywall ($275+) and 11-month builder warranty inspections ($345+), and pre-listing seller inspections ($345+).`,
     ``,
     `Reserve a slot at ${quoteUrl} or text/call me directly at (678) 480-2110.`,
     ``,
@@ -89,8 +89,8 @@ function buildCloudEmail(contact) {
     <div style="background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #d4af37;border-radius:6px;padding:14px 18px;margin:18px 0;">
       <div style="font-size:12px;font-weight:700;color:#0f172a;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;">How We Help Protect Your Closings</div>
       <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Two Certified Master Inspectors ($345+ / $295 Condos):</strong> Half the inspection time, active SUPRA eKEY access, and same-day digital reports.</div>
-      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; DeKalb County $100 Low-Flow Certificate:</strong> Same-day signed Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County.</div>
-      <div style="margin:0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Sewer Scope ($450), New Build ($275+) &amp; $35,000 Warranties:</strong> Includes 4K drone roof photography, calibrated infrared thermal scans, and $35,000 in buyer warranty protection.</div>
+      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; DeKalb County Low-Flow Certificate:</strong> Same-day signed Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County.</div>
+      <div style="margin:0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Sewer Scope, New Build ($275+) &amp; $35,000 Warranties:</strong> Includes 4K drone roof photography, calibrated infrared thermal scans, and $35,000 in buyer warranty protection.</div>
     </div>
     <p style="margin:0 0 18px 0;font-size:15px;line-height:1.62;color:#1e293b;">Next time you're in a tight due diligence window, just text or call my cell at <strong>(678) 480-2110</strong> and we'll get your client taken care of within 24 to 48 hours.</p>
     <div style="border-top:1px solid #e2e8f0;padding-top:16px;margin-top:16px;">

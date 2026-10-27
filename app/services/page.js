@@ -55,7 +55,7 @@ export default function Services() {
     },
     {
       title: 'Pre-Listing Seller Inspection',
-      price: '$365+',
+      price: '$345+',
       priceNote: 'Prevent transaction deal-killers before listing',
       description: 'Identify potential issues before putting your home on the market. Streamline negotiations, avoid last-minute surprises, and increase buyer confidence.',
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
@@ -87,7 +87,7 @@ export default function Services() {
     },
     {
       title: '11-Month Warranty Inspection',
-      price: '$335+',
+      price: '$345+',
       description: 'Performed before your 1-year builder warranty expires. Receive an itemized, photo-documented punch list to ensure your builder warranty covers settlement, trade adjustments, and mechanical items before month 12.',
       details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousands in future repairs', 'Maximum warranty utilization'],
       image: '/images/gas-meter.png',
@@ -108,7 +108,7 @@ export default function Services() {
     },
     {
       title: 'Pool & Spa Inspections',
-      price: '$300',
+      price: 'Call for Quote',
       description: 'Comprehensive mechanical and safety evaluation of residential swimming pools and spas. We test pumps, filters, heaters, electrical safety, plumbing lines, shell integrity, and safety boundaries.',
       details: ['Comprehensive pool & spa inspection', 'Pump & heater functional tests', 'Safety barrier & GFCI electrical review', 'Filter and plumbing line evaluation'],
       image: '/images/pool-inspecting.png',
@@ -129,7 +129,7 @@ export default function Services() {
     },
     {
       title: 'Sewer Scope Inspections',
-      price: '$450',
+      price: 'Call for Quote',
       description: 'Using high-resolution sewer cameras, we inspect the main lateral sewer line from the cleanout to the municipal street main or septic connection. Highly recommended for older properties.',
       details: ['High-definition sewer video camera', 'Main lateral line inspection', 'Full digital video recording provided', 'Detects root intrusion, bellies, and cracks'],
       image: '/images/sewer-scope.png',
@@ -150,7 +150,7 @@ export default function Services() {
     },
     {
       title: 'Termite & WDO Inspections',
-      price: '$125+',
+      price: 'Call for Quote',
       description: 'Wood Destroying Organisms can cause catastrophic structural damage. We deliver the Official Georgia Wood Infestation Inspection Report (GAR compliant) required for real estate closings.',
       details: ['Official GA WDO Inspection Report', 'Identifies active and past termite activity', 'Checks for wood-boring beetles & fungus', 'Standard requirement for mortgage approvals'],
       slug: 'termite-and-wdo-inspection-guide',
@@ -170,7 +170,7 @@ export default function Services() {
     },
     {
       title: 'Radon Gas Testing',
-      price: '$250',
+      price: 'Call for Quote',
       description: 'Radon is a cancer-causing, odorless radioactive gas common in Georgia granite bedrock. We deploy 48-hour continuous electronic radon monitors following strict EPA protocols.',
       details: ['Continuous electronic radon monitors', '48-hour professional deployment', 'Strict EPA protocol compliance'],
       slug: 'hidden-dangers-of-radon-gas-georgia',
@@ -190,10 +190,10 @@ export default function Services() {
     },
     {
       title: 'Mold & Indoor Air Quality Testing',
-      price: 'From $450',
-      priceNote: 'Certified Independent Microbiology Lab Analysis (Starts at $450)',
-      description: 'Georgia\'s humid subtropical climate and vented crawlspaces make toxic mold a serious hidden health hazard. Starting at $450, we perform calibrated spore trap air sampling (indoor samples compared against outdoor baseline) analyzed by an accredited microbiology laboratory, with optional surface swabs or additional zone samples available if needed.',
-      details: ['InterNACHI® Certified Moisture Intrusion Inspector', 'Calibrated spore trap air sampling (starts at $450)', 'Outdoor control baseline comparison', 'Accredited microbiology lab report', 'Infrared moisture mapping included', 'Optional surface swabs & species ID (Stachybotrys, etc.)'],
+      price: 'Call for Quote',
+      priceNote: 'Certified Independent Microbiology Lab Analysis',
+      description: 'Georgia\'s humid subtropical climate and vented crawlspaces make toxic mold a serious hidden health hazard. We perform calibrated spore trap air sampling (indoor samples compared against outdoor baseline) analyzed by an accredited microbiology laboratory, with optional surface swabs or additional zone samples available if needed.',
+      details: ['InterNACHI® Certified Moisture Intrusion Inspector', 'Calibrated spore trap air sampling', 'Outdoor control baseline comparison', 'Accredited microbiology lab report', 'Infrared moisture mapping included', 'Optional surface swabs & species ID (Stachybotrys, etc.)'],
       image: '/images/crawlspace.png',
       slug: 'mold-testing-atlanta-indoor-air-quality-inspection-guide',
       serviceSlug: 'mold-testing',
@@ -212,7 +212,7 @@ export default function Services() {
     },
     {
       title: 'Short-Term Rental (STR) Compliance Inspection',
-      price: 'From $395',
+      price: 'Call for Quote',
       priceNote: 'Airbnb & VRBO Safety & County Code Compliance',
       description: 'Operating a short-term rental in Metro Atlanta requires strict adherence to life-safety codes, egress clearances, and guest protection standards. Foresight provides investor-focused inspections verifying smoke/CO alarms, egress paths, water heater capacity, HVAC performance, and structural reliability.',
       details: ['Life-safety & egress clearance evaluation', 'High-occupancy mechanical load check', 'Thermal imaging of electrical & HVAC', 'Municipal STR compliance checklist support'],
@@ -233,10 +233,10 @@ export default function Services() {
     },
     {
       title: 'Contractor Repair Cost & Pricing Estimates',
-      price: '$99',
+      price: 'Call for Quote',
       priceNote: 'Optional Inspection Add-On or Standalone Outside Report Review',
       description: 'Standard home inspections are diagnostic only per InterNACHI Standards of Practice. When requested, Foresight provides empirical contractor repair cost estimates and trade schedules (regional Metro Atlanta contractor data) formatted for standard Georgia repair amendment negotiation.',
-      details: ['Trade labor ($95–$165/hr) & materials breakdowns', 'Sample Georgia repair amendment language', 'Available as $99 add-on for Foresight clients', 'Available as $99 standalone evaluation for outside reports'],
+      details: ['Trade labor & materials breakdowns', 'Sample Georgia repair amendment language', 'Available as an add-on for Foresight clients', 'Available for standalone outside report reviews'],
       image: '/images/ac-pic.png',
       slug: 'repair-credit-calculator',
       briefing: {
@@ -244,8 +244,8 @@ export default function Services() {
         duration: '45-Sec Briefing',
         tagline: 'Bridge the Diagnostic Gap with Regional Metro Atlanta Trade Pricing',
         takeaways: [
-          'InterNACHI SOP is diagnostic only; this optional $99 add-on calculates true dollar repair costs.',
-          'Itemizes trade labor ($95–$165/hr) and materials using localized regional construction cost data.',
+          'InterNACHI SOP is diagnostic only; this optional add-on calculates true dollar repair costs.',
+          'Itemizes trade labor and materials using localized regional construction cost data.',
           'Includes ready-to-copy repair amendment wording to secure maximum seller credits.'
         ]
       }
@@ -284,16 +284,16 @@ export default function Services() {
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Buyer Home Inspection", "description": "Comprehensive inspection covering structure, roof, electrical, plumbing, HVAC, and all major systems with two certified inspectors and $10,000 warranty." }, "price": "345.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Condo & Townhome Inspection", "description": "Focused interior and mechanical systems inspection tailored for condominium units." }, "price": "295.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "365.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection", "description": "Identify potential issues before listing. Streamline negotiations and increase buyer confidence." }, "price": "345.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Inspection", "description": "Independent third-party quality assurance for your newly built home with complete builder punch list." }, "price": "275.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional code-referenced punch list before your 1-year builder warranty expires." }, "price": "335.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries." }, "price": "300.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists." }, "price": "125.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing." }, "price": "250.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis." }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety Inspections, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines." }, "price": "395.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for Georgia repair amendment negotiation. Available as $99 add-on or standalone outside evaluation." }, "price": "99.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Warranty Inspection", "description": "Professional code-referenced punch list before your 1-year builder warranty expires." }, "price": "345.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool & Spa Inspection", "description": "Evaluation of pumps, filters, heaters, electrical, plumbing, shell integrity, and safety boundaries. Call (678) 480-2110 for quote." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite & WDO Inspection", "description": "Official Georgia Wood Infestation Report by licensed pest control specialists. Call (678) 480-2110 for quote." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing", "description": "Professional 48-hour continuous monitor radon testing. Call (678) 480-2110 for quote." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HD Sewer Scope Camera Inspection", "description": "Fiber-optic video inspection of main underground lateral sewer line from house to municipal street main. Call (678) 480-2110 for quote." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold & Indoor Air Quality Testing", "description": "Certified mold inspection, calibrated spore trap air sampling, and accredited independent microbiology laboratory analysis. Call (678) 480-2110 for quote." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) Compliance Inspection", "description": "Professional safety Inspections, egress route checks, and alarm pre-screening mapped to Metro Atlanta county guidelines. Call (678) 480-2110 for quote." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contractor Repair Cost & Due Diligence Estimates", "description": "Optional empirical contractor repair estimates and trade schedules formatted for Georgia repair amendment negotiation. Call (678) 480-2110 for quote." } }
       ]
     }
   };
@@ -347,7 +347,7 @@ export default function Services() {
         "name": "Does Foresight Home Inspections do mold testing in Atlanta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Our baseline testing protocol includes calibrated spore-trap air sampling (2 indoor living zones compared against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered within 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
+          "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta. Our baseline testing protocol includes calibrated spore-trap air sampling (2 indoor living zones compared against an outdoor control baseline), while additional surface swabs or extra room air samples can be added on site. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered within 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage. Call our office at (678) 480-2110 for a custom quote."
         }
       }
     ]
@@ -635,8 +635,8 @@ export default function Services() {
                   <h3 style={{ marginTop: '0.5rem', fontSize: '1.75rem', fontWeight: 800 }}>Short-Term Rental (STR) Compliance Assist</h3>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', display: 'block' }}>Starting at</span>
-                  <strong style={{ color: 'var(--color-red)', fontSize: '2.25rem', fontWeight: 800 }}>$355</strong>
+                  <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-dark)', display: 'block' }}>Custom Municipal Scope</span>
+                  <strong style={{ color: 'var(--color-red)', fontSize: '1.85rem', fontWeight: 800 }}>Call for Quote</strong>
                 </div>
               </div>
 
@@ -653,7 +653,7 @@ export default function Services() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.95rem' }}>
                   <li><strong>Local Agent Signage:</strong> Checking that the mandatory 24-hour local contact information and evacuation maps are clearly posted.</li>
                   <li><strong>Historic Exclusions:</strong> Pre-screening checks for localized historic district restrictions to safeguard your non-refundable government portal application fees.</li>
-                  <li><strong>Custom Pricing:</strong> Pricing starts at <strong>$355</strong> based on standard condos and single-family homes, and adjusts for larger estates. Contact us for exact pricing tailored to your county's rules.</li>
+                  <li><strong>Custom Quote:</strong> Contact our office at <a href="tel:678-480-2110" style={{ color: 'var(--color-red)', fontWeight: 700 }}>(678) 480-2110</a> for custom pricing tailored to your property size and your county&apos;s specific STR ordinance rules.</li>
                 </ul>
               </div>
 
@@ -922,7 +922,7 @@ export default function Services() {
           <details style={{ border: '1px solid var(--color-gray-mid)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', marginBottom: '1rem', background: 'white' }}>
             <summary className="faq-question" style={{ fontWeight: 700, cursor: 'pointer', fontSize: '1.05rem' }}>Do you provide mold testing and indoor air quality assessments in Atlanta?</summary>
             <p className="speakable-answer" style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
-              Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Our baseline protocol includes calibrated spore-trap air sampling (2 interior living zones compared against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage.
+              Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta. Our baseline protocol includes calibrated spore-trap air sampling (2 interior living zones compared against an outdoor control baseline), while additional surface swabs or extra room air samples can be added on site. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count and species identification reports delivered in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage. Call our office at (678) 480-2110 for a quote.
             </p>
           </details>
 

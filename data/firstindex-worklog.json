@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< Updated upstream
     "timestamp": "2026-10-26T19:29:55.062Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-10-26",
@@ -8,6 +9,16 @@
     "aiMentionTrackerPassed": true,
     "aiFanningPassed": true,
     "deployedToVercel": false,
+=======
+    "timestamp": "2026-10-26T13:01:00.717Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-10-26",
+    "truthGuardPassed": true,
+    "page1GuardPassed": true,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "deployedToVercel": true,
+>>>>>>> Stashed changes
     "executedImpactTask": {
       "priority": "P2_ALL_STRIKING_CITIES_ENRICHED",
       "executed": true,

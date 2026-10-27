@@ -4,13 +4,11 @@
 > **Project-Scoped Rules (`foresight-website`)**: These standards apply **strictly** to Foresight Home Inspections and must never be carried over into the entrepreneur's other independent business ventures.
 
 ## 1. Non-Negotiable Commercial Pricing & Copy Constraints
-* **Standard Residential Homes**: Starting at **`$345`**
-* **Condos & Townhomes**: Starting at **`$295`**
-* **Sewer Scope Camera Inspection**: Strictly **`$450` flat rate** (never alter or discount)
-* **Radon Continuous Monitoring**: **`$250`**
-* **Swimming Pool & Spa Inspection**: **`$300`**
-* **DeKalb County Low-Flow Plumbing Certificate**: **`$100`**
-* **Termite / Official Georgia Wood Infestation Report**: **`$125`** slab (`$165` crawlspace)
+* **Standard Residential Homes (Buyer, Pre-Listing Seller, 11-Month Builder Warranty)**: Starting at **`$345`** (same square-footage tier table across all three; `1,501–2,000 sq ft` = `$425`)
+* **Condos & Townhomes**: Starting at **`$295`** (`<= 1,000 sq ft` = `$295`, `> 1,000 sq ft` = `$325`)
+* **Pre-Drywall Framing Inspection**: **`$275+`** (`$275` up to 1,500 sq ft, `$300` 1,501–2,500, `$350` 2,501–3,500, `$400` 3,501+)
+* **New Construction Final Inspection**: **`$400+`** based on square footage
+* **Auxiliary & Specialty Add-Ons (Sewer Scope, Radon, Pool & Spa, Termite/WDO, Mold & Air Quality, STR Compliance, DeKalb Low-Flow Certificate, Contractor Repair Cost Estimates)**: **`Call for Quote` / `Call (678) 480-2110 for Quote`** (never display fixed dollar prices for auxiliary services on the calculator, service pages, or outbound emails)
 * **Core Value Hooks**: Two-Inspector Team on every home, same-day interactive digital report, **`$10,000` Honor Guarantee**, active SUPRA eKEY access.
 * **Copy & Schema Formatting**:
   * **Zero asterisks (`*`)** in any visible user-facing copy.

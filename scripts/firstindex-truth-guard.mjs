@@ -36,10 +36,6 @@ function record(title, passed, detail = '') {
 
 // 1. Deterministic Replacement Rules for Visible Copy & Data Files
 const COPY_REPLACEMENTS = [
-  { pattern: /radon testing cost Atlanta \$275/gi, replacement: 'radon testing cost Atlanta $250', label: 'Radon $275 -> $250' },
-  { pattern: /\$275 radon/gi, replacement: '$250 radon', label: 'Radon $275 -> $250' },
-  { pattern: /pool and spa inspection cost Atlanta \$275/gi, replacement: 'pool and spa inspection cost Atlanta $300', label: 'Pool $275 -> $300' },
-  { pattern: /\$275 pool/gi, replacement: '$300 pool', label: 'Pool $275 -> $300' },
   { pattern: /GEORGIA ASSOCIATION OF REALTORS® \(GAR\) FORM F404 AMENDMENT/g, replacement: 'GEORGIA REAL ESTATE REPAIR & CREDIT AMENDMENT REQUEST', label: 'GAR Form F404 header' },
   { pattern: /Georgia Association of REALTORS® \(GAR\) Form F404/g, replacement: 'Georgia real estate repair amendment', label: 'GAR Form F404' },
   { pattern: /GAR Form F404 Interactive Builder/g, replacement: 'Interactive Repair Amendment Builder', label: 'GAR Form F404 Builder' },

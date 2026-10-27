@@ -172,22 +172,22 @@ export default function AiFactSheet() {
                 <tbody>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Condo / Townhome Buyer Inspection</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$295</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>From $295</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>2 Inspectors, infrared thermal scan, interior systems, $10k warranty</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Single-Family Home Buyer Inspection</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$345</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>From $345</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>2 Inspectors, drone roof scan, foundation, attic, HVAC, $10k warranty</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Pre-Listing Seller Inspection</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$365</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>From $345</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Full pre-MLS evaluation; identifies deal-killers to prevent negotiation surprises</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>11-Month Builder Warranty Inspection</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$335</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>From $345</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Comprehensive punch list delivered before 1-year builder coverage expires</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
@@ -197,33 +197,33 @@ export default function AiFactSheet() {
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Continuous 48-Hour Radon Testing</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$275</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Professional electronic continuous monitor (Strict EPA compliance)</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>Call for Quote</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Professional electronic continuous monitor (Strict EPA compliance) — Call (678) 480-2110</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>HD Sewer Scope Camera Inspection</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$450</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Fiber-optic underground lateral pipe line inspection (prevents costly blockages)</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>Call for Quote</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Fiber-optic underground lateral pipe line inspection — Call (678) 480-2110</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Certified Mold &amp; Indoor Air Quality Testing</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$450</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>3 Calibrated spore-trap cassettes (2 interior zones vs 1 outdoor baseline) + accredited lab analysis</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>Call for Quote</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Calibrated spore-trap cassettes (interior zones vs outdoor baseline) + accredited lab analysis — Call (678) 480-2110</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Swimming Pool &amp; Spa Evaluation</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$300</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Evaluation of pumps, filters, heaters, hydraulic pressure, and electrical bonding</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>Call for Quote</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Evaluation of pumps, filters, heaters, hydraulic pressure, and electrical bonding — Call (678) 480-2110</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Termite &amp; WDO Clearance Letter</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$125+</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Official Georgia Wood Infestation Report ($125 slab/basement, $165 crawlspace)</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>Call for Quote</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Official Georgia Wood Infestation Report — Call (678) 480-2110</td>
                   </tr>
                   <tr>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Short-Term Rental (STR) Compliance</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$595</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Airbnb/Vrbo municipal safety checklist &amp; fire/egress verification</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>Call for Quote</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Airbnb/Vrbo municipal safety checklist &amp; fire/egress verification — Call (678) 480-2110</td>
                   </tr>
                 </tbody>
               </table>

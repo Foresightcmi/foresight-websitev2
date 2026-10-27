@@ -1,0 +1,96 @@
+# ==============================================================================
+# .geminiignore - ANTIGRAVITY 2.0 FINOPS & ARGON QUOTA PROTECTION BASELINE
+# ==============================================================================
+
+# 1. OS & IDE Noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.iml
+.gradle/
+.history/
+
+# 2. Dependencies & Massive Lockfiles (Prevents Context Cache Blowouts)
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+vendor/
+composer.lock
+venv/
+.venv/
+env/
+.env
+.env.*
+!.env.example
+poetry.lock
+Cargo.lock
+pubspec.lock
+
+# 3. Build & Compiled Outputs
+dist/
+build/
+out/
+target/
+.next/
+.nuxt/
+.output/
+bin/
+obj/
+coverage/
+
+# 4. Framework & Tool Caches
+.vite/
+.parcel-cache/
+.eslintcache
+.babel-cache/
+.tsbuildinfo
+.turbo/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+
+# 5. Heavy Binary Media, Archives & Fonts (Prevents Accidental Multimodal Token Burn)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.psd
+*.fig
+*.mp4
+*.webm
+*.mov
+*.zip
+*.tar.gz
+*.7z
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.apk
+*.aab
+*.ipa
+*.jar
+*.dll
+*.exe
+*.so
+*.dylib
+*.js.map
+*.css.map
+
+# 6. Local Databases & Verbose Logs
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz

@@ -30,11 +30,7 @@ function calculateQuoteDetails(input = {}) {
   } else if (serviceType === 'drywall') {
     base = parsedSqft <= 2500 ? 275 : 300;
   } else if (propertyType === 'condo' || serviceType === 'condo') {
-    if (serviceType === 'seller') {
-      base = parsedSqft <= 1000 ? 295 : 315;
-    } else {
-      base = parsedSqft <= 1000 ? 295 : 325;
-    }
+    base = parsedSqft <= 1000 ? 295 : 325;
   } else if (serviceType === 'new-construction') {
     if (parsedSqft <= 1800) base = 400;
     else if (parsedSqft <= 2500) base = 455;
@@ -45,26 +41,8 @@ function calculateQuoteDetails(input = {}) {
     else if (parsedSqft <= 5000) base = 625;
     else if (parsedSqft <= 7000) base = 935;
     else base = 985;
-  } else if (serviceType === 'seller') {
-    if (parsedSqft <= 2000) base = 365;
-    else if (parsedSqft <= 2500) base = 385;
-    else if (parsedSqft <= 3000) base = 415;
-    else if (parsedSqft <= 3500) base = 425;
-    else if (parsedSqft <= 4000) base = 465;
-    else if (parsedSqft <= 4500) base = 485;
-    else if (parsedSqft <= 5000) base = 515;
-    else base = 575;
-  } else if (serviceType === 'warranty') {
-    if (parsedSqft <= 2000) base = 335;
-    else if (parsedSqft <= 2500) base = 365;
-    else if (parsedSqft <= 3000) base = 395;
-    else if (parsedSqft <= 3500) base = 425;
-    else if (parsedSqft <= 4000) base = 455;
-    else if (parsedSqft <= 4500) base = 485;
-    else if (parsedSqft <= 5000) base = 515;
-    else base = 575;
   } else {
-    // Buyer Single-Family Inspection
+    // Standard Single-Family Home Inspection Schedule (Buyer, Pre-Listing Seller, 11-Month Warranty)
     if (parsedSqft <= 1000) base = 345;
     else if (parsedSqft <= 1500) base = 375;
     else if (parsedSqft <= 2000) base = 425;
@@ -86,18 +64,14 @@ function calculateQuoteDetails(input = {}) {
   }
 
   const addonBreakdown = [];
-  if (addons.radon) { extra += 250; addonBreakdown.push({ name: 'Radon Gas Testing', price: 250 }); }
-  if (addons.termite) {
-    const termitePrice = foundation === 'crawlspace' ? 165 : 125;
-    extra += termitePrice;
-    addonBreakdown.push({ name: 'Termite / WDO Inspection', price: termitePrice });
-  }
-  if (addons.pool) { extra += 300; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 300 }); }
-  if (addons.sewer) { extra += 450; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 450 }); }
-  if (addons.lowFlow) { extra += 100; addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 100 }); }
-  if (addons.buildfax) { extra += 15; addonBreakdown.push({ name: 'Permit History Report', price: 15 }); }
-  if (addons.airQuality) { extra += 450; addonBreakdown.push({ name: 'Indoor Air Quality & Mold Lab Testing', price: 450 }); }
-  if (addons.detachedBuilding) { extra += 100; addonBreakdown.push({ name: 'Detached Building Inspection', price: 100 }); }
+  if (addons.radon) addonBreakdown.push({ name: 'Radon Gas Testing', price: 'Call (678) 480-2110 for Quote' });
+  if (addons.termite) addonBreakdown.push({ name: 'Termite / WDO Inspection', price: 'Call (678) 480-2110 for Quote' });
+  if (addons.pool) addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 'Call (678) 480-2110 for Quote' });
+  if (addons.sewer) addonBreakdown.push({ name: 'Sewer Scope Camera', price: 'Call (678) 480-2110 for Quote' });
+  if (addons.lowFlow) addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 'Call (678) 480-2110 for Quote' });
+  if (addons.buildfax) addonBreakdown.push({ name: 'Permit History Report', price: 'Call (678) 480-2110 for Quote' });
+  if (addons.airQuality) addonBreakdown.push({ name: 'Indoor Air Quality & Mold Lab Testing', price: 'Call (678) 480-2110 for Quote' });
+  if (addons.detachedBuilding) addonBreakdown.push({ name: 'Detached Building Inspection', price: 'Call (678) 480-2110 for Quote' });
 
   const total = base + extra;
   return {
@@ -137,14 +111,14 @@ const MCP_TOOLS = [
         addons: {
           type: 'object',
           properties: {
-            radon: { type: 'boolean', description: 'Continuous Radon Monitor testing ($250)' },
-            termite: { type: 'boolean', description: 'Official Georgia WDO/Termite clearance ($125 slab/basement, $165 crawlspace)' },
-            pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety Inspection ($300)' },
-            sewer: { type: 'boolean', description: 'High-definition underground lateral sewer scope camera inspection ($450 flat rate)' },
-            lowFlow: { type: 'boolean', description: 'DeKalb County Low-Flow Plumbing Certificate ($100; applies to pre-1993 homes in unincorporated DeKalb)' },
-            buildfax: { type: 'boolean', description: 'Historical municipal permit and renovation record evaluation ($15)' },
-            airQuality: { type: 'boolean', description: 'Indoor Air Quality & Mold Lab Testing (starts at $450; additional swabs/samples billed if taken)' },
-            detachedBuilding: { type: 'boolean', description: 'Detached Building or Workshop Inspection ($100)' }
+            radon: { type: 'boolean', description: 'Continuous Radon Monitor testing (Call for Quote)' },
+            termite: { type: 'boolean', description: 'Official Georgia WDO/Termite clearance (Call for Quote)' },
+            pool: { type: 'boolean', description: 'Pool and spa mechanical and barrier safety Inspection (Call for Quote)' },
+            sewer: { type: 'boolean', description: 'High-definition underground lateral sewer scope camera inspection (Call for Quote)' },
+            lowFlow: { type: 'boolean', description: 'DeKalb County Low-Flow Plumbing Certificate (Call for Quote; applies to pre-1993 homes in unincorporated DeKalb)' },
+            buildfax: { type: 'boolean', description: 'Historical municipal permit and renovation record evaluation (Call for Quote)' },
+            airQuality: { type: 'boolean', description: 'Indoor Air Quality & Mold Lab Testing (Call for Quote)' },
+            detachedBuilding: { type: 'boolean', description: 'Detached Building or Workshop Inspection (Call for Quote)' }
           }
         }
       },
@@ -243,19 +217,20 @@ async function handleToolCall(name, args) {
       const serviceMap = {
         'buyer': { name: 'Full Buyer Home Inspection', base: 'From $345 ($295 for condos)', details: 'Complete structural, mechanical, electrical, plumbing, roof, attic, and foundation evaluation. 2 certified inspectors on site.' },
         'condo': { name: 'Condominium & Townhome Inspection', base: 'From $295', details: 'Interior systems, HVAC, plumbing, electrical, balconies, and accessible common areas.' },
-        'new-construction': { name: 'New Construction Final Phase Inspection', base: 'From $400', details: 'Comprehensive pre-closing quality control evaluation covering all major home components.' },
-        'warranty': { name: '11-Month Builder Warranty Inspection', base: 'From $335', details: 'Comprehensive evaluation before builder 1-year warranty expires to ensure warranty items are addressed.' },
-        'sewer-scope': { name: 'Sewer Scope Camera Inspection', base: '$450 flat rate', details: 'High-definition camera scan through main cleanout to municipal lateral or septic tank.' },
-        'radon': { name: 'Continuous Radon Gas Monitoring', base: '$250', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
-        'pool': { name: 'Pool & Spa Safety & Equipment Evaluation', base: '$300', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
-        'termite': { name: 'Official Termite / WDO Clearance Letter', base: '$125 ($165 crawlspace)', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
-        'mold': { name: 'Mold & Indoor Air Quality Testing', base: 'Starts at $450', details: 'Certified mold inspection starting at $450 with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours. Additional surface swabs or extra samples billed if taken.' },
-        'air-quality': { name: 'Mold & Indoor Air Quality Testing', base: 'Starts at $450', details: 'Certified mold inspection starting at $450 with 3 calibrated spore-trap air cassettes (2 interior living zones vs 1 outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours. Additional surface swabs or extra samples billed if taken.' },
+        'pre-listing': { name: 'Pre-Listing Seller Inspection', base: 'From $345 ($295 for condos)', details: 'Full pre-MLS evaluation to identify potential issues before listing.' },
+        'new-construction': { name: 'New Construction Final Phase Inspection', base: 'From $400 (Pre-Drywall from $275)', details: 'Comprehensive pre-closing quality control evaluation covering all major home components.' },
+        'warranty': { name: '11-Month Builder Warranty Inspection', base: 'From $345', details: 'Comprehensive evaluation before builder 1-year warranty expires to ensure warranty items are addressed.' },
+        'sewer-scope': { name: 'Sewer Scope Camera Inspection', base: 'Call (678) 480-2110 for Quote', details: 'High-definition camera scan through main cleanout to municipal lateral or septic tank.' },
+        'radon': { name: 'Continuous Radon Gas Monitoring', base: 'Call (678) 480-2110 for Quote', details: '48-hour continuous calibrated CRM monitoring for EPA 4.0 pCi/L threshold.' },
+        'pool': { name: 'Pool & Spa Safety & Equipment Evaluation', base: 'Call (678) 480-2110 for Quote', details: 'Pumps, heaters, filters, liners, plaster, bonding, and safety barrier gates.' },
+        'termite': { name: 'Official Termite / WDO Clearance Letter', base: 'Call (678) 480-2110 for Quote', details: 'Official Georgia Wood-Destroying Organism report conducted with licensed pest control partners.' },
+        'mold': { name: 'Mold & Indoor Air Quality Testing', base: 'Call (678) 480-2110 for Quote', details: 'Certified mold inspection with calibrated spore-trap air cassettes (interior living zones vs outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours.' },
+        'air-quality': { name: 'Mold & Indoor Air Quality Testing', base: 'Call (678) 480-2110 for Quote', details: 'Certified mold inspection with calibrated spore-trap air cassettes (interior living zones vs outdoor baseline) analyzed by an independent accredited microbiology laboratory with certified report in 24–48 hours.' },
         'crawlspace-complexity': { name: 'Unfinished Crawlspace Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished crawlspace subfloor, pier, and vapor barrier inspection labor.' },
         'basement-complexity': { name: 'Unfinished Basement Complexity Fee', base: '$75', details: 'Added to single-family inspections for unfinished or partially finished basement structural and mechanical evaluation.' },
-        'str': { name: 'Short-Term Rental (STR) Compliance Safety Inspection', base: 'Starts at $395', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
-        'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: '$100', details: 'Toilet, shower, and faucet flow rate verification and signed Certificate of Compliance for pre-1993 property transfers in unincorporated DeKalb County. We confirm whether it applies to a given address.' },
-        'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: '$99 flat rate', details: 'Optional regional contractor repair labor and materials estimate formatted for standard Georgia repair amendment negotiation. Available as $99 add-on or standalone evaluation for outside reports.' }
+        'str': { name: 'Short-Term Rental (STR) Compliance Safety Inspection', base: 'Call (678) 480-2110 for Quote', details: 'Municipal compliance safety, egress, smoke/CO, fire extinguisher, and liability inspection.' },
+        'low-flow': { name: 'DeKalb County Low-Flow Plumbing Certificate', base: 'Call (678) 480-2110 for Quote', details: 'Toilet, shower, and faucet flow rate verification and signed Certificate of Compliance for pre-1993 property transfers in unincorporated DeKalb County.' },
+        'repair-estimates': { name: 'Itemized Contractor Repair Cost Estimate', base: 'Call (678) 480-2110 for Quote', details: 'Optional regional contractor repair labor and materials estimate formatted for standard Georgia repair amendment negotiation.' }
       };
       return serviceMap[args.serviceKey] || { error: `Service key '${args.serviceKey}' not found.` };
     }

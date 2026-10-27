@@ -8,7 +8,7 @@ export default function QuoteClient({ showValueComparison = true }) {
   const [serviceType, setServiceType] = useState('buyer'); // 'buyer', 'seller', 'new-construction', 'warranty', 'str'
   const [sqft, setSqft] = useState(2000);
   const [foundation, setFoundation] = useState('slab'); // 'slab', 'basement', 'crawlspace'
-  const [ageTier, setAgeTier] = useState('under-25'); // 'under-25', '25-49', 'over-50'
+  const [ageTier, setAgeTier] = useState('under-50'); // 'under-50', 'over-50'
   
   const [addons, setAddons] = useState({
     radon: false,
@@ -96,20 +96,15 @@ export default function QuoteClient({ showValueComparison = true }) {
     const parsedSqft = Number(sqft) || 2000;
 
     if (serviceType === 'str') {
-      base = 395; // Official PDF Page 6: SHORT-TERM RENTAL COMPLIANCE INSPECTION (Starts at $395.00)
+      base = 395; // SHORT-TERM RENTAL COMPLIANCE INSPECTION (Starts at $395.00)
     } else if (serviceType === 'drywall') {
-      // Official PDF Page 5: PRE-DRYWALL/FRAMING INSPECTION $275.00 / $300.00
+      // PRE-DRYWALL/FRAMING INSPECTION $275.00 / $300.00
       base = parsedSqft <= 2500 ? 275 : 300;
     } else if (propertyType === 'condo') {
-      if (serviceType === 'seller') {
-        // Official PDF Page 4: PRE-LISTING CONDOMINIUM INSPECTION $315.00
-        base = parsedSqft <= 1000 ? 295 : 315;
-      } else {
-        // Official PDF Page 1: PRE-PURCHASE CONDOMINIUM INSPECTION: <=1000 $295, 1001-1800 $325
-        base = parsedSqft <= 1000 ? 295 : 325;
-      }
+      // CONDOMINIUM INSPECTION: <=1000 $295, >1000 $325
+      base = parsedSqft <= 1000 ? 295 : 325;
     } else if (serviceType === 'new-construction') {
-      // Official PDF Page 3: FORESIGHT NEW CONSTRUCTION INSPECTION SERVICES
+      // FORESIGHT NEW CONSTRUCTION INSPECTION SERVICES
       if (parsedSqft <= 1800) base = 400;
       else if (parsedSqft <= 2500) base = 455;
       else if (parsedSqft <= 3000) base = 485;
@@ -119,28 +114,8 @@ export default function QuoteClient({ showValueComparison = true }) {
       else if (parsedSqft <= 5000) base = 625;
       else if (parsedSqft <= 7000) base = 935;
       else base = 985;
-    } else if (serviceType === 'seller') {
-      // Official PDF Page 4: FORESIGHT PRE-LISTING (SELLERS) INSPECTION SERVICES
-      if (parsedSqft <= 2000) base = 365;
-      else if (parsedSqft <= 2500) base = 385;
-      else if (parsedSqft <= 3000) base = 415;
-      else if (parsedSqft <= 3500) base = 425;
-      else if (parsedSqft <= 4000) base = 465;
-      else if (parsedSqft <= 4500) base = 485;
-      else if (parsedSqft <= 5000) base = 515;
-      else base = 575;
-    } else if (serviceType === 'warranty') {
-      // Official PDF Page 4 & 5: FORESIGHT 11TH MONTH WARRANTY INSPECTION SERVICES
-      if (parsedSqft <= 2000) base = 335;
-      else if (parsedSqft <= 2500) base = 365;
-      else if (parsedSqft <= 3000) base = 395;
-      else if (parsedSqft <= 3500) base = 425;
-      else if (parsedSqft <= 4000) base = 455;
-      else if (parsedSqft <= 4500) base = 485;
-      else if (parsedSqft <= 5000) base = 515;
-      else base = 575;
     } else {
-      // Official PDF Page 1 & 2: FORESIGHT PRE-PURCHASE (BUYERS) HOME INSPECTION
+      // STANDARD SINGLE-FAMILY HOME INSPECTION SCHEDULE (Buyer, Pre-Listing Seller, 11-Month Warranty)
       if (parsedSqft <= 1000) base = 345;
       else if (parsedSqft <= 1500) base = 375;
       else if (parsedSqft <= 2000) base = 425;
@@ -156,12 +131,12 @@ export default function QuoteClient({ showValueComparison = true }) {
     
     let extra = 0;
 
-    // Age Surcharge: PDF Page 5: HOMES OVER 50 YEARS OLD $75.00
+    // Age Surcharge: HOMES OVER 50 YEARS OLD $75.00
     if (serviceType !== 'str' && ageTier === 'over-50') {
       extra += 75;
     }
 
-    // Foundation Complexity Fees: PDF Page 5:
+    // Foundation Complexity Fees:
     // Crawlspace = +$75, Unfinished Basement = +$75
     if (propertyType === 'single-family' && serviceType !== 'str') {
       if (foundation === 'crawlspace') {
@@ -172,19 +147,7 @@ export default function QuoteClient({ showValueComparison = true }) {
       }
     }
 
-    // Addons from Official Fee Schedule (PDF Pages 2, 5, 6)
-    if (addons.radon) extra += 250; // 48 HOUR RADON TEST $250.00
-    if (addons.pool) extra += 300;  // POOL INSPECTION $300.00
-    if (addons.sewer) extra += 450; // PDF Page 6: SEWER SCOPE INSPECTION $450.00
-    if (addons.lowFlow) extra += 100; // DeKalb Low-Flow Certificate $100.00
-    if (addons.buildfax) extra += 15; // PDF Page 2: BUILDFAX PROPERTY HISTORY REPORT $15.00
-    if (addons.termite) {
-      // PDF Page 2: WDO/TERMITE ON CRAWLSPACE $165, ON SLAB OR BASEMENT $125
-      extra += (foundation === 'crawlspace' ? 165 : 125);
-    }
-    if (addons.airQuality) extra += 450; // PDF Page 6: INDOOR AIR QUALITY / MOLD TESTING $450.00
-    if (addons.detachedBuilding) extra += 100; // PDF Page 5: ADDITIONAL CHARGE FOR DETACHED BUILDING $100.00
-    if (addons.repairEstimates) extra += 99; // Optional Due Diligence Contractor Repair Cost & Pricing Estimates $99.00
+    // Auxiliary / Specialty Add-ons are quoted directly by our office at (678) 480-2110
 
     // Promotional & Client Discounts (Strict $25 cap)
     if (discount === 'first-time') extra -= 25; // First-Time Homebuyer Discount ($25.00)
@@ -315,7 +278,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     }
   };
 
-  const handlePostSubmitUpsell = async (addonKey, addonLabel, addonPrice) => {
+  const handlePostSubmitUpsell = async (addonKey, addonLabel) => {
     setAddons(prev => ({ ...prev, [addonKey]: true }));
     setUpsellAdded(prev => ({ ...prev, [addonKey]: true }));
     try {
@@ -333,7 +296,7 @@ export default function QuoteClient({ showValueComparison = true }) {
           foundation,
           ageTier,
           addons: [`1-CLICK POST-BOOKING UPGRADE: ${addonLabel}`],
-          estimatedTotal: total + addonPrice,
+          estimatedTotal: total,
           notes: `Client clicked 1-Click Post-Request Add-On Upgrade to attach ${addonLabel} to their tentative request for ${leadAddress || 'their property'}.`,
           source: 'Quote Post-Submission 1-Click Upsell'
         })
@@ -361,15 +324,15 @@ export default function QuoteClient({ showValueComparison = true }) {
       const activeAddonNames = Object.keys(addons)
         .filter(k => addons[k])
         .map(k => {
-          if (k === 'radon') return '48-Hour Radon Gas Test ($250)';
-          if (k === 'pool') return 'Pool & Spa Inspection ($300)';
-          if (k === 'sewer') return 'Sewer Scope Camera ($450)';
-          if (k === 'termite') return foundation === 'crawlspace' ? 'Termite / WDO Crawlspace ($165)' : 'Termite / WDO Slab/Basement ($125)';
-          if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance ($100)';
-          if (k === 'buildfax') return 'BuildFax Report ($15)';
-          if (k === 'airQuality') return 'Indoor Air Quality & Mold Lab Testing (Starts at $450)';
-          if (k === 'detachedBuilding') return 'Detached Building / Workshop Inspection ($100)';
-          if (k === 'repairEstimates') return 'Contractor Repair Cost & Pricing Estimates ($99)';
+          if (k === 'radon') return '48-Hour Radon Gas Test (Call for Quote)';
+          if (k === 'pool') return 'Pool & Spa Inspection (Call for Quote)';
+          if (k === 'sewer') return 'Sewer Scope Camera Inspection (Call for Quote)';
+          if (k === 'termite') return foundation === 'crawlspace' ? 'Termite / WDO Crawlspace (Call for Quote)' : 'Termite / WDO Slab/Basement (Call for Quote)';
+          if (k === 'lowFlow') return 'DeKalb Low-Flow Compliance Certificate (Call for Quote)';
+          if (k === 'buildfax') return 'BuildFax Report (Call for Quote)';
+          if (k === 'airQuality') return 'Indoor Air Quality & Mold Lab Testing (Call for Quote)';
+          if (k === 'detachedBuilding') return 'Detached Building / Workshop Inspection (Call for Quote)';
+          if (k === 'repairEstimates') return 'Contractor Repair Cost & Pricing Estimates (Call for Quote)';
           return k;
         });
       if (discount !== 'none') {
@@ -607,7 +570,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 color: 'var(--color-gray-dark)',
                 lineHeight: 1.5
               }}>
-                <strong>Specialty Service Scheduling:</strong> Specialized auxiliary inspections (Pool &amp; Spa, Termite/WDO, Radon Gas Testing, and Sewer Scope) are coordinated alongside your main home inspection. When requested, our office coordinates the dedicated equipment and specialized schedules to ensure smooth on-site execution.
+                <strong>Specialty Service Scheduling &amp; Pricing:</strong> Specialized auxiliary inspections (Pool &amp; Spa, Termite/WDO, Radon Gas Testing, Sewer Scope, Mold/Air Quality, and Detached Structures) are coordinated alongside your main home inspection. Select any auxiliary services you would like to request below, or call our office directly at <a href="tel:678-480-2110" style={{ color: 'var(--color-red)', fontWeight: 700 }}>(678) 480-2110</a> for custom auxiliary pricing and scheduling.
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -624,10 +587,10 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 700, display: 'block', color: addons.repairEstimates ? '#fde047' : 'var(--color-white)' }}>
-                      Contractor Repair Cost &amp; Pricing Estimate (+ $99)
+                      Contractor Repair Cost &amp; Pricing Estimate (Call Us for Quote)
                     </span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '2px', lineHeight: 1.45 }}>
-                      <strong>Optional Due Diligence Add-On:</strong> Detailed contractor labor ($95–$165/hr) and materials estimates for every reported defect, formatted for Georgia repair amendment negotiation. <em>(Standard home inspections are diagnostic only per InterNACHI SOP; we do not provide repair estimates unless specifically requested).</em>
+                      <strong>Optional Due Diligence Add-On:</strong> Detailed contractor labor and materials estimates for reported defects, formatted for Georgia repair amendment negotiation. <em>(Standard home inspections are diagnostic only per InterNACHI SOP; we do not provide repair estimates unless specifically requested).</em>
                     </span>
                   </div>
                 </label>
@@ -639,7 +602,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('sewer')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (+ $450)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Sewer Scope Inspection (Call Us for Quote)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>High-definition video camera inspection of the main sewer lateral to city connection or septic tank.</span>
                   </div>
                 </label>
@@ -651,7 +614,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('radon')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>48-Hour Radon Gas Test (+ $250)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>48-Hour Radon Gas Test (Call Us for Quote)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Continuous 48-hour electronic monitoring following strict EPA protocols.</span>
                   </div>
                 </label>
@@ -663,7 +626,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('pool')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Pool & Spa Inspection (+ $300)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Pool &amp; Spa Inspection (Call Us for Quote)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Comprehensive pump, filter, heater, electrical bonding, and shell safety evaluation.</span>
                   </div>
                 </label>
@@ -676,7 +639,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   />
                   <div>
                     <span style={{ fontWeight: 600, display: 'block' }}>
-                      Termite / WDO Inspection (+ {foundation === 'crawlspace' ? '$165 Crawlspace' : '$125 Slab/Basement'})
+                      Termite / WDO Inspection (Call Us for Quote)
                     </span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Official Georgia Wood Infestation Inspection Report (GAR compliant) performed by licensed partner.</span>
                   </div>
@@ -689,8 +652,8 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('airQuality')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Indoor Air Quality / Mold Lab Testing (Starts at +$450)</span>
-                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>3 baseline spore trap air samples + certified lab report (additional surface swabs or extra samples billed if taken).</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Indoor Air Quality / Mold Lab Testing (Call Us for Quote)</span>
+                    <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Baseline spore trap air samples + certified lab report (surface swabs or extra samples coordinated on site).</span>
                   </div>
                 </label>
 
@@ -701,7 +664,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('detachedBuilding')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>Detached Building / Workshop Inspection (+ $100)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>Detached Building / Workshop Inspection (Call Us for Quote)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Inspection of separate workshop, storage garage, or detached structure.</span>
                   </div>
                 </label>
@@ -713,7 +676,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('lowFlow')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (+ $100)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>DeKalb Low-Flow Compliance Certification (Call Us for Quote)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Mandatory signed Certificate of Compliance for pre-1993 DeKalb property transfers.</span>
                   </div>
                 </label>
@@ -725,7 +688,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('buildfax')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 600, display: 'block' }}>BuildFax Permit & Improvement Report (+ $15)</span>
+                    <span style={{ fontWeight: 600, display: 'block' }}>BuildFax Permit &amp; Improvement Report (Call Us for Quote)</span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)' }}>Detailed records of past building permits, additions, renovations, and aging systems.</span>
                   </div>
                 </label>
@@ -950,64 +913,67 @@ export default function QuoteClient({ showValueComparison = true }) {
                 {Object.values(addons).some(Boolean) && (
                   <div style={{ marginTop: '1.25rem', borderTop: '1px dashed rgba(255,255,255,0.2)', paddingTop: '0.85rem' }}>
                     <div style={{ fontSize: '0.75rem', color: 'var(--color-gold)', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
-                      Selected Auxiliary Add-Ons:
+                      Requested Auxiliary Add-Ons (Quoted by Office):
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                       {addons.repairEstimates && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#fde047', fontWeight: 600 }}>
                           <span>Contractor Repair Cost Estimates</span>
-                          <span>+$99</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.sewer && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>Sewer Scope Camera Inspection</span>
-                          <span>+$450</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.radon && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>48-Hour Radon Gas Testing</span>
-                          <span>+$275</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.pool && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>Pool &amp; Spa Inspection</span>
-                          <span>+$300</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.termite && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>Termite / WDO Clearance Letter</span>
-                          <span>+{foundation === 'crawlspace' ? '$165' : '$125'}</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.airQuality && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
-                          <span>Mold &amp; Air Quality Lab Testing (Base)</span>
-                          <span>+$450+</span>
+                          <span>Mold &amp; Air Quality Lab Testing</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.detachedBuilding && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>Detached Building Inspection</span>
-                          <span>+$100</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.lowFlow && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>DeKalb Low-Flow Compliance Certificate</span>
-                          <span>+$100</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                       {addons.buildfax && (
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.825rem', color: '#FFFFFF' }}>
                           <span>BuildFax History Report</span>
-                          <span>+$15</span>
+                          <span>Call for Quote</span>
                         </div>
                       )}
                     </div>
+                    <p style={{ fontSize: '0.73rem', color: '#cbd5e1', margin: '0.6rem 0 0 0', lineHeight: 1.4 }}>
+                      Our office will call you at <strong style={{ color: '#34d399' }}>(678) 480-2110</strong> to confirm pricing and scheduling for your selected auxiliary services.
+                    </p>
                   </div>
                 )}
               </div>
@@ -1149,45 +1115,45 @@ export default function QuoteClient({ showValueComparison = true }) {
                             {!addons.repairEstimates && (
                               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.1)' }}>
                                 <div>
-                                  <strong style={{ fontSize: '0.82rem', color: '#fde047', display: 'block' }}>Itemized Contractor Repair Cost Estimate (+$99)</strong>
+                                  <strong style={{ fontSize: '0.82rem', color: '#fde047', display: 'block' }}>Itemized Contractor Repair Cost Estimate</strong>
                                   <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Regional trade pricing + sample Georgia repair amendment wording for seller credit demands.</span>
                                 </div>
                                 <button
                                   type="button"
-                                  onClick={() => handlePostSubmitUpsell('repairEstimates', 'Contractor Repair Cost & Pricing Estimates ($99)', 99)}
+                                  onClick={() => handlePostSubmitUpsell('repairEstimates', 'Contractor Repair Cost & Pricing Estimates (Call for Quote)')}
                                   style={{ background: 'var(--color-gold)', color: '#0f172a', border: 'none', borderRadius: '4px', padding: '0.45rem 0.75rem', fontSize: '0.75rem', fontWeight: 800, cursor: 'pointer', flexShrink: 0 }}
                                 >
-                                  + Add ($99)
+                                  + Request Quote
                                 </button>
                               </div>
                             )}
                             {!addons.sewer && (
                               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.1)' }}>
                                 <div>
-                                  <strong style={{ fontSize: '0.82rem', color: '#ffffff', display: 'block' }}>Fiber-Optic Sewer Scope Camera Inspection (+$450 Flat Rate)</strong>
+                                  <strong style={{ fontSize: '0.82rem', color: '#ffffff', display: 'block' }}>Fiber-Optic Sewer Scope Camera Inspection</strong>
                                   <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Detects hidden root intrusion, bellies, and crushed underground sewer laterals.</span>
                                 </div>
                                 <button
                                   type="button"
-                                  onClick={() => handlePostSubmitUpsell('sewer', 'Sewer Scope Camera ($450)', 450)}
+                                  onClick={() => handlePostSubmitUpsell('sewer', 'Sewer Scope Camera Inspection (Call for Quote)')}
                                   style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '4px', padding: '0.45rem 0.75rem', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', flexShrink: 0 }}
                                 >
-                                  + Add ($450)
+                                  + Request Quote
                                 </button>
                               </div>
                             )}
                             {!addons.lowFlow && (
                               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.6rem 0.75rem', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.1)' }}>
                                 <div>
-                                  <strong style={{ fontSize: '0.82rem', color: '#ffffff', display: 'block' }}>DeKalb County Low-Flow Plumbing Certificate (+$100)</strong>
+                                  <strong style={{ fontSize: '0.82rem', color: '#ffffff', display: 'block' }}>DeKalb County Low-Flow Plumbing Certificate</strong>
                                   <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Required for water service activation in unincorporated DeKalb County (we verify parcel applicability).</span>
                                 </div>
                                 <button
                                   type="button"
-                                  onClick={() => handlePostSubmitUpsell('lowFlow', 'DeKalb Low-Flow Compliance ($100)', 100)}
+                                  onClick={() => handlePostSubmitUpsell('lowFlow', 'DeKalb Low-Flow Compliance Certificate (Call for Quote)')}
                                   style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '4px', padding: '0.45rem 0.75rem', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', flexShrink: 0 }}
                                 >
-                                  + Add ($100)
+                                  + Request Quote
                                 </button>
                               </div>
                             )}
@@ -1196,7 +1162,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       )}
                       {Object.keys(upsellAdded).length > 0 && (
                         <div style={{ background: 'rgba(16, 185, 129, 0.25)', border: '1px solid #34d399', borderRadius: '6px', padding: '0.5rem 0.75rem', fontSize: '0.78rem', color: '#ecfdf5', marginBottom: '0.85rem', fontWeight: 700 }}>
-                          ✓ Upgrade attached to your reservation! Updated Estimated Total: ${total}
+                          ✓ Auxiliary service request attached! Our office will confirm pricing when we call you.
                         </div>
                       )}
                       <p style={{ fontSize: '0.8rem', color: 'var(--color-gray-mid)', margin: 0 }}>

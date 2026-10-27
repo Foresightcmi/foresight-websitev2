@@ -174,7 +174,7 @@ function buildLoanOfficerEmail(lo) {
           <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal inspection in under 2.5 hours.</li>
           <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as Georgia repair amendment) for licensed broker or attorney review.</li>
           <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
-          <li><strong>DeKalb County Low-Flow Plumbing Certificate ($100 Flat):</strong> On-site fixture verification (toilets 1.6 GPF max) and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
+          <li><strong>DeKalb County Low-Flow Plumbing Certificate:</strong> On-site fixture verification (toilets 1.6 GPF max) and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
         </ul>
       </div>
 
@@ -235,12 +235,12 @@ function buildUnderContractEmail(realtor) {
   const isDeKalb = DEKALB_MUNICIPALITIES_REGEX.test(city) || DEKALB_MUNICIPALITIES_REGEX.test(address);
 
   const subject = isDeKalb
-    ? `Congrats on ${address} (${city}) — 24-Hr Priority Due Diligence Pass + $100 DeKalb Low-Flow`
+    ? `Congrats on ${address} (${city}) — 24-Hr Priority Due Diligence Pass + DeKalb Low-Flow`
     : `Congrats on ${address} (${city}) — 24-Hr Priority Due Diligence Slot`;
 
   const dekalbPara = isDeKalb
-    ? `Since ${address} is in the DeKalb area, if it was built before 1993 in unincorporated DeKalb County, we also sign the official DeKalb Watershed Low-Flow Plumbing Certificate ($100 flat fee) on the spot so water service turn-on is never delayed.`
-    : `We also handle main sewer line camera scopes ($450 flat rate), pre-drywall and 11-month builder warranty inspections ($335+), and signed DeKalb County Low-Flow Plumbing Certificates ($100 flat fee) whenever a closing needs one.`;
+    ? `Since ${address} is in the DeKalb area, if it was built before 1993 in unincorporated DeKalb County, we also sign the official DeKalb Watershed Low-Flow Plumbing Certificate on the spot so water service turn-on is never delayed.`
+    : `We also handle main sewer line camera scopes, pre-drywall ($275+) and 11-month builder warranty inspections ($345+), and signed DeKalb County Low-Flow Plumbing Certificates whenever a closing needs one.`;
 
   const text = [
     `Hi ${firstName},`,
@@ -270,8 +270,8 @@ function buildUnderContractEmail(realtor) {
     <div style="background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #d4af37;border-radius:6px;padding:14px 18px;margin:18px 0;">
       <div style="font-size:12px;font-weight:700;color:#0f172a;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;">What's Included for ${address}</div>
       <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Two Certified Master Inspectors (From $345 / $295 Condos):</strong> Full roof, structural, mechanical, and infrared thermal evaluation in ~2 hours with same-day digital report delivery.</div>
-      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; DeKalb County $100 Low-Flow Certificate:</strong> Same-day signed Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County so water turn-on is never delayed.</div>
-      <div style="margin:0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Sewer Scope ($450), New Build ($275+) &amp; $35,000 Warranties:</strong> Plus 4K drone roof photography, free utility setup concierge, and $35,000 in combined buyer warranty protection.</div>
+      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; DeKalb County Low-Flow Certificate:</strong> Same-day signed Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County so water turn-on is never delayed.</div>
+      <div style="margin:0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Sewer Scope, New Build ($275+) &amp; $35,000 Warranties:</strong> Plus 4K drone roof photography, free utility setup concierge, and $35,000 in combined buyer warranty protection.</div>
     </div>
     <p style="margin:0 0 18px 0;font-size:15px;line-height:1.62;color:#1e293b;">You or your buyer can grab a time slot online or text/call my cell directly at <strong>(678) 480-2110</strong>.</p>
     <div style="border-top:1px solid #e2e8f0;padding-top:16px;margin-top:16px;">
@@ -336,7 +336,7 @@ function buildPreDueDiligenceEmail(realtor) {
           <li><strong>Active SUPRA eKEY Access:</strong> We inspect smoothly without burdening the listing agent.</li>
           <li><strong>Georgia Contract-Ready Repair Summaries:</strong> Clean diagnostic language compatible with standard Georgia repair amendments that keeps deals intact.</li>
           <li><strong>$35,000 Client Protection Guarantees:</strong> 90-Day Structural Warranty &amp; InterNACHI Buy-Back Guarantee.</li>
-          <li><strong>DeKalb Low-Flow Plumbing Certificate ($100 Flat):</strong> Official signed county compliance certificate issued on-site for pre-1993 DeKalb homes.</li>
+          <li><strong>DeKalb Low-Flow Plumbing Certificate:</strong> Official signed county compliance certificate issued on-site for pre-1993 DeKalb homes.</li>
         </ul>
       </div>
 
