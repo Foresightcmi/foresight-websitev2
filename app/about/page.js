@@ -87,6 +87,14 @@ export default function About() {
           "Pool and Spa Inspections",
           "Termite and WDO Inspections",
           "Moisture Diagnostics"
+        ],
+        "sameAs": [
+          "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+          "https://certifiedmasterinspector.org/verify/christopher-boykin",
+          "https://www.fhinspectionsatl.com/videos",
+          "https://www.instagram.com/fhinspectionsatl/",
+          "https://www.tiktok.com/@fhinspectionsatl",
+          "https://www.linkedin.com/company/foresight-home-inspections-llc/"
         ]
       },
       {
@@ -125,12 +133,15 @@ export default function About() {
         }
       },
       {
-        "@type": "WebPage",
+        "@type": "ProfilePage",
         "@id": "https://www.fhinspectionsatl.com/about#webpage",
         "url": "https://www.fhinspectionsatl.com/about",
         "name": "About Foresight Home Inspections | Certified Master Inspector Atlanta",
         "description": "Meet the Certified Master Inspector leading Metro Atlanta's premium two-inspector home inspection company.",
+        "dateCreated": "2024-09-01T08:00:00-04:00",
+        "dateModified": "2026-10-27T00:00:00-04:00",
         "isPartOf": { "@id": "https://www.fhinspectionsatl.com/#website" },
+        "mainEntity": { "@id": "https://www.fhinspectionsatl.com/about#christopher-boykin" },
         "about": { "@id": "https://www.fhinspectionsatl.com/about#christopher-boykin" }
       }
     ]

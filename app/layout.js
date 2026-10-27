@@ -69,6 +69,19 @@ export const metadata = {
     description: 'Two certified inspectors on every job. Up to $35,000 in warranty & InterNACHI® guarantee protection included. Serving 87+ cities across 20 Metro Atlanta counties.',
     images: ['/images/Logopng.png'],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/icon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/images/Logopng-small.webp', sizes: '192x192', type: 'image/webp' },
+    ],
+    shortcut: ['/favicon.ico'],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   verification: {
     google: 'google2daf7fa6e380098a',
   },
@@ -494,17 +507,6 @@ export default function RootLayout({ children }) {
       }
     ],
     "foundingDate": "2019",
-    "sameAs": [
-      "https://maps.google.com/?cid=10862078652033010531",
-      "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-      "https://certifiedmasterinspector.org/verify/christopher-boykin",
-      "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
-      "https://nextdoor.com/pages/foresight-home-inspections-llc-lithonia-ga/",
-      "https://www.linkedin.com/company/foresight-home-inspections-llc/",
-      "https://facebook.com/fhinspectionsatl",
-      "https://www.instagram.com/fhinspectionsatl/",
-      "https://www.tiktok.com/@fhinspectionsatl"
-    ],
     "knowsAbout": [
       "Home Inspection",
       "Thermal Imaging",
@@ -531,6 +533,8 @@ export default function RootLayout({ children }) {
       "@id": "https://www.fhinspectionsatl.com/#person-christopher-boykin",
       "name": "Christopher Boykin",
       "jobTitle": "Certified Master Inspector",
+      "url": "https://www.fhinspectionsatl.com/about",
+      "image": "https://www.fhinspectionsatl.com/images/Christopher_Boykin.jpg",
       "hasCredential": [
         {
           "@type": "EducationalOccupationalCredential",
@@ -554,7 +558,13 @@ export default function RootLayout({ children }) {
         }
       ],
       "sameAs": [
-        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
+        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+        "https://certifiedmasterinspector.org/verify/christopher-boykin",
+        "https://www.fhinspectionsatl.com/about",
+        "https://www.fhinspectionsatl.com/videos",
+        "https://www.instagram.com/fhinspectionsatl/",
+        "https://www.tiktok.com/@fhinspectionsatl",
+        "https://www.linkedin.com/company/foresight-home-inspections-llc/"
       ],
       "award": "Certified Master Inspector® (CMI) Designation - September 2024"
     },
@@ -582,7 +592,6 @@ export default function RootLayout({ children }) {
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       }
     ],
-    "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJk_3KQe0H9YgRw8vLCvROjpY",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Home Inspection Services",
@@ -647,6 +656,28 @@ export default function RootLayout({ children }) {
           "inLanguage": "en-US"
         },
         "description": "Instant automated online booking available 24 hours a day, 7 days a week. No phone call required."
+      },
+      {
+        "@type": "QuoteAction",
+        "name": "Calculate Instant Home Inspection Quote",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.fhinspectionsatl.com/quote",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+          "inLanguage": "en-US"
+        },
+        "description": "Interactive Metro Atlanta home inspection pricing calculator starting at $345 for single-family homes and $295 for condos."
+      },
+      {
+        "@type": "AssessAction",
+        "name": "Run Property Defect & Risk Scanner",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.fhinspectionsatl.com/risk-scanner",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"],
+          "inLanguage": "en-US"
+        },
+        "description": "Interactive diagnostic risk scanner for Georgia homebuyers and realtors evaluating property age, foundation type, and municipal systems."
       }
     ]
   }
@@ -657,8 +688,12 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/images/Logopng-small.webp" type="image/webp" sizes="96x96" />
-        <link rel="apple-touch-icon" href="/images/Logopng-small.webp" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/icon-48x48.png" type="image/png" sizes="48x48" />
+        <link rel="icon" href="/icon-96x96.png" type="image/png" sizes="96x96" />
+        <link rel="icon" href="/icon-192x192.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/images/Logopng-small.webp" type="image/webp" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="preload" as="image" href="/images/luxury-home-mobile.webp" type="image/webp" media="(max-width: 640px)" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/luxury-home.webp" type="image/webp" media="(min-width: 641px)" fetchPriority="high" />
         <meta name="geo.region" content="US-GA" />
@@ -719,6 +754,16 @@ export default function RootLayout({ children }) {
                   window.gtag('event', 'google_review_click', {
                     event_category: 'social_proof',
                     platform: 'google',
+                    page_path: window.location.pathname
+                  });
+                }
+
+                // 4. Google Preferred Sources Button Clicks
+                var prefLink = e.target.closest('a[href*="google.com/preferences/source"], [google-add-preferred-source-btn]');
+                if (prefLink && typeof window.gtag === 'function') {
+                  window.gtag('event', 'preferred_source_click', {
+                    event_category: 'ai_search_preference',
+                    platform: 'google_preferred_source',
                     page_path: window.location.pathname
                   });
                 }

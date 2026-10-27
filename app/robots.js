@@ -26,6 +26,11 @@ export default function robots() {
         disallow: ['/videos/chris-avatar*', '/sample-report/'],
       },
       {
+        userAgent: 'Googlebot-Image',
+        allow: ['/', '/images/', '/favicon.ico', '/icon-48x48.png', '/icon-96x96.png', '/icon-192x192.png', '/apple-touch-icon.png'],
+        disallow: ['/sample-report/'],
+      },
+      {
         userAgent: 'GPTBot',
         allow: '/',
       },
@@ -76,6 +81,8 @@ export default function robots() {
     ],
     sitemap: [
       'https://www.fhinspectionsatl.com/sitemap.xml',
+      'https://www.fhinspectionsatl.com/sitemap-images.xml',
+      'https://www.fhinspectionsatl.com/sitemap-video.xml',
     ],
   }
 }

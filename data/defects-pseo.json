@@ -41,7 +41,9 @@
         "q": "Is hard-coat real stucco better than synthetic EIFS?",
         "a": "Yes. Traditional hard-coat stucco is breathable and far more durable, though it still requires proper window flashing and clearance from soil to prevent moisture intrusion."
       }
-    ]
+    ],
+    "image": "/images/moisture-meter.webp",
+    "imageCaption": "Certified Master Inspector conducting electronic moisture meter and infrared thermal evaluation on synthetic EIFS stucco wall assembly in Metro Atlanta"
   },
   {
     "slug": "aluminum-wiring-inspection",
@@ -85,7 +87,9 @@
         "q": "Can thermal imaging detect aluminum wiring fire hazards?",
         "a": "Yes! infrared thermal imaging cameras detect invisible heat buildup caused by loose aluminum wire connections before smoke or fire occurs."
       }
-    ]
+    ],
+    "image": "/images/thermal-1.webp",
+    "imageCaption": "Calibrated infrared thermal scan detecting electrical hotspot and terminal overheating on single-strand aluminum branch circuit wiring in an Atlanta home"
   },
   {
     "slug": "federal-pacific-zinsco-panel-inspection",
@@ -129,7 +133,9 @@
         "q": "How much does it cost to replace an FPE electrical panel in Atlanta?",
         "a": "Replacing an FPE Stab-Lok panel typically costs between $1,800 and $3,500 depending on service amperage (150-amp vs 200-amp)."
       }
-    ]
+    ],
+    "image": "/images/two-inspectors-electrical-panel-inspection.webp",
+    "imageCaption": "Two-inspector team evaluating electrical service panel, bus bars, and circuit breakers during an Atlanta residential home inspection"
   },
   {
     "slug": "crawlspace-fungus-joist-rot-inspection",
@@ -173,7 +179,9 @@
         "q": "How much does crawlspace encapsulation cost in Atlanta?",
         "a": "Full crawlspace encapsulation with a commercial dehumidifier ranges from $5,000 to $12,000 depending on square footage and soil conditions."
       }
-    ]
+    ],
+    "image": "/images/crawlspace.webp",
+    "imageCaption": "Physical crawlspace structural evaluation inspecting floor joists, pier foundations, and wood moisture levels over Georgia Piedmont red clay soil"
   },
   {
     "slug": "heat-exchanger-hvac-inspection",
@@ -217,7 +225,9 @@
         "q": "Can a home inspector test for carbon monoxide?",
         "a": "Yes. Foresight Home Inspections uses electronic combustible gas and carbon monoxide detectors to check furnace supply vents during testing."
       }
-    ]
+    ],
+    "image": "/images/ac-pic.webp",
+    "imageCaption": "HVAC heating and cooling system diagnostic evaluation testing temperature split differentials and combustion safety in Metro Atlanta"
   },
   {
     "slug": "unsealed-roof-flashing-water-leak-inspection",
@@ -261,7 +271,9 @@
         "q": "Can thermal cameras find roof leaks before ceilings show water spots?",
         "a": "Yes! infrared thermal cameras detect subtle evaporative cooling temperature drops in damp attic insulation long before water stains bleed through ceiling drywall."
       }
-    ]
+    ],
+    "image": "/images/roof-1.webp",
+    "imageCaption": "Aerial 4K drone and roof flashing inspection evaluating chimney counter-flashing, valleys, and roof penetrations in Atlanta, Georgia"
   },
   {
     "slug": "polybutylene-pipe-plumbing-defect-inspection",
@@ -305,6 +317,8 @@
         "q": "How can a buyer negotiate when polybutylene pipes are found?",
         "a": "Our comprehensive inspection report documents the presence of polybutylene piping with photographic evidence, allowing your real estate agent to negotiate a seller credit, price reduction, or complete pre-closing repipe."
       }
-    ]
+    ],
+    "image": "/images/thermal-ceiling.webp",
+    "imageCaption": "Infrared thermal ceiling scan pinpointing concealed polybutylene plumbing supply line moisture leak above drywall in Metro Atlanta home"
   }
 ]

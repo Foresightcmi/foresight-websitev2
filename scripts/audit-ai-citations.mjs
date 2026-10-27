@@ -119,6 +119,39 @@ if (fs.existsSync(realtorClientPath)) {
     realtorCode.includes('realtor_gar_clause_copied'));
 }
 
+// 5. Q4 '26 GOOGLE SEARCH CENTRAL MULTIMODAL, FAVICON & PLATFORM PROPERTIES AUDIT
+console.log('\n5. Q4 \'26 GOOGLE SEARCH CENTRAL (FAVICON, MULTIMODAL LENS, PROFILEPAGE & AI MODE)');
+check('Raster favicon.ico + 48x48/96x96/192x192 PNGs exist (Google non-SVG favicon spec)',
+  fs.existsSync(path.join(ROOT, 'public', 'favicon.ico')) &&
+  fs.existsSync(path.join(ROOT, 'public', 'icon-48x48.png')) &&
+  fs.existsSync(path.join(ROOT, 'public', 'icon-96x96.png')) &&
+  fs.existsSync(path.join(ROOT, 'public', 'icon-192x192.png')) &&
+  fs.existsSync(path.join(ROOT, 'public', 'apple-touch-icon.png')) &&
+  fs.existsSync(path.join(ROOT, 'public', 'images', 'Logopng-small.webp')));
+
+check('Multimodal Image Sitemap (/sitemap-images.xml) exists for Google Lens & Circle to Search',
+  fs.existsSync(path.join(ROOT, 'app', 'sitemap-images.xml', 'route.js')));
+
+if (fs.existsSync(defectPagePath)) {
+  const defectPageCode = fs.readFileSync(defectPagePath, 'utf8');
+  check('Defect template emits ImageObject schema with license/creditText for Google Lens',
+    defectPageCode.includes('"@type": "ImageObject"') && defectPageCode.includes('representativeOfPage'));
+}
+
+const aboutPagePath = path.join(ROOT, 'app', 'about', 'page.js');
+if (fs.existsSync(aboutPagePath)) {
+  const aboutCode = fs.readFileSync(aboutPagePath, 'utf8');
+  check('About page implements Google ProfilePage schema for Creator/Human Voice authority',
+    aboutCode.includes('"@type": "ProfilePage"') && aboutCode.includes('mainEntity'));
+}
+
+const layoutPath = path.join(ROOT, 'app', 'layout.js');
+if (fs.existsSync(layoutPath)) {
+  const layoutCode = fs.readFileSync(layoutPath, 'utf8');
+  check('Root layout includes AI Mode Connected Apps actions (ScheduleAction, QuoteAction, AssessAction)',
+    layoutCode.includes('ScheduleAction') && layoutCode.includes('QuoteAction') && layoutCode.includes('AssessAction'));
+}
+
 // SUMMARY & SCORE
 const score = Math.round((passedChecks / totalChecks) * 100);
 console.log('\n════════════════════════════════════════════════════════════════');

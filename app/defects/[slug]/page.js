@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import Image from 'next/image';
 import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }) {
   }
 
   const canonicalUrl = `${SITE_URL}/defects/${resolvedParams.slug}`;
+  const imageUrl = defect.image ? `${SITE_URL}${defect.image}` : `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.webp`;
 
   return {
     title: defect.metaTitle,
@@ -46,6 +48,18 @@ export async function generateMetadata({ params }) {
       description: defect.metaDescription,
       url: canonicalUrl,
       type: 'article',
+      images: [
+        {
+          url: imageUrl,
+          alt: defect.imageCaption || defect.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: defect.metaTitle,
+      description: defect.metaDescription,
+      images: [imageUrl],
     },
     alternates: {
       canonical: canonicalUrl,
@@ -63,6 +77,8 @@ export default async function DefectPage({ params }) {
   }
 
   const canonicalUrl = `${SITE_URL}/defects/${resolvedParams.slug}`;
+  const imageUrl = defect.image ? `${SITE_URL}${defect.image}` : `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.webp`;
+  const imageCaption = defect.imageCaption || `${defect.title} diagnostic evaluation by Foresight Home Inspections in Metro Atlanta`;
   const relatedDefects = defects.filter(d => d.slug !== defect.slug).slice(0, 3);
 
   const articleJsonLd = {
@@ -71,7 +87,24 @@ export default async function DefectPage({ params }) {
     "headline": defect.title,
     "description": defect.metaDescription,
     "url": canonicalUrl,
-    "image": defect.image ? `${SITE_URL}${defect.image}` : `${SITE_URL}/images/two-inspectors-electrical-panel-inspection.jpg`,
+    "image": {
+      "@type": "ImageObject",
+      "@id": `${canonicalUrl}#primaryimage`,
+      "url": imageUrl,
+      "contentUrl": imageUrl,
+      "caption": imageCaption,
+      "name": defect.title,
+      "representativeOfPage": true,
+      "creditText": "Foresight Home Inspections, LLC — Certified Master Inspector® Field Diagnostics",
+      "copyrightNotice": "© Foresight Home Inspections, LLC. All rights reserved.",
+      "license": `${SITE_URL}/terms`,
+      "acquireLicensePage": `${SITE_URL}/contact`,
+      "creator": {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person-christopher-boykin`,
+        "name": "Christopher Boykin"
+      }
+    },
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": [".ai-citation-bluf", "h1", "h2"]
@@ -314,7 +347,7 @@ export default async function DefectPage({ params }) {
                       <td style={{ padding: '0.6rem 0.75rem' }}>{defect.tableData.governingStandard}</td>
                     </tr>
                     <tr>
-                      <td style={{ padding: '0.6rem 0.75rem', fontWeight: 700, background: '#f1f5f9' }}>Contract Action (GAR)</td>
+                      <td style={{ padding: '0.6rem 0.75rem', fontWeight: 700, background: '#f1f5f9' }}>Contract Action</td>
                       <td style={{ padding: '0.6rem 0.75rem', color: '#991b1b', fontWeight: 600 }}>{defect.tableData.realtorAction}</td>
                     </tr>
                   </tbody>
@@ -323,7 +356,7 @@ export default async function DefectPage({ params }) {
             )}
           </div>
 
-          {/* Identification Section */}
+          {/* Identification & Multimodal Visual Reference Section */}
           <div style={{
             background: '#ffffff',
             padding: '2rem',
@@ -336,9 +369,24 @@ export default async function DefectPage({ params }) {
             <h2 style={{ fontSize: '1.4rem', marginBottom: '0.75rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               How to Identify This Defect in Georgia Homes
             </h2>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', margin: 0 }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--color-gray-dark)', margin: '0 0 1.25rem 0' }}>
               {defect.identification}
             </p>
+            <figure style={{ margin: 0, borderRadius: '10px', overflow: 'hidden', border: '1px solid #e2e8f0', background: '#0f172a' }}>
+              <div style={{ position: 'relative', width: '100%', height: '320px' }}>
+                <Image
+                  src={defect.image || '/images/two-inspectors-electrical-panel-inspection.webp'}
+                  alt={imageCaption}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  loading="lazy"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+              <figcaption style={{ padding: '0.75rem 1rem', fontSize: '0.85rem', color: '#cbd5e1', background: '#0f172a', lineHeight: 1.5 }}>
+                <strong>Field Visual Reference (Google Lens &amp; Multimodal Diagnostic):</strong> {imageCaption}
+              </figcaption>
+            </figure>
           </div>
 
           {/* Critical Risks Grid */}
