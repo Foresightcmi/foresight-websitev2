@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T12:24:07.334Z",
+  "generatedAt": "2026-10-28T18:59:53.545Z",
   "source_url": "https://www.fhinspectionsatl.com",
   "retrieved_on": "2026-10-28",
   "engine": "Foresight Native Field-Evidence to AEO Engine v1.0",
@@ -19,7 +19,11 @@
       "seedQuery": "sewer scope atlanta",
       "liveAutocompleteQuestions": [
         "sewer scope atlanta",
-        "sewer scope inspection atlanta"
+        "sewer scope inspection atlanta",
+        "sewer scope near me",
+        "sewer scope cost",
+        "when should you get a sewer scope",
+        "is a sewer scope worth it"
       ],
       "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=sewer%20scope%20atlanta",
       "question": "Do I really need a sewer scope camera inspection when buying a home in Metro Atlanta?",
@@ -43,7 +47,9 @@
       "seedQuery": "dekalb county low flow",
       "liveAutocompleteQuestions": [
         "dekalb county low flow certificate",
-        "dekalb county low flow toilet law"
+        "dekalb county low flow toilet law",
+        "dekalb county low water pressure",
+        "dekalb county low water pressure today"
       ],
       "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=dekalb%20county%20low%20flow",
       "question": "When is a DeKalb County Low-Flow Plumbing Compliance Certificate required to turn on water service?",
@@ -69,12 +75,13 @@
         "home inspection atlanta",
         "home inspection atlanta ga",
         "home inspection atlanta cost",
+        "home inspectors atlanta",
+        "home inspector atlanta ga",
+        "home inspectors atlanta jobs",
+        "home inspectors atlanta reddit",
         "home inspection jobs atlanta",
         "home inspection pros atlanta",
-        "home inspection companies atlanta",
-        "ria home inspection atlanta",
-        "house call home inspection atlanta",
-        "structural engineer home inspection atlanta"
+        "home inspection companies atlanta"
       ],
       "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=home%20inspection%20atlanta",
       "question": "Why does Foresight Home Inspections send two certified inspectors to every property instead of one?",
@@ -99,13 +106,14 @@
       "liveAutocompleteQuestions": [
         "11 month warranty inspection",
         "11 month warranty inspection near me",
-        "11 month warranty inspection cost",
         "11 month warranty inspection checklist",
+        "11 month warranty inspection cost",
         "11 month home warranty inspection",
         "11 month home warranty inspection near me",
         "11 month home warranty inspection checklist",
         "11 month builder warranty inspection",
-        "dr horton 11 month warranty inspection"
+        "dr horton 11 month warranty inspection",
+        "warranty expiration date"
       ],
       "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=11%20month%20warranty%20inspection",
       "question": "What happens during an 11-month builder warranty inspection in Georgia before the 1-year warranty expires?",
