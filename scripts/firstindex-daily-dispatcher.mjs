@@ -99,6 +99,8 @@ async function main() {
 
   const s2 = runStep('2. Page-1 Structural & Schema Guard', 'python scripts/page1-guard.py');
   const s3 = runStep('3. Live AI Mention & Autocomplete Tracker', 'node scripts/firstindex-ai-mention-tracker.mjs');
+  const s3b = runStep('3.5. Native Field-Evidence & Call-Question to AEO Engine', 'node scripts/field-evidence-aeo-engine.mjs');
+  const s3c = runStep('3.6. 6-Engine AI Crawler & Citation Readiness Audit', 'node scripts/audit-ai-citations.mjs');
   const s4 = runStep('4. AI Fanning Surface Area Engine', 'node scripts/ai-fanning-engine.mjs');
   const s5 = runStep('5. Off-Site Authority, Link-Magnet & Directory Verifier', 'node scripts/firstindex-authority-outreach.mjs');
   const s6 = runStep('6. Website <-> Email Campaign Bidirectional Bridge', 'node scripts/sync-email-campaign-bridge.mjs');

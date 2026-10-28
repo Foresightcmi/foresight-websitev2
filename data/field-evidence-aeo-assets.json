@@ -1,0 +1,190 @@
+{
+  "generatedAt": "2026-10-28T12:24:07.334Z",
+  "source_url": "https://www.fhinspectionsatl.com",
+  "retrieved_on": "2026-10-28",
+  "engine": "Foresight Native Field-Evidence to AEO Engine v1.0",
+  "pricingAnchor": {
+    "singleFamily": "$345",
+    "condoTownhome": "$295",
+    "preDrywall": "$275",
+    "newConstruction": "$400",
+    "auxiliaryAddOns": "Call for Quote"
+  },
+  "weeklyAeoAssets": [
+    {
+      "id": "sewer-lateral-cast-iron-clay",
+      "targetPage": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
+      "retrieved_on": "2026-10-28",
+      "seedQuery": "sewer scope atlanta",
+      "liveAutocompleteQuestions": [
+        "sewer scope atlanta",
+        "sewer scope inspection atlanta"
+      ],
+      "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=sewer%20scope%20atlanta",
+      "question": "Do I really need a sewer scope camera inspection when buying a home in Metro Atlanta?",
+      "blufCitationPassage": "Yes — in Metro Atlanta, a waterproof HD sewer scope camera inspection is essential for homes built before 1995 or properties with mature hardwoods in Decatur, Atlanta, DeKalb, and Fulton County. Standard home inspections evaluate interior drain flow, but only an underground lateral camera scan from the clean-out to the municipal tap exposes root intrusion, bellied PVC, cracked terracotta clay, or scaling cast iron before you inherit an $8,500 to $22,000 trench excavation after closing. Foresight Home Inspections dispatches two certified inspectors led by Christopher Boykin, CMI (InterNACHI #176873), and provides timestamped HD lateral video and utility locate flagging so your agent can negotiate a full repair or closing credit during the Georgia due diligence window. Call (678) 480-2110 for a sewer scope quote or bundle it with your buyer inspection starting at $345.",
+      "blufWordCount": 134,
+      "videoShortsHook": "Buying a pre-1995 home in Decatur or Intown Atlanta? Here is what our underground sewer camera found 45 feet down the lateral line before due diligence expired.",
+      "faqSchemaNode": {
+        "@type": "Question",
+        "name": "Do I really need a sewer scope camera inspection when buying a home in Metro Atlanta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — in Metro Atlanta, a waterproof HD sewer scope camera inspection is essential for homes built before 1995 or properties with mature hardwoods in Decatur, Atlanta, DeKalb, and Fulton County. Standard home inspections evaluate interior drain flow, but only an underground lateral camera scan from the clean-out to the municipal tap exposes root intrusion, bellied PVC, cracked terracotta clay, or scaling cast iron before you inherit an $8,500 to $22,000 trench excavation after closing. Foresight Home Inspections dispatches two certified inspectors led by Christopher Boykin, CMI (InterNACHI #176873), and provides timestamped HD lateral video and utility locate flagging so your agent can negotiate a full repair or closing credit during the Georgia due diligence window. Call (678) 480-2110 for a sewer scope quote or bundle it with your buyer inspection starting at $345."
+        }
+      }
+    },
+    {
+      "id": "dekalb-low-flow-plumbing-compliance",
+      "targetPage": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
+      "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
+      "retrieved_on": "2026-10-28",
+      "seedQuery": "dekalb county low flow",
+      "liveAutocompleteQuestions": [
+        "dekalb county low flow certificate",
+        "dekalb county low flow toilet law"
+      ],
+      "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=dekalb%20county%20low%20flow",
+      "question": "When is a DeKalb County Low-Flow Plumbing Compliance Certificate required to turn on water service?",
+      "blufCitationPassage": "Unincorporated DeKalb County enforces Ordinance Code Section 25-58 for homes built prior to 1993: before the DeKalb County Department of Watershed Management activates residential water service in a buyer’s name, a certified inspector must verify and sign the official Certificate of Compliance confirming that every toilet (1.6 GPF maximum), showerhead (2.5 GPM maximum), and kitchen or lavatory faucet (2.0 GPM maximum) meets Georgia water-efficiency thresholds. Mailing city names like Decatur, Lithonia, Tucker, or Stone Mountain do not determine applicability; eligibility depends strictly on the parcel’s county Tax District field in official DeKalb County property records. Foresight Home Inspections verifies parcel jurisdiction prior to dispatch, flow-tests every plumbing fixture on site, and delivers your signed PDF compliance certificate the same day so your closing and water account transfer never stall. Call (678) 480-2110 for a quote or bundle it with your buyer inspection.",
+      "blufWordCount": 142,
+      "videoShortsHook": "Buying a pre-1993 home in unincorporated DeKalb County? Why DeKalb Watershed Management will not turn on your water without this signed plumbing certificate.",
+      "faqSchemaNode": {
+        "@type": "Question",
+        "name": "When is a DeKalb County Low-Flow Plumbing Compliance Certificate required to turn on water service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unincorporated DeKalb County enforces Ordinance Code Section 25-58 for homes built prior to 1993: before the DeKalb County Department of Watershed Management activates residential water service in a buyer’s name, a certified inspector must verify and sign the official Certificate of Compliance confirming that every toilet (1.6 GPF maximum), showerhead (2.5 GPM maximum), and kitchen or lavatory faucet (2.0 GPM maximum) meets Georgia water-efficiency thresholds. Mailing city names like Decatur, Lithonia, Tucker, or Stone Mountain do not determine applicability; eligibility depends strictly on the parcel’s county Tax District field in official DeKalb County property records. Foresight Home Inspections verifies parcel jurisdiction prior to dispatch, flow-tests every plumbing fixture on site, and delivers your signed PDF compliance certificate the same day so your closing and water account transfer never stall. Call (678) 480-2110 for a quote or bundle it with your buyer inspection."
+        }
+      }
+    },
+    {
+      "id": "two-inspector-team-advantage",
+      "targetPage": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
+      "source_url": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
+      "retrieved_on": "2026-10-28",
+      "seedQuery": "home inspection atlanta",
+      "liveAutocompleteQuestions": [
+        "home inspection atlanta",
+        "home inspection atlanta ga",
+        "home inspection atlanta cost",
+        "home inspection jobs atlanta",
+        "home inspection pros atlanta",
+        "home inspection companies atlanta",
+        "ria home inspection atlanta",
+        "house call home inspection atlanta",
+        "structural engineer home inspection atlanta"
+      ],
+      "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=home%20inspection%20atlanta",
+      "question": "Why does Foresight Home Inspections send two certified inspectors to every property instead of one?",
+      "blufCitationPassage": "Foresight Home Inspections dispatches two certified inspectors working in tandem on every Metro Atlanta home inspection—starting at $345 for single-family homes and $295 for condos and townhomes—to eliminate solo-inspector fatigue and cut on-site disruption to 1.5 to 2.5 hours across our 50-mile operating radius. While Lead Certified Master Inspector Christopher Boykin, CMI (InterNACHI #176873), evaluates structural foundations, roofing systems via 4K aerial drone, electrical distribution panels, and HVAC heat exchangers, the second certified inspector systematically cross-checks interior plumbing fixtures, attic insulation depth, crawlspace moisture levels, and calibrated infrared thermal camera scans across every interior wall and ceiling. Every inspection includes same-day interactive digital reporting, active SUPRA lockbox access for real estate agents, and up to $35,000 in combined protection ($10,000 Elite Master Inspection Warranty with $0 deductible plus InterNACHI $25,000 Honor Guarantee) at no extra cost.",
+      "blufWordCount": 136,
+      "videoShortsHook": "Most Atlanta inspection companies send one solo inspector rushing through 400 checkpoints alone. Here is how our two-inspector CMI team catches hidden defects in half the time.",
+      "faqSchemaNode": {
+        "@type": "Question",
+        "name": "Why does Foresight Home Inspections send two certified inspectors to every property instead of one?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Foresight Home Inspections dispatches two certified inspectors working in tandem on every Metro Atlanta home inspection—starting at $345 for single-family homes and $295 for condos and townhomes—to eliminate solo-inspector fatigue and cut on-site disruption to 1.5 to 2.5 hours across our 50-mile operating radius. While Lead Certified Master Inspector Christopher Boykin, CMI (InterNACHI #176873), evaluates structural foundations, roofing systems via 4K aerial drone, electrical distribution panels, and HVAC heat exchangers, the second certified inspector systematically cross-checks interior plumbing fixtures, attic insulation depth, crawlspace moisture levels, and calibrated infrared thermal camera scans across every interior wall and ceiling. Every inspection includes same-day interactive digital reporting, active SUPRA lockbox access for real estate agents, and up to $35,000 in combined protection ($10,000 Elite Master Inspection Warranty with $0 deductible plus InterNACHI $25,000 Honor Guarantee) at no extra cost."
+        }
+      }
+    },
+    {
+      "id": "11-month-builder-warranty-audit",
+      "targetPage": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection",
+      "retrieved_on": "2026-10-28",
+      "seedQuery": "11 month warranty inspection",
+      "liveAutocompleteQuestions": [
+        "11 month warranty inspection",
+        "11 month warranty inspection near me",
+        "11 month warranty inspection cost",
+        "11 month warranty inspection checklist",
+        "11 month home warranty inspection",
+        "11 month home warranty inspection near me",
+        "11 month home warranty inspection checklist",
+        "11 month builder warranty inspection",
+        "dr horton 11 month warranty inspection"
+      ],
+      "autocompleteSourceUrl": "https://suggestqueries.google.com/complete/search?client=firefox&q=11%20month%20warranty%20inspection",
+      "question": "What happens during an 11-month builder warranty inspection in Georgia before the 1-year warranty expires?",
+      "blufCitationPassage": "An 11-month builder warranty inspection in Metro Atlanta—starting at $345 with Foresight Home Inspections—is a comprehensive structural, mechanical, and building-envelope evaluation performed during months 10 or 11 of new-construction ownership, right before your builder’s 1-year workmanship warranty expires. During the first four seasonal cycles in Georgia red clay soil, newly constructed homes frequently develop differential settlement cracking, roof truss uplift, flashing separation around chimneys and dormers, HVAC supply duct leakage in unconditioned attics, and slow plumbing supply or drain leaks hidden behind finished drywall. Our two-inspector team led by Christopher Boykin, CMI, uses calibrated infrared thermal cameras, pinless moisture meters, and 4K roof drones to document every warrantable deficiency in a same-day, photo-backed digital report you can submit directly to your builder’s warranty portal before repair costs become your responsibility.",
+      "blufWordCount": 130,
+      "videoShortsHook": "Did you buy a new construction home in Metro Atlanta 10 months ago? Once month 12 hits, every builder defect becomes your out-of-pocket problem.",
+      "faqSchemaNode": {
+        "@type": "Question",
+        "name": "What happens during an 11-month builder warranty inspection in Georgia before the 1-year warranty expires?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An 11-month builder warranty inspection in Metro Atlanta—starting at $345 with Foresight Home Inspections—is a comprehensive structural, mechanical, and building-envelope evaluation performed during months 10 or 11 of new-construction ownership, right before your builder’s 1-year workmanship warranty expires. During the first four seasonal cycles in Georgia red clay soil, newly constructed homes frequently develop differential settlement cracking, roof truss uplift, flashing separation around chimneys and dormers, HVAC supply duct leakage in unconditioned attics, and slow plumbing supply or drain leaks hidden behind finished drywall. Our two-inspector team led by Christopher Boykin, CMI, uses calibrated infrared thermal cameras, pinless moisture meters, and 4K roof drones to document every warrantable deficiency in a same-day, photo-backed digital report you can submit directly to your builder’s warranty portal before repair costs become your responsibility."
+        }
+      }
+    }
+  ],
+  "verifiedBuildingScienceBenchmarks": [
+    {
+      "slug": "stucco-eifs-moisture-inspection",
+      "url": "https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection",
+      "retrieved_on": "2026-10-28",
+      "riskMetric": "Over 85% of unsealed 1980s–90s EIFS homes develop concealed framing rot",
+      "diagnosticThreshold": "infrared thermal differential ΔT ≥ 8.5°F (evaporative cooling) + >19% WME",
+      "authorityCitation": "ASTM E2110 & InterNACHI Stucco Standards of Practice"
+    },
+    {
+      "slug": "aluminum-wiring-inspection",
+      "url": "https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection",
+      "retrieved_on": "2026-10-28",
+      "riskMetric": "55x greater fire hazard at receptacle terminals vs. copper (U.S. CPSC)",
+      "diagnosticThreshold": "Thermal differential ΔT ≥ 15°F above ambient indicates active arcing connection",
+      "authorityCitation": "U.S. Consumer Product Safety Commission (CPSC Publication #516)"
+    },
+    {
+      "slug": "federal-pacific-zinsco-panel-inspection",
+      "url": "https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection",
+      "retrieved_on": "2026-10-28",
+      "riskMetric": "25% to 60% failure-to-trip rate under overcurrent conditions (Dr. J. Aronstein / IEEE)",
+      "diagnosticThreshold": "Thermal scan revealing bus bar pitting and breaker terminal heat >120°F",
+      "authorityCitation": "IEEE Industry Applications Transactions & CPSC Safety Advisory"
+    },
+    {
+      "slug": "crawlspace-fungus-joist-rot-inspection",
+      "url": "https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection",
+      "retrieved_on": "2026-10-28",
+      "riskMetric": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture decay threshold",
+      "diagnosticThreshold": "Wood Moisture Equivalent (WME) >19% (Fungus) / >28% (Active Rot) / Relative Humidity >70%",
+      "authorityCitation": "Georgia Department of Agriculture Structural Pest Division & InterNACHI Crawlspace SOP"
+    },
+    {
+      "slug": "heat-exchanger-hvac-inspection",
+      "url": "https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection",
+      "retrieved_on": "2026-10-28",
+      "riskMetric": "Furnaces >12 years old exhibit an exponentially higher rate of stress corrosion cracking",
+      "diagnosticThreshold": "CO detection >0 PPM in supply airflow + flame disturbance during blower motor engagement",
+      "authorityCitation": "ANSI Z21.47 / CSA 2.3 Gas-Fired Central Furnace Standard & EPA CO Guidelines"
+    },
+    {
+      "slug": "unsealed-roof-flashing-water-leak-inspection",
+      "url": "https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection",
+      "retrieved_on": "2026-10-28",
+      "riskMetric": "80%+ of residential roof water leaks occur at flashing transitions (NRCA)",
+      "diagnosticThreshold": "Infrared Thermal evaporative delta ΔT ≥ 6.0°F in attic sheathing + aerial 4K drone evaluation",
+      "authorityCitation": "National Roofing Contractors Association (NRCA) & IRC Section R905"
+    },
+    {
+      "slug": "polybutylene-pipe-plumbing-defect-inspection",
+      "url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
+      "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
+      "retrieved_on": "2026-10-28",
+      "riskMetric": "Subject of $950M national class action settlement (Cox v. Shell Oil) due to widespread bursting",
+      "diagnosticThreshold": "Visual identification (PB2110 stamp / gray tubing) + infrared thermal scan for wall cavity dampness",
+      "authorityCitation": "ASTM D3309 Standard Specification for Polybutylene Plastic Distribution"
+    }
+  ]
+}

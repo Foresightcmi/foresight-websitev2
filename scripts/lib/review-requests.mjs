@@ -44,14 +44,16 @@ export function dueActions(queue, now = new Date(), suppressed = new Set()) {
   return out;
 }
 
+const YELP_REVIEW_LINK = 'https://www.yelp.com/biz/foresight-home-inspections-lithonia-2';
+
 export function buildEmail(e, link, kind) {
   const f = firstName(e.name);
   const where = e.city ? ` in ${e.city}` : '';
   if (kind === 'reminder') {
-    const text = `Hi ${f},\n\nJust a quick follow-up in case my last note got buried. If you have a minute, a Google review of your inspection${where} helps other buyers find us:\n${link}\n\nThanks either way, and congratulations on the new place.\n\nChristopher Boykin, CMI\nForesight Home Inspections | 678-480-2110`;
+    const text = `Hi ${f},\n\nJust a quick follow-up in case my last note got buried. If you have a minute, a Google or Yelp review of your inspection${where} helps other buyers find us:\nGoogle: ${link}\nYelp: ${YELP_REVIEW_LINK}\n\nThanks either way, and congratulations on the new place.\n\nChristopher Boykin, CMI\nForesight Home Inspections | 678-480-2110`;
     return { subject: `Quick follow-up from Foresight, ${f}`, text, html: toHtml(text, link) };
   }
-  const text = `Hi ${f},\n\nThank you for trusting Foresight with your ${e.service}${where}. Would you share a quick Google review of your experience? It takes about a minute, and it helps neighbors find an inspector they can rely on.\n\nLeave a review: ${link}\n\nIf you are comfortable, mentioning the service and your city helps people searching for the same thing.\n\nAnything in the report unclear? Reply here or call 678-480-2110 and I will walk you through it.\n\nChristopher Boykin, CMI\nForesight Home Inspections`;
+  const text = `Hi ${f},\n\nThank you for trusting Foresight with your ${e.service}${where}. Would you share a quick review of your experience? It takes about a minute, and it helps neighbors find an inspector they can rely on.\n\nLeave a Google review: ${link}\nPrefer Yelp? Leave a Yelp review: ${YELP_REVIEW_LINK}\n\nIf you are comfortable, mentioning ${e.city || 'your city'}, our two-inspector team, or the calibrated infrared thermal scan helps buyers and search assistants match the exact service you received.\n\nAnything in the report unclear? Reply here or call 678-480-2110 and I will walk you through it.\n\nChristopher Boykin, CMI\nForesight Home Inspections`;
   return { subject: `${f}, how did your inspection go?`, text, html: toHtml(text, link) };
 }
 

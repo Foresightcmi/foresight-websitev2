@@ -90,7 +90,7 @@ export default function About() {
         ],
         "sameAs": [
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-          "https://certifiedmasterinspector.org/verify/christopher-boykin",
+          "https://certifiedmasterinspector.org/",
           "https://www.fhinspectionsatl.com/videos",
           "https://www.instagram.com/fhinspectionsatl/",
           "https://www.tiktok.com/@fhinspectionsatl",

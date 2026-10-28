@@ -112,11 +112,11 @@ export default function RootLayout({ children }) {
         "sameAs": [
           "https://maps.google.com/?cid=10862078652033010531",
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-          "https://certifiedmasterinspector.org/verify/christopher-boykin",
+          "https://certifiedmasterinspector.org/",
           "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
           "https://nextdoor.com/pages/foresight-home-inspections-llc-lithonia-ga/",
           "https://www.linkedin.com/company/foresight-home-inspections-llc/",
-          "https://facebook.com/fhinspectionsatl",
+          "https://www.facebook.com/fhinspectionsatl/",
           "https://www.instagram.com/fhinspectionsatl/",
           "https://www.tiktok.com/@fhinspectionsatl"
         ],
@@ -559,7 +559,7 @@ export default function RootLayout({ children }) {
       ],
       "sameAs": [
         "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-        "https://certifiedmasterinspector.org/verify/christopher-boykin",
+        "https://certifiedmasterinspector.org/",
         "https://www.fhinspectionsatl.com/about",
         "https://www.fhinspectionsatl.com/videos",
         "https://www.instagram.com/fhinspectionsatl/",
@@ -788,7 +788,7 @@ export default function RootLayout({ children }) {
                     <Image src="/images/11-month-warranty-logo.webp" alt="InterNACHI Certified 11th Month Warranty Inspector" width={95} height={95} sizes="95px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
                 </div>
                 <div className="footer-socials">
-                  <a href="https://facebook.com/fhinspectionsatl" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer-social-link" title="Facebook">
+                  <a href="https://www.facebook.com/fhinspectionsatl/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer-social-link" title="Facebook">
                     <svg viewBox="0 0 24 24">
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>

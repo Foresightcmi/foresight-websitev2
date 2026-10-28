@@ -17,15 +17,15 @@ const cities = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'cities.json')
 const HOME_RING = ['Lithonia', 'Stonecrest', 'Redan', 'Conyers', 'Stone Mountain', 'Snellville', 'Decatur', 'Tucker', 'Covington', 'Lilburn'];
 const PRICE = {
   'buyer-inspection': `from ${truth.singleFamily} (${truth.condoTownhome} condos)`,
-  'radon-testing': `${truth.radon} flat`,
-  'sewer-scope-inspection': `${truth.sewerScope} flat`,
-  'termite-inspection': `from ${truth.termiteWdoSlab} (${truth.termiteWdoCrawlspace} crawlspace)`,
-  'mold-testing': `from ${truth.moldAirQuality}`,
+  'radon-testing': 'call for quote',
+  'sewer-scope-inspection': 'call for quote',
+  'termite-inspection': 'call for quote',
+  'mold-testing': 'call for quote',
   'pre-listing-inspection': `from ${truth.preListing}`,
   '11-month-warranty-inspection': `from ${truth.elevenMonthWarranty}`,
   'new-construction-inspection': `from ${truth.newConstruction}`,
   'pre-drywall-inspection': `from ${truth.preDrywall}`,
-  'pool-inspection': `${truth.poolSpa} flat`,
+  'pool-inspection': 'call for quote',
   'commercial-property-inspection': 'quoted per property'
 };
 // Turnaround wording must match how each service actually works.
@@ -75,13 +75,23 @@ ${post}
 \`\`\`
 Characters: ${post.length} / 1,500
 
-## 2. Photos (upload 2–3 real photos from this week's jobs)
-- A ${svc.name.toLowerCase()} photo from a real job (no client faces, no house numbers)
-- One team photo on site (two inspectors), or a thermal/drone image
-- File names like \`${svc.slug}-${city.Slug}-ga.jpg\` (helps you stay organized)
+## 2. Multimodal Photos (upload 2–3 real photos to GBP & Yelp — +156% AI selection lift)
+- A ${svc.name.toLowerCase()} photo from a real job in or near ${name} (no client faces, no house numbers)
+- One team photo on site (two certified inspectors) or a calibrated infrared thermal / 4K drone roof image
+- File names like \`${svc.slug}-${city.Slug}-ga.jpg\` and \`two-inspector-team-${city.Slug}-ga.jpg\`
 
-## 3. Reviews
-- Reply to every new review within 24 hours. Mention the service and city naturally.
+## 3. GBP Q&A Seed (paste into Google Business Profile Q&A section)
+- **Question**: ${faq ? fill(faq.q) : `What is included with a ${svc.name.toLowerCase()} in ${name}, GA?`}
+- **Owner Answer**: ${faq ? fill(faq.a).split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.') : `Foresight Home Inspections dispatches two certified inspectors led by Christopher Boykin, CMI, for every ${svc.name.toLowerCase()} in ${name}, GA (${PRICE[svc.slug] || svc.price}), including calibrated infrared thermal imaging, 4K drone roof views, and up to $35,000 in warranty protection.`}
+
+## 4. 60-Second YouTube Shorts / Reels Field Script (0.737 AI Citation Correlation)
+- **Title**: ${svc.name} in ${name}, GA — What 2 Certified Inspectors Look For
+- **0–10s Hook**: "We are on site in ${name}, Georgia performing a ${svc.name.toLowerCase()} — here is the #1 hidden issue buyers miss before closing."
+- **10–45s Field Proof**: Show the defect or diagnostic tool in action (calibrated infrared thermal camera, moisture meter, or roof/crawlspace check) and explain the repair impact in plain English.
+- **45–60s CTA**: "Need a two-inspector team in ${name}? Book online at fhinspectionsatl.com or call 678-480-2110."
+
+## 5. Reviews (Google & Yelp)
+- Reply to every new Google and Yelp review within 24 hours. Mention the service (${svc.name.toLowerCase()}) and city (${name}) naturally in your owner reply.
 - Add each finished client to the review engine (phone intake topic in data/private/review-config.json).
 `;
 

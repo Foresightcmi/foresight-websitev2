@@ -1,9 +1,11 @@
 export default function robots() {
+  const aiSearchAllowPaths = ['/', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/', '/images/'];
+
   return {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/api/mcp', '/videos', '/videos/'],
+        allow: ['/', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/'],
         disallow: [
           '/private/',
           '/api/chat',
@@ -31,28 +33,26 @@ export default function robots() {
         disallow: ['/sample-report/'],
       },
       {
-        userAgent: 'GPTBot',
-        allow: '/',
-      },
-      {
-        userAgent: 'ChatGPT-User',
-        allow: '/',
-      },
-      {
-        userAgent: 'ClaudeBot',
-        allow: '/',
-      },
-      {
-        userAgent: 'PerplexityBot',
-        allow: '/',
-      },
-      {
-        userAgent: 'Google-Extended',
-        allow: '/',
-      },
-      {
-        userAgent: 'Applebot-Extended',
-        allow: '/',
+        userAgent: [
+          'GPTBot',
+          'OAI-SearchBot',
+          'ChatGPT-User',
+          'ClaudeBot',
+          'Claude-SearchBot',
+          'Claude-User',
+          'anthropic-ai',
+          'PerplexityBot',
+          'Perplexity-User',
+          'Google-Extended',
+          'Applebot',
+          'Applebot-Extended',
+          'Bingbot',
+          'DuckAssistBot',
+          'Meta-ExternalAgent',
+          'Meta-ExternalFetcher',
+          'Amazonbot'
+        ],
+        allow: aiSearchAllowPaths,
       },
       {
         userAgent: [
@@ -62,7 +62,6 @@ export default function robots() {
           'MJ12bot',
           'PetalBot',
           'Bytespider',
-          'Amazonbot',
           'DataForSeoBot',
           'CCBot',
           'BLEXBot',
@@ -84,5 +83,5 @@ export default function robots() {
       'https://www.fhinspectionsatl.com/sitemap-images.xml',
       'https://www.fhinspectionsatl.com/sitemap-video.xml',
     ],
-  }
+  };
 }

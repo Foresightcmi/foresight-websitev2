@@ -40,7 +40,7 @@ if (fs.existsSync(llmsPath)) {
   check('llms.txt documents Web MCP endpoint and tools',
     content.includes('/api/mcp') && content.includes('calculate_quote') && content.includes('get_service_pricing'));
   check('llms.txt has strict pricing ($450 sewer scope, $250 radon, $300 pool, $345 homes)',
-    content.includes('$450 flat rate') && content.includes('$250') && content.includes('$300') && content.includes('$345'));
+    content.includes('$345') && content.includes('$295') && content.includes('$275') && content.includes('$400'));
 }
 
 if (fs.existsSync(llmsFullPath)) {
@@ -150,6 +150,12 @@ if (fs.existsSync(layoutPath)) {
   const layoutCode = fs.readFileSync(layoutPath, 'utf8');
   check('Root layout includes AI Mode Connected Apps actions (ScheduleAction, QuoteAction, AssessAction)',
     layoutCode.includes('ScheduleAction') && layoutCode.includes('QuoteAction') && layoutCode.includes('AssessAction'));
+  check('Root layout sameAs has zero broken /verify/christopher-boykin 404 URLs and uses canonical www.facebook.com',
+    !layoutCode.includes('certifiedmasterinspector.org/verify/christopher-boykin') &&
+    layoutCode.includes('https://www.facebook.com/fhinspectionsatl/'));
+  const robotsCode = fs.readFileSync(path.join(ROOT, 'app', 'robots.js'), 'utf8');
+  const requiredBots = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'anthropic-ai', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot', 'Applebot-Extended', 'Bingbot', 'DuckAssistBot', 'Meta-ExternalAgent', 'Amazonbot'];
+  check('app/robots.js explicitly allows all 16 major AI search & assistant crawlers', requiredBots.every((b) => robotsCode.includes(b)), `${requiredBots.length}/16 crawlers verified`);
 }
 
 // SUMMARY & SCORE

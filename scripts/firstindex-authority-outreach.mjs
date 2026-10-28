@@ -58,13 +58,16 @@ const LINK_MAGNET_ASSETS = [
 ];
 
 const HIGH_TRUST_DIRECTORIES = [
-  { name: 'InterNACHI Certified Master Inspector Directory', url: 'https://www.nachi.org', claimStatus: 'CLAIMED_ACTIVE' },
-  { name: 'Better Business Bureau (Atlanta & NE Georgia)', url: 'https://www.bbb.org', claimStatus: 'CLAIMED_ACTIVE' },
-  { name: 'Metro Atlanta Chamber of Commerce', url: 'https://www.metroatlantachamber.com', claimStatus: 'ACTION_NEEDED_UNCLAIMED' },
-  { name: 'Bing Places for Business (ChatGPT Search Index)', url: 'https://www.bingplaces.com', claimStatus: 'CLAIMED_ACTIVE' },
-  { name: 'Apple Business Connect (Siri & Apple Maps)', url: 'https://businessconnect.apple.com', claimStatus: 'ACTION_NEEDED_UNCLAIMED' },
-  { name: 'Nextdoor Neighborhood Business Directory', url: 'https://business.nextdoor.com', claimStatus: 'CLAIMED_ACTIVE' },
-  { name: 'Patch Local Atlanta Community Hubs', url: 'https://patch.com/georgia/atlanta', claimStatus: 'CLAIMED_ACTIVE' }
+  { name: 'Yelp Business Profile (ChatGPT 80% Local Feed & Perplexity Fusion)', url: 'https://www.yelp.com/biz/foresight-home-inspections-lithonia-2', claimStatus: 'CLAIMED_ACTIVE', aiEnginesFed: ['ChatGPT Search', 'Perplexity', 'Apple Intelligence', 'Bing Copilot'] },
+  { name: 'Bing Places for Business (ChatGPT Search & Copilot Index)', url: 'https://www.bingplaces.com', claimStatus: 'CLAIMED_ACTIVE', aiEnginesFed: ['ChatGPT Search', 'Microsoft Copilot'] },
+  { name: 'Foursquare Places POI Database (ChatGPT Mapbox Shortlist)', url: 'https://foursquare.com', claimStatus: 'ACTION_NEEDED_VERIFY_POI', aiEnginesFed: ['ChatGPT Search', 'Apple Maps', 'Uber/Mapbox'] },
+  { name: 'Apple Business Connect (Siri & Apple Intelligence Place Card)', url: 'https://businessconnect.apple.com', claimStatus: 'ACTION_NEEDED_UNCLAIMED', aiEnginesFed: ['Apple Intelligence', 'Siri', 'Apple Maps'] },
+  { name: 'Brave Search Webmaster & Local Index (Claude Web Search Backend)', url: 'https://search.brave.com', claimStatus: 'CLAIMED_ACTIVE', aiEnginesFed: ['Claude Web Search'] },
+  { name: 'InterNACHI Certified Master Inspector Directory', url: 'https://www.nachi.org', claimStatus: 'CLAIMED_ACTIVE', aiEnginesFed: ['Google AI Overviews', 'Perplexity', 'Claude'] },
+  { name: 'Better Business Bureau (Atlanta & NE Georgia)', url: 'https://www.bbb.org', claimStatus: 'CLAIMED_ACTIVE', aiEnginesFed: ['Perplexity', 'ChatGPT Search', 'Bing Copilot'] },
+  { name: 'Metro Atlanta Chamber of Commerce', url: 'https://www.metroatlantachamber.com', claimStatus: 'ACTION_NEEDED_UNCLAIMED', aiEnginesFed: ['Google AI Overviews', 'Perplexity'] },
+  { name: 'Nextdoor Neighborhood Business Directory', url: 'https://business.nextdoor.com', claimStatus: 'CLAIMED_ACTIVE', aiEnginesFed: ['Google AI Mode', 'Perplexity'] },
+  { name: 'Patch Local Atlanta Community Hubs', url: 'https://patch.com/georgia/atlanta', claimStatus: 'CLAIMED_ACTIVE', aiEnginesFed: ['Google AI Overviews', 'Perplexity'] }
 ];
 
 async function verifyUrlReachable(targetUrl) {
