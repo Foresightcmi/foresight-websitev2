@@ -183,9 +183,9 @@ export default function About() {
                 src="/images/Christopher_Boykin.webp"
                 alt="Christopher Boykin, Certified Master Inspector (CMI) — Founder of Foresight Home Inspections in Atlanta GA"
                 width={600}
-                height={347}
+                height={360}
                 sizes="(max-width: 768px) 100vw, 600px"
-                style={{ width: '100%', height: 'auto', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}
+                style={{ width: '100%', height: 'auto', aspectRatio: '1024 / 614', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}
                 priority
               />
               <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
