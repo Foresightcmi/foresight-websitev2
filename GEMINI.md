@@ -44,7 +44,7 @@
 
 ## 6. Inviolable Tri-Logo Brand Standard (All Presentations, Carousels, Dossiers & Outbound Emails)
 * **Every single slide** of every presentation, social carousel (`slide_1.jpg`–`slide_5.jpg`), LinkedIn PDF deck (`linkedin_carousel_deck.pdf`), companion HTML field guide, and client HTML dossier (`public/dossiers/*.html`, `public/warranty-dossiers/*.html`), AND **100% of outbound emails** sent across `foresight-website`, `../email-campaign-engine`, and `../omni-video-publisher` MUST display all **three official marks**:
-  1. **Foresight Business Logo**: `https://www.fhinspectionsatl.com/images/logo_dark_mode.png` (dark headers) or `https://www.fhinspectionsatl.com/images/Logopng.png` (light headers).
+  1. **Foresight Business Logo**: `https://www.fhinspectionsatl.com/images/Logopng.png` (light headers).
   2. **Certified Master Inspector (`CMI`) Seal**: `https://www.fhinspectionsatl.com/images/cmi_logo.png` (`CMI #MICB-1082`).
   3. **InterNACHI Certified Professional Inspector (`CPI`) Seal**: `https://www.fhinspectionsatl.com/images/cpi_logo.png` (`InterNACHI #NACHI20061502`).
 * **Email Compatibility Rule**: Always use `.png` URLs served over first-party HTTPS (`https://www.fhinspectionsatl.com/images/*.png`) in HTML emails — never `.webp` or `.svg` (which Outlook Desktop and several webmail proxies block).

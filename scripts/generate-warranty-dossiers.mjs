@@ -446,9 +446,9 @@ function generateWarrantyDossierHtml(client) {
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="cmi-brand" style="display:flex;align-items:center;gap:10px;">
-      <img src="https://www.fhinspectionsatl.com/images/logo_dark_mode.png" alt="Foresight Home Inspections" style="height:36px;width:auto;">
-      <img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="CMI" style="height:36px;width:36px;object-fit:contain;">
-      <img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="CPI" style="height:36px;width:36px;object-fit:contain;">
+      <img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" style="height:44px;background:#ffffff;padding:3px 6px;border-radius:5px;width:auto;">
+      <img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="CMI" style="height:44px;background:#ffffff;padding:3px 6px;border-radius:5px;width:36px;object-fit:contain;">
+      <img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="CPI" style="height:44px;background:#ffffff;padding:3px 6px;border-radius:5px;width:36px;object-fit:contain;">
       <span>FORESIGHT HOME INSPECTIONS &bull; ATLANTA, GA</span>
     </div>
     <div style="display:flex; align-items:center; gap:16px;">
