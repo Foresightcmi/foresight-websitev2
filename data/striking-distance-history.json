@@ -1,5 +1,22 @@
 [
   {
+    "timestamp": "2026-10-29T19:07:09.469Z",
+    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
+    "totalInStrikingDistance": 490,
+    "topTargets": [
+      "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
+      "home inspection lilburn ga (Pos 7.1, 100 impr -> /services/buyer-inspection/lilburn)",
+      "home inspection snellville ga (Pos 9.4, 99 impr -> /services/buyer-inspection/snellville)",
+      "home inspection norcross ga (Pos 3.9, 88 impr -> /services/buyer-inspection/norcross)",
+      "dallas pre drywall inspection (Pos 8.4, 85 impr -> /services/pre-drywall-inspection/dallas)",
+      "home inspection austell ga (Pos 4.6, 85 impr -> /services/buyer-inspection/austell)",
+      "home inspector in acworth, ga (Pos 18.1, 84 impr -> /services/buyer-inspection/acworth)",
+      "home inspections in acworth, ga (Pos 16.6, 77 impr -> /services/buyer-inspection/acworth)",
+      "home inspection acworth ga (Pos 15.3, 74 impr -> /services/buyer-inspection/acworth)",
+      "home inspection kennesaw ga (Pos 20.8, 72 impr -> /services/11-month-warranty-inspection/kennesaw)"
+    ]
+  },
+  {
     "timestamp": "2026-10-28T18:59:50.643Z",
     "action": "Live GSC Query-by-Page Striking-Distance Sweep",
     "totalInStrikingDistance": 490,

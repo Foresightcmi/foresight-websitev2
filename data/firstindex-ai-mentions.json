@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-28T18:59:53.151Z",
-  "retrieved_on": "2026-10-28",
+  "generatedAt": "2026-10-29T19:07:12.053Z",
+  "retrieved_on": "2026-10-29",
   "source_url": "https://www.fhinspectionsatl.com",
   "readinessScore": "100%",
   "verifiedPrompts": 6,
@@ -11,16 +11,16 @@
       "buyerPrompt": "best home inspector in Atlanta GA with two inspectors",
       "canonicalUrl": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
       "source_url": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=best%20home%20inspector%20atlanta",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "suggestions": [
           "best home inspector atlanta",
           "best home inspectors atlanta reddit",
@@ -46,16 +46,16 @@
       "buyerPrompt": "sewer scope camera inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
       "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=sewer%20scope%20inspection%20atlanta",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "suggestions": [
           "sewer scope inspection atlanta",
           "how much is a sewer scope inspection",
@@ -77,16 +77,16 @@
       "buyerPrompt": "DeKalb County low-flow plumbing compliance certificate inspector",
       "canonicalUrl": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
       "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=dekalb%20county%20low%20flow%20certificate",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "suggestions": [
           "dekalb county low flow certificate",
           "what is a dekalb",
@@ -106,16 +106,16 @@
       "buyerPrompt": "11-month builder warranty inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
       "source_url": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=11%20month%20warranty%20inspection%20atlanta",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "suggestions": []
       },
       "urlIndexedInLlmsTxt": true,
@@ -131,16 +131,16 @@
       "buyerPrompt": "radon testing and pool inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/quote",
       "source_url": "https://www.fhinspectionsatl.com/quote",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/quote",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=radon%20testing%20atlanta",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "suggestions": [
           "radon testing atlanta",
           "radon testing atlanta ga",
@@ -166,16 +166,16 @@
       "buyerPrompt": "polybutylene pipe and stucco EIFS home inspector Atlanta",
       "canonicalUrl": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=polybutylene%20pipe%20inspection%20atlanta",
-        "retrieved_on": "2026-10-28",
+        "retrieved_on": "2026-10-29",
         "suggestions": []
       },
       "urlIndexedInLlmsTxt": true,

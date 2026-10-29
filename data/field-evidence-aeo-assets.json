@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-28T18:59:53.545Z",
+  "generatedAt": "2026-10-29T19:07:12.370Z",
   "source_url": "https://www.fhinspectionsatl.com",
-  "retrieved_on": "2026-10-28",
+  "retrieved_on": "2026-10-29",
   "engine": "Foresight Native Field-Evidence to AEO Engine v1.0",
   "pricingAnchor": {
     "singleFamily": "$345",
@@ -15,7 +15,7 @@
       "id": "sewer-lateral-cast-iron-clay",
       "targetPage": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
       "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "seedQuery": "sewer scope atlanta",
       "liveAutocompleteQuestions": [
         "sewer scope atlanta",
@@ -43,7 +43,7 @@
       "id": "dekalb-low-flow-plumbing-compliance",
       "targetPage": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
       "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "seedQuery": "dekalb county low flow",
       "liveAutocompleteQuestions": [
         "dekalb county low flow certificate",
@@ -69,7 +69,7 @@
       "id": "two-inspector-team-advantage",
       "targetPage": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
       "source_url": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "seedQuery": "home inspection atlanta",
       "liveAutocompleteQuestions": [
         "home inspection atlanta",
@@ -101,7 +101,7 @@
       "id": "11-month-builder-warranty-audit",
       "targetPage": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection",
       "source_url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "seedQuery": "11 month warranty inspection",
       "liveAutocompleteQuestions": [
         "11 month warranty inspection",
@@ -135,7 +135,7 @@
       "slug": "stucco-eifs-moisture-inspection",
       "url": "https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/stucco-eifs-moisture-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "riskMetric": "Over 85% of unsealed 1980s–90s EIFS homes develop concealed framing rot",
       "diagnosticThreshold": "infrared thermal differential ΔT ≥ 8.5°F (evaporative cooling) + >19% WME",
       "authorityCitation": "ASTM E2110 & InterNACHI Stucco Standards of Practice"
@@ -144,7 +144,7 @@
       "slug": "aluminum-wiring-inspection",
       "url": "https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/aluminum-wiring-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "riskMetric": "55x greater fire hazard at receptacle terminals vs. copper (U.S. CPSC)",
       "diagnosticThreshold": "Thermal differential ΔT ≥ 15°F above ambient indicates active arcing connection",
       "authorityCitation": "U.S. Consumer Product Safety Commission (CPSC Publication #516)"
@@ -153,7 +153,7 @@
       "slug": "federal-pacific-zinsco-panel-inspection",
       "url": "https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/federal-pacific-zinsco-panel-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "riskMetric": "25% to 60% failure-to-trip rate under overcurrent conditions (Dr. J. Aronstein / IEEE)",
       "diagnosticThreshold": "Thermal scan revealing bus bar pitting and breaker terminal heat >120°F",
       "authorityCitation": "IEEE Industry Applications Transactions & CPSC Safety Advisory"
@@ -162,7 +162,7 @@
       "slug": "crawlspace-fungus-joist-rot-inspection",
       "url": "https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/crawlspace-fungus-joist-rot-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "riskMetric": "Over 60% of vented Georgia crawlspaces exceed the 19% wood moisture decay threshold",
       "diagnosticThreshold": "Wood Moisture Equivalent (WME) >19% (Fungus) / >28% (Active Rot) / Relative Humidity >70%",
       "authorityCitation": "Georgia Department of Agriculture Structural Pest Division & InterNACHI Crawlspace SOP"
@@ -171,7 +171,7 @@
       "slug": "heat-exchanger-hvac-inspection",
       "url": "https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/heat-exchanger-hvac-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "riskMetric": "Furnaces >12 years old exhibit an exponentially higher rate of stress corrosion cracking",
       "diagnosticThreshold": "CO detection >0 PPM in supply airflow + flame disturbance during blower motor engagement",
       "authorityCitation": "ANSI Z21.47 / CSA 2.3 Gas-Fired Central Furnace Standard & EPA CO Guidelines"
@@ -180,7 +180,7 @@
       "slug": "unsealed-roof-flashing-water-leak-inspection",
       "url": "https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/unsealed-roof-flashing-water-leak-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "riskMetric": "80%+ of residential roof water leaks occur at flashing transitions (NRCA)",
       "diagnosticThreshold": "Infrared Thermal evaporative delta ΔT ≥ 6.0°F in attic sheathing + aerial 4K drone evaluation",
       "authorityCitation": "National Roofing Contractors Association (NRCA) & IRC Section R905"
@@ -189,7 +189,7 @@
       "slug": "polybutylene-pipe-plumbing-defect-inspection",
       "url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
-      "retrieved_on": "2026-10-28",
+      "retrieved_on": "2026-10-29",
       "riskMetric": "Subject of $950M national class action settlement (Cox v. Shell Oil) due to widespread bursting",
       "diagnosticThreshold": "Visual identification (PB2110 stamp / gray tubing) + infrared thermal scan for wall cavity dampness",
       "authorityCitation": "ASTM D3309 Standard Specification for Polybutylene Plastic Distribution"
