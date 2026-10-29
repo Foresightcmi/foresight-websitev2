@@ -502,7 +502,7 @@
       <div class="stats-row">
         <span class="stat-label">Due Diligence Agent Outreach:</span>
         <span class="stat-numbers">
-          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">2</span> Contacted
+          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">0</span> Contacted
         </span>
       </div>
       <div class="progress-track">
@@ -521,7 +521,7 @@
           <option value="name_asc">👤 Agent Name (A to Z)</option>
         </select>
         <select class="select-ctrl" id="citySelect" onchange="setCity(this.value)">
-          <option value="ALL">📍 All Cities (2)</option>
+          <option value="ALL">📍 All Cities (0)</option>
         </select>
       </div>
     </div>
@@ -547,7 +547,7 @@
   <div id="cardsContainer"></div>
 
   <script>
-    const underContractFilers = [{"id":"card_dcbaadb74e","role":"LIST_AGENT","name":"THOMAS BEGORA","first":"THOMAS","phone":"(404) 435-6533","clean_phone":"4044356533","brokerage":"Key Real Estate Solutions, Inc.","city":"Acworth","address":"2583 Willow Grove Road 8","price":"$259,900","raw_price":259900,"date":"2026-10-27"},{"id":"card_ac74c6ad30","role":"LIST_AGENT","name":"Nicolette Douglas","first":"Nicolette","phone":"(470) 785-2203","clean_phone":"4707852203","brokerage":"Brandywine Homes Usa, LLC.","city":"Stockbridge","address":"505 Village Circle","price":"$244,900","raw_price":244900,"date":"2026-10-27"}];
+    const underContractFilers = [];
 
     // State Persistence across localStorage
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
