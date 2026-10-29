@@ -6,7 +6,7 @@ import DueDiligenceCalculator from '../components/DueDiligenceCalculator';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
-  title: 'Home Inspection Repair Credit Calculator Atlanta GA | Foresight',
+  title: 'Home Inspection Repair Credit Calculator Atlanta GA',
   description: 'Calculate home inspection repair costs with regional contractor trade benchmarks. Model Georgia seller closing credit requests and generate sample repair amendment wording.',
   keywords: [
     'home inspection repair credit calculator',

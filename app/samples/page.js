@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SampleReportPreview from './SampleReportPreview';
 
 export const metadata = {
-  title: 'Sample Written Inspection Reports & Checklist Atlanta GA | Foresight',
+  title: 'Sample Written Inspection Reports & Checklist Atlanta GA',
   description: 'View real sample written inspection reports & checklists from Foresight in Atlanta, GA. Photo-documented interactive digital reports delivered within 24 hours!',
   keywords: ['sample home inspection report Atlanta', 'written inspection reports georgia', 'inspection checklist atlanta ga', 'interactive digital sample report', 'home inspection sample Georgia', 'dual inspector report format'],
   alternates: {

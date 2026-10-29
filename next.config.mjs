@@ -244,6 +244,16 @@ const nextConfig = {
         destination: '/concierge',
         permanent: true,
       },
+      // Trailing punctuation 301 rescue (GA4 caught 57+ lost sessions on /quote. from email/SMS auto-linkers)
+      { source: '/quote.', destination: '/quote', permanent: true },
+      { source: '/quote,', destination: '/quote', permanent: true },
+      { source: '/concierge.', destination: '/concierge', permanent: true },
+      { source: '/services.', destination: '/services', permanent: true },
+      { source: '/service-areas.', destination: '/service-areas', permanent: true },
+      { source: '/due-diligence.', destination: '/due-diligence', permanent: true },
+      { source: '/realtors.', destination: '/realtors', permanent: true },
+      { source: '/contact.', destination: '/contact', permanent: true },
+      { source: '/blog.', destination: '/blog', permanent: true },
       // VIP Dispatch instant route
       {
         source: '/dispatch',

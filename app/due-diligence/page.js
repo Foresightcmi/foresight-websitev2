@@ -6,7 +6,7 @@ import DueDiligenceCalculator from '../components/DueDiligenceCalculator';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
-  title: 'Georgia Due Diligence Defense & Repair Credit Negotiator | Foresight',
+  title: 'Georgia Due Diligence Defense & Repair Credit Negotiator',
   description: 'Protect your Georgia Due Diligence period. Quantify repair credits with regional contractor cost benchmarks, generate sample repair amendment clauses, and secure guaranteed 48-hour dual-inspector scheduling with up to $35,000 in warranty protection.',
   keywords: [
     'Georgia due diligence period home inspection',

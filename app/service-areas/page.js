@@ -4,7 +4,7 @@ import Link from 'next/link';
 import CitySearch from '../components/CitySearch';
 
 export const metadata = {
-  title: 'Home Inspection Service Areas Atlanta | 87 Cities | Foresight',
+  title: 'Home Inspection Service Areas Atlanta | 87 Cities',
   description: '4.8★ home inspections across 87 Metro Atlanta municipalities. 2-inspector team led by a CMI from $345. Free thermal & 4K drones. Select your city today!',
   openGraph: {
     title: 'Metro Atlanta Home Inspection Service Areas | Foresight',

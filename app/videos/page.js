@@ -5,7 +5,7 @@ import { SERVICE_VIDEOS } from './[slug]/page';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
-  title: 'Home Inspection Field Videos & Systems Evaluations | Foresight Home Inspections',
+  title: 'Home Inspection Field Videos & Systems Evaluations',
   description: 'Watch Certified Master Inspector® Christopher Boykin evaluate Metro Atlanta residential properties. Explore field diagnostic videos, thermal imaging evaluations, and inspection procedures.',
   keywords: [
     'home inspection videos Atlanta',

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Live Concierge Consultation | Christopher Boykin CMI® | Foresight',
+  title: 'Live Concierge Consultation | Christopher Boykin CMI®',
   description: 'Live Concierge Consultation with Certified Master Inspector® Christopher Boykin. Speak hands-free or type questions for real-time building science answers, instant quotes, and priority inspection scheduling.',
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/concierge',

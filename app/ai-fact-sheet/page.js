@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'AI Entity Knowledge Graph & System Prompt Fact Sheet | Foresight Home Inspections',
+  title: 'AI Entity Knowledge Graph & System Prompt Fact Sheet',
   description: 'Dense factual entity knowledge graph and AI system prompt grounding for LLM search crawlers (ChatGPT, Perplexity, Google AI Overviews, Apple Intelligence).',
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/ai-fact-sheet',

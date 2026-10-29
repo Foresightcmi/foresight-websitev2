@@ -6,7 +6,7 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 const PAGE_URL = `${SITE_URL}/videos/complete-home-systems-diagnostic`;
 
 export const metadata = {
-  title: 'Complete Home Systems Diagnostic Video | Foresight Home Inspections',
+  title: 'Complete Home Systems Diagnostic Video',
   description: 'Watch Certified Master Inspector Christopher Boykin demonstrate our two-inspector diagnostic protocol across Atlanta home systems: HVAC, 200A panels, crawlspace, and infrared thermal imaging.',
   keywords: [
     'home inspection video Atlanta',

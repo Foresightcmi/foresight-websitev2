@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Checkout Incomplete | Foresight Home Inspections',
+  title: 'Checkout Incomplete',
   description: 'Your checkout was canceled. Contact Foresight Home Inspections for assistance.',
   robots: { index: false, follow: false },
 };

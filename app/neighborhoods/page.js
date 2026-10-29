@@ -6,7 +6,7 @@ import Script from 'next/script';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
-  title: 'Atlanta Neighborhood & Subdivision Home Inspections | Foresight',
+  title: 'Atlanta Neighborhood & Subdivision Home Inspections',
   description: 'Specialized home inspection guides for Metro Atlanta\'s prominent historic districts, luxury enclaves, and master-planned communities. Certified Master Inspector diagnostic Evaluations.',
   keywords: [
     'Atlanta neighborhood home inspection',

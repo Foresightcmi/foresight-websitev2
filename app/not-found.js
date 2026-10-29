@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Page Not Found | Foresight Home Inspections',
+  title: 'Page Not Found',
   description: 'The page you are looking for could not be found. Navigate back to Foresight Home Inspections to explore our services, service areas, blog, and more.',
 };
 

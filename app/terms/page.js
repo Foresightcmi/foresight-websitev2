@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Terms of Service | Foresight Home Inspections',
+  title: 'Terms of Service',
   description: 'Terms of Service for Foresight Home Inspections, LLC.',
   alternates: { canonical: 'https://www.fhinspectionsatl.com/terms' },
 };
