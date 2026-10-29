@@ -1060,6 +1060,56 @@ export default function QuoteClient({ showValueComparison = true }) {
                   border: '1px solid rgba(255, 255, 255, 0.15)',
                   marginBottom: '1rem'
                 }}>
+                  {leadStatus !== 'success' && (
+                    <div style={{
+                      background: 'rgba(15, 23, 42, 0.78)',
+                      border: '1.5px solid rgba(52, 211, 153, 0.48)',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '0.85rem 0.95rem',
+                      marginBottom: '0.95rem',
+                      textAlign: 'left'
+                    }}>
+                      <div style={{ fontSize: '0.72rem', color: '#6ee7b7', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.55rem' }}>
+                        Fastest Due-Diligence Lock-In &bull; Direct Concierge
+                      </div>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.55rem' }}>
+                        <a
+                          href="tel:+16784802110"
+                          onClick={() => {
+                            if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+                              window.gtag('event', 'phone_call_click', { event_category: 'quote_concierge', value: typeof total === 'number' ? total : 345 });
+                            }
+                          }}
+                          style={{
+                            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem',
+                            minHeight: '44px', padding: '0.55rem 0.85rem', borderRadius: '6px',
+                            background: '#10b981', color: '#052e16', border: '1.5px solid #34d399',
+                            fontSize: '0.86rem', fontWeight: 800, textDecoration: 'none'
+                          }}
+                        >
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                          <span>Call (678) 480-2110</span>
+                        </a>
+                        <a
+                          href={`sms:+16784802110?body=${encodeURIComponent(`Hi Christopher, I calculated a Foresight inspection estimate (${isCustom ? total : '$' + total}) on fhinspectionsatl.com/quote and would like to check availability.`)}`}
+                          onClick={() => {
+                            if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+                              window.gtag('event', 'sms_quote_click', { event_category: 'quote_concierge', value: typeof total === 'number' ? total : 345 });
+                            }
+                          }}
+                          style={{
+                            display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem',
+                            minHeight: '44px', padding: '0.55rem 0.85rem', borderRadius: '6px',
+                            background: 'rgba(255, 255, 255, 0.08)', color: '#f8fafc', border: '1.5px solid rgba(248, 250, 252, 0.42)',
+                            fontSize: '0.86rem', fontWeight: 700, textDecoration: 'none'
+                          }}
+                        >
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                          <span>Text This Quote</span>
+                        </a>
+                      </div>
+                    </div>
+                  )}
                   {leadStatus === 'success' ? (
                     <div style={{ 
                       background: 'rgba(16, 185, 129, 0.15)', 

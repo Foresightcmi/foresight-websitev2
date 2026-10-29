@@ -93,9 +93,7 @@ function buildWarrantyEmailHtml(lead) {
 </head>
 <body>
   <div class="card">
-    <div class="header">
-      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections">
-    </div>
+    <div style="background-color:#0f172a;border-bottom:3px solid #d4af37;padding:16px 22px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/logo_dark_mode.png" alt="Foresight Home Inspections" height="44" style="display:block;height:44px;width:auto;border:0;" /><div style="font-size:11px;font-weight:700;color:#d4af37;letter-spacing:0.5px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;margin-right:6px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;" /></td></tr></table></div>
     <div class="banner">
       🏛️ INDEPENDENT BUILDING SCIENCE &amp; BUILDER WARRANTY INSPECTION
     </div>

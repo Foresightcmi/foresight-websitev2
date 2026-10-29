@@ -35,9 +35,16 @@
   * Mirrors `unsubscribed_contacts.json` bidirectionally and feeds newly harvested FMLS Under-Contract Realtors (`data/under-contract-realtors.json`) into `../email-campaign-engine/recovered_active_filers.json`.
   * Highlights the DeKalb County Low-Flow Plumbing Certificate (`Call for Quote`) as applying to **unincorporated DeKalb only** (verified per county Tax District field, never claimed mandatory by mailing city name).
 * **Daily Social Video & Editorial Carousel Sync (`../omni-video-publisher`)**:
-  * `Foresight_ChiefOfStaff_Social_Team` dispatches **Daily at `10:30 AM` ET** across IG Reels (`@fhinspectionsatl`), FB Reels, TikTok, YouTube Shorts, LinkedIn Personal + Company Page, and GBP (`Store 264545`), funneling traffic to `/quote` and `(678) 480-2110`.
+  * `Foresight_ChiefOfStaff_Social_Team` dispatches **Daily at `10:30 AM` ET** (Video Commercials) and `Foresight_Afternoon_Editorial_Carousel` dispatches **Daily at `2:30 PM` ET** (5-Slide `v3` Architectural Editorial Carousels) across IG (`@fhinspectionsatl`), FB, TikTok, YouTube Shorts, LinkedIn Personal + Company Page, and GBP (`Store 264545`), funneling traffic to `/quote` and `(678) 480-2110`.
 
 ## 5. City Page Ownership & Anti-Cannibalization
 * **`/services/buyer-inspection/{city}`** is the ONLY page targeting `"home inspection {city}"`.
 * **`/service-areas/{city}`** hubs are local guides (`{City}, GA Inspection Guide: Local Risks & Services`). Never retitle hubs to `"Home Inspection in {City}"`.
 * Every non-buyer `/services/[service]/[city]` page includes a top-30% de-cannibalization sibling link pointing to `/services/buyer-inspection/{city}`.
+
+## 6. Inviolable Tri-Logo Brand Standard (All Presentations, Carousels, Dossiers & Outbound Emails)
+* **Every single slide** of every presentation, social carousel (`slide_1.jpg`–`slide_5.jpg`), LinkedIn PDF deck (`linkedin_carousel_deck.pdf`), companion HTML field guide, and client HTML dossier (`public/dossiers/*.html`, `public/warranty-dossiers/*.html`), AND **100% of outbound emails** sent across `foresight-website`, `../email-campaign-engine`, and `../omni-video-publisher` MUST display all **three official marks**:
+  1. **Foresight Business Logo**: `https://www.fhinspectionsatl.com/images/logo_dark_mode.png` (dark headers) or `https://www.fhinspectionsatl.com/images/Logopng.png` (light headers).
+  2. **Certified Master Inspector (`CMI`) Seal**: `https://www.fhinspectionsatl.com/images/cmi_logo.png` (`CMI #MICB-1082`).
+  3. **InterNACHI Certified Professional Inspector (`CPI`) Seal**: `https://www.fhinspectionsatl.com/images/cpi_logo.png` (`InterNACHI #NACHI20061502`).
+* **Email Compatibility Rule**: Always use `.png` URLs served over first-party HTTPS (`https://www.fhinspectionsatl.com/images/*.png`) in HTML emails — never `.webp` or `.svg` (which Outlook Desktop and several webmail proxies block).

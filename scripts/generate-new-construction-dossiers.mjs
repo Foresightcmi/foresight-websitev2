@@ -358,11 +358,13 @@ function generateNewConstructionDossierHtml(lead) {
   <!-- Brand Navigation Bar -->
   <header class="brand-header">
     <div class="brand-logo-wrap">
-      <img src="https://www.fhinspectionsatl.com/images/Logopng.webp" alt="Foresight Home Inspections" class="brand-logo-img">
+      <img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" class="brand-logo-img">
       <div>
         <div class="brand-title">Foresight Home Inspections</div>
-        <div class="brand-subtitle">Certified Master Inspector® Due Diligence Advisory</div>
+        <div class="brand-subtitle">Certified Master Inspector® &bull; InterNACHI CPI® Advisory</div>
       </div>
+      <img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" style="height:48px;width:48px;object-fit:contain;margin-left:10px;">
+      <img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" style="height:48px;width:48px;object-fit:contain;margin-left:6px;">
     </div>
     <div class="header-actions">
       <a href="tel:6784802110" class="btn-small btn-outline">📞 Call CMI Direct</a>
@@ -521,7 +523,7 @@ function generateNewConstructionDossierHtml(lead) {
 
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap;">
             <strong style="color: #0F172A; font-size: 1.1rem;">Phase 2: Final Pre-Closing Inspection + Infrared Thermal Imaging</strong>
-            <span style="color: var(--color-gold); font-weight: 700;">From $345</span>
+            <span style="color: var(--color-gold); font-weight: 700;">From $400</span>
           </div>
           <p style="color: #64748B; font-size: 0.85rem; margin-bottom: 1rem;">Full system operational verification (roof, attic, crawlspace/basement, appliances, GFCI/AFCI circuits) with calibrated infrared thermal imaging and 4K drone scans to arm you for the Blue-Tape walkthrough.</p>
 
@@ -564,7 +566,7 @@ function generateNewConstructionDossierHtml(lead) {
 
   <footer class="footer">
     <p>
-      Foresight Home Inspections, LLC | 1816 South Deshon Road, Lithonia, GA 30058<br>
+      Foresight Home Inspections, LLC | Two-Inspector CMI Team<br>
       Serving Metro Atlanta &amp; 77+ Cities Across 20 Georgia Counties.<br>
       Certified Master Inspector® #MICB-1082 | InterNACHI Member #NACHI20061502<br>
       <a href="https://www.fhinspectionsatl.com">www.fhinspectionsatl.com</a> | <a href="mailto:inspect@foresightcmi.com">inspect@foresightcmi.com</a>

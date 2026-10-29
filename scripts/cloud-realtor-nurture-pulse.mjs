@@ -78,10 +78,7 @@ function buildCloudEmail(contact) {
   ].join('\n');
 
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;max-width:600px;margin:0;background-color:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;">
-  <div style="background-color:#0f172a;border-bottom:3px solid #d4af37;padding:18px 24px;">
-    <div style="font-size:17px;font-weight:700;color:#ffffff;letter-spacing:0.6px;">FORESIGHT HOME INSPECTIONS</div>
-    <div style="font-size:12px;font-weight:600;color:#d4af37;letter-spacing:0.5px;margin-top:4px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; TWO-INSPECTOR TEAM &bull; ${city.toUpperCase()}</div>
-  </div>
+  <div style="background-color:#0f172a;border-bottom:3px solid #d4af37;padding:16px 22px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/logo_dark_mode.png" alt="Foresight Home Inspections" height="44" style="display:block;height:44px;width:auto;border:0;" /><div style="font-size:11px;font-weight:700;color:#d4af37;letter-spacing:0.5px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;margin-right:6px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;" /></td></tr></table></div>
   <div style="padding:24px 24px 20px 24px;">
     <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">Hi ${firstName},</p>
     <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">${opener}</p>

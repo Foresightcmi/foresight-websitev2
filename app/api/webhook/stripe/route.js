@@ -142,11 +142,12 @@ export async function POST(req) {
           subject: `[PAID $${amountTotal}] Due Diligence Evaluation Order - ${clientName}`,
           html: `
             <div style="font-family: Arial, sans-serif; padding: 24px; border: 2px solid #10B981; border-radius: 8px; background: #ffffff; max-width: 650px;">
-              <div style="background: #10B981; color: #ffffff; padding: 12px 16px; border-radius: 6px 6px 0 0; margin: -24px -24px 20px -24px;">
+              <div style="margin: -24px -24px 0 -24px; border-radius: 6px 6px 0 0; overflow: hidden;"><div style="background-color:#0f172a;border-bottom:3px solid #d4af37;padding:16px 22px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/logo_dark_mode.png" alt="Foresight Home Inspections" height="44" style="display:block;height:44px;width:auto;border:0;" /><div style="font-size:11px;font-weight:700;color:#d4af37;letter-spacing:0.5px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;margin-right:6px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;" /></td></tr></table></div></div>
+              <div style="background: #10B981; color: #ffffff; padding: 12px 16px; margin: 0 -24px 20px -24px;">
                 <h2 style="margin: 0; font-size: 1.25rem;">Payment Confirmed • $${amountTotal}</h2>
                 <p style="margin: 4px 0 0; font-size: 0.85rem; opacity: 0.95;">Stripe Checkout Session: ${session.id}</p>
               </div>
-              <p>A new <strong>$99 Standalone Due Diligence Repair Cost Evaluation</strong> has been paid on Stripe. The 4-hour SLA delivery clock has started.</p>
+              <p>A new <strong>Standalone Due Diligence Repair Cost Evaluation</strong> has been paid on Stripe. The 4-hour SLA delivery clock has started.</p>
               <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                 <tr><td style="padding: 8px; font-weight: bold; width: 140px; border-bottom: 1px solid #eee;">Client Name:</td><td style="padding: 8px; border-bottom: 1px solid #eee;">${escapeHtml(clientName)}</td></tr>
                 <tr><td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Phone:</td><td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="tel:${clientPhone}">${clientPhone}</a></td></tr>
