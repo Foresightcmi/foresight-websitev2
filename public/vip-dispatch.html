@@ -502,7 +502,7 @@
       <div class="stats-row">
         <span class="stat-label">Due Diligence Agent Outreach:</span>
         <span class="stat-numbers">
-          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">0</span> Contacted
+          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">12</span> Contacted
         </span>
       </div>
       <div class="progress-track">
@@ -521,7 +521,7 @@
           <option value="name_asc">👤 Agent Name (A to Z)</option>
         </select>
         <select class="select-ctrl" id="citySelect" onchange="setCity(this.value)">
-          <option value="ALL">📍 All Cities (0)</option>
+          <option value="ALL">📍 All Cities (12)</option>
         </select>
       </div>
     </div>
@@ -547,7 +547,7 @@
   <div id="cardsContainer"></div>
 
   <script>
-    const underContractFilers = [];
+    const underContractFilers = [{"id":"card_9367404ecb","role":"BUYER_AGENT","name":"KAREN E FOSTER","first":"KAREN","phone":"(678) 315-3066","clean_phone":"6783153066","brokerage":"Maximum One Realty Greater ATL.","city":"Powder Springs","address":"3706 Villa Springs Circle","price":"$309,900","raw_price":309900,"date":"2026-10-28"},{"id":"card_839bf1674c","role":"BUYER_AGENT","name":"Derrick Broxton","first":"Derrick","phone":"(470) 429-0143","clean_phone":"4704290143","brokerage":"Atrium Realty, LLC","city":"Riverdale","address":"366 N Beach Court","price":"$164,900","raw_price":164900,"date":"2026-10-28"},{"id":"card_29c1aecf56","role":"BUYER_AGENT","name":"Emma Velasquez Larios","first":"Emma","phone":"(404) 484-2524","clean_phone":"4044842524","brokerage":"La Rosa Realty Georgia","city":"Loganville","address":"4905 Hudson Road","price":"$124,900","raw_price":124900,"date":"2026-10-28"},{"id":"card_58bc855c95","role":"LIST_AGENT","name":"Robbie Jackson","first":"Robbie","phone":"(404) 285-1568","clean_phone":"4042851568","brokerage":"Dorsey Alston Realtors","city":"Atlanta","address":"1696 West Wesley Road NW","price":"$2,395,000","raw_price":2395000,"date":"2026-10-28"},{"id":"card_50be405aba","role":"LIST_AGENT","name":"HEATHER SKOGLIND","first":"HEATHER","phone":"(678) 612-8310","clean_phone":"6786128310","brokerage":"HomeSmart","city":"Cumming","address":"2855 Etienne Lane","price":"$850,000","raw_price":850000,"date":"2026-10-28"},{"id":"card_9af2347d83","role":"LIST_AGENT","name":"Lombardo Home Group","first":"Lombardo","phone":"(678) 578-8998","clean_phone":"6785788998","brokerage":"Keller Williams North Atlanta","city":"Cumming","address":"5680 Cascade Trail","price":"$800,000","raw_price":800000,"date":"2026-10-28"},{"id":"card_8e64aa2450","role":"LIST_AGENT","name":"Jeff Leshin","first":"Jeff","phone":"(678) 488-0043","clean_phone":"6784880043","brokerage":"Real Broker, LLC.","city":"Waleska","address":"117 Klamath Court","price":"$695,000","raw_price":695000,"date":"2026-10-28"},{"id":"card_d15f93e16b","role":"LIST_AGENT","name":"Andrea Peeler","first":"Andrea","phone":"(770) 616-7996","clean_phone":"7706167996","brokerage":"REMAX Center","city":"Snellville","address":"4250 Horder Court","price":"$529,000","raw_price":529000,"date":"2026-10-28"},{"id":"card_c753cdb2b8","role":"LIST_AGENT","name":"Jo Ann Carpenter","first":"Jo","phone":"(678) 677-7775","clean_phone":"6786777775","brokerage":"Keller Williams Realty Atlanta Partners","city":"Lawrenceville","address":"220 Craig Drive","price":"$375,000","raw_price":375000,"date":"2026-10-28"},{"id":"card_dfe6dd7e5c","role":"LIST_AGENT","name":"JULIE FOGARD","first":"JULIE","phone":"(770) 419-1986","clean_phone":"7704191986","brokerage":"REMAX Around Atlanta","city":"Powder Springs","address":"3706 Villa Springs Circle","price":"$309,900","raw_price":309900,"date":"2026-10-28"},{"id":"card_34a470e4c7","role":"LIST_AGENT","name":"MONA CARTER","first":"MONA","phone":"(678) 630-6633","clean_phone":"6786306633","brokerage":"LoKation Real Estate, LLC","city":"Riverdale","address":"366 N Beach Court","price":"$164,900","raw_price":164900,"date":"2026-10-28"},{"id":"card_1697099e45","role":"LIST_AGENT","name":"Morgan Fulcher","first":"Morgan","phone":"(678) 446-6564","clean_phone":"6784466564","brokerage":"REMAX Center","city":"Loganville","address":"4905 Hudson Road","price":"$124,900","raw_price":124900,"date":"2026-10-28"}];
 
     // State Persistence across localStorage
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
