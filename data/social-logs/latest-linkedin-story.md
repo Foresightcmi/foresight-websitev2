@@ -1,54 +1,52 @@
-# 🚀 Foresight LinkedIn Growth Engine: Post #3
+# 🚀 Foresight LinkedIn Growth Engine: Post #4
 
-**Schedule Slot:** Wednesday - Deposit (The New Construction Shortcut Enemy) (10:00 AM Weekday Cadence)  
+**Schedule Slot:** Thursday - Deposit (The Georgia Red Clay Enemy) (10:00 AM Weekday Cadence)  
 **Strategy Type:** DEPOSIT (4:1 Value Deposit (Against The Enemy))  
-**Topic:** Atlanta Pre-Drywall Inspection: Severed Trusses in New Construction  
-**Image Asset:** `https://www.fhinspectionsatl.com/images/roof-1.webp`  
-**Generated At:** 2026-10-28T19:20:37.322Z  
+**Topic:** Atlanta Foundation & Crawlspace Inspection: Hydrostatic Red Clay Deflection  
+**Image Asset:** `https://www.fhinspectionsatl.com/images/crawlspace-inspection.webp`  
+**Generated At:** 2026-10-29T19:25:17.984Z  
 
 ---
 
 ## 📱 Mobile Above-The-Fold Preview (Before "...see more")
 ```text
-Atlanta Pre-Drywall Inspection Warning: The site superintendent told my client 'You don't need an independent inspector.'
+Atlanta Foundation & Crawlspace Inspection: Georgia red clay looks solid until it drinks 1,000 gallons of rain.
 
-'The county building inspector already signed off on the framing.'
+Then it acts like an expanding hydraulic jack against your basement walls.
 
-My c... [see more]
+Last w... [see more]
 ```
 
 ---
 
 ## ✍️ Full Post Text (Copy & Paste to LinkedIn)
 ```text
-Atlanta Pre-Drywall Inspection Warning: The site superintendent told my client 'You don't need an independent inspector.'
+Atlanta Foundation & Crawlspace Inspection: Georgia red clay looks solid until it drinks 1,000 gallons of rain.
 
-'The county building inspector already signed off on the framing.'
+Then it acts like an expanding hydraulic jack against your basement walls.
 
-My client hired us anyway for a pre-drywall framing evaluation.
+Last week in Marietta, a buyer was told 'that small hairline crack is just settling.'
 
-Within 10 minutes, we found three severed load-bearing roof trusses.
+We put laser levels and digital moisture meters on the stem wall.
 
-The HVAC contractor had cut right through them to run flex ducting.
+The foundation wall was deflecting inward by 1.75 inches.
 
-The roof was literally sagging under its own weight before the drywall was even hung.
+Hydrostatic clay pressure had sheared the mortar joints below the grade.
 
-The builder had to halt the drywall crew and bring out a structural engineer.
+Cost to install carbon fiber reinforcement straps: $16,500.
 
-County inspectors spend an average of 7 minutes on residential job sites.
+Hairline cracks are rarely 'just settling' in Atlanta's Piedmont soil.
 
-They check basic code minimums; we protect your equity.
+Always measure the deflection before your due diligence expires.
 
-Never close on new construction without an independent Certified Master Inspector.
-
-Trust, but verify.
+Building science doesn't guess.
 ```
 
 ---
 
 ## 💬 First Comment (Drop Immediately After Posting)
 ```text
-Schedule phased new construction & pre-drywall evaluations in Atlanta: https://www.fhinspectionsatl.com/services/new-construction-inspection
+Read our building science guide on Georgia clay & foundations: https://www.fhinspectionsatl.com/blog/crawlspace-moisture-silent-threat-georgia-foundations
 ```
 
 ---

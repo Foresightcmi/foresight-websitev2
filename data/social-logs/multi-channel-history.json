@@ -220,5 +220,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 9,
+    "title": "Realtor VIP Due Diligence & Repair Negotiation Leverage",
+    "publishedAt": "2026-10-29T19:25:18.387Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/realtors"
   }
 ]
