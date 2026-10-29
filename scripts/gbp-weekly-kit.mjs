@@ -26,7 +26,7 @@ const PRICE = {
   'new-construction-inspection': `from ${truth.newConstruction}`,
   'pre-drywall-inspection': `from ${truth.preDrywall}`,
   'pool-inspection': 'call for quote',
-  'commercial-property-inspection': 'quoted per property'
+  'commercial-property-inspection': 'call for quote'
 };
 // Turnaround wording must match how each service actually works.
 const REPORT = {

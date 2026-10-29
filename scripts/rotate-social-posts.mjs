@@ -27,7 +27,7 @@ That’s why Foresight Home Inspections deploys Two Certified Inspectors on Ever
 
 👥 Double the Scrutiny: One inspector thoroughly evaluates the roof, exterior grading, foundation, and crawlspace, while the second evaluates electrical panels, mechanicals, plumbing fixtures, and attic insulation simultaneously.
 ⚡ Half the On-Site Time: Comprehensive 1,600-point InterNACHI SOP evaluations completed in 1.5 to 2.5 hours—with same-day digital reporting.
-🔥 infrared thermal Infrared & 4K Aerial Drones Included FREE: Zero extra fees for the advanced diagnostic technology that protects your investment.
+🔥 Calibrated Infrared Thermal & 4K Aerial Drones Included FREE: Zero extra fees for the advanced diagnostic technology that protects your investment.
 🛡️ Up to $35,000 in Warranty Protection: Every full inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI’s $25,000 Honor Guarantee.
 
 Led by board-certified Certified Master Inspector® Christopher Boykin.
@@ -103,7 +103,7 @@ At Foresight Home Inspections, we partner with top-producing agents across Metro
 1️⃣ Objective Building Science: We clearly distinguish between true structural/safety hazards vs. routine deferred maintenance, so your clients stay calm and informed.
 2️⃣ SUPRA® eKEY Integrated: We carry active electronic lockbox access across Metro Atlanta boards—you don't have to spend your Saturday waiting around on-site.
 3️⃣ Two Inspectors = Faster Appointments: We cut on-site time from 4+ hours down to 1.5–2.5 hours, minimizing seller disruption, and deliver digital reports within 24 hours.
-4️⃣ 1-Click GAR Repair Request Builder: Easily convert report findings into official Georgia Association of REALTORS® (GAR) Form F404 amendment language in seconds.
+4️⃣ 1-Click Digital Repair Request Builder: Easily convert report findings into official Georgia Repair Amendment language in seconds.
 5️⃣ $10,000 Elite Warranty Protection Included: Zero-deductible coverage that shields both the buyer and your transaction after closing.
 
 Elevate your client experience with board-certified Certified Master Inspector® Christopher Boykin.
@@ -126,7 +126,7 @@ Because North Metro Atlanta sits directly on a subterranean granite bedrock form
 • The #1 leading cause of lung cancer among non-smokers in the United States.
 • The EPA urges continuous electronic testing for EVERY residential real estate transaction in Georgia.
 
-Foresight Home Inspections deploys calibrated continuous 48-hour electronic CRM radon monitors that capture hourly air samples, delivering an indisputable lab-grade report during your due diligence window ($250 flat rate).
+Foresight Home Inspections deploys calibrated continuous 48-hour electronic CRM radon monitors that capture hourly air samples, delivering an indisputable lab-grade report during your due diligence window (Call (678) 480-2110 for a quote).
 
 Protect your family's health and negotiate seller mitigation credits before closing.
 
@@ -179,7 +179,7 @@ Georgia building science data proves that first-year homes routinely develop:
 ⚠️ Negative exterior grading causing rainwater to pool against foundation walls
 ⚠️ Unbalanced HVAC duct dampers leaving master bedrooms overheated
 
-A Foresight 11-Month Builder Warranty Inspection (from $335) gives you an independent, Certified Master Inspector photo punch list ready to upload directly into your builder's warranty portal.
+A Foresight 11-Month Builder Warranty Inspection (from $345) gives you an independent, Certified Master Inspector photo punch list ready to upload directly into your builder's warranty portal.
 
 On average, our clients save $1,500 to $4,500 in builder-paid repairs before warranty expiration!
 
@@ -213,7 +213,7 @@ Don’t buy a home with an uninspected roof. Choose the technology and thoroughn
 👉 Get your instant price online 24/7:
 https://www.fhinspectionsatl.com/quote
 
-#DroneRoofInspection #DroneRoofInspection #AtlantaHomeInspection #RoofingInspection #CertifiedMasterInspector #ForesightHomeInspections`,
+#DroneRoofInspection #AtlantaHomeInspection #RoofingInspection #CertifiedMasterInspector #ForesightHomeInspections`,
     link: 'https://www.fhinspectionsatl.com/quote',
     imageUrl: 'https://www.fhinspectionsatl.com/images/drone-2.webp',
   }

@@ -1,4 +1,4 @@
-# GBP Weekly Kit — Week 44 (2026-10-28)
+# GBP Weekly Kit — Week 44 (2026-10-29)
 
 ## 1. Post (Google Business Profile > Add update)
 Button: **Book** → https://www.fhinspectionsatl.com/services/buyer-inspection/stone-mountain?utm_source=gbp&utm_medium=post&utm_campaign=wk44
