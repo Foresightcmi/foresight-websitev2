@@ -59,7 +59,7 @@ const dueDiligenceFaqSchema = {
       name: 'How does the two-inspector team help protect my due diligence timeline?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A solo inspector typically takes 3.5 to 5 hours on site and requires 24 to 48 hours to draft a narrative report. Foresight sends two certified inspectors who complete the comprehensive on-site diagnostic in 1.5 to 2.5 hours, allowing rapid report finalization so your agent has maximum days left to negotiate.',
+        text: 'A solo inspector typically takes 3.5 to 5 hours on site and requires 24 to 48 hours to draft a narrative report. Foresight sends two certified inspectors who complete the comprehensive on-site diagnostic through parallel two-inspector focus, allowing same-day report finalization so your agent has maximum days left to negotiate.',
       },
     },
   ],
@@ -231,7 +231,7 @@ export default function DueDiligencePage() {
                   <div>
                     <h3 style={{ fontSize: '1.15rem', fontWeight: 700, margin: '0 0 0.35rem' }}>Day 2–3: Dual-Inspector Diagnostic Evaluation</h3>
                     <p style={{ margin: 0, color: 'var(--color-gray-dark)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                      Two certified inspectors evaluate structure, electrical, HVAC, plumbing, roof, and foundation in 1.5–2.5 hours with infrared thermal and drones.
+                      Two certified inspectors evaluate structure, electrical, HVAC, plumbing, roof, and foundation with dedicated parallel coverage with infrared thermal and drones.
                     </p>
                   </div>
                 </div>

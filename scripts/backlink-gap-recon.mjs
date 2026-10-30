@@ -76,7 +76,7 @@ const BROKERAGE_TARGETS = [
     category: 'Real Estate Brokerage',
     domain: 'bhhsgeorgia.com',
     targetPage: 'Preferred Vendor Directory',
-    pitchAngle: 'Dual-inspector speed (1.5–2.5 hrs on site) with guaranteed same-day digital reports',
+    pitchAngle: 'Dual-inspector speed (2x diagnostic depth, zero solo fatigue) with guaranteed same-day digital reports',
     linkMagnet: 'https://www.fhinspectionsatl.com/due-diligence',
     realtorPortal: 'https://www.fhinspectionsatl.com/realtors',
     estimatedAuthority: 'DA 46+',

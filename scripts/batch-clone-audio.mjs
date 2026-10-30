@@ -24,7 +24,7 @@ const clips = [
   },
   {
     name: 'chris-process',
-    text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free infrared thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?"
+    text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free infrared thermal imaging to see inside walls. Because we send two certified inspectors, we finish with dedicated parallel focus and zero solo fatigue and deliver your full digital report within 24 hours. What property are you looking to have evaluated?"
   },
   {
     name: 'chris-10am',

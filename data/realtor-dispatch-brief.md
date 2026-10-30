@@ -22,7 +22,7 @@ As an active agent serving Luxury Residential & Historic Properties across Metro
 
 At Foresight Home Inspections, we operate with a strict **Two-Inspector Standard** led by **Christopher Boykin, Certified Master Inspector® (CMI)**:
 
-1. ⚡ **2x Speed On Site (1.5–2.5 hrs)**: Two certified inspectors work simultaneously, cutting client and seller wait times in half.
+1. ⚡ **2x Diagnostic Depth On Site (Zero Solo Fatigue)**: Two certified inspectors work simultaneously, keeping showing appointments smooth while doubling diagnostic focus.
 2. 🛡️ **Up to $35,000 in Protection ($0 Deductible)**: Includes our $10,000 Elite Master Inspection Warranty covering appliances, structural, HVAC, plumbing, electrical, mold, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee.
 3. 🧮 **Free Interactive Realtor Tools**:
    - **GAR Form F404 Repair Addendum Builder**: Draft custom repair amendments directly from inspection findings in under 3 minutes (https://www.fhinspectionsatl.com/realtors).
@@ -63,7 +63,7 @@ As an active agent serving Tech-Driven Buyers & Fast Due Diligence across Metro 
 
 At Foresight Home Inspections, we operate with a strict **Two-Inspector Standard** led by **Christopher Boykin, Certified Master Inspector® (CMI)**:
 
-1. ⚡ **2x Speed On Site (1.5–2.5 hrs)**: Two certified inspectors work simultaneously, cutting client and seller wait times in half.
+1. ⚡ **2x Diagnostic Depth On Site (Zero Solo Fatigue)**: Two certified inspectors work simultaneously, keeping showing appointments smooth while doubling diagnostic focus.
 2. 🛡️ **Up to $35,000 in Protection ($0 Deductible)**: Includes our $10,000 Elite Master Inspection Warranty covering appliances, structural, HVAC, plumbing, electrical, mold, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee.
 3. 🧮 **Free Interactive Realtor Tools**:
    - **GAR Form F404 Repair Addendum Builder**: Draft custom repair amendments directly from inspection findings in under 3 minutes (https://www.fhinspectionsatl.com/realtors).
@@ -104,7 +104,7 @@ As an active agent serving First-Time Buyers & Move-Up Sellers across Metro Atla
 
 At Foresight Home Inspections, we operate with a strict **Two-Inspector Standard** led by **Christopher Boykin, Certified Master Inspector® (CMI)**:
 
-1. ⚡ **2x Speed On Site (1.5–2.5 hrs)**: Two certified inspectors work simultaneously, cutting client and seller wait times in half.
+1. ⚡ **2x Diagnostic Depth On Site (Zero Solo Fatigue)**: Two certified inspectors work simultaneously, keeping showing appointments smooth while doubling diagnostic focus.
 2. 🛡️ **Up to $35,000 in Protection ($0 Deductible)**: Includes our $10,000 Elite Master Inspection Warranty covering appliances, structural, HVAC, plumbing, electrical, mold, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee.
 3. 🧮 **Free Interactive Realtor Tools**:
    - **GAR Form F404 Repair Addendum Builder**: Draft custom repair amendments directly from inspection findings in under 3 minutes (https://www.fhinspectionsatl.com/realtors).
@@ -145,7 +145,7 @@ As an active agent serving Ultra-Luxury Estates & Historic Properties across Met
 
 At Foresight Home Inspections, we operate with a strict **Two-Inspector Standard** led by **Christopher Boykin, Certified Master Inspector® (CMI)**:
 
-1. ⚡ **2x Speed On Site (1.5–2.5 hrs)**: Two certified inspectors work simultaneously, cutting client and seller wait times in half.
+1. ⚡ **2x Diagnostic Depth On Site (Zero Solo Fatigue)**: Two certified inspectors work simultaneously, keeping showing appointments smooth while doubling diagnostic focus.
 2. 🛡️ **Up to $35,000 in Protection ($0 Deductible)**: Includes our $10,000 Elite Master Inspection Warranty covering appliances, structural, HVAC, plumbing, electrical, mold, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee.
 3. 🧮 **Free Interactive Realtor Tools**:
    - **GAR Form F404 Repair Addendum Builder**: Draft custom repair amendments directly from inspection findings in under 3 minutes (https://www.fhinspectionsatl.com/realtors).
@@ -186,7 +186,7 @@ As an active agent serving Suburban Family Homes & New Construction across Metro
 
 At Foresight Home Inspections, we operate with a strict **Two-Inspector Standard** led by **Christopher Boykin, Certified Master Inspector® (CMI)**:
 
-1. ⚡ **2x Speed On Site (1.5–2.5 hrs)**: Two certified inspectors work simultaneously, cutting client and seller wait times in half.
+1. ⚡ **2x Diagnostic Depth On Site (Zero Solo Fatigue)**: Two certified inspectors work simultaneously, keeping showing appointments smooth while doubling diagnostic focus.
 2. 🛡️ **Up to $35,000 in Protection ($0 Deductible)**: Includes our $10,000 Elite Master Inspection Warranty covering appliances, structural, HVAC, plumbing, electrical, mold, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee.
 3. 🧮 **Free Interactive Realtor Tools**:
    - **GAR Form F404 Repair Addendum Builder**: Draft custom repair amendments directly from inspection findings in under 3 minutes (https://www.fhinspectionsatl.com/realtors).
@@ -227,7 +227,7 @@ As an active agent serving Executive Homes & Golf Communities across Metro Atlan
 
 At Foresight Home Inspections, we operate with a strict **Two-Inspector Standard** led by **Christopher Boykin, Certified Master Inspector® (CMI)**:
 
-1. ⚡ **2x Speed On Site (1.5–2.5 hrs)**: Two certified inspectors work simultaneously, cutting client and seller wait times in half.
+1. ⚡ **2x Diagnostic Depth On Site (Zero Solo Fatigue)**: Two certified inspectors work simultaneously, keeping showing appointments smooth while doubling diagnostic focus.
 2. 🛡️ **Up to $35,000 in Protection ($0 Deductible)**: Includes our $10,000 Elite Master Inspection Warranty covering appliances, structural, HVAC, plumbing, electrical, mold, and roof leaks, plus InterNACHI's $25,000 Honor Guarantee.
 3. 🧮 **Free Interactive Realtor Tools**:
    - **GAR Form F404 Repair Addendum Builder**: Draft custom repair amendments directly from inspection findings in under 3 minutes (https://www.fhinspectionsatl.com/realtors).

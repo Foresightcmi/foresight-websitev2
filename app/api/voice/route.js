@@ -326,7 +326,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // 2. Comprehensive Home Evaluation Process (Top-to-Bottom InterNACHI SOP)
   if (matchesAny(['process', 'evaluate', 'evaluation', 'how do you inspect', 'how you inspect', 'what do you inspect', 'what is inspected', 'what do you check', 'sop', 'standard', 'steps', 'procedure', 'how does it work'])) {
     return {
-      text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free infrared thermal imaging to see inside walls. Because we send two certified inspectors, we finish in half the time and deliver your full digital report within 24 hours. What property are you looking to have evaluated?",
+      text: "We perform an exhaustive top-to-bottom evaluation following InterNACHI standards. We inspect the roof with 4K aerial drones, check attics, test electrical panels for fire hazards, evaluate plumbing for polybutylene, test HVAC temperature splits, and inspect foundations for red clay pressure. Plus, we include free infrared thermal imaging to see inside walls. Because we send two certified inspectors, we finish with dedicated parallel focus and zero solo fatigue and deliver your full digital report within 24 hours. What property are you looking to have evaluated?",
       preAudio: '/audio/receptionist-process.mp3'
     };
   }
@@ -506,7 +506,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // 8. Signature Value Questions
   if (matchesAny(['two', 'team', 'dual', 'inspectors', 'pair', 'solo', 'why two'])) {
     return {
-      text: "Most discount companies send one inspector who gets exhausted after four hours and can easily miss hidden defects. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the scrutiny in half the time, plus up to 35,000 dollars in warranty and guarantee protection. Would you like to check our availability for your inspection?",
+      text: "Most discount companies send one inspector who gets exhausted after four hours and can easily miss hidden defects. We send two certified inspectors on every single job, led by Certified Master Inspector Christopher Boykin! You get double the diagnostic scrutiny with zero solo-inspector fatigue, plus up to 35,000 dollars in warranty and guarantee protection. Would you like to check our availability for your inspection?",
       preAudio: '/audio/receptionist-why-two.mp3'
     };
   }
@@ -584,7 +584,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
 
   if (matchesAny(['how long', 'duration', 'time take', 'hours'])) {
     return {
-      text: "Because we send two certified inspectors on every single job instead of just one, we finish a complete, highly thorough inspection in just 1.5 to 2.5 hours, saving you half the time of exhausted solo inspectors! Would a morning or afternoon time work best for you?",
+      text: "Because we send two certified inspectors on every single job instead of just one, we finish a complete, highly thorough inspection with dedicated structural and mechanical focus and zero solo-inspector fatigue! Would a morning or afternoon time work best for you?",
       preAudio: '/audio/receptionist-why-two.mp3'
     };
   }

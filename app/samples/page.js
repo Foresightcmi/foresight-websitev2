@@ -177,7 +177,7 @@ export default function SampleReports() {
                 <h3 style={{ margin: 0 }}>Two Inspectors on Site</h3>
               </div>
               <p style={{ color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
-                Our dual-inspector model provides double the technical oversight while completing physical evaluations in 1.5 to 2.5 hours. Fast delivery ensures you meet tight option period deadlines.
+                Our dual-inspector model provides double the technical oversight while completing physical evaluations with dedicated two-inspector parallel focus. Fast delivery ensures you meet tight option period deadlines.
               </p>
             </div>
           </div>

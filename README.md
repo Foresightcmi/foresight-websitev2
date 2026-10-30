@@ -13,7 +13,7 @@
 ## ⚡ Executive Summary & Value Proposition
 
 Foresight Home Inspections, LLC is Georgia's premier Certified Master Inspector-led home inspection company operating on a strict **Two-Inspector Standard**:
-* **Two Certified Inspectors on Every Job:** Cuts on-site inspection time by 50% (1.5–2.5 hours vs. 4+ hours for solo operators) while providing double the verification on roofs, crawlspaces, electrical panels, and HVAC systems.
+* **Two Certified Inspectors on Every Job:** Eliminates solo-inspector fatigue through dedicated parallel structural and mechanical coverage while providing double the verification on roofs, crawlspaces, electrical panels, and HVAC systems.
 * **$10,000 Elite Master Inspection Warranty ($0 Deductible):** Included free on every standard inspection, covering appliances, mechanicals, structure, mold remediation ($2,250), and roof leaks ($1,000).
 * **Advanced Diagnostics Included Free:** High-resolution infrared thermal imaging, aerial camera roof drones, and electronic moisture scanners.
 * **Under 24-Hour Digital Report Delivery:** Comprehensive HTML/PDF reports with embedded high-definition photos, video clips, and prioritized repair action items.

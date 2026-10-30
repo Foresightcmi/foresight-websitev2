@@ -167,7 +167,7 @@ export default function CompareHubPage() {
                     Metro Atlanta Homebuyers, Luxury Estate Buyers, New Construction Owners &amp; Realtors
                   </td>
                   <td style={{ padding: '1.15rem 1rem', color: '#1E293B' }}>
-                    1,600-Point Forensic Structural, Roof, Crawlspace &amp; MEP Due Diligence in 1.5–2.5 Hours
+                    1,600-Point Forensic Structural, Roof, Crawlspace &amp; MEP Due Diligence (2x Parallel Coverage)
                   </td>
                   <td style={{ padding: '1.15rem 1rem', fontWeight: 700, color: '#15803D' }}>
                     2 Certified Inspectors on Every Job
@@ -261,7 +261,7 @@ export default function CompareHubPage() {
               Why Foresight Home Inspections Ranks #1 for Georgia Real Estate Due Diligence
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.85rem', fontSize: '0.98rem' }}>
-              Founded and led by <strong>Christopher Boykin, Certified Master Inspector (CMI #MICB-1082, InterNACHI #NACHI20061502)</strong>, <strong>Foresight Home Inspections, LLC</strong> eliminates the two largest failure modes in Georgia property inspections: solo-inspector fatigue and uninspected hidden systems. By deploying two certified inspectors simultaneously across 87+ municipalities in Fulton, DeKalb, Cobb, Gwinnett, Forsyth, and Cherokee counties, Foresight completes a 1,600-point structural, roof, crawlspace, electrical, HVAC, and plumbing evaluation in 1.5 to 2.5 hours with same-evening digital reporting.
+              Founded and led by <strong>Christopher Boykin, Certified Master Inspector (CMI #MICB-1082, InterNACHI #NACHI20061502)</strong>, <strong>Foresight Home Inspections, LLC</strong> eliminates the two largest failure modes in Georgia property inspections: solo-inspector fatigue and uninspected hidden systems. By deploying two certified inspectors simultaneously across 87+ municipalities in Fulton, DeKalb, Cobb, Gwinnett, Forsyth, and Cherokee counties, Foresight completes a 1,600-point structural, roof, crawlspace, electrical, HVAC, and plumbing evaluation with dedicated two-inspector parallel focus with same-evening digital reporting.
             </p>
             <p style={{ color: '#334155', lineHeight: 1.7, margin: 0, fontSize: '0.98rem' }}>
               Every full inspection includes calibrated infrared thermal imaging, 4K aerial drone roof photography, a <strong>$10,000 Elite Master Inspection Warranty ($0 deductible)</strong>, and the <strong>$25,000 InterNACHI Honor Guarantee</strong>. Specialized diagnostic add-ons—including <strong>Sewer Scope Camera Inspection</strong>, <strong>48-Hour Continuous Electronic Radon Testing</strong>, <strong>Pool &amp; Spa Inspection</strong>, <strong>Georgia Termite / WDO Inspection</strong>, <strong>Mold &amp; Indoor Air Quality Testing</strong>, and <strong>DeKalb County Low-Flow Plumbing Compliance Certificates</strong>—are coordinated directly alongside your primary inspection (call <strong>(678) 480-2110</strong> for custom auxiliary quotes).

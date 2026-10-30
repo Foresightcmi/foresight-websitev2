@@ -16,7 +16,7 @@ Atlanta Realtors: How does your inspection partner protect your buyers and stren
 
 Foresight Home Inspections delivers the technical documentation you need to protect your client's earnest money and negotiate significant repair credits:
 
-• Two Certified Inspectors on every job: Half the on-site time (1.5-2.5 hrs), reducing scheduling stress for listing agents and buyers.
+• Two Certified Inspectors on every job: Dedicated structural + mechanical coverage, eliminating solo fatigue and scheduling stress for listing agents and buyers.
 • Crystal-Clear Digital Reports: Delivered the same evening with high-res photos, thermal imaging overlays, and categorized severity ratings.
 • Clear Defect Documentation: Defect descriptions written with precise, professional building code clarity ready to copy directly into the Amendment to Address Defects.
 • Up to $35,000 in warranty protection backing your clients.
@@ -42,7 +42,7 @@ When your buyers have 5 to 7 days on their due diligence clock, you can't afford
 
 Foresight Home Inspections is engineered to be your strongest negotiation partner:
 
-👥 Two Certified Inspectors On-Site: Thorough 1,600-point inspection completed in just 1.5 to 2.5 hours.
+👥 Two Certified Inspectors On-Site: Thorough 1,600-point inspection completed with dedicated two-inspector parallel coverage.
 📱 Same-Day Narrative Digital Reports: Delivered the evening of inspection with interactive photo/video evidence and clear defect classifications.
 ⚖️ Organized for Fast Repair Requests: Professional descriptions that make drafting your Amendment to Address Defects fast and airtight.
 🛡️ $35,000 Warranty Backing: Complete peace of mind protecting your clients long after closing.
@@ -67,7 +67,7 @@ Atlanta Realtor Due Diligence Inspection Partner: The due diligence window is th
 When buyers uncover major structural or mechanical defects during Georgia's 5 to 7 day due diligence window, the clarity and photographic proof of the inspection report determine how effectively a realtor can negotiate seller-paid repairs or closing credits.
 
 Why Metro Atlanta's top-producing realtors partner with Foresight Home Inspections:
-• Two-Inspector Protocol: 1.5 to 2.5 hour on-site duration minimizes inconvenience to sellers while maximizing evaluation thoroughness.
+• Two-Inspector Protocol: Parallel two-inspector coverage keeps showing appointments smooth for sellers while maximizing diagnostic thoroughness.
 • Same-Evening Digital Reports: Clear 3-Step Diagnostic summaries with interactive one-click repair request builders.
 • Real Client Protection: Up to $35,000 in combined warranty and guarantee backing ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).
 • Active Electronic SUPRA eKEY Access: We open and secure listings independently.

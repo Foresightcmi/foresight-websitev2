@@ -1339,7 +1339,7 @@ export default function DashboardClient({
                       </div>
                       <ul style={{ color: '#cbd5e1', fontSize: '0.85rem', margin: 0, paddingLeft: '1.2rem', lineHeight: 1.6 }}>
                         <li>Two Certified Inspectors on Every Job</li>
-                        <li>1.5–2.5 Hour On-Site Evaluation (Same-Day Digital Reports)</li>
+                        <li>Two-Inspector Parallel Evaluation (Same-Day Digital Reports)</li>
                         <li>Infrared Thermal Imaging Thermal &amp; 4K Aerial Drones Included Standard</li>
                         <li>Up to $35,000 in Combined Warranty Protection</li>
                       </ul>
@@ -1436,7 +1436,7 @@ export default function DashboardClient({
                     <div style={{ background: '#0f172a', padding: '1rem', borderRadius: 'var(--radius-md)', border: '1px solid #22c55e' }}>
                       <span style={{ color: '#4ade80', fontWeight: 700, fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>✓ FORESIGHT STANDARD</span>
                       <ul style={{ color: '#cbd5e1', fontSize: '0.75rem', margin: 0, paddingLeft: '1rem', lineHeight: 1.5 }}>
-                        <li>1.5–2.5 hours parallel evaluation</li>
+                        <li>Two-inspector parallel evaluation (zero solo fatigue)</li>
                         <li>4K aerial drone roof scan</li>
                         <li>calibrated infrared thermal included</li>
                         <li>Same-day digital report</li>

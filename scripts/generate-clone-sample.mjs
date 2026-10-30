@@ -11,7 +11,7 @@ async function testClone() {
   const refAudioBlob = new Blob([refAudioBuffer], { type: 'audio/wav' });
 
   const refText = 'Hello. This is a sample of my voice for cloning in Home Inspection AI Studio.';
-  const genText = 'Welcome to Foresight Home Inspections! I am Chris Boykin, your Certified Master Inspector. We send two certified inspectors on every single job, giving you double the scrutiny in half the time.';
+  const genText = 'Welcome to Foresight Home Inspections! I am Chris Boykin, your Certified Master Inspector. We send two certified inspectors on every single job, giving you double the diagnostic scrutiny with zero solo-inspector fatigue.';
 
   console.log('Sending voice cloning request to F5-TTS...');
   const result = await client.predict('/predict', {

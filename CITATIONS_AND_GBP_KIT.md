@@ -85,7 +85,7 @@ Use these customized email templates to build high-value partnerships with local
 > My name is Christopher Boykin, and I am the founder of **Foresight Home Inspections, LLC**. I’m a Certified Master Inspector® (CMI)—the highest professional credential in our industry. 
 > 
 > We do things differently to support top-performing agents like you:
-> 1. **Two Certified Inspectors on Every Job:** We send a dual-inspector team to check twice as much in half the time. It is unmatched thoroughness that clients love.
+> 1. **Two Certified Inspectors on Every Job:** We send a dual-inspector team to check twice the systems in parallel with zero solo fatigue. It is unmatched thoroughness that clients love.
 > 2. **Included $10,000 Protection Warranty:** Every inspection automatically includes a $10,000 Master Warranty (covering appliances, structure, HVAC, roof, and mold remediation) with a $0 deductible at no extra cost. This gives your clients absolute peace of mind during closing.
 > 3. **Next-Day Digital Reports:** Detailed, clear, modern digital reports delivered within 24 hours.
 > 

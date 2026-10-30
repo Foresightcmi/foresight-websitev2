@@ -101,7 +101,7 @@ export default function TrueValueComparison() {
                     <span style={{ color: '#EF4444', marginRight: '0.4rem', fontWeight: 800 }}>✗</span> 1 Inspector Alone <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>(3.5–5 hrs on-site, human fatigue on 400+ points)</span>
                   </td>
                   <td style={{ padding: '1.15rem 1.5rem', background: 'rgba(212, 175, 55, 0.06)', fontWeight: 700, color: '#FFFFFF' }}>
-                    <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> 2 Certified Inspectors <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>(Double coverage, cross-checked in 1.5–2.5 hrs)</span>
+                    <span style={{ color: 'var(--color-gold)', marginRight: '0.4rem' }}>✓</span> 2 Certified Inspectors <span style={{ fontSize: '0.85rem', color: 'var(--color-gold)' }}>(Double coverage, dedicated structural + mechanical focus)</span>
                   </td>
                 </tr>
 

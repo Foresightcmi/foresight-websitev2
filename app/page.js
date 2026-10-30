@@ -80,7 +80,7 @@ export default function Home() {
             "name": "Why do you send two home inspectors to a property?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our Two-Inspector Standard ensures maximum accuracy and efficiency. By putting two sets of expert eyes on your home, we catch defects solo inspectors miss, while reducing the on-site inspection time from 4+ hours down to roughly 1.5 to 2.5 hours."
+              "text": "Our Two-Inspector Standard ensures maximum accuracy and efficiency. By putting two sets of expert eyes on your home, we catch defects solo inspectors miss, while eliminating solo-inspector fatigue while keeping showing appointments smooth and thorough."
             }
           },
           {
@@ -120,7 +120,7 @@ export default function Home() {
             "name": "What is the difference between a standard solo inspection and Foresight's Dual-Team CMI Protocol?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This cuts on-site disruption to 1.5–2.5 hours, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with interactive repair request lists, and includes up to $35,000 in combined warranty and guarantee protection."
+              "text": "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This eliminates solo-inspector fatigue with property-scaled thoroughness, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with interactive repair request lists, and includes up to $35,000 in combined warranty and guarantee protection."
             }
           },
           {
@@ -324,8 +324,8 @@ export default function Home() {
               <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Deployed on 100% of Jobs</div>
             </div>
             <div style={{ padding: '0.5rem' }}>
-              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#34D399' }}>1.5–2.5 Hrs</div>
-              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>50% Faster Than Solo Inspections</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#34D399' }}>2x Depth</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Zero Solo-Inspector Fatigue</div>
             </div>
             <div style={{ padding: '0.5rem' }}>
               <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#FDE047' }}>&lt;24 Hours</div>
@@ -375,7 +375,7 @@ export default function Home() {
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
                     <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
-                    <div><strong>Two Certified Inspectors:</strong> Lead CMI® on site with senior inspector for double coverage in half the time.</div>
+                    <div><strong>Two Certified Inspectors:</strong> Lead CMI® on site with senior inspector for dedicated structural + mechanical coverage and zero solo fatigue.</div>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
                     <span style={{ color: 'var(--color-gold)', fontSize: '1.1rem' }}>✓</span>
@@ -983,7 +983,7 @@ export default function Home() {
               },
               {
                 q: "What is the difference between a standard solo inspection and Foresight's Dual-Team CMI Protocol?",
-                a: "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This cuts on-site disruption to 1.5–2.5 hours, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with 1-click GAR repair lists, and includes up to $35,000 in combined warranty and guarantee protection."
+                a: "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This eliminates solo-inspector fatigue with property-scaled thoroughness, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with 1-click GAR repair lists, and includes up to $35,000 in combined warranty and guarantee protection."
               },
               {
                 q: "What is covered under Foresight's up to $35,000 in warranties and guarantees?",

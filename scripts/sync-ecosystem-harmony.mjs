@@ -111,7 +111,7 @@ export function auditAndSyncEcosystemHarmony() {
       const isCommercial = sp.targetPage.includes('commercial-property-inspection');
       const turnaroundBullet = isCommercial
         ? '• Comprehensive ASTM E2018 digital report delivered in 24 to 48 hours.'
-        : '• Same-day digital report delivered after a 1.5 to 2.5 hour on-site evaluation.';
+        : '• Same-day digital report delivered after our thorough two-inspector on-site evaluation.';
       const postPayload = {
         title: sp.title,
         topic: sp.topic,

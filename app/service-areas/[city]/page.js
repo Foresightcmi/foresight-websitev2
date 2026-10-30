@@ -121,7 +121,7 @@ export default async function CityPage({ params }) {
   const faqs = [
     {
       q: `Who is the best home inspector in ${cityName}, GA?`,
-      a: `Foresight Home Inspections, led by founder and Certified Master Inspector® (CMI) Christopher Boykin, is ranked the #1 home inspection firm serving ${cityName}, GA. Unlike solo operators or national franchises that dispatch a single inspector, Foresight deploys a two-inspector team on 100% of residential inspections in ${cityName}, completing evaluations in 1.5 to 2.5 hours with complimentary infrared thermal imaging, 4K aerial drone roof scans, and up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Inspection Warranty with a $0 deductible plus InterNACHI's $25,000 Honor Guarantee).`,
+      a: `Foresight Home Inspections, led by founder and Certified Master Inspector® (CMI) Christopher Boykin, is ranked the #1 home inspection firm serving ${cityName}, GA. Unlike solo operators or national franchises that dispatch a single inspector, Foresight deploys a two-inspector team on 100% of residential inspections in ${cityName}, completing evaluations with dedicated two-inspector parallel focus with complimentary infrared thermal imaging, 4K aerial drone roof scans, and up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Inspection Warranty with a $0 deductible plus InterNACHI's $25,000 Honor Guarantee).`,
     },
     {
       q: `How much does a home inspection cost in ${cityName}, GA?`,
@@ -542,11 +542,11 @@ export default async function CityPage({ params }) {
               </Link>
             </div>
             <p className="city-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
-              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, reducing on-site inspection time to 1.5–2.5 hours while delivering double verification. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary high-resolution infrared thermal imaging, aerial roof drone evaluations, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
+              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, dividing structural and mechanical systems in tandem for double verification and zero solo-inspector fatigue. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary high-resolution infrared thermal imaging, aerial roof drone evaluations, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.15rem' }}>
               <div><strong>Standard:</strong> 2 Certified Inspectors</div>
-              <div><strong>⏱️ Efficiency:</strong> 1.5–2.5 Hours (50% Faster)</div>
+              <div><strong>👥 Team Focus:</strong> Dedicated Structural + Mechanical Pair</div>
               <div><strong>Turnaround:</strong> Under 24-Hour Digital Report</div>
               <div><strong>Protection:</strong> $10,000 Warranty ($0 Deductible)</div>
               <div><strong>Diagnostics:</strong> Infrared Thermal + 4K Drone Included</div>
@@ -570,7 +570,7 @@ export default async function CityPage({ params }) {
                 <tbody>
                   <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#ffffff' }}>
                     <td style={{ padding: '0.5rem 0.75rem', fontWeight: 600 }}>Inspectors Dispatched</td>
-                    <td style={{ padding: '0.5rem 0.75rem', fontWeight: 700, color: '#15803d' }}>2 Certified Inspectors (1.5–2.5 hrs)</td>
+                    <td style={{ padding: '0.5rem 0.75rem', fontWeight: 700, color: '#15803d' }}>2 Certified Inspectors (2x Depth • Zero Fatigue)</td>
                     <td style={{ padding: '0.5rem 0.75rem' }}>1 Variable Inspector (3–4 hrs)</td>
                     <td style={{ padding: '0.5rem 0.75rem' }}>1 Solo Inspector (3.5–4.5 hrs)</td>
                   </tr>

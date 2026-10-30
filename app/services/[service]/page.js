@@ -21,7 +21,7 @@ const SERVICE_MAP = {
     metaDescription: '4.8★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
     description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
-      'Two certified inspectors on site for 2x thoroughness in half the time',
+      'Two certified inspectors on site for 2x diagnostic thoroughness with zero solo-inspector fatigue',
       'Infrared thermal imaging and moisture meter diagnostics included free',
       'Aerial camera drone roof scanning for high or steep roofs',
       'Up to $35,000 in combined warranty protection ($10,000 Elite Warranty + $25,000 InterNACHI Honor Guarantee, $0 deductible)',
@@ -37,7 +37,7 @@ const SERVICE_MAP = {
     metaDescription: '4.8★ Buyer home inspection in Atlanta, GA from $345 ($295 condos). 2 certified inspectors led by a CMI, free thermal, 4K drones & $35,000 warranty!',
     description: 'Every Foresight full home inspection includes two certified inspectors on site led by Christopher Boykin, Certified Master Inspector® (CMI). We evaluate the entire structural, mechanical, electrical, plumbing, roof, and attic systems, delivering comprehensive reports within 24 hours backed by up to $35,000 in combined warranty protection.',
     included: [
-      'Two certified inspectors on site for 2x thoroughness in half the time',
+      'Two certified inspectors on site for 2x diagnostic thoroughness with zero solo-inspector fatigue',
       'Infrared thermal imaging and moisture meter diagnostics included free',
       'Aerial camera drone roof scanning for high or steep roofs',
       'Up to $35,000 in combined warranty protection ($10,000 Elite Warranty + $25,000 InterNACHI Honor Guarantee, $0 deductible)',
@@ -327,7 +327,7 @@ export default async function ServiceHubPage({ params }) {
   const defaultFaqs = [
     {
       q: `Why does Foresight dispatch two certified inspectors for ${serviceData.name}?`,
-      a: `Our signature Two-Inspector Protocol pairs Lead Certified Master Inspector® Christopher Boykin with a senior inspector, completing thorough structural, mechanical, and diagnostic checks in 1.5 to 2.5 hours rather than 4+ hours solo, eliminating fatigue and delivering double verification.`
+      a: `Our signature Two-Inspector Protocol pairs Lead Certified Master Inspector® Christopher Boykin with a senior inspector, completing thorough structural, mechanical, and diagnostic checks with dedicated two-inspector parallel coverage rather than an exhausted solo walkthrough, eliminating fatigue and delivering double verification.`
     },
     {
       q: `How fast do I receive the ${serviceData.name} report?`,
@@ -535,12 +535,12 @@ export default async function ServiceHubPage({ params }) {
               </span>
             </div>
             <p style={{ fontSize: '0.975rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
-              <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties ({serviceData.price === 'Call for Quote' ? <>call <strong>(678) 480-2110</strong> for quote</> : <>starting at <strong>{serviceData.price.replace(/^From\s+/i, '')}</strong></>}). Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, cutting on-site disruption to 1.5–2.5 hours while delivering double verification. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
+              <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties ({serviceData.price === 'Call for Quote' ? <>call <strong>(678) 480-2110</strong> for quote</> : <>starting at <strong>{serviceData.price.replace(/^From\s+/i, '')}</strong></>}). Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, dividing structural and mechanical systems in parallel for double verification and zero solo-inspector fatigue. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #F1F5F9', fontSize: '0.85rem', color: '#475569' }}>
               <div><strong>Lead Credential:</strong> Certified Master Inspector® (CMI)</div>
               <div><strong>Deployment:</strong> 2 Certified Inspectors (100% of jobs)</div>
-              <div><strong>⏱️ Duration:</strong> 1.5–2.5 Hours (50% faster than solo)</div>
+              <div><strong>👥 Coverage:</strong> Dedicated Structural + Mechanical Pair</div>
               <div><strong>Turnaround:</strong> Under 24 Hours (Same-Day Evening Avg.)</div>
               <div><strong>⭐ Rating:</strong> 4.8/5.0 (53+ Verified 5-Star Reviews)</div>
               <div><strong>Protection:</strong> $35,000 Warranty / Guarantee ($0 Deductible)</div>

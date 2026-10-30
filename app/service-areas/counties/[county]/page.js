@@ -113,7 +113,7 @@ export default async function CountyPage({ params }) {
     },
     {
       q: `Why does Foresight send two certified inspectors on every ${county.name} inspection?`,
-      a: `Our strict two-inspector model cuts on-site inspection time in half (1.5 to 2.5 hours vs. 4 hours for solo inspectors) while delivering double the thoroughness. One inspector focuses on the exterior, roof, and foundation while the other evaluates the interior, electrical panels, plumbing, and HVAC systems.`
+      a: `Our strict two-inspector model eliminates solo-inspector fatigue by dividing the property in parallel while delivering double the thoroughness. One inspector focuses on the exterior, roof, and foundation while the other evaluates the interior, electrical panels, plumbing, and HVAC systems.`
     }
   ];
 
@@ -421,7 +421,7 @@ export default async function CountyPage({ params }) {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)' }}>
               <div><strong>Team:</strong> 2 Certified Inspectors</div>
-              <div><strong>⏱️ Duration:</strong> 1.5–2.5 Hours</div>
+              <div><strong>👥 Coverage:</strong> 2x Depth (Zero Solo Fatigue)</div>
               <div><strong>Report:</strong> Under 24 Hours</div>
               <div><strong>Warranty:</strong> $10,000 ($0 Deductible)</div>
             </div>
@@ -521,7 +521,7 @@ export default async function CountyPage({ params }) {
               The Foresight Dual-Inspector Standard in {county.name}
             </h2>
             <p style={{ color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.7, textAlign: 'center', maxWidth: '750px', margin: '0 auto 1.5rem' }}>
-              Unlike ordinary single-inspector companies in {county.name} that take 3.5 to 5 hours on site, Foresight sends <strong>two certified inspectors</strong> on every residential property. Led by Certified Master Inspector Christopher Boykin, you get double the thoroughness in half the time.
+              Unlike ordinary single-inspector companies in {county.name} that take 3.5 to 5 hours on site, Foresight sends <strong>two certified inspectors</strong> on every residential property. Led by Certified Master Inspector Christopher Boykin, you get double the thoroughness with zero solo-inspector fatigue.
             </p>
             <div style={{
               background: 'rgba(255,255,255,0.06)',

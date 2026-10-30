@@ -96,7 +96,7 @@ export default function TwoPossibilities() {
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: '#22C55E', fontWeight: 800, fontSize: '1.1rem', lineHeight: 1 }}>✓</span>
                   <div>
-                    <strong style={{ color: '#FFFFFF' }}>Two Certified Inspectors on Every Job:</strong> Dual-coverage splits the property simultaneously (interior vs. exterior), reducing on-site disruption to 1.5–2.5 hours with twice the eyes and zero fatigue.
+                    <strong style={{ color: '#FFFFFF' }}>Two Certified Inspectors on Every Job:</strong> Dual-coverage splits the property simultaneously (interior vs. exterior), delivering dedicated attention to every system with twice the eyes, zero fatigue, and showing-friendly efficiency.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

@@ -254,9 +254,9 @@ export default function About() {
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
               <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'monospace', color: 'var(--color-gold)', marginBottom: '1rem' }}>02</div>
-              <h3 style={{ marginBottom: '1rem' }}>Half the Time</h3>
+              <h3 style={{ marginBottom: '1rem' }}>Zero Solo-Inspector Fatigue</h3>
               <p style={{ color: 'var(--color-gray-dark)' }}>
-                Our two-inspector model cuts total inspection time in half &mdash; typically under 2.5 hours &mdash; without ever sacrificing thoroughness. You and your realtor get time back in your day.
+                Because two certified inspectors divide structural and mechanical systems in parallel, every component receives unhurried, dedicated focus scaled to your home&rsquo;s size &mdash; keeping showing schedules smooth without rushing.
               </p>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>

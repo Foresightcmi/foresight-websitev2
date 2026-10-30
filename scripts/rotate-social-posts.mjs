@@ -26,7 +26,7 @@ In real estate, your due diligence window is strictly ticking, and your time is 
 That’s why Foresight Home Inspections deploys Two Certified Inspectors on Every Single Job:
 
 👥 Double the Scrutiny: One inspector thoroughly evaluates the roof, exterior grading, foundation, and crawlspace, while the second evaluates electrical panels, mechanicals, plumbing fixtures, and attic insulation simultaneously.
-⚡ Half the On-Site Time: Comprehensive 1,600-point InterNACHI SOP evaluations completed in 1.5 to 2.5 hours—with same-day digital reporting.
+⚡ Zero Solo-Inspector Fatigue: Comprehensive 1,600-point InterNACHI SOP evaluations performed by two certified inspectors in parallel—with same-day digital reporting.
 🔥 Calibrated Infrared Thermal & 4K Aerial Drones Included FREE: Zero extra fees for the advanced diagnostic technology that protects your investment.
 🛡️ Up to $35,000 in Warranty Protection: Every full inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible) plus InterNACHI’s $25,000 Honor Guarantee.
 
@@ -102,7 +102,7 @@ At Foresight Home Inspections, we partner with top-producing agents across Metro
 
 1️⃣ Objective Building Science: We clearly distinguish between true structural/safety hazards vs. routine deferred maintenance, so your clients stay calm and informed.
 2️⃣ SUPRA® eKEY Integrated: We carry active electronic lockbox access across Metro Atlanta boards—you don't have to spend your Saturday waiting around on-site.
-3️⃣ Two Inspectors = Faster Appointments: We cut on-site time from 4+ hours down to 1.5–2.5 hours, minimizing seller disruption, and deliver digital reports within 24 hours.
+3️⃣ Two Inspectors = Faster Appointments: We divide structural and mechanical systems in parallel for unhurried thoroughness without solo fatigue, and deliver digital reports within 24 hours.
 4️⃣ 1-Click Digital Repair Request Builder: Easily convert report findings into official Georgia Repair Amendment language in seconds.
 5️⃣ $10,000 Elite Warranty Protection Included: Zero-deductible coverage that shields both the buyer and your transaction after closing.
 

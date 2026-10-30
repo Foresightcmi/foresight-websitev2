@@ -294,7 +294,7 @@ export default function ContactClient() {
                 <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
               </summary>
               <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                With two certified inspectors working simultaneously on every job, a typical Foresight inspection takes approximately 1.5 to 2.5 hours — significantly less than the 3 to 4 hours required by single-inspector companies, while providing more thorough coverage.
+                On-site time scales naturally with your home's square footage, age, and foundation type so nothing is ever rushed. With two certified inspectors working simultaneously—one focused on exterior, roof, attic, and structure while the other evaluates electrical, plumbing, and HVAC—you get double the diagnostic thoroughness without solo-inspector fatigue and an efficient appointment window.
               </p>
             </details>
 

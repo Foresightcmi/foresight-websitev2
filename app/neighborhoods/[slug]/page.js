@@ -223,7 +223,7 @@ export default async function NeighborhoodPage({ params }) {
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red-light)', fontSize: '1.2rem' }}>✓</span>
                   <div>
-                    <strong>Two Certified Inspectors:</strong> Lead CMI + Senior Inspector cover twice the ground in 1.5–2.5 hrs.
+                    <strong>Two Certified Inspectors:</strong> Lead CMI + Senior Inspector cover twice the ground with dedicated parallel focus.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

@@ -31,7 +31,7 @@ const realtorsFaqSchema = {
       name: 'How long do your dual inspections take?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Because we send two fully-certified inspectors to every job, we complete the physical scanning in approximately 1.5 to 2.5 hours depending on size. This is nearly half the time a standard single inspector requires, helping minimize inconvenience to listing sellers.',
+        text: 'Because we send two fully-certified inspectors to every job, we complete the physical scanning with property-scaled parallel thoroughness—giving every system dedicated focus without solo-inspector fatigue while helping minimize inconvenience to listing sellers.',
       },
     },
     {
