@@ -35,7 +35,7 @@ const MEDIA_TARGETS = [
       },
       {
         topic: "The ROI of Sewer Scope Inspections in Older Neighborhoods",
-        subject: "Pitch: Why a $450 Sewer Scope Saves Atlanta Home Buyers $15,000+ (Christopher Boykin, CMI®)",
+        subject: "Pitch: Why a High-Resolution Sewer Scope Saves Atlanta Home Buyers $15,000+ (Christopher Boykin, CMI)",
         soundbite: "Standard visual home inspections stop where plumbing lines enter the concrete slab or ground. In established 1950s–1980s neighborhoods, tree root intrusion and heavy clay soil shifting crush aging clay and cast iron laterals. A high-resolution sewer camera is the single highest-ROI diagnostic a buyer can order.",
         citationUrl: "https://www.fhinspectionsatl.com/blog/sewer-scope-inspection-guide",
         keyStat: "Underground sewer line excavation and replacement in Metro Atlanta routinely costs between $5,000 and $15,000."
@@ -83,6 +83,58 @@ function runDigitalPRScout() {
   console.log("🚀 Running Autonomous Digital PR Scout & Pitch Engine...");
   
   const dispatches = [];
+  const intelPath = path.join(__dirname, '..', 'data', 'agent-reach-intel.json');
+  const b2bPath = path.join(__dirname, '..', 'data', 'b2b-referral-partners.json');
+
+  if (fs.existsSync(intelPath)) {
+    try {
+      const intel = JSON.parse(fs.readFileSync(intelPath, 'utf8'));
+      for (const item of (intel.investigativeNewsAndSubstacks || []).slice(0, 6)) {
+        const isSubstack = item.kind === 'atlanta_substack';
+        dispatches.push({
+          channel: isSubstack ? `Atlanta Substack (${item.author || 'Local Housing Desk'})` : `Atlanta Investigative Desk (${item.author || 'Broadcast/Print'})`,
+          category: isSubstack ? 'Hyper-Local Substack Data Commentary' : 'Reactive Local Builder Defect Commentary',
+          topic: `Reactive CMI Commentary on: ${item.title}`,
+          subject: `Follow-up Data on "${item.title.slice(0, 62)}" — Certified Master Inspector Field Findings`,
+          expertBio: "Christopher Boykin, Certified Master Inspector (CMI #MICB-1082) and founder of Foresight Home Inspections, LLC (Metro Atlanta). Dual-inspector structural + mechanical teams.",
+          soundbite: isSubstack
+            ? "Across Metro Atlanta neighborhoods, our two-inspector teams regularly uncover $2,600 to $14,200+ in hidden crawlspace moisture, roof flashing omissions, and electrical panel hazards during Georgia's 5-to-7 day due diligence period (Homes From $345 / Condos From $295)."
+            : "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing.",
+          keyStat: "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
+          citationUrl: "https://www.fhinspectionsatl.com/services/new-construction-inspection",
+          liveSourceUrl: item.source_url,
+          retrieved_on: item.retrieved_on,
+          pressRoomUrl: "https://www.fhinspectionsatl.com/press",
+          contactInfo: { phone: "678-480-2110", email: "inspect@foresightcmi.com" },
+          status: "LIVE_REACTIVE_READY"
+        });
+      }
+    } catch {}
+  }
+
+  if (fs.existsSync(b2bPath)) {
+    try {
+      const b2b = JSON.parse(fs.readFileSync(b2bPath, 'utf8'));
+      for (const pod of b2b.filter((p) => p.category === 'podcast_media')) {
+        dispatches.push({
+          channel: `${pod.company} (${pod.name})`,
+          category: 'Metro Atlanta Real Estate & Relocation Podcast Guest Pitch',
+          topic: `Guest Segment: How Two-Inspector Field Diagnostics Save Georgia Homebuyers $3,500–$14,200+ in Negotiations`,
+          subject: `Podcast Guest Idea for ${pod.company}: What Metro Atlanta Buyers Miss in 5-Day Due Diligence (Christopher Boykin, CMI)`,
+          expertBio: "Christopher Boykin, Certified Master Inspector (CMI #MICB-1082) and founder of Foresight Home Inspections, LLC (Metro Atlanta).",
+          soundbite: "We share real Metro Atlanta field stories—from brand-new builds with disconnected HVAC plenums to red-clay crawlspace floods—showing buyers and agents how calm, objective diagnostics keep deals together while protecting thousands at the closing table.",
+          keyStat: "Two Certified Inspectors on every property (Homes From $345, Pre-Drywall From $275, New Construction From $400) backed by $35,000 in combined protection.",
+          citationUrl: "https://www.fhinspectionsatl.com/press",
+          liveSourceUrl: pod.source_url,
+          retrieved_on: pod.retrieved_on,
+          recipientEmail: pod.email || null,
+          pressRoomUrl: "https://www.fhinspectionsatl.com/press",
+          contactInfo: { phone: "678-480-2110", email: "inspect@foresightcmi.com" },
+          status: "PODCAST_PITCH_READY"
+        });
+      }
+    } catch {}
+  }
   
   MEDIA_TARGETS.forEach(channel => {
     channel.idealPitches.forEach(pitch => {

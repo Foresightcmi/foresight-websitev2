@@ -127,6 +127,15 @@ async function main() {
     readinessScore: `${Math.round((verifiedCount / BUYER_PROMPTS.length) * 100)}%`,
     verifiedPrompts: verifiedCount,
     totalPrompts: BUYER_PROMPTS.length,
+    communityEntityMentions: (() => {
+      const p = path.join(ROOT, 'data', 'agent-reach-intel.json');
+      if (!fs.existsSync(p)) return { totalThreadsScanned: 0, foresightOrganicMentions: 0, gapThreadsWithCmiDrafts: 0, threads: [] };
+      try {
+        const threads = JSON.parse(fs.readFileSync(p, 'utf8')).buyerIntentThreads || [];
+        const mentioned = threads.filter((t) => t.mentions_foresight).length;
+        return { totalThreadsScanned: threads.length, foresightOrganicMentions: mentioned, gapThreadsWithCmiDrafts: threads.length - mentioned, threads: threads.map((t) => ({ platform: t.platform, title: t.title, source_url: t.source_url, retrieved_on: t.retrieved_on, mentions_foresight: t.mentions_foresight })) };
+      } catch { return { totalThreadsScanned: 0, foresightOrganicMentions: 0, gapThreadsWithCmiDrafts: 0, threads: [] }; }
+    })(),
     prompts: results
   };
 

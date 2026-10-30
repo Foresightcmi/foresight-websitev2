@@ -51,6 +51,43 @@ function syncUnderContractToCampaign(unsubSet) {
   const seenEmails = new Set(existingArr.map((r) => String(r.email || '').toLowerCase()));
 
   let added = 0;
+  let addedYoutubeRealtors = 0;
+  const intelPath = path.join(WEB_ROOT, 'data', 'agent-reach-intel.json');
+  if (fs.existsSync(intelPath)) {
+    try {
+      const intel = JSON.parse(fs.readFileSync(intelPath, 'utf8'));
+      for (const yt of intel.youtubeRealtors || []) {
+        const c = yt.verified_contact;
+        const email = String(c?.email || '').trim().toLowerCase();
+        if (!email || !email.includes('@') || unsubSet.has(email)) continue;
+        if (/@ansleyre\.com$|@ansleyatlanta\.com$/i.test(email) || /ansley|chapman group/i.test(c?.brokerage || '')) continue;
+        const existingItem = existingArr.find((x) => String(x.email || '').toLowerCase() === email);
+        if (existingItem) {
+          existingItem.is_new_construction = true;
+          existingItem.video_title = yt.video_title;
+          existingItem.video_url = yt.source_url;
+        } else {
+          seenEmails.add(email);
+          existingArr.unshift({
+            email,
+            first_name: c.first || (c.name || '').split(' ')[0] || 'there',
+            full_name: c.name || '',
+            brokerage: c.brokerage || '',
+            city: c.city || 'Metro Atlanta',
+            listing_address: '',
+            is_new_construction: true,
+            video_title: yt.video_title,
+            video_url: yt.source_url,
+            source_url: yt.source_url,
+            retrieved_on: yt.retrieved_on || today
+          });
+          addedYoutubeRealtors++;
+          added++;
+        }
+      }
+    } catch {}
+  }
+
   for (const r of ucList) {
     const email = String(r.email || '').trim().toLowerCase();
     if (!email || !email.includes('@') || seenEmails.has(email) || unsubSet.has(email)) continue;

@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
 const LOAN_OFFICERS_FILE = path.join(ROOT_DIR, 'data', 'loan-officers.json');
+const B2B_PARTNERS_FILE = path.join(ROOT_DIR, 'data', 'b2b-referral-partners.json');
 const UNDER_CONTRACT_FILE = path.join(ROOT_DIR, 'data', 'under-contract-realtors.json');
 const OUTREACH_LOG_FILE = path.join(ROOT_DIR, 'data', 'due-diligence-outreach-log.json');
 const OPENSMS_LOG_FILE = path.join(ROOT_DIR, 'data', 'opensms-outreach-log.json');
@@ -154,7 +155,7 @@ function buildLoanOfficerEmail(lo) {
 </head>
 <body>
   <div class="card">
-    <div style="background-color:#0f172a;border-bottom:3px solid #d4af37;padding:16px 22px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="44" style="display:block;height:52px;background:#ffffff;padding:4px 8px;border-radius:6px;width:auto;border:0;" /><div style="font-size:11px;font-weight:700;color:#d4af37;letter-spacing:0.5px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;margin-right:6px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;" /></td></tr></table></div>
+    <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="70" width="70" style="display:inline-block;height:70px;width:70px;border:0;vertical-align:middle;" /></td></tr></table></div>
     <div class="banner">
       🏛️ MORTGAGE ORIGINATOR SERVICE LEVEL AGREEMENT &amp; COLLATERAL PROTECTION
     </div>
@@ -169,7 +170,7 @@ function buildLoanOfficerEmail(lo) {
         <strong>The Foresight CMI® Lender Protection Standard:</strong>
         <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
           <li><strong>Guaranteed 24-Hr Scheduling SLA:</strong> Same-day digital reports delivered by 8:00 PM.</li>
-          <li><strong>Two Certified Master Inspectors Concurrency:</strong> Complete structural, mechanical &amp; thermal inspection in under 2.5 hours.</li>
+          <li><strong>Two Certified Master Inspectors Concurrency:</strong> Dedicated structural + mechanical evaluations in parallel with zero solo-inspector fatigue.</li>
           <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as Georgia repair amendment) for licensed broker or attorney review.</li>
           <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
           <li><strong>DeKalb County Low-Flow Plumbing Certificate:</strong> On-site fixture verification (toilets 1.6 GPF max) and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
@@ -311,7 +312,7 @@ function buildPreDueDiligenceEmail(realtor) {
 </head>
 <body>
   <div class="card">
-    <div style="background-color:#0f172a;border-bottom:3px solid #d4af37;padding:16px 22px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="44" style="display:block;height:52px;background:#ffffff;padding:4px 8px;border-radius:6px;width:auto;border:0;" /><div style="font-size:11px;font-weight:700;color:#d4af37;letter-spacing:0.5px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;margin-right:6px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="46" width="46" style="display:inline-block;height:46px;width:46px;border:0;vertical-align:middle;" /></td></tr></table></div>
+    <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="70" width="70" style="display:inline-block;height:70px;width:70px;border:0;vertical-align:middle;" /></td></tr></table></div>
     <div class="banner">
       ⚡ PRE-DUE DILIGENCE READINESS &amp; 24-HR INSPECTION SLOT RESERVATION
     </div>
@@ -325,7 +326,7 @@ function buildPreDueDiligenceEmail(realtor) {
       <div class="highlight-box">
         <strong>Why Atlanta Top Producers Keep Foresight on Speed Dial:</strong>
         <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #334155;">
-          <li><strong>Two Certified Master Inspectors on Every Job:</strong> Complete thorough evaluation in ~2 hours.</li>
+          <li><strong>Two Certified Master Inspectors on Every Job:</strong> Dedicated structural + mechanical focus in parallel with zero solo-inspector fatigue.</li>
           <li><strong>Active SUPRA eKEY Access:</strong> We inspect smoothly without burdening the listing agent.</li>
           <li><strong>Georgia Contract-Ready Repair Summaries:</strong> Clean diagnostic language compatible with standard Georgia repair amendments that keeps deals intact.</li>
           <li><strong>$35,000 Client Protection Guarantees:</strong> 90-Day Structural Warranty &amp; InterNACHI Buy-Back Guarantee.</li>
@@ -560,6 +561,7 @@ async function main() {
   let quotaCeilingHit = false;
 
   let sentLendersCount = 0;
+  let sentB2bPartnersCount = 0;
   let sentUnderContractCount = 0;
   let sentOpenSmsCount = 0;
 
@@ -804,7 +806,38 @@ async function main() {
     }
   }
 
-  // 3. Save Updated Outreach Log
+  // 3. Save Updated Outreach Log (after Priority #3 B2B Referral Partners)
+  if (fs.existsSync(B2B_PARTNERS_FILE)) {
+    const b2bPartners = JSON.parse(fs.readFileSync(B2B_PARTNERS_FILE, 'utf8')).filter((p) => p.email && p.category !== 'podcast_media');
+    console.log(`🤝 [Due Diligence Engine] Priority #3: Loaded ${b2bPartners.length} Verified B2B Referral Partners (Closing/Probate Attorneys & Insurance Agencies).`);
+    if (canSendEmail && transporter && !quotaCeilingHit) {
+      for (const p of b2bPartners) {
+        const normEmail = String(p.email || '').trim().toLowerCase();
+        const normName = String(p.name || '').trim().toLowerCase();
+        const key = `B2B_${p.id}_${normEmail}`;
+        if (contactedKeys.has(key) || contactedEmails.has(normEmail) || (normName && contactedNames.has(normName)) || isSuppressed(p.email, p.name, p.company)) continue;
+        const isAtty = p.category === 'attorney_closing_probate';
+        const subject = isAtty
+          ? `Metro Atlanta Probate, Estate & Closing Condition Inspections (2-Inspector CMI Team)`
+          : `4-Point, Roof Drone & Moisture Verification for ${p.company} Policyholders`;
+        const pitchLine = isAtty
+          ? `Whether your firm is handling a Georgia probate estate valuation, pre-closing repair dispute, or unincorporated DeKalb County Low-Flow Plumbing Certificate (Call for Quote), our Two Certified Master Inspectors evaluate every property in parallel (Residential Homes From $345 / Condos From $295) with same-day photo-documented reports.`
+          : `When ${p.company} clients in ${p.city || 'Metro Atlanta'} need independent roof/4K drone condition documentation, polybutylene or electrical panel safety checks, or full residential inspections (Homes From $345 / Condos From $295; specialty evaluations Call for Quote), our Two Certified Master Inspectors deliver same-day reports backed by $35,000 in client protection.`;
+        const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;"><div style="background:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="CMI" height="78" width="78" style="display:inline-block;height:78px;width:78px;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="CPI" height="70" width="70" style="display:inline-block;height:70px;width:70px;" /></td></tr></table></div><div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">Hi <strong>${p.first || 'there'}</strong>,</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">${pitchLine}</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">If your office ever needs priority 24-hour scheduling across Metro Atlanta, feel free to share our direct desk at <strong>(678) 480-2110</strong> or <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;font-weight:600;">www.fhinspectionsatl.com</a>.</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
+        try {
+          await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: p.email, subject, html });
+          contactedKeys.add(key); contactedEmails.add(normEmail); if (normName) contactedNames.add(normName);
+          outreachLog.push({ key, type: 'B2B_PARTNER', category: p.category, targetName: p.name, company: p.company, email: p.email, city: p.city, timestamp: new Date().toISOString() });
+          fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
+          sentB2bPartnersCount++;
+          await sleep(2500);
+        } catch (e) {
+          if (/550|454|Daily user sending limit/i.test(e.message)) { quotaCeilingHit = true; break; }
+        }
+        if (sentB2bPartnersCount >= 2) break;
+      }
+    }
+  }
   fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
   console.log(`💾 [Due Diligence Engine] Updated outreach log (${outreachLog.length} total historical communications).`);
 

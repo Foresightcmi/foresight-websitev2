@@ -1,34 +1,126 @@
 {
-  "generatedAt": "2026-10-29T19:07:12.053Z",
-  "retrieved_on": "2026-10-29",
+  "generatedAt": "2026-10-30T12:12:38.018Z",
+  "retrieved_on": "2026-10-30",
   "source_url": "https://www.fhinspectionsatl.com",
   "readinessScore": "100%",
   "verifiedPrompts": 6,
   "totalPrompts": 6,
+  "communityEntityMentions": {
+    "totalThreadsScanned": 13,
+    "foresightOrganicMentions": 0,
+    "gapThreadsWithCmiDrafts": 13,
+    "threads": [
+      {
+        "platform": "reddit",
+        "title": "Looking for recommendations for a home inspector who's independent and not some PE stooge : r/Marietta",
+        "source_url": "https://www.reddit.com/r/Marietta/comments/1w6b5f7/looking_for_recommendations_for_a_home_inspector/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "reddit",
+        "title": "Home inspector : r/DecaturGA",
+        "source_url": "https://www.reddit.com/r/DecaturGA/comments/1s61p45/home_inspector/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "reddit",
+        "title": "Home inspector : r/DecaturGA",
+        "source_url": "https://www.reddit.com/r/DecaturGA/comments/1rp2c26/home_inspector/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "reddit",
+        "title": "Buyers home inspectors : r/Gwinnett",
+        "source_url": "https://www.reddit.com/r/Gwinnett/comments/1rutyo5/buyers_home_inspectors/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "reddit",
+        "title": "Home Inspector Recommendations-that will permit you to follow along : r/Atlanta",
+        "source_url": "https://www.reddit.com/r/Atlanta/comments/1m0jjcr/home_inspector_recommendationsthat_will_permit/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "biggerpockets",
+        "title": "Seeking a reliable Home Inspector in ATL",
+        "source_url": "https://www.biggerpockets.com/forums/52/topics/887739-seeking-a-reliable-home-inspector-in-atl",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "biggerpockets",
+        "title": "Home inspection Companies in Atlanta",
+        "source_url": "https://www.biggerpockets.com/forums/647/topics/848554-home-inspection-companies-in-atlanta",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "biggerpockets",
+        "title": "Home inspection in Atlanta Georgia",
+        "source_url": "https://www.biggerpockets.com/forums/311/topics/820183-home-inspection-in-atlanta-georgia",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "biggerpockets",
+        "title": "Home inspector in Kennesaw GA?",
+        "source_url": "https://www.biggerpockets.com/forums/647/topics/642205-home-inspector-in-kennesaw-ga",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "nextdoor",
+        "title": "Seeking Reliable Home Inspector Recommendations in Marietta, GA",
+        "source_url": "https://nextdoor.com/p/G6CnRPt3yjTM/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "nextdoor",
+        "title": "Looking for certified electrician for home inspection - Buford, GA",
+        "source_url": "https://nextdoor.com/p/S4ybWR3yCdwD/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "nextdoor",
+        "title": "Seeking reliable contractor for home projects in Decatur, GA",
+        "source_url": "https://nextdoor.com/p/H5g-jt4SWG7k/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      },
+      {
+        "platform": "nextdoor",
+        "title": "Marietta, Georgia",
+        "source_url": "https://nextdoor.com/p/Hmwk-2DYgzzC/",
+        "retrieved_on": "2026-10-30",
+        "mentions_foresight": false
+      }
+    ]
+  },
   "prompts": [
     {
       "id": "dual-inspector-atlanta",
       "buyerPrompt": "best home inspector in Atlanta GA with two inspectors",
       "canonicalUrl": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
       "source_url": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
-      "retrieved_on": "2026-10-29",
+      "retrieved_on": "2026-10-30",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=best%20home%20inspector%20atlanta",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "suggestions": [
-          "best home inspector atlanta",
-          "best home inspectors atlanta reddit",
-          "best home inspectors atlanta ga",
-          "best home inspection companies in atlanta",
-          "how much do home inspectors make in georgia",
-          "how to become a home inspector in georgia",
-          "home inspectors near me reviews"
+          "best home inspector atlanta"
         ]
       },
       "urlIndexedInLlmsTxt": true,
@@ -46,22 +138,18 @@
       "buyerPrompt": "sewer scope camera inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
       "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
-      "retrieved_on": "2026-10-29",
+      "retrieved_on": "2026-10-30",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=sewer%20scope%20inspection%20atlanta",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "suggestions": [
-          "sewer scope inspection atlanta",
-          "how much is a sewer scope inspection",
-          "sewer scope inspection near me",
-          "sewer scope inspection cost",
-          "should you do a sewer scope inspection"
+          "sewer scope inspection atlanta"
         ]
       },
       "urlIndexedInLlmsTxt": true,
@@ -77,20 +165,18 @@
       "buyerPrompt": "DeKalb County low-flow plumbing compliance certificate inspector",
       "canonicalUrl": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
       "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
-      "retrieved_on": "2026-10-29",
+      "retrieved_on": "2026-10-30",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=dekalb%20county%20low%20flow%20certificate",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "suggestions": [
-          "dekalb county low flow certificate",
-          "what is a dekalb",
-          "dekalb yield results"
+          "dekalb county low flow certificate"
         ]
       },
       "urlIndexedInLlmsTxt": true,
@@ -106,16 +192,16 @@
       "buyerPrompt": "11-month builder warranty inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
       "source_url": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
-      "retrieved_on": "2026-10-29",
+      "retrieved_on": "2026-10-30",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=11%20month%20warranty%20inspection%20atlanta",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "suggestions": []
       },
       "urlIndexedInLlmsTxt": true,
@@ -131,25 +217,21 @@
       "buyerPrompt": "radon testing and pool inspection Atlanta GA",
       "canonicalUrl": "https://www.fhinspectionsatl.com/quote",
       "source_url": "https://www.fhinspectionsatl.com/quote",
-      "retrieved_on": "2026-10-29",
+      "retrieved_on": "2026-10-30",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/quote",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=radon%20testing%20atlanta",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "suggestions": [
           "radon testing atlanta",
           "radon testing atlanta ga",
           "radon testing atlanta cost",
-          "radon mitigation atlanta",
-          "radon mitigation atlanta ga",
-          "radon testing and mitigation atlanta",
-          "is radon testing free",
-          "who does radon testing in my area"
+          "radon testing and mitigation atlanta"
         ]
       },
       "urlIndexedInLlmsTxt": true,
@@ -166,16 +248,16 @@
       "buyerPrompt": "polybutylene pipe and stucco EIFS home inspector Atlanta",
       "canonicalUrl": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
       "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
-      "retrieved_on": "2026-10-29",
+      "retrieved_on": "2026-10-30",
       "liveEndpoint": {
         "source_url": "https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "http_status": 200,
         "has_json_ld": true
       },
       "autocompleteIntent": {
         "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=polybutylene%20pipe%20inspection%20atlanta",
-        "retrieved_on": "2026-10-29",
+        "retrieved_on": "2026-10-30",
         "suggestions": []
       },
       "urlIndexedInLlmsTxt": true,

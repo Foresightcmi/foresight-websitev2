@@ -116,8 +116,8 @@ async function fetchNewBuildsForRegion(region) {
         inspectionPackages: [
           'Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)',
           'New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)',
-          '11-Month Builder Warranty Inspection (From $335)',
-          'HD Fiber-Optic Sewer Scope Camera Add-On ($450 Flat Rate)'
+          '11-Month Builder Warranty Inspection (From $345)',
+          'HD Fiber-Optic Sewer Scope Camera Add-On (Call for Quote)'
         ],
         harvestedAt: new Date().toISOString()
       };
@@ -189,6 +189,15 @@ async function main() {
     lastSync: new Date().toISOString(),
     totalActiveLeads: uniqueLeads.length,
     newLeadsThisRun: addedCount,
+    warrantySubdivisionCohorts: (() => {
+      const p = path.join(ROOT_DIR, 'data', 'agent-reach-intel.json');
+      if (!fs.existsSync(p)) return [];
+      try {
+        const c = JSON.parse(fs.readFileSync(p, 'utf8')).warrantySubdivisionCohorts || [];
+        fs.writeFileSync(path.join(ROOT_DIR, 'data', 'warranty-subdivision-cohorts.json'), JSON.stringify({ updatedAt: new Date().toISOString(), offer: '11-Month Builder Warranty Inspection (From $345)', cohorts: c }, null, 2), 'utf8');
+        return c;
+      } catch { return []; }
+    })(),
     topCorridors: TARGET_REGIONS.map(r => r.name),
     leads: uniqueLeads.slice(0, 50)
   }, null, 2), 'utf8');
