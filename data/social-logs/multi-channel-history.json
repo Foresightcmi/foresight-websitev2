@@ -230,5 +230,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/realtors"
+  },
+  {
+    "postId": 10,
+    "title": "Sewer Scope Camera Diagnostics: The $15,000 Line Defense",
+    "publishedAt": "2026-10-30T18:59:36.536Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]

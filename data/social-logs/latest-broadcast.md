@@ -1,9 +1,9 @@
-# 📣 Active Multi-Channel Broadcast: Post #9
-**Title:** Realtor VIP Due Diligence & Repair Negotiation Leverage  
-**Topic:** Realtor Partnership & Contract Negotiation  
-**Generated At:** 2026-10-29T19:25:18.387Z  
-**Target Booking Link:** [https://www.fhinspectionsatl.com/realtors](https://www.fhinspectionsatl.com/realtors)  
-**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/realtor-partnership.webp](https://www.fhinspectionsatl.com/images/realtor-partnership.webp)  
+# 📣 Active Multi-Channel Broadcast: Post #10
+**Title:** Sewer Scope Camera Diagnostics: The $15,000 Line Defense  
+**Topic:** Sewer Scope Camera Inspections  
+**Generated At:** 2026-10-30T18:59:36.536Z  
+**Target Booking Link:** [https://www.fhinspectionsatl.com/quote](https://www.fhinspectionsatl.com/quote)  
+**High-Res Image Asset:** [https://www.fhinspectionsatl.com/images/sewer-scope.webp](https://www.fhinspectionsatl.com/images/sewer-scope.webp)  
 **Webhook Status:** `skipped`
 
 ---
@@ -12,23 +12,24 @@
 *Optimized for Local 3-Pack, local municipal entities, and direct phone/online booking.*
 
 ```text
-Atlanta Realtors: How does your inspection partner protect your buyers and strengthen your contract negotiations?
+The most expensive defect in an older Atlanta home is often buried 6 feet underground.
 
-Foresight Home Inspections delivers the technical documentation you need to protect your client's earnest money and negotiate significant repair credits:
+Standard home inspections do not evaluate underground sewer laterals. If an older home in Atlanta, Decatur, or Kirkwood has collapsed clay pipes, tree root intrusion, or pipe belly blockages, replacing the sewer line can cost $8,000 to $15,000+ out of pocket.
 
-• Two Certified Inspectors on every job: Dedicated structural + mechanical coverage, eliminating solo fatigue and scheduling stress for listing agents and buyers.
-• Crystal-Clear Digital Reports: Delivered the same evening with high-res photos, thermal imaging overlays, and categorized severity ratings.
-• Clear Defect Documentation: Defect descriptions written with precise, professional building code clarity ready to copy directly into the Amendment to Address Defects.
-• Up to $35,000 in warranty protection backing your clients.
+Foresight Home Inspections deploys high-definition self-leveling sewer scope cameras to evaluate the entire main lateral line from the cleanout to the city sewer main or septic connection.
 
-Join our Realtor VIP Program for priority scheduling and client perks.
+• High-definition video recording with distance meter telemetry
+• Clear identification of root infiltration, offset joints, and structural cracking
+• Call 678-480-2110 for a sewer scope inspection quote
 
-Call 678-480-2110 or visit our Realtor VIP hub online.
+Add a sewer scope to your Atlanta inspection package today.
+
+Call 678-480-2110 or calculate your instant fee online.
 ```
 
 **GBP Call to Action:** Book Online or Call (678) 480-2110  
-**Link:** https://www.fhinspectionsatl.com/realtors  
-**Photo:** Attach `https://www.fhinspectionsatl.com/images/realtor-partnership.webp`
+**Link:** https://www.fhinspectionsatl.com/quote  
+**Photo:** Attach `https://www.fhinspectionsatl.com/images/sewer-scope.webp`
 
 ---
 
@@ -36,24 +37,21 @@ Call 678-480-2110 or visit our Realtor VIP hub online.
 *Optimized for social engagement, visual storytelling, consumer trust, and homebuyer education.*
 
 ```text
-Attention Metro Atlanta Real Estate Agents! 🏡🤝
+The most expensive repair on your Atlanta home might be buried 6 feet underground... 🚽🕳️
 
-When your buyers have 5 to 7 days on their due diligence clock, you can't afford to wait days for a confusing 80-page inspection report full of vague disclaimers.
+Standard home inspections do NOT cover underground sewer lateral pipes. In established Metro Atlanta neighborhoods like Inman Park, Virginia-Highland, Decatur, and West End, underground clay and cast iron pipes are frequently 50 to 100 years old.
 
-Foresight Home Inspections is engineered to be your strongest negotiation partner:
+What happens when mature tree roots break through the clay joints or the pipe collapses? Raw sewage backs up into your home—and city code makes the homeowner 100% responsible for the $8,000 to $15,000 repair cost out to the street!
 
-👥 Two Certified Inspectors On-Site: Thorough 1,600-point inspection completed with dedicated two-inspector parallel coverage.
-📱 Same-Day Narrative Digital Reports: Delivered the evening of inspection with interactive photo/video evidence and clear defect classifications.
-⚖️ Organized for Fast Repair Requests: Professional descriptions that make drafting your Amendment to Address Defects fast and airtight.
-🛡️ $35,000 Warranty Backing: Complete peace of mind protecting your clients long after closing.
+Don't buy a home blind. Foresight's high-definition Sewer Scope Camera inspections provide a full digital video walkthrough of your underground line before closing.
 
-Partner with Certified Master Inspector Christopher Boykin.
+"Hindsight is expensive... Choose Foresight!"
 
-👉 Join our Realtor VIP Program today:
-https://www.fhinspectionsatl.com/realtors
-📞 Direct Realtor Concierge: 678-480-2110
+👉 Add a Sewer Scope Camera inspection (Call for Quote):
+https://www.fhinspectionsatl.com/quote
+📞 Direct CMI Phone: (678) 480-2110
 
-#AtlantaRealtors #GeorgiaRealEstate #RealtorLife #DueDiligence #AtlantaRealEstateAgent #CertifiedMasterInspector
+#SewerScope #AtlantaRealEstate #OldHomesAtlanta #PlumbingFail #HomeBuyerTips #ForesightHomeInspections
 ```
 
 ---
@@ -62,21 +60,19 @@ https://www.fhinspectionsatl.com/realtors
 *Optimized for Real Estate Agents, GAR Contract Due Diligence, Investors, Attorneys, and Building Science Authority.*
 
 ```text
-Atlanta Realtor Due Diligence Inspection Partner: The due diligence window is the most critical milestone in any Georgia residential transaction.
+Atlanta Sewer Scope Camera Inspection (Call for Quote): Why underground sewer lines are the #1 hidden liability in older Metro Atlanta homes.
 
-When buyers uncover major structural or mechanical defects during Georgia's 5 to 7 day due diligence window, the clarity and photographic proof of the inspection report determine how effectively a realtor can negotiate seller-paid repairs or closing credits.
+In Fulton, DeKalb, and Cobb counties, the homeowner is 100% financially responsible for the entire private sewer line from the foundation all the way to the city main in the street.
 
-Why Metro Atlanta's top-producing realtors partner with Foresight Home Inspections:
-• Two-Inspector Protocol: Parallel two-inspector coverage keeps showing appointments smooth for sellers while maximizing diagnostic thoroughness.
-• Same-Evening Digital Reports: Clear 3-Step Diagnostic summaries with interactive one-click repair request builders.
-• Real Client Protection: Up to $35,000 in combined warranty and guarantee backing ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).
-• Active Electronic SUPRA eKEY Access: We open and secure listings independently.
+🔍 What We Spotted: Tree root intrusion, cracked clay pipe joints, corroded cast iron, and low-slope pipe bellies 6 feet underground.
+💡 What This Could Mean: Raw sewage backups and $8,000 to $15,000+ in emergency yard and street excavation costs.
+🛠️ How We Protect You: Our high-definition Sewer Scope Camera inspection (Call (678) 480-2110 for a quote) records a full video walkthrough with linear-foot distance markers from your cleanout to the street main before your due diligence expires.
 
-Join our Realtor VIP network (active GREC License # required):
-https://www.fhinspectionsatl.com/realtors
+Book your Sewer Scope Camera inspection online 24/7:
+https://www.fhinspectionsatl.com/services/sewer-scope-inspection
 
-#RealtorPartnership #RealEstateBroker #AtlantaRealEstate #ContractNegotiations #DueDiligence #AtlantaRealtors
+#SewerScope #PlumbingInspection #RealEstateInvestment #DueDiligence #AtlantaRealEstate #ForesightHomeInspections
 ```
 
 ---
-*Next post in rotation:* **Post #10: "Sewer Scope Camera Diagnostics: The $15,000 Line Defense"**
+*Next post in rotation:* **Post #11: "DeKalb County Plumbing Low-Flow Compliance Certificate (Call for Quote)"**
