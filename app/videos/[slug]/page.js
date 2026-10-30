@@ -39,9 +39,9 @@ export const SERVICE_VIDEOS = [
     durationDisplay: '0:40',
     uploadDate: '2026-10-12T00:00:00Z',
     serviceHref: '/services/11-month-warranty-inspection',
-    startingPrice: 'From $335',
+    startingPrice: 'From $345',
     takeaways: [
-      'Performed during Month 10 or 11 of ownership (starting at $335) before the builder 1-year workmanship warranty expires.',
+      'Performed during Month 10 or 11 of ownership (starting from $345) before the builder 1-year workmanship warranty expires.',
       'Includes two certified inspectors on site, calibrated infrared thermal imaging, and 4K aerial drone roof diagnostics at zero additional upsell.',
       'Delivers a photo-annotated, builder-ready repair punch list within 24 hours so homeowners can submit documented warranty claims on time.'
     ]
@@ -58,9 +58,9 @@ export const SERVICE_VIDEOS = [
     durationDisplay: '0:40',
     uploadDate: '2026-10-11T00:00:00Z',
     serviceHref: '/services/pool-inspection',
-    startingPrice: '$300 Flat Rate',
+    startingPrice: 'Call for Quote',
     takeaways: [
-      'Evaluates multi-speed circulation pumps, sand/cartridge/DE filtration housings, gas and heat-pump heaters, salt chlorine generators, and automated valves ($300 flat rate).',
+      'Evaluates multi-speed circulation pumps, sand/cartridge/DE filtration housings, gas and heat-pump heaters, salt chlorine generators, and automated valves (Call for Quote).',
       'Verifies NEC Article 680 equipotential electrical bonding, GFCI circuit protection, underwater luminaire safety, and child safety barrier compliance.',
       'Inspects plaster/pebble interior surfaces, coping stones, skimmer throats, and deck drainage gradients.'
     ]
@@ -69,7 +69,7 @@ export const SERVICE_VIDEOS = [
     slug: 'sewer-scope-inspections',
     title: 'Sewer Scope Lateral Camera Inspection in Metro Atlanta — CMI® Video Briefing',
     shortTitle: 'Sewer Scope Lateral Camera Inspection',
-    description: 'See how Foresight Home Inspections conducts fiber-optic HD video camera inspections of underground main sewer laterals from the house cleanout to the municipal tap across Metro Atlanta ($450 flat rate).',
+    description: 'See how Foresight Home Inspections conducts fiber-optic HD video camera inspections of underground main sewer laterals from the house cleanout to the municipal tap across Metro Atlanta (Call for Quote).',
     videoUrl: '/videos/services/sewer-scope.mp4',
     posterUrl: '/images/services/sewer-scope-poster.webp',
     durationIso: 'PT36S',
@@ -77,9 +77,9 @@ export const SERVICE_VIDEOS = [
     durationDisplay: '0:36',
     uploadDate: '2026-10-11T00:00:00Z',
     serviceHref: '/services/sewer-scope-inspection',
-    startingPrice: '$450 Flat Rate',
+    startingPrice: 'Call for Quote',
     takeaways: [
-      'High-definition waterproof fiber-optic camera inspection from the main cleanout to the street tap or septic inlet ($450 flat rate).',
+      'High-definition waterproof fiber-optic camera inspection from the main cleanout to the street tap or septic inlet (Call for Quote).',
       'Identifies tree root intrusion, crushed Orangeburg or terracotta clay pipe, cast-iron channel rot, offset joints, and standing-water bellies.',
       'Prevents $6,500 to $18,000+ post-closing trenchless or excavated sewer line replacement surprises.'
     ]
@@ -96,10 +96,10 @@ export const SERVICE_VIDEOS = [
     durationDisplay: '0:35',
     uploadDate: '2026-10-11T00:00:00Z',
     serviceHref: '/services/termite-inspection',
-    startingPrice: '$125 ($165 Crawlspace)',
+    startingPrice: 'Call for Quote',
     takeaways: [
-      'Provides the Official Georgia Wood Infestation Inspection Report required by mortgage lenders for VA, FHA, and conventional real estate closings ($125 slab/basement; $165 crawlspace).',
-      'evaluates foundation stem walls, sill plates, rim joists, subfloor framing, and exterior earth-to-wood contact zones for Eastern Subterranean Termite mud tubes.',
+      'Provides the Official Georgia Wood Infestation Inspection Report required by mortgage lenders for VA, FHA, and conventional real estate closings (Call for Quote).',
+      'Evaluates foundation stem walls, sill plates, rim joists, subfloor framing, and exterior earth-to-wood contact zones for Eastern Subterranean Termite mud tubes.',
       'Identifies active infestations, conducive moisture conditions, and structural wood-decay fungus.'
     ]
   },
@@ -107,7 +107,7 @@ export const SERVICE_VIDEOS = [
     slug: 'radon-gas-testing',
     title: 'Continuous 48-Hour Electronic Radon Testing in Atlanta GA — CMI® Video Briefing',
     shortTitle: '48-Hour Continuous Electronic Radon Testing',
-    description: 'Learn why North Georgia’s granite bedrock places Fulton, DeKalb, Gwinnett, and Cobb counties in EPA Radon Zone 1, and how Foresight performs 48-hour continuous electronic radon monitoring ($250).',
+    description: 'Learn why North Georgia’s granite bedrock places Fulton, DeKalb, Gwinnett, and Cobb counties in EPA Radon Zone 1, and how Foresight performs 48-hour continuous electronic radon monitoring (Call for Quote).',
     videoUrl: '/videos/services/radon-testing.mp4',
     posterUrl: '/images/services/radon-testing-poster.webp',
     durationIso: 'PT30S',
@@ -115,9 +115,9 @@ export const SERVICE_VIDEOS = [
     durationDisplay: '0:30',
     uploadDate: '2026-10-11T00:00:00Z',
     serviceHref: '/services/radon-testing',
-    startingPrice: '$275 Flat Rate',
+    startingPrice: 'Call for Quote',
     takeaways: [
-      'Deploys calibrated continuous electronic radon monitors for a minimum 48-hour closed-building test period ($250 flat rate).',
+      'Deploys calibrated continuous electronic radon monitors for a minimum 48-hour closed-building test period (Call for Quote).',
       'Produces hour-by-hour pCi/L barometric and tamper-verified telemetry rather than delayed charcoal mail-in canisters.',
       'Identifies properties exceeding the 4.0 pCi/L EPA action threshold so buyers can negotiate sub-slab depressurization mitigation ($1,200–$1,800) prior to closing.'
     ]
@@ -126,7 +126,7 @@ export const SERVICE_VIDEOS = [
     slug: 'mold-indoor-air-quality-testing',
     title: 'Certified Spore Trap Mold & Indoor Air Quality Testing in Atlanta — CMI® Video Briefing',
     shortTitle: 'Mold & Indoor Air Quality Testing',
-    description: 'Certified Master Inspector® Christopher Boykin explains calibrated Zefon Bio-Pump spore trap air sampling, surface swab collection, and accredited laboratory microbiology analysis across Metro Atlanta ($450 flat rate).',
+    description: 'Certified Master Inspector® Christopher Boykin explains calibrated Zefon Bio-Pump spore trap air sampling, surface swab collection, and accredited laboratory microbiology analysis across Metro Atlanta (Call for Quote).',
     videoUrl: '/videos/services/mold-testing.mp4',
     posterUrl: '/images/services/mold-testing-poster.webp',
     durationIso: 'PT39S',
@@ -134,9 +134,9 @@ export const SERVICE_VIDEOS = [
     durationDisplay: '0:39',
     uploadDate: '2026-10-12T00:00:00Z',
     serviceHref: '/services/mold-testing',
-    startingPrice: '$450 Flat Rate',
+    startingPrice: 'Call for Quote',
     takeaways: [
-      'Combines calibrated volumetric air cassette sampling (15 liters/minute) with outdoor baseline control comparison and direct surface tape/swab sampling ($450 flat rate).',
+      'Combines calibrated volumetric air cassette sampling (15 liters/minute) with outdoor baseline control comparison and direct surface tape/swab sampling (Call for Quote).',
       'Pairs biological sampling with non-invasive infrared thermography and pinless dielectric moisture metering to pinpoint the hidden water source feeding fungal growth.',
       'Delivers accredited laboratory genus-level spore counts (including Stachybotrys, Aspergillus/Penicillium, and Chaetomium).'
     ]
@@ -145,7 +145,7 @@ export const SERVICE_VIDEOS = [
     slug: 'short-term-rental-str-compliance-inspection',
     title: 'Airbnb & Short-Term Rental (STR) Compliance Inspection in Atlanta — CMI® Video Briefing',
     shortTitle: 'Short-Term Rental (STR) Safety & Code Compliance',
-    description: 'See how Foresight Home Inspections conducts municipal Short-Term Rental (STR) life-safety, egress, occupancy load, and electrical compliance inspections with a signed CMI® Affidavit (starts at $395).',
+    description: 'See how Foresight Home Inspections conducts municipal Short-Term Rental (STR) life-safety, egress, occupancy load, and electrical compliance inspections with a signed CMI® Affidavit (Call for Quote).',
     videoUrl: '/videos/services/short-term-rental.mp4',
     posterUrl: '/images/services/short-term-rental-poster.webp',
     durationIso: 'PT31S',
@@ -153,9 +153,9 @@ export const SERVICE_VIDEOS = [
     durationDisplay: '0:31',
     uploadDate: '2026-10-12T00:00:00Z',
     serviceHref: '/services',
-    startingPrice: '$595 Flat Rate',
+    startingPrice: 'Call for Quote',
     takeaways: [
-      'Complete municipal STR life-safety and building code evaluation for Atlanta, Fulton, DeKalb, and Metro Atlanta hosts (starts at $395).',
+      'Complete municipal STR life-safety and building code evaluation for Atlanta, Fulton, DeKalb, and Metro Atlanta hosts (Call for Quote).',
       'Verifies interconnected smoke and carbon monoxide alarms, bedroom emergency egress window dimensions, fire extinguisher mounting, GFCI/AFCI protection, and deck load safety.',
       'Includes a stamped Certified Master Inspector® (CMI®) Compliance Affidavit delivered within 24 hours.'
     ]

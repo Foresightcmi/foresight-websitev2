@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function UnifiedForesightStudioPage() {
   const [data, setData] = useState(null);
   const [activeTab, setActiveTab] = useState('generator');
-  const [topic, setTopic] = useState('Phase 1 Pre-Drywall ($275) & New Construction Inspections');
+  const [topic, setTopic] = useState('Phase 1 Pre-Drywall (From $275) & New Construction (From $400) Inspections');
   const [city, setCity] = useState('Decatur');
   const [generatedPacket, setGeneratedPacket] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -119,13 +119,13 @@ export default function UnifiedForesightStudioPage() {
               Synchronized Multi-Channel Generator (Video Script + 5-Slide Carousel + GBP/LinkedIn/Reels + Realtor Email)
             </h2>
             <p style={{ color: '#94a3b8', fontSize: '0.88rem', marginBottom: '1.25rem' }}>
-              Enter any inspection topic and Metro Atlanta city below to generate a 100% harmonized campaign across Video, Social, GBP, and Email using your canonical pricing ($345 Homes, $295 Condos, $275 Pre-Drywall, $100 DeKalb Low-Flow, $35,000 Protection).
+              Enter any inspection topic and Metro Atlanta city below to generate a 100% harmonized campaign across Video, Social, GBP, and Email using your canonical pricing (From $345 Homes, From $295 Condos, From $275 Pre-Drywall / From $400 New Construction, Auxiliary Services: Call for Quote, $35,000 Protection).
             </p>
             <form onSubmit={handleGenerate} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr auto', gap: '0.75rem', marginBottom: '1.5rem' }}>
               <input
                 value={topic}
                 onChange={e => setTopic(e.target.value)}
-                placeholder="Topic (e.g., Phase 1 Pre-Drywall ($275), DeKalb Low-Flow Certificate ($100), Polybutylene Pipe)"
+                placeholder="Topic (e.g., Phase 1 Pre-Drywall (From $275), New Construction (From $400), Polybutylene Pipe)"
                 style={{ background: '#090d16', color: '#fff', border: '1px solid #334155', borderRadius: '8px', padding: '0.75rem' }}
               />
               <input

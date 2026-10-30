@@ -179,7 +179,7 @@ export default function CompareHubPage() {
                     Up to $35,000 ($10K Elite Master Warranty + $25K Honor Guarantee)
                   </td>
                   <td style={{ padding: '1.15rem 1rem', color: '#0F172A', fontWeight: 600 }}>
-                    Homes from $345 • Condos from $295 • New Construction from $400 (Pre-Drywall $275) • Auxiliary Services: Call (678) 480-2110 for Quote
+                    Homes from $345 • Condos from $295 • Pre-Drywall from $275 / New Construction from $400 • Auxiliary Services: Call (678) 480-2110 for Quote
                   </td>
                 </tr>
                 <tr style={{ background: '#FFFFFF', borderBottom: '1px solid #E2E8F0' }}>

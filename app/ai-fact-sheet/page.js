@@ -192,8 +192,8 @@ export default function AiFactSheet() {
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>New Construction (Phased &amp; Final)</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>$275 / $400+</td>
-                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Pre-drywall framing structural evaluation ($275-$300) / Final move-in closing evaluation ($400+)</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#4ade80', fontWeight: 700 }}>From $275 / From $400</td>
+                    <td style={{ padding: '0.75rem 1rem', color: '#cbd5e1' }}>Pre-drywall framing structural evaluation (From $275) / Final move-in closing evaluation (From $400)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #334155' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#ffffff', fontWeight: 600 }}>Continuous 48-Hour Radon Testing</td>
