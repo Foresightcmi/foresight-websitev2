@@ -780,7 +780,7 @@ export default function RootLayout({ children }) {
                 <p style={{ fontStyle: 'italic', color: '#CBD5E1', marginBottom: '0.75rem', fontWeight: '600', fontSize: '1.05rem' }}>&quot;Hindsight is expensive... Choose Foresight!&quot;</p>
                 <p>Two sets of expert eyes on every job. Unparalleled thoroughness and accuracy.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                    <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector Certification" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
+                    <Image src="/images/cmi_logo.webp" alt="Certified Master Inspector Certification" width={148} height={104} sizes="148px" style={{ height: '104px', width: 'auto', objectFit: 'contain' }} />
                     <Image src="/images/cpi_logo.webp" alt="Certified Professional Inspector Certification" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
                     <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector" width={140} height={95} sizes="140px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />
                     <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector" width={95} height={95} sizes="95px" style={{ height: '95px', width: 'auto', objectFit: 'contain' }} />

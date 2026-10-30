@@ -1058,6 +1058,14 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
   filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.7));
 }
 
+.hero-cred-img-cmi {
+  height: 146px;
+  width: auto;
+  max-width: 165px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.7));
+}
+
 .hero-cred-caption {
   display: flex;
   flex-direction: column;
@@ -1198,6 +1206,10 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
   }
   .hero-cred-img-primary {
     height: 95px !important;
+    filter: none !important;
+  }
+  .hero-cred-img-cmi {
+    height: 103px !important;
     filter: none !important;
   }
   .hero-cred-exp {

@@ -189,7 +189,7 @@ export default function About() {
                 priority
               />
               <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Image src="/images/cmi_logo.png" alt="Certified Master Inspector designation logo" width={160} height={120} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+                <Image src="/images/cmi_logo.png" alt="Certified Master Inspector designation logo" width={160} height={120} style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
                 <Image src="/images/cpi_logo.png" alt="Certified Professional Inspector designation logo" width={160} height={120} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
                 <Image src="/images/internachi_new_construction_inspector.webp" alt="InterNACHI Certified New Construction Inspector designation logo" width={140} height={100} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
                 <Image src="/images/internachi_moisture_intrusion_inspector.webp" alt="InterNACHI Certified Moisture Intrusion Inspector designation logo" width={100} height={100} style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />

@@ -210,10 +210,10 @@ export default function Home() {
                   <Image
                     src="/images/cmi_logo.webp"
                     alt="Certified Master Inspector Christopher Boykin"
-                    width={150}
-                    height={150}
-                    sizes="(max-width: 768px) 110px, 145px"
-                    className="hero-cred-img-primary"
+                    width={160}
+                    height={160}
+                    sizes="(max-width: 768px) 115px, 155px"
+                    className="hero-cred-img-cmi"
                     loading="eager"
                   />
                   <div className="hero-cred-caption">
