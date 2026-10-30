@@ -1,7 +1,57 @@
 {
-  "lastSync": "2026-10-29T19:29:51.637Z",
-  "totalActiveLeads": 361,
-  "newLeadsThisRun": 12,
+  "lastSync": "2026-10-30T19:07:47.201Z",
+  "totalActiveLeads": 367,
+  "newLeadsThisRun": 6,
+  "warrantySubdivisionCohorts": [
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Toll Brothers Announces New Luxury Home Community Now Open",
+      "published_at": "2025-03-06T17:06:57.000Z",
+      "source_url": "https://www.globenewswire.com/news-release/2025/03/06/3038467/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Now-Open-in-Atlanta-Georgia.html",
+      "retrieved_on": "2026-10-30",
+      "excerpt": "Highlights: Toll Brothers Announces New Luxury Home Community Now Open ## Nolyn Pointe by Toll Brothers offers single-family homes in the Chosewood Park neighborhood of Atlanta with direct access to the BeltLine Southside Trail March 06, 2025 12:06 ET | Source: Toll Brothers, Inc"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc.",
+      "published_at": "2025-08-28T08:00:00.000Z",
+      "source_url": "https://investors.centurycommunities.com/news/news-details/2025/Century-Communities-to-Host-Grand-Opening-This-Weekend-in-Flowery-Branch-GA/default.aspx",
+      "retrieved_on": "2026-10-30",
+      "excerpt": "Highlights: Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc. ### Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA August 28, 2025 Anticipated new townhome community offers amenities and low-mainte"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum",
+      "published_at": "2025-06-03T19:00:19.000Z",
+      "source_url": "https://www.atlantarealestateforum.com/grand-opening-of-decaturs-celesta-set-for-june-21/",
+      "retrieved_on": "2026-10-30",
+      "excerpt": "Highlights: Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum # Grand Opening Of Decatur’s Celesta Set For June 21 June 3, 2025| David Weekley Homes https://www.atlantarealestateforum.com/wp-content/uploads/ai-text-to-speech/post-183408-Sg-grand-openi"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "The Providence Group Announces Grand Opening of Phase 3 at Waterside in Peachtree Corners - Metro Atlanta CEO",
+      "published_at": "2025-06-05T00:00:00.000Z",
+      "source_url": "https://metroatlantaceo.com/news/2025/06/providence-group-announces-grand-opening-phase-3-waterside-peachtree-corners/",
+      "retrieved_on": "2026-10-30",
+      "excerpt": "Highlights: The Providence Group Announces Grand Opening of Phase 3 at Waterside in Peachtree Corners - Metro Atlanta CEO ## The Providence Group Announces Grand Opening of Phase 3 at Waterside in Peachtree Corners Staff Report From Georgia CEO Thursday, June 5th, 2025 The Provid"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine",
+      "published_at": "2025-06-12T20:31:48.000Z",
+      "source_url": "https://atlantaagentmagazine.com/2025/06/12/old-mill-preserve-grand-opening/",
+      "retrieved_on": "2026-10-30",
+      "excerpt": "Highlights: David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine ## David Weekley Homes announces grand opening of Old Mill Preserve by Elizabeth Kanzeg Rowland June 12, 2025 Image courtesy of David Weekley Homes Old Mill Preserve, a new age-r"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Tour Snellville Homes at Oak Grove Glen - Atlanta Real Estate Forum",
+      "published_at": "2025-06-10T18:01:12.000Z",
+      "source_url": "https://www.atlantarealestateforum.com/tour-snellville-homes-at-oak-grove-glen/",
+      "retrieved_on": "2026-10-30",
+      "excerpt": "Highlights: # Tour Snellville Homes at Oak Grove Glen June 10, 2025| Century Communities Join Century Communities for the grand opening of Oak Grove Glen, a single-family home community in Snellville. This community features 70 homes, priced from the $400,000s, with nine move-in"
+    }
+  ],
   "topCorridors": [
     "City of Atlanta",
     "Alpharetta",
