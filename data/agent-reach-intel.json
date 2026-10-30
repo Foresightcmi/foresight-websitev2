@@ -1,18 +1,28 @@
 {
-  "generatedAt": "2026-10-30T12:12:35.510Z",
+  "generatedAt": "2026-10-30T20:59:14.759Z",
   "retrieved_on": "2026-10-30",
   "cadence": "twice_daily_0730_1230_ET",
   "counts": {
     "youtubeRealtors": 10,
-    "verifiedYoutubeEmails": 7,
+    "verifiedYoutubeEmails": 6,
     "instagramNewBuildTours": 4,
     "buyerIntentThreads": 13,
-    "unseenBuyerThreads": 8,
+    "unseenBuyerThreads": 0,
     "investigativeNewsAndSubstacks": 9,
     "warrantySubdivisionCohorts": 6,
     "socialMarketHooks": 3
   },
   "youtubeRealtors": [
+    {
+      "medium": "youtube_relocation_realtor",
+      "channel_author": "New Homes In Georgia by Shonnie Alridge",
+      "video_title": "Living In Hoschton, GA | Modern New Construction | 2 Primary Suites | Home Tour | Atlanta New Homes",
+      "source_url": "https://www.youtube.com/watch?v=1ecfj1hXARE",
+      "retrieved_on": "2026-10-30",
+      "view_count": 84373,
+      "transcript_excerpt": "BASE: $1799900 as of the publishing of this video. Home price is subject to change. Exclusively Listed by: Debora Refec, Wynd ...",
+      "verified_contact": null
+    },
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Atlanta Real Estate Channel",
@@ -25,49 +35,31 @@
     },
     {
       "medium": "youtube_relocation_realtor",
+      "channel_author": "Atlanta Real Estate Channel",
+      "video_title": "Tour This INSANE LUXURY New Construction Home Near Atlanta GA!",
+      "source_url": "https://www.youtube.com/watch?v=Mfa6e949mY0",
+      "retrieved_on": "2026-10-30",
+      "view_count": 15990,
+      "transcript_excerpt": "Looking at homes near Atlanta GA? This Hoschton GA home tour takes you through a luxury new construction property in a ...",
+      "verified_contact": null
+    },
+    {
+      "medium": "youtube_relocation_realtor",
       "channel_author": "Living in Atlanta Georgia With Robert and Amber",
-      "video_title": "You Have to See Inside This STUNNING New Construction Home Near Atlanta Georgia!",
-      "source_url": "https://www.youtube.com/watch?v=UEOFPoOcIg8",
+      "video_title": "Come Tour This MASSIVE New Construction Home Near Atlanta Georgia That Has Everything!",
+      "source_url": "https://www.youtube.com/watch?v=nd8zHNa_jY8",
       "retrieved_on": "2026-10-30",
-      "view_count": 1448,
-      "transcript_excerpt": "Moving to Atlanta Georgia? Let's Talk! Call/Text: (470) 272-3338 Email: AtlantaRelocationTeam@gmail.com Thinking about ...",
-      "verified_contact": {
-        "name": "Living in Atlanta Georgia With Robert and Amber",
-        "first": "Robert",
-        "brokerage": "Living in Atlanta Georgia With Robert and Amber",
-        "city": "Metro Atlanta",
-        "email": "atlantarelocationteam@gmail.com",
-        "phone": "(470) 272-3338",
-        "profile_source_url": "https://www.youtube.com/watch?v=UEOFPoOcIg8"
-      }
-    },
-    {
-      "medium": "youtube_relocation_realtor",
-      "channel_author": "Atlanta Homes for Sale",
-      "video_title": "Let's Tour This New 5 Bdrm/5.5 Bath Model Home Near Atlanta | Open Floor Plan + Guest Suite on Main",
-      "source_url": "https://www.youtube.com/watch?v=YDlNxOaQJ6s",
-      "retrieved_on": "2026-10-30",
-      "view_count": 1877,
-      "transcript_excerpt": "Welcome to another Atlanta home tour! Today we are exploring a beautiful model home by Toll Brothers in Cumming, Georgia.",
+      "view_count": 2240,
+      "transcript_excerpt": "Thinking about moving to Atlanta Georgia and wondering what new construction can look like outside the city? In this home tour, ...",
       "verified_contact": null
     },
     {
       "medium": "youtube_relocation_realtor",
-      "channel_author": "Atlanta Homes for Sale",
-      "video_title": "Atlanta, GA New Home Tour | 2 Owner’s Suites on Over 1 Acre",
-      "source_url": "https://www.youtube.com/watch?v=zsPEMKL0zMA",
-      "retrieved_on": "2026-10-30",
-      "view_count": 9895,
-      "transcript_excerpt": "Welcome to another Atlanta home tour! Today we are exploring a beautiful model home in The Tillery in Marietta with prices ...",
-      "verified_contact": null
-    },
-    {
-      "medium": "youtube_relocation_realtor",
-      "channel_author": "Erin Coker - Atlanta Real Estate",
+      "channel_author": "Erin Coker - Atlanta Real Estate ",
       "video_title": "NEVER Buy a New Construction Home in Georgia",
       "source_url": "https://www.youtube.com/watch?v=Olh9tcYXBlA",
       "retrieved_on": "2026-10-30",
-      "view_count": 25238,
+      "view_count": 25243,
       "transcript_excerpt": "Making a Move? Let's Connect! Call or Text Erin Directly: 404-956-0956 Book a Call: https://calendly.com/erincoker Not in ...",
       "verified_contact": {
         "name": "Erin Coker",
@@ -81,12 +73,12 @@
     },
     {
       "medium": "youtube_relocation_realtor",
-      "channel_author": "Erin Coker - Atlanta Real Estate",
-      "video_title": "Why New Homes Scare Me In Atlanta",
-      "source_url": "https://www.youtube.com/watch?v=WByRHa9LHIs",
+      "channel_author": "Erin Coker - Atlanta Real Estate ",
+      "video_title": "NEVER Buy a Townhome in Atlanta",
+      "source_url": "https://www.youtube.com/watch?v=0N2im_-2Ljk",
       "retrieved_on": "2026-10-30",
-      "view_count": 384,
-      "transcript_excerpt": "Call or Text Erin Directly: 404-956-0956 Erin.Coker@Compass.com Book a Call: https://calendly.com/erincoker Not in ...",
+      "view_count": 7,
+      "transcript_excerpt": "Book a Call: https://calendly.com/erincoker Erin.Coker@Compass.com Are Atlanta townhomes a bad investment right now?",
       "verified_contact": {
         "name": "Erin Coker",
         "first": "Erin",
@@ -100,11 +92,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Tim Trevathan - Atlanta Georgia Living",
-      "video_title": "How to Buy a New Construction Home in Georgia: Step-By-Step Guide (PART 2)",
-      "source_url": "https://www.youtube.com/watch?v=MCOwTJu8OMs",
+      "video_title": "Atlanta's Ultra Wealthy Are Secretly Moving HERE! V2 333",
+      "source_url": "https://www.youtube.com/watch?v=Dr78SL5KRK4",
       "retrieved_on": "2026-10-30",
-      "view_count": 508,
-      "transcript_excerpt": "Looking for PART 1? ✓ ✓ Click here: https://youtu.be/ByD5ESa4hXA?feature=shared How to Buy a New Construction Home in ...",
+      "view_count": 118,
+      "transcript_excerpt": "✅🏘️Take My FREE Neighborhood Quiz & Find Your Perfect Area!📍✅ https://www.gyrec.app/l/tim-trevathan/q5236z ✅Download My FREE ...",
       "verified_contact": {
         "name": "Tim Trevathan",
         "first": "Tim",
@@ -118,11 +110,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Tim Trevathan - Atlanta Georgia Living",
-      "video_title": "EVERYTHING You Need to Know About New Construction Homes in Atlanta!",
-      "source_url": "https://www.youtube.com/watch?v=2-Df2N1Jjuc",
+      "video_title": "How to Buy a New Construction Home in Georgia: Step-By-Step Guide (PART 2)",
+      "source_url": "https://www.youtube.com/watch?v=MCOwTJu8OMs",
       "retrieved_on": "2026-10-30",
-      "view_count": 605,
-      "transcript_excerpt": "EVERYTHING You Need to Know About New Construction Homes in Atlanta! Best videos on new construction for you: ✓ How to ...",
+      "view_count": 508,
+      "transcript_excerpt": "Looking for PART 1? ✓ ✓ Click here: https://youtu.be/ByD5ESa4hXA?feature=shared How to Buy a New Construction Home in ...",
       "verified_contact": {
         "name": "Tim Trevathan",
         "first": "Tim",
@@ -154,11 +146,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Living in Atlanta GA - Angelo Mirville",
-      "video_title": "New Construction Custom Build Modern Home in Atlanta, GA (Oakland City)",
-      "source_url": "https://www.youtube.com/watch?v=6avDvgUfPXM",
+      "video_title": "New Construction Home In Atlanta Georgia - Come Check Out Our New Stonegate Manor Community Today!",
+      "source_url": "https://www.youtube.com/watch?v=MTnhzpPWuc0",
       "retrieved_on": "2026-10-30",
-      "view_count": 797,
-      "transcript_excerpt": "New Construction Custom Build Modern Home in Atlanta, GA (Oakland City) \"Immerse in modern elegance with this newly crafted ...",
+      "view_count": 173,
+      "transcript_excerpt": "New Construction Home In Atlanta Georgia - Come Check Out Our New Stonegate Manor Community Today! Let's tour this Brand ...",
       "verified_contact": {
         "name": "Angelo Mirville",
         "first": "Angelo",
@@ -185,14 +177,14 @@
     },
     {
       "medium": "instagram_new_build_tour",
-      "title": "Shatorri Phillips, REALTOR® | 🏡 Morning Creek Forest Townhomes – New Construction in South Fulton! 🌳",
-      "source_url": "https://www.instagram.com/shatorriphillips/reel/DF_KCGBvmUV/",
+      "title": "@jonesyrealtygroup | New Construction in Snellville, GA – Walk Through This Stunning Home! 🎥✨",
+      "source_url": "https://www.instagram.com/reel/DGx-0J4PVA8/",
       "retrieved_on": "2026-10-30"
     },
     {
       "medium": "instagram_new_build_tour",
-      "title": "@jonesyrealtygroup | New Construction in Snellville, GA – Walk Through This Stunning Home! 🎥✨",
-      "source_url": "https://www.instagram.com/reel/DGx-0J4PVA8/",
+      "title": "Shatorri Phillips, REALTOR® | 🏡 Morning Creek Forest Townhomes – New Construction in South Fulton! 🌳",
+      "source_url": "https://www.instagram.com/shatorriphillips/reel/DF_KCGBvmUV/",
       "retrieved_on": "2026-10-30"
     }
   ],
@@ -203,10 +195,10 @@
       "source_url": "https://www.reddit.com/r/Marietta/comments/1w6b5f7/looking_for_recommendations_for_a_home_inspector/",
       "retrieved_on": "2026-10-30",
       "published_at": "2026-09-03T15:47:43.000Z",
-      "age_hours": 1364,
+      "age_hours": 1373,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: # Looking for recommendations for a home inspector who's independent and not some PE stooge Posted by u/-E-Cross in r/Marietta · 9 points · 7 comments · September 3, 2026 at 3:47 PM UTC Thanks ## Top comments (5 shown of 7 reported) u/rootlo0p · 4 points · September 3, 2026 at 6:00 PM UTC > Never take a realtor-recomme",
+      "excerpt": "# Looking for recommendations for a home inspector who's independent and not some PE stooge Posted by u/-E-Cross in r/Marietta · 9 points · 7 comments · September 3, 2026 at 3:47 PM UTC Thanks ## Top comments (5 shown of 7 reported) u/rootlo0p · 4 points · September 3, 2026 at 6:00 PM UTC > Never take a realtor-recommended inspect",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -215,22 +207,10 @@
       "source_url": "https://www.reddit.com/r/DecaturGA/comments/1s61p45/home_inspector/",
       "retrieved_on": "2026-10-30",
       "published_at": "2026-03-28T14:23:06.000Z",
-      "age_hours": 5182,
+      "age_hours": 5191,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: # Home inspector Posted by u/Beachbaby77 in r/DecaturGA · 5 points · 8 comments · March 28, 2026 at 2:23 PM UTC I am interested in making an offer on a Decatur condo and was wondering if anyone knows of any good home inspectors? Please and thank you.😊 ## Top comments (6 shown of 8 reported) u/Ok_Stick_3070 · 3 points",
-      "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
-    },
-    {
-      "platform": "reddit",
-      "title": "Home inspector : r/DecaturGA",
-      "source_url": "https://www.reddit.com/r/DecaturGA/comments/1rp2c26/home_inspector/",
-      "retrieved_on": "2026-10-30",
-      "published_at": "2026-03-09T14:53:24.000Z",
-      "age_hours": 5637,
-      "is_fresh_72h": false,
-      "mentions_foresight": false,
-      "excerpt": "Highlights: # Home inspector Posted by u/blinkersix2 in r/DecaturGA · 5 points · 7 comments · March 9, 2026 at 2:53 PM UTC Looking for a good home inspector in the area. Any recommendations would be appreciated. ## Top comments (7 shown) u/kizzles1 · 3 points · March 9, 2026 at 4:48 PM UTC > Good experience with Lunspro u/Onilwy",
+      "excerpt": "# Home inspector Posted by u/Beachbaby77 in r/DecaturGA · 5 points · 8 comments · March 28, 2026 at 2:23 PM UTC I am interested in making an offer on a Decatur condo and was wondering if anyone knows of any good home inspectors? Please and thank you.😊 ## Top comments (6 shown of 8 reported) u/Ok_Stick_3070 · 3 points · March 28,",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -239,11 +219,23 @@
       "source_url": "https://www.reddit.com/r/Gwinnett/comments/1rutyo5/buyers_home_inspectors/",
       "retrieved_on": "2026-10-30",
       "published_at": "2026-03-15T23:54:27.000Z",
-      "age_hours": 5484,
+      "age_hours": 5493,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: # Buyers home inspectors Posted by u/whoduhhelru in r/Gwinnett · 2 points · 17 comments · March 15, 2026 at 11:54 PM UTC I put in an offer that looks like itll get accepted. I'm a first time buyer. Any recommendations for home inspectors in the Gwinnett area? ## Top comments (9 ... u/Quick-Pace-4050 · 12 points · March",
+      "excerpt": "# Buyers home inspectors Posted by u/whoduhhelru in r/Gwinnett · 2 points · 17 comments · March 15, 2026 at 11:54 PM UTC I put in an offer that looks like itll get accepted. I'm a first time buyer. Any recommendations for home inspectors in the Gwinnett area? ## Top comments (9 ... u/Quick-Pace-4050 · 12 points · March 16, 2026 at",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. On Metro Atlanta homes, ask whether your inspector physically enters accessible crawlspaces and attics, scans moisture gradients with a calibrated infrared thermal camera, and evaluates roof flashings via 4K aerial drone rather than binoculars from the driveway. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
+    },
+    {
+      "platform": "reddit",
+      "title": "Home inspector : r/DecaturGA",
+      "source_url": "https://www.reddit.com/r/DecaturGA/comments/1rp2c26/home_inspector/",
+      "retrieved_on": "2026-10-30",
+      "published_at": "2026-03-09T14:53:24.000Z",
+      "age_hours": 5646,
+      "is_fresh_72h": false,
+      "mentions_foresight": false,
+      "excerpt": "# Home inspector Posted by u/blinkersix2 in r/DecaturGA · 5 points · 7 comments · March 9, 2026 at 2:53 PM UTC Looking for a good home inspector in the area. Any recommendations would be appreciated. ## Top comments (7 shown) u/kizzles1 · 3 points · March 9, 2026 at 4:48 PM UTC > Good experience with Lunspro u/Onilwyn · 2 poin",
+      "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
       "platform": "reddit",
@@ -251,10 +243,10 @@
       "source_url": "https://www.reddit.com/r/Atlanta/comments/1m0jjcr/home_inspector_recommendationsthat_will_permit/",
       "retrieved_on": "2026-10-30",
       "published_at": "2025-07-15T14:40:07.000Z",
-      "age_hours": 11326,
+      "age_hours": 11334,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: # Home Inspector Recommendations-that will permit you to follow along Posted by u/FlashyHeight9323 in r/Atlanta · 7 points · 17 comments · July 15, 2025 at 2:40 PM UTC I heard this is very key so if anyone had any good experiences with someone thorough and comfortable/professional enough to let you be there for the inspect",
+      "excerpt": "# Home Inspector Recommendations-that will permit you to follow along Posted by u/FlashyHeight9323 in r/Atlanta · 7 points · 17 comments · July 15, 2025 at 2:40 PM UTC I heard this is very key so if anyone had any good experiences with someone thorough and comfortable/professional enough to let you be there for the inspection would be",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. On Metro Atlanta homes, ask whether your inspector physically enters accessible crawlspaces and attics, scans moisture gradients with a calibrated infrared thermal camera, and evaluates roof flashings via 4K aerial drone rather than binoculars from the driveway. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -263,10 +255,10 @@
       "source_url": "https://www.biggerpockets.com/forums/52/topics/887739-seeking-a-reliable-home-inspector-in-atl",
       "retrieved_on": "2026-10-30",
       "published_at": "2020-10-31T03:11:28.000Z",
-      "age_hours": 52569,
+      "age_hours": 52578,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: Seeking a reliable Home Inspector in ATL # Seeking a reliable Home Inspector in ATL Sakib J. Investor · Los Angeles, CA · Member since 2020 · 154 posts · 32 votes Can someone recommend a solid, reliable Home Inspector or Home Inspection Company in Atlanta? ## 3 Replies - close modal Michael J. Abel Rental Property Investor · A",
+      "excerpt": "Seeking a reliable Home Inspector in ATL # Seeking a reliable Home Inspector in ATL Sakib J. Investor · Los Angeles, CA · Member since 2020 · 154 posts · 32 votes Can someone recommend a solid, reliable Home Inspector or Home Inspection Company in Atlanta? ## 3 Replies - close modal Michael J. Abel Rental Property Investor · Atlanta, GA ·",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. On Metro Atlanta homes, ask whether your inspector physically enters accessible crawlspaces and attics, scans moisture gradients with a calibrated infrared thermal camera, and evaluates roof flashings via 4K aerial drone rather than binoculars from the driveway. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -275,10 +267,10 @@
       "source_url": "https://www.biggerpockets.com/forums/647/topics/848554-home-inspection-companies-in-atlanta",
       "retrieved_on": "2026-10-30",
       "published_at": "2020-10-11T18:08:25.000Z",
-      "age_hours": 53034,
+      "age_hours": 53043,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: Home inspection Companies in Atlanta # Home inspection Companies in Atlanta William Hines Pittsburgh, PA · Member since 2012 · 10 posts · 9 votes I am looking for suggestions on good Home Inspectors in Atlanta. ### Investor-friendly agents in Atlanta, GA See the agents BiggerPockets members work with in Atlanta, GA. Rod Krause",
+      "excerpt": "Home inspection Companies in Atlanta # Home inspection Companies in Atlanta William Hines Pittsburgh, PA · Member since 2012 · 10 posts · 9 votes I am looking for suggestions on good Home Inspectors in Atlanta. ### Investor-friendly agents in Atlanta, GA See the agents BiggerPockets members work with in Atlanta, GA. Rod Krause Realtor · A",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. Even on brand-new Georgia homes, municipal code officials spend only minutes on-site and routinely miss disconnected attic exhaust ducts, missing kick-out flashing, and crushed sewer laterals. Independent Phase 1 Pre-Drywall inspections (starting From $275) and Final New Construction inspections (From $400) give you documented repair leverage before closing. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -286,11 +278,11 @@
       "title": "Home inspection in Atlanta Georgia",
       "source_url": "https://www.biggerpockets.com/forums/311/topics/820183-home-inspection-in-atlanta-georgia",
       "retrieved_on": "2026-10-30",
-      "published_at": "N/A",
+      "published_at": null,
       "age_hours": null,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: Home inspection in Atlanta Georgia # Home inspection in Atlanta Georgia Jessica Luan Member since 2020 · 4 posts · 1 vote Can anyone recommend a good home inspection company servicing atlanta Georgia metro area. ### Investor-friendly agents in Atlanta, GA See the agents BiggerPockets members work with in Atlanta, GA. Mitch Mes",
+      "excerpt": "Home inspection in Atlanta Georgia # Home inspection in Atlanta Georgia Jessica Luan Member since 2020 · 4 posts · 1 vote Can anyone recommend a good home inspection company servicing atlanta Georgia metro area. ### Investor-friendly agents in Atlanta, GA See the agents BiggerPockets members work with in Atlanta, GA. Mitch Messer Lender ·",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -299,10 +291,10 @@
       "source_url": "https://www.biggerpockets.com/forums/647/topics/642205-home-inspector-in-kennesaw-ga",
       "retrieved_on": "2026-10-30",
       "published_at": "2018-12-18T12:28:44.000Z",
-      "age_hours": 68952,
+      "age_hours": 68961,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: # Home inspector in Kennesaw GA? Evan O'Brien Investor · Kennesaw, GA · Member since 2016 · 37 posts · 14 votes Hi everyone! Any recommendations for a professional home inspector in/near Kennesaw, GA? Thanks! Bob B. Investor · Jasper GA · Member since 2015 · 1k+ posts · 1k+ votes 7y @Evan @Evan O'Brien David Hunter is a great",
+      "excerpt": "# Home inspector in Kennesaw GA? Evan O'Brien Investor · Kennesaw, GA · Member since 2016 · 37 posts · 14 votes Hi everyone! Any recommendations for a professional home inspector in/near Kennesaw, GA? Thanks! Bob B. Investor · Jasper GA · Member since 2015 · 1k+ posts · 1k+ votes 7y @Evan @Evan O'Brien David Hunter is a great inspector an",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -311,10 +303,10 @@
       "source_url": "https://nextdoor.com/p/G6CnRPt3yjTM/",
       "retrieved_on": "2026-10-30",
       "published_at": "2026-04-17T21:08:37.000Z",
-      "age_hours": 4695,
+      "age_hours": 4704,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: Seeking Reliable Home Inspector Recommendations in Marietta, GA # Marietta, Georgia M. I. Snellville, GA 17 Apr Hello neighbors, I am looking for recommendations for a house inspector. Any suggestions for a reliable home inspector or anyone who is a home inspector? Feel free to DM me. Thanks! 6 P. G. Marietta, GA· 17 Apr· Veri",
+      "excerpt": "Seeking Reliable Home Inspector Recommendations in Marietta, GA # Marietta, Georgia M. I. Snellville, GA 17 Apr Hello neighbors, I am looking for recommendations for a house inspector. Any suggestions for a reliable home inspector or anyone who is a home inspector? Feel free to DM me. Thanks! 6 P. G. Marietta, GA· 17 Apr· Verified in 2020",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -323,10 +315,10 @@
       "source_url": "https://nextdoor.com/p/S4ybWR3yCdwD/",
       "retrieved_on": "2026-10-30",
       "published_at": "2025-09-26T22:13:08.000Z",
-      "age_hours": 9566,
+      "age_hours": 9575,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: Looking for certified electrician for home inspection - Buford, GA # Buford, Georgia G. A. Buford, GA 26 Sep 25 Am looking for a certified Electrician to do an inspection on the electrical in my home/office. He needs to be able to do a verifiable report and also help to fix a few exits sign. I don’t have very much to pay. Pls",
+      "excerpt": "Looking for certified electrician for home inspection - Buford, GA # Buford, Georgia G. A. Buford, GA 26 Sep 25 Am looking for a certified Electrician to do an inspection on the electrical in my home/office. He needs to be able to do a verifiable report and also help to fix a few exits sign. I don’t have very much to pay. Pls if anyone ha",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. On Metro Atlanta homes, ask whether your inspector physically enters accessible crawlspaces and attics, scans moisture gradients with a calibrated infrared thermal camera, and evaluates roof flashings via 4K aerial drone rather than binoculars from the driveway. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -335,10 +327,10 @@
       "source_url": "https://nextdoor.com/p/H5g-jt4SWG7k/",
       "retrieved_on": "2026-10-30",
       "published_at": "2026-04-15T00:00:00.000Z",
-      "age_hours": 4764,
+      "age_hours": 4773,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: Seeking reliable contractor for home projects in Decatur, GA # Decatur, Georgia S. H. 15 Apr Decatur, GA Hello neighbors, I’m currently looking for a skilled home improvement professional or experienced contractor to complete a few projects in my home. Scope of work includes: • Installation of 4 interior doors • Bathtub instal",
+      "excerpt": "Seeking reliable contractor for home projects in Decatur, GA # Decatur, Georgia S. H. Decatur 15 Apr Hello neighbors, I’m currently looking for a skilled home improvement professional or experienced contractor to complete a few projects in my home. Scope of work includes: • Installation of 4 interior doors • Bathtub installation • Closing",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
@@ -347,10 +339,10 @@
       "source_url": "https://nextdoor.com/p/Hmwk-2DYgzzC/",
       "retrieved_on": "2026-10-30",
       "published_at": "2025-05-19T23:34:44.000Z",
-      "age_hours": 12685,
+      "age_hours": 12693,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "Highlights: Need Advice on Replacing Copper Water Pipes in Marietta, GA # Marietta, Georgia K. S. 19 May 25 Marietta, GA Looking to replace copper water pipes in my house If you replaced your copper pipes did you bother whole house or just where they had holes ... Marietta, GA· 19 May 25 ... H. W. Marietta, GA· 19 May 25 Typically the lea",
+      "excerpt": "Need Advice on Replacing Copper Water Pipes in Marietta, GA # Marietta, Georgia K. S. 19 May 25 Marietta, GA Looking to replace copper water pipes in my house If you replaced your copper pipes did you bother whole house or just where they had holes ... H. W. Marietta, GA· 19 May 25 Typically the leaks are in the horizontal pipe. I repaire",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     }
   ],
@@ -358,11 +350,11 @@
     {
       "kind": "investigative_tv_print",
       "title": "Suing a Builder | Consumer Ed, brought to you by the Georgia Attorney General’s Consumer Protection Division",
-      "author": "N/A",
-      "published_at": "N/A",
+      "author": "Atlanta Investigative Desk",
+      "published_at": null,
       "source_url": "https://consumered.georgia.gov/your-home/home-improvement/suing-builder",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: The General Assembly passed a law in 2004 called the Right to Repair Act (O.C.G.A. Sections 8-2-35 through 8-2-43), which defines the process for suing a builder, subcontractor or design professional for defective construction or remodeling of your home. Owners of new and old single-family homes, duplexes a"
+      "excerpt": "The General Assembly passed a law in 2004 called the Right to Repair Act (O.C.G.A. Sections 8-2-35 through 8-2-43), which defines the process for suing a builder, subcontractor or design professional for defective construction or remodeling of your home. Owners of new and old single-family homes, duplexes and condomini"
     },
     {
       "kind": "investigative_tv_print",
@@ -371,7 +363,7 @@
       "published_at": "2025-09-15T23:12:26.000Z",
       "source_url": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-homeowners-say-theyre-stuck-with-defective-homes-after-failed-property-inspections/QXPIIWMWTNBC3DSI2ALJNJR6H4/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: SOUTH FULTON, Ga. — Homeowners in South Fulton are facing costly repairs after discovering their homes failed inspection before purchase. Channel 2 investigative reporter Ashli Lincoln reports that these homes have major defects, leaving residents scared to live in them. The homes, located on Rock Rose Lane"
+      "excerpt": "SOUTH FULTON, Ga. — Homeowners in South Fulton are facing costly repairs after discovering their homes failed inspection before purchase. Channel 2 investigative reporter Ashli Lincoln reports that these homes have major defects, leaving residents scared to live in them. The homes, located on Rock Rose Lane, require ex"
     },
     {
       "kind": "investigative_tv_print",
@@ -380,7 +372,7 @@
       "published_at": "2025-02-26T23:33:20.000Z",
       "source_url": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-residents-face-numerous-issues-one-stop-shop-homes/SAGIST57QJC4BLG6OFDIM5MOGI/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: SOUTH FULTON, Ga. — Darlean Williams says she owns a shell of a house, after being forced to move out of her brand new home because of ongoing defects. “Since I’ve moved in, it’s been issues from day one, I have not been able to get comfortable in my dream home,” Williams said. Months after purchasing her h"
+      "excerpt": "SOUTH FULTON, Ga. — Darlean Williams says she owns a shell of a house, after being forced to move out of her brand new home because of ongoing defects. “Since I’ve moved in, it’s been issues from day one, I have not been able to get comfortable in my dream home,” Williams said. Months after purchasing her home, she say"
     },
     {
       "kind": "investigative_tv_print",
@@ -389,7 +381,7 @@
       "published_at": "2025-01-14T23:22:08.000Z",
       "source_url": "https://www.wsbtv.com/news/local/fayette-county/bamboozled-owner-says-developer-sold-her-defective-metro-atlanta-home/GHYJS7PEPFEYNBMP5FG7CFG5UE/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: FAYETTEVILLE, Ga. — A Fayetteville homeowner says she’s been forced to live in a hotel for nearly two years after she says she was sold a defective home. Emoral Farmer says it’s been two years since she’s been able to live in what was once her dream home. “Bamboozled, like I’ve been played on what we call t"
+      "excerpt": "FAYETTEVILLE, Ga. — A Fayetteville homeowner says she’s been forced to live in a hotel for nearly two years after she says she was sold a defective home. Emoral Farmer says it’s been two years since she’s been able to live in what was once her dream home. “Bamboozled, like I’ve been played on what we call the American"
     },
     {
       "kind": "investigative_tv_print",
@@ -398,7 +390,7 @@
       "published_at": "2026-02-03T18:12:52.000Z",
       "source_url": "https://www.wsbtv.com/news/local/cobb-county/22-million-teardown-new-homes-safety-structural-issues-would-cost-1m-fix/H2GKHLZM2FEY3LMHT4TDZWWV2I/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: COBB COUNTY, Ga. — The repair punch list for a newly built home has hundreds of items. It is so extensive that licensed builder Lisa Wagener has a blunt assessment. “It’s actually really sad for the homeowners, but I call it a $2.2 million teardown,” Wagener told Channel 2 Consumer Investigator Justin Gray."
+      "excerpt": "COBB COUNTY, Ga. — The repair punch list for a newly built home has hundreds of items. It is so extensive that licensed builder Lisa Wagener has a blunt assessment. “It’s actually really sad for the homeowners, but I call it a $2.2 million teardown,” Wagener told Channel 2 Consumer Investigator Justin Gray. The East Co"
     },
     {
       "kind": "atlanta_substack",
@@ -407,7 +399,7 @@
       "published_at": "2022-08-21T14:21:17.000Z",
       "source_url": "https://atlantarealestate.substack.com/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: ATL Real Estate Report | Substack # ATL Real Estate Report Podcast + newsletter that explores Atlanta's dynamic real estate market By Deep Gap Journal · Launched 4 years ago ---"
+      "excerpt": "ATL Real Estate Report | Substack # ATL Real Estate Report Podcast + newsletter that explores Atlanta's dynamic real estate market By Deep Gap Journal · Launched 4 years ago ---"
     },
     {
       "kind": "atlanta_substack",
@@ -416,7 +408,7 @@
       "published_at": "2025-08-25T13:51:38.000Z",
       "source_url": "https://matthewsreisresearch.substack.com/p/atlanta-multifamily-report-3q-2025",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: Atlanta's multifamily market is at a pivotal moment, shaped by strong in-migration and a historic development boom. The arrival of major corporate headquarters and innovation hubs for companies like Newell Brands, Mercedes-Benz, and Cargill signals sustained high-quality job growth that will continue to fue"
+      "excerpt": "Atlanta's multifamily market is at a pivotal moment, shaped by strong in-migration and a historic development boom. The arrival of major corporate headquarters and innovation hubs for companies like Newell Brands, Mercedes-Benz, and Cargill signals sustained high-quality job growth that will continue to fuel housing de"
     },
     {
       "kind": "atlanta_substack",
@@ -425,16 +417,16 @@
       "published_at": "2023-01-14T13:01:09.000Z",
       "source_url": "https://atlantarealestate.substack.com/p/secular-vs-cyclical",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: The Atlanta Real Estate Report by ATLsherpa is a podcast & companion website for those interested in the Atlanta real estate market. This includes individual buyers, sellers and investors. It also includes architects, builders, developers, lenders, realtors and urban planners; anyone involved with the local"
+      "excerpt": "To sum it up in two words: BUY ATL! (photo by ATLsherpa) - BUY ATL for the long-term (3+ years) - Perfect Storm (pandemic created a “Cat 5”) - RE market is hyper local - City of ATL is a city of neighborhoods - Metro ATL is a region of cities / communities / subdivisions (suburbs & exurbs) - Population of 21-county reg"
     },
     {
       "kind": "atlanta_substack",
-      "title": "The Housing Correction Visualized in the Two Atlantas",
-      "author": "Conor Sen",
-      "published_at": "2026-09-18T10:13:35.000Z",
-      "source_url": "https://conorsen.substack.com/p/the-housing-correction-visualized",
+      "title": "Key Takeaways from ULI Housing Opportunity Conference 2025",
+      "author": "Trevor Butler",
+      "published_at": "2025-02-27T22:56:46.000Z",
+      "source_url": "https://ponderingplace.substack.com/p/key-takeaway-from-uli-housing-opportunity",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: ### A zip code-level analysis shows how bifurcated metro Atlanta’s housing market has been over the past few years ... Most geographic analysis of the housing market since its 2022 peak focuses on the bust in some of the pandemic migration destinations like Texas and Florida or the continued resilience and"
+      "excerpt": "Our cities are at a transition point. Most of the major metros of the Sun Belt have grown significantly and even more rapidly since the pandemic. Yet, we have not yet come to terms with the fact that we are in a new era of growth and development. Particularly in the state of Georgia, where Atlanta represents a dispropo"
     }
   ],
   "warrantySubdivisionCohorts": [
@@ -444,15 +436,7 @@
       "published_at": "2025-03-06T17:06:57.000Z",
       "source_url": "https://www.globenewswire.com/news-release/2025/03/06/3038467/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Now-Open-in-Atlanta-Georgia.html",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: Toll Brothers Announces New Luxury Home Community Now Open ## Nolyn Pointe by Toll Brothers offers single-family homes in the Chosewood Park neighborhood of Atlanta with direct access to the BeltLine Southside Trail March 06, 2025 12:06 ET | Source: Toll Brothers, Inc"
-    },
-    {
-      "medium": "11_month_warranty_subdivision_cohort",
-      "title": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc.",
-      "published_at": "2025-08-28T08:00:00.000Z",
-      "source_url": "https://investors.centurycommunities.com/news/news-details/2025/Century-Communities-to-Host-Grand-Opening-This-Weekend-in-Flowery-Branch-GA/default.aspx",
-      "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc. ### Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA August 28, 2025 Anticipated new townhome community offers amenities and low-mainte"
+      "excerpt": "Toll Brothers Announces New Luxury Home Community Now Open ## Nolyn Pointe by Toll Brothers offers single-family homes in the Chosewood Park neighborhood of Atlanta with direct access to the BeltLine Southside Trail March 06, 2025 12:06 ET | Source: Toll Brothers, Inc. ATLANTA, M"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
@@ -460,7 +444,7 @@
       "published_at": "2025-06-03T19:00:19.000Z",
       "source_url": "https://www.atlantarealestateforum.com/grand-opening-of-decaturs-celesta-set-for-june-21/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum # Grand Opening Of Decatur’s Celesta Set For June 21 June 3, 2025| David Weekley Homes https://www.atlantarealestateforum.com/wp-content/uploads/ai-text-to-speech/post-183408-Sg-grand-openi"
+      "excerpt": "Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum # Grand Opening Of Decatur’s Celesta Set For June 21 June 3, 2025| David Weekley Homes https://www.atlantarealestateforum.com/wp-content/uploads/ai-text-to-speech/post-183408-Sg-grand-opening-of-decatu"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
@@ -468,7 +452,7 @@
       "published_at": "2025-06-05T00:00:00.000Z",
       "source_url": "https://metroatlantaceo.com/news/2025/06/providence-group-announces-grand-opening-phase-3-waterside-peachtree-corners/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: The Providence Group Announces Grand Opening of Phase 3 at Waterside in Peachtree Corners - Metro Atlanta CEO ## The Providence Group Announces Grand Opening of Phase 3 at Waterside in Peachtree Corners Staff Report From Georgia CEO Thursday, June 5th, 2025 The Provid"
+      "excerpt": "The Providence Group Announces Grand Opening of Phase 3 at Waterside in Peachtree Corners - Metro Atlanta CEO ## The Providence Group Announces Grand Opening of Phase 3 at Waterside in Peachtree Corners Staff Report From Georgia CEO Thursday, June 5th, 2025 The Providence Group,"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
@@ -476,15 +460,23 @@
       "published_at": "2025-06-12T20:31:48.000Z",
       "source_url": "https://atlantaagentmagazine.com/2025/06/12/old-mill-preserve-grand-opening/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine ## David Weekley Homes announces grand opening of Old Mill Preserve by Elizabeth Kanzeg Rowland June 12, 2025 Image courtesy of David Weekley Homes Old Mill Preserve, a new age-r"
+      "excerpt": "David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine ## David Weekley Homes announces grand opening of Old Mill Preserve by Elizabeth Kanzeg Rowland June 12, 2025 Image courtesy of David Weekley Homes Old Mill Preserve, a new age-restricted co"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
-      "title": "Tour Snellville Homes at Oak Grove Glen - Atlanta Real Estate Forum",
-      "published_at": "2025-06-10T18:01:12.000Z",
-      "source_url": "https://www.atlantarealestateforum.com/tour-snellville-homes-at-oak-grove-glen/",
+      "title": "Grand Opening & Ribbon Cutting Event: Mulberry Summit - EMC Homes",
+      "published_at": "2025-05-12T14:17:17.000Z",
+      "source_url": "https://www.emchomes.com/grand-opening-ribbon-cutting-event-mulberry-summit/",
       "retrieved_on": "2026-10-30",
-      "excerpt": "Highlights: # Tour Snellville Homes at Oak Grove Glen June 10, 2025| Century Communities Join Century Communities for the grand opening of Oak Grove Glen, a single-family home community in Snellville. This community features 70 homes, priced from the $400,000s, with nine move-in"
+      "excerpt": "# Grand Opening & Ribbon Cutting Event: Mulberry Summit May 12, 2025 EMC Homes is excited to announce the Grand Opening of Mulberry Summit in Flowery Branch, where new homes start from the $400’s. Join us Tuesday, May 13 th for the Ribbon Cutting ceremony at 10am, and stay for ca"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Wingate Companies Celebrates Grand Opening of Cypress 595, Atlanta’s Premier Affordable Housing Community",
+      "published_at": "2025-06-02T16:02:33.000Z",
+      "source_url": "https://www.einpresswire.com/article/818292996/wingate-companies-celebrates-grand-opening-of-cypress-595-atlanta-s-premier-affordable-housing-community",
+      "retrieved_on": "2026-10-30",
+      "excerpt": "Wingate Companies Celebrates Grand Opening of Cypress 595, Atlanta’s Premier Affordable Housing Community # Wingate Companies Celebrates Grand Opening of Cypress 595, Atlanta’s Premier Affordable Housing Community News Provided By Synergy PR June 02, 2025, 16:02 GMT Wingate Compa"
     }
   ],
   "socialMarketHooks": [

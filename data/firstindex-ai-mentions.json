@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T18:45:08.383Z",
+  "generatedAt": "2026-10-30T20:59:16.549Z",
   "retrieved_on": "2026-10-30",
   "source_url": "https://www.fhinspectionsatl.com",
   "readinessScore": "100%",
@@ -26,15 +26,15 @@
       },
       {
         "platform": "reddit",
-        "title": "Home inspector : r/DecaturGA",
-        "source_url": "https://www.reddit.com/r/DecaturGA/comments/1rp2c26/home_inspector/",
+        "title": "Buyers home inspectors : r/Gwinnett",
+        "source_url": "https://www.reddit.com/r/Gwinnett/comments/1rutyo5/buyers_home_inspectors/",
         "retrieved_on": "2026-10-30",
         "mentions_foresight": false
       },
       {
         "platform": "reddit",
-        "title": "Buyers home inspectors : r/Gwinnett",
-        "source_url": "https://www.reddit.com/r/Gwinnett/comments/1rutyo5/buyers_home_inspectors/",
+        "title": "Home inspector : r/DecaturGA",
+        "source_url": "https://www.reddit.com/r/DecaturGA/comments/1rp2c26/home_inspector/",
         "retrieved_on": "2026-10-30",
         "mentions_foresight": false
       },

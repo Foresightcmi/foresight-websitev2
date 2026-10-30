@@ -8,7 +8,7 @@
 
 ### 1. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: Suing a Builder | Consumer Ed, brought to you by the Georgia Attorney General’s Consumer Protection Division
 
-- **Channel**: Atlanta Investigative Desk (N/A)
+- **Channel**: Atlanta Investigative Desk (Atlanta Investigative Desk)
 - **Subject Line**: `Follow-up Data on "Suing a Builder | Consumer Ed, brought to you by the Georgia A" — Certified Master Inspector Field Findings`
 - **Core Soundbite**: "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing."
 - **Hard Data Metric**: Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.
