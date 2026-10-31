@@ -502,7 +502,7 @@
       <div class="stats-row">
         <span class="stat-label">Due Diligence Agent Outreach:</span>
         <span class="stat-numbers">
-          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">5</span> Contacted
+          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">1</span> Contacted
         </span>
       </div>
       <div class="progress-track">
@@ -521,7 +521,7 @@
           <option value="name_asc">👤 Agent Name (A to Z)</option>
         </select>
         <select class="select-ctrl" id="citySelect" onchange="setCity(this.value)">
-          <option value="ALL">📍 All Cities (5)</option>
+          <option value="ALL">📍 All Cities (1)</option>
         </select>
       </div>
     </div>
@@ -547,7 +547,7 @@
   <div id="cardsContainer"></div>
 
   <script>
-    const underContractFilers = [{"id":"card_53bfe43e52","role":"BUYER_AGENT","name":"Ansley Willett","first":"Ansley","phone":"(678) 628-9548","clean_phone":"6786289548","brokerage":"Southern Classic Realtors","city":"Monroe","address":"2332 Spring Brook Drive","price":"$390,000","raw_price":390000,"date":"2026-10-30"},{"id":"card_9b77cc84e0","role":"LIST_AGENT","name":"Abigail Lincoln","first":"Abigail","phone":"(978) 877-2644","clean_phone":"9788772644","brokerage":"Real Broker, LLC.","city":"Lilburn","address":"4824 Rosewood Drive SW","price":"$289,100","raw_price":289100,"date":"2026-10-30"},{"id":"card_912d23f7b0","role":"LIST_AGENT","name":"Brynn Draughon","first":"Brynn","phone":"(678) 322-8733","clean_phone":"6783228733","brokerage":"Century 21 Connect Realty","city":"Kennesaw","address":"133 Park Forest Drive NW","price":"$250,000","raw_price":250000,"date":"2026-10-30"},{"id":"card_5d25654753","role":"LIST_AGENT","name":"DUSTIN COWART","first":"DUSTIN","phone":"(770) 363-6537","clean_phone":"7703636537","brokerage":"Atlantic Real Estate Brokers, LLC","city":"Newnan","address":"832 Country Club Road","price":"$249,900","raw_price":249900,"date":"2026-10-30"},{"id":"card_7f455cd8da","role":"LIST_AGENT","name":"Rebecca Thomas","first":"Rebecca","phone":"(404) 273-5006","clean_phone":"4042735006","brokerage":"Coldwell Banker Residential Real Estate, LLC","city":"Acworth","address":"4424 Brandy Lane SE","price":"$235,000","raw_price":235000,"date":"2026-10-30"}];
+    const underContractFilers = [{"id":"card_53bfe43e52","role":"BUYER_AGENT","name":"Ansley Willett","first":"Ansley","phone":"(678) 628-9548","clean_phone":"6786289548","brokerage":"Southern Classic Realtors","city":"Monroe","address":"2332 Spring Brook Drive","price":"$390,000","raw_price":390000,"date":"2026-10-30"}];
 
     // State Persistence across localStorage
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
