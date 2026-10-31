@@ -186,8 +186,8 @@ async function main() {
         sentAt: new Date().toISOString()
       });
 
-      // Dispatched smartphone notification
-      try {
+      // Only push per-email smartphone notification if --push is explicitly requested (radar + EOD already summarize)
+      if (process.argv.includes('--push')) try {
         const title = cleanHeader(`🚀 Sent: Pre-Drywall Intro for ${lead.propertyName || 'New Build'}`);
         const summary = [
           `New Construction Introduction Sent:`,

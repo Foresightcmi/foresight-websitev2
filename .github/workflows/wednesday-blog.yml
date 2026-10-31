@@ -32,14 +32,16 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/generate-blog-post.mjs
 
-      - name: Ping Google Sitemap
-        run: |
-          curl -s "https://www.google.com/ping?sitemap=https://www.fhinspectionsatl.com/sitemap.xml"
-          echo "Google sitemap pinged"
-
-      - name: Commit and push
+      - name: Commit, push, and ping IndexNow
         run: |
           git config user.name "Foresight Blog Writer"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/posts.json
-          git diff --cached --quiet || (git commit -m "blog: new post $(date +%Y-%m-%d) [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Clean"
+          if ! git diff --cached --quiet; then
+            git commit -m "blog: new post $(date +%Y-%m-%d) [skip ci]"
+            git pull --rebase -X theirs origin main
+            git push origin main
+            node scripts/ping-indexnow.mjs
+          else
+            echo "Clean"
+          fi

@@ -100,6 +100,7 @@ function buildDueDiligenceEmail(lead) {
  * Dispatches real-time smartphone alert via ntfy.sh
  */
 async function dispatchSmartphoneAlert(lead, emailData) {
+  if (!process.argv.includes('--push')) return;
   const title = cleanHeader(`🚀 Sent: Advisory to ${lead.ownerName || 'Lead'}`);
   const summary = [
     `Autonomous Due Diligence Advisory Sent:`,

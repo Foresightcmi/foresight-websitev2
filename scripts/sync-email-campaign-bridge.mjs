@@ -131,12 +131,26 @@ function syncUnderContractToCampaign(unsubSet) {
     fs.writeFileSync(activeFilersPath, JSON.stringify(existingArr.slice(0, 5000), null, 2), 'utf8');
   }
 
-  // Export cloud-ready realtor nurture queue into foresight-website/data/ for 24/7 GitHub Actions execution when PC is off
+  // Export cloud-ready realtor nurture queue (excluding Realtors emailed locally in last 14d) for manual PC-off backup
+  const recentLocalEmails = new Set();
+  const masterDbPath = path.join(CAMPAIGN_ROOT, 'master_realtor_database.json');
+  if (fs.existsSync(masterDbPath)) {
+    try {
+      const mdb = JSON.parse(fs.readFileSync(masterDbPath, 'utf8'));
+      const cutoff = Date.now() - 14 * 24 * 60 * 60 * 1000;
+      for (const c of Object.values(mdb.contacts || {})) {
+        const em = String(c.email || '').trim().toLowerCase();
+        const sentRecently = Object.values(c.campaigns || {}).some((cp) => cp?.sent && cp?.timestamp && new Date(cp.timestamp).getTime() >= cutoff);
+        if (em && sentRecently) recentLocalEmails.add(em);
+      }
+    } catch {}
+  }
+
   const cloudQueuePath = path.join(WEB_ROOT, 'data', 'cloud-realtor-nurture-queue.json');
   const cloudQueue = existingArr
     .filter((r) => {
       const e = String(r.email || '').trim().toLowerCase();
-      return e && e.includes('@') && !unsubSet.has(e) && !/@ansleyre\.com$|@ansleyatlanta\.com$/i.test(e);
+      return e && e.includes('@') && !unsubSet.has(e) && !recentLocalEmails.has(e) && !/@ansleyre\.com$|@ansleyatlanta\.com$/i.test(e);
     })
     .slice(0, 1500);
   fs.writeFileSync(cloudQueuePath, JSON.stringify(cloudQueue, null, 2), 'utf8');

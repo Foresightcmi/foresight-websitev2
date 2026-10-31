@@ -147,7 +147,7 @@ async function main() {
   existingLog.unshift(entry);
   fs.writeFileSync(worklogPath, JSON.stringify(existingLog.slice(0, 90), null, 2), 'utf8');
 
-  if (!process.argv.includes('--no-notify')) {
+  if (!process.argv.includes('--no-notify') && (deployedToVercel || !s1.ok || !s2.ok || process.argv.includes('--push'))) {
     try {
       await fetch(NTFY_TOPIC, {
         method: 'POST',

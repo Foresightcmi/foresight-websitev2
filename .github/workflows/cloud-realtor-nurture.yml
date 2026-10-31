@@ -1,9 +1,9 @@
-name: Cloud Realtor Nurture Campaign (24/7 PC-Off Autonomous Engine)
+name: Cloud Realtor Nurture Campaign (Manual PC-Off Vacation Backup)
 
 on:
-  schedule:
-    # 3x daily inside 9 AM - 6 PM Eastern year-round (14:15, 17:15, 20:15 UTC)
-    - cron: '15 14,17,20 * * *'
+  # Scheduled cron retired so cloud pulses never double-email Realtors already
+  # handled daily at 9:00 AM by local Windows Task Antigravity_Daily_Email_Campaign.
+  # Trigger manually via workflow_dispatch only when local workstation is powered off.
   workflow_dispatch:
 
 concurrency:

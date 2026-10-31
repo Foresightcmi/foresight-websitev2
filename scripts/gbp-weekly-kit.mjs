@@ -97,7 +97,7 @@ Characters: ${post.length} / 1,500
 
 fs.writeFileSync(path.join(ROOT, 'data', 'gbp-weekly-kit.md'), md, 'utf8');
 console.log(md);
-if (!process.argv.includes('--no-push')) {
+if (process.argv.includes('--push')) {
   await fetch('https://ntfy.sh/fores-antigravity-alerts-77', {
     method: 'POST',
     headers: { Title: `GBP post for week ${week}: ${svc.name} in ${name}`, Tags: 'round_pushpin', Click: url },

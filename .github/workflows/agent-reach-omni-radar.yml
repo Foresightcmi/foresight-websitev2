@@ -3,6 +3,7 @@ name: Foresight Agent-Reach Twice-Daily Omni-Medium Demand Radar
 on:
   schedule:
     # Twice Daily: 11:30 UTC (07:30 AM EDT) & 16:30 UTC (12:30 PM EDT)
+    # Single authoritative runner (local duplicate Windows Task retired).
     - cron: '30 11,16 * * *'
   workflow_dispatch:
 
@@ -39,19 +40,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Twice-Daily 10-Medium Radar, PR Scout & Truth Verification
+      - name: Run Twice-Daily 10-Medium Demand & YouTube Realtor Radar
         env:
           AGENT_REACH_BIN: /home/runner/.local/bin/agent-reach
           YT_DLP_BIN: /home/runner/.local/bin/yt-dlp
-        run: |
-          node scripts/agent-reach-omni-radar.mjs --push
-          node scripts/digital-pr-scout.mjs
-          node scripts/sync-email-campaign-bridge.mjs
-          node scripts/firstindex-ai-mention-tracker.mjs
+        run: node scripts/agent-reach-omni-radar.mjs --push
 
       - name: Commit & Push Verified Omni-Medium Intelligence
         run: |
           git config user.name "Foresight Omni-Radar Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/
-          git diff --cached --quiet || (git commit -m "chore(radar): twice-daily Agent-Reach 10-medium demand & PR intel sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Clean"
+          git diff --cached --quiet || (git commit -m "chore(radar): twice-daily Agent-Reach 10-medium demand intel sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Clean"
