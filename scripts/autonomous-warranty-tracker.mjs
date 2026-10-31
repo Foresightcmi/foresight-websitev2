@@ -1258,7 +1258,9 @@ async function main() {
   const pushTitle = `ðŸ“± 11-Month Warranty SMS Dispatcher Ready: ${readyToTextCount} Leads Queue!`;
   const pushMsg = `SMS Dispatcher Ready:\nâ€¢ Ready to Text: ${readyToTextCount} leads\nâ€¢ Emailed by AI: ${emailedIds.size} dossiers\nâ€¢ Total Due Now: ${cohorts.urgent.length}\n\nTap to open 1-click mobile SMS dispatcher:\nhttps://fhinspectionsatl.com/warranty-dispatch.html`;
 
-  await sendPushNotification(pushTitle, pushMsg, 'default');
+  if (process.argv.includes('--push')) {
+    await sendPushNotification(pushTitle, pushMsg, 'default');
+  }
   console.log('ðŸ [Warranty Tracker] Execution completed successfully!');
 }
 

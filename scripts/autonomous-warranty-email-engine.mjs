@@ -335,7 +335,7 @@ async function main() {
     const pushTitle = `📧 Homeowner Warranty Dossiers Dispatched: ${sentCount} Emailed!`;
     const pushMsg = `Autonomous Email Engine sent ${sentCount} 11-Month Warranty Dossiers to verified homeowners via inspect@foresightcmi.com.\n\nRemaining queue: ${eligibleHomeowners.length - sentCount}\nCheck dispatcher portal for SMS tracking.`;
     await sendPushNotification(pushTitle, pushMsg, 'default');
-  } else if (!canSendEmail) {
+  } else if (!canSendEmail && process.argv.includes('--push')) {
     const pushTitle = `🛡️ Warranty Engine: CRM Cohorts Verified`;
     const pushMsg = `Autonomous Warranty Engine verified ${eligibleHomeowners.length} eligible homeowners in CRM queue.\nEmail dispatch handled by local daemon engine.`;
     await sendPushNotification(pushTitle, pushMsg, 'default');

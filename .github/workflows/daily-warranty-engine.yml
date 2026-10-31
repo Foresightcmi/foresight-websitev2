@@ -2,7 +2,7 @@ name: Autonomous 11-Month Warranty Email Dispatcher
 
 on:
   schedule:
-    # 14:45 UTC = 10:45 AM EDT / 9:45 AM EST (Daily inside 9 AM - 6 PM Eastern)
+    # 14:45 UTC = 10:45 AM EDT / 9:45 AM EST (Daily, right after 10:00 AM Permit Radar harvest)
     - cron: '45 14 * * *'
   workflow_dispatch:
 
@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Refresh Month 10-12 Aging Cohorts From Latest Municipal Permits & New Builds
+        run: node scripts/autonomous-warranty-tracker.mjs
+
       - name: Execute Autonomous 11-Month Warranty Dispatch Engine
         run: node scripts/autonomous-warranty-email-engine.mjs
         env:
@@ -42,5 +45,5 @@ jobs:
         run: |
           git config user.name "Foresight Warranty Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/warranty-outreach-log.json data/warranty-tracker-crm.json public/warranty-dispatch.html
-          git diff --cached --quiet || (git commit -m "chore(warranty): autonomous 11-month warranty outreach dispatch [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Warranty records clean or push bypassed."
+          git add data/warranty-outreach-log.json data/warranty-tracker-crm.json public/warranty-dispatch.html public/dossiers/
+          git diff --cached --quiet || (git commit -m "chore(warranty): daily 11-month cohort refresh & warranty outreach dispatch [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Warranty records clean or push bypassed."
