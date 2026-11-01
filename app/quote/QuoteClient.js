@@ -22,7 +22,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     detachedBuilding: false,
     repairEstimates: false
   });
-  const [discount, setDiscount] = useState('none'); // 'none', 'first-time', 'realtor', 'repeat'
+  const [discount, setDiscount] = useState('none'); // 'none' | 'realtor' (Licensed GA Realtors only)
   const [realtorLicense, setRealtorLicense] = useState('');
   const [realtorBrokerage, setRealtorBrokerage] = useState('');
   const [realtorValidationMsg, setRealtorValidationMsg] = useState('');
@@ -50,8 +50,8 @@ export default function QuoteClient({ showValueComparison = true }) {
       setFirstTouchChannel(captureBrowserFirstTouch());
       const params = new URLSearchParams(window.location.search);
       const discountParam = params.get('discount');
-      if (discountParam && ['first-time', 'repeat', 'realtor', 'promo'].includes(discountParam)) {
-        setDiscount(discountParam);
+      if (discountParam === 'realtor') {
+        setDiscount('realtor');
       }
       const typeParam = params.get('type');
       const serviceParam = params.get('service');
@@ -153,11 +153,8 @@ export default function QuoteClient({ showValueComparison = true }) {
 
     // Auxiliary / Specialty Add-ons are quoted directly by our office at (678) 480-2110
 
-    // Promotional & Client Discounts (Strict $25 cap)
-    if (discount === 'first-time') extra -= 25; // First-Time Homebuyer Discount ($25.00)
-    if (discount === 'repeat') extra -= 25;     // Repeat Customer Loyalty Discount ($25.00)
-    if (discount === 'realtor') extra -= 25;    // Verified Licensed Georgia Realtor Partner ($25.00)
-    if (discount === 'promo') extra -= 25;      // Promotional / Referral Discount ($25.00)
+    // Verified Licensed Georgia Realtor Partner Concession (Strict -$25.00 cap; active GREC license required)
+    if (discount === 'realtor') extra -= 25;
 
     return { total: Math.max(0, base + extra), isCustom: false };
   };
@@ -320,10 +317,7 @@ export default function QuoteClient({ showValueComparison = true }) {
   const handleSaveVoucher = async (e) => {
     e.preventDefault();
     setVoucherStatus('sending');
-    if (discount === 'none') {
-      setDiscount('first-time');
-    }
-    const lockedPrice = isCustom ? 'Call (678) 480-2110 for Quote' : (discount === 'none' ? Math.max(0, total - 25) : total);
+    const savedEstimate = isCustom ? 'Call (678) 480-2110 for Quote' : total;
     try {
       const res = await fetch('/api/lead-capture', {
         method: 'POST',
@@ -336,11 +330,11 @@ export default function QuoteClient({ showValueComparison = true }) {
           serviceType,
           foundation,
           ageTier,
-          estimatedTotal: lockedPrice,
+          estimatedTotal: savedEstimate,
           attributionChannel: firstTouchChannel,
           howFound,
-          notes: `[Quote Calculator $25 Price-Lock Voucher Saved] Locked Estimate: ${isCustom ? lockedPrice : `$${lockedPrice}`} (${sqft} sq ft ${propertyType}, ${serviceType})`,
-          source: 'Quote Calculator $25 Price Lock Voucher'
+          notes: `[Quote Calculator Estimate & 25-Point Buyer Checklist Saved] Estimate: ${isCustom ? savedEstimate : `$${savedEstimate}`} (${sqft} sq ft ${propertyType}, ${serviceType})`,
+          source: 'Quote Calculator Saved Estimate & Buyer Checklist'
         })
       });
       if (res.ok) {
@@ -414,14 +408,8 @@ export default function QuoteClient({ showValueComparison = true }) {
           if (k === 'repairEstimates') return 'Contractor Repair Cost & Pricing Estimates (Call for Quote)';
           return k;
         });
-      if (discount !== 'none') {
-        const discountNames = {
-          'first-time': 'First-Time Homebuyer Discount (-$25)',
-          'repeat': 'Repeat Customer Loyalty Discount (-$25)',
-          'realtor': `Verified Licensed Realtor Discount (-$25) [GREC #${realtorLicense.trim()} - ${realtorBrokerage.trim()}]`,
-          'promo': 'Promotional / Partner Discount (-$25)'
-        };
-        activeAddonNames.push(discountNames[discount] || 'Promotional Discount (-$25)');
+      if (discount === 'realtor') {
+        activeAddonNames.push(`Verified Licensed Realtor Partner Discount (-$25) [GREC #${realtorLicense.trim()} - ${realtorBrokerage.trim()}]`);
       }
 
       const formattedRealtor = leadRealtor
@@ -774,9 +762,9 @@ export default function QuoteClient({ showValueComparison = true }) {
                   </div>
                 </label>
 
-              <h2 style={{ marginTop: '2.5rem', marginBottom: '1.25rem' }}>7. Available Client Discounts</h2>
+              <h2 style={{ marginTop: '2.5rem', marginBottom: '1.25rem' }}>7. Licensed Georgia Realtor Partner Discount</h2>
               <div className="form-group">
-                <label className="form-label">Apply an Eligible Promotional or Client Discount ($25 Max)</label>
+                <label className="form-label">Eligible Licensed Georgia Realtor Partner Discount ($25 Max — Active GREC License Required)</label>
                 <select 
                   className="form-control"
                   value={discount}
@@ -786,10 +774,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   }}
                 >
                   <option value="none">Standard Pricing ($0 Discount)</option>
-                  <option value="first-time">First-Time Homebuyer Discount (-$25.00)</option>
-                  <option value="repeat">Repeat Customer Loyalty Discount (-$25.00)</option>
                   <option value="realtor">Verified Licensed Georgia Realtor / Agent Partner (-$25.00)</option>
-                  <option value="promo">Promotional / Partner Code (-$25.00)</option>
                 </select>
               </div>
 
@@ -826,7 +811,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                     <div>
                       <label style={{ fontSize: '0.75rem', fontWeight: 700, display: 'block', marginBottom: '4px', color: 'var(--color-dark)' }}>
-                        GREC License # (Required) *
+                        GREC License # (Required)
                       </label>
                       <input 
                         type="text" 
@@ -843,7 +828,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     </div>
                     <div>
                       <label style={{ fontSize: '0.75rem', fontWeight: 700, display: 'block', marginBottom: '4px', color: 'var(--color-dark)' }}>
-                        Active Brokerage / Firm (Required) *
+                        Active Brokerage / Firm (Required)
                       </label>
                       <input 
                         type="text" 
@@ -1454,7 +1439,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                   )}
                 </div>
 
-                {/* Layer 5 Guestbook: Non-Ready Buyer Price-Lock & Checklist Capture */}
+                {/* Layer 5 Guestbook: Non-Ready Buyer Estimate Save & Checklist Capture */}
                 {!isCustom && leadStatus !== 'success' && (
                   <div style={{
                     background: 'rgba(212, 175, 55, 0.08)',
@@ -1467,10 +1452,10 @@ export default function QuoteClient({ showValueComparison = true }) {
                     {voucherStatus === 'sent' ? (
                       <div>
                         <strong style={{ color: '#34d399', fontSize: '0.88rem', display: 'block', marginBottom: '0.25rem' }}>
-                          ✓ $25 First-Time Buyer Voucher Applied! (Quote Locked at ${total})
+                          ✓ Fee Estimate Saved (${total}) &amp; 25-Point Buyer Checklist Unlocked!
                         </strong>
                         <p style={{ fontSize: '0.78rem', color: '#e2e8f0', margin: '0 0 0.5rem 0', lineHeight: 1.4 }}>
-                          Your -$25 discount is now active above, and your 25-Point Atlanta Buyer Checklist is unlocked:
+                          Your property estimate is saved for your search, and your printable 25-Point Atlanta Buyer Checklist is ready:
                         </p>
                         <a
                           href="/dossiers/atlanta-buyer-inspection-checklist.html"
@@ -1485,11 +1470,11 @@ export default function QuoteClient({ showValueComparison = true }) {
                       <form onSubmit={handleSaveVoucher}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
                           <strong style={{ color: 'var(--color-gold)', fontSize: '0.85rem' }}>
-                            🎁 Still House Hunting? Lock In -$25 Off + Free Buyer Checklist
+                            📋 Still House Hunting? Save This Estimate + Free 25-Point Buyer Checklist
                           </strong>
                         </div>
                         <p style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', margin: '0 0 0.6rem 0', lineHeight: 1.35 }}>
-                          Don&apos;t have an address or binding date yet? Enter your email to apply an instant <strong>$25 Voucher</strong> to this quote and unlock our printable 25-Point Atlanta Buyer Checklist.
+                          Don&apos;t have a final address or binding date yet? Enter your email to save this exact <strong>${total}</strong> quote and unlock our printable 25-Point Metro Atlanta Buyer Checklist.
                         </p>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.45rem', marginBottom: '0.5rem' }}>
                           <input
@@ -1526,7 +1511,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                             cursor: voucherStatus === 'sending' ? 'not-allowed' : 'pointer'
                           }}
                         >
-                          {voucherStatus === 'sending' ? 'Applying Voucher...' : `Apply $25 Voucher & Unlock Checklist (Locks at $${discount === 'none' ? Math.max(0, total - 25) : total})`}
+                          {voucherStatus === 'sending' ? 'Saving Estimate...' : `Save $${total} Quote & Unlock Free 25-Point Checklist`}
                         </button>
                       </form>
                     )}

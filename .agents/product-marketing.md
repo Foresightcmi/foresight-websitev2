@@ -11,7 +11,7 @@
   - **Pre-Drywall Framing Inspection**: **`From $275`**
   - **New Construction Final Inspection**: **`From $400`** (`$200` Repair Re-Inspections)
   - **All Auxiliary & Commercial Add-Ons (Sewer Scope, Radon, Pool & Spa, Termite/WDO, Mold/Air Quality, STR Compliance, Unincorporated DeKalb Low-Flow Certificate, Commercial PCA, Repair Cost Estimates)**: Strictly **`Call for Quote`** / **`Call (678) 480-2110 for Quote`**
-  - **Complexity Adjustments**: `+$75` each for Unfinished Crawlspace, Unfinished Basement, or `50+` yr Vintage Home; max discount `-$25`.
+  - **Complexity Adjustments & Realtor-Only Discount**: `+$75` each for Unfinished Crawlspace, Unfinished Basement, or `50+` yr Vintage Home; `-$25` partner discount exclusively for verified licensed Georgia Realtors (active GREC License `#` required; zero non-Realtor discounts).
 
 ## 2. Target Audiences & Buying Triggers (JTBD Four Forces)
 1. **Under-Contract Homebuyers (`5–10` Day Georgia Due-Diligence Window)**:

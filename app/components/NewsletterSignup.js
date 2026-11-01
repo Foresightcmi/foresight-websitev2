@@ -45,19 +45,19 @@ export default function NewsletterSignup() {
           Free Atlanta Home Buyer Inspection Checklist
         </h2>
         <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', lineHeight: '1.6', color: 'rgba(255,255,255,0.8)' }}>
-          Get our comprehensive 25-point checklist that Metro Atlanta homebuyers use to protect their investment, plus an instant $25 First-Time Buyer Inspection Voucher.
+          Get our comprehensive 25-point field checklist that Metro Atlanta homebuyers use during walk-throughs and Georgia 5-to-10 day due diligence windows to protect their investment.
         </p>
 
         {status === 'success' ? (
           <div style={{ backgroundColor: 'rgba(15, 23, 42, 0.85)', padding: '2rem', borderRadius: 'var(--radius-md)', border: '2px solid var(--color-gold)', textAlign: 'left' }}>
             <div style={{ display: 'inline-block', backgroundColor: 'rgba(16, 185, 129, 0.2)', color: '#34D399', border: '1px solid rgba(16, 185, 129, 0.4)', padding: '0.25rem 0.75rem', borderRadius: '50px', fontSize: '0.78rem', fontWeight: 700, marginBottom: '0.75rem', textTransform: 'uppercase' }}>
-              ✓ Instant Access Unlocked + $25 Buyer Voucher
+              ✓ Instant Checklist Access Unlocked
             </div>
             <h3 style={{ color: 'var(--color-gold)', fontSize: '1.45rem', marginBottom: '0.5rem', fontWeight: 800 }}>
               Your 25-Point Atlanta Buyer Checklist Is Ready!
             </h3>
             <p style={{ color: '#E2E8F0', fontSize: '0.95rem', lineHeight: 1.55, marginBottom: '1.25rem' }}>
-              Open and print your interactive Certified Master Inspector field checklist now, or apply your complimentary <strong>$25 First-Time Buyer Voucher</strong> directly inside our 30-second fee calculator (homes starting at $345, condos at $295).
+              Open and print your interactive Certified Master Inspector field checklist now, or calculate an instant deterministic fee quote inside our 30-second calculator (single-family homes starting at $345, condos at $295).
             </p>
             <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
               <a
@@ -80,7 +80,7 @@ export default function NewsletterSignup() {
                 📄 Open &amp; Print 25-Point Checklist &rarr;
               </a>
               <a
-                href="/quote?discount=first-time"
+                href="/quote"
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   color: '#FFFFFF',
@@ -95,7 +95,7 @@ export default function NewsletterSignup() {
                   gap: '0.4rem'
                 }}
               >
-                Claim $25 Off Instant Quote &rarr;
+                Calculate Instant Online Quote ($345+) &rarr;
               </a>
             </div>
           </div>
@@ -158,7 +158,7 @@ export default function NewsletterSignup() {
                 transition: 'opacity 0.2s ease'
               }}
             >
-              {status === 'loading' ? 'Unlocking Checklist...' : 'Get My Free Checklist + $25 Voucher'}
+              {status === 'loading' ? 'Unlocking Checklist...' : 'Get My Free 25-Point Buyer Checklist'}
             </button>
             {status === 'error' && (
               <p style={{ color: '#FCA5A5', marginTop: '0.5rem', fontSize: '0.9rem' }}>

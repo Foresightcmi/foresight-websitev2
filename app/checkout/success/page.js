@@ -70,26 +70,26 @@ export default function CheckoutSuccessPage() {
             🔍 Need Physical Verification Before Due Diligence Expires?
           </div>
           <p style={{ fontSize: '0.85rem', color: '#E2E8F0', margin: '0 0 0.85rem 0', lineHeight: 1.5 }}>
-            If your outside inspector did not scope the underground sewer line or test for Radon, mold, or unincorporated DeKalb low-flow compliance, you can apply a <strong>$25 Repeat Client Voucher</strong> toward any on-site Foresight diagnostic:
+            If your outside inspector did not scope the underground sewer line or test for Radon, mold, or unincorporated DeKalb low-flow compliance, you can request any on-site Foresight diagnostic directly below:
           </p>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
             <Link
-              href="/quote?sewer=true&discount=repeat"
+              href="/quote?sewer=true"
               style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#FFFFFF', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
             >
               Sewer Scope Camera (Call for Quote) &rarr;
             </Link>
             <Link
-              href="/quote?radon=true&discount=repeat"
+              href="/quote?radon=true"
               style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#FFFFFF', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none' }}
             >
               48-Hr Radon Monitoring (Call for Quote) &rarr;
             </Link>
             <Link
-              href="/quote?discount=repeat"
+              href="/quote"
               style={{ background: '#D4AF37', color: '#0F172A', padding: '0.5rem 0.85rem', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 800, textDecoration: 'none' }}
             >
-              Full 2-Inspector Evaluation ($345+ / -$25 Off) &rarr;
+              Full 2-Inspector Evaluation (From $345) &rarr;
             </Link>
           </div>
         </div>

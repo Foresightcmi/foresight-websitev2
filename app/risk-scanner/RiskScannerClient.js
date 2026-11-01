@@ -424,10 +424,10 @@ export default function RiskScannerClient() {
           foundation,
           ageTier: yearBuilt < 1976 ? 'over-50' : yearBuilt <= 2001 ? '25-49' : 'under-25',
           addons: recommendedPackage.services.map(s => `${s.name} (${s.price})`),
-          estimatedTotal: Math.max(0, recommendedPackage.total - 25),
-          notes: `[Risk Scanner Dossier & $25 Price Lock] Score: ${diagnostic.score}/100 | Exposure: $${diagnostic.minExposure.toLocaleString()}-$${diagnostic.maxExposure.toLocaleString()} | Hazards: ${hazardList}`,
+          estimatedTotal: recommendedPackage.total,
+          notes: `[Risk Scanner Dossier Saved] Score: ${diagnostic.score}/100 | Exposure: $${diagnostic.minExposure.toLocaleString()}-$${diagnostic.maxExposure.toLocaleString()} | Hazards: ${hazardList}`,
           _hp: dossierHp,
-          source: 'Property Risk Scanner Dossier + $25 Voucher'
+          source: 'Property Risk Scanner Dossier & Buyer Checklist'
         })
       });
       if (res.ok) {
@@ -1110,7 +1110,7 @@ export default function RiskScannerClient() {
                 </a>
               </div>
 
-              {/* Layer 5 Guestbook: Email Me This Property Risk Dossier + $25 Price Lock */}
+              {/* Layer 5 Guestbook: Email Me This Property Risk Dossier + Buyer Checklist */}
               <div style={{
                 marginTop: '1.85rem',
                 paddingTop: '1.5rem',
@@ -1125,14 +1125,14 @@ export default function RiskScannerClient() {
                     color: '#FFFFFF'
                   }}>
                     <div style={{ fontWeight: 800, color: '#34D399', fontSize: '1.05rem', marginBottom: '0.35rem' }}>
-                      ✓ Property Risk Dossier &amp; $25 Price-Lock Voucher Logged!
+                      ✓ Property Risk Dossier &amp; Estimate (${recommendedPackage.total}) Logged!
                     </div>
                     <p style={{ fontSize: '0.86rem', color: '#E2E8F0', margin: '0 0 0.85rem 0', lineHeight: 1.5 }}>
-                      We have registered your <strong>$25 Price-Lock Voucher</strong> (Recommended Package locked at <strong>${Math.max(0, recommendedPackage.total - 25)}</strong>) for {dossierAddress || countyInfo.name}. You can also open our printable 25-Point Atlanta Buyer Checklist right now:
+                      We have saved your property diagnostic summary (Recommended Base Package: <strong>${recommendedPackage.total}</strong>) for {dossierAddress || countyInfo.name}. You can also open our printable 25-Point Atlanta Buyer Checklist right now:
                     </p>
                     <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                       <Link
-                        href={`${quoteTargetUrl}&discount=first-time`}
+                        href={quoteTargetUrl}
                         style={{
                           background: 'var(--color-gold)',
                           color: '#0F172A',
@@ -1143,7 +1143,7 @@ export default function RiskScannerClient() {
                           textDecoration: 'none'
                         }}
                       >
-                        Book Online With $25 Voucher Applied &rarr;
+                        Book Online With Pre-Filled Property Details &rarr;
                       </Link>
                       <a
                         href="/dossiers/atlanta-buyer-inspection-checklist.html"
@@ -1168,14 +1168,14 @@ export default function RiskScannerClient() {
                   <form onSubmit={handleDossierSave} style={{ background: 'rgba(0, 0, 0, 0.28)', padding: '1.25rem', borderRadius: '10px', border: '1px solid rgba(212, 175, 55, 0.35)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
                       <strong style={{ color: 'var(--color-gold)', fontSize: '0.95rem' }}>
-                        📩 Not Ready to Book Today? Save This Risk Dossier + Lock In a $25 Voucher
+                        📩 Not Ready to Book Today? Save This Risk Dossier + Free 25-Point Buyer Checklist
                       </strong>
                       <span style={{ fontSize: '0.75rem', color: '#34D399', fontWeight: 700 }}>
-                        Locks Package at ${Math.max(0, recommendedPackage.total - 25)}
+                        Recommended Base Package: ${recommendedPackage.total}
                       </span>
                     </div>
                     <p style={{ fontSize: '0.8rem', color: '#CBD5E1', margin: '0 0 0.85rem 0', lineHeight: 1.45 }}>
-                      Still negotiating an offer or comparing properties? Send this {yearBuilt} {countyInfo.name.split('(')[0].trim()} hazard breakdown, our 25-Point Buyer Checklist, and a 30-day <strong>$25 Inspection Voucher</strong> to your inbox.
+                      Still negotiating an offer or comparing properties? Send this {yearBuilt} {countyInfo.name.split('(')[0].trim()} hazard breakdown and our printable 25-Point Metro Atlanta Buyer Checklist straight to your inbox.
                     </p>
                     <div style={{ display: 'none' }} aria-hidden="true">
                       <input type="text" name="_hp" tabIndex="-1" autoComplete="off" value={dossierHp} onChange={(e) => setDossierHp(e.target.value)} />
@@ -1231,7 +1231,7 @@ export default function RiskScannerClient() {
                           cursor: dossierStatus === 'sending' ? 'not-allowed' : 'pointer'
                         }}
                       >
-                        {dossierStatus === 'sending' ? 'Saving...' : 'Save Dossier + $25 Voucher'}
+                        {dossierStatus === 'sending' ? 'Saving...' : 'Save Dossier + Free Checklist'}
                       </button>
                     </div>
                   </form>

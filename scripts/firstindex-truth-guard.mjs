@@ -245,5 +245,36 @@ const cloudPulseCode = fs.readFileSync(path.join(ROOT, 'scripts', 'cloud-realtor
 const hasMetroBrokersGuard = ddEngineCode.includes('metrobrokers.com') && cloudPulseCode.includes('metrobrokers');
 record('Barracuda Gateway & MetroBrokers Domain Suppression Guard (metrobrokers.com / cbcmetrobrokers.com / peachtreetc.com)', hasMetroBrokersGuard);
 
+// Step 6: Realtor-Only $25 Discount Policy Guard (Zero Non-Realtor Client/Promo Discounts)
+const DISCOUNT_AUDIT_FILES = [
+  'app/quote/QuoteClient.js',
+  'app/risk-scanner/RiskScannerClient.js',
+  'app/components/NewsletterSignup.js',
+  'app/checkout/success/page.js',
+  'lib/chris-brain-prompt.js',
+  'public/dossiers/atlanta-buyer-inspection-checklist.html'
+];
+const BANNED_NON_REALTOR_DISCOUNTS = [
+  /Apply an Eligible Promotional or Client Discount/i,
+  /First-Time Homebuyer Discount/i,
+  /Repeat Customer Loyalty Discount/i,
+  /\$25 First-Time Buyer/i,
+  /\$25 Repeat Client/i,
+  /\$25 Price-Lock Voucher/i,
+  /discount=first-time/i,
+  /discount=repeat/i,
+  /discount=promo/i
+];
+let nonRealtorDiscountLeaks = [];
+for (const rel of DISCOUNT_AUDIT_FILES) {
+  const full = path.join(ROOT, rel);
+  if (!fs.existsSync(full)) continue;
+  const raw = fs.readFileSync(full, 'utf8');
+  for (const pat of BANNED_NON_REALTOR_DISCOUNTS) {
+    if (pat.test(raw)) nonRealtorDiscountLeaks.push(`${rel} (${pat})`);
+  }
+}
+record('Realtor-Only $25 Discount Policy Guard (Zero non-Realtor client/promo/buyer/repeat $25 discounts)', nonRealtorDiscountLeaks.length === 0, nonRealtorDiscountLeaks.join('; '));
+
 console.log(`\n[SUMMARY] Passed ${passedChecks}/${totalChecks} FirstIndex Truth checks (${fixedItems} items auto-healed).\n`);
 process.exit(passedChecks === totalChecks ? 0 : 1);

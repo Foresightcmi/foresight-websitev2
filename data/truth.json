@@ -48,7 +48,8 @@
     "unfinishedCrawlspaceFee": "+$75",
     "unfinishedBasementFee": "+$75",
     "vintageHome50PlusFee": "+$75",
-    "maxDiscount": "-$25"
+    "maxDiscount": "-$25",
+    "discountEligibility": "Verified Licensed Georgia Realtors Only (Active GREC License # Required)"
   },
   "guardrails": {
     "zeroVisibleAsterisks": true,
