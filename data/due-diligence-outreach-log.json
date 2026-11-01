@@ -7496,5 +7496,24 @@
     "email": "rob.hill@robhillgroup.com",
     "city": "Atlanta (Clairmont / DeKalb)",
     "timestamp": "2026-10-31T22:50:05.228Z"
+  },
+  {
+    "key": "LO_lo_movement_micole_sudduth_micole.sudduth@movement.com",
+    "type": "LOAN_OFFICER",
+    "targetName": "Micole Sudduth",
+    "company": "Movement Mortgage",
+    "email": "micole.sudduth@movement.com",
+    "city": "Sandy Springs / Atlanta",
+    "timestamp": "2026-11-01T19:06:25.339Z"
+  },
+  {
+    "key": "B2B_b2b_ins_concierge_young_rob@conciergeig.com",
+    "type": "B2B_PARTNER",
+    "category": "insurance_agency",
+    "targetName": "Rob Young",
+    "company": "Concierge Insurance Group",
+    "email": "rob@conciergeig.com",
+    "city": "Duluth / Gwinnett",
+    "timestamp": "2026-11-01T19:06:29.813Z"
   }
 ]
