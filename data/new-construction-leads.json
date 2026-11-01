@@ -10641,5 +10641,34 @@
       "HD Fiber-Optic Sewer Scope Camera Add-On (Call for Quote)"
     ],
     "harvestedAt": "2026-10-30T19:07:47.054Z"
+  },
+  {
+    "recordId": "NC-10047531",
+    "mlsId": "10047531",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "Henry County (McDonough/Stockbridge)",
+    "propertyName": "2243 Roaming Hills Dr",
+    "address": "2243 Roaming Hills Dr, Richmond, GA 47374",
+    "city": "Richmond",
+    "zip": "47374",
+    "price": 299750,
+    "sqft": 1445,
+    "yearBuilt": 2024,
+    "beds": 3,
+    "baths": 2,
+    "mlsStatus": "Active",
+    "constructionStage": "Pre-Drywall & 11-Month Warranty Window",
+    "daysOnMarket": 423,
+    "redfinUrl": "https://www.redfin.com/IN/Richmond/2243-Roaming-Hills-Dr-47374/home/192240532",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $345)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On (Call for Quote)"
+    ],
+    "harvestedAt": "2026-11-01T18:51:57.747Z"
   }
 ]
