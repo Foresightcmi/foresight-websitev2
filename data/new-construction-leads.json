@@ -10670,5 +10670,34 @@
       "HD Fiber-Optic Sewer Scope Camera Add-On (Call for Quote)"
     ],
     "harvestedAt": "2026-11-01T18:51:57.747Z"
+  },
+  {
+    "recordId": "NC-7862187",
+    "mlsId": "7862187",
+    "source": "MLS / Real Estate Network",
+    "jurisdiction": "City of Atlanta (Fulton/DeKalb)",
+    "propertyName": "1928 Repose Dr",
+    "address": "1928 Repose Dr, Atlanta, GA 30341",
+    "city": "Atlanta",
+    "zip": "30341",
+    "price": 1128000,
+    "sqft": 3554,
+    "yearBuilt": 2026,
+    "beds": 5,
+    "baths": 4.5,
+    "mlsStatus": "Active",
+    "constructionStage": "Active Framing & Rough-In (Pre-Drywall Critical Window)",
+    "daysOnMarket": 0,
+    "redfinUrl": "https://www.redfin.com/GA/Atlanta/1928-Repose-DR-30341/home/206781903",
+    "ownerName": "Future Homeowner / Buyer Representation",
+    "ownerEmail": null,
+    "ownerPhone": null,
+    "inspectionPackages": [
+      "Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)",
+      "New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)",
+      "11-Month Builder Warranty Inspection (From $345)",
+      "HD Fiber-Optic Sewer Scope Camera Add-On (Call for Quote)"
+    ],
+    "harvestedAt": "2026-11-01T22:42:24.652Z"
   }
 ]
