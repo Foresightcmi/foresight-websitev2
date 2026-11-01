@@ -48,6 +48,17 @@ export const metadata = {
     title: 'Foresight Home Inspections | Two Inspectors on Every Job',
     description: 'Atlanta home inspections led by a Certified Master Inspector®. Two inspectors. Up to $35,000 in warranty & guarantee protection included. Serving Metro Atlanta and surrounding North Georgia.',
     url: 'https://www.fhinspectionsatl.com',
+    siteName: 'Foresight Home Inspections',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/images/Logopng.png',
+        width: 800,
+        height: 600,
+        alt: 'Foresight Home Inspections Logo',
+      },
+    ],
   },
 };
 
@@ -96,7 +107,7 @@ export default function Home() {
             "name": "How much does a certified home inspection cost in Metro Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Foresight home inspections start at $295 for condos/townhomes and $345 for single-family homes. Specialized add-ons include certified mold and indoor air quality lab testing (starts at $450), 48-hour continuous electronic radon testing ($250), fiber-optic sewer scope camera Inspections ($450), swimming pool & spa evaluations ($300), and official termite/WDO clearance letters ($125+)."
+              "text": "Foresight home inspections start at $295 for condos and townhomes, $345 for single-family homes (Buyer, Pre-Listing, and 11-Month Builder Warranty), $275 for Phase 1 Pre-Drywall, and $400 for Final New Construction. Auxiliary diagnostics—including certified mold and indoor air quality lab testing, 48-hour continuous electronic radon testing, fiber-optic sewer scope camera inspections, swimming pool and spa evaluations, and official termite/WDO clearance letters—are custom-quoted directly by our office at (678) 480-2110."
             }
           },
           {
@@ -104,7 +115,7 @@ export default function Home() {
             "name": "Does Foresight Home Inspections do mold testing in Atlanta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Baseline testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
+              "text": "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta (Call 678-480-2110 for Quote). Baseline testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline) plus optional surface swabs or extra room samples analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
             }
           },
           {
@@ -128,7 +139,7 @@ export default function Home() {
             "name": "Can I get an itemized contractor repair cost estimate for inspection defects?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller credit negotiations. It is available as a $99 add-on to any Foresight inspection or as a standalone $99 evaluation for outside inspection reports."
+              "text": "Yes. Standard home inspections in Georgia are strictly diagnostic evaluations in accordance with InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight offers an optional Itemized Contractor Repair Cost Estimate (Call 678-480-2110 for Quote). Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller credit negotiations—available as an add-on to any Foresight inspection or as a standalone review of an outside inspection report."
             }
           }
         ]
@@ -967,15 +978,15 @@ export default function Home() {
             faqs={[
               {
                 q: "How much does a certified home inspection cost in Metro Atlanta?",
-                a: "Foresight home inspections start at $295+ for condos and $345+ for homes, depending on the square footage of the property. Add-on services include certified mold & indoor air quality lab testing starting at $450, sewer scope camera inspections for $450, professional 48-hour continuous radon gas testing for $250, pool safety evaluations starting at $300, and official termite (WDO) reports starting at $125 (bundled)."
+                a: "Foresight home inspections start from $295 for condos and townhomes, from $345 for single-family homes (Buyer, Pre-Listing, and 11-Month Builder Warranty), from $275 for Phase 1 Pre-Drywall, and from $400 for Final New Construction based on square footage. Auxiliary diagnostics—including certified mold and indoor air quality lab testing, sewer scope camera inspections, 48-hour continuous radon gas testing, pool and spa evaluations, and official termite (WDO) reports—are custom-quoted by calling (678) 480-2110."
               },
               {
                 q: "Does Foresight Home Inspections provide mold testing and air quality sampling?",
-                a: "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta starting at $450. Baseline testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline), while additional surface swabs or extra room air samples may cost more depending on the number of samples taken. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
+                a: "Yes. Foresight Home Inspections provides certified mold testing and indoor air quality assessments across Metro Atlanta (Call 678-480-2110 for Quote). Baseline testing includes calibrated spore-trap air sampling (2 indoor living zones tested against an outdoor control baseline), plus optional surface swabs or extra room air samples as needed. All samples are analyzed by an independent accredited microbiology laboratory, with certified spore count reports returned in 24 to 48 hours. In addition, our included $10,000 Elite Warranty provides up to $2,250 in mold remediation coverage."
               },
               {
                 q: "Why does Foresight send two home inspectors on every job?",
-                a: "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector reviews the roof, structure, and exterior, while the other evaluates interior plumbing, electrical, and HVAC. This dual-coverage system checks twice as much, ensures extreme accuracy, and cuts inspection time in half to under 2.5 hours."
+                a: "Foresight Home Inspections sends two fully certified inspectors to every property. One inspector focuses on the roof, structure, foundation, and exterior envelope while the other evaluates interior plumbing, electrical, and HVAC systems in parallel. This dual-coverage protocol delivers twice the diagnostic focus, eliminates solo-inspector fatigue, and scales cleanly to each property's complexity."
               },
               {
                 q: "What does Christopher Boykin's Certified Master Inspector® credential mean?",
@@ -1007,7 +1018,7 @@ export default function Home() {
               },
               {
                 q: "Can I get an itemized repair cost estimate for contractor repairs?",
-                a: "Yes. While standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair estimates by default), Foresight offers an optional $99 Itemized Contractor Repair Cost Estimate if you choose to add it. Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller repair credit negotiations. It is also available as a standalone 4-hour evaluation for buyers who hired an outside inspection company."
+                a: "Yes. While standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair estimates by default), Foresight offers an optional Itemized Contractor Repair Cost Estimate (Call 678-480-2110 for Quote). Calibrated using regional Metro Atlanta contractor trade rates, this report provides line-item repair costs and ready-to-use sample repair amendment wording to maximize your seller repair credit negotiations, and is also available as a standalone review for buyers who hired an outside inspection company."
               }
             ]}
           />

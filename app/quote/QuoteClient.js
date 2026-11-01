@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import { captureBrowserFirstTouch } from '../../lib/agentAttribution';
 
 const ValueComparison = dynamic(() => import('../components/ValueComparison'), { ssr: true });
 export default function QuoteClient({ showValueComparison = true }) {
@@ -40,10 +41,13 @@ export default function QuoteClient({ showValueComparison = true }) {
   const [voucherEmail, setVoucherEmail] = useState('');
   const [voucherStatus, setVoucherStatus] = useState('idle'); // idle, sending, sent, error
   const [upsellAdded, setUpsellAdded] = useState({}); // { repairEstimates: true, sewer: true, lowFlow: true }
+  const [firstTouchChannel, setFirstTouchChannel] = useState('');
+  const [howFound, setHowFound] = useState('');
 
-  // Parse URL parameters for initial states
+  // Parse URL parameters for initial states & persist first-touch AI / Search attribution
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      setFirstTouchChannel(captureBrowserFirstTouch());
       const params = new URLSearchParams(window.location.search);
       const discountParam = params.get('discount');
       if (discountParam && ['first-time', 'repeat', 'realtor', 'promo'].includes(discountParam)) {
@@ -96,7 +100,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     const parsedSqft = Number(sqft) || 2000;
 
     if (serviceType === 'str') {
-      base = 395; // SHORT-TERM RENTAL COMPLIANCE INSPECTION (Starts at $395.00)
+      return { total: 'Call (678) 480-2110 for Quote', isCustom: true };
     } else if (serviceType === 'drywall') {
       // PRE-DRYWALL/FRAMING INSPECTION $275.00 / $300.00
       base = parsedSqft <= 2500 ? 275 : 300;
@@ -165,7 +169,7 @@ export default function QuoteClient({ showValueComparison = true }) {
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         window.gtag('event', 'quote_calculated', {
           event_category: 'quote_calculator',
-          value: total,
+          value: typeof total === 'number' ? total : 0,
           currency: 'USD',
           property_type: propertyType,
           service_type: serviceType,
@@ -175,6 +179,77 @@ export default function QuoteClient({ showValueComparison = true }) {
     }, 1500);
     return () => clearTimeout(timer);
   }, [total, propertyType, serviceType, sqft]);
+
+  // Register Browser-Native WebMCP Tools (navigator.modelContext) for In-Browser AI Agents
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !navigator.modelContext || typeof navigator.modelContext.registerTool !== 'function') {
+      return undefined;
+    }
+    const tools = [
+      {
+        name: 'calculate_home_inspection_quote',
+        description: 'Configure the Metro Atlanta home inspection calculator on this page and return the instant guaranteed base quote.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            propertyType: { type: 'string', enum: ['single-family', 'condo'] },
+            serviceType: { type: 'string', enum: ['buyer', 'seller', 'new-construction', 'drywall', 'warranty', 'str'] },
+            sqft: { type: 'number', description: 'Finished heated square footage' },
+            foundation: { type: 'string', enum: ['slab', 'basement', 'crawlspace'] },
+            over50YearsOld: { type: 'boolean' }
+          }
+        },
+        execute: async (input = {}) => {
+          if (input.propertyType) setPropertyType(input.propertyType);
+          if (input.serviceType) setServiceType(input.serviceType);
+          if (input.sqft) setSqft(Number(input.sqft));
+          if (input.foundation) setFoundation(input.foundation);
+          if (typeof input.over50YearsOld === 'boolean') setAgeTier(input.over50YearsOld ? 'over-50' : 'under-50');
+          return { content: [{ type: 'text', text: 'Updated Foresight Instant Quote Calculator state on page. Review guaranteed summary or call /api/mcp calculate_quote for JSON.' }] };
+        }
+      },
+      {
+        name: 'prefill_inspection_booking_request',
+        description: 'Open and prefill the tentative inspection slot request form for the user to review and submit.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            name: { type: 'string' },
+            email: { type: 'string' },
+            phone: { type: 'string' },
+            address: { type: 'string' },
+            preferredDate: { type: 'string' },
+            notes: { type: 'string' }
+          }
+        },
+        execute: async (input = {}) => {
+          setShowLeadForm(true);
+          setHowFound('AI Assistant');
+          if (input.name) setLeadName(input.name);
+          if (input.email) setLeadEmail(input.email);
+          if (input.phone) setLeadPhone(input.phone);
+          if (input.address) setLeadAddress(input.address);
+          if (input.preferredDate) setLeadPreferredDate(input.preferredDate);
+          if (input.notes) setLeadNotes(input.notes);
+          return { content: [{ type: 'text', text: 'Prefilled Foresight booking form for user confirmation.' }] };
+        }
+      }
+    ];
+    try {
+      tools.forEach((t) => navigator.modelContext.registerTool(t));
+    } catch {
+      // Ignore non-standard browser experimental signature mismatches
+    }
+    return () => {
+      try {
+        if (typeof navigator.modelContext?.unregisterTool === 'function') {
+          tools.forEach((t) => navigator.modelContext.unregisterTool(t.name));
+        }
+      } catch {
+        // Ignore teardown errors
+      }
+    };
+  }, []);
 
   // Calculate potential negotiation leverage dynamically based on inspection details
   const calculateNegotiatingLeverage = () => {
@@ -248,7 +323,7 @@ export default function QuoteClient({ showValueComparison = true }) {
     if (discount === 'none') {
       setDiscount('first-time');
     }
-    const lockedPrice = discount === 'none' ? Math.max(0, total - 25) : total;
+    const lockedPrice = isCustom ? 'Call (678) 480-2110 for Quote' : (discount === 'none' ? Math.max(0, total - 25) : total);
     try {
       const res = await fetch('/api/lead-capture', {
         method: 'POST',
@@ -262,7 +337,9 @@ export default function QuoteClient({ showValueComparison = true }) {
           foundation,
           ageTier,
           estimatedTotal: lockedPrice,
-          notes: `[Quote Calculator $25 Price-Lock Voucher Saved] Locked Estimate: $${lockedPrice} (${sqft} sq ft ${propertyType}, ${serviceType})`,
+          attributionChannel: firstTouchChannel,
+          howFound,
+          notes: `[Quote Calculator $25 Price-Lock Voucher Saved] Locked Estimate: ${isCustom ? lockedPrice : `$${lockedPrice}`} (${sqft} sq ft ${propertyType}, ${serviceType})`,
           source: 'Quote Calculator $25 Price Lock Voucher'
         })
       });
@@ -297,6 +374,8 @@ export default function QuoteClient({ showValueComparison = true }) {
           ageTier,
           addons: [`1-CLICK POST-BOOKING UPGRADE: ${addonLabel}`],
           estimatedTotal: total,
+          attributionChannel: firstTouchChannel,
+          howFound,
           notes: `Client clicked 1-Click Post-Request Add-On Upgrade to attach ${addonLabel} to their tentative request for ${leadAddress || 'their property'}.`,
           source: 'Quote Post-Submission 1-Click Upsell'
         })
@@ -366,6 +445,8 @@ export default function QuoteClient({ showValueComparison = true }) {
           ageTier,
           addons: activeAddonNames,
           estimatedTotal: total,
+          attributionChannel: firstTouchChannel,
+          howFound,
           notes: leadNotes,
           _hp: leadHp,
           source: 'Quote Calculator Online Booking'
@@ -376,7 +457,7 @@ export default function QuoteClient({ showValueComparison = true }) {
         if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
           window.gtag('event', 'quote_lead_generated', {
             event_category: 'conversion',
-            value: total,
+            value: typeof total === 'number' ? total : 0,
             currency: 'USD',
             service_type: serviceType,
             property_type: propertyType,
@@ -495,7 +576,7 @@ export default function QuoteClient({ showValueComparison = true }) {
               }}>
                 <strong>Short-Term Rental (STR) Compliance Inspection:</strong>
                 <p style={{ margin: '0.25rem 0 0.5rem 0', fontSize: '0.825rem', color: 'var(--color-gray-dark)', lineHeight: 1.4 }}>
-                  Surrounding Atlanta counties require strict compliance. Our service assists hosts by inspecting standard safety benchmarks (starts at $395):
+                  Surrounding Atlanta counties require strict compliance. Our service assists hosts by inspecting standard safety benchmarks (Call 678-480-2110 for Quote):
                 </p>
                 <ul style={{ paddingLeft: '1.25rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                   <li>Smoke detector placement & functional testing (each level & sleeping area).</li>
@@ -840,7 +921,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       <span style={{ fontWeight: 600, color: 'var(--color-white)' }}>Standard</span>
                     </div>
                     <span style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)' }}>
-                      <strong>Two Inspectors = 2x Thorough:</strong> Completed in 2–2.5 hours instead of 4+ hours, saving you and your agent time.
+                      <strong>Two Inspectors = 2x Thorough:</strong> Dedicated parallel structural and mechanical focus with zero solo-inspector fatigue.
                     </span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -1025,7 +1106,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                       {serviceType === 'str' ? 'County Safety Compliance' : 'Negotiating Leverage'}
                     </span>
                     <strong style={{ fontSize: '1.4rem', color: '#34d399', letterSpacing: '-0.02em' }}>
-                      {serviceType === 'str' ? 'Starts at $395' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
+                      {serviceType === 'str' ? 'Call for Quote' : `$${leverage.min.toLocaleString()} - $${leverage.max.toLocaleString()}+`}
                     </strong>
                   </div>
                   <div style={{ textAlign: 'right' }}>
@@ -1314,11 +1395,41 @@ export default function QuoteClient({ showValueComparison = true }) {
                         <label style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '2px' }}>Special Instructions / Lockbox / Questions (Optional)</label>
                         <textarea 
                           rows="2"
-                          placeholder="Any gate codes, SUPRA key access details, or questions..." 
+                          placeholder="Any gate codes, SUPRA key access details, or questions... (Zillow / Redfin / MLS links welcome)" 
                           value={leadNotes} 
                           onChange={e => setLeadNotes(e.target.value)} 
                           style={{ padding: '0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', width: '100%', background: 'rgba(0,0,0,0.3)', color: '#ffffff', resize: 'vertical' }} 
                         />
+                      </div>
+
+                      <div>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--color-gray-mid)', display: 'block', marginBottom: '4px' }}>How did you find us? (Optional)</span>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+                          {['Google Search', 'Realtor Referral', 'AI Assistant (ChatGPT / Grok / Claude / Gemini)', 'Friend / Social'].map((opt) => {
+                            const active = howFound === opt;
+                            return (
+                              <button
+                                key={opt}
+                                type="button"
+                                onClick={() => setHowFound(active ? '' : opt)}
+                                aria-pressed={active}
+                                style={{
+                                  padding: '0.5rem 0.75rem',
+                                  minHeight: '44px',
+                                  borderRadius: '999px',
+                                  border: active ? '1px solid var(--color-gold)' : '1px solid rgba(255,255,255,0.2)',
+                                  background: active ? 'rgba(212, 175, 55, 0.22)' : 'rgba(0,0,0,0.28)',
+                                  color: active ? '#fde68a' : '#cbd5e1',
+                                  fontSize: '0.72rem',
+                                  fontWeight: active ? 700 : 500,
+                                  cursor: 'pointer'
+                                }}
+                              >
+                                {opt}
+                              </button>
+                            );
+                          })}
+                        </div>
                       </div>
 
                       <div style={{ background: 'rgba(211,47,47,0.12)', padding: '0.6rem 0.8rem', borderRadius: '4px', border: '1px solid rgba(211,47,47,0.25)', fontSize: '0.75rem', color: '#fca5a5', lineHeight: 1.35 }}>
@@ -1331,7 +1442,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         className="btn btn-primary" 
                         style={{ padding: '0.85rem', fontSize: '1.05rem', fontWeight: 700, width: '100%', background: 'var(--color-red)' }}
                       >
-                        {leadStatus === 'submitting' ? 'Submitting Request...' : `Submit Inspection Request ($${total})`}
+                        {leadStatus === 'submitting' ? 'Submitting Request...' : (isCustom ? 'Submit Custom Quote Request' : `Submit Inspection Request ($${total})`)}
                       </button>
 
                       {leadStatus === 'error' && (
@@ -1344,7 +1455,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                 </div>
 
                 {/* Layer 5 Guestbook: Non-Ready Buyer Price-Lock & Checklist Capture */}
-                {leadStatus !== 'success' && (
+                {!isCustom && leadStatus !== 'success' && (
                   <div style={{
                     background: 'rgba(212, 175, 55, 0.08)',
                     border: '1px dashed rgba(212, 175, 55, 0.45)',
@@ -1492,7 +1603,7 @@ export default function QuoteClient({ showValueComparison = true }) {
       <div>
         <span style={{ fontSize: '0.7rem', color: 'var(--color-gray-mid)', display: 'block', textTransform: 'uppercase', fontWeight: 600 }}>Est. Inspection Total</span>
         <strong style={{ fontSize: '1.35rem', color: 'var(--color-red)', fontWeight: 800 }}>
-          ${total}
+          {isCustom ? 'Call for Quote' : `$${total}`}
         </strong>
       </div>
       <a 

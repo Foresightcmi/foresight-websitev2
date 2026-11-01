@@ -96,12 +96,22 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "HomeAndConstructionBusiness",
+        "@type": ["HomeAndConstructionBusiness", "Organization"],
         "@id": "https://www.fhinspectionsatl.com/#business",
         "name": "Foresight Home Inspections, LLC",
         "url": "https://www.fhinspectionsatl.com",
         "telephone": "+1-678-480-2110",
         "email": "inspect@foresightcmi.com",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-678-480-2110",
+            "email": "inspect@foresightcmi.com",
+            "contactType": "customer service",
+            "areaServed": "US-GA",
+            "availableLanguage": ["English"]
+          }
+        ],
         "hasMap": "https://maps.google.com/?cid=10862078652033010531",
         "logo": "https://www.fhinspectionsatl.com/images/Logopng.png",
         "image": "https://www.fhinspectionsatl.com/images/Logopng.png",
@@ -525,7 +535,9 @@ export default function RootLayout({ children }) {
     "memberOf": {
       "@type": "Organization",
       "name": "International Association of Certified Home Inspectors (InterNACHI)",
-      "url": "https://www.nachi.org"
+      "description": "Accredited international trade association of certified residential and commercial property inspectors.",
+      "url": "https://www.nachi.org",
+      "sameAs": ["https://www.nachi.org"]
     },
     "description": "Premium home inspection services in Atlanta featuring two inspectors on every job, led by a Certified Master Inspector. Includes $10,000 Elite Master Inspection Warranty.",
     "founder": {
@@ -543,7 +555,9 @@ export default function RootLayout({ children }) {
           "recognizedBy": {
             "@type": "Organization",
             "name": "Master Inspector Certification Board",
-            "url": "https://certifiedmasterinspector.org"
+            "description": "Independent board awarding the Certified Master Inspector (CMI) professional designation.",
+            "url": "https://certifiedmasterinspector.org",
+            "sameAs": ["https://certifiedmasterinspector.org"]
           }
         },
         {
@@ -553,7 +567,9 @@ export default function RootLayout({ children }) {
           "recognizedBy": {
             "@type": "Organization",
             "name": "InterNACHI",
-            "url": "https://www.nachi.org"
+            "description": "International Association of Certified Home Inspectors credentialing body.",
+            "url": "https://www.nachi.org",
+            "sameAs": ["https://www.nachi.org"]
           }
         }
       ],
@@ -598,15 +614,11 @@ export default function RootLayout({ children }) {
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Single-Family Home Inspection" }, "price": "345.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "345", "unitText": "starting" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Condo and Townhome Inspection" }, "price": "295.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "295", "unitText": "starting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "price": "365.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "365", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Listing Seller Inspection" }, "price": "345.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "345", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11-Month Builder Warranty Inspection" }, "price": "345.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "345", "unitText": "starting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Phase 1 Pre-Drywall Framing Inspection" }, "price": "275.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "275", "unitText": "starting" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction Final Inspection" }, "price": "400.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "400", "unitText": "starting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sewer Scope Camera Inspection" }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "450" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mold and Indoor Air Quality Lab Testing" }, "price": "450.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "450" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radon Gas Testing (48-Hr Continuous Monitor)" }, "price": "250.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "250" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool and Spa Inspection" }, "price": "300.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "300" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Termite and WDO Inspection" }, "price": "125.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "125" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-Term Rental (STR) City Compliance Inspection" }, "price": "395.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "395" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DeKalb County Plumbing Low-Flow Compliance Certificate" }, "price": "100.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "validThrough": "2027-12-31", "validFrom": "2026-01-01", "priceSpecification": { "@type": "UnitPriceSpecification", "priceCurrency": "USD", "price": "100" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auxiliary & Specialty Diagnostics (Sewer Scope, Radon, Pool & Spa, Termite/WDO, Mold & Air Quality, STR Compliance, DeKalb Low-Flow Certificate)" }, "description": "Call (678) 480-2110 for Quote", "url": "https://www.fhinspectionsatl.com/quote" }
       ]
     },
     "subjectOf": [

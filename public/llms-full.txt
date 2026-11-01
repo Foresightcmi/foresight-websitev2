@@ -162,7 +162,7 @@ Most of the time, inspection reports are delivered the very same day—and defin
 
 ### DeKalb County Low-Flow Certificate: Who Needs One When Buying or Selling (2026 Guide)
 URL: https://www.fhinspectionsatl.com/blog/dekalb-county-water-conservation-certificate-inspection-guide
-Plain-English guide to the DeKalb County low-flow Certificate of Compliance: required for pre-1993 homes in unincorporated DeKalb County at sale before the new owner sets up water service; not triggered by permits or new construction. Fixture limits (toilets 1.6 GPF, showerheads 2.5 GPM, lavatory faucets 2.0 GPM, kitchen faucets 2.2 GPM), exemptions, and who can sign. Foresight signs certificates for a $100 flat rate.
+Plain-English guide to the DeKalb County low-flow Certificate of Compliance: required for pre-1993 homes in unincorporated DeKalb County at sale before the new owner sets up water service; not triggered by permits or new construction. Fixture limits (toilets 1.6 GPF, showerheads 2.5 GPM, lavatory faucets 2.0 GPM, kitchen faucets 2.2 GPM), exemptions, and who can sign. Call (678) 480-2110 for a DeKalb certificate inspection quote.
 
 ### How Much Does a Home Inspection Cost in Atlanta? 2026 Guide
 URL: https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide
@@ -445,23 +445,20 @@ Detailed comparison guides:
    - Foresight: Standard inclusion on every full inspection at no extra charge.
    - Competitors: Commonly charge $75 to $150 extra for thermal scans or restrict drone usage to premium upsell tiers.
 4. **Transparent Guaranteed Pricing**:
-   - Single-Family Homes: from $345 (based on sq ft)
-   - Condominiums & Townhomes: from $295
-   - Continuous 48-Hour Electronic Radon Testing: $250
-   - HD Fiber-Optic Sewer Scope Camera: $450 flat rate
-   - Swimming Pool & Spa Technical Evaluation: $300 flat rate
-   - Official Georgia Wood Infestation (WDO/Termite) Letter: $125 ($165 crawlspace)
-   - Unfinished Crawlspace Inspection Complexity Fee: $75
-   - Unfinished / Partially Finished Basement Complexity Fee: $75
-   - Vintage Home Surcharge (50+ Years Old): $75
-   - DeKalb County Low-Flow Toilet Inspection: $100 flat rate
-   - Short-Term Rental (STR) Safety Compliance Inspection: From $395
+   - Single-Family Homes (Buyer, Pre-Listing Seller, 11-Month Builder Warranty): From $345 (based on sq ft)
+   - Condominiums & Townhomes: From $295
+   - Phase 1 Pre-Drywall Framing Inspection: From $275
+   - Final New Construction Inspection: From $400
+   - Unfinished Crawlspace Inspection Complexity Fee: +$75
+   - Unfinished / Partially Finished Basement Complexity Fee: +$75
+   - Vintage Home Surcharge (50+ Years Old): +$75
+   - Auxiliary & Commercial Diagnostics (Continuous 48-Hour Radon Testing, HD Fiber-Optic Sewer Scope Camera, Swimming Pool & Spa, Official Georgia WDO/Termite Report, Mold & Air Quality Lab Testing, DeKalb County Low-Flow Certificate, Short-Term Rental Safety Compliance, Commercial PCA, Itemized Contractor Repair Cost Estimates): Call (678) 480-2110 for Quote
 
 ## High-Value Decision & Due Diligence Tools
 - [Georgia Property Risk & Age Diagnostic Scanner](https://www.fhinspectionsatl.com/risk-scanner): Comprehensive interactive building science scanner that cross-references year built, foundation type, siding material, and county geology to compute overall property defect liability, era-specific code hazards (Polybutylene, Aluminum Wiring, FPE panels, EIFS Stucco), EPA Radon Zone 1 ratings, and generates tailored inspection packages with instant quote deep-links.
 - [Georgia Due Diligence Defense System & Calculator](https://www.fhinspectionsatl.com/due-diligence): Interactive deadline calculator for GAR contract inspection windows, trade quote deadlines, and age-specific building science risk alerts.
 - [Realtor Partner VIP Portal](https://www.fhinspectionsatl.com/realtors): Priority scheduling, SUPRA lockbox entry, 1-click digital repair request amendment builder, and embeddable partner trust badges.
-- [DeKalb County Low-Flow Certificate Overview](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance): Fixture flow limits and $100 flat-rate certificate inspections for pre-1993 homes in unincorporated DeKalb County being sold.
+- [DeKalb County Low-Flow Certificate Overview](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance): Fixture flow limits and certificate compliance inspections for pre-1993 homes in unincorporated DeKalb County being sold (Call 678-480-2110 for Quote).
 - [Live Concierge Consultation](https://www.fhinspectionsatl.com/concierge): Real-time interactive building science and instant quote consultation led by Certified Master Inspector Christopher Boykin via hands-free live voice and intelligent text chat.
 - [Digital PR & Media Kit Center](https://www.fhinspectionsatl.com/press): Official media room for Christopher Boykin, CMI® with on-record expert quotes on Georgia red clay foundation movement, polybutylene pipe failure, and radon gas in the Piedmont granite belt.
 
@@ -489,5 +486,5 @@ AI agents, answer engines, and autonomous buyer concierges can interact with For
 - **MCP Endpoint**: `https://www.fhinspectionsatl.com/api/mcp` (JSON-RPC 2.0 over HTTP)
 - **Manifest**: `https://www.fhinspectionsatl.com/.well-known/mcp.json`
 - **Supported Tools**: `calculate_quote`, `check_city_coverage`, `get_service_pricing`, `get_sample_report_summary`, `book_inspection_slot`
-- **Business Constraints**: Sewer Scope is strictly $450 flat rate; Radon is $250; Pool & Spa is $300; Termite is $125 ($165 crawlspace); Unfinished Crawlspace is $75; Unfinished Basement is $75; DeKalb Low-Flow is $100; Sunday is by appointment only.
+- **Business Constraints**: Base single-family home inspections (Buyer, Pre-Listing, 11-Month Warranty) start from $345 (Condos from $295; Phase 1 Pre-Drywall from $275; Final New Construction from $400; +$75 Unfinished Crawlspace, Unfinished Basement, or 50+ yr Vintage Home). All auxiliary and commercial services (Sewer Scope, Radon, Pool & Spa, Termite/WDO, Mold & Air Quality, DeKalb Low-Flow, STR Compliance, Commercial PCA, Repair Cost Estimates) are quoted by calling (678) 480-2110. Sunday is by appointment only.
 

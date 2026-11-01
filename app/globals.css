@@ -290,6 +290,14 @@ a:hover {
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
+/* Foldable & Dual-Screen Unfolded Viewports (769px - 920px: Galaxy Z Fold / Dual-Pane Tablets) */
+@media (max-width: 920px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
 .card {
   background: var(--color-white);
   border-radius: var(--radius-lg);

@@ -1,26 +1,27 @@
 export default function robots() {
-  const aiSearchAllowPaths = ['/', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/', '/images/'];
+  const aiSearchAllowPaths = ['/', '/.well-known/', '/.well-known/mcp.json', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/', '/images/'];
+  const protectedDisallows = [
+    '/private/',
+    '/api/chat',
+    '/api/voice',
+    '/dashboard',
+    '/vip-dispatch',
+    '/vip-dispatch.html',
+    '/dispatch',
+    '/dispatch.html',
+    '/warranty-dispatch',
+    '/warranty-dispatch.html',
+    '/videos/chris-avatar*',
+    '/audio/',
+    '/sample-report/'
+  ];
 
   return {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/'],
-        disallow: [
-          '/private/',
-          '/api/chat',
-          '/api/voice',
-          '/dashboard',
-          '/vip-dispatch',
-          '/vip-dispatch.html',
-          '/dispatch',
-          '/dispatch.html',
-          '/warranty-dispatch',
-          '/warranty-dispatch.html',
-          '/videos/chris-avatar*',
-          '/audio/',
-          '/sample-report/'
-        ],
+        allow: ['/', '/.well-known/', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/'],
+        disallow: protectedDisallows,
       },
       {
         userAgent: 'Googlebot-Video',
@@ -43,6 +44,9 @@ export default function robots() {
           'anthropic-ai',
           'PerplexityBot',
           'Perplexity-User',
+          'GrokBot',
+          'xAI-Bot',
+          'xAI-Crawler',
           'Google-Extended',
           'Applebot',
           'Applebot-Extended',
@@ -53,6 +57,7 @@ export default function robots() {
           'Amazonbot'
         ],
         allow: aiSearchAllowPaths,
+        disallow: protectedDisallows,
       },
       {
         userAgent: [

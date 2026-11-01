@@ -85,6 +85,14 @@ const nextConfig = {
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           {
+            key: 'Vary',
+            value: 'Accept',
+          },
+          {
+            key: 'Link',
+            value: '</llms.txt>; rel="llms-txt", </.well-known/mcp.json>; rel="mcp-manifest", </api/mcp>; rel="service-desc"',
+          },
+          {
             key: 'CDN-Cache-Control',
             value: 'public, s-maxage=31536000',
           },
@@ -1074,6 +1082,27 @@ const nextConfig = {
         permanent: true,
       },
     ];
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/',
+          has: [{ type: 'header', key: 'accept', value: '.*text/markdown.*' }],
+          destination: '/api/markdown',
+        },
+        {
+          source: '/:slug((?!api(?:/|$)|_next(?:/|$)|images(?:/|$)|videos(?:/|$)|audio(?:/|$)|sample-report(?:/|$)|\\.well-known(?:/|$)|llms\\.txt$|llms-full\\.txt$|robots\\.txt$|favicon\\.ico$|manifest\\.json$|sitemap.*\\.xml$)[^/]+)',
+          has: [{ type: 'header', key: 'accept', value: '.*text/markdown.*' }],
+          destination: '/api/markdown/:slug',
+        },
+        {
+          source: '/:first((?!api(?:/|$)|_next(?:/|$)|images(?:/|$)|videos(?:/|$)|audio(?:/|$)|sample-report(?:/|$)|\\.well-known(?:/|$))[^/]+)/:rest+',
+          has: [{ type: 'header', key: 'accept', value: '.*text/markdown.*' }],
+          destination: '/api/markdown/:first/:rest+',
+        },
+      ],
+    };
   },
 };
 
