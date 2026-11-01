@@ -41,6 +41,8 @@ const STATIC_PAGES = {
   '/free-utility-setup': { title: 'Complimentary Utilities Plus Concierge Setup', summary: 'Free power, gas, water, fiber internet, and home security setup included with every Foresight inspection.' },
   '/privacy': { title: 'Privacy Policy', summary: 'Client data privacy, CCPA/GDPR disclosures, and redacted report handling standards.' },
   '/terms': { title: 'Terms of Service', summary: 'Website and online quote request terms of service.' },
+  '/developers': { title: 'Foresight Home Inspections API & MCP Server Documentation', summary: 'Public OpenAPI 3.1 REST endpoints (/api/v1/quote, /api/v1/coverage, /api/v1/services, /openapi.json), no-auth public access (120 req/min), RFC 9457 JSON errors, and Streamable HTTP MCP server (/api/mcp).' },
+  '/mcp': { title: 'Foresight Home Inspections MCP Server', summary: 'Streamable HTTP Model Context Protocol server at /api/mcp (manifest /.well-known/mcp.json) exposing calculate_quote, check_city_coverage, get_service_pricing, get_sample_report_summary, book_inspection_slot, and JSON-RPC 2.0 resources.' },
 };
 
 function stripHtml(html = '') {
@@ -62,7 +64,7 @@ function mdResponse(body, status = 200) {
       'Content-Type': 'text/markdown; charset=utf-8',
       'Vary': 'Accept',
       'Cache-Control': 'public, max-age=300, s-maxage=3600',
-      'Link': '</llms.txt>; rel="llms-txt", </.well-known/mcp.json>; rel="mcp-manifest", </api/mcp>; rel="service-desc"',
+      'Link': '</llms.txt>; rel="llms-txt", </.well-known/mcp.json>; rel="mcp-manifest", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </developers>; rel="service-doc"; type="text/html", </.well-known/api-catalog>; rel="api-catalog"',
     },
   });
 }

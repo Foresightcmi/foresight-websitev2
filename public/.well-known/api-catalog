@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.fhinspectionsatl.com/api/v1",
+      "service-desc": [
+        {
+          "href": "https://www.fhinspectionsatl.com/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.fhinspectionsatl.com/developers",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

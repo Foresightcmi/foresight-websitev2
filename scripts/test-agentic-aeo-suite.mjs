@@ -92,4 +92,51 @@ await check('6. Agent instructions in llms.txt, WebMCP in QuoteClient, og:type, 
 });
 
 console.log(`\nRESULT: ${passed} passed, ${failed} failed`);
+await check('7. OpenAPI 3.1.0 spec (/openapi.json) & RFC 9727 API catalog (/.well-known/api-catalog)', async () => {
+  assert.ok(fs.existsSync(path.join(ROOT, 'public/openapi.json')), 'Missing public/openapi.json');
+  assert.ok(fs.existsSync(path.join(ROOT, 'public/.well-known/api-catalog')), 'Missing public/.well-known/api-catalog');
+  const spec = JSON.parse(read('public/openapi.json'));
+  assert.equal(spec.openapi, '3.1.0');
+  const ops = Object.values(spec.paths || {}).flatMap((p) => Object.values(p));
+  assert.ok(ops.length >= 3, 'Expected >= 3 OpenAPI operations');
+  const ids = new Set(ops.map((o) => o.operationId).filter(Boolean));
+  assert.equal(ids.size, ops.length, 'Every OpenAPI operation must have a unique operationId');
+  assert.ok(spec.components?.schemas?.ProblemDetails, 'Missing ProblemDetails schema');
+});
+
+await check('8. Public v1 REST API & RFC 9457 JSON error responses (404/400/405)', async () => {
+  const notFoundMod = await import('../app/api/[...notfound]/route.js');
+  const nfRes = await notFoundMod.GET(new Request('https://www.fhinspectionsatl.com/api/does-not-exist'));
+  const nfJson = await nfRes.json();
+  assert.equal(nfRes.status, 404);
+  assert.match(nfRes.headers.get('content-type') || '', /application\/problem\+json/i);
+  assert.equal(nfJson.code, 'api_route_not_found');
+  assert.ok(nfJson.resolution && nfJson.detail);
+
+  const quoteMod = await import('../app/api/v1/quote/route.js');
+  const badRes = await quoteMod.GET(new Request('https://www.fhinspectionsatl.com/api/v1/quote?sqft=-5'));
+  assert.equal(badRes.status, 400);
+  assert.match(badRes.headers.get('content-type') || '', /application\/problem\+json/i);
+
+  const okRes = await quoteMod.GET(new Request('https://www.fhinspectionsatl.com/api/v1/quote?sqft=2200&propertyType=single-family'));
+  const okJson = await okRes.json();
+  assert.equal(okRes.status, 200);
+  assert.equal(okJson.total, 475);
+
+  const strRes = await quoteMod.GET(new Request('https://www.fhinspectionsatl.com/api/v1/quote?sqft=2200&serviceType=str'));
+  const strJson = await strRes.json();
+  assert.equal(strJson.isCustomQuote, true);
+});
+
+await check('9. Public /developers API docs, homepage footer link, site-type & footer price scrub', async () => {
+  assert.ok(fs.existsSync(path.join(ROOT, 'app/developers/page.js')), 'Missing app/developers/page.js');
+  const devPage = read('app/developers/page.js');
+  assert.ok(devPage.includes('Foresight Home Inspections API') && devPage.includes('/openapi.json'), 'Missing API title/spec in /developers');
+  const layout = read('app/layout.js');
+  assert.ok(layout.includes('href="/developers"'), 'Missing /developers link in global footer');
+  assert.ok(layout.includes('is-agentic-site-type'), 'Missing is-agentic-site-type declaration');
+  assert.ok(!/\(\$450\)|\(\$250\)|\(\$125\+\)|\(\$300\)|\(\$395\+\)/.test(layout), 'Legacy auxiliary prices remain in app/layout.js footer');
+});
+
+console.log(`\nFINAL RESULT: ${passed} passed, ${failed} failed`);
 process.exit(failed === 0 ? 0 : 1);

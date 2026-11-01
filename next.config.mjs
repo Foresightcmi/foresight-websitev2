@@ -29,8 +29,11 @@ const nextConfig = {
     root: process.cwd(),
   },
   // Security Headers to boost SEO trust scores and technical robustness
-  async headers() {
+  async headers() { const apiCatalogHeader = { source: '/.well-known/api-catalog', headers: [{ key: 'Content-Type', value: 'application/linkset+json; charset=utf-8' }] };
     return [
+      {
+        ...apiCatalogHeader,
+      },
       {
         source: '/sample-report/(.*)',
         headers: [
@@ -90,7 +93,7 @@ const nextConfig = {
           },
           {
             key: 'Link',
-            value: '</llms.txt>; rel="llms-txt", </.well-known/mcp.json>; rel="mcp-manifest", </api/mcp>; rel="service-desc"',
+            value: '</llms.txt>; rel="llms-txt", </.well-known/mcp.json>; rel="mcp-manifest", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </developers>; rel="service-doc"; type="text/html", </.well-known/api-catalog>; rel="api-catalog"',
           },
           {
             key: 'CDN-Cache-Control',
@@ -1092,7 +1095,7 @@ const nextConfig = {
           destination: '/api/markdown',
         },
         {
-          source: '/:slug((?!api(?:/|$)|_next(?:/|$)|images(?:/|$)|videos(?:/|$)|audio(?:/|$)|sample-report(?:/|$)|\\.well-known(?:/|$)|llms\\.txt$|llms-full\\.txt$|robots\\.txt$|favicon\\.ico$|manifest\\.json$|sitemap.*\\.xml$)[^/]+)',
+          source: '/:slug((?!api(?:/|$)|_next(?:/|$)|images(?:/|$)|videos(?:/|$)|audio(?:/|$)|sample-report(?:/|$)|\\.well-known(?:/|$)|openapi\\.json$|llms\\.txt$|llms-full\\.txt$|robots\\.txt$|favicon\\.ico$|manifest\\.json$|sitemap.*\\.xml$)[^/]+)',
           has: [{ type: 'header', key: 'accept', value: '.*text/markdown.*' }],
           destination: '/api/markdown/:slug',
         },

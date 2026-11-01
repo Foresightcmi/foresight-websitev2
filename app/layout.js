@@ -88,6 +88,7 @@ export const metadata = {
   other: {
     'mcp-server': 'https://www.fhinspectionsatl.com/api/mcp',
     'mcp-manifest': 'https://www.fhinspectionsatl.com/.well-known/mcp.json',
+    'is-agentic-site-type': 'business',
   },
 };
 
@@ -517,7 +518,9 @@ export default function RootLayout({ children }) {
       }
     ],
     "foundingDate": "2019",
+    "keywords": "Atlanta Home Inspections, Metro Atlanta Home Inspector, Certified Master Inspector Atlanta",
     "knowsAbout": [
+      "Atlanta Home Inspections",
       "Home Inspection",
       "Thermal Imaging",
       "Infrared Thermal Imaging",
@@ -832,15 +835,15 @@ export default function RootLayout({ children }) {
                 <h3>Inspection Services</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link prefetch={false} href="/services/buyer-inspection">Buyer Home Inspection</Link></li>
-                  <li><Link prefetch={false} href="/services/mold-testing">Mold &amp; Air Quality ($450)</Link></li>
-                  <li><Link prefetch={false} href="/services/radon-testing">Radon Gas Testing ($250)</Link></li>
-                  <li><Link prefetch={false} href="/services/termite-inspection">Termite &amp; WDO ($125+)</Link></li>
-                  <li><Link prefetch={false} href="/services/sewer-scope-inspection">Sewer Scope Camera ($450)</Link></li>
+                  <li><Link prefetch={false} href="/services/mold-testing">Mold &amp; Air Quality</Link></li>
+                  <li><Link prefetch={false} href="/services/radon-testing">Radon Gas Testing</Link></li>
+                  <li><Link prefetch={false} href="/services/termite-inspection">Termite &amp; WDO</Link></li>
+                  <li><Link prefetch={false} href="/services/sewer-scope-inspection">Sewer Scope Camera</Link></li>
                   <li><Link prefetch={false} href="/services/new-construction-inspection">New Construction Phased</Link></li>
-                  <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection ($300)</Link></li>
+                  <li><Link prefetch={false} href="/services/pool-inspection">Pool &amp; Spa Inspection</Link></li>
                   <li><Link prefetch={false} href="/services/pre-listing-inspection">Pre-Listing Seller Inspection</Link></li>
-                  <li><Link prefetch={false} href="/service-areas/atlanta-str-compliance" style={{ color: 'var(--color-gold)' }}>Atlanta STR Permit Inspection ($395+)</Link></li>
-                  <li><Link prefetch={false} href="/service-areas/south-fulton-rental-compliance" style={{ color: 'var(--color-gold)' }}>South Fulton Rental Compliance ($250)</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/atlanta-str-compliance" style={{ color: 'var(--color-gold)' }}>Atlanta STR Permit Inspection</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/south-fulton-rental-compliance" style={{ color: 'var(--color-gold)' }}>South Fulton Rental Compliance</Link></li>
                   <li><Link prefetch={false} href="/service-areas/dekalb-county-compliance">DeKalb Low-Flow Compliance</Link></li>
                   <li><Link prefetch={false} href="/services">View All Services &amp; Pricing &rarr;</Link></li>
                 </ul>
@@ -877,6 +880,8 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/blog">Inspection Knowledge Base</Link></li>
                   <li><Link prefetch={false} href="/videos">Field Inspection Videos</Link></li>
                   <li><Link prefetch={false} href="/faq">FAQ</Link></li>
+                  <li><Link prefetch={false} href="/developers">AI Agent &amp; API Docs</Link></li>
+                  <li><Link prefetch={false} href="/mcp">MCP Server</Link></li>
                   <li style={{ marginTop: '0.75rem' }}><a href="tel:678-480-2110" aria-label="Call Foresight Home Inspections at 678-480-2110" style={{ fontWeight: 700, color: 'var(--color-white)' }}>678-480-2110</a></li>
                   <li><a href="mailto:inspect@foresightcmi.com">inspect@foresightcmi.com</a></li>
                   <li style={{ marginTop: '0.25rem', lineHeight: '1.4' }}>

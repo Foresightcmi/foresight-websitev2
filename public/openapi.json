@@ -1,0 +1,235 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Foresight Home Inspections API",
+    "version": "1.1.0",
+    "description": "Public read-only REST API for calculating deterministic Metro Atlanta residential home inspection quotes, checking 20-county municipal service coverage, and listing Certified Master Inspector services. Requires no authentication and complements the Streamable HTTP MCP server at /api/mcp.",
+    "termsOfService": "https://www.fhinspectionsatl.com/terms",
+    "license": {
+      "name": "Foresight Home Inspections Terms of Service",
+      "url": "https://www.fhinspectionsatl.com/terms"
+    },
+    "contact": {
+      "name": "Foresight Home Inspections Office",
+      "url": "https://www.fhinspectionsatl.com/developers",
+      "email": "inspect@foresightcmi.com"
+    }
+  },
+  "externalDocs": {
+    "description": "Foresight Home Inspections API & MCP Server Documentation",
+    "url": "https://www.fhinspectionsatl.com/developers"
+  },
+  "servers": [
+    {
+      "url": "https://www.fhinspectionsatl.com",
+      "description": "Production API"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Pricing & Quotes",
+      "description": "Calculate deterministic Metro Atlanta home inspection fee quotes."
+    },
+    {
+      "name": "Coverage & Services",
+      "description": "Verify 20-county Metro Atlanta city/ZIP coverage and list official services."
+    }
+  ],
+  "paths": {
+    "/api/v1/quote": {
+      "get": {
+        "operationId": "calculateInspectionQuoteV1",
+        "tags": ["Pricing & Quotes"],
+        "summary": "Calculate deterministic Metro Atlanta home inspection quote",
+        "description": "Calculates base fee, foundation/vintage complexity adjustments, and 50% booking deposit for a Metro Atlanta residential property inspection without side effects. Auxiliary and STR services return Call (678) 480-2110 for Quote.",
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sqft",
+            "required": true,
+            "description": "Heated and cooled property square footage (integer between 100 and 25000).",
+            "schema": { "type": "integer", "minimum": 100, "maximum": 25000 },
+            "example": 2200
+          },
+          {
+            "in": "query",
+            "name": "propertyType",
+            "required": false,
+            "description": "Residential structure category.",
+            "schema": { "type": "string", "enum": ["single-family", "condo", "townhome"], "default": "single-family" }
+          },
+          {
+            "in": "query",
+            "name": "serviceType",
+            "required": false,
+            "description": "Primary inspection service category.",
+            "schema": { "type": "string", "enum": ["buyer", "seller", "new-construction", "warranty", "str", "drywall"], "default": "buyer" }
+          },
+          {
+            "in": "query",
+            "name": "foundation",
+            "required": false,
+            "description": "Primary foundation type (+$75 for unfinished crawlspace or unfinished basement on single-family homes).",
+            "schema": { "type": "string", "enum": ["slab", "crawlspace", "basement"], "default": "slab" }
+          },
+          {
+            "in": "query",
+            "name": "ageTier",
+            "required": false,
+            "description": "Property age bracket (+$75 for 50+ year vintage homes).",
+            "schema": { "type": "string", "enum": ["under-50", "over-50"], "default": "under-50" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Calculated inspection quote",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/QuoteResponse" } } }
+          },
+          "400": { "$ref": "#/components/responses/BadRequest" },
+          "405": { "$ref": "#/components/responses/MethodNotAllowed" }
+        }
+      }
+    },
+    "/api/v1/coverage": {
+      "get": {
+        "operationId": "checkMetroAtlantaCoverageV1",
+        "tags": ["Coverage & Services"],
+        "summary": "Verify Metro Atlanta city or Georgia ZIP code coverage",
+        "description": "Checks whether a Metro Atlanta city name or 5-digit Georgia postal code falls inside Foresight Home Inspections 50-mile, 20-county, 87-city standard service area.",
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "description": "Metro Atlanta city name or 5-digit Georgia ZIP code.",
+            "schema": { "type": "string", "minLength": 2, "maxLength": 100 },
+            "example": "Alpharetta"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Coverage lookup result",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CoverageResponse" } } }
+          },
+          "400": { "$ref": "#/components/responses/BadRequest" },
+          "405": { "$ref": "#/components/responses/MethodNotAllowed" }
+        }
+      }
+    },
+    "/api/v1/services": {
+      "get": {
+        "operationId": "listInspectionServicesV1",
+        "tags": ["Coverage & Services"],
+        "summary": "List inspection services and base fee tiers",
+        "description": "Returns Foresight Home Inspections official service catalog, starting base rates, credentials, and MCP discovery links.",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Official service catalog and base fee schedule",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ServicesResponse" } } }
+          },
+          "405": { "$ref": "#/components/responses/MethodNotAllowed" }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "BadRequest": {
+        "description": "Missing or invalid query parameter",
+        "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } }
+      },
+      "MethodNotAllowed": {
+        "description": "HTTP method not supported on this endpoint",
+        "content": { "application/problem+json": { "schema": { "$ref": "#/components/schemas/ProblemDetails" } } }
+      }
+    },
+    "schemas": {
+      "QuoteResponse": {
+        "type": "object",
+        "required": ["isCustomQuote", "currency", "base", "extra", "total", "sqft", "propertyType", "serviceType", "bookingUrl"],
+        "properties": {
+          "isCustomQuote": { "type": "boolean", "description": "True when the service requires a custom telephone quote." },
+          "currency": { "type": "string", "example": "USD" },
+          "base": { "oneOf": [{ "type": "integer" }, { "type": "string" }], "description": "Base fee in USD or Call for Quote notice." },
+          "extra": { "type": "integer", "description": "Foundation or 50+ yr vintage complexity adjustment in USD." },
+          "total": { "oneOf": [{ "type": "integer" }, { "type": "string" }], "description": "Total estimated fee in USD or Call for Quote notice." },
+          "depositRequired": { "type": "integer" },
+          "balanceDue": { "type": "integer" },
+          "sqft": { "type": "integer" },
+          "propertyType": { "type": "string" },
+          "serviceType": { "type": "string" },
+          "foundation": { "type": "string" },
+          "ageTier": { "type": "string" },
+          "auxiliaryServicesNote": { "type": "string" },
+          "bookingUrl": { "type": "string", "format": "uri" }
+        }
+      },
+      "CoverageResponse": {
+        "type": "object",
+        "required": ["query", "inStandardCoverage"],
+        "properties": {
+          "query": { "type": "string" },
+          "inStandardCoverage": { "type": "boolean" },
+          "city": { "type": "string" },
+          "county": { "type": "string" },
+          "postalCode": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "quoteUrl": { "type": "string", "format": "uri" },
+          "message": { "type": "string" }
+        }
+      },
+      "ServicesResponse": {
+        "type": "object",
+        "required": ["business", "baseStartingRates", "services", "mcpEndpoint", "openApiSpec"],
+        "properties": {
+          "business": { "type": "object", "description": "Lead inspector and contact details." },
+          "baseStartingRates": { "type": "object", "description": "Locked base starting rates and Call for Quote policy." },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["slug", "name", "pricing", "url"],
+              "properties": {
+                "slug": { "type": "string" },
+                "name": { "type": "string" },
+                "pricing": { "type": "string" },
+                "url": { "type": "string", "format": "uri" }
+              }
+            }
+          },
+          "mcpEndpoint": { "type": "string", "format": "uri" },
+          "openApiSpec": { "type": "string", "format": "uri" },
+          "docsUrl": { "type": "string", "format": "uri" }
+        }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "required": ["type", "title", "status", "detail", "instance", "code", "resolution"],
+        "properties": {
+          "type": { "type": "string", "format": "uri" },
+          "title": { "type": "string" },
+          "status": { "type": "integer", "minimum": 400, "maximum": 599 },
+          "detail": { "type": "string" },
+          "message": { "type": "string" },
+          "instance": { "type": "string" },
+          "code": { "type": "string", "enum": ["invalid_parameter", "invalid_enum_value", "method_not_allowed", "api_route_not_found"] },
+          "resolution": { "type": "string" },
+          "documentation_url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  },
+  "x-rate-limit-policy": {
+    "name": "public-api",
+    "quota": 120,
+    "window_seconds": 60,
+    "partition": "client IP address"
+  },
+  "x-api-lifecycle": {
+    "current_major_version": "v1",
+    "deprecation_policy_url": "https://www.fhinspectionsatl.com/developers#versioning"
+  }
+}

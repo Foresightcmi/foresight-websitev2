@@ -12,6 +12,9 @@
 - **Agent & Developer Endpoints (MCP + Markdown)**:
   - [Streamable HTTP MCP Server](https://www.fhinspectionsatl.com/api/mcp): JSON-RPC 2.0 MCP endpoint supporting `initialize`, `notifications/initialized`, `resources/list`, `resources/read`, and `tools/call` (`calculate_quote`, `check_city_coverage`, `get_service_pricing`, `get_sample_report_summary`, `book_inspection_slot`).
   - [MCP Capability Manifest](https://www.fhinspectionsatl.com/.well-known/mcp.json): Machine-readable tool and resource discovery document.
+  - [OpenAPI 3.1 Specification](https://www.fhinspectionsatl.com/openapi.json): Self-describing REST v1 schema (`/api/v1/quote`, `/api/v1/coverage`, `/api/v1/services`) with RFC 9457 `ProblemDetails` JSON error responses.
+  - [API & Developer Documentation](https://www.fhinspectionsatl.com/developers): Authentication (no API key required), rate limits, endpoints, and example requests.
+  - [MCP Server Guide](https://www.fhinspectionsatl.com/mcp): Dedicated Model Context Protocol tool and resource guide.
   - [Extended Reference Corpus (llms-full.txt)](https://www.fhinspectionsatl.com/llms-full.txt): Complete warranty specifications, methodology, and 87-city municipal directory.
   - [Instant Quote & WebMCP Booking Calculator](https://www.fhinspectionsatl.com/quote): Real-time square-footage pricing and browser-native `navigator.modelContext` WebMCP tools (or send `Accept: text/markdown` to any URL on this domain for clean Markdown).
 

@@ -1,5 +1,5 @@
 export default function robots() {
-  const aiSearchAllowPaths = ['/', '/.well-known/', '/.well-known/mcp.json', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/', '/images/'];
+  const aiSearchAllowPaths = ['/', '/.well-known/', '/.well-known/mcp.json', '/.well-known/api-catalog', '/openapi.json', '/api/v1/', '/api/mcp', '/developers', '/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/', '/images/'];
   const protectedDisallows = [
     '/private/',
     '/api/chat',
@@ -20,7 +20,7 @@ export default function robots() {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/.well-known/', '/api/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/'],
+        allow: ['/', '/.well-known/', '/openapi.json', '/api/v1/', '/api/mcp', '/developers', '/mcp', '/llms.txt', '/llms-full.txt', '/videos', '/videos/'],
         disallow: protectedDisallows,
       },
       {
