@@ -1,21 +1,30 @@
 # Autonomous Digital PR & Media Pitch Dispatch Brief
 
-> **Generated**: Oct 30, 2026
+> **Generated**: Nov 2, 2026
 > **Lead Expert**: Christopher Boykin, Certified Master Inspector® (CMI)
 > **Status**: 13 Turnkey Pitches Ready for Immediate Media Placement
 
 ---
 
-### 1. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: Suing a Builder | Consumer Ed, brought to you by the Georgia Attorney General’s Consumer Protection Division
+### 1. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: Douglaville woman bought a new home for her family. Now she says it could cost $534K to fix – WSB-TV Channel 2 - Atlanta
 
-- **Channel**: Atlanta Investigative Desk (Atlanta Investigative Desk)
-- **Subject Line**: `Follow-up Data on "Suing a Builder | Consumer Ed, brought to you by the Georgia A" — Certified Master Inspector Field Findings`
+- **Channel**: Atlanta Investigative Desk (Ashli Lincoln)
+- **Subject Line**: `Follow-up Data on "Douglaville woman bought a new home for her family. Now she sa" — Certified Master Inspector Field Findings`
 - **Core Soundbite**: "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing."
 - **Hard Data Metric**: Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.
 - **Target Backlink URL**: [https://www.fhinspectionsatl.com/services/new-construction-inspection](https://www.fhinspectionsatl.com/services/new-construction-inspection)
 - **Press Kit Reference**: [https://www.fhinspectionsatl.com/press](https://www.fhinspectionsatl.com/press)
 
-### 2. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: South Fulton homeowners say they’re stuck with defective homes after failed property inspections  – WSB-TV Channel 2 - Atlanta
+### 2. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: More than a dozen Georgia homeowners claim D.R. Horton sold them homes with ‘defective pipes’
+
+- **Channel**: Atlanta Investigative Desk (Andy Pierrotti)
+- **Subject Line**: `Follow-up Data on "More than a dozen Georgia homeowners claim D.R. Horton sold th" — Certified Master Inspector Field Findings`
+- **Core Soundbite**: "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing."
+- **Hard Data Metric**: Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.
+- **Target Backlink URL**: [https://www.fhinspectionsatl.com/services/new-construction-inspection](https://www.fhinspectionsatl.com/services/new-construction-inspection)
+- **Press Kit Reference**: [https://www.fhinspectionsatl.com/press](https://www.fhinspectionsatl.com/press)
+
+### 3. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: South Fulton homeowners say they’re stuck with defective homes after failed property inspections  – WSB-TV Channel 2 - Atlanta
 
 - **Channel**: Atlanta Investigative Desk (Ashli Lincoln)
 - **Subject Line**: `Follow-up Data on "South Fulton homeowners say they’re stuck with defective homes" — Certified Master Inspector Field Findings`
@@ -24,19 +33,10 @@
 - **Target Backlink URL**: [https://www.fhinspectionsatl.com/services/new-construction-inspection](https://www.fhinspectionsatl.com/services/new-construction-inspection)
 - **Press Kit Reference**: [https://www.fhinspectionsatl.com/press](https://www.fhinspectionsatl.com/press)
 
-### 3. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: South Fulton residents face numerous issues from ‘one-stop shop’ homes – WSB-TV Channel 2 - Atlanta
+### 4. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: South Fulton residents face numerous issues from ‘one-stop shop’ homes – WSB-TV Channel 2 - Atlanta
 
 - **Channel**: Atlanta Investigative Desk (Ashli Lincoln)
 - **Subject Line**: `Follow-up Data on "South Fulton residents face numerous issues from ‘one-stop sho" — Certified Master Inspector Field Findings`
-- **Core Soundbite**: "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing."
-- **Hard Data Metric**: Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.
-- **Target Backlink URL**: [https://www.fhinspectionsatl.com/services/new-construction-inspection](https://www.fhinspectionsatl.com/services/new-construction-inspection)
-- **Press Kit Reference**: [https://www.fhinspectionsatl.com/press](https://www.fhinspectionsatl.com/press)
-
-### 4. [Reactive Local Builder Defect Commentary] Reactive CMI Commentary on: ‘Bamboozled:’ Owner says developer sold her a defective metro Atlanta home – WSB-TV Channel 2 - Atlanta
-
-- **Channel**: Atlanta Investigative Desk (Ashli Lincoln)
-- **Subject Line**: `Follow-up Data on "‘Bamboozled:’ Owner says developer sold her a defective metro " — Certified Master Inspector Field Findings`
 - **Core Soundbite**: "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing."
 - **Hard Data Metric**: Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.
 - **Target Backlink URL**: [https://www.fhinspectionsatl.com/services/new-construction-inspection](https://www.fhinspectionsatl.com/services/new-construction-inspection)
@@ -51,10 +51,10 @@
 - **Target Backlink URL**: [https://www.fhinspectionsatl.com/services/new-construction-inspection](https://www.fhinspectionsatl.com/services/new-construction-inspection)
 - **Press Kit Reference**: [https://www.fhinspectionsatl.com/press](https://www.fhinspectionsatl.com/press)
 
-### 6. [Hyper-Local Substack Data Commentary] Reactive CMI Commentary on: Atlanta Real Estate Report | Substack
+### 6. [Hyper-Local Substack Data Commentary] Reactive CMI Commentary on: The Housing Correction Visualized in the Two Atlantas
 
-- **Channel**: Atlanta Substack (Deep Gap Journal)
-- **Subject Line**: `Follow-up Data on "Atlanta Real Estate Report | Substack" — Certified Master Inspector Field Findings`
+- **Channel**: Atlanta Substack (Conor Sen)
+- **Subject Line**: `Follow-up Data on "The Housing Correction Visualized in the Two Atlantas" — Certified Master Inspector Field Findings`
 - **Core Soundbite**: "Across Metro Atlanta neighborhoods, our two-inspector teams regularly uncover $2,600 to $14,200+ in hidden crawlspace moisture, roof flashing omissions, and electrical panel hazards during Georgia's 5-to-7 day due diligence period (Homes From $345 / Condos From $295)."
 - **Hard Data Metric**: Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.
 - **Target Backlink URL**: [https://www.fhinspectionsatl.com/services/new-construction-inspection](https://www.fhinspectionsatl.com/services/new-construction-inspection)
