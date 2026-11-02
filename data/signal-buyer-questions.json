@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-02T18:49:20.715Z",
+  "generatedAt": "2026-11-02T22:01:15.873Z",
   "retrieved_on": "2026-11-02",
   "source_url": "https://suggestqueries.google.com",
-  "totalQuestionsScraped": 18,
+  "totalQuestionsScraped": 20,
   "liveQuestions": [
     {
       "question": "home inspection atlanta?",
@@ -54,6 +54,13 @@
       "answerFactory40WordBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) resolves \"radon testing georgia\" across Metro Atlanta by deploying two certified inspectors on every property starting at $345 ($275 pre-drywall) with free infrared thermal imaging, 4K drone scans, 24-hour reports, and $35,000 warranty protection. [PROOF FLAG: Insert recent 2026 Atlanta field inspection example]"
     },
     {
+      "question": "radon mitigation georgia?",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=radon%20testing%20georgia",
+      "retrieved_on": "2026-11-02",
+      "status": "NEW_CONTENT_GAP",
+      "answerFactory40WordBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) resolves \"radon mitigation georgia\" across Metro Atlanta by deploying two certified inspectors on every property starting at $345 ($275 pre-drywall) with free infrared thermal imaging, 4K drone scans, 24-hour reports, and $35,000 warranty protection. [PROOF FLAG: Insert recent 2026 Atlanta field inspection example]"
+    },
+    {
       "question": "11 month warranty inspection?",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=11%20month%20warranty%20inspection",
       "retrieved_on": "2026-11-02",
@@ -75,11 +82,11 @@
       "answerFactory40WordBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) resolves \"termite inspection georgia\" across Metro Atlanta by deploying two certified inspectors on every property starting at $345 ($275 pre-drywall) with free infrared thermal imaging, 4K drone scans, 24-hour reports, and $35,000 warranty protection. [PROOF FLAG: Insert recent 2026 Atlanta field inspection example]"
     },
     {
-      "question": "termite inspection cost in georgia?",
+      "question": "termite treatment georgia?",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=termite%20inspection%20georgia",
       "retrieved_on": "2026-11-02",
       "status": "NEW_CONTENT_GAP",
-      "answerFactory40WordBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) resolves \"termite inspection cost in georgia\" across Metro Atlanta by deploying two certified inspectors on every property starting at $345 ($275 pre-drywall) with free infrared thermal imaging, 4K drone scans, 24-hour reports, and $35,000 warranty protection. [PROOF FLAG: Insert recent 2026 Atlanta field inspection example]"
+      "answerFactory40WordBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) resolves \"termite treatment georgia\" across Metro Atlanta by deploying two certified inspectors on every property starting at $345 ($275 pre-drywall) with free infrared thermal imaging, 4K drone scans, 24-hour reports, and $35,000 warranty protection. [PROOF FLAG: Insert recent 2026 Atlanta field inspection example]"
     },
     {
       "question": "commercial property inspection atlanta?",
@@ -87,6 +94,13 @@
       "retrieved_on": "2026-11-02",
       "status": "COVERED_ENHANCE_40W_BLUF",
       "answerFactory40WordBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) resolves \"commercial property inspection atlanta\" across Metro Atlanta by deploying two certified inspectors on every property starting at $345 ($275 pre-drywall) with free infrared thermal imaging, 4K drone scans, 24-hour reports, and $35,000 warranty protection. [PROOF FLAG: Insert recent 2026 Atlanta field inspection example]"
+    },
+    {
+      "question": "commercial property inspection cost?",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&q=commercial%20property%20inspection%20atlanta",
+      "retrieved_on": "2026-11-02",
+      "status": "COVERED_ENHANCE_40W_BLUF",
+      "answerFactory40WordBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) resolves \"commercial property inspection cost\" across Metro Atlanta by deploying two certified inspectors on every property starting at $345 ($275 pre-drywall) with free infrared thermal imaging, 4K drone scans, 24-hour reports, and $35,000 warranty protection. [PROOF FLAG: Insert recent 2026 Atlanta field inspection example]"
     },
     {
       "question": "mold inspection atlanta?",

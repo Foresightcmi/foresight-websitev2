@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-02T18:49:17.315Z",
+  "generatedAt": "2026-11-02T22:01:10.912Z",
   "retrieved_on": "2026-11-02",
   "source_url": "https://www.fhinspectionsatl.com",
   "totalQuestions": 20,
-  "goldCount": 0,
-  "amberReadyCount": 9,
+  "goldCount": 2,
+  "amberReadyCount": 8,
   "questions": [
     {
       "id": 1,
@@ -13,10 +13,79 @@
       "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
       "retrieved_on": "2026-11-02",
       "indexedInLlmsTxt": false,
-      "namedInLiveSearchPass": false,
-      "starStatus": "BLUE_GAP",
-      "autocompleteExpansions": [],
-      "citedResults": []
+      "namedInLiveSearchPass": true,
+      "starStatus": "GOLD_WON",
+      "autocompleteExpansions": [
+        "best home inspectors atlanta ga",
+        "how to become a home inspector in georgia",
+        "how much do home inspectors make in georgia"
+      ],
+      "citedResults": [
+        {
+          "title": "THE BEST 10 HOME INSPECTORS IN ATLANTA, GA - Yelp",
+          "url": "https://www.yelp.com/search?cflt=home_inspectors&find_loc=Atlanta%2C+GA",
+          "domain": "yelp.com",
+          "snippet": "What are people saying about home inspectors services in Atlanta, GA? This is a review for a home inspectors business in Atlanta, GA: &quot;I had a pre-listing inspection done a couple of weeks ago to let me know what I need to take care of before selling. The inspection seemed extremely thorough, then they went over the major issues with me in person upon finish. I then got the detailed inspection ...",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "15 Best Atlanta, GA Home Inspection Companies | Expertise.com",
+          "url": "https://www.expertise.com/home-improvement/home-inspection/georgia/atlanta",
+          "domain": "expertise.com",
+          "snippet": "Find and connect with the 15 Best Home Inspection Companies in Atlanta, GA. Hand picked by an independent editorial team and updated for 2026.",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "10 Best Home inspectors in Atlanta, GA - Angi",
+          "url": "https://www.angi.com/companylist/us/ga/atlanta/home-inspection.htm",
+          "domain": "angi.com",
+          "snippet": "Read verified reviews and see ratings for Atlanta, GA home inspectors for free! This list will help you pick the right home inspectors in Atlanta, GA.",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "TOP 10 BEST Home Inspectors in Atlanta, GA - (2026 Guide) - Yelp",
+          "url": "https://www.yelp.com/search?find_desc=Home+Inspectors&find_loc=Atlanta%2C+GA",
+          "domain": "yelp.com",
+          "snippet": "Top 10 Best Home Inspectors Near Atlanta, Georgia (Updated 2026) Sort: Recommended All Open Now Fast-responding Request a Quote Virtual Consultations",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Best Home Inspectors in Atlanta GA (2026 Comparison Guide)",
+          "url": "https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026",
+          "domain": "fhinspectionsatl.com",
+          "snippet": "Compare the top home inspection models in Atlanta, GA. See why Foresight Home Inspections (2 Certified Inspectors, CMI #MICB-1082, $35K Warranty, $345+) ranks #1.",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Best Home Inspectors Atlanta GA",
+          "url": "https://homeinspectioninsider.com/home-inspectors-atlanta/",
+          "domain": "homeinspectioninsider.com",
+          "snippet": "Choosing home inspectors in Atlanta may seem difficult, but it doesn&#x27;t have to be. Atlanta&#x27;s best home inspection companies are customer-focused and ready to assist you with your house purchase. Top Home Inspection Companies in Atlanta GA There are many great Atlanta home inspection companies. We&#x27;ve identified the following home inspection companies as the best home inspectors in the ...",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Atlanta Home Inspector | ASHI Certified | Same-Day Reports",
+          "url": "https://www.atlantapremierhomeinspections.com/home-inspections-atlanta-ga",
+          "domain": "atlantapremierhomeinspections.com",
+          "snippet": "Top-Rated Home Inspection Services in Atlanta, GA Guard Your Investment with Atlanta&#x27;s GC Licensed Home Inspector Moving quickly in the fast-paced Atlanta real estate market shouldn&#x27;t mean bypassing peace of mind.",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Top 8 Home Inspector in Atlanta, GA (2026 Rankings) — ProFindr",
+          "url": "https://profindr.com/top/home-inspector-atlanta-ga",
+          "domain": "profindr.com",
+          "snippet": "Compare home inspector in Atlanta, GA. Licensing & Insurance — All listed businesses hold active state licenses verified through official databases. Customer Reviews — We aggregate ratings from Google, Yelp, and the BBB, weighting recency and review volume. Response Time — Companies offering same-day or 24/7 emergency service score higher. Pricing Transparency — Businesses who offer ...",
+          "source_url": "https://html.duckduckgo.com/html/?q=best%20home%20inspector%20atlanta%20ga",
+          "retrieved_on": "2026-11-02"
+        }
+      ]
     },
     {
       "id": 2,
@@ -25,10 +94,75 @@
       "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
       "retrieved_on": "2026-11-02",
       "indexedInLlmsTxt": true,
-      "namedInLiveSearchPass": false,
-      "starStatus": "AMBER_READY_ON_SITE",
+      "namedInLiveSearchPass": true,
+      "starStatus": "GOLD_WON",
       "autocompleteExpansions": [],
-      "citedResults": []
+      "citedResults": [
+        {
+          "title": "Atlanta, GA Home Inspection & Certified Home Inspectors | $345",
+          "url": "https://www.fhinspectionsatl.com/",
+          "domain": "fhinspectionsatl.com",
+          "snippet": "Atlanta home inspections led by a Certified Master Inspector®. Two inspectors. Up to $35,000 in warranty & guarantee protection included. Serving Metro Atlanta and surrounding North Georgia.",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Two-Inspector Team vs Single Inspector | Foresight Difference",
+          "url": "https://www.fhinspectionsatl.com/compare/two-inspector-team-vs-single-inspector",
+          "domain": "fhinspectionsatl.com",
+          "snippet": "Discover why a two-inspector team provides 2x coverage, faster reporting, and zero missed defects compared to single-person home inspections in Atlanta.",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "THE BEST 10 HOME INSPECTORS IN ATLANTA, GA - Yelp",
+          "url": "https://www.yelp.com/search?cflt=home_inspectors&find_loc=Atlanta%2C+GA",
+          "domain": "yelp.com",
+          "snippet": "What are people saying about home inspectors services in Atlanta, GA? This is a review for a home inspectors business in Atlanta, GA: &quot;I had a pre-listing inspection done a couple of weeks ago to let me know what I need to take care of before selling. The inspection seemed extremely thorough, then they went over the major issues with me in person upon finish. I then got the detailed inspection ...",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Atlanta Home Inspection | Same-Day Reports & Fixed Pricing",
+          "url": "https://www.atlantapremierhomeinspections.com/",
+          "domain": "atlantapremierhomeinspections.com",
+          "snippet": "Top rated home inspection companies in Atlanta. Get same-day reports, transparent fixed pricing, and certified inspectors. Check our fixed rates & book online 24/7!",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Residential Inspection | Atlanta Residential Property Inspector",
+          "url": "https://www.inspectionwizards.com/pages/services/residential-property-inspector-atlanta-ga",
+          "domain": "inspectionwizards.com",
+          "snippet": "Residential Property Inspection Services Atlanta, GA Inspection Wizards abides by the InterNACHI Standards of Practice and Code of Ethics. All inspection services are scheduled Monday through Friday, and involve two inspectors to make sure no detail goes unnoticed and to allow us to test systems that require two people to accurately inspect them.",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "HDMK Inspection Services | Greater Atlanta",
+          "url": "https://hdmkatlanta.com/",
+          "domain": "hdmkatlanta.com",
+          "snippet": "Buying a Home in Atlanta? Request a thorough home inspection with same-day reports from one of Atlanta&#x27;s highest-rated local inspectors.",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Schedule-Atlanta - Ally Property Inspections",
+          "url": "https://allypropertyinspections.com/schedule-atlanta/",
+          "domain": "allypropertyinspections.com",
+          "snippet": "Schedule Inspection Atlanta Book Your Atlanta Home Inspection Online Pick a date and time that works for you. It takes about two minutes, it is available 24/7, and no phone call is needed. Schedule Online Now Prefer to talk it through? Call or text (404) 793-3773 Commercial and multifamily inspections are scheduled by phone.",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        },
+        {
+          "title": "Home & Property Inspections Atlanta | Inspect Atlanta",
+          "url": "https://inspectatlanta.com/",
+          "domain": "inspectatlanta.com",
+          "snippet": "Request home, buyer, seller, new construction, warranty, condo, commercial, and rental property inspections across Metro Atlanta.",
+          "source_url": "https://html.duckduckgo.com/html/?q=two%20inspector%20home%20inspection%20atlanta",
+          "retrieved_on": "2026-11-02"
+        }
+      ]
     },
     {
       "id": 3,
@@ -39,7 +173,13 @@
       "indexedInLlmsTxt": false,
       "namedInLiveSearchPass": false,
       "starStatus": "BLUE_GAP",
-      "autocompleteExpansions": [],
+      "autocompleteExpansions": [
+        "home inspection in atlanta ga",
+        "home inspector in atlanta ga",
+        "home inspection companies in atlanta ga",
+        "new home inspector in atlanta ga",
+        "home inspection cost georgia"
+      ],
       "citedResults": []
     },
     {
@@ -112,7 +252,10 @@
       "namedInLiveSearchPass": false,
       "starStatus": "BLUE_GAP",
       "autocompleteExpansions": [
-        "home inspector acworth ga"
+        "home inspector acworth ga",
+        "home inspection acworth ga",
+        "how much do home inspectors make in georgia",
+        "how to become a home inspector in georgia"
       ],
       "citedResults": []
     },
@@ -125,7 +268,10 @@
       "indexedInLlmsTxt": false,
       "namedInLiveSearchPass": false,
       "starStatus": "BLUE_GAP",
-      "autocompleteExpansions": [],
+      "autocompleteExpansions": [
+        "home inspector lilburn ga",
+        "home inspection cost georgia"
+      ],
       "citedResults": []
     },
     {
@@ -233,7 +379,13 @@
       "indexedInLlmsTxt": false,
       "namedInLiveSearchPass": false,
       "starStatus": "BLUE_GAP",
-      "autocompleteExpansions": [],
+      "autocompleteExpansions": [
+        "home inspection buford ga",
+        "mold remediation buford ga",
+        "mold inspection near me",
+        "mold inspection classes",
+        "mold inspection cost"
+      ],
       "citedResults": []
     },
     {
