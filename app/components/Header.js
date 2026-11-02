@@ -30,35 +30,6 @@ export default function Header() {
               <li><Link prefetch={false} href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
               <li><Link prefetch={false} href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
               <li>
-                <Link
-                  prefetch={false}
-                  href="/concierge"
-                  onClick={(e) => {
-                    setMenuOpen(false);
-                    if (typeof window !== 'undefined' && window.dispatchEvent) {
-                      e.preventDefault();
-                      window.dispatchEvent(new CustomEvent('open_foresight_live_consultation'));
-                    }
-                  }}
-                  style={{
-                    background: '#0F172A',
-                    color: '#FDE047',
-                    padding: '0.38rem 0.8rem',
-                    borderRadius: '6px',
-                    border: '1px solid rgba(212, 175, 55, 0.45)',
-                    fontWeight: '700',
-                    fontSize: '0.9rem',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px'
-                  }}
-                  aria-label="Live Concierge Consultation with Christopher Boykin, Certified Master Inspector"
-                  title="Live Concierge: Speak or Type with Christopher Boykin, CMI"
-                >
-                  Live Concierge
-                </Link>
-              </li>
-              <li>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" onClick={() => setMenuOpen(false)}>
                   Schedule Online 24/7
                 </a>

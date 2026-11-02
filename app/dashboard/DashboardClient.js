@@ -1643,7 +1643,7 @@ export default function DashboardClient({
                     Verified Inbound Leads &amp; CRM Pipeline (${totalPipelineValue.toLocaleString()})
                   </h3>
                   <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>
-                    Real-time captures from Website Quote Engine, Live AI Concierge, and Due Diligence Portals.
+                    Real-time captures from Website Quote Engine, Direct Contact Form, and Due Diligence Portals.
                   </p>
                 </div>
                 <span style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#4ade80', border: '1px solid rgba(34, 197, 94, 0.4)', padding: '0.35rem 0.85rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700 }}>

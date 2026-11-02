@@ -252,13 +252,18 @@ const nextConfig = {
       // Concierge unification redirect
       {
         source: '/ask-twin',
-        destination: '/concierge',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/concierge',
+        destination: '/contact',
         permanent: true,
       },
       // Trailing punctuation 301 rescue (GA4 caught 57+ lost sessions on /quote. from email/SMS auto-linkers)
       { source: '/quote.', destination: '/quote', permanent: true },
       { source: '/quote,', destination: '/quote', permanent: true },
-      { source: '/concierge.', destination: '/concierge', permanent: true },
+      { source: '/concierge.', destination: '/contact', permanent: true },
       { source: '/services.', destination: '/services', permanent: true },
       { source: '/service-areas.', destination: '/service-areas', permanent: true },
       { source: '/due-diligence.', destination: '/due-diligence', permanent: true },

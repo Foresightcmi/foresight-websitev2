@@ -182,9 +182,9 @@ export default function Blog() {
           <div className="card" style={{ marginTop: '3rem', textAlign: 'center', background: 'var(--color-dark)', color: 'var(--color-white)', borderColor: 'transparent' }}>
             <h3 style={{ color: 'var(--color-white)', marginBottom: '1rem' }}>Have a Specific Home Question?</h3>
             <p style={{ color: 'var(--color-gray-mid)', marginBottom: '1.5rem' }}>
-              Christopher Boykin, Certified Master Inspector® is available 24/7 via live voice or chat to answer your Georgia home inspection questions.
+              Reach out directly to Certified Master Inspector® Christopher Boykin and our team for answers to your Georgia home inspection questions.
             </p>
-            <Link href="/concierge" className="btn btn-primary">Live Concierge Consultation</Link>
+            <Link href="/contact" className="btn btn-primary">Contact Our Inspection Team</Link>
           </div>
         </div>
       </section>

@@ -205,14 +205,14 @@ export default function FAQPage() {
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>Still have questions?</h2>
           <p style={{ fontSize: '1.25rem', color: 'var(--color-gray-light)', marginBottom: '2.5rem' }}>
-            Our team is here to help. Reach out to us or connect directly with Christopher Boykin, CMI® via our Live Concierge.
+            Our team is here to help. Reach out to us directly or calculate an instant inspection quote online.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn btn-gold" style={{ padding: '1rem 2rem', backgroundColor: 'var(--color-gold)', color: 'var(--color-dark)', textDecoration: 'none', fontWeight: 'bold', borderRadius: 'var(--radius-md)', display: 'inline-block' }}>
               Contact Us
             </Link>
-            <Link href="/concierge" className="btn btn-outline" style={{ padding: '1rem 2rem', border: '2px solid var(--color-white)', color: 'var(--color-white)', textDecoration: 'none', fontWeight: 'bold', borderRadius: 'var(--radius-md)', display: 'inline-block' }}>
-              Live Concierge Consultation
+            <Link href="/quote" className="btn btn-outline" style={{ padding: '1rem 2rem', border: '2px solid var(--color-white)', color: 'var(--color-white)', textDecoration: 'none', fontWeight: 'bold', borderRadius: 'var(--radius-md)', display: 'inline-block' }}>
+              Instant Quote Calculator
             </Link>
           </div>
         </div>

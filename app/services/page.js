@@ -74,7 +74,7 @@ export default function Services() {
       serviceSlug: 'new-construction-inspection',
       briefing: {
         title: 'New Construction Inspections',
-        duration: '30-Sec Briefing',
+        duration: '30-Sec Video',
         tagline: 'Independent Third-Party Quality Control Collaborating with Site Builders',
         videoSrc: '/videos/services/new-construction.mp4',
         poster: '/images/services/new-construction-poster.webp',
@@ -95,7 +95,7 @@ export default function Services() {
       serviceSlug: '11-month-warranty-inspection',
       briefing: {
         title: '11-Month Warranty Inspection',
-        duration: '40-Sec Briefing',
+        duration: '40-Sec Video',
         tagline: 'Protect Your Investment Before the 1-Year Builder Warranty Expires',
         videoSrc: '/videos/services/11-month-warranty.mp4',
         poster: '/images/services/11-month-warranty-poster.webp',
@@ -116,7 +116,7 @@ export default function Services() {
       serviceSlug: 'pool-inspection',
       briefing: {
         title: 'Pool & Spa Inspections',
-        duration: '40-Sec Briefing',
+        duration: '40-Sec Video',
         tagline: 'Specialized Mechanical, Plumbing & Electrical Safety Verification',
         videoSrc: '/videos/services/pool-and-spa.mp4',
         poster: '/images/services/pool-and-spa-poster.webp',
@@ -137,7 +137,7 @@ export default function Services() {
       serviceSlug: 'sewer-scope-inspection',
       briefing: {
         title: 'Sewer Scope Inspections',
-        duration: '36-Sec Briefing',
+        duration: '36-Sec Video',
         tagline: 'High-Definition Video Inspection of Main Underground Lateral Line',
         videoSrc: '/videos/services/sewer-scope.mp4',
         poster: '/images/services/sewer-scope-poster.webp',
@@ -157,7 +157,7 @@ export default function Services() {
       serviceSlug: 'termite-inspection',
       briefing: {
         title: 'Termite & WDO Clearance Inspection',
-        duration: '35-Sec Briefing',
+        duration: '35-Sec Video',
         tagline: 'Official Georgia Wood Infestation Inspection Report (GAR Compliant)',
         videoSrc: '/videos/services/termite-inspection.mp4',
         poster: '/images/services/termite-inspection-poster.webp',
@@ -177,7 +177,7 @@ export default function Services() {
       serviceSlug: 'radon-testing',
       briefing: {
         title: 'Continuous Radon Gas Testing',
-        duration: '30-Sec Briefing',
+        duration: '30-Sec Video',
         tagline: '48-Hour Electronic Monitor Deployment for Georgia Granite Bedrock',
         videoSrc: '/videos/services/radon-testing.mp4',
         poster: '/images/services/radon-testing-poster.webp',
@@ -199,7 +199,7 @@ export default function Services() {
       serviceSlug: 'mold-testing',
       briefing: {
         title: 'Mold & Indoor Air Quality Testing',
-        duration: '40-Sec Briefing',
+        duration: '40-Sec Video',
         tagline: 'Calibrated Spore Trap Air Sampling & Accredited Microbiology Lab Reports',
         videoSrc: '/videos/services/mold-testing.mp4',
         poster: '/images/services/mold-testing-poster.webp',
@@ -220,7 +220,7 @@ export default function Services() {
       serviceSlug: 'str-short-term-rental-inspection',
       briefing: {
         title: 'Short-Term Rental (STR) Inspection',
-        duration: '30-Sec Briefing',
+        duration: '30-Sec Video',
         tagline: 'Life-Safety, Mechanical Capacity & Municipal Compliance Inspections',
         videoSrc: '/videos/services/short-term-rental.mp4',
         poster: '/images/services/short-term-rental-poster.webp',
@@ -241,7 +241,7 @@ export default function Services() {
       slug: 'repair-credit-calculator',
       briefing: {
         title: 'Contractor Repair Cost & Pricing Estimates',
-        duration: '45-Sec Briefing',
+        duration: '45-Sec Video',
         tagline: 'Bridge the Diagnostic Gap with Regional Metro Atlanta Trade Pricing',
         takeaways: [
           'InterNACHI SOP is diagnostic only; this optional add-on calculates true dollar repair costs.',
@@ -504,7 +504,7 @@ export default function Services() {
                       </Link>
                     )}
                     {s.briefing && (
-                      <ServiceVideoTrigger briefing={s.briefing} label="45-Sec Video Briefing" />
+                      <ServiceVideoTrigger briefing={s.briefing} label={s.briefing.duration || "45-Sec Video"} />
                     )}
                     <Link href="/quote" className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', opacity: 0.8, fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
                       Calculate Price
@@ -595,7 +595,7 @@ export default function Services() {
                     </Link>
                   )}
                   {s.briefing && (
-                    <ServiceVideoTrigger briefing={s.briefing} label="45-Sec Briefing" />
+                    <ServiceVideoTrigger briefing={s.briefing} label={s.briefing.duration || "45-Sec Video"} />
                   )}
                   {s.slug && (
                     <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
@@ -722,13 +722,13 @@ export default function Services() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ fontSize: '2.5rem', lineHeight: 1, width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-red-light)', borderRadius: 'var(--radius-md)', flexShrink: 0 }}>
+              <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}><Image src="/images/sewer-scope.png" alt="HD fiber-optic sewer scope camera and continuous electronic radon monitoring equipment" fill style={{ objectFit: 'cover' }} />
                 
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>HD Sewer Scope &amp; Continuous Radon Monitors</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
-                  An AI assistant trained directly on InterNACHI Standards of Practice and standard residential construction practices. Ask questions about your inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
+                  We deploy self-leveling HD fiber-optic lateral cameras to inspect underground sewer lines from cleanout to street main, along with 48-hour continuous electronic radon monitors calibrated for Georgia&apos;s granite bedrock.
                 </p>
               </div>
             </div>

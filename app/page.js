@@ -615,8 +615,8 @@ export default function Home() {
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ padding: '0.9rem 2rem' }}>
                   Schedule Inspection Now
                 </a>
-                <Link prefetch={false} href="/ask-twin" className="btn btn-outline" style={{ borderColor: '#0F172A', color: '#0F172A', padding: '0.9rem 2rem' }}>
-                  Ask Foresight AI
+                <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ borderColor: '#0F172A', color: '#0F172A', padding: '0.9rem 2rem' }}>
+                  Get Instant Quote
                 </Link>
               </div>
             </div>
@@ -717,13 +717,19 @@ export default function Home() {
             </div>
 
             <div className="card card-premium" style={{ background: 'var(--color-gray-light)', display: 'flex', gap: '1.5rem', alignItems: 'center', borderTop: '4px solid var(--color-red)' }}>
-              <div style={{ width: '90px', height: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(211, 47, 47, 0.08)', border: '1px solid rgba(211, 47, 47, 0.2)', borderRadius: 'var(--radius-md)', flexShrink: 0, color: 'var(--color-red)' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              <div style={{ position: 'relative', width: '90px', height: '90px', flexShrink: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                <Image
+                  src="/images/sewer-scope.webp"
+                  alt="HD fiber-optic sewer scope camera and continuous electronic radon monitoring equipment"
+                  fill
+                  sizes="90px"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>Foresight AI Digital Twin</h3>
+                <h3 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>HD Sewer Scope &amp; Continuous Radon Monitors</h3>
                 <p style={{ color: 'var(--color-gray-dark)', margin: 0, fontSize: '1rem', lineHeight: 1.6 }}>
-                  An AI assistant trained directly on InterNACHI Standards of Practice and standard residential construction practices. Ask questions about your inspection report, get home maintenance timelines, or troubleshoot issues in seconds.
+                  We deploy self-leveling HD fiber-optic lateral cameras to inspect underground sewer lines from cleanout to street main, along with 48-hour continuous electronic radon monitors calibrated for Georgia&apos;s granite bedrock.
                 </p>
               </div>
             </div>

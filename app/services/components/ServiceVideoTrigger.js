@@ -7,7 +7,7 @@ const ServiceVideoModal = dynamic(() => import('./ServiceVideoModal'), { ssr: fa
 
 export default function ServiceVideoTrigger({
   briefing,
-  label = '45-Sec Video Briefing',
+  label = '45-Sec Video',
   style = {},
   variant = 'compact'
 }) {
@@ -21,7 +21,7 @@ export default function ServiceVideoTrigger({
         type="button"
         onClick={() => setIsOpen(true)}
         className="service-video-trigger-btn"
-        aria-label={`Watch ${briefing.duration || '45-second'} video briefing for ${briefing.title}`}
+        aria-label={`Watch ${briefing.duration || '45-Sec Video'} for ${briefing.title}`}
         style={{
           background: 'rgba(212, 175, 55, 0.12)',
           border: '1px solid rgba(212, 175, 55, 0.55)',

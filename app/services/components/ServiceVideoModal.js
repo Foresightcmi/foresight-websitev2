@@ -49,7 +49,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
 
   const {
     title,
-    duration = '45-Sec Briefing',
+    duration = '45-Sec Video',
     tagline = 'Why Two Certified Inspectors On Every Job Protect Your Home & Investment',
     videoSrc = '/videos/foresight-home-systems.mp4',
     poster = '/images/home-systems-poster.webp',
@@ -150,7 +150,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
           </div>
           <button
             onClick={onClose}
-            aria-label="Close service video briefing"
+            aria-label="Close service video"
             style={{
               background: 'rgba(255, 255, 255, 0.08)',
               border: '1px solid rgba(255, 255, 255, 0.15)',
@@ -240,7 +240,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
             <span style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: '0.85rem', fontFamily: 'monospace' }}>CMI</span>
             <div>
               <span style={{ fontSize: '0.72rem', color: 'var(--color-gold)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block' }}>
-                Expert Field Briefing
+                Expert Field Video
               </span>
               <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#F8FAFC' }}>
                 Presented by Lead Certified Master Inspector® Christopher Boykin
@@ -251,7 +251,7 @@ export default function ServiceVideoModal({ isOpen, onClose, briefing }) {
           {/* Takeaways List */}
           <div style={{ marginBottom: '1.75rem' }}>
             <h4 style={{ fontSize: '0.92rem', color: '#F8FAFC', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '0 0 0.85rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ color: 'var(--color-gold)' }}>★</span> What You Learn In This Briefing
+              <span style={{ color: 'var(--color-gold)' }}>★</span> What You Learn In This Video
             </h4>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {takeaways.map((point, index) => (

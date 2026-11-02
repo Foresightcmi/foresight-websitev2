@@ -34,7 +34,7 @@ const STATIC_PAGES = {
   '/repair-credit-calculator': { title: 'Georgia Repair Credit & Due Diligence Negotiator', summary: 'Regional contractor repair range estimator demonstrating seller credit leverage during Georgia due diligence.' },
   '/due-diligence': { title: 'Georgia Due Diligence Deadline & Contingency Calculator', summary: 'Interactive due diligence timeline planner for Georgia residential purchase contracts.' },
   '/ai-fact-sheet': { title: 'Foresight Home Inspections AI Fact Sheet & Entity Grounding', summary: 'Verified machine-readable entity facts, credentials, fee tiers, and warranty specifications.' },
-  '/concierge': { title: 'Live Inspection Concierge Consultation', summary: 'Interactive building science Q&A and instant quote guidance.' },
+
   '/press': { title: 'Digital PR & Media Kit Center', summary: 'On-record building science commentary and credentials for Certified Master Inspector Christopher Boykin.' },
   '/review': { title: 'Verified Client & Realtor Reviews (4.8 Stars, 53 Google Reviews)', summary: 'Verified homeowner and Georgia Realtor feedback across Metro Atlanta.' },
   '/samples': { title: 'Sample Interactive Digital Home Inspection Reports', summary: 'Explore real Metro Atlanta digital inspection report examples with calibrated infrared thermal and 4K drone imagery.' },

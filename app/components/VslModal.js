@@ -73,7 +73,7 @@ export default function VslModal({ isOpen, onClose }) {
             </svg>
             <div>
               <h3 style={{ margin: 0, fontSize: '1.05rem', color: '#FFFFFF', fontWeight: 700 }}>
-                The Foresight 60-Second Inspection Briefing
+                The Foresight 60-Second Inspection Video
               </h3>
               <p style={{ margin: 0, fontSize: '0.75rem', color: '#94A3B8' }}>
                 Why Two Certified Inspectors On Every Job Save You Thousands
@@ -82,7 +82,7 @@ export default function VslModal({ isOpen, onClose }) {
           </div>
           <button 
             onClick={onClose}
-            aria-label="Close video briefing modal"
+            aria-label="Close video modal"
             style={{
               background: 'rgba(255, 255, 255, 0.1)',
               border: 'none',

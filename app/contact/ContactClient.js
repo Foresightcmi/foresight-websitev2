@@ -181,8 +181,8 @@ export default function ContactClient() {
                 </form>
               )}
               <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Want an instant answer?</p>
-                 <Link href="/concierge" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Live Concierge Consultation with Christopher Boykin, CMI® &rarr;</Link>
+                 <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>Want an instant price estimate?</p>
+                 <Link href="/quote" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Calculate Your Instant Quote &rarr;</Link>
               </div>
             </div>
           </div>

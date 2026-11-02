@@ -165,7 +165,7 @@ export default function VideosHub() {
         {/* Dedicated Service Video Watch Pages Grid */}
         <section>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.25rem' }}>
-            Specialty Inspection Video Briefings (Dedicated Watch Pages)
+            Specialty Inspection Videos (Dedicated Watch Pages)
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
@@ -217,7 +217,7 @@ export default function VideosHub() {
                     </p>
                   </div>
                   <Link href={`/videos/${video.slug}`} style={{ color: 'var(--color-gold)', fontSize: '0.85rem', fontWeight: 700, textDecoration: 'none' }}>
-                    Watch Video Briefing &rarr;
+                    Watch Video &rarr;
                   </Link>
                 </div>
               </div>

@@ -334,7 +334,7 @@ export default async function BlogPost({ params }) {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.9rem' }}>
                   <li><Link href="/compare/two-inspector-team-vs-single-inspector" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; 2-Inspector Team vs Single Inspector</Link></li>
                   <li><Link href="/compare/11-month-warranty-vs-builder-walkthrough" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; 11-Month Warranty vs Builder Walkthrough</Link></li>
-                  <li><Link href="/concierge" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Concierge Inspection Advisor</Link></li>
+                  <li><Link href="/repair-credit-calculator" style={{ color: 'var(--color-red)', textDecoration: 'none', fontWeight: 600 }}>&rarr; Repair Credit Calculator</Link></li>
                 </ul>
               </div>
             </div>

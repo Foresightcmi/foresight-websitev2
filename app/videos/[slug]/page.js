@@ -10,7 +10,7 @@ export const dynamicParams = false;
 export const SERVICE_VIDEOS = [
   {
     slug: 'new-construction-inspections',
-    title: 'New Construction Inspection in Metro Atlanta — CMI® Video Briefing',
+    title: 'New Construction Inspection in Metro Atlanta — CMI® Inspection Video',
     shortTitle: 'New Construction Multi-Phase Inspections',
     description: 'Certified Master Inspector® Christopher Boykin explains how Foresight Home Inspections conducts independent Phase 1 Pre-Drywall (from $275) and Phase 2 Final Walkthrough (from $400) inspections across Metro Atlanta using a two-inspector team.',
     videoUrl: '/videos/services/new-construction.mp4',
@@ -29,7 +29,7 @@ export const SERVICE_VIDEOS = [
   },
   {
     slug: '11-month-warranty-inspection',
-    title: '11-Month Builder Warranty Inspection in Metro Atlanta — CMI® Video Briefing',
+    title: '11-Month Builder Warranty Inspection in Metro Atlanta — CMI® Inspection Video',
     shortTitle: '11-Month Builder Warranty Inspection',
     description: 'Watch how Foresight Home Inspections documents latent structural settlement, roof flashing separations, HVAC static pressure issues, and moisture intrusion during Month 10 or 11 so your builder repairs them before your 1-year warranty expires.',
     videoUrl: '/videos/services/11-month-warranty.mp4',
@@ -48,7 +48,7 @@ export const SERVICE_VIDEOS = [
   },
   {
     slug: 'pool-and-spa-inspections',
-    title: 'Swimming Pool & Spa Inspection in Metro Atlanta — CMI® Video Briefing',
+    title: 'Swimming Pool & Spa Inspection in Metro Atlanta — CMI® Inspection Video',
     shortTitle: 'Swimming Pool & Spa Inspection',
     description: 'Certified Master Inspector® Christopher Boykin outlines Foresight Home Inspections’ mechanical, hydraulic, electrical bonding, and barrier safety evaluation for residential swimming pools and heated spas across Metro Atlanta.',
     videoUrl: '/videos/services/pool-and-spa.mp4',
@@ -67,7 +67,7 @@ export const SERVICE_VIDEOS = [
   },
   {
     slug: 'sewer-scope-inspections',
-    title: 'Sewer Scope Lateral Camera Inspection in Metro Atlanta — CMI® Video Briefing',
+    title: 'Sewer Scope Lateral Camera Inspection in Metro Atlanta — CMI® Inspection Video',
     shortTitle: 'Sewer Scope Lateral Camera Inspection',
     description: 'See how Foresight Home Inspections conducts fiber-optic HD video camera inspections of underground main sewer laterals from the house cleanout to the municipal tap across Metro Atlanta (Call for Quote).',
     videoUrl: '/videos/services/sewer-scope.mp4',
@@ -86,7 +86,7 @@ export const SERVICE_VIDEOS = [
   },
   {
     slug: 'termite-and-wdo-inspections',
-    title: 'Official Georgia Termite & WDO Inspection in Atlanta — CMI® Video Briefing',
+    title: 'Official Georgia Termite & WDO Inspection in Atlanta — CMI® Inspection Video',
     shortTitle: 'Official Georgia Termite & WDO Inspection',
     description: 'Certified Master Inspector® Christopher Boykin details Official Georgia Wood Infestation Inspection Reports for subterranean termites, powderpost beetles, carpenter ants, and wood-decay fungi across Metro Atlanta.',
     videoUrl: '/videos/services/termite-inspection.mp4',
@@ -105,7 +105,7 @@ export const SERVICE_VIDEOS = [
   },
   {
     slug: 'radon-gas-testing',
-    title: 'Continuous 48-Hour Electronic Radon Testing in Atlanta GA — CMI® Video Briefing',
+    title: 'Continuous 48-Hour Electronic Radon Testing in Atlanta GA — CMI® Inspection Video',
     shortTitle: '48-Hour Continuous Electronic Radon Testing',
     description: 'Learn why North Georgia’s granite bedrock places Fulton, DeKalb, Gwinnett, and Cobb counties in EPA Radon Zone 1, and how Foresight performs 48-hour continuous electronic radon monitoring (Call for Quote).',
     videoUrl: '/videos/services/radon-testing.mp4',
@@ -124,7 +124,7 @@ export const SERVICE_VIDEOS = [
   },
   {
     slug: 'mold-indoor-air-quality-testing',
-    title: 'Certified Spore Trap Mold & Indoor Air Quality Testing in Atlanta — CMI® Video Briefing',
+    title: 'Certified Spore Trap Mold & Indoor Air Quality Testing in Atlanta — CMI® Inspection Video',
     shortTitle: 'Mold & Indoor Air Quality Testing',
     description: 'Certified Master Inspector® Christopher Boykin explains calibrated Zefon Bio-Pump spore trap air sampling, surface swab collection, and accredited laboratory microbiology analysis across Metro Atlanta (Call for Quote).',
     videoUrl: '/videos/services/mold-testing.mp4',
@@ -143,7 +143,7 @@ export const SERVICE_VIDEOS = [
   },
   {
     slug: 'short-term-rental-str-compliance-inspection',
-    title: 'Airbnb & Short-Term Rental (STR) Compliance Inspection in Atlanta — CMI® Video Briefing',
+    title: 'Airbnb & Short-Term Rental (STR) Compliance Inspection in Atlanta — CMI® Inspection Video',
     shortTitle: 'Short-Term Rental (STR) Safety & Code Compliance',
     description: 'See how Foresight Home Inspections conducts municipal Short-Term Rental (STR) life-safety, egress, occupancy load, and electrical compliance inspections with a signed CMI® Affidavit (Call for Quote).',
     videoUrl: '/videos/services/short-term-rental.mp4',
@@ -269,7 +269,7 @@ export default async function ServiceVideoWatchPage({ params }) {
 
         <header style={{ marginBottom: '2rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212,175,55,0.15)', border: '1px solid var(--color-gold)', color: 'var(--color-gold)', borderRadius: '9999px', padding: '0.35rem 0.95rem', fontSize: '0.8rem', fontWeight: 700, marginBottom: '0.75rem' }}>
-            CMI® Field Video Briefing • {video.durationDisplay} • {video.startingPrice}
+            CMI® Field Video • {video.durationDisplay} • {video.startingPrice}
           </div>
           <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, lineHeight: 1.2, color: '#FFFFFF', margin: '0 0 0.85rem 0' }}>
             {video.title}
