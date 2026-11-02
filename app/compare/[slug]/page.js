@@ -149,6 +149,20 @@ export default async function ComparisonPage({ params }) {
         </div>
       </section>
 
+      {/* Answer Factory 40-Word Direct Answer Box (AEO / GEO Passage Extraction) */}
+      <section style={{ background: '#f8fafc', padding: '1.75rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: '8px', padding: '1.35rem 1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
+            <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: '0 0 0.5rem 0' }}>
+              {item.questionHeading || `Why choose Foresight Home Inspections for ${item.title.split('|')[0].trim()}?`}
+            </h2>
+            <p id="aeo-direct-answer" style={{ fontSize: '1rem', lineHeight: 1.6, color: '#1e293b', margin: 0, fontWeight: 500 }}>
+              {item.directAnswerBluf || item.summary}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Visual Inspection In Action Showcase */}
       {item.image && (
         <section className="section bg-light" style={{ padding: '4rem 0 3rem', borderBottom: '1px solid var(--color-gray-mid)' }}>

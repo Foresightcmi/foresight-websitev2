@@ -399,8 +399,9 @@ export default async function ServiceCityPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      "price": `${serviceData.price.replace(/[^0-9]/g, '') || "200"}.00`,
-      "priceCurrency": "USD",
+      ...(serviceData.price.replace(/[^0-9]/g, '')
+        ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" }
+        : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": serviceData.priceDetails } }),
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
@@ -430,8 +431,9 @@ export default async function ServiceCityPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      "price": `${serviceData.price.replace(/[^0-9]/g, '') || "200"}.00`,
-      "priceCurrency": "USD",
+      ...(serviceData.price.replace(/[^0-9]/g, '')
+        ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" }
+        : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": serviceData.priceDetails } }),
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
@@ -579,14 +581,17 @@ export default async function ServiceCityPage({ params }) {
           <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
               <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                {serviceName} in {cityName}, GA: Quick Facts &amp; Pricing
+                Who offers certified {serviceName.toLowerCase()} in {cityName}, GA and what does it cost?
               </h2>
               <span style={{ fontSize: '0.8rem', background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', padding: '0.2rem 0.6rem', borderRadius: '4px', fontWeight: 600 }}>
                 Verified 2026 Standards
               </span>
             </div>
-            <p style={{ fontSize: '1rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
-              <strong>Direct Answer:</strong> Foresight Home Inspections provides certified <strong>{serviceName.toLowerCase()}</strong> in {cityName}, GA ({county} County) ({serviceData.price === 'Call for Quote' ? <>call <strong>(678) 480-2110</strong> for a quote — {serviceData.priceDetails}</> : <>starting at <strong>{serviceData.price}</strong> ({serviceData.priceDetails})</>}). Governed directly by Board-Certified Master Inspector® Christopher Boykin (CMI #MICB-1082) with <strong>two certified inspectors on every appointment</strong>, our dual-evaluation protocol cuts on-site time in half (two-inspector parallel focus vs. exhausted solo walkthroughs for solo competitors) while eliminating late-stage inspector fatigue. Every evaluation includes calibrated infrared thermal imaging ($0 upcharge vs. $150 competitor fees), 24-hour digital reporting, and up to <strong>$35,000 in zero-deductible warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee).
+            <p id="aeo-direct-answer" style={{ fontSize: '1.02rem', lineHeight: 1.6, color: '#0f172a', fontWeight: 500, margin: '0 0 0.75rem 0' }}>
+              <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) provides 4.8★ certified {serviceName.toLowerCase()} in {cityName}, GA ({serviceData.price === 'Call for Quote' ? 'custom-quoted at 678-480-2110' : `starting at ${serviceData.price}`}) with two inspectors on site, free thermal imaging, 24-hour reports, and $35,000 warranty protection.
+            </p>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: '#475569', margin: '0 0 1rem 0' }}>
+              Serving all of {cityName} and {county} County ({serviceData.priceDetails}), our two-inspector parallel protocol eliminates late-stage solo inspector fatigue while including calibrated infrared thermal imaging ($0 upcharge vs. $150 competitor fees) and our $10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee ($0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #f1f5f9', fontSize: '0.875rem', color: '#475569' }}>
               <div><strong>Price:</strong> {serviceData.price}</div>
@@ -600,7 +605,7 @@ export default async function ServiceCityPage({ params }) {
                 <Link href={`/services/buyer-inspection/${resolvedParams.city}`} style={{ color: 'var(--color-red)', fontWeight: 700, textDecoration: 'underline' }}>
                   Home Inspection &amp; Home Inspector in {cityName}, GA ($345+)
                 </Link>{' '}
-                guide.
+                guide.{resolvedParams.city !== 'atlanta' && (<> • Looking for City of Atlanta coverage? See our <Link href={`/services/${serviceData.slug}/atlanta`} style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'underline' }}>Atlanta, GA {serviceName}</Link> hub.</>)}
               </div>
             )}
           </div>

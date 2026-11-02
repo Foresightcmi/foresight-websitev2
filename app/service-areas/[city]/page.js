@@ -535,14 +535,14 @@ export default async function CityPage({ params }) {
           <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
               <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                Quick Diagnostic Overview: {cityName}, GA Home Inspections
+                Who is the best home inspector in {cityName}, GA and what does an inspection cost?
               </h2>
               <Link href={`/service-areas/counties/${countySlug}`} style={{ fontSize: '0.85rem', color: 'var(--color-red)', fontWeight: 700, textDecoration: 'none' }}>
                 Explore {county} County Hub &rarr;
               </Link>
             </div>
             <p className="city-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
-              Foresight Home Inspections is the premier Certified Master Inspector (CMI®) team serving {cityName}, GA. Every inspection is conducted by <strong>two certified inspectors</strong> working in tandem, dividing structural and mechanical systems in tandem for double verification and zero solo-inspector fatigue. Standard inspections start at $295 (condos) and $345 (single-family homes) and include complimentary high-resolution infrared thermal imaging, aerial roof drone evaluations, and up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty + InterNACHI $25,000 Honor Guarantee, $0 deductible).
+              <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the 4.8★ home inspection team serving {cityName}, GA, deploying <strong>two certified inspectors</strong> from $345 ($295 condos) with free thermal imaging, 4K drone scans, and <strong>$35,000 warranty protection</strong> ($0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.15rem' }}>
               <div><strong>Standard:</strong> 2 Certified Inspectors</div>

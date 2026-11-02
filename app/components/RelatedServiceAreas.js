@@ -2,6 +2,28 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 
+// GSC Leak Hunter Priority Strike-Zone Cities (Positions 3.5–18.2 with Highest Impressions)
+const LEAK_HUNTER_PRIORITY_SLUGS = [
+  'atlanta',
+  'acworth',
+  'woodstock',
+  'cumming',
+  'lilburn',
+  'snellville',
+  'norcross',
+  'dallas',
+  'austell',
+  'fairburn',
+  'powder-springs',
+  'johns-creek',
+  'buford',
+  'stone-mountain',
+  'alpharetta',
+  'marietta',
+  'peachtree-corners',
+  'chattahoochee-hills'
+];
+
 export default function RelatedServiceAreas({ currentCitySlug, serviceSlug }) {
   let cities = [];
   try {
@@ -12,18 +34,23 @@ export default function RelatedServiceAreas({ currentCitySlug, serviceSlug }) {
     return null;
   }
 
-  // Filter out the current city so we don't link to the page we're on
-  const filteredCities = cities.filter(c => {
-    const slug = c['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    return slug !== currentCitySlug;
+  const toSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+  const filteredCities = cities.filter((c) => toSlug(c['City Name']) !== currentCitySlug);
+
+  // Deterministic Leak Hunter Priority Sort: Priority GSC strike-zone cities first, then alphabetical
+  const sortedCities = [...filteredCities].sort((a, b) => {
+    const slugA = toSlug(a['City Name']);
+    const slugB = toSlug(b['City Name']);
+    const idxA = LEAK_HUNTER_PRIORITY_SLUGS.indexOf(slugA);
+    const idxB = LEAK_HUNTER_PRIORITY_SLUGS.indexOf(slugB);
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    return slugA.localeCompare(slugB);
   });
 
-  // Shuffle and pick 12 random cities to spread link juice evenly across the site
-  // For deterministic SSG builds, we could use a seeded random, but standard sort is okay for now
-  // We'll use a simple deterministic slice based on the length to avoid hydration issues if it were client side.
-  // Since this is a server component, standard random is fine for every build.
-  const shuffled = filteredCities.sort(() => 0.5 - Math.random());
-  const selectedCities = shuffled.slice(0, 15);
+  const selectedCities = sortedCities.slice(0, 15);
 
   return (
     <div style={{ marginTop: '4rem', padding: '3rem 0', borderTop: '1px solid var(--color-gray-mid)' }}>
@@ -33,17 +60,16 @@ export default function RelatedServiceAreas({ currentCitySlug, serviceSlug }) {
         </h3>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(165px, 1fr))',
           gap: '1rem',
           textAlign: 'center'
         }}>
           {selectedCities.map((city) => {
-            const slug = city['City Name'].toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            // If serviceSlug is provided, we link to the PSEO service page, otherwise the general city page
+            const slug = toSlug(city['City Name']);
             const href = serviceSlug ? `/services/${serviceSlug}/${slug}` : `/service-areas/${slug}`;
             return (
-              <Link 
-                key={slug} 
+              <Link
+                key={slug}
                 href={href}
                 prefetch={false}
                 style={{
@@ -62,9 +88,9 @@ export default function RelatedServiceAreas({ currentCitySlug, serviceSlug }) {
           })}
         </div>
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-           <Link href="/service-areas" className="btn btn-outline" style={{ fontSize: '0.9rem' }}>
-             View All 160+ Service Areas
-           </Link>
+          <Link href="/service-areas" className="btn btn-outline" style={{ fontSize: '0.9rem' }}>
+            View All 87 Metro Atlanta Service Areas
+          </Link>
         </div>
       </div>
     </div>

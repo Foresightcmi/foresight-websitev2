@@ -1,4 +1,4 @@
-name: Monday — Technical SEO Health Guard
+name: Monday — Technical SEO Health & SearchAgent OS Dominance Guard
 
 on:
   schedule:
@@ -32,12 +32,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run FirstIndex Truth Document Guard & Auto-Healer
+        run: node scripts/firstindex-truth-guard.mjs --fix
+
       - name: Run SEO Technical Health Check
         run: node scripts/seo-health-check.mjs
+
+      - name: Run SearchAgent OS (Bot 1 Answer Radar, Bot 4 Source Map, Bot 5 Signal)
+        run: node scripts/search-agent-os.mjs
+
+      - name: Run Bot 2 GSC Leak Hunter & Striking Distance Engines
+        run: |
+          node scripts/gsc-leak-hunter-engine.mjs
+          node scripts/striking-distance-engine.mjs
 
       - name: Commit and Push SEO Moat Refinements
         run: |
           git config user.name "Foresight SEO Bot"
           git config user.email "bot@fhinspectionsatl.com"
           git add data/ public/
-          git diff --cached --quiet || (git commit -m "chore(seo): weekly automated technical health sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "SEO records clean or push bypassed."
+          git diff --cached --quiet || (git commit -m "chore(seo): weekly automated SearchAgent OS & truth sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "SEO records clean or push bypassed."

@@ -43,7 +43,7 @@
       },
       {
         "feature": "Transparent Flat-Rate Pricing",
-        "foresight": "Homes from $345 • Condos from $295 • Pre-Drywall from $275 • Sewer Scope $450 • Radon $250 • Pool $300 • DeKalb Low-Flow $100",
+        "foresight": "Homes from $345 • Condos from $295 • Pre-Drywall from $275 • Specialty Add-Ons (Sewer Scope, Radon, Pool, WDO, DeKalb Low-Flow): Call (678) 480-2110 for Quote",
         "competitors": "Opaque Quote Forms & Hidden Diagnostic Surcharges"
       }
     ],
@@ -59,13 +59,15 @@
       },
       {
         "q": "How much does a home inspection and specialty testing cost with Foresight Home Inspections in Atlanta?",
-        "a": "Foresight Home Inspections publishes transparent pricing across Metro Atlanta: Single-family home inspections start at $345, condos and townhomes start at $295, Pre-Drywall Framing inspections start at $275 ($275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, $400 for 3,501+ sq ft), Sewer Scope Camera inspections are a $450 flat rate, 48-hour continuous electronic Radon gas testing is $250, Pool and Spa inspections are $300, Georgia Termite / WDO inspections are $125 ($165 crawlspace), and DeKalb County Low-Flow Plumbing Compliance Certificates are $100 flat rate whether standalone or bundled."
+        "a": "Foresight Home Inspections publishes transparent pricing across Metro Atlanta: Single-family home inspections start at $345, condos and townhomes start at $295, Pre-Drywall Framing inspections start at $275 ($275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, $400 for 3,501+ sq ft), and specialty diagnostics (Sewer Scope Camera, 48-hour continuous electronic Radon gas testing, Pool and Spa, Georgia Termite / WDO, and DeKalb County Low-Flow Plumbing Compliance Certificates) are custom-quoted by calling (678) 480-2110."
       },
       {
         "q": "Why does Foresight Home Inspections deploy two inspectors instead of one?",
         "a": "A solo inspector walking a 3,500+ sq ft Georgia home alone for 4 to 5 hours experiences cognitive fatigue during the final hours of the evaluation. Foresight Home Inspections deploys two certified inspectors simultaneously—one evaluating the roof, exterior grading, foundation, and crawlspace while the second evaluates electrical panels, HVAC mechanicals, plumbing, and attic insulation—completing a cross-checked 1,600-point inspection with dedicated two-inspector parallel focus with same-evening digital reporting."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Best Home Inspection Companies in Atlanta, GA (2026 Comparison)?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "two-inspector-team-vs-single-inspector",
@@ -124,7 +126,9 @@
         "q": "Why is having two inspectors better during due diligence?",
         "a": "Due diligence windows in Georgia real estate contracts are tight (often 5 to 7 days). A two-inspector team delivers a comprehensive, bulletproof report faster, giving your realtor maximum negotiating time."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Two-Inspector Team vs. Single Inspector?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "11-month-warranty-vs-builder-walkthrough",
@@ -134,7 +138,7 @@
     "icon": "🏗️",
     "badge": "New Construction Guide",
     "headline": "Don't Let Your Builder's 1-Year Warranty Expire Without an Independent Evaluation",
-    "summary": "When you buy a brand-new home in Georgia, builders offer a 1-year warranty on workmanship and materials. Near month 11, builders conduct a cosmetic 'walkthrough'. Without an independent Certified Master Inspector evaluate, major structural, roof, and HVAC defects will remain hidden until you pay for them out of pocket.",
+    "summary": "When you buy a brand-new home in Georgia, builders offer a 1-year warranty on workmanship and materials. Near month 11, builders conduct a cosmetic 'walkthrough'. Without an independent Certified Master Inspector evaluation, major structural, roof, and HVAC defects will remain hidden until you pay for them out of pocket.",
     "comparisonTable": [
       {
         "feature": "Inspector Independence",
@@ -176,7 +180,9 @@
         "q": "Will my builder accept Foresight's 11-month inspection report?",
         "a": "Yes. Our reports are formatted as clear technical punch lists with photos, code references, and thermal images that builder warranty managers accept immediately."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for 11-Month Warranty Inspection vs. Builder 1-Year Walkthrough?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "pre-purchase-inspection-vs-bank-appraisal",
@@ -233,7 +239,9 @@
         "q": "Should I get a home inspection before or after the appraisal?",
         "a": "Get your home inspection scheduled immediately during your due diligence period before paying for an appraisal."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Pre-Purchase Home Inspection vs. Mortgage Bank Appraisal?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "thermal-imaging-vs-standard-visual-inspection",
@@ -243,7 +251,7 @@
     "icon": "📷",
     "badge": "High-Tech Diagnostics",
     "headline": "Seeing the Invisible: Why Visual Inspections Miss Major Hidden Defects",
-    "summary": "A traditional visual home inspection relies strictly on what the human eye can see. infrared thermal thermal cameras detect temperature differences across surfaces, revealing hidden water leaks behind drywall, missing insulation inside finished ceilings, and dangerous electrical hotspots before they cause damage.",
+    "summary": "A traditional visual home inspection relies strictly on what the human eye can see. Calibrated infrared thermal cameras detect temperature differences across surfaces, revealing hidden water leaks behind drywall, missing insulation inside finished ceilings, and dangerous electrical hotspots before they cause damage.",
     "comparisonTable": [
       {
         "feature": "Hidden Moisture Detection",
@@ -280,7 +288,9 @@
         "q": "Does Foresight charge extra for thermal imaging?",
         "a": "No! We include infrared thermal imaging scans on every single home inspection at zero extra cost."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Infrared Thermal Imaging vs. Standard Visual Home Inspection?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "new-construction-inspection-vs-county-building-inspector",
@@ -290,7 +300,7 @@
     "icon": "🏛️",
     "badge": "Code vs Quality Evaluation",
     "headline": "Why City and County Building Inspectors Do Not Replace an Independent Home Inspection",
-    "summary": "Many buyers assume municipal county inspectors thoroughly evaluation their new construction home before issuing a Certificate of Occupancy (CO). In reality, county code officials spend only 10 to 15 minutes per home checking bare-minimum life safety codes, completely ignoring HVAC airflow balancing, roof flashing integrity, insulation voids, and structural craftsmanship.",
+    "summary": "Many buyers assume municipal county inspectors thoroughly evaluate their new construction home before issuing a Certificate of Occupancy (CO). In reality, county code officials spend only 10 to 15 minutes per home checking bare-minimum life safety codes, completely ignoring HVAC airflow balancing, roof flashing integrity, insulation voids, and structural craftsmanship.",
     "comparisonTable": [
       {
         "feature": "Time On Site",
@@ -337,7 +347,9 @@
         "q": "When should I hire an independent inspector for new construction?",
         "a": "We recommend a 3-phase inspection: Phase 1 (Pre-Pour Foundation), Phase 2 (Pre-Drywall Framing & Mechanicals), and Phase 3 (Final Pre-Closing Inspection with infrared thermal imaging)."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Independent Home Inspection vs. City/County Code Inspector?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-bpg-inspections",
@@ -349,7 +361,7 @@
     "image": "/images/two-inspectors-electrical-panel-inspection.jpg",
     "imageAlt": "Two Certified Inspectors from Foresight cross-evaluating electrical panel wiring compared to solo inspector models in Atlanta",
     "headline": "Two Certified Master Inspectors vs. Multi-State Corporate Scheduling",
-    "summary": "BPG Inspections (a division of Fidelity National Financial) is one of the largest corporate inspection providers in the country. While they offer standard single-inspector packages, Foresight Home Inspections is an elite Atlanta-owned firm deploying two certified inspectors to every property with up to $35,000 in warranty protection, flat-rate $450 sewer scopes, and direct owner accountability.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms BPG Inspections in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. BPG Inspections (a division of Fidelity National Financial) is one of the largest corporate inspection providers in the country. While they offer standard single-inspector packages, Foresight Home Inspections is an elite Atlanta-owned firm deploying two certified inspectors to every property with up to $35,000 in warranty protection, 200-ft HD fiber-optic sewer scopes (Call for Quote), and direct owner accountability.",
     "comparisonTable": [
       {
         "feature": "Inspectors On Site",
@@ -368,7 +380,7 @@
       },
       {
         "feature": "Sewer Scope Pricing",
-        "foresight": "Strictly $450 Flat Rate (HD Video Included)",
+        "foresight": "Call (678) 480-2110 for Quote (HD Video Included)",
         "competitors": "$475 to $600+ (Third-Party Surcharge)"
       },
       {
@@ -390,7 +402,7 @@
     "benefits": [
       "Dual-Inspector Speed & Focus: Two inspectors cross-verify structural, electrical, and HVAC components, cutting your wait time in half during tight Georgia due diligence periods.",
       "Direct CMI Accountability: You speak directly with Certified Master Inspector Christopher Boykin, not a corporate ticketing queue or remote dispatcher.",
-      "Transparent Flat-Rate Pricing: No hidden mileage surcharges or escalating sewer scope rates; single-family homes start at $345 and sewer scopes are strictly $450 flat rate."
+      "Transparent Flat-Rate Pricing: No hidden mileage surcharges or escalating sewer scope rates; single-family homes start at $345 and specialty add-on diagnostics are custom-quoted at (678) 480-2110."
     ],
     "faqs": [
       {
@@ -401,7 +413,9 @@
         "q": "Why is a two-inspector team better than a solo corporate inspector?",
         "a": "A solo inspector spending four hours alone in attics and crawlspaces naturally experiences cognitive fatigue. Foresight deploys two certified inspectors who simultaneously cross-evaluation roof, electrical, foundation, and plumbing systems, delivering a more thorough report with dedicated parallel focus and zero solo fatigue."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. BPG Inspections?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-home-probe",
@@ -413,7 +427,7 @@
     "image": "/images/thermal-1.webp",
     "imageAlt": "Calibrated infrared thermal imaging scan of electrical circuit panel during Atlanta home inspection",
     "headline": "Certified Master Inspector Dual-Evaluation vs. Single-Inspector Atlanta Models",
-    "summary": "Home-Probe Inc is a well-known local inspection company in Metro Atlanta. However, when evaluating the thoroughness of your inspection, the operational model matters. Foresight deploys two certified inspectors on every residential inspection, includes infrared thermal imaging standard, and backs every client with up to $35,000 in complimentary warranty coverage.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Home-Probe Inc in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Home-Probe Inc is a well-known local inspection company in Metro Atlanta. However, when evaluating the thoroughness of your inspection, the operational model matters. Foresight deploys two certified inspectors on every residential inspection, includes infrared thermal imaging standard, and backs every client with up to $35,000 in complimentary warranty coverage.",
     "comparisonTable": [
       {
         "feature": "Inspectors On Site",
@@ -432,7 +446,7 @@
       },
       {
         "feature": "Sewer Scope Rate",
-        "foresight": "Strictly $450 Flat Rate (Main Out to Street)",
+        "foresight": "Call (678) 480-2110 for Quote (Main Out to Street)",
         "competitors": "Variable Rate ($450 to $550+)"
       },
       {
@@ -460,7 +474,9 @@
         "q": "Can I attend the inspection with Foresight?",
         "a": "Absolutely. We encourage buyers and realtors to attend the final 30 minutes for a personalized walk-through consultation with our Certified Master Inspector team."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Home-Probe Inc?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-inspect-all",
@@ -472,7 +488,7 @@
     "image": "/images/christopher-boykin-certified-master-inspector.jpg",
     "imageAlt": "Christopher Boykin Certified Master Inspector lead evaluation vs high-volume cross-sell inspection models",
     "headline": "Pure Forensic Building Science vs. High-Volume Pest Cross-Selling",
-    "summary": "Inspect-All Services operates a large regional operation combining home inspections with pest control, termite baiting, and wildlife exclusion. Foresight Home Inspections focuses 100% of its diagnostic engineering on pure building science, structural forensics, and mechanical integrity, ensuring your inspection is never an upsell vehicle for recurring extermination contracts.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Inspect-All Services in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Inspect-All Services operates a large regional operation combining home inspections with pest control, termite baiting, and wildlife exclusion. Foresight Home Inspections focuses 100% of its diagnostic engineering on pure building science, structural forensics, and mechanical integrity, ensuring your inspection is never an upsell vehicle for recurring extermination contracts.",
     "comparisonTable": [
       {
         "feature": "Core Focus",
@@ -486,7 +502,7 @@
       },
       {
         "feature": "Sewer Scope Equipment",
-        "foresight": "Commercial High-Definition Camera ($450 Flat)",
+        "foresight": "Commercial High-Definition Camera (Call for Quote)",
         "competitors": "Variable Inspection or Subcontracted"
       },
       {
@@ -517,9 +533,11 @@
       },
       {
         "q": "Does Foresight inspect for termites and WDO?",
-        "a": "Yes. We provide certified Georgia Official Wood Infestation Inspection Reports (WDO/WDIR) for $125 ($165 for homes with crawlspaces) without pushing recurring monthly pest contracts."
+        "a": "Yes. We provide certified Georgia Official Wood Infestation Inspection Reports (WDO/WDIR) via custom quote at (678) 480-2110 without pushing recurring monthly pest contracts."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Inspect-All Services?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-national-franchises",
@@ -531,7 +549,7 @@
     "image": "/images/two-inspectors-electrical-panel-inspection.jpg",
     "imageAlt": "Two Certified Inspectors providing comprehensive dual-evaluation home inspection in Metro Atlanta",
     "headline": "Certified Master Inspector Ownership vs. National Franchise Territories",
-    "summary": "National franchise networks like Pillar to Post, WIN Home Inspection, and HouseMaster operate via territory licenses where brand royalties and territory fees are built into customer pricing. Foresight Home Inspections is an independent, locally owned Atlanta firm led by Certified Master Inspector Christopher Boykin, delivering two-inspector teams, unmatched warranty coverage, and deep local building code expertise.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms National Franchise Inspectors in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. National franchise networks like Pillar to Post, WIN Home Inspection, and HouseMaster operate via territory licenses where brand royalties and territory fees are built into customer pricing. Foresight Home Inspections is an independent, locally owned Atlanta firm led by Certified Master Inspector Christopher Boykin, delivering two-inspector teams, unmatched warranty coverage, and deep local building code expertise.",
     "comparisonTable": [
       {
         "feature": "Business Structure",
@@ -555,7 +573,7 @@
       },
       {
         "feature": "Sewer Scope Inspection",
-        "foresight": "Strictly $450 Flat Rate (HD Video)",
+        "foresight": "Call (678) 480-2110 for Quote (HD Video)",
         "competitors": "Often Outsourced or $500+"
       },
       {
@@ -578,7 +596,9 @@
         "q": "Do franchise inspection companies provide warranties?",
         "a": "Most national franchises offer limited 90-day third-party policies with high deductibles or coverage caps. Foresight includes up to $35,000 in total warranty coverage with a zero-dollar deductible on every full home inspection."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. National Franchise Inspectors?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-pillar-to-post",
@@ -590,7 +610,7 @@
     "image": "/images/two-inspectors-electrical-panel-inspection.jpg",
     "imageAlt": "Two Certified Inspectors from Foresight cross-evaluating electrical systems vs Pillar to Post single-inspector franchise model",
     "headline": "Two Certified Master Inspectors vs. Tiered National Franchise Packages",
-    "summary": "Pillar to Post is one of the largest national franchise home inspection networks in North America. While they operate via local territory licensees with tiered packages (Plus, Premium, Prestige), Foresight Home Inspections is an elite Atlanta-owned firm led by Certified Master Inspector Christopher Boykin. We deploy two certified inspectors to every property with up to $35,000 in warranty protection, flat-rate $450 sewer scopes, and zero corporate franchise royalty markups.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Pillar to Post Home Inspectors in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Pillar to Post is one of the largest national franchise home inspection networks in North America. While they operate via local territory licensees with tiered packages (Plus, Premium, Prestige), Foresight Home Inspections is an elite Atlanta-owned firm led by Certified Master Inspector Christopher Boykin. We deploy two certified inspectors to every property with up to $35,000 in warranty protection, 200-ft HD fiber-optic sewer scopes (Call for Quote), and zero corporate franchise royalty markups.",
     "comparisonTable": [
       {
         "feature": "Inspectors On Site",
@@ -614,7 +634,7 @@
       },
       {
         "feature": "Sewer Scope Camera",
-        "foresight": "Strictly $450 Flat Rate (HD Video)",
+        "foresight": "Call (678) 480-2110 for Quote (HD Video)",
         "competitors": "$475 to $600+ (Third-Party Surcharge)"
       },
       {
@@ -647,7 +667,9 @@
         "q": "Why is a two-inspector team better than a franchise inspector?",
         "a": "Franchise territories typically send a single inspector who spends 3.5 to 4.5 hours alone navigating attics, crawlspaces, and mechanical rooms. Fatigue sets in. Foresight sends two certified inspectors who simultaneously cross-evaluation the property, delivering a superior, cross-verified report with dedicated parallel focus and zero solo fatigue."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Pillar to Post Home Inspectors?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-ria-inspections",
@@ -659,7 +681,7 @@
     "image": "/images/christopher-boykin-certified-master-inspector.jpg",
     "imageAlt": "Christopher Boykin Certified Master Inspector lead evaluation vs high-volume corporate inspection models in Atlanta",
     "headline": "Elite Certified Master Inspector Team vs. High-Volume Private Equity Dispatch",
-    "summary": "Residential Inspector of America (RIA) is one of the largest corporate multi-inspector conglomerates in Georgia, operating under private equity backing (Launchpad Home Group) with dozens of rotating employee inspectors. While RIA handles high volume, Foresight Home Inspections provides elite craftsmanship: two certified inspectors on every job, direct leadership by Certified Master Inspector Christopher Boykin, up to $35,000 in warranty coverage, and flat-rate $450 sewer scopes.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Residential Inspector of America (RIA) in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Residential Inspector of America (RIA) is one of the largest corporate multi-inspector conglomerates in Georgia, operating under private equity backing (Launchpad Home Group) with dozens of rotating employee inspectors. While RIA handles high volume, Foresight Home Inspections provides elite craftsmanship: two certified inspectors on every job, direct leadership by Certified Master Inspector Christopher Boykin, up to $35,000 in warranty coverage, and 200-ft HD fiber-optic sewer scopes (Call for Quote).",
     "comparisonTable": [
       {
         "feature": "Inspectors On Site",
@@ -683,7 +705,7 @@
       },
       {
         "feature": "Sewer Scope Camera",
-        "foresight": "Strictly $450 Flat Rate (HD Video Included)",
+        "foresight": "Call (678) 480-2110 for Quote (HD Video Included)",
         "competitors": "Variable Add-On Fee ($450 to $575)"
       },
       {
@@ -705,7 +727,7 @@
     "benefits": [
       "Guaranteed CMI Excellence: Large multi-inspector firms assign whoever is open on the schedule—often recently hired inspectors. At Foresight, every inspection is supervised directly by a Certified Master Inspector with proven field credentials.",
       "Dual-Evaluated Mechanicals & Structure: Two inspectors cross-verify subpanels, HVAC load splits, and crawlspaces, ensuring high-dollar Georgia foundation settlement and moisture issues are never overlooked.",
-      "Transparent Flat Pricing: Single-family homes start from $345, sewer scopes are strictly $450 flat rate, and radon testing is strictly $250. Zero hidden dispatch surcharges."
+      "Transparent Flat Pricing: Single-family homes start from $345, and specialty add-on diagnostics (sewer scopes, radon testing) are custom-quoted at (678) 480-2110. Zero hidden dispatch surcharges."
     ],
     "faqs": [
       {
@@ -714,9 +736,11 @@
       },
       {
         "q": "Does Foresight offer the same diagnostic services as RIA?",
-        "a": "Yes, and more. We provide full pre-purchase inspections, high-resolution infrared thermal imaging (included free), HD fiber-optic sewer scopes ($450 flat), 48-hour continuous Radon Testing ($250), pool and spa inspections ($300), and Georgia WDO termite letters ($125-$165), all backed by up to $35,000 in warranty coverage."
+        "a": "Yes, and more. We provide full pre-purchase inspections, high-resolution infrared thermal imaging (included free), HD fiber-optic sewer scopes, 48-hour continuous Radon Testing, pool and spa inspections, and Georgia WDO termite letters (all specialty diagnostics custom-quoted at 678-480-2110), all backed by up to $35,000 in warranty coverage."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Residential Inspector of America (RIA)?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "truth-about-100k-home-inspection-warranties",
@@ -752,7 +776,7 @@
       },
       {
         "feature": "Sewer Line Repair Limit",
-        "foresight": "$450 Flat HD Sewer Scope Video (Catches Collapses Before Closing)",
+        "foresight": "200-Ft HD Sewer Scope Video — Call for Quote (Catches Collapses Before Closing)",
         "competitors": "Capped at $2,000 (Atlanta Lateral Replacements Cost $7,000-$25,000)"
       },
       {
@@ -784,7 +808,9 @@
         "q": "How does Foresight Home Inspections protect buyers differently?",
         "a": "Foresight prioritizes defect prevention by assigning two certified inspectors led by Certified Master Inspector Christopher Boykin, ensuring twice the coverage with dedicated parallel focus and zero solo fatigue. We back every evaluation with $35,000 in combined zero-deductible warranty and guarantee protection, free infrared thermal scans, and free 4K drone roof imaging."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for The Truth About $100,000 Home Inspection Warranties?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-avalon-home-inspections",
@@ -796,7 +822,7 @@
     "image": "/images/two-inspectors-electrical-panel-inspection.jpg",
     "imageAlt": "Foresight two inspector team vs Avalon Home Inspections in Atlanta GA",
     "headline": "Dual Certified Master Inspector Team vs. Solo Inspector Marketing Bundles",
-    "summary": "Avalon Home Inspections is a prominent independent inspection company in the Atlanta and Marietta markets known for advertising over $100,000 in free warranty bundles. However, Avalon dispatches single solo inspectors who must evaluate entire properties alone over 3.5 to 4.5 hours, and their pricing is concealed behind proprietary scheduling forms. Foresight Home Inspections provides complete pricing transparency starting at $345, deploys two certified inspectors on every job led by Certified Master Inspector Christopher Boykin, and provides $35,000 in zero-deductible warranty protection.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Avalon Home Inspections in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Avalon Home Inspections is a prominent independent inspection company in the Atlanta and Marietta markets known for advertising over $100,000 in free warranty bundles. However, Avalon dispatches single solo inspectors who must evaluate entire properties alone over 3.5 to 4.5 hours, and their pricing is concealed behind proprietary scheduling forms. Foresight Home Inspections provides complete pricing transparency starting at $345, deploys two certified inspectors on every job led by Certified Master Inspector Christopher Boykin, and provides $35,000 in zero-deductible warranty protection.",
     "comparisonTable": [
       {
         "feature": "Inspectors Deployed",
@@ -825,7 +851,7 @@
       },
       {
         "feature": "Sewer Scope Camera",
-        "foresight": "Strictly $450 Flat Rate (Full HD Color Video)",
+        "foresight": "Call (678) 480-2110 for Quote (Full HD Color Video)",
         "competitors": "Variable Third-Party Scheduling"
       }
     ],
@@ -843,7 +869,9 @@
         "q": "Is a two-inspector team faster than Avalon Home Inspections?",
         "a": "Yes. A solo inspector takes 3.5 to 4.5 hours to thoroughly inspect a home, causing scheduling delays for realtors and buyers. Foresight's dual-inspector protocol completes the same rigorous 1,600-point inspection with dedicated two-inspector parallel focus."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Avalon Home Inspections?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-noble-property-inspections",
@@ -855,7 +883,7 @@
     "image": "/images/thermal-1.png",
     "imageAlt": "Calibrated infrared thermal imaging included free with Foresight Home Inspections vs Noble Property Inspections",
     "headline": "All-Inclusive Professional Diagnostics vs. Nickel-and-Dime Add-On Surcharges",
-    "summary": "Noble Property Inspections operates across Texas, Florida, and Georgia, advertising baseline inspection rates but charging separate add-on fees for essential modern tools: $150 extra for thermal imaging, $35 extra for drone roof checks, and $65 for a defect cost estimate. When combined, a buyer pays $535 to $580+ for a single inspector. Foresight Home Inspections includes calibrated infrared thermal imaging, 4K aerial camera drone scans, and instant online cost tools completely free on every inspection, performed by two certified inspectors starting at $345.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Noble Property Inspections in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Noble Property Inspections operates across Texas, Florida, and Georgia, advertising baseline inspection rates but charging separate add-on fees for essential modern tools: $150 extra for thermal imaging, $35 extra for drone roof checks, and $65 for a defect cost estimate. When combined, a buyer pays $535 to $580+ for a single inspector. Foresight Home Inspections includes calibrated infrared thermal imaging, 4K aerial camera drone scans, and instant online cost tools completely free on every inspection, performed by two certified inspectors starting at $345.",
     "comparisonTable": [
       {
         "feature": "Infrared Thermal Imaging",
@@ -902,7 +930,9 @@
         "q": "How does Foresight's price compare to Noble Property Inspections?",
         "a": "Foresight is significantly more affordable and thorough. A full inspection with thermal imaging and drone roof photography costs $345 with Foresight (and includes two inspectors). At Noble, the same diagnostic combination with a single inspector totals $535 to $580."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Noble Property Inspections?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-champia-inspections",
@@ -914,7 +944,7 @@
     "image": "/images/christopher-boykin-certified-master-inspector.jpg",
     "imageAlt": "Certified Master Inspector Christopher Boykin lead evaluation vs Champia Real Estate Inspections",
     "headline": "Specialized Master Inspector Team vs. High-Volume Inspection Dispatch",
-    "summary": "Champia Real Estate Inspections has operated in Metro Atlanta since 1987 out of Peachtree Corners, offering commercial and residential inspections through a roster of field inspectors. While Champia is an established firm, they dispatch solo inspectors who spend 3.5 to 4.5 hours on site, and their fees are gated behind quote requests. Foresight Home Inspections deploys two certified inspectors on every single appointment led by Certified Master Inspector Christopher Boykin, provides transparent flat-rate pricing starting at $345, and includes $35,000 in zero-deductible warranty protection.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Champia Real Estate Inspections in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Champia Real Estate Inspections has operated in Metro Atlanta since 1987 out of Peachtree Corners, offering commercial and residential inspections through a roster of field inspectors. While Champia is an established firm, they dispatch solo inspectors who spend 3.5 to 4.5 hours on site, and their fees are gated behind quote requests. Foresight Home Inspections deploys two certified inspectors on every single appointment led by Certified Master Inspector Christopher Boykin, provides transparent flat-rate pricing starting at $345, and includes $35,000 in zero-deductible warranty protection.",
     "comparisonTable": [
       {
         "feature": "Inspectors Assigned",
@@ -961,7 +991,9 @@
         "q": "Does Foresight offer commercial inspections like Champia?",
         "a": "Yes. Foresight provides comprehensive commercial property condition assessments (PCA) and multifamily business license evaluations across Metro Atlanta adhering to ASTM E2018 standards."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Champia Real Estate Inspections?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-scott-home-services",
@@ -973,7 +1005,7 @@
     "image": "/images/two-inspectors-electrical-panel-inspection.jpg",
     "imageAlt": "Foresight modern two inspector team vs Scott Home Services in Atlanta GA",
     "headline": "Modern Dual-Inspector Engineering vs. Traditional Solo Heritage Model",
-    "summary": "Scott Home Services is one of Atlanta's oldest inspection firms, operating since 1973 with a legacy focus on historic homes. However, Scott Home Services relies on solo inspector dispatches and completely gates all pricing behind phone or text inquiries. Foresight Home Inspections brings modern building science to Metro Atlanta: deploying two certified inspectors equipped with calibrated thermal imaging, 4K aerial drones, upfront pricing from $345, and $35,000 in zero-deductible warranty protection.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Scott Home Services in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Scott Home Services is one of Atlanta's oldest inspection firms, operating since 1973 with a legacy focus on historic homes. However, Scott Home Services relies on solo inspector dispatches and completely gates all pricing behind phone or text inquiries. Foresight Home Inspections brings modern building science to Metro Atlanta: deploying two certified inspectors equipped with calibrated thermal imaging, 4K aerial drones, upfront pricing from $345, and $35,000 in zero-deductible warranty protection.",
     "comparisonTable": [
       {
         "feature": "Inspection Team Structure",
@@ -1015,7 +1047,9 @@
         "q": "Can Foresight inspect older historic homes like Scott Home Services?",
         "a": "Yes. Certified Master Inspector Christopher Boykin specializes in historic Metro Atlanta architecture (Grant Park, Inman Park, Virginia-Highland, Druid Hills), evaluating unreinforced masonry, red clay settlement, and legacy wiring."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Scott Home Services?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   },
   {
     "slug": "foresight-vs-paris-pressley",
@@ -1027,7 +1061,7 @@
     "image": "/images/christopher-boykin-certified-master-inspector.jpg",
     "imageAlt": "Foresight transparent pricing vs Paris Pressley age surcharges in Atlanta GA",
     "headline": "Flat All-Inclusive Pricing vs. Escalating Age & Occupancy Surcharges",
-    "summary": "Paris Pressley is an experienced independent home inspector in Atlanta who publishes square-footage pricing starting at $379 to $650, but adds multiple surcharges: $30 extra if the home is occupied, $35 extra if built before 2003, $40 extra if built before 1990, and $50 extra if built before 1978. A typical 2,200 sq ft 1980s occupied home costs $649 for a single inspector. Foresight Home Inspections provides clear flat-rate pricing starting at $345 with zero penalty for property age or occupancy, backed by two certified inspectors and $35,000 in warranty coverage.",
+    "summary": "Foresight Home Inspections, LLC (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) outperforms Paris Pressley Inspections in Metro Atlanta by deploying two certified inspectors on every property from $345 with free thermal imaging, 4K drone scans, and $35,000 in zero-deductible warranty protection. Paris Pressley is an experienced independent home inspector in Atlanta who publishes square-footage pricing starting at $379 to $650, but adds multiple surcharges: $30 extra if the home is occupied, $35 extra if built before 2003, $40 extra if built before 1990, and $50 extra if built before 1978. A typical 2,200 sq ft 1980s occupied home costs $649 for a single inspector. Foresight Home Inspections provides clear flat-rate pricing starting at $345 with zero penalty for property age or occupancy, backed by two certified inspectors and $35,000 in warranty coverage.",
     "comparisonTable": [
       {
         "feature": "Inspectors Deployed",
@@ -1074,6 +1108,8 @@
         "q": "How much can a buyer save with Foresight vs. Paris Pressley?",
         "a": "On a typical 2,200 sq ft 1980s suburban home, Paris Pressley charges $649 for a single inspector. Foresight provides two certified inspectors with free thermal imaging, free drone roof scan, and $35,000 in warranty protection starting from $345, saving buyers over $300."
       }
-    ]
+    ],
+    "questionHeading": "Why choose Foresight Home Inspections for Foresight vs. Paris Pressley Inspections?",
+    "directAnswerBluf": "Foresight Home Inspections, LLC (CMI #MICB-1082) deploys two certified inspectors to every Metro Atlanta home starting at $345 ($295 condos, $275 pre-drywall), including free infrared thermal imaging, 4K drone roof scans, same-day reports, and $35,000 zero-deductible warranty protection."
   }
 ]

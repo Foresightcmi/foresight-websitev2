@@ -276,5 +276,14 @@ for (const rel of DISCOUNT_AUDIT_FILES) {
 }
 record('Realtor-Only $25 Discount Policy Guard (Zero non-Realtor client/promo/buyer/repeat $25 discounts)', nonRealtorDiscountLeaks.length === 0, nonRealtorDiscountLeaks.join('; '));
 
+// Step 7: Comparison Self-Cannibalization & Stale Add-On Pricing Guard (Goldie Answer Radar / Factory Rule)
+const compData = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'comparisons-pseo.json'), 'utf8'));
+const compStaleHits = compData.filter((c) => {
+  const s = JSON.stringify({ summary: c.summary, benefits: c.benefits, faqs: c.faqs, foresightRows: (c.comparisonTable || []).map((r) => r.foresight) });
+  return /\$450|\$250|\$125|\$165|DeKalb Low-Flow \$100|Pool \$300/.test(s);
+});
+const compSelfCannibalHits = compData.filter((c) => c.slug.startsWith('foresight-vs-') && !c.summary.startsWith('Foresight Home Inspections'));
+record('Zero stale add-on prices or rival-first self-cannibalizing summaries across all 18 /compare pages', compStaleHits.length === 0 && compSelfCannibalHits.length === 0, `${compStaleHits.length} stale price hits, ${compSelfCannibalHits.length} rival-first summaries`);
+
 console.log(`\n[SUMMARY] Passed ${passedChecks}/${totalChecks} FirstIndex Truth checks (${fixedItems} items auto-healed).\n`);
 process.exit(passedChecks === totalChecks ? 0 : 1);
