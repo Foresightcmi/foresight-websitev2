@@ -468,5 +468,239 @@
         "answer": "Realtors receive digital HomeGauge reports with the 1-click Digital Repair Request List Builder tool and our instant GAR Amendment Repair Clause Generator to expedite negotiations."
       }
     ]
+  },
+  {
+    "slug": "oakhurst-winnona-park-decatur",
+    "name": "Oakhurst & Winnona Park",
+    "city": "Decatur",
+    "county": "DeKalb",
+    "type": "Historic Craftsman & Infill Enclaves",
+    "tagline": "Craftsman Bungalow, Modern Infill & DeKalb Low-Flow Evaluations in City of Decatur",
+    "era": "1920s – 1950s (Plus Modern Custom Builds)",
+    "intro": "Oakhurst, Winnona Park, and Great Lakes represent the heart of Decatur's walkable residential neighborhoods, blending 1920s Craftsman bungalows with high-value modern custom infill builds. Navigating due diligence in Decatur requires deep diagnostic experience across pier-and-beam crawlspaces, tree-canopy clay sewer laterals, and DeKalb County plumbing compliance.",
+    "keyDefects": [
+      {
+        "title": "Crawlspace Joist Moisture & Vapor Barrier Gaps",
+        "description": "Older Decatur bungalows built over vented crawlspaces frequently exhibit wood moisture above 18%, subfloor deflection, and active fungal growth requiring digital moisture profiling."
+      },
+      {
+        "title": "Mature Oak Root Intrusion in Clay & Cast Iron Sewers",
+        "description": "Decatur's dense tree canopy places heavy root pressure on original clay and cast iron sewer laterals, making a 200ft HD sewer camera inspection critical during due diligence."
+      },
+      {
+        "title": "Modern Infill Flashing & Multi-Zone HVAC Balancing",
+        "description": "Two-story custom builds in Oakhurst and Winnona Park often develop roof-to-wall kick-out flashing leaks, attic baffle omissions, and uneven second-floor HVAC static pressure."
+      },
+      {
+        "title": "Adjacent Unincorporated DeKalb Low-Flow Plumbing Compliance",
+        "description": "Properties along the Decatur border in unincorporated DeKalb County require signed Low-Flow Plumbing Certificates (toilets 1.6 GPF max) before water service transfer."
+      }
+    ],
+    "recommendedServices": ["sewer-scope-inspection", "radon-testing", "termite-inspection"],
+    "faqs": [
+      {
+        "question": "Do you issue signed DeKalb County Low-Flow Plumbing Certificates near Decatur?",
+        "answer": "Yes. For homes built before 1993 in unincorporated DeKalb County, our Certified Master Inspectors verify fixture flow rates and sign the official DeKalb Watershed certificate on site."
+      },
+      {
+        "question": "Do you perform 11-Month Builder Warranty inspections on new Decatur infill homes?",
+        "answer": "Yes. Our two-inspector CMI team documents roof, stucco/hardie flashing, crawlspace, and HVAC defects before your 1-year builder warranty expires."
+      }
+    ]
+  },
+  {
+    "slug": "smoke-rise-lavista-park-dekalb",
+    "name": "Smoke Rise, Briarmoor & Lavista Park",
+    "city": "Tucker",
+    "county": "DeKalb",
+    "type": "Mid-Century Custom Estates & Granite Ridge Subdivisions",
+    "tagline": "Comprehensive Structural, Radon & Low-Flow Inspections Across Tucker, Stone Mountain & Brookhaven",
+    "era": "1950s – 1990s (Plus New Townhomes)",
+    "intro": "Stretching from Lavista Park and Briarmoor Manor to the wooded acre lots of Smoke Rise in Tucker and Stone Mountain, East DeKalb's premier neighborhoods sit directly atop the Lithonia-Stone Mountain granite formation. Proper due diligence demands granite-zone radon monitoring, mid-century electrical panel audits, and DeKalb watershed compliance.",
+    "keyDefects": [
+      {
+        "title": "Stone Mountain Granite Bedrock Radon Gas",
+        "description": "Underlying granite formations across Tucker, Stone Mountain, andLithonia generate elevated indoor radon levels in basements and crawlspaces. We deploy 48-hour continuous radon monitors."
+      },
+      {
+        "title": "Unincorporated DeKalb Low-Flow Water Transfer Mandate",
+        "description": "Most homes in Smoke Rise, Tucker, and Briarmoor built prior to 1993 require a signed DeKalb County Low-Flow Plumbing Certificate to activate water service after closing."
+      },
+      {
+        "title": "Federal Pacific, Zinsco & Mid-Century Service Panels",
+        "description": "1960s and 1970s ranch and split-level estates frequently retain legacy breaker panels, ungrounded circuits, or double-lugged main neutrals detected via infrared thermal scans."
+      },
+      {
+        "title": "Sloped Lot Retaining Walls & Walkout Basement Seepage",
+        "description": "Wooded rolling lots in Smoke Rise and Lavista Park often channel surface runoff against CMU block foundation walls, causing efflorescence and hydrostatic moisture intrusion."
+      }
+    ],
+    "recommendedServices": ["radon-testing", "sewer-scope-inspection", "termite-inspection"],
+    "faqs": [
+      {
+        "question": "Why is radon testing essential in Tucker, Stone Mountain, and Lithonia?",
+        "answer": "DeKalb County's granite bedrock is an EPA Zone 1 high-potential radon corridor. Continuous 48-hour monitoring protects buyers before the due diligence window closes."
+      },
+      {
+        "question": "How fast are inspection reports delivered for Tucker and Stone Mountain buyers?",
+        "answer": "Same-day digital reports with high-resolution photos, infrared thermal scans, and repair request summaries are delivered within 24 hours."
+      }
+    ]
+  },
+  {
+    "slug": "peachtree-city-golf-cart-villages",
+    "name": "Peachtree City Golf Cart Villages (Kedron, Braelin & Wilksmoor)",
+    "city": "Peachtree City",
+    "county": "Fayette",
+    "type": "Master-Planned Golf Cart & Lake Villages",
+    "tagline": "Buyer, Pre-Listing & 11-Month Warranty Inspections in Fayette County's Premier Villages",
+    "era": "1970s – Present (Master-Planned Villages)",
+    "intro": "Peachtree City's five interconnected villages—Aberdeen, Braelin, Glenloch, Kedron, and Wilksmoor—feature over 100 miles of multi-use golf cart paths, lakes, and wooded subdivisions across Fayette County. Inspecting homes here requires attention to 1980s–1990s polybutylene plumbing, wooded crawlspace humidity, and 11-month builder warranties in newer Cresswind and Everton enclaves.",
+    "keyDefects": [
+      {
+        "title": "Polybutylene Water Mains & Interior Manifold Piping",
+        "description": "Homes constructed across Braelin, Glenloch, and Kedron between 1982 and 1996 frequently contain grey polybutylene supply lines prone to fitting fractures and concealed leaks."
+      },
+      {
+        "title": "Wooded Lot Roof Debris, Valley Flashing & Skylight Leaks",
+        "description": "Heavy pine canopy coverage throughout Peachtree City accelerates shingle granule loss, clogs roof valleys, and degrades skylight curb flashing inspected via 4K aerial drone."
+      },
+      {
+        "title": "Crawlspace Moisture & Subterranean Termite Activity",
+        "description": "Proximity to Lake Peachtree, Lake Kedron, and Flat Creek creates elevated soil moisture under vented crawlspaces, requiring thorough moisture meter and termite clearance checks."
+      },
+      {
+        "title": "11-Month Builder Warranty & Active-Adult New Construction",
+        "description": "Newer communities in Peachtree City, Fayetteville, and Tyrone frequently exhibit attic insulation gaps, truss uplift, and grading settlement prior to the 1-year builder warranty deadline."
+      }
+    ],
+    "recommendedServices": ["termite-inspection", "sewer-scope-inspection", "11-month-warranty-inspection"],
+    "faqs": [
+      {
+        "question": "Do you inspect all five villages in Peachtree City and surrounding Fayette County?",
+        "answer": "Yes. Our Two Certified Master Inspectors cover Aberdeen, Braelin, Glenloch, Kedron, Wilksmoor, Fayetteville, Tyrone, Brooks, and Woolsey with same-day digital reports."
+      },
+      {
+        "question": "Do you offer 11-Month Builder Warranty inspections in Peachtree City and Fayetteville?",
+        "answer": "Yes. We provide a complete photo-documented builder repair punch list before your 12-month new home warranty expires."
+      }
+    ]
+  },
+  {
+    "slug": "eagles-landing-lake-dow-henry",
+    "name": "Eagle's Landing, Lake Dow & Heron Bay",
+    "city": "McDonough",
+    "county": "Henry",
+    "type": "Gated Country Club, Lake & New Build Communities",
+    "tagline": "Dual-Inspector CMI Evaluations Across McDonough, Stockbridge, Locust Grove & Hampton",
+    "era": "1990s – Present (Country Club Estates & New Subdivisions)",
+    "intro": "Eagle's Landing Country Club, Lake Dow, and Heron Bay anchor the South Metro luxury and family subdivision market across Henry County. From custom golf course estates with finished terrace levels in Stockbridge and McDonough to fast-growing new construction corridors in Locust Grove and Hampton, Foresight delivers two-inspector precision on every home.",
+    "keyDefects": [
+      {
+        "title": "New Construction Phase 1 Pre-Drywall & Final Walkthrough Omissions",
+        "description": "High-volume builder subdivisions in McDonough, Locust Grove, and Hampton frequently contain unsealed ductwork, missing roof kick-out flashing, and loose electrical panel terminations."
+      },
+      {
+        "title": "Synthetic Stucco (EIFS) & Masonry Veneer Weep Screeds",
+        "description": "1990s and 2000s executive homes in Eagle's Landing and Lake Dow require infrared thermal scanning around window headers and stucco terminations to detect trapped sheathing moisture."
+      },
+      {
+        "title": "11-Month Builder Warranty Settlement & Drainage Grading",
+        "description": "Georgia red clay compaction during the first year after construction often creates negative lot grading, driveway slab cracking, and roof truss nail pops covered under builder warranty."
+      },
+      {
+        "title": "Multi-Zone HVAC & Attic Duct Leakage",
+        "description": "Large two-story Henry County homes often suffer from disconnected flex ducts in hot attics and improperly balanced upstairs heat pump zones."
+      }
+    ],
+    "recommendedServices": ["new-construction-inspection", "11-month-warranty-inspection", "pre-drywall-inspection"],
+    "faqs": [
+      {
+        "question": "Do you perform Pre-Drywall and 11-Month Warranty inspections in McDonough and Locust Grove?",
+        "answer": "Yes. We perform Phase 1 Pre-Drywall (From $275), Final New Construction (From $400), and 11-Month Builder Warranty inspections (From $345) across all Henry County subdivisions."
+      },
+      {
+        "question": "How fast can buyers schedule a due diligence inspection in Stockbridge or McDonough?",
+        "answer": "We offer 24-to-48 hour priority scheduling with two Certified Master Inspectors on site and same-day digital report delivery."
+      }
+    ]
+  },
+  {
+    "slug": "summergrove-serenbe-trilith-south",
+    "name": "SummerGrove, Serenbe & Trilith Communities",
+    "city": "Newnan",
+    "county": "Coweta",
+    "type": "Master-Planned & High-Performance Communities",
+    "tagline": "Custom New Build, Geothermal & 11-Month Warranty Inspections in Newnan, Senoia & Chattahoochee Hills",
+    "era": "2000s – Present (Master-Planned & Architect-Designed)",
+    "intro": "From the 1,400-acre golf and lake community of SummerGrove in Newnan to the biophilic neighborhoods of Serenbe in Chattahoochee Hills and Trilith in Fayetteville, Southwest Metro Atlanta features some of Georgia's most distinctive residential construction. Foresight's two-inspector CMI team evaluates complex building envelopes, high-efficiency mechanicals, and 11-month builder warranties.",
+    "keyDefects": [
+      {
+        "title": "High-Performance Envelope, Roof Membrane & Flashing Details",
+        "description": "Modern architectural roofs, standing-seam metal assemblies, and tight building envelopes require 4K aerial drone and infrared thermal scans to verify flashing integrity."
+      },
+      {
+        "title": "11-Month Builder Warranty Punch Lists for New Construction",
+        "description": "Rapidly expanding subdivisions across Newnan, Senoia, and Sharpsburg frequently exhibit attic insulation voids, improper roof boot flashing, and grading erosion before the 1-year warranty expires."
+      },
+      {
+        "title": "Conditioned Crawlspaces, Dehumidifiers & ERV/HRV Balancing",
+        "description": "High-efficiency homes with encapsulated crawlspaces and fresh-air ventilation systems require verification of relative humidity controls and condensate drainage."
+      },
+      {
+        "title": "Lakefront & Golf Course Lot Foundation Drainage",
+        "description": "Sloped parcels in SummerGrove and Senoia require careful assessment of French drains, downspout discharge extensions, and retaining wall stability."
+      }
+    ],
+    "recommendedServices": ["11-month-warranty-inspection", "new-construction-inspection", "radon-testing"],
+    "faqs": [
+      {
+        "question": "Do you perform 11-Month Builder Warranty inspections in Newnan, Senoia, and Sharpsburg?",
+        "answer": "Yes. Our Two Certified Master Inspectors inspect every structural and mechanical system so you can submit a complete repair list to your builder before the 12-month warranty deadline."
+      },
+      {
+        "question": "Do you inspect custom homes in Serenbe (Chattahoochee Hills) and Trilith?",
+        "answer": "Yes. We regularly inspect custom residences across Chattahoochee Hills, Fayetteville, Senoia, and Newnan with 4K drone and calibrated thermal imaging included."
+      }
+    ]
+  },
+  {
+    "slug": "hamilton-mill-chateau-elan-northeast",
+    "name": "Hamilton Mill, Chateau Elan & Suwanee Subdivisions",
+    "city": "Dacula",
+    "county": "Gwinnett",
+    "type": "Golf, Country Club & New Construction Subdivisions",
+    "tagline": "Executive Home, Pre-Drywall & 11-Month Warranty Inspections in Dacula, Buford, Suwanee & Hoschton",
+    "era": "1990s – Present (Golf Estates & Active New Builds)",
+    "intro": "Spanning Hamilton Mill in Dacula, Laurel Springs in Suwanee, Lake Lanier communities in Buford, and Chateau Elan / Del Webb in Braselton and Hoschton, the I-85 Northeast corridor is one of Metro Atlanta's highest-velocity real estate markets. Foresight's dual-inspector CMI team protects buyers across both established country club estates and brand-new subdivisions.",
+    "keyDefects": [
+      {
+        "title": "11-Month Builder Warranty & New Build Framing/Mechanical Defects",
+        "description": "New construction communities in Dacula, Hoschton, Buford, and Lawrenceville frequently display truss nail pops, missing attic baffles, unsealed HVAC plenums, and roof flashing gaps."
+      },
+      {
+        "title": "Stucco, Stone Veneer & Multi-Gable Roof Valley Flashing",
+        "description": "Custom golf course homes in Hamilton Mill and Chateau Elan feature complex roof intersections and masonry veneers that require 4K aerial drone and thermal moisture scanning."
+      },
+      {
+        "title": "Finished Terrace Level Moisture & Gwinnett Granite Radon",
+        "description": "Walkout basements across Gwinnett, Forsyth, and Hall counties require pinless moisture profiling along foundation walls and 48-hour continuous radon gas monitoring."
+      },
+      {
+        "title": "Multi-Unit HVAC Split Differentials & Water Heater Expansion",
+        "description": "Large two-story and three-story family homes require full supply/return temperature-split testing across all HVAC zones and thermal expansion tank verification."
+      }
+    ],
+    "recommendedServices": ["11-month-warranty-inspection", "new-construction-inspection", "radon-testing"],
+    "faqs": [
+      {
+        "question": "Do you perform 11-Month Builder Warranty inspections in Dacula, Hoschton, and Buford?",
+        "answer": "Yes. We inspect new construction homes across Gwinnett, Hall, Jackson, and Forsyth counties before your 1-year builder warranty expires."
+      },
+      {
+        "question": "How fast can you inspect a home under due diligence in Lawrenceville, Suwanee, or Duluth?",
+        "answer": "Our Two Certified Master Inspectors offer 24-to-48 hour scheduling with same-day digital report delivery and active SUPRA eKEY access."
+      }
+    ]
   }
 ]

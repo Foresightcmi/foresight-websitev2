@@ -29,6 +29,40 @@ const EXCLUDED_DOMAINS = new Set([
 
 const DEKALB_REGEX = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i;
 
+export const SURROUNDING_QUADRANT_CITIES = {
+  EAST: [
+    'Decatur', 'Lithonia', 'Stone Mountain', 'Tucker', 'Chamblee', 'Dunwoody',
+    'Brookhaven', 'Conyers', 'Covington', 'Snellville', 'Loganville', 'Monroe', 'Stonecrest', 'Clarkston'
+  ],
+  SOUTH: [
+    'McDonough', 'Stockbridge', 'Locust Grove', 'Hampton', 'Fayetteville',
+    'Peachtree City', 'Newnan', 'Senoia', 'Tyrone', 'Fairburn', 'College Park',
+    'East Point', 'Union City', 'Jonesboro', 'Rex', 'Morrow'
+  ],
+  NORTHEAST: [
+    'Lawrenceville', 'Buford', 'Duluth', 'Suwanee', 'Dacula', 'Lilburn',
+    'Norcross', 'Peachtree Corners', 'Grayson', 'Sugar Hill', 'Cumming',
+    'Alpharetta', 'Johns Creek', 'Milton', 'Hoschton', 'Flowery Branch', 'Gainesville', 'Auburn'
+  ],
+  NORTHWEST: [
+    'Marietta', 'Smyrna', 'Kennesaw', 'Acworth', 'Woodstock', 'Canton',
+    'Dallas', 'Powder Springs', 'Austell', 'Mableton', 'Douglasville', 'Roswell', 'Cartersville', 'Villa Rica'
+  ]
+};
+
+export function classifyQuadrant(city = '', county = '') {
+  const c = String(city).toLowerCase().trim();
+  const co = String(county).toLowerCase().trim();
+  for (const [quad, list] of Object.entries(SURROUNDING_QUADRANT_CITIES)) {
+    if (list.some((item) => item.toLowerCase() === c)) return quad;
+  }
+  if (/dekalb|rockdale|newton|walton|morgan/.test(co)) return 'EAST';
+  if (/henry|fayette|coweta|clayton|spalding|butts/.test(co)) return 'SOUTH';
+  if (/gwinnett|forsyth|hall|barrow|jackson|dawson/.test(co)) return 'NORTHEAST';
+  if (/cobb|cherokee|paulding|douglas|bartow|carroll/.test(co)) return 'NORTHWEST';
+  return 'INTOWN';
+}
+
 function formatPhone(digits) {
   if (!digits || digits.length !== 10) return digits || '';
   return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
@@ -79,11 +113,12 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
     }
     const first = item.first || (item.name ? item.name.split(' ')[0] : 'there');
     const textBody = buildSmsCopy(first, item.address, item.city, item.role);
-    const buyerForwardBody = `Hi ${first}, here is our 1-click due diligence quote link and $35,000 warranty info for your buyers at ${item.address}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(item.address)} . Includes our 2-inspector team, same-day report, and free utility setup concierge. Feel free to pass this along to your buyers!`;
+    const buyerForwardBody = `Hi ${first}, here is our 1-click due diligence quote link and $35,000 warranty info for your buyers at ${item.address}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(item.address)} — Includes our 2-inspector team, same-day report, and free utility setup concierge. Feel free to pass this along to your buyers!`;
     item.text_body = textBody;
     item.sms_link = item.clean_phone ? `sms:+1${item.clean_phone}?&body=${encodeURIComponent(textBody)}` : '';
     item.buyer_forward_body = buyerForwardBody;
     item.buyer_forward_link = item.clean_phone ? `sms:+1${item.clean_phone}?&body=${encodeURIComponent(buyerForwardBody)}` : '';
+    item.quadrant = classifyQuadrant(item.city, item.county);
     const k = item.listing_ref || item.listing_key || `${(item.email || item.clean_phone || '').toLowerCase()}::${(item.address || '').toLowerCase()}`;
     delete item.listing_key;
     item.listing_ref = k;
@@ -92,8 +127,17 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
 
   let newPendingDeals = 0;
 
+  const feedUrls = [];
   for (let offset = 0; offset < maxOffset; offset += 200) {
-    const url = `https://mls.virtusmart.com/api/search/p?From=${offset}&Size=200&geocode=1&feed=FMLS`;
+    feedUrls.push(`https://mls.virtusmart.com/api/search/p?From=${offset}&Size=200&geocode=1&feed=FMLS`);
+  }
+  for (const quad of ['EAST', 'SOUTH', 'NORTHEAST', 'NORTHWEST']) {
+    for (const targetCity of SURROUNDING_QUADRANT_CITIES[quad]) {
+      feedUrls.push(`https://mls.virtusmart.com/api/search/p?From=0&Size=100&geocode=1&feed=FMLS&City=${encodeURIComponent(targetCity)}`);
+    }
+  }
+
+  for (const url of feedUrls) {
     try {
       const res = await fetch(url, {
         headers: {
@@ -101,9 +145,9 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
           'Accept': 'application/json'
         }
       });
-      if (!res.ok) break;
+      if (!res.ok) continue;
       const data = await res.json();
-      if (!Array.isArray(data) || data.length === 0) break;
+      if (!Array.isArray(data) || data.length === 0) continue;
 
       for (const row of data) {
         const src = row?._source || {};
@@ -182,6 +226,7 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
             brokerage: t.brokerage,
             city,
             county: src.CountyOrParish || '',
+            quadrant: classifyQuadrant(city, src.CountyOrParish || ''),
             address,
             price: priceStr,
             raw_price: rawPrice,
@@ -203,7 +248,7 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
         }
       }
     } catch (err) {
-      console.warn(`⚠️ [Live FMLS Harvester] Warning at offset ${offset}:`, err.message);
+      console.warn(`⚠️ [Live FMLS Harvester] Warning fetching feed:`, err.message);
     }
   }
 
@@ -255,18 +300,40 @@ export async function harvestLiveDueDiligence(maxOffset = 1400) {
     fs.writeFileSync(ARCHIVE_FILE, JSON.stringify(mergedArchive, null, 2), 'utf8');
   }
 
-  // Sort active records: freshest dates first, Buyer Agent first, highest list price first
-  active.sort((a, b) => {
+  // Sort within each quadrant: freshest dates first, Buyer Agent first, highest list price first
+  const baseCompare = (a, b) => {
     const dCmp = (b.date || '').localeCompare(a.date || '');
     if (dCmp !== 0) return dCmp;
     if (a.role === 'BUYER_AGENT' && b.role !== 'BUYER_AGENT') return -1;
     if (b.role === 'BUYER_AGENT' && a.role !== 'BUYER_AGENT') return 1;
     return (b.raw_price || 0) - (a.raw_price || 0);
-  });
+  };
 
-  fs.writeFileSync(UNDER_CONTRACT_FILE, JSON.stringify(active, null, 2), 'utf8');
-  console.log(`✅ [Live FMLS Harvester] Discovered ${newPendingDeals} new deals. Active pool maintained at ${active.length} records (rolling 5-day freshness window; ${stale.length} archived).`);
-  return { newPendingDeals, totalRecords: active.length };
+  const quadrantOrder = ['EAST', 'SOUTH', 'NORTHEAST', 'NORTHWEST', 'INTOWN'];
+  const buckets = { EAST: [], SOUTH: [], NORTHEAST: [], NORTHWEST: [], INTOWN: [] };
+  for (const item of active) {
+    const q = item.quadrant || classifyQuadrant(item.city, item.county);
+    item.quadrant = q;
+    (buckets[q] || buckets.INTOWN).push(item);
+  }
+  for (const q of quadrantOrder) buckets[q].sort(baseCompare);
+
+  // Round-robin interleave across East, South, Northeast, Northwest, and Intown
+  const balancedActive = [];
+  let added = true;
+  while (added) {
+    added = false;
+    for (const q of quadrantOrder) {
+      if (buckets[q].length > 0) {
+        balancedActive.push(buckets[q].shift());
+        added = true;
+      }
+    }
+  }
+
+  fs.writeFileSync(UNDER_CONTRACT_FILE, JSON.stringify(balancedActive, null, 2), 'utf8');
+  console.log(`✅ [Live FMLS Harvester] Discovered ${newPendingDeals} new deals. Active pool maintained at ${balancedActive.length} balanced multi-quadrant records (${stale.length} archived).`);
+  return { newPendingDeals, totalRecords: balancedActive.length };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {

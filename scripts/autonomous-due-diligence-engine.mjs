@@ -574,7 +574,8 @@ async function main() {
     totalUnderContract = underContractRealtors.length;
     console.log(`📋 [Due Diligence Engine] Priority #1: Loaded ${underContractRealtors.length} Active Under-Contract / Due Diligence Realtors.`);
 
-    const sorted = [...underContractRealtors].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    // Preserve Round-Robin Quadrant Interleaving (EAST -> SOUTH -> NORTHEAST -> NORTHWEST -> INTOWN)
+    const sorted = [...underContractRealtors];
 
     if (canSendEmail && transporter) {
       for (const r of sorted) {

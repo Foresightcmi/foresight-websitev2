@@ -1089,6 +1089,42 @@ const nextConfig = {
         destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
         permanent: true,
       },
+      // Trailing-Period SMS/Email Auto-Linker Recovery (GA4 59-User /quote. 404 Fix)
+      {
+        source: '/quote.',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/realtors.',
+        destination: '/realtors',
+        permanent: true,
+      },
+      {
+        source: '/services.',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/contact.',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/due-diligence.',
+        destination: '/due-diligence',
+        permanent: true,
+      },
+      {
+        source: '/samples.',
+        destination: '/samples',
+        permanent: true,
+      },
+      {
+        source: '/repair-credit-calculator.',
+        destination: '/repair-credit-calculator',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
