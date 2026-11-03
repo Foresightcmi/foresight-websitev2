@@ -128,8 +128,8 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
   }
 
   const hour = new Date().getHours();
-  if (!forceWindow && (hour < 9 || hour >= 18)) {
-    console.log(`[Review Engine] Outside 9 AM-6 PM window. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred to next daytime window.`);
+  if (!forceWindow && (hour < 8 || hour >= 22)) {
+    console.log(`[Review Engine] Outside 8 AM-10 PM window. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred to next daytime window.`);
     return { added, sent: [], revoked, newWarrantyCount: hg.newWarrantyCount };
   }
   const cool = readJson(COOLDOWN, {});

@@ -79,7 +79,7 @@ test('rejects pre-inspection, agreement, deposit, bounce, guide, BuildFax, and R
   }
 });
 
-test('accepts genuine completed Inspection Report Viewed by Customer (email OR HomeGauge username) and enforces 1-day post-view delay', () => {
+test('accepts genuine completed Inspection Report Viewed by Customer (email OR HomeGauge username) and enforces 1–2h post-view delay', () => {
   const subj = 'Inspection Report for 200 Sample Pine Ave Viewed';
   const body = 'Dear CHRISTOPHER, Inspection Report uploaded on 2026-10-27 17:15:27 EDT for 200 Sample Pine Ave has been viewed by Customer Alex Buyer/alex@example.com You can turn off these notifications.';
   const job = parseHomeGaugeNotificationEmail(body, subj, 'Tue, 27 Oct 2026 22:00:00 +0000');
@@ -103,8 +103,8 @@ test('accepts genuine completed Inspection Report Viewed by Customer (email OR H
   // 1-day post-view delay check
   const q = [];
   upsert(q, { ...uJob, email: 'buyer@example.com', phone: '4045550199' }, new Date('2026-11-02T23:35:00Z'));
-  assert.equal(dueActions(q, new Date('2026-11-03T04:00:00Z')).length, 0, 'Too soon (4.5h after viewing)');
-  assert.equal(dueActions(q, new Date('2026-11-03T20:30:00Z')).length, 1, 'Due next afternoon (~21h after viewing)');
+  assert.equal(dueActions(q, new Date('2026-11-03T00:05:00Z')).length, 0, 'Too soon (30m after viewing)');
+  assert.equal(dueActions(q, new Date('2026-11-03T01:05:00Z')).length, 1, 'Due 1–2h after viewing (~1.5h after viewing)');
 });
 
 test('extracts cancellation details from HomeGauge Inspection Canceled email (including spaced area code)', () => {

@@ -5,7 +5,7 @@
  */
 
 export const REMINDER_AFTER_DAYS = 4;
-export const HOMEGAUGE_INITIAL_DELAY_MS = 18 * 3600000; // ~1 day (18h+) after customer views completed report
+export const HOMEGAUGE_INITIAL_DELAY_MS = 1 * 3600000; // 1–2h after customer views completed report (1h min delay + 30m poll)
 const DAY_MS = 86400000;
 const RESCHEDULE_GRACE_MS = 2 * 3600000;
 

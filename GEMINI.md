@@ -24,7 +24,7 @@
   * Permanently exclude all contacts in `data/unsubscribed_contacts.json` (including Amy Fuchs and Joe Chapman / Chapman Group Realty).
 
 ## 3. Technical & Local SEO Guardrails
-* Primary GBP category locked to **`Home inspector`** (`Store code 264545`).
+* Primary GBP category locked to **`Home inspector`** (`Store code 264545`). Automated Google/Yelp review requests (`scripts/review-request-engine.mjs`) must dispatch **1 to 2 hours after the customer views the completed report** (`HOMEGAUGE_INITIAL_DELAY_MS = 1 * 3600000` + 30-minute polling via `Foresight_HomeGauge_Review_Afternoon`).
 * Maintain 87 valid Metro Atlanta municipal hubs with exact GPS `latitude`/`longitude`, `GeoCircle`, `hasMap` Place ID linkage, `/llms.txt`, `/llms-full.txt`, `/sitemap-images.xml`, and Web MCP (`/api/mcp`, `.well-known/mcp.json`).
 
 ## 4. FirstIndex Autonomous SEO/AEO, Social & Email Campaign Bridge (`data/truth.json`)
