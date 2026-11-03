@@ -160,7 +160,7 @@ export default function VslModal({ isOpen, onClose }) {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
               <span style={{ color: '#60A5FA', fontWeight: 800, fontSize: '0.85rem', fontFamily: 'monospace' }}>03</span>
               <div>
-                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>$100,000 Elite Warranty</strong>
+                <strong style={{ fontSize: '0.85rem', color: '#FFFFFF', display: 'block' }}>$10,000 Elite Warranty ($35k Combined)</strong>
                 <span style={{ fontSize: '0.78rem', color: '#94A3B8' }}>$0 deductible coverage for 90 days</span>
               </div>
             </div>

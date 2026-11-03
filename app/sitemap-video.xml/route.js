@@ -27,7 +27,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/11-month-warranty-inspection`,
       title: '11-Month Builder Warranty Inspection in Metro Atlanta - Foresight Inspection Video',
-      description: 'Protect your new construction investment before your 1-year builder warranty expires (starting at $335). Itemized builder punch list identifying structural settlement, truss uplift, and duct leakage.',
+      description: 'Protect your new construction investment before your 1-year builder warranty expires (starting at $345). Itemized builder punch list identifying structural settlement, truss uplift, and duct leakage.',
       thumbnail: `${SITE_URL}/images/services/11-month-warranty-poster.webp`,
       content: `${SITE_URL}/videos/services/11-month-warranty.mp4`,
       player: `${SITE_URL}/videos/11-month-warranty-inspection`,
@@ -37,7 +37,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/pool-and-spa-inspections`,
       title: 'Swimming Pool & Spa Inspection in Metro Atlanta - Foresight Inspection Video',
-      description: 'Comprehensive mechanical, plumbing, and electrical life-safety evaluation of swimming pools and spas ($300 flat rate). Multi-speed pumps, sand/DE filters, heaters, GFCI bonding, and barriers.',
+      description: 'Comprehensive mechanical, plumbing, and electrical life-safety evaluation of swimming pools and spas (call 678-480-2110 for custom quote). Multi-speed pumps, sand/DE filters, heaters, GFCI bonding, and barriers.',
       thumbnail: `${SITE_URL}/images/services/pool-and-spa-poster.webp`,
       content: `${SITE_URL}/videos/services/pool-and-spa.mp4`,
       player: `${SITE_URL}/videos/pool-and-spa-inspections`,
@@ -47,7 +47,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/sewer-scope-inspections`,
       title: 'Sewer Scope Lateral Camera Inspection in Metro Atlanta - Foresight Inspection Video',
-      description: 'High-definition fiber-optic sewer lateral camera inspection from cleanout to city main ($450 flat rate). Detect root intrusions, low-pitch bellies, and cracked lines before closing.',
+      description: 'High-definition fiber-optic sewer lateral camera inspection from cleanout to city main (call 678-480-2110 for custom quote). Detect root intrusions, low-pitch bellies, and cracked lines before closing.',
       thumbnail: `${SITE_URL}/images/services/sewer-scope-poster.webp`,
       content: `${SITE_URL}/videos/services/sewer-scope.mp4`,
       player: `${SITE_URL}/videos/sewer-scope-inspections`,
@@ -57,7 +57,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/termite-and-wdo-inspections`,
       title: 'Official Georgia Termite & WDO Inspection in Atlanta - Foresight Inspection Video',
-      description: 'Official Georgia Wood Infestation Inspection Report for real estate closing and mortgage underwriting ($125 slab/basement; $165 crawlspace). Subterranean termites, wood-decay fungus, and beetles.',
+      description: 'Official Georgia Wood Infestation Inspection Report for real estate closing and mortgage underwriting (call 678-480-2110 for custom quote). Subterranean termites, wood-decay fungus, and beetles.',
       thumbnail: `${SITE_URL}/images/services/termite-inspection-poster.webp`,
       content: `${SITE_URL}/videos/services/termite-inspection.mp4`,
       player: `${SITE_URL}/videos/termite-and-wdo-inspections`,
@@ -67,7 +67,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/radon-gas-testing`,
       title: 'Continuous 48-Hour Electronic Radon Testing in Atlanta GA - Foresight Inspection Video',
-      description: 'EPA-certified 48-hour continuous electronic active radon monitor placement for Georgia granite bedrock ($250 flat rate). Hourly pCi/L graph and official mitigation report.',
+      description: 'EPA-certified 48-hour continuous electronic active radon monitor placement for Georgia granite bedrock (call 678-480-2110 for custom quote). Hourly pCi/L graph and official mitigation report.',
       thumbnail: `${SITE_URL}/images/services/radon-testing-poster.webp`,
       content: `${SITE_URL}/videos/services/radon-testing.mp4`,
       player: `${SITE_URL}/videos/radon-gas-testing`,
@@ -77,7 +77,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/mold-indoor-air-quality-testing`,
       title: 'Certified Spore Trap Mold & Indoor Air Quality Testing in Atlanta - Foresight Inspection Video',
-      description: 'Calibrated spore trap air sampling and surface tape lifts analyzed by an accredited microbiology laboratory ($450 flat rate). Certified spore counts and toxigenic fungal identification.',
+      description: 'Calibrated spore trap air sampling and surface tape lifts analyzed by an accredited microbiology laboratory (call 678-480-2110 for custom quote). Certified spore counts and toxigenic fungal identification.',
       thumbnail: `${SITE_URL}/images/services/mold-testing-poster.webp`,
       content: `${SITE_URL}/videos/services/mold-testing.mp4`,
       player: `${SITE_URL}/videos/mold-indoor-air-quality-testing`,
@@ -87,7 +87,7 @@ export async function GET() {
     {
       loc: `${SITE_URL}/videos/short-term-rental-str-compliance-inspection`,
       title: 'Airbnb & STR Safety Compliance Inspection in Metro Atlanta - Foresight Inspection Video',
-      description: 'Life-safety, mechanical load capacity, and municipal code compliance inspections for Metro Atlanta Airbnb and VRBO properties (starts at $395). Egress, smoke/CO alarms, and electrical panels.',
+      description: 'Life-safety, mechanical load capacity, and municipal code compliance inspections for Metro Atlanta Airbnb and VRBO properties (call 678-480-2110 for custom quote). Egress, smoke/CO alarms, and electrical panels.',
       thumbnail: `${SITE_URL}/images/services/short-term-rental-poster.webp`,
       content: `${SITE_URL}/videos/services/short-term-rental.mp4`,
       player: `${SITE_URL}/videos/short-term-rental-str-compliance-inspection`,

@@ -14,9 +14,9 @@
       "description": "Non-competitive questions resolving buyer anxiety during the strict 5-10 day Georgia Association of Realtors (GAR) due diligence window.",
       "primaryMoneyPage": {
         "url": "/realtors",
-        "name": "1-Click GAR F404 Due Diligence Repair Clause Generator",
-        "anchorText": "GAR F404 Due Diligence Repair Clause Generator",
-        "ctaText": "Generate Free GAR F404 Repair Clauses",
+        "name": "1-Click Georgia Repair Amendment Due Diligence Repair Clause Generator",
+        "anchorText": "Georgia Repair Amendment Due Diligence Repair Clause Generator",
+        "ctaText": "Generate Free Georgia Repair Amendment Repair Clauses",
         "dealValue": 750
       },
       "secondaryMoneyPage": {
@@ -99,7 +99,7 @@
       "detailedAnalysis": [
         {
           "heading": "Understanding Georgia's As-Is Contract Framework",
-          "body": "Under standard Georgia real estate law and GAR Form F201, real property is conveyed in an as-is baseline condition. When a buyer submits an inspection report and an Amendment to Address Concerns (GAR Form F404), the seller can respond in one of three ways: accept all requests in full, provide a counterproposal with limited repairs or cash credits, or reject the request outright. A refusal does not constitute a breach of contract."
+          "body": "Under standard Georgia real estate law and GAR Form Purchase Agreement, real property is conveyed in an as-is baseline condition. When a buyer submits an inspection report and an Amendment to Address Concerns (Georgia Repair Amendment), the seller can respond in one of three ways: accept all requests in full, provide a counterproposal with limited repairs or cash credits, or reject the request outright. A refusal does not constitute a breach of contract."
         },
         {
           "heading": "The 11:59 PM Due Diligence Deadline Rule",
@@ -113,13 +113,19 @@
       "expertQuote": "In over a thousand Georgia inspections, we find that sellers rarely refuse repairs when issues are documented with infrared thermal imagery and framed in licensed building science terminology rather than subjective buyer complaints.",
       "moneyPageTarget": {
         "url": "/realtors",
-        "name": "1-Click GAR F404 Due Diligence Repair Clause Generator",
-        "anchorText": "Use our 1-Click GAR F404 Due Diligence Repair Clause Generator",
+        "name": "1-Click Georgia Repair Amendment Due Diligence Repair Clause Generator",
+        "anchorText": "Use our 1-Click Georgia Repair Amendment Due Diligence Repair Clause Generator",
         "callout": "Need to draft binding repair amendment language right now? Generate contract-ready InterNACHI repair clauses in seconds."
       },
       "topicalBridges": [
-        { "slug": "how-many-days-is-due-diligence-period-in-georgia", "title": "How Many Days Is Typical Georgia Due Diligence?" },
-        { "slug": "what-defects-fail-a-home-inspection-in-georgia", "title": "What Defects Fail a Georgia Home Inspection?" }
+        {
+          "slug": "how-many-days-is-due-diligence-period-in-georgia",
+          "title": "How Many Days Is Typical Georgia Due Diligence?"
+        },
+        {
+          "slug": "what-defects-fail-a-home-inspection-in-georgia",
+          "title": "What Defects Fail a Georgia Home Inspection?"
+        }
       ]
     },
     {
@@ -151,8 +157,14 @@
         "callout": "Guaranteed 48-hour inspection scheduling and same-day reports protect your strict contract window."
       },
       "topicalBridges": [
-        { "slug": "can-seller-refuse-repairs-georgia-due-diligence", "title": "Can Seller Refuse Repairs in Georgia Due Diligence?" },
-        { "slug": "why-hire-two-home-inspectors-instead-of-one", "title": "Why Hire Two Home Inspectors Instead of One?" }
+        {
+          "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+          "title": "Can Seller Refuse Repairs in Georgia Due Diligence?"
+        },
+        {
+          "slug": "why-hire-two-home-inspectors-instead-of-one",
+          "title": "Why Hire Two Home Inspectors Instead of One?"
+        }
       ]
     },
     {
@@ -184,8 +196,14 @@
         "callout": "View comprehensive forensic photographic guides to Georgia foundation, electrical, and roofing defects."
       },
       "topicalBridges": [
-        { "slug": "can-you-sell-a-house-with-a-federal-pacific-panel-in-georgia", "title": "Selling a House with a Federal Pacific Panel in Georgia" },
-        { "slug": "is-a-horizontal-foundation-crack-serious-in-georgia", "title": "Is a Horizontal Foundation Crack Serious in Georgia?" }
+        {
+          "slug": "can-you-sell-a-house-with-a-federal-pacific-panel-in-georgia",
+          "title": "Selling a House with a Federal Pacific Panel in Georgia"
+        },
+        {
+          "slug": "is-a-horizontal-foundation-crack-serious-in-georgia",
+          "title": "Is a Horizontal Foundation Crack Serious in Georgia?"
+        }
       ]
     },
     {
@@ -217,8 +235,14 @@
         "callout": "Never rely on seller representations. Get independent InterNACHI CMI verification with infrared thermal imaging."
       },
       "topicalBridges": [
-        { "slug": "can-seller-refuse-repairs-georgia-due-diligence", "title": "Can Seller Refuse Repairs in Georgia Due Diligence?" },
-        { "slug": "is-a-home-inspector-liable-for-missed-defects-in-georgia", "title": "Are Georgia Home Inspectors Liable for Missed Defects?" }
+        {
+          "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+          "title": "Can Seller Refuse Repairs in Georgia Due Diligence?"
+        },
+        {
+          "slug": "is-a-home-inspector-liable-for-missed-defects-in-georgia",
+          "title": "Are Georgia Home Inspectors Liable for Missed Defects?"
+        }
       ]
     },
     {
@@ -250,8 +274,14 @@
         "callout": "View 100% transparent flat-rate pricing based on square footage with zero hidden add-ons."
       },
       "topicalBridges": [
-        { "slug": "how-many-days-is-due-diligence-period-in-georgia", "title": "How Many Days Is Typical Georgia Due Diligence?" },
-        { "slug": "what-defects-fail-a-home-inspection-in-georgia", "title": "What Defects Fail a Georgia Home Inspection?" }
+        {
+          "slug": "how-many-days-is-due-diligence-period-in-georgia",
+          "title": "How Many Days Is Typical Georgia Due Diligence?"
+        },
+        {
+          "slug": "what-defects-fail-a-home-inspection-in-georgia",
+          "title": "What Defects Fail a Georgia Home Inspection?"
+        }
       ]
     },
     {
@@ -283,8 +313,14 @@
         "callout": "Protect your family with calibrated CRM electronic radon monitoring during your Georgia due diligence window."
       },
       "topicalBridges": [
-        { "slug": "what-radon-level-requires-mitigation-in-georgia", "title": "What Radon Level Requires Mitigation in Georgia?" },
-        { "slug": "why-does-georgia-red-clay-cause-foundation-settling", "title": "Why Georgia Red Clay Causes Foundation Settling" }
+        {
+          "slug": "what-radon-level-requires-mitigation-in-georgia",
+          "title": "What Radon Level Requires Mitigation in Georgia?"
+        },
+        {
+          "slug": "why-does-georgia-red-clay-cause-foundation-settling",
+          "title": "Why Georgia Red Clay Causes Foundation Settling"
+        }
       ]
     },
     {
@@ -316,8 +352,14 @@
         "callout": "Get hour-by-hour electronic radon readings delivered directly inside your comprehensive inspection report."
       },
       "topicalBridges": [
-        { "slug": "is-radon-common-in-metro-atlanta-homes", "title": "Is Radon Common in Metro Atlanta Homes?" },
-        { "slug": "can-seller-refuse-repairs-georgia-due-diligence", "title": "Can Seller Refuse Repairs in Georgia Due Diligence?" }
+        {
+          "slug": "is-radon-common-in-metro-atlanta-homes",
+          "title": "Is Radon Common in Metro Atlanta Homes?"
+        },
+        {
+          "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+          "title": "Can Seller Refuse Repairs in Georgia Due Diligence?"
+        }
       ]
     },
     {
@@ -349,8 +391,14 @@
         "callout": "Inspect underground plumbing lines with high-definition self-leveling fiber optic camera scopes."
       },
       "topicalBridges": [
-        { "slug": "who-is-responsible-for-tree-roots-in-sewer-line-georgia", "title": "Who Pays for Tree Roots in Sewer Line in Georgia?" },
-        { "slug": "what-defects-fail-a-home-inspection-in-georgia", "title": "What Defects Fail a Georgia Home Inspection?" }
+        {
+          "slug": "who-is-responsible-for-tree-roots-in-sewer-line-georgia",
+          "title": "Who Pays for Tree Roots in Sewer Line in Georgia?"
+        },
+        {
+          "slug": "what-defects-fail-a-home-inspection-in-georgia",
+          "title": "What Defects Fail a Georgia Home Inspection?"
+        }
       ]
     },
     {
@@ -377,13 +425,19 @@
       "expertQuote": "Tree roots don't stop growing after closing. If roots have separated a clay pipe joint, standard drain cleaning is only a temporary band-aid until the next heavy storm causes a backup.",
       "moneyPageTarget": {
         "url": "/realtors",
-        "name": "1-Click GAR F404 Due Diligence Repair Clause Generator",
-        "anchorText": "Generate GAR F404 Sewer Repair Amendment Language",
+        "name": "1-Click Georgia Repair Amendment Due Diligence Repair Clause Generator",
+        "anchorText": "Generate Georgia Repair Amendment Sewer Repair Amendment Language",
         "callout": "Use our Realtor tool to draft legally binding sewer repair and pipe-lining contract clauses."
       },
       "topicalBridges": [
-        { "slug": "can-sewer-scope-inspection-be-done-on-slab-foundation", "title": "Can Sewer Scope Be Done on Slab Foundation?" },
-        { "slug": "can-seller-refuse-repairs-georgia-due-diligence", "title": "Can Seller Refuse Repairs in Georgia Due Diligence?" }
+        {
+          "slug": "can-sewer-scope-inspection-be-done-on-slab-foundation",
+          "title": "Can Sewer Scope Be Done on Slab Foundation?"
+        },
+        {
+          "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+          "title": "Can Seller Refuse Repairs in Georgia Due Diligence?"
+        }
       ]
     },
     {
@@ -415,8 +469,14 @@
         "callout": "Understand the difference between cosmetic hairline settlement and active structural shear movement."
       },
       "topicalBridges": [
-        { "slug": "is-a-horizontal-foundation-crack-serious-in-georgia", "title": "Is a Horizontal Foundation Crack Serious in Georgia?" },
-        { "slug": "is-radon-common-in-metro-atlanta-homes", "title": "Is Radon Common in Metro Atlanta Homes?" }
+        {
+          "slug": "is-a-horizontal-foundation-crack-serious-in-georgia",
+          "title": "Is a Horizontal Foundation Crack Serious in Georgia?"
+        },
+        {
+          "slug": "is-radon-common-in-metro-atlanta-homes",
+          "title": "Is Radon Common in Metro Atlanta Homes?"
+        }
       ]
     },
     {
@@ -448,8 +508,14 @@
         "callout": "Experience North Atlanta's premier luxury inspection service tailored for $1M+ estate properties."
       },
       "topicalBridges": [
-        { "slug": "why-hire-two-home-inspectors-instead-of-one", "title": "Why Hire Two Home Inspectors Instead of One?" },
-        { "slug": "how-many-days-is-due-diligence-period-in-georgia", "title": "How Many Days Is Typical Georgia Due Diligence?" }
+        {
+          "slug": "why-hire-two-home-inspectors-instead-of-one",
+          "title": "Why Hire Two Home Inspectors Instead of One?"
+        },
+        {
+          "slug": "how-many-days-is-due-diligence-period-in-georgia",
+          "title": "How Many Days Is Typical Georgia Due Diligence?"
+        }
       ]
     },
     {
@@ -481,8 +547,14 @@
         "callout": "Never close on new construction without an independent pre-closing CMI forensic evaluation."
       },
       "topicalBridges": [
-        { "slug": "what-is-an-11-month-builder-warranty-inspection", "title": "What Is an 11-Month Builder Warranty Inspection?" },
-        { "slug": "why-hire-two-home-inspectors-instead-of-one", "title": "Why Hire Two Home Inspectors Instead of One?" }
+        {
+          "slug": "what-is-an-11-month-builder-warranty-inspection",
+          "title": "What Is an 11-Month Builder Warranty Inspection?"
+        },
+        {
+          "slug": "why-hire-two-home-inspectors-instead-of-one",
+          "title": "Why Hire Two Home Inspectors Instead of One?"
+        }
       ]
     },
     {
@@ -514,8 +586,14 @@
         "callout": "Lock in your 11-month inspection before your builder warranty legally expires."
       },
       "topicalBridges": [
-        { "slug": "do-new-construction-homes-in-georgia-need-home-inspection", "title": "Do New Construction Homes Need Inspections in Georgia?" },
-        { "slug": "how-long-does-home-inspection-take-for-5000-sq-ft-house", "title": "How Long Does a 5,000 Sq Ft Inspection Take?" }
+        {
+          "slug": "do-new-construction-homes-in-georgia-need-home-inspection",
+          "title": "Do New Construction Homes Need Inspections in Georgia?"
+        },
+        {
+          "slug": "how-long-does-home-inspection-take-for-5000-sq-ft-house",
+          "title": "How Long Does a 5,000 Sq Ft Inspection Take?"
+        }
       ]
     },
     {
@@ -547,8 +625,14 @@
         "callout": "Discover why over 1,000 Metro Atlanta home buyers choose Foresight's dual-inspector model."
       },
       "topicalBridges": [
-        { "slug": "how-long-does-home-inspection-take-for-5000-sq-ft-house", "title": "How Long Does a 5,000 Sq Ft Inspection Take?" },
-        { "slug": "is-a-home-inspector-liable-for-missed-defects-in-georgia", "title": "Are Georgia Home Inspectors Liable for Missed Defects?" }
+        {
+          "slug": "how-long-does-home-inspection-take-for-5000-sq-ft-house",
+          "title": "How Long Does a 5,000 Sq Ft Inspection Take?"
+        },
+        {
+          "slug": "is-a-home-inspector-liable-for-missed-defects-in-georgia",
+          "title": "Are Georgia Home Inspectors Liable for Missed Defects?"
+        }
       ]
     },
     {
@@ -580,8 +664,14 @@
         "callout": "Protect your purchase with Atlanta's only dual-inspector team backed by up to $35,000 in combined warranty protection."
       },
       "topicalBridges": [
-        { "slug": "why-hire-two-home-inspectors-instead-of-one", "title": "Why Hire Two Home Inspectors Instead of One?" },
-        { "slug": "does-seller-have-to-disclose-prior-inspection-report-georgia", "title": "Does Seller Have to Disclose Prior Inspection in Georgia?" }
+        {
+          "slug": "why-hire-two-home-inspectors-instead-of-one",
+          "title": "Why Hire Two Home Inspectors Instead of One?"
+        },
+        {
+          "slug": "does-seller-have-to-disclose-prior-inspection-report-georgia",
+          "title": "Does Seller Have to Disclose Prior Inspection in Georgia?"
+        }
       ]
     },
     {
@@ -613,8 +703,14 @@
         "callout": "Identify FPE and Zinsco breaker markings and learn current Atlanta panel replacement costs."
       },
       "topicalBridges": [
-        { "slug": "what-defects-fail-a-home-inspection-in-georgia", "title": "What Defects Fail a Georgia Home Inspection?" },
-        { "slug": "can-seller-refuse-repairs-georgia-due-diligence", "title": "Can Seller Refuse Repairs in Georgia Due Diligence?" }
+        {
+          "slug": "what-defects-fail-a-home-inspection-in-georgia",
+          "title": "What Defects Fail a Georgia Home Inspection?"
+        },
+        {
+          "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+          "title": "Can Seller Refuse Repairs in Georgia Due Diligence?"
+        }
       ]
     },
     {
@@ -646,8 +742,14 @@
         "callout": "View forensic photographic examples of Georgia foundation cracks and structural remediation options."
       },
       "topicalBridges": [
-        { "slug": "why-does-georgia-red-clay-cause-foundation-settling", "title": "Why Georgia Red Clay Causes Foundation Settling" },
-        { "slug": "what-defects-fail-a-home-inspection-in-georgia", "title": "What Defects Fail a Georgia Home Inspection?" }
+        {
+          "slug": "why-does-georgia-red-clay-cause-foundation-settling",
+          "title": "Why Georgia Red Clay Causes Foundation Settling"
+        },
+        {
+          "slug": "what-defects-fail-a-home-inspection-in-georgia",
+          "title": "What Defects Fail a Georgia Home Inspection?"
+        }
       ]
     },
     {
@@ -679,8 +781,14 @@
         "callout": "Understand moisture testing protocols, weep screed clearance, and insurance requirements for Georgia stucco homes."
       },
       "topicalBridges": [
-        { "slug": "what-defects-fail-a-home-inspection-in-georgia", "title": "What Defects Fail a Georgia Home Inspection?" },
-        { "slug": "is-thermal-imaging-necessary-during-a-home-inspection", "title": "Is infrared thermal imaging Necessary for Inspections?" }
+        {
+          "slug": "what-defects-fail-a-home-inspection-in-georgia",
+          "title": "What Defects Fail a Georgia Home Inspection?"
+        },
+        {
+          "slug": "is-thermal-imaging-necessary-during-a-home-inspection",
+          "title": "Is infrared thermal imaging Necessary for Inspections?"
+        }
       ]
     },
     {
@@ -712,25 +820,31 @@
         "callout": "Every full Foresight inspection includes certified infrared thermal imaging and 4K aerial drone scans at no extra charge."
       },
       "topicalBridges": [
-        { "slug": "how-to-tell-difference-between-hardcoat-stucco-and-eifs", "title": "Hardcoat Stucco vs Synthetic EIFS in Georgia" },
-        { "slug": "can-you-sell-a-house-with-a-federal-pacific-panel-in-georgia", "title": "Selling a House with a Federal Pacific Panel in Georgia" }
+        {
+          "slug": "how-to-tell-difference-between-hardcoat-stucco-and-eifs",
+          "title": "Hardcoat Stucco vs Synthetic EIFS in Georgia"
+        },
+        {
+          "slug": "can-you-sell-a-house-with-a-federal-pacific-panel-in-georgia",
+          "title": "Selling a House with a Federal Pacific Panel in Georgia"
+        }
       ]
     },
     {
-      "slug": "what-is-the-create-request-list-feature-in-homegauge",
+      "slug": "what-is-the-create-request-list-feature-in-interactive digital report",
       "colonyId": "due-diligence-contract",
-      "question": "What Is the Create Request List (CRL) Feature in HomeGauge Reports?",
-      "metaTitle": "What Is the Create Request List in HomeGauge? | Georgia Realtor Guide",
-      "metaDescription": "Learn how the interactive Create Request List (CRL) feature transforms home inspection reports into contract-ready Georgia GAR repair amendments in one click.",
-      "shortAnswer": "The Create Request List (CRL®) is an interactive, browser-based digital tool integrated into Foresight's HomeGauge inspection reports that allows buyers and real estate agents to assemble contract-ready repair amendments in minutes. Instead of manually copying and pasting text and photos from a 60-page PDF into an email, the buyer clicks checkboxes beside defect findings, specifies whether they want repair by a licensed contractor, a monetary credit, or a price reduction, and exports a formatted PDF amendment ready for attachment to Georgia GAR Form F404.",
+      "question": "What Is the Digital Repair Request Builder Feature in interactive digital report Reports?",
+      "metaTitle": "What Is the Create Request List in interactive digital report? | Georgia Realtor Guide",
+      "metaDescription": "Learn how the interactive Digital Repair Request Builder feature transforms home inspection reports into contract-ready Georgia GAR repair amendments in one click.",
+      "shortAnswer": "The Digital Repair Request Builder is an interactive, browser-based digital tool integrated into Foresight's interactive digital report inspection reports that allows buyers and real estate agents to assemble contract-ready repair amendments in minutes. Instead of manually copying and pasting text and photos from a 60-page PDF into an email, the buyer clicks checkboxes beside defect findings, specifies whether they want repair by a licensed contractor, a monetary credit, or a price reduction, and exports a formatted PDF amendment ready for attachment to Georgia Georgia Repair Amendment.",
       "detailedAnalysis": [
         {
           "heading": "Eliminating the 3-Hour Amendment Nightmare",
-          "body": "Traditionally, real estate agents spend hours extracting defect paragraphs, resizing high-definition photos, and writing custom repair stipulations for due diligence amendments. CRL automates the entire process in under 10 minutes."
+          "body": "Traditionally, real estate agents spend hours extracting defect paragraphs, resizing high-definition photos, and writing custom repair stipulations for due diligence amendments. Digital Repair List automates the entire process in under 10 minutes."
         },
         {
           "heading": "Direct Integration with Georgia Association of Realtors Forms",
-          "body": "The exported CRL document directly references item numbers, photo documentation, and InterNACHI defect classifications, making it smooth to attach directly as Exhibit A to GAR Form F404 (Amendment to Address Concerns)."
+          "body": "The exported Digital Repair List document directly references item numbers, photo documentation, and InterNACHI defect classifications, making it smooth to attach directly as Exhibit A to Georgia Repair Amendment (Amendment to Address Concerns)."
         },
         {
           "heading": "Collaborative Cloud Sharing Between Buyer and Agent",
@@ -742,11 +856,195 @@
         "url": "/realtors",
         "name": "Realtor VIP & Contract Amendment Toolkit",
         "anchorText": "Explore the Foresight Realtor Due Diligence Toolkit",
-        "callout": "Discover how 1-Click CRL reporting and our GAR F404 Repair Clause Generator streamline transaction closings."
+        "callout": "Discover how 1-Click Digital Repair List reporting and our Georgia Repair Amendment Repair Clause Generator streamline transaction closings."
       },
       "topicalBridges": [
-        { "slug": "can-seller-refuse-repairs-georgia-due-diligence", "title": "Can Seller Refuse Repairs in Georgia Due Diligence?" },
-        { "slug": "how-many-days-is-due-diligence-period-in-georgia", "title": "How Many Days Is Typical Georgia Due Diligence?" }
+        {
+          "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+          "title": "Can Seller Refuse Repairs in Georgia Due Diligence?"
+        },
+        {
+          "slug": "how-many-days-is-due-diligence-period-in-georgia",
+          "title": "How Many Days Is Typical Georgia Due Diligence?"
+        }
+      ]
+    },
+    {
+      "slug": "how-much-does-pre-drywall-inspection-cost-atlanta",
+      "colonyId": "luxury-estate-engineering",
+      "question": "How Much Does a Pre-Drywall Framing Inspection Cost in Metro Atlanta, GA?",
+      "metaTitle": "Pre-Drywall Inspection Cost Atlanta GA (2026) | From $275",
+      "metaDescription": "Foresight Home Inspections performs Phase 1 pre-drywall framing inspections in Metro Atlanta starting at $275 with 2 certified inspectors and thermal scans.",
+      "shortAnswer": "Foresight Home Inspections, LLC (CMI #MICB-1082) performs Phase 1 Pre-Drywall Framing Inspections across Metro Atlanta starting at $275 (up to 1,500 sq ft), deploying two certified inspectors to verify structural framing, load-bearing studs, PEX plumbing manifolds, rough electrical wiring, and roof trusses before drywall conceals defects.",
+      "detailedAnalysis": [
+        {
+          "heading": "Transparent 2026 Pre-Drywall Pricing Tiers in Metro Atlanta",
+          "body": "Foresight publishes flat square-footage pricing for Phase 1 rough-in framing inspections: $275 up to 1,500 sq ft, $300 for 1,501–2,500 sq ft, $350 for 2,501–3,500 sq ft, and $400 for 3,501–5,000 sq ft."
+        },
+        {
+          "heading": "What Two Certified Inspectors Catch Before Sheetrock Is Hung",
+          "body": "Once drywall is hung, 80% of a new home’s structural skeleton, shear walls, anchor bolts, LVL headers, and rough mechanical routing become invisible. Our two-inspector team inspects every stud bay, nail plate, and roof truss gusset plate in parallel."
+        }
+      ],
+      "expertQuote": "Municipal county code inspectors spend an average of 12 to 15 minutes on a new build; our two-inspector CMI team evaluates every structural connection and rough-in mechanical line before sheetrock locks defects inside the walls.",
+      "moneyPageTarget": {
+        "url": "/services/pre-drywall-inspection",
+        "name": "Phase 1 Pre-Drywall Framing Inspection (From $275)",
+        "anchorText": "Schedule Your Phase 1 Pre-Drywall Framing Inspection",
+        "callout": "Lock in two certified inspectors led by Certified Master Inspector Christopher Boykin before your builder hangs sheetrock."
+      },
+      "topicalBridges": [
+        {
+          "slug": "11-month-builder-warranty-inspection-checklist-georgia",
+          "title": "11-Month Builder Warranty Inspection Checklist in Georgia"
+        },
+        {
+          "slug": "can-seller-refuse-repairs-georgia-due-diligence",
+          "title": "Can Seller Refuse Repairs in Georgia Due Diligence?"
+        }
+      ]
+    },
+    {
+      "slug": "radon-testing-and-mitigation-georgia-granite-zone-1",
+      "colonyId": "environmental-subterranean",
+      "question": "Is Radon Testing Necessary in Georgia Granite Bedrock (EPA Zone 1)?",
+      "metaTitle": "Radon Testing Georgia (EPA Zone 1 Granite Bedrock) | CMI Guide",
+      "metaDescription": "Why 48-hour continuous electronic radon testing is critical across North Georgia EPA Zone 1 granite bedrock counties (Fulton, DeKalb, Gwinnett, Cobb).",
+      "shortAnswer": "Foresight Home Inspections, LLC (CMI #MICB-1082) strongly recommends 48-hour continuous electronic radon gas monitoring across Metro Atlanta because Fulton, DeKalb, Gwinnett, Cobb, and Forsyth counties sit atop EPA Zone 1 uranium-bearing granite bedrock, where indoor radon frequently exceeds the 4.0 pCi/L EPA action threshold.",
+      "detailedAnalysis": [
+        {
+          "heading": "Why North Georgia Granite Bedrock Produces Elevated Radon Gas",
+          "body": "The Stone Mountain and Brevard Fault plutons beneath Metro Atlanta contain natural uranium deposits that decay into radioactive radon-222 gas, migrating upward through slab expansion joints, sump pits, and crawlspaces."
+        },
+        {
+          "heading": "Continuous Electronic Hourly Monitoring vs Charcoal Canisters",
+          "body": "Instead of passive charcoal canisters that can be skewed by humidity, Foresight deploys calibrated continuous electronic radon monitors that log hourly pCi/L readings, temperature, barometric pressure, and tamper flags over 48 hours."
+        }
+      ],
+      "expertQuote": "Every home in EPA Zone 1 North Georgia—whether basement, crawlspace, or slab-on-grade—should be tested with a 48-hour continuous electronic radon monitor during the due diligence period.",
+      "moneyPageTarget": {
+        "url": "/services/radon-testing",
+        "name": "48-Hour Continuous Electronic Radon Testing in Metro Atlanta",
+        "anchorText": "Request a Custom Quote for 48-Hour Radon Testing",
+        "callout": "Call (678) 480-2110 to add 48-hour continuous electronic radon monitoring to your Metro Atlanta home inspection."
+      },
+      "topicalBridges": [
+        {
+          "slug": "sewer-scope-camera-inspection-atlanta-clay-cast-iron",
+          "title": "When Should Atlanta Homebuyers Order a Sewer Scope Inspection?"
+        },
+        {
+          "slug": "is-thermal-imaging-necessary-during-a-home-inspection",
+          "title": "Is Infrared Thermal Imaging Necessary During a Home Inspection?"
+        }
+      ]
+    },
+    {
+      "slug": "11-month-builder-warranty-inspection-checklist-georgia",
+      "colonyId": "luxury-estate-engineering",
+      "question": "What Does an 11-Month Builder Warranty Inspection Cover in Georgia?",
+      "metaTitle": "11-Month Builder Warranty Inspection Georgia | From $345",
+      "metaDescription": "What is included in an 11-month builder warranty inspection in Metro Atlanta? Two certified inspectors from $345 with thermal scans and 4K drone roof checks.",
+      "shortAnswer": "Foresight Home Inspections, LLC (CMI #MICB-1082) performs 11-Month Builder Warranty Inspections across Metro Atlanta starting at $345, deploying two certified inspectors with free infrared thermal imaging and 4K aerial drones to document structural settlement, roof flashing leaks, and HVAC defects before your 1-year builder warranty expires.",
+      "detailedAnalysis": [
+        {
+          "heading": "Why Month 10–11 Is the Final Lever Against Builder Repair Costs",
+          "body": "After four full Georgia seasons of red clay expansion, summer cooling loads, and heavy thunderstorms, hidden construction defects surface. Submitting a CMI-documented punch list before month 12 forces the builder to remediate defects at $0 cost to the homeowner."
+        }
+      ],
+      "expertQuote": "Our two-inspector 11-month warranty evaluations routinely uncover $2,500 to $8,500 in roof flashing, attic insulation, and crawlspace moisture defects while the builder is still contractually obligated to repair them.",
+      "moneyPageTarget": {
+        "url": "/services/11-month-warranty-inspection",
+        "name": "11-Month Builder Warranty Inspection (From $345)",
+        "anchorText": "Book Your 11-Month Builder Warranty Inspection",
+        "callout": "Includes two certified inspectors, infrared thermal imaging, 4K drone roof scan, and a builder-ready digital punch list."
+      },
+      "topicalBridges": [
+        {
+          "slug": "how-much-does-pre-drywall-inspection-cost-atlanta",
+          "title": "How Much Does a Pre-Drywall Inspection Cost in Atlanta?"
+        }
+      ]
+    },
+    {
+      "slug": "termite-wdo-clearance-letter-inspection-georgia",
+      "colonyId": "environmental-subterranean",
+      "question": "When Do You Need an Official Georgia Termite & WDO Clearance Letter?",
+      "metaTitle": "Official Georgia Termite & WDO Clearance Letter Guide (2026)",
+      "metaDescription": "Everything Georgia homebuyers need to know about Official Georgia Wood Infestation Inspection Reports (WDO / termite letters) in Subterranean Termite Zone 1.",
+      "shortAnswer": "Foresight Home Inspections, LLC (CMI #MICB-1082) coordinates Official Georgia Wood Destroying Organism (WDO) termite clearance inspections across Metro Atlanta (call 678-480-2110 for quote) because Georgia sits in Subterranean Termite Hazard Zone 1, where VA, FHA, and conventional lenders require an official Wood Infestation Report for closing.",
+      "detailedAnalysis": [
+        {
+          "heading": "Subterranean Termites, Powderpost Beetles, and Wood-Decay Fungus",
+          "body": "An official Georgia WDO inspection evaluates sill plates, rim joists, subflooring, and foundation perimeters for Eastern and Formosan subterranean termites, carpenter ants, powderpost beetles, and active wood-destroying fungi."
+        }
+      ],
+      "expertQuote": "Georgia red clay soil holds high moisture against foundation walls year-round, making subterranean termite mud-tube and sill-plate inspections essential on every purchase.",
+      "moneyPageTarget": {
+        "url": "/services/termite-inspection",
+        "name": "Official Georgia Termite & WDO Clearance Inspection",
+        "anchorText": "Add an Official Georgia Termite & WDO Inspection",
+        "callout": "Call (678) 480-2110 to bundle your Official Georgia WDO Clearance Report with your two-inspector home evaluation."
+      },
+      "topicalBridges": [
+        {
+          "slug": "sewer-scope-camera-inspection-atlanta-clay-cast-iron",
+          "title": "When Should Atlanta Homebuyers Order a Sewer Scope Inspection?"
+        }
+      ]
+    },
+    {
+      "slug": "sewer-scope-camera-inspection-atlanta-clay-cast-iron",
+      "colonyId": "environmental-subterranean",
+      "question": "When Should Atlanta Homebuyers Order a Sewer Scope Camera Inspection?",
+      "metaTitle": "Sewer Scope Camera Inspection Atlanta GA | Root & Pipe Guide",
+      "metaDescription": "Why Atlanta homes built before 1995 or near mature hardwoods need an HD fiber-optic sewer scope camera inspection before the Georgia due diligence deadline.",
+      "shortAnswer": "Foresight Home Inspections, LLC (CMI #MICB-1082) recommends an HD fiber-optic sewer scope camera inspection (call 678-480-2110 for quote) on any Metro Atlanta home built before 1995, properties with mature oak or pine trees, and new builds where heavy grading machinery can crush underground PVC sewer laterals.",
+      "detailedAnalysis": [
+        {
+          "heading": "Preventing $8,000 to $25,000 Underground Lateral Excavation Surprises",
+          "body": "Standard home inspections test indoor drain flow but cannot see underground cast-iron, clay terracotta, or Orangeburg sewer pipes between the foundation and the municipal main."
+        }
+      ],
+      "expertQuote": "A 30-minute HD fiber-optic camera sweep from the main cleanout to the street tap is the only way to verify that tree roots or settled red clay have not compromised the main sewer lateral.",
+      "moneyPageTarget": {
+        "url": "/services/sewer-scope-inspection",
+        "name": "HD Fiber-Optic Sewer Scope Camera Inspection",
+        "anchorText": "Schedule an HD Sewer Scope Camera Evaluation",
+        "callout": "Includes recorded HD video footage from cleanout to municipal main so you can negotiate repairs before due diligence expires."
+      },
+      "topicalBridges": [
+        {
+          "slug": "radon-testing-and-mitigation-georgia-granite-zone-1",
+          "title": "Is Radon Testing Necessary in Georgia Granite Bedrock?"
+        }
+      ]
+    },
+    {
+      "slug": "commercial-property-pca-inspection-atlanta-ga",
+      "colonyId": "luxury-estate-engineering",
+      "question": "What Is Included in an ASTM E2018 Commercial Property Inspection in Atlanta?",
+      "metaTitle": "Commercial Property Inspection Atlanta GA (ASTM E2018 PCA)",
+      "metaDescription": "Foresight Home Inspections performs ASTM E2018-15 Baseline Property Condition Assessments (PCA) for retail, office, warehouse, and multi-family assets in Atlanta.",
+      "shortAnswer": "Foresight Home Inspections, LLC (CMI #MICB-1082) conducts ASTM E2018-15 Commercial Property Condition Assessments (PCA) across Metro Atlanta (call 678-480-2110 for custom quote), deploying two certified inspectors with 4K aerial drones and radiometric thermal cameras to evaluate TPO/EPDM flat roofs, 3-phase electrical switchgear, RTU HVAC units, and ADA life-safety compliance.",
+      "detailedAnalysis": [
+        {
+          "heading": "Capital Expenditure (CapEx) & Immediate Repair Forecasting for Investors",
+          "body": "Commercial acquisitions carry zero residential consumer protections. Our two-inspector team evaluates roof membranes, commercial package HVAC units, structural slabs, and parking lot drainage so investors can price CapEx reserves accurately prior to closing."
+        }
+      ],
+      "expertQuote": "Deploying two certified inspectors with aerial thermal drones lets us inspect large-footprint TPO roofs and multi-zone commercial mechanicals with institutional precision.",
+      "moneyPageTarget": {
+        "url": "/services/commercial-property-inspection",
+        "name": "ASTM E2018 Commercial Property Condition Assessment (PCA)",
+        "anchorText": "Request a Commercial PCA Inspection Quote",
+        "callout": "Call (678) 480-2110 for rapid commercial due diligence scheduling across all 20 Metro Atlanta counties."
+      },
+      "topicalBridges": [
+        {
+          "slug": "how-much-does-pre-drywall-inspection-cost-atlanta",
+          "title": "How Much Does a Pre-Drywall Inspection Cost in Atlanta?"
+        }
       ]
     }
   ]

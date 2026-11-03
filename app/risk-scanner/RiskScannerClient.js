@@ -341,34 +341,30 @@ export default function RiskScannerClient() {
     ];
 
     if (needsRadon) {
-      total += 250;
       services.push({
         name: '48-Hour Electronic Continuous Radon Testing',
-        price: '$250 Flat Rate',
-        cost: 250,
+        price: 'Call for Quote',
+        cost: 0,
         recommended: true,
         reason: `${countyInfo.name} is EPA Radon Zone 1 with high granite soil emissions.`
       });
     }
 
     if (needsSewer) {
-      total += 450;
       services.push({
         name: 'High-Definition Sewer Scope Camera Inspection',
-        price: '$450 Flat Rate',
-        cost: 450,
+        price: 'Call for Quote',
+        cost: 0,
         recommended: true,
         reason: `Built in ${year}. Sewer laterals over 25 years old require lateral camera verification.`
       });
     }
 
     if (needsTermite) {
-      const termiteFee = foundation === 'crawlspace' ? 165 : 125;
-      total += termiteFee;
       services.push({
         name: 'Official Georgia Wood Infestation Report (WDO / Termite)',
-        price: `$${termiteFee}`,
-        cost: termiteFee,
+        price: 'Call for Quote',
+        cost: 0,
         recommended: true,
         reason: 'Georgia red clay soil is high-risk subterranean termite territory.'
       });

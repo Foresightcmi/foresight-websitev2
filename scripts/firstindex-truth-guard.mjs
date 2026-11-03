@@ -93,6 +93,7 @@ const TARGET_FILES = [
   'data/defects-pseo.json',
   'data/posts.json',
   'data/comparisons-pseo.json',
+  'data/seo-colony-matrix.json',
   'data/neighborhoods-pseo.json',
   'scripts/ai-fanning-engine.mjs',
   'scripts/audit-ai-citations.mjs',

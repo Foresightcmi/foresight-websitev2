@@ -7,22 +7,22 @@ const ERA_PROFILES = {
   'pre-1975': {
     label: 'Pre-1975 Historic / Vintage',
     risks: 'Cast iron sewer decay, galvanized water lines, ungrounded 2-prong electrical, potential asbestos/lead, and historic foundation settlement.',
-    highPriorityAddons: ['Sewer Scope ($450)', 'Radon Testing ($250)', 'Termite WDO ($125+)']
+    highPriorityAddons: ['Sewer Scope (Call for Quote)', 'Radon Testing (Call for Quote)', 'Termite WDO (Call for Quote)']
   },
   '1978-1995': {
     label: '1978–1995 High-Liability Era',
     risks: 'Polybutylene (PB2110) plumbing pipe micro-fractures, Federal Pacific / Zinsco circuit breaker failure, and unsealed EIFS synthetic stucco moisture rot.',
-    highPriorityAddons: ['Infrared Thermal Scan (Included Free)', 'Sewer Scope ($450)', 'HVAC Load Evaluation']
+    highPriorityAddons: ['Infrared Thermal Scan (Included Free)', 'Sewer Scope (Call for Quote)', 'HVAC Load Evaluation']
   },
   '1996-2015': {
     label: '1996–2015 Rapid Suburban Expansion',
     risks: 'Aging 15–20 yr architectural shingles, aging original HVAC compressors (R-22 phased out), vented crawlspace fungal growth, and deck ledger flashing leaks.',
-    highPriorityAddons: ['Crawlspace Fungal Evaluation', 'HVAC Thermal Delta-T', 'Termite Clearance ($125+)']
+    highPriorityAddons: ['Crawlspace Fungal Evaluation', 'HVAC Thermal Delta-T', 'Termite Clearance (Call for Quote)']
   },
   '2016-present': {
     label: '2016–Present Modern & New Builds',
     risks: 'Rushed subcontractor framing, missing attic energy baffles, unsealed roof penetrations, crushed underground sewer laterals from grading, and HVAC duct disconnects.',
-    highPriorityAddons: ['Pre-Drywall ($275+)', '11-Month Warranty ($335+)', 'Sewer Scope ($450)']
+    highPriorityAddons: ['Pre-Drywall ($275+)', '11-Month Warranty ($345+)', 'Sewer Scope (Call for Quote)']
   }
 };
 
