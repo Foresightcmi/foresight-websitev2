@@ -115,7 +115,7 @@ export default async function BlogPost({ params }) {
       },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": [".article-title", ".article-excerpt"]
+        "cssSelector": ["#aeo-direct-answer", ".article-title", ".article-excerpt"]
       },
       "keywords": post.keywords?.join(', ')
     },
@@ -278,7 +278,7 @@ export default async function BlogPost({ params }) {
           </div>
 
           {/* Article excerpt for search engines & AI speakable grounding */}
-          <p className="article-excerpt" style={{ fontSize: '1.15rem', color: 'var(--color-gray-dark)', fontStyle: 'italic', marginBottom: '2rem', lineHeight: 1.7, borderLeft: '4px solid var(--color-red)', paddingLeft: '1.25rem', background: '#f8fafc', padding: '1rem 1.25rem', borderRadius: 'var(--radius-sm)' }}>
+          <p id="aeo-direct-answer" className="article-excerpt" style={{ fontSize: '1.15rem', color: 'var(--color-gray-dark)', fontStyle: 'italic', marginBottom: '2rem', lineHeight: 1.7, borderLeft: '4px solid var(--color-red)', paddingLeft: '1.25rem', background: '#f8fafc', padding: '1rem 1.25rem', borderRadius: 'var(--radius-sm)' }}>
             {summaryText}
           </p>
           

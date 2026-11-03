@@ -83,6 +83,10 @@ export default async function NeighborhoodPage({ params }) {
     '@id': `${canonicalUrl}#service`,
     name: `Home Inspection Services in ${hood.name}, GA`,
     serviceType: 'Residential Home Inspection',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#aeo-direct-answer', 'h1'],
+    },
     provider: {
       '@type': 'HomeAndConstructionBusiness',
       name: 'Foresight Home Inspections, LLC',
@@ -197,10 +201,10 @@ export default async function NeighborhoodPage({ params }) {
             <div>
               <span className="badge" style={{ marginBottom: '1rem' }}>Architectural Insight</span>
               <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: '1.25rem' }}>
-                Navigating Due Diligence in {hood.name}
+                What should homebuyers inspect in {hood.name} ({hood.city}, GA) and what does an inspection cost?
               </h2>
-              <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                {hood.intro}
+              <p id="aeo-direct-answer" style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+                <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) inspects {hood.name} homes in {hood.city}, GA from $345 ($295 condos), deploying <strong>two certified inspectors</strong> with free thermal imaging, 4K drone scans, and <strong>$35,000 warranty protection</strong>. {hood.intro}
               </p>
               <div style={{ padding: '1.25rem', background: 'var(--color-gray-light)', borderRadius: '8px', borderLeft: '4px solid var(--color-red)' }}>
                 <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.5rem' }}>

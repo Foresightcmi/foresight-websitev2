@@ -83,6 +83,10 @@ export default async function ComparisonPage({ params }) {
       "@type": "Organization",
       "name": "Foresight Home Inspections, LLC",
       "url": SITE_URL
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#aeo-direct-answer", "h1"]
     }
   };
 

@@ -103,7 +103,11 @@ export default async function ColonyQuestionPage({ params }) {
       url: SITE_URL
     },
     mainEntityOfPage: canonicalUrl,
-    datePublished: '2026-10-01'
+    datePublished: '2026-10-01',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#aeo-direct-answer', 'h1']
+    }
   };
 
   const breadcrumbSchema = {
@@ -172,7 +176,7 @@ export default async function ColonyQuestionPage({ params }) {
               Direct Inspector Answer (BLUF)
             </span>
           </div>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.65', color: '#14532d', margin: 0, fontWeight: 500 }}>
+          <p id="aeo-direct-answer" style={{ fontSize: '1.1rem', lineHeight: '1.65', color: '#14532d', margin: 0, fontWeight: 500 }}>
             {item.shortAnswer}
           </p>
         </div>

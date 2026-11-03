@@ -362,6 +362,10 @@ export default async function ServiceCityPage({ params }) {
     "url": canonicalUrl,
     "image": primaryProductImage,
     "serviceType": serviceName,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#aeo-direct-answer", "h1"]
+    },
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",

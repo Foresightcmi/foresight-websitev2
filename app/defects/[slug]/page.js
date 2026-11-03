@@ -107,7 +107,7 @@ export default async function DefectPage({ params }) {
     },
     "speakable": {
       "@type": "SpeakableSpecification",
-      "cssSelector": [".ai-citation-bluf", "h1", "h2"]
+      "cssSelector": ["#aeo-direct-answer", ".ai-citation-bluf", "h1", "h2"]
     },
     "about": [
       {
@@ -289,14 +289,14 @@ export default async function DefectPage({ params }) {
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
               <h2 style={{ fontSize: '1.25rem', color: '#0f172a', margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 800 }}>
-                Diagnostic Technical Brief &amp; Engineering Benchmark
+                What causes {defect.badge || defect.title} in Metro Atlanta homes and how is it inspected?
               </h2>
               <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', background: '#dbeafe', color: '#1e40af', padding: '0.2rem 0.6rem', borderRadius: '4px' }}>
                 BLUF Verified
               </span>
             </div>
             
-            <p className="ai-citation-bluf" style={{ fontSize: '1.05rem', lineHeight: 1.7, color: '#1e293b', margin: '0 0 1.5rem', fontWeight: 500 }}>
+            <p id="aeo-direct-answer" className="ai-citation-bluf" style={{ fontSize: '1.05rem', lineHeight: 1.7, color: '#1e293b', margin: '0 0 1.5rem', fontWeight: 500 }}>
               {defect.blufSummary || defect.summary}
             </p>
 

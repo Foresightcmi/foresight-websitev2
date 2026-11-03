@@ -377,6 +377,10 @@ export default async function ServiceHubPage({ params }) {
     "name": serviceData.name,
     "description": serviceData.description,
     "image": primaryProductImage,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#aeo-direct-answer", "h1"]
+    },
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
@@ -401,8 +405,7 @@ export default async function ServiceHubPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      "price": `${serviceData.price.replace(/[^0-9]/g, '') || "345"}.00`,
-      "priceCurrency": "USD",
+      ...(serviceData.price.replace(/[^0-9]/g, '') ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" } : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": "Call (678) 480-2110 for custom quote" } }),
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
@@ -428,8 +431,7 @@ export default async function ServiceHubPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      "price": `${serviceData.price.replace(/[^0-9]/g, '') || "345"}.00`,
-      "priceCurrency": "USD",
+      ...(serviceData.price.replace(/[^0-9]/g, '') ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" } : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": "Call (678) 480-2110 for custom quote" } }),
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
@@ -528,13 +530,13 @@ export default async function ServiceHubPage({ params }) {
           <div style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', borderLeft: '5px solid var(--color-gold)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
               <h2 style={{ fontSize: '1.15rem', color: '#0F172A', margin: 0, fontWeight: 700 }}>
-                {serviceData.name} in Metro Atlanta: Verified Diagnostic Overview
+                How much does a {serviceData.name.toLowerCase()} cost in Metro Atlanta and what is included?
               </h2>
               <span style={{ fontSize: '0.8rem', background: '#ECFDF5', color: '#065F46', border: '1px solid #A7F3D0', padding: '0.2rem 0.6rem', borderRadius: '4px', fontWeight: 600 }}>
                 Verified 2026 Standards
               </span>
             </div>
-            <p style={{ fontSize: '0.975rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
+            <p id="aeo-direct-answer" style={{ fontSize: '0.975rem', lineHeight: 1.65, color: '#334155', margin: '0 0 1rem 0' }}>
               <strong>Direct Answer (BLUF):</strong> Foresight Home Inspections delivers certified <strong>{serviceData.name.toLowerCase()}</strong> across 20 Metro Atlanta counties ({serviceData.price === 'Call for Quote' ? <>call <strong>(678) 480-2110</strong> for quote</> : <>starting at <strong>{serviceData.price.replace(/^From\s+/i, '')}</strong></>}). Led by board-certified Certified Master Inspector® (CMI) Christopher Boykin, every inspection features two certified inspectors working simultaneously, dividing structural and mechanical systems in parallel for double verification and zero solo-inspector fatigue. Reports are delivered digitally in under 24 hours backed by up to <strong>$35,000 in combined warranty protection</strong> ($10,000 Elite Master Warranty with $0 deductible + InterNACHI $25,000 Honor Guarantee).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid #F1F5F9', fontSize: '0.85rem', color: '#475569' }}>

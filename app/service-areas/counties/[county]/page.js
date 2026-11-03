@@ -89,7 +89,7 @@ export default async function CountyPage({ params }) {
     },
     {
       q: `How much does a home inspection cost in ${county.name}, GA?`,
-      a: `Home inspections in ${county.name} start at $295 for condos/townhomes and $345 for single-family homes. Pre-listing inspections start at $365, and new construction final phase inspections start at $400+. Ancillary services include Radon Testing ($250), Sewer Scope Camera ($450), Pool Inspection ($300), and Termite/WDO clearances ($125+). Visit our instant quote calculator for exact flat pricing.`
+      a: `Home inspections in ${county.name} start at $295 for condos/townhomes and $345 for single-family homes. Pre-listing and 11-month warranty inspections start at $345, pre-drywall starts at $275, and new construction final phase inspections start at $400+. Ancillary services (Radon Testing, Sewer Scope Camera, Pool & Spa Inspection, Mold Testing, and Termite/WDO clearances) are available by custom quote at (678) 480-2110.`
     },
     {
       q: `Do you perform Pre-Listing Home Inspections and provide seller checklists in ${county.name}, GA?`,
@@ -97,7 +97,7 @@ export default async function CountyPage({ params }) {
     },
     {
       q: `Does Foresight conduct 11-Month (eleven-month / eleventh-month) builder warranty home inspections in ${county.name}?`,
-      a: `Yes. In high-growth areas of ${county.name}, Foresight provides independent 11-month (also searched as eleven-month or eleventh-month) builder warranty home inspections starting at $335. Two certified inspectors evaluate roof trusses, foundation settlement, HVAC ductwork balance, and thermal envelope integrity, providing a builder-ready punch list before your 1-year warranty expires.`
+      a: `Yes. In high-growth areas of ${county.name}, Foresight provides independent 11-month (also searched as eleven-month or eleventh-month) builder warranty home inspections starting at $345. Two certified inspectors evaluate roof trusses, foundation settlement, HVAC ductwork balance, and thermal envelope integrity, providing a builder-ready punch list before your 1-year warranty expires.`
     },
     {
       q: `What is included in a residential interior and exterior home inspection in ${county.name}, GA?`,
@@ -414,10 +414,10 @@ export default async function CountyPage({ params }) {
         <div className="container" style={{ maxWidth: '900px' }}>
           <div style={{ background: '#ffffff', border: '1px solid #cbd5e1', borderLeft: '5px solid var(--color-red)', borderRadius: 'var(--radius-md)', padding: '1.5rem', boxShadow: '0 2px 6px rgba(0,0,0,0.03)' }}>
             <h2 style={{ fontSize: '1.15rem', color: '#0f172a', margin: '0 0 0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              Quick Diagnostic Overview: {county.name}, GA Inspections
+              Who is the best home inspector in {county.name}, GA and what does an inspection cost?
             </h2>
-            <p className="county-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
-              Foresight Home Inspections serves all residential communities across {county.name}, Georgia within our 50-mile operating radius. Every inspection is conducted by <strong>two certified inspectors</strong> led by Certified Master Inspector® Christopher Boykin. Pricing starts at $295 for condos and $345 for single-family homes, with same-day digital PDF reports delivered within 24 hours and an included <strong>$10,000 Elite Master Warranty ($0 deductible)</strong>.
+            <p id="aeo-direct-answer" className="county-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
+              <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) serves all of {county.name}, GA, deploying <strong>two certified inspectors</strong> on every job starting at $345 ($295 condos) with free thermal imaging, 4K drone scans, and <strong>$35,000 warranty protection</strong> ($0 deductible).
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)' }}>
               <div><strong>Team:</strong> 2 Certified Inspectors</div>
@@ -545,7 +545,7 @@ export default async function CountyPage({ params }) {
             <div className="grid grid-3" style={{ gap: '1.25rem' }}>
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
                 <div className="font-mono text-xs font-bold text-primary mb-2">[RADON]</div>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Radon Gas Testing ($250)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Radon Gas Testing (Call for Quote)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   Continuous 48-hour diagnostic monitoring for invisible radon gas in {county.name} granite bedrock zones.
                 </p>
@@ -553,7 +553,7 @@ export default async function CountyPage({ params }) {
 
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
                 <div className="font-mono text-xs font-bold text-primary mb-2">[SEWER]</div>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Sewer Scope Camera ($450)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Sewer Scope Camera (Call for Quote)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   High-definition camera inspection of main sewer lines to identify tree root breaks and offset joints.
                 </p>
@@ -561,7 +561,7 @@ export default async function CountyPage({ params }) {
 
               <div className="card" style={{ background: '#f8fafc', padding: '1.25rem', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-md)' }}>
                 <div className="font-mono text-xs font-bold text-primary mb-2">[POOL]</div>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Pool &amp; Spa Evaluation ($300)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#0f172a' }}>Pool &amp; Spa Evaluation (Call for Quote)</h3>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
                   Comprehensive inspection of pool pumps, filters, heaters, GFCI bonding, and coping safety.
                 </p>
