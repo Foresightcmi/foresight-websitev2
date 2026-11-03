@@ -5,7 +5,7 @@
  */
 
 export const REMINDER_AFTER_DAYS = 4;
-export const HOMEGAUGE_INITIAL_DELAY_MS = 24 * 3600000; // 24h after verified completed report upload
+export const HOMEGAUGE_INITIAL_DELAY_MS = 18 * 3600000; // ~1 day (18h+) after customer views completed report
 const DAY_MS = 86400000;
 const RESCHEDULE_GRACE_MS = 2 * 3600000;
 
@@ -119,15 +119,26 @@ export function parseIntake(text) {
 export function upsert(queue, entry, now = new Date(), canceledIndex = null) {
   if (!entry || entry.completionVerified === false || isCanceledEntry(entry, canceledIndex)) return false;
   if (entry.completedAt && Date.parse(entry.completedAt) > now.getTime() + 5 * 60000) return false;
-  const dup = queue.find((q) => (entry.email && q.email === entry.email) || (entry.phone && q.phone === entry.phone));
+  const entryAddrKey = normalizeAddressKey(entry.address);
+  const dup = queue.find((q) =>
+    (entry.email && q.email === entry.email)
+    || (entry.phone && q.phone === entry.phone)
+    || (entryAddrKey && normalizeAddressKey(q.address) === entryAddrKey)
+  );
   if (dup) {
     if (entry.name && (!dup.name || !dup.name.includes(' ')) && entry.name.includes(' ')) dup.name = entry.name;
+    if (entry.email && !dup.email) dup.email = entry.email;
+    if (entry.phone && !dup.phone) dup.phone = entry.phone;
     if (entry.city && !dup.city) dup.city = entry.city;
     if (entry.address && !dup.address) dup.address = entry.address;
+    if (entry.reportId && !dup.reportId) dup.reportId = entry.reportId;
     if (entry.completionVerified) dup.completionVerified = true;
     if (entry.reportUploadedAt && !dup.reportUploadedAt) dup.reportUploadedAt = entry.reportUploadedAt;
+    if (entry.reportViewedAt && (!dup.reportViewedAt || entry.reportViewedAt < dup.reportViewedAt)) dup.reportViewedAt = entry.reportViewedAt;
+    if (entry.customerViewedReport) dup.customerViewedReport = true;
     return false;
   }
+  if (!entry.email && !entry.phone) return false;
   queue.push({ id: `rv_${now.getTime()}_${queue.length}`, ...entry, addedAt: now.toISOString(), sentAt: null, reminderSentAt: null, reviewedAt: null, optedOut: false, canceledAt: null });
   return true;
 }
@@ -139,10 +150,11 @@ export function dueActions(queue, now = new Date(), suppressed = new Set(), canc
     if (isCanceledEntry(e, canceledIndex)) continue;
     if (e.completedAt && Date.parse(e.completedAt) > now.getTime() + 5 * 60000) continue;
     const isHgAuto = String(e.source || '').startsWith('homegauge_');
-    if (isHgAuto && e.completionVerified !== true) continue;
+    if (isHgAuto && (e.completionVerified !== true || e.customerViewedReport === false)) continue;
     if ((e.email && suppressed.has(e.email)) || (e.phone && suppressed.has(e.phone))) continue;
     if (!e.sentAt) {
-      if (isHgAuto && e.addedAt && now - new Date(e.addedAt) < HOMEGAUGE_INITIAL_DELAY_MS) continue;
+      const viewedAnchor = e.reportViewedAt || e.reportUploadedAt || e.addedAt;
+      if (isHgAuto && viewedAnchor && now - new Date(viewedAnchor) < HOMEGAUGE_INITIAL_DELAY_MS) continue;
       out.push({ entry: e, kind: 'initial' });
     } else if (!e.reminderSentAt && now - new Date(e.sentAt) >= REMINDER_AFTER_DAYS * DAY_MS) {
       out.push({ entry: e, kind: 'reminder' });

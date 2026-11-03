@@ -79,15 +79,32 @@ test('rejects pre-inspection, agreement, deposit, bounce, guide, BuildFax, and R
   }
 });
 
-test('accepts genuine completed Inspection Report Viewed by Customer and extracts full human name', () => {
+test('accepts genuine completed Inspection Report Viewed by Customer (email OR HomeGauge username) and enforces 1-day post-view delay', () => {
   const subj = 'Inspection Report for 200 Sample Pine Ave Viewed';
   const body = 'Dear CHRISTOPHER, Inspection Report uploaded on 2026-10-27 17:15:27 EDT for 200 Sample Pine Ave has been viewed by Customer Alex Buyer/alex@example.com You can turn off these notifications.';
-  const job = parseHomeGaugeNotificationEmail(body, subj);
+  const job = parseHomeGaugeNotificationEmail(body, subj, 'Tue, 27 Oct 2026 22:00:00 +0000');
   assert.ok(job, 'Expected completed report notification to parse');
   assert.equal(job.name, 'Alex Buyer');
   assert.equal(job.email, 'alex@example.com');
   assert.equal(job.address, '200 Sample Pine Ave');
   assert.equal(job.completionVerified, true);
+  assert.equal(job.customerViewedReport, true);
+  assert.equal(job.reportViewedAt, '2026-10-27T22:00:00.000Z');
+
+  // HomeGauge username handle (no @ in Viewed email, enriched from .hr5 by address)
+  const usernameBody = 'Dear CHRISTOPHER, Inspection Report uploaded on 2026-11-02 18:02:08 EST for 20 Kimball Ct has been viewed by Customer Irvin Rodriguez/IrvinRodriguez300';
+  const uJob = parseHomeGaugeNotificationEmail(usernameBody, 'Inspection Report for 20 Kimball Ct Viewed', 'Mon, 02 Nov 2026 23:34:22 +0000');
+  assert.ok(uJob, 'Expected username-based Customer Viewed email to parse');
+  assert.equal(uJob.name, 'Irvin Rodriguez');
+  assert.equal(uJob.hgUsername, 'IrvinRodriguez300');
+  assert.equal(uJob.customerViewedReport, true);
+  assert.equal(uJob.reportViewedAt, '2026-11-02T23:34:22.000Z');
+
+  // 1-day post-view delay check
+  const q = [];
+  upsert(q, { ...uJob, email: 'buyer@example.com', phone: '4045550199' }, new Date('2026-11-02T23:35:00Z'));
+  assert.equal(dueActions(q, new Date('2026-11-03T04:00:00Z')).length, 0, 'Too soon (4.5h after viewing)');
+  assert.equal(dueActions(q, new Date('2026-11-03T20:30:00Z')).length, 1, 'Due next afternoon (~21h after viewing)');
 });
 
 test('extracts cancellation details from HomeGauge Inspection Canceled email (including spaced area code)', () => {

@@ -102,7 +102,7 @@ function auditExistingQueueCompletion(queue, hr5ByAddress) {
   return quarantined;
 }
 
-async function run(cfg, queue, dryRun = false) {
+async function run(cfg, queue, dryRun = false, forceWindow = false) {
   const intake = await pollIntake(cfg);
   const user = env('EMAIL_USER') || 'inspect@foresightcmi.com'; // ggignore
   const pass = env('EMAIL_PASSWORD'); // ggignore
@@ -119,7 +119,7 @@ async function run(cfg, queue, dryRun = false) {
     if (upsert(queue, entry, new Date(), canceledIndex)) added.push(entry.name);
   }
   for (const job of hg.jobs) {
-    if (upsert(queue, job, new Date(), canceledIndex)) added.push(`${job.name} [HomeGauge Verified]`);
+    if (upsert(queue, job, new Date(), canceledIndex)) added.push(`${job.name} (${job.address || job.city || 'Report Viewed'})`);
   }
 
   if (dryRun) {
@@ -128,8 +128,8 @@ async function run(cfg, queue, dryRun = false) {
   }
 
   const hour = new Date().getHours();
-  if (hour < 9 || hour >= 18) {
-    console.log(`[Review Engine] Outside 9 AM-6 PM window. Queued ${added.length} completed client(s); Revoked ${revoked.length}; sends deferred.`);
+  if (!forceWindow && (hour < 9 || hour >= 18)) {
+    console.log(`[Review Engine] Outside 9 AM-6 PM window. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred to next daytime window.`);
     return { added, sent: [], revoked, newWarrantyCount: hg.newWarrantyCount };
   }
   const cool = readJson(COOLDOWN, {});
@@ -137,18 +137,21 @@ async function run(cfg, queue, dryRun = false) {
   const transporter = emailOk && pass ? nodemailer.createTransport({ service: 'gmail', auth: { user, pass } }) : null;
   const sent = [];
   for (const { entry, kind } of dueActions(queue, new Date(), suppressed(), canceledIndex)) {
+    if (kind !== 'initial') continue;
     let ok = false;
     if (entry.email && transporter) {
       try {
-        const m = buildEmail(entry, REVIEW_LINK, kind);
+        const m = buildEmail(entry, REVIEW_LINK, 'initial');
         await transporter.sendMail({ from: `"Christopher Boykin, CMI" <${user}>`, to: entry.email, subject: m.subject, text: m.text, html: m.html });
         ok = true;
       } catch (e) { console.warn(`[Review Engine] Email failed for ${entry.name}:`, e.message); }
     }
-    if (entry.phone && (await sendSms(entry.phone, buildSms(entry, REVIEW_LINK, kind)))) ok = true;
+    if (entry.phone && (await sendSms(entry.phone, buildSms(entry, REVIEW_LINK, 'initial')))) ok = true;
     if (ok) {
-      entry[kind === 'initial' ? 'sentAt' : 'reminderSentAt'] = new Date().toISOString();
-      sent.push(`${entry.name} (${kind})`);
+      const nowIso = new Date().toISOString();
+      entry.sentAt = nowIso;
+      entry.reminderSentAt = nowIso;
+      sent.push(`${entry.name} (${entry.address || entry.city || entry.email})`);
     }
     await sleep(2500);
   }
@@ -186,15 +189,15 @@ async function main() {
     if (e) { e.reviewedAt = new Date().toISOString(); console.log(`Marked ${e.name} as reviewed.`); } else console.log('Not found.');
   } else if (cmd === 'list') {
     for (const q of queue) {
-      console.log(`${q.name} | ${q.address || q.city || '-'} | verified:${q.completionVerified ? 'Y' : 'N'} canceled:${q.canceledAt ? 'Y' : 'N'} sent:${q.sentAt ? 'Y' : 'N'} reminder:${q.reminderSentAt ? 'Y' : 'N'} reviewed:${q.reviewedAt ? 'Y' : 'N'}`);
+      console.log(`${q.name} | ${q.address || q.city || '-'} | viewedAt:${q.reportViewedAt || '-'} | verified:${q.completionVerified ? 'Y' : 'N'} canceled:${q.canceledAt ? 'Y' : 'N'} sent:${q.sentAt ? 'Y' : 'N'} reviewed:${q.reviewedAt ? 'Y' : 'N'}`);
     }
     console.log(`\nCanceled quarantine ledger: ${cancels.length} record(s) | Phone intake topic: ${cfg.intakeTopic}`);
   } else {
-    const { added, sent, revoked = [] } = await run(cfg, queue, cmd === 'dry-run');
-    if (cmd !== 'dry-run' && (added.length || sent.length || revoked.length)) {
-      await push('Review requests', `New completed: ${added.join(', ') || 'none'}\nSent: ${sent.join(', ') || 'none'}\nCanceled blocked: ${revoked.map((r) => r.name).join(', ') || 'none'}`);
+    const { added, sent, revoked = [] } = await run(cfg, queue, cmd === 'dry-run', cmd === 'run-now');
+    if (cmd !== 'dry-run' && sent.length) {
+      await push('Auto-Sent Review Request to Customer', `Automatically sent Google review request with link (${REVIEW_LINK}) to:\n- ${sent.join('\n- ')}`);
     }
-    console.log(`[Review Engine] New: ${added.length} | Sent: ${sent.length} | Canceled/Quarantined: ${revoked.length} | Queue: ${queue.length}`);
+    console.log(`[Review Engine] New Viewed: ${added.length} | Auto-Sent: ${sent.length} | Canceled/Quarantined: ${revoked.length} | Queue: ${queue.length}`);
   }
   writeJson(QUEUE, queue);
   writeJson(CFG, cfg);

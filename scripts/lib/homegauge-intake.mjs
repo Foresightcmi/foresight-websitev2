@@ -161,14 +161,16 @@ export function parseHomeGaugeNotificationEmail(rawText = '', subject = '', date
   if (!m) return null;
 
   const [, uploadedRaw, rawAddr, rawCustomerName, rawHandle] = m;
-  const handleLower = rawHandle.trim().toLowerCase();
+  const handleTrim = rawHandle.trim();
+  const handleLower = handleTrim.toLowerCase();
   const email = (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(handleLower) && !IGNORED_EMAILS.has(handleLower) && !handleLower.endsWith('@homegauge.com')) ? handleLower : '';
+  const hgUsername = email ? '' : handleTrim;
   const phoneMatch = clean.match(/(?:Client|Customer|Buyer|Phone|Mobile|Cell)[:\s]*\(?\s*(\d{3})\s*\)?[-.\s]*(\d{3})[-.\s]*(\d{4})/i);
   const phone = phoneMatch ? `${phoneMatch[1]}${phoneMatch[2]}${phoneMatch[3]}` : '';
   const name = rawCustomerName.trim();
-  if (!name || (!email && !phone)) return null;
-
   const address = rawAddr.trim();
+  if (!name || !address) return null;
+
   const cityMatch = address.match(/,\s*([A-Za-z\s]+),\s*(?:GA|Georgia)/i);
   const city = cityMatch ? cityMatch[1].trim() : '';
   const service = /wood destroying|wdo|termite/i.test(subj) ? 'termite & WDO inspection'
@@ -178,11 +180,14 @@ export function parseHomeGaugeNotificationEmail(rawText = '', subject = '', date
     : 'home inspection';
   const isNewConstruction = /new construction|pre-drywall|predrywall|phase/i.test(combined);
   const parsedUp = Date.parse(uploadedRaw.trim().replace(/\s+EDT|\s+EST/i, ''));
-  const reportUploadedAt = !isNaN(parsedUp) ? new Date(parsedUp).toISOString() : ((dateHeader && !isNaN(Date.parse(dateHeader))) ? new Date(dateHeader).toISOString() : new Date().toISOString());
+  const parsedView = (dateHeader && !isNaN(Date.parse(dateHeader))) ? Date.parse(dateHeader) : NaN;
+  const reportUploadedAt = !isNaN(parsedUp) ? new Date(parsedUp).toISOString() : (!isNaN(parsedView) ? new Date(parsedView).toISOString() : new Date().toISOString());
+  const reportViewedAt = !isNaN(parsedView) ? new Date(parsedView).toISOString() : reportUploadedAt;
 
   return {
-    name, email, phone, address, city, service, isNewConstruction,
-    completionVerified: true, reportUploadedAt, completedAt: reportUploadedAt, source: 'homegauge_imap'
+    name, email, phone, hgUsername, address, city, service, isNewConstruction,
+    customerViewedReport: true, reportViewedAt,
+    completionVerified: true, reportUploadedAt, completedAt: reportViewedAt, source: 'homegauge_imap'
   };
 }
 
@@ -204,8 +209,7 @@ export async function pollHomeGaugeImap(user, pass, seenUids = [], seenCancelUid
       else if (step === 1 && buf.includes('A1 OK')) { step = 2; buf = ''; sock.write('A2 SELECT INBOX\r\n'); }
       else if (step === 2 && buf.includes('A2 OK')) { step = 3; buf = ''; sock.write(`A3 SEARCH SINCE ${sinceDate} FROM "homegauge"\r\n`); }
       else if (step === 3 && buf.includes('A3 OK')) {
-        const ids = ((buf.match(/\* SEARCH([0-9 ]+)/)?.[1] || '').trim().split(/\s+/).filter(Boolean))
-          .filter((id) => !seen.has(id) || !seenCan.has(id)).slice(-80);
+        const ids = ((buf.match(/\* SEARCH([0-9 ]+)/)?.[1] || '').trim().split(/\s+/).filter(Boolean)).slice(-80);
         if (!ids.length) { clearTimeout(timer); sock.write('A4 LOGOUT\r\n'); return finish(); }
         step = 4; buf = '';
         sock.write(`A4 FETCH ${ids.join(',')} (BODY.PEEK[HEADER.FIELDS (FROM SUBJECT DATE)])\r\n`);
@@ -218,9 +222,9 @@ export async function pollHomeGaugeImap(user, pass, seenUids = [], seenCancelUid
             newCancelUids.push(id);
             if (/\bcancel(?:ed|led)\b/i.test(subj)) cancelIds.push(id);
           }
-          if (!seen.has(id)) {
-            newUids.push(id);
-            if (/^(?:Inspection Report|Wood Destroying Insect|Radon Report|Mold Report|Air Quality Report|Sewer Scope Report)\s+for\s+.+\s+Viewed$/i.test(subj)) viewIds.push(id);
+          if (!seen.has(id)) newUids.push(id);
+          if (/^(?:Inspection Report|Wood Destroying Insect|Radon Report|Mold Report|Air Quality Report|Sewer Scope Report)\s+for\s+.+\s+Viewed$/i.test(subj)) {
+            viewIds.push(id);
           }
         }
         if (cancelIds.length) { step = 5; buf = ''; sock.write(`A5 FETCH ${cancelIds.join(',')} (BODY.PEEK[HEADER.FIELDS (SUBJECT DATE)] BODY.PEEK[TEXT]<0.45000>)\r\n`); }
@@ -327,6 +331,13 @@ export async function ingestHomeGaugeJobs({ privDir, user, pass, cfg, extraCance
   const imapRes = await pollHomeGaugeImap(user, pass, cfg.seenHomeGaugeImapIds || [], cfg.seenHomeGaugeCancelIds || []);
   if (imapRes.newUids.length) cfg.seenHomeGaugeImapIds = [...new Set([...(cfg.seenHomeGaugeImapIds || []), ...imapRes.newUids])].slice(-300);
   if (imapRes.newCancelUids.length) cfg.seenHomeGaugeCancelIds = [...new Set([...(cfg.seenHomeGaugeCancelIds || []), ...imapRes.newCancelUids])].slice(-300);
+  const viewedByAddress = new Map();
+  for (const v of imapRes.jobs) {
+    const k = normalizeAddressKey(v.address);
+    if (!k) continue;
+    const prev = viewedByAddress.get(k);
+    if (!prev || String(v.reportViewedAt || '') < String(prev.reportViewedAt || '')) viewedByAddress.set(k, v);
+  }
   candidateJobs.push(...imapRes.jobs);
 
   const merged = mergeCancellations(savedCancels, [...extraCancellations, ...imapRes.cancellations]);
@@ -336,21 +347,36 @@ export async function ingestHomeGaugeJobs({ privDir, user, pass, cfg, extraCance
   const canceledIndex = buildCanceledIndex(merged.list);
 
   if (!cfg.hr5CompletedSince) cfg.hr5CompletedSince = '2026-10-30T00:00:00.000Z';
+  const sinceMs = Date.parse(cfg.hr5CompletedSince) || 0;
   const hr5 = scanLocalCompletedHr5Reports(cfg.hr5CompletedSince);
-  candidateJobs.push(...hr5.completedJobs);
+  for (const rec of hr5.completedJobs) {
+    const v = viewedByAddress.get(normalizeAddressKey(rec.address));
+    if (v) candidateJobs.push({ ...rec, customerViewedReport: true, reportViewedAt: v.reportViewedAt });
+  }
 
   const jobs = [];
   for (const j of candidateJobs) {
     if (isCanceledEntry(j, canceledIndex)) continue;
-    const localRec = hr5.byAddressKey.get(normalizeAddressKey(j.address));
+    const viewOrUpMs = Date.parse(j.reportViewedAt || j.reportUploadedAt || j.completedAt || '');
+    if (sinceMs && !isNaN(viewOrUpMs) && viewOrUpMs < sinceMs) continue;
+    const addrKey = normalizeAddressKey(j.address);
+    const localRec = hr5.byAddressKey.get(addrKey);
+    const viewedRec = viewedByAddress.get(addrKey);
+    if (viewedRec) {
+      j.customerViewedReport = true;
+      if (!j.reportViewedAt || viewedRec.reportViewedAt < j.reportViewedAt) j.reportViewedAt = viewedRec.reportViewedAt;
+    }
     if (localRec) {
       if (!localRec.uploaded || !localRec.hasContent) continue; // Local draft exists but report NOT uploaded -> block!
+      if (localRec.reportId && !j.reportId) j.reportId = localRec.reportId;
       if (localRec.name && (!j.name || !j.name.includes(' '))) j.name = localRec.name;
       if (localRec.city && !j.city) j.city = localRec.city;
       if (localRec.phone && !j.phone) j.phone = localRec.phone;
       if (localRec.email && !j.email) j.email = localRec.email;
+      if (localRec.service && (!j.service || j.service === 'home inspection')) j.service = localRec.service;
+      if (localRec.isNewConstruction) j.isNewConstruction = true;
     }
-    if (j.completionVerified === true) jobs.push(j);
+    if (j.completionVerified === true && j.customerViewedReport !== false && (j.email || j.phone)) jobs.push(j);
   }
 
   const warrantyFile = path.join(privDir, 'homegauge-warranty-clients.json');
