@@ -309,5 +309,25 @@
     "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3190301.html",
     "type": "permit_homeowner",
     "timestamp": "2026-10-25T17:54:18.780Z"
+  },
+  {
+    "leadId": "ext_DKB-3190449",
+    "name": "Moshe Boroosan",
+    "address": "1283 BRAMBLE RD, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "moshe@boroosanlaw.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3190449.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-11-05T21:21:34.931Z"
+  },
+  {
+    "leadId": "ext_DKB-3191282",
+    "name": "Alejandro D Milrud",
+    "address": "1968 HOOPER ST, DeKalb County, GA",
+    "city": "Decatur",
+    "email": "Alejandro@Milrud.com",
+    "dossierUrl": "https://fhinspectionsatl.com/dossiers/warranty-ext_DKB-3191282.html",
+    "type": "permit_homeowner",
+    "timestamp": "2026-11-05T21:21:41.108Z"
   }
 ]
