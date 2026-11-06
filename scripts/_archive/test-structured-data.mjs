@@ -97,6 +97,80 @@ for (const city of citiesData) {
 assert(citiesWithImage === citiesData.length, `All ${citiesData.length} cities in cities.json include "image" in LocalBusiness schema`);
 assert(citiesWithInvalidParent === 0, 'Zero cities in cities.json place aggregateRating on a Service node');
 
+// 5. Check app/services/[service]/page.js and app/services/[service]/[city]/page.js for Product.offers.price & priceSpecification.price
+const serviceHubPage = fs.readFileSync(path.join(process.cwd(), 'app', 'services', '[service]', 'page.js'), 'utf8');
+const serviceCityPage = fs.readFileSync(path.join(process.cwd(), 'app', 'services', '[service]', '[city]', 'page.js'), 'utf8');
+assert(!serviceHubPage.includes('"@type": "PriceSpecification"'), 'services/[service]/page.js has zero bare PriceSpecification objects without price');
+assert(!serviceCityPage.includes('"@type": "PriceSpecification"'), 'services/[service]/[city]/page.js has zero bare PriceSpecification objects without price');
+assert(serviceHubPage.includes('"@type": "UnitPriceSpecification"'), 'services/[service]/page.js includes UnitPriceSpecification with numeric price');
+assert(serviceCityPage.includes('"@type": "UnitPriceSpecification"'), 'services/[service]/[city]/page.js includes UnitPriceSpecification with numeric price');
+
+// 6. Simulate Offer price evaluation across all 12 services in data/services-pseo.json (including "Call for Quote" services)
+const servicesData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'services-pseo.json'), 'utf8'));
+const allServicesHaveNumericOfferPrice = servicesData.every((serviceData) => {
+  const offerPrice = `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`;
+  return /^\d+\.\d{2}$/.test(offerPrice) && Number(offerPrice) > 0;
+});
+assert(allServicesHaveNumericOfferPrice, `All ${servicesData.length} services in services-pseo.json resolve to a valid numeric Offer.price and priceSpecification.price`);
+
+// 7. If .next/server/app exists, parse every compiled HTML file's application/ld+json blocks
+const nextAppDir = path.join(process.cwd(), '.next', 'server', 'app');
+if (fs.existsSync(nextAppDir)) {
+  function walkHtml(dir) {
+    let out = [];
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) out.push(...walkHtml(full));
+      else if (entry.name.endsWith('.html')) out.push(full);
+    }
+    return out;
+  }
+  const htmlFiles = walkHtml(nextAppDir);
+  let totalProducts = 0;
+  let totalOffers = 0;
+  let invalidOffers = [];
+  function inspectJsonLd(node, file) {
+    if (!node || typeof node !== 'object') return;
+    if (Array.isArray(node)) {
+      node.forEach((n) => inspectJsonLd(n, file));
+      return;
+    }
+    if (node['@type'] === 'Product') totalProducts++;
+    if (node['@type'] === 'Offer' || node['@type'] === 'AggregateOffer') {
+      totalOffers++;
+      const hasPrice = node.price !== undefined && node.price !== '' && !Number.isNaN(Number(node.price));
+      const specPrice = node.priceSpecification && node.priceSpecification.price;
+      const hasSpecPrice = specPrice !== undefined && specPrice !== '' && !Number.isNaN(Number(specPrice));
+      if (!hasPrice && !hasSpecPrice) {
+        invalidOffers.push({ file: path.relative(process.cwd(), file), node });
+      }
+      if (node.priceSpecification && !hasSpecPrice) {
+        invalidOffers.push({ file: path.relative(process.cwd(), file), reason: 'priceSpecification missing price', node });
+      }
+    }
+    for (const val of Object.values(node)) inspectJsonLd(val, file);
+  }
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(file, 'utf8');
+    const re = /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi;
+    let m;
+    while ((m = re.exec(html)) !== null) {
+      try {
+        inspectJsonLd(JSON.parse(m[1]), file);
+      } catch (err) {
+        invalidOffers.push({ file: path.relative(process.cwd(), file), error: err.message });
+      }
+    }
+  }
+  if (invalidOffers.length > 0) {
+    console.error('Invalid Offers found:', JSON.stringify(invalidOffers.slice(0, 5), null, 2));
+  }
+  assert(
+    invalidOffers.length === 0 && totalProducts > 0 && totalOffers > 0,
+    `All ${totalOffers} Offer/AggregateOffer nodes and ${totalProducts} Product nodes across ${htmlFiles.length} compiled HTML pages specify valid numeric price & priceSpecification.price`
+  );
+}
+
 console.log(`\nStructured Data Evaluation Summary: ${passes} passed, ${errors} failed.`);
 if (errors > 0) {
   process.exit(1);

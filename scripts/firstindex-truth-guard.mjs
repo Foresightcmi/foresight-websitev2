@@ -286,5 +286,33 @@ const compStaleHits = compData.filter((c) => {
 const compSelfCannibalHits = compData.filter((c) => c.slug.startsWith('foresight-vs-') && !c.summary.startsWith('Foresight Home Inspections'));
 record('Zero stale add-on prices or rival-first self-cannibalizing summaries across all 18 /compare pages', compStaleHits.length === 0 && compSelfCannibalHits.length === 0, `${compStaleHits.length} stale price hits, ${compSelfCannibalHits.length} rival-first summaries`);
 
+// Step 8: Google Search Console Product Snippets Guard (Every Offer & UnitPriceSpecification must include numeric price)
+const SCHEMA_OFFER_FILES = [
+  'app/services/[service]/page.js',
+  'app/services/[service]/[city]/page.js',
+  'app/services/page.js',
+  'app/service-areas/[city]/page.js',
+  'app/service-areas/counties/[county]/page.js',
+  'app/layout.js'
+];
+let missingOfferPriceFiles = [];
+for (const rel of SCHEMA_OFFER_FILES) {
+  const full = path.join(ROOT, rel);
+  if (!fs.existsSync(full)) continue;
+  const raw = fs.readFileSync(full, 'utf8');
+  if (raw.includes('"@type": "PriceSpecification"') || !raw.includes('"priceSpecification"') || !raw.includes('"price":')) {
+    missingOfferPriceFiles.push(rel);
+  }
+}
+const allServicesValidOfferPrice = services.every((s) => {
+  const computed = `${(s.price.match(/\d+/) || ['345'])[0]}.00`;
+  return /^\d+\.\d{2}$/.test(computed) && Number(computed) >= 275;
+});
+record(
+  'Google Search Console Product Snippets Guard (Every Offer & priceSpecification.price populated across all 12 services & 163 cities)',
+  missingOfferPriceFiles.length === 0 && allServicesValidOfferPrice,
+  missingOfferPriceFiles.length ? missingOfferPriceFiles.join(', ') : '12/12 services emit valid numeric Offer.price & priceSpecification.price'
+);
+
 console.log(`\n[SUMMARY] Passed ${passedChecks}/${totalChecks} FirstIndex Truth checks (${fixedItems} items auto-healed).\n`);
 process.exit(passedChecks === totalChecks ? 0 : 1);

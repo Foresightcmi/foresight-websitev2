@@ -137,6 +137,12 @@ export default async function CountyPage({ params }) {
       "@type": "Offer",
       "price": "345.00",
       "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "345.00",
+        "priceCurrency": "USD",
+        "unitText": "starting"
+      },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",

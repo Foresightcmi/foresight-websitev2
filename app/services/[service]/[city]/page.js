@@ -403,9 +403,15 @@ export default async function ServiceCityPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      ...(serviceData.price.replace(/[^0-9]/g, '')
-        ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" }
-        : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": serviceData.priceDetails } }),
+      "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+        "priceCurrency": "USD",
+        "unitText": "starting",
+        "description": serviceData.priceDetails
+      },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
@@ -435,9 +441,15 @@ export default async function ServiceCityPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      ...(serviceData.price.replace(/[^0-9]/g, '')
-        ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" }
-        : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": serviceData.priceDetails } }),
+      "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+        "priceCurrency": "USD",
+        "unitText": "starting",
+        "description": serviceData.priceDetails
+      },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",

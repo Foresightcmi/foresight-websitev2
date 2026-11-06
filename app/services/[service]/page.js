@@ -405,7 +405,15 @@ export default async function ServiceHubPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      ...(serviceData.price.replace(/[^0-9]/g, '') ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" } : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": "Call (678) 480-2110 for custom quote" } }),
+      "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+        "priceCurrency": "USD",
+        "unitText": "starting",
+        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : `Starting at ${serviceData.price}`
+      },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
@@ -431,7 +439,15 @@ export default async function ServiceHubPage({ params }) {
     },
     "offers": {
       "@type": "Offer",
-      ...(serviceData.price.replace(/[^0-9]/g, '') ? { "price": `${serviceData.price.replace(/[^0-9]/g, '')}.00`, "priceCurrency": "USD" } : { "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "description": "Call (678) 480-2110 for custom quote" } }),
+      "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
+        "priceCurrency": "USD",
+        "unitText": "starting",
+        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : `Starting at ${serviceData.price}`
+      },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",

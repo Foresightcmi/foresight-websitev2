@@ -204,6 +204,17 @@ export default async function CityPage({ params }) {
       "itemListElement": [
         {
           "@type": "Offer",
+          "price": "345.00",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "345.00",
+            "priceCurrency": "USD",
+            "unitText": "starting"
+          },
+          "priceValidUntil": "2027-12-31",
+          "validThrough": "2027-12-31",
+          "validFrom": "2026-01-01",
           "itemOffered": {
             "@type": "Service",
             "name": "Buyer's Home Inspection"
@@ -211,6 +222,17 @@ export default async function CityPage({ params }) {
         },
         {
           "@type": "Offer",
+          "price": "345.00",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "345.00",
+            "priceCurrency": "USD",
+            "unitText": "starting"
+          },
+          "priceValidUntil": "2027-12-31",
+          "validThrough": "2027-12-31",
+          "validFrom": "2026-01-01",
           "itemOffered": {
             "@type": "Service",
             "name": "Pre-Listing Inspection"
@@ -218,6 +240,17 @@ export default async function CityPage({ params }) {
         },
         {
           "@type": "Offer",
+          "price": "345.00",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "345.00",
+            "priceCurrency": "USD",
+            "unitText": "starting"
+          },
+          "priceValidUntil": "2027-12-31",
+          "validThrough": "2027-12-31",
+          "validFrom": "2026-01-01",
           "itemOffered": {
             "@type": "Service",
             "name": "11-Month Warranty Inspection"
@@ -248,6 +281,12 @@ export default async function CityPage({ params }) {
       "@type": "Offer",
       "price": "345.00",
       "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "345.00",
+        "priceCurrency": "USD",
+        "unitText": "starting"
+      },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
