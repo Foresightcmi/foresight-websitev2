@@ -85,6 +85,11 @@ const softwareSchema = {
     '@type': 'Offer',
     price: '0.00',
     priceCurrency: 'USD',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '0.00',
+      priceCurrency: 'USD',
+    },
     priceValidUntil: '2027-12-31',
     validThrough: '2027-12-31',
     validFrom: '2026-01-01',

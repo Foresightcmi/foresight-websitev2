@@ -86,8 +86,13 @@ const softwareAppSchema = {
   description: 'Interactive building science risk calculator analyzing historical era building codes, soil geology, radon zones, and defect vulnerabilities across 20 Metro Atlanta counties.',
   offers: {
     '@type': 'Offer',
-    price: '0',
+    price: '0.00',
     priceCurrency: 'USD',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '0.00',
+      priceCurrency: 'USD',
+    },
     priceValidUntil: '2027-12-31',
     validThrough: '2027-12-31',
     validFrom: '2026-01-01',

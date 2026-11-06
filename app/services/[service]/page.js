@@ -230,7 +230,7 @@ const SERVICE_MAP = {
   },
   'commercial-property-inspection': {
     name: 'Commercial Real Estate Due Diligence & Property Condition Assessments',
-    price: 'From $750',
+    price: 'Call for Quote',
     icon: '10',
     headline: 'Commercial Real Estate Due Diligence Inspection Services in Metro Atlanta',
     metaTitle: 'Commercial Real Estate Due Diligence Inspection Services Atlanta GA',
@@ -412,7 +412,7 @@ export default async function ServiceHubPage({ params }) {
         "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
         "priceCurrency": "USD",
         "unitText": "starting",
-        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : `Starting at ${serviceData.price}`
+        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : `Starting at ${serviceData.price.replace(/^From\s+/i, '')}`
       },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
@@ -446,7 +446,7 @@ export default async function ServiceHubPage({ params }) {
         "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
         "priceCurrency": "USD",
         "unitText": "starting",
-        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : `Starting at ${serviceData.price}`
+        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : `Starting at ${serviceData.price.replace(/^From\s+/i, '')}`
       },
       "priceValidUntil": "2027-12-31",
       "validThrough": "2027-12-31",
@@ -709,7 +709,9 @@ export default async function ServiceHubPage({ params }) {
                 'pre-listing-inspection',
                 'mold-testing',
                 'buyer-inspection',
-                '11-month-warranty-inspection'
+                '11-month-warranty-inspection',
+                'commercial-property-inspection',
+                'pre-drywall-inspection'
               ];
               const href = pseoServices.includes(canonicalService)
                 ? `/services/${canonicalService}/${citySlug}`

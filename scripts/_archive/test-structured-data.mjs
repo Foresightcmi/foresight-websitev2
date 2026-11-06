@@ -138,14 +138,15 @@ if (fs.existsSync(nextAppDir)) {
     if (node['@type'] === 'Product') totalProducts++;
     if (node['@type'] === 'Offer' || node['@type'] === 'AggregateOffer') {
       totalOffers++;
-      const hasPrice = node.price !== undefined && node.price !== '' && !Number.isNaN(Number(node.price));
+      const hasPrice = typeof node.price === 'string' && /^\d+\.\d{2}$/.test(node.price);
       const specPrice = node.priceSpecification && node.priceSpecification.price;
-      const hasSpecPrice = specPrice !== undefined && specPrice !== '' && !Number.isNaN(Number(specPrice));
-      if (!hasPrice && !hasSpecPrice) {
-        invalidOffers.push({ file: path.relative(process.cwd(), file), node });
+      const hasSpecPrice = typeof specPrice === 'string' && /^\d+\.\d{2}$/.test(specPrice);
+      const specDesc = (node.priceSpecification && node.priceSpecification.description) || '';
+      if (!hasPrice || !hasSpecPrice) {
+        invalidOffers.push({ file: path.relative(process.cwd(), file), reason: 'missing or non-2-decimal price/priceSpecification.price', node });
       }
-      if (node.priceSpecification && !hasSpecPrice) {
-        invalidOffers.push({ file: path.relative(process.cwd(), file), reason: 'priceSpecification missing price', node });
+      if (node.price === '750.00' || specDesc.includes('Starting at From ')) {
+        invalidOffers.push({ file: path.relative(process.cwd(), file), reason: 'stale 750.00 price or duplicate Starting at From description', node });
       }
     }
     for (const val of Object.values(node)) inspectJsonLd(val, file);
@@ -167,7 +168,7 @@ if (fs.existsSync(nextAppDir)) {
   }
   assert(
     invalidOffers.length === 0 && totalProducts > 0 && totalOffers > 0,
-    `All ${totalOffers} Offer/AggregateOffer nodes and ${totalProducts} Product nodes across ${htmlFiles.length} compiled HTML pages specify valid numeric price & priceSpecification.price`
+    `All ${totalOffers} Offer/AggregateOffer nodes and ${totalProducts} Product nodes across ${htmlFiles.length} compiled HTML pages specify valid 2-decimal numeric price & priceSpecification.price`
   );
 }
 

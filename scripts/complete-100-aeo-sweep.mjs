@@ -205,11 +205,11 @@ console.log('Complete 100/100 AEO template sweep applied across all 9 dynamic ro
   }
   c = c.replace(
     `"price": \`\${serviceData.price.replace(/[^0-9]/g, '') || "345"}.00\`,\n      "priceCurrency": "USD",`,
-    `"price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n      "priceCurrency": "USD",\n      "priceSpecification": {\n        "@type": "UnitPriceSpecification",\n        "price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n        "priceCurrency": "USD",\n        "unitText": "starting",\n        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : \`Starting at \${serviceData.price}\`\n      },`
+    `"price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n      "priceCurrency": "USD",\n      "priceSpecification": {\n        "@type": "UnitPriceSpecification",\n        "price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n        "priceCurrency": "USD",\n        "unitText": "starting",\n        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : \`Starting at \${serviceData.price.replace(/^From\\\\s+/i, '')}\`\n      },`
   );
   c = c.replace(
     `"price": \`\${serviceData.price.replace(/[^0-9]/g, '') || "345"}.00\`,\n      "priceCurrency": "USD",`,
-    `"price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n      "priceCurrency": "USD",\n      "priceSpecification": {\n        "@type": "UnitPriceSpecification",\n        "price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n        "priceCurrency": "USD",\n        "unitText": "starting",\n        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : \`Starting at \${serviceData.price}\`\n      },`
+    `"price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n      "priceCurrency": "USD",\n      "priceSpecification": {\n        "@type": "UnitPriceSpecification",\n        "price": \`\${(serviceData.price.match(/\\d+/) || ['345'])[0]}.00\`,\n        "priceCurrency": "USD",\n        "unitText": "starting",\n        "description": serviceData.price === 'Call for Quote' ? "Bundled with home inspection packages from $345 — call (678) 480-2110 for custom quote" : \`Starting at \${serviceData.price.replace(/^From\\\\s+/i, '')}\`\n      },`
   );
   fs.writeFileSync(p, c, 'utf8');
 }

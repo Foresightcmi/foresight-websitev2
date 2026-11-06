@@ -24,8 +24,13 @@ const webAppSchema = {
   "description": "Interactive fee estimator and buyer negotiation leverage calculator for Metro Atlanta home inspections.",
   "offers": {
     "@type": "Offer",
-    "price": "0",
+    "price": "0.00",
     "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
     "priceValidUntil": "2027-12-31",
     "validThrough": "2027-12-31",
     "validFrom": "2026-01-01"
