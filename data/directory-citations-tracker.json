@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-06T20:40:36.002Z",
+  "generatedAt": "2026-11-07T18:12:32.894Z",
   "source_url": "https://www.fhinspectionsatl.com",
-  "retrieved_on": "2026-11-06",
+  "retrieved_on": "2026-11-07",
   "withinDaytimeWindow": true,
   "remainingDailyEmailQuota": 1200,
   "verifiedLinkMagnetAssets": [
@@ -12,7 +12,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.fhinspectionsatl.com/due-diligence",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Metro Atlanta Vintage & Red Clay Property Risk Scanner",
@@ -21,7 +21,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.fhinspectionsatl.com/risk-scanner",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Instant Home Inspection Quote & Fee Calculator",
@@ -30,7 +30,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.fhinspectionsatl.com/quote",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     }
   ],
   "verifiedCitationDirectories": [
@@ -47,7 +47,7 @@
       "httpStatus": 403,
       "reachable": true,
       "source_url": "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Bing Places for Business (ChatGPT Search & Copilot Index)",
@@ -60,7 +60,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.bingplaces.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Foursquare Places POI Database (ChatGPT Mapbox Shortlist)",
@@ -74,7 +74,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://foursquare.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Apple Business Connect (Siri & Apple Intelligence Place Card)",
@@ -88,7 +88,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://businessconnect.apple.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Brave Search Webmaster & Local Index (Claude Web Search Backend)",
@@ -100,7 +100,7 @@
       "httpStatus": 429,
       "reachable": false,
       "source_url": "https://search.brave.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "InterNACHI Certified Master Inspector Directory",
@@ -114,7 +114,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.nachi.org",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Better Business Bureau (Atlanta & NE Georgia)",
@@ -128,7 +128,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.bbb.org",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Metro Atlanta Chamber of Commerce",
@@ -141,7 +141,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.metroatlantachamber.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Nextdoor Neighborhood Business Directory",
@@ -154,7 +154,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://business.nextdoor.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "name": "Patch Local Atlanta Community Hubs",
@@ -167,170 +167,110 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://patch.com/georgia/atlanta",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     }
   ],
   "brokerageResourcePitchesReady": 20,
   "brokerageResourcePitches": [
     {
-      "recipientName": "Kenneth Roy",
-      "recipientEmail": "kenny@kennyroyteam.com",
-      "brokerageDomain": "kennyroyteam.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your kennyroyteam.com buyer resources",
-      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
-      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://kennyroyteam.com",
-      "retrieved_on": "2026-11-06"
-    },
-    {
-      "recipientName": "MAGGIE HARPER",
-      "recipientEmail": "maggieharper@kw.com",
+      "recipientName": "Catherine Ann Crowe",
+      "recipientEmail": "anncrowe@kw.com",
       "brokerageDomain": "kw.com",
       "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your kw.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://kw.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Francisco Urrea",
-      "recipientEmail": "atlantaagent@bellsouth.net",
-      "brokerageDomain": "bellsouth.net",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your bellsouth.net buyer resources",
+      "recipientName": "Colleen MooreTyner",
+      "recipientEmail": "colleen@pillarandporchproperties.com",
+      "brokerageDomain": "pillarandporchproperties.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your pillarandporchproperties.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://bellsouth.net",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://pillarandporchproperties.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Collette McDonald",
-      "recipientEmail": "collette@collettemcdonald.com",
-      "brokerageDomain": "collettemcdonald.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your collettemcdonald.com buyer resources",
+      "recipientName": "MARCI ROBINSON",
+      "recipientEmail": "marci@sandysprings.com",
+      "brokerageDomain": "sandysprings.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your sandysprings.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://collettemcdonald.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://sandysprings.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Sacha Davis",
-      "recipientEmail": "sachad@tritori.co",
-      "brokerageDomain": "tritori.co",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your tritori.co buyer resources",
+      "recipientName": "Wanda Moreno",
+      "recipientEmail": "wanda.moreno@cbrealty.com",
+      "brokerageDomain": "cbrealty.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your cbrealty.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://tritori.co",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://cbrealty.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Samuel Bass",
-      "recipientEmail": "onlinesalesatlanta@dreamfindershomes.com",
-      "brokerageDomain": "dreamfindershomes.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your dreamfindershomes.com buyer resources",
+      "recipientName": "ROGER PHILMON",
+      "recipientEmail": "rogerphilmon@comcast.net",
+      "brokerageDomain": "comcast.net",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your comcast.net buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://dreamfindershomes.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://comcast.net",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Imani Frith",
-      "recipientEmail": "imani.frith@directresidentialrealty.com",
-      "brokerageDomain": "directresidentialrealty.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your directresidentialrealty.com buyer resources",
+      "recipientName": "Demeeka Cobb",
+      "recipientEmail": "hello@demeekacobb.com",
+      "brokerageDomain": "demeekacobb.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your demeekacobb.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://directresidentialrealty.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://demeekacobb.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Brian Robinson",
-      "recipientEmail": "brianrobinson@remax.net",
-      "brokerageDomain": "remax.net",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your remax.net buyer resources",
+      "recipientName": "Jasmine Dufanal",
+      "recipientEmail": "jasmined@c21connectrealty.com",
+      "brokerageDomain": "c21connectrealty.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your c21connectrealty.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://remax.net",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://c21connectrealty.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Chad Bulloch",
-      "recipientEmail": "chadbulloch@livian.com",
-      "brokerageDomain": "livian.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your livian.com buyer resources",
+      "recipientName": "Teadra Jones",
+      "recipientEmail": "teadra@hestergrouprealtors.com",
+      "brokerageDomain": "hestergrouprealtors.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your hestergrouprealtors.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://livian.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://hestergrouprealtors.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Brianna Moses",
-      "recipientEmail": "brianna@wrcgwinnett.com",
-      "brokerageDomain": "wrcgwinnett.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your wrcgwinnett.com buyer resources",
+      "recipientName": "LOGAN COOK",
+      "recipientEmail": "realestate@logancook.com",
+      "brokerageDomain": "logancook.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your logancook.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://wrcgwinnett.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://logancook.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Jude Rasmus",
-      "recipientEmail": "rasmus@rasmusrealestate.com",
-      "brokerageDomain": "rasmusrealestate.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your rasmusrealestate.com buyer resources",
-      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
-      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://rasmusrealestate.com",
-      "retrieved_on": "2026-11-06"
-    },
-    {
-      "recipientName": "BONNIE B MULLINAX",
-      "recipientEmail": "homes@mullinaxteam.com",
-      "brokerageDomain": "mullinaxteam.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your mullinaxteam.com buyer resources",
-      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
-      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://mullinaxteam.com",
-      "retrieved_on": "2026-11-06"
-    },
-    {
-      "recipientName": "Bobby Lester",
-      "recipientEmail": "invest@bobbylester.com",
-      "brokerageDomain": "bobbylester.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your bobbylester.com buyer resources",
-      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
-      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://bobbylester.com",
-      "retrieved_on": "2026-11-06"
-    },
-    {
-      "recipientName": "Dabney Jordan",
-      "recipientEmail": "dabneyjordan@atlantafinehomes.com",
+      "recipientName": "Ally and Seth Team",
+      "recipientEmail": "allyandseth@atlantafinehomes.com",
       "brokerageDomain": "atlantafinehomes.com",
       "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your atlantafinehomes.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://atlantafinehomes.com",
-      "retrieved_on": "2026-11-06"
-    },
-    {
-      "recipientName": "TRACY VINSON",
-      "recipientEmail": "tracy.vinson@bhhsgeorgia.com",
-      "brokerageDomain": "bhhsgeorgia.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your bhhsgeorgia.com buyer resources",
-      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
-      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://bhhsgeorgia.com",
-      "retrieved_on": "2026-11-06"
-    },
-    {
-      "recipientName": "Matt LaMarsh",
-      "recipientEmail": "matt.lamarsh@evatlanta.com",
-      "brokerageDomain": "evatlanta.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your evatlanta.com buyer resources",
-      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
-      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://evatlanta.com",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
       "recipientName": "Loree Nichols",
@@ -340,37 +280,97 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://mainstay.io",
-      "retrieved_on": "2026-11-06"
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Lauren Estadt",
-      "recipientEmail": "lauren@rootsatlanta.com",
-      "brokerageDomain": "rootsatlanta.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your rootsatlanta.com buyer resources",
+      "recipientName": "Brad Campbell",
+      "recipientEmail": "brad@perimeterteam.com",
+      "brokerageDomain": "perimeterteam.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your perimeterteam.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://rootsatlanta.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://perimeterteam.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "Amber Kuhn",
-      "recipientEmail": "amberkuhn@athomepg.com",
-      "brokerageDomain": "athomepg.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your athomepg.com buyer resources",
+      "recipientName": "Christine Love",
+      "recipientEmail": "christine.love@compass.com",
+      "brokerageDomain": "compass.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your compass.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://athomepg.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://compass.com",
+      "retrieved_on": "2026-11-07"
     },
     {
-      "recipientName": "SHARON HENRY",
-      "recipientEmail": "sharon@sharonhenry.com",
-      "brokerageDomain": "sharonhenry.com",
-      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your sharonhenry.com buyer resources",
+      "recipientName": "Naiverh C Castelao",
+      "recipientEmail": "realestate@carolinacastelao.com",
+      "brokerageDomain": "carolinacastelao.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your carolinacastelao.com buyer resources",
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
-      "source_url": "https://sharonhenry.com",
-      "retrieved_on": "2026-11-06"
+      "source_url": "https://carolinacastelao.com",
+      "retrieved_on": "2026-11-07"
+    },
+    {
+      "recipientName": "Nic LaGatta",
+      "recipientEmail": "nic@resciencebroker.com",
+      "brokerageDomain": "resciencebroker.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your resciencebroker.com buyer resources",
+      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
+      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
+      "source_url": "https://resciencebroker.com",
+      "retrieved_on": "2026-11-07"
+    },
+    {
+      "recipientName": "Kathy Coots",
+      "recipientEmail": "kathy@cootsteam.com",
+      "brokerageDomain": "cootsteam.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your cootsteam.com buyer resources",
+      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
+      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
+      "source_url": "https://cootsteam.com",
+      "retrieved_on": "2026-11-07"
+    },
+    {
+      "recipientName": "Kenneth Roy",
+      "recipientEmail": "kenny@kennyroyteam.com",
+      "brokerageDomain": "kennyroyteam.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your kennyroyteam.com buyer resources",
+      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
+      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
+      "source_url": "https://kennyroyteam.com",
+      "retrieved_on": "2026-11-07"
+    },
+    {
+      "recipientName": "Jude Rasmus",
+      "recipientEmail": "rasmus@rasmusrealestate.com",
+      "brokerageDomain": "rasmusrealestate.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your rasmusrealestate.com buyer resources",
+      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
+      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
+      "source_url": "https://rasmusrealestate.com",
+      "retrieved_on": "2026-11-07"
+    },
+    {
+      "recipientName": "Will Melton",
+      "recipientEmail": "will@meltonpropertiesgroup.com",
+      "brokerageDomain": "meltonpropertiesgroup.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your meltonpropertiesgroup.com buyer resources",
+      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
+      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
+      "source_url": "https://meltonpropertiesgroup.com",
+      "retrieved_on": "2026-11-07"
+    },
+    {
+      "recipientName": "Robert Salmons",
+      "recipientEmail": "listings@enterarealty.com",
+      "brokerageDomain": "enterarealty.com",
+      "subject": "Free Georgia Due Diligence & Inspection Cost Calculator for your enterarealty.com buyer resources",
+      "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
+      "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
+      "source_url": "https://enterarealty.com",
+      "retrieved_on": "2026-11-07"
     }
   ]
 }
