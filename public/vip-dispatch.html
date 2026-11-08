@@ -502,7 +502,7 @@
       <div class="stats-row">
         <span class="stat-label">Due Diligence Agent Outreach:</span>
         <span class="stat-numbers">
-          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">2</span> Contacted
+          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">0</span> Contacted
         </span>
       </div>
       <div class="progress-track">
@@ -521,7 +521,7 @@
           <option value="name_asc">👤 Agent Name (A to Z)</option>
         </select>
         <select class="select-ctrl" id="citySelect" onchange="setCity(this.value)">
-          <option value="ALL">📍 All Cities (2)</option>
+          <option value="ALL">📍 All Cities (0)</option>
         </select>
       </div>
     </div>
@@ -547,7 +547,7 @@
   <div id="cardsContainer"></div>
 
   <script>
-    const underContractFilers = [{"id":"card_9ba2d3e3cc","role":"LIST_AGENT","name":"Joseph Womack","first":"Joseph","phone":"(770) 655-2344","clean_phone":"7706552344","brokerage":"Joey's Homes","city":"Cartersville","address":"16 Jones Mill Place","price":"$325,000","raw_price":325000,"date":"2026-11-07"},{"id":"card_5ce5ee4139","role":"LIST_AGENT","name":"Kristin Walker","first":"Kristin","phone":"(678) 350-3578","clean_phone":"6783503578","brokerage":"Ga Classic Realty","city":"Temple","address":"136 White Rose Lane","price":"$160,000","raw_price":160000,"date":"2026-11-07"}];
+    const underContractFilers = [];
 
     // State Persistence across localStorage
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
