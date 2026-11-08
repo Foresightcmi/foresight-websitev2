@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-07T16:58:38.141Z",
-  "retrieved_on": "2026-11-07",
+  "generatedAt": "2026-11-08T17:13:06.824Z",
+  "retrieved_on": "2026-11-08",
   "cadence": "twice_daily_0730_1230_ET",
   "counts": {
     "youtubeRealtors": 10,
@@ -15,42 +15,42 @@
   "youtubeRealtors": [
     {
       "medium": "youtube_relocation_realtor",
+      "channel_author": "Real Estate Made Simple - Metro Atlanta",
+      "video_title": "Stockbridge, GA New Construction Home Tour",
+      "source_url": "https://www.youtube.com/watch?v=X2bGNZ1eW5A",
+      "retrieved_on": "2026-11-08",
+      "view_count": 2318,
+      "transcript_excerpt": "For your real estate needs, please call 404-403-8022 Looking for new construction homes in Stockbridge, GA? Moving to Atlanta ...",
+      "verified_contact": null
+    },
+    {
+      "medium": "youtube_relocation_realtor",
+      "channel_author": "New Homes In Georgia by Shonnie Alridge",
+      "video_title": "Living In Hoschton, GA | Modern New Construction | 2 Primary Suites | Home Tour | Atlanta New Homes",
+      "source_url": "https://www.youtube.com/watch?v=1ecfj1hXARE",
+      "retrieved_on": "2026-11-08",
+      "view_count": 86001,
+      "transcript_excerpt": "BASE: $1799900 as of the publishing of this video. Home price is subject to change. Exclusively Listed by: Debora Refec, Wynd ...",
+      "verified_contact": null
+    },
+    {
+      "medium": "youtube_relocation_realtor",
       "channel_author": "Raveen Stinson | Metro Atlanta Realtor",
       "video_title": "MUST SEE New Construction Home in Atlanta, GA! 2 Private Suites",
       "source_url": "https://www.youtube.com/watch?v=VXdYCP3ezps",
-      "retrieved_on": "2026-11-07",
-      "view_count": 2383,
+      "retrieved_on": "2026-11-08",
+      "view_count": 2707,
       "transcript_excerpt": "STUNNING NEW CONSTRUCTION HOME NEAR ATLANTA, GEORGIA! Looking for a spacious new construction home in Metro ...",
       "verified_contact": null
     },
     {
       "medium": "youtube_relocation_realtor",
-      "channel_author": "Raveen Stinson | Metro Atlanta Realtor",
-      "video_title": "Luxury Homes Starting at $399K Near Atlanta?! 🏡 | More Space for Less!",
-      "source_url": "https://www.youtube.com/watch?v=zfaHY-v7dDk",
-      "retrieved_on": "2026-11-07",
-      "view_count": 246,
-      "transcript_excerpt": "LIKE this video if you enjoy beautiful home tours. SUBSCRIBE for more Atlanta-area luxury homes, new construction, and ...",
-      "verified_contact": null
-    },
-    {
-      "medium": "youtube_relocation_realtor",
-      "channel_author": "Raveen Stinson | Metro Atlanta Realtor",
-      "video_title": "This $1M Atlanta Townhome Has an ELEVATOR & ROOFTOP TERRACE! 🏡",
-      "source_url": "https://www.youtube.com/watch?v=Yea6zN_AnBg",
-      "retrieved_on": "2026-11-07",
-      "view_count": 3803,
-      "transcript_excerpt": "INSIDE A $1 MILLION LUXURY TOWNHOME NEAR ATLANTA! | ALPHARETTA, GA Looking for luxury townhomes in Alpharetta, ...",
-      "verified_contact": null
-    },
-    {
-      "medium": "youtube_relocation_realtor",
-      "channel_author": "Atlanta Real Estate Channel",
-      "video_title": "Inside Atlanta Georgia’s Best Ranch Style Homes | New Construction Tour!",
-      "source_url": "https://www.youtube.com/watch?v=YMNMDjWOmaE",
-      "retrieved_on": "2026-11-07",
-      "view_count": 5834,
-      "transcript_excerpt": "Step inside Atlanta Georgia's best ranch style homes in this brand new construction community offering true single level living.",
+      "channel_author": "New Homes In Georgia by Shonnie Alridge",
+      "video_title": "Living In McDonough, GA | .075 Acres | Upstairs Loft | Home Tour | Aspen Plan | Atlanta New Homes",
+      "source_url": "https://www.youtube.com/watch?v=gtlVWOvsZ7U",
+      "retrieved_on": "2026-11-08",
+      "view_count": 3183,
+      "transcript_excerpt": "BASE: $474850 as of the publishing of this video. Home price is subject to change. Exclusively Listed by Tonya Slayton, Valor ...",
       "verified_contact": null
     },
     {
@@ -58,8 +58,8 @@
       "channel_author": "Erin Coker - Atlanta Real Estate ",
       "video_title": "NEVER Buy a New Construction Home in Georgia",
       "source_url": "https://www.youtube.com/watch?v=Olh9tcYXBlA",
-      "retrieved_on": "2026-11-07",
-      "view_count": 25387,
+      "retrieved_on": "2026-11-08",
+      "view_count": 25404,
       "transcript_excerpt": "Making a Move? Let's Connect! Call or Text Erin Directly: 404-956-0956 Book a Call: https://calendly.com/erincoker Not in ...",
       "verified_contact": {
         "name": "Erin Coker",
@@ -76,8 +76,8 @@
       "channel_author": "Erin Coker - Atlanta Real Estate ",
       "video_title": "Never Buy A New Construction Home in Atlanta (Buy This Instead)",
       "source_url": "https://www.youtube.com/watch?v=pZeEYPh5PvY",
-      "retrieved_on": "2026-11-07",
-      "view_count": 610,
+      "retrieved_on": "2026-11-08",
+      "view_count": 611,
       "transcript_excerpt": "Call or Text Erin Directly: 404-956-0956 Erin.Coker@Compass.com Book a Call: https://calendly.com/erincoker Not in ...",
       "verified_contact": {
         "name": "Erin Coker",
@@ -92,11 +92,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Tim Trevathan - Atlanta Georgia Living",
-      "video_title": "How to Buy a New Construction Home in Georgia: Step-By-Step Guide (PART 2)",
-      "source_url": "https://www.youtube.com/watch?v=MCOwTJu8OMs",
-      "retrieved_on": "2026-11-07",
-      "view_count": 508,
-      "transcript_excerpt": "Looking for PART 1? ✓ ✓ Click here: https://youtu.be/ByD5ESa4hXA?feature=shared How to Buy a New Construction Home in ...",
+      "video_title": "EVERYTHING You Need to Know About New Construction Homes in Atlanta!",
+      "source_url": "https://www.youtube.com/watch?v=2-Df2N1Jjuc",
+      "retrieved_on": "2026-11-08",
+      "view_count": 605,
+      "transcript_excerpt": "EVERYTHING You Need to Know About New Construction Homes in Atlanta! Best videos on new construction for you: ✓ How to ...",
       "verified_contact": {
         "name": "Tim Trevathan",
         "first": "Tim",
@@ -110,11 +110,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Tim Trevathan - Atlanta Georgia Living",
-      "video_title": "MOST AFFORDABLE Single Family New Construction Homes in ALL of Atlanta!",
-      "source_url": "https://www.youtube.com/watch?v=LXB4Hnkm8k8",
-      "retrieved_on": "2026-11-07",
-      "view_count": 976,
-      "transcript_excerpt": "MOST AFFORDABLE Single Family New Construction Homes in ALL of Atlanta! ✓ How to Buy a New Construction Home in ...",
+      "video_title": "How to Buy a New Construction Home in Georgia: Step-By-Step Guide (PART 2)",
+      "source_url": "https://www.youtube.com/watch?v=MCOwTJu8OMs",
+      "retrieved_on": "2026-11-08",
+      "view_count": 508,
+      "transcript_excerpt": "Looking for PART 1? ✓ ✓ Click here: https://youtu.be/ByD5ESa4hXA?feature=shared How to Buy a New Construction Home in ...",
       "verified_contact": {
         "name": "Tim Trevathan",
         "first": "Tim",
@@ -130,7 +130,7 @@
       "channel_author": "Living in Atlanta GA - Angelo Mirville",
       "video_title": "NEW Construction Home Tour in Atlanta GA | Addison Floor Plan at Eastside Parc",
       "source_url": "https://www.youtube.com/watch?v=EAvaYzpw6G8",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "view_count": 113,
       "transcript_excerpt": "Cell: 678-673-3303 ✉️ Email: info@angelomirville.com 🗓️ Free Real Estate Consultation: ...",
       "verified_contact": {
@@ -146,11 +146,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Living in Atlanta GA - Angelo Mirville",
-      "video_title": "New Construction Custom Build Modern Home in Atlanta, GA (Oakland City)",
-      "source_url": "https://www.youtube.com/watch?v=6avDvgUfPXM",
-      "retrieved_on": "2026-11-07",
-      "view_count": 797,
-      "transcript_excerpt": "New Construction Custom Build Modern Home in Atlanta, GA (Oakland City) \"Immerse in modern elegance with this newly crafted ...",
+      "video_title": "Custom New Construction Build | Atlanta Upper Westside | Modern Luxury w/ Pool | Now For Sale",
+      "source_url": "https://www.youtube.com/watch?v=qiEGvE0Lsbk",
+      "retrieved_on": "2026-11-08",
+      "view_count": 142,
+      "transcript_excerpt": "Custom New Construction Build in the Atlanta Upper Westside are Modern Luxury w/ Pool Now For Sale. Designed by 7-Ten ...",
       "verified_contact": {
         "name": "Angelo Mirville",
         "first": "Angelo",
@@ -167,25 +167,25 @@
       "medium": "instagram_new_build_tour",
       "title": "Sharon West Realtor | 🚨 Atlanta Luxury Home Tour! 🏡✨ Step inside this stunning brand new construction home located in one of Atlanta’s most sought-after Buckhead... | Instagram",
       "source_url": "https://www.instagram.com/reel/DJxT86MvKlk/",
-      "retrieved_on": "2026-11-07"
+      "retrieved_on": "2026-11-08"
     },
     {
       "medium": "instagram_new_build_tour",
       "title": "Tawantis Renee’ Monroe | Home Tour of New construction townhomes in Mableton, Ga. 5,000 Builder incentives.",
       "source_url": "https://www.instagram.com/monroerealty/reel/DG0pnErxj77/?api=to%2Bjpg%2Bonline%E3%80%90PG.CYOU%E3%80%91.ojvd&hl=zh-cn",
-      "retrieved_on": "2026-11-07"
+      "retrieved_on": "2026-11-08"
     },
     {
       "medium": "instagram_new_build_tour",
       "title": "Allison | Atlanta REALTOR® | ✨ Walk Through Wednesday ✨",
       "source_url": "https://www.instagram.com/closingwithallison/reel/DH9k9fdgwlx/",
-      "retrieved_on": "2026-11-07"
+      "retrieved_on": "2026-11-08"
     },
     {
       "medium": "instagram_new_build_tour",
       "title": "levi austin, MBA ATLANTA REALTOR ®️ | Covington, GA has some new construction single family homes starting in the mid to high 300’s!",
       "source_url": "https://www.instagram.com/levixaustin/reel/DGozKWWg_0U/",
-      "retrieved_on": "2026-11-07"
+      "retrieved_on": "2026-11-08"
     }
   ],
   "buyerIntentThreads": [
@@ -193,9 +193,9 @@
       "platform": "reddit",
       "title": "Looking for recommendations for a home inspector who's independent and not some PE stooge : r/Marietta",
       "source_url": "https://www.reddit.com/r/Marietta/comments/1w6b5f7/looking_for_recommendations_for_a_home_inspector/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2026-09-03T15:47:43.000Z",
-      "age_hours": 1561,
+      "age_hours": 1585,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Looking for recommendations for a home inspector who's independent and not some PE stooge Posted by u/-E-Cross in r/Marietta · 9 points · 7 comments · September 3, 2026 at 3:47 PM UTC Thanks ## Top comments (5 shown of 7 reported) u/rootlo0p · 4 points · September 3, 2026 at 6:00 PM UTC > Never take a realtor-recommended inspect",
@@ -205,9 +205,9 @@
       "platform": "reddit",
       "title": "Home inspector : r/DecaturGA",
       "source_url": "https://www.reddit.com/r/DecaturGA/comments/1s61p45/home_inspector/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2026-03-28T14:23:06.000Z",
-      "age_hours": 5379,
+      "age_hours": 5403,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Home inspector Posted by u/Beachbaby77 in r/DecaturGA · 5 points · 8 comments · March 28, 2026 at 2:23 PM UTC I am interested in making an offer on a Decatur condo and was wondering if anyone knows of any good home inspectors? Please and thank you.😊 ## Top comments (6 shown of 8 reported) u/Ok_Stick_3070 · 3 points · March 28,",
@@ -217,9 +217,9 @@
       "platform": "reddit",
       "title": "Home inspector : r/DecaturGA",
       "source_url": "https://www.reddit.com/r/DecaturGA/comments/1rp2c26/home_inspector/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2026-03-09T14:53:24.000Z",
-      "age_hours": 5834,
+      "age_hours": 5858,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Home inspector Posted by u/blinkersix2 in r/DecaturGA · 5 points · 7 comments · March 9, 2026 at 2:53 PM UTC Looking for a good home inspector in the area. Any recommendations would be appreciated. ## Top comments (7 shown) u/kizzles1 · 3 points · March 9, 2026 at 4:48 PM UTC > Good experience with Lunspro u/Onilwyn · 2 poin",
@@ -229,9 +229,9 @@
       "platform": "reddit",
       "title": "Buyers home inspectors : r/Gwinnett",
       "source_url": "https://www.reddit.com/r/Gwinnett/comments/1rutyo5/buyers_home_inspectors/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2026-03-15T23:54:27.000Z",
-      "age_hours": 5681,
+      "age_hours": 5705,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Buyers home inspectors Posted by u/whoduhhelru in r/Gwinnett · 2 points · 17 comments · March 15, 2026 at 11:54 PM UTC I put in an offer that looks like itll get accepted. I'm a first time buyer. Any recommendations for home inspectors in the Gwinnett area? ## Top comments (9 ... u/Quick-Pace-4050 · 12 points · March 16, 2026 at",
@@ -241,9 +241,9 @@
       "platform": "reddit",
       "title": "Home Inspector Recommendations-that will permit you to follow along : r/Atlanta",
       "source_url": "https://www.reddit.com/r/Atlanta/comments/1m0jjcr/home_inspector_recommendationsthat_will_permit/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2025-07-15T14:40:07.000Z",
-      "age_hours": 11522,
+      "age_hours": 11547,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Home Inspector Recommendations-that will permit you to follow along Posted by u/FlashyHeight9323 in r/Atlanta · 7 points · 17 comments · July 15, 2025 at 2:40 PM UTC I heard this is very key so if anyone had any good experiences with someone thorough and comfortable/professional enough to let you be there for the inspection would be",
@@ -253,7 +253,7 @@
       "platform": "biggerpockets",
       "title": "Home inspection Companies in Atlanta",
       "source_url": "https://www.biggerpockets.com/forums/647/topics/848554-home-inspection-companies-in-atlanta",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": null,
       "age_hours": null,
       "is_fresh_72h": false,
@@ -265,7 +265,7 @@
       "platform": "biggerpockets",
       "title": "Seeking a reliable Home Inspector in ATL",
       "source_url": "https://www.biggerpockets.com/forums/52/topics/887739-seeking-a-reliable-home-inspector-in-atl",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": null,
       "age_hours": null,
       "is_fresh_72h": false,
@@ -277,7 +277,7 @@
       "platform": "biggerpockets",
       "title": "Home inspector in Kennesaw GA?",
       "source_url": "https://www.biggerpockets.com/forums/647/topics/642205-home-inspector-in-kennesaw-ga",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": null,
       "age_hours": null,
       "is_fresh_72h": false,
@@ -289,21 +289,21 @@
       "platform": "biggerpockets",
       "title": "Home inspection in Atlanta Georgia",
       "source_url": "https://www.biggerpockets.com/forums/311/topics/820183-home-inspection-in-atlanta-georgia",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": null,
       "age_hours": null,
       "is_fresh_72h": false,
       "mentions_foresight": false,
-      "excerpt": "# Home inspection in Atlanta Georgia Jessica Luan Member since 2020 · 4 posts · 1 vote Can anyone recommend a good home inspection company servicing atlanta Georgia metro area. ... Mitch Messer ... 6y Hi @Jessica Luan! I just referred you to a great Metro Atlanta home inspector via DM. ... - Mitch Messer Lender · Playa del Carmen, México",
+      "excerpt": "# Home inspection in Atlanta Georgia Jessica Luan Member since 2020 · 4 posts · 1 vote Can anyone recommend a good home inspection company servicing atlanta Georgia metro area. ... Mitch Messer Lender · Playa del Carmen, México · Member since 2014 · 2k+ posts · 1k+ votes 6y Hi @Jessica Luan! I just referred you to a great Metro Atlanta ho",
       "cmiDraftReply": "Certified Master Inspector (CMI #MICB-1082) here in Metro Atlanta — happy to share a quick checklist whether you hire us or another independent firm: 1. In Georgia red clay neighborhoods, standing crawlspace moisture and negative yard grading routinely trigger $3,500 to $8,500+ waterproofing negotiations during due diligence. Always insist on full crawlspace entry and calibrated infrared thermal moisture scanning. 2. Walk the property onsite during the final summary so your inspector shows you what is a true $2,500–$10,000+ structural/mechanical negotiation item versus routine $20 homeowner upkeep. At Foresight Home Inspections (owner-operated, never private-equity), we send Two Certified Inspectors to every home (Homes From $345 / Condos From $295) for dedicated structural + mechanical depth with zero solo fatigue, same-day interactive digital reports, and $35,000 in combined protection (fhinspectionsatl.com | 678-480-2110)."
     },
     {
       "platform": "nextdoor",
       "title": "Seeking Reliable Home Inspector Recommendations in Marietta, GA",
       "source_url": "https://nextdoor.com/p/G6CnRPt3yjTM/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2026-04-17T21:08:37.000Z",
-      "age_hours": 4892,
+      "age_hours": 4916,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "Seeking Reliable Home Inspector Recommendations in Marietta, GA # Marietta, Georgia M. I. Snellville, GA 17 Apr Hello neighbors, I am looking for recommendations for a house inspector. Any suggestions for a reliable home inspector or anyone who is a home inspector? Feel free to DM me. Thanks! 6 P. G. Marietta, GA· 17 Apr· Verified in 2020",
@@ -313,9 +313,9 @@
       "platform": "nextdoor",
       "title": "Certified Home Inspector Needed for Property Inspection in Atlanta, GA",
       "source_url": "https://nextdoor.com/p/TDFM4T4qr74g/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2025-11-13T15:06:25.000Z",
-      "age_hours": 8618,
+      "age_hours": 8642,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "Certified Home Inspector Needed for Property Inspection in Atlanta, GA # Atlanta, Georgia S. G. Atlanta 13 Nov Need certified home inspector to see some properties for the market serious only thanks. Pm me Thanks!! 1 2 S. R. Alpharetta, GA· 13 Nov· Verified in 2016 Are you looking for a home inspector? 1 S. G. Atlanta, GA· 13 Nov· Verifie",
@@ -325,9 +325,9 @@
       "platform": "nextdoor",
       "title": "Looking for certified electrician for home inspection - Buford, GA",
       "source_url": "https://nextdoor.com/p/S4ybWR3yCdwD/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2025-09-26T22:13:08.000Z",
-      "age_hours": 9763,
+      "age_hours": 9787,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "Looking for certified electrician for home inspection - Buford, GA # Buford, Georgia G. A. Buford, GA 26 Sep 25 Am looking for a certified Electrician to do an inspection on the electrical in my home/office. He needs to be able to do a verifiable report and also help to fix a few exits sign. I don’t have very much to pay. Pls if anyone ha",
@@ -337,9 +337,9 @@
       "platform": "nextdoor",
       "title": "Seeking a good structural engineer for home checks - Duluth, GA",
       "source_url": "https://nextdoor.com/p/Tn2yt3YSGYRs?view=detail",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "published_at": "2026-04-01T19:52:43.000Z",
-      "age_hours": 5277,
+      "age_hours": 5301,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "Seeking a good structural engineer for home checks - Duluth, GA ... Log in ... # Duluth, Georgia S. W. Duluth, GA · 1 Apr Does anyone know of a good structural engineer that checks on homes? Not looking for home inspectors but for structural engineers. K. K.Duluth, GA·1 Apr https://aca-prod.accela.com/GWINNETT/Report/ShowReport.aspx?modul",
@@ -349,30 +349,21 @@
   "investigativeNewsAndSubstacks": [
     {
       "kind": "investigative_tv_print",
-      "title": "‘$2.2 million teardown’: New home’s safety, structural issues would cost $1M+ to fix – WSB-TV Channel 2 - Atlanta",
-      "author": "Justin Gray",
-      "published_at": "2026-02-03T18:12:52.000Z",
-      "source_url": "https://www.wsbtv.com/news/local/cobb-county/22-million-teardown-new-homes-safety-structural-issues-would-cost-1m-fix/H2GKHLZM2FEY3LMHT4TDZWWV2I/",
-      "retrieved_on": "2026-11-07",
-      "excerpt": "COBB COUNTY, Ga. — The repair punch list for a newly built home has hundreds of items. It is so extensive that licensed builder Lisa Wagener has a blunt assessment. “It’s actually really sad for the homeowners, but I call it a $2.2 million teardown,” Wagener told Channel 2 Consumer Investigator Justin Gray. The East Co"
-    },
-    {
-      "kind": "investigative_tv_print",
       "title": "South Fulton residents face numerous issues from ‘one-stop shop’ homes – WSB-TV Channel 2 - Atlanta",
       "author": "Ashli Lincoln",
       "published_at": "2025-02-26T23:33:20.000Z",
       "source_url": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-residents-face-numerous-issues-one-stop-shop-homes/SAGIST57QJC4BLG6OFDIM5MOGI/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "SOUTH FULTON, Ga. — Darlean Williams says she owns a shell of a house, after being forced to move out of her brand new home because of ongoing defects. “Since I’ve moved in, it’s been issues from day one, I have not been able to get comfortable in my dream home,” Williams said. Months after purchasing her home, she say"
     },
     {
       "kind": "investigative_tv_print",
-      "title": "South Fulton homeowners say they’re stuck with defective homes after failed property inspections  – WSB-TV Channel 2 - Atlanta",
-      "author": "Ashli Lincoln",
-      "published_at": "2025-09-15T23:12:26.000Z",
-      "source_url": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-homeowners-say-theyre-stuck-with-defective-homes-after-failed-property-inspections/QXPIIWMWTNBC3DSI2ALJNJR6H4/",
-      "retrieved_on": "2026-11-07",
-      "excerpt": "SOUTH FULTON, Ga. — Homeowners in South Fulton are facing costly repairs after discovering their homes failed inspection before purchase. Channel 2 investigative reporter Ashli Lincoln reports that these homes have major defects, leaving residents scared to live in them. The homes, located on Rock Rose Lane, require ex"
+      "title": "‘$2.2 million teardown’: New home’s safety, structural issues would cost $1M+ to fix – WSB-TV Channel 2 - Atlanta",
+      "author": "Justin Gray",
+      "published_at": "2026-02-03T18:12:52.000Z",
+      "source_url": "https://www.wsbtv.com/news/local/cobb-county/22-million-teardown-new-homes-safety-structural-issues-would-cost-1m-fix/H2GKHLZM2FEY3LMHT4TDZWWV2I/",
+      "retrieved_on": "2026-11-08",
+      "excerpt": "COBB COUNTY, Ga. — The repair punch list for a newly built home has hundreds of items. It is so extensive that licensed builder Lisa Wagener has a blunt assessment. “It’s actually really sad for the homeowners, but I call it a $2.2 million teardown,” Wagener told Channel 2 Consumer Investigator Justin Gray. The East Co"
     },
     {
       "kind": "investigative_tv_print",
@@ -380,8 +371,17 @@
       "author": "Ashli Lincoln",
       "published_at": "2025-01-14T23:22:08.000Z",
       "source_url": "https://www.wsbtv.com/news/local/fayette-county/bamboozled-owner-says-developer-sold-her-defective-metro-atlanta-home/GHYJS7PEPFEYNBMP5FG7CFG5UE/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "FAYETTEVILLE, Ga. — A Fayetteville homeowner says she’s been forced to live in a hotel for nearly two years after she says she was sold a defective home. Emoral Farmer says it’s been two years since she’s been able to live in what was once her dream home. “Bamboozled, like I’ve been played on what we call the American"
+    },
+    {
+      "kind": "investigative_tv_print",
+      "title": "South Fulton homeowners say they’re stuck with defective homes after failed property inspections  – WSB-TV Channel 2 - Atlanta",
+      "author": "Ashli Lincoln",
+      "published_at": "2025-09-15T23:12:26.000Z",
+      "source_url": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-homeowners-say-theyre-stuck-with-defective-homes-after-failed-property-inspections/QXPIIWMWTNBC3DSI2ALJNJR6H4/",
+      "retrieved_on": "2026-11-08",
+      "excerpt": "SOUTH FULTON, Ga. — Homeowners in South Fulton are facing costly repairs after discovering their homes failed inspection before purchase. Channel 2 investigative reporter Ashli Lincoln reports that these homes have major defects, leaving residents scared to live in them. The homes, located on Rock Rose Lane, require ex"
     },
     {
       "kind": "investigative_tv_print",
@@ -389,7 +389,7 @@
       "author": "Andy Pierrotti",
       "published_at": "2026-04-02T22:11:16.000Z",
       "source_url": "https://www.atlantanewsfirst.com/2026/04/02/more-than-dozen-georgia-homeowners-claim-dr-horton-sold-them-homes-with-defective-pipes/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "More than a dozen Georgia homeowners are accusing D.R. Horton, one of the nation’s largest home builders, of selling them houses with defective plumbing. ... DALLAS, Ga. (Atlanta News First) - More than a dozen Georgia homeowners are accusing D.R. Horton, one of the nation’s largest home builders, of selling them house"
     },
     {
@@ -398,7 +398,7 @@
       "author": "Conor Sen",
       "published_at": "2026-09-18T10:13:35.000Z",
       "source_url": "https://conorsen.substack.com/p/the-housing-correction-visualized",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "### A zip code-level analysis shows how bifurcated metro Atlanta’s housing market has been over the past few years Conor Sen Sep 18, 2026 ∙ Paid Most geographic analysis of the housing market since its 2022 peak focuses on the bust in some of the pandemic migration destinations like Texas and Florida or the continued r"
     },
     {
@@ -407,7 +407,7 @@
       "author": "Deep Gap Journal",
       "published_at": null,
       "source_url": "https://atlantarealestate.substack.com/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "ATL Real Estate Report | Substack # ATL Real Estate Report Podcast + newsletter that explores Atlanta's dynamic real estate market · Launched 4 years ago ---"
     },
     {
@@ -416,7 +416,7 @@
       "author": "Aziz Sunderji",
       "published_at": "2026-02-03T14:00:40.000Z",
       "source_url": "https://homeeconomics.substack.com/p/atlanta-city-limits",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "### What’s preventing the metro from growing? Aziz Sunderji Feb 03, 2026 ∙ Paid Atlanta’s housing stock grew by 4.8% in the 1970s, but by the 2010s, that rate had fallen to 1.1%. It was just 0.6% in 2020-23. We see the same slowdown across Sunbelt cities, including Phoenix, Dallas, and Miami. Why? The map below holds p"
     },
     {
@@ -425,7 +425,7 @@
       "author": "Kyle Matthews",
       "published_at": "2025-08-25T13:51:38.000Z",
       "source_url": "https://matthewsreisresearch.substack.com/p/atlanta-multifamily-report-3q-2025",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "Atlanta's multifamily market is at a pivotal moment, shaped by strong in-migration and a historic development boom. The arrival of major corporate headquarters and innovation hubs for companies like Newell Brands, Mercedes-Benz, and Cargill signals sustained high-quality job growth that will continue to fuel housing de"
     }
   ],
@@ -435,7 +435,7 @@
       "title": "Toll Brothers Announces New Luxury Home Community Now Open",
       "published_at": "2025-03-06T17:06:57.000Z",
       "source_url": "https://www.globenewswire.com/news-release/2025/03/06/3038467/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Now-Open-in-Atlanta-Georgia.html",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "Toll Brothers Announces New Luxury Home Community Now Open ## Nolyn Pointe by Toll Brothers offers single-family homes in the Chosewood Park neighborhood of Atlanta with direct access to the BeltLine Southside Trail March 06, 2025 12:06 ET | Source: Toll Brothers, Inc. ATLANTA, M"
     },
     {
@@ -443,39 +443,39 @@
       "title": "Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum",
       "published_at": "2025-06-03T19:00:19.000Z",
       "source_url": "https://www.atlantarealestateforum.com/grand-opening-of-decaturs-celesta-set-for-june-21/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum # Grand Opening Of Decatur’s Celesta Set For June 21 June 3, 2025| David Weekley Homes https://www.atlantarealestateforum.com/wp-content/uploads/ai-text-to-speech/post-183408-Sg-grand-opening-of-decatu"
-    },
-    {
-      "medium": "11_month_warranty_subdivision_cohort",
-      "title": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc.",
-      "published_at": "2025-08-28T08:00:00.000Z",
-      "source_url": "https://investors.centurycommunities.com/news/news-details/2025/Century-Communities-to-Host-Grand-Opening-This-Weekend-in-Flowery-Branch-GA/default.aspx",
-      "retrieved_on": "2026-11-07",
-      "excerpt": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc. # News Details ### Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA August 28, 2025 Anticipated new townhome community offers amenities and low-mai"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
       "title": "David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine",
       "published_at": "2025-06-12T20:31:48.000Z",
       "source_url": "https://atlantaagentmagazine.com/2025/06/12/old-mill-preserve-grand-opening/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine ## David Weekley Homes announces grand opening of Old Mill Preserve by Elizabeth Kanzeg Rowland June 12, 2025 Image courtesy of David Weekley Homes Old Mill Preserve, a new age-restricted co"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
-      "title": "Grand Opening & Ribbon Cutting Event: Mulberry Summit - EMC Homes",
-      "published_at": "2025-05-12T14:17:17.000Z",
-      "source_url": "https://www.emchomes.com/grand-opening-ribbon-cutting-event-mulberry-summit/",
-      "retrieved_on": "2026-11-07",
-      "excerpt": "# Grand Opening & Ribbon Cutting Event: Mulberry Summit May 12, 2025 EMC Homes is excited to announce the Grand Opening of Mulberry Summit in Flowery Branch, where new homes start from the $400’s. Join us Tuesday, May 13 th for the Ribbon Cutting ceremony at 10am, and stay for ca"
+      "title": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc.",
+      "published_at": "2025-08-28T08:00:00.000Z",
+      "source_url": "https://investors.centurycommunities.com/news/news-details/2025/Century-Communities-to-Host-Grand-Opening-This-Weekend-in-Flowery-Branch-GA/default.aspx",
+      "retrieved_on": "2026-11-08",
+      "excerpt": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc. # News Details ### Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA August 28, 2025 Anticipated new townhome community offers amenities and low-mai"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Toll Brothers Announces New Luxury Community, Emberly, Now Open for Sale in Alpharetta, Georgia",
+      "published_at": null,
+      "source_url": "https://www.taiwannews.com.tw/news/6212074",
+      "retrieved_on": "2026-11-08",
+      "excerpt": "/ GlobeNewswire # Toll Brothers Announces New Luxury Community, Emberly, Now Open for Sale in Alpharetta, Georgia GlobeNewswire Oct. 2, 2025 02:52 323 --- ALPHARETTA, Ga., Oct. 01, 2025 (GLOBE NEWSWIRE) -- Toll Brothers, Inc. (NYSE:TOL), the nation’s leading builder of luxury hom"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
       "title": "Tour Snellville Homes at Oak Grove Glen - Atlanta Real Estate Forum",
       "published_at": "2025-06-10T18:01:12.000Z",
       "source_url": "https://www.atlantarealestateforum.com/tour-snellville-homes-at-oak-grove-glen/",
-      "retrieved_on": "2026-11-07",
+      "retrieved_on": "2026-11-08",
       "excerpt": "# Tour Snellville Homes at Oak Grove Glen June 10, 2025| Century Communities Join Century Communities for the grand opening of Oak Grove Glen, a single-family home community in Snellville. This community features 70 homes, priced from the $400,000s, with nine move-in ready opport"
     }
   ],
@@ -484,11 +484,11 @@
       "id": "hook_new_build_defects_atl",
       "defect_category": "structural_framing_and_ductwork",
       "theme_title": "Metro Atlanta New Construction Defect Alert: What Municipal Code Checks Miss",
-      "hook_headline": "Local Housing Alert: \"‘$2.2 million teardown’: New home’s safety, structural issues would cost $1M+ to fix – W\" — Why Phase 1 Pre-Drywall (From $275) & Final New Construction (From $400) Inspections Pay for Themselves",
+      "hook_headline": "Local Housing Alert: \"South Fulton residents face numerous issues from ‘one-stop shop’ homes – WSB-TV Channel \" — Why Phase 1 Pre-Drywall (From $275) & Final New Construction (From $400) Inspections Pay for Themselves",
       "negotiation_leverage": "$2,400–$9,800+ in pre-closing builder punch-list repairs (disconnected attic exhausts, missing kick-out flashing, unsealed penetrations)",
       "pricing_anchor": "Pre-Drywall From $275 | Final New Construction From $400",
-      "source_url": "https://www.wsbtv.com/news/local/cobb-county/22-million-teardown-new-homes-safety-structural-issues-would-cost-1m-fix/H2GKHLZM2FEY3LMHT4TDZWWV2I/",
-      "retrieved_on": "2026-11-07"
+      "source_url": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-residents-face-numerous-issues-one-stop-shop-homes/SAGIST57QJC4BLG6OFDIM5MOGI/",
+      "retrieved_on": "2026-11-08"
     },
     {
       "id": "hook_red_clay_crawlspace_moisture",
@@ -498,7 +498,7 @@
       "negotiation_leverage": "$3,500–$14,200+ in Georgia Repair Amendment seller credits for standing crawlspace water, negative grading, and subfloor fungal moisture",
       "pricing_anchor": "Two Certified Inspectors | Residential Homes From $345 | Condos From $295",
       "source_url": "https://www.reddit.com/r/Marietta/comments/1w6b5f7/looking_for_recommendations_for_a_home_inspector/",
-      "retrieved_on": "2026-11-07"
+      "retrieved_on": "2026-11-08"
     },
     {
       "id": "hook_11_month_builder_warranty_window",
@@ -508,7 +508,7 @@
       "negotiation_leverage": "$1,850–$7,600+ in builder-funded warranty repairs documented before the 1-year fit-and-finish warranty closes",
       "pricing_anchor": "11-Month Builder Warranty Inspection From $345 (2 Certified Inspectors + 4K Drone + Thermal)",
       "source_url": "https://www.globenewswire.com/news-release/2025/03/06/3038467/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Now-Open-in-Atlanta-Georgia.html",
-      "retrieved_on": "2026-11-07"
+      "retrieved_on": "2026-11-08"
     }
   ]
 }
