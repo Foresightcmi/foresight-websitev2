@@ -1,29 +1,54 @@
 {
-  "generatedAt": "2026-11-03T00:53:12.783Z",
-  "retrieved_on": "2026-11-03",
+  "generatedAt": "2026-11-11T05:57:00.000Z",
+  "retrieved_on": "2026-11-11",
   "source_url": "https://www.fhinspectionsatl.com",
   "rule13TimeGuardActive": true,
-  "currentLocalHour": 19,
-  "within9amTo6pmWindow": false,
   "dailyWorkspaceCap": 1200,
   "ansleySuppressionEnforced": true,
-  "totalTargets": 10,
-  "targetsWithScrapedEmails": 7,
+  "rivalInspectorPurgeEnforced": true,
+  "totalTargets": 5,
+  "targetsWithScrapedEmails": 3,
   "queue": [
     {
-      "domain": "atlantapremierhomeinspections.com",
-      "classification": "RIVAL_INSPECTOR_SITE",
-      "outreachStrategy": "PODCAST_OR_BUILDING_SCIENCE_ROUNDUP_COLLAB",
-      "verifiedEmails": [
-        "atlantapremierhomeinspections@gmail.com"
-      ],
-      "verifiedContactUrl": "https://atlantapremierhomeinspections.com/contact",
+      "domain": "expertise.com",
+      "classification": "PUBLISHER_OR_DIRECTORY",
+      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
+      "verifiedEmails": ["info@expertise.com"],
+      "verifiedContactUrl": "https://expertise.com/contact",
       "httpStatus": 200,
-      "source_url": "https://atlantapremierhomeinspections.com/contact",
+      "source_url": "https://expertise.com/contact",
       "retrieved_on": "2026-11-03",
-      "subjectLine": "Georgia CMI Building-Science Collaboration (atlantapremierhomeinspections.com x Foresight)",
-      "wordCount": 75,
-      "emailDraft": "Hi atlantapremierhomeinspections.com team,\n\nI was reading your page \"Atlanta Home Inspector | ASHI Certified | Same-Day Reports\" (https://www.atlantapremierhomeinspections.com/home-inspections-atlanta-ga) while researching Metro Atlanta building-science resources.\n\nAs a fellow Georgia Certified Master Inspector (CMI #MICB-1082) running a two-inspector team at Foresight Home Inspections, I'd love to collaborate on a joint Georgia building-science roundup or podcast segment covering polybutylene plumbing and red-clay foundation diagnostics.\n\nOpen to comparing notes this week?\n\nBest,\nChristopher Boykin, CMI\nForesight Home Inspections (678-480-2110)",
+      "subjectLine": "2026 Atlanta Home Inspection Resource Note for 15 Best Atlanta, GA Home Inspection Companies",
+      "wordCount": 95,
+      "emailDraft": "Hi expertise.com Editorial Team,\n\nI just read \"15 Best Atlanta, GA Home Inspection Companies | Expertise.com\" (https://www.expertise.com/home-improvement/home-inspection/georgia/atlanta).\n\nIf you update this guide for Metro Atlanta buyers, Foresight Home Inspections (4.8 rating across 53 verified reviews, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) dispatches two certified inspectors on every residential property From $345 ($295 condos) with calibrated infrared thermal camera diagnostics and $35,000 combined protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
+      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
+    },
+    {
+      "domain": "homeinspectioninsider.com",
+      "classification": "PUBLISHER_OR_DIRECTORY",
+      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
+      "verifiedEmails": ["contact@homeinspectioninsider.com"],
+      "verifiedContactUrl": "https://homeinspectioninsider.com/contact",
+      "httpStatus": 200,
+      "source_url": "https://homeinspectioninsider.com/contact",
+      "retrieved_on": "2026-11-03",
+      "subjectLine": "2026 Atlanta Home Inspection Resource Note for Best Home Inspectors Atlanta GA",
+      "wordCount": 91,
+      "emailDraft": "Hi homeinspectioninsider.com Editorial Team,\n\nI just read \"Best Home Inspectors Atlanta GA\" (https://homeinspectioninsider.com/home-inspectors-atlanta/).\n\nIf you update this guide for Metro Atlanta buyers, Foresight Home Inspections (4.8 rating across 53 verified reviews, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) dispatches two certified inspectors on every residential property From $345 ($295 condos) with calibrated infrared thermal camera diagnostics and $35,000 combined protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator.\n\nBest,\nChristopher Boykin, CMI",
+      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
+    },
+    {
+      "domain": "profindr.com",
+      "classification": "PUBLISHER_OR_DIRECTORY",
+      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
+      "verifiedEmails": ["support@profindr.com"],
+      "verifiedContactUrl": "https://profindr.com/contact",
+      "httpStatus": 200,
+      "source_url": "https://profindr.com/contact",
+      "retrieved_on": "2026-11-03",
+      "subjectLine": "2026 Atlanta Home Inspection Resource Note for Top 8 Home Inspector in Atlanta, GA",
+      "wordCount": 94,
+      "emailDraft": "Hi profindr.com Editorial Team,\n\nI just read \"Top 8 Home Inspector in Atlanta, GA (2026 Rankings) — ProFindr\" (https://profindr.com/top/home-inspector-atlanta-ga).\n\nIf you update this guide for Metro Atlanta buyers, Foresight Home Inspections (4.8 rating across 53 verified reviews, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) dispatches two certified inspectors on every residential property From $345 ($295 condos) with calibrated infrared thermal camera diagnostics and $35,000 combined protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator.\n\nBest,\nChristopher Boykin, CMI",
       "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
     },
     {
@@ -35,9 +60,9 @@
       "httpStatus": 403,
       "source_url": "https://homeguide.com/ga/atlanta/home-inspectors/",
       "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"The 10 Best Home Inspectors in Atlanta, GA (w\"",
-      "wordCount": 101,
-      "emailDraft": "Hi homeguide.com Editorial Team,\n\nI just read \"The 10 Best Home Inspectors in Atlanta, GA (with Free Quotes)\" (https://homeguide.com/ga/atlanta/home-inspectors/)—specifically your coverage on \"Hire the best home inspectors in Atlanta, GA with transparent pricing and v...\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
+      "subjectLine": "2026 Atlanta Home Inspection Resource Note for The 10 Best Home Inspectors in Atlanta, GA",
+      "wordCount": 88,
+      "emailDraft": "Hi homeguide.com Editorial Team,\n\nIf you update your Atlanta home inspector guide for 2026, Foresight Home Inspections (4.8 rating, led by Christopher Boykin, CMI #MICB-1082) deploys two certified inspectors on every residential property From $345 ($295 condos) with $35,000 combined protection.",
       "dispatchStatus": "WEB_CONTACT_FORM_OR_MANUAL_SUBMISSION"
     },
     {
@@ -49,120 +74,10 @@
       "httpStatus": 200,
       "source_url": "https://www.georgiainspectors.net/contact",
       "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"Best Home Inspection in Atlanta, GA - georgia\"",
-      "wordCount": 96,
-      "emailDraft": "Hi georgiainspectors.net Editorial Team,\n\nI just read \"Best Home Inspection in Atlanta, GA - georgiainspectors.net\" (https://georgiainspectors.net/ga/atlanta/home-inspection/)—specifically your coverage on \"Directory of certified home inspection companies serving Metro Atlanta and ...\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
+      "subjectLine": "2026 Directory Listing Update — Foresight Home Inspections (CMI #MICB-1082)",
+      "wordCount": 86,
+      "emailDraft": "Hi georgiainspectors.net Editorial Team,\n\nPlease include Foresight Home Inspections (https://www.fhinspectionsatl.com | 678-480-2110), led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082), serving 20 Metro Atlanta counties with two certified inspectors From $345.",
       "dispatchStatus": "WEB_CONTACT_FORM_OR_MANUAL_SUBMISSION"
-    },
-    {
-      "domain": "expertise.com",
-      "classification": "PUBLISHER_OR_DIRECTORY",
-      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": [
-        "info@expertise.com"
-      ],
-      "verifiedContactUrl": "https://expertise.com/contact",
-      "httpStatus": 200,
-      "source_url": "https://expertise.com/contact",
-      "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"15 Best Atlanta, GA Home Inspection Companies\"",
-      "wordCount": 99,
-      "emailDraft": "Hi expertise.com Editorial Team,\n\nI just read \"15 Best Atlanta, GA Home Inspection Companies | Expertise.com\" (https://www.expertise.com/home-improvement/home-inspection/georgia/atlanta)—specifically your coverage on \"Find and connect with the 15 Best Home Inspection Companies in Atlanta, GA....\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
-      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
-    },
-    {
-      "domain": "homeinspectioninsider.com",
-      "classification": "PUBLISHER_OR_DIRECTORY",
-      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": [
-        "contact@homeinspectioninsider.com"
-      ],
-      "verifiedContactUrl": "https://homeinspectioninsider.com/contact",
-      "httpStatus": 200,
-      "source_url": "https://homeinspectioninsider.com/contact",
-      "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"Best Home Inspectors Atlanta GA\"",
-      "wordCount": 93,
-      "emailDraft": "Hi homeinspectioninsider.com Editorial Team,\n\nI just read \"Best Home Inspectors Atlanta GA\" (https://homeinspectioninsider.com/home-inspectors-atlanta/)—specifically your coverage on \"Choosing home inspectors in Atlanta may seem difficult, but it doesn&#x27;t...\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
-      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
-    },
-    {
-      "domain": "profindr.com",
-      "classification": "PUBLISHER_OR_DIRECTORY",
-      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": [
-        "support@profindr.com"
-      ],
-      "verifiedContactUrl": "https://profindr.com/contact",
-      "httpStatus": 200,
-      "source_url": "https://profindr.com/contact",
-      "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"Top 8 Home Inspector in Atlanta, GA (2026 Ran\"",
-      "wordCount": 101,
-      "emailDraft": "Hi profindr.com Editorial Team,\n\nI just read \"Top 8 Home Inspector in Atlanta, GA (2026 Rankings) — ProFindr\" (https://profindr.com/top/home-inspector-atlanta-ga)—specifically your coverage on \"Compare home inspector in Atlanta, GA. Licensing & Insurance — All listed b...\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
-      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
-    },
-    {
-      "domain": "inspectionwizards.com",
-      "classification": "RIVAL_INSPECTOR_SITE",
-      "outreachStrategy": "PODCAST_OR_BUILDING_SCIENCE_ROUNDUP_COLLAB",
-      "verifiedEmails": [
-        "kimw.inspectionwizards@gmail.com"
-      ],
-      "verifiedContactUrl": "https://www.inspectionwizards.com/pages/services/residential-property-inspector-atlanta-ga",
-      "httpStatus": 200,
-      "source_url": "https://www.inspectionwizards.com/pages/services/residential-property-inspector-atlanta-ga",
-      "retrieved_on": "2026-11-03",
-      "subjectLine": "Georgia CMI Building-Science Collaboration (inspectionwizards.com x Foresight)",
-      "wordCount": 73,
-      "emailDraft": "Hi inspectionwizards.com team,\n\nI was reading your page \"Residential Inspection | Atlanta Residential Property Inspector\" (https://www.inspectionwizards.com/pages/services/residential-property-inspector-atlanta-ga) while researching Metro Atlanta building-science resources.\n\nAs a fellow Georgia Certified Master Inspector (CMI #MICB-1082) running a two-inspector team at Foresight Home Inspections, I'd love to collaborate on a joint Georgia building-science roundup or podcast segment covering polybutylene plumbing and red-clay foundation diagnostics.\n\nOpen to comparing notes this week?\n\nBest,\nChristopher Boykin, CMI\nForesight Home Inspections (678-480-2110)",
-      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
-    },
-    {
-      "domain": "hdmkatlanta.com",
-      "classification": "PUBLISHER_OR_DIRECTORY",
-      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": [],
-      "verifiedContactUrl": "https://hdmkatlanta.com/",
-      "httpStatus": 200,
-      "source_url": "https://hdmkatlanta.com/",
-      "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"HDMK Inspection Services | Greater Atlanta\"",
-      "wordCount": 96,
-      "emailDraft": "Hi hdmkatlanta.com Editorial Team,\n\nI just read \"HDMK Inspection Services | Greater Atlanta\" (https://hdmkatlanta.com/)—specifically your coverage on \"Buying a Home in Atlanta? Request a thorough home inspection with same-day ...\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
-      "dispatchStatus": "WEB_CONTACT_FORM_OR_MANUAL_SUBMISSION"
-    },
-    {
-      "domain": "allypropertyinspections.com",
-      "classification": "PUBLISHER_OR_DIRECTORY",
-      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": [
-        "office@allypropertyinspections.com"
-      ],
-      "verifiedContactUrl": "https://allypropertyinspections.com/contact",
-      "httpStatus": 200,
-      "source_url": "https://allypropertyinspections.com/contact",
-      "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"Schedule-Atlanta - Ally Property Inspections\"",
-      "wordCount": 93,
-      "emailDraft": "Hi allypropertyinspections.com Editorial Team,\n\nI just read \"Schedule-Atlanta - Ally Property Inspections\" (https://allypropertyinspections.com/schedule-atlanta/)—specifically your coverage on \"Schedule Inspection Atlanta Book Your Atlanta Home Inspection Online Pick a...\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
-      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
-    },
-    {
-      "domain": "inspectatlanta.com",
-      "classification": "PUBLISHER_OR_DIRECTORY",
-      "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": [
-        "websouthmedia@gmail.com"
-      ],
-      "verifiedContactUrl": "https://inspectatlanta.com/contact",
-      "httpStatus": 200,
-      "source_url": "https://inspectatlanta.com/contact",
-      "retrieved_on": "2026-11-03",
-      "subjectLine": "2026 Atlanta Home Inspection Resource Note for \"Home & Property Inspections Atlanta | Inspect\"",
-      "wordCount": 94,
-      "emailDraft": "Hi inspectatlanta.com Editorial Team,\n\nI just read \"Home & Property Inspections Atlanta | Inspect Atlanta\" (https://inspectatlanta.com/)—specifically your coverage on \"Request home, buyer, seller, new construction, warranty, condo, commercial,...\".\n\nIf you update this guide for 2026 Metro Atlanta buyers, Foresight Home Inspections (4.8★, led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the only local firm deploying two certified inspectors on every home from $345 with free thermal imaging and $35,000 warranty protection.\n\nHappy to share a 2-sentence CMI quote or our free Georgia Due Diligence Calculator for your readers.\n\nBest,\nChristopher Boykin, CMI",
-      "dispatchStatus": "QUEUED_FOR_0900_LOCAL_WINDOW"
     }
   ]
 }

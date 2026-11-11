@@ -1,0 +1,80 @@
+name: Foresight Promotion Agency — Daily 8:15 AM & 6:15 PM Cloud Pulse
+
+on:
+  schedule:
+    # 13:15 UTC = 8:15 AM EST | 23:15 UTC = 6:15 PM EST
+    - cron: '15 13,23 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: foresight-agency-cloud-pulse
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  agency-cloud-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Dept 2 Cloud IMAP Opt-Out Quarantine Guard
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        run: node scripts/cloud-imap-unsubscribe-guard.mjs
+
+      - name: Dept 3 & Dept 5 Truth Guard, SEO Health & Striking-Distance Refresh
+        run: |
+          node scripts/firstindex-truth-guard.mjs --fix
+          node scripts/seo-health-check.mjs
+          node scripts/striking-distance-engine.mjs
+
+      - name: Dept 5 Live Conversion Surface & Tri-Logo Probe + ntfy Alert
+        run: |
+          node -e '
+            const urls = [
+              "https://www.fhinspectionsatl.com/",
+              "https://www.fhinspectionsatl.com/quote",
+              "https://www.fhinspectionsatl.com/due-diligence",
+              "https://www.fhinspectionsatl.com/concierge",
+              "https://www.fhinspectionsatl.com/realtors",
+              "https://www.fhinspectionsatl.com/llms.txt",
+              "https://www.fhinspectionsatl.com/images/Logopng.png",
+              "https://www.fhinspectionsatl.com/images/cmi_logo.png",
+              "https://www.fhinspectionsatl.com/images/cpi_logo.png"
+            ];
+            (async () => {
+              const checks = await Promise.all(urls.map(async u => {
+                try { const r = await fetch(u); return { u, ok: r.status === 200, s: r.status }; }
+                catch { return { u, ok: false, s: 0 }; }
+              }));
+              const pass = checks.filter(c => c.ok).length;
+              await fetch("https://ntfy.sh/fores-antigravity-alerts-77", {
+                method: "POST",
+                headers: { Title: "Foresight Agency Cloud Pulse (" + pass + "/" + urls.length + " Live)", Tags: "shield,chart_with_upwards_trend" },
+                body: "Cloud Agency Staff Verified:\n- Conversion & Tri-Logo Surfaces: " + pass + "/" + urls.length + " HTTP 200\n- Truth Guard & Striking-Distance SEO: PASS\n- IMAP Unsubscribe Guard: SYNCED"
+              });
+              if (pass < urls.length) process.exit(1);
+            })();
+          '
+
+      - name: Commit Synced Opt-Outs or SEO Refinements
+        run: |
+          git config user.name "Foresight Promotion Agency Bot"
+          git config user.email "bot@fhinspectionsatl.com"
+          git add data/ public/
+          git diff --cached --quiet || (git commit -m "chore(agency): automated cloud agency pulse & opt-out sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "Clean."

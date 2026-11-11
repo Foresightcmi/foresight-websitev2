@@ -66,8 +66,12 @@ async function main() {
   const localHour = now.getHours();
   const withinSendWindow = localHour >= 9 && localHour < 18;
 
+  const RIVAL_RX = /(premierhomeinspection|inspectionwizards|allypropertyinspection|hdmkatlanta|home-probe|bpginspections|champia\.com|residentialinspector\.com|edificeinspections|inspectatlanta|propertyinspectorsofatlanta|conleyhomeinspections|avaloninspections|pillartopost|ihihomeinspections|dreamhomeinspection)/i;
   const dispatchQueue = [];
   for (const item of outreachData.outreachDrafts) {
+    if (String(item.classification || '').includes('RIVAL_INSPECTOR') || RIVAL_RX.test(String(item.domain || ''))) {
+      continue;
+    }
     const recon = await probeDomainContacts(item.domain, item.sampleCitedUrl);
     dispatchQueue.push({
       domain: item.domain,
