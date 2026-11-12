@@ -1,0 +1,41 @@
+{
+  "alertedKeys": [
+    "notification@facebookmail.com|=?UTF-8?B?U2hhbm5vbiBXaWxsaWFt?= =?UTF-8?B?cyBSZWFsdG9yIEVsZW1l?=",
+    "thesouthernshmooze@substack.com|=?UTF-8?q?We're_Trying_Something_New!_Join_Our_First_Shmooze_Community_Cl?=",
+    "noreply-location-sharing@google.com|You're sharing your real-time location with Nataki Boykin",
+    "eanderson@youneedresults.com|Re: [Login Caution] Your Client's Inspection Has Been Scheduled",
+    "ltgates2012@gmail.com|Re: HOME INSPECTOR CREDENTIALS: 3286 MORRIS HILLS DRIVE DACULA, GA"
+  ],
+  "recentReplies": [
+    {
+      "email": "ltgates2012@gmail.com",
+      "subject": "Re: HOME INSPECTOR CREDENTIALS: 3286 MORRIS HILLS DRIVE DACULA, GA",
+      "snippet": "-ID: <CAGhYXGO+Xzj6j5QVuH_7YFqrk0-NMz_YojEdnXurbzi_XAMDYA@mail.gmail.com> Subject: Re: HOME INSPECTOR CREDENTIALS: 3286 MORRIS HILLS DRIVE DACULA, GA 30019 ) A4 OK Success",
+      "detectedAt": "2026-11-12T03:53:35.255Z"
+    },
+    {
+      "email": "eanderson@youneedresults.com",
+      "subject": "Re: [Login Caution] Your Client's Inspection Has Been Scheduled",
+      "snippet": "uneedresults.com> Message-ID: <CAFtKr3bD0vVVAVJswhF3QS7Ae-9rwBAqzCqULvXDbzuqsV2qHg@mail.gmail.com> Subject: Re: [Login Caution] Your Client's Inspection Has Been Scheduled )",
+      "detectedAt": "2026-11-12T03:53:35.197Z"
+    },
+    {
+      "email": "noreply-location-sharing@google.com",
+      "subject": "You're sharing your real-time location with Nataki Boykin",
+      "snippet": "GsTZ6aQ1dw@notifications.google.com> Subject: You're sharing your real-time location with Nataki Boykin From: Google Location Sharing <noreply-location-sharing@google.com> )",
+      "detectedAt": "2026-11-12T03:53:35.134Z"
+    },
+    {
+      "email": "thesouthernshmooze@substack.com",
+      "subject": "=?UTF-8?q?We're_Trying_Something_New!_Join_Our_First_Shmooze_Community_Cl?=",
+      "snippet": "l?= =?UTF-8?q?eanup_=F0=9F=8D=91?= From: The Southern Shmooze Weekly <thesouthernshmooze@substack.com> Message-Id: <20261109182805.3.6d9f023ed19d2daa@mg-d1.substack.com> )",
+      "detectedAt": "2026-11-12T03:53:34.969Z"
+    },
+    {
+      "email": "notification@facebookmail.com",
+      "subject": "=?UTF-8?B?U2hhbm5vbiBXaWxsaWFt?= =?UTF-8?B?cyBSZWFsdG9yIEVsZW1l?=",
+      "snippet": "c=?= =?UTF-8?B?IHRvLi4uIg==?= From: \"Shannon Williams... on Facebook\" <notification@facebookmail.com> Message-ID: <bc3f4d46-ea6a-48a2-bfe7-02fd2c1e11ff@facebookmail.com> )",
+      "detectedAt": "2026-11-12T03:53:34.651Z"
+    }
+  ]
+}

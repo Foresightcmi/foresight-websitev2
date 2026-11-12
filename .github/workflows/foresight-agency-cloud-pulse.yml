@@ -1,9 +1,11 @@
-name: Foresight Promotion Agency — Daily 8:15 AM & 6:15 PM Cloud Pulse
+name: Foresight Promotion Agency — 24/7 Cloud Pulse (Morning, Daytime Warm-Reply & EOD)
 
 on:
   schedule:
-    # 13:15 UTC = 8:15 AM EST | 23:15 UTC = 6:15 PM EST
+    # 13:15 & 23:15 UTC = 8:15 AM & 6:15 PM EST (Morning Battle Plan & EOD Scorecard)
     - cron: '15 13,23 * * *'
+    # 15:30, 17:30, 19:30, 21:30 UTC = 10:30 AM, 12:30 PM, 2:30 PM, 4:30 PM EST (Daytime Warm-Reply & Agency Cycle)
+    - cron: '30 15,17,19,21 * * *'
   workflow_dispatch:
 
 concurrency:

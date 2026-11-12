@@ -12,6 +12,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import tls from 'tls';
 import nodemailer from 'nodemailer';
 
 const ROOT = process.cwd();
@@ -20,6 +21,55 @@ const STATE_FILE = path.join(ROOT, 'data', 'cloud-realtor-nurture-state.json');
 const UNSUB_FILE = path.join(ROOT, 'data', 'unsubscribed_contacts.json');
 const DD_LOG_FILE = path.join(ROOT, 'data', 'due-diligence-outreach-log.json');
 const ENV_LOCAL = path.join(ROOT, '.env.local');
+
+function inspectImapSentMail(user, pass) {
+  return new Promise((resolve) => {
+    const recentTo = new Set();
+    let sentTodayCount = 0;
+    let buffer = '';
+    let step = 0;
+    const sock = tls.connect(993, 'imap.gmail.com', { servername: 'imap.gmail.com', timeout: 12000 });
+    const finish = () => {
+      try { sock.destroy(); } catch {}
+      resolve({ recentTo, sentTodayCount });
+    };
+    sock.on('timeout', finish);
+    sock.on('error', finish);
+    const fmtDate = (daysAgo) => new Date(Date.now() - daysAgo * 86400000)
+      .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
+    sock.on('data', (chunk) => {
+      buffer += chunk.toString('utf8');
+      if (step === 0 && buffer.includes('* OK')) {
+        step = 1; buffer = '';
+        sock.write(`A1 LOGIN "${user}" "${pass}"\r\n`);
+      } else if (step === 1 && buffer.includes('A1 OK')) {
+        step = 2; buffer = '';
+        sock.write(`A2 SELECT "[Gmail]/Sent Mail"\r\n`);
+      } else if (step === 2 && buffer.includes('A2 OK')) {
+        step = 3; buffer = '';
+        sock.write(`A3 SEARCH SINCE ${fmtDate(0)}\r\n`);
+      } else if (step === 3 && buffer.includes('A3 OK')) {
+        const m = buffer.match(/\* SEARCH([0-9 ]*)/);
+        sentTodayCount = m && m[1].trim() ? m[1].trim().split(/\s+/).filter(Boolean).length : 0;
+        step = 4; buffer = '';
+        sock.write(`A4 SEARCH SINCE ${fmtDate(14)}\r\n`);
+      } else if (step === 4 && buffer.includes('A4 OK')) {
+        const m = buffer.match(/\* SEARCH([0-9 ]*)/);
+        const ids = m && m[1].trim() ? m[1].trim().split(/\s+/).filter(Boolean).slice(-400) : [];
+        if (ids.length === 0) { sock.write(`A5 LOGOUT\r\n`); return finish(); }
+        step = 5; buffer = '';
+        sock.write(`A5 FETCH ${ids.join(',')} (BODY.PEEK[HEADER.FIELDS (TO)])\r\n`);
+      } else if (step === 5 && buffer.includes('A5 OK')) {
+        const matches = buffer.matchAll(/To:.*?([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/gi);
+        for (const mt of matches) recentTo.add(mt[1].toLowerCase().trim());
+        sock.write(`A6 LOGOUT\r\n`);
+        finish();
+      } else if (buffer.includes('A1 NO') || buffer.includes('A2 NO')) {
+        finish();
+      }
+    });
+  });
+}
 
 const DEKALB_REGEX = /\b(lithonia|stone mountain|tucker|decatur|redan|stonecrest|chamblee|dunwoody|brookhaven|avondale estates|clarkston|doraville|pine lake|ellenwood|scottdale|conley|dekalb)\b/i;
 const EXCLUDED_DOMAINS = /@(ansleyre|ansleyatlanta|metrobrokers|cbcmetrobrokers|peachtreetc|drhorton|pulte|lennar|ashtonwoods|stanleymartin|centurycommunities|beazer|adamshomes|rocklynhomes|meritagehomes|tollbrothers|kbhome|taylormorrison|smithdouglas|chafincommunities|chafinrealtyinc|paranhomes|dwhomes|theprovidencegroup|relianthomes|odwyerhomes|cstonega)\.com$/i;
@@ -116,25 +166,34 @@ async function main() {
   const ddSent = new Set((ddLog.sentEmails || []).map((e) => String(e).toLowerCase()));
   const state = fs.existsSync(STATE_FILE) ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')) : { lastSentByEmail: {}, totalCloudSent: 0 };
 
+  const { user, pass } = getCredentials();
+  const imapSent = (!process.argv.includes('--dry-run') && pass)
+    ? await inspectImapSentMail(user, pass)
+    : { recentTo: new Set(), sentTodayCount: 0 };
+
+  if (imapSent.sentTodayCount >= 25 && !process.argv.includes('--force')) {
+    console.log(`  🖥️ Local PC campaign already active today (${imapSent.sentTodayCount} emails in [Gmail]/Sent Mail). Standing by so no duplicate batch is sent.`);
+    return;
+  }
+
   const now = Date.now();
   const COOLDOWN_MS = 14 * 24 * 60 * 60 * 1000;
   const eligible = queue.filter((c) => {
     const email = String(c.email || '').trim().toLowerCase();
     if (!email || !email.includes('@')) return false;
-    if (unsubSet.has(email) || ddSent.has(email)) return false;
+    if (unsubSet.has(email) || ddSent.has(email) || imapSent.recentTo.has(email)) return false;
     if (EXCLUDED_DOMAINS.test(email) || /ansley|chapman group/i.test(c.brokerage || '') || /amy fuchs|joe chapman/i.test(c.full_name || '')) return false;
     const lastTs = state.lastSentByEmail?.[email] ? new Date(state.lastSentByEmail[email]).getTime() : 0;
     return now - lastTs > COOLDOWN_MS;
   });
 
-  console.log(`  📋 Eligible Realtors in Cloud Queue: ${eligible.length}`);
+  console.log(`  📋 Eligible Realtors in Cloud Queue: ${eligible.length} (Sent today across PC+Cloud: ${imapSent.sentTodayCount})`);
   if (process.argv.includes('--dry-run')) {
     fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2), 'utf8');
     console.log('  ✅ Dry-run verified. State file initialized.');
     return;
   }
 
-  const { user, pass } = getCredentials();
   if (!pass) {
     console.log('  ℹ️ EMAIL_PASSWORD not set in environment; skipping live SMTP send.');
     return;

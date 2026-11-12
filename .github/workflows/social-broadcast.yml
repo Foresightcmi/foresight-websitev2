@@ -1,8 +1,10 @@
-name: Autonomous Social & GBP Broadcast Engine (Manual Backup Only)
+name: Autonomous Social & GBP Broadcast Engine (24/7 Cloud + PC-Aware Fallback)
 
 on:
-  # Scheduled cron retired: daily native video + 5-slide editorial carousels are now
-  # auto-published locally via omni-video-publisher (10:30 AM & 2:30 PM Windows Tasks).
+  schedule:
+    # Runs daily at 11:20 AM EST (16:20 UTC). Automatically checks if local PC already
+    # published today's 10:30 AM social batch; if PC is off, runs cloud broadcast + ntfy push.
+    - cron: '20 16 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -32,8 +34,33 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Execute LinkedIn Content Engine (Manual Trigger)
-        run: node scripts/linkedin-content-engine.mjs --push
+      - name: Execute Cloud Social & GBP Engine When Local PC Is Off
+        run: |
+          node -e '
+            import("node:fs").then(({ default: fs }) => {
+              const p = "data/chief-of-staff-social-status.json";
+              const today = new Date().toISOString().slice(0, 10);
+              if (fs.existsSync(p) && process.env.GITHUB_EVENT_NAME === "schedule") {
+                const st = JSON.parse(fs.readFileSync(p, "utf8"));
+                if ((st.lastRunAt || "").startsWith(today) && (st.publishedPlatforms || []).length > 0) {
+                  console.log("Local PC already published today (" + st.publishedPlatforms.length + " platforms). Skipping duplicate cloud push.");
+                  process.exit(0);
+                }
+              }
+            });
+          ' || exit 0
+          node -e '
+            import("node:fs").then(async ({ default: fs }) => {
+              const p = "data/chief-of-staff-social-status.json";
+              const today = new Date().toISOString().slice(0, 10);
+              if (fs.existsSync(p) && process.env.GITHUB_EVENT_NAME === "schedule") {
+                const st = JSON.parse(fs.readFileSync(p, "utf8"));
+                if ((st.lastRunAt || "").startsWith(today) && (st.publishedPlatforms || []).length > 0) return;
+              }
+              const { spawnSync } = await import("node:child_process");
+              spawnSync(process.execPath, ["scripts/linkedin-content-engine.mjs", "--push"], { stdio: "inherit" });
+            });
+          '
 
       - name: Commit and Push Updated Social State & Logs
         run: |
