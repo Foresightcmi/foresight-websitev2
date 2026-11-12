@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-11T21:41:10.179Z",
+  "generatedAt": "2026-11-12T21:00:42.922Z",
   "source_url": "https://www.fhinspectionsatl.com",
-  "retrieved_on": "2026-11-11",
+  "retrieved_on": "2026-11-12",
   "withinDaytimeWindow": true,
   "remainingDailyEmailQuota": 1200,
   "verifiedLinkMagnetAssets": [
@@ -12,7 +12,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.fhinspectionsatl.com/due-diligence",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Metro Atlanta Vintage & Red Clay Property Risk Scanner",
@@ -21,7 +21,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.fhinspectionsatl.com/risk-scanner",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Instant Home Inspection Quote & Fee Calculator",
@@ -30,7 +30,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.fhinspectionsatl.com/quote",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     }
   ],
   "verifiedCitationDirectories": [
@@ -47,7 +47,7 @@
       "httpStatus": 403,
       "reachable": true,
       "source_url": "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Bing Places for Business (ChatGPT Search & Copilot Index)",
@@ -60,7 +60,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.bingplaces.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Foursquare Places POI Database (ChatGPT Mapbox Shortlist)",
@@ -74,7 +74,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://foursquare.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Apple Business Connect (Siri & Apple Intelligence Place Card)",
@@ -88,7 +88,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://businessconnect.apple.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Brave Search Webmaster & Local Index (Claude Web Search Backend)",
@@ -100,7 +100,7 @@
       "httpStatus": 429,
       "reachable": false,
       "source_url": "https://search.brave.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "InterNACHI Certified Master Inspector Directory",
@@ -114,7 +114,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.nachi.org",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Better Business Bureau (Atlanta & NE Georgia)",
@@ -128,7 +128,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.bbb.org",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Metro Atlanta Chamber of Commerce",
@@ -141,7 +141,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://www.metroatlantachamber.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Nextdoor Neighborhood Business Directory",
@@ -154,7 +154,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://business.nextdoor.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "name": "Patch Local Atlanta Community Hubs",
@@ -167,7 +167,7 @@
       "httpStatus": 200,
       "reachable": true,
       "source_url": "https://patch.com/georgia/atlanta",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     }
   ],
   "brokerageResourcePitchesReady": 20,
@@ -180,7 +180,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://opendoor.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Antonio Guzman",
@@ -190,7 +190,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://kw.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Caelyn Pyles",
@@ -200,7 +200,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://atlantafinehomes.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "JODI HALPERT",
@@ -210,7 +210,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://jodihalpert.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Melanie Fields",
@@ -220,7 +220,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://20westrealty.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Robyn Amos",
@@ -230,7 +230,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://robynsellsinatl.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "MEHBS OMAR",
@@ -240,7 +240,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://bellsouth.net",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "BARRY SLATON",
@@ -250,7 +250,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://silvercitygroup.net",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "JUANETTA BROWN",
@@ -260,7 +260,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://rockhavenga.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Angelina Williams",
@@ -270,7 +270,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://evatlanta.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Aaron Rothenberger",
@@ -280,7 +280,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://spfs.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Cheryl Kypreos",
@@ -290,7 +290,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://kypreosteam.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Elaine Anderson",
@@ -300,7 +300,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://youneedresults.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Hunt Home Team",
@@ -310,7 +310,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://hunthometeam.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Marsha Harrell",
@@ -320,7 +320,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://att.net",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Stella Harris",
@@ -330,7 +330,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://wmrealty.homes",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "Taylor Irby",
@@ -340,7 +340,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://kellerknapp.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "DAVID B HOBER",
@@ -350,7 +350,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://hoberrealty.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "The Anderson Group",
@@ -360,7 +360,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://tagatlanta.com",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     },
     {
       "recipientName": "GINA ROGUSKY",
@@ -370,7 +370,7 @@
       "toolUrl": "https://www.fhinspectionsatl.com/due-diligence",
       "embedCode": "<a href=\"https://www.fhinspectionsatl.com/due-diligence\" target=\"_blank\" rel=\"noopener\">Free Georgia Due Diligence Deadline &amp; Inspection Repair Addendum Calculator — Foresight Home Inspections</a>",
       "source_url": "https://mainstay.io",
-      "retrieved_on": "2026-11-11"
+      "retrieved_on": "2026-11-12"
     }
   ]
 }
