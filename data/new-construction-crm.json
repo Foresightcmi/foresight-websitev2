@@ -1,38 +1,38 @@
 {
-  "lastSync": "2026-11-12T21:24:37.704Z",
-  "totalActiveLeads": 440,
-  "newLeadsThisRun": 6,
+  "lastSync": "2026-11-13T20:50:35.262Z",
+  "totalActiveLeads": 452,
+  "newLeadsThisRun": 12,
   "warrantySubdivisionCohorts": [
-    {
-      "medium": "11_month_warranty_subdivision_cohort",
-      "title": "Toll Brothers Announces New Luxury Home Community Now Open",
-      "published_at": "2025-03-06T17:06:57.000Z",
-      "source_url": "https://www.globenewswire.com/news-release/2025/03/06/3038467/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Now-Open-in-Atlanta-Georgia.html",
-      "retrieved_on": "2026-11-12",
-      "excerpt": "Toll Brothers Announces New Luxury Home Community Now Open ## Nolyn Pointe by Toll Brothers offers single-family homes in the Chosewood Park neighborhood of Atlanta with direct access to the BeltLine Southside Trail March 06, 2025 12:06 ET | Source: Toll Brothers, Inc. ATLANTA, M"
-    },
     {
       "medium": "11_month_warranty_subdivision_cohort",
       "title": "Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum",
       "published_at": "2025-06-03T19:00:19.000Z",
       "source_url": "https://www.atlantarealestateforum.com/grand-opening-of-decaturs-celesta-set-for-june-21/",
-      "retrieved_on": "2026-11-12",
+      "retrieved_on": "2026-11-13",
       "excerpt": "Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum # Grand Opening Of Decatur’s Celesta Set For June 21 June 3, 2025| David Weekley Homes https://www.atlantarealestateforum.com/wp-content/uploads/ai-text-to-speech/post-183408-Sg-grand-opening-of-decatu"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Toll Brothers Announces New Luxury Home Community Now Open",
+      "published_at": "2025-03-06T17:06:57.000Z",
+      "source_url": "https://www.globenewswire.com/news-release/2025/03/06/3038467/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Now-Open-in-Atlanta-Georgia.html",
+      "retrieved_on": "2026-11-13",
+      "excerpt": "Toll Brothers Announces New Luxury Home Community Now Open ## Nolyn Pointe by Toll Brothers offers single-family homes in the Chosewood Park neighborhood of Atlanta with direct access to the BeltLine Southside Trail March 06, 2025 12:06 ET | Source: Toll Brothers, Inc. ATLANTA, M"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
       "title": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc.",
       "published_at": "2025-08-28T08:00:00.000Z",
       "source_url": "https://investors.centurycommunities.com/news/news-details/2025/Century-Communities-to-Host-Grand-Opening-This-Weekend-in-Flowery-Branch-GA/default.aspx",
-      "retrieved_on": "2026-11-12",
-      "excerpt": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc. # News Details ### Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA August 28, 2025 Anticipated new townhome community offers amenities and low-mai"
+      "retrieved_on": "2026-11-13",
+      "excerpt": "Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA | Century Communities, Inc. # News Details ## Century Communities to Host Grand Opening This Weekend in Flowery Branch, GA August 28, 2025 Anticipated new townhome community offers amenities and low-main"
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
       "title": "Tour Snellville Homes at Oak Grove Glen - Atlanta Real Estate Forum",
       "published_at": "2025-06-10T18:01:12.000Z",
       "source_url": "https://www.atlantarealestateforum.com/tour-snellville-homes-at-oak-grove-glen/",
-      "retrieved_on": "2026-11-12",
+      "retrieved_on": "2026-11-13",
       "excerpt": "Tour Snellville Homes at Oak Grove Glen - Atlanta Real Estate Forum # Tour Snellville Homes at Oak Grove Glen June 10, 2025| Century Communities Join Century Communities for the grand opening of Oak Grove Glen, a single-family home community in Snellville. This community features"
     },
     {
@@ -40,7 +40,7 @@
       "title": "David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine",
       "published_at": "2025-06-12T20:31:48.000Z",
       "source_url": "https://atlantaagentmagazine.com/2025/06/12/old-mill-preserve-grand-opening/",
-      "retrieved_on": "2026-11-12",
+      "retrieved_on": "2026-11-13",
       "excerpt": "David Weekley Homes announces grand opening of Old Mill Preserve - Atlanta Agent Magazine ## David Weekley Homes announces grand opening of Old Mill Preserve by Elizabeth Kanzeg Rowland June 12, 2025 Image courtesy of David Weekley Homes Old Mill Preserve, a new age-restricted co"
     },
     {
@@ -48,7 +48,7 @@
       "title": "Grand Opening & Ribbon Cutting Event: Mulberry Summit - EMC Homes",
       "published_at": "2025-05-12T14:17:17.000Z",
       "source_url": "https://www.emchomes.com/grand-opening-ribbon-cutting-event-mulberry-summit/",
-      "retrieved_on": "2026-11-12",
+      "retrieved_on": "2026-11-13",
       "excerpt": "# Grand Opening & Ribbon Cutting Event: Mulberry Summit May 12, 2025 EMC Homes is excited to announce the Grand Opening of Mulberry Summit in Flowery Branch, where new homes start from the $400’s. Join us Tuesday, May 13 th for the Ribbon Cutting ceremony at 10am, and stay for ca"
     }
   ],
