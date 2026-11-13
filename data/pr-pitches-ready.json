@@ -1,5 +1,5 @@
 {
-  "lastGenerated": "2026-11-11T21:41:07.288Z",
+  "lastGenerated": "2026-11-13T21:08:13.830Z",
   "totalPitchesReady": 13,
   "dispatches": [
     {
@@ -12,7 +12,7 @@
       "keyStat": "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
       "citationUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
       "liveSourceUrl": "https://www.wsbtv.com/news/local/cobb-county/22-million-teardown-new-homes-safety-structural-issues-would-cost-1m-fix/H2GKHLZM2FEY3LMHT4TDZWWV2I/",
-      "retrieved_on": "2026-11-11",
+      "retrieved_on": "2026-11-13",
       "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
       "contactInfo": {
         "phone": "678-480-2110",
@@ -30,25 +30,7 @@
       "keyStat": "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
       "citationUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
       "liveSourceUrl": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-homeowners-say-theyre-stuck-with-defective-homes-after-failed-property-inspections/QXPIIWMWTNBC3DSI2ALJNJR6H4/",
-      "retrieved_on": "2026-11-11",
-      "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
-      "contactInfo": {
-        "phone": "678-480-2110",
-        "email": "inspect@foresightcmi.com"
-      },
-      "status": "LIVE_REACTIVE_READY"
-    },
-    {
-      "channel": "Atlanta Investigative Desk (Ashli Lincoln)",
-      "category": "Reactive Local Builder Defect Commentary",
-      "topic": "Reactive CMI Commentary on: South Fulton residents face numerous issues from ‘one-stop shop’ homes – WSB-TV Channel 2 - Atlanta",
-      "subject": "Follow-up Data on \"South Fulton residents face numerous issues from ‘one-stop sho\" — Certified Master Inspector Field Findings",
-      "expertBio": "Christopher Boykin, Certified Master Inspector (CMI #MICB-1082) and founder of Foresight Home Inspections, LLC (Metro Atlanta). Dual-inspector structural + mechanical teams.",
-      "soundbite": "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing.",
-      "keyStat": "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
-      "citationUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
-      "liveSourceUrl": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-residents-face-numerous-issues-one-stop-shop-homes/SAGIST57QJC4BLG6OFDIM5MOGI/",
-      "retrieved_on": "2026-11-11",
+      "retrieved_on": "2026-11-13",
       "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
       "contactInfo": {
         "phone": "678-480-2110",
@@ -66,7 +48,7 @@
       "keyStat": "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
       "citationUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
       "liveSourceUrl": "https://www.atlantanewsfirst.com/2026/04/02/more-than-dozen-georgia-homeowners-claim-dr-horton-sold-them-homes-with-defective-pipes/",
-      "retrieved_on": "2026-11-11",
+      "retrieved_on": "2026-11-13",
       "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
       "contactInfo": {
         "phone": "678-480-2110",
@@ -77,14 +59,32 @@
     {
       "channel": "Atlanta Investigative Desk (Ashli Lincoln)",
       "category": "Reactive Local Builder Defect Commentary",
-      "topic": "Reactive CMI Commentary on: ‘Bamboozled:’ Owner says developer sold her a defective metro Atlanta home – WSB-TV Channel 2 - Atlanta",
-      "subject": "Follow-up Data on \"‘Bamboozled:’ Owner says developer sold her a defective metro \" — Certified Master Inspector Field Findings",
+      "topic": "Reactive CMI Commentary on: South Fulton residents face numerous issues from ‘one-stop shop’ homes – WSB-TV Channel 2 - Atlanta",
+      "subject": "Follow-up Data on \"South Fulton residents face numerous issues from ‘one-stop sho\" — Certified Master Inspector Field Findings",
       "expertBio": "Christopher Boykin, Certified Master Inspector (CMI #MICB-1082) and founder of Foresight Home Inspections, LLC (Metro Atlanta). Dual-inspector structural + mechanical teams.",
       "soundbite": "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing.",
       "keyStat": "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
       "citationUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
-      "liveSourceUrl": "https://www.wsbtv.com/news/local/fayette-county/bamboozled-owner-says-developer-sold-her-defective-metro-atlanta-home/GHYJS7PEPFEYNBMP5FG7CFG5UE/",
-      "retrieved_on": "2026-11-11",
+      "liveSourceUrl": "https://www.wsbtv.com/news/local/south-fulton-county/south-fulton-residents-face-numerous-issues-one-stop-shop-homes/SAGIST57QJC4BLG6OFDIM5MOGI/",
+      "retrieved_on": "2026-11-13",
+      "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
+      "contactInfo": {
+        "phone": "678-480-2110",
+        "email": "inspect@foresightcmi.com"
+      },
+      "status": "LIVE_REACTIVE_READY"
+    },
+    {
+      "channel": "Atlanta Investigative Desk (Justin Gray)",
+      "category": "Reactive Local Builder Defect Commentary",
+      "topic": "Reactive CMI Commentary on: What happens when your new home has flaws? This is what you need to know – WSB-TV Channel 2 - Atlanta",
+      "subject": "Follow-up Data on \"What happens when your new home has flaws? This is what you ne\" — Certified Master Inspector Field Findings",
+      "expertBio": "Christopher Boykin, Certified Master Inspector (CMI #MICB-1082) and founder of Foresight Home Inspections, LLC (Metro Atlanta). Dual-inspector structural + mechanical teams.",
+      "soundbite": "Municipal building code inspectors spend only minutes on-site and frequently miss disconnected attic exhaust ducts, missing kick-out flashing, and unsealed roof penetrations. Independent Phase 1 Pre-Drywall (From $275) and Final New Construction (From $400) inspections document defects before closing.",
+      "keyStat": "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
+      "citationUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
+      "liveSourceUrl": "https://www.wsbtv.com/news/local/dekalb-county/what-happens-when-your-new-home-has-flaws-this-is-what-you-need-know/IASVEJ7ARVCH5K5WWPMOYMHATQ/",
+      "retrieved_on": "2026-11-13",
       "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
       "contactInfo": {
         "phone": "678-480-2110",
@@ -102,7 +102,7 @@
       "keyStat": "Independent 2-inspector evaluations routinely document $2,400–$14,200+ in repair credits before closing.",
       "citationUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection",
       "liveSourceUrl": "https://conorsen.substack.com/p/the-housing-correction-visualized",
-      "retrieved_on": "2026-11-11",
+      "retrieved_on": "2026-11-13",
       "pressRoomUrl": "https://www.fhinspectionsatl.com/press",
       "contactInfo": {
         "phone": "678-480-2110",
