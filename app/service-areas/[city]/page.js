@@ -168,6 +168,12 @@ export default async function CityPage({ params }) {
       "telephone": "+1-678-480-2110",
       "email": "inspect@foresightcmi.com",
       "priceRange": "$$$",
+      "hasMap": "https://maps.google.com/?cid=10862078652033010531",
+      "sameAs": [
+        "https://maps.google.com/?cid=10862078652033010531",
+        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+        "https://www.linkedin.com/company/107206117/"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1816 South Deshon Road",
@@ -180,6 +186,7 @@ export default async function CityPage({ params }) {
     "areaServed": {
       "@type": "City",
       "name": cityName,
+      ...(zip ? { "postalCode": zip } : {}),
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": coords.lat,
@@ -583,6 +590,14 @@ export default async function CityPage({ params }) {
             <p id="aeo-direct-answer" className="city-bluf-summary" style={{ fontSize: '0.95rem', color: '#334155', lineHeight: 1.6, margin: '0 0 1rem' }}>
               <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) is the 4.8★ home inspection team serving {cityName}, GA, deploying <strong>two certified inspectors</strong> from $345 ($295 condos) with free thermal imaging, 4K drone scans, and <strong>$35,000 warranty protection</strong> ($0 deductible).
             </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: 'var(--radius-sm)', padding: '0.8rem 1rem', marginBottom: '1rem' }}>
+              <div style={{ fontSize: '0.88rem', color: '#0f172a' }}>
+                <strong>Booking a Buyer Inspection in {cityName}?</strong> Compare packages starting <strong>From $345</strong> (Condos From $295) — 2 Certified Inspectors + Free Thermal &amp; 4K Drone.
+              </div>
+              <Link href={`/services/buyer-inspection/${slug}`} className="btn btn-primary" style={{ padding: '0.45rem 0.95rem', fontSize: '0.84rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                {cityName} Buyer Inspection (From $345) &rarr;
+              </Link>
+            </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '0.75rem', fontSize: '0.85rem', color: '#475569', background: '#f1f5f9', padding: '0.85rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.15rem' }}>
               <div><strong>Standard:</strong> 2 Certified Inspectors</div>
               <div><strong>👥 Team Focus:</strong> Dedicated Structural + Mechanical Pair</div>

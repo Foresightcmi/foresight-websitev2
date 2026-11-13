@@ -45,8 +45,8 @@ export default function Services() {
     },
     {
       title: 'Standard Buyer Inspection',
-      price: '$295+',
-      priceNote: 'Condos from $295 | Single Family from $345',
+      price: 'From $295',
+      priceNote: 'Condos From $295 | Single Family From $345',
       description: 'Our core comprehensive inspection covering the structure, roof, electrical, plumbing, HVAC, and all major systems. Two expert inspectors on site for maximum thoroughness.',
       details: ['Two inspectors on site', 'Thermal imaging scan included', 'Detailed digital report within 24 hours', '$10,000 Master Warranty included'],
       image: '/images/ac-pic.png',
@@ -55,7 +55,7 @@ export default function Services() {
     },
     {
       title: 'Pre-Listing Seller Inspection',
-      price: '$345+',
+      price: 'From $345',
       priceNote: 'Prevent transaction deal-killers before listing',
       description: 'Identify potential issues before putting your home on the market. Streamline negotiations, avoid last-minute surprises, and increase buyer confidence.',
       details: ['Full major systems review', 'Proactive repair planning tool', 'Increased transaction speed', 'Thermal scan included'],
@@ -87,7 +87,7 @@ export default function Services() {
     },
     {
       title: '11-Month Warranty Inspection',
-      price: '$345+',
+      price: 'From $345',
       description: 'Performed before your 1-year builder warranty expires. Receive an itemized, photo-documented punch list to ensure your builder warranty covers settlement, trade adjustments, and mechanical items before month 12.',
       details: ['Detailed builder-ready report', 'Mechanical & structural check', 'Saves thousands in future repairs', 'Maximum warranty utilization'],
       image: '/images/gas-meter.png',
@@ -258,6 +258,10 @@ export default function Services() {
     "name": "Foresight Home Inspection Services",
     "image": "https://www.fhinspectionsatl.com/images/two-inspectors-electrical-panel-inspection.jpg",
     "serviceType": "Home Inspection",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#services-aeo-summary", ".speakable-answer"]
+    },
     "provider": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Foresight Home Inspections, LLC",
@@ -265,6 +269,12 @@ export default function Services() {
       "telephone": "+1-678-480-2110",
       "email": "inspect@foresightcmi.com",
       "priceRange": "$$$",
+      "hasMap": "https://maps.google.com/?cid=10862078652033010531",
+      "sameAs": [
+        "https://maps.google.com/?cid=10862078652033010531",
+        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+        "https://www.linkedin.com/company/107206117/"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1816 South Deshon Road",
@@ -275,8 +285,13 @@ export default function Services() {
       }
     },
     "areaServed": {
-      "@type": "State",
-      "name": "Georgia"
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.7462",
+        "longitude": "-84.1031"
+      },
+      "geoRadius": "80467"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -466,9 +481,55 @@ export default function Services() {
           <p style={{ color: '#F1F5F9', maxWidth: '700px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.7, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             Transparent pricing based on actual square footage. We provide Certified Master Inspector®-led inspections with thermal imaging included, plus a full range of specialty assessments. All inspections are conducted to InterNACHI Standards of Practice.
           </p>
-          <p style={{ color: '#E2E8F0', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.025rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
+          <p id="services-aeo-summary" style={{ color: '#E2E8F0', maxWidth: '700px', margin: '1rem auto 0', fontSize: '1.025rem', lineHeight: 1.6, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
             A certified home inspection in Metro Atlanta starts at $345 for single-family homes ($295 for condos) and includes two certified inspectors, infrared thermal imaging, 4K aerial drone scans, and the $10,000 Elite Master Inspection Warranty at no extra cost.
           </p>
+        </div>
+      </section>
+
+      <section style={{ background: '#f8fafc', padding: '1.75rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container" style={{ maxWidth: '960px' }}>
+          <div style={{ overflowX: 'auto', border: '1px solid #cbd5e1', borderRadius: 'var(--radius-md)', background: '#ffffff' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem', textAlign: 'left' }}>
+              <caption style={{ textAlign: 'left', padding: '0.7rem 1rem', background: '#0f172a', color: '#ffffff', fontWeight: 700, fontSize: '0.92rem' }}>
+                2026 Metro Atlanta Home Inspection Pricing &amp; Inclusions Overview
+              </caption>
+              <thead>
+                <tr style={{ background: '#f1f5f9', borderBottom: '1px solid #cbd5e1', color: '#0f172a' }}>
+                  <th style={{ padding: '0.6rem 0.9rem' }}>Inspection Package</th>
+                  <th style={{ padding: '0.6rem 0.9rem' }}>Starting Rate</th>
+                  <th style={{ padding: '0.6rem 0.9rem' }}>Included Standard</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 600 }}>Condo / Townhome Buyer Inspection</td>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 700, color: '#15803d' }}>From $295</td>
+                  <td style={{ padding: '0.55rem 0.9rem' }}>2 Certified Inspectors + Free Thermal + Up to $35,000 Protection ($0 Deductible)</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 600 }}>Single-Family Buyer / Pre-Listing / 11-Month Warranty</td>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 700, color: '#15803d' }}>From $345</td>
+                  <td style={{ padding: '0.55rem 0.9rem' }}>2 Certified Inspectors + Free Infrared Thermal + Free 4K Drone + $35,000 Protection</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 600 }}>Phase 1 Pre-Drywall Framing Inspection</td>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 700, color: '#15803d' }}>From $275</td>
+                  <td style={{ padding: '0.55rem 0.9rem' }}>Structural Framing, Rough MEP &amp; Builder Punch List</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 600 }}>New Construction Final Walkthrough</td>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 700, color: '#15803d' }}>From $400</td>
+                  <td style={{ padding: '0.55rem 0.9rem' }}>2 Certified Inspectors + Thermal + 4K Drone + Up to $35,000 Protection</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 600 }}>Specialty Add-Ons: Radon, Sewer Scope, Mold/IAQ, WDO, Pool &amp; Commercial</td>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 700 }}>Call for Quote (678-480-2110)</td>
+                  <td style={{ padding: '0.55rem 0.9rem' }}>Property-specific diagnostic testing &amp; accredited lab / camera reporting</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -856,6 +917,47 @@ export default function Services() {
 
       <ValueComparison />
       <QualityChecklist />
+
+      <section className="section bg-white" style={{ borderTop: '1px solid var(--color-gray-mid)' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '2rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem' }}>87+ Metro Atlanta Cities Served</span>
+            <h2>Popular Metro Atlanta Inspection Locations</h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '720px', margin: '0.75rem auto 0' }}>
+              Compare 2-inspector availability, thermal &amp; 4K drone coverage, and transparent starting rates across high-demand Georgia communities.
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', justifyContent: 'center', marginBottom: '1.75rem' }}>
+            {[
+              ['Atlanta', 'atlanta'], ['Marietta', 'marietta'], ['Alpharetta', 'alpharetta'],
+              ['Norcross', 'norcross'], ['Austell', 'austell'], ['Lilburn', 'lilburn'],
+              ['Snellville', 'snellville'], ['Acworth', 'acworth'], ['Woodstock', 'woodstock'],
+              ['Johns Creek', 'johns-creek'], ['Buford', 'buford'], ['Stone Mountain', 'stone-mountain'],
+              ['Smyrna', 'smyrna'], ['Powder Springs', 'powder-springs'], ['Chattahoochee Hills', 'chattahoochee-hills'],
+              ['Fairburn', 'fairburn'], ['Fayetteville', 'fayetteville'], ['McDonough', 'mcdonough'],
+              ['Suwanee', 'suwanee'], ['Duluth', 'duluth'], ['Clarkston', 'clarkston'],
+              ['Redan', 'redan'], ['Cumming', 'cumming'], ['Peachtree Corners', 'peachtree-corners'],
+              ['Canton', 'canton'], ['Dallas', 'dallas'],
+            ].map(([name, cSlug]) => (
+              <Link
+                key={cSlug}
+                href={`/services/buyer-inspection/${cSlug}`}
+                style={{ padding: '0.45rem 0.9rem', borderRadius: '999px', border: '1px solid #cbd5e1', background: '#f8fafc', color: '#0f172a', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none' }}
+              >
+                {name}, GA Home Inspection (From $345)
+              </Link>
+            ))}
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', fontSize: '0.88rem' }}>
+            <Link href="/services/new-construction-inspection/palmetto" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Palmetto New Construction (From $400)</Link>
+            <Link href="/services/pre-drywall-inspection/tyrone" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Tyrone Pre-Drywall (From $275)</Link>
+            <Link href="/services/mold-testing/woodstock" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Woodstock Mold Testing</Link>
+            <Link href="/services/sewer-scope-inspection/atlanta" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Atlanta Sewer Scope</Link>
+            <Link href="/services/sewer-scope-inspection/suwanee" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Suwanee Sewer Scope</Link>
+            <Link href="/services/commercial-property-inspection/fairburn" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Fairburn Commercial Inspection</Link>
+          </div>
+        </div>
+      </section>
 
       <section className="section bg-gray-light">
         <div className="container" style={{ maxWidth: '800px' }}>

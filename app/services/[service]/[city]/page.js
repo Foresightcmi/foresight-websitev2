@@ -376,7 +376,8 @@ export default async function ServiceCityPage({ params }) {
       "hasMap": "https://maps.google.com/?cid=10862078652033010531",
       "sameAs": [
         "https://maps.google.com/?cid=10862078652033010531",
-        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873"
+        "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
+        "https://www.linkedin.com/company/107206117/"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -390,6 +391,7 @@ export default async function ServiceCityPage({ params }) {
     "areaServed": {
       "@type": "City",
       "name": cityName,
+      ...(zip ? { "postalCode": zip } : {}),
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": cityData.Latitude || "33.7490",
@@ -604,7 +606,7 @@ export default async function ServiceCityPage({ params }) {
               </span>
             </div>
             <p id="aeo-direct-answer" style={{ fontSize: '1.02rem', lineHeight: 1.6, color: '#0f172a', fontWeight: 500, margin: '0 0 0.75rem 0' }}>
-              <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) provides 4.8★ certified {serviceName.toLowerCase()} in {cityName}, GA ({serviceData.price === 'Call for Quote' ? 'custom-quoted at 678-480-2110' : `starting at ${serviceData.price}`}) with two inspectors on site, free thermal imaging, 24-hour reports, and $35,000 warranty protection.
+              <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) provides 4.8★ certified {serviceName.toLowerCase()} in {cityName}, GA ({serviceData.price === 'Call for Quote' ? 'custom-quoted at 678-480-2110' : serviceData.price.replace(/^From\s+/i, 'starting from ')}) with two inspectors on site, free thermal imaging, 24-hour reports, and $35,000 warranty protection.
             </p>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: '#475569', margin: '0 0 1rem 0' }}>
               Serving all of {cityName} and {county} County ({serviceData.priceDetails}), our two-inspector parallel protocol eliminates late-stage solo inspector fatigue while including calibrated infrared thermal imaging ($0 upcharge vs. $150 competitor fees) and our $10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee ($0 deductible).
@@ -619,7 +621,7 @@ export default async function ServiceCityPage({ params }) {
               <div style={{ marginTop: '0.75rem', paddingTop: '0.65rem', borderTop: '1px dashed #e2e8f0', fontSize: '0.875rem', color: '#334155' }}>
                 🏡 Buying a home in {cityName}? View our primary{' '}
                 <Link href={`/services/buyer-inspection/${resolvedParams.city}`} style={{ color: 'var(--color-red)', fontWeight: 700, textDecoration: 'underline' }}>
-                  Home Inspection &amp; Home Inspector in {cityName}, GA ($345+)
+                  Home Inspection &amp; Home Inspector in {cityName}, GA (From $345)
                 </Link>{' '}
                 guide.{resolvedParams.city !== 'atlanta' && (<> • Looking for City of Atlanta coverage? See our <Link href={`/services/${serviceData.slug}/atlanta`} style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'underline' }}>Atlanta, GA {serviceName}</Link> hub.</>)}
               </div>
