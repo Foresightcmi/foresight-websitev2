@@ -1,9 +1,9 @@
 {
-  "lastRunAt": "2026-11-14T15:41:05.735269+00:00",
-  "topic": "The Ultimate Home Inspection Stress Test (Thermal & Moisture)",
-  "commercial": "FINAL_Ultimate Stress Test.mp4",
+  "lastRunAt": "2026-11-15T16:28:33.221273+00:00",
+  "topic": "Un-Grounded 3-Prong Outlets (Bootleg / Open Ground Hazard)",
+  "commercial": "FINAL_3_Prong_outlet_202608311835.mp4",
   "jobsCreated": 1,
-  "firstJobId": "job-comm-20261114-153010-7dd9",
+  "firstJobId": "job-comm-20261115-161753-ce3c",
   "livePublish": true,
   "publishedPlatforms": [
     "linkedin",
@@ -22,38 +22,38 @@
       "published": true,
       "personal": {
         "published": true,
-        "uploaded_video": false,
-        "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\linkedin_personal_after_post.png",
+        "uploaded_video": true,
+        "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\linkedin_personal_after_post.png",
         "url": "https://www.linkedin.com/feed/"
       },
       "company": {
         "published": true,
         "uploaded_video": true,
-        "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\linkedin_company_after_post.png",
+        "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\linkedin_company_after_post.png",
         "url": "https://www.linkedin.com/company/107206117/admin/page-posts/published/"
       },
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\linkedin_personal_after_post.png"
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\linkedin_personal_after_post.png"
     },
     "tiktok": {
       "ok": true,
       "platform": "tiktok",
       "published": true,
       "confirmed_redirect": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\tiktok_after_post.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\tiktok_after_post.png",
       "url": "https://www.tiktok.com/tiktokstudio/content"
     },
     "facebook_reels": {
       "ok": true,
       "platform": "meta_reels_fb_ig",
       "published": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\meta_reels_after_share.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\meta_reels_after_share.png",
       "url": "https://business.facebook.com/latest/reels_composer?asset_id=1988493077836707&business_id=301890663979294&ir_qe_exposed=1"
     },
     "instagram_reels": {
       "ok": true,
       "platform": "meta_reels_fb_ig",
       "published": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\meta_reels_after_share.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\meta_reels_after_share.png",
       "url": "https://business.facebook.com/latest/reels_composer?asset_id=1988493077836707&business_id=301890663979294&ir_qe_exposed=1"
     },
     "youtube": {
@@ -61,8 +61,8 @@
       "platform": "youtube",
       "published": true,
       "clicked_done": true,
-      "video_url": "https://youtube.com/shorts/LO_EJ_Kmrz0",
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\youtube_after_done.png",
+      "video_url": "https://youtube.com/shorts/U2id1Kt3q_U",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\youtube_after_done.png",
       "url": "https://studio.youtube.com/channel/UC1XFbPYDJ5uJYhjY4w3D1iw/videos/upload?d=ud&filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D"
     },
     "google_business_profile": {
@@ -70,7 +70,7 @@
       "platform": "google_business_profile",
       "published": true,
       "uploaded_media": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\gbp_after_upload.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\gbp_after_upload.png",
       "url": "https://business.google.com/local/business/13295917577711269956/promote/updates?hl=en&dcs=0&ih=gmbweb&origin=https%3A%2F%2Fbusiness.google.com"
     },
     "threads": {
@@ -78,17 +78,15 @@
       "platform": "threads",
       "published": false,
       "uploaded_media": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\threads_after_post.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\threads_after_post.png",
       "url": "https://www.threads.com/"
     },
     "pinterest": {
       "ok": true,
       "platform": "pinterest",
       "published": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261114-153010-7dd9\\pinterest_after_publish.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261115-161753-ce3c\\pinterest_after_publish.png",
       "url": "https://www.pinterest.com/pin-creation-tool/"
     }
-  },
-  "lastCheckedAt": "2026-11-14T23:15:06.961203+00:00",
-  "lastCheckNote": "exit-0"
+  }
 }
