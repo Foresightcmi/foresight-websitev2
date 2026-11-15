@@ -1,5 +1,47 @@
 [
   {
+    "timestamp": "2026-11-15T19:27:06.070Z",
+    "source_url": "https://www.fhinspectionsatl.com",
+    "retrieved_on": "2026-11-15",
+    "truthGuardPassed": true,
+    "page1GuardPassed": false,
+    "aiMentionTrackerPassed": true,
+    "aiFanningPassed": true,
+    "deployedToVercel": false,
+    "executedImpactTask": {
+      "priority": "P1_GSC_STRIKING_DISTANCE_EXECUTED",
+      "executed": true,
+      "citiesUpdated": 24,
+      "targets": [
+        "Acworth (\"pre-drywall inspections in acworth, ga\", Pos 8.1, 64 impr)",
+        "Canton (\"commercial inspection canton ga\", Pos 9.1, 44 impr)",
+        "Powder Springs (\"commercial inspections powder springs, ga\", Pos 8.8, 44 impr)",
+        "Buford (\"mold inspection near me buford\", Pos 6.4, 41 impr)",
+        "Peachtree City (\"commercial inspections peachtree city, ga\", Pos 8.1, 40 impr)",
+        "Duluth (\"seller home inspections duluth, ga\", Pos 8.4, 40 impr)",
+        "Alpharetta (\"commercial building inspections alpharetta, ga\", Pos 8.3, 39 impr)",
+        "Cumming (\"indoor air quality testing in cumming ga\", Pos 10.1, 38 impr)",
+        "Carrollton (\"property inspections carrollton, ga\", Pos 16.2, 36 impr)",
+        "Marietta (\"pre listing home inspection marietta ga\", Pos 18.9, 35 impr)",
+        "Atlanta (\"spa inspections atlanta, ga\", Pos 13.5, 35 impr)",
+        "Dunwoody (\"11 month warranty inspection dunwoody ga\", Pos 19.7, 34 impr)",
+        "Kennesaw (\"11 month warranty inspection kennesaw ga\", Pos 18.3, 31 impr)",
+        "Smyrna (\"11 month warranty inspection smyrna ga\", Pos 19.9, 31 impr)",
+        "Dallas (\"pre listing home inspection dallas ga\", Pos 16.4, 29 impr)",
+        "Sandy Springs (\"pre listing home inspection sandy springs ga\", Pos 19.5, 29 impr)",
+        "Roswell (\"commercial inspections roswell, ga\", Pos 20.1, 28 impr)",
+        "Woodstock (\"commercial inspections woodstock, ga\", Pos 15.4, 28 impr)",
+        "Norcross (\"mold inspection near me norcross\", Pos 9.4, 27 impr)",
+        "Suwanee (\"mold inspection near me suwanee\", Pos 4.7, 23 impr)",
+        "Cartersville (\"home inspection cartersville ga\", Pos 20.2, 21 impr)",
+        "Peachtree Corners (\"mold inspection peachtree corners\", Pos 10.1, 20 impr)",
+        "Griffin (\"indoor air quality services griffin\", Pos 5.2, 19 impr)",
+        "Milton (\"milton pool inspection\", Pos 6.2, 17 impr)"
+      ],
+      "task": "Auto-injected exact-match striking-distance GSC phrases into 24 city hubs: Acworth (\"pre-drywall inspections in acworth, ga\", Pos 8.1, 64 impr) | Canton (\"commercial inspection canton ga\", Pos 9.1, 44 impr) | Powder Springs (\"commercial inspections powder springs, ga\", Pos 8.8, 44 impr) | Buford (\"mold inspection near me buford\", Pos 6.4, 41 impr) | Peachtree City (\"commercial inspections peachtree city, ga\", Pos 8.1, 40 impr) | Duluth (\"seller home inspections duluth, ga\", Pos 8.4, 40 impr) | Alpharetta (\"commercial building inspections alpharetta, ga\", Pos 8.3, 39 impr) | Cumming (\"indoor air quality testing in cumming ga\", Pos 10.1, 38 impr) | Carrollton (\"property inspections carrollton, ga\", Pos 16.2, 36 impr) | Marietta (\"pre listing home inspection marietta ga\", Pos 18.9, 35 impr) | Atlanta (\"spa inspections atlanta, ga\", Pos 13.5, 35 impr) | Dunwoody (\"11 month warranty inspection dunwoody ga\", Pos 19.7, 34 impr) | Kennesaw (\"11 month warranty inspection kennesaw ga\", Pos 18.3, 31 impr) | Smyrna (\"11 month warranty inspection smyrna ga\", Pos 19.9, 31 impr) | Dallas (\"pre listing home inspection dallas ga\", Pos 16.4, 29 impr) | Sandy Springs (\"pre listing home inspection sandy springs ga\", Pos 19.5, 29 impr) | Roswell (\"commercial inspections roswell, ga\", Pos 20.1, 28 impr) | Woodstock (\"commercial inspections woodstock, ga\", Pos 15.4, 28 impr) | Norcross (\"mold inspection near me norcross\", Pos 9.4, 27 impr) | Suwanee (\"mold inspection near me suwanee\", Pos 4.7, 23 impr) | Cartersville (\"home inspection cartersville ga\", Pos 20.2, 21 impr) | Peachtree Corners (\"mold inspection peachtree corners\", Pos 10.1, 20 impr) | Griffin (\"indoor air quality services griffin\", Pos 5.2, 19 impr) | Milton (\"milton pool inspection\", Pos 6.2, 17 impr)"
+    }
+  },
+  {
     "timestamp": "2026-11-14T18:49:16.065Z",
     "source_url": "https://www.fhinspectionsatl.com",
     "retrieved_on": "2026-11-14",
