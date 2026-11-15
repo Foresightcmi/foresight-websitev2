@@ -94,11 +94,11 @@ What sets our process apart:
 • Digital report with HD photos and video delivered within 24 hours to share directly with your builder's superintendent
 • Backed by up to $35,000 in warranty protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)
 
-Straightforward flat-rate pricing:
-- Pre-drywall framing inspection: from $275
-- New construction final walkthrough inspection: from $345
-- 11-month builder warranty evaluation (before Day 365): from $345
-- DeKalb County Low-Flow Plumbing Fixture Certificate (Official CMI Sign-Off): $100 Flat Fee
+Straightforward pricing:
+- Pre-drywall framing inspection: From $275
+- New construction final walkthrough inspection: From $400
+- 11-month builder warranty evaluation (before Day 365): From $345
+- DeKalb County Low-Flow Plumbing Fixture Certificate (Official CMI Sign-Off): Call (678) 480-2110 for Quote
 
 If you already have an independent inspector on board or have already completed your inspections, congratulations on your new build and please feel free to disregard this note!
 
@@ -125,12 +125,12 @@ ${disclosureText(agencyName)}`;
       <li><strong>Digital report with HD photos and video</strong> delivered within 24 hours to share directly with your builder's superintendent</li>
       <li>Backed by <strong>up to $35,000 in warranty protection</strong> ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)</li>
     </ul>
-    <p style="margin:0 0 6px;"><strong>Straightforward flat-rate pricing:</strong></p>
+    <p style="margin:0 0 6px;"><strong>Straightforward pricing:</strong></p>
     <ul style="margin:0 0 14px;padding-left:20px;">
-      <li>Pre-drywall framing inspection: from $275</li>
-      <li>New construction final walkthrough inspection: from $345</li>
-      <li>11-month builder warranty evaluation (before Day 365): from $345</li>
-      <li><strong>DeKalb County Low-Flow Plumbing Fixture Certificate: $100 Flat Fee</strong></li>
+      <li>Pre-drywall framing inspection: From $275</li>
+      <li>New construction final walkthrough inspection: From $400</li>
+      <li>11-month builder warranty evaluation (before Day 365): From $345</li>
+      <li><strong>DeKalb County Low-Flow Plumbing Fixture Certificate: Call (678) 480-2110 for Quote</strong></li>
     </ul>
     <p style="margin:0 0 14px;">If you already have an independent inspector on board or have already completed your inspections, congratulations on your new build and please feel free to disregard this note!</p>
     <p style="margin:0 0 14px;">If you would like to talk through your build schedule or lock in an evaluation, simply reply to this email or call me directly at <a href="tel:6784802110" style="color:#0f172a;font-weight:600;">${PHONE}</a>. Full details are also available at <a href="${SITE}/services/new-construction-inspection" style="color:#0f172a;">fhinspectionsatl.com/services/new-construction-inspection</a>.</p>
@@ -167,7 +167,7 @@ What we inspect on site:
 • Deck ledger boards, guardrails, and stair stability
 • 24-hour digital checklist report with photos for your owner records and insurance documentation
 
-Inspection fee: Starts at $395.
+Inspection fee: Call (678) 480-2110 for Quote.
 
 If you have already completed your safety checks or are fully set, congratulations and please feel free to disregard this note!
 
@@ -197,7 +197,7 @@ ${disclosureText(agencyName)}`;
       <li>Deck ledger boards, guardrails, and stair stability</li>
       <li>24-hour digital checklist report with photos for your owner records and insurance documentation</li>
     </ul>
-    <p style="margin:0 0 14px;"><strong>Inspection fee:</strong> Starts at $395</p>
+    <p style="margin:0 0 14px;"><strong>Inspection fee:</strong> Call (678) 480-2110 for Quote</p>
     <p style="margin:0 0 14px;">If you have already completed your safety checks or are fully set, congratulations and please feel free to disregard this note!</p>
     <p style="margin:0 0 14px;">If you would like to book a safety evaluation or discuss any questions about your property, simply reply to this email, call me at <a href="tel:6784802110" style="color:#0f172a;font-weight:600;">${PHONE}</a>, or learn more at <a href="${SITE}/service-areas/atlanta-str-compliance" style="color:#0f172a;">fhinspectionsatl.com/service-areas/atlanta-str-compliance</a>.</p>
   `, agencyName);

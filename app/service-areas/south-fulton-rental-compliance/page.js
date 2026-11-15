@@ -6,7 +6,7 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 // SEO Metadata
 // ---------------------------------------------------------------------------
 export async function generateMetadata() {
-  const title = 'City of South Fulton Rental Property Inspection | Landlord Compliance $250';
+  const title = 'City of South Fulton Rental Property Inspection | Landlord Compliance';
   const description =
     'Certified Master Inspector property maintenance & life-safety inspections for City of South Fulton residential landlords and property managers. Official compliance certificate.';
 
@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: 'How much does a South Fulton rental compliance inspection cost?',
-    a: 'We offer a transparent flat fee of $250 per single-family home or townhouse. For landlords and property management companies with portfolios of 3 or more units, we provide volume portfolio pricing at $195 per unit. This includes our full inspection and the signed compliance certificate required by the city.',
+    a: 'Call (678) 480-2110 for a quote on single-family homes, townhouses, or multi-unit landlord portfolios (3+ units). Every inspection includes our full life-safety evaluation and the signed compliance certificate required by the city.',
   },
   {
     q: 'How fast do I receive the compliance certificate for the City of South Fulton?',
@@ -234,7 +234,7 @@ export default function SouthFultonRentalCompliancePage() {
               lineHeight: 1.7,
             }}
           >
-            Mandatory property maintenance & life-safety compliance certificates for South Fulton landlords, single-family investors, and property management firms. $250 flat fee with 24-hr turnaround.
+            Mandatory property maintenance &amp; life-safety compliance certificates for South Fulton landlords, single-family investors, and property management firms. Call (678) 480-2110 for a quote with 24-hr turnaround.
           </p>
           <div
             style={{
@@ -249,7 +249,7 @@ export default function SouthFultonRentalCompliancePage() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
             >
-              Instant Rental Quote ($250)
+              Request Rental Quote
             </Link>
             <a
               href="tel:678-480-2110"
@@ -277,7 +277,7 @@ export default function SouthFultonRentalCompliancePage() {
           >
             <span>Certified Master Inspector® (CMI)</span>
             <span>Fast Same-Day / 24-Hr Certificates</span>
-            <span>Volume Rates for 3+ Unit Portfolios ($195/unit)</span>
+            <span>Multi-Unit Portfolio Quotes Available</span>
           </div>
         </div>
       </section>
@@ -400,10 +400,10 @@ export default function SouthFultonRentalCompliancePage() {
               </ul>
               <div style={{ marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--color-gold)', marginBottom: '0.25rem' }}>
-                  $250 Flat Fee / Unit
+                  Call (678) 480-2110 for Quote
                 </div>
                 <div style={{ fontSize: '0.825rem', color: '#94A3B8', marginBottom: '1.25rem' }}>
-                  Multi-unit portfolios (3+ properties): $195 / unit
+                  Multi-unit landlord portfolios (3+ properties) available
                 </div>
                 <Link
                   href="/quote"
@@ -599,7 +599,7 @@ export default function SouthFultonRentalCompliancePage() {
               className="btn btn-primary"
               style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}
             >
-              Book Rental Inspection ($250)
+              Book Rental Inspection (Call for Quote)
             </Link>
             <a
               href="tel:678-480-2110"

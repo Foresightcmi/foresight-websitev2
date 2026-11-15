@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { CHRIS_SYSTEM_INSTRUCTION } from '../../../lib/chris-brain-prompt';
+import { resolveGeminiPrimaryTextModel } from '../../../lib/gemini-model-resolver.mjs';
 
 export async function POST(request) {
   try {
@@ -35,10 +36,11 @@ export async function POST(request) {
     });
 
     const systemInstruction = CHRIS_SYSTEM_INSTRUCTION;
+    const activeModel = await resolveGeminiPrimaryTextModel(apiKey);
 
     // If client requested streaming, stream plain text tokens with sub-second TTFT
     if (stream) {
-      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${activeModel}:streamGenerateContent?alt=sse&key=${apiKey}`;
 
       const geminiRes = await fetch(endpoint, {
         method: 'POST',
@@ -112,7 +114,7 @@ export async function POST(request) {
     }
 
     // Standard fast non-streaming response (with thinkingBudget: 0 for ~1s latency)
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${activeModel}:generateContent?key=${apiKey}`;
 
     const response = await fetch(endpoint, {
       method: 'POST',

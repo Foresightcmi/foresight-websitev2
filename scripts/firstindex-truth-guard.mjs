@@ -215,7 +215,7 @@ for (const p of posts) {
   if ((p.title + p.excerpt + p.content).includes('*')) asteriskPosts++;
 }
 record(`Blog post link-density ceiling (<= ${maxLinks} links/post)`, excessiveLinkPosts === 0, `${excessiveLinkPosts} posts exceed cap`);
-record('Zero visible asterisks (*) across all 39 blog posts', asteriskPosts === 0);
+record(`Zero visible asterisks (*) across all ${posts.length} blog posts`, asteriskPosts === 0);
 
 // Step 4: GitGuardian Zero-Leak, Anti-Spam Bounce Guard & foresightcmi.com Redirect Checks
 const ggExists = fs.existsSync(path.join(ROOT, '.gitguardian.yaml'));

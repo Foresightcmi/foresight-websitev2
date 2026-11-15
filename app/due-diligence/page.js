@@ -176,7 +176,7 @@ export default function DueDiligencePage() {
                 Guaranteed 48-Hour Scheduling Window
               </h3>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '1rem', lineHeight: 1.6, flexGrow: 1 }}>
-                Once your purchase agreement is binding, you cannot afford to wait 4 to 6 days for an open slot. Our dual-inspector team guarantees an on-site appointment within 48 hours across 163+ Metro Atlanta cities.
+                Once your purchase agreement is binding, you cannot afford to wait 4 to 6 days for an open slot. Our dual-inspector team guarantees an on-site appointment within 48 hours across 87 Metro Atlanta cities.
               </p>
             </div>
 

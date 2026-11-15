@@ -97,7 +97,7 @@ export default function CitySearch({ cities }) {
       {filtered.length === 0 && (
         <div style={{ textAlign: 'center', padding: '2rem', background: 'white', borderRadius: 'var(--radius-md)' }}>
           <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem', marginBottom: '1rem' }}>
-            We serve all 163+ cities across Metro Atlanta! If your city isn&apos;t listed above, we still cover your area.
+            We serve all 87 cities across 20 Metro Atlanta counties! If your city isn&apos;t listed above, we still cover your area.
           </p>
           <a href="tel:6784802110" className="btn btn-primary">
             Call to Confirm Coverage: (678) 480-2110 &rarr;

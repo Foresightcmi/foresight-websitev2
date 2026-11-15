@@ -141,8 +141,8 @@ async function fetchDeKalbPermits() {
         comments: a.comments ? a.comments.slice(0, 300) : null,
         acaLink: `https://aca-prod.accela.com/DEKALB/Cap/GlobalSearchResults.aspx?QueryText=${a.applicationNumber || a.id}`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.locationLine1 || 'DeKalb County, GA')}`,
-        inspectionOpportunity: 'Pre-Drywall Inspection + 11-Month Builder Warranty + $100 DeKalb Low-Flow Certificate',
-        estimatedInspectionFee: 'From $275 - $345 (+ $100 Low-Flow)',
+        inspectionOpportunity: 'Pre-Drywall Inspection + 11-Month Builder Warranty + DeKalb Low-Flow Certificate',
+        estimatedInspectionFee: 'Pre-Drywall From $275 | Final From $400 | 11-Month From $345 | Low-Flow: Call (678) 480-2110 for Quote',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -331,7 +331,7 @@ async function fetchAtlantaSTRPermits() {
         acaLink: `https://aca-prod.accela.com/ATLANTA_GA/Cap/GlobalSearchResults.aspx?QueryText=${encodeURIComponent(a.USER_RECORD_ID || a.USER_ADDRESS || '')}`,
         streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`,
         inspectionOpportunity: 'City of Atlanta STR Annual Life-Safety & Smoke/CO Inspection',
-        estimatedInspectionFee: 'From $395',
+        estimatedInspectionFee: 'Call (678) 480-2110 for Quote',
         harvestedAt: new Date().toISOString()
       };
     });
@@ -344,6 +344,69 @@ async function fetchAtlantaSTRPermits() {
 /**
  * Dispatches smartphone push notification via ntfy.sh
  */
+
+/**
+ * 6. Queries Forsyth County GIS Tax_Parcel (2025-2026 New Builds for 11-Month Builder Warranty)
+ *    & Forsyth EnerGov Building Permits (Residential Detached New Construction)
+ */
+async function fetchForsythPermits() {
+  console.log('🏛️  [Permit Radar: Forsyth County] Querying Forsyth GIS 2025-2026 New Construction & 11-Month Warranty Cohort...');
+  const results = [];
+  try {
+    const params = new URLSearchParams({
+      where: 'RESYRBLT >= 2025 AND SITEADDRESS IS NOT NULL',
+      outFields: 'OBJECTID,PARCELID,SITEADDRESS,CNVYNAME,PSTLADDRESS,PSTLCITY,PSTLZIP5,RESYRBLT,RESFLRAREA,CNTASSDVAL',
+      returnGeometry: 'false',
+      orderByFields: 'CNTASSDVAL DESC',
+      resultRecordCount: '40',
+      f: 'json'
+    });
+    const url = `https://geo.forsythco.com/gis/rest/services/Public/Tax_Parcel/FeatureServer/0/query?${params.toString()}`;
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+      signal: AbortSignal.timeout(12000)
+    });
+    if (response.ok) {
+      const json = await response.json();
+      const features = json.features || [];
+      console.log(`✅ [Permit Radar: Forsyth County] Retrieved ${features.length} 2025-2026 New Construction / 11-Month Warranty parcels.`);
+      for (const f of features) {
+        const a = f.attributes || {};
+        const pid = String(a.PARCELID || a.OBJECTID).replace(/\s+/g, '');
+        const city = a.PSTLCITY || 'Cumming';
+        const zip = a.PSTLZIP5 || '30041';
+        const addr = a.SITEADDRESS ? `${a.SITEADDRESS.trim()}, ${city}, GA ${zip}` : `${city}, GA ${zip}`;
+        const subdiv = a.CNVYNAME ? a.CNVYNAME.trim() : 'Forsyth Subdivision';
+        const sqft = Math.round(Number(a.RESFLRAREA || 2600));
+        const yr = Math.round(Number(a.RESYRBLT || 2025));
+        results.push({
+          recordId: `FOR-${pid}`,
+          jurisdiction: 'Forsyth County (Cumming / North Metro)',
+          permitName: `${subdiv} — ${yr} New Build (${sqft} sq ft)`,
+          permitType: `Residential New Construction (${yr} Build — 11-Month Warranty Window)`,
+          address: addr,
+          jobValue: Number(a.CNTASSDVAL || 450000),
+          status: 'Active 11-Month Warranty Window',
+          statusDate: new Date().toISOString().split('T')[0],
+          parcel: String(a.PARCELID || 'N/A').trim(),
+          quadrant: 'Northeast (Forsyth)',
+          ownerName: `${subdiv} Homeowner`,
+          ownerEmail: null,
+          ownerPhone: null,
+          acaLink: 'https://geo.forsythco.com/gis/rest/services/Public/Tax_Parcel/FeatureServer/0',
+          streetView: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`,
+          inspectionOpportunity: '11-Month Builder Warranty Inspection (2 Certified Inspectors + 4K Drone + Thermal)',
+          estimatedInspectionFee: 'From $345',
+          harvestedAt: new Date().toISOString()
+        });
+      }
+    }
+  } catch (err) {
+    console.warn(`⚠️ [Permit Radar: Forsyth County] Error:`, err.message);
+  }
+  return results;
+}
+
 async function dispatchPushAlert(newLeads, statsByJurisdiction) {
   if (!newLeads || newLeads.length === 0) return;
 
@@ -404,12 +467,13 @@ async function main() {
 
   try {
     // Execute all municipal collectors in parallel
-    const [atlRes, dkbRes, alpRes, jckRes, strRes] = await Promise.allSettled([
+    const [atlRes, dkbRes, alpRes, jckRes, strRes, forRes] = await Promise.allSettled([
       fetchAtlantaPermits(),
       fetchDeKalbPermits(),
       fetchAlpharettaPermits(),
       fetchJohnsCreekPermits(),
-      fetchAtlantaSTRPermits()
+      fetchAtlantaSTRPermits(),
+      fetchForsythPermits()
     ]);
 
     const atlLeads = atlRes.status === 'fulfilled' ? atlRes.value : [];
@@ -417,8 +481,9 @@ async function main() {
     const alpLeads = alpRes.status === 'fulfilled' ? alpRes.value : [];
     const jckLeads = jckRes.status === 'fulfilled' ? jckRes.value : [];
     const strLeads = strRes.status === 'fulfilled' ? strRes.value : [];
+    const forLeads = forRes.status === 'fulfilled' ? forRes.value : [];
 
-    const allHarvested = [...atlLeads, ...dkbLeads, ...alpLeads, ...jckLeads, ...strLeads];
+    const allHarvested = [...atlLeads, ...dkbLeads, ...alpLeads, ...jckLeads, ...strLeads, ...forLeads];
     console.log(`\n📊 [Permit Radar] Multi-Jurisdiction Raw Harvest Complete: ${allHarvested.length} total permits across 5 jurisdictions.`);
 
     // Ensure data directory exists
@@ -453,9 +518,39 @@ async function main() {
       }
     }
 
+    // Cross-match active MLS contracts & new builds to populate missing Realtor/Agent contacts on Alpharetta/Johns Creek/Forsyth permits
+    const mlsAddressEmailMap = new Map();
+    for (const srcRel of ['data/under-contract-realtors.json', 'data/new-construction-leads.json']) {
+      try {
+        const p = path.join(ROOT_DIR, srcRel);
+        if (!fs.existsSync(p)) continue;
+        const rows = JSON.parse(fs.readFileSync(p, 'utf8'));
+        for (const r of (Array.isArray(rows) ? rows : [])) {
+          const normAddr = String(r.address || '').split(',')[0].toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+          const em = String(r.email || r.ownerEmail || '').toLowerCase().trim();
+          if (normAddr && em && em.includes('@') && !mlsAddressEmailMap.has(normAddr)) {
+            mlsAddressEmailMap.set(normAddr, { email: em, name: r.name || r.ownerName || '', phone: r.phone || r.agentPhone || null });
+          }
+        }
+      } catch {}
+    }
+    const enrichPermitLead = (l) => {
+      if (!l.ownerEmail && l.address) {
+        const key = String(l.address).split(',')[0].toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+        const hit = mlsAddressEmailMap.get(key);
+        if (hit) {
+          l.ownerEmail = hit.email;
+          if (!l.ownerName || /homeowner|owner|tbd/i.test(l.ownerName)) l.ownerName = hit.name || l.ownerName;
+          if (!l.ownerPhone && hit.phone) l.ownerPhone = hit.phone;
+        }
+      }
+      return l;
+    };
+
     const existingIds = new Set(existingLeads.map(l => l.recordId));
     const newlyDiscovered = [];
     for (const l of allHarvested) {
+      enrichPermitLead(l);
       if (!existingIds.has(l.recordId)) {
         existingIds.add(l.recordId);
         newlyDiscovered.push(l);
@@ -464,16 +559,18 @@ async function main() {
 
     console.log(`✨ [Permit Radar] ${newlyDiscovered.length} NEWLY DISCOVERED high-intent permits across Metro Atlanta.`);
 
-    // Track breakdown by jurisdiction
     const statsByJurisdiction = {};
     newlyDiscovered.forEach(l => {
       statsByJurisdiction[l.jurisdiction] = (statsByJurisdiction[l.jurisdiction] || 0) + 1;
     });
 
     // Merge and save (cap at top 250 most recent records)
-    const combined = [...newlyDiscovered, ...existingLeads].slice(0, 250);
+    const combined = [...newlyDiscovered, ...existingLeads].map(enrichPermitLead).slice(0, 250);
     fs.writeFileSync(DATA_FILE, JSON.stringify(combined, null, 2), 'utf8');
     console.log(`💾 [Permit Radar] Saved ${combined.length} total qualified permit leads to ${DATA_FILE}`);
+
+    const harvestOnly = process.argv.includes('--harvest-only') || process.argv.includes('--dry-run');
+    const skipAlert = harvestOnly || process.argv.includes('--no-alert');
 
     // If new leads discovered, generate executive dossiers and dispatch smartphone push alert
     if (newlyDiscovered.length > 0) {
@@ -481,31 +578,37 @@ async function main() {
       try {
         const { execSync } = await import('node:child_process');
         execSync('node scripts/generate-permit-dossiers.mjs', { stdio: 'inherit', cwd: ROOT_DIR });
-        try {
-          execSync('git add public/dossiers/ data/permit-leads.json data/permit-leads-crm.json', { stdio: 'ignore', cwd: ROOT_DIR });
-          const status = execSync('git status --porcelain public/dossiers data/permit-leads.json data/permit-leads-crm.json', { cwd: ROOT_DIR }).toString().trim();
-          if (status) {
-            execSync('git commit -m "chore(dossiers): auto-deploy newly harvested dossiers"', { stdio: 'ignore', cwd: ROOT_DIR });
-            execSync('git pull --no-rebase -X ours origin main', { stdio: 'ignore', cwd: ROOT_DIR });
-            execSync('git push origin main', { stdio: 'ignore', cwd: ROOT_DIR });
-            console.log('🚀 [Permit Radar] Successfully synced and deployed new dossiers to production.');
+        if (!harvestOnly) {
+          try {
+            execSync('git add public/dossiers/ data/permit-leads.json data/permit-leads-crm.json', { stdio: 'ignore', cwd: ROOT_DIR });
+            const status = execSync('git status --porcelain public/dossiers data/permit-leads.json data/permit-leads-crm.json', { cwd: ROOT_DIR }).toString().trim();
+            if (status) {
+              execSync('git commit -m "chore(dossiers): auto-deploy newly harvested dossiers"', { stdio: 'ignore', cwd: ROOT_DIR });
+              execSync('git pull --no-rebase -X ours origin main', { stdio: 'ignore', cwd: ROOT_DIR });
+              execSync('git push origin main', { stdio: 'ignore', cwd: ROOT_DIR });
+              console.log('🚀 [Permit Radar] Successfully synced and deployed new dossiers to production.');
+            }
+          } catch (syncErr) {
+            console.warn('ℹ️ [Permit Radar] Git sync note:', syncErr.message);
           }
-        } catch (syncErr) {
-          console.warn('ℹ️ [Permit Radar] Git sync note:', syncErr.message);
         }
       } catch (genErr) {
         console.warn('⚠️ [Permit Radar] Dossier generation error:', genErr.message);
       }
-      await dispatchPushAlert(newlyDiscovered, statsByJurisdiction);
+      if (!skipAlert) await dispatchPushAlert(newlyDiscovered, statsByJurisdiction);
     }
 
-    // Instantly trigger autonomous email dispatch for any uncontacted leads ASAP
-    console.log('⚡ [Permit Radar] Dispatching autonomous email outreach to all uncontacted permit leads ASAP...');
-    try {
-      const { execSync } = await import('node:child_process');
-      execSync('node scripts/permit-outreach-engine.mjs --all', { stdio: 'inherit', cwd: ROOT_DIR });
-    } catch (outreachErr) {
-      console.warn('⚠️ [Permit Radar] Outreach dispatch note:', outreachErr.message);
+    // Instantly trigger autonomous email dispatch unless --harvest-only / --dry-run
+    if (!harvestOnly) {
+      console.log('⚡ [Permit Radar] Dispatching autonomous email outreach to all uncontacted permit leads ASAP...');
+      try {
+        const { execSync } = await import('node:child_process');
+        execSync('node scripts/permit-outreach-engine.mjs --all', { stdio: 'inherit', cwd: ROOT_DIR });
+      } catch (outreachErr) {
+        console.warn('⚠️ [Permit Radar] Outreach dispatch note:', outreachErr.message);
+      }
+    } else {
+      console.log('ℹ️ [Permit Radar] --harvest-only active: skipped git push, ntfy alert, and live email dispatch.');
     }
 
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);

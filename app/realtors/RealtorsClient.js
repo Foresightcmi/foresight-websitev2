@@ -239,7 +239,7 @@ export default function RealtorsClient() {
               <div className="font-mono text-sm font-bold text-primary mb-3">[TWO INSPECTORS]</div>
               <h3 style={{ marginBottom: '1rem', fontWeight: 700 }}>The Due Diligence Accelerator</h3>
               <p style={{ color: 'var(--color-gray-dark)', flexGrow: 1, fontSize: '1.025rem', lineHeight: 1.6 }}>
-                In Atlanta's fast-paced market, tight due diligence windows kill deals. We send <strong>two certified inspectors</strong> to every job to cut on-site time in half and guarantee your clients get their comprehensive report within 24 hours, maximizing your negotiation leverage.
+                In Atlanta's fast-paced market, tight due diligence windows kill deals. We send <strong>two certified inspectors</strong> to every job to deliver 2x diagnostic depth with dedicated structural and mechanical focus and zero solo-inspector fatigue and guarantee your clients get their comprehensive report within 24 hours, maximizing your negotiation runway.
               </p>
             </div>
 
@@ -669,7 +669,7 @@ export default function RealtorsClient() {
             </Link>
           </div>
 
-          {/* Realtor Tool Spotlight: $99 Contractor Repair Estimates & Outside Report Reviews */}
+          {/* Realtor Tool Spotlight: Contractor Repair Estimates & Outside Report Reviews */}
           <div style={{
             marginTop: '1.5rem',
             background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%)',
@@ -684,13 +684,13 @@ export default function RealtorsClient() {
           }}>
             <div style={{ maxWidth: '700px' }}>
               <span style={{ background: 'rgba(212, 175, 55, 0.2)', color: 'var(--color-gold)', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', padding: '0.2rem 0.6rem', borderRadius: '4px', letterSpacing: '0.05em' }}>
-                Optional Realtor Negotiation Service &bull; $99 Flat Fee
+                Optional Realtor Negotiation Service &bull; Call (678) 480-2110 for Quote
               </span>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', fontWeight: 800, margin: '0.5rem 0 0.25rem 0' }}>
-                Itemized Contractor Repair Cost Estimates &amp; Outside Report Reviews ($99)
+                Itemized Contractor Repair Cost Estimates &amp; Outside Report Reviews (Call (678) 480-2110 for Quote)
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '0.92rem', margin: 0, lineHeight: 1.5 }}>
-                Standard Georgia home inspections are diagnostic only per InterNACHI standards. When your clients need empirical trade numbers for repair amendment negotiations, Foresight provides an optional <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with regional Atlanta trade schedules. <em>Also available as a 4-hour standalone evaluation if your client already hired an outside inspection company!</em>
+                Standard Georgia home inspections are diagnostic only per InterNACHI standards. When your clients need empirical trade numbers for repair amendment negotiations, Foresight provides an optional <strong>Itemized Contractor Repair Cost Estimate (Call (678) 480-2110 for Quote)</strong> calibrated with regional Atlanta trade schedules. <em>Also available as a 4-hour standalone evaluation if your client already hired an outside inspection company!</em>
               </p>
             </div>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>

@@ -7,20 +7,20 @@
 
 export const LEGACY_BULLET_RE = /<li>Certified <strong>[^<]+<\/strong> and full residential property diagnostics[^<]*<\/li>/g;
 export const MANAGED_RE = /<li data-gsc="([a-z-]+)">[\s\S]*?<\/li>/g;
-export const MAX_MANAGED_PER_CITY = 2;
+export const MAX_MANAGED_PER_CITY = 3;
 
 // Order matters: first match wins.
 export const INTENTS = [
-  { id: 'sewer', re: /sewer|lateral|camera/, label: 'sewer scope inspection', price: 'a $450 flat rate', path: '/services/sewer-scope-inspection' },
-  { id: 'radon', re: /radon/, label: 'radon testing', price: 'a $250 flat rate', path: '/services/radon-testing' },
-  { id: 'mold', re: /mold|air quality|iaq/, label: 'mold and air quality testing', price: 'from $450', path: '/services/mold-testing' },
-  { id: 'termite', re: /termite|wdo|wood destroying/, label: 'termite and WDO inspection', price: 'from $125', path: '/services/termite-inspection' },
-  { id: 'pool', re: /pool|spa/, label: 'pool and spa inspection', price: 'a $300 flat rate', path: '/services/pool-inspection' },
-  { id: 'warranty', re: /11 month|11-month|warranty/, label: '11-month builder warranty inspection', price: 'from $335', path: '/services/11-month-warranty-inspection' },
+  { id: 'sewer', re: /sewer|lateral|camera/, label: 'sewer scope inspection', price: '(Call (678) 480-2110 for Quote)', path: '/services/sewer-scope-inspection' },
+  { id: 'radon', re: /radon/, label: 'radon testing', price: '(Call (678) 480-2110 for Quote)', path: '/services/radon-testing' },
+  { id: 'mold', re: /mold|air quality|iaq/, label: 'mold and air quality testing', price: '(Call (678) 480-2110 for Quote)', path: '/services/mold-testing' },
+  { id: 'termite', re: /termite|wdo|wood destroying/, label: 'termite and WDO inspection', price: '(Call (678) 480-2110 for Quote)', path: '/services/termite-inspection' },
+  { id: 'pool', re: /pool|spa/, label: 'pool and spa inspection', price: '(Call (678) 480-2110 for Quote)', path: '/services/pool-inspection' },
+  { id: 'warranty', re: /11 month|11-month|warranty/, label: '11-month builder warranty inspection', price: 'from $345', path: '/services/11-month-warranty-inspection' },
   { id: 'predrywall', re: /pre[\s-]?drywall|framing/, label: 'pre-drywall inspection', price: 'from $275', path: '/services/pre-drywall-inspection' },
   { id: 'newbuild', re: /new construction|new build/, label: 'new construction inspection', price: 'from $400', path: '/services/new-construction-inspection' },
-  { id: 'prelisting', re: /pre[\s-]?listing|seller/, label: 'pre-listing inspection', price: 'from $365', path: '/services/pre-listing-inspection' },
-  { id: 'commercial', re: /commercial/, label: 'commercial property inspection', price: 'from $750', path: '/services/commercial-property-inspection' },
+  { id: 'prelisting', re: /pre[\s-]?listing|seller/, label: 'pre-listing inspection', price: 'from $345 ($295 condos)', path: '/services/pre-listing-inspection' },
+  { id: 'commercial', re: /commercial/, label: 'commercial property inspection', price: '(Call (678) 480-2110 for Quote)', path: '/services/commercial-property-inspection' },
   { id: 'home', re: /.*/, label: 'home inspection', price: 'from $345 ($295 condos)', path: '/quote' }
 ];
 

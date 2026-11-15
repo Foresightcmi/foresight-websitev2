@@ -13,7 +13,9 @@ export default function robots() {
     '/warranty-dispatch.html',
     '/videos/chris-avatar*',
     '/audio/',
-    '/sample-report/'
+    '/sample-report/',
+    '/blog?*',
+    '/*?q=*'
   ];
 
   return {

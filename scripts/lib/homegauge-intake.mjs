@@ -253,6 +253,42 @@ export async function pollHomeGaugeImap(user, pass, seenUids = [], seenCancelUid
   });
 }
 
+/** Poll Gmail INBOX (14d) for client opt-out or already-reviewed email replies */
+export async function pollReviewOptOutReplies(user, pass, queuedEmails = []) {
+  const targets = new Set((queuedEmails || []).map((e) => String(e || '').toLowerCase().trim()).filter(Boolean));
+  if (!user || !pass || !targets.size) return { optOuts: [], reviewed: [] };
+  return new Promise((resolve) => {
+    const optOuts = new Set(), reviewed = new Set();
+    let buf = '', step = 0;
+    const sinceDate = new Date(Date.now() - 14 * 86400000).toUTCString().split(' ').slice(1, 4).join('-');
+    const sock = tls.connect(993, 'imap.gmail.com', { servername: 'imap.gmail.com' });
+    const finish = () => { try { sock.destroy(); } catch {} resolve({ optOuts: [...optOuts], reviewed: [...reviewed] }); };
+    const timer = setTimeout(finish, 8500);
+    sock.on('error', () => { clearTimeout(timer); finish(); });
+    sock.on('data', (chunk) => {
+      buf += chunk.toString('utf8');
+      if (step === 0 && buf.includes('* OK')) { step = 1; buf = ''; sock.write(`R1 LOGIN "${user}" "${pass}"\r\n`); }
+      else if (step === 1 && buf.includes('R1 OK')) { step = 2; buf = ''; sock.write('R2 SELECT INBOX\r\n'); }
+      else if (step === 2 && buf.includes('R2 OK')) { step = 3; buf = ''; sock.write(`R3 SEARCH SINCE ${sinceDate} SUBJECT "Re:"\r\n`); }
+      else if (step === 3 && buf.includes('R3 OK')) {
+        const ids = ((buf.match(/\* SEARCH([0-9 ]+)/)?.[1] || '').trim().split(/\s+/).filter(Boolean)).slice(-40);
+        if (!ids.length) { clearTimeout(timer); sock.write('R4 LOGOUT\r\n'); return finish(); }
+        step = 4; buf = ''; sock.write(`R4 FETCH ${ids.join(',')} (BODY.PEEK[HEADER.FIELDS (FROM)] BODY.PEEK[TEXT]<0.500>)\r\n`);
+      } else if (step === 4 && buf.includes('R4 OK')) {
+        clearTimeout(timer);
+        for (const blk of buf.split(/\* (?=\d+ FETCH)/).slice(1)) {
+          const from = (blk.match(/From:[^\n<]*<([^>\s]+@[^>\s]+)>/i)?.[1] || blk.match(/From:\s*([^\s\r\n]+@[^\s\r\n]+)/i)?.[1] || '').toLowerCase().trim();
+          if (!from || !targets.has(from)) continue;
+          const bodyTop = cleanImapHtml(blk.split(/From:/i).slice(1).join(' ')).replace(/Reply STOP anytime[^.]*\./gi, '');
+          if (/\b(stop|unsubscribe|remove me|opt out|take me off|no thanks|do not email|don't email|please stop)\b/i.test(bodyTop)) optOuts.add(from);
+          else if (/\b(already reviewed|already left|left a review|just left|posted a review|submitted a review)\b/i.test(bodyTop)) reviewed.add(from);
+        }
+        sock.write('R5 LOGOUT\r\n'); finish();
+      } else if (buf.includes('R1 NO') || buf.includes('R1 BAD')) { clearTimeout(timer); finish(); }
+    });
+  });
+}
+
 /** Scan local HomeGauge Desktop Reports (`RIUploaded === "1"` + findings/photos) for ground-truth completion verification */
 export function scanLocalCompletedHr5Reports(hr5SinceIso = '2026-10-30T00:00:00.000Z', now = new Date()) {
   const byAddressKey = new Map(), completedJobs = [];

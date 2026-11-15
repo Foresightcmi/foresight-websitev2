@@ -91,4 +91,34 @@ assert.ok(prDispatches.some((p) => p.liveSourceUrl), 'pr-pitches-ready.json must
 const carouselPy = fs.readFileSync(path.join(OMNI_ROOT, 'automation', 'post_editorial_carousel.py'), 'utf8');
 assert.ok(carouselPy.includes('agent-reach-intel.json'), 'post_editorial_carousel.py must bridge agent-reach-intel.json');
 
-console.log('✅ ALL FORESIGHT AGENT-REACH OMNI-MEDIUM TDD GATES PASSED (100%)!');
+// 5. Multi-Channel Boost Endeavors Verification (Forsyth 11-Mo GIS, FMLS Price-Drop Trigger)
+const permitLeads = JSON.parse(fs.readFileSync(path.join(WEB_ROOT, 'data', 'permit-leads.json'), 'utf8'));
+assert.ok(permitLeads.some((p) => String(p.recordId || '').startsWith('FOR-')), 'permit-leads.json must include Forsyth County 2025-2026 11-Month Warranty parcels');
+
+const priceDropLeads = JSON.parse(fs.readFileSync(path.join(WEB_ROOT, 'data', 'fmls-price-drop-leads.json'), 'utf8'));
+assert.ok(Array.isArray(priceDropLeads) && priceDropLeads.length >= 25, 'fmls-price-drop-leads.json must contain >=25 verified FMLS price-drop leads');
+for (const pd of priceDropLeads) {
+  assert.ok(pd.list_price < pd.previous_price && pd.price_drop_amount > 0, `FMLS price drop lead ${pd.id} must have verified price reduction`);
+  assert.ok(!BANNED_DOMAINS.test(`${pd.email} ${pd.brokerage}`), `FMLS price drop lead ${pd.name} violates suppression`);
+  assertTruthSafe(pd.pitch_body, `FMLS Price Drop Pitch (${pd.id})`);
+}
+
+// 6. Wave-2 FMLS Micro-Triggers & B2B Niches + 1,200 Daily Cap (150 Endeavor Reserve)
+const microTriggerLeads = JSON.parse(fs.readFileSync(path.join(WEB_ROOT, 'data', 'fmls-micro-trigger-leads.json'), 'utf8'));
+assert.ok(Array.isArray(microTriggerLeads) && microTriggerLeads.length >= 50, 'fmls-micro-trigger-leads.json must contain >=50 verified FMLS micro-trigger leads');
+const microTypes = new Set(microTriggerLeads.map((m) => m.trigger_type));
+for (const reqType of ['BACK_ON_MARKET', 'EXCHANGE_1031', 'DIAGNOSTIC_VINTAGE_SEWER', 'TENANT_OR_MULTIFAMILY']) {
+  assert.ok(microTypes.has(reqType), `fmls-micro-trigger-leads.json must include ${reqType}`);
+}
+for (const ml of microTriggerLeads) {
+  assert.ok(!BANNED_DOMAINS.test(`${ml.email} ${ml.brokerage}`), `FMLS micro-trigger lead ${ml.name} violates suppression`);
+  assertTruthSafe(ml.pitch_body, `FMLS Micro-Trigger Pitch (${ml.id})`);
+}
+
+assert.ok(b2bPartners.length >= 60, 'b2b-referral-partners.json must contain >=60 verified B2B referral partners');
+for (const reqCat of ['public_adjuster_gapia', 'qi_1031_exchange', 'attorney_elder_law_fiduciary', 'realtor_youtube_relocation', 'hoa_remodeler_architect']) {
+  assert.ok(cats.has(reqCat), `b2b-referral-partners.json must include Wave-2 category ${reqCat}`);
+}
+assert.ok(watchdogSrc.includes('MAX_24H_GLOBAL_LIMIT = 1200') && watchdogSrc.includes('HIGH_INTENT_ENDEAVORS_RESERVE = 150'), 'Watchdog must enforce 1,200 daily cap with 150 High-Intent Endeavors reserve');
+
+console.log('✅ ALL FORESIGHT AGENT-REACH & MULTI-CHANNEL BOOST TDD GATES PASSED (100%)!');

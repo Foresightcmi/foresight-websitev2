@@ -38,8 +38,12 @@ const seenPhones = new Set();
 const seenNames = new Set();
 const seenEmails = new Set();
 
-// Filter valid 10-digit phone agents, strictly deduplicate per person, and keep up to 150 brand-new Due Diligence deals
-const validFilers = [];
+import { classifyQuadrant } from './harvest-live-due-diligence.mjs';
+
+const CORRIDOR_ORDER = ['EAST', 'SOUTH', 'NORTHEAST', 'NORTH_FULTON', 'WEST', 'NORTHWEST', 'INTOWN'];
+const buckets = Object.fromEntries(CORRIDOR_ORDER.map(q => [q, []]));
+
+// Filter valid 10-digit phone agents, strictly deduplicate per person, and balance up to 150 brand-new deals across all 7 corridors
 for (const f of sortedFilers) {
   const cleanPhone = (f.clean_phone || f.raw_phone || f.phone || '').replace(/[^0-9]/g, '').slice(-10);
   if (cleanPhone.length !== 10 || cleanPhone === '6788780215' || cleanPhone === '6784802110' || cleanPhone === '0000000000') continue;
@@ -48,7 +52,6 @@ for (const f of sortedFilers) {
   if (/ansley|chapman group/i.test(f.brokerage || '') || /amy fuchs|joe chapman/i.test(f.name || '')) continue;
   if (f.closed || f.close_date) continue;
 
-  // Strict 48-hour freshness guard: never dispatch deals older than 2.0 days or past active due diligence
   const dealTimestamp = new Date(f.pending_timestamp || f.date || 0).getTime();
   const dealAgeDays = (Date.now() - dealTimestamp) / (1000 * 60 * 60 * 24);
   if (isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
@@ -56,15 +59,26 @@ for (const f of sortedFilers) {
   const normName = f.name.trim().toLowerCase();
   const normEmail = String(f.email || '').trim().toLowerCase();
 
-  // Exclude if already contacted in historical logs or already added in this batch
   if (contactedPhones.has(cleanPhone) || contactedNames.has(normName) || (normEmail && contactedEmails.has(normEmail))) continue;
   if (seenPhones.has(cleanPhone) || seenNames.has(normName) || (normEmail && seenEmails.has(normEmail))) continue;
 
   seenPhones.add(cleanPhone);
   seenNames.add(normName);
   if (normEmail) seenEmails.add(normEmail);
-  validFilers.push(f);
-  if (validFilers.length >= 150) break;
+  const q = buckets[f.quadrant] ? f.quadrant : classifyQuadrant(f.city, f.county);
+  buckets[q].push(f);
+}
+
+const validFilers = [];
+let addedRound = true;
+while (addedRound && validFilers.length < 150) {
+  addedRound = false;
+  for (const q of CORRIDOR_ORDER) {
+    if (buckets[q].length > 0 && validFilers.length < 150) {
+      validFilers.push(buckets[q].shift());
+      addedRound = true;
+    }
+  }
 }
 
 const minifiedFilers = validFilers.map(f => ({
@@ -76,6 +90,8 @@ const minifiedFilers = validFilers.map(f => ({
   clean_phone: f.clean_phone || (f.raw_phone || f.phone || '').replace(/[^0-9]/g, ''),
   brokerage: f.brokerage || 'Real Estate Professional',
   city: f.city || 'Metro Atlanta',
+  quadrant: f.quadrant || classifyQuadrant(f.city, f.county),
+  mlsFeed: f.mlsFeed || 'FMLS',
   address: f.address || 'Property Under Contract',
   price: f.price || '',
   raw_price: f.raw_price || 0,
@@ -842,10 +858,10 @@ const htmlContent = `<!DOCTYPE html>
         if (!autoPilotRunning) break;
         const f = uncontacted[i];
         const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i.test(f.city || '') || /dekalb/i.test(f.address || '');
-        const dekalbTag = isDeKalb ? ', plus signed DeKalb Low-Flow certs ($100)' : '';
+        const dekalbTag = isDeKalb ? ', plus signed DeKalb Low-Flow certs' : '';
         const textBody = f.role === 'BUYER_AGENT'
           ? 'Hi ' + f.first + ', congrats on getting your buyers under contract at ' + f.address + ' in ' + f.city + '! This is Chris Boykin with Foresight Home Inspections. If your buyers need a fast 24-hr inspection slot during due diligence, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, active SUPRA eKEY, same-day report' + dekalbTag + '). Check times here: https://www.fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' or text me at (678) 480-2110.'
-          : 'Hi ' + f.first + ', Chris Boykin with Foresight Home Inspections here. Saw ' + f.address + ' in ' + f.city + ' just went under contract, congrats! If the buyers or co-op agent need a fast 24-hr due diligence slot, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, SUPRA eKEY, same-day report' + dekalbTag + '), or we can help with a pre-listing inspection ($365+) on your next listing. My cell is (678) 480-2110 | https://www.fhinspectionsatl.com/realtors';
+          : 'Hi ' + f.first + ', Chris Boykin with Foresight Home Inspections here. Saw ' + f.address + ' in ' + f.city + ' just went under contract, congrats! If the buyers or co-op agent need a fast 24-hr due diligence slot, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, SUPRA eKEY, same-day report' + dekalbTag + '), or we can help with a pre-listing inspection (From $345) on your next listing. My cell is (678) 480-2110 | https://www.fhinspectionsatl.com/realtors';
 
         btn.textContent = '⏹️ Stop Auto-Pilot (' + (i + 1) + '/' + uncontacted.length + ' Dispatched)';
         logEl.textContent = '📤 Dispatching via OpenSMS to ' + f.name + ' (' + f.address + ')...';
@@ -889,7 +905,7 @@ const htmlContent = `<!DOCTYPE html>
       
       const notice = document.getElementById('filterNotice');
       if (tab === 'live') {
-        notice.innerHTML = 'Showing <b>up to 150 brand-new unique FMLS under-contract agents in active 48-hour due diligence window</b> (100% deduplicated per person).';
+        notice.innerHTML = 'Showing <b>up to 150 brand-new unique FMLS &amp; GeorgiaMLS under-contract agents in active 48-hour due diligence window</b> (100% deduplicated per person across all 7 corridors).';
       } else if (tab === 'contacted') {
         notice.innerHTML = 'Showing <b>contacted agents</b>. Timestamp shown below.';
       } else {
@@ -1023,18 +1039,18 @@ const htmlContent = `<!DOCTYPE html>
 
         // Dynamically synthesize text and links
         const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale/i.test(f.city || '') || /dekalb/i.test(f.address || '');
-        const dekalbTag = isDeKalb ? ', plus signed DeKalb Low-Flow certs ($100)' : '';
+        const dekalbTag = isDeKalb ? ', plus signed DeKalb Low-Flow certs' : '';
         const isBuyerAgent = f.role === 'BUYER_AGENT';
 
         const textBody = isBuyerAgent
           ? 'Hi ' + f.first + ', congrats on getting your buyers under contract at ' + f.address + ' in ' + f.city + '! This is Chris Boykin with Foresight Home Inspections. If your buyers need a fast 24-hr inspection slot during due diligence, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, active SUPRA eKEY, same-day report' + dekalbTag + '). Check times here: https://www.fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' or text me at (678) 480-2110.'
-          : 'Hi ' + f.first + ', Chris Boykin with Foresight Home Inspections here. Saw ' + f.address + ' in ' + f.city + ' just went under contract, congrats! If the buyers or co-op agent need a fast 24-hr due diligence slot, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, SUPRA eKEY, same-day report' + dekalbTag + '), or we can help with a pre-listing inspection ($365+) on your next listing. My cell is (678) 480-2110 | https://www.fhinspectionsatl.com/realtors';
+          : 'Hi ' + f.first + ', Chris Boykin with Foresight Home Inspections here. Saw ' + f.address + ' in ' + f.city + ' just went under contract, congrats! If the buyers or co-op agent need a fast 24-hr due diligence slot, my partner and I inspect together as a 2-inspector CMI team ($345+ homes, SUPRA eKEY, same-day report' + dekalbTag + '), or we can help with a pre-listing inspection (From $345) on your next listing. My cell is (678) 480-2110 | https://www.fhinspectionsatl.com/realtors';
         const smsLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(textBody);
 
-        const buyerBody = 'Hi ' + f.first + ', here is our 1-click due diligence quote link and $35,000 warranty info for your buyers at ' + f.address + ': https://www.fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' . Includes our 2-inspector team, same-day report' + (isDeKalb ? ', official DeKalb Low-Flow Certificate ($100),' : '') + ' and free utility setup concierge. Feel free to pass this along to your buyers so they can lock in their inspection date.';
+        const buyerBody = 'Hi ' + f.first + ', here is our 1-click due diligence quote link and $35,000 warranty info for your buyers at ' + f.address + ': https://www.fhinspectionsatl.com/quote?prop=' + encodeURIComponent(f.address) + ' . Includes our 2-inspector team, same-day report' + (isDeKalb ? ', official DeKalb Low-Flow Certificate (Call (678) 480-2110 for Quote),' : '') + ' and free utility setup concierge. Feel free to pass this along to your buyers so they can lock in their inspection date.';
         const buyerLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(buyerBody);
 
-        const preDrywallBody = 'Hi ' + f.first + ', Chris Boykin with Foresight Home Inspections here. Quick heads-up for your new-build buyers in ' + f.city + ': our 2-Inspector Pre-Drywall Framing Inspection starts at $275 ($275 up to 1,500 sq ft, $300 for 1,501-2,500, $350 for 2,501-3,500, $400 for 3,501+ sq ft), plus Final New Construction ($400+) and 11-Month Warranty ($335+). Info & scheduling: https://www.fhinspectionsatl.com/services/pre-drywall-inspection or (678) 480-2110.';
+        const preDrywallBody = 'Hi ' + f.first + ', Chris Boykin with Foresight Home Inspections here. Quick heads-up for your new-build buyers in ' + f.city + ': our 2-Inspector Pre-Drywall Framing Inspection starts at $275 ($275 up to 2,499 sq ft, $300 for 2,500+ sq ft), plus Final New Construction (From $400) and 11-Month Warranty (From $345). Info & scheduling: https://www.fhinspectionsatl.com/services/pre-drywall-inspection or (678) 480-2110.';
         const preDrywallLink = 'sms:+1' + f.clean_phone + '?&body=' + encodeURIComponent(preDrywallBody);
 
         const roleBadge = isBuyerAgent
@@ -1053,7 +1069,7 @@ const htmlContent = `<!DOCTYPE html>
                 <div class="agent-name">
                   👤 \\\${f.name}
                   \\\${roleBadge}
-                  \\\${isDeKalb ? '<span style="background:rgba(59,130,246,0.18); border:1px solid #3b82f6; color:#93c5fd; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:4px;">🏛️ DeKalb Low-Flow ($100)</span>' : ''}
+                  \\\${isDeKalb ? '<span style="background:rgba(59,130,246,0.18); border:1px solid #3b82f6; color:#93c5fd; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:4px;">🏛️ DeKalb Low-Flow Eligible</span>' : ''}
                 </div>
                 <div class="agent-brokerage">\\\${f.brokerage || 'Real Estate Professional'}</div>
               </div>

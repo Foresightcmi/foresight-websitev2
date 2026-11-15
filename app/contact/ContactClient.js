@@ -192,7 +192,7 @@ export default function ContactClient() {
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Our Headquarters & Service Territory</h2>
               <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem', maxWidth: '650px', margin: '0 auto' }}>
-                Based in Lithonia, GA — proudly dispatching dual-inspector teams across 163+ cities in Metro Atlanta every day.
+                Based in Lithonia, GA — proudly dispatching dual-inspector teams across 87 cities in Metro Atlanta every day.
               </p>
             </div>
             
@@ -284,7 +284,7 @@ export default function ContactClient() {
                 <span style={{ color: 'var(--color-red)', fontWeight: 'bold' }}>+</span>
               </summary>
               <p style={{ marginTop: '1rem', color: 'var(--color-gray-dark)', lineHeight: 1.7, fontSize: '0.975rem' }}>
-                Foresight Home Inspections serves over 163 cities across Metro Atlanta and the state of Georgia, including Atlanta, Sandy Springs, Alpharetta, Johns Creek, Roswell, Marietta, Decatur, Lawrenceville, Duluth, Suwanee, Peachtree City, McDonough, Covington, and many more. View our complete <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>service areas directory</Link>.
+                Foresight Home Inspections serves 87 cities across 20 Metro Atlanta counties, including Atlanta, Sandy Springs, Alpharetta, Johns Creek, Roswell, Marietta, Decatur, Lawrenceville, Duluth, Suwanee, Peachtree City, McDonough, Covington, and surrounding communities. View our complete <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>service areas directory</Link>.
               </p>
             </details>
 

@@ -7,236 +7,282 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const LEADS_FILE = path.join(ROOT_DIR, 'data', 'new-construction-leads.json');
 const CRM_FILE = path.join(ROOT_DIR, 'data', 'new-construction-crm.json');
+const UNSUBSCRIBED_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'unsubscribed_contacts.json');
+const MASTER_DB_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'master_realtor_database.json');
 const NTFY_TOPIC = 'fores-antigravity-alerts-77';
 
-function cleanHeader(str) {
-  if (!str) return '';
-  return String(str).replace(/[^\x00-\x7F]/g, '').trim();
-}
+const METRO_COUNTIES = new Set([
+  'fulton', 'dekalb', 'gwinnett', 'cobb', 'clayton', 'cherokee', 'forsyth',
+  'henry', 'fayette', 'coweta', 'douglas', 'paulding', 'rockdale', 'newton',
+  'walton', 'barrow', 'hall', 'dawson', 'bartow', 'jackson', 'carroll',
+  'spalding', 'butts', 'morgan'
+]);
 
-/**
- * Key Metro Atlanta Regions for New Construction
- * Combines Major Counties and High-Growth Municipalities
- */
-const TARGET_REGIONS = [
-  { name: 'City of Atlanta', id: 30756, type: 6, jurisdiction: 'City of Atlanta (Fulton/DeKalb)' },
-  { name: 'Alpharetta', id: 406, type: 6, jurisdiction: 'City of Alpharetta (North Fulton)' },
-  { name: 'Fulton County', id: 894, type: 5, jurisdiction: 'Fulton County' },
-  { name: 'Forsyth County', id: 893, type: 5, jurisdiction: 'Forsyth County (Cumming Corridor)' },
-  { name: 'Gwinnett County', id: 898, type: 5, jurisdiction: 'Gwinnett County' },
-  { name: 'Cobb County', id: 882, type: 5, jurisdiction: 'Cobb County' },
-  { name: 'DeKalb County', id: 885, type: 5, jurisdiction: 'DeKalb County' },
-  { name: 'Cherokee County', id: 880, type: 5, jurisdiction: 'Cherokee County (Woodstock/Canton)' },
-  { name: 'Paulding County', id: 938, type: 5, jurisdiction: 'Paulding County (Dallas/Hiram)' },
-  { name: 'Henry County', id: 902, type: 5, jurisdiction: 'Henry County (McDonough/Stockbridge)' },
-  { name: 'Coweta County', id: 883, type: 5, jurisdiction: 'Coweta County (Newnan/Senoia)' },
-  { name: 'Fayette County', id: 891, type: 5, jurisdiction: 'Fayette County (Peachtree City/Fayetteville)' },
-  { name: 'Hall County', id: 899, type: 5, jurisdiction: 'Hall County (Gainesville/Flowery Branch)' }
+const BUILDER_OR_EXCLUDED_REGEX = /ansley|drhorton|pulte|lennar|meritage|tollbrothers|beazer|kbhome|ashtonwoods|weekley|taylormorrison|stanleymartin|smithdouglas|centurycommunities|rocklynhomes|chafin|paranhomes|adamshomes|metrobrokers|cbcmetrobrokers|peachtreetc|cgrealtyinc|dwhomes|theprovidencegroup|relianthomes|odwyerhomes|cstonega/i;
+
+const CORRIDOR_TARGETS = [
+  { city: 'Alpharetta', corridor: 'NORTH_FULTON' }, { city: 'Roswell', corridor: 'NORTH_FULTON' },
+  { city: 'Milton', corridor: 'NORTH_FULTON' }, { city: 'Johns Creek', corridor: 'NORTH_FULTON' },
+  { city: 'Sandy Springs', corridor: 'NORTH_FULTON' }, { city: 'Dunwoody', corridor: 'NORTH_FULTON' },
+  { city: 'Cumming', corridor: 'NORTHEAST' }, { city: 'Buford', corridor: 'NORTHEAST' },
+  { city: 'Suwanee', corridor: 'NORTHEAST' }, { city: 'Lawrenceville', corridor: 'NORTHEAST' },
+  { city: 'Dacula', corridor: 'NORTHEAST' }, { city: 'Hoschton', corridor: 'NORTHEAST' },
+  { city: 'Braselton', corridor: 'NORTHEAST' }, { city: 'Winder', corridor: 'NORTHEAST' },
+  { city: 'Marietta', corridor: 'NORTHWEST' }, { city: 'Woodstock', corridor: 'NORTHWEST' },
+  { city: 'Canton', corridor: 'NORTHWEST' }, { city: 'Acworth', corridor: 'NORTHWEST' },
+  { city: 'Kennesaw', corridor: 'NORTHWEST' }, { city: 'Dallas', corridor: 'NORTHWEST' },
+  { city: 'Douglasville', corridor: 'WEST' }, { city: 'Villa Rica', corridor: 'WEST' },
+  { city: 'Decatur', corridor: 'EAST' }, { city: 'Tucker', corridor: 'EAST' },
+  { city: 'Snellville', corridor: 'EAST' }, { city: 'Loganville', corridor: 'EAST' },
+  { city: 'Conyers', corridor: 'EAST' }, { city: 'Covington', corridor: 'EAST' },
+  { city: 'McDonough', corridor: 'SOUTH' }, { city: 'Locust Grove', corridor: 'SOUTH' },
+  { city: 'Stockbridge', corridor: 'SOUTH' }, { city: 'Fayetteville', corridor: 'SOUTH' },
+  { city: 'Peachtree City', corridor: 'SOUTH' }, { city: 'Newnan', corridor: 'SOUTH' },
+  { city: 'Senoia', corridor: 'SOUTH' }, { city: 'Fairburn', corridor: 'SOUTH' },
+  { city: 'Atlanta', corridor: 'INTOWN' }
 ];
+const CITY_CORRIDOR_MAP = new Map(CORRIDOR_TARGETS.map((t) => [t.city.toLowerCase(), t.corridor]));
 
-/**
- * Harvests New Construction Listings from Redfin / MLS Open GIS Feed
- */
-async function fetchNewBuildsForRegion(region) {
-  console.log(`🏗️  [New Construction Radar] Scanning ${region.name} (${region.jurisdiction})...`);
-  try {
-    const url = `https://www.redfin.com/stingray/api/gis?al=1&region_id=${region.id}&region_type=${region.type}&num_homes=250&v=8`;
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'application/json'
-      },
-      signal: AbortSignal.timeout(12000)
-    });
-
-    if (!res.ok) {
-      console.warn(`⚠️ [New Construction Radar] ${region.name} returned status ${res.status}`);
-      return [];
-    }
-
-    const text = await res.text();
-    const cleanText = text.replace('{}&&', '');
-    const json = JSON.parse(cleanText);
-    const homes = json.payload?.homes || [];
-
-    // Filter for New Construction (Built 2024-2026 or isNewConstruction true)
-    // Prioritize Under Contract / Pending due diligence properties over premature active listings
-    const newBuilds = homes.filter(h => {
-      const year = h.yearBuilt?.value;
-      const isNew = h.isNewConstruction === true;
-      const recentYear = year >= 2024;
-      return isNew || recentYear;
-    }).sort((a, b) => {
-      const aContract = (a.mlsStatus === 'Under Contract' || a.mlsStatus === 'Pending' || a.mlsStatus === 'Contingent') ? 0 : 1;
-      const bContract = (b.mlsStatus === 'Under Contract' || b.mlsStatus === 'Pending' || b.mlsStatus === 'Contingent') ? 0 : 1;
-      return aContract - bContract;
-    });
-
-    console.log(`✅ [New Construction Radar] ${region.name}: Harvested ${newBuilds.length} verified new construction properties.`);
-
-    return newBuilds.map(h => {
-      const street = h.streetLine?.value || 'New Construction Property';
-      const city = h.city || region.name;
-      const zip = h.zip || '';
-      const fullAddress = `${street}, ${city}, GA ${zip}`.trim();
-      const priceVal = h.price?.value || 0;
-      const sqftVal = h.sqFt?.value || 0;
-      const mlsNumber = h.mlsId?.value || String(h.propertyId || Math.floor(Math.random() * 900000 + 100000));
-      const recordId = `NC-${mlsNumber}`;
-
-      // Calculate estimated days until drywall / closing
-      const daysOnMarket = h.dom?.value || h.timeOnRedfin?.value ? Math.floor((h.timeOnRedfin?.value || 0) / (1000 * 60 * 60 * 24)) : 14;
-      const estStage = (h.mlsStatus === 'Under Contract' || h.mlsStatus === 'Pending' || h.mlsStatus === 'Contingent')
-        ? 'Active Due Diligence / Pre-Closing Final Walkthrough Window'
-        : (h.mlsStatus === 'Coming Soon' || daysOnMarket < 21
-            ? 'Active Framing & Rough-In (Pre-Drywall Critical Window)'
-            : 'Pre-Drywall & 11-Month Warranty Window');
-
-      return {
-        recordId,
-        mlsId: mlsNumber,
-        source: 'MLS / Real Estate Network',
-        jurisdiction: region.jurisdiction,
-        propertyName: street,
-        address: fullAddress,
-        city,
-        zip,
-        price: priceVal,
-        sqft: sqftVal,
-        yearBuilt: h.yearBuilt?.value || 2025,
-        beds: h.beds || 4,
-        baths: h.baths || 3.5,
-        mlsStatus: h.mlsStatus || 'Active',
-        constructionStage: estStage,
-        daysOnMarket,
-        redfinUrl: h.url ? `https://www.redfin.com${h.url}` : null,
-        ownerName: 'Future Homeowner / Buyer Representation',
-        ownerEmail: null,
-        ownerPhone: null,
-        inspectionPackages: [
-          'Pre-Drywall Framing & Mechanical Rough-In Evaluation (From $275)',
-          'New Construction Pre-Closing Final Inspection + Infrared Thermal Imaging (From $400)',
-          '11-Month Builder Warranty Inspection (From $345)',
-          'HD Fiber-Optic Sewer Scope Camera Add-On (Call for Quote)'
-        ],
-        harvestedAt: new Date().toISOString()
-      };
-    });
-  } catch (err) {
-    console.error(`❌ [New Construction Radar] Error in ${region.name}:`, err.message);
-    return [];
-  }
+function cleanHeader(str) {
+  return str ? String(str).replace(/[^\x00-\x7F]/g, '').trim() : '';
 }
 
-/**
- * Harvests all target corridors and merges with existing database
- */
-async function main() {
-  console.log('🚀 [New Construction Radar] Initializing Metro Atlanta New Construction Harvester...');
+function loadSuppressedEmails() {
+  const set = new Set();
+  if (!fs.existsSync(UNSUBSCRIBED_FILE)) return set;
+  try {
+    for (const item of JSON.parse(fs.readFileSync(UNSUBSCRIBED_FILE, 'utf8'))) {
+      const em = typeof item === 'string' ? item : item?.email;
+      if (em) set.add(em.toLowerCase().trim());
+    }
+  } catch {}
+  return set;
+}
 
-  const results = await Promise.allSettled(TARGET_REGIONS.map(reg => fetchNewBuildsForRegion(reg)));
+function loadMasterRealtorLookup(suppressed) {
+  const byPhone = new Map();
+  const byName = new Map();
+  if (!fs.existsSync(MASTER_DB_FILE)) return { byPhone, byName };
+  try {
+    const contacts = Object.values(JSON.parse(fs.readFileSync(MASTER_DB_FILE, 'utf8')).contacts || {});
+    const phoneCounts = new Map();
+    const nameCounts = new Map();
+    for (const c of contacts) {
+      const p = String(c.phone || '').replace(/\D/g, '').slice(-10);
+      if (p.length === 10) phoneCounts.set(p, (phoneCounts.get(p) || 0) + 1);
+      const n = String(c.name || '').trim().toLowerCase();
+      if (n.length > 5) nameCounts.set(n, (nameCounts.get(n) || 0) + 1);
+    }
+    for (const c of contacts) {
+      const em = String(c.email || '').toLowerCase().trim();
+      if (!em || !em.includes('@') || c.unsubscribed || c.quarantined || c.excluded || suppressed.has(em)) continue;
+      if (BUILDER_OR_EXCLUDED_REGEX.test(`${em} ${c.brokerage || ''}`)) continue;
+      const p = String(c.phone || '').replace(/\D/g, '').slice(-10);
+      const n = String(c.name || '').trim().toLowerCase();
+      if (p.length === 10 && (phoneCounts.get(p) || 0) <= 2 && !byPhone.has(p)) byPhone.set(p, { email: em, phone: p });
+      if (n.length > 5 && (nameCounts.get(n) || 0) === 1 && !byName.has(n)) byName.set(n, { email: em, phone: p });
+    }
+  } catch {}
+  return { byPhone, byName };
+}
+async function mapWithConcurrency(items, concurrency, fn) {
+  const out = new Array(items.length);
+  let cursor = 0;
+  async function worker() {
+    while (cursor < items.length) {
+      const idx = cursor++;
+      out[idx] = await fn(items[idx], idx);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(concurrency, Math.max(1, items.length)) }, () => worker()));
+  return out;
+}
 
-  let newlyHarvested = [];
-  for (const res of results) {
-    if (res.status === 'fulfilled' && Array.isArray(res.value)) {
-      newlyHarvested.push(...res.value);
+function buildLeadFromSource(src, feedName, url, masterLookup, suppressed) {
+  const status = String(src.StandardStatus || src.MlsStatus || '');
+  if (/closed|sold|expired|withdrawn|canceled|terminate/i.test(status) || src.CloseDate) return null;
+  if (/lease|rental|land|lot|acreage|farm/i.test(String(src.PropertyType || src.PropertySubType || ''))) return null;
+
+  const state = String(src.StateOrProvince || '').toUpperCase().trim();
+  if (state !== 'GA') return null;
+
+  const countyRaw = String(src.CountyOrParish || '').trim();
+  const county = countyRaw.toLowerCase();
+  const city = String(src.City || '').trim();
+  if (!county || !METRO_COUNTIES.has(county)) return null;
+
+  const yearBuilt = Number(src.YearBuilt || 0);
+  const isNewFlag = src.NewConstructionYN === true || String(src.NewConstructionYN || '').toLowerCase() === 'true';
+  if (!(isNewFlag || yearBuilt >= 2025)) return null;
+
+  const price = Number(src.ListPrice || 0);
+  if (price < 200000) return null;
+
+  const addressLine = String(src.UnparsedAddress || `${src.StreetNumber || ''} ${src.StreetName || ''} ${src.StreetSuffix || ''}`).trim();
+  if (!addressLine || /^0\s+/i.test(addressLine)) return null;
+
+  const zip = String(src.PostalCode || '').trim();
+  const fullAddress = `${addressLine}, ${city}, GA ${zip}`.trim();
+  const mlsId = String(src.ListingId || src.ListingKey || `${city}_${addressLine}`.replace(/[^a-zA-Z0-9]/g, '')).trim();
+  const rawAgentName = String(src.ListAgentFullName || src.ShowingContactName || '').trim();
+  let agentEmail = String(src.ListAgentEmail || '').toLowerCase().trim();
+  let agentPhone = String(src.ListAgentDirectPhone || src.ListAgentMobilePhone || src.ShowingContactPhone || src.AttributionContact || '').replace(/\D/g, '').slice(-10);
+  const brokerage = String(src.ListOfficeName || 'Metro Atlanta Real Estate').trim();
+
+  if (!agentEmail || agentPhone.length !== 10) {
+    const hit = (agentPhone.length === 10 && masterLookup.byPhone.get(agentPhone))
+      || (rawAgentName.length > 5 && masterLookup.byName.get(rawAgentName.toLowerCase()));
+    if (hit) {
+      if (!agentEmail && hit.email) agentEmail = hit.email;
+      if (agentPhone.length !== 10 && hit.phone) agentPhone = hit.phone;
     }
   }
 
-  console.log(`\n📊 [New Construction Radar] Harvested a total of ${newlyHarvested.length} new construction properties across Metro Atlanta.`);
+  const isIndependentAgent = Boolean(
+    agentEmail && agentEmail.includes('@') && !suppressed.has(agentEmail) && !BUILDER_OR_EXCLUDED_REGEX.test(`${agentEmail} ${brokerage}`)
+  );
+  const dom = Number(src.DaysOnMarket || src.CumulativeDaysOnMarket || 14);
+  const estStage = /pending|under contract|contingent/i.test(status)
+    ? 'Active Due Diligence / Pre-Closing Final Walkthrough Window'
+    : (dom < 21 ? 'Active Framing & Rough-In (Pre-Drywall Critical Window)' : 'Pre-Drywall & 11-Month Warranty Window');
+  const todayStr = new Date().toISOString().slice(0, 10);
 
-  // Load existing leads database if present
+  return {
+    recordId: `NC-${mlsId}`,
+    mlsId,
+    source: `${feedName} Live Georgia New Construction Feed`,
+    jurisdiction: `${countyRaw} County, GA`,
+    corridor: CITY_CORRIDOR_MAP.get(city.toLowerCase()) || 'METRO_ATL',
+    permitType: 'New Construction Residential',
+    propertyName: addressLine,
+    address: fullAddress,
+    city,
+    state: 'GA',
+    zip,
+    price,
+    sqft: Number(src.LivingArea || src.BuildingAreaTotal || 0),
+    yearBuilt: yearBuilt >= 2024 ? yearBuilt : 2025,
+    beds: Number(src.BedroomsTotal || 4),
+    baths: Number(src.BathroomsTotalInteger || 3),
+    mlsStatus: status || 'Active',
+    constructionStage: estStage,
+    daysOnMarket: isNaN(dom) ? 14 : dom,
+    brokerage,
+    agentPhone: agentPhone.length === 10 ? `(${agentPhone.slice(0, 3)}) ${agentPhone.slice(3, 6)}-${agentPhone.slice(6)}` : null,
+    redfinUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`,
+    ownerName: isIndependentAgent && rawAgentName ? rawAgentName : 'Future Homeowner / Buyer Representation',
+    ownerEmail: isIndependentAgent ? agentEmail : null,
+    ownerPhone: agentPhone.length === 10 ? agentPhone : null,
+    estInspectionValue: 675,
+    source_url: url,
+    retrieved_on: todayStr,
+    harvestedAt: new Date().toISOString()
+  };
+}
+function isGeorgiaLead(lead) {
+  if (!lead) return false;
+  if (/\/(IN|IL|IA|TX|FL|NC|SC|TN|AL)\//i.test(String(lead.redfinUrl || ''))) return false;
+  if (lead.state && String(lead.state).toUpperCase() !== 'GA') return false;
+  if (/,\s*(IN|IL|IA|TX|FL|NC|SC|TN|AL)\b/i.test(String(lead.address || ''))) return false;
+  const county = String(lead.jurisdiction || '').toLowerCase().replace(/\s*county.*$/, '').trim();
+  const city = String(lead.city || '').toLowerCase().trim();
+  if (county && METRO_COUNTIES.has(county)) return true;
+  if (CITY_CORRIDOR_MAP.has(city)) return true;
+  return /,\s*GA\b/i.test(String(lead.address || ''));
+}
+
+async function main() {
+  console.log('🚀 [New Construction Radar] Initializing 100% Georgia Multi-MLS New Construction Harvester...');
+  const suppressed = loadSuppressedEmails();
+  const masterLookup = loadMasterRealtorLookup(suppressed);
+
+  const feedUrls = [
+    'https://mls.virtusmart.com/api/search/p?From=0&Size=200&geocode=1&feed=FMLS',
+    'https://mls.virtusmart.com/api/search/p?From=200&Size=200&geocode=1&feed=FMLS',
+    'https://mls.virtusmart.com/api/search/p?From=0&Size=200&geocode=1&feed=GeorgiaMLS',
+    'https://mls.virtusmart.com/api/search/p?From=200&Size=200&geocode=1&feed=GeorgiaMLS'
+  ];
+  for (const t of CORRIDOR_TARGETS) {
+    const q = encodeURIComponent(t.city);
+    feedUrls.push(`https://mls.virtusmart.com/api/search/p?From=0&Size=100&geocode=1&feed=FMLS&City=${q}`);
+    feedUrls.push(`https://mls.virtusmart.com/api/search/p?From=0&Size=100&geocode=1&feed=GeorgiaMLS&City=${q}`);
+  }
+
+  const pages = await mapWithConcurrency(feedUrls, 25, async (url) => {
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0', Accept: 'application/json' }, signal: AbortSignal.timeout(7000) });
+      if (!res.ok) return { url, rows: [] };
+      const data = await res.json();
+      return { url, rows: Array.isArray(data) ? data : [] };
+    } catch { return { url, rows: [] }; }
+  });
+
+  const newlyHarvested = [];
+  for (const { url, rows } of pages) {
+    const feedName = url.includes('feed=GeorgiaMLS') ? 'GeorgiaMLS' : 'FMLS';
+    for (const row of rows) {
+      const lead = buildLeadFromSource(row?._source || {}, feedName, url, masterLookup, suppressed);
+      if (lead) newlyHarvested.push(lead);
+    }
+  }
+  console.log(`📊 [New Construction Radar] Harvested ${newlyHarvested.length} Georgia new-build candidates across FMLS + GeorgiaMLS.`);
+
   let existingLeads = [];
   if (fs.existsSync(LEADS_FILE)) {
-    try {
-      existingLeads = JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8'));
-    } catch {
-      existingLeads = [];
-    }
+    try { existingLeads = JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8')).filter(isGeorgiaLead); } catch { existingLeads = []; }
   }
 
-  // De-duplicate by recordId or exact normalized address
   const leadMap = new Map();
+  const addrSeen = new Set();
   for (const lead of existingLeads) {
+    lead.state = 'GA';
+    if (!lead.corridor) {
+      const cLow = String(lead.city || '').toLowerCase().trim();
+      lead.corridor = CITY_CORRIDOR_MAP.get(cLow) || (['brookhaven', 'chamblee'].includes(cLow) ? 'NORTH_FULTON' : ['south fulton', 'east point', 'hapeville'].includes(cLow) ? 'SOUTH' : 'METRO_ATL');
+    }
     leadMap.set(lead.recordId, lead);
-    if (lead.address) leadMap.set(lead.address.toLowerCase().trim(), lead);
+    if (lead.address) addrSeen.add(lead.address.toLowerCase().trim());
   }
 
   let addedCount = 0;
   for (const lead of newlyHarvested) {
     const addrKey = lead.address.toLowerCase().trim();
-    if (!leadMap.has(lead.recordId) && !leadMap.has(addrKey)) {
-      leadMap.set(lead.recordId, lead);
-      leadMap.set(addrKey, lead);
-      addedCount++;
+    if (leadMap.has(lead.recordId)) {
+      const prev = leadMap.get(lead.recordId);
+      if (!prev.ownerEmail && lead.ownerEmail) { prev.ownerEmail = lead.ownerEmail; prev.ownerName = lead.ownerName; prev.ownerPhone = lead.ownerPhone; }
+      continue;
     }
+    if (addrSeen.has(addrKey)) continue;
+    leadMap.set(lead.recordId, lead);
+    addrSeen.add(addrKey);
+    addedCount++;
   }
 
-  // Deduplicate map values
-  const uniqueLeads = Array.from(new Set(leadMap.values()));
-
-  // Ensure data directory exists
-  const dataDir = path.dirname(LEADS_FILE);
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
-
+  const uniqueLeads = Array.from(leadMap.values()).filter(isGeorgiaLead);
+  fs.mkdirSync(path.dirname(LEADS_FILE), { recursive: true });
   fs.writeFileSync(LEADS_FILE, JSON.stringify(uniqueLeads, null, 2), 'utf8');
-  console.log(`💾 [New Construction Radar] Saved ${uniqueLeads.length} unique leads to ${LEADS_FILE} (+${addedCount} new).`);
+  console.log(`💾 [New Construction Radar] Saved ${uniqueLeads.length} 100%-Georgia leads (+${addedCount} new).`);
 
-  // Write CRM snapshot
-  fs.writeFileSync(CRM_FILE, JSON.stringify({
+  const crmPayload = {
     lastSync: new Date().toISOString(),
     totalActiveLeads: uniqueLeads.length,
     newLeadsThisRun: addedCount,
-    warrantySubdivisionCohorts: (() => {
-      const p = path.join(ROOT_DIR, 'data', 'agent-reach-intel.json');
-      if (!fs.existsSync(p)) return [];
-      try {
-        const c = JSON.parse(fs.readFileSync(p, 'utf8')).warrantySubdivisionCohorts || [];
-        fs.writeFileSync(path.join(ROOT_DIR, 'data', 'warranty-subdivision-cohorts.json'), JSON.stringify({ updatedAt: new Date().toISOString(), offer: '11-Month Builder Warranty Inspection (From $345)', cohorts: c }, null, 2), 'utf8');
-        return c;
-      } catch { return []; }
-    })(),
-    topCorridors: TARGET_REGIONS.map(r => r.name),
+    topCorridors: ['NORTH_FULTON', 'NORTHEAST', 'NORTHWEST', 'WEST', 'EAST', 'SOUTH', 'INTOWN'],
     leads: uniqueLeads.slice(0, 50)
-  }, null, 2), 'utf8');
+  };
+  fs.writeFileSync(CRM_FILE, JSON.stringify(crmPayload, null, 2), 'utf8');
 
-  // Push real-time alert via ntfy.sh if new leads were found
-  if (addedCount > 0) {
+  const skipAlert = process.argv.includes('--no-alert') || process.argv.includes('--harvest-only') || process.argv.includes('--dry-run');
+  if (addedCount > 0 && !skipAlert) {
+    const topLead = uniqueLeads[0];
     try {
-      const topLead = newlyHarvested[0];
-      const title = cleanHeader(`🏗️ ${addedCount} New Construction Leads Captured!`);
-      const body = [
-        `Metro Atlanta New Construction Radar Update:`,
-        `• New Properties Added: ${addedCount}`,
-        `• Total Active Leads in DB: ${uniqueLeads.length}`,
-        `• Sample Property: ${topLead?.address || 'Metro Atlanta'}`,
-        `• Valuation / Price: $${Number(topLead?.price || 0).toLocaleString()}`,
-        `• Stage: ${topLead?.constructionStage || 'Pre-Drywall'}`,
-        ``,
-        `Ready for autonomous due diligence dossier generation.`
-      ].join('\n');
-
       await fetch(`https://ntfy.sh/${NTFY_TOPIC}`, {
         method: 'POST',
-        headers: {
-          'Title': title,
-          'Priority': 'default',
-          'Tags': 'building_construction,house,hammer'
-        },
-        body: Buffer.from(body, 'utf8')
+        headers: { Title: cleanHeader(`🏗️ ${addedCount} Georgia New Construction Leads Captured`), Priority: 'default', Tags: 'building_construction,house' },
+        body: Buffer.from(`100% Georgia Multi-MLS New Construction Update:\n• New Leads: ${addedCount} | Total Active: ${uniqueLeads.length}\n• Sample: ${topLead?.city || 'Metro Atlanta'}, GA ($${Number(topLead?.price || 0).toLocaleString()})`, 'utf8')
       });
-      console.log(`📱 [New Construction Radar] Smartphone alert dispatched to ntfy.sh/${NTFY_TOPIC}`);
-    } catch (e) {
-      console.warn('⚠️ [New Construction Radar] Alert notification failed:', e.message);
-    }
+    } catch {}
   }
-
-  console.log('🏁 [New Construction Radar] Run complete.\n');
 }
 
-main().catch(err => {
-  console.warn('⚠️ [New Construction Radar] Non-fatal runtime notice:', err.message);
-  process.exit(0);
-});
+main().catch((err) => { console.warn('⚠️ [New Construction Radar]', err.message); process.exit(0); });

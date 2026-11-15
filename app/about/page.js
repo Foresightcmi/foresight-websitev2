@@ -583,7 +583,7 @@ export default function About() {
               <div style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--color-red)', marginBottom: '1rem' }}>GEO</div>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.1rem' }}>Service Area</h3>
               <p style={{ color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.6 }}>
-                Serving 163+ cities across<br />
+                Serving 87 cities across<br />
                 <Link href="/service-areas" style={{ color: 'var(--color-red)', fontWeight: 600 }}>Metro Atlanta, Georgia</Link>
               </p>
             </div>

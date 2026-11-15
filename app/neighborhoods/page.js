@@ -68,7 +68,7 @@ export default function NeighborhoodsIndexPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/service-areas" className="btn btn-outline" style={{ borderColor: 'var(--color-gold)', color: 'var(--color-gold)' }}>
-              View All 163+ Service Cities
+              View All 87 Service Cities
             </Link>
             <Link href="/quote" className="btn btn-primary">
               Calculate Instant Fee
@@ -148,11 +148,11 @@ export default function NeighborhoodsIndexPage() {
             Need an Inspection in Another Neighborhood?
           </h2>
           <p style={{ color: 'var(--color-gray-dark)', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '2rem' }}>
-            Foresight covers over 163+ cities and hundreds of subdivisions throughout Metro Atlanta with our signature dual-inspector model and guaranteed 24-hour report turnaround.
+            Foresight covers all 87 cities and hundreds of subdivisions throughout Metro Atlanta with our signature dual-inspector model and guaranteed 24-hour report turnaround.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/service-areas" className="btn btn-primary">
-              Browse All 163+ Service Areas
+              Browse All 87 Service Areas
             </Link>
             <Link href="/quote" className="btn btn-outline" style={{ borderColor: 'var(--color-dark)', color: 'var(--color-dark)' }}>
               Calculate Inspection Fee

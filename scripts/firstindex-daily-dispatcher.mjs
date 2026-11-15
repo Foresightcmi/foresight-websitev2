@@ -63,7 +63,7 @@ function executeHighestImpactTask() {
       matchedCity['Last Refreshed'] = today;
       updatedCities++;
       optimizedTargets.push(`${matchedCity['City Name']} ("${item.query}", Pos ${item.position.toFixed(1)}, ${item.impressions} impr)`);
-      if (updatedCities >= 15) break;
+      if (updatedCities >= 75) break;
     }
   }
 

@@ -16,6 +16,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveGeminiTextModels } from '../lib/gemini-model-resolver.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OPPORTUNITIES_FILE = path.join(__dirname, '..', 'data', 'backlink-opportunities.json');
@@ -154,30 +155,35 @@ Return ONLY valid JSON:
   ]
 }`;
 
-  try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ role: 'user', parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.5, maxOutputTokens: 2048 }
-        })
-      }
-    );
+  const models = await resolveGeminiTextModels(GEMINI_API_KEY);
+  for (const model of models) {
+    try {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ role: 'user', parts: [{ text: prompt }] }],
+            generationConfig: { temperature: 0.5, maxOutputTokens: 2048 }
+          })
+        }
+      );
 
-    if (!response.ok) return null;
-    const data = await response.json();
-    const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-    let jsonStr = rawText;
-    if (jsonStr.startsWith('```')) {
-      jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+      if (!response.ok) continue;
+      const data = await response.json();
+      const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+      if (!rawText) continue;
+      let jsonStr = rawText;
+      if (jsonStr.startsWith('```')) {
+        jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+      }
+      return JSON.parse(jsonStr);
+    } catch {
+      continue;
     }
-    return JSON.parse(jsonStr);
-  } catch {
-    return null;
   }
+  return null;
 }
 
 async function main() {

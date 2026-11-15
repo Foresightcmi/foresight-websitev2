@@ -147,7 +147,7 @@ export default function DueDiligenceCalculator() {
   const [foundation, setFoundation] = useState('crawlspace');
   const [copiedEmbed, setCopiedEmbed] = useState(false);
 
-  // $99 Outside Report Review Modal & Stripe Checkout State
+  // Outside Report Review Modal & Intake State
   const [showAuditModal, setShowAuditModal] = useState(false);
   const [auditName, setAuditName] = useState('');
   const [auditEmail, setAuditEmail] = useState('');
@@ -723,7 +723,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                   Book Certified Master Inspection with infrared thermal scan (From $345) →
                 </a>
 
-                {/* Standalone $99 Second-Opinion Evaluation Door */}
+                {/* Standalone Second-Opinion Evaluation Door */}
                 <div style={{
                   marginTop: '0.75rem',
                   background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%)',
@@ -740,7 +740,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                     </span>
                   </div>
                   <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#ffffff' }}>
-                    Get the Official Foresight Repair Cost &amp; GAR Exhibit Review ($99 Flat)
+                    Get the Official Foresight Repair Cost &amp; GAR Exhibit Review (Call (678) 480-2110 for Quote)
                   </div>
                   <p style={{ fontSize: '0.74rem', color: '#94A3B8', margin: 0, lineHeight: 1.4 }}>
                     Hired a competitor who handed you an un-priced PDF? Upload your report to have our Certified Master Inspector engine extract contractor repair costs and generate your Georgia repair amendment exhibit in 4 hours.
@@ -762,7 +762,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                       boxShadow: '0 4px 12px rgba(212, 175, 55, 0.25)'
                     }}
                   >
-                    Order $99 Outside Report Review (Stripe Checkout) →
+                    Request Outside Report Review (Call (678) 480-2110 for Quote) →
                   </button>
                 </div>
 
@@ -1195,7 +1195,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
         </button>
       </div>
 
-      {/* $99 Outside Report Review Stripe Intake Modal */}
+      {/* Outside Report Review Intake Modal */}
       {showAuditModal && (
         <div style={{
           position: 'fixed',
@@ -1253,7 +1253,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
             </div>
 
             <h3 style={{ fontSize: '1.35rem', fontWeight: 900, color: '#FFFFFF', margin: '0 0 0.5rem', letterSpacing: '-0.01em' }}>
-              4-Hour Due Diligence Repair Cost Evaluation ($99 Flat)
+              4-Hour Due Diligence Repair Cost Evaluation (Call (678) 480-2110 for Quote)
             </h3>
 
             <p style={{ fontSize: '0.8rem', color: '#94A3B8', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
@@ -1263,7 +1263,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
             <form onSubmit={handleStartAuditCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
-                  Full Name *
+                  Full Name (Required)
                 </label>
                 <input
                   type="text"
@@ -1475,7 +1475,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                   opacity: auditLoading ? 0.7 : 1
                 }}
               >
-                {auditLoading ? 'Connecting to Stripe...' : 'Proceed to Secure Stripe Checkout ($99 Flat) →'}
+                {auditLoading ? 'Submitting Request...' : 'Request Outside Report Quote (Call (678) 480-2110) →'}
               </button>
 
               <div style={{ fontSize: '0.72rem', color: '#64748B', textAlign: 'center', lineHeight: 1.4 }}>

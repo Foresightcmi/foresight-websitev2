@@ -18,7 +18,7 @@ export default function CheckoutSuccessPage() {
         </div>
 
         <div style={{ display: 'inline-block', padding: '4px 12px', background: 'rgba(16, 185, 129, 0.12)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '9999px', fontSize: '0.75rem', color: '#34D399', fontWeight: 700, letterSpacing: '0.05em', marginBottom: '1rem', textTransform: 'uppercase' }}>
-          Payment Confirmed • $99 Due Diligence Evaluation
+          Request Confirmed • Due Diligence Evaluation
         </div>
 
         <h1 style={{ fontSize: '2rem', fontWeight: 900, margin: '0 0 1rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>

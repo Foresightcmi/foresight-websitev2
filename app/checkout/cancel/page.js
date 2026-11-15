@@ -50,7 +50,7 @@ export default function CheckoutCancelPage() {
               textDecoration: 'none'
             }}
           >
-            Try Again ($99 Evaluation)
+            Return to Repair Credit Calculator
           </Link>
           <Link
             href="/quote"

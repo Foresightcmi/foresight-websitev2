@@ -172,7 +172,7 @@ function buildLoanOfficerEmail(lo) {
           <li><strong>Guaranteed 24-Hr Scheduling SLA:</strong> Same-day digital reports delivered by 8:00 PM.</li>
           <li><strong>Two Certified Master Inspectors Concurrency:</strong> Dedicated structural + mechanical evaluations in parallel with zero solo-inspector fatigue.</li>
           <li><strong>Georgia Repair Amendment Support:</strong> Clear diagnostic defect summaries compatible with standard Georgia repair request amendments (such as Georgia repair amendment) for licensed broker or attorney review.</li>
-          <li><strong>$35,000 in Buyer Protection Guarantees:</strong> InterNACHI Buy-Back Guarantee + 90-Day Structural Warranty eliminates borrower cold feet.</li>
+          <li><strong>$35,000 in Buyer Protection Guarantees:</strong> $10,000 Elite Group 100-Day Zero-Deductible Home Warranty + $25,000 InterNACHI Honor Guarantee eliminates borrower cold feet.</li>
           <li><strong>DeKalb County Low-Flow Plumbing Certificate:</strong> On-site fixture verification (toilets 1.6 GPF max) and signed county certificate for pre-1993 homes in unincorporated DeKalb; we confirm whether it applies to your address.</li>
         </ul>
       </div>
@@ -190,7 +190,7 @@ function buildLoanOfficerEmail(lo) {
 In Georgia, due diligence is typically only 5 to 7 days. To protect your earnest money and keep our closing date on schedule, we recommend Foresight Home Inspections:
 • Two Certified Master Inspectors on every job
 • Same-day digital report delivery
-• $35,000 Client Protection Warranty & InterNACHI Buy-Back Guarantee
+• $35,000 Client Protection ($10,000 100-Day Zero-Deductible Warranty + $25,000 InterNACHI Honor Guarantee)
 👉 Reserve your inspection slot in 60 seconds: ${quoteUrl}
 Priority Desk: (678) 480-2110 | inspect@foresightcmi.com"</div>
 
@@ -210,7 +210,7 @@ Priority Desk: (678) 480-2110 | inspect@foresightcmi.com"</div>
       Foresight Home Inspections, LLC | Serving Metro Atlanta • <br>
       Serving Metro Atlanta, Fulton, Gwinnett, Cobb, DeKalb, Forsyth, Cherokee &amp; 20 Counties.<br>
       Confidential Professional Advisory for Mortgage Industry Partners.<br>
-      <span style="font-size: 10px; color: #94a3b8;">Foresight Home Inspections is an independent inspection firm and is not affiliated with or endorsed by the Georgia Association of Realtors (GAR). Diagnostic summaries are provided for informational review by licensed real estate brokers and legal counsel.</span>
+      <span style="font-size: 10px; color: #94a3b8;">Foresight Home Inspections is an independent inspection firm and is not affiliated with or endorsed by the Georgia Association of Realtors (GAR). RESPA Section 8 Notice (12 U.S.C. 2607): Zero referral fees, zero kickbacks, and zero fee-splitting; objective scheduling SLA and technical inspection standards only; borrowers are always free to select any home inspector of their choice.</span>
     </div>
   </div>
 </body>
@@ -329,7 +329,7 @@ function buildPreDueDiligenceEmail(realtor) {
           <li><strong>Two Certified Master Inspectors on Every Job:</strong> Dedicated structural + mechanical focus in parallel with zero solo-inspector fatigue.</li>
           <li><strong>Active SUPRA eKEY Access:</strong> We inspect smoothly without burdening the listing agent.</li>
           <li><strong>Georgia Contract-Ready Repair Summaries:</strong> Clean diagnostic language compatible with standard Georgia repair amendments that keeps deals intact.</li>
-          <li><strong>$35,000 Client Protection Guarantees:</strong> 90-Day Structural Warranty &amp; InterNACHI Buy-Back Guarantee.</li>
+          <li><strong>$35,000 Client Protection Guarantees:</strong> $10,000 Elite Group 100-Day Zero-Deductible Home Warranty &amp; $25,000 InterNACHI Honor Guarantee.</li>
           <li><strong>DeKalb Low-Flow Plumbing Certificate:</strong> Official signed county compliance certificate issued on-site for pre-1993 DeKalb homes.</li>
         </ul>
       </div>
@@ -351,7 +351,7 @@ function buildPreDueDiligenceEmail(realtor) {
     </div>
     <div class="footer">
       Foresight Home Inspections, LLC | Serving Metro Atlanta • <br>
-      Serving Metro Atlanta &amp; 77+ Municipalities across 20 Georgia Counties.<br>
+      Serving Metro Atlanta &amp; 87 Municipalities across 20 Georgia Counties.<br>
       <span style="font-size: 10px; color: #94a3b8;">Foresight Home Inspections is an independent inspection firm and is not affiliated with or endorsed by the Georgia Association of Realtors (GAR). Diagnostic summaries are provided for informational review by licensed real estate brokers and legal counsel.</span>
     </div>
   </div>
@@ -632,6 +632,7 @@ async function main() {
             date: r.date,
             timestamp: new Date().toISOString()
           });
+        
           fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
 
           sentUnderContractCount++;
@@ -800,7 +801,7 @@ async function main() {
         }
 
         // Max 2 loan officers per automated daily scout pass
-        if (sentLendersCount >= 2) break;
+        if (sentLendersCount >= 6) break;
       }
     } else {
       console.log('  ℹ️ Email dispatch inactive; loan officer directory is verified and current.');
@@ -817,13 +818,36 @@ async function main() {
         const normName = String(p.name || '').trim().toLowerCase();
         const key = `B2B_${p.id}_${normEmail}`;
         if (contactedKeys.has(key) || contactedEmails.has(normEmail) || (normName && contactedNames.has(normName)) || isSuppressed(p.email, p.name, p.company)) continue;
-        const isAtty = p.category === 'attorney_closing_probate';
-        const subject = isAtty
-          ? `Metro Atlanta Probate, Estate & Closing Condition Inspections (2-Inspector CMI Team)`
-          : `4-Point, Roof Drone & Moisture Verification for ${p.company} Policyholders`;
-        const pitchLine = isAtty
-          ? `Whether your firm is handling a Georgia probate estate valuation, pre-closing repair dispute, or unincorporated DeKalb County Low-Flow Plumbing Certificate (Call for Quote), our Two Certified Master Inspectors evaluate every property in parallel (Residential Homes From $345 / Condos From $295) with same-day photo-documented reports.`
-          : `When ${p.company} clients in ${p.city || 'Metro Atlanta'} need independent roof/4K drone condition documentation, polybutylene or electrical panel safety checks, or full residential inspections (Homes From $345 / Condos From $295; specialty evaluations Call for Quote), our Two Certified Master Inspectors deliver same-day reports backed by $35,000 in client protection.`;
+        let subject = `4-Point, Roof Drone & Moisture Verification for ${p.company} Policyholders`;
+        let pitchLine = `When ${p.company} clients in ${p.city || 'Metro Atlanta'} need independent roof/4K drone condition documentation, polybutylene or electrical panel safety checks, or full residential inspections (Homes From $345 / Condos From $295; specialty evaluations Call for Quote), our Two Certified Master Inspectors deliver same-day reports backed by $35,000 in client protection.`;
+        if (p.category === 'attorney_closing_probate' || p.category === 'attorney_divorce_family') {
+          subject = `Metro Atlanta Probate, Estate & Closing Condition Inspections (2-Inspector CMI Team)`;
+          pitchLine = `Whether ${p.company} is handling a Georgia probate estate valuation, marital property division, pre-closing repair dispute, or unincorporated DeKalb County Low-Flow Plumbing Certificate (Call for Quote), our Two Certified Master Inspectors evaluate every property in parallel (Residential Homes From $345 / Condos From $295) with same-day photo-documented reports.`;
+        } else if (p.category === 'property_management_sfr') {
+          subject = `Single-Family Acquisition, Annual Maintenance & 11-Month Warranty Inspections for ${p.company}`;
+          pitchLine = `When ${p.company} or your out-of-state investor landlords need fast acquisition due-diligence inspections, 11-month builder warranty punch-lists, or calibrated infrared thermal moisture & sewer diagnostics across Metro Atlanta, our Two Certified Master Inspectors inspect in parallel (Homes From $345 / Condos From $295) with same-day interactive digital reports.`;
+        } else if (p.category === 'relocation_corporate_mobility' || p.category === 'senior_move_manager_nasmm') {
+          subject = `2-Inspector Corporate Relocation & Pre-Listing Evaluations for ${p.company}`;
+          pitchLine = `Whether ${p.company} is coordinating an executive corporate relocation buyout or preparing a longtime Metro Atlanta home for downsizing and listing, our Two Certified Master Inspectors deliver same-day, zero-fatigue evaluations (Residential Homes From $345 / Condos From $295; Phase 1 Pre-Drywall From $275) with 4K aerial roof drone and calibrated infrared thermal scanning included.`;
+        } else if (p.category === 'specialty_engineer_contractor') {
+          subject = `Independent CMI Structural, Moisture & Pre-Drywall Diagnostics for ${p.company} (CMI #MICB-1082)`;
+          pitchLine = `Because our Two Certified Master Inspectors perform 100% objective full-home, pre-drywall (From $275), and 11-month warranty inspections across Metro Atlanta (Homes From $345) and never sell competing repair work, our independent diagnostic reports give ${p.company} clients clear, unbiased baseline documentation with zero conflict of interest.`;
+        } else if (p.category === 'public_adjuster_gapia') {
+          subject = `Independent CMI Thermal, Moisture & 4K Roof Drone Documentation for ${p.company}`;
+          pitchLine = `When ${p.company} represents Metro Atlanta policyholders on storm, roof, or water-intrusion claims, our Two Certified Master Inspectors provide 100% independent third-party property condition evaluations, calibrated infrared thermal moisture mapping, and 4K aerial roof drone documentation (Residential Homes From $345 / Condos From $295; specialty evaluations Call for Quote) with zero conflict of interest in repair work.`;
+        } else if (p.category === 'qi_1031_exchange') {
+          subject = `45-Day 1031 Exchange Replacement Property Inspections for ${p.company} Clients`;
+          pitchLine = `Because ${p.company} investors operate under a strict 45-day IRS identification window, our Two Certified Master Inspectors evaluate Metro Atlanta replacement properties in parallel (Residential Homes From $345 / Condos From $295) and deliver same-day CapEx-focused reports so your exchangers can lock in their selections with confidence.`;
+        } else if (p.category === 'attorney_elder_law_fiduciary') {
+          subject = `Fiduciary & Elder-Care Property Condition Assessments for ${p.company}`;
+          pitchLine = `When ${p.company} advises Metro Atlanta families on Medicaid trusts, conservatorships, or estate administration, our Two Certified Master Inspectors deliver objective, photo-documented Property Condition & Safety Assessments (Residential Homes From $345 / Condos From $295) so fiduciaries know whether to sell as-is, renovate, or rent the residence.`;
+        } else if (p.category === 'realtor_youtube_relocation') {
+          subject = `Sight-Unseen Out-of-State Buyer Inspections for ${p.company} (2-Inspector CMI Team)`;
+          pitchLine = `Because out-of-state buyers finding ${p.company} on YouTube often purchase sight-unseen, our Two Certified Master Inspectors inspect every home in parallel (Residential Homes From $345 / Condos From $295; Pre-Drywall From $275) with calibrated infrared thermal imaging, 4K roof drone photos, and a calm phone walkthrough that keeps remote buyers confident.`;
+        } else if (p.category === 'hoa_remodeler_architect') {
+          subject = `Townhome 11-Month Warranty Days & Pre-Renovation Baselines for ${p.company}`;
+          pitchLine = `Whether ${p.company} is coordinating neighborhood-wide 11-month builder warranty inspections for a townhome community or establishing a pre-renovation structural and thermal moisture baseline across Metro Atlanta, our Two Certified Master Inspectors deliver same-day engineering-grade reports (Homes From $345 / Condos From $295; Pre-Drywall From $275).`;
+        }
         const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;"><div style="background:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="CMI" height="78" width="78" style="display:inline-block;height:78px;width:78px;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="CPI" height="70" width="70" style="display:inline-block;height:70px;width:70px;" /></td></tr></table></div><div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">Hi <strong>${p.first || 'there'}</strong>,</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">${pitchLine}</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">If your office ever needs priority 24-hour scheduling across Metro Atlanta, feel free to share our direct desk at <strong>(678) 480-2110</strong> or <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;font-weight:600;">www.fhinspectionsatl.com</a>.</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
         try {
           await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: p.email, subject, html });
@@ -835,10 +859,67 @@ async function main() {
         } catch (e) {
           if (/550|454|Daily user sending limit/i.test(e.message)) { quotaCeilingHit = true; break; }
         }
-        if (sentB2bPartnersCount >= 2) break;
+        if (sentB2bPartnersCount >= 15) break;
       }
     }
   }
+
+  // -----------------------------------------------------------
+  // PRIORITY #4: Live FMLS Price-Drop / Seller-Defense Realtors
+  // -----------------------------------------------------------
+  const PRICE_DROP_FILE = path.join(ROOT_DIR, 'data', 'fmls-price-drop-leads.json');
+  let sentPriceDropCount = 0;
+  if (fs.existsSync(PRICE_DROP_FILE) && canSendEmail && transporter && !quotaCeilingHit) {
+    const priceDrops = JSON.parse(fs.readFileSync(PRICE_DROP_FILE, 'utf8'));
+    console.log(`📉 [Due Diligence Engine] Priority #4: Loaded ${priceDrops.length} Live FMLS Price-Drop / Seller-Defense Leads.`);
+    for (const pd of priceDrops) {
+      const normEmail = String(pd.email || '').trim().toLowerCase();
+      const normName = String(pd.name || '').trim().toLowerCase();
+      const key = `PRICEDROP_${pd.id}_${normEmail}`;
+      if (!normEmail || contactedKeys.has(key) || contactedEmails.has(normEmail) || (normName && contactedNames.has(normName)) || isSuppressed(pd.email, pd.name, pd.brokerage)) continue;
+      const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;"><div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">${pd.pitch_body}</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
+      try {
+        await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: pd.email, subject: pd.subject, text: pd.pitch_body, html });
+        contactedKeys.add(key); contactedEmails.add(normEmail); if (normName) contactedNames.add(normName);
+        outreachLog.push({ key, type: 'FMLS_PRICE_DROP', targetName: pd.name, brokerage: pd.brokerage, address: pd.address, city: pd.city, email: pd.email, timestamp: new Date().toISOString() });
+        fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
+        sentPriceDropCount++;
+        await sleep(2500);
+      } catch (e) {
+        if (/550|454|Daily user sending limit/i.test(e.message)) { quotaCeilingHit = true; break; }
+      }
+      if (sentPriceDropCount >= 15) break;
+    }
+  }
+
+  // -----------------------------------------------------------
+  // PRIORITY #5: Live FMLS Micro-Triggers (Back On Market, 1031 Exchange, Pre-1972 Sewer, Tenant/Multifamily)
+  // -----------------------------------------------------------
+  const MICRO_TRIGGER_FILE = path.join(ROOT_DIR, 'data', 'fmls-micro-trigger-leads.json');
+  let sentMicroTriggerCount = 0;
+  if (fs.existsSync(MICRO_TRIGGER_FILE) && canSendEmail && transporter && !quotaCeilingHit) {
+    const microLeads = JSON.parse(fs.readFileSync(MICRO_TRIGGER_FILE, 'utf8'));
+    console.log(`🎯 [Due Diligence Engine] Priority #5: Loaded ${microLeads.length} Live FMLS Micro-Trigger Leads (Back On Market, 1031, Vintage Sewer, Multifamily).`);
+    for (const ml of microLeads) {
+      const normEmail = String(ml.email || '').trim().toLowerCase();
+      const normName = String(ml.name || '').trim().toLowerCase();
+      const key = `MICRO_${ml.id}_${normEmail}`;
+      if (!normEmail || contactedKeys.has(key) || contactedEmails.has(normEmail) || (normName && contactedNames.has(normName)) || isSuppressed(ml.email, ml.name, ml.brokerage)) continue;
+      const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;"><div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">${ml.pitch_body}</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
+      try {
+        await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: ml.email, subject: ml.subject, text: ml.pitch_body, html });
+        contactedKeys.add(key); contactedEmails.add(normEmail); if (normName) contactedNames.add(normName);
+        outreachLog.push({ key, type: `FMLS_${ml.trigger_type}`, targetName: ml.name, brokerage: ml.brokerage, address: ml.address, city: ml.city, email: ml.email, timestamp: new Date().toISOString() });
+        fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
+        sentMicroTriggerCount++;
+        await sleep(2500);
+      } catch (e) {
+        if (/550|454|Daily user sending limit/i.test(e.message)) { quotaCeilingHit = true; break; }
+      }
+      if (sentMicroTriggerCount >= 20) break;
+    }
+  }
+
   fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
   console.log(`💾 [Due Diligence Engine] Updated outreach log (${outreachLog.length} total historical communications).`);
 

@@ -30,13 +30,17 @@ jobs:
       - name: Generate blog post from keyword brief
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/generate-blog-post.mjs
+        run: |
+          node scripts/generate-blog-post.mjs
+          node scripts/firstindex-truth-guard.mjs --fix
+          node scripts/firstindex-truth-guard.mjs
+          node scripts/seo-health-check.mjs
 
       - name: Commit, push, and ping IndexNow
         run: |
           git config user.name "Foresight Blog Writer"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/posts.json
+          git add data/posts.json public/llms.txt public/llms-full.txt
           if ! git diff --cached --quiet; then
             git commit -m "blog: new post $(date +%Y-%m-%d) [skip ci]"
             git pull --rebase -X theirs origin main

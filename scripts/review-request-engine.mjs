@@ -1,32 +1,34 @@
 #!/usr/bin/env node
-/**
- * Review Request Engine (local only; client PII stays in gitignored data/private/).
- *   node scripts/review-request-engine.mjs add "Jane Doe | jane@x.com | 4045551234 | Lithonia | home inspection"
- *   node scripts/review-request-engine.mjs cancel "100 Sample St | jane@x.com"
- *   node scripts/review-request-engine.mjs run       (poll intake + quarantine cancellations + send due completed asks; 9 AM-6 PM)
- *   node scripts/review-request-engine.mjs dry-run   (sync cancellations & completed jobs without sending)
- *   node scripts/review-request-engine.mjs done jane@x.com   (client reviewed: stop reminders)
- *   node scripts/review-request-engine.mjs list
- * Phone intake: publish pipe format (or "CANCEL: <address|email|phone>") to private ntfy topic in data/private/review-config.json.
- */
+// Review Request Engine (local only; client PII stays in gitignored data/private/).
+//   node scripts/review-request-engine.mjs add "Jane Doe | jane@x.com | 4045551234 | Lithonia | home inspection"
+//   node scripts/review-request-engine.mjs cancel "100 Sample St | jane@x.com"
+//   node scripts/review-request-engine.mjs run       (poll intake + quarantine cancellations + send due completed asks)
+//   node scripts/review-request-engine.mjs dry-run   (sync cancellations & completed jobs without sending)
+//   node scripts/review-request-engine.mjs reactivate-past-clients --dry-run --limit=8
+//   node scripts/review-request-engine.mjs done jane@x.com   (client reviewed: stop reminders)
+//   node scripts/review-request-engine.mjs list
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import nodemailer from 'nodemailer';
 import {
   parseIntake, parseCancelIntake, normalizeAddressKey, buildCanceledIndex,
-  reconcileQueueCancellations, upsert, dueActions, buildEmail, buildSms, digits10
+  reconcileQueueCancellations, upsert, dueActions, buildEmail, buildSms, digits10,
+  seedLedgerFromQueue, recordLedgerTouch, canContactClient
 } from './lib/review-requests.mjs';
-import { ingestHomeGaugeJobs, mergeCancellations } from './lib/homegauge-intake.mjs';
+import { ingestHomeGaugeJobs, mergeCancellations, pollReviewOptOutReplies } from './lib/homegauge-intake.mjs';
 
 const ROOT = process.cwd();
 const PRIV = path.join(ROOT, 'data', 'private');
 const QUEUE = path.join(PRIV, 'review-requests.json');
+const LEDGER = path.join(PRIV, 'review-dispatch-ledger.json');
+const UNSUB = path.join(ROOT, 'data', 'unsubscribed_contacts.json');
 const CANCELS = path.join(PRIV, 'canceled-inspections.json');
 const CFG = path.join(PRIV, 'review-config.json');
 const REVIEW_LINK = 'https://g.page/r/CaK5MZOz_FBtEBM/review';
 const ALERTS = 'https://ntfy.sh/fores-antigravity-alerts-77';
 const COOLDOWN = path.resolve(ROOT, '..', 'email-campaign-engine', 'smtp_cooldown_state.json');
+const MAX_AUTO_BATCH = 10;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
 const writeJson = (f, d) => { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(d, null, 2), 'utf8'); };
@@ -102,6 +104,26 @@ function auditExistingQueueCompletion(queue, hr5ByAddress) {
   return quarantined;
 }
 
+function applyReplyFlags(queue, { optOuts = [], reviewed = [] }) {
+  if (!optOuts.length && !reviewed.length) return 0;
+  const nowIso = new Date().toISOString();
+  const optSet = new Set(optOuts), revSet = new Set(reviewed);
+  let changes = 0;
+  for (const q of queue) {
+    const em = String(q.email || '').toLowerCase().trim();
+    if (em && optSet.has(em) && !q.optedOut) { q.optedOut = true; q.optedOutAt = nowIso; changes++; }
+    if (em && revSet.has(em) && !q.reviewedAt) { q.reviewedAt = nowIso; changes++; }
+  }
+  if (optOuts.length) {
+    const cur = readJson(UNSUB, []);
+    const seen = new Set(cur.map((x) => String(typeof x === 'string' ? x : x?.email || x?.phone || '').toLowerCase().trim()));
+    let addedUnsub = false;
+    for (const em of optOuts) { if (!seen.has(em)) { cur.push(em); seen.add(em); addedUnsub = true; } }
+    if (addedUnsub) writeJson(UNSUB, cur);
+  }
+  return changes;
+}
+
 async function run(cfg, queue, dryRun = false, forceWindow = false) {
   const intake = await pollIntake(cfg);
   const user = env('EMAIL_USER') || 'inspect@foresightcmi.com'; // ggignore
@@ -122,8 +144,15 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
     if (upsert(queue, job, new Date(), canceledIndex)) added.push(`${job.name} (${job.address || job.city || 'Report Viewed'})`);
   }
 
+  const ledger = seedLedgerFromQueue(readJson(LEDGER, { byKey: {} }), queue);
+  writeJson(LEDGER, ledger);
+
+  const activeEmails = queue.filter((q) => q.email && !q.optedOut && !q.reviewedAt && !q.canceledAt).map((q) => q.email);
+  const replyRes = await pollReviewOptOutReplies(user, pass, activeEmails);
+  applyReplyFlags(queue, replyRes);
+
   if (dryRun) {
-    console.log(`[Review Engine Dry-Run] Added: ${added.length} | Revoked/Quarantined: ${revoked.length} | Canceled Ledger: ${hg.cancellations.length}`);
+    console.log(`[Review Engine Dry-Run] Added: ${added.length} | Revoked/Quarantined: ${revoked.length} | OptOuts/Reviewed: ${replyRes.optOuts.length}/${replyRes.reviewed.length} | Canceled Ledger: ${hg.cancellations.length}`);
     return { added, sent: [], revoked, newCancelCount: hg.newCancelCount };
   }
 
@@ -136,27 +165,104 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
   const emailOk = !(cool.cooldownUntil && new Date(cool.cooldownUntil) > new Date());
   const transporter = emailOk && pass ? nodemailer.createTransport({ service: 'gmail', auth: { user, pass } }) : null;
   const sent = [];
-  for (const { entry, kind } of dueActions(queue, new Date(), suppressed(), canceledIndex)) {
-    if (kind !== 'initial') continue;
-    let ok = false;
-    if (entry.email && transporter) {
+  for (const { entry, kind } of dueActions(queue, new Date(), suppressed(), canceledIndex, ledger).slice(0, MAX_AUTO_BATCH)) {
+    const gate = canContactClient(ledger, entry, kind, new Date(), suppressed());
+    if (!gate.allowed) continue;
+    const emailField = kind === 'initial' ? 'emailSentAt' : 'reminderEmailSentAt';
+    const smsField = kind === 'initial' ? 'smsSentAt' : 'reminderSmsSentAt';
+    let didSendEmail = false;
+    let didSendSms = false;
+    if (entry.email && !entry[emailField] && transporter) {
       try {
-        const m = buildEmail(entry, REVIEW_LINK, 'initial');
+        const m = buildEmail(entry, REVIEW_LINK, kind);
         await transporter.sendMail({ from: `"Christopher Boykin, CMI" <${user}>`, to: entry.email, subject: m.subject, text: m.text, html: m.html });
-        ok = true;
-      } catch (e) { console.warn(`[Review Engine] Email failed for ${entry.name}:`, e.message); }
+        entry[emailField] = new Date().toISOString();
+        didSendEmail = true;
+      } catch (e) { console.warn('[Review Engine] Email dispatch failed:', e.message); }
     }
-    if (entry.phone && (await sendSms(entry.phone, buildSms(entry, REVIEW_LINK, 'initial')))) ok = true;
-    if (ok) {
+    if (entry.phone && !entry[smsField] && (await sendSms(entry.phone, buildSms(entry, REVIEW_LINK, kind)))) {
+      entry[smsField] = new Date().toISOString();
+      didSendSms = true;
+    }
+    if (didSendEmail || didSendSms) {
       const nowIso = new Date().toISOString();
-      entry.sentAt = nowIso;
-      entry.reminderSentAt = nowIso;
-      sent.push(`${entry.name} (${entry.address || entry.city || entry.email})`);
+      const channels = [...(didSendEmail ? ['email'] : []), ...(didSendSms ? ['sms'] : [])];
+      if (kind === 'initial' && !entry.sentAt) entry.sentAt = nowIso;
+      else if (kind === 'reminder') entry.reminderSentAt = entry.reminderSentAt || nowIso;
+      recordLedgerTouch(ledger, entry, kind, nowIso, channels);
+      writeJson(LEDGER, ledger);
+      writeJson(QUEUE, queue);
+      sent.push(`${entry.city || 'Metro Atlanta'} [${kind}]`);
     }
     await sleep(2500);
   }
   transporter?.close();
   return { added, sent, revoked };
+}
+
+async function reactivatePastClients(args, queue, cancels) {
+  const isDryRun = !args.includes('--live') && !args.includes('--send');
+  const forceWindow = args.includes('--force-window');
+  const limitArg = args.find((a) => a.startsWith('--limit='))?.split('=')[1] || (args.indexOf('--limit') >= 0 ? args[args.indexOf('--limit') + 1] : '8');
+  const limit = Math.min(10, Math.max(1, parseInt(limitArg, 10) || 8));
+  const now = new Date();
+  const day = now.getDay();
+  const mins = now.getHours() * 60 + now.getMinutes();
+  const inWeekdayWindow = day >= 1 && day <= 5 && mins >= 600 && mins <= 990; // Mon-Fri 10:00-16:30 local
+  const statePath = path.join(PRIV, 'past-client-reactivation.json');
+  const state = readJson(statePath, { updatedAt: now.toISOString(), totalReactivated: 0, sentIds: [], sentPhones: [], sentAddresses: [] });
+  const pastClients = readJson(path.join(ROOT, 'data', 'past-clients.json'), []);
+  const sup = suppressed();
+  const canceledIdx = buildCanceledIndex(cancels);
+  const queuePhones = new Set(queue.map((q) => digits10(q.phone)).filter((p) => p.length === 10));
+  const queueEmails = new Set(queue.map((q) => String(q.email || '').toLowerCase().trim()).filter(Boolean));
+  const queueAddrs = new Set(queue.map((q) => normalizeAddressKey(q.address)).filter(Boolean));
+  const ledger = seedLedgerFromQueue(readJson(LEDGER, { byKey: {} }), queue);
+  const reactivatedPhones = new Set(state.sentPhones || []);
+  const reactivatedAddrs = new Set(state.sentAddresses || []);
+  const reactivatedIds = new Set(state.sentIds || []);
+  const eligible = pastClients.filter((c) => {
+    if (!c || c.initial_sent === true) return false;
+    const ph = digits10(c.phone || c.raw_phone);
+    const em = String(c.email || '').toLowerCase().trim();
+    const addrKey = normalizeAddressKey(c.address);
+    if (ph.length !== 10) return false;
+    if (sup.has(ph) || (em && sup.has(em))) return false;
+    if (queuePhones.has(ph) || (em && queueEmails.has(em)) || (addrKey && queueAddrs.has(addrKey))) return false;
+    if (reactivatedPhones.has(ph) || (addrKey && reactivatedAddrs.has(addrKey)) || (c.id && reactivatedIds.has(String(c.id)))) return false;
+    if (canceledIdx.byPhone.get(ph) || (em && canceledIdx.byEmail.get(em)) || (addrKey && canceledIdx.byAddress.get(addrKey))) return false;
+    return canContactClient(ledger, { ...c, phone: ph, email: em }, 'initial', now, sup).allowed;
+  });
+  const batch = eligible.slice(0, limit);
+  if (isDryRun || (!inWeekdayWindow && !forceWindow)) {
+    if (!fs.existsSync(statePath)) writeJson(statePath, state);
+    console.log(`[Past-Client Reactivation ${isDryRun ? 'Dry-Run' : 'Deferred Outside Mon-Fri 10:00-16:30'}] Historical: ${pastClients.length} | Eligible: ${eligible.length} | Batch (limit <= 10): ${batch.length} | InWindow(Mon-Fri 10:00-16:30): ${inWeekdayWindow}`);
+    return { eligibleCount: eligible.length, batchCount: batch.length, sentCount: 0, isDryRun };
+  }
+  let sentCount = 0;
+  for (const c of batch) {
+    const ph = digits10(c.phone || c.raw_phone);
+    const em = String(c.email || '').toLowerCase().trim();
+    const candidate = { id: String(c.id || ''), name: c.first || c.name, city: c.city, address: c.address, phone: ph, email: em };
+    if (!canContactClient(ledger, candidate, 'initial', new Date(), sup).allowed) continue;
+    const msg = `Hi ${c.first || c.name || 'there'}, Chris with Foresight Home Inspections checking in. Completely optional & zero pressure (no follow-ups will follow): an honest Google review helps local buyers find us: ${REVIEW_LINK} Reply STOP anytime to opt out.`;
+    if (await sendSms(ph, msg)) {
+      const sentIso = new Date().toISOString();
+      sentCount++;
+      state.sentIds.push(String(c.id || ''));
+      state.sentPhones.push(ph);
+      if (normalizeAddressKey(c.address)) state.sentAddresses.push(normalizeAddressKey(c.address));
+      state.totalReactivated = (state.totalReactivated || 0) + 1;
+      state.updatedAt = sentIso;
+      recordLedgerTouch(ledger, candidate, 'initial', sentIso, ['sms']);
+      recordLedgerTouch(ledger, candidate, 'reminder', sentIso, ['single_touch_cap']);
+      writeJson(LEDGER, ledger);
+      writeJson(statePath, state);
+      await sleep(3000);
+    }
+  }
+  console.log(`[Past-Client Reactivation Live] Sent: ${sentCount}/${batch.length} | Remaining Eligible: ${eligible.length - sentCount}`);
+  return { eligibleCount: eligible.length, batchCount: batch.length, sentCount, isDryRun: false };
 }
 
 async function main() {
@@ -189,9 +295,12 @@ async function main() {
     if (e) { e.reviewedAt = new Date().toISOString(); console.log(`Marked ${e.name} as reviewed.`); } else console.log('Not found.');
   } else if (cmd === 'list') {
     for (const q of queue) {
-      console.log(`${q.name} | ${q.address || q.city || '-'} | viewedAt:${q.reportViewedAt || '-'} | verified:${q.completionVerified ? 'Y' : 'N'} canceled:${q.canceledAt ? 'Y' : 'N'} sent:${q.sentAt ? 'Y' : 'N'} reviewed:${q.reviewedAt ? 'Y' : 'N'}`);
+      console.log(`${q.city || '-'} | viewedAt:${q.reportViewedAt || '-'} | verified:${q.completionVerified ? 'Y' : 'N'} canceled:${q.canceledAt ? 'Y' : 'N'} sent:${q.sentAt ? 'Y' : 'N'} reminder:${q.reminderSentAt ? 'Y' : 'N'} closing:${q.closingCheckSentAt ? 'Y' : 'N'} reviewed:${q.reviewedAt ? 'Y' : 'N'}`);
     }
     console.log(`\nCanceled quarantine ledger: ${cancels.length} record(s) | Phone intake topic: ${cfg.intakeTopic}`);
+  } else if (cmd === 'reactivate-past-clients') {
+    await reactivatePastClients(args, queue, cancels);
+    return;
   } else {
     const { added, sent, revoked = [] } = await run(cfg, queue, cmd === 'dry-run', cmd === 'run-now');
     if (cmd !== 'dry-run' && sent.length) {

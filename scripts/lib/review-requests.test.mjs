@@ -1,7 +1,7 @@
 // Run: node --test scripts/lib/review-requests.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseIntake, upsert, dueActions, buildEmail, buildSms } from './review-requests.mjs';
+import { parseIntake, upsert, dueActions, buildEmail, buildSms, seedLedgerFromQueue, recordLedgerTouch, canContactClient } from './review-requests.mjs';
 
 test('parses pipe intake with email, phone, city, service', () => {
   const e = parseIntake('Jane Doe | Jane@Example.com | (404) 555-1234 | Lithonia | Radon Testing');
@@ -19,16 +19,22 @@ test('dedupes by email or phone', () => {
   assert.equal(q.length, 1);
 });
 
-test('initial now, one reminder after 4 days, then nothing', () => {
+test('initial now, one reminder after 7 days, hard 2-touch lifetime cap and 6-day ledger cooldown', () => {
   const now = new Date('2026-10-21T14:00:00Z');
-  const q = [{ email: 'a@x.com', sentAt: null }];
+  const q = [{ id: 't1', email: 'a@x.com', phone: '4045550199', address: '100 Main St', sentAt: null }];
   assert.equal(dueActions(q, now)[0].kind, 'initial');
-  q[0].sentAt = '2026-10-18T14:00:00Z';
+  q[0].sentAt = '2026-10-15T14:00:00Z';
   assert.equal(dueActions(q, now).length, 0);
-  q[0].sentAt = '2026-10-17T13:00:00Z';
-  assert.equal(dueActions(q, now)[0].kind, 'reminder');
+  q[0].sentAt = '2026-10-14T13:00:00Z';
+  const ledger = seedLedgerFromQueue({ byKey: {} }, q);
+  assert.equal(dueActions(q, now, new Set(), null, ledger)[0].kind, 'reminder');
   q[0].reminderSentAt = now.toISOString();
-  assert.equal(dueActions(q, now).length, 0);
+  recordLedgerTouch(ledger, q[0], 'reminder', now.toISOString(), ['email']);
+  assert.equal(dueActions(q, new Date('2026-11-05T14:00:00Z'), new Set(), null, ledger).length, 0);
+  // Duplicate record for same person/phone/address must still be blocked by immutable ledger
+  const dup = [{ id: 't2', email: 'other@x.com', phone: '4045550199', address: '100 Main St', sentAt: null }];
+  assert.equal(canContactClient(ledger, dup[0], 'initial', new Date('2026-10-22T14:00:00Z')).allowed, false);
+  assert.equal(dueActions(dup, new Date('2026-11-05T14:00:00Z'), new Set(), null, ledger).length, 0);
 });
 
 test('suppressed, opted-out and reviewed clients are skipped', () => {
@@ -36,17 +42,20 @@ test('suppressed, opted-out and reviewed clients are skipped', () => {
   assert.equal(dueActions(q, new Date(), new Set(['a@x.com'])).length, 0);
 });
 
-test('copy: no asterisks, no incentive language, includes link and opt-out on SMS', () => {
+test('copy: no asterisks, no incentive language, low-pressure optional tone, link and opt-out on email + SMS', () => {
   const e = { name: 'Jane Doe', city: 'Lithonia', service: 'home inspection' };
   const link = 'https://g.page/r/CaK5MZOz_FBtEBM/review';
-  const mail = buildEmail(e, link, 'initial');
-  const sms = buildSms(e, link, 'initial');
-  for (const s of [mail.text, mail.html, sms]) {
-    assert.ok(!s.includes('*'));
-    assert.ok(!/discount|gift|reward|\$\d/i.test(s));
-    assert.ok(s.includes(link));
+  for (const kind of ['initial', 'reminder']) {
+    const mail = buildEmail(e, link, kind);
+    const sms = buildSms(e, link, kind);
+    for (const s of [mail.text, mail.html, sms]) {
+      assert.ok(!s.includes('*'));
+      assert.ok(!/discount|gift|reward|\$\d/i.test(s));
+      assert.ok(s.includes(link));
+      assert.ok(/no pressure|optional/i.test(s), `Expected low-pressure phrasing in ${kind}`);
+      assert.ok(/STOP/i.test(s), `Expected STOP opt-out in ${kind}`);
+    }
   }
-  assert.ok(/STOP/.test(sms));
 });
 
 import {
@@ -79,7 +88,7 @@ test('rejects pre-inspection, agreement, deposit, bounce, guide, BuildFax, and R
   }
 });
 
-test('accepts genuine completed Inspection Report Viewed by Customer (email OR HomeGauge username) and enforces 1–2h post-view delay', () => {
+test('accepts genuine completed Inspection Report Viewed by Customer (email OR HomeGauge username) and enforces 4h post-view delay', () => {
   const subj = 'Inspection Report for 200 Sample Pine Ave Viewed';
   const body = 'Dear CHRISTOPHER, Inspection Report uploaded on 2026-10-27 17:15:27 EDT for 200 Sample Pine Ave has been viewed by Customer Alex Buyer/alex@example.com You can turn off these notifications.';
   const job = parseHomeGaugeNotificationEmail(body, subj, 'Tue, 27 Oct 2026 22:00:00 +0000');
@@ -100,11 +109,11 @@ test('accepts genuine completed Inspection Report Viewed by Customer (email OR H
   assert.equal(uJob.customerViewedReport, true);
   assert.equal(uJob.reportViewedAt, '2026-11-02T23:34:22.000Z');
 
-  // 1-day post-view delay check
+  // 4-hour post-view delay check
   const q = [];
   upsert(q, { ...uJob, email: 'buyer@example.com', phone: '4045550199' }, new Date('2026-11-02T23:35:00Z'));
-  assert.equal(dueActions(q, new Date('2026-11-03T00:05:00Z')).length, 0, 'Too soon (30m after viewing)');
-  assert.equal(dueActions(q, new Date('2026-11-03T01:05:00Z')).length, 1, 'Due 1–2h after viewing (~1.5h after viewing)');
+  assert.equal(dueActions(q, new Date('2026-11-03T01:05:00Z')).length, 0, 'Too soon (1.5h after viewing)');
+  assert.equal(dueActions(q, new Date('2026-11-03T03:40:00Z')).length, 1, 'Due >= 4h after viewing (~4h05m after viewing)');
 });
 
 test('extracts cancellation details from HomeGauge Inspection Canceled email (including spaced area code)', () => {

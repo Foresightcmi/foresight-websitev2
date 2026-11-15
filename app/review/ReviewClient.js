@@ -22,19 +22,19 @@ export default function ReviewClient() {
   const firstName = (clientName || 'Valued Client').split(' ')[0];
   const address = propertyAddress || 'your property';
 
-  // Dynamic 5-Star SMS Templates
-  const previousClientSms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! It was an absolute honor inspecting your home at ${address}. As an independent Atlanta local business, our reputation is built on 5-star reviews from valued clients like you. Could you please take 30 seconds to give us a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - It means the world to our team! Thank you so much! Christopher Boykin, CMI® (678) 480-2110`;
+  // Dynamic Neutral Zero-Pressure Google-Compliant SMS Templates
+  const previousClientSms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here. It was a pleasure inspecting ${address}. Completely optional and zero pressure: an honest Google review helps local homebuyers know what to expect. ${directGoogleReviewUrl} - (678) 480-2110. Reply STOP anytime to opt out.`;
 
-  const sameDaySms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here! Thank you for trusting our two-inspector team on ${address} today! Your interactive digital inspection report is ready. As an Atlanta local family business, our reputation is built on 5-star client experiences. If our thoroughness and thermal scan gave you peace of mind, could you take 30 seconds to share a 5-star review on Google? ⭐ Tap here for instant access: ${directGoogleReviewUrl} - Christopher Boykin, CMI® (678) 480-2110`;
+  const sameDaySms = `Hi ${firstName}, Christopher Boykin with Foresight Home Inspections here. Call (678) 480-2110 anytime if any question comes up on ${address}. Completely optional and no pressure: an honest Google review helps local buyers: ${directGoogleReviewUrl} Reply STOP to opt out.`;
 
   const activeSms = dispatchMode === 'previous' ? previousClientSms : sameDaySms;
 
-  // Dynamic 5-Star Email Templates
-  const previousClientEmailSubject = `Checking in on ${address} + Quick Favor for Christopher Boykin ⭐⭐⭐⭐⭐`;
-  const previousClientEmailBody = `Dear ${clientName || 'Valued Client'},\n\nI hope you and your family are settling in wonderfully at ${address}!\n\nChristopher Boykin here, founder of Foresight Home Inspections. It was a true pleasure inspecting your home during your due diligence.\n\nAs an independent, Georgia-certified small business, 5-star Google reviews from previous clients are the lifeblood of our company—they are how local Atlanta homebuyers know they can trust our two-inspector team to protect their investment.\n\nIf you had a great experience with our inspection thoroughness, infrared thermal scans, and detailed report, would you take 30 seconds to leave us a 5-star review on Google?\n\n⭐⭐⭐⭐⭐ Tap here to leave your 5-Star Review:\n${directGoogleReviewUrl}\n\nIf there is anything you ever need regarding home maintenance, contractor recommendations, or building questions, my direct cell is always open to you at (678) 480-2110.\n\nWith sincere gratitude,\n\nChristopher Boykin, CMI®\nCertified Master Inspector\nForesight Home Inspections LLC\nPhone: (678) 480-2110\nWebsite: https://www.fhinspectionsatl.com`;
+  // Dynamic Neutral Zero-Pressure Google-Compliant Email Templates
+  const previousClientEmailSubject = `Optional note on ${address} from Christopher Boykin`;
+  const previousClientEmailBody = `Dear ${clientName || 'Valued Client'},\n\nI hope things are going smoothly at ${address}.\n\nChristopher Boykin here, founder of Foresight Home Inspections. It was a pleasure inspecting your property during your due diligence.\n\nNo pressure at all — if you happen to have 30 seconds, an honest Google review of your experience helps Metro Atlanta homebuyers know what to expect from our two-inspector team, calibrated infrared thermal camera scan, and interactive digital report:\n${directGoogleReviewUrl}\n\nOptional 1-line memory prompts if you ever want ideas:\n- Property City or Neighborhood (e.g., home inspection in your Metro Atlanta city)\n- Two-Inspector Team and calibrated infrared thermal camera scan\n- How the same-day interactive digital report helped with your repair priorities\n\nPrefer not to get review emails? Reply STOP anytime and I will remove you right away. My direct line is always open at (678) 480-2110 for any home questions.\n\nWith sincere gratitude,\n\nChristopher Boykin, CMI\nCertified Master Inspector (#MICB-1082)\nForesight Home Inspections, LLC\nPhone: (678) 480-2110\nWebsite: https://www.fhinspectionsatl.com`;
 
-  const sameDayEmailSubject = `Your Inspection Report + Quick Favor for Christopher Boykin ⭐⭐⭐⭐⭐`;
-  const sameDayEmailBody = `Dear ${clientName || 'Valued Client'},\n\nThank you for trusting Foresight Home Inspections to evaluate ${address} today. Our mission is to give you complete clarity and peace of mind during your home buying journey.\n\nYour complete digital inspection report and infrared thermal photos are now ready.\n\nAs a locally-owned Atlanta business, 5-star Google reviews from valued clients mean the world to our inspection team. If you appreciated our two-inspector thoroughness, detailed walkthrough, and up to $35,000 in combined warranty and guarantee protection, could you take 30 seconds to leave us a 5-star review on Google?\n\n⭐⭐⭐⭐⭐ Tap here to leave your 5-Star Review:\n${directGoogleReviewUrl}\n\nPlease don't hesitate to reach out if you have any questions about your report or contractor repair priorities.\n\nWarm regards,\n\nChristopher Boykin, CMI®\nCertified Master Inspector\nForesight Home Inspections LLC\nPhone: (678) 480-2110\nWebsite: https://fhinspectionsatl.com`;
+  const sameDayEmailSubject = `Your Interactive Digital Report + Any Questions for Foresight`;
+  const sameDayEmailBody = `Dear ${clientName || 'Valued Client'},\n\nThank you for trusting Foresight Home Inspections to evaluate ${address} today. Your same-day interactive digital report and calibrated infrared thermal camera photos are now ready — call or reply anytime at (678) 480-2110 if you want to walk through any finding by phone.\n\nCompletely optional and no pressure at all: once you have looked over your report, taking 30 seconds to share an honest Google review helps other Metro Atlanta families know what to expect from our two-inspector team and up to $35,000 in combined warranty and guarantee protection:\n${directGoogleReviewUrl}\n\nOptional 1-line memory prompts if you ever want ideas:\n- Property City or Neighborhood (e.g., home inspection in your Metro Atlanta city)\n- Two-Inspector Team and calibrated infrared thermal camera scan\n- How the same-day interactive digital report helped with your repair priorities\n\nPrefer not to receive review emails? Reply STOP anytime and I will take you right off the list.\n\nWarm regards,\n\nChristopher Boykin, CMI\nCertified Master Inspector (#MICB-1082)\nForesight Home Inspections, LLC\nPhone: (678) 480-2110\nWebsite: https://www.fhinspectionsatl.com`;
 
   const activeEmailSubject = dispatchMode === 'previous' ? previousClientEmailSubject : sameDayEmailSubject;
   const activeEmailBody = dispatchMode === 'previous' ? previousClientEmailBody : sameDayEmailBody;
@@ -131,6 +131,23 @@ export default function ReviewClient() {
           >
             Thank You for Choosing Foresight!
           </h1>
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              backgroundColor: '#FEF9C3',
+              color: '#0F172A',
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              padding: '0.4rem 0.9rem',
+              borderRadius: '999px',
+              border: '1px solid #FDE047',
+              marginBottom: '0.85rem',
+            }}
+          >
+            <span>4.8/5 Rating &bull; 53 Verified Google Reviews</span>
+          </div>
           <p
             style={{
               color: '#475569',
@@ -140,11 +157,10 @@ export default function ReviewClient() {
               margin: '0 auto',
             }}
           >
-            We appreciate your trust! Your 5-star Google review helps Metro Atlanta homebuyers discover a thorough, CMI-led dual inspector team.
+            We appreciate your trust. Your honest Google review helps Metro Atlanta homebuyers discover our CMI-led two-inspector team.
           </p>
         </div>
 
-        {/* Primary Google Review CTA */}
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <a
             href={directGoogleReviewUrl}
@@ -168,14 +184,13 @@ export default function ReviewClient() {
               maxWidth: '420px',
             }}
           >
-            <span>⭐⭐⭐⭐⭐</span> Leave a 5-Star Google Review
+            <span>⭐⭐⭐⭐⭐</span> Leave a Google Review
           </a>
           <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#64748B' }}>
-            Takes under 30 seconds • Opens directly to Google Review dialog
+            Takes under 30 seconds &bull; Opens directly to Google Review dialog
           </div>
         </div>
 
-        {/* Helpful Details Box */}
         <div
           style={{
             backgroundColor: '#F1F5F9',
@@ -196,10 +211,10 @@ export default function ReviewClient() {
               gap: '0.5rem',
             }}
           >
-            Helpful Details to Mention in Your 5-Star Review:
+            Optional Memory Prompt Chips (Helpful Details You Can Mention):
           </h2>
           <p style={{ fontSize: '0.9rem', color: '#475569', marginBottom: '1rem', lineHeight: 1.5 }}>
-            Specific details help other Atlanta families know what to expect and strengthen our local community presence:
+            Not sure what to write? Mentioning any of these 3 details helps other Metro Atlanta families know what to expect:
           </p>
           <div
             style={{
@@ -209,27 +224,21 @@ export default function ReviewClient() {
             }}
           >
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Two-Inspector Team:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>1. Metro Atlanta City or Neighborhood:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Having two certified inspectors on-site for thoroughness and half the inspection time.
+                Sharing the city or neighborhood where we inspected your property helps nearby buyers.
               </p>
             </div>
             <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Infrared Thermal &amp; Drone Tech:</strong>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>2. Two-Inspector Team &amp; Calibrated Infrared Thermal Camera Scan:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Infrared thermal imaging, electrical panel scan, and aerial drone roof findings.
+                Having two certified inspectors on-site for 2x diagnostic depth, dedicated structural and mechanical focus, and calibrated infrared thermal camera scans.
               </p>
             </div>
-            <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Christopher Boykin, CMI®:</strong>
+            <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0', gridColumn: '1 / -1' }}>
+              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>3. Same-Day Interactive Digital Report &amp; Walkthrough Clarity:</strong>
               <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Clear explanations, honest communication, and patient walkthrough answers.
-              </p>
-            </div>
-            <div style={{ backgroundColor: '#ffffff', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid #E2E8F0' }}>
-              <strong style={{ color: '#0F172A', fontSize: '0.9rem' }}>Atlanta Suburb &amp; Digital Repair List Report:</strong>
-              <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.85rem', color: '#64748B' }}>
-                Mentioning your neighborhood and how the same-day report helped during negotiations.
+                How Christopher Boykin, CMI (#MICB-1082) and our same-day interactive digital report helped you and your agent plan repair priorities with up to $35,000 in combined protection.
               </p>
             </div>
           </div>
@@ -261,7 +270,7 @@ export default function ReviewClient() {
               boxShadow: '0 4px 12px rgba(15, 23, 42, 0.15)'
             }}
           >
-            {showInspectorTool ? 'Hide Review Dispatch App' : 'Open Foresight 5-Star Review Dispatch App'}
+            {showInspectorTool ? 'Hide Review Dispatch App' : 'Open Foresight Review Dispatch App'}
           </button>
 
           {showInspectorTool && (
@@ -358,10 +367,9 @@ export default function ReviewClient() {
                 </div>
               </div>
 
-              {/* Direct Review Link Indicator */}
               <div style={{ background: '#1E293B', padding: '8px 12px', borderRadius: '6px', border: '1px solid #334155', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
                 <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>
-                  Direct Google 5-Star Link Embedded in Messages:
+                  Direct Google Review Link Embedded in Messages:
                 </span>
                 <a
                   href={directGoogleReviewUrl}
@@ -369,15 +377,14 @@ export default function ReviewClient() {
                   rel="noopener noreferrer"
                   style={{ color: '#D4AF37', fontSize: '0.75rem', fontWeight: 700, textDecoration: 'underline' }}
                 >
-                  Test 5-Star Link &rarr;
+                  Test Google Review Link &rarr;
                 </a>
               </div>
 
-              {/* SMS Dispatch Section */}
               <div style={{ marginBottom: '1.25rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
                   <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#38BDF8', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    SMS Message Preview (5-Star Request Expressed)
+                    SMS Message Preview (Google-Compliant Neutral Request)
                   </span>
                   <div style={{ display: 'flex', gap: '6px' }}>
                     <button

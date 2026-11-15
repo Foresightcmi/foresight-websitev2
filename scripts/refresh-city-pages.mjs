@@ -11,6 +11,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveGeminiTextModels } from '../lib/gemini-model-resolver.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CITIES_FILE = path.join(__dirname, '..', 'data', 'cities.json');
@@ -79,11 +80,7 @@ Return ONLY valid JSON:
   "seasonalTip": "The paragraph text here. Keep it 3-4 sentences."
 }`;
 
-  const modelsToTry = [
-    'gemini-1.5-flash',
-    'gemini-2.0-flash-lite',
-    'gemini-2.5-flash'
-  ];
+  const modelsToTry = await resolveGeminiTextModels(GEMINI_API_KEY);
 
   for (const model of modelsToTry) {
     for (let attempt = 1; attempt <= 2; attempt++) {

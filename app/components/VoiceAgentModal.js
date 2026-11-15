@@ -912,7 +912,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
                   addons: {
                     type: "ARRAY",
                     items: { type: "STRING" },
-                    description: "Addon services: radon ($250), sewer ($450), termite ($125/$165), pool ($300), lowFlow ($100), str (from $395)"
+                    description: "Addon services (all Call (678) 480-2110 for Quote): radon, sewer, termite, pool, lowFlow, str"
                   }
                 },
                 required: ["sqft"]
@@ -1583,9 +1583,9 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
     setSelectedAddons(updated);
 
     // Speak update
-    const prompt = exists 
+    const prompt = exists
       ? `Remove ${label} from my inspection estimate.`
-      : `Add ${label} for $${price} to my inspection estimate.`;
+      : `Add ${label} (${price || 'Call (678) 480-2110 for Quote'}) to my inspection estimate.`;
     handleSendQuery(prompt);
   };
 
@@ -2189,11 +2189,11 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               }}>
                 <span style={{ fontSize: '0.68rem', color: '#94a3b8', fontWeight: 700 }}>Add-ons:</span>
                 {[
-                  { key: 'sewer', label: 'Sewer Scope ($450)' },
-                  { key: 'radon', label: 'Radon ($250)' },
-                  { key: 'termite', label: 'Termite ($125+)' },
-                  { key: 'pool', label: 'Pool/Spa ($300)' },
-                  { key: 'lowFlow', label: 'DeKalb Low-Flow ($100)' }
+                  { key: 'sewer', label: 'Sewer Scope (Call (678) 480-2110 for Quote)' },
+                  { key: 'radon', label: 'Radon (Call (678) 480-2110 for Quote)' },
+                  { key: 'termite', label: 'Termite (Call (678) 480-2110 for Quote)' },
+                  { key: 'pool', label: 'Pool/Spa (Call (678) 480-2110 for Quote)' },
+                  { key: 'lowFlow', label: 'DeKalb Low-Flow (Call (678) 480-2110 for Quote)' }
                 ].map(item => {
                   const isSelected = (liveLeadForm.addons || []).includes(item.key);
                   return (
@@ -2698,7 +2698,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
             Quick Add-ons:
           </span>
           <button
-            onClick={() => handleToggleAddon('radon', '48-Hour Electronic Radon Testing', 250)}
+            onClick={() => handleToggleAddon('radon', '48-Hour Electronic Radon Testing', 'Call (678) 480-2110 for Quote')}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -2711,10 +2711,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Radon ($250)
+            + Radon (Call (678) 480-2110 for Quote)
           </button>
           <button
-            onClick={() => handleToggleAddon('termite', 'Termite / WDO Inspection', 125)}
+            onClick={() => handleToggleAddon('termite', 'Termite / WDO Inspection', 'Call (678) 480-2110 for Quote')}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -2727,10 +2727,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Termite / WDO ($125+)
+            + Termite / WDO (Call (678) 480-2110 for Quote)
           </button>
           <button
-            onClick={() => handleToggleAddon('sewer', 'Sewer Scope Camera Inspection', 450)}
+            onClick={() => handleToggleAddon('sewer', 'Sewer Scope Camera Inspection', 'Call (678) 480-2110 for Quote')}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -2743,10 +2743,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Sewer Scope ($450)
+            + Sewer Scope (Call (678) 480-2110 for Quote)
           </button>
           <button
-            onClick={() => handleToggleAddon('pool', 'Pool and Spa Inspection', 300)}
+            onClick={() => handleToggleAddon('pool', 'Pool and Spa Inspection', 'Call (678) 480-2110 for Quote')}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -2759,10 +2759,10 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + Pool ($300)
+            + Pool (Call (678) 480-2110 for Quote)
           </button>
           <button
-            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Inspection', 395)}
+            onClick={() => handleToggleAddon('str', 'Short-Term Rental STR Safety Inspection', 'Call (678) 480-2110 for Quote')}
             style={{
               padding: '4px 10px',
               borderRadius: '20px',
@@ -2775,7 +2775,7 @@ export default function VoiceAgentModal({ isOpen, onClose }) {
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            + STR Compliance (From $395)
+            + STR Compliance (Call (678) 480-2110 for Quote)
           </button>
         </div>
 

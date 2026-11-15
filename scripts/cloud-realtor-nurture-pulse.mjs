@@ -6,7 +6,7 @@
  * Runs 100% in GitHub's cloud without needing the local PC or chat session to be on:
  * - Strict 9:00 AM - 6:00 PM Eastern (America/New_York) daytime window guard
  * - 0% @ansleyre.com / @ansleyatlanta.com & unsubscribed_contacts.json suppression
- * - Automatic DeKalb County $100 Low-Flow Certificate + $365 Pre-Listing Seller Bridge
+ * - Automatic DeKalb County Low-Flow Certificate + From $345 Pre-Listing Seller Bridge
  * - Git-persisted state in `data/cloud-realtor-nurture-state.json` (14-day cooldown)
  */
 
@@ -116,9 +116,9 @@ function buildCloudEmail(contact) {
     ``,
     opener.replace(/<\/?strong>/g, ''),
     ``,
-    `My partner and I inspect every home together as a two-inspector Certified Master Inspector team with active SUPRA eKEY access, starting at $345 ($295 for condos). Having both of us on site cuts the inspection time in half, includes calibrated infrared thermal imaging and a 4K drone roof check, and gets the report back the same evening.`,
+    `My partner and I inspect every home together as a two-inspector Certified Master Inspector team with active SUPRA eKEY access, starting From $345 ($295 for condos). Having both of us on site delivers twice the diagnostic depth without rushing the walkthrough, includes calibrated infrared thermal imaging and a 4K drone roof check, and gets the report back the same evening.`,
     ``,
-    `We also handle signed DeKalb County Low-Flow Plumbing Certificates, main sewer line camera scopes, pre-drywall ($275+) and 11-month builder warranty inspections ($345+), and pre-listing seller inspections ($345+).`,
+    `We also handle signed DeKalb County Low-Flow Plumbing Certificates (Call for Quote), main sewer line camera scopes, pre-drywall (From $275) and 11-month builder warranty inspections (From $345), and pre-listing seller inspections (From $345).`,
     ``,
     `Reserve a slot at ${quoteUrl} or text/call me directly at (678) 480-2110.`,
     ``,
@@ -132,12 +132,12 @@ function buildCloudEmail(contact) {
   <div style="padding:24px 24px 20px 24px;">
     <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">Hi ${firstName},</p>
     <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">${opener}</p>
-    <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">My partner and I inspect every home together as a two-inspector Certified Master Inspector team with active SUPRA eKEY access. Having two of us on site cuts the appointment time in half and gives your buyers a calm, practical walkthrough separating real defects from normal maintenance.</p>
+    <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">My partner and I inspect every home together as a two-inspector Certified Master Inspector team with active SUPRA eKEY access, delivering twice the diagnostic depth without rushing the walkthrough and giving your buyers a calm, practical summary separating real defects from normal maintenance.</p>
     <div style="background-color:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #d4af37;border-radius:6px;padding:14px 18px;margin:18px 0;">
       <div style="font-size:12px;font-weight:700;color:#0f172a;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;">How We Help Protect Your Closings</div>
-      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Two Certified Master Inspectors ($345+ / $295 Condos):</strong> Half the inspection time, active SUPRA eKEY access, and same-day digital reports.</div>
-      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; DeKalb County Low-Flow Certificate:</strong> Same-day signed Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County.</div>
-      <div style="margin:0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Sewer Scope, New Build ($275+) &amp; $35,000 Warranties:</strong> Includes 4K drone roof photography, calibrated infrared thermal scans, and $35,000 in buyer warranty protection.</div>
+      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Two Certified Master Inspectors (From $345 / $295 Condos):</strong> Two certified eyes in parallel with zero solo-inspector fatigue, active SUPRA eKEY access, and same-day digital reports.</div>
+      <div style="margin:0 0 8px 0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; DeKalb County Low-Flow Certificate (Call (678) 480-2110 for Quote):</strong> Same-day signed Certificate of Compliance for pre-1993 homes in unincorporated DeKalb County.</div>
+      <div style="margin:0;font-size:14px;line-height:1.5;color:#1e293b;"><strong style="color:#0f172a;">&#9642; Sewer Scope, Pre-Drywall (From $275), New Build (From $400) &amp; $35,000 Warranties:</strong> Includes 4K drone roof photography, calibrated infrared thermal scans, and $35,000 in buyer warranty protection.</div>
     </div>
     <p style="margin:0 0 18px 0;font-size:15px;line-height:1.62;color:#1e293b;">Next time you're in a tight due diligence window, just text or call my cell at <strong>(678) 480-2110</strong> and we'll get your client taken care of within 24 to 48 hours.</p>
     <div style="border-top:1px solid #e2e8f0;padding-top:16px;margin-top:16px;">

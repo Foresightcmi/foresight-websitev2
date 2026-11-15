@@ -370,6 +370,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-06-24',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
         source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-07-12',
         destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
         permanent: true,
@@ -381,6 +386,11 @@ const nextConfig = {
       },
       {
         source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-08-02',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-08-05',
         destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
         permanent: true,
       },

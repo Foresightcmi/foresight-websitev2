@@ -47,6 +47,25 @@ async function main() {
     });
   }
 
+  // Add all 50 GSC Leak Hunter (Bucket A Page-1 Low-CTR + Bucket B Page-2 Breakthrough) & 46 Page-2 City URLs
+  const leakPath = path.join(__dirname, '..', 'data', 'gsc-leak-hunter-report.json');
+  if (fs.existsSync(leakPath)) {
+    const leak = JSON.parse(fs.readFileSync(leakPath, 'utf8'));
+    for (const item of [...(leak.bucketAPage1LowCtr || []), ...(leak.bucketBPage2Breakthrough || [])]) {
+      if (item.targetUrl) urls.push(item.targetUrl);
+    }
+  }
+  const scorePath = path.join(__dirname, '..', 'data', 'city-rank-scoreboard.json');
+  if (fs.existsSync(scorePath)) {
+    const score = JSON.parse(fs.readFileSync(scorePath, 'utf8'));
+    for (const row of (score.rows || [])) {
+      if (row.tier === 'PAGE2' || row.tier === 'PAGE1') {
+        urls.push(`${SITE_URL}/service-areas/${row.slug}`);
+        urls.push(`${SITE_URL}/services/buyer-inspection/${row.slug}`);
+      }
+    }
+  }
+
   // Add comparison guides
   const comparisonsFile = path.join(__dirname, '..', 'data', 'comparisons-pseo.json');
   if (fs.existsSync(comparisonsFile)) {

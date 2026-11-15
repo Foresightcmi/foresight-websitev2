@@ -62,7 +62,7 @@ export default function FAQPage() {
     {
       category: 'Service Areas & Specialties',
       questions: [
-        { q: 'What areas do you serve?', a: '163+ cities across Metro Atlanta including Fulton, DeKalb, Gwinnett, Cobb, Forsyth, Clayton, Henry, and Rockdale counties.' },
+        { q: 'What areas do you serve?', a: '87 cities across 20 Metro Atlanta counties including Fulton, DeKalb, Gwinnett, Cobb, Forsyth, Clayton, Henry, and Rockdale counties.' },
         { q: 'Do you inspect luxury and estate homes?', a: 'Yes, our Estate & Luxury Tier includes extended 4+ hour evaluation, CMI-led team, full drone scanning, and a private strategy call.' },
         { q: 'What add-on services do you offer?', a: 'We coordinate HD sewer scope camera inspections, 48-hour continuous radon gas testing, swimming pool & spa evaluations, Official Georgia Termite / WDO inspections, certified mold & indoor air quality lab testing, DeKalb Low-Flow certificates, and itemized contractor repair cost estimates. Call (678) 480-2110 for a quote on any specialty add-on.' },
         { q: 'Do you offer free utility setup?', a: 'Yes, complimentary Utilities Plus concierge sets up all utilities (power, gas, water, internet, security) at best market rates.' },

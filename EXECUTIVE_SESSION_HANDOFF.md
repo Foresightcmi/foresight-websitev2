@@ -1,21 +1,21 @@
 # 🏆 Executive Master Dossier: The #1 Google Search Ranking Roadmap
 
-> **Primary Objective**: Rank Foresight Home Inspections #1 across Metro Atlanta for high-intent buyer and commercial inspection searches.  
-> **Last Updated**: October 7, 2026 — 08:18 AM EST  
-> **Repository**: `C:\Users\fores\.gemini\antigravity\scratch\foresight-website`  
-> **Production Domain**: `https://fhinspectionsatl.com`  
-> **Current Git Head**: Clean, verified, and pushed to `main`
+> __Primary Objective__: Rank Foresight Home Inspections #1 across Metro Atlanta for high-intent buyer and commercial inspection searches.  
+> __Last Updated__: November 14, 2026 — Canonical Truth v2026.10.20  
+> __Repository__: `C:\Users\fores\.gemini\antigravity\scratch\foresight-website`  
+> __Production Domain__: `https://www.fhinspectionsatl.com`  
+> __Current Git Head__: Clean, verified, and synced with `data/truth.json`
 
 ---
 
 ## 🎯 1. Current Search Baseline & The Path to #1
 
 Based on live Google Search Console API synchronization:
-* **Page 1 Queries (Positions 1–10)**: **196 queries** (+21.0% recent surge).
-* **Striking-Distance Queries (Positions 11–20)**: **281 queries** sitting on Page 2 ready to be pushed to Page 1 and #1.
-* **Top 20 Total Search Footprint**: **477 queries** (+22.9% expansion).
-* **Brand Search (`"foresight home inspections"`)**: **Rank #2.8** (13.3% CTR, climbing to #1).
-* **Clicks on Core Pages**: Up +19.6% month-over-month.
+- __Page 1 Queries (Positions 1–10)__: __196 queries__ (+21.0% recent surge).
+- __Striking-Distance Queries (Positions 11–20)__: __281 queries__ sitting on Page 2 ready to be pushed to Page 1 and #1.
+- __Top 20 Total Search Footprint__: __477 queries__ (+22.9% expansion).
+- __Brand Search (`"foresight home inspections"`)__: __Rank #2.8__ (13.3% CTR, climbing to #1).
+- __Clicks on Core Pages__: Up +19.6% month-over-month.
 
 ---
 
@@ -36,11 +36,11 @@ flowchart TD
 ### Phase 2: NavBoost Click-Stream & CTR Optimization (Lily Ray Standard)
 - Google's 13-month NavBoost cycle rewards pages with above-average click-through and high dwell time ("Good Clicks").
 - Audit title tags (<60 characters) and meta descriptions (<158 characters) on top landing pages with commercial value hooks:
-  - *"Atlanta Home Inspections from $345 | 2-Inspector Team | $10k Warranty"*
+  - _"Atlanta Home Inspections from $345 | 2-Inspector Team | $10k Warranty"_
   - Front-load target entities; eliminate vague branding titles.
 
 ### Phase 3: Mathematical Single-Variable HTML Weighting (Kyle Roof US Patent 10,540,263 B1)
-- Strict algorithmic placement hierarchy: **Meta Title Tag > H1 > URL Slug > H2/H3 > First 100 Words > Body Paragraphs**.
+- Strict algorithmic placement hierarchy: __Meta Title Tag > H1 > URL Slug > H2/H3 > First 100 Words > Body Paragraphs__.
 - Guarantee exactly one H1 per page; eliminate decorative headings; ensure semantic markup.
 
 ### Phase 4: Hyper-Local SAB Dominance (Whitespark / Darren Shaw Standard)
@@ -56,33 +56,34 @@ flowchart TD
 
 ## 🛠️ 3. Technical SEO Health & Zero-Error Architecture
 
-- **Clean Static Compilation**: 1,205 pure static HTML pages with 0 build errors.
-- **GSC Indexing Clean**:
+- __Clean Static Compilation__: 1,216 pure static HTML pages with 0 build errors.
+- __GSC Indexing Clean__:
   - `robots.js`: Disallow of `/opengraph-image` permanently removed; all images and meta previews crawlable.
   - 404 Errors: 35+ permanent 301 redirects deployed in `next.config.mjs` for all legacy URL variants.
-- **WCAG 2.1/2.2 AA Compliance**: High-contrast ratios, semantic landmarks, full keyboard navigability, zero layout thrashing.
-- **Mobile Speed**: Zero forced reflows, dynamic client chunking for heavy modals, lazy-loaded below-fold images.
+- __WCAG 2.1/2.2 AA Compliance__: High-contrast ratios, semantic landmarks, full keyboard navigability, zero layout thrashing.
+- __Mobile Speed__: Zero forced reflows, dynamic client chunking for heavy modals, lazy-loaded below-fold images.
 
 ---
 
 ## 💰 4. Inviolable Commercial Pricing (Must Be Preserved Across All SEO Edits)
 
-- Single-family home inspections: Starting from **$345** (condos from **$295**)
-- Sewer Scope inspection: Strictly **$450 flat rate** (Zero asterisks)
-- Radon Gas testing: Strictly **$250**
-- Pool & Spa inspection: Strictly **$300**
-- DeKalb County Low-Flow Compliance: Strictly **$100**
-- Georgia Termite / WDO: Strictly **$125** ($165 crawlspace)
-- Business address hidden in visible UI; present only in structured schema.
+- Single-family home inspections (Buyer, Pre-Listing, 11-Month Warranty): Starting from __$345__ (condos/townhomes from __$295__)
+- Phase 1 Pre-Drywall framing inspections: Starting from __$275__
+- Final New Construction inspections: Starting from __$400__
+- Repair Re-Inspections: __$200__
+- Complexity add-on fees (Unfinished Crawlspace, Unfinished Basement, 50+ yr Vintage Home): __+$75 each__
+- Maximum Discount: __-$25__ (Strictly Verified Licensed Georgia Realtors Only with active GREC License number)
+- Auxiliary & Commercial Services (Sewer Scope, Radon Gas Testing, Pool & Spa, DeKalb County Low-Flow Compliance, Georgia Termite / WDO, Mold & Air Quality Lab Analysis, Short-Term Rental Compliance, Commercial PCA, Itemized Contractor Repair Cost Estimates): Strictly __Call (678) 480-2110 for Quote__
+- Business address (`1816 South Deshon Road, Lithonia, GA 30058`) hidden in visible UI; present only in structured schema.
 - Sunday: By appointment only.
 
 ---
 
 ## 🤖 5. Active Autonomous Background Tasks
 
-1. **Daily Due Diligence & Loan Officer Scouting** (`0 8 * * *`)
-2. **Weekly SEO Dominance Engine** (`0 9 * * 1`)
-3. **Monthly Strategic Growth Engine** (`0 10 1 * *`)
+1. __Daily Due Diligence & Loan Officer Scouting__ (`Daily 08:00 UTC`)
+2. __Weekly SEO Dominance Engine__ (`Mondays 09:00 UTC`)
+3. __Monthly Strategic Growth Engine__ (`1st of Month 10:00 UTC`)
 
 ---
 

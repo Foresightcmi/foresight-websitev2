@@ -10,7 +10,7 @@ const SCHEDULE_URL = 'https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-
 export async function generateMetadata() {
   const title = 'DeKalb County Low-Flow Compliance Inspection | Foresight Home Inspections';
   const description =
-    'Selling or buying a pre-1993 home in unincorporated DeKalb County? We check plumbing fixtures and sign the county low-flow Certificate of Compliance for a $100 flat rate.';
+    'Selling or buying a pre-1993 home in unincorporated DeKalb County? We check plumbing fixtures and sign the county low-flow Certificate of Compliance. Call (678) 480-2110 for a quote.';
 
   return {
     title,
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'Can I get the compliance inspection as a standalone service?',
-    a: 'Yes. The fixture check and signed Certificate of Compliance cost a flat $100, either on their own or added to a home inspection. We send the signed certificate to you, and to your closing attorney if you like, within 24 hours.',
+    a: 'Yes. The fixture check and signed Certificate of Compliance are available either as a standalone inspection or added to a full home inspection (Call (678) 480-2110 for Quote). We send the signed certificate to you, and to your closing attorney if you like, within 24 hours.',
   },
   {
     q: 'Is Foresight part of DeKalb County?',
@@ -210,7 +210,7 @@ export default function DeKalbCountyCompliancePage() {
             }}
           >
             For pre-1993 homes being sold in unincorporated DeKalb County, GA. We check every
-            fixture and sign the county Certificate of Compliance for a $100 flat rate.
+            fixture and sign the county Certificate of Compliance. Call (678) 480-2110 for a quote.
           </p>
           <div
             style={{
@@ -472,14 +472,14 @@ export default function DeKalbCountyCompliancePage() {
             </div>
             <div
               style={{
-                fontSize: '3.5rem',
+                fontSize: '2.25rem',
                 fontWeight: 800,
                 color: 'var(--color-red)',
-                lineHeight: 1,
+                lineHeight: 1.2,
                 marginBottom: '0.5rem',
               }}
             >
-              $100
+              Call for Quote
             </div>
             <p
               style={{
@@ -489,7 +489,7 @@ export default function DeKalbCountyCompliancePage() {
                 fontWeight: 500,
               }}
             >
-              Flat rate for standalone inspection or when combined with a home inspection
+              Available as a standalone inspection or combined with a home inspection — Call (678) 480-2110
             </p>
             <p
               style={{

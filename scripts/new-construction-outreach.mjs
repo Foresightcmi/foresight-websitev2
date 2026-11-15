@@ -108,6 +108,11 @@ async function main() {
   // Export executive hot sheet for direct mail and phone outreach
   generateHotSheetCsv(leads);
 
+  if (process.argv.includes('--export-only') || process.argv.includes('--dry-run')) {
+    console.log('ℹ️ [New Construction Outreach] --export-only / --dry-run active: CSV exported without opening SMTP.');
+    return;
+  }
+
   // Load outreach log
   let outreachLog = [];
   if (fs.existsSync(OUTREACH_FILE)) {

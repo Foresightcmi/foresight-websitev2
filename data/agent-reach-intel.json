@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-14T17:16:16.554Z",
+  "generatedAt": "2026-11-14T17:30:26.894Z",
   "retrieved_on": "2026-11-14",
   "cadence": "twice_daily_0730_1230_ET",
   "counts": {
-    "youtubeRealtors": 10,
-    "verifiedYoutubeEmails": 6,
+    "youtubeRealtors": 9,
+    "verifiedYoutubeEmails": 5,
     "instagramNewBuildTours": 4,
     "buyerIntentThreads": 13,
     "unseenBuyerThreads": 0,
@@ -25,32 +25,12 @@
     },
     {
       "medium": "youtube_relocation_realtor",
-      "channel_author": "Faith P Sells ATL - Georgia Homes",
-      "video_title": "Tour This Stunning 4-Bedroom New Construction Home in McDonough GA | Austin Floor Plan",
-      "source_url": "https://www.youtube.com/watch?v=IslREkksur8",
-      "retrieved_on": "2026-11-14",
-      "view_count": 2792,
-      "transcript_excerpt": "I'm so excited to take you on a full tour of The Austin plan in McDonough, GA (Henry County). This new construction home offers a ...",
-      "verified_contact": null
-    },
-    {
-      "medium": "youtube_relocation_realtor",
-      "channel_author": "New Homes In Georgia by Shonnie Alridge",
-      "video_title": "Living In Hoschton, GA | Modern New Construction | 2 Primary Suites | Home Tour | Atlanta New Homes",
-      "source_url": "https://www.youtube.com/watch?v=1ecfj1hXARE",
-      "retrieved_on": "2026-11-14",
-      "view_count": 87020,
-      "transcript_excerpt": "BASE: $1799900 as of the publishing of this video. Home price is subject to change. Exclusively Listed by: Debora Refec, Wynd ...",
-      "verified_contact": null
-    },
-    {
-      "medium": "youtube_relocation_realtor",
       "channel_author": "Atlanta Real Estate Channel",
-      "video_title": "Moving to Georgia? Top New Construction Design Center Tips You Need to Know!",
-      "source_url": "https://www.youtube.com/watch?v=zTOtn2TRJ5I",
+      "video_title": "Touring Atlanta Georgia’s New Construction Homes in an Up-and-Coming Neighborhood!",
+      "source_url": "https://www.youtube.com/watch?v=W1jZeTPwS0A",
       "retrieved_on": "2026-11-14",
-      "view_count": 50194,
-      "transcript_excerpt": "Are you thinking about moving to Georgia and purchasing a new construction home? This video is for you! Let's get you ready for ...",
+      "view_count": 11104,
+      "transcript_excerpt": "Discover the charm of Atlanta, Georgia's new construction homes in this up-and-coming neighborhood! This brand new ...",
       "verified_contact": null
     },
     {
@@ -73,30 +53,32 @@
     },
     {
       "medium": "youtube_relocation_realtor",
-      "channel_author": "Erin Coker - Atlanta Real Estate ",
+      "channel_author": "Atlanta Real Estate Channel",
+      "video_title": "Touring This Stunning New Construction Home in Atlanta Georgia Suburb with an Insane Wow Factor!",
+      "source_url": "https://www.youtube.com/watch?v=07dSC0w_t34",
+      "retrieved_on": "2026-11-14",
+      "view_count": 7349,
+      "transcript_excerpt": "Touring a stunning new construction home in an Atlanta Georgia suburb with nonstop wow factor throughout. This brand new ...",
+      "verified_contact": null
+    },
+    {
+      "medium": "youtube_relocation_realtor",
+      "channel_author": "Atlanta Relocation Creator",
       "video_title": "Never Buy A New Construction Home in Atlanta (Buy This Instead)",
       "source_url": "https://www.youtube.com/watch?v=pZeEYPh5PvY",
       "retrieved_on": "2026-11-14",
-      "view_count": 612,
-      "transcript_excerpt": "Call or Text Erin Directly: 404-956-0956 Erin.Coker@Compass.com Book a Call: https://calendly.com/erincoker Not in ...",
-      "verified_contact": {
-        "name": "Erin Coker",
-        "first": "Erin",
-        "brokerage": "Compass",
-        "city": "Atlanta",
-        "email": "erin.coker@compass.com",
-        "phone": "404-956-0956",
-        "profile_source_url": "https://www.compass.com/agents/erin-coker/"
-      }
+      "view_count": 0,
+      "transcript_excerpt": "",
+      "verified_contact": null
     },
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Tim Trevathan - Atlanta Georgia Living",
-      "video_title": "BEST UPGRADES on New Construction Homes in Atlanta, GA!",
-      "source_url": "https://www.youtube.com/watch?v=aQsTLU3eyNw",
+      "video_title": "5 MOST Important Things to Know Before Buying New Construction RIGHT NOW in GA",
+      "source_url": "https://www.youtube.com/watch?v=om1Gc3UBdPM",
       "retrieved_on": "2026-11-14",
-      "view_count": 452,
-      "transcript_excerpt": "BEST UPGRADES on New Construction Homes in Atlanta, GA! ✓ How to Buy a New Construction Home in Georgia Step-by-Step ...",
+      "view_count": 402,
+      "transcript_excerpt": "5 MOST Important Things to Know Before Buying New Construction RIGHT NOW in GA The current housing landscape is fierce, ...",
       "verified_contact": {
         "name": "Tim Trevathan",
         "first": "Tim",
@@ -110,11 +92,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Tim Trevathan - Atlanta Georgia Living",
-      "video_title": "5 MOST Important Things to Know Before Buying New Construction RIGHT NOW in GA",
-      "source_url": "https://www.youtube.com/watch?v=om1Gc3UBdPM",
+      "video_title": "BEST UPGRADES on New Construction Homes in Atlanta, GA!",
+      "source_url": "https://www.youtube.com/watch?v=aQsTLU3eyNw",
       "retrieved_on": "2026-11-14",
-      "view_count": 402,
-      "transcript_excerpt": "5 MOST Important Things to Know Before Buying New Construction RIGHT NOW in GA The current housing landscape is fierce, ...",
+      "view_count": 452,
+      "transcript_excerpt": "BEST UPGRADES on New Construction Homes in Atlanta, GA! ✓ How to Buy a New Construction Home in Georgia Step-by-Step ...",
       "verified_contact": {
         "name": "Tim Trevathan",
         "first": "Tim",
@@ -146,11 +128,11 @@
     {
       "medium": "youtube_relocation_realtor",
       "channel_author": "Living in Atlanta GA - Angelo Mirville",
-      "video_title": "New Construction Home In Atlanta Georgia - Come Check Out Our New Stonegate Manor Community Today!",
-      "source_url": "https://www.youtube.com/watch?v=MTnhzpPWuc0",
+      "video_title": "New Construction Custom Build Modern Home in Atlanta, GA (Oakland City)",
+      "source_url": "https://www.youtube.com/watch?v=6avDvgUfPXM",
       "retrieved_on": "2026-11-14",
-      "view_count": 173,
-      "transcript_excerpt": "New Construction Home In Atlanta Georgia - Come Check Out Our New Stonegate Manor Community Today! Let's tour this Brand ...",
+      "view_count": 798,
+      "transcript_excerpt": "New Construction Custom Build Modern Home in Atlanta, GA (Oakland City) \"Immerse in modern elegance with this newly crafted ...",
       "verified_contact": {
         "name": "Angelo Mirville",
         "first": "Angelo",
@@ -195,7 +177,7 @@
       "source_url": "https://www.reddit.com/r/Marietta/comments/1w6b5f7/looking_for_recommendations_for_a_home_inspector/",
       "retrieved_on": "2026-11-14",
       "published_at": "2026-09-03T15:47:43.000Z",
-      "age_hours": 1729,
+      "age_hours": 1730,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Looking for recommendations for a home inspector who's independent and not some PE stooge Posted by u/-E-Cross in r/Marietta · 9 points · 7 comments · September 3, 2026 at 3:47 PM UTC Thanks ## Top comments (5 shown of 7 reported) u/rootlo0p · 4 points · September 3, 2026 at 6:00 PM UTC > Never take a realtor-recommended inspect",
@@ -219,7 +201,7 @@
       "source_url": "https://www.reddit.com/r/DecaturGA/comments/1rp2c26/home_inspector/",
       "retrieved_on": "2026-11-14",
       "published_at": "2026-03-09T14:53:24.000Z",
-      "age_hours": 6002,
+      "age_hours": 6003,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Home inspector Posted by u/blinkersix2 in r/DecaturGA · 5 points · 7 comments · March 9, 2026 at 2:53 PM UTC Looking for a good home inspector in the area. Any recommendations would be appreciated. ## Top comments (7 shown) u/kizzles1 · 3 points · March 9, 2026 at 4:48 PM UTC > Good experience with Lunspro u/Onilwyn · 2 poin",
@@ -231,7 +213,7 @@
       "source_url": "https://www.reddit.com/r/Gwinnett/comments/1rutyo5/buyers_home_inspectors/",
       "retrieved_on": "2026-11-14",
       "published_at": "2026-03-15T23:54:27.000Z",
-      "age_hours": 5849,
+      "age_hours": 5850,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Buyers home inspectors Posted by u/whoduhhelru in r/Gwinnett · 2 points · 17 comments · March 15, 2026 at 11:54 PM UTC I put in an offer that looks like itll get accepted. I'm a first time buyer. Any recommendations for home inspectors in the Gwinnett area? ## Top comments (9 shown of 17 reported) u/Quick-Pace-4050 · 12 points ·",
@@ -243,7 +225,7 @@
       "source_url": "https://www.reddit.com/r/DecaturGA/comments/1kgktr2/home_inspector_recommendations_in_the_area/",
       "retrieved_on": "2026-11-14",
       "published_at": "2025-05-07T00:57:10.000Z",
-      "age_hours": 13360,
+      "age_hours": 13361,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "# Home Inspector recommendations in the area? Posted by u/Fragrant-Rutabaga335 in r/DecaturGA · 1 point · 9 comments · May 7, 2025 at 12:57 AM UTC Hey folks! My realtor recommended a company, but wondering if any of you had a inspector that you'd recommend? Would really appreciate it, thanks! ## Top comments (8 shown of 9 reported)",
@@ -339,7 +321,7 @@
       "source_url": "https://nextdoor.com/p/Tn2yt3YSGYRs?view=detail",
       "retrieved_on": "2026-11-14",
       "published_at": "2026-04-01T19:52:43.000Z",
-      "age_hours": 5445,
+      "age_hours": 5446,
       "is_fresh_72h": false,
       "mentions_foresight": false,
       "excerpt": "Seeking a good structural engineer for home checks - Duluth, GA Log in Sign up Partners Businesses Partners Businesses Log in Sign up # Duluth, Georgia S. W. Duluth, GA · 1 Apr Does anyone know of a good structural engineer that checks on homes? Not looking for home inspectors but for structural engineers. K. K.Duluth, GA·1 Apr https://ac",
@@ -464,19 +446,19 @@
     },
     {
       "medium": "11_month_warranty_subdivision_cohort",
-      "title": "Grand Opening & Ribbon Cutting Event: Mulberry Summit - EMC Homes",
-      "published_at": "2025-05-12T14:17:17.000Z",
-      "source_url": "https://www.emchomes.com/grand-opening-ribbon-cutting-event-mulberry-summit/",
-      "retrieved_on": "2026-11-14",
-      "excerpt": "# Grand Opening & Ribbon Cutting Event: Mulberry Summit May 12, 2025 EMC Homes is excited to announce the Grand Opening of Mulberry Summit in Flowery Branch, where new homes start from the $400’s. Join us Tuesday, May 13 th for the Ribbon Cutting ceremony at 10am, and stay for ca"
-    },
-    {
-      "medium": "11_month_warranty_subdivision_cohort",
       "title": "Tour Snellville Homes at Oak Grove Glen - Atlanta Real Estate Forum",
       "published_at": "2025-06-10T18:01:12.000Z",
       "source_url": "https://www.atlantarealestateforum.com/tour-snellville-homes-at-oak-grove-glen/",
       "retrieved_on": "2026-11-14",
       "excerpt": "Tour Snellville Homes at Oak Grove Glen - Atlanta Real Estate Forum # Tour Snellville Homes at Oak Grove Glen June 10, 2025| Century Communities Join Century Communities for the grand opening of Oak Grove Glen, a single-family home community in Snellville. This community features"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Grand Opening & Ribbon Cutting Event: Mulberry Summit - EMC Homes",
+      "published_at": "2025-05-12T14:17:17.000Z",
+      "source_url": "https://www.emchomes.com/grand-opening-ribbon-cutting-event-mulberry-summit/",
+      "retrieved_on": "2026-11-14",
+      "excerpt": "# Grand Opening & Ribbon Cutting Event: Mulberry Summit May 12, 2025 EMC Homes is excited to announce the Grand Opening of Mulberry Summit in Flowery Branch, where new homes start from the $400’s. Join us Tuesday, May 13 th for the Ribbon Cutting ceremony at 10am, and stay for ca"
     }
   ],
   "socialMarketHooks": [

@@ -30,6 +30,16 @@ export default function Header() {
               <li><Link prefetch={false} href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
               <li><Link prefetch={false} href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
               <li>
+                <a
+                  href="tel:678-480-2110"
+                  aria-label="Call Foresight Home Inspections at (678) 480-2110"
+                  onClick={() => setMenuOpen(false)}
+                  style={{ fontWeight: 700, color: 'var(--color-gold)', whiteSpace: 'nowrap' }}
+                >
+                  (678) 480-2110
+                </a>
+              </li>
+              <li>
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-gold" onClick={() => setMenuOpen(false)}>
                   Schedule Online 24/7
                 </a>

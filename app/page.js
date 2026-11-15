@@ -196,12 +196,22 @@ export default function Home() {
             <Link prefetch={false} href="/quote" className="btn btn-outline" style={{ padding: '1.05rem 2rem', fontSize: '1.02rem', fontWeight: 700, borderRadius: 'var(--radius-md)', background: 'rgba(15, 23, 42, 0.65)', border: '1px solid rgba(255, 255, 255, 0.28)', color: '#FFFFFF', backdropFilter: 'blur(8px)' }}>
               Instant Fee Calculator
             </Link>
+            <a href="tel:678-480-2110" className="btn btn-outline" style={{ padding: '1.05rem 1.85rem', fontSize: '1.02rem', fontWeight: 700, borderRadius: 'var(--radius-md)', background: 'rgba(15, 23, 42, 0.78)', border: '1px solid rgba(212, 175, 55, 0.55)', color: 'var(--color-gold)', backdropFilter: 'blur(8px)' }}>
+              Call (678) 480-2110
+            </a>
             <VslTriggerButton />
           </div>
 
           <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: '#E2E8F0', fontSize: '0.92rem', flexWrap: 'wrap' }}>
             <span style={{ color: 'var(--color-gold)', letterSpacing: '2px' }}>★★★★★</span>
-            <span>4.8/5 Rating &bull; Google <strong style={{ color: '#FFFFFF' }}>&ldquo;Foresight Home Inspections&rdquo;</strong> to read 40+ verified 5-star reviews</span>
+            <a
+              href="https://g.page/r/CaK5MZOz_FBtEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#E2E8F0', textDecoration: 'underline', textUnderlineOffset: '3px', fontWeight: 600 }}
+            >
+              4.8/5 Rating &bull; 53 Verified Google Reviews
+            </a>
           </div>
 
           <div style={{ display: 'inline-block', background: 'rgba(52, 211, 153, 0.1)', border: '1px solid rgba(52, 211, 153, 0.3)', color: '#34d399', padding: '0.45rem 1.25rem', borderRadius: '2rem', fontSize: '0.88rem', fontWeight: 600, marginBottom: '2rem', backdropFilter: 'blur(4px)' }}>
@@ -527,7 +537,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* OPTIONAL $99 ITEMIZED CONTRACTOR REPAIR ESTIMATES & Georgia repair amendment AMENDMENT EXHIBIT */}
+          {/* OPTIONAL ITEMIZED CONTRACTOR REPAIR ESTIMATES & Georgia repair amendment AMENDMENT EXHIBIT */}
           <div style={{
             marginTop: '2.5rem',
             background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%)',
@@ -543,31 +553,31 @@ export default function Home() {
           }}>
             <div style={{ maxWidth: '720px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(212, 175, 55, 0.15)', border: '1px solid rgba(212, 175, 55, 0.35)', color: 'var(--color-gold)', padding: '0.3rem 0.85rem', borderRadius: '2rem', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
-                <span>Optional Due Diligence Service &bull; $99 Flat Fee</span>
+                <span>Optional Due Diligence Service &bull; Call (678) 480-2110 for Quote</span>
               </div>
               <h3 style={{ color: '#FFFFFF', fontSize: '1.5rem', fontWeight: 800, margin: '0 0 0.5rem 0' }}>
-                Itemized Contractor Repair Cost Estimates &amp; Amendment Exhibits ($99)
+                Itemized Contractor Repair Cost Estimates &amp; Amendment Exhibits (Call (678) 480-2110 for Quote)
               </h3>
               <p style={{ color: '#CBD5E1', fontSize: '0.98rem', lineHeight: 1.6, margin: '0 0 0.75rem 0' }}>
-                Standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, <strong>if you choose</strong>, Foresight provides an empirical <strong>$99 Itemized Contractor Repair Cost Estimate</strong> calibrated with regional Metro Atlanta contractor trade labor ($95–$165/hr) and materials schedules.
+                Standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, <strong>if you choose</strong>, Foresight provides an empirical <strong>Itemized Contractor Repair Cost Estimate (Call (678) 480-2110 for Quote)</strong> calibrated with regional Metro Atlanta contractor trade labor ($95–$165/hr) and materials schedules.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', fontSize: '0.88rem', color: '#94A3B8' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <span style={{ color: 'var(--color-gold)' }}>✓</span> Ready-to-paste Georgia repair amendment language
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Optional $99 add-on to any Foresight inspection
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Optional add-on to any Foresight inspection (Call (678) 480-2110 for Quote)
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Available as a standalone $99 evaluation for outside reports
+                  <span style={{ color: 'var(--color-gold)' }}>✓</span> Available as a standalone evaluation for outside reports (Call (678) 480-2110 for Quote)
                 </span>
               </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: '220px' }}>
-              <Link prefetch={false} href="/quote" className="btn btn-gold" style={{ textAlign: 'center', padding: '0.85rem 1.75rem', fontWeight: 700 }}>
-                Add to Quote (+$99) →
-              </Link>
+              <a href="tel:678-480-2110" className="btn btn-gold" style={{ textAlign: 'center', padding: '0.85rem 1.75rem', fontWeight: 700 }}>
+                Call (678) 480-2110 for Quote →
+              </a>
               <Link prefetch={false} href="/repair-credit-calculator" className="btn btn-outline" style={{ textAlign: 'center', borderColor: '#64748B', color: '#F1F5F9', padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}>
                 Try Repair Credit Tool →
               </Link>
@@ -663,7 +673,7 @@ export default function Home() {
             </div>
 
             <div className="card" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)' }}>
-              <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>163+</h3>
+              <h3 style={{ fontSize: '1.85rem', color: '#0F172A', marginBottom: '0.25rem', fontWeight: 800 }}>87</h3>
               <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1E293B' }}>Georgia Cities Served</h4>
               <p style={{ color: '#475569', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
                 Foresight provides comprehensive two-inspector team coverage across Fulton, DeKalb, Gwinnett, Cobb, and Forsyth counties.
@@ -786,7 +796,7 @@ export default function Home() {
           <div className="grid grid-3">
             <div className="card card-premium">
               <h3 style={{ marginBottom: '1rem', color: 'var(--color-red)' }}>The Due Diligence Accelerator (2-Inspector Team)</h3>
-              <p>In Atlanta's fast-paced market, your due diligence window is closing fast. Our two-inspector team cuts on-site time in half and guarantees your comprehensive digital report within 24 hours—giving you the maximum possible time to negotiate repairs or price drops.</p>
+              <p>In Atlanta's fast-paced market, your due diligence window is closing fast. Our two-inspector team delivers 2x diagnostic depth with dedicated structural and mechanical focus and zero solo-inspector fatigue and guarantees your comprehensive digital report within 24 hours—giving you the maximum possible time to negotiate repairs or price drops.</p>
             </div>
             <div className="card">
               <h3 style={{ marginBottom: '1rem' }}>Advanced Tech Included</h3>
@@ -1016,7 +1026,7 @@ export default function Home() {
               },
               {
                 q: "What areas does Foresight Home Inspections serve?",
-                a: "Foresight Home Inspections serves over 163 cities across Metro Atlanta, including Lithonia, Decatur, Sandy Springs, Alpharetta, Johns Creek, Roswell, Marietta, Smyrna, Atlanta, and surrounding North Georgia counties."
+                a: "Foresight Home Inspections serves 87 cities across 20 Metro Atlanta counties, including Lithonia, Decatur, Sandy Springs, Alpharetta, Johns Creek, Roswell, Marietta, Smyrna, Atlanta, and surrounding North Georgia communities."
               },
               {
                 q: "How quickly will I receive my home inspection report?",

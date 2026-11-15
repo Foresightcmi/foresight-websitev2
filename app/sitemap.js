@@ -16,6 +16,7 @@ export default async function sitemap() {
     { loc: '/services/radon-testing', changefreq: 'monthly', priority: 0.85 },
     { loc: '/services/termite-inspection', changefreq: 'monthly', priority: 0.85 },
     { loc: '/services/sewer-scope-inspection', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/services/pre-drywall-inspection', changefreq: 'monthly', priority: 0.85 },
     { loc: '/services/new-construction-inspection', changefreq: 'monthly', priority: 0.85 },
     { loc: '/services/pool-inspection', changefreq: 'monthly', priority: 0.85 },
     { loc: '/services/pre-listing-inspection', changefreq: 'monthly', priority: 0.85 },
@@ -27,6 +28,7 @@ export default async function sitemap() {
     { loc: '/realtors', changefreq: 'monthly', priority: 0.8 },
     { loc: '/quote', changefreq: 'weekly', priority: 0.9 },
     { loc: '/risk-scanner', changefreq: 'weekly', priority: 0.85 },
+    { loc: '/repair-credit-calculator', changefreq: 'weekly', priority: 0.85 },
 
     { loc: '/blog', changefreq: 'weekly', priority: 0.7 },
     { loc: '/press', changefreq: 'monthly', priority: 0.85 },
@@ -207,7 +209,37 @@ export default async function sitemap() {
     }
   }
 
-  return routes;
+  // 9. Dynamic SEO Colony FAQ Pages (26 long-tail AEO/GEO routes)
+  const COLONY_MATRIX_FILE = path.join(process.cwd(), 'data', 'seo-colony-matrix.json');
+  if (fs.existsSync(COLONY_MATRIX_FILE)) {
+    try {
+      const matrix = JSON.parse(fs.readFileSync(COLONY_MATRIX_FILE, 'utf8'));
+      const questions = Array.isArray(matrix.questions) ? matrix.questions : [];
+      for (const q of questions) {
+        if (!q || !q.slug) continue;
+        routes.push({
+          url: encodeURI(`${baseUrl}/faq/${q.slug}`),
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: 0.8,
+        });
+      }
+    } catch (err) {
+      console.error('Error reading seo-colony-matrix in sitemap.js:', err);
+    }
+  }
+
+  // Deduplicate routes by URL
+  const seenUrls = new Set();
+  const uniqueRoutes = [];
+  for (const r of routes) {
+    if (!seenUrls.has(r.url)) {
+      seenUrls.add(r.url);
+      uniqueRoutes.push(r);
+    }
+  }
+
+  return uniqueRoutes;
 }
 
 
