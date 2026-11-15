@@ -524,7 +524,7 @@ export default function Services() {
                 </tr>
                 <tr>
                   <td style={{ padding: '0.55rem 0.9rem', fontWeight: 600 }}>Specialty Add-Ons: Radon, Sewer Scope, Mold/IAQ, WDO, Pool &amp; Commercial</td>
-                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 700 }}>Call for Quote (678-480-2110)</td>
+                  <td style={{ padding: '0.55rem 0.9rem', fontWeight: 700 }}>Call (678) 480-2110 for Quote</td>
                   <td style={{ padding: '0.55rem 0.9rem' }}>Property-specific diagnostic testing &amp; accredited lab / camera reporting</td>
                 </tr>
               </tbody>

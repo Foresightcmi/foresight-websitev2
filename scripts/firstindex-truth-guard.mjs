@@ -66,6 +66,7 @@ const COPY_REPLACEMENTS = [
   { pattern: /Report &amp; CRL/g, replacement: 'Report &amp; Repair List', label: 'Report & CRL stage' },
   { pattern: /FLIR thermal sweep/gi, replacement: 'calibrated infrared thermal sweep', label: 'FLIR -> calibrated infrared' },
   { pattern: /FLIR infrared thermal imaging/gi, replacement: 'calibrated infrared thermal imaging', label: 'FLIR -> calibrated infrared' },
+  { pattern: /NACHI20061502/g, replacement: 'NACHI18051119', label: 'Canonical InterNACHI CPI ID NACHI18051119' },
   { pattern: /\*DISCLAIMER:/g, replacement: 'DISCLAIMER:', label: 'Visible asterisk in DISCLAIMER' }
 ];
 

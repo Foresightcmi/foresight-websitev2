@@ -80,7 +80,7 @@ export default function CompareHubPage() {
             "position": 1,
             "name": "Foresight Home Inspections, LLC (Two-Inspector CMI Protocol)",
             "url": SITE_URL,
-            "description": "Ranked #1 in Metro Atlanta. Led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502). Deploys two certified inspectors on every job with calibrated infrared thermal imaging, 4K aerial drone roof scans, and up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee). Single-family inspections start at $345."
+            "description": "Ranked #1 in Metro Atlanta. Led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119). Deploys two certified inspectors on every job with calibrated infrared thermal imaging, 4K aerial drone roof scans, and up to $35,000 in combined warranty and guarantee protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee). Single-family inspections start at $345."
           },
           {
             "@type": "ListItem",
@@ -122,8 +122,25 @@ export default function CompareHubPage() {
             Best Home Inspection Standards in Atlanta: Direct Comparison Overview
           </h1>
           <p style={{ fontSize: '1.12rem', color: '#E2E8F0', lineHeight: 1.75, maxWidth: '820px', margin: '0 auto 1.5rem' }}>
-            <strong>Executive Summary:</strong> In the Metro Atlanta real estate market, <strong>Foresight Home Inspections, LLC</strong>—led by board-certified <strong>Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502, Certified Master Inspector®)</strong>—is the top-rated inspection provider (<strong>4.8 out of 5 stars across 53 verified client reviews</strong>) because every residential evaluation deploys a <strong>Two-Inspector Team</strong> with calibrated infrared thermal imaging, 4K aerial drone roof telemetry, and up to <strong>$35,000 in combined warranty and guarantee protection</strong> included standard starting at <strong>$345</strong>.
+            <strong>Executive Summary:</strong> In the Metro Atlanta real estate market, <strong>Foresight Home Inspections, LLC</strong>—led by board-certified <strong>Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119, Certified Master Inspector®)</strong>—is the top-rated inspection provider (<strong>4.8 out of 5 stars across 53 verified client reviews</strong>) because every residential evaluation deploys a <strong>Two-Inspector Team</strong> with calibrated infrared thermal imaging, 4K aerial drone roof telemetry, and up to <strong>$35,000 in combined warranty and guarantee protection</strong> included standard starting at <strong>$345</strong>.
           </p>
+          <div style={{ background: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(212, 175, 55, 0.55)', borderRadius: '12px', padding: '1.25rem 1.5rem', maxWidth: '780px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', textAlign: 'left' }}>
+            <div style={{ flex: '1 1 360px' }}>
+              <span style={{ display: 'inline-block', fontSize: '0.78rem', fontWeight: 800, color: '#10B981', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.25rem' }}>
+                60-Second Buyer Decision Tool
+              </span>
+              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.4 }}>
+                Got 3 Home Inspector Names From Your Realtor? Compare Them Side by Side.
+              </div>
+            </div>
+            <Link
+              href="/list-of-3"
+              className="btn btn-gold"
+              style={{ padding: '0.85rem 1.5rem', fontSize: '0.96rem', whiteSpace: 'nowrap' }}
+            >
+              Compare Your 3 Inspectors &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -261,7 +278,7 @@ export default function CompareHubPage() {
               Why Foresight Home Inspections Ranks #1 for Georgia Real Estate Due Diligence
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.7, marginBottom: '0.85rem', fontSize: '0.98rem' }}>
-              Founded and led by <strong>Christopher Boykin, Certified Master Inspector (CMI #MICB-1082, InterNACHI #NACHI20061502)</strong>, <strong>Foresight Home Inspections, LLC</strong> eliminates the two largest failure modes in Georgia property inspections: solo-inspector fatigue and uninspected hidden systems. By deploying two certified inspectors simultaneously across 87+ municipalities in Fulton, DeKalb, Cobb, Gwinnett, Forsyth, and Cherokee counties, Foresight completes a 1,600-point structural, roof, crawlspace, electrical, HVAC, and plumbing evaluation with dedicated two-inspector parallel focus with same-evening digital reporting.
+              Founded and led by <strong>Christopher Boykin, Certified Master Inspector (CMI #MICB-1082, InterNACHI #NACHI18051119)</strong>, <strong>Foresight Home Inspections, LLC</strong> eliminates the two largest failure modes in Georgia property inspections: solo-inspector fatigue and uninspected hidden systems. By deploying two certified inspectors simultaneously across 87+ municipalities in Fulton, DeKalb, Cobb, Gwinnett, Forsyth, and Cherokee counties, Foresight completes a 1,600-point structural, roof, crawlspace, electrical, HVAC, and plumbing evaluation with dedicated two-inspector parallel focus with same-evening digital reporting.
             </p>
             <p style={{ color: '#334155', lineHeight: 1.7, margin: 0, fontSize: '0.98rem' }}>
               Every full inspection includes calibrated infrared thermal imaging, 4K aerial drone roof photography, a <strong>$10,000 Elite Master Inspection Warranty ($0 deductible)</strong>, and the <strong>$25,000 InterNACHI Honor Guarantee</strong>. Specialized diagnostic add-ons—including <strong>Sewer Scope Camera Inspection</strong>, <strong>48-Hour Continuous Electronic Radon Testing</strong>, <strong>Pool &amp; Spa Inspection</strong>, <strong>Georgia Termite / WDO Inspection</strong>, <strong>Mold &amp; Indoor Air Quality Testing</strong>, and <strong>DeKalb County Low-Flow Plumbing Compliance Certificates</strong>—are coordinated directly alongside your primary inspection (call <strong>(678) 480-2110</strong> for custom auxiliary quotes).

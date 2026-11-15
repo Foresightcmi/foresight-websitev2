@@ -27,13 +27,13 @@ Always use this exact text structure so search engine bots can match your profil
 When directories ask for your business description, select the one that fits the character limit:
 
 ### Short Description (100 Characters Max)
-> Two certified inspectors on every job, led by a Certified Master Inspector. $10,000 warranty!
+> Two certified inspectors on every job, led by a CMI. Up to $35,000 warranty & guarantee protection!
 
 ### Medium Description (250 Characters Max)
-> Premium Metro Atlanta home inspection featuring two certified inspectors on every job. Led by Christopher Boykin, a Certified Master Inspector® (CMI). Every inspection includes a $10,000 protection warranty. Fast, transparent pricing.
+> Metro Atlanta home inspections led by Certified Master Inspector® Christopher Boykin (CMI #MICB-1082). Two certified inspectors on every job from $345 ($295 condos), free infrared thermal & 4K drone scans, plus $35,000 combined protection.
 
 ### Long Description (750 Characters Max - Perfect for Google Business Profile & Yelp)
-> Foresight Home Inspections, LLC provides premium, ultra-thorough residential inspection services across Metro Atlanta. We set the industry standard with our dual-inspector model: we send two certified inspectors on every single job to ensure nothing slips through the cracks. Led by Christopher Boykin, an elite Certified Master Inspector® (CMI), our team uses advanced thermal imaging, moisture diagnostics, and drone systems. Every inspection comes backed by a $10,000 Elite Master Inspection Warranty at no additional cost. We offer transparent pricing on standard home buyers inspections, pre-listing sellers inspections, new construction phases, and 11-month builders warranty checks. Because hindsight is expensive... Choose Foresight!
+> Foresight Home Inspections, LLC provides thorough residential and commercial inspection services across 20 Metro Atlanta counties. We send two certified inspectors on every job for dedicated structural and mechanical coverage with zero solo-inspector fatigue. Led by Certified Master Inspector® Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119), every full home inspection includes calibrated infrared thermal imaging, 4K drone roof scans, same-day interactive digital reports, and up to $35,000 in combined protection ($10,000 Elite Master Warranty with $0 deductible + $25,000 InterNACHI Honor Guarantee). Homes from $345, Condos from $295, Pre-Drywall from $275, New Construction from $400; specialty add-ons call (678) 480-2110.
 
 ---
 
@@ -41,33 +41,31 @@ When directories ask for your business description, select the one that fits the
 
 ### A. Core Categories & Services Mapped
 Select these categories in your Google Business Profile dashboard:
-*   **Primary Category:** `Home Inspector`
-*   **Secondary Categories:** 
-    *   `Commercial Real Estate Inspector`
-    *   `Building Inspector`
+-   **Primary Category:** `Home inspector`
+-   **Secondary Categories:** 
+    -   `Commercial Real Estate Inspector`
+    -   `Building Inspector`
 
 ### B. Dynamic Google Business Update Posts
 Post these once a week directly to your Google Business Profile dashboard to signal constant activity:
 
 #### Post Option 1: Highlighting the Dual-Inspector Model
-> 🔍 **Why Two Inspectors Are Better Than One!**
+> 🔍 **Why Two Certified Inspectors Beat a Solo Walkthrough**
 > 
-> Buying a home in Atlanta is a major investment. That's why Foresight Home Inspections, LLC sends two certified inspectors on every single job. One inspector focuses on the roof, exterior, structure, and main systems, while the second meticulously checks interior finishes, windows, outlets, appliances, and plumbing. 
+> Buying a home in Metro Atlanta is a major investment. Foresight Home Inspections, LLC dispatches two certified inspectors on every single job (Homes from $345, Condos from $295). One inspector evaluates the roof, exterior, foundation, and structural framing while the second checks HVAC, electrical panels, plumbing, and interior systems in parallel.
 > 
-> Double the eyes, double the thoroughness, zero extra cost. Backed by our $10,000 Elite Master Inspection Warranty!
+> Dedicated dual-system focus, zero solo fatigue, and up to $35,000 in combined warranty & guarantee protection ($0 deductible).
 > 
-> 👉 Get an instant, direct price estimate in seconds: https://www.fhinspectionsatl.com/quote
+> 👉 Calculate an instant quote in seconds: https://www.fhinspectionsatl.com/quote
 
-#### Post Option 2: The $10,000 Certified Master Inspector Advantage
-> 🛡️ **Total Peace of Mind Included With Every Inspection!**
+#### Post Option 2: The $35,000 Certified Master Inspector Protection Package
+> 🛡️ **Up to $35,000 in Combined Protection Included With Every Full Inspection**
 > 
-> Not all home inspectors are equal. Christopher Boykin is a Certified Master Inspector® (CMI)—the highest professional designation in the industry. 
+> Christopher Boykin holds the Certified Master Inspector® designation (CMI #MICB-1082, InterNACHI #NACHI18051119). Every full residential inspection includes our $10,000 Elite Master Inspection Warranty ($0 deductible covering structure, HVAC, plumbing, electrical, roof leaks, and mold remediation) plus InterNACHI's $25,000 Honor Guarantee at no extra cost.
 > 
-> Because of this elite certification, every inspection we conduct automatically includes our $10,000 Elite Master Inspection Warranty at NO extra cost ($0 deductible). Coverage includes appliances, structure, mechanicals (HVAC, plumbing, electrical), roof leaks, and mold remediation.
+> Homes from $345 | Condos from $295 | Pre-Drywall from $275 | New Construction from $400.
 > 
-> Don't settle for "hindsight." Get the protection you deserve.
-> 
-> 👉 Schedule your Georgia home inspection online: https://www.fhinspectionsatl.com
+> 👉 Schedule your Metro Atlanta inspection online: https://www.fhinspectionsatl.com/quote
 
 ---
 
@@ -76,18 +74,18 @@ Post these once a week directly to your Google Business Profile dashboard to sig
 Use these customized email templates to build high-value partnerships with local GA agents and brokers to earn links and referrals.
 
 ### Email Template 1: Direct CMI Advantage Pitch
-> **Subject:** Metro Atlanta's Dual-Inspector Advantage with a $10,000 Warranty for Your Clients
+> **Subject:** Metro Atlanta's Dual-Inspector Advantage with $35,000 Combined Protection for Your Clients
 > 
 > Hi [Agent Name],
 > 
 > As a dedicated agent here in the Metro Atlanta area, you know how crucial a smooth, thorough inspection is to keeping a deal together while protecting your clients' investments.
 > 
-> My name is Christopher Boykin, and I am the founder of **Foresight Home Inspections, LLC**. I’m a Certified Master Inspector® (CMI)—the highest professional credential in our industry. 
+> My name is Christopher Boykin, and I am the founder of **Foresight Home Inspections, LLC**. I’m a Certified Master Inspector® (`CMI #MICB-1082`, `InterNACHI #NACHI18051119`)—the highest professional credential in our industry. 
 > 
 > We do things differently to support top-performing agents like you:
 > 1. **Two Certified Inspectors on Every Job:** We send a dual-inspector team to check twice the systems in parallel with zero solo fatigue. It is unmatched thoroughness that clients love.
-> 2. **Included $10,000 Protection Warranty:** Every inspection automatically includes a $10,000 Master Warranty (covering appliances, structure, HVAC, roof, and mold remediation) with a $0 deductible at no extra cost. This gives your clients absolute peace of mind during closing.
-> 3. **Next-Day Digital Reports:** Detailed, clear, modern digital reports delivered within 24 hours.
+> 2. **Included $35,000 Combined Protection:** Every standard inspection includes our $10,000 Elite Master Warranty ($0 deductible covering appliances, structure, HVAC, roof, and mold remediation) plus the $25,000 InterNACHI Honor Guarantee at no extra cost.
+> 3. **Same-Day Digital Reports:** Detailed, interactive digital reports with a 1-click Repair Request Builder delivered within 24 hours.
 > 
 > If you have a moment next week, I’d love to drop off some flyers for your clients or treat you to a quick coffee to chat about how we can support your business. 
 > 

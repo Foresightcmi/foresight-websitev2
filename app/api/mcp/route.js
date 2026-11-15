@@ -212,7 +212,7 @@ const MCP_RESOURCES = [
   {
     uri: 'https://www.fhinspectionsatl.com/api/mcp#pricing-truth',
     name: 'Canonical Fee Schedule & Business Truth (truth.json)',
-    description: 'Authoritative pricing tiers, credentials (CMI #MICB-1082, InterNACHI #NACHI20061502), and $35,000 combined warranty/guarantee specifications.',
+    description: 'Authoritative pricing tiers, credentials (CMI #MICB-1082, InterNACHI #NACHI18051119), and $35,000 combined warranty/guarantee specifications.',
     mimeType: 'application/json',
     readContent: () => JSON.stringify(truthData, null, 2),
   },
@@ -499,7 +499,7 @@ export async function GET(req) {
     protocol: 'Model Context Protocol / Streamable HTTP JSON-RPC 2.0',
     endpoint: `${protocol}://${host}/api/mcp`,
     documentation: `${protocol}://${host}/llms.txt`,
-    leadInspector: 'Christopher Boykin, CMI (#MICB-1082 | InterNACHI #NACHI20061502)',
+    leadInspector: 'Christopher Boykin, CMI (#MICB-1082 | InterNACHI #NACHI18051119)',
     operatingRadius: '50 miles across 20 Metro Atlanta counties (87 municipalities)',
     supportedMethods: ['initialize', 'notifications/initialized', 'ping', 'tools/list', 'tools/call', 'resources/list', 'resources/read'],
     availableTools: MCP_TOOLS.map(t => ({ name: t.name, description: t.description })),

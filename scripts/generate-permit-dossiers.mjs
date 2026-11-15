@@ -630,7 +630,7 @@ function generateBrandDossierHtml(lead) {
         <p style="font-style: italic; color: #CBD5E1; margin-bottom: 0.75rem; font-weight: 600;">"Hindsight is expensive... Choose Foresight!"</p>
         <p>Two sets of expert eyes on every job. Unparalleled thoroughness, accuracy, and building science due diligence.</p>
         <p style="margin-top: 1rem; color: #64748B; font-size: 0.8rem;">
-          InterNACHI® Certified Master Inspector #NACHI20061502
+          InterNACHI® Certified Master Inspector #NACHI18051119
         </p>
       </div>
       <div>

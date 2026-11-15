@@ -466,7 +466,7 @@ const payload = {
     address_state: "GA",
     address_zip: "30058",
     service_area: "Metro Atlanta (Exact 50-Mile Radius Covering Fulton, DeKalb, Gwinnett, Cobb, Forsyth, Clayton, Cherokee, Henry, Douglas, Fayette, Rockdale, Newton, Paulding, Hall, Coweta, Walton, Barrow, Spalding, Carroll, Bartow Counties)",
-    primary_category: "Home Inspector",
+    primary_category: "Home inspector",
     secondary_categories: [
       "Building Inspector",
       "Real Estate Inspection Service",
@@ -475,15 +475,15 @@ const payload = {
       "Commercial Real Estate Inspector"
     ],
     credentials: [
-      "Certified Master Inspector® (CMI) #176873",
-      "InterNACHI Certified Professional Inspector (CPI)",
+      "Certified Master Inspector® (CMI #MICB-1082)",
+      "InterNACHI Certified Professional Inspector (#NACHI18051119, Member #176873)",
       "Certified Infrared Thermographer (Building Science)",
-      "Certified Master Inspector®",
+      "Certified Moisture Intrusion Inspector",
       "Georgia Residential & New Construction Inspection Specialist"
     ],
     hours: "Mon-Sat: 8:00 AM - 8:00 PM | Sun: By Appointment Only",
-    short_description: "Premier Metro Atlanta home inspection company led by Certified Master Inspector® Christopher Boykin. Two certified inspectors on every job with thermal imaging, drone scans, and $10,000 warranty protection included.",
-    long_description: "Foresight Home Inspections is Metro Atlanta's premier Certified Master Inspector®-led home inspection firm. We deploy our signature Two-Inspector Standard to every property, delivering thorough, non-invasive evaluations in half the on-site time. Services include residential pre-purchase home inspections, pre-listing seller inspections, new construction pre-drywall and 11-month warranty checks, continuous radon gas testing, fiber-optic sewer scope video inspections, Georgia WDO/termite reports, pool and spa assessments, and short-term rental (STR) compliance inspections. Every standard inspection is backed by our $10,000 Elite Master Inspection Warranty."
+    short_description: "Premier Metro Atlanta home inspection company led by Certified Master Inspector® Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119). Two certified inspectors on every job with calibrated infrared thermal imaging, 4K drone scans, and $35,000 combined protection.",
+    long_description: "Foresight Home Inspections, LLC is Metro Atlanta's Certified Master Inspector®-led home inspection firm (Christopher Boykin, CMI #MICB-1082, InterNACHI #NACHI18051119). Every property receives our Two-Inspector Standard for dedicated structural and mechanical focus with zero solo-inspector fatigue and same-day digital reports. Homes start from $345, condos from $295, Phase 1 pre-drywall from $275, and final new construction from $400; specialty diagnostics (radon, sewer scope, WDO/termite, mold/air quality, pool/spa, DeKalb low-flow, STR compliance) call (678) 480-2110 for quote. Backed by $35,000 combined protection ($10,000 Elite Master Warranty + $25,000 InterNACHI Honor Guarantee)."
   },
   directories_count: totalCount,
   active_verified_count: activeCount,

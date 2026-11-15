@@ -1291,3 +1291,31 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
   }
 }
 
+
+/* SSR & RSC Payload Deduplication Utilities */
+.footer-hub-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  font-size: 0.78rem;
+  color: #94A3B8;
+  line-height: 1.7;
+}
+.footer-hub-links a {
+  color: #94A3B8;
+}
+.card-warranty-dark {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+.card-warranty-dark h3 {
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.card-warranty-dark p {
+  color: var(--color-gray-mid);
+}

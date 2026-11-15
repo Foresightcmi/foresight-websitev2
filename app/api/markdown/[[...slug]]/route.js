@@ -19,7 +19,7 @@ const STATIC_PAGES = {
   },
   '/about': {
     title: 'About Foresight Home Inspections & Lead Inspector Christopher Boykin, CMI',
-    summary: 'Founded and led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI20061502). Two certified inspectors on every residential property across 20 Metro Atlanta counties.',
+    summary: 'Founded and led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119). Two certified inspectors on every residential property across 20 Metro Atlanta counties.',
   },
   '/contact': { title: 'Contact Foresight Home Inspections', summary: 'Call or text (678) 480-2110 or email inspect@foresightcmi.com. Sunday inspections strictly By Appointment Only.' },
   '/services': { title: 'Metro Atlanta Home Inspection & Diagnostic Services', summary: '11 residential, new-construction, environmental, and commercial property inspection services across 87 Metro Atlanta municipalities.' },

@@ -101,7 +101,7 @@ const BUSINESS_NAP = {
   address: "1816 South Deshon Road, Lithonia, GA 30058",
   serviceArea: "Metro Atlanta and 87+ cities across 20 Georgia counties",
   owner: "Christopher Boykin",
-  credentials: "Certified Master Inspector (CMI #MICB-1082), InterNACHI #NACHI20061502",
+  credentials: "Certified Master Inspector (CMI #MICB-1082), InterNACHI #NACHI18051119",
   certBody: "Master Inspector Certification Board (MICB) & InterNACHI",
   description: "Premium home inspection services in Metro Atlanta with two certified inspectors on every job. Led by Christopher Boykin, CMI. Every inspection includes calibrated infrared thermal imaging, 4K drone roof technology, and up to $35,000 in combined warranty protection ($10,000 Elite Master Inspection Warranty + $25,000 InterNACHI Honor Guarantee). Starting at $345 for homes ($295 condos, $450 flat-rate sewer camera scope, $100 DeKalb low-flow certificate).",
   shortDescription: "Certified Master Inspector serving Metro Atlanta. Two inspectors on every job from $345. $35,000 warranty protection included.",

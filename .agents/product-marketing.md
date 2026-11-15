@@ -27,7 +27,7 @@
 - **Mandatory Tri-Logo Header (`100%` of Slides, Carousels, Dossiers & Outbound HTML Emails)**:
   1. `#FFFFFF`-framed official **`Logopng.png`** (`https://www.fhinspectionsatl.com/images/Logopng.png` — never invert, recolor, or use `logo_dark_mode.png`)
   2. **`cmi_logo.png`** (`Certified Master Inspector #MICB-1082`)
-  3. **`cpi_logo.png`** (`InterNACHI Certified Professional Inspector #NACHI20061502`)
+  3. **`cpi_logo.png`** (`InterNACHI Certified Professional Inspector #NACHI18051119`)
 - **Official Founder Portrait**: Updated `1024x614` `public/images/Christopher_Boykin.jpg` (clean `FORESIGHT HOME INSPECTIONS 678-480-2110` polo embroidery).
 - **Official Sonic Branding**: `public/audio/foresight-anthem-30s-hook.mp3` (*Foresight Anthem • "Choose Foresight"*).
 - **Observational Voice & Banned Tokens**:

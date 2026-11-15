@@ -4,9 +4,10 @@ import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import ProcessSteps from './components/ProcessSteps';
 import LatestPosts from './components/LatestPosts';
-import NewsletterSignup from './components/NewsletterSignup';
 import VslTriggerButton from './components/VslTriggerButton';
-import HomeVideoPlayer from './components/HomeVideoPlayer';
+
+const HomeVideoPlayer = dynamic(() => import('./components/HomeVideoPlayer'));
+const NewsletterSignup = dynamic(() => import('./components/NewsletterSignup'));
 
 import TrueValueComparison from './components/TrueValueComparison';
 import Testimonials from './components/Testimonials';
@@ -890,46 +891,29 @@ export default function Home() {
           </div>
 
           <div className="grid grid-3" style={{ gap: '1.5rem', marginBottom: '2.5rem' }}>
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
-              <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-gold)' }}>✓</span> Elite Terms
-              </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>90 Days from closing or 120 Days from inspection (whichever comes first).</p>
+            <div className="card card-warranty-dark">
+              <h3><span style={{ color: 'var(--color-gold)' }}>✓</span> Elite Terms</h3>
+              <p>90 Days from closing or 120 Days from inspection (whichever comes first).</p>
             </div>
-            
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
-              <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-gold)' }}>✓</span> Total Coverage
-              </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>$10,000 Aggregate Coverage Limit with exactly $0 Deductible.</p>
+            <div className="card card-warranty-dark">
+              <h3><span style={{ color: 'var(--color-gold)' }}>✓</span> Total Coverage</h3>
+              <p>$10,000 Aggregate Coverage Limit with exactly $0 Deductible.</p>
             </div>
-
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
-              <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-gold)' }}>✓</span> Appliances
-              </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for Major Kitchen Appliances (NO age limits). Washer/Dryer fully included.</p>
+            <div className="card card-warranty-dark">
+              <h3><span style={{ color: 'var(--color-gold)' }}>✓</span> Appliances</h3>
+              <p>Up to $2,250 for Major Kitchen Appliances (NO age limits). Washer/Dryer fully included.</p>
             </div>
-
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
-              <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-gold)' }}>✓</span> Structural
-              </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 coverage for structural components of the home.</p>
+            <div className="card card-warranty-dark">
+              <h3><span style={{ color: 'var(--color-gold)' }}>✓</span> Structural</h3>
+              <p>Up to $2,250 coverage for structural components of the home.</p>
             </div>
-
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
-              <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-gold)' }}>✓</span> Mechanicals
-              </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 coverage for Major Mechanicals (HVAC, Electrical, Plumbing).</p>
+            <div className="card card-warranty-dark">
+              <h3><span style={{ color: 'var(--color-gold)' }}>✓</span> Mechanicals</h3>
+              <p>Up to $2,250 coverage for Major Mechanicals (HVAC, Electrical, Plumbing).</p>
             </div>
-
-            <div className="card" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', color: 'white' }}>
-              <h3 style={{ color: 'var(--color-white)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ color: 'var(--color-gold)' }}>✓</span> Additional Protection
-              </h3>
-              <p style={{ color: 'var(--color-gray-mid)' }}>Up to $2,250 for Mold Remediation and $1,000 for Roof Leak Protection.</p>
+            <div className="card card-warranty-dark">
+              <h3><span style={{ color: 'var(--color-gold)' }}>✓</span> Additional Protection</h3>
+              <p>Up to $2,250 for Mold Remediation and $1,000 for Roof Leak Protection.</p>
             </div>
           </div>
 

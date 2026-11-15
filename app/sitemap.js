@@ -27,6 +27,8 @@ export default async function sitemap() {
     { loc: '/about', changefreq: 'monthly', priority: 0.8 },
     { loc: '/realtors', changefreq: 'monthly', priority: 0.8 },
     { loc: '/quote', changefreq: 'weekly', priority: 0.9 },
+    { loc: '/list-of-3', changefreq: 'weekly', priority: 0.9 },
+    { loc: '/compare', changefreq: 'weekly', priority: 0.9 },
     { loc: '/risk-scanner', changefreq: 'weekly', priority: 0.85 },
     { loc: '/repair-credit-calculator', changefreq: 'weekly', priority: 0.85 },
 
