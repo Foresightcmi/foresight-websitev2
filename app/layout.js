@@ -927,9 +927,6 @@ export default function RootLayout({ children }) {
                   Proudly Black-owned.
                 </span>
               </p>
-              <Link prefetch={false} href="/dashboard" style={{ color: '#CBD5E1', textDecoration: 'none', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                Owner Command Center
-              </Link>
             </div>
           </div>
         </footer>

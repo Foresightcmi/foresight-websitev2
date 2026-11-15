@@ -733,7 +733,7 @@ export default function Services() {
                 <a href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.75rem 2rem', color: 'var(--color-red)', borderColor: 'var(--color-red)' }}>
                   Schedule Inspection
                 </a>
-                <Link href="/blog/metro-atlanta-short-term-rental-str-compliance-assist" className="btn btn-outline" style={{ padding: '0.75rem 2rem' }}>
+                <Link href="/blog/metro-atlanta-short-term-rental-str-compliance-guide" className="btn btn-outline" style={{ padding: '0.75rem 2rem' }}>
                   Read STR Guide
                 </Link>
               </div>

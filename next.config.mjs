@@ -21,8 +21,11 @@ const nextConfig = {
   outputFileTracingExcludes: {
     '*': [
       './public/videos/**',
+      './public/audio/**',
+      './public/dossiers/**',
       './public/sample-report/**',
       './public/vip-dispatch.html',
+      './data/archive-under-contract-realtors.json',
     ],
   },
   turbopack: {
@@ -52,6 +55,15 @@ const nextConfig = {
         ],
       },
       {
+        source: '/dossiers/(.*)',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      {
         source: '/videos/chris-avatar(.*)',
         headers: [
           {
@@ -61,7 +73,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/((?!sample-report).*)',
+        source: '/((?!sample-report|images/|videos/|audio/|_next/static/).*)',
         headers: [
           {
             key: 'X-Frame-Options',
@@ -106,7 +118,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/api/(.*)',
+        source: '/api/((?!geo|markdown|v1/services|v1/coverage).*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -316,7 +328,108 @@ const nextConfig = {
       },
       {
         source: '/service-areas/rex-ga',
-        destination: '/service-areas/rex',
+        destination: '/service-areas/morrow',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/rex',
+        destination: '/service-areas/morrow',
+        permanent: true,
+      },
+      // Non-standalone sub-city slugs -> nearest canonical city or county hub
+      {
+        source: '/service-areas/ball-ground',
+        destination: '/service-areas/canton',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/lithia-springs',
+        destination: '/service-areas/douglasville',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/villa-rica',
+        destination: '/service-areas/carrollton',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/hiram',
+        destination: '/service-areas/dallas',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/flowery-branch',
+        destination: '/service-areas/gainesville',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/braselton',
+        destination: '/service-areas/counties/hall-county',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/oakwood',
+        destination: '/service-areas/gainesville',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/mableton',
+        destination: '/service-areas/smyrna',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/holly-springs',
+        destination: '/service-areas/canton',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/waleska',
+        destination: '/service-areas/canton',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/auburn',
+        destination: '/service-areas/winder',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/statham',
+        destination: '/service-areas/winder',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/bethlehem',
+        destination: '/service-areas/winder',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/emerson',
+        destination: '/service-areas/cartersville',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/adairsville',
+        destination: '/service-areas/cartersville',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/temple',
+        destination: '/service-areas/carrollton',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/bowdon',
+        destination: '/service-areas/carrollton',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/sunny-side',
+        destination: '/service-areas/griffin',
+        permanent: true,
+      },
+      {
+        source: '/service-areas/orchard-hill',
+        destination: '/service-areas/griffin',
         permanent: true,
       },
       // Legacy or mistyped city / county routes
@@ -336,10 +449,25 @@ const nextConfig = {
         permanent: true,
       },
       // ── Official Google Search Console 404 Remediation & Legacy Wix Migration ──
-      // 1. Defect route migration
+      // 1. Defect & FAQ route migrations
       {
         source: '/defects/foundation-crack-settlement-inspection',
         destination: '/blog/foundation-inspection-and-repair-near-me-atlanta',
+        permanent: true,
+      },
+      {
+        source: '/defects/polybutylene-pipe-inspection',
+        destination: '/defects/polybutylene-pipe-plumbing-defect-inspection',
+        permanent: true,
+      },
+      {
+        source: '/faq/what-is-the-create-request-list-feature-in-homegauge',
+        destination: '/faq/what-is-the-digital-repair-request-builder-feature',
+        permanent: true,
+      },
+      {
+        source: '/faq/what-is-the-create-request-list-feature-in-interactive%20digital%20report',
+        destination: '/faq/what-is-the-digital-repair-request-builder-feature',
         permanent: true,
       },
       // 2. Service area legacy -ga suffix
@@ -348,14 +476,14 @@ const nextConfig = {
         destination: '/service-areas/brooks',
         permanent: true,
       },
-      // 3. Dated duplicate blog slugs -> canonical blog posts
+      // 3. Dated duplicate blog slugs -> canonical blog posts (complete history + regex catch-all)
       {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-29',
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-05-27',
         destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
         permanent: true,
       },
       {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-08',
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-06-14',
         destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
         permanent: true,
       },
@@ -365,8 +493,58 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-08',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
         source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-26',
         destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-07-29',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-08-16',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-08-19',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-06',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-09',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-27',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-29',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-30',
+        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        permanent: true,
+      },
+      {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-06-03',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
         permanent: true,
       },
       {
@@ -395,12 +573,47 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-08-26',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide-2026-09-16',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-06-10',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
         source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-07-01',
         destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
         permanent: true,
       },
       {
         source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-07-22',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-08-09',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-08-12',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-09-02',
+        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        permanent: true,
+      },
+      {
+        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-09-23',
         destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
         permanent: true,
       },
@@ -453,14 +666,64 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/post/unveiling-the-hidden-value-the-unknown-marketing-power-of-pre-listing-inspections-for-sellers',
+        destination: '/blog/pre-listing-seller-inspection-guide',
+        permanent: true,
+      },
+      {
+        source: '/post/detailed-inspections-for-new-constructions',
+        destination: '/blog/why-new-construction-needs-inspections',
+        permanent: true,
+      },
+      {
+        source: '/post/pre-sale-home-inspection-tips-for-atlanta-sellers',
+        destination: '/blog/pre-listing-seller-inspection-guide',
+        permanent: true,
+      },
+      {
+        source: '/post/essential-tips-for-reliable-home-inspections',
+        destination: '/blog/first-time-home-buyer-inspection-checklist-atlanta',
+        permanent: true,
+      },
+      {
+        source: '/post/nature-s-touch-bringing-the-outdoors-inside-with-plants-and-greenery',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/post/why-professional-home-inspection-services-matter',
+        destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
+        permanent: true,
+      },
+      {
+        source: '/post/comprehensive-overview-of-home-inspection-services',
+        destination: '/services',
+        permanent: true,
+      },
+      {
         source: '/post/:slug*',
         destination: '/blog',
         permanent: true,
       },
-      // 7. Legacy Navigation, Booking & Resource URLs
+      // 7. Legacy Navigation, Booking, Retired App Routes & Resource URLs
       {
         source: '/book',
         destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/bio',
+        destination: '/quote',
+        permanent: true,
+      },
+      {
+        source: '/anthem',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/seo-guide',
+        destination: '/blog',
         permanent: true,
       },
       {
@@ -511,7 +774,7 @@ const nextConfig = {
       },
       {
         source: '/services/home-buyer-inspection/:city',
-        destination: '/service-areas/:city',
+        destination: '/services/buyer-inspection/:city',
         permanent: true,
       },
       // Essential service variations and legacy aliases
@@ -612,27 +875,32 @@ const nextConfig = {
       },
       {
         source: '/services/commercial',
-        destination: '/services',
+        destination: '/services/commercial-property-inspection',
         permanent: true,
       },
       {
         source: '/services/commercial-inspection',
-        destination: '/services',
+        destination: '/services/commercial-property-inspection',
         permanent: true,
       },
       {
         source: '/services/commercial-inspections',
-        destination: '/services',
+        destination: '/services/commercial-property-inspection',
         permanent: true,
       },
       {
         source: '/services/commercial-inspection/:city',
-        destination: '/service-areas/:city',
+        destination: '/services/commercial-property-inspection/:city',
         permanent: true,
       },
       {
         source: '/services/mold-inspection',
-        destination: '/services',
+        destination: '/services/mold-testing',
+        permanent: true,
+      },
+      {
+        source: '/services/mold-inspection/:city',
+        destination: '/services/mold-testing/:city',
         permanent: true,
       },
       {
@@ -696,53 +964,17 @@ const nextConfig = {
         destination: '/sitemap.xml',
         permanent: true,
       },
-      // Old dated blog post slugs to canonical
-      {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-09',
-        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
-        permanent: true,
-      },
-      {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-06',
-        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
-        permanent: true,
-      },
-      {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-06-14',
-        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
-        permanent: true,
-      },
-      {
-        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-09-02',
-        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
-        permanent: true,
-      },
-      {
-        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-06-10',
-        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
-        permanent: true,
-      },
+      // Keyword cannibalization & legacy blog consolidation redirects
       {
         source: '/blog/why-new-construction-inspections-are-important',
         destination: '/blog/why-new-construction-needs-inspections',
         permanent: true,
       },
       {
-        source: '/blog/crawlspace-moisture-the-silent-threat-to-georgia-foundations-2026-08-09',
-        destination: '/blog/crawlspace-moisture-silent-threat-georgia-foundations',
+        source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist',
+        destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
         permanent: true,
       },
-      {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-05-27',
-        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
-        permanent: true,
-      },
-      {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-08-19',
-        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
-        permanent: true,
-      },
-      // Keyword cannibalization consolidation redirects
       {
         source: '/blog/metro-atlanta-short-term-rental-str-compliance-assist-guide',
         destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
@@ -759,54 +991,13 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-30',
-        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
+        source: '/blog/estate-and-luxury-home-inspection-guide',
+        destination: '/services/buyer-inspection',
         permanent: true,
       },
       {
-        source: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance-2026-09-29',
-        destination: '/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance',
-        permanent: true,
-      },
-      // Legacy /post/ URLs to modern /blog/ routes
-      {
-        source: '/post/unveiling-the-hidden-value-the-unknown-marketing-power-of-pre-listing-inspections-for-sellers',
-        destination: '/blog/pre-listing-seller-inspection-guide',
-        permanent: true,
-      },
-      {
-        source: '/post/detailed-inspections-for-new-constructions',
-        destination: '/blog/why-new-construction-needs-inspections',
-        permanent: true,
-      },
-      {
-        source: '/post/pre-sale-home-inspection-tips-for-atlanta-sellers',
-        destination: '/blog/pre-listing-seller-inspection-guide',
-        permanent: true,
-      },
-      {
-        source: '/post/essential-tips-for-reliable-home-inspections',
-        destination: '/blog/first-time-home-buyer-inspection-checklist-atlanta',
-        permanent: true,
-      },
-      {
-        source: '/post/nature-s-touch-bringing-the-outdoors-inside-with-plants-and-greenery',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/post/why-professional-home-inspection-services-matter',
-        destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
-        permanent: true,
-      },
-      {
-        source: '/post/comprehensive-overview-of-home-inspection-services',
-        destination: '/services',
-        permanent: true,
-      },
-      {
-        source: '/post/:slug*',
-        destination: '/blog',
+        source: '/blog/why-you-need-home-inspection-new-build',
+        destination: '/services/new-construction-inspection',
         permanent: true,
       },
       {
@@ -936,83 +1127,7 @@ const nextConfig = {
         destination: '/about',
         permanent: true,
       },
-      // Google Search Console 404 Remediation Redirects
-      {
-        source: '/book',
-        destination: '/quote',
-        permanent: true,
-      },
-      {
-        source: '/resources',
-        destination: '/services',
-        permanent: true,
-      },
-      {
-        source: '/resources/faq',
-        destination: '/faq',
-        permanent: true,
-      },
-      {
-        source: '/inspection-service-areas',
-        destination: '/service-areas',
-        permanent: true,
-      },
-      {
-        source: '/blog/categories/:slug*',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/_api/:path*',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/search',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/post/how-to-prepare-your-atlanta-home-for-hurricane-season-a-reliable-guide-for-homeowners-to-weather-th',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/post/what-you-need-to-know-about-home-inspection-services',
-        destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
-        permanent: true,
-      },
-      {
-        source: '/post/hosting-with-heart-crafting-a-home-perfect-for-entertaining',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/post/how-to-negotiate-repairs-after-a-home-inspection-in-georgia',
-        destination: '/blog/how-to-negotiate-home-inspection-repairs-georgia-gar-contract',
-        permanent: true,
-      },
-      {
-        source: '/post/understanding-the-benefits-of-home-inspection-services',
-        destination: '/blog/what-fails-home-inspection-deal-breakers-georgia',
-        permanent: true,
-      },
-      {
-        source: '/blog/estate-and-luxury-home-inspection-guide',
-        destination: '/services/buyer-inspection',
-        permanent: true,
-      },
-      {
-        source: '/blog/why-you-need-home-inspection-new-build',
-        destination: '/services/new-construction-inspection',
-        permanent: true,
-      },
       // GSC 3-Month Performance Recovery & Striking-Distance Redirects
-      {
-        source: '/service-areas/brooks-ga',
-        destination: '/service-areas/brooks',
-        permanent: true,
-      },
       {
         source: '/services/sewer-camera-inspection',
         destination: '/services/sewer-scope-inspection',
@@ -1099,32 +1214,7 @@ const nextConfig = {
         destination: '/blog/metro-atlanta-short-term-rental-str-compliance-guide',
         permanent: true,
       },
-      // Trailing-Period SMS/Email Auto-Linker Recovery (GA4 59-User /quote. 404 Fix)
-      {
-        source: '/quote.',
-        destination: '/quote',
-        permanent: true,
-      },
-      {
-        source: '/realtors.',
-        destination: '/realtors',
-        permanent: true,
-      },
-      {
-        source: '/services.',
-        destination: '/services',
-        permanent: true,
-      },
-      {
-        source: '/contact.',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/due-diligence.',
-        destination: '/due-diligence',
-        permanent: true,
-      },
+      // Additional Trailing-Period SMS/Email Auto-Linker Recovery
       {
         source: '/samples.',
         destination: '/samples',

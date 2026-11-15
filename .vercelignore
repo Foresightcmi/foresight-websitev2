@@ -2,6 +2,9 @@
 
 # Offline MLS & Lead Datasets (Used locally by background scouting engines, not by Next.js)
 data/under-contract-realtors.json
+data/archive-under-contract-realtors.json
+data/cloud-realtor-nurture-queue.json
+data/warranty-tracker-crm.json
 data/past-clients.json
 data/social-logs/
 data/due-diligence-outreach-log.json
@@ -9,6 +12,7 @@ data/permit-leads.json
 data/permit-leads-crm.json
 data/new-construction-leads.json
 data/new-construction-crm.json
+onedrive_dump.html
 
 # Local scripts (Maintenance & cron execution run on server, not in Vercel build)
 scripts/

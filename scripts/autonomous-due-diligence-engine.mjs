@@ -200,7 +200,7 @@ Priority Desk: (678) 480-2110 | inspect@foresightcmi.com"</div>
         Respectfully,<br><br>
         <strong>Christopher Boykin, CMI®</strong><br>
         Lead Inspector &amp; Founder | Foresight Home Inspections, LLC<br>
-        <em>Certified Master Inspector® #MICB-1082 • InterNACHI #NACHI20061502</em><br>
+        <em>Certified Master Inspector® #MICB-1082 • InterNACHI #NACHI18051119</em><br>
         Direct Priority Desk: <a href="tel:6784802110" style="color: #0f172a; font-weight: bold;">(678) 480-2110</a><br>
         Email: <a href="mailto:inspect@foresightcmi.com" style="color: #0f172a;">inspect@foresightcmi.com</a><br>
         <a href="https://www.fhinspectionsatl.com" style="color: #d4af37; font-weight: bold;">www.fhinspectionsatl.com</a>

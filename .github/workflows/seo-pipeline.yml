@@ -52,7 +52,7 @@ jobs:
         git config --global user.name "Foresight SEO Bot"
         git config --global user.email "seo-bot@fhinspectionsatl.com"
         git add data/
-        git diff --cached --quiet || (git commit -m "chore(seo): automated Sunday keyword discovery, ecosystem harmony & Rank Math audit" && git pull --rebase -X theirs origin main && git push origin main) || echo "No changes to commit."
+        git diff --cached --quiet || (git commit -m "chore(seo): automated Sunday keyword discovery, ecosystem harmony & Rank Math audit [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "No changes to commit."
 
     - name: Run Search Engine Pinger (IndexNow & Google)
       run: node scripts/ping-indexnow.mjs

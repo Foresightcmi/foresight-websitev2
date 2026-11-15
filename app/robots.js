@@ -15,7 +15,11 @@ export default function robots() {
     '/audio/',
     '/sample-report/',
     '/blog?*',
-    '/*?q=*'
+    '/*?q=*',
+    '/dossiers',
+    '/dossiers/',
+    '/warranty-dossiers',
+    '/warranty-dossiers/'
   ];
 
   return {

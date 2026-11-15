@@ -585,8 +585,8 @@ export default async function CountyPage({ params }) {
                 <h3 style={{ fontSize: '1.15rem', color: '#0f172a', marginBottom: '0.75rem' }}>Common Defect Evaluations</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <li><Link href="/defects/stucco-eifs-moisture-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Stucco (EIFS) Moisture Intrusion Inspection</Link></li>
-                  <li><Link href="/defects/polybutylene-pipe-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Polybutylene Plumbing Pipe Risk Guide</Link></li>
-                  <li><Link href="/defects/foundation-crack-settlement-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Georgia Red Clay Foundation Settling Guide</Link></li>
+                  <li><Link href="/defects/polybutylene-pipe-plumbing-defect-inspection" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Polybutylene Plumbing Pipe Risk Guide</Link></li>
+                  <li><Link href="/blog/foundation-inspection-and-repair-near-me-atlanta" style={{ color: 'var(--color-red)', fontWeight: 600, textDecoration: 'none' }}>&rarr; Georgia Red Clay Foundation Settling Guide</Link></li>
                 </ul>
               </div>
 

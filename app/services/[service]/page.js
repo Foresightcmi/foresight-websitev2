@@ -278,8 +278,17 @@ function loadServicesPseo() {
   }
 }
 
+const LEGACY_SERVICE_ALIASES = new Set([
+  'home-buyer-inspection',
+  'pool-spa-inspection',
+  'termite-wdo-inspection',
+  'mold-inspection',
+]);
+
 export async function generateStaticParams() {
-  return Object.keys(SERVICE_MAP).map(service => ({ service }));
+  return Object.keys(SERVICE_MAP)
+    .filter(service => !LEGACY_SERVICE_ALIASES.has(service))
+    .map(service => ({ service }));
 }
 
 export async function generateMetadata({ params }) {
