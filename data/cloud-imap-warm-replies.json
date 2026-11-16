@@ -10,9 +10,23 @@
     "timykalee@gmail.com|Re: Pre Dry Wall Inspection",
     "no_reply@communications.paypal.com|We're updating our terms and conditions",
     "radon@cutcliffradonservices.com|RE: SCHEDULED RADON TEST: 23 BLUE HERON POINT ACWORTH, GA",
-    "tiffany@willowandwest.living|Re: Your Client's Inspection Has Been Scheduled"
+    "tiffany@willowandwest.living|Re: Your Client's Inspection Has Been Scheduled",
+    "nspire@spgroupusa.com|Re: Weekly Bulletin - NSPIRED Podcast - November 16, 2026",
+    "fmann@tratonhomes.com|RE: FW: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW,"
   ],
   "recentReplies": [
+    {
+      "email": "fmann@tratonhomes.com",
+      "subject": "RE: FW: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW,",
+      "snippet": "RE: FW: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW, GA 30144 Message-ID: <DM4PR18MB426938AF50E79C49713CE314B17C2@DM4PR18MB4269.namprd18.prod.outlook.com> )",
+      "detectedAt": "2026-11-16T22:55:25.120Z"
+    },
+    {
+      "email": "nspire@spgroupusa.com",
+      "subject": "Re: Weekly Bulletin - NSPIRED Podcast - November 16, 2026",
+      "snippet": "<nspire@spgroupusa.com> Message-ID: <CAMsuLWKHcHguPjxdA9De7=r3acsXefa54AjKGyn_FnHkRNH4JQ@mail.gmail.com> Subject: Re: Weekly Bulletin - NSPIRED Podcast - November 16, 2026 )",
+      "detectedAt": "2026-11-16T22:55:24.838Z"
+    },
     {
       "email": "tiffany@willowandwest.living",
       "subject": "Re: Your Client's Inspection Has Been Scheduled",
