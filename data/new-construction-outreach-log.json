@@ -38,5 +38,45 @@
     "messageId": "<6212ff7e-44da-0855-c73b-f47ae98ee2a4@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7807719.html",
     "sentAt": "2026-11-15T19:41:46.570Z"
+  },
+  {
+    "recordId": "NC-7868081",
+    "address": "115 Greenwich Drive, Covington, GA 30016",
+    "recipient": "wanda.sellsatl@gmail.com",
+    "messageId": "<f53a4bf5-08f1-43bc-7b3b-f7b9d7780bb0@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7868081.html",
+    "sentAt": "2026-11-16T23:19:01.245Z"
+  },
+  {
+    "recordId": "NC-7845224",
+    "address": "333 Conifer Lane, Ball Ground, GA 30107",
+    "recipient": "glen@psponline.com",
+    "messageId": "<a01e537e-691c-40d2-9d74-ee48524af804@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7845224.html",
+    "sentAt": "2026-11-16T23:19:02.505Z"
+  },
+  {
+    "recordId": "NC-7868367",
+    "address": "1943 Deco Drive, Kennesaw, GA 30144",
+    "recipient": "fmann@tratonhomes.com",
+    "messageId": "<adb4af94-9072-a453-b012-9721a341de86@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7868367.html",
+    "sentAt": "2026-11-16T23:19:03.880Z"
+  },
+  {
+    "recordId": "NC-7867836",
+    "address": "5933 Spring Way, Stonecrest, GA 30038",
+    "recipient": "cmcthadden@mckinleyhomes.com",
+    "messageId": "<677a4f56-9871-cb93-c379-aa4ff97a1067@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7867836.html",
+    "sentAt": "2026-11-16T23:19:05.210Z"
+  },
+  {
+    "recordId": "NC-7868440",
+    "address": "76 Stonebriar Cove, Villa Rica, GA 30180",
+    "recipient": "wbarker@discoverartisan.com",
+    "messageId": "<08f9abc5-f056-944b-7ddb-7323bdf08712@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7868440.html",
+    "sentAt": "2026-11-16T23:19:06.681Z"
   }
 ]
