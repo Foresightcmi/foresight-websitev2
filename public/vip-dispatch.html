@@ -502,7 +502,7 @@
       <div class="stats-row">
         <span class="stat-label">Due Diligence Agent Outreach:</span>
         <span class="stat-numbers">
-          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">0</span> Contacted
+          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">9</span> Contacted
         </span>
       </div>
       <div class="progress-track">
@@ -521,7 +521,7 @@
           <option value="name_asc">👤 Agent Name (A to Z)</option>
         </select>
         <select class="select-ctrl" id="citySelect" onchange="setCity(this.value)">
-          <option value="ALL">📍 All Cities (0)</option>
+          <option value="ALL">📍 All Cities (9)</option>
         </select>
       </div>
     </div>
@@ -547,7 +547,7 @@
   <div id="cardsContainer"></div>
 
   <script>
-    const underContractFilers = [];
+    const underContractFilers = [{"id":"fmls_pending_5be190b23d","role":"LIST_AGENT","name":"Vanessa Reilly","first":"Vanessa","phone":"(404) 556-1733","clean_phone":"4045561733","brokerage":"Domo Realty","city":"Decatur","quadrant":"EAST","mlsFeed":"FMLS","address":"1354 Rupert Road","price":"$399,900","raw_price":399900,"date":"2026-11-16"},{"id":"fmls_pending_c6f09f20ba","role":"LIST_AGENT","name":"Brittany Milstead","first":"Brittany","phone":"(770) 846-6444","clean_phone":"7708466444","brokerage":"Keller Williams Realty Atlanta Partners","city":"Gainesville","quadrant":"NORTHEAST","mlsFeed":"FMLS","address":"8420 Pleasant Grove Circle","price":"$429,000","raw_price":429000,"date":"2026-11-16"},{"id":"fmls_pending_6e4315f9c2","role":"LIST_AGENT","name":"JOHN H HEATH","first":"JOHN","phone":"(678) 908-7002","clean_phone":"6789087002","brokerage":"Keller Williams Realty Community Partners","city":"Dawsonville","quadrant":"NORTHWEST","mlsFeed":"FMLS","address":"161 Roscoe Collette Road","price":"$499,500","raw_price":499500,"date":"2026-11-15"},{"id":"fmls_pending_f1c1319855","role":"LIST_AGENT","name":"REGENNIA SHEPHARD","first":"REGENNIA","phone":"(770) 616-3047","clean_phone":"7706163047","brokerage":"McKinley Properties, LLC.","city":"South Fulton","quadrant":"INTOWN","mlsFeed":"FMLS","address":"8136 Pine Ridge Road","price":"$364,900","raw_price":364900,"date":"2026-11-15"},{"id":"fmls_pending_d757febcdd","role":"LIST_AGENT","name":"Charles Holmes","first":"Charles","phone":"(678) 698-7094","clean_phone":"6786987094","brokerage":"List 4 Less Realty","city":"Lithonia","quadrant":"EAST","mlsFeed":"FMLS","address":"2150 Mulberry Lane","price":"$259,900","raw_price":259900,"date":"2026-11-16"},{"id":"fmls_pending_41219eac85","role":"LIST_AGENT","name":"Stephen Milone","first":"Stephen","phone":"(678) 693-2363","clean_phone":"6786932363","brokerage":"EXP Realty, LLC.","city":"Dawsonville","quadrant":"NORTHEAST","mlsFeed":"FMLS","address":"22 Midnight Run","price":"$389,900","raw_price":389900,"date":"2026-11-16"},{"id":"fmls_pending_0604c37bd3","role":"LIST_AGENT","name":"Matthew Schneider","first":"Matthew","phone":"(808) 646-0521","clean_phone":"8086460521","brokerage":"Real Broker, LLC.","city":"Duluth","quadrant":"NORTHEAST","mlsFeed":"FMLS","address":"3653 North Street","price":"$325,000","raw_price":325000,"date":"2026-11-16"},{"id":"fmls_pending_411dbed3ed","role":"LIST_AGENT","name":"Lonnie Latham","first":"Lonnie","phone":"(404) 271-7170","clean_phone":"4042717170","brokerage":"Engel & Volkers Atlanta","city":"Peachtree Corners","quadrant":"NORTHEAST","mlsFeed":"FMLS","address":"703 Peachtree Forest Avenue","price":"$250,000","raw_price":250000,"date":"2026-11-16"},{"id":"fmls_pending_93fc869cd1","role":"LIST_AGENT","name":"Jessica Beauchamp","first":"Jessica","phone":"(678) 787-6781","clean_phone":"6787876781","brokerage":"Chapman Hall Professionals Realty, LLC","city":"Jefferson","quadrant":"NORTHEAST","mlsFeed":"FMLS","address":"3249 Commerce Road","price":"$225,000","raw_price":225000,"date":"2026-11-15"}];
 
     // State Persistence across localStorage
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
