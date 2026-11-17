@@ -240,5 +240,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 28,
+    "title": "3:00 AM Homebuyer Red-Flag Translator & 6 Free Inspection Benefits",
+    "publishedAt": "2026-11-17T04:51:01.322Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/homebuyer-red-flags"
   }
 ]

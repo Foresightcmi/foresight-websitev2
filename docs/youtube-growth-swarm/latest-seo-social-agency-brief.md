@@ -1,6 +1,6 @@
 # Foresight SEO, AEO & Social Media Research Agency — Live Intelligence Brief
 
-Generated: `2026-11-17T03:48:33.948Z`  
+Generated: `2026-11-17T04:51:03.199Z`  
 Canonical Truth Lock: `data/truth.json (v2026.10.20)` • Domain: `https://www.fhinspectionsatl.com`
 
 ---
@@ -13,7 +13,7 @@ Canonical Truth Lock: `data/truth.json (v2026.10.20)` • Domain: `https://www.f
 | **Concentric Neighborhood Clusters** | `28` Hyper-Local Hubs (`Offer` `345.00` USD + Upward `/` & Buyer Links) |
 | **Educational Building-Science Studies** | `45` Articles (100% synced into `/llms.txt`) |
 | **Chameleonic Competitor Score** | **100 vs 19 avg (16 rivals audited)** |
-| **Social & Video Omnichannel Queue** | `27` Social Queue Posts • `10` LinkedIn Stories • `53` Studio Packets |
+| **Social & Video Omnichannel Queue** | `28` Social Queue Posts • `11` LinkedIn Stories • `54` Studio Packets |
 | **GBP Weekly Kit (`Store 264545`)** | Freshly generated in `data/gbp-weekly-kit.md` & `docs/youtube-growth-swarm/ready-to-paste-omnichannel-pack.md` |
 
 ---

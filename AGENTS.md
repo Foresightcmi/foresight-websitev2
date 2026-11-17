@@ -58,3 +58,13 @@
 ## 8. Agent-Reach Twice-Daily 10-Medium Demand & B2B Referral Radar (`07:30 AM` & `12:30 PM` ET)
 * **Zero-Cookie Public-Web Isolation**: Always execute `agent-reach` via `scripts/lib/agent-reach-client.mjs` (`--backend public-web` / `exa` / `yt-dlp`, never passing `--json` and never reading cookies from `@fhinspectionsatl` or `omni-video-publisher/brands/plsinspectnow-atl/browser_profile`).
 * **Dual-Track Twice-Daily Cadence (`07:30 AM` & `12:30 PM` ET)**: Runs locally via hardened Windows Scheduled Task `Foresight_AgentReach_Omni_Radar` (`run_agent_reach_radar_service.bat`) and in cloud via `.github/workflows/agent-reach-omni-radar.yml`, feeding `data/agent-reach-intel.json` into `digital-pr-scout.mjs`, `sync-email-campaign-bridge.mjs` (`recovered_active_filers.json`), `autonomous-due-diligence-engine.mjs` (`data/loan-officers.json` + `data/b2b-referral-partners.json`), `firstindex-ai-mention-tracker.mjs`, `omni-video-publisher` (`70/20/10` live hooks), and `ntfy.sh/fores-antigravity-alerts-77`, while strictly honoring `<= 1,200 / 24h` shared mailbox quota and `0%` Ansley/opt-out leakage.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
