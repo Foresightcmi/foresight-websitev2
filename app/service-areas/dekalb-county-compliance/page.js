@@ -535,6 +535,7 @@ export default function DeKalbCountyCompliancePage() {
               </a>
               <a
                 href="/dossiers/dekalb-low-flow-compliance.html"
+                rel="nofollow noopener noreferrer"
                 className="btn btn-outline"
                 style={{
                   padding: '0.85rem 2.5rem',
@@ -545,6 +546,16 @@ export default function DeKalbCountyCompliancePage() {
               >
                 View Regulatory Dossier
               </a>
+              <Link
+                href="/services/municipal-rehab-inspections"
+                className="btn btn-outline"
+                style={{
+                  padding: '0.85rem 2rem',
+                  fontSize: '1rem',
+                }}
+              >
+                Municipal &amp; Pre-Rehab Inspections
+              </Link>
             </div>
           </div>
         </div>

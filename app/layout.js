@@ -881,6 +881,7 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/samples">Sample Inspection Reports</Link></li>
                   <li><Link prefetch={false} href="/defects/stucco-eifs-moisture-inspection">Red-Flag Defect Guides</Link></li>
                   <li><Link prefetch={false} href="/realtors">Realtors VIP Program</Link></li>
+                  <li><Link prefetch={false} href="/services/municipal-rehab-inspections">Municipal &amp; Rehab Inspections</Link></li>
                   <li><Link prefetch={false} href="/press">Press &amp; Media Kit</Link></li>
                   <li><Link prefetch={false} href="/blog">Inspection Knowledge Base</Link></li>
                   <li><Link prefetch={false} href="/videos">Field Inspection Videos</Link></li>
@@ -939,13 +940,17 @@ export default function RootLayout({ children }) {
               <Link prefetch={false} href="/videos/termite-and-wdo-inspections">Termite &amp; WDO Video Guide</Link>
               </div>
             </div>
-            <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', paddingBottom: '3.5rem' }}>
               <p style={{ margin: 0, fontSize: '0.85rem' }}>
                 &copy; {new Date().getFullYear()} Foresight Home Inspections, LLC. All rights reserved.{' '}
                 <span style={{ fontSize: '0.68rem', opacity: 0.65, display: 'inline-block', letterSpacing: '0.02em' }}>
                   Proudly Black-owned.
                 </span>
               </p>
+              <div style={{ display: 'flex', gap: '1rem', fontSize: '0.82rem' }}>
+                <Link prefetch={false} href="/privacy" style={{ color: '#CBD5E1', textDecoration: 'none' }}>Privacy Policy</Link>
+                <Link prefetch={false} href="/terms" style={{ color: '#CBD5E1', textDecoration: 'none' }}>Terms of Service</Link>
+              </div>
             </div>
           </div>
         </footer>

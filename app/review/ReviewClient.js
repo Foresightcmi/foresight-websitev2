@@ -520,6 +520,34 @@ export default function ReviewClient() {
           )}
         </div>
 
+        {/* Post-Inspection Client Commitment & Review Context */}
+        <div
+          style={{
+            textAlign: 'left',
+            backgroundColor: '#F8FAFC',
+            border: '1px solid #E2E8F0',
+            borderRadius: '0.85rem',
+            padding: '1.5rem',
+            marginBottom: '1.75rem',
+            color: '#334155',
+            lineHeight: 1.65,
+            fontSize: '0.95rem',
+          }}
+        >
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0F172A', marginTop: 0, marginBottom: '0.65rem' }}>
+            Why Honest Client Reviews Matter in Metro Atlanta
+          </h2>
+          <p style={{ marginTop: 0, marginBottom: '0.85rem' }}>
+            Because Georgia does not require a state license to perform residential home inspections, verified feedback from real Metro Atlanta buyers, sellers, homeowners, and Realtors helps families distinguish a board-certified Certified Master Inspector two-inspector team from unvetted solo operators. Every Foresight residential inspection is led by Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119) with two certified inspectors on site, calibrated infrared thermal camera scans, 4K drone roof photography, a same-day interactive digital report, and up to $35,000 in combined protection ($10,000 Elite Master Warranty with $0 deductible plus the $25,000 InterNACHI Honor Guarantee).
+          </p>
+          <p style={{ margin: 0 }}>
+            Have a follow-up question about a finding in your interactive digital report, seasonal maintenance, or your 11-Month Builder Warranty window? Call our office directly anytime at{' '}
+            <a href="tel:6784802110" style={{ color: '#B91C1C', fontWeight: 700, textDecoration: 'none' }}>(678) 480-2110</a>, explore our{' '}
+            <Link href="/homeowner-care" style={{ color: '#B91C1C', fontWeight: 700 }}>Post-Closing Homeowner Care Guide</Link>, or set up your utilities at zero charge via{' '}
+            <Link href="/free-utility-setup" style={{ color: '#B91C1C', fontWeight: 700 }}>Free Utility Concierge</Link>.
+          </p>
+        </div>
+
         {/* Google Preferred Source Integration */}
         <div style={{ textAlign: 'left' }}>
           <GooglePreferredSource 

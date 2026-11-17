@@ -42,7 +42,15 @@ export default function PrivacyPolicy() {
           <p>
             With your explicit consent (such as when signing a pre-inspection agreement), we may share your inspection report with your real estate agent or the seller's agent to facilitate your real estate transaction.
           </p>
-          <h2 style={{ marginTop: '2rem', marginBottom: '1rem', color: 'var(--color-dark)' }}>4. Contact Us</h2>
+          <h2 style={{ marginTop: '2rem', marginBottom: '1rem', color: 'var(--color-dark)' }}>4. Data Security &amp; Report Retention</h2>
+          <p>
+            We implement administrative, technical, and HTTPS/TLS encryption safeguards designed to protect your personal contact details, property records, and interactive digital inspection reports from unauthorized access or disclosure. Payment card transactions are processed through PCI-DSS compliant payment providers and are never stored in plain text on our web servers.
+          </p>
+          <h2 style={{ marginTop: '2rem', marginBottom: '1rem', color: 'var(--color-dark)' }}>5. Cookies, Analytics &amp; Communication Preferences</h2>
+          <p>
+            Our website uses first-party session state and privacy-conscious analytics to measure page performance, instant quote calculator reliability, and user navigation across Metro Atlanta service pages. If you receive SMS or email appointment confirmations or optional post-inspection follow-ups, you may opt out at any time by replying STOP to any text message or clicking unsubscribe or replying STOP to any email.
+          </p>
+          <h2 style={{ marginTop: '2rem', marginBottom: '1rem', color: 'var(--color-dark)' }}>6. Contact Us</h2>
           <p>
             If you have questions or comments about this Privacy Policy, please contact us at:
           </p>

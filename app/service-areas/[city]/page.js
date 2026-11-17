@@ -17,6 +17,24 @@ function loadCities() {
   return JSON.parse(fileContents);
 }
 
+function loadCounties() {
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'counties-pseo.json');
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    return [];
+  }
+}
+
+function loadNeighborhoods() {
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'neighborhoods-pseo.json');
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    return [];
+  }
+}
+
 function toSlug(cityName) {
   return cityName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 }
@@ -107,6 +125,12 @@ export default async function CityPage({ params }) {
   const county = cityData.County || 'Georgia';
   const zip = cityData.Zip || '';
   const slug = resolvedParams.city;
+  const countiesList = loadCounties();
+  const countyInfo = countiesList.find(c => c.slug === `${toSlug(county)}-county` || c.name.toLowerCase() === `${county.toLowerCase()} county`) || null;
+  const neighborhoodsList = loadNeighborhoods();
+  const localNeighborhoods = neighborhoodsList.filter(
+    n => (n.city && n.city.toLowerCase() === cityName.toLowerCase()) || (n.county && n.county.toLowerCase() === county.toLowerCase())
+  ).slice(0, 6);
 
   const coords = {
     lat: cityData?.Latitude || "33.7490",
@@ -1206,6 +1230,80 @@ export default async function CityPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════
+          6B. COUNTY BUILDING CODE & LOCAL NEIGHBORHOOD HUBS
+      ═══════════════════════════════════════════════════════════════ */}
+      {(countyInfo || localNeighborhoods.length > 0) && (
+        <section className="section bg-white" style={{ borderTop: '1px solid #e2e8f0' }}>
+          <div className="container" style={{ maxWidth: '960px' }}>
+            <div className="section-title" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <h2>{cityName} &amp; {county} County Regional Inspection Intelligence</h2>
+              <p style={{ color: 'var(--color-gray-dark)', maxWidth: '680px', margin: '0 auto' }}>
+                Localized soil mechanics, municipal code priorities, and neighborhood-specific due diligence resources for {cityName}{zip ? ` (ZIP ${zip})` : ''}.
+              </p>
+            </div>
+
+            {countyInfo && (
+              <div className="card" style={{ padding: '1.75rem 2rem', marginBottom: '1.75rem', borderLeft: '4px solid var(--color-red)', background: '#f8fafc' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                  <h3 style={{ fontSize: '1.25rem', margin: 0, color: 'var(--color-dark)' }}>
+                    {countyInfo.name} Structural &amp; Municipal Priorities (County Seat: {countyInfo.seat})
+                  </h3>
+                  <Link href={`/service-areas/counties/${countyInfo.slug}`} style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                    Explore {countyInfo.name} Inspection Hub &rarr;
+                  </Link>
+                </div>
+                {countyInfo.buildingCodeFocus && (
+                  <p style={{ color: 'var(--color-gray-dark)', fontSize: '0.96rem', lineHeight: 1.65, marginBottom: '0.9rem' }}>
+                    <strong>Regional Code &amp; Permitting Focus:</strong> {countyInfo.buildingCodeFocus}
+                  </p>
+                )}
+                {Array.isArray(countyInfo.keyRisks) && countyInfo.keyRisks.length > 0 && (
+                  <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--color-gray-dark)', fontSize: '0.94rem', lineHeight: 1.65, display: 'grid', gap: '0.4rem' }}>
+                    {countyInfo.keyRisks.map((risk, rIdx) => (
+                      <li key={rIdx}>{risk}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            )}
+
+            {localNeighborhoods.length > 0 && (
+              <div>
+                <h3 style={{ fontSize: '1.15rem', marginBottom: '1rem', color: 'var(--color-dark)' }}>
+                  Nearby {county} County Neighborhood &amp; Subdivision Guides
+                </h3>
+                <div className="grid grid-3" style={{ gap: '1rem' }}>
+                  {localNeighborhoods.map((hood) => (
+                    <Link
+                      key={hood.slug}
+                      href={`/neighborhoods/${hood.slug}`}
+                      style={{
+                        display: 'block',
+                        padding: '1rem 1.15rem',
+                        background: '#ffffff',
+                        border: '1px solid #cbd5e1',
+                        borderRadius: 'var(--radius-md)',
+                        textDecoration: 'none',
+                        color: 'var(--color-dark)'
+                      }}
+                    >
+                      <strong style={{ display: 'block', fontSize: '0.95rem', marginBottom: '0.25rem' }}>{hood.name}</strong>
+                      <span style={{ fontSize: '0.82rem', color: 'var(--color-gray-dark)', display: 'block', marginBottom: '0.35rem' }}>
+                        {hood.city}, GA &bull; {hood.era}
+                      </span>
+                      <span style={{ fontSize: '0.82rem', color: 'var(--color-red)', fontWeight: 700 }}>
+                        Neighborhood Guide &rarr;
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ═══════════════════════════════════════════════════════════════
           7. NEARBY COMMUNITIES

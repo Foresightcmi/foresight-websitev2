@@ -65,6 +65,14 @@ export default async function ComparisonPage({ params }) {
   }
 
   const canonicalUrl = `${SITE_URL}/compare/${resolvedParams.slug}`;
+  const curIdx = Math.max(0, comparisons.findIndex(c => c.slug === item.slug));
+  const relatedComparisons = [];
+  for (let i = 1; i < comparisons.length && relatedComparisons.length < 4; i++) {
+    const nextComp = comparisons[(curIdx + i) % comparisons.length];
+    if (nextComp && nextComp.slug !== item.slug) {
+      relatedComparisons.push(nextComp);
+    }
+  }
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -316,6 +324,44 @@ export default async function ComparisonPage({ params }) {
               </details>
             ))}
           </div>
+
+          {/* Related Comparisons Mesh */}
+          {relatedComparisons.length > 0 && (
+            <div style={{ marginTop: '3rem', marginBottom: '2.5rem', padding: '2rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 'var(--radius-lg)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
+                <h2 style={{ fontSize: '1.35rem', margin: 0, color: 'var(--color-dark)' }}>
+                  Related Home Inspection Comparisons
+                </h2>
+                <Link href="/compare" style={{ color: 'var(--color-red)', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
+                  View All Comparison Guides &rarr;
+                </Link>
+              </div>
+              <div className="grid grid-2" style={{ gap: '1rem' }}>
+                {relatedComparisons.map((rc) => (
+                  <Link
+                    key={rc.slug}
+                    href={`/compare/${rc.slug}`}
+                    style={{
+                      display: 'block',
+                      padding: '1rem 1.25rem',
+                      background: '#ffffff',
+                      border: '1px solid #cbd5e1',
+                      borderRadius: 'var(--radius-md)',
+                      textDecoration: 'none',
+                      color: 'var(--color-dark)'
+                    }}
+                  >
+                    <strong style={{ display: 'block', fontSize: '0.98rem', marginBottom: '0.3rem', color: 'var(--color-dark)' }}>
+                      {rc.title}
+                    </strong>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--color-red)', fontWeight: 700 }}>
+                      Compare Side-by-Side &rarr;
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Google Preferred Source 1-Click Trust Signal */}
           <div style={{ marginTop: '2.5rem', marginBottom: '2rem' }}>

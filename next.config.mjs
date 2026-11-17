@@ -64,6 +64,24 @@ const nextConfig = {
         ],
       },
       {
+        source: '/(vip-dispatch|dispatch|warranty-dispatch|community-dispatch)\\.html',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      {
+        source: '/email-templates/(.*)',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      {
         source: '/videos/chris-avatar(.*)',
         headers: [
           {
@@ -1222,6 +1240,11 @@ const nextConfig = {
       },
       {
         source: '/repair-credit-calculator.',
+        destination: '/repair-credit-calculator',
+        permanent: true,
+      },
+      {
+        source: '/blog/repair-credit-calculator',
         destination: '/repair-credit-calculator',
         permanent: true,
       },

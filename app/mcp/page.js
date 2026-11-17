@@ -39,6 +39,35 @@ export default function McpPage() {
           <li><code>resources/list</code> &amp; <code>resources/read</code> — Read <code>llms.txt</code>, <code>#pricing-truth</code>, and <code>#service-coverage</code> directly over JSON-RPC 2.0.</li>
         </ul>
       </div>
+
+      <div style={{ background: 'rgba(15, 23, 42, 0.72)', border: '1px solid rgba(148, 163, 184, 0.2)', borderRadius: '14px', padding: '1.5rem', marginBottom: '1.5rem' }}>
+        <h2 style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>Quick Configuration &amp; JSON-RPC 2.0 Protocol</h2>
+        <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: '1rem' }}>
+          The Foresight MCP endpoint implements stateless Streamable HTTP over standard JSON-RPC 2.0, allowing AI assistants in Claude Desktop, Cursor, Google Antigravity, ChatGPT Actions, and custom real estate due diligence workflows to query verified pricing, municipal service-area boundaries, and inspection availability without scraping HTML.
+        </p>
+        <pre style={{ background: '#020617', color: '#E2E8F0', padding: '1rem', borderRadius: '10px', overflowX: 'auto', fontSize: '0.86rem', lineHeight: 1.5, border: '1px solid rgba(148, 163, 184, 0.2)', marginBottom: '1rem' }}>{`{
+  "mcpServers": {
+    "foresight-home-inspections": {
+      "url": "https://www.fhinspectionsatl.com/api/mcp"
+    }
+  }
+}`}</pre>
+        <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>
+          Every response reflects our authoritative operational standards led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119): two certified inspectors on every full residential evaluation, complimentary calibrated infrared thermal camera imaging, 4K aerial drone roof scans, same-day interactive digital report delivery, and $35,000 in combined protection ($10,000 Elite Master Warranty with $0 deductible plus the $25,000 InterNACHI Honor Guarantee). Verified Licensed Georgia Realtors with an active GREC license number qualify for a $25 courtesy Realtor adjustment.
+        </p>
+      </div>
+
+      <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
+        <Link href="/developers" className="btn btn-outline" style={{ borderColor: 'var(--color-gold)', color: 'var(--color-gold)' }}>
+          REST OpenAPI Documentation &rarr;
+        </Link>
+        <Link href="/ai-fact-sheet" className="btn btn-outline" style={{ borderColor: '#CBD5E1', color: '#CBD5E1' }}>
+          Official AI Fact Sheet &rarr;
+        </Link>
+        <Link href="/quote" className="btn btn-primary">
+          Interactive Quote Calculator &rarr;
+        </Link>
+      </div>
     </section>
   );
 }

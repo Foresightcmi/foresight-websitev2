@@ -41,7 +41,8 @@ export default function Services() {
       description: 'Dedicated 4+ hour comprehensive property inspection for luxury estates and complex architectural grounds. Led by a Certified Master Inspector® (CMI) with aerial drone scanning, thermal envelope diagnostics, and 1-on-1 strategy consultation.',
       details: ['Lead Certified Master Inspector® (CMI) + Senior Inspector', 'Extended 4+ hour dedicated evaluation window', 'Aerial drone roof & grounds scan', 'infrared thermal imaging & envelope diagnostics', 'Direct 1-on-1 post-report strategy consultation', '$10,000 Warranty protection included'],
       image: '/images/drone-2.png',
-      slug: 'estate-and-luxury-home-inspection-guide'
+      slug: 'what-does-home-inspector-look-for-buying-house',
+      serviceSlug: 'buyer-inspection'
     },
     {
       title: 'Standard Buyer Inspection',
@@ -70,7 +71,7 @@ export default function Services() {
       description: 'Independent third-party quality assurance for your newly built home. We collaborate professionally with site superintendents to perform structural pre-drywall evaluations and comprehensive final move-in inspections.',
       details: ['InterNACHI® Certified New Construction Inspector', 'Pre-drywall framing & mechanical evaluation', 'Final phase move-in inspection', 'Objective builder punch list', 'Workmanship & code-reference review'],
       image: '/images/drone-2.png',
-      slug: 'why-you-need-home-inspection-new-build',
+      slug: 'why-new-construction-needs-inspections',
       serviceSlug: 'new-construction-inspection',
       briefing: {
         title: 'New Construction Inspections',
@@ -238,7 +239,7 @@ export default function Services() {
       description: 'Standard home inspections are diagnostic only per InterNACHI Standards of Practice. When requested, Foresight provides empirical contractor repair cost estimates and trade schedules (regional Metro Atlanta contractor data) formatted for standard Georgia repair amendment negotiation.',
       details: ['Trade labor & materials breakdowns', 'Sample Georgia repair amendment language', 'Available as an add-on for Foresight clients', 'Available for standalone outside report reviews'],
       image: '/images/ac-pic.png',
-      slug: 'repair-credit-calculator',
+      guideHref: '/repair-credit-calculator',
       briefing: {
         title: 'Contractor Repair Cost & Pricing Estimates',
         duration: '45-Sec Video',
@@ -249,6 +250,16 @@ export default function Services() {
           'Includes ready-to-copy repair amendment wording to secure maximum seller credits.'
         ]
       }
+    },
+    {
+      title: 'Municipal & Pre-Rehab Property Inspections',
+      price: 'Call for Quote',
+      priceNote: 'DeKalb Housing Bond, Housing Authorities & Non-Profit Rehab Scope',
+      description: 'Independent third-party pre-rehab baseline assessments and post-rehab contractor compliance sign-offs supporting municipal housing programs and affordable housing developers across DeKalb County and Metro Atlanta.',
+      details: ['Pre-rehab scope documentation', 'Post-rehab draw verification', 'DeKalb Low-Flow Plumbing compliance', 'CMI-led two-inspector team'],
+      image: '/images/crawlspace.png',
+      slug: 'pre-rehab-post-rehab-inspections-dekalb',
+      serviceSlug: 'municipal-rehab-inspections'
     }
   ];
 
@@ -578,8 +589,8 @@ export default function Services() {
                     <Link href="/quote" className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', opacity: 0.8, fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
                       Calculate Price
                     </Link>
-                    {s.slug && (
-                      <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', fontSize: '0.9rem', padding: '0.5rem 1rem', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)' }}>
+                    {(s.guideHref || s.slug) && (
+                      <Link href={s.guideHref || `/blog/${s.slug}`} className="btn btn-outline" style={{ width: '100%', borderWidth: '1px', fontSize: '0.9rem', padding: '0.5rem 1rem', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)' }}>
                         In-Depth Guide
                       </Link>
                     )}
@@ -666,8 +677,8 @@ export default function Services() {
                   {s.briefing && (
                     <ServiceVideoTrigger briefing={s.briefing} label={s.briefing.duration || "45-Sec Video"} />
                   )}
-                  {s.slug && (
-                    <Link href={`/blog/${s.slug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
+                  {(s.guideHref || s.slug) && (
+                    <Link href={s.guideHref || `/blog/${s.slug}`} className="btn btn-outline" style={{ whiteSpace: 'nowrap', width: '100%', textAlign: 'center', borderColor: 'var(--color-gray-dark)', color: 'var(--color-gray-dark)', fontSize: '0.85rem', padding: '0.5rem 1rem' }}>
                       Read Guide
                     </Link>
                   )}

@@ -41,6 +41,10 @@ export default function MunicipalRehabInspections() {
     "areaServed": {
       "@type": "AdministrativeArea",
       "name": "DeKalb County & Metro Atlanta"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#aeo-direct-answer", "h1"]
     }
   };
 
@@ -58,6 +62,19 @@ export default function MunicipalRehabInspections() {
           <p style={{ color: 'var(--color-gray-mid)', maxWidth: '800px', margin: '0 auto', fontSize: '1.15rem', lineHeight: 1.6 }}>
             Providing independent third-party property evaluations, pre-rehab scope assessments, and post-rehab contractor compliance sign-offs for municipal programs, housing authorities, and non-profit development partners across DeKalb County and Metro Atlanta.
           </p>
+        </div>
+      </section>
+
+      <section className="section bg-white" style={{ padding: '2.5rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container" style={{ maxWidth: '920px' }}>
+          <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderLeft: '4px solid var(--color-red)', borderRadius: '10px', padding: '1.75rem 2rem' }}>
+            <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--color-dark)', marginBottom: '0.6rem' }}>
+              Who provides certified pre-rehab and post-rehab municipal property inspections in DeKalb County and Metro Atlanta?
+            </h2>
+            <p id="aeo-direct-answer" style={{ margin: 0, color: 'var(--color-gray-dark)', lineHeight: 1.7 }}>
+              Foresight Home Inspections (CMI #MICB-1082, InterNACHI #NACHI18051119) performs independent third-party pre-rehab baseline assessments, milestone progress inspections, and post-rehab final draw sign-offs across DeKalb County and 20 Metro Atlanta counties (Call (678) 480-2110 for Quote).
+            </p>
+          </div>
         </div>
       </section>
 
@@ -98,6 +115,39 @@ export default function MunicipalRehabInspections() {
                   <span><strong>infrared thermal & Moisture Diagnostics:</strong> Thermal scanning for active leaks, insulation voids, and electrical fire risks.</span>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <div className="card" style={{ padding: '2.25rem', marginBottom: '3rem', background: 'var(--color-white)' }}>
+            <h2 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>Four-Stage Municipal &amp; Grant Rehabilitation Workflow</h2>
+            <p style={{ color: 'var(--color-gray-dark)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+              Publicly funded owner-occupied rehabilitation grants, CDBG and HOME program allocations, land-bank dispositions, and non-profit affordable housing renovations require objective field documentation at every construction milestone so agency administrators protect taxpayer capital and resident safety:
+            </p>
+            <div className="grid grid-2" style={{ gap: '1.25rem' }}>
+              <div style={{ padding: '1.25rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                <strong style={{ display: 'block', color: 'var(--color-dark)', marginBottom: '0.35rem' }}>1. Pre-Rehab Scope &amp; Hazard Baseline</strong>
+                <p style={{ margin: 0, fontSize: '0.94rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
+                  Two certified inspectors evaluate roof life, structural framing, electrical panels, supply and drain plumbing, HVAC equipment, crawlspace moisture, and life-safety egress to establish a photo-verified scope of work before contractor bidding.
+                </p>
+              </div>
+              <div style={{ padding: '1.25rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                <strong style={{ display: 'block', color: 'var(--color-dark)', marginBottom: '0.35rem' }}>2. Rough-In &amp; Open-Wall Milestone Review</strong>
+                <p style={{ margin: 0, fontSize: '0.94rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
+                  Mid-project verification of structural repairs, flashing details, PEX or copper re-piping, ductwork, and electrical branch circuits prior to insulation and drywall concealment.
+                </p>
+              </div>
+              <div style={{ padding: '1.25rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                <strong style={{ display: 'block', color: 'var(--color-dark)', marginBottom: '0.35rem' }}>3. Calibrated Infrared Thermal &amp; Drone Verification</strong>
+                <p style={{ margin: 0, fontSize: '0.94rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
+                  Non-invasive calibrated infrared thermal camera imaging and 4K aerial drone roof scans confirm envelope water-tightness, insulation continuity, and proper HVAC temperature splits.
+                </p>
+              </div>
+              <div style={{ padding: '1.25rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                <strong style={{ display: 'block', color: 'var(--color-dark)', marginBottom: '0.35rem' }}>4. Post-Rehab Final Draw &amp; Unincorporated DeKalb Low-Flow Sign-Off</strong>
+                <p style={{ margin: 0, fontSize: '0.94rem', color: 'var(--color-gray-dark)', lineHeight: 1.6 }}>
+                  Same-day interactive digital report confirming punch-list completion before final retainage release, plus official Low-Flow Plumbing Certificate verification where required in unincorporated DeKalb County.
+                </p>
+              </div>
             </div>
           </div>
 

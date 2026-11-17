@@ -118,7 +118,6 @@ ${videos.map(v => `  <url>
       <video:title>${escapeXml(v.title)}</video:title>
       <video:description>${escapeXml(v.description)}</video:description>
       <video:content_loc>${v.content}</video:content_loc>
-      <video:player_loc>${v.player}</video:player_loc>
       <video:duration>${v.duration}</video:duration>
       <video:publication_date>${v.date}</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>

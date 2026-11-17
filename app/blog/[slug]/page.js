@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import AuthorBio from '../../components/AuthorBio';
 import TableOfContents from '../../components/TableOfContents';
 import GooglePreferredSource from '../../components/GooglePreferredSource';
@@ -56,15 +57,7 @@ export default async function BlogPost({ params }) {
   const post = posts.find(p => p.slug === resolvedParams.slug);
 
   if (!post) {
-    return (
-      <section className="section bg-gray-light" style={{ textAlign: 'center' }}>
-        <div className="container">
-          <h1>Post Not Found</h1>
-          <p style={{ marginBottom: '2rem' }}>Sorry, we couldn't find that article.</p>
-          <Link href="/blog" className="btn btn-primary">Back to Blog</Link>
-        </div>
-      </section>
-    );
+    notFound();
   }
 
   const wordCount = (post.content || '').replace(/<[^>]*>/g, '').split(/\s+/).length;
@@ -202,10 +195,26 @@ export default async function BlogPost({ params }) {
     "@graph": schemaGraph
   };
 
-  // Smart Category-Matching Related Posts Engine
-  const sameCategoryPosts = posts.filter(p => p.category === post.category && p.slug !== post.slug);
-  const otherPosts = posts.filter(p => p.category !== post.category && p.slug !== post.slug);
-  const relatedPosts = [...sameCategoryPosts, ...otherPosts].slice(0, 3);
+  // Deterministic Circular Related Posts Engine (ensures all 44 posts receive >=4 contextual inbound links)
+  const postIdx = Math.max(0, posts.findIndex(p => p.slug === post.slug));
+  const sameCategoryPool = posts.filter(p => p.category === post.category);
+  const sameCatIdx = Math.max(0, sameCategoryPool.findIndex(p => p.slug === post.slug));
+  const relatedPosts = [];
+  const usedSlugs = new Set([post.slug]);
+  for (let i = 1; i < sameCategoryPool.length && relatedPosts.length < 3; i++) {
+    const cand = sameCategoryPool[(sameCatIdx + i) % sameCategoryPool.length];
+    if (cand && !usedSlugs.has(cand.slug)) {
+      usedSlugs.add(cand.slug);
+      relatedPosts.push(cand);
+    }
+  }
+  for (let i = 1; i < posts.length && relatedPosts.length < 4; i++) {
+    const cand = posts[(postIdx + i * 7) % posts.length];
+    if (cand && !usedSlugs.has(cand.slug)) {
+      usedSlugs.add(cand.slug);
+      relatedPosts.push(cand);
+    }
+  }
 
   return (
     <>

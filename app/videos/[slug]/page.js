@@ -152,7 +152,7 @@ export const SERVICE_VIDEOS = [
     durationSeconds: 31,
     durationDisplay: '0:31',
     uploadDate: '2026-10-12T00:00:00Z',
-    serviceHref: '/services',
+    serviceHref: '/services/str-short-term-rental-inspection',
     startingPrice: 'Call for Quote',
     takeaways: [
       'Complete municipal STR life-safety and building code evaluation for Atlanta, Fulton, DeKalb, and Metro Atlanta hosts (Call for Quote).',
@@ -221,7 +221,6 @@ export default async function ServiceVideoWatchPage({ params }) {
         uploadDate: video.uploadDate,
         duration: video.durationIso,
         contentUrl: `${SITE_URL}${video.videoUrl}`,
-        embedUrl: pageUrl,
         inLanguage: 'en-US',
         author: {
           '@type': 'Person',
@@ -319,7 +318,7 @@ export default async function ServiceVideoWatchPage({ params }) {
             border: '1px solid rgba(255, 255, 255, 0.1)',
             borderRadius: '14px',
             padding: '1.75rem',
-            marginBottom: '2.5rem',
+            marginBottom: '2rem',
           }}
         >
           <h2 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#FFFFFF', marginTop: 0, marginBottom: '1rem' }}>
@@ -330,6 +329,72 @@ export default async function ServiceVideoWatchPage({ params }) {
               <li key={idx}>{point}</li>
             ))}
           </ul>
+        </section>
+
+        {/* Detailed Georgia Due Diligence & Two-Inspector Field Context */}
+        <section
+          style={{
+            background: 'rgba(15, 23, 42, 0.65)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '14px',
+            padding: '1.75rem',
+            marginBottom: '2rem',
+            lineHeight: 1.75,
+            color: '#CBD5E1',
+          }}
+        >
+          <h2 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#FFFFFF', marginTop: 0, marginBottom: '0.85rem' }}>
+            How Foresight Executes {video.shortTitle} Across Metro Atlanta
+          </h2>
+          <p style={{ marginTop: 0, marginBottom: '1rem' }}>
+            Georgia does not license home inspectors at the state level, which makes verifiable field credentials and structured diagnostic workflows critical before your Georgia Purchase Agreement due diligence window closes. Every Foresight evaluation is governed by Certified Master Inspector Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119) following InterNACHI Standards of Practice across 87 Metro Atlanta municipalities and 20 counties.
+          </p>
+          <p style={{ marginTop: 0, marginBottom: '1rem' }}>
+            On standard residential inspections (starting from $345 for single-family homes, from $295 for condos and townhomes, from $275 for Phase 1 Pre-Drywall, and from $400 for Final New Construction; Call (678) 480-2110 for Quote on specialty and auxiliary evaluations), Foresight dispatches two certified inspectors on every property for double the diagnostic depth and zero solo-inspector fatigue. Full residential inspections include complimentary calibrated infrared thermal camera scans, 4K aerial drone roof photography where airspace and weather permit, a same-day interactive digital report with our Digital Repair Request Builder, and $35,000 in combined protection ($10,000 Elite Master Warranty with $0 deductible plus the $25,000 InterNACHI Honor Guarantee).
+          </p>
+          <p style={{ margin: 0 }}>
+            Documenting material structural, roofing, electrical, plumbing, or environmental defects early gives homebuyers and Realtors objective regional contractor cost data ($1,250 to $14,200+ in typical major-system repair exposure) to support a clean Georgia Repair Amendment seller credit negotiation before closing. Explore our <Link href="/repair-credit-calculator" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Repair Credit Calculator</Link>, <Link href="/homebuyer-red-flags" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Homebuyer Red-Flag Symptom Guide</Link>, or <Link href="/service-areas" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>87 Metro Atlanta City Guides</Link>.
+          </p>
+        </section>
+
+        {/* Related Field Videos Mesh */}
+        <section
+          style={{
+            background: 'rgba(15, 23, 42, 0.55)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderRadius: '14px',
+            padding: '1.5rem 1.75rem',
+            marginBottom: '2.5rem',
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>
+              More CMI Field Inspection Briefings
+            </h2>
+            <Link href="/videos" style={{ color: 'var(--color-gold)', fontSize: '0.88rem', fontWeight: 700, textDecoration: 'none' }}>
+              All Field Videos &rarr;
+            </Link>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.85rem' }}>
+            {SERVICE_VIDEOS.filter((v) => v.slug !== video.slug).slice(0, 4).map((rv) => (
+              <Link
+                key={rv.slug}
+                href={`/videos/${rv.slug}`}
+                style={{
+                  display: 'block',
+                  padding: '0.9rem 1rem',
+                  borderRadius: '10px',
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  color: '#F8FAFC',
+                  textDecoration: 'none',
+                }}
+              >
+                <strong style={{ display: 'block', fontSize: '0.92rem', marginBottom: '0.25rem' }}>{rv.shortTitle}</strong>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold)', fontWeight: 600 }}>Watch {rv.durationDisplay} Briefing &rarr;</span>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* CTA Bar */}

@@ -68,6 +68,25 @@ export default async function ColonyQuestionPage({ params }) {
   const colony = data.colonies.find(c => c.id === item.colonyId) || {};
   const canonicalUrl = `${SITE_URL}/faq/${resolvedParams.slug}`;
 
+  // Deterministically ensure every FAQ authority page links to >= 4 sibling FAQ guides across the matrix
+  const allQuestions = Array.isArray(data.questions) ? data.questions : [];
+  const qIdx = Math.max(0, allQuestions.findIndex(q => q.slug === item.slug));
+  const bridgeMap = new Map();
+  if (Array.isArray(item.topicalBridges)) {
+    for (const b of item.topicalBridges) {
+      if (b && b.slug && b.slug !== item.slug && allQuestions.some(q => q.slug === b.slug)) {
+        bridgeMap.set(b.slug, b);
+      }
+    }
+  }
+  for (let i = 1; i < allQuestions.length && bridgeMap.size < 4; i++) {
+    const nextQ = allQuestions[(qIdx + i) % allQuestions.length];
+    if (nextQ && nextQ.slug !== item.slug && !bridgeMap.has(nextQ.slug)) {
+      bridgeMap.set(nextQ.slug, { slug: nextQ.slug, title: nextQ.question });
+    }
+  }
+  const mergedBridges = [...bridgeMap.values()];
+
   // Structured Data Schema: FAQPage + Article + Breadcrumb
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -252,13 +271,13 @@ export default async function ColonyQuestionPage({ params }) {
         )}
 
         {/* TOPICAL BRIDGES (CONNECTING ADJACENT COLONY CIRCLES) */}
-        {item.topicalBridges && item.topicalBridges.length > 0 && (
+        {mergedBridges.length > 0 && (
           <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '2.5rem', marginBottom: '3rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.25rem' }}>
               Related Inspection Authority Questions &amp; Building Science Guides:
             </h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
-              {item.topicalBridges.map((bridge, bIdx) => (
+              {mergedBridges.map((bridge, bIdx) => (
                 <Link
                   key={bIdx}
                   href={`/faq/${bridge.slug}`}

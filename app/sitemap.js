@@ -68,12 +68,28 @@ export default async function sitemap() {
     { loc: '/terms', changefreq: 'yearly', priority: 0.3 }
   ];
   
-  const now = new Date();
+  const getDataModDate = (dataFileName, fallbackIso = '2026-11-16') => {
+    try {
+      const fullPath = path.join(process.cwd(), 'data', dataFileName);
+      if (fs.existsSync(fullPath)) {
+        return fs.statSync(fullPath).mtime.toISOString().split('T')[0];
+      }
+    } catch {}
+    return fallbackIso;
+  };
+
+  const now = getDataModDate('truth.json', '2026-11-16');
+  const staticMod = '2026-11-16';
+  const defectsMod = getDataModDate('defects-pseo.json', now);
+  const comparisonsMod = getDataModDate('comparisons-pseo.json', now);
+  const neighborhoodsMod = getDataModDate('neighborhoods-pseo.json', now);
+  const countiesMod = getDataModDate('counties-pseo.json', now);
+  const colonyMod = getDataModDate('seo-colony-matrix.json', now);
   
   for (const page of staticPages) {
     routes.push({
       url: `${baseUrl}${page.loc}`,
-      lastModified: now,
+      lastModified: staticMod,
       changeFrequency: page.changefreq,
       priority: page.priority,
     });
@@ -154,7 +170,7 @@ export default async function sitemap() {
       for (const d of defects) {
         routes.push({
           url: `${baseUrl}/defects/${d.slug}`,
-          lastModified: now,
+          lastModified: defectsMod,
           changeFrequency: 'monthly',
           priority: 0.8,
         });
@@ -172,7 +188,7 @@ export default async function sitemap() {
       for (const c of comparisons) {
         routes.push({
           url: `${baseUrl}/compare/${c.slug}`,
-          lastModified: now,
+          lastModified: comparisonsMod,
           changeFrequency: 'monthly',
           priority: 0.8,
         });
@@ -190,7 +206,7 @@ export default async function sitemap() {
       for (const n of neighborhoods) {
         routes.push({
           url: `${baseUrl}/neighborhoods/${n.slug}`,
-          lastModified: now,
+          lastModified: neighborhoodsMod,
           changeFrequency: 'monthly',
           priority: 0.85,
         });
@@ -208,7 +224,7 @@ export default async function sitemap() {
       for (const c of counties) {
         routes.push({
           url: `${baseUrl}/service-areas/counties/${c.slug}`,
-          lastModified: now,
+          lastModified: countiesMod,
           changeFrequency: 'monthly',
           priority: 0.85,
         });
@@ -228,7 +244,7 @@ export default async function sitemap() {
         if (!q || !q.slug) continue;
         routes.push({
           url: encodeURI(`${baseUrl}/faq/${q.slug}`),
-          lastModified: now,
+          lastModified: colonyMod,
           changeFrequency: 'monthly',
           priority: 0.8,
         });

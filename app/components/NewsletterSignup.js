@@ -63,7 +63,7 @@ export default function NewsletterSignup() {
               <a
                 href="/dossiers/atlanta-buyer-inspection-checklist.html"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 style={{
                   backgroundColor: 'var(--color-gold)',
                   color: 'var(--color-dark)',

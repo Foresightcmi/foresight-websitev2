@@ -36,21 +36,62 @@ export default function RelatedServiceAreas({ currentCitySlug, serviceSlug }) {
 
   const toSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
+  const currentIndex = Math.max(0, cities.findIndex((c) => toSlug(c['City Name']) === currentCitySlug));
+  const currentCity = cities[currentIndex] || null;
+  const curLat = parseFloat(currentCity?.Latitude) || 33.7490;
+  const curLng = parseFloat(currentCity?.Longitude) || -84.3880;
+  const curCounty = currentCity?.County || '';
+
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const haversineKm = (lat1, lon1, lat2, lon2) => {
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  };
+
   const filteredCities = cities.filter((c) => toSlug(c['City Name']) !== currentCitySlug);
 
-  // Deterministic Leak Hunter Priority Sort: Priority GSC strike-zone cities first, then alphabetical
-  const sortedCities = [...filteredCities].sort((a, b) => {
-    const slugA = toSlug(a['City Name']);
-    const slugB = toSlug(b['City Name']);
-    const idxA = LEAK_HUNTER_PRIORITY_SLUGS.indexOf(slugA);
-    const idxB = LEAK_HUNTER_PRIORITY_SLUGS.indexOf(slugB);
-    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
-    if (idxA !== -1) return -1;
-    if (idxB !== -1) return 1;
-    return slugA.localeCompare(slugB);
-  });
+  // 1. Deterministic Geographic + County Nearest-Neighbor Mesh (10 closest neighbors so all 87 cities receive inbound equity)
+  const nearestNeighbors = [...filteredCities]
+    .sort((a, b) => {
+      const slugA = toSlug(a['City Name']);
+      const slugB = toSlug(b['City Name']);
+      const distA = haversineKm(curLat, curLng, parseFloat(a.Latitude) || 33.7490, parseFloat(a.Longitude) || -84.3880) - (curCounty && a.County === curCounty ? 8 : 0);
+      const distB = haversineKm(curLat, curLng, parseFloat(b.Latitude) || 33.7490, parseFloat(b.Longitude) || -84.3880) - (curCounty && b.County === curCounty ? 8 : 0);
+      if (Math.abs(distA - distB) > 0.01) return distA - distB;
+      return slugA.localeCompare(slugB);
+    })
+    .slice(0, 10);
 
-  const selectedCities = sortedCities.slice(0, 15);
+  // 2. Deterministic Leak Hunter Priority Strike-Zone Rotation (5 priority GSC hubs rotated by currentIndex, zero Math.random)
+  const chosenSlugs = new Set(nearestNeighbors.map((c) => toSlug(c['City Name'])));
+  const priorityCities = [];
+  for (let i = 0; i < LEAK_HUNTER_PRIORITY_SLUGS.length && priorityCities.length < 5; i++) {
+    const pSlug = LEAK_HUNTER_PRIORITY_SLUGS[(currentIndex + i) % LEAK_HUNTER_PRIORITY_SLUGS.length];
+    if (pSlug === currentCitySlug || chosenSlugs.has(pSlug)) continue;
+    const match = filteredCities.find((c) => toSlug(c['City Name']) === pSlug);
+    if (match) {
+      chosenSlugs.add(pSlug);
+      priorityCities.push(match);
+    }
+  }
+
+  // Top up deterministically if needed so every page links to 15 distinct Metro Atlanta cities
+  const selectedCities = [...nearestNeighbors, ...priorityCities];
+  if (selectedCities.length < 15) {
+    for (const c of filteredCities) {
+      const s = toSlug(c['City Name']);
+      if (!chosenSlugs.has(s)) {
+        chosenSlugs.add(s);
+        selectedCities.push(c);
+        if (selectedCities.length === 15) break;
+      }
+    }
+  }
 
   return (
     <div style={{ marginTop: '4rem', padding: '3rem 0', borderTop: '1px solid var(--color-gray-mid)' }}>

@@ -1144,7 +1144,7 @@ export default function RiskScannerClient() {
                       <a
                         href="/dossiers/atlanta-buyer-inspection-checklist.html"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="nofollow noopener noreferrer"
                         style={{
                           background: 'rgba(255,255,255,0.1)',
                           color: '#FFFFFF',

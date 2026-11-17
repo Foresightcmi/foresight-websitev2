@@ -45,6 +45,7 @@ export default function Breadcrumbs({ items }) {
   let breadcrumbItems = items;
   if (!breadcrumbItems) {
     if (!pathname || pathname === '/') return null;
+    if (pathname.startsWith('/checkout') || pathname.startsWith('/studio') || pathname.startsWith('/dashboard')) return null;
 
     const segments = pathname.split('/').filter(Boolean);
     breadcrumbItems = [{ label: 'Home', href: '/' }];

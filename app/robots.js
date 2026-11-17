@@ -19,7 +19,11 @@ export default function robots() {
     '/dossiers',
     '/dossiers/',
     '/warranty-dossiers',
-    '/warranty-dossiers/'
+    '/warranty-dossiers/',
+    '/studio',
+    '/checkout/',
+    '/community-dispatch.html',
+    '/email-templates/'
   ];
 
   return {

@@ -44,8 +44,24 @@ async function main() {
     `${SITE_URL}/llms-full.txt`,
     `${SITE_URL}/blog`,
     `${SITE_URL}/services`,
-    `${SITE_URL}/service-areas`
+    `${SITE_URL}/services/municipal-rehab-inspections`,
+    `${SITE_URL}/service-areas`,
+    `${SITE_URL}/service-areas/counties`,
+    `${SITE_URL}/faq`,
+    `${SITE_URL}/review`,
+    `${SITE_URL}/mcp`,
+    `${SITE_URL}/privacy`,
+    `${SITE_URL}/terms`
   );
+
+  // Add all 26 SEO Colony FAQ guides
+  const colonyFile = path.join(__dirname, '..', 'data', 'seo-colony-matrix.json');
+  if (fs.existsSync(colonyFile)) {
+    const colony = JSON.parse(fs.readFileSync(colonyFile, 'utf8'));
+    for (const q of (colony.questions || [])) {
+      if (q && q.slug) urls.push(`${SITE_URL}/faq/${q.slug}`);
+    }
+  }
 
   // Add recent blog posts
   const postsFile = path.join(__dirname, '..', 'data', 'posts.json');
@@ -190,14 +206,6 @@ async function main() {
         console.log(`    ${endpoint}: ❌ ${err.message}`);
       }
     }
-  }
-
-  // Also ping Google
-  try {
-    const googleRes = await fetch(`https://www.google.com/ping?sitemap=${SITE_URL}/sitemap.xml`);
-    console.log(`  Google Sitemap Ping: ${googleRes.status} ✅`);
-  } catch {
-    console.log(`  Google Sitemap Ping: ❌`);
   }
 
   console.log('\n✅ Done!');

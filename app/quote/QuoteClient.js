@@ -1460,7 +1460,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                         <a
                           href="/dossiers/atlanta-buyer-inspection-checklist.html"
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="nofollow noopener noreferrer"
                           style={{ color: 'var(--color-gold)', fontSize: '0.8rem', fontWeight: 800, textDecoration: 'underline' }}
                         >
                           📄 Open &amp; Print 25-Point Buyer Inspection Checklist &rarr;
