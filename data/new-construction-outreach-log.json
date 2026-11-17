@@ -78,5 +78,45 @@
     "messageId": "<08f9abc5-f056-944b-7ddb-7323bdf08712@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7868440.html",
     "sentAt": "2026-11-16T23:19:06.681Z"
+  },
+  {
+    "recordId": "NC-7868433",
+    "address": "357 Torrey Pines Circle, Villa Rica, GA 30180",
+    "recipient": "wbarker@discoverartisan.com",
+    "messageId": "<829bbc6b-c248-e08e-6541-2b19ccbc7572@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7868433.html",
+    "sentAt": "2026-11-17T22:11:01.287Z"
+  },
+  {
+    "recordId": "NC-7868437",
+    "address": "680 Carriage Drive, Sandy Springs, GA 30328",
+    "recipient": "jodi.mekyten@bhhsgeorgia.com",
+    "messageId": "<b3c52bce-5059-8f39-f415-fac3abfd582b@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7868437.html",
+    "sentAt": "2026-11-17T22:11:02.715Z"
+  },
+  {
+    "recordId": "NC-7858306",
+    "address": "4181 Ledan Extension, Gainesville, GA 30506",
+    "recipient": "deborahbarlowproperties@gmail.com",
+    "messageId": "<2414c80c-6c07-f8b2-8ac2-df44e832546a@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7858306.html",
+    "sentAt": "2026-11-17T22:11:03.831Z"
+  },
+  {
+    "recordId": "NC-7848695",
+    "address": "224 Knollwood Bend, Canton, GA 30015",
+    "recipient": "tyoung@tratonhomes.com",
+    "messageId": "<587324a3-a4d2-3c39-70a5-7a8c63a409f1@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7848695.html",
+    "sentAt": "2026-11-17T22:11:04.937Z"
+  },
+  {
+    "recordId": "NC-7775257",
+    "address": "3563 Northside Drive NW, Atlanta, GA 30305",
+    "recipient": "ben@buckhead.com",
+    "messageId": "<0875deb6-fdaf-f466-e4a7-6b3bb6ea6122@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7775257.html",
+    "sentAt": "2026-11-17T22:11:06.167Z"
   }
 ]
