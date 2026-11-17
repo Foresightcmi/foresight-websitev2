@@ -283,7 +283,8 @@ def main():
         "competitors": competitor_reports
     }
     
-    out_file = r"C:\Users\fores\.gemini\antigravity\scratch\foresight-website\data\competitor-deep-dive.json"
+    website_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out_file = os.path.join(website_dir, "data", "competitor-deep-dive.json")
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(out_data, f, indent=2, ensure_ascii=False)
         

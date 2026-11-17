@@ -206,6 +206,7 @@ def parse_gsc_xlsx(xlsx_path, output_json_path):
         print(f"Zero-Click High-Impression Pages: {len(zero_click_high_impression_pages)}")
 
 if __name__ == '__main__':
+    website_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     xlsx = r'C:\Users\fores\.gemini\antigravity\brain\57c20a95-6534-416b-af4b-8789bb6046c2\.user_uploaded\media_1791501004126_84084867.xlsx'
-    out = r'C:\Users\fores\.gemini\antigravity\scratch\foresight-website\data\analytics\gsc-3month-official-export.json'
+    out = os.path.join(website_dir, 'data', 'analytics', 'gsc-3month-official-export.json')
     parse_gsc_xlsx(xlsx, out)

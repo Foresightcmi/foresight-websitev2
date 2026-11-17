@@ -1,7 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const nextServerDir = 'C:/Users/fores/.gemini/antigravity/scratch/foresight-website/.next/server/app';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const nextServerDir = path.resolve(__dirname, '..', '.next', 'server', 'app');
 
 function scanHtmlFiles(dir) {
   if (!fs.existsSync(dir)) return;

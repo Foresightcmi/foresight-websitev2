@@ -1,28 +1,29 @@
-# Antigravity 2.0 - Universal Scheduled Task Registrar
-# Hardens all autonomous background engines to OS-level persistence
+# Foresight Home Inspections - Universal Windows Scheduled Task Registrar (foresight-websitev2)
+# Hardens local SEO, Competitor Scorecard, Social Queue & Omni-Radar persistence alongside 24/7 GitHub Cloud Actions
 
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -WakeToRun -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 3)
+$repoDir = 'C:\Users\fores\.gemini\antigravity\scratch\foresight-websitev2'
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 2)
 
-# 1. Daily Due Diligence, FirstIndex SEO & Campaign Bridge (Daily at 9:30 AM — inside 9 AM-6 PM SMTP window)
-$actionDD = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/c C:\Users\fores\.gemini\antigravity\scratch\foresight-website\run_due_diligence_service.bat' -WorkingDirectory 'C:\Users\fores\.gemini\antigravity\scratch\foresight-website'
+# 1. Daily SEO, AEO & Social Media Research Agency (Daily at 9:30 AM ET)
+$actionAgency = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `"$repoDir\run_seo_social_agency_service.bat`"" -WorkingDirectory $repoDir
 $triggerDaily930AM = New-ScheduledTaskTrigger -Daily -At '09:30AM'
-$triggerLogon = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 
-Register-ScheduledTask -TaskName 'Foresight_Daily_DueDiligence_Scout' -Action $actionDD -Trigger @($triggerDaily930AM, $triggerLogon) -Settings $settings -Description 'Autonomous Daily Due Diligence, FirstIndex SEO Dispatcher & Email Campaign Bridge for Foresight Home Inspections' -Force | Out-Null
-Write-Host "Registered Foresight_Daily_DueDiligence_Scout (Daily 9:30 AM + Auto Catch-Up)"
+Register-ScheduledTask -TaskName 'Foresight_SEO_Social_Agency_Daily' -Action $actionAgency -Trigger @($triggerDaily930AM) -Settings $settings -Description 'Daily Foresight Website SEO, GSC Leak Hunter, Chameleonic Competitor Scorecard, Social Queue Sync & IndexNow Pinger' -Force | Out-Null
+Write-Host "Registered Foresight_SEO_Social_Agency_Daily (Daily 9:30 AM ET)"
 
-# 2. Weekly SEO Dominance Engine (Mondays at 9:00 AM)
-$actionSEO = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/c C:\Users\fores\.gemini\antigravity\scratch\foresight-website\run_weekly_seo_service.bat' -WorkingDirectory 'C:\Users\fores\.gemini\antigravity\scratch\foresight-website'
+# 2. Weekly SEO Dominance & GBP Kit Engine (Mondays at 9:00 AM ET)
+$actionSEO = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `"$repoDir\run_weekly_seo_service.bat`"" -WorkingDirectory $repoDir
 $triggerMon9AM = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday -At '09:00AM'
 
-Register-ScheduledTask -TaskName 'Foresight_Weekly_SEO_Dominance' -Action $actionSEO -Trigger @($triggerMon9AM) -Settings $settings -Description 'Autonomous Weekly Monday SEO Dominance Pipeline, Striking Distance Keywords & Next.js Build' -Force | Out-Null
-Write-Host "Registered Foresight_Weekly_SEO_Dominance (Mondays 9:00 AM + Auto Catch-Up)"
+Register-ScheduledTask -TaskName 'Foresight_Weekly_SEO_Dominance' -Action $actionSEO -Trigger @($triggerMon9AM) -Settings $settings -Description 'Weekly Monday SEO Dominance Pipeline, GBP Store 264545 Weekly Kit & Chameleonic Scorecard' -Force | Out-Null
+Write-Host "Registered Foresight_Weekly_SEO_Dominance (Mondays 9:00 AM ET)"
 
-# 3. Monthly Strategic Growth Audit (1st of each Month at 10:00 AM)
-$actionGrowth = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/c C:\Users\fores\.gemini\antigravity\scratch\foresight-website\run_monthly_growth_service.bat' -WorkingDirectory 'C:\Users\fores\.gemini\antigravity\scratch\foresight-website'
-$triggerMonthly10AM = New-ScheduledTaskTrigger -Daily -At '10:00AM'
+# 3. Twice-Daily Agent-Reach 10-Medium Social & YouTube Demand Radar (7:30 AM & 12:30 PM ET)
+$actionRadar = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `"$repoDir\run_agent_reach_radar_service.bat`"" -WorkingDirectory $repoDir
+$trigger730AM = New-ScheduledTaskTrigger -Daily -At '07:30AM'
+$trigger1230PM = New-ScheduledTaskTrigger -Daily -At '12:30PM'
 
-Register-ScheduledTask -TaskName 'Foresight_Monthly_Growth_Audit' -Action $actionGrowth -Trigger @($triggerMonthly10AM) -Settings $settings -Description 'Autonomous Monthly Strategic SEO & Competitor Growth Reconnaissance' -Force | Out-Null
-Write-Host "Registered Foresight_Monthly_Growth_Audit (10:00 AM + Auto Catch-Up)"
+Register-ScheduledTask -TaskName 'Foresight_AgentReach_Omni_Radar' -Action $actionRadar -Trigger @($trigger730AM, $trigger1230PM) -Settings $settings -Description 'Twice-Daily 10-Medium Social & YouTube Realtor Demand Radar (Zero-Cookie Public-Web Mode)' -Force | Out-Null
+Write-Host "Registered Foresight_AgentReach_Omni_Radar (Daily 7:30 AM & 12:30 PM ET)"
 
-Write-Host "All Foresight autonomous background tasks are now 100% hardened in Windows OS Task Scheduler!"
+Write-Host "All Foresight local SEO & Social Agency background tasks are registered in Windows Task Scheduler!"

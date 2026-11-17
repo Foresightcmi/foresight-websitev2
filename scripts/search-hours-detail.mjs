@@ -1,5 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.resolve(__dirname, '..');
 
 function searchHoursContent(dir) {
   const files = fs.readdirSync(dir);
@@ -26,4 +30,4 @@ function searchHoursContent(dir) {
   }
 }
 
-searchHoursContent('C:/Users/fores/.gemini/antigravity/scratch/foresight-website');
+searchHoursContent(ROOT_DIR);

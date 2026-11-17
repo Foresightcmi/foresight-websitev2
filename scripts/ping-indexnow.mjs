@@ -29,7 +29,7 @@ async function main() {
     `${SITE_URL}/neighborhoods`,
   ];
 
-  // Add all 22 concentric neighborhood hub pages
+  // Add all concentric neighborhood hub pages
   const neighborhoodsFile = path.join(__dirname, '..', 'data', 'neighborhoods-pseo.json');
   if (fs.existsSync(neighborhoodsFile)) {
     const neighborhoods = JSON.parse(fs.readFileSync(neighborhoodsFile, 'utf8'));
@@ -205,6 +205,17 @@ async function main() {
       } catch (err) {
         console.log(`    ${endpoint}: ❌ ${err.message}`);
       }
+    }
+  }
+
+  // Verify live XML sitemaps return 200 OK (replaces deprecated Google /ping endpoint)
+  console.log('\n🗺️  Verifying live XML sitemaps:');
+  for (const sm of [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/sitemap-images.xml`, `${SITE_URL}/sitemap-video.xml`]) {
+    try {
+      const smRes = await fetch(sm, { method: 'HEAD' });
+      console.log(`    ${sm}: ${smRes.status} ${smRes.status === 200 ? '✅' : '⚠️'}`);
+    } catch (err) {
+      console.log(`    ${sm}: ❌ ${err.message}`);
     }
   }
 

@@ -39,11 +39,14 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: node scripts/cloud-imap-unsubscribe-guard.mjs
 
-      - name: Dept 3 & Dept 5 Truth Guard, SEO Health & Striking-Distance Refresh
+      - name: Dept 3 & Dept 5 Truth Guard, SEO Health & SEO-Social Research Agency Refresh
         run: |
           node scripts/firstindex-truth-guard.mjs --fix
           node scripts/seo-health-check.mjs
           node scripts/striking-distance-engine.mjs
+          node scripts/chameleonic-competitor-matrix.mjs
+          node scripts/foresight-seo-social-agency.mjs
+          node scripts/audit-youtube-growth-system.mjs
 
       - name: Dept 5 Live Conversion Surface & Tri-Logo Probe + ntfy Alert
         run: |
@@ -51,6 +54,10 @@ jobs:
             const urls = [
               "https://www.fhinspectionsatl.com/",
               "https://www.fhinspectionsatl.com/quote",
+              "https://www.fhinspectionsatl.com/about/christopher-boykin",
+              "https://www.fhinspectionsatl.com/homebuyer-red-flags",
+              "https://www.fhinspectionsatl.com/homeowner-care",
+              "https://www.fhinspectionsatl.com/neighborhoods",
               "https://www.fhinspectionsatl.com/due-diligence",
               "https://www.fhinspectionsatl.com/concierge",
               "https://www.fhinspectionsatl.com/realtors",

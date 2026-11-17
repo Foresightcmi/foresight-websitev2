@@ -29,8 +29,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Performance Guard Sentry
-        run: npm run perf:check
+      - name: Run Performance, Page-1 & YouTube Growth System Guards
+        run: |
+          npm run perf:check
+          node scripts/audit-youtube-growth-system.mjs
+          python3 scripts/page1-guard.py
 
       - name: Verify Clean Production Build
         run: npm run build

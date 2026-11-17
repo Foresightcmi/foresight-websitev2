@@ -1,0 +1,171 @@
+{
+  "generatedAt": "2026-11-17T03:48:33.948Z",
+  "agencyName": "Foresight Autonomous SEO, AEO & Social Media Research Agency",
+  "domain": "https://www.fhinspectionsatl.com",
+  "truthVersion": "2026.10.20",
+  "inventoryHealth": {
+    "municipalitiesServed": 87,
+    "pseoServicesCount": 11,
+    "pseoServiceCityRoutes": 957,
+    "neighborhoodClustersCount": 28,
+    "educationalBlogStudiesCount": 45,
+    "socialQueueReadyCount": 27,
+    "linkedInStoriesReadyCount": 10,
+    "videoStudioPacketsCount": 53,
+    "agentReachSignalsCount": 0,
+    "chameleonicScoreVsMarket": "100 vs 19 avg (16 rivals audited)",
+    "aiMentionChecksTracked": 0
+  },
+  "topPage1CtrTargets": [
+    {
+      "query": "commercial inspection cumming ga",
+      "position": 6.6,
+      "impressions": 123,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/cumming",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    },
+    {
+      "query": "home inspection lilburn ga",
+      "position": 7.1,
+      "impressions": 100,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/lilburn",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    },
+    {
+      "query": "home inspection snellville ga",
+      "position": 9.4,
+      "impressions": 99,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/snellville",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    },
+    {
+      "query": "home inspection norcross ga",
+      "position": 3.9,
+      "impressions": 88,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/norcross",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    },
+    {
+      "query": "dallas pre drywall inspection",
+      "position": 8.4,
+      "impressions": 85,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/services/pre-drywall-inspection/dallas",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    },
+    {
+      "query": "home inspection austell ga",
+      "position": 4.6,
+      "impressions": 85,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/austell",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    },
+    {
+      "query": "home inspections chattahoochee hills ga",
+      "position": 3.4,
+      "impressions": 77,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/service-areas/chattahoochee-hills",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    },
+    {
+      "query": "commercial inspections peachtree corners ga",
+      "position": 3.6,
+      "impressions": 64,
+      "clicks": 0,
+      "targetUrl": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/peachtree-corners",
+      "status": "4.8★ + Price/Modifier Title Active — Monitor 14-Day CTR Lift"
+    }
+  ],
+  "nextWavePage2NeighborhoodCandidates": [
+    {
+      "city": "Dunwoody",
+      "slug": "dunwoody",
+      "moneyUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/dunwoody",
+      "recommendedAction": "Build hyper-local subdivision cluster in data/neighborhoods-pseo.json linking upward to /services/buyer-inspection/dunwoody and rotate a city-specific GBP + LinkedIn spotlight."
+    },
+    {
+      "city": "Fayetteville",
+      "slug": "fayetteville",
+      "moneyUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/fayetteville",
+      "recommendedAction": "Build hyper-local subdivision cluster in data/neighborhoods-pseo.json linking upward to /services/buyer-inspection/fayetteville and rotate a city-specific GBP + LinkedIn spotlight."
+    },
+    {
+      "city": "Lithonia",
+      "slug": "lithonia",
+      "moneyUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/lithonia",
+      "recommendedAction": "Build hyper-local subdivision cluster in data/neighborhoods-pseo.json linking upward to /services/buyer-inspection/lithonia and rotate a city-specific GBP + LinkedIn spotlight."
+    },
+    {
+      "city": "Loganville",
+      "slug": "loganville",
+      "moneyUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/loganville",
+      "recommendedAction": "Build hyper-local subdivision cluster in data/neighborhoods-pseo.json linking upward to /services/buyer-inspection/loganville and rotate a city-specific GBP + LinkedIn spotlight."
+    },
+    {
+      "city": "Lilburn",
+      "slug": "lilburn",
+      "moneyUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/lilburn",
+      "recommendedAction": "Build hyper-local subdivision cluster in data/neighborhoods-pseo.json linking upward to /services/buyer-inspection/lilburn and rotate a city-specific GBP + LinkedIn spotlight."
+    },
+    {
+      "city": "Grayson",
+      "slug": "grayson",
+      "moneyUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/grayson",
+      "recommendedAction": "Build hyper-local subdivision cluster in data/neighborhoods-pseo.json linking upward to /services/buyer-inspection/grayson and rotate a city-specific GBP + LinkedIn spotlight."
+    }
+  ],
+  "weeklySocialToSeoBridge": [
+    {
+      "slot": 1,
+      "channel": "Google Business Profile (Store 264545) + Facebook",
+      "targetQuery": "commercial inspection cumming ga",
+      "destinationUrl": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/cumming",
+      "hookAngle": "Contrast Foresight's 2-Inspector CMI Team, Free Thermal + Free 4K Drone, and $35,000 Warranty against solo-inspector competitors for \"commercial inspection cumming ga\" (currently Pos 6.6 with 123 impressions)."
+    },
+    {
+      "slot": 2,
+      "channel": "Instagram Carousel (@fhinspectionsatl) + Reels (30s Anthem)",
+      "targetQuery": "home inspection lilburn ga",
+      "destinationUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/lilburn",
+      "hookAngle": "Contrast Foresight's 2-Inspector CMI Team, Free Thermal + Free 4K Drone, and $35,000 Warranty against solo-inspector competitors for \"home inspection lilburn ga\" (currently Pos 7.1 with 100 impressions)."
+    },
+    {
+      "slot": 3,
+      "channel": "LinkedIn Personal + Company Page Authority Story",
+      "targetQuery": "home inspection snellville ga",
+      "destinationUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/snellville",
+      "hookAngle": "Contrast Foresight's 2-Inspector CMI Team, Free Thermal + Free 4K Drone, and $35,000 Warranty against solo-inspector competitors for \"home inspection snellville ga\" (currently Pos 9.4 with 99 impressions)."
+    },
+    {
+      "slot": 4,
+      "channel": "YouTube Shorts + TikTok Field Symptom Clip",
+      "targetQuery": "home inspection norcross ga",
+      "destinationUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection/norcross",
+      "hookAngle": "Contrast Foresight's 2-Inspector CMI Team, Free Thermal + Free 4K Drone, and $35,000 Warranty against solo-inspector competitors for \"home inspection norcross ga\" (currently Pos 3.9 with 88 impressions)."
+    }
+  ],
+  "activeAutomationMesh": {
+    "cloudGitHubWorkflows": [
+      "foresight-agency-cloud-pulse.yml (6x Daily Truth, Striking-Distance & Conversion Surface Guard)",
+      "agent-reach-omni-radar.yml (2x Daily 7:30 AM & 12:30 PM ET 10-Medium Social & YouTube Demand Radar)",
+      "firstindex-daily-engine.yml (Daily 9:30 AM AI Mention Tracker & llms.txt Truth Sync)",
+      "social-broadcast.yml (Daily 11:20 AM PC-Aware LinkedIn/GBP/Social Fallback Broadcaster)",
+      "weekly-seo-dominance.yml (Mondays 9:00 AM SearchAgent OS, GSC Leak Hunter & YouTube Growth Guard)",
+      "wednesday-blog.yml (Wednesdays Building-Science Blog Publisher)",
+      "friday-backlinks.yml (Fridays Digital PR & Local Authority Link Prospector)",
+      "seo-pipeline.yml (Sundays Keyword Discovery, Ecosystem Harmony & IndexNow Pinger)"
+    ],
+    "localWindowsTasks": [
+      "Foresight_SEO_Social_Agency_Daily (Daily 9:30 AM Local SEO + Social Brief & IndexNow Sync)",
+      "Foresight_Weekly_SEO_Dominance (Mondays 9:00 AM Full SEO Agent Suite + GBP Weekly Kit)",
+      "Foresight_AgentReach_Omni_Radar (Daily 7:30 AM & 12:30 PM ET Local Demand Radar)"
+    ],
+    "antigravityIdeAgent": "Foresight SEO & Social Growth Agency (Mondays & Thursdays 9:15 AM America/New_York)"
+  }
+}

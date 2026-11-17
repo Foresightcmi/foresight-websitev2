@@ -58,7 +58,7 @@ To allow the website to forward Captured leads to your spreadsheet, you must pub
 ## 🔒 Step 4: Link Your Website to Your Webhook
 
 1. Open your website's local environment file:
-   👉 [foresight-website/.env.local](file:///C:/Users/fores/.gemini/antigravity/scratch/foresight-website/.env.local)
+   👉 [foresight-websitev2/.env.local](file:///C:/Users/fores/.gemini/antigravity/scratch/foresight-websitev2/.env.local)
 2. Add the copied Apps Script URL to the bottom:
    ```env
    APPS_SCRIPT_WEBHOOK_URL=your_copied_web_app_url_here

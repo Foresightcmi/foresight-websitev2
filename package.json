@@ -32,7 +32,9 @@
     "ecosystem:sync": "node scripts/sync-ecosystem-harmony.mjs && node scripts/sync-email-campaign-bridge.mjs",
     "radar:omni": "node scripts/agent-reach-omni-radar.mjs",
     "radar:test": "node scripts/test-agent-reach-integration.mjs",
-    "marketing:cli": "node scripts/gemini-cli-marketing.mjs"
+    "marketing:cli": "node scripts/gemini-cli-marketing.mjs",
+    "agency:research": "node scripts/chameleonic-competitor-matrix.mjs && node scripts/foresight-seo-social-agency.mjs",
+    "youtube:audit": "node scripts/audit-youtube-growth-system.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

@@ -137,8 +137,10 @@ Mapping Todd Anderson's 7-Step Map-Pack architecture and Be-Picked's 5 AI-Author
 ## Quick Command Reference for Ongoing Operations
 
 ```powershell
-# 1. Pre-Deploy Deterministic Truth & Swarm Verification
+# 1. Pre-Deploy Deterministic Truth, Agency & Swarm Verification
+npm run agency:research
 node scripts/firstindex-truth-guard.mjs
+python scripts/page1-guard.py
 node scripts/audit-ai-citations.mjs
 node scripts/test-search-agent-os.mjs
 node scripts/seo-health-check.mjs

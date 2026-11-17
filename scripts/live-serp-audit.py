@@ -30,16 +30,16 @@ HEADERS = {
 }
 
 TARGET_QUERIES = [
-    {"query": "home inspection Atlanta", "service": "Single-Family Home Inspection", "foresight_price": "$345+", "foresight_url": "https://fhinspectionsatl.com/"},
-    {"query": "sewer scope inspection Atlanta", "service": "Sewer Scope Inspection", "foresight_price": "$450 flat rate", "foresight_url": "https://fhinspectionsatl.com/services/sewer-scope-inspection"},
-    {"query": "mold inspection Atlanta", "service": "Mold & Air Quality Testing", "foresight_price": "$450+", "foresight_url": "https://fhinspectionsatl.com/services/mold-testing"},
-    {"query": "new construction home inspection Atlanta", "service": "New Construction / Pre-Drywall", "foresight_price": "$400 / $275 Pre-Drywall", "foresight_url": "https://fhinspectionsatl.com/services/new-construction-inspection"},
-    {"query": "11 month warranty inspection Atlanta", "service": "11-Month Builder Warranty Inspection", "foresight_price": "$335+", "foresight_url": "https://fhinspectionsatl.com/services/11-month-warranty-inspection"},
-    {"query": "DeKalb County low flow toilet certificate", "service": "DeKalb Low-Flow Toilet Certificate", "foresight_price": "$100 flat rate", "foresight_url": "https://fhinspectionsatl.com/service-areas/dekalb-county-compliance"},
-    {"query": "Atlanta short term rental inspection", "service": "Atlanta STR Life-Safety Inspection", "foresight_price": "$395+", "foresight_url": "https://fhinspectionsatl.com/blog/metro-atlanta-short-term-rental-str-compliance-guide"},
-    {"query": "radon testing Atlanta", "service": "Radon Gas Testing", "foresight_price": "$250", "foresight_url": "https://fhinspectionsatl.com/services/radon-testing"},
-    {"query": "home inspector Lithonia GA", "service": "Local Hub: Lithonia, GA", "foresight_price": "$345+", "foresight_url": "https://fhinspectionsatl.com/service-areas/lithonia"},
-    {"query": "home inspector Decatur GA", "service": "Local Hub: Decatur, GA", "foresight_price": "$345+", "foresight_url": "https://fhinspectionsatl.com/service-areas/decatur"},
+    {"query": "home inspection Atlanta", "service": "Single-Family Home Inspection", "foresight_price": "From $345", "foresight_url": "https://www.fhinspectionsatl.com/"},
+    {"query": "sewer scope inspection Atlanta", "service": "Sewer Scope Inspection", "foresight_price": "Call for Quote", "foresight_url": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection"},
+    {"query": "mold inspection Atlanta", "service": "Mold & Air Quality Testing", "foresight_price": "Call for Quote", "foresight_url": "https://www.fhinspectionsatl.com/services/mold-testing"},
+    {"query": "new construction home inspection Atlanta", "service": "New Construction / Pre-Drywall", "foresight_price": "From $400 / Pre-Drywall From $275", "foresight_url": "https://www.fhinspectionsatl.com/services/new-construction-inspection"},
+    {"query": "11 month warranty inspection Atlanta", "service": "11-Month Builder Warranty Inspection", "foresight_price": "From $345", "foresight_url": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection"},
+    {"query": "DeKalb County low flow toilet certificate", "service": "DeKalb Low-Flow Toilet Certificate", "foresight_price": "Call for Quote", "foresight_url": "https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance"},
+    {"query": "Atlanta short term rental inspection", "service": "Atlanta STR Life-Safety Inspection", "foresight_price": "Call for Quote", "foresight_url": "https://www.fhinspectionsatl.com/blog/metro-atlanta-short-term-rental-str-compliance-guide"},
+    {"query": "radon testing Atlanta", "service": "Radon Gas Testing", "foresight_price": "Call for Quote", "foresight_url": "https://www.fhinspectionsatl.com/services/radon-testing"},
+    {"query": "home inspector Lithonia GA", "service": "Local Hub: Lithonia, GA", "foresight_price": "From $345", "foresight_url": "https://www.fhinspectionsatl.com/services/buyer-inspection/lithonia"},
+    {"query": "home inspector Decatur GA", "service": "Local Hub: Decatur, GA", "foresight_price": "From $345", "foresight_url": "https://www.fhinspectionsatl.com/services/buyer-inspection/decatur"},
 ]
 
 def resolve_yahoo_link(raw_href):
@@ -219,7 +219,8 @@ def main():
         "query_audits": all_query_reports,
     }
 
-    out_path = r"C:\Users\fores\.gemini\antigravity\scratch\foresight-website\data\live-serp-audit.json"
+    website_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out_path = os.path.join(website_dir, "data", "live-serp-audit.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 

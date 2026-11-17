@@ -1,5 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.resolve(__dirname, '..');
 
 function searchFiles(dir) {
   let results = [];
@@ -36,5 +40,5 @@ function searchFiles(dir) {
   return results;
 }
 
-const matches = searchFiles('C:/Users/fores/.gemini/antigravity/scratch/foresight-website');
+const matches = searchFiles(ROOT_DIR);
 console.log(JSON.stringify(matches, null, 2));

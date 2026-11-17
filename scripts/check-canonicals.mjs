@@ -1,5 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const APP_DIR = path.resolve(__dirname, '..', 'app');
 
 // Check all page.js files for canonical metadata definitions
 function checkCanonicals(dir) {
@@ -18,4 +22,4 @@ function checkCanonicals(dir) {
   }
 }
 
-checkCanonicals('C:/Users/fores/.gemini/antigravity/scratch/foresight-website/app');
+checkCanonicals(APP_DIR);

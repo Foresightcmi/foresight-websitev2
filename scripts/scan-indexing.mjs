@@ -1,5 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.resolve(__dirname, '..');
 
 function scanDir(dir) {
   let results = [];
@@ -23,4 +27,4 @@ function scanDir(dir) {
   return results;
 }
 
-console.log(JSON.stringify(scanDir('C:/Users/fores/.gemini/antigravity/scratch/foresight-website'), null, 2));
+console.log(JSON.stringify(scanDir(ROOT_DIR), null, 2));

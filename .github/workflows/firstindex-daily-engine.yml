@@ -32,8 +32,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Execute FirstIndex Daily Truth Guard, AI Mention Tracker & Impact Dispatcher
-        run: npm run firstindex:run
+      - name: Execute FirstIndex Daily Truth Guard, AI Mention Tracker & YouTube Growth Guard
+        run: |
+          npm run firstindex:run
+          node scripts/foresight-seo-social-agency.mjs
+          node scripts/audit-youtube-growth-system.mjs
 
       - name: Commit & Push Verified Truth & AI Visibility Updates
         run: |

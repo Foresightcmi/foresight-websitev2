@@ -122,6 +122,12 @@ const REQUIRED_RING1_SLUGS = [
   'brookwood-summit-chase-snellville',
   'riverside-chastain-sandy-springs',
   'country-club-of-the-south-johns-creek',
+  'woodstock-towne-lake-eagle-watch',
+  'acworth-brookstone-lake-acworth',
+  'powder-springs-lost-mountain-seven-springs',
+  'peachtree-corners-amberfield-river-station',
+  'lawrenceville-tribble-mill-collins-hill',
+  'brookhaven-ashford-park-historic-club',
 ];
 
 const hoodSlugs = new Set(hoods.map((h) => h.slug));
@@ -154,9 +160,9 @@ const missing4FaqsNewHoods = REQUIRED_RING1_SLUGS.filter((slug) => {
 });
 
 check(
-  'T1. data/neighborhoods-pseo.json has >= 22 valid entries matching cities.json',
+  'T1. data/neighborhoods-pseo.json has >= 28 valid entries matching cities.json',
   hoodsParseOk &&
-    hoods.length >= 22 &&
+    hoods.length >= 28 &&
     hoodSlugs.size === hoods.length &&
     invalidHoodCities.length === 0 &&
     schemaIncompleteHoods.length === 0 &&
@@ -165,9 +171,9 @@ check(
 );
 
 check(
-  'T2. data/neighborhoods-pseo.json includes all 6 Ring-1 / North Metro concentric slugs',
+  'T2. data/neighborhoods-pseo.json includes all 12 Ring-1, North Metro & Page-2 Breakthrough slugs',
   missingRingSlugs.length === 0,
-  missingRingSlugs.length ? `Missing: ${missingRingSlugs.join(', ')}` : '6/6 Ring-1 & North Metro slugs present'
+  missingRingSlugs.length ? `Missing: ${missingRingSlugs.join(', ')}` : '12/12 concentric & Page-2 slugs present'
 );
 
 const stopwatchRe = /\b(?:2\.0\s*(?:to|[-–])\s*2\.5\s*hours|1\.5\s*(?:to|[-–])\s*2\.5\s*hours|half\s+the\s+time)\b/i;
@@ -420,6 +426,8 @@ const PLAYBOOK_FILES = [
   'docs/youtube-growth-swarm/action-playbook.md',
   'docs/youtube-growth-swarm/video-1-todd-anderson-7-step-map-pack.md',
   'docs/youtube-growth-swarm/video-2-be-picked-ai-authority-hourglass.md',
+  'docs/youtube-growth-swarm/metro-atlanta-chameleonic-scorecard.md',
+  'docs/youtube-growth-swarm/ready-to-paste-omnichannel-pack.md',
 ];
 const missingPlaybooks = PLAYBOOK_FILES.filter((p) => {
   const f = readRel(p);
@@ -432,13 +440,25 @@ const hasFreeBenefitsMatrix =
   actionPlaybook.content.includes('/free-utility-setup') &&
   actionPlaybook.content.includes('/risk-scanner') &&
   actionPlaybook.content.includes('/list-of-3');
+const agencySkill = readRel('.agents/skills/foresight-seo-social-agency/SKILL.md');
+const agencyBrief = readRel('data/agency-growth-brief.json');
+const scorecardJson = readRel('data/chameleonic-map-pack-scorecard.json');
+const servicesPseo = readRel('data/services-pseo.json');
+const allServicesStarred =
+  servicesPseo.exists &&
+  JSON.parse(servicesPseo.content).every((s) => String(s.metaTitle || '').startsWith('4.8★'));
 
 check(
-  'B5. All 3 playbook markdown documents exist in docs/youtube-growth-swarm/ including $0 Free Benefits Matrix',
-  missingPlaybooks.length === 0 && hasFreeBenefitsMatrix,
+  'B5. All 5 playbook/scorecard/omnichannel docs + 4.8★ CTR titles + Foresight SEO/Social Agency skill & brief verified',
+  missingPlaybooks.length === 0 &&
+    hasFreeBenefitsMatrix &&
+    agencySkill.exists &&
+    agencyBrief.exists &&
+    scorecardJson.exists &&
+    allServicesStarred,
   missingPlaybooks.length
     ? `Missing/empty: ${missingPlaybooks.join(', ')}`
-    : `3/3 playbook files + Free Benefits Matrix (${hasFreeBenefitsMatrix}) verified`
+    : `5/5 docs + 11/11 4.8★ service titles + Agency Skill & Brief verified`
 );
 
 const NEW_PAGE_FILES = [

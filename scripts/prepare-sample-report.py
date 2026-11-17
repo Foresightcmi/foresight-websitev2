@@ -12,7 +12,8 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 
 SOURCE_DIR = r"C:\Users\fores\Documents\HomeGauge\Reports\20260910-2453-Lake-Erma-Dr"
 SOURCE_HTML = os.path.join(SOURCE_DIR, "FullReportForUpload.html")
-DEST_DIR = r"C:\Users\fores\.gemini\antigravity\scratch\foresight-website\public\sample-report"
+WEBSITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEST_DIR = os.path.join(WEBSITE_DIR, "public", "sample-report")
 
 def main():
     print(f"[START] Preparing sample report from: {SOURCE_DIR}")
@@ -61,7 +62,7 @@ def main():
 <div id="foresight-sample-top-banner" style="background: linear-gradient(90deg, #0F172A 0%, #1E293B 100%); color: #ffffff; padding: 12px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; border-bottom: 3px solid #D4AF37; box-shadow: 0 4px 15px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 999999; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
   <div style="display: flex; align-items: center; gap: 10px;">
     <span style="background: #D4AF37; color: #0F172A; font-weight: 800; font-size: 11px; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Official Sample Report</span>
-    <span><strong>Foresight Home Inspections</strong> • Dual-Inspector CMI® Audit • All Client & Property Details Redacted for Privacy</span>
+    <span><strong>Foresight Home Inspections</strong> • Dual-Inspector CMI® Evaluation • All Client & Property Details Redacted for Privacy</span>
   </div>
   <div style="display: flex; gap: 10px; align-items: center;">
     <a href="https://www.fhinspectionsatl.com/quote" target="_blank" style="background: #D4AF37; color: #0F172A; font-weight: 700; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 13px;">Get Instant Quote</a>

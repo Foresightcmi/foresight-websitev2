@@ -1,0 +1,391 @@
+{
+  "generatedAt": "2026-11-17T03:48:33.466Z",
+  "methodology": "Todd Anderson Chameleonic Map-Pack Benchmarking + Be-Picked 5-Pillar AI-Authority Hourglass",
+  "foresightBenchmark": {
+    "name": "Foresight Home Inspections, LLC",
+    "domain": "fhinspectionsatl.com",
+    "leadInspector": "Christopher Boykin, CMI (#MICB-1082 | InterNACHI #NACHI18051119)",
+    "googleRating": "4.8 (53 verified Google reviews)",
+    "transparentPricing": "Homes From $345 | Condos From $295 | Pre-Drywall From $275 | New Construction From $400 | Auxiliary/PCA Call (678) 480-2110 for Quote",
+    "twoInspectorStandard": true,
+    "freeThermalIncluded": true,
+    "free4kDroneIncluded": true,
+    "warrantyCeiling": "$35,000 Combined ($10,000 Elite Master Warranty $0 Deductible + $25,000 InterNACHI Honor Guarantee)",
+    "neighborhoodClustersLive": 28,
+    "municipalHubsLive": 87,
+    "educationalStudiesLive": 45,
+    "hasProductSchema": true,
+    "hasFaqSchema": true,
+    "hasAiLlmsOrMcp": true,
+    "chameleonicScore100": 100
+  },
+  "marketSummary": {
+    "competitorsEvaluated": 16,
+    "averageCompetitorScore100": 19,
+    "foresightScoreAdvantage": 81,
+    "competitorsWithTransparentPricing": "5/16",
+    "competitorsWithTwoInspectorsOnEveryHome": "0/16",
+    "competitorsWithProductStarSchema": "1/16",
+    "competitorsWithFaqSchema": "2/16",
+    "competitorsWithLlmsTxtOrWebMcp": "0/16"
+  },
+  "competitors": [
+    {
+      "name": "Ally Property Inspections",
+      "domain": "allypropertyinspections.com",
+      "modelType": "Independent Local Inspection Firm",
+      "transparentPricing": true,
+      "detectedPrices": [
+        "$350",
+        "$215"
+      ],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": true,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "Limited / Unspecified",
+      "hasProductSchema": false,
+      "hasFaqSchema": true,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 58,
+      "primaryGaps": [
+        "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+        "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs."
+      ]
+    },
+    {
+      "name": "Atlanta Premier Home Inspections",
+      "domain": "atlantapremierhomeinspections.com",
+      "modelType": "Local Multi-Inspector Firm",
+      "transparentPricing": true,
+      "detectedPrices": [
+        "$150",
+        "$200",
+        "$285",
+        "$375",
+        "$50",
+        "$525"
+      ],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": true,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "Limited / Unspecified",
+      "hasProductSchema": false,
+      "hasFaqSchema": true,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 48,
+      "primaryGaps": [
+        "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+        "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs."
+      ]
+    },
+    {
+      "name": "Residential Inspector of America (RIA)",
+      "domain": "atlanta.residentialinspector.com",
+      "modelType": "Private Equity Owned Regional Dispatch",
+      "transparentPricing": true,
+      "detectedPrices": [
+        "$20"
+      ],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": true,
+      "free4kDroneIncluded": true,
+      "warrantyCeiling": "Limited / Unspecified",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 45,
+      "primaryGaps": [
+        "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+        "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+        "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+      ]
+    },
+    {
+      "name": "Noble Property Inspections",
+      "domain": "noble-pi.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": true,
+      "detectedPrices": [
+        "$350",
+        "$395"
+      ],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": true,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "Basic / Unspecified",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 38,
+      "primaryGaps": [
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks."
+      ]
+    },
+    {
+      "name": "The BrickKicker Greater Atlanta",
+      "domain": "georgia.brickkicker.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": true,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "Basic / Unspecified",
+      "hasProductSchema": true,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 33,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks.",
+        "Technical Crawl Friction: HTTP 404 blocking crawlers or broken /services URL."
+      ]
+    },
+    {
+      "name": "Conley Home Inspections",
+      "domain": "conleyhomeinspections.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": true,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "Basic / Unspecified",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 23,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks.",
+        "Technical Crawl Friction: HTTP 404 blocking crawlers or broken /services URL."
+      ]
+    },
+    {
+      "name": "Champia Real Estate Inspections",
+      "domain": "champia.com",
+      "modelType": "Longstanding Local Multi-Inspector Firm",
+      "transparentPricing": true,
+      "detectedPrices": [
+        "$300"
+      ],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None Detected",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 20,
+      "primaryGaps": [
+        "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+        "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+        "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+      ]
+    },
+    {
+      "name": "Paris Pressley Real Estate Inspector",
+      "domain": "ppinspect.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": true,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None (Disclaimed)",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 13,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks.",
+        "Technical Crawl Friction: HTTP 404 blocking crawlers or broken /services URL."
+      ]
+    },
+    {
+      "name": "Home-Probe, Inc.",
+      "domain": "home-probe.com",
+      "modelType": "Regional Solo Inspector Dispatch",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "Limited / Unspecified",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 10,
+      "primaryGaps": [
+        "Opaque Pricing: Forces buyers into quote forms / phone calls rather than showing transparent upfront rates.",
+        "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+        "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+        "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+      ]
+    },
+    {
+      "name": "Inspect-All Services",
+      "domain": "inspectallatlanta.com",
+      "modelType": "Pest Control & Multi-Service Cross-Sell",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "Limited / Unspecified",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 10,
+      "primaryGaps": [
+        "Opaque Pricing: Forces buyers into quote forms / phone calls rather than showing transparent upfront rates.",
+        "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+        "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+        "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+      ]
+    },
+    {
+      "name": "John Mease Home Inspections",
+      "domain": "johnmeasehomeinspections.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None (Disclaimed)",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 5,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks.",
+        "Technical Crawl Friction: HTTP 404 blocking crawlers or broken /services URL."
+      ]
+    },
+    {
+      "name": "BPG Inspections",
+      "domain": "bpginspections.com",
+      "modelType": "Corporate National Franchise / Dispatch",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None Detected",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 0,
+      "primaryGaps": [
+        "Opaque Pricing: Forces buyers into quote forms / phone calls rather than showing transparent upfront rates.",
+        "Solo Inspector Fatigue: Dispatches a single inspector working 3.5-5 hours solo; vulnerable to Foresight's 2-inspector team narrative.",
+        "Missing Product Schema: Does not output Product rich snippet markup to secure gold review stars in Google SERPs.",
+        "Missing FAQPage Schema: Leaves People Also Ask (PAA) and AI Overview answer slots open for competitor capture."
+      ]
+    },
+    {
+      "name": "Avalon Home Inspections",
+      "domain": "avaloninspections.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None (Disclaimed)",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 0,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks.",
+        "Technical Crawl Friction: HTTP 403 blocking crawlers or broken /services URL."
+      ]
+    },
+    {
+      "name": "Scott Home Services",
+      "domain": "scotthomeservices.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None (Disclaimed)",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 0,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks.",
+        "Technical Crawl Friction: HTTP 404 blocking crawlers or broken /services URL."
+      ]
+    },
+    {
+      "name": "Superior Home Inspections",
+      "domain": "choosesuperiorinspection.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None (Disclaimed)",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 0,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks.",
+        "Technical Crawl Friction: HTTP 403 blocking crawlers or broken /services URL."
+      ]
+    },
+    {
+      "name": "Sherlock Homes Inspection Co.",
+      "domain": "sherlockhic.com",
+      "modelType": "Regional / Local Atlanta Competitor",
+      "transparentPricing": false,
+      "detectedPrices": [],
+      "twoInspectorStandard": false,
+      "freeThermalIncluded": false,
+      "free4kDroneIncluded": false,
+      "warrantyCeiling": "None (Disclaimed)",
+      "hasProductSchema": false,
+      "hasFaqSchema": false,
+      "hasAiLlmsOrMcp": false,
+      "chameleonicScore100": 0,
+      "primaryGaps": [
+        "Opaque Pricing: No upfront residential starting prices published in HTML.",
+        "Solo Inspector Model: Does not guarantee two certified inspectors on every residential home.",
+        "Missing Product Rich Snippet Schema: No SERP review star or UnitPriceSpecification markup.",
+        "Missing FAQPage Schema: Zero structured PAA / AI Overview answer blocks."
+      ]
+    }
+  ],
+  "strategicTakeaways": [
+    "Review Velocity Is the Single Remaining Map-Pack Lever: Foresight already leads 100 vs 19 on technical schema, pricing transparency, two-inspector operations, and AI entity architecture; steady post-inspection Google reviews naming the city and defect found will compound Top-3 Map-Pack share across Ring-1 and Ring-2 cities.",
+    "Zero Competitors Publish Product + UnitPriceSpecification + /llms.txt + Web MCP Together: Foresight captures SERP rich-snippet review stars AND structured LLM citations while corporate franchises force buyers into opaque quote walls.",
+    "Exploit Opaque Pricing & Solo-Inspector Fatigue in Social Hooks: Highlighting Homes From $345, Pre-Drywall From $275, Free Thermal + Free 4K Drone, and Two Certified Inspectors on Every Home directly contrasts with 100% of corporate dispatch rivals."
+  ]
+}

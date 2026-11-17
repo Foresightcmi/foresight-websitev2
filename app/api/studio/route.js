@@ -7,9 +7,9 @@ import { FORESIGHT_UNIFIED_PERSONA } from '../../../lib/foresight-persona.mjs';
 export const maxDuration = 300;
 export const dynamic = 'force-dynamic';
 
-function readJsonSafe(relPath, fallback = []) {
+function readDataJsonSafe(fileName, fallback = []) {
   try {
-    const full = path.join(process.cwd(), relPath);
+    const full = path.join(process.cwd(), 'data', fileName);
     if (fs.existsSync(full)) {
       return JSON.parse(fs.readFileSync(full, 'utf8'));
     }
@@ -18,16 +18,16 @@ function readJsonSafe(relPath, fallback = []) {
 }
 
 export async function GET() {
-  const truth = readJsonSafe('data/truth.json', {});
-  const underContract = readJsonSafe('data/under-contract-realtors.json', []);
-  const cloudQueue = readJsonSafe('data/cloud-realtor-nurture-queue.json', []);
-  const cloudState = readJsonSafe('data/cloud-realtor-nurture-state.json', {});
-  const warrantyCrm = readJsonSafe('data/warranty-tracker-crm.json', []);
-  const unsubscribed = readJsonSafe('data/unsubscribed_contacts.json', []);
-  const linkedInPosts = readJsonSafe('data/linkedin-tobi-engine.json', []);
-  const studioPackets = readJsonSafe('data/unified-studio-packets.json', []);
-  const outreachLog = readJsonSafe('data/due-diligence-outreach-log.json', []);
-  const socialQueue = readJsonSafe('data/social-queue.json', []);
+  const truth = readDataJsonSafe('truth.json', {});
+  const underContract = readDataJsonSafe('under-contract-realtors.json', []);
+  const cloudQueue = readDataJsonSafe('cloud-realtor-nurture-queue.json', []);
+  const cloudState = readDataJsonSafe('cloud-realtor-nurture-state.json', {});
+  const warrantyCrm = readDataJsonSafe('warranty-tracker-crm.json', []);
+  const unsubscribed = readDataJsonSafe('unsubscribed_contacts.json', []);
+  const linkedInPosts = readDataJsonSafe('linkedin-tobi-engine.json', []);
+  const studioPackets = readDataJsonSafe('unified-studio-packets.json', []);
+  const outreachLog = readDataJsonSafe('due-diligence-outreach-log.json', []);
+  const socialQueue = readDataJsonSafe('social-queue.json', []);
 
   return NextResponse.json({
     ok: true,
@@ -60,7 +60,7 @@ export async function POST(request) {
     const topic = String(body.topic || 'Phase 1 Pre-Drywall & New Construction Inspections').trim().slice(0, 140);
     const city = String(body.city || 'Atlanta').trim().slice(0, 60);
     const audience = String(body.audience || 'Both Buyers & Realtors').trim();
-    const truth = readJsonSafe('data/truth.json', {});
+    const truth = readDataJsonSafe('truth.json', {});
     const p = truth.pricing || {};
 
     const isDeKalb = /dekalb|decatur|lithonia|stone mountain|dunwoody|brookhaven|tucker|chamblee|clarkston|doraville|avondale|stonecrest|redan/i.test(city) || /dekalb|low-flow/i.test(topic);

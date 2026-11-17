@@ -43,7 +43,7 @@ const STRIKING_SOCIAL_POSTS = [
     imageUrl: 'https://www.fhinspectionsatl.com/images/drone-2.webp',
     city: 'Cumming',
     serviceName: 'Commercial Property Inspection',
-    priceHook: 'starting at $750 with 24–48 hour ASTM E2018 digital report turnaround'
+    priceHook: 'custom-quoted per square footage (Call 678-480-2110 for Quote) with 24–48 hour ASTM E2018 digital report turnaround'
   },
   {
     targetPage: '/services/buyer-inspection/lilburn',

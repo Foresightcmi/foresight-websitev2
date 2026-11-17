@@ -214,7 +214,8 @@ export async function generateMetadata({ params }) {
 
   let title = serviceData.metaTitle.replace(/{city}/g, cityName);
   if (title.length > 62) {
-    title = `${cityName}, GA ${serviceName} | ${serviceData.price}`;
+    const fallbackBadge = serviceData.price === 'Call for Quote' ? '2-Team CMI' : serviceData.price;
+    title = `4.8★ ${cityName}, GA ${serviceName} | ${fallbackBadge}`;
   }
   const description = serviceData.metaDescription.replace(/{city}/g, cityName);
   const canonicalUrl = `${SITE_URL}/services/${normalizedService}/${resolvedParams.city}`;
