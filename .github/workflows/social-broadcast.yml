@@ -1,10 +1,10 @@
-name: Autonomous Social & GBP Broadcast Engine (24/7 Cloud + PC-Aware Fallback)
+name: Autonomous 3-Tier Social & GBP Failover Engine (PC1 -> PC2 -> 24/7 Cloud)
 
 on:
   schedule:
-    # Runs daily at 11:20 AM EST (16:20 UTC). Automatically checks if local PC already
-    # published today's 10:30 AM social batch; if PC is off, runs cloud broadcast + ntfy push.
-    - cron: '20 16 * * *'
+    # Runs daily at 11:35 AM EST (16:35 UTC) — 65 min after Primary PC (10:30 AM)
+    # and 30 min after Standby PC #2 (11:05 AM). Stands down if either PC published today!
+    - cron: '35 16 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   broadcast-social-post:
-    name: Manual Fallback — Rotate LinkedIn, GBP & Facebook Copy
+    name: Tier-3 Cloud Social & GBP Failover (When Both PCs Are Offline)
     runs-on: ubuntu-latest
 
     steps:
@@ -34,37 +34,16 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Execute Cloud Social & GBP Engine When Local PC Is Off
-        run: |
-          node -e '
-            import("node:fs").then(({ default: fs }) => {
-              const p = "data/chief-of-staff-social-status.json";
-              const today = new Date().toISOString().slice(0, 10);
-              if (fs.existsSync(p) && process.env.GITHUB_EVENT_NAME === "schedule") {
-                const st = JSON.parse(fs.readFileSync(p, "utf8"));
-                if ((st.lastRunAt || "").startsWith(today) && (st.publishedPlatforms || []).length > 0) {
-                  console.log("Local PC already published today (" + st.publishedPlatforms.length + " platforms). Skipping duplicate cloud push.");
-                  process.exit(0);
-                }
-              }
-            });
-          ' || exit 0
-          node -e '
-            import("node:fs").then(async ({ default: fs }) => {
-              const p = "data/chief-of-staff-social-status.json";
-              const today = new Date().toISOString().slice(0, 10);
-              if (fs.existsSync(p) && process.env.GITHUB_EVENT_NAME === "schedule") {
-                const st = JSON.parse(fs.readFileSync(p, "utf8"));
-                if ((st.lastRunAt || "").startsWith(today) && (st.publishedPlatforms || []).length > 0) return;
-              }
-              const { spawnSync } = await import("node:child_process");
-              spawnSync(process.execPath, ["scripts/linkedin-content-engine.mjs", "--push"], { stdio: "inherit" });
-            });
-          '
+      - name: Execute Tier-3 Cloud Failover When Both Local PCs Are Offline
+        env:
+          SOCIAL_WEBHOOK_URL: ${{ secrets.SOCIAL_WEBHOOK_URL }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+        run: node scripts/pc2-social-failover-publisher.mjs --slot=morning --headless-only
 
-      - name: Commit and Push Updated Social State & Logs
+      - name: Commit and Push Updated Failover State & Logs
         run: |
           git config --global user.name "Foresight Social Bot"
           git config --global user.email "social-bot@fhinspectionsatl.com"
-          git add data/social-logs/ data/
-          git diff --cached --quiet || (git commit -m "chore(social): manual LinkedIn copy rotation [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "No state changes to commit."
+          git add data/social-logs/ data/chief-of-staff-social-status.json
+          git diff --cached --quiet || (git commit -m "chore(social): automated Tier-3 cloud social failover sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "No state changes to commit."

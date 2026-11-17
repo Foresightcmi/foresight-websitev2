@@ -34,7 +34,10 @@
     "radar:test": "node scripts/test-agent-reach-integration.mjs",
     "marketing:cli": "node scripts/gemini-cli-marketing.mjs",
     "agency:research": "node scripts/chameleonic-competitor-matrix.mjs && node scripts/foresight-seo-social-agency.mjs",
-    "youtube:audit": "node scripts/audit-youtube-growth-system.mjs"
+    "youtube:audit": "node scripts/audit-youtube-growth-system.mjs",
+    "social:render": "node scripts/render-omnichannel-pack.mjs",
+    "social:failover:status": "node scripts/pc2-social-failover-publisher.mjs --status",
+    "social:failover:login": "node scripts/pc2-social-failover-publisher.mjs --login"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",
