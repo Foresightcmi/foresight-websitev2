@@ -174,21 +174,19 @@ export default function StrComplianceChecklist() {
             {score === 100 ? 'Property Appears Permit-Ready!' : 'Need Official Life-Safety Certification?'}
           </h4>
           <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.9rem', maxWidth: '550px' }}>
-            City of Atlanta requires licensed third-party inspection documentation before issuing or renewing your STR operating license. Foresight provides flat-rate $595 certified life-safety inspections with 24-hour report delivery.
+            City of Atlanta requires third-party inspection documentation before issuing or renewing your STR operating license. Foresight provides certified STR life-safety inspections with 24-hour report delivery — Call (678) 480-2110 for Quote.
           </p>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
           <a
-            href="https://schedulenow.homegauge.com/11ec7d41-999d-45c5-9ccd-df7d23ece8b6/schedule"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:6784802110"
             className="btn btn-gold"
             style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}
           >
-            Book $595 STR Inspection
+            Call (678) 480-2110 for Quote
           </a>
-          <Link href="/quote" className="btn btn-outline-light" style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}>
-            Calculate Fees
+          <Link href="/quote?service=str" className="btn btn-outline-light" style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem' }}>
+            Request STR Inspection Online
           </Link>
         </div>
       </div>

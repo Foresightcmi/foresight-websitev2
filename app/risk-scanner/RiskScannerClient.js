@@ -448,11 +448,12 @@ export default function RiskScannerClient() {
     params.set('service', recommendedPackage.baseService);
     params.set('sqft', String(sqft));
     params.set('foundation', foundation.includes('basement') ? 'basement' : foundation === 'crawlspace' ? 'crawlspace' : 'slab');
+    if (Number(yearBuilt) < 1976) params.set('age', 'over-50');
     if (recommendedPackage.needsRadon) params.set('radon', 'true');
     if (recommendedPackage.needsSewer) params.set('sewer', 'true');
     if (recommendedPackage.needsTermite) params.set('termite', 'true');
     return `/quote?${params.toString()}`;
-  }, [recommendedPackage, sqft, foundation]);
+  }, [recommendedPackage, sqft, foundation, yearBuilt]);
 
   return (
     <div style={{ background: '#F8FAFC', minHeight: '100vh', paddingBottom: '5rem' }}>

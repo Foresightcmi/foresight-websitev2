@@ -624,7 +624,7 @@ export default async function ServiceHubPage({ params }) {
 
             {(canonicalService === 'thermal-imaging-inspection' || canonicalService === 'buyer-inspection' || canonicalService === 'home-buyer-inspection') && (
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#0F172A', color: '#FFFFFF', padding: '1.5rem', borderRadius: 'var(--radius-md)', marginBottom: '2rem', border: '1px solid rgba(212,175,55,0.3)', flexWrap: 'wrap' }}>
-                <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified Inspector" width={100} height={100} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
+                <Image src="/images/infrared-certified-white-text.webp" alt="InterNACHI Infrared Certified Inspector" width={100} height={100} style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
                 <div style={{ flex: 1, minWidth: '240px' }}>
                   <h4 style={{ color: 'var(--color-gold)', margin: 0, fontSize: '1.15rem', fontWeight: 700 }}>InterNACHI® Infrared Certified® Inspector</h4>
                   <p style={{ margin: '0.35rem 0 0', color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.5 }}>

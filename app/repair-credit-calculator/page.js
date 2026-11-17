@@ -52,7 +52,7 @@ const calculatorFaqSchema = {
       name: 'Can I get an official repair cost evaluation if I hired another home inspector?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Foresight Home Inspections offers a standalone Due Diligence Repair Cost Evaluation (Call (678) 480-2110 for Quote). You can upload an inspection report from any outside inspection company, and our Certified Master Inspector team will extract contractor repair ranges and generate a structured REPAIR AMENDMENT EXHIBIT within 4 hours.',
+        text: 'Yes. Foresight Home Inspections offers a standalone $99 Due Diligence Repair Cost Evaluation online. You can upload an inspection report from any outside inspection company (or paste findings), and our Certified Master Inspector team extracts regional contractor repair ranges and delivers a structured REPAIR AMENDMENT EXHIBIT within 4 hours.',
       },
     },
     {

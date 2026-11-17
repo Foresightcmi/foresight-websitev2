@@ -22,7 +22,7 @@ const ERA_PROFILES = {
   '2016-present': {
     label: '2016–Present Modern & New Builds',
     risks: 'Rushed subcontractor framing, missing attic energy baffles, unsealed roof penetrations, crushed underground sewer laterals from grading, and HVAC duct disconnects.',
-    highPriorityAddons: ['Pre-Drywall ($275+)', '11-Month Warranty ($345+)', 'Sewer Scope (Call for Quote)']
+    highPriorityAddons: ['Pre-Drywall (From $275)', '11-Month Warranty (From $345)', 'Sewer Scope (Call for Quote)']
   }
 };
 

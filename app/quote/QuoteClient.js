@@ -81,6 +81,11 @@ export default function QuoteClient({ showValueComparison = true }) {
         setFoundation(foundationParam);
       }
 
+      const ageParam = params.get('age');
+      if (ageParam === 'over-50' || ageParam === 'under-50') {
+        setAgeTier(ageParam);
+      }
+
       const estimatesParam = params.get('estimates') || params.get('repairEstimates');
 
       setAddons(prev => ({
@@ -644,8 +649,8 @@ export default function QuoteClient({ showValueComparison = true }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <label className="checkbox-container" style={{
-                  background: addons.repairEstimates ? 'rgba(212, 175, 55, 0.1)' : 'rgba(255, 255, 255, 0.02)',
-                  border: addons.repairEstimates ? '1px solid rgba(212, 175, 55, 0.4)' : '1px solid rgba(255, 255, 255, 0.08)',
+                  background: addons.repairEstimates ? 'rgba(212, 175, 55, 0.14)' : '#F8FAFC',
+                  border: addons.repairEstimates ? '1.5px solid #D4AF37' : '1px solid #CBD5E1',
                   borderRadius: '8px',
                   padding: '12px'
                 }}>
@@ -655,7 +660,7 @@ export default function QuoteClient({ showValueComparison = true }) {
                     onChange={() => handleAddonToggle('repairEstimates')} 
                   />
                   <div>
-                    <span style={{ fontWeight: 700, display: 'block', color: addons.repairEstimates ? '#fde047' : 'var(--color-white)' }}>
+                    <span style={{ fontWeight: 700, display: 'block', color: addons.repairEstimates ? '#854D0E' : 'var(--color-dark)' }}>
                       Contractor Repair Cost &amp; Pricing Estimate (Call Us for Quote)
                     </span>
                     <span style={{ fontSize: '0.825rem', color: 'var(--color-gray-dark)', display: 'block', marginTop: '2px', lineHeight: 1.45 }}>

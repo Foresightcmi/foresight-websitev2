@@ -3,65 +3,7 @@ import nodemailer from 'nodemailer';
 import { recordLead } from '../../../lib/leads';
 import { CHRIS_SYSTEM_INSTRUCTION, JORDAN_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../../lib/chris-brain-prompt';
 import { resolveGeminiTextModels } from '../../../lib/gemini-model-resolver.mjs';
-
-// Calculation helper strictly adhering to Foresight pricing engine
-function calculateQuoteDetails({ propertyType = 'single-family', serviceType = 'buyer', sqft = 2000, foundation = 'slab', ageTier = 'under-50', addons = {} }) {
-  let base = 345;
-  const parsedSqft = Number(sqft) || 2000;
-
-  if (serviceType === 'str') {
-    base = 395;
-  } else if (propertyType === 'condo' || serviceType === 'condo') {
-    if (parsedSqft <= 1000) base = 295;
-    else base = 325;
-  } else {
-    if (parsedSqft <= 1000) base = 345;
-    else if (parsedSqft <= 1500) base = 375;
-    else if (parsedSqft <= 2000) base = 425;
-    else if (parsedSqft <= 2500) base = 475;
-    else if (parsedSqft <= 3000) base = 525;
-    else if (parsedSqft <= 3500) base = 575;
-    else if (parsedSqft <= 4000) base = 625;
-    else if (parsedSqft <= 4500) base = 675;
-    else if (parsedSqft <= 5000) base = 775;
-    else if (parsedSqft <= 5500) base = 875;
-    else base = 985;
-  }
-
-  let extra = 0;
-  if (serviceType !== 'str') {
-    if (ageTier === 'over-50') extra += 75;
-  }
-
-  if (propertyType === 'single-family' && serviceType !== 'str') {
-    if (foundation === 'crawlspace') extra += 75;
-    if (foundation === 'basement') extra += 75;
-  }
-
-  const addonBreakdown = [];
-  if (addons.radon) { extra += 250; addonBreakdown.push({ name: 'Radon Gas Testing', price: 250 }); }
-  if (addons.termite) { 
-    const termitePrice = foundation === 'crawlspace' ? 165 : 125;
-    extra += termitePrice; 
-    addonBreakdown.push({ name: 'Termite / WDO Inspection', price: termitePrice }); 
-  }
-  if (addons.pool) { extra += 300; addonBreakdown.push({ name: 'Pool & Spa Inspection', price: 300 }); }
-  if (addons.sewer) { extra += 450; addonBreakdown.push({ name: 'Sewer Scope Camera', price: 450 }); }
-  if (addons.lowFlow) { extra += 100; addonBreakdown.push({ name: 'DeKalb Low Flow Certification', price: 100 }); }
-  if (addons.buildfax) { extra += 15; addonBreakdown.push({ name: 'Permit History Report', price: 15 }); }
-
-  const total = base + extra;
-  return {
-    base,
-    extra,
-    total,
-    addonBreakdown,
-    sqft: parsedSqft,
-    propertyType,
-    foundation,
-    ageTier
-  };
-}
+import { calculateQuoteDetails } from '../../../lib/pricing';
 
 // Lead & appointment persistence helper
 async function persistBooking({ name, phone, email, address, preferredDate, addons = [], estimatedTotal, notes = '' }) {

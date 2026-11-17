@@ -44,20 +44,20 @@ export default function ThermalSlider() {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '1.25rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-          <Image src="/images/infrared-certified-logo.webp" alt="InterNACHI Infrared Certified" width={48} height={48} sizes="48px" style={{ height: '44px', width: 'auto', objectFit: 'contain' }} />
+          <Image src="/images/infrared-certified-white-text.webp" alt="InterNACHI Infrared Certified" width={48} height={48} sizes="48px" style={{ height: '44px', width: 'auto', objectFit: 'contain' }} />
           <div>
             <span className="badge" style={{ background: 'rgba(212,175,55,0.2)', color: 'var(--color-gold)', border: '1px solid var(--color-gold)', fontSize: '0.8rem', padding: '0.25rem 0.75rem', marginBottom: '0.35rem', display: 'inline-block' }}>
               Interactive Diagnostic Comparison
             </span>
             <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 800, margin: 0 }}>
-              Visual Daylight vs. Infrared Thermal Imaging Thermal Scan
+              Visual Daylight vs. Calibrated Infrared Thermal Scan
             </h3>
           </div>
         </div>
         <div style={{ display: 'flex', gap: '0.4rem', background: '#1E293B', padding: '0.25rem', borderRadius: '50px', border: '1px solid #334155' }}>
           <button
             type="button"
-            onClick={() => { setSliderPosition(0); triggerGtag('view_visual_only'); }}
+            onClick={() => { setSliderPosition(100); triggerGtag('view_visual_only'); }}
             style={{
               padding: '0.35rem 0.85rem',
               borderRadius: '50px',
@@ -65,8 +65,8 @@ export default function ThermalSlider() {
               fontSize: '0.8rem',
               fontWeight: 700,
               cursor: 'pointer',
-              background: sliderPosition === 0 ? 'var(--color-gold)' : 'transparent',
-              color: sliderPosition === 0 ? '#0F172A' : '#CBD5E1',
+              background: sliderPosition === 100 ? 'var(--color-gold)' : 'transparent',
+              color: sliderPosition === 100 ? '#0F172A' : '#CBD5E1',
               transition: 'all 0.2s'
             }}
           >
@@ -91,7 +91,7 @@ export default function ThermalSlider() {
           </button>
           <button
             type="button"
-            onClick={() => { setSliderPosition(100); triggerGtag('view_thermal_only'); }}
+            onClick={() => { setSliderPosition(0); triggerGtag('view_thermal_only'); }}
             style={{
               padding: '0.35rem 0.85rem',
               borderRadius: '50px',
@@ -99,8 +99,8 @@ export default function ThermalSlider() {
               fontSize: '0.8rem',
               fontWeight: 700,
               cursor: 'pointer',
-              background: sliderPosition === 100 ? 'var(--color-gold)' : 'transparent',
-              color: sliderPosition === 100 ? '#0F172A' : '#CBD5E1',
+              background: sliderPosition === 0 ? 'var(--color-gold)' : 'transparent',
+              color: sliderPosition === 0 ? '#0F172A' : '#CBD5E1',
               transition: 'all 0.2s'
             }}
           >

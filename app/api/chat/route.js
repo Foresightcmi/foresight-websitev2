@@ -37,6 +37,10 @@ export async function POST(request) {
 
     const systemInstruction = CHRIS_SYSTEM_INSTRUCTION;
     const activeModel = await resolveGeminiPrimaryTextModel(apiKey);
+    const isGemini4 = /^gemini-4/i.test(activeModel);
+    const generationConfig = isGemini4
+      ? { maxOutputTokens: 350, thinkingConfig: { thinkingLevel: 'LOW' } }
+      : { temperature: 0.7, maxOutputTokens: 350 };
 
     // If client requested streaming, stream plain text tokens with sub-second TTFT
     if (stream) {
@@ -50,10 +54,7 @@ export async function POST(request) {
           systemInstruction: {
             parts: [{ text: systemInstruction }]
           },
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 350
-          }
+          generationConfig
         }),
       });
 
@@ -126,10 +127,7 @@ export async function POST(request) {
         systemInstruction: {
           parts: [{ text: systemInstruction }]
         },
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 350
-        }
+        generationConfig
       }),
     });
 

@@ -200,7 +200,7 @@ export default function DueDiligenceCalculator() {
         } catch (storageErr) {
           console.warn('localStorage error:', storageErr);
         }
-        setAuditMsg(`✓ Successfully analyzed ${data.defectsCount} defect items (${data.pricingIndex.region})! Your complete repair schedule and REPAIR AMENDMENT EXHIBIT are ready for instant download upon payment.`);
+        setAuditMsg(`✓ Analyzed ${data.defectsCount} defect items (${data.pricingIndex.region})! Complete your $99 checkout below to unlock the itemized contractor cost schedule and Georgia Repair Amendment exhibit.`);
       }
     } catch (err) {
       setAuditMsg('Failed to process file upload. You can still enter your cloud link or paste notes below.');
@@ -214,8 +214,32 @@ export default function DueDiligenceCalculator() {
     setAuditLoading(true);
     setAuditMsg('');
 
+    let finalParsed = parsedAuditResult;
+    if (!finalParsed && auditNotes && auditNotes.trim().length >= 25) {
+      try {
+        const zipMatch = (auditAddress || propertyAddress || '').match(/\b\d{5}\b/);
+        const analyzeRes = await fetch('/api/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            rawText: auditNotes,
+            purchasePrice: purchasePrice || 485000,
+            zipCode: zipMatch ? zipMatch[0] : '30005',
+            loanType: 'conventional',
+            downPaymentPercent: 10,
+          }),
+        });
+        if (analyzeRes.ok) {
+          finalParsed = await analyzeRes.json();
+          setParsedAuditResult(finalParsed);
+        }
+      } catch {
+        // Proceed with standard 4-hour CMI fulfillment if notes have no direct assembly hits
+      }
+    }
+
     // Ensure localStorage is updated with final inputs
-    if (parsedAuditResult) {
+    if (finalParsed && finalParsed.defects) {
       try {
         const auditPayload = {
           propertyInfo: {
@@ -225,9 +249,9 @@ export default function DueDiligenceCalculator() {
             downPaymentPercent: 10,
             buyerName: auditName || 'Valued Buyer',
           },
-          defects: parsedAuditResult.defects,
-          calculations: parsedAuditResult.calculations,
-          pricingIndex: parsedAuditResult.pricingIndex,
+          defects: finalParsed.defects,
+          calculations: finalParsed.calculations,
+          pricingIndex: finalParsed.pricingIndex,
         };
         localStorage.setItem('foresight:last_audit:v1', JSON.stringify(auditPayload));
       } catch (err) {
@@ -246,7 +270,7 @@ export default function DueDiligenceCalculator() {
           phone: auditPhone,
           address: auditAddress || propertyAddress,
           reportLink: auditReportLink,
-          notes: `${auditNotes || ''}${parsedAuditResult ? ` [Parsed ${parsedAuditResult.defectsCount} defects: $${parsedAuditResult.calculations.totalMedian} median]` : ''}`,
+          notes: `${auditNotes || ''}${finalParsed ? ` [Parsed ${finalParsed.defectsCount} defects: $${finalParsed.calculations.totalMedian} median]` : ''}`,
           amount: 99
         })
       });
@@ -276,12 +300,12 @@ export default function DueDiligenceCalculator() {
     const active = DEFECT_ITEMS.filter((item) => selectedDefects.includes(item.id));
     
     // Scale costs slightly by square footage for whole-house items
-    const totalMedian = active.reduce((sum, item) => {
-      let cost = item.cost;
-      if (item.id === 'roof_replacement') cost = Math.round(squareFootage * 4.45);
-      if (item.id === 'polybutylene_plumbing') cost = Math.round(squareFootage * 3.75);
-      return sum + cost;
-    }, 0);
+    const getItemCost = (item) => {
+      if (item.id === 'roof_replacement') return Math.round(squareFootage * 4.45);
+      if (item.id === 'polybutylene_plumbing') return Math.round(squareFootage * 3.75);
+      return item.cost;
+    };
+    const totalMedian = active.reduce((sum, item) => sum + getItemCost(item), 0);
 
     const lowEstimate = Math.round(totalMedian * 0.85);
     const highEstimate = Math.round(totalMedian * 1.25);
@@ -304,7 +328,7 @@ Pursuant to the Due Diligence Contingency of the Purchase and Sale Agreement, Bu
 
 ${active.map((d, i) => `${i + 1}. [${d.category}] ${d.title}
    - Finding: ${d.desc}
-   - Estimated Contractor Remediation: $${d.cost.toLocaleString()}`).join('\n')}
+   - Estimated Contractor Remediation: $${getItemCost(d).toLocaleString()}`).join('\n')}
 
 PROPOSED SETTLEMENT IN LIEU OF REPAIRS:
 In lieu of Seller performing actual physical repairs prior to closing, Seller agrees to credit Buyer the sum of $${openingDemand.toLocaleString()} at the time of closing to be applied toward Buyer's closing costs, prepaids, and/or loan rate buydown (or via reduction of the purchase price), subject to Buyer's lender approval.
@@ -698,7 +722,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                   }}
                 >
                   {copiedAmendment ? <span>✓</span> : null}
-                  {copiedAmendment ? 'Sample GAR Clause Copied!' : 'Copy Sample GAR Amendment Clause'}
+                  {copiedAmendment ? 'Sample Repair Amendment Clause Copied!' : 'Copy Sample Repair Amendment Clause'}
                 </button>
 
                 <a
@@ -734,16 +758,19 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                   flexDirection: 'column',
                   gap: '0.4rem'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
                     <span style={{ fontSize: '0.7rem', color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'monospace' }}>
                       Already Booked Another Inspector?
                     </span>
+                    <span style={{ fontSize: '0.72rem', background: 'rgba(16, 185, 129, 0.18)', color: '#34D399', border: '1px solid rgba(16, 185, 129, 0.4)', padding: '2px 7px', borderRadius: '999px', fontWeight: 800, fontFamily: 'monospace' }}>
+                      $99 Flat
+                    </span>
                   </div>
                   <div style={{ fontSize: '0.84rem', fontWeight: 800, color: '#ffffff' }}>
-                    Get the Official Foresight Repair Cost &amp; GAR Exhibit Review (Call (678) 480-2110 for Quote)
+                    Get the Official $99 Foresight Repair Cost &amp; Amendment Review
                   </div>
                   <p style={{ fontSize: '0.74rem', color: '#94A3B8', margin: 0, lineHeight: 1.4 }}>
-                    Hired a competitor who handed you an un-priced PDF? Upload your report to have our Certified Master Inspector engine extract contractor repair costs and generate your Georgia repair amendment exhibit in 4 hours.
+                    Hired a competitor who handed you an un-priced PDF? Upload your report (or paste findings) to have our Certified Master Inspector engine extract contractor repair costs and generate your Georgia Repair Amendment exhibit within 4 hours.
                   </p>
                   <button
                     type="button"
@@ -762,7 +789,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                       boxShadow: '0 4px 12px rgba(212, 175, 55, 0.25)'
                     }}
                   >
-                    Request Outside Report Review (Call (678) 480-2110 for Quote) →
+                    Start $99 Outside Report Evaluation →
                   </button>
                 </div>
 
@@ -1149,6 +1176,44 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                   </p>
                 </div>
               </div>
+
+              <div style={{
+                marginTop: '1.25rem',
+                background: 'rgba(15, 23, 42, 0.85)',
+                border: '1px solid rgba(212, 175, 55, 0.4)',
+                borderRadius: '12px',
+                padding: '1rem 1.25rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '0.85rem'
+              }}>
+                <div>
+                  <strong style={{ color: '#FFFFFF', fontSize: '0.9rem', display: 'block' }}>
+                    Already Hired Another Inspector &amp; Running Out of Due Diligence Days?
+                  </strong>
+                  <span style={{ color: '#94A3B8', fontSize: '0.8rem' }}>
+                    Upload any outside inspection report for our $99 4-Hour CMI Repair Cost &amp; Amendment Evaluation.
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowAuditModal(true)}
+                  style={{
+                    padding: '10px 16px',
+                    borderRadius: '8px',
+                    background: 'linear-gradient(135deg, #D4AF37 0%, #B89628 100%)',
+                    color: '#0F172A',
+                    fontWeight: 800,
+                    fontSize: '0.82rem',
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Start $99 Outside Report Evaluation →
+                </button>
+              </div>
             </div>
           )}
         </div>
@@ -1248,16 +1313,16 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
 
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(212, 175, 55, 0.12)', border: '1px solid rgba(212, 175, 55, 0.35)', borderRadius: '9999px', padding: '4px 10px', marginBottom: '0.75rem' }}>
               <span style={{ fontSize: '0.72rem', color: '#FDE047', fontWeight: 800, textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                Standalone Outside Report Review
+                Standalone Outside Report Review • $99 Flat
               </span>
             </div>
 
             <h3 style={{ fontSize: '1.35rem', fontWeight: 900, color: '#FFFFFF', margin: '0 0 0.5rem', letterSpacing: '-0.01em' }}>
-              4-Hour Due Diligence Repair Cost Evaluation (Call (678) 480-2110 for Quote)
+              $99 4-Hour Due Diligence Repair Cost Evaluation
             </h3>
 
             <p style={{ fontSize: '0.8rem', color: '#94A3B8', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
-              Standard home inspections are diagnostic only per InterNACHI SOP. If you hired another inspection company and received an un-priced PDF, our CMI team cross-references your findings against <strong>regional Metro Atlanta contractor trade rates ($95–$165/hr)</strong> and generates a clean sample amendment exhibit within 4 hours.
+              Standard home inspections are diagnostic only per InterNACHI SOP. If you hired another inspection company and received an un-priced PDF, our CMI team cross-references your findings against <strong>regional Metro Atlanta contractor trade rates ($95–$165/hr)</strong> and delivers a structured Georgia Repair Amendment exhibit within 4 hours for a flat $99 fee.
             </p>
 
             <form onSubmit={handleStartAuditCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
@@ -1287,7 +1352,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
-                    Email Address *
+                    Email Address (Required)
                   </label>
                   <input
                     type="email"
@@ -1309,7 +1374,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                 </div>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
-                    Mobile Phone *
+                    Mobile Phone (Required)
                   </label>
                   <input
                     type="tel"
@@ -1333,7 +1398,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
-                  Property Under Contract *
+                  Property Under Contract (Required)
                 </label>
                 <input
                   type="text"
@@ -1393,7 +1458,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                     fontSize: '0.75rem',
                     fontWeight: 700
                   }}>
-                    ✓ {parsedAuditResult.defectsCount} items priced (${Number(parsedAuditResult.calculations.totalMedian).toLocaleString()} median demand). Ready for instant unlock!
+                    ✓ {parsedAuditResult.defectsCount} defect items isolated ({parsedAuditResult.pricingIndex.region}). Ready for instant unlock upon $99 payment!
                   </div>
                 )}
               </div>
@@ -1422,11 +1487,11 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
 
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 700, color: '#CBD5E1', marginBottom: '4px' }}>
-                  Due Diligence Deadline &amp; Priority Concerns
+                  Paste Report Findings or Due Diligence Notes (Optional)
                 </label>
                 <textarea
-                  rows={2}
-                  placeholder="e.g. Due diligence ends Friday at 5pm. Main issues: HVAC, roof shingles, and main panel."
+                  rows={3}
+                  placeholder="Paste defect findings from a scanned report or note your deadline (e.g. Due diligence ends Friday at 5pm; FPE Stab-Lok panel, main sewer root intrusion, aged HVAC)."
                   value={auditNotes}
                   onChange={(e) => setAuditNotes(e.target.value)}
                   style={{
@@ -1475,7 +1540,7 @@ DISCLAIMER: Foresight Home Inspections, LLC is an independent diagnostic propert
                   opacity: auditLoading ? 0.7 : 1
                 }}
               >
-                {auditLoading ? 'Submitting Request...' : 'Request Outside Report Quote (Call (678) 480-2110) →'}
+                {auditLoading ? 'Connecting to Secure Checkout...' : 'Proceed to Secure $99 Stripe Checkout →'}
               </button>
 
               <div style={{ fontSize: '0.72rem', color: '#64748B', textAlign: 'center', lineHeight: 1.4 }}>
