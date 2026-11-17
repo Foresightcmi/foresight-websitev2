@@ -63,9 +63,18 @@ function normalizeAddressKey(addr) {
   return String(addr || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
+function getImapSinceDate(daysAgo = 21) {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const dt = new Date(Date.now() - daysAgo * 86400000);
+  const d = String(dt.getUTCDate()).padStart(2, '0');
+  return `${d}-${months[dt.getUTCMonth()]}-${dt.getUTCFullYear()}`;
+}
+
 function parseHgNotifierEmail(rawEmail) {
   const decoded = decodeQuotedPrintable(rawEmail);
-  const withoutStyle = decoded.replace(/<style[\s\S]*?<\/style>/gi, '');
+  const htmlPartIdx = decoded.search(/Content-Type:\s*text\/html/i);
+  const bodyPortion = htmlPartIdx !== -1 ? decoded.slice(htmlPartIdx) : decoded;
+  const withoutStyle = bodyPortion.replace(/<style[\s\S]*?<\/style>/gi, '');
   const lines = withoutStyle
     .replace(/<[^>]+>/g, '\n')
     .split(/\r?\n/)
@@ -89,13 +98,18 @@ function parseHgNotifierEmail(rawEmail) {
   const inspectionDate = dtMatch ? parseMonthDateToIso(dtMatch[1]) : undefined;
   const inspectionTime = dtMatch ? dtMatch[2].toUpperCase().replace(/\s+/g, ' ').trim() : '10:00 AM';
 
-  const addrLineMatch = text.match(/\b(\d{1,6}\s+[^\r\n]+?),\s*([A-Za-z\s.]+?,\s*[A-Z]{2}\s+\d{5}(?:-\d{4})?)/);
+  // Greedy street + optional Lot/Unit/Apt before final "City, ST ZIP"
+  const addrLineMatch = text.match(/^(\d{1,6}\s+[^\r\n]+),\s*([A-Za-z\s.'\-]+,\s*[A-Z]{2}\s+\d{5}(?:-\d{4})?)$/m);
   const propertyAddress = addrLineMatch ? addrLineMatch[1].trim() : '';
   const cityStateZip = addrLineMatch ? addrLineMatch[2].trim() : 'Metro Atlanta, GA';
   if (!propertyAddress) return null;
 
   const custMatch = text.match(/Customer\(s\)\s*\n\s*(?!Real\s*Estate|Service\b)([^\n]+)/i);
   const clientName = custMatch ? custMatch[1].replace(/\s*\([^)]*\)\s*/g, ' ').trim() : '';
+
+  const agentSplit = text.split(/Real\s*Estate\s*Professional\(s\)/i);
+  const clientBlock = agentSplit[0] || text;
+  const agentBlock = agentSplit[1] || '';
 
   const agentMatch = text.match(/Real\s*Estate\s*Professional\(s\)\s*\n\s*(?!Service\b)([^\n]+)/i);
   let realtorName = '';
@@ -107,15 +121,18 @@ function parseHgNotifierEmail(rawEmail) {
       .trim();
   }
 
-  const emails = Array.from(new Set(text.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g) || []))
-    .filter(e => !/homegauge\.com|foresightcmi\.com|fhinspectionsatl\.com|noreply/i.test(e));
-  const clientEmail = emails[0] || '';
-  const realtorEmail = emails[1] || '';
+  const filterEmail = (list) =>
+    Array.from(new Set(list || [])).filter(e => !/homegauge\.com|foresightcmi\.com|fhinspectionsatl\.com|noreply/i.test(e));
+  const clientEmails = filterEmail(clientBlock.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g));
+  const agentEmails = filterEmail(agentBlock.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g));
+  const clientEmail = clientEmails[0] || '';
+  const realtorEmail = agentEmails[0] || clientEmails[1] || '';
 
-  const phones = (text.match(/(?:Mobile|Work|Home|Cell|Phone)\s*:\s*([0-9\-().\s]{10,17})/gi) || [])
-    .map(m => formatPhone(m.replace(/^[^:]+:\s*/i, '')));
-  const clientPhone = phones[0] || '';
-  const agentPhone = phones[1] || '';
+  const extractPhones = (blk) =>
+    (blk.match(/(?:Mobile|Work|Home|Cell|Phone)\s*:\s*([0-9\-().\s]{10,17})/gi) || [])
+      .map(m => formatPhone(m.replace(/^[^:]+:\s*/i, '')));
+  const clientPhone = extractPhones(clientBlock)[0] || '';
+  const agentPhone = extractPhones(agentBlock)[0] || '';
 
   const feeMatch =
     text.match(/Inspection\s*Total\s*:\s*\n?\s*\$\s*([\d,]+(?:\.\d{2})?)/i) ||
@@ -138,11 +155,11 @@ function parseHgNotifierEmail(rawEmail) {
     ? 'Crawlspace'
     : (/UNFINISHED\s*BASEMENT/i.test(text) && !/Unfinished\s*Basement\?\s*:\s*no/i.test(text) ? 'Basement' : 'Slab');
 
-  const rooms = text.match(/Rooms\s*:\s*([^\n]+)/i)?.[1]?.trim() || '';
-  const mls = text.match(/MLS\s*#\s*:\s*([^\n]+)/i)?.[1]?.trim() || '';
-  const pets = text.match(/Pet\s*Instructions\s*:\s*([^\n]+)/i)?.[1]?.trim() || '';
-  const occupied = text.match(/Property\s*Occupied\s*:\s*([^\n]+)/i)?.[1]?.trim() || '';
-  const utilities = text.match(/Utilities\s*on\s*:\s*([^\n]+)/i)?.[1]?.trim() || '';
+  const rooms = text.match(/Rooms[ \t]*:[ \t]*([^\r\n]*)/i)?.[1]?.trim() || '';
+  const mls = text.match(/MLS\s*#[ \t]*:[ \t]*([^\r\n]*)/i)?.[1]?.trim() || '';
+  const pets = text.match(/Pet\s*Instructions[ \t]*:[ \t]*([^\r\n]*)/i)?.[1]?.trim() || '';
+  const occupied = text.match(/Property\s*Occupied[ \t]*:[ \t]*([^\r\n]*)/i)?.[1]?.trim() || '';
+  const utilities = text.match(/Utilities\s*on[ \t]*:[ \t]*([^\r\n]*)/i)?.[1]?.trim() || '';
 
   const noteParts = [
     reportId ? `Report ID: ${reportId}` : '',
@@ -180,43 +197,83 @@ function parseHgNotifierEmail(rawEmail) {
   };
 }
 
-async function fetchRecentHgJobsFromImap(user, pass) {
+async function fetchRecentHgJobsFromImap(user, pass, includePast = false) {
   return new Promise((resolve) => {
-    const socket = tls.connect(993, 'imap.gmail.com', { servername: 'imap.gmail.com', timeout: 11000 });
+    const socket = tls.connect(993, 'imap.gmail.com', { servername: 'imap.gmail.com', timeout: 14000 });
     let buffer = '';
     let step = 0;
+    let hgRawBuffer = '';
+    const sinceStr = getImapSinceDate(21);
 
     const finish = (jobs, canceledIds = []) => {
       try {
         socket.write('A99 LOGOUT\r\n');
         socket.end();
-      } catch {
-        // ignore close error
-      }
+      } catch {}
       resolve({ jobs, canceledIds });
     };
 
-    const timer = setTimeout(() => finish([]), 11000);
-
+    const timer = setTimeout(() => finish([]), 14000);
     socket.on('error', () => {
       clearTimeout(timer);
       resolve({ jobs: [], canceledIds: [] });
     });
 
+    const finalizeMessages = (paidRawBuffer = '') => {
+      clearTimeout(timer);
+      const paidPrefixes = Array.from(paidRawBuffer.matchAll(/Subject:\s*Payment\s+Received:\s*([^\r\n]+)/gi))
+        .map(m => normalizeAddressKey(m[1]))
+        .filter(Boolean);
+
+      const rawMessages = hgRawBuffer.split(/\*\s+\d+\s+FETCH\s+\(/i).slice(1);
+      const activeByAddr = new Map();
+      const canceledSet = new Set();
+      for (const rawMsg of rawMessages) {
+        const parsed = parseHgNotifierEmail(rawMsg);
+        if (!parsed || !parsed.propertyAddress) continue;
+        const baseKey = normalizeAddressKey(parsed.propertyAddress.split(',')[0]);
+        if (parsed.canceled) {
+          activeByAddr.delete(baseKey);
+          canceledSet.add(parsed.id);
+        } else {
+          canceledSet.delete(parsed.id);
+          const isPaid = paidPrefixes.some(pk => baseKey.startsWith(pk) || pk.startsWith(baseKey));
+          const prev = activeByAddr.get(baseKey);
+          activeByAddr.set(baseKey, {
+            ...prev,
+            ...Object.fromEntries(Object.entries(parsed).filter(([, v]) => v !== '' && v !== undefined)),
+            ...(isPaid ? { paymentStatus: 'paid' } : {})
+          });
+        }
+      }
+      const todayIso = getEasternTodayIso();
+      const allActive = Array.from(activeByAddr.values()).filter(
+        j => includePast || (j.inspectionDate || '') >= todayIso
+      );
+      allActive.sort((a, b) => (a.inspectionDate || '').localeCompare(b.inspectionDate || ''));
+      return finish(allActive, Array.from(canceledSet));
+    };
+
     socket.on('data', (chunk) => {
       buffer += chunk.toString('utf8');
       if (step === 0 && buffer.includes('* OK')) {
-        step = 1;
-        buffer = '';
+        step = 1; buffer = '';
         socket.write(`A1 LOGIN "${user}" "${pass.replace(/\s+/g, '')}"\r\n`);
       } else if (step === 1 && buffer.includes('A1 OK')) {
-        step = 2;
-        buffer = '';
-        socket.write('A2 SELECT INBOX\r\n');
-      } else if (step === 2 && buffer.includes('A2 OK')) {
-        step = 3;
-        buffer = '';
-        socket.write('A3 SEARCH FROM "noreply@HomeGauge.com"\r\n');
+        step = 2; buffer = '';
+        socket.write('A2 EXAMINE "[Gmail]/All Mail"\r\n');
+      } else if (step === 2 && (buffer.includes('A2 OK') || buffer.includes('A2 NO'))) {
+        if (buffer.includes('A2 NO')) {
+          buffer = '';
+          socket.write('A2B EXAMINE "INBOX"\r\n');
+          step = 25;
+          return;
+        }
+        step = 3; buffer = '';
+        socket.write(`A3 SEARCH FROM "noreply@HomeGauge.com" SINCE ${sinceStr}\r\n`);
+      } else if (step === 25 && buffer.includes('A2B OK')) {
+        step = 3; buffer = '';
+        socket.write(`A3 SEARCH FROM "noreply@HomeGauge.com" SINCE ${sinceStr}\r\n`);
       } else if (step === 3 && (buffer.includes('A3 OK') || buffer.includes('A3 BAD') || buffer.includes('A3 NO'))) {
         const searchLine = buffer.match(/\*\s+SEARCH\s+([0-9\s]+)/i);
         const ids = searchLine ? searchLine[1].trim().split(/\s+/).filter(Boolean) : [];
@@ -224,34 +281,21 @@ async function fetchRecentHgJobsFromImap(user, pass) {
           clearTimeout(timer);
           return finish([]);
         }
-        const recentIds = ids.slice(-30).join(',');
-        step = 4;
-        buffer = '';
+        const recentIds = ids.slice(-20).join(',');
+        step = 4; buffer = '';
         socket.write(`A4 FETCH ${recentIds} (BODY.PEEK[])\r\n`);
       } else if (step === 4 && (buffer.includes('A4 OK') || buffer.includes('A4 BAD') || buffer.includes('A4 NO'))) {
-        clearTimeout(timer);
-        const rawMessages = buffer.split(/\*\s+\d+\s+FETCH\s+\(/i).slice(1);
-        const activeByAddr = new Map();
-        const canceledSet = new Set();
-        for (const rawMsg of rawMessages) {
-          const parsed = parseHgNotifierEmail(rawMsg);
-          if (!parsed || !parsed.propertyAddress) continue;
-          if (parsed.canceled) {
-            activeByAddr.delete(parsed.addrKey);
-            canceledSet.add(parsed.id);
-          } else {
-            canceledSet.delete(parsed.id);
-            const prev = activeByAddr.get(parsed.addrKey);
-            activeByAddr.set(parsed.addrKey, {
-              ...prev,
-              ...Object.fromEntries(Object.entries(parsed).filter(([, v]) => v !== '' && v !== undefined))
-            });
-          }
-        }
-        const sortedJobs = Array.from(activeByAddr.values()).sort((a, b) =>
-          (b.inspectionDate || '').localeCompare(a.inspectionDate || '')
-        );
-        return finish(sortedJobs, Array.from(canceledSet));
+        hgRawBuffer = buffer;
+        step = 5; buffer = '';
+        socket.write(`A5 SEARCH FROM "support@HomeGauge.com" SUBJECT "Payment Received" SINCE ${sinceStr}\r\n`);
+      } else if (step === 5 && (buffer.includes('A5 OK') || buffer.includes('A5 BAD') || buffer.includes('A5 NO'))) {
+        const searchLine = buffer.match(/\*\s+SEARCH\s+([0-9\s]+)/i);
+        const pIds = searchLine ? searchLine[1].trim().split(/\s+/).filter(Boolean) : [];
+        if (pIds.length === 0) return finalizeMessages('');
+        step = 6; buffer = '';
+        socket.write(`A6 FETCH ${pIds.slice(-20).join(',')} (BODY.PEEK[HEADER.FIELDS (SUBJECT)])\r\n`);
+      } else if (step === 6 && (buffer.includes('A6 OK') || buffer.includes('A6 BAD') || buffer.includes('A6 NO'))) {
+        return finalizeMessages(buffer);
       }
     });
   });
@@ -263,6 +307,7 @@ export async function GET(request) {
   if (key !== SYNC_TOKEN) {
     return Response.json({ error: 'Unauthorized' }, { status: 401, headers: CORS_HEADERS });
   }
+  const includePast = url.searchParams.get('includePast') === '1';
 
   const emailUser = process.env.EMAIL_USER || process.env.SMTP_USER || 'inspect@foresightcmi.com';
   const emailPass = process.env.EMAIL_PASSWORD || process.env.SMTP_PASS || '';
@@ -270,7 +315,7 @@ export async function GET(request) {
     return Response.json({ jobs: [], canceledIds: [], status: 'missing_credentials' }, { headers: CORS_HEADERS });
   }
 
-  const { jobs, canceledIds } = await fetchRecentHgJobsFromImap(emailUser, emailPass);
+  const { jobs, canceledIds } = await fetchRecentHgJobsFromImap(emailUser, emailPass, includePast);
   return Response.json(
     {
       syncedAt: new Date().toISOString(),
