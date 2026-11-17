@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     inlineCss: true,
+    agentUpgrade: 'security',
   },
   // Normalize URLs to remove trailing slashes for duplicate content SEO safety
   trailingSlash: false,
