@@ -853,7 +853,7 @@ export default function RootLayout({ children }) {
               <div>
                 <h3>Top Service Areas</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li><Link prefetch={false} href="/service-areas/atlanta">Atlanta Home Inspection</Link></li>
+                  <li><Link prefetch={false} href="/service-areas/atlanta">Atlanta, GA Inspection Guide</Link></li>
                   <li><Link prefetch={false} href="/service-areas/sandy-springs">Sandy Springs, GA</Link></li>
                   <li><Link prefetch={false} href="/service-areas/alpharetta">Alpharetta, GA</Link></li>
                   <li><Link prefetch={false} href="/service-areas/marietta">Marietta, GA</Link></li>
@@ -872,7 +872,10 @@ export default function RootLayout({ children }) {
                   <li><Link prefetch={false} href="/quote" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Instant Quote Calculator</Link></li>
                   <li><Link prefetch={false} href="/risk-scanner" style={{ color: 'var(--color-gold)', fontWeight: 700 }}>Property Risk Scanner</Link></li>
 
+                  <li><Link prefetch={false} href="/about/christopher-boykin">Christopher Boykin, CMI Bio</Link></li>
                   <li><Link prefetch={false} href="/compare/two-inspector-team-vs-single-inspector">Why Two Inspectors?</Link></li>
+                  <li><Link prefetch={false} href="/homebuyer-red-flags" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Homebuyer Red-Flag Guide</Link></li>
+                  <li><Link prefetch={false} href="/homeowner-care">Post-Closing Homeowner Care</Link></li>
                   <li><Link prefetch={false} href="/due-diligence">Due Diligence Guarantee</Link></li>
                   <li><Link prefetch={false} href="/repair-credit-calculator" style={{ color: 'var(--color-gold)', fontWeight: 600 }}>Repair Credit Calculator</Link></li>
                   <li><Link prefetch={false} href="/samples">Sample Inspection Reports</Link></li>
@@ -893,7 +896,22 @@ export default function RootLayout({ children }) {
               </div>
             </div>
             <div className="footer-hub-links">
-              <strong style={{ color: '#CBD5E1' }}>Extended Metro Atlanta Service Hubs:</strong>{' '}
+              <div style={{ marginBottom: '0.65rem' }}>
+                <strong style={{ color: '#CBD5E1' }}>Buyer Inspection City Hubs (From $345):</strong>{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/atlanta">Atlanta Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/alpharetta">Alpharetta Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/marietta">Marietta Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/sandy-springs">Sandy Springs Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/decatur">Decatur Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/lithonia">Lithonia Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/stonecrest">Stonecrest Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/roswell">Roswell Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/johns-creek">Johns Creek Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/services/buyer-inspection/lawrenceville">Lawrenceville Home Inspection</Link> &bull;{' '}
+                <Link prefetch={false} href="/neighborhoods">Metro Atlanta Neighborhoods</Link>
+              </div>
+              <div>
+                <strong style={{ color: '#CBD5E1' }}>Extended Metro Atlanta Service Hubs:</strong>{' '}
               <Link prefetch={false} href="/service-areas/lithonia">Lithonia</Link> &bull;{' '}
               <Link prefetch={false} href="/service-areas/stonecrest">Stonecrest</Link> &bull;{' '}
               <Link prefetch={false} href="/service-areas/dunwoody">Dunwoody</Link> &bull;{' '}
@@ -919,6 +937,7 @@ export default function RootLayout({ children }) {
               <Link prefetch={false} href="/services/sewer-scope-inspection/stone-mountain">Stone Mountain Sewer Scope</Link> &bull;{' '}
               <Link prefetch={false} href="/services/pool-inspection/brooks">Brooks Pool Inspection</Link> &bull;{' '}
               <Link prefetch={false} href="/videos/termite-and-wdo-inspections">Termite &amp; WDO Video Guide</Link>
+              </div>
             </div>
             <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
               <p style={{ margin: 0, fontSize: '0.85rem' }}>

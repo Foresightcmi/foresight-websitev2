@@ -20,8 +20,32 @@ const INDEXNOW_KEY = 'foresighthomeinspections2026';
 async function main() {
   console.log('📡 IndexNow Pinger — Starting...\n');
 
-  // Collect all URLs that may have changed recently
-  const urls = [SITE_URL, `${SITE_URL}/blog`, `${SITE_URL}/services`, `${SITE_URL}/service-areas`];
+  // Collect priority newly shipped hubs & all URLs that may have changed recently
+  const urls = [
+    SITE_URL,
+    `${SITE_URL}/about/christopher-boykin`,
+    `${SITE_URL}/homebuyer-red-flags`,
+    `${SITE_URL}/homeowner-care`,
+    `${SITE_URL}/neighborhoods`,
+  ];
+
+  // Add all 22 concentric neighborhood hub pages
+  const neighborhoodsFile = path.join(__dirname, '..', 'data', 'neighborhoods-pseo.json');
+  if (fs.existsSync(neighborhoodsFile)) {
+    const neighborhoods = JSON.parse(fs.readFileSync(neighborhoodsFile, 'utf8'));
+    for (const n of neighborhoods) {
+      if (n && n.slug) urls.push(`${SITE_URL}/neighborhoods/${n.slug}`);
+    }
+  }
+
+  urls.push(
+    `${SITE_URL}/ai-fact-sheet`,
+    `${SITE_URL}/llms.txt`,
+    `${SITE_URL}/llms-full.txt`,
+    `${SITE_URL}/blog`,
+    `${SITE_URL}/services`,
+    `${SITE_URL}/service-areas`
+  );
 
   // Add recent blog posts
   const postsFile = path.join(__dirname, '..', 'data', 'posts.json');
@@ -136,31 +160,35 @@ async function main() {
   ];
   crawledNotIndexedUrls.forEach(s => urls.push(`${SITE_URL}${s}`));
 
-  console.log(`📋 ${urls.length} URLs to submit\n`);
+  const uniqueUrls = [...new Set(urls)];
+  console.log(`📋 ${uniqueUrls.length} unique URLs to submit\n`);
 
-  // Submit to IndexNow API (covers Bing, Yandex, Naver, Seznam)
-  const payload = {
-    host: 'www.fhinspectionsatl.com',
-    key: INDEXNOW_KEY,
-    keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
-    urlList: urls.slice(0, 100), // Max 100 per request
-  };
-
+  // Submit to IndexNow API (covers Bing, Yandex, Naver, Seznam) in batches of 100
   const endpoints = [
     'https://api.indexnow.org/indexnow',
     'https://www.bing.com/indexnow',
   ];
 
-  for (const endpoint of endpoints) {
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      console.log(`  ${endpoint}: ${response.status} ${response.status === 200 || response.status === 202 ? '✅' : '⚠️'}`);
-    } catch (err) {
-      console.log(`  ${endpoint}: ❌ ${err.message}`);
+  for (let i = 0; i < uniqueUrls.length; i += 100) {
+    const batch = uniqueUrls.slice(i, i + 100);
+    const payload = {
+      host: 'www.fhinspectionsatl.com',
+      key: INDEXNOW_KEY,
+      keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
+      urlList: batch,
+    };
+    console.log(`  Batch ${Math.floor(i / 100) + 1} (${batch.length} URLs):`);
+    for (const endpoint of endpoints) {
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        console.log(`    ${endpoint}: ${response.status} ${response.status === 200 || response.status === 202 ? '✅' : '⚠️'}`);
+      } catch (err) {
+        console.log(`    ${endpoint}: ❌ ${err.message}`);
+      }
     }
   }
 

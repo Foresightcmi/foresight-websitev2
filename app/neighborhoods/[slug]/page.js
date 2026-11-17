@@ -67,6 +67,14 @@ export default async function NeighborhoodPage({ params }) {
   const canonicalUrl = `${SITE_URL}/neighborhoods/${hood.slug}`;
   const citySlug = hood.city.toLowerCase().replace(/\s+/g, '-');
 
+  const otherNeighborhoods = neighborhoods.filter(n => n.slug !== hood.slug);
+  const sameCounty = otherNeighborhoods.filter(n => n.county === hood.county);
+  const otherCounties = otherNeighborhoods.filter(n => n.county !== hood.county);
+  const currentIdx = neighborhoods.findIndex(n => n.slug === hood.slug);
+  const offset = otherCounties.length > 0 ? currentIdx % otherCounties.length : 0;
+  const rotatedOthers = [...otherCounties.slice(offset), ...otherCounties.slice(0, offset)];
+  const adjacentNeighborhoods = [...sameCounty, ...rotatedOthers].slice(0, 6);
+
   const breadcrumbsJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -105,6 +113,19 @@ export default async function NeighborhoodPage({ params }) {
     areaServed: {
       '@type': 'AdministrativeArea',
       name: `${hood.name}, ${hood.city}, GA`,
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '345.00',
+      priceCurrency: 'USD',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '345.00',
+        priceCurrency: 'USD',
+        unitText: 'starting',
+      },
     },
     description: hood.intro,
   };
@@ -206,49 +227,94 @@ export default async function NeighborhoodPage({ params }) {
               <p id="aeo-direct-answer" style={{ color: 'var(--color-gray-dark)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
                 <strong>Foresight Home Inspections, LLC</strong> (led by Certified Master Inspector Christopher Boykin, CMI #MICB-1082) inspects {hood.name} homes in {hood.city}, GA from $345 ($295 condos), deploying <strong>two certified inspectors</strong> with free thermal imaging, 4K drone scans, and <strong>$35,000 warranty protection</strong>. {hood.intro}
               </p>
-              <div style={{ padding: '1.25rem', background: 'var(--color-gray-light)', borderRadius: '8px', borderLeft: '4px solid var(--color-red)' }}>
-                <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.5rem' }}>
-                  Parent Municipality & Service Link:
+              <div style={{ padding: '1.35rem', background: 'var(--color-gray-light)', borderRadius: '8px', borderLeft: '4px solid var(--color-red)' }}>
+                <strong style={{ color: 'var(--color-dark)', display: 'block', marginBottom: '0.6rem' }}>
+                  Parent Municipality &amp; Upward Metro Equity Links:
                 </strong>
-                <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--color-gray-dark)' }}>
-                  Located within {hood.county} County. Explore our full citywide inspection capabilities on our{' '}
-                  <Link href={`/service-areas/${citySlug}`} style={{ color: 'var(--color-red)', fontWeight: 600 }}>
-                    {hood.city}, GA Home Inspection Hub →
-                  </Link>
+                <p style={{ margin: '0 0 0.75rem', fontSize: '0.95rem', color: 'var(--color-gray-dark)' }}>
+                  Located within {hood.county} County, {hood.city}, GA. Connect directly to our primary Atlanta authority hub, dedicated buyer inspection page, and local municipal risk guide:
                 </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.45rem', fontSize: '0.95rem' }}>
+                  <li>
+                    <Link href="/" style={{ color: 'var(--color-dark)', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                      Atlanta Home Inspections — Foresight Home Inspections →
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={`/services/buyer-inspection/${citySlug}`} style={{ color: 'var(--color-red)', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                      {hood.city}, GA Buyer Home Inspection (From $345) →
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={`/service-areas/${citySlug}`} style={{ color: 'var(--color-dark)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                      {hood.city}, GA Inspection Guide: Local Risks &amp; Services →
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
 
             <div style={{ background: 'var(--color-dark)', color: 'var(--color-white)', padding: '2.25rem', borderRadius: '12px' }}>
               <h3 style={{ color: 'var(--color-gold)', fontSize: '1.35rem', marginBottom: '1.25rem', fontWeight: 700 }}>
-                ⭐ The Foresight {hood.name} Standard
+                ⭐ The Foresight {hood.name} Protocol
               </h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red-light)', fontSize: '1.2rem' }}>✓</span>
                   <div>
-                    <strong>Two Certified Inspectors:</strong> Lead CMI + Senior Inspector cover twice the ground with dedicated parallel focus.
+                    <strong>Two Certified Inspectors:</strong> Lead CMI + Senior Inspector deliver property-scaled parallel focus with zero solo-inspector fatigue.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red-light)', fontSize: '1.2rem' }}>✓</span>
                   <div>
-                    <strong>infrared thermal Envelope Diagnostics:</strong> Detect concealed moisture and insulation voids without damage.
+                    <strong>Infrared Thermal Envelope Diagnostics:</strong> Detect concealed moisture and insulation voids without damage, plus 4K aerial drone roof scans.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red-light)', fontSize: '1.2rem' }}>✓</span>
                   <div>
-                    <strong>Active SUPRA eKEY Access:</strong> smooth, autonomous entry with zero scheduling friction for agents.
+                    <strong>Active SUPRA eKEY Access:</strong> Smooth, autonomous lockbox entry with zero scheduling friction for listing and buyer agents.
                   </div>
                 </li>
                 <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                   <span style={{ color: 'var(--color-red-light)', fontSize: '1.2rem' }}>✓</span>
                   <div>
-                    <strong>$10,000 Elite Warranty:</strong> $0 deductible coverage on appliances, structural, and mechanicals.
+                    <strong>$35,000 Combined Protection:</strong> $10,000 Elite Master Warranty ($0 deductible) + $25,000 InterNACHI Honor Guarantee.
                   </div>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          {/* Real Defect Negotiation Leverage & Verified Google Reviews Strip */}
+          <div style={{ marginTop: '2.5rem', background: '#0F172A', color: '#FFFFFF', borderRadius: '12px', padding: '2rem', border: '1px solid rgba(212, 175, 55, 0.35)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.75rem', alignItems: 'center' }}>
+            <div>
+              <span className="badge" style={{ marginBottom: '0.65rem' }}>Verified Client ROI &amp; Trust</span>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.45rem', fontWeight: 800, marginBottom: '0.5rem' }}>
+                $1,250–$14,200+ Typical Repair Credit Leverage vs. From $345 Inspection
+              </h3>
+              <p style={{ color: '#CBD5E1', fontSize: '0.96rem', lineHeight: 1.6, margin: 0 }}>
+                Metro Atlanta contractor trade defects uncovered before closing routinely power $1,250–$14,200+ in Georgia Repair Amendment seller credits. Decode red-flag symptoms or estimate your negotiation leverage before due diligence expires.
+              </p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              <a
+                href="https://g.page/r/CaK5MZOz_FBtEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ background: 'rgba(212, 175, 55, 0.14)', border: '1px solid rgba(212, 175, 55, 0.45)', borderRadius: '8px', padding: '0.85rem 1.1rem', color: '#FDE047', fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none', display: 'block', textAlign: 'center' }}
+              >
+                ★★★★★ 4.8/5 across 53 Verified Google Reviews →
+              </a>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <Link href="/repair-credit-calculator" className="btn btn-gold" style={{ flex: 1, minWidth: '180px', padding: '0.75rem 1rem', fontSize: '0.92rem' }}>
+                  Repair Credit Calculator →
+                </Link>
+                <Link href="/homebuyer-red-flags" className="btn btn-outline-light" style={{ flex: 1, minWidth: '180px', padding: '0.75rem 1rem', fontSize: '0.92rem' }}>
+                  3:00 AM Red-Flag Guide →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -308,14 +374,22 @@ export default async function NeighborhoodPage({ params }) {
                 'radon-testing': '48-Hour Continuous Radon Test',
                 'termite-inspection': 'Official GA WDO Termite Letter',
                 'pool-inspection': 'Pool & Spa Diagnostic Evaluation',
-                'new-construction-inspection': 'New Build / 11-Month Inspection'
+                'new-construction-inspection': 'New Construction Inspection (From $400)',
+                '11-month-warranty-inspection': '11-Month Builder Warranty (From $345)',
+                'pre-drywall-inspection': 'Pre-Drywall Framing Inspection (From $275)',
+                'pre-listing-inspection': 'Pre-Listing Seller Inspection (From $345)',
+                'mold-testing': 'Certified Mold & Air Quality Lab Testing'
               };
               const descriptions = {
-                'sewer-scope-inspection': '200ft high-def camera scan through main lateral line to detect root blockages, offset joints, and cracked clay pipes.',
-                'radon-testing': 'EPA-compliant electronic continuous monitors measuring airborne radon levels in living spaces and basements.',
-                'termite-inspection': 'Thorough inspection for subterranean termite activity, past treatments, and moisture-damaged framing with official state clearance.',
-                'pool-inspection': 'APSP & NEC 680 safety evaluation of pumps, chlorinators, filters, heaters, barriers, and electrical bonding.',
-                'new-construction-inspection': 'Independent builder warranty punch list documenting code compliance and finishing defects before builder sign-off.'
+                'sewer-scope-inspection': '200ft high-def camera scan through main lateral line to detect root blockages, offset joints, and cracked clay pipes. Call (678) 480-2110 for Quote.',
+                'radon-testing': 'EPA-compliant electronic continuous monitors measuring airborne radon levels in living spaces and basements. Call (678) 480-2110 for Quote.',
+                'termite-inspection': 'Thorough inspection for subterranean termite activity, past treatments, and moisture-damaged framing with official state clearance. Call (678) 480-2110 for Quote.',
+                'pool-inspection': 'APSP & NEC 680 safety evaluation of pumps, chlorinators, filters, heaters, barriers, and electrical bonding. Call (678) 480-2110 for Quote.',
+                'new-construction-inspection': 'Independent final new-build evaluation documenting framing, mechanical, and envelope punch list items before closing.',
+                '11-month-warranty-inspection': 'Comprehensive two-inspector evaluation before your 1-year builder warranty expires so defects are repaired at builder expense.',
+                'pre-drywall-inspection': 'Phase 1 framing, rough electrical, rough plumbing, and structural shear check before insulation and drywall conceal defects.',
+                'pre-listing-inspection': 'Two-inspector seller pre-listing evaluation that uncovers repair priorities before hitting the MLS.',
+                'mold-testing': 'Calibrated spore-trap indoor air quality sampling analyzed by an accredited lab. Call (678) 480-2110 for Quote.'
               };
 
               return (
@@ -368,6 +442,56 @@ export default async function NeighborhoodPage({ params }) {
                 </p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Adjacent Metro Atlanta Neighborhood Clusters (Deterministic) */}
+      <section className="section bg-white">
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '2.25rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem' }}>Concentric Ring Exploration</span>
+            <h2 style={{ fontSize: '2.1rem', fontWeight: 800 }}>
+              Adjacent Metro Atlanta Neighborhood Clusters
+            </h2>
+            <p style={{ color: 'var(--color-gray-dark)', maxWidth: '680px', margin: '0.5rem auto 0', fontSize: '1rem' }}>
+              Compare construction eras, radon zones, and structural risks across neighboring {hood.county} County and Metro Atlanta communities.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: '1.25rem' }}>
+            {adjacentNeighborhoods.map((adj) => (
+              <Link
+                key={adj.slug}
+                href={`/neighborhoods/${adj.slug}`}
+                className="card"
+                style={{ padding: '1.5rem', background: 'var(--color-gray-light)', borderRadius: '10px', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '3px solid var(--color-gold)' }}
+              >
+                <div>
+                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--color-red)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    {adj.city}, GA &bull; {adj.county} County
+                  </span>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--color-dark)', margin: '0.4rem 0 0.5rem' }}>
+                    {adj.name}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--color-gray-dark)', margin: 0, lineHeight: 1.55 }}>
+                    {adj.tagline}
+                  </p>
+                </div>
+                <span style={{ marginTop: '1rem', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-red)' }}>
+                  Explore Cluster Guide →
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/neighborhoods" className="btn btn-outline" style={{ borderColor: 'var(--color-dark)', color: 'var(--color-dark)' }}>
+              View All {neighborhoods.length} Neighborhood Clusters
+            </Link>
+            <Link href="/" className="btn btn-outline" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+              Atlanta Home Inspections — Foresight Home Inspections
+            </Link>
           </div>
         </div>
       </section>

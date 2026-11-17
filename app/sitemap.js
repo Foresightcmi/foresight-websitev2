@@ -27,6 +27,7 @@ export default async function sitemap() {
     { loc: '/services/commercial-property-inspection', changefreq: 'monthly', priority: 0.85 },
     { loc: '/samples', changefreq: 'monthly', priority: 0.85 },
     { loc: '/about', changefreq: 'monthly', priority: 0.8 },
+    { loc: '/about/christopher-boykin', changefreq: 'monthly', priority: 0.85 },
     { loc: '/realtors', changefreq: 'monthly', priority: 0.8 },
     { loc: '/quote', changefreq: 'weekly', priority: 0.9 },
     { loc: '/list-of-3', changefreq: 'weekly', priority: 0.9 },
@@ -34,6 +35,8 @@ export default async function sitemap() {
     { loc: '/risk-scanner', changefreq: 'weekly', priority: 0.85 },
     { loc: '/repair-credit-calculator', changefreq: 'weekly', priority: 0.85 },
     { loc: '/defects', changefreq: 'monthly', priority: 0.85 },
+    { loc: '/homebuyer-red-flags', changefreq: 'weekly', priority: 0.9 },
+    { loc: '/homeowner-care', changefreq: 'monthly', priority: 0.85 },
 
     { loc: '/blog', changefreq: 'weekly', priority: 0.7 },
     { loc: '/press', changefreq: 'monthly', priority: 0.85 },

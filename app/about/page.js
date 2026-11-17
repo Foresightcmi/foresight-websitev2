@@ -225,6 +225,13 @@ export default function About() {
                 <Link href="/quote" className="btn btn-outline" style={{ borderWidth: '2px' }}>
                   Get Instant Quote
                 </Link>
+                <Link
+                  href="/about/christopher-boykin"
+                  className="btn btn-outline"
+                  style={{ borderWidth: '2px', borderColor: 'var(--color-red)', color: 'var(--color-red)', fontWeight: 700 }}
+                >
+                  View Christopher Boykin&rsquo;s Full CMI® CV, Credentials &amp; Dual-Team Protocol &rarr;
+                </Link>
               </div>
             </div>
           </div>

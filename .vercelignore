@@ -16,6 +16,7 @@ onedrive_dump.html
 
 # Local scripts (Maintenance & cron execution run on server, not in Vercel build)
 scripts/
+docs/
 
 # Local logs and temporary files
 *.log

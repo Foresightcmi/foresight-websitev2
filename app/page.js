@@ -359,7 +359,7 @@ export default function Home() {
             </div>
             <div style={{ padding: '0.5rem' }}>
               <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#FDE047' }}>&lt;24 Hours</div>
-              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Digital Report &amp; GAR Repair Lists</div>
+              <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Digital Report &amp; Georgia Repair Lists</div>
             </div>
             <div style={{ padding: '0.5rem' }}>
               <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#A78BFA' }}>$35,000</div>
@@ -368,6 +368,293 @@ export default function Home() {
             <div style={{ padding: '0.5rem' }}>
               <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F87171' }}>87 Cities</div>
               <div style={{ fontSize: '0.82rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Across 20 Metro Atlanta Counties</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MALL-ENTRANCE BUYER & 3:00 AM SYMPTOM QUICK-ROUTER ── */}
+      <section className="section bg-white" style={{ padding: '4rem 0', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 2.5rem' }}>
+            <span className="badge" style={{ marginBottom: '0.75rem', fontWeight: 700 }}>
+              Quick-Router Navigation
+            </span>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.75rem' }}>
+              What Brings You Here Today?
+            </h2>
+            <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.6, margin: 0 }}>
+              Choose your starting door below—from translating a 3:00 AM house symptom or verifying Lead CMI Christopher Boykin&apos;s credentials to calculating seller credit leverage or browsing Metro Atlanta neighborhoods.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.25rem' }}>
+            <Link
+              prefetch={false}
+              href="/homebuyer-red-flags"
+              className="card"
+              style={{ padding: '1.65rem', background: '#FFF5F5', border: '1px solid #FECACA', borderTop: '4px solid var(--color-red)', borderRadius: 'var(--radius-lg)', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+            >
+              <div>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--color-red)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Noticed a Symptom?
+                </span>
+                <h3 style={{ fontSize: '1.18rem', fontWeight: 800, color: '#0F172A', margin: '0.4rem 0 0.6rem' }}>
+                  3:00 AM Red-Flag &amp; Symptom Translator
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                  Musty crawlspace odors, stair-step brick cracks, or vintage electrical panels? Decode hidden risks in plain English.
+                </p>
+              </div>
+              <span style={{ marginTop: '1rem', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-red)' }}>
+                Decode Your Symptom →
+              </span>
+            </Link>
+
+            <Link
+              prefetch={false}
+              href="/about/christopher-boykin"
+              className="card"
+              style={{ padding: '1.65rem', background: '#F8FAFC', border: '1px solid #CBD5E1', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+            >
+              <div>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#92400E', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Practitioner Authority
+                </span>
+                <h3 style={{ fontSize: '1.18rem', fontWeight: 800, color: '#0F172A', margin: '0.4rem 0 0.6rem' }}>
+                  Meet Lead CMI Christopher Boykin &amp; Our Dual-Team Protocol
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                  Inspect CMI #MICB-1082 &amp; InterNACHI #NACHI18051119 credentials and learn how two parallel inspectors work on every home.
+                </p>
+              </div>
+              <span style={{ marginTop: '1rem', fontSize: '0.88rem', fontWeight: 700, color: '#0F172A' }}>
+                View CMI Profile &amp; CV →
+              </span>
+            </Link>
+
+            <Link
+              prefetch={false}
+              href="/repair-credit-calculator"
+              className="card"
+              style={{ padding: '1.65rem', background: '#F8FAFC', border: '1px solid #CBD5E1', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+            >
+              <div>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#92400E', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Due Diligence ROI
+                </span>
+                <h3 style={{ fontSize: '1.18rem', fontWeight: 800, color: '#0F172A', margin: '0.4rem 0 0.6rem' }}>
+                  Estimate Seller Repair Credit Leverage
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                  Contrast $1,250–$14,200+ in typical Metro Atlanta Georgia Repair Amendment leverage against a From $345 inspection.
+                </p>
+              </div>
+              <span style={{ marginTop: '1rem', fontSize: '0.88rem', fontWeight: 700, color: '#0F172A' }}>
+                Open Credit Calculator →
+              </span>
+            </Link>
+
+            <Link
+              prefetch={false}
+              href="/services/buyer-inspection"
+              className="card bg-dark"
+              style={{ padding: '1.65rem', background: '#0F172A', border: '1px solid #1E293B', borderTop: '4px solid var(--color-gold)', borderRadius: 'var(--radius-lg)', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#FFFFFF' }}
+            >
+              <div>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Book Your Team
+                </span>
+                <h3 style={{ fontSize: '1.18rem', fontWeight: 800, color: '#FFFFFF', margin: '0.4rem 0 0.6rem' }}>
+                  Buyer Inspections From $345
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#CBD5E1', lineHeight: 1.55, margin: 0 }}>
+                  Condos from $295, Pre-Drywall from $275, New Construction from $400. Free thermal, 4K drone scans &amp; $35,000 protection.
+                </p>
+              </div>
+              <span style={{ marginTop: '1rem', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-gold)' }}>
+                Explore Buyer Inspections →
+              </span>
+            </Link>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem', marginTop: '1.25rem' }}>
+            <Link
+              prefetch={false}
+              href="/homeowner-care"
+              className="card"
+              style={{ padding: '1.5rem', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 'var(--radius-lg)', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+            >
+              <div>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: 'var(--color-red)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Already Closed?
+                </span>
+                <h3 style={{ fontSize: '1.12rem', fontWeight: 800, color: '#0F172A', margin: '0.35rem 0 0.5rem' }}>
+                  Post-Closing Homeowner Care &amp; 11-Month Warranty Hub
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                  4-season Atlanta maintenance checklists, $35,000 protection guide, free utility concierge &amp; 11-Month checks (From $345).
+                </p>
+              </div>
+              <span style={{ marginTop: '0.85rem', fontSize: '0.88rem', fontWeight: 700, color: 'var(--color-red)' }}>
+                Open Homeowner Care Hub →
+              </span>
+            </Link>
+
+            <Link
+              prefetch={false}
+              href="/service-areas"
+              className="card"
+              style={{ padding: '1.5rem', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 'var(--radius-lg)', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+            >
+              <div>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Regional Coverage
+                </span>
+                <h3 style={{ fontSize: '1.12rem', fontWeight: 800, color: '#0F172A', margin: '0.35rem 0 0.5rem' }}>
+                  87 Metro Atlanta Cities
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                  Local soil, EPA Zone 1 granite radon, and municipal compliance guides across 20 Metro Atlanta counties.
+                </p>
+              </div>
+              <span style={{ marginTop: '0.85rem', fontSize: '0.88rem', fontWeight: 700, color: '#0F172A' }}>
+                Browse All 87 Cities →
+              </span>
+            </Link>
+
+            <Link
+              prefetch={false}
+              href="/neighborhoods"
+              className="card"
+              style={{ padding: '1.5rem', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 'var(--radius-lg)', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+            >
+              <div>
+                <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Hyper-Local Subdivisions
+                </span>
+                <h3 style={{ fontSize: '1.12rem', fontWeight: 800, color: '#0F172A', margin: '0.35rem 0 0.5rem' }}>
+                  22 Neighborhood Clusters
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: '#334155', lineHeight: 1.55, margin: 0 }}>
+                  Construction-era guides from Intown Victorians and Arabia Mountain to Snellville, Sandy Springs &amp; Johns Creek.
+                </p>
+              </div>
+              <span style={{ marginTop: '0.85rem', fontSize: '0.88rem', fontWeight: 700, color: '#0F172A' }}>
+                Explore 22 Neighborhoods →
+              </span>
+            </Link>
+          </div>
+
+          {/* ── FREE BENEFITS ($0 EXTRA CHARGE) & 5 FREE SELF-SERVE TOOLS SPOTLIGHT ── */}
+          <div style={{ marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', alignItems: 'stretch' }}>
+            {/* 6 Free Included Inspection Benefits ($0 Extra Charge) */}
+            <div style={{ background: '#0F172A', color: '#FFFFFF', borderRadius: 'var(--radius-lg)', padding: '2rem', border: '1px solid #1E293B', borderTop: '4px solid var(--color-gold)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span className="badge" style={{ background: 'rgba(212, 175, 55, 0.16)', color: 'var(--color-gold)', border: '1px solid rgba(212, 175, 55, 0.45)', marginBottom: '0.75rem', fontWeight: 700 }}>
+                  $0 Extra Charge &bull; Included on Every Full Inspection
+                </span>
+                <h3 style={{ color: '#FFFFFF', fontSize: '1.42rem', fontWeight: 800, marginBottom: '0.6rem' }}>
+                  6 Free Included Inspection Benefits
+                </h3>
+                <p style={{ color: '#CBD5E1', fontSize: '0.94rem', lineHeight: 1.55, marginBottom: '1.25rem' }}>
+                  Single-family inspections start From $345 (Condos &amp; Townhomes From $295, Pre-Drywall From $275, Final New Construction From $400) with zero surprise upcharges for core diagnostics:
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.93rem', color: '#F1F5F9' }}>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span>
+                    <div><strong>2nd Certified Inspector ($0 Extra):</strong> Parallel structural and mechanical coverage on every home with zero solo-inspector fatigue.</div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span>
+                    <div><strong>Free Calibrated Infrared Thermal Scan:</strong> Non-invasive moisture, insulation void, and electrical breaker hot-spot detection.</div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span>
+                    <div><strong>Free 4K Aerial Drone Roof Scan:</strong> High-definition shingle, chimney, flashing, and valley inspection on steep or high roofs.</div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span>
+                    <div><strong>Free $35,000 Combined Protection ($0 Deductible):</strong> $10,000 Elite Master Warranty plus InterNACHI&apos;s $25,000 Honor Guarantee.</div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span>
+                    <div>
+                      <strong>Free $150-Value Utilities Plus Concierge:</strong> Fast power, gas, water, fiber internet &amp; security setup via{' '}
+                      <Link prefetch={false} href="/free-utility-setup" style={{ color: 'var(--color-gold)', textDecoration: 'underline', fontWeight: 700 }}>
+                        Utilities Plus Setup →
+                      </Link>
+                    </div>
+                  </li>
+                  <li style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--color-gold)', fontWeight: 800 }}>✓</span>
+                    <div><strong>Free Digital Repair Request List Builder:</strong> Same-day interactive digital report with 1-click Georgia Repair List exporting.</div>
+                  </li>
+                </ul>
+              </div>
+              <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <Link prefetch={false} href="/quote" className="btn btn-gold" style={{ padding: '0.75rem 1.35rem', fontSize: '0.92rem', flex: 1, minWidth: '170px' }}>
+                  Calculate Instant Price →
+                </Link>
+                <Link prefetch={false} href="/free-utility-setup" className="btn btn-outline-light" style={{ padding: '0.75rem 1.35rem', fontSize: '0.92rem', flex: 1, minWidth: '170px' }}>
+                  Free Utility Setup →
+                </Link>
+              </div>
+            </div>
+
+            {/* 5 Free Metro Atlanta Self-Serve Tools */}
+            <div style={{ background: '#F8FAFC', color: '#0F172A', borderRadius: 'var(--radius-lg)', padding: '2rem', border: '1px solid #CBD5E1', borderTop: '4px solid var(--color-red)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span className="badge" style={{ marginBottom: '0.75rem', fontWeight: 700 }}>
+                  100% Free Self-Serve Buyer &amp; Realtor Tools
+                </span>
+                <h3 style={{ color: '#0F172A', fontSize: '1.42rem', fontWeight: 800, marginBottom: '0.6rem' }}>
+                  5 Free Metro Atlanta Self-Serve Tools
+                </h3>
+                <p style={{ color: '#334155', fontSize: '0.94rem', lineHeight: 1.55, marginBottom: '1.25rem' }}>
+                  Use our interactive Metro Atlanta diagnostic calculators and comparison guides anytime—no signup or fee required:
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <Link prefetch={false} href="/homebuyer-red-flags" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1rem', textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
+                    <div>
+                      <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.96rem' }}>1. 3:00 AM Red-Flag &amp; Symptom Translator</strong>
+                      <span style={{ color: '#475569', fontSize: '0.85rem' }}>Translate musty odors, cracks &amp; aging systems into building science</span>
+                    </div>
+                    <span style={{ color: 'var(--color-red)', fontWeight: 800, flexShrink: 0 }}>Open →</span>
+                  </Link>
+                  <Link prefetch={false} href="/repair-credit-calculator" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1rem', textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
+                    <div>
+                      <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.96rem' }}>2. Seller Repair Credit Leverage Calculator</strong>
+                      <span style={{ color: '#475569', fontSize: '0.85rem' }}>Estimate $1,250–$14,200+ Georgia Repair Amendment leverage</span>
+                    </div>
+                    <span style={{ color: 'var(--color-red)', fontWeight: 800, flexShrink: 0 }}>Open →</span>
+                  </Link>
+                  <Link prefetch={false} href="/risk-scanner" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1rem', textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
+                    <div>
+                      <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.96rem' }}>3. Georgia Property Risk &amp; Age Scanner</strong>
+                      <span style={{ color: '#475569', fontSize: '0.85rem' }}>Check polybutylene, aluminum wiring, EPA Zone 1 radon &amp; clay risk</span>
+                    </div>
+                    <span style={{ color: 'var(--color-red)', fontWeight: 800, flexShrink: 0 }}>Open →</span>
+                  </Link>
+                  <Link prefetch={false} href="/list-of-3" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1rem', textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
+                    <div>
+                      <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.96rem' }}>4. Realtor List-of-3 Inspector Comparator</strong>
+                      <span style={{ color: '#475569', fontSize: '0.85rem' }}>Compare 3 Atlanta inspectors in 60 seconds side by side</span>
+                    </div>
+                    <span style={{ color: 'var(--color-red)', fontWeight: 800, flexShrink: 0 }}>Open →</span>
+                  </Link>
+                  <Link prefetch={false} href="/homeowner-care" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '0.85rem 1rem', textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
+                    <div>
+                      <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.96rem' }}>5. Post-Closing Homeowner Care &amp; Warranty Hub</strong>
+                      <span style={{ color: '#475569', fontSize: '0.85rem' }}>4-season checklists, warranty activation &amp; 11-Month checks (From $345)</span>
+                    </div>
+                    <span style={{ color: 'var(--color-red)', fontWeight: 800, flexShrink: 0 }}>Open →</span>
+                  </Link>
+                </div>
+              </div>
+              <div style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: '#475569', borderTop: '1px solid #E2E8F0', paddingTop: '0.85rem' }}>
+                Auxiliary diagnostics (Sewer Scope, Radon, Pool &amp; Spa, Termite/WDO, Mold) are custom-quoted at (678) 480-2110. Verified Licensed Georgia Realtors receive a -$25 courtesy discount with an active GREC License #.
+              </div>
             </div>
           </div>
         </div>
@@ -1002,7 +1289,7 @@ export default function Home() {
               },
               {
                 q: "What is the difference between a standard solo inspection and Foresight's Dual-Team CMI Protocol?",
-                a: "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This eliminates solo-inspector fatigue with property-scaled thoroughness, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with 1-click GAR repair lists, and includes up to $35,000 in combined warranty and guarantee protection."
+                a: "Because Georgia does not require state licensing for home inspectors, standards vary widely across operators. In a standard solo inspection, one inspector must evaluate the entire property alone over 4+ hours, where physical fatigue can set in, specialty scans (thermal, drone) often cost extra, and post-inspection warranties are rarely provided. With Foresight's Dual-Team CMI Protocol, two certified inspectors led by board-certified CMI Christopher Boykin inspect simultaneously, dividing interior systems and structural envelopes. This eliminates solo-inspector fatigue with property-scaled thoroughness, includes complimentary infrared thermal imaging and drone scans, delivers same-day digital reporting with 1-click Georgia repair lists, and includes up to $35,000 in combined warranty and guarantee protection."
               },
               {
                 q: "What is covered under Foresight's up to $35,000 in warranties and guarantees?",

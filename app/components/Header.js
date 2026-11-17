@@ -25,6 +25,7 @@ export default function Header() {
             <ul className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
               <li><Link prefetch={false} href="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
               <li><Link prefetch={false} href="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
+              <li><Link prefetch={false} href="/homebuyer-red-flags" onClick={() => setMenuOpen(false)} style={{ whiteSpace: 'nowrap' }}>Red Flags</Link></li>
               <li><Link prefetch={false} href="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
               <li><Link prefetch={false} href="/realtors" onClick={() => setMenuOpen(false)}>Realtors</Link></li>
               <li><Link prefetch={false} href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>

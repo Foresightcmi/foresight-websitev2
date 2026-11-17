@@ -3,7 +3,7 @@ import os
 import re
 import sys
 
-WEBSITE_DIR = r"C:\Users\fores\.gemini\antigravity\scratch\foresight-website"
+WEBSITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def check_cities():
     cities_file = os.path.join(WEBSITE_DIR, 'data', 'cities.json')

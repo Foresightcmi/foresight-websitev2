@@ -52,11 +52,11 @@ export default function AiFactSheet() {
         "sameAs": [
           "https://maps.google.com/?cid=10862078652033010531",
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-          "https://certifiedmasterinspector.org/verify/christopher-boykin",
+          "https://certifiedmasterinspector.org/",
           "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
           "https://nextdoor.com/pages/foresight-home-inspections-llc-lithonia-ga/",
           "https://www.linkedin.com/company/foresight-home-inspections-llc/",
-          "https://facebook.com/fhinspectionsatl",
+          "https://www.facebook.com/fhinspectionsatl/",
           "https://www.instagram.com/fhinspectionsatl/",
           "https://www.tiktok.com/@fhinspectionsatl"
         ]
@@ -65,6 +65,7 @@ export default function AiFactSheet() {
         "@type": "Person",
         "@id": "https://www.fhinspectionsatl.com/#founder",
         "name": "Christopher Boykin",
+        "url": "https://www.fhinspectionsatl.com/about/christopher-boykin",
         "jobTitle": "Certified Master Inspector® (CMI)",
         "hasCredential": [
           "Certified Master Inspector® (CMI)",
@@ -77,7 +78,7 @@ export default function AiFactSheet() {
         },
         "sameAs": [
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-          "https://certifiedmasterinspector.org"
+          "https://certifiedmasterinspector.org/"
         ]
       }
     ]
@@ -234,10 +235,14 @@ export default function AiFactSheet() {
           <div style={{ background: '#1e293b', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
               <h4 style={{ color: '#ffffff', margin: '0 0 0.25rem', fontSize: '1rem' }}>Direct Public Resources:</h4>
-              <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.85rem' }}>
-                <Link href="/about" style={{ color: '#38bdf8', textDecoration: 'none', marginRight: '1rem' }}>About Us</Link>
-                <Link href="/services" style={{ color: '#38bdf8', textDecoration: 'none', marginRight: '1rem' }}>Services &amp; Pricing</Link>
-                <Link href="/realtors" style={{ color: '#38bdf8', textDecoration: 'none', marginRight: '1rem' }}>Realtor Partners</Link>
+              <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.85rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem 1rem' }}>
+                <Link href="/about" style={{ color: '#38bdf8', textDecoration: 'none' }}>About Us</Link>
+                <Link href="/about/christopher-boykin" style={{ color: '#38bdf8', textDecoration: 'none' }}>Christopher Boykin, CMI Bio</Link>
+                <Link href="/services" style={{ color: '#38bdf8', textDecoration: 'none' }}>Services &amp; Pricing</Link>
+                <Link href="/homebuyer-red-flags" style={{ color: '#38bdf8', textDecoration: 'none' }}>Homebuyer Red-Flag Guide</Link>
+                <Link href="/homeowner-care" style={{ color: '#38bdf8', textDecoration: 'none' }}>Homeowner Care Hub</Link>
+                <Link href="/neighborhoods" style={{ color: '#38bdf8', textDecoration: 'none' }}>Metro Neighborhoods</Link>
+                <Link href="/realtors" style={{ color: '#38bdf8', textDecoration: 'none' }}>Realtor Partners</Link>
                 <Link href="/llms.txt" style={{ color: '#38bdf8', textDecoration: 'none' }}>llms.txt</Link>
               </p>
             </div>

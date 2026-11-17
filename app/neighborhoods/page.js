@@ -7,7 +7,7 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
   title: 'Atlanta Neighborhood & Subdivision Home Inspections',
-  description: 'Specialized home inspection guides for Metro Atlanta\'s prominent historic districts, luxury enclaves, and master-planned communities. Certified Master Inspector diagnostic Evaluations.',
+  description: 'Specialized home inspection guides for Metro Atlanta\'s prominent historic districts, luxury enclaves, and master-planned communities. Certified Master Inspector diagnostic evaluations.',
   keywords: [
     'Atlanta neighborhood home inspection',
     'historic district home inspection Atlanta',
@@ -34,6 +34,20 @@ function loadNeighborhoods() {
 export default function NeighborhoodsIndexPage() {
   const neighborhoods = loadNeighborhoods();
 
+  const webPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}/neighborhoods#webpage`,
+    url: `${SITE_URL}/neighborhoods`,
+    name: 'Metro Atlanta Neighborhood & Subdivision Home Inspection Guides',
+    description: 'Hyper-local home inspection guides covering historic Intown Atlanta, East DeKalb Ring-1 corridors, and North & South Metro communities.',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#aeo-direct-answer', 'h1'],
+    },
+  };
+
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -49,10 +63,26 @@ export default function NeighborhoodsIndexPage() {
   return (
     <>
       <Script
+        id="neighborhoods-webpage-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <Script
         id="neighborhoods-itemlist-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+
+      {/* Breadcrumb Navigation Bar */}
+      <nav aria-label="Breadcrumb" className="bg-light" style={{ padding: '0.75rem 0', borderBottom: '1px solid #eaeaea' }}>
+        <div className="container">
+          <ol style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', margin: 0, padding: 0, fontSize: '0.875rem' }}>
+            <li><Link href="/" style={{ color: 'var(--color-gray-dark)' }}>Home</Link></li>
+            <li style={{ color: 'var(--color-gray-mid)' }}>/</li>
+            <li style={{ color: 'var(--color-red)', fontWeight: 600 }}>Neighborhoods</li>
+          </ol>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <section className="section bg-dark text-white text-center" style={{ padding: '5rem 0 4rem', position: 'relative', overflow: 'hidden' }}>
@@ -73,6 +103,32 @@ export default function NeighborhoodsIndexPage() {
             <Link href="/quote" className="btn btn-primary">
               Calculate Instant Fee
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* AEO Direct Answer & Upward Metro Equity Navigation */}
+      <section className="section bg-white" style={{ padding: '2.75rem 0', borderBottom: '1px solid #e2e8f0' }}>
+        <div className="container" style={{ maxWidth: '1000px' }}>
+          <div style={{ background: '#F8FAFC', border: '1px solid #CBD5E1', borderLeft: '4px solid var(--color-red)', borderRadius: '10px', padding: '1.75rem 2rem' }}>
+            <span className="badge" style={{ marginBottom: '0.65rem' }}>Direct Neighborhood Overview</span>
+            <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--color-dark)', marginBottom: '0.65rem' }}>
+              Which Metro Atlanta neighborhoods does Foresight Home Inspections evaluate and what does an inspection cost?
+            </h2>
+            <p id="aeo-direct-answer" style={{ color: 'var(--color-gray-dark)', fontSize: '1rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+              Foresight Home Inspections (CMI #MICB-1082) inspects {neighborhoods.length} Metro Atlanta neighborhood clusters from $345 ($295 condos), deploying two certified inspectors, free calibrated infrared thermal imaging, 4K drone roof scans, and $35,000 combined warranty protection.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem', alignItems: 'center' }}>
+              <Link href="/" className="btn btn-outline" style={{ padding: '0.55rem 1.1rem', fontSize: '0.88rem', borderColor: 'var(--color-dark)', color: 'var(--color-dark)' }}>
+                Atlanta Home Inspections — Foresight Home Inspections →
+              </Link>
+              <Link href="/services/buyer-inspection" className="btn btn-primary" style={{ padding: '0.55rem 1.1rem', fontSize: '0.88rem' }}>
+                Buyer Home Inspections (From $345) →
+              </Link>
+              <Link href="/service-areas" className="btn btn-outline" style={{ padding: '0.55rem 1.1rem', fontSize: '0.88rem', borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+                All 87 Metro Atlanta City Guides →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
