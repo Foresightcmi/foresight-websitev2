@@ -118,5 +118,45 @@
     "messageId": "<0875deb6-fdaf-f466-e4a7-6b3bb6ea6122@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7775257.html",
     "sentAt": "2026-11-17T22:11:06.167Z"
+  },
+  {
+    "recordId": "NC-7864667",
+    "address": "389 Grand Wehunt Drive, Hoschton, GA 30548",
+    "recipient": "ishaffer@davidsonhomes.com",
+    "messageId": "<815d48ba-c82b-9c3c-14d9-2e16cf7de9da@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7864667.html",
+    "sentAt": "2026-11-18T21:47:58.679Z"
+  },
+  {
+    "recordId": "NC-7863488",
+    "address": "7332 Rocklin Lane, Flowery Branch, GA 30542",
+    "recipient": "ffenno@mckinleyhomes.com",
+    "messageId": "<264a195e-1188-a400-f998-86425f0b3f89@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7863488.html",
+    "sentAt": "2026-11-18T21:47:59.942Z"
+  },
+  {
+    "recordId": "NC-7863765",
+    "address": "7 Jericho Way, Newnan, GA 30263",
+    "recipient": "atlantainfo@drbgroup.com",
+    "messageId": "<f66faf73-39ec-717e-fd5d-ab0ac020584b@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7863765.html",
+    "sentAt": "2026-11-18T21:48:02.336Z"
+  },
+  {
+    "recordId": "NC-7863394",
+    "address": "3545 Vermillion View, Suwanee, GA 30024",
+    "recipient": "jcooper@jwcsales.com",
+    "messageId": "<b424c5b7-0d70-1228-4927-6ad45b54ea2a@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7863394.html",
+    "sentAt": "2026-11-18T21:48:04.804Z"
+  },
+  {
+    "recordId": "NC-7862166",
+    "address": "153 Merwood Lane, Jefferson, GA 30549",
+    "recipient": "info@alphapropgroup.com",
+    "messageId": "<18fcc793-15c4-0d3d-d715-480b14b7b02d@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862166.html",
+    "sentAt": "2026-11-18T21:48:08.116Z"
   }
 ]
