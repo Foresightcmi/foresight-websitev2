@@ -13,7 +13,8 @@
     "youtube",
     "google_business_profile",
     "threads",
-    "pinterest"
+    "pinterest",
+    "nextdoor"
   ],
   "authChallenges": [],
   "dispatch": {
@@ -77,7 +78,7 @@
     "nextdoor": {
       "ok": true,
       "platform": "nextdoor",
-      "published": false,
+      "published": true,
       "uploaded_media": true,
       "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261118-132119-e37a\\nextdoor_after_post.png",
       "url": "https://nextdoor.com/page-admin/feed/?profile_id=164000702"
