@@ -303,14 +303,14 @@ const aboutPage = readRel('app/about/page.js');
 const chrisCode = chrisBio.content;
 const chrisImageTags = chrisCode.match(/<(?:Image|img)\b[\s\S]*?\/>/g) || [];
 const hasCmi110 = chrisImageTags.some((tag) => /cmi_logo/i.test(tag) && /110px/i.test(tag));
-const hasCpi100 = chrisImageTags.some((tag) => /cpi_logo/i.test(tag) && /100px/i.test(tag));
-const hasOpticalCmiGreaterCpi = hasCmi110 && hasCpi100;
+const hasCpi110 = chrisImageTags.some((tag) => /cpi_logo/i.test(tag) && /110px/i.test(tag));
+const hasEqualOpticalCmiCpi = hasCmi110 && hasCpi110;
 const hasUnmodifiedLogo =
   chrisCode.includes('Logopng.png') &&
   (/filter:\s*['"]none['"]/.test(chrisCode) || /background:\s*['"]#(?:fff|ffffff)['"]/i.test(chrisCode));
 
 check(
-  'B1. app/about/christopher-boykin/page.js has ProfilePage, Person, Speakable, FAQPage, #aeo-direct-answer, CMI/NACHI IDs, BY Christopher Boykin, optical 110px > 100px & /about link',
+  'B1. app/about/christopher-boykin/page.js has ProfilePage, Person, Speakable, FAQPage, #aeo-direct-answer, CMI/NACHI IDs, BY Christopher Boykin, equal 110px == 110px CMI/CPI & /about link',
   chrisBio.exists &&
     aboutPage.exists &&
     chrisCode.includes('ProfilePage') &&
@@ -323,11 +323,11 @@ check(
     chrisCode.includes('176873') &&
     /BY\s+Christopher\s+Boykin/i.test(chrisCode) &&
     /dual/i.test(chrisCode) &&
-    hasOpticalCmiGreaterCpi &&
+    hasEqualOpticalCmiCpi &&
     hasUnmodifiedLogo &&
     !chrisCode.includes('certifiedmasterinspector.org/verify/christopher-boykin') &&
     aboutPage.content.includes('/about/christopher-boykin'),
-  `exists=${chrisBio.exists}, optical110vs100=${hasOpticalCmiGreaterCpi}, unmodifiedLogo=${hasUnmodifiedLogo}`
+  `exists=${chrisBio.exists}, equal110vs110=${hasEqualOpticalCmiCpi}, unmodifiedLogo=${hasUnmodifiedLogo}`
 );
 
 const redFlagsPage = readRel('app/homebuyer-red-flags/page.js');

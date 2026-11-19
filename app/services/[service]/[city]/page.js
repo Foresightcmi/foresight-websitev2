@@ -324,18 +324,6 @@ export default async function ServiceCityPage({ params }) {
     a: f.a.replace(/{city}/g, cityName),
   }));
 
-  // JSON-LD Schemas
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-      { "@type": "ListItem", "position": 2, "name": "Services", "item": `${SITE_URL}/services` },
-      { "@type": "ListItem", "position": 3, "name": serviceName, "item": `${SITE_URL}/services#${serviceData.slug}` },
-      { "@type": "ListItem", "position": 4, "name": `${serviceName} in ${cityName}`, "item": canonicalUrl }
-    ]
-  };
-
   const serviceImages = {
     'sewer-scope-inspection': `${SITE_URL}/images/sewer-scope.png`,
     'pool-spa-inspection': `${SITE_URL}/images/pool-inspecting.png`,
@@ -536,10 +524,6 @@ export default async function ServiceCityPage({ params }) {
       {/* ── JSON-LD SCHEMAS ─────────────────────────────────────────── */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <script
@@ -551,17 +535,9 @@ export default async function ServiceCityPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ── BREADCRUMBS ────────────────────────────────────────────── */}
-      <div className="container" style={{ paddingTop: '1.5rem', fontSize: '0.9rem', color: 'var(--color-gray)' }}>
-        <Link href="/" style={{ color: 'var(--color-red)' }}>Home</Link> &nbsp;/&nbsp;
-        <Link href="/services" style={{ color: 'var(--color-red)' }}>Services</Link> &nbsp;/&nbsp;
-        <Link href={`/service-areas/${resolvedParams.city}`} style={{ color: 'var(--color-red)' }}>{cityName}</Link> &nbsp;/&nbsp;
-        <span>{serviceName}</span>
-      </div>
-
       {/* ── HERO SECTION ───────────────────────────────────────────── */}
       <section className="hero" style={{ padding: '4rem 0 5rem' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
+        <div className="container hero-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: '920px' }}>
           <span className="badge" style={{ marginBottom: '1rem', display: 'inline-block' }}>
             {serviceData.icon} {serviceData.badge}
           </span>
@@ -648,22 +624,22 @@ export default async function ServiceCityPage({ params }) {
             </div>
 
             {/* Pricing Card */}
-            <div className="card card-premium" style={{ background: 'var(--color-dark)', color: 'white', padding: '2.25rem', textAlign: 'center', borderRadius: 'var(--radius-lg)' }}>
+            <div className="card card-premium bg-dark" style={{ background: 'var(--color-dark)', color: 'white', padding: '2.25rem', textAlign: 'center', borderRadius: 'var(--radius-lg)' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{serviceData.icon}</div>
               <h3 style={{ color: 'white', fontSize: '1.5rem', marginBottom: '0.5rem' }}>{serviceName} Pricing</h3>
-              <div style={{ fontSize: '2.75rem', fontWeight: 800, color: 'var(--color-red)', margin: '0.5rem 0' }}>
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--color-gold)', margin: '0.5rem 0', lineHeight: 1.15 }}>
                 {serviceData.price}
               </div>
-              <p style={{ color: 'var(--color-gray-mid)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#E2E8F0', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
                 {serviceData.priceDetails}
               </p>
-              <ul style={{ textAlign: 'left', listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', color: 'var(--color-gray-mid)', fontSize: '0.95rem' }}>
-                <li style={{ marginBottom: '0.5rem' }}>✓ Includes $10,000 Elite Warranty Protection</li>
-                <li style={{ marginBottom: '0.5rem' }}>✓ Two Certified Inspectors on every job</li>
-                <li style={{ marginBottom: '0.5rem' }}>✓ Digital Report delivered within 24 hours</li>
+              <ul style={{ textAlign: 'left', listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', color: '#F8FAFC', fontSize: '0.95rem' }}>
+                <li style={{ marginBottom: '0.5rem', color: '#F8FAFC' }}><span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>✓</span> Up to $35,000 Combined Warranty ($0 Deductible)</li>
+                <li style={{ marginBottom: '0.5rem', color: '#F8FAFC' }}><span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>✓</span> Certified Master Inspector® Led Team</li>
+                <li style={{ marginBottom: '0.5rem', color: '#F8FAFC' }}><span style={{ color: 'var(--color-gold)', fontWeight: 700 }}>✓</span> Digital Report Delivered Within 24 Hours</li>
               </ul>
               <Link href="/quote" className="btn btn-primary" style={{ width: '100%', display: 'block' }}>
-                Get Custom Quote
+                {serviceData.price === 'Call for Quote' ? 'Request Custom Quote' : 'Calculate Instant Quote'}
               </Link>
             </div>
           </div>
@@ -897,7 +873,7 @@ export default async function ServiceCityPage({ params }) {
               Targeted Building Science &amp; Defect Evaluations for <span style={{ color: 'var(--color-red)' }}>{cityName}</span>
             </h2>
             <p style={{ color: '#64748B', maxWidth: '680px', margin: '0.5rem auto 0', fontSize: '1.05rem', lineHeight: 1.6 }}>
-              In {county} County, specific geological and construction era factors directly influence property integrity. Review critical forensic defect guides relevant to your {serviceName.toLowerCase()} inspection.
+              In {county} County, specific geological and construction era factors directly influence property integrity. Review critical forensic defect guides relevant to your {/inspection/i.test(serviceName) ? serviceName.toLowerCase() : `${serviceName.toLowerCase()} inspection`}.
             </p>
           </div>
 

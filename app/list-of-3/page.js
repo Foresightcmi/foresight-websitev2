@@ -286,13 +286,13 @@ export default function ListOf3Page() {
             <img
               src="https://www.fhinspectionsatl.com/images/cmi_logo.png"
               alt="Board-Certified Master Inspector CMI #MICB-1082"
-              style={{ height: '92px', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '92px', width: '92px', objectFit: 'contain' }}
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://www.fhinspectionsatl.com/images/cpi_logo.png"
               alt="InterNACHI Certified Professional Inspector #NACHI18051119"
-              style={{ height: '85px', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '92px', width: '92px', objectFit: 'contain' }}
             />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', background: '#0F172A', color: '#FFFFFF', padding: '0.6rem 1.1rem', borderRadius: '9999px', border: '1px solid #D4AF37', fontSize: '0.88rem', fontWeight: 700 }}>

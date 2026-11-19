@@ -20,16 +20,59 @@ const labelMap = {
   'privacy': 'Privacy Policy',
   'terms': 'Terms of Service',
   'dekalb-county-compliance': 'DeKalb County Compliance',
+  'atlanta-str-compliance': 'Atlanta STR Compliance',
+  'south-fulton-rental-compliance': 'South Fulton Rental Compliance',
   'municipal-rehab-inspections': 'Municipal Rehab Inspections',
   'radon-testing': 'Radon Testing',
   'sewer-scope-inspection': 'Sewer Scope Inspection',
+  'pool-inspection': 'Pool & Spa Inspection',
   'pool-spa-inspection': 'Pool & Spa Inspection',
+  'termite-inspection': 'Termite & WDO Inspection',
   'termite-wdo-inspection': 'Termite & WDO Inspection',
+  'new-construction-inspection': 'New Construction Inspection',
+  'pre-listing-inspection': 'Pre-Listing Inspection',
+  'buyer-inspection': 'Buyer Home Inspection',
+  'home-buyer-inspection': 'Buyer Home Inspection',
+  'commercial-property-inspection': 'Commercial Property Inspection',
+  'pre-drywall-inspection': 'Pre-Drywall Inspection',
   '11-month-warranty-inspection': '11-Month Warranty Inspection',
+  'mold-testing': 'Mold & Air Quality Testing',
   'str-short-term-rental-inspection': 'STR Inspection',
-  'home-buyer-inspection': 'Buyer Inspection',
+  'repair-credit-calculator': 'Repair Credit Calculator',
+  'homebuyer-red-flags': 'Homebuyer Red Flags',
+  'homeowner-care': 'Homeowner Care',
+  'due-diligence': 'Due Diligence Guarantee',
+  'list-of-3': 'Metro Atlanta Buyer Scorecard',
+  'christopher-boykin': 'Christopher Boykin, CMI',
   'risk-scanner': 'Property Risk Scanner'
 };
+
+const STANDALONE_SERVICE_AREA_SLUGS = new Set([
+  '/service-areas/counties',
+  '/service-areas/atlanta-str-compliance',
+  '/service-areas/dekalb-county-compliance',
+  '/service-areas/south-fulton-rental-compliance',
+]);
+
+function hasPageLevelBreadcrumbs(pathname) {
+  if (
+    pathname.startsWith('/checkout') ||
+    pathname.startsWith('/studio') ||
+    pathname.startsWith('/dashboard') ||
+    pathname.startsWith('/neighborhoods') ||
+    pathname.startsWith('/videos') ||
+    pathname.startsWith('/repair-credit-calculator') ||
+    pathname.startsWith('/defects/') ||
+    pathname.startsWith('/faq/') ||
+    pathname.startsWith('/service-areas/counties/')
+  ) {
+    return true;
+  }
+  if (pathname.startsWith('/service-areas/') && !STANDALONE_SERVICE_AREA_SLUGS.has(pathname)) {
+    return true;
+  }
+  return false;
+}
 
 function formatLabel(slug) {
   if (labelMap[slug]) return labelMap[slug];
@@ -45,7 +88,7 @@ export default function Breadcrumbs({ items }) {
   let breadcrumbItems = items;
   if (!breadcrumbItems) {
     if (!pathname || pathname === '/') return null;
-    if (pathname.startsWith('/checkout') || pathname.startsWith('/studio') || pathname.startsWith('/dashboard')) return null;
+    if (hasPageLevelBreadcrumbs(pathname)) return null;
 
     const segments = pathname.split('/').filter(Boolean);
     breadcrumbItems = [{ label: 'Home', href: '/' }];

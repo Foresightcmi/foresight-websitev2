@@ -256,9 +256,9 @@ export default function Home() {
                   <Image
                     src="/images/cpi_logo.webp"
                     alt="InterNACHI Certified Professional Inspector"
-                    width={150}
-                    height={150}
-                    sizes="(max-width: 768px) 110px, 145px"
+                    width={160}
+                    height={160}
+                    sizes="(max-width: 768px) 115px, 155px"
                     className="hero-cred-img-primary"
                     loading="eager"
                   />

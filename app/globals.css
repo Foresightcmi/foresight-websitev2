@@ -249,6 +249,12 @@ a:hover {
   top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(135deg, #111827 0%, #1f2937 60%, #111827 100%);
   z-index: 0;
+  pointer-events: none;
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -1059,16 +1065,16 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
 }
 
 .hero-cred-img-primary {
-  height: 135px;
-  width: auto;
-  max-width: 155px;
+  height: 146px;
+  width: 146px;
+  max-width: 165px;
   object-fit: contain;
   filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.7));
 }
 
 .hero-cred-img-cmi {
   height: 146px;
-  width: auto;
+  width: 146px;
   max-width: 165px;
   object-fit: contain;
   filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.7));
@@ -1213,11 +1219,13 @@ section[style*="linear-gradient"] span[style*="color: var(--color-red)"] {
     padding: 0.4rem 0.6rem !important;
   }
   .hero-cred-img-primary {
-    height: 95px !important;
+    height: 103px !important;
+    width: 103px !important;
     filter: none !important;
   }
   .hero-cred-img-cmi {
     height: 103px !important;
+    width: 103px !important;
     filter: none !important;
   }
   .hero-cred-exp {
