@@ -158,5 +158,45 @@
     "messageId": "<18fcc793-15c4-0d3d-d715-480b14b7b02d@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862166.html",
     "sentAt": "2026-11-18T21:48:08.116Z"
+  },
+  {
+    "recordId": "NC-7865125",
+    "address": "8135 Nora Court, Gainesville, GA 30506",
+    "recipient": "mibenthal@kmhomes.com",
+    "messageId": "<6f129c01-fde5-e214-4b90-f2255eaccb15@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7865125.html",
+    "sentAt": "2026-11-19T22:05:24.993Z"
+  },
+  {
+    "recordId": "NC-7863563",
+    "address": "262 Windsor Drive SW, Marietta, GA 30064",
+    "recipient": "gahomesbydc@gmail.com",
+    "messageId": "<6d157a2c-d572-f005-3fb7-5e9310a38160@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7863563.html",
+    "sentAt": "2026-11-19T22:05:27.884Z"
+  },
+  {
+    "recordId": "NC-7862177",
+    "address": "3936 Lockaby Way, Lawrenceville, GA 30044",
+    "recipient": "alayer@mckinleyhomes.com",
+    "messageId": "<034eb7a1-964d-43f1-f812-c3b2b64f7dfb@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862177.html",
+    "sentAt": "2026-11-19T22:05:29.703Z"
+  },
+  {
+    "recordId": "NC-7864630",
+    "address": "213 Little Coyote Loop, Waleska, GA 30183",
+    "recipient": "alanc@lakearrowheadga.com",
+    "messageId": "<4ca6cdc3-0c77-29e4-37d1-f6ebecc809db@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7864630.html",
+    "sentAt": "2026-11-19T22:05:31.441Z"
+  },
+  {
+    "recordId": "NC-7865095",
+    "address": "15 Fothergilla Way, Dallas, GA 30132",
+    "recipient": "nataliemoutos@gmail.com",
+    "messageId": "<823659d0-332b-31f0-ee6b-7079a31772b0@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7865095.html",
+    "sentAt": "2026-11-19T22:05:34.518Z"
   }
 ]
