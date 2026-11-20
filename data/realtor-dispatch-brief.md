@@ -1,5 +1,5 @@
 # Metro Atlanta VIP Brokerage Outreach Dispatch Brief
-Generated: 2026-11-16 23:43:11
+Generated: 2026-11-20 22:08:16
 
 This brief contains tailored partnership outreach packages for top Metro Atlanta brokerage offices.
 Equip their managing brokers, team leaders, and productivity coaches with our free interactive Due Diligence tools and CMI dual-team standard.

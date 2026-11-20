@@ -4,7 +4,7 @@
   "cadence": "twice_daily_0730_1230_ET",
   "counts": {
     "youtubeRealtors": 10,
-    "verifiedYoutubeEmails": 4,
+    "verifiedYoutubeEmails": 7,
     "instagramNewBuildTours": 4,
     "buyerIntentThreads": 13,
     "unseenBuyerThreads": 0,
@@ -72,6 +72,52 @@
       "view_count": 0,
       "transcript_excerpt": "",
       "verified_contact": null
+    },
+    {
+      "medium": "youtube_relocation_realtor",
+      "channel_author": "North Metro Atlanta New Homes by Rasheda Butts",
+      "video_title": "Tour This Beautiful $575,000 New Construction Home | Chafin Communities | Gainesville, GA",
+      "source_url": "https://www.youtube.com/watch?v=eJBSKm-Qh8s",
+      "retrieved_on": "2026-11-20",
+      "view_count": 1290,
+      "transcript_excerpt": "New Construction Home Tour | Chafin Communities | Ponderosa Farms | Gainesville, GA Starting Price: $575000 (at the time this ...",
+      "verified_contact": null
+    },
+    {
+      "medium": "youtube_relocation_realtor",
+      "channel_author": "Erin Coker - Atlanta Real Estate ",
+      "video_title": "Sellers REFUSE To Sell In Atlanta (Market Update November 2026)",
+      "source_url": "https://www.youtube.com/watch?v=0vZQnqkW-Tc",
+      "retrieved_on": "2026-11-20",
+      "view_count": 27,
+      "transcript_excerpt": "Book a call with Erin: https://calendly.com/erincoker Track your property value in real time: ...",
+      "verified_contact": {
+        "name": "Erin Coker",
+        "first": "Erin",
+        "brokerage": "Compass",
+        "city": "Atlanta",
+        "email": "erin.coker@compass.com",
+        "phone": "404-956-0956",
+        "profile_source_url": "https://www.compass.com/agents/erin-coker/"
+      }
+    },
+    {
+      "medium": "youtube_relocation_realtor",
+      "channel_author": "Erin Coker - Atlanta Real Estate ",
+      "video_title": "Why These Atlanta Homes Aren’t Selling… But Others Are",
+      "source_url": "https://www.youtube.com/watch?v=qMSKsnWKKOs",
+      "retrieved_on": "2026-11-20",
+      "view_count": 438,
+      "transcript_excerpt": "What's your home worth today? https://erincoker.com/get-a-free-home-valuation/ Talk through your next move: ...",
+      "verified_contact": {
+        "name": "Erin Coker",
+        "first": "Erin",
+        "brokerage": "Compass",
+        "city": "Atlanta",
+        "email": "erin.coker@compass.com",
+        "phone": "404-956-0956",
+        "profile_source_url": "https://www.compass.com/agents/erin-coker/"
+      }
     },
     {
       "medium": "youtube_relocation_realtor",
@@ -416,6 +462,14 @@
   "warrantySubdivisionCohorts": [
     {
       "medium": "11_month_warranty_subdivision_cohort",
+      "title": "Toll Brothers Announces New Luxury Home Community Now Open",
+      "published_at": "2025-03-06T17:06:57.000Z",
+      "source_url": "https://www.globenewswire.com/news-release/2025/03/06/3038467/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Now-Open-in-Atlanta-Georgia.html",
+      "retrieved_on": "2026-11-20",
+      "excerpt": "Toll Brothers Announces New Luxury Home Community Now Open ## Nolyn Pointe by Toll Brothers offers single-family homes in the Chosewood Park neighborhood of Atlanta with direct access to the BeltLine Southside Trail March 06, 2025 12:06 ET | Source: Toll Brothers, Inc. ATLANTA, M"
+    },
+    {
+      "medium": "11_month_warranty_subdivision_cohort",
       "title": "Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum",
       "published_at": "2025-06-03T19:00:19.000Z",
       "source_url": "https://www.atlantarealestateforum.com/grand-opening-of-decaturs-celesta-set-for-june-21/",
@@ -488,7 +542,7 @@
       "id": "hook_11_month_builder_warranty_window",
       "defect_category": "roof_envelope_and_warranty_expiration",
       "theme_title": "2025 Metro Atlanta New-Home Owners: Your 11-Month Builder Warranty Clock Is Ticking",
-      "hook_headline": "11-Month Builder Warranty Alert for Recent Closings (\"Grand Opening Of Decatur’s Celesta Set For June 21 - Atlanta Real Estate Forum\"): Document Hidden Roof, Plumbing & Truss Settlement Before Month 12 Expires",
+      "hook_headline": "11-Month Builder Warranty Alert for Recent Closings (\"Toll Brothers Announces New Luxury Home Community Now Open\"): Document Hidden Roof, Plumbing & Truss Settlement Before Month 12 Expires",
       "negotiation_leverage": "$1,850–$7,600+ in builder-funded warranty repairs documented before the 1-year fit-and-finish warranty closes",
       "pricing_anchor": "11-Month Builder Warranty Inspection From $345 (2 Certified Inspectors + 4K Drone + Thermal)",
       "source_url": "https://www.atlantarealestateforum.com/grand-opening-of-decaturs-celesta-set-for-june-21/",
