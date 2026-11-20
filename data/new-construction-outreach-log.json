@@ -198,5 +198,45 @@
     "messageId": "<823659d0-332b-31f0-ee6b-7079a31772b0@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7865095.html",
     "sentAt": "2026-11-19T22:05:34.518Z"
+  },
+  {
+    "recordId": "NC-7862187",
+    "address": "1928 Repose Dr, Atlanta, GA 30341",
+    "recipient": "golson@empirecommunities.com",
+    "messageId": "<bc92f199-dc58-4fda-1e6f-9b696fde859a@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862187.html",
+    "sentAt": "2026-11-20T21:45:44.969Z"
+  },
+  {
+    "recordId": "NC-7863564",
+    "address": "258 Windsor Drive SW, Marietta, GA 30064",
+    "recipient": "gahomesbydc@gmail.com",
+    "messageId": "<98a23503-28c3-8249-a98a-94420585833e@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7863564.html",
+    "sentAt": "2026-11-20T21:45:48.637Z"
+  },
+  {
+    "recordId": "NC-7863565",
+    "address": "266 Windsor Drive SW, Marietta, GA 30064",
+    "recipient": "gahomesbydc@gmail.com",
+    "messageId": "<ee3459e3-fb1d-1c55-55db-1a0e4e5cd323@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7863565.html",
+    "sentAt": "2026-11-20T21:45:50.468Z"
+  },
+  {
+    "recordId": "NC-7864604",
+    "address": "196 Oakdale Road, Jefferson, GA 30549",
+    "recipient": "info@alphapropgroup.com",
+    "messageId": "<516fcfd0-0fe5-d0e4-7613-4a65ade6c90f@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7864604.html",
+    "sentAt": "2026-11-20T21:45:53.942Z"
+  },
+  {
+    "recordId": "NC-7864650",
+    "address": "698 Sunstone Lane, Lawrenceville, GA 30043",
+    "recipient": "jbrundidge@tratonhomes.com",
+    "messageId": "<09536569-2f34-8906-c4b7-fab4915ae327@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7864650.html",
+    "sentAt": "2026-11-20T21:45:56.664Z"
   }
 ]
