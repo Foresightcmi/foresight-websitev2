@@ -304,10 +304,11 @@ for (const rel of SCHEMA_OFFER_FILES) {
   const full = path.join(ROOT, rel);
   if (!fs.existsSync(full)) continue;
   const raw = fs.readFileSync(full, 'utf8');
+  const usesSharedPseoMeta = rel === 'app/services/[service]/[city]/page.js' && raw.includes('buildServiceCityOfferSchema');
   if (
     raw.includes('"@type": "PriceSpecification"') ||
-    (!raw.includes('"priceSpecification"') && !raw.includes('priceSpecification:')) ||
-    (!raw.includes('"price":') && !raw.includes('price:'))
+    (!usesSharedPseoMeta && !raw.includes('"priceSpecification"') && !raw.includes('priceSpecification:')) ||
+    (!usesSharedPseoMeta && !raw.includes('"price":') && !raw.includes('price:'))
   ) {
     missingOfferPriceFiles.push(rel);
   }
@@ -315,7 +316,9 @@ for (const rel of SCHEMA_OFFER_FILES) {
 const serviceHubRaw = fs.readFileSync(path.join(ROOT, 'app/services/[service]/page.js'), 'utf8');
 const hasStaleHubCommercialPrice = serviceHubRaw.includes("price: 'From $750'") || serviceHubRaw.includes('Starting at ${serviceData.price}');
 const allServicesValidOfferPrice = services.every((s) => {
-  const computed = `${(s.price.match(/\d+/) || ['345'])[0]}.00`;
+  if (s.price === 'Call for Quote') return serviceHubRaw.includes(`'${s.slug}'`);
+  const numMatch = s.price.match(/\d+/);
+  const computed = numMatch ? `${numMatch[0]}.00` : '';
   return /^\d+\.\d{2}$/.test(computed) && Number(computed) >= 275 && serviceHubRaw.includes(`'${s.slug}'`);
 });
 record(

@@ -156,9 +156,11 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
     return { added, sent: [], revoked, newCancelCount: hg.newCancelCount };
   }
 
+  const easternDateRun = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const isHolidayRun = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDateRun);
   const easternHour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(new Date()));
-  if (!forceWindow && (easternHour < 9 || easternHour >= 18)) {
-    console.log(`[Review Engine] Outside 9 AM-6 PM ET window. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred to next daytime window.`);
+  if (!forceWindow && (isHolidayRun || easternHour < 9 || easternHour >= 18)) {
+    console.log(`[Review Engine] Outside 9 AM-6 PM ET window or holiday blackout. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred.`);
     return { added, sent: [], revoked, newWarrantyCount: hg.newWarrantyCount };
   }
   const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
@@ -354,15 +356,32 @@ async function runWarrantyCheckin(args, queue, cancels) {
   }
   const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
   let crossSent24h = 0;
-  for (const [fn, k] of [['due-diligence-outreach-log.json', 'timestamp'], ['permit-outreach-log.json', 'dispatchedAt'], ['warranty-outreach-log.json', 'timestamp']]) {
-    for (const r of readJson(path.join(ROOT, 'data', fn), [])) {
-      if (r?.[k] && new Date(r[k]).getTime() >= oneDayAgoMs) crossSent24h++;
+  const masterDb = readJson(path.resolve(ROOT, '..', 'email-campaign-engine', 'master_realtor_database.json'), { contacts: {} });
+  for (const c of Object.values(masterDb.contacts || {})) {
+    for (const camp of Object.values(c?.campaigns || {})) {
+      if (camp?.sent && camp.timestamp && new Date(camp.timestamp).getTime() >= oneDayAgoMs) crossSent24h++;
     }
   }
-  if (crossSent24h >= 1190) return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun: false };
+  for (const [fn, k] of [['due-diligence-outreach-log.json', 'timestamp'], ['permit-outreach-log.json', 'dispatchedAt'], ['warranty-outreach-log.json', 'timestamp'], ['new-construction-outreach-log.json', 'sentAt'], ['new-construction-outreach.json', 'sentAt'], ['agent-reach-outreach-log.json', 'timestamp']]) {
+    const raw = readJson(path.join(ROOT, 'data', fn), []);
+    for (const r of (Array.isArray(raw) ? raw : (raw?.history || []))) {
+      const ts = r?.[k] || r?.timestamp || r?.dispatchedAt || r?.sentAt;
+      if (ts && new Date(ts).getTime() >= oneDayAgoMs) crossSent24h++;
+    }
+  }
+  const cloudSt = readJson(path.join(ROOT, 'data', 'cloud-realtor-nurture-state.json'), {});
+  for (const ts of Object.values(cloudSt?.lastSentByEmail || {})) {
+    if (ts && new Date(ts).getTime() >= oneDayAgoMs) crossSent24h++;
+  }
+  const ledger = seedLedgerFromQueue(readJson(LEDGER, { byKey: {} }), queue);
+  for (const rec of Object.values(ledger.byKey || {})) {
+    for (const t of (rec?.touches || [])) {
+      if (t?.at && Array.isArray(t.channels) && t.channels.some((ch) => String(ch).startsWith('email')) && new Date(t.at).getTime() >= oneDayAgoMs) crossSent24h++;
+    }
+  }
+  if (crossSent24h >= 1200) return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun: false };
 
   const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user, pass } });
-  const ledger = seedLedgerFromQueue(readJson(LEDGER, { byKey: {} }), queue);
   let sentCount = 0;
   for (const rec of batch) {
     const mail = buildWarrantyCheckinEmail(rec, rec.cohort);

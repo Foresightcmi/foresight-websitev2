@@ -113,8 +113,12 @@ test('Item 3: All 77x9 pSEO routes stay <=60 char title, <=158 char description,
       }
 
       const offer = buildServiceCityOfferSchema(svc, `https://www.fhinspectionsatl.com/services/${svc.slug}/kennesaw`, cityName);
-      assert.ok(offer && /^\d+\.\d{2}$/.test(offer.price) && Number(offer.price) >= 275, `GSC Product Snippet Offer must emit valid 2-decimal floor for ${svc.slug}`);
-      assert.equal(offer.priceSpecification.description, svc.priceDetails);
+      if (svc.price === 'Call for Quote') {
+        assert.equal(offer, undefined, `Call for Quote service ${svc.slug} must not emit fake numeric Offer price`);
+      } else {
+        assert.ok(offer && /^\d+\.\d{2}$/.test(offer.price) && Number(offer.price) >= 275);
+        assert.equal(offer.priceSpecification.description, svc.priceDetails);
+      }
     }
   }
 });

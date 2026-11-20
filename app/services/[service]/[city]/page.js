@@ -388,30 +388,13 @@ export default async function ServiceCityPage({ params }) {
         "containedInPlace": { "@type": "State", "name": "Georgia" }
       }
     },
-    "offers": {
-      "@type": "Offer",
-      "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
-      "priceCurrency": "USD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": `${(serviceData.price.match(/\d+/) || ['345'])[0]}.00`,
-        "priceCurrency": "USD",
-        "unitText": "starting",
-        "description": serviceData.priceDetails
-      },
-      "priceValidUntil": "2027-12-31",
-      "validThrough": "2027-12-31",
-      "validFrom": "2026-01-01",
-      "availability": "https://schema.org/InStock",
-      "url": canonicalUrl,
-      "areaServed": {
-        "@type": "City",
-        "name": cityName
-      }
-    }
+    ...(buildServiceCityOfferSchema(serviceData, canonicalUrl, cityName, false)
+      ? { "offers": buildServiceCityOfferSchema(serviceData, canonicalUrl, cityName, false) }
+      : {})
   };
 
-  const productJsonLd = {
+  const productOffer = buildServiceCityOfferSchema(serviceData, canonicalUrl, cityName, true);
+  const productJsonLd = productOffer ? {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": `${serviceName} Package in ${cityName}, GA`,
@@ -426,7 +409,7 @@ export default async function ServiceCityPage({ params }) {
       "@type": "Brand",
       "name": "Foresight Home Inspections"
     },
-    "offers": buildServiceCityOfferSchema(serviceData, canonicalUrl, cityName, true),
+    "offers": productOffer,
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -470,10 +453,12 @@ export default async function ServiceCityPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
-      />
+      {productJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

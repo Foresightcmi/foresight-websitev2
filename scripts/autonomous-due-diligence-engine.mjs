@@ -626,7 +626,7 @@ async function main() {
 
     const sorted = [...underContractRealtors];
 
-    if (canSendEmail && transporter) {
+    if (canSendEmail && transporter && !isHolidayBlackout) {
       for (const r of sorted) {
         if (quotaCeilingHit) break;
         if (!r.email || !r.email.includes('@')) continue;

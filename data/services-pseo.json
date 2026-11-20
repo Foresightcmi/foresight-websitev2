@@ -212,8 +212,8 @@
   {
     "slug": "buyer-inspection",
     "name": "Buyer Home Inspection",
-    "metaTitle": "Home Inspection {city}, GA | From $345 | Same-Day CMI",
-    "metaDescription": "Certified Master Inspector (CMI) home inspection in {city}, GA From $345 (Condos From $295). 2 inspectors, free thermal, 4K drone & same-day report.",
+    "metaTitle": "4.8★ Home Inspection {city}, GA | From $345 (2-CMI)",
+    "metaDescription": "4.8★ Certified Master Inspector (CMI) home inspection in {city}, GA From $345 (Condos From $295). 2 inspectors, free thermal, 4K drone & same-day report.",
     "price": "From $345",
     "priceDetails": "Condos From $295 | Single Family Homes From $345 based on square footage",
     "icon": "🏡",
@@ -247,8 +247,8 @@
   {
     "slug": "commercial-property-inspection",
     "name": "Commercial Property Inspection",
-    "metaTitle": "Commercial Building Inspection {city}, GA | ASTM PCA",
-    "metaDescription": "ASTM E2018 commercial property condition assessments in {city}, GA — Call (678) 480-2110 for Quote. 2-inspector CMI team, thermal drone roof & HVAC check.",
+    "metaTitle": "4.8★ Commercial Inspection {city}, GA | ASTM PCA",
+    "metaDescription": "4.8★ ASTM E2018 commercial property condition assessments in {city}, GA — Call (678) 480-2110 for Quote. 2-inspector CMI team, thermal drone roof & HVAC check.",
     "price": "Call for Quote",
     "priceDetails": "Custom quote based on square footage, use type, and mechanical complexity — Call (678) 480-2110 for Quote",
     "icon": "🏢",
@@ -282,8 +282,8 @@
   {
     "slug": "pre-drywall-inspection",
     "name": "Pre-Drywall Framing Inspection",
-    "metaTitle": "Pre-Drywall Inspection {city}, GA | From $275 | CMI",
-    "metaDescription": "Independent CMI pre-drywall framing inspections in {city}, GA From $275. 2 certified inspectors check load paths, rough plumbing, electrical & HVAC.",
+    "metaTitle": "4.8★ Pre-Drywall Inspection {city}, GA | From $275",
+    "metaDescription": "4.8★ Independent CMI pre-drywall framing inspections in {city}, GA From $275. 2 certified inspectors check load paths, rough plumbing, electrical & HVAC.",
     "price": "From $275",
     "priceDetails": "From $275 up to 1,500 sq ft | $300 for 1,501–2,500 sq ft | $350 for 2,501–3,500 sq ft | $400 for 3,501+ sq ft",
     "icon": "📐",
@@ -317,8 +317,8 @@
   {
     "slug": "11-month-warranty-inspection",
     "name": "11-Month Builder Warranty Inspection",
-    "metaTitle": "11-Month Warranty Inspection {city}, GA | From $345",
-    "metaDescription": "Independent 11-month builder warranty inspections in {city}, GA From $345. 2 certified inspectors, free thermal, 4K drone & builder-ready punch list.",
+    "metaTitle": "4.8★ 11-Month Warranty Inspection {city} | From $345",
+    "metaDescription": "4.8★ Independent 11-month builder warranty inspections in {city}, GA From $345. 2 certified inspectors, free thermal, 4K drone & builder-ready punch list.",
     "price": "From $345",
     "priceDetails": "11-month warranty evaluations From $345 based on home square footage",
     "icon": "⏳",
