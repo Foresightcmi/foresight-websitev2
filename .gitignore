@@ -48,3 +48,6 @@ data/opensms-config.json
 # Client PII for review request engine (local only)
 data/private/
 review_requests.log
+
+# Local-only county deed & internal dispatch leads (keep out of public CDN/Git)
+data/eleven-month-deed-leads.json

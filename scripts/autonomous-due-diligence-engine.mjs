@@ -6,6 +6,7 @@ import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import nodemailer from 'nodemailer';
 import { harvestLiveDueDiligence } from './harvest-live-due-diligence.mjs';
+import { discoverLocalOpenSmsPhone, sendOpenSmsWithDhcpFallback } from './lib/opensms-fallback.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,47 +43,6 @@ function getOpenSmsConfig() {
     } catch {}
   }
   return { apiKey, gatewayUrl };
-}
-
-async function discoverLocalOpenSmsPhone(port = 9292) {
-  const prefixes = new Set(['192.168.1']);
-  const nets = os.networkInterfaces();
-  for (const name of Object.keys(nets)) {
-    for (const iface of nets[name] || []) {
-      if (iface.family === 'IPv4' && !iface.internal && (iface.address.startsWith('192.168.') || iface.address.startsWith('10.0.'))) {
-        prefixes.add(iface.address.split('.').slice(0, 3).join('.'));
-      }
-    }
-  }
-  for (const prefix of prefixes) {
-    const found = [];
-    await Promise.all(
-      Array.from({ length: 254 }, (_, i) => i + 1).map(
-        i =>
-          new Promise(resolve => {
-            const ip = `${prefix}.${i}`;
-            const sock = new net.Socket();
-            sock.setTimeout(500);
-            sock.once('connect', () => {
-              found.push(`http://${ip}:${port}/sms/`);
-              sock.destroy();
-              resolve();
-            });
-            sock.once('timeout', () => {
-              sock.destroy();
-              resolve();
-            });
-            sock.once('error', () => {
-              sock.destroy();
-              resolve();
-            });
-            sock.connect(port, ip);
-          })
-      )
-    );
-    if (found.length > 0) return found[0];
-  }
-  return '';
 }
 
 function getEmailCredentials() {
@@ -155,7 +115,7 @@ function buildLoanOfficerEmail(lo) {
 </head>
 <body>
   <div class="card">
-    <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="70" width="70" style="display:inline-block;height:70px;width:70px;border:0;vertical-align:middle;" /></td></tr></table></div>
+    <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;" /></td></tr></table></div>
     <div class="banner">
       🏛️ MORTGAGE ORIGINATOR SERVICE LEVEL AGREEMENT &amp; COLLATERAL PROTECTION
     </div>
@@ -258,7 +218,7 @@ function buildUnderContractEmail(realtor) {
   ].join('\n');
 
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;max-width:600px;margin:0;background-color:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;">
-  <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="70" width="70" style="display:inline-block;height:70px;width:70px;border:0;vertical-align:middle;" /></td></tr></table></div>
+  <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;" /></td></tr></table></div>
   <div style="padding:24px 24px 20px 24px;">
     <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">Hi ${firstName},</p>
     <p style="margin:0 0 14px 0;font-size:15px;line-height:1.62;color:#1e293b;">Congratulations on getting <strong>${address}</strong> in <strong>${city}${price}</strong> under contract! I wanted to reach out directly in case your buyers or the co-op agent need a fast 24-hour inspection slot while your due diligence clock is running.</p>
@@ -312,7 +272,7 @@ function buildPreDueDiligenceEmail(realtor) {
 </head>
 <body>
   <div class="card">
-    <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="70" width="70" style="display:inline-block;height:70px;width:70px;border:0;vertical-align:middle;" /></td></tr></table></div>
+    <div style="background-color:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;letter-spacing:0.4px;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; INTER-NACHI CPI &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="Certified Master Inspector (CMI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="InterNACHI Certified Professional Inspector (CPI)" height="78" width="78" style="display:inline-block;height:78px;width:78px;border:0;vertical-align:middle;" /></td></tr></table></div>
     <div class="banner">
       ⚡ PRE-DUE DILIGENCE READINESS &amp; 24-HR INSPECTION SLOT RESERVATION
     </div>
@@ -427,16 +387,84 @@ async function main() {
     } catch {}
     return { active: false };
   }
-  function setSharedCooldown(reason) {
+  function setSharedCooldown(reason, hours = 24.25) {
     try {
       const payload = {
         triggeredAt: new Date().toISOString(),
-        cooldownUntil: new Date(Date.now() + 24.25 * 3600 * 1000).toISOString(),
+        cooldownUntil: new Date(Date.now() + hours * 3600 * 1000).toISOString(),
         reason
       };
       fs.writeFileSync(SHARED_COOLDOWN_FILE, JSON.stringify(payload, null, 2), 'utf8');
     } catch {}
   }
+
+  const easternHour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(new Date()));
+  const easternDateStr = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const isDaytimeWindow = easternHour >= 9 && easternHour < 18;
+  const isHolidayBlackout = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDateStr);
+
+  const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
+  const fourteenDaysAgoMs = Date.now() - 14 * 24 * 3600 * 1000;
+  let rolling24hSent = 0;
+  const recentlyContactedEmails14d = new Set();
+  const masterDbPath = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'master_realtor_database.json');
+  if (fs.existsSync(masterDbPath)) {
+    try {
+      const mdb = JSON.parse(fs.readFileSync(masterDbPath, 'utf8'));
+      for (const c of Object.values(mdb.contacts || {})) {
+        const cEmail = String(c?.email || '').trim().toLowerCase();
+        for (const camp of Object.values(c?.campaigns || {})) {
+          if (camp?.sent && camp.timestamp) {
+            const tMs = new Date(camp.timestamp).getTime();
+            if (tMs >= oneDayAgoMs) rolling24hSent++;
+            if (cEmail && tMs >= fourteenDaysAgoMs) recentlyContactedEmails14d.add(cEmail);
+          }
+        }
+      }
+    } catch {}
+  }
+  for (const [fn, tsKey] of [
+    ['due-diligence-outreach-log.json', 'timestamp'],
+    ['permit-outreach-log.json', 'dispatchedAt'],
+    ['warranty-outreach-log.json', 'timestamp'],
+    ['new-construction-outreach-log.json', 'sentAt'],
+    ['new-construction-outreach.json', 'sentAt'],
+    ['agent-reach-outreach-log.json', 'timestamp']
+  ]) {
+    const lp = path.join(ROOT_DIR, 'data', fn);
+    if (!fs.existsSync(lp)) continue;
+    try {
+      const parsed = JSON.parse(fs.readFileSync(lp, 'utf8'));
+      for (const r of (Array.isArray(parsed) ? parsed : (parsed.history || []))) {
+        const ts = r?.[tsKey] || r?.timestamp || r?.dispatchedAt || r?.sentAt;
+        const tMs = ts ? new Date(ts).getTime() : 0;
+        if (tMs >= oneDayAgoMs) rolling24hSent++;
+        const em = String(r?.email || r?.recipientEmail || '').trim().toLowerCase();
+        if (em && tMs >= fourteenDaysAgoMs) recentlyContactedEmails14d.add(em);
+      }
+    } catch {}
+  }
+  const cloudStateFile = path.join(ROOT_DIR, 'data', 'cloud-realtor-nurture-state.json');
+  if (fs.existsSync(cloudStateFile)) {
+    try {
+      const cs = JSON.parse(fs.readFileSync(cloudStateFile, 'utf8'));
+      for (const ts of Object.values(cs.lastSentByEmail || {})) {
+        if (ts && new Date(ts).getTime() >= oneDayAgoMs) rolling24hSent++;
+      }
+    } catch {}
+  }
+  const revLedgerFile = path.join(ROOT_DIR, 'data', 'private', 'review-dispatch-ledger.json');
+  if (fs.existsSync(revLedgerFile)) {
+    try {
+      const rl = JSON.parse(fs.readFileSync(revLedgerFile, 'utf8'));
+      for (const rec of Object.values(rl.byKey || {})) {
+        for (const t of rec?.touches || []) {
+          if (t?.at && Array.isArray(t.channels) && t.channels.includes('email') && new Date(t.at).getTime() >= oneDayAgoMs) rolling24hSent++;
+        }
+      }
+    } catch {}
+  }
+  let remaining24hBudget = Math.max(0, 1200 - rolling24hSent);
 
   const { user, pass } = getEmailCredentials();
   const { apiKey: openSmsKey, gatewayUrl: configuredSmsUrl } = getOpenSmsConfig();
@@ -444,18 +472,21 @@ async function main() {
   let canSendEmail = false;
   const smtpCooldown = getSharedCooldown();
 
-  if (smtpCooldown.active) {
-    console.log(`🛡️ [Due Diligence Engine] Shared SMTP Circuit Breaker active until ${smtpCooldown.cooldownUntil}. Skipping SMTP to protect 24h reset (FMLS Harvest & OpenSMS remain active).`);
+  if (!isDaytimeWindow) {
+    console.log(`🛡️ [Due Diligence Engine] Outside 9:00 AM - 6:00 PM ET window (Hour: ${easternHour}). Harvest synced; SMTP/SMS deferred to daytime.`);
+  } else if (remaining24hBudget <= 0) {
+    console.log(`🛡️ [Due Diligence Engine] Rolling 24h cap reached (${rolling24hSent}/1200). Preserving 800-email Workspace buffer.`);
+  } else if (smtpCooldown.active) {
+    console.log(`🛡️ [Due Diligence Engine] Shared SMTP Circuit Breaker active until ${smtpCooldown.cooldownUntil}. Skipping SMTP.`);
   } else if (!pass) {
     console.warn('⚠️ [Due Diligence Engine] EMAIL_PASSWORD not found in environment/secrets.');
-    console.log('ℹ️ [Due Diligence Engine] Running in Directory Scout & Verification mode (email dispatch handled by authenticated local daemon).');
   } else {
     try {
       const testTransporter = nodemailer.createTransport({
         service: 'gmail',
         pool: true,
         maxConnections: 1,
-        maxMessages: 45,
+        maxMessages: 25,
         auth: { user, pass }
       });
       await testTransporter.verify();
@@ -558,23 +589,41 @@ async function main() {
     return false;
   }
 
-  let quotaCeilingHit = false;
+  let quotaCeilingHit = remaining24hBudget <= 0;
+  const TRI_LOGO_HEADER = `<div style="background:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="CMI" height="78" width="78" style="display:inline-block;height:78px;width:78px;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="CPI" height="78" width="78" style="display:inline-block;height:78px;width:78px;" /></td></tr></table></div>`;
+
+  function consumeBudget(normEmail) {
+    remaining24hBudget = Math.max(0, remaining24hBudget - 1);
+    if (normEmail) recentlyContactedEmails14d.add(normEmail);
+    if (remaining24hBudget <= 0) quotaCeilingHit = true;
+  }
+
+  function handleSmtpError(e, label = '') {
+    const msg = String(e?.message || e || '');
+    if (/550|454|Daily user sending limit/i.test(msg)) {
+      setSharedCooldown(`Due Diligence 550/454 limit (${label}): ${msg}`, 24.25);
+      quotaCeilingHit = true;
+      return true;
+    }
+    if (/421|4\.7\.0|Too many concurrent|rate/i.test(msg)) {
+      setSharedCooldown(`Due Diligence 421 soft rate deferral (${label}): ${msg}`, 0.75);
+      quotaCeilingHit = true;
+      return true;
+    }
+    return false;
+  }
 
   let sentLendersCount = 0;
   let sentB2bPartnersCount = 0;
   let sentUnderContractCount = 0;
   let sentOpenSmsCount = 0;
 
-  // -----------------------------------------------------------
-  // PRIORITY #1 (TASK A): Dispatch to Active Under-Contract / Due Diligence Properties First
-  // -----------------------------------------------------------
   let totalUnderContract = 0;
   if (fs.existsSync(UNDER_CONTRACT_FILE)) {
     const underContractRealtors = JSON.parse(fs.readFileSync(UNDER_CONTRACT_FILE, 'utf8'));
     totalUnderContract = underContractRealtors.length;
     console.log(`📋 [Due Diligence Engine] Priority #1: Loaded ${underContractRealtors.length} Active Under-Contract / Due Diligence Realtors.`);
 
-    // Preserve Round-Robin Quadrant Interleaving (EAST -> SOUTH -> NORTHEAST -> NORTHWEST -> INTOWN)
     const sorted = [...underContractRealtors];
 
     if (canSendEmail && transporter) {
@@ -592,8 +641,7 @@ async function main() {
         const key = `CONTRACT_${r.id}_${r.email}`;
         if (
           contactedKeys.has(key) ||
-          contactedEmails.has(normEmail) ||
-          (normName && contactedNames.has(normName)) ||
+          recentlyContactedEmails14d.has(normEmail) ||
           (cleanPhone.length === 10 && smsContactedPhones.has(cleanPhone))
         ) {
           continue;
@@ -617,6 +665,7 @@ async function main() {
 
           contactedKeys.add(key);
           contactedEmails.add(normEmail);
+          consumeBudget(normEmail);
           if (normName) contactedNames.add(normName);
           if (cleanPhone.length === 10) smsContactedPhones.add(cleanPhone);
           outreachLog.push({
@@ -637,31 +686,22 @@ async function main() {
 
           sentUnderContractCount++;
           console.log(`  ✓ Transmitted successfully to ${r.name} for ${r.address}`);
-          await sleep(18000); // 18s safe spacing
+          await sleep(18500);
         } catch (e) {
           console.error(`  ❌ Failed to send to ${r.email}:`, e.message);
-          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
-            setSharedCooldown(`Due Diligence 550/454 limit reached (${r.email}): ${e.message}`);
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Locked shared 24h circuit breaker and halting cleanly.');
-            quotaCeilingHit = true;
-            break;
-          }
+          if (handleSmtpError(e, r.email)) break;
         }
 
-        const maxUnderContractPerRun = Number(process.env.DD_BATCH_LIMIT || 25);
+        const maxUnderContractPerRun = Number(process.env.DD_BATCH_LIMIT || 10);
         if (sentUnderContractCount >= maxUnderContractPerRun) break;
       }
     } else {
       console.log('  ℹ️ Email dispatch inactive; under-contract due diligence directory is verified and current.');
     }
 
-    // Autonomous OpenSMS Dispatch for Top Uncontacted Due Diligence Deals
-    // Strictly targets DasLearning Local OpenSMS on Android phone (http://<PHONE_IP>:9292/sms/)
-    const discoveredLocalUrl = configuredSmsUrl || (await discoverLocalOpenSmsPhone(9292));
-    if (discoveredLocalUrl) {
-      const targetEndpoint = discoveredLocalUrl;
-      const isLocalDasLearning = targetEndpoint.includes(':9292') || targetEndpoint.endsWith('/sms/');
-      console.log(`🤖 [OpenSMS Engine] Connected to Android OpenSMS Gateway: ${targetEndpoint}`);
+    let activeSmsUrl = isDaytimeWindow ? (configuredSmsUrl || (await discoverLocalOpenSmsPhone(9292))) : '';
+    if (activeSmsUrl) {
+      console.log(`🤖 [OpenSMS Engine] Target Android OpenSMS Gateway: ${activeSmsUrl}`);
 
       for (const r of sorted) {
         // Strict Freshness Gate: ONLY contracts signed in the last 48 hours (active 2-day due diligence window)
@@ -686,46 +726,40 @@ async function main() {
 
         const smsMessage = r.text_body || `Hi ${r.first || 'there'}, Christopher Boykin with Foresight Home Inspections here! Saw ${r.address} in ${r.city} just went under contract—congratulations! If your buyers need a rapid 24-hr due diligence inspection with our two-inspector team, active SUPRA eKEY access, and same-day digital report, we have a slot open in ${r.city}: https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(r.address || '')} — (678) 480-2110`;
 
-        const headers = { 'Content-Type': 'application/json' };
-        if (openSmsKey) headers['Authorization'] = `Bearer ${openSmsKey}`;
+        const smsOut = await sendOpenSmsWithDhcpFallback({
+          phone: cleanPhone,
+          text: smsMessage,
+          configuredUrl: activeSmsUrl,
+          apiKey: openSmsKey,
+          configFilePath: OPENSMS_CONFIG_FILE
+        });
 
-        const bodyPayload = isLocalDasLearning
-          ? { number: `+1${cleanPhone}`, text: smsMessage }
-          : { to: `+1${cleanPhone}`, message: smsMessage };
-
-        try {
-          const smsRes = await fetch(targetEndpoint, {
-            method: 'POST',
-            headers,
-            body: JSON.stringify(bodyPayload)
+        if (smsOut.ok) {
+          activeSmsUrl = smsOut.endpoint || activeSmsUrl;
+          if (smsOut.rediscovered) console.log(`  🔄 [OpenSMS] Auto-updated DHCP LAN IP -> ${activeSmsUrl}`);
+          const smsData = smsOut.data || {};
+          const isLocalDasLearning = activeSmsUrl.includes(':9292') || activeSmsUrl.endsWith('/sms/');
+          smsContactedPhones.add(cleanPhone);
+          if (normName) contactedNames.add(normName);
+          if (normEmail) contactedEmails.add(normEmail);
+          openSmsLog.push({
+            id: smsData.id || `sms_${Date.now()}`,
+            leadId: r.id,
+            to: `+1${cleanPhone}`,
+            targetName: r.name,
+            address: r.address,
+            city: r.city,
+            role: r.role || 'LIST_AGENT',
+            gateway: isLocalDasLearning ? 'DasLearning-Local-9292' : 'OpenSMS-Cloud',
+            status: smsData.stat === true ? 'sent' : (smsData.status || 'pending'),
+            timestamp: new Date().toISOString()
           });
-          if (smsRes.ok) {
-            const smsData = await smsRes.json().catch(() => ({}));
-            smsContactedPhones.add(cleanPhone);
-            if (normName) contactedNames.add(normName);
-            if (normEmail) contactedEmails.add(normEmail);
-            openSmsLog.push({
-              id: smsData.id || `sms_${Date.now()}`,
-              leadId: r.id,
-              to: `+1${cleanPhone}`,
-              targetName: r.name,
-              address: r.address,
-              city: r.city,
-              role: r.role || 'LIST_AGENT',
-              gateway: isLocalDasLearning ? 'DasLearning-Local-9292' : 'OpenSMS-Cloud',
-              status: smsData.stat === true ? 'sent' : (smsData.status || 'pending'),
-              timestamp: new Date().toISOString()
-            });
-            fs.writeFileSync(OPENSMS_LOG_FILE, JSON.stringify(openSmsLog, null, 2), 'utf8');
-            sentOpenSmsCount++;
-            console.log(`  📱 [OpenSMS] Dispatched SMS to ${r.name} (+1${cleanPhone}) for ${r.address}`);
-            await sleep(25000); // 25s carrier-safe spacing
-          } else {
-            console.warn(`  ⚠️ [OpenSMS] HTTP ${smsRes.status} for +1${cleanPhone}`);
-            break;
-          }
-        } catch (smsErr) {
-          console.warn(`  ⚠️ [OpenSMS] Dispatch error:`, smsErr.message);
+          fs.writeFileSync(OPENSMS_LOG_FILE, JSON.stringify(openSmsLog, null, 2), 'utf8');
+          sentOpenSmsCount++;
+          console.log(`  📱 [OpenSMS] Dispatched SMS to ${r.name} (+1${cleanPhone}) for ${r.address}`);
+          await sleep(25000);
+        } else {
+          console.warn(`  ⚠️ [OpenSMS] Gateway unreachable (${smsOut.error || `HTTP ${smsOut.status || 0}`}); deferring SMS until phone reconnects to LAN.`);
           break;
         }
 
@@ -745,30 +779,21 @@ async function main() {
     totalLoanOfficers = loanOfficers.length;
     console.log(`🏦 [Due Diligence Engine] Priority #2: Loaded ${loanOfficers.length} Mortgage Loan Officers.`);
 
-    if (canSendEmail && transporter) {
+    if (canSendEmail && transporter && !isHolidayBlackout) {
       for (const lo of loanOfficers) {
         if (quotaCeilingHit) break;
         const normEmail = String(lo.email || '').trim().toLowerCase();
         const normName = String(lo.name || '').trim().toLowerCase();
         const key = `LO_${lo.id}_${lo.email}`;
-        if (
-          contactedKeys.has(key) ||
-          (normEmail && contactedEmails.has(normEmail)) ||
-          (normName && contactedNames.has(normName))
-        ) {
-          continue;
-        }
-        if (isSuppressed(lo.email, lo.name, lo.company)) {
-          console.log(`  🛡️ [Suppression Gate] Bypassed suppressed loan officer: ${lo.name} (${lo.email})`);
-          continue;
-        }
+        if (contactedKeys.has(key) || (normEmail && recentlyContactedEmails14d.has(normEmail))) continue;
+        if (isSuppressed(lo.email, lo.name, lo.company)) continue;
 
         console.log(`📤 [Due Diligence Engine] Dispatching Lender Dossier to ${lo.name} (${lo.company}) <${lo.email}>...`);
         const { subject, html } = buildLoanOfficerEmail(lo);
 
         try {
           await transporter.sendMail({
-            from: `"Christopher Boykin, CMI® - Foresight Home Inspections" <${user}>`,
+            from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`,
             to: lo.email,
             subject,
             html
@@ -776,32 +801,23 @@ async function main() {
 
           contactedKeys.add(key);
           if (normEmail) contactedEmails.add(normEmail);
+          consumeBudget(normEmail);
           if (normName) contactedNames.add(normName);
           outreachLog.push({
-            key,
-            type: 'LOAN_OFFICER',
-            targetName: lo.name,
-            company: lo.company,
-            email: lo.email,
-            city: lo.city,
-            timestamp: new Date().toISOString()
+            key, type: 'LOAN_OFFICER', targetName: lo.name, company: lo.company,
+            email: lo.email, city: lo.city, timestamp: new Date().toISOString()
           });
           fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
 
           sentLendersCount++;
           console.log(`  ✓ Transmitted successfully to ${lo.name}`);
-          await sleep(2500); // 2.5s safe spacing
+          await sleep(18500);
         } catch (e) {
           console.error(`  ❌ Failed to send to ${lo.email}:`, e.message);
-          if (e.message.includes('550') || e.message.includes('454') || e.message.includes('Daily user sending limit exceeded')) {
-            console.warn('⚠️ [Due Diligence Engine] Daily rolling sending limit reached (550/454). Halting dispatch cleanly to preserve domain reputation.');
-            quotaCeilingHit = true;
-            break;
-          }
+          if (handleSmtpError(e, lo.email)) break;
         }
 
-        // Max 2 loan officers per automated daily scout pass
-        if (sentLendersCount >= 6) break;
+        if (sentLendersCount >= 3) break;
       }
     } else {
       console.log('  ℹ️ Email dispatch inactive; loan officer directory is verified and current.');
@@ -812,14 +828,16 @@ async function main() {
   if (fs.existsSync(B2B_PARTNERS_FILE)) {
     const b2bPartners = JSON.parse(fs.readFileSync(B2B_PARTNERS_FILE, 'utf8')).filter((p) => p.email && p.category !== 'podcast_media');
     console.log(`🤝 [Due Diligence Engine] Priority #3: Loaded ${b2bPartners.length} Verified B2B Referral Partners (Closing/Probate Attorneys & Insurance Agencies).`);
-    if (canSendEmail && transporter && !quotaCeilingHit) {
+    if (canSendEmail && transporter && !quotaCeilingHit && !isHolidayBlackout) {
       for (const p of b2bPartners) {
+        if (quotaCeilingHit) break;
         const normEmail = String(p.email || '').trim().toLowerCase();
         const normName = String(p.name || '').trim().toLowerCase();
         const key = `B2B_${p.id}_${normEmail}`;
-        if (contactedKeys.has(key) || contactedEmails.has(normEmail) || (normName && contactedNames.has(normName)) || isSuppressed(p.email, p.name, p.company)) continue;
+        if (contactedKeys.has(key) || recentlyContactedEmails14d.has(normEmail) || isSuppressed(p.email, p.name, p.company)) continue;
         let subject = `4-Point, Roof Drone & Moisture Verification for ${p.company} Policyholders`;
         let pitchLine = `When ${p.company} clients in ${p.city || 'Metro Atlanta'} need independent roof/4K drone condition documentation, polybutylene or electrical panel safety checks, or full residential inspections (Homes From $345 / Condos From $295; specialty evaluations Call for Quote), our Two Certified Master Inspectors deliver same-day reports backed by $35,000 in client protection.`;
+        let partnerCta = '';
         if (p.category === 'attorney_closing_probate' || p.category === 'attorney_divorce_family') {
           subject = `Metro Atlanta Probate, Estate & Closing Condition Inspections (2-Inspector CMI Team)`;
           pitchLine = `Whether ${p.company} is handling a Georgia probate estate valuation, marital property division, pre-closing repair dispute, or unincorporated DeKalb County Low-Flow Plumbing Certificate (Call for Quote), our Two Certified Master Inspectors evaluate every property in parallel (Residential Homes From $345 / Condos From $295) with same-day photo-documented reports.`;
@@ -847,19 +865,27 @@ async function main() {
         } else if (p.category === 'hoa_remodeler_architect') {
           subject = `Townhome 11-Month Warranty Days & Pre-Renovation Baselines for ${p.company}`;
           pitchLine = `Whether ${p.company} is coordinating neighborhood-wide 11-month builder warranty inspections for a townhome community or establishing a pre-renovation structural and thermal moisture baseline across Metro Atlanta, our Two Certified Master Inspectors deliver same-day engineering-grade reports (Homes From $345 / Condos From $295; Pre-Drywall From $275).`;
+        } else if (p.category === 'transaction_coordinator') {
+          subject = `24-Hr Georgia Due Diligence SLA + SUPRA eKEY for ${p.company} Closings`;
+          pitchLine = `Under tight Metro Atlanta GAR Due Diligence periods, ${p.company} cannot afford scheduling delays or multi-day report bottlenecks. Our Two Certified Master Inspectors deploy in parallel with active SUPRA eKEY access, delivering same-day interactive reports plus a Digital Repair Request Builder (Single-Family From $345, Condos/Townhomes From $295, Pre-Drywall From $275, New Construction From $400; specialty add-ons Call (678) 480-2110 for Quote) backed by $35,000 combined protection ($10,000 Elite Master Warranty $0 deductible + $25,000 InterNACHI Honor Guarantee).`;
+          partnerCta = `<p style="font-size:15px;line-height:1.6;color:#1e293b;">View our <a href="https://www.fhinspectionsatl.com/dossiers/tc-partner-dossier.html" style="color:#0f52ba;font-weight:700;">TC &amp; Buyer Team Partner Dossier</a> (with a copy-paste Day-1 Buyer Onboarding Snippet) or share our <a href="https://www.fhinspectionsatl.com/list-of-3" style="color:#0f52ba;font-weight:700;">Recommended List of 3</a> directly with your contract-to-close agents.</p>`;
+        } else if (p.category === 'buyer_lead_team') {
+          subject = `2-Inspector CMI Team + Day-1 SUPRA Access for ${p.company} Buyers`;
+          pitchLine = `When ${p.company} moves buyers from binding agreement through Georgia Due Diligence, our Two Certified Master Inspectors evaluate structural and mechanical systems in parallel—eliminating solo-inspector fatigue—with active SUPRA eKEY access and same-day Digital Repair Request Builder reports (Single-Family From $345, Condos/Townhomes From $295, Pre-Drywall From $275, New Construction From $400; specialty services Call (678) 480-2110 for Quote) backed by $35,000 combined protection.`;
+          partnerCta = `<p style="font-size:15px;line-height:1.6;color:#1e293b;">See the <a href="https://www.fhinspectionsatl.com/dossiers/tc-partner-dossier.html" style="color:#0f52ba;font-weight:700;">TC &amp; Buyer Team Partner Dossier</a> (includes -$25 Verified Licensed GA Realtor courtesy terms with Active GREC License # and Day-1 buyer onboarding copy) or keep our card ready via <a href="https://www.fhinspectionsatl.com/list-of-3" style="color:#0f52ba;font-weight:700;">fhinspectionsatl.com/list-of-3</a>.</p>`;
         }
-        const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;"><div style="background:#ffffff;border-bottom:3px solid #d4af37;padding:14px 20px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle"><img src="https://www.fhinspectionsatl.com/images/Logopng.png" alt="Foresight Home Inspections" height="70" style="display:block;height:70px;width:auto;border:0;" /><div style="font-size:11px;font-weight:800;color:#0f172a;margin-top:6px;">CERTIFIED MASTER INSPECTOR (#MICB-1082) &bull; TWO-INSPECTOR TEAM</div></td><td valign="middle" align="right" style="white-space:nowrap;"><img src="https://www.fhinspectionsatl.com/images/cmi_logo.png" alt="CMI" height="78" width="78" style="display:inline-block;height:78px;width:78px;margin-right:8px;" /><img src="https://www.fhinspectionsatl.com/images/cpi_logo.png" alt="CPI" height="70" width="70" style="display:inline-block;height:70px;width:70px;" /></td></tr></table></div><div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">Hi <strong>${p.first || 'there'}</strong>,</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">${pitchLine}</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">If your office ever needs priority 24-hour scheduling across Metro Atlanta, feel free to share our direct desk at <strong>(678) 480-2110</strong> or <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;font-weight:600;">www.fhinspectionsatl.com</a>.</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
+        const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;">${TRI_LOGO_HEADER}<div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">Hi <strong>${p.first || 'there'}</strong>,</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">${pitchLine}</p>${partnerCta}<p style="font-size:15px;line-height:1.6;color:#1e293b;">If your office ever needs priority 24-hour scheduling across Metro Atlanta, feel free to share our direct desk at <strong>(678) 480-2110</strong> or <a href="https://www.fhinspectionsatl.com" style="color:#0f52ba;font-weight:600;">www.fhinspectionsatl.com</a>.</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Lithonia, GA 30058 &bull; Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
         try {
           await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: p.email, subject, html });
-          contactedKeys.add(key); contactedEmails.add(normEmail); if (normName) contactedNames.add(normName);
+          contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
           outreachLog.push({ key, type: 'B2B_PARTNER', category: p.category, targetName: p.name, company: p.company, email: p.email, city: p.city, timestamp: new Date().toISOString() });
           fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
           sentB2bPartnersCount++;
-          await sleep(2500);
+          await sleep(18500);
         } catch (e) {
-          if (/550|454|Daily user sending limit/i.test(e.message)) { quotaCeilingHit = true; break; }
+          if (handleSmtpError(e, p.email)) break;
         }
-        if (sentB2bPartnersCount >= 15) break;
+        if (sentB2bPartnersCount >= 4) break;
       }
     }
   }
@@ -869,26 +895,27 @@ async function main() {
   // -----------------------------------------------------------
   const PRICE_DROP_FILE = path.join(ROOT_DIR, 'data', 'fmls-price-drop-leads.json');
   let sentPriceDropCount = 0;
-  if (fs.existsSync(PRICE_DROP_FILE) && canSendEmail && transporter && !quotaCeilingHit) {
+  if (fs.existsSync(PRICE_DROP_FILE) && canSendEmail && transporter && !quotaCeilingHit && !isHolidayBlackout) {
     const priceDrops = JSON.parse(fs.readFileSync(PRICE_DROP_FILE, 'utf8'));
     console.log(`📉 [Due Diligence Engine] Priority #4: Loaded ${priceDrops.length} Live FMLS Price-Drop / Seller-Defense Leads.`);
     for (const pd of priceDrops) {
+      if (quotaCeilingHit) break;
       const normEmail = String(pd.email || '').trim().toLowerCase();
       const normName = String(pd.name || '').trim().toLowerCase();
       const key = `PRICEDROP_${pd.id}_${normEmail}`;
-      if (!normEmail || contactedKeys.has(key) || contactedEmails.has(normEmail) || (normName && contactedNames.has(normName)) || isSuppressed(pd.email, pd.name, pd.brokerage)) continue;
-      const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;"><div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">${pd.pitch_body}</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
+      if (!normEmail || contactedKeys.has(key) || recentlyContactedEmails14d.has(normEmail) || isSuppressed(pd.email, pd.name, pd.brokerage)) continue;
+      const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;">${TRI_LOGO_HEADER}<div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">${pd.pitch_body}</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Lithonia, GA 30058 &bull; Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
       try {
         await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: pd.email, subject: pd.subject, text: pd.pitch_body, html });
-        contactedKeys.add(key); contactedEmails.add(normEmail); if (normName) contactedNames.add(normName);
+        contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
         outreachLog.push({ key, type: 'FMLS_PRICE_DROP', targetName: pd.name, brokerage: pd.brokerage, address: pd.address, city: pd.city, email: pd.email, timestamp: new Date().toISOString() });
         fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
         sentPriceDropCount++;
-        await sleep(2500);
+        await sleep(18500);
       } catch (e) {
-        if (/550|454|Daily user sending limit/i.test(e.message)) { quotaCeilingHit = true; break; }
+        if (handleSmtpError(e, pd.email)) break;
       }
-      if (sentPriceDropCount >= 15) break;
+      if (sentPriceDropCount >= 6) break;
     }
   }
 
@@ -897,33 +924,66 @@ async function main() {
   // -----------------------------------------------------------
   const MICRO_TRIGGER_FILE = path.join(ROOT_DIR, 'data', 'fmls-micro-trigger-leads.json');
   let sentMicroTriggerCount = 0;
-  if (fs.existsSync(MICRO_TRIGGER_FILE) && canSendEmail && transporter && !quotaCeilingHit) {
+  if (fs.existsSync(MICRO_TRIGGER_FILE) && canSendEmail && transporter && !quotaCeilingHit && !isHolidayBlackout) {
     const microLeads = JSON.parse(fs.readFileSync(MICRO_TRIGGER_FILE, 'utf8'));
     console.log(`🎯 [Due Diligence Engine] Priority #5: Loaded ${microLeads.length} Live FMLS Micro-Trigger Leads (Back On Market, 1031, Vintage Sewer, Multifamily).`);
     for (const ml of microLeads) {
+      if (quotaCeilingHit) break;
       const normEmail = String(ml.email || '').trim().toLowerCase();
       const normName = String(ml.name || '').trim().toLowerCase();
       const key = `MICRO_${ml.id}_${normEmail}`;
-      if (!normEmail || contactedKeys.has(key) || contactedEmails.has(normEmail) || (normName && contactedNames.has(normName)) || isSuppressed(ml.email, ml.name, ml.brokerage)) continue;
-      const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;"><div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">${ml.pitch_body}</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
+      if (!normEmail || contactedKeys.has(key) || recentlyContactedEmails14d.has(normEmail) || isSuppressed(ml.email, ml.name, ml.brokerage)) continue;
+      const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;">${TRI_LOGO_HEADER}<div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">${ml.pitch_body}</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Lithonia, GA 30058 &bull; Serving Metro Atlanta &bull; Reply stop anytime to opt out.</span></p></div></div>`;
       try {
         await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: ml.email, subject: ml.subject, text: ml.pitch_body, html });
-        contactedKeys.add(key); contactedEmails.add(normEmail); if (normName) contactedNames.add(normName);
+        contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
         outreachLog.push({ key, type: `FMLS_${ml.trigger_type}`, targetName: ml.name, brokerage: ml.brokerage, address: ml.address, city: ml.city, email: ml.email, timestamp: new Date().toISOString() });
         fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
         sentMicroTriggerCount++;
-        await sleep(2500);
+        await sleep(18500);
       } catch (e) {
-        if (/550|454|Daily user sending limit/i.test(e.message)) { quotaCeilingHit = true; break; }
+        if (handleSmtpError(e, ml.email)) break;
       }
-      if (sentMicroTriggerCount >= 20) break;
+      if (sentMicroTriggerCount >= 6) break;
+    }
+  }
+
+  // -----------------------------------------------------------
+  // PRIORITY #6: 11-Month Builder Warranty Buyer-Agent Client-for-Life Drip ($0.00)
+  // -----------------------------------------------------------
+  const WARRANTY_11M_FILE = path.join(ROOT_DIR, 'data', 'eleven-month-deed-leads.json');
+  let sentWarranty11mCount = 0;
+  if (fs.existsSync(WARRANTY_11M_FILE) && canSendEmail && transporter && !quotaCeilingHit && !isHolidayBlackout) {
+    const warrantyLeads = JSON.parse(fs.readFileSync(WARRANTY_11M_FILE, 'utf8')).filter(
+      (w) => w && w.cohort === 'URGENT_10_TO_12_MONTHS' && w.buyerAgentEmail && w.dns_mx_ok === true
+    );
+    console.log(`🏡 [Due Diligence Engine] Priority #6: Loaded ${warrantyLeads.length} Urgent 10-12 Month New-Construction Buyer-Agent Leads.`);
+    for (const w of warrantyLeads) {
+      if (quotaCeilingHit) break;
+      const normEmail = String(w.buyerAgentEmail || '').trim().toLowerCase();
+      const normName = String(w.buyerAgentName || '').trim().toLowerCase();
+      const key = `WARRANTY11M_${w.id}_${normEmail}`;
+      if (!normEmail || contactedKeys.has(key) || recentlyContactedEmails14d.has(normEmail) || isSuppressed(w.buyerAgentEmail, w.buyerAgentName, w.buyerOfficeName)) continue;
+      const quoteUrl = `https://www.fhinspectionsatl.com/quote?prop=${encodeURIComponent(w.address || '')}&service=11-month-warranty`;
+      const subject = `11-Month Builder Warranty Cutoff for Your Buyers at ${w.address} (${w.city})`;
+      const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:600px;background:#ffffff;border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;">${TRI_LOGO_HEADER}<div style="padding:24px;"><p style="font-size:15px;line-height:1.6;color:#1e293b;">Hi <strong>${w.buyerAgentFirst || 'there'}</strong>,</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">Your buyers at <strong>${w.address}</strong> in ${w.city} (closed ${w.closeDate}) are approaching their 1-year builder warranty cutoff (${w.warrantyExpirationDate}). Reaching out with an <strong>11-Month Builder Warranty Inspection (From $345)</strong> is a $0 client-for-life touchpoint before builder structural, flashing, attic duct, and cold-weather thermal insulation coverage expires.</p><p style="font-size:15px;line-height:1.6;color:#1e293b;">Our Two Certified Master Inspectors evaluate structural and mechanical systems in parallel with calibrated infrared thermal imaging, 4K aerial roof drone scans, and same-day photo-documented punch-lists (11-Month Warranty From $345, Phase 1 Pre-Drywall From $275, Final New Construction From $400; specialty services Call (678) 480-2110 for Quote) backed by $35,000 combined zero-deductible protection ($10,000 $0-deductible Elite Master Warranty + $25,000 InterNACHI Honor Guarantee). A -$25 courtesy discount applies strictly for Verified Licensed Georgia Realtors (Active GREC License # required).</p><p style="font-size:15px;line-height:1.6;color:#1e293b;"><a href="${quoteUrl}" style="display:inline-block;background:#0f172a;color:#d4af37;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:8px;">Book 11-Month Warranty Inspection</a> &nbsp; or call <strong>(678) 480-2110</strong> (Mon&ndash;Sat; Sunday By Appointment Only).</p><p style="font-size:14px;color:#0f172a;margin-top:16px;"><strong>Christopher Boykin, CMI</strong><br>Founder &amp; Lead Inspector &bull; Foresight Home Inspections<br><span style="font-size:11px;color:#64748b;">Lithonia, GA 30058 &bull; Serving Metro Atlanta &bull; RESPA Section 8 (12 U.S.C. 2607): Zero referral fees or kickbacks; homebuyers are free to choose any qualified inspector. Reply stop anytime to opt out.</span></p></div></div>`;
+      try {
+        await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: w.buyerAgentEmail, subject, html });
+        contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
+        outreachLog.push({ key, type: 'WARRANTY_11M_DRIP', targetName: w.buyerAgentName, brokerage: w.buyerOfficeName, address: w.address, city: w.city, email: w.buyerAgentEmail, timestamp: new Date().toISOString() });
+        fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
+        sentWarranty11mCount++;
+        await sleep(18500);
+      } catch (e) {
+        if (handleSmtpError(e, w.buyerAgentEmail)) break;
+      }
+      if (sentWarranty11mCount >= Number(process.env.WARRANTY11M_BATCH_LIMIT || 18)) break;
     }
   }
 
   fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
   console.log(`💾 [Due Diligence Engine] Updated outreach log (${outreachLog.length} total historical communications).`);
 
-  // 3b. Auto-Deploy Refreshed VIP Dispatcher & Due Diligence Pool to Live Site
   try {
     execSync('node scripts/generate-due-diligence-dispatch.mjs', { cwd: ROOT_DIR, stdio: 'ignore' });
     execSync('git add public/vip-dispatch.html data/under-contract-realtors.json data/archive-under-contract-realtors.json data/due-diligence-outreach-log.json', { cwd: ROOT_DIR, stdio: 'ignore' });
@@ -931,7 +991,7 @@ async function main() {
     if (diffStatus) {
       const todayIso = new Date().toISOString().split('T')[0];
       execSync(`git commit -m "chore(dispatch): auto-sync ${todayIso} FMLS due diligence harvest & vip-dispatch.html"`, { cwd: ROOT_DIR, stdio: 'ignore' });
-      execSync('git pull --rebase origin main', { cwd: ROOT_DIR, stdio: 'ignore' });
+      execSync('git pull --ff-only origin main', { cwd: ROOT_DIR, stdio: 'ignore' });
       execSync('git push origin main', { cwd: ROOT_DIR, stdio: 'ignore' });
       console.log('🚀 [Due Diligence Engine] Auto-deployed refreshed public/vip-dispatch.html to origin/main.');
     }
@@ -939,26 +999,17 @@ async function main() {
     console.warn('⚠️ [Due Diligence Engine] Git auto-deploy warning:', gitErr.message);
   }
 
-  // 4. Send Mobile Summary Alert
-  const totalSentThisRun = sentUnderContractCount + sentLendersCount + sentOpenSmsCount;
-  if ((canSendEmail || sentOpenSmsCount > 0) && (totalSentThisRun > 0 || newPendingHarvested > 0)) {
-    const pushTitle = `⚡ Due Diligence Engine: ${sentUnderContractCount} Emails, ${sentOpenSmsCount} SMS`;
-    const pushMsg = `Autonomous Scout & OpenSMS Run Complete:\n• Live FMLS Pending Harvested: ${newPendingHarvested}\n• Active Due Diligence Emails: ${sentUnderContractCount}\n• OpenSMS Dispatched: ${sentOpenSmsCount}\n• Mortgage Loan Officers: ${sentLendersCount}\nTotal Historical Dispatched: ${outreachLog.length}`;
-    await sendPushNotification(pushTitle, pushMsg, 'high');
-  } else if (!canSendEmail) {
-    const pushTitle = `🛡️ Due Diligence Scout: ${newPendingHarvested} New Pending Homes`;
-    const pushMsg = `Autonomous Scout Directory Verified:\n• ${newPendingHarvested} New FMLS Pending Listings Harvested\n• ${totalUnderContract} Total Under-Contract Agents Ready\n• ${sentOpenSmsCount} OpenSMS Sent`;
-    await sendPushNotification(pushTitle, pushMsg, 'default');
-  } else {
-    const pushTitle = `⚡ Due Diligence Scout: Roster Current`;
-    const pushMsg = `All active under-contract properties and loan officers have current dossiers.\nTotal Historical Dispatched: ${outreachLog.length}`;
+  const totalEmailsSentThisRun = sentUnderContractCount + sentWarranty11mCount + sentPriceDropCount + sentMicroTriggerCount + sentB2bPartnersCount + sentLendersCount;
+  if (totalEmailsSentThisRun > 0 || sentOpenSmsCount > 0) {
+    const pushTitle = `Due Diligence & 11-Mo Warranty: ${totalEmailsSentThisRun} Emails, ${sentOpenSmsCount} SMS`;
+    const pushMsg = `High-Intent Dispatch Complete:\n- Active Under-Contract: ${sentUnderContractCount}\n- 11-Mo Builder Warranty: ${sentWarranty11mCount}\n- Price-Drop & Micro-Triggers: ${sentPriceDropCount + sentMicroTriggerCount}\n- B2B & Lenders: ${sentB2bPartnersCount + sentLendersCount}\n- OpenSMS: ${sentOpenSmsCount}\nTotal Historical: ${outreachLog.length}`;
     await sendPushNotification(pushTitle, pushMsg, 'default');
   }
 
   if (transporter) transporter.close();
   releaseLock();
   console.log('🏁 [Due Diligence Engine] Execution complete!');
-  console.log(`Summary: ${newPendingHarvested} New Pending Harvested, ${sentUnderContractCount} Due Diligence Emails, ${sentOpenSmsCount} OpenSMS Texts, ${sentLendersCount} Lenders dispatched.`);
+  console.log(`Summary: ${newPendingHarvested} New Pending, ${sentUnderContractCount} Under-Contract, ${sentWarranty11mCount} 11-Mo Warranty, ${sentPriceDropCount} Price-Drop, ${sentMicroTriggerCount} Micro-Trigger, ${sentB2bPartnersCount} B2B, ${sentLendersCount} Lenders, ${sentOpenSmsCount} OpenSMS.`);
 }
 
 main().catch(async (err) => {

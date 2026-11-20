@@ -1,0 +1,11 @@
+{
+  "entries": [
+    {
+      "path": "~/.gemini/config/skill_vault",
+      "include_only": [
+        "foresight-promotion-agency",
+        "foresight-seo-maintenance"
+      ]
+    }
+  ]
+}

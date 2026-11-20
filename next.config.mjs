@@ -27,6 +27,8 @@ const nextConfig = {
       './public/sample-report/**',
       './public/vip-dispatch.html',
       './data/archive-under-contract-realtors.json',
+      './data/eleven-month-deed-leads.json',
+      './data/private/**',
     ],
   },
   turbopack: {

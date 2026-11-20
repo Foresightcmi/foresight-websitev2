@@ -146,15 +146,15 @@ export default function HomebuyerRedFlagsPage() {
                 width={110}
                 height={110}
                 priority
-                style={{ height: '110px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '110px', width: '110px', objectFit: 'contain' }}
               />
               <Image
                 src="/images/cpi_logo.png"
                 alt="InterNACHI Certified Professional Inspector NACHI18051119"
-                width={100}
-                height={100}
+                width={110}
+                height={110}
                 priority
-                style={{ height: '100px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '110px', width: '110px', objectFit: 'contain' }}
               />
             </div>
           </div>

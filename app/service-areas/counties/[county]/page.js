@@ -96,8 +96,8 @@ export default async function CountyPage({ params }) {
       a: `Yes. Foresight conducts comprehensive pre-listing home inspections across all of ${county.name}, GA. Our two-inspector team provides sellers and listing agents with a prioritized inspection checklist and repair roadmap before hitting the MLS, preventing contract delays and eliminating buyer price renegotiations during due diligence.`
     },
     {
-      q: `Does Foresight conduct 11-Month (eleven-month / eleventh-month) builder warranty home inspections in ${county.name}?`,
-      a: `Yes. In high-growth areas of ${county.name}, Foresight provides independent 11-month (also searched as eleven-month or eleventh-month) builder warranty home inspections starting at $345. Two certified inspectors evaluate roof trusses, foundation settlement, HVAC ductwork balance, and thermal envelope integrity, providing a builder-ready punch list before your 1-year warranty expires.`
+      q: `Does Foresight conduct 11-Month (eleven-month / eleventh-month) builder warranty inspections in ${county.name}?`,
+      a: `Yes. In high-growth areas of ${county.name}, Foresight provides independent 11-month (also searched as eleven-month or eleventh-month) builder warranty inspections From $345. Two certified inspectors evaluate roof trusses, foundation settlement, HVAC ductwork balance, and thermal envelope integrity, providing a builder-ready punch list before your 1-year warranty expires.`
     },
     {
       q: `What is included in a residential interior and exterior home inspection in ${county.name}, GA?`,

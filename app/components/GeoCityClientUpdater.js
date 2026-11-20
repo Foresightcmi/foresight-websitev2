@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const METRO_ATLANTA_SLUGS = {
   'acworth': 'acworth', 'alpharetta': 'alpharetta', 'atlanta': 'atlanta', 'austell': 'austell',
@@ -30,7 +31,16 @@ const METRO_ATLANTA_SLUGS = {
   'winder': 'winder', 'woodstock': 'woodstock', 'woolsey': 'woolsey'
 };
 
+const SLUG_TO_CITY_LABEL = Object.entries(METRO_ATLANTA_SLUGS).reduce((acc, [label, slug]) => {
+  if (!acc[slug] || label.replace(/\s+/g, '-') === slug) {
+    acc[slug] = label;
+  }
+  return acc;
+}, {});
+
 export default function GeoCityClientUpdater() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const applyCity = (cityObj) => {
       const pill = document.getElementById('geo-trust-city-pill');
@@ -39,6 +49,17 @@ export default function GeoCityClientUpdater() {
         pill.textContent = `ACTIVE IN ${cityObj.name.toUpperCase()}, GA \u2192`;
       }
     };
+
+    if (pathname) {
+      const segments = pathname.split('/').filter(Boolean);
+      const routeCitySlug =
+        (segments[0] === 'services' && segments.length === 3 ? segments[2] : null) ||
+        (segments[0] === 'service-areas' && segments.length === 2 ? segments[1] : null);
+      if (routeCitySlug && SLUG_TO_CITY_LABEL[routeCitySlug]) {
+        applyCity({ name: SLUG_TO_CITY_LABEL[routeCitySlug], slug: routeCitySlug });
+        return;
+      }
+    }
 
     try {
       const cached = sessionStorage.getItem('foresight_geo_city');
@@ -67,7 +88,7 @@ export default function GeoCityClientUpdater() {
 
     const timer = setTimeout(fetchLocation, 8500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   return null;
 }

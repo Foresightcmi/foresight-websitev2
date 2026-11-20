@@ -1,8 +1,8 @@
 ﻿# Foresight Home Inspections — Universal Multi-PC & Cloud Failover Registrar (PC #2)
 # Ensures ZERO single-PC dependency across SEO, Social/GBP, Demand Radar & Review Intake
 
-$repoDir = 'C:\Users\fores\.gemini\antigravity\scratch\foresight-websitev2'
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 2)
+$repoDir = 'C:\Users\fores\.gemini\antigravity\scratch\foresight-website'
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -WakeToRun -ExecutionTimeLimit (New-TimeSpan -Hours 2)
 
 # 1. Daily SEO, AEO & Social Media Research Agency (Daily at 9:30 AM ET)
 $actionAgency = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `"$repoDir\run_seo_social_agency_service.bat`"" -WorkingDirectory $repoDir

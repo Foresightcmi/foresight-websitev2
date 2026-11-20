@@ -13,7 +13,9 @@
       "domain": "expertise.com",
       "classification": "PUBLISHER_OR_DIRECTORY",
       "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": ["info@expertise.com"],
+      "verifiedEmails": [
+        "info@expertise.com"
+      ],
       "verifiedContactUrl": "https://expertise.com/contact",
       "httpStatus": 200,
       "source_url": "https://expertise.com/contact",
@@ -27,7 +29,9 @@
       "domain": "homeinspectioninsider.com",
       "classification": "PUBLISHER_OR_DIRECTORY",
       "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": ["contact@homeinspectioninsider.com"],
+      "verifiedEmails": [
+        "contact@homeinspectioninsider.com"
+      ],
       "verifiedContactUrl": "https://homeinspectioninsider.com/contact",
       "httpStatus": 200,
       "source_url": "https://homeinspectioninsider.com/contact",
@@ -41,7 +45,9 @@
       "domain": "profindr.com",
       "classification": "PUBLISHER_OR_DIRECTORY",
       "outreachStrategy": "EDITORIAL_LISTICLE_INCLUSION",
-      "verifiedEmails": ["support@profindr.com"],
+      "verifiedEmails": [
+        "support@profindr.com"
+      ],
       "verifiedContactUrl": "https://profindr.com/contact",
       "httpStatus": 200,
       "source_url": "https://profindr.com/contact",

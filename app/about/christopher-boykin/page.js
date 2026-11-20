@@ -383,18 +383,18 @@ export default function ChristopherBoykinCvPage() {
               <Image
                 src="/images/cmi_logo.png"
                 alt="Certified Master Inspector MICB-1082 seal"
-                width={120}
+                width={110}
                 height={110}
                 priority
-                style={{ height: '110px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '110px', width: '110px', objectFit: 'contain' }}
               />
               <Image
                 src="/images/cpi_logo.png"
                 alt="InterNACHI Certified Professional Inspector NACHI18051119 seal"
                 width={110}
-                height={100}
+                height={110}
                 priority
-                style={{ height: '100px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '110px', width: '110px', objectFit: 'contain' }}
               />
             </div>
           </div>
@@ -488,16 +488,16 @@ export default function ChristopherBoykinCvPage() {
                 <Image
                   src="/images/cmi_logo.png"
                   alt="Certified Master Inspector designation logo"
-                  width={120}
+                  width={110}
                   height={110}
-                  style={{ height: '110px', width: 'auto', objectFit: 'contain' }}
+                  style={{ height: '110px', width: '110px', objectFit: 'contain' }}
                 />
                 <Image
                   src="/images/cpi_logo.png"
                   alt="InterNACHI Certified Professional Inspector designation logo"
                   width={110}
-                  height={100}
-                  style={{ height: '100px', width: 'auto', objectFit: 'contain' }}
+                  height={110}
+                  style={{ height: '110px', width: '110px', objectFit: 'contain' }}
                 />
                 <Image
                   src="/images/internachi_new_construction_inspector.webp"

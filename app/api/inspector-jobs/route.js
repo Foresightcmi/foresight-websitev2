@@ -144,8 +144,10 @@ function parseHgNotifierEmail(rawEmail) {
 
   const sqftMatch = text.match(/Square\s*Footage\s*:\s*([\d,]+)/i);
   const squareFootage = sqftMatch ? parseInt(sqftMatch[1].replace(/,/g, ''), 10) : undefined;
-  const servicesOrdered = ['home_inspection', 'infrared_thermal'];
-  if (/11[\s\-]*MONTH\s*WARRANTY/i.test(text)) servicesOrdered.push('builder_warranty_11mo');
+  const primaryMode = /PRE[\s\-]*DRY\s*WALL|PHASE\s*[12]\s*(?:FRAMING|ROUGH|INSPECTION)|ROUGH[\s\-]*IN\s+INSPECTION|FRAMING\s+INSPECTION/i.test(text)
+    ? 'pre_drywall'
+    : (/11[\s\-]*MONTH|BUILDER\s+WARRANTY/i.test(text) ? 'builder_warranty_11mo' : 'home_inspection');
+  const servicesOrdered = [primaryMode, 'infrared_thermal'];
   if (/RADON/i.test(text)) servicesOrdered.push('radon_crm');
   if (/MOLD|SPORE|AIR\s*QUALITY/i.test(text)) servicesOrdered.push('mold_air_spore');
   if (/SEWER/i.test(text)) servicesOrdered.push('sewer_scope');

@@ -17,6 +17,8 @@ import {
   seedLedgerFromQueue, recordLedgerTouch, canContactClient
 } from './lib/review-requests.mjs';
 import { ingestHomeGaugeJobs, mergeCancellations, pollReviewOptOutReplies } from './lib/homegauge-intake.mjs';
+import { sendOpenSmsWithDhcpFallback } from './lib/opensms-fallback.mjs';
+import { scanAllHistoricalHr5Reports, mineWarmWarrantyAndFinalCohorts, buildWarrantyCheckinEmail, fourKeySet } from './lib/warranty-checkin.mjs';
 
 const ROOT = process.cwd();
 const PRIV = path.join(ROOT, 'data', 'private');
@@ -73,13 +75,11 @@ async function pollIntake(cfg) {
 
 async function sendSms(phone, text) {
   const key = env('OPENSMS_API_KEY');
-  const url = env('OPENSMS_URL') || readJson(path.join(ROOT, 'data', 'opensms-config.json'), {}).gatewayUrl;
-  if (!key || !url) return false;
-  try {
-    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` }, body: JSON.stringify({ number: `+1${phone}`, text }), signal: AbortSignal.timeout(15000) });
-    const data = await res.json().catch(() => ({}));
-    return res.ok && data.stat === true;
-  } catch { return false; }
+  const cfgPath = path.join(ROOT, 'data', 'opensms-config.json');
+  const url = env('OPENSMS_URL') || readJson(cfgPath, {}).gatewayUrl;
+  if (!key) return false;
+  const out = await sendOpenSmsWithDhcpFallback({ phone, text, configuredUrl: url, apiKey: key, configFilePath: cfgPath });
+  return out.ok;
 }
 
 const push = (title, body) => fetch(ALERTS, { method: 'POST', headers: { Title: title, Tags: 'star' }, body }).catch(() => {});
@@ -156,13 +156,38 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
     return { added, sent: [], revoked, newCancelCount: hg.newCancelCount };
   }
 
-  const hour = new Date().getHours();
-  if (!forceWindow && (hour < 8 || hour >= 22)) {
-    console.log(`[Review Engine] Outside 8 AM-10 PM window. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred to next daytime window.`);
+  const easternHour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(new Date()));
+  if (!forceWindow && (easternHour < 9 || easternHour >= 18)) {
+    console.log(`[Review Engine] Outside 9 AM-6 PM ET window. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred to next daytime window.`);
     return { added, sent: [], revoked, newWarrantyCount: hg.newWarrantyCount };
   }
+  const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
+  let crossSent24h = 0;
+  const masterDb = readJson(path.resolve(ROOT, '..', 'email-campaign-engine', 'master_realtor_database.json'), { contacts: {} });
+  for (const c of Object.values(masterDb.contacts || {})) {
+    for (const camp of Object.values(c?.campaigns || {})) {
+      if (camp?.sent && camp.timestamp && new Date(camp.timestamp).getTime() >= oneDayAgoMs) crossSent24h++;
+    }
+  }
+  for (const [fn, k] of [['due-diligence-outreach-log.json', 'timestamp'], ['permit-outreach-log.json', 'dispatchedAt'], ['warranty-outreach-log.json', 'timestamp'], ['new-construction-outreach-log.json', 'sentAt'], ['new-construction-outreach.json', 'sentAt'], ['agent-reach-outreach-log.json', 'timestamp']]) {
+    const raw = readJson(path.join(ROOT, 'data', fn), []);
+    for (const r of (Array.isArray(raw) ? raw : (raw?.history || []))) {
+      const ts = r?.[k] || r?.timestamp || r?.dispatchedAt || r?.sentAt;
+      if (ts && new Date(ts).getTime() >= oneDayAgoMs) crossSent24h++;
+    }
+  }
+  const cloudSt = readJson(path.join(ROOT, 'data', 'cloud-realtor-nurture-state.json'), {});
+  for (const ts of Object.values(cloudSt?.lastSentByEmail || {})) {
+    if (ts && new Date(ts).getTime() >= oneDayAgoMs) crossSent24h++;
+  }
+  for (const rec of Object.values(ledger.byKey || {})) {
+    for (const t of (rec?.touches || [])) {
+      if (t?.at && Array.isArray(t.channels) && t.channels.includes('email') && new Date(t.at).getTime() >= oneDayAgoMs) crossSent24h++;
+    }
+  }
+  let remainingEmailQuota = Math.max(0, 1200 - crossSent24h);
   const cool = readJson(COOLDOWN, {});
-  const emailOk = !(cool.cooldownUntil && new Date(cool.cooldownUntil) > new Date());
+  const emailOk = remainingEmailQuota > 0 && !(cool.cooldownUntil && new Date(cool.cooldownUntil) > new Date());
   const transporter = emailOk && pass ? nodemailer.createTransport({ service: 'gmail', auth: { user, pass } }) : null;
   const sent = [];
   for (const { entry, kind } of dueActions(queue, new Date(), suppressed(), canceledIndex, ledger).slice(0, MAX_AUTO_BATCH)) {
@@ -172,11 +197,12 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
     const smsField = kind === 'initial' ? 'smsSentAt' : 'reminderSmsSentAt';
     let didSendEmail = false;
     let didSendSms = false;
-    if (entry.email && !entry[emailField] && transporter) {
+    if (entry.email && !entry[emailField] && transporter && remainingEmailQuota > 0) {
       try {
         const m = buildEmail(entry, REVIEW_LINK, kind);
         await transporter.sendMail({ from: `"Christopher Boykin, CMI" <${user}>`, to: entry.email, subject: m.subject, text: m.text, html: m.html });
         entry[emailField] = new Date().toISOString();
+        remainingEmailQuota--;
         didSendEmail = true;
       } catch (e) { console.warn('[Review Engine] Email dispatch failed:', e.message); }
     }
@@ -206,9 +232,11 @@ async function reactivatePastClients(args, queue, cancels) {
   const limitArg = args.find((a) => a.startsWith('--limit='))?.split('=')[1] || (args.indexOf('--limit') >= 0 ? args[args.indexOf('--limit') + 1] : '8');
   const limit = Math.min(10, Math.max(1, parseInt(limitArg, 10) || 8));
   const now = new Date();
+  const easternDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  const isHoliday = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDate);
   const day = now.getDay();
   const mins = now.getHours() * 60 + now.getMinutes();
-  const inWeekdayWindow = day >= 1 && day <= 5 && mins >= 600 && mins <= 990; // Mon-Fri 10:00-16:30 local
+  const inWeekdayWindow = !isHoliday && day >= 1 && day <= 5 && mins >= 600 && mins <= 990;
   const statePath = path.join(PRIV, 'past-client-reactivation.json');
   const state = readJson(statePath, { updatedAt: now.toISOString(), totalReactivated: 0, sentIds: [], sentPhones: [], sentAddresses: [] });
   const pastClients = readJson(path.join(ROOT, 'data', 'past-clients.json'), []);
@@ -221,8 +249,13 @@ async function reactivatePastClients(args, queue, cancels) {
   const reactivatedPhones = new Set(state.sentPhones || []);
   const reactivatedAddrs = new Set(state.sentAddresses || []);
   const reactivatedIds = new Set(state.sentIds || []);
+  const maxAgeMs = 540 * 24 * 3600 * 1000;
   const eligible = pastClients.filter((c) => {
-    if (!c || c.initial_sent === true) return false;
+    if (!c || c.initial_sent === true || c.reviewedAt) return false;
+    const rawAddr = String(c.address || '').trim();
+    if (!rawAddr || /^your home$/i.test(rawAddr) || !/^\d+\s+\S/.test(rawAddr)) return false;
+    const dtMs = c.date ? new Date(c.date).getTime() : NaN;
+    if (isNaN(dtMs) || dtMs > now.getTime() || (now.getTime() - dtMs) > maxAgeMs) return false;
     const ph = digits10(c.phone || c.raw_phone);
     const em = String(c.email || '').toLowerCase().trim();
     const addrKey = normalizeAddressKey(c.address);
@@ -259,10 +292,97 @@ async function reactivatePastClients(args, queue, cancels) {
       writeJson(LEDGER, ledger);
       writeJson(statePath, state);
       await sleep(3000);
+    } else if (sentCount === 0) {
+      console.log('[Past-Client Reactivation] OpenSMS phone gateway currently unreachable on local Wi-Fi; deferring cleanly.');
+      break;
     }
   }
   console.log(`[Past-Client Reactivation Live] Sent: ${sentCount}/${batch.length} | Remaining Eligible: ${eligible.length - sentCount}`);
   return { eligibleCount: eligible.length, batchCount: batch.length, sentCount, isDryRun: false };
+}
+
+async function runWarrantyCheckin(args, queue, cancels) {
+  const isDryRun = !args.includes('--live') && !args.includes('--send');
+  const forceWindow = args.includes('--force-window');
+  const limitArg = args.find((a) => a.startsWith('--limit='))?.split('=')[1] || '4';
+  const limit = Math.min(8, Math.max(1, parseInt(limitArg, 10) || 4));
+  const now = new Date();
+  const easternDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  const easternHour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(now));
+  const isHoliday = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDate);
+  const inWindow = !isHoliday && now.getDay() >= 1 && now.getDay() <= 5 && easternHour >= 9 && easternHour < 18;
+
+  const warrantyFile = path.join(PRIV, 'homegauge-warranty-clients.json');
+  const statePath = path.join(PRIV, 'warranty-checkin-state.json');
+  const state = readJson(statePath, { updatedAt: now.toISOString(), totalSent: 0, sentKeys: [], history: [] });
+  const pastClients = readJson(path.join(ROOT, 'data', 'past-clients.json'), []);
+  const hr5Records = scanAllHistoricalHr5Reports();
+  const existingWarranty = readJson(warrantyFile, []);
+
+  // Enrich gitignored homegauge-warranty-clients.json with historical New-Build & Pre-Drywall records
+  const mergedMap = new Map();
+  for (const r of [...existingWarranty, ...pastClients, ...hr5Records, ...queue]) {
+    if (!r) continue;
+    const key = r.reportId || `${normalizeAddressKey(r.address)}:${String(r.completedAt || r.date || '').slice(0, 10)}` || r.id;
+    const prev = mergedMap.get(key) || {};
+    mergedMap.set(key, { ...prev, ...r, email: r.email || prev.email || '', phone: digits10(r.phone || r.raw_phone) || prev.phone || '' });
+  }
+  const allRecords = [...mergedMap.values()];
+  const newBuildPool = allRecords.filter((r) => /new\s+construction|pre-?\s*drywall|predrywall|phase|11-?\s*month/i.test(String(r.service || '')));
+  writeJson(warrantyFile, newBuildPool);
+
+  const sup = suppressed();
+  const sentKeySet = new Set(state.sentKeys || []);
+  const { cohort11Month, cohortFinal } = mineWarmWarrantyAndFinalCohorts({
+    records: allRecords, cancellations: cancels, suppressedSet: sup, alreadySentKeys: sentKeySet, now
+  });
+  const candidates = [...cohort11Month, ...cohortFinal];
+  const batch = candidates.slice(0, limit);
+
+  if (isDryRun || (!inWindow && !forceWindow)) {
+    if (!fs.existsSync(statePath)) writeJson(statePath, state);
+    console.log(`[Warranty & Final Check-In ${isDryRun ? 'Dry-Run' : 'Deferred'}] Pool: ${newBuildPool.length} | 11-Month Eligible: ${cohort11Month.length} | Final Eligible: ${cohortFinal.length} | Batch: ${batch.length}`);
+    return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun };
+  }
+
+  const user = env('EMAIL_USER') || 'inspect@foresightcmi.com'; // ggignore
+  const pass = env('EMAIL_PASSWORD'); // ggignore
+  const cool = readJson(COOLDOWN, {});
+  if (!pass || (cool.cooldownUntil && new Date(cool.cooldownUntil) > now)) {
+    console.log('[Warranty & Final Check-In] Missing credentials or SMTP cooldown active; deferring.');
+    return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun: false };
+  }
+  const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
+  let crossSent24h = 0;
+  for (const [fn, k] of [['due-diligence-outreach-log.json', 'timestamp'], ['permit-outreach-log.json', 'dispatchedAt'], ['warranty-outreach-log.json', 'timestamp']]) {
+    for (const r of readJson(path.join(ROOT, 'data', fn), [])) {
+      if (r?.[k] && new Date(r[k]).getTime() >= oneDayAgoMs) crossSent24h++;
+    }
+  }
+  if (crossSent24h >= 1190) return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun: false };
+
+  const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user, pass } });
+  const ledger = seedLedgerFromQueue(readJson(LEDGER, { byKey: {} }), queue);
+  let sentCount = 0;
+  for (const rec of batch) {
+    const mail = buildWarrantyCheckinEmail(rec, rec.cohort);
+    try {
+      await transporter.sendMail({ from: `"Christopher Boykin, CMI" <${user}>`, to: rec.email, subject: mail.subject, text: mail.text, html: mail.html });
+      const sentIso = new Date().toISOString();
+      for (const k of fourKeySet(rec)) { if (!sentKeySet.has(k)) { sentKeySet.add(k); state.sentKeys.push(k); } }
+      state.totalSent = (state.totalSent || 0) + 1;
+      state.updatedAt = sentIso;
+      state.history.push({ id: rec.id, cohort: rec.cohort, city: rec.city || '', ageDays: rec.ageDays, sentAt: sentIso });
+      recordLedgerTouch(ledger, rec, 'initial', sentIso, ['email_warranty_checkin']);
+      writeJson(LEDGER, ledger);
+      writeJson(statePath, state);
+      sentCount++;
+      await sleep(6000);
+    } catch (e) { console.warn('[Warranty Check-In] Send failed:', e.message); break; }
+  }
+  transporter.close();
+  console.log(`[Warranty & Final Check-In Live] Sent: ${sentCount}/${batch.length} | 11-Month Eligible: ${cohort11Month.length} | Final Eligible: ${cohortFinal.length}`);
+  return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount, isDryRun: false };
 }
 
 async function main() {
@@ -300,6 +420,9 @@ async function main() {
     console.log(`\nCanceled quarantine ledger: ${cancels.length} record(s) | Phone intake topic: ${cfg.intakeTopic}`);
   } else if (cmd === 'reactivate-past-clients') {
     await reactivatePastClients(args, queue, cancels);
+    return;
+  } else if (cmd === 'warranty-checkin') {
+    await runWarrantyCheckin(args, queue, cancels);
     return;
   } else {
     const { added, sent, revoked = [] } = await run(cfg, queue, cmd === 'dry-run', cmd === 'run-now');
