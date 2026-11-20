@@ -394,7 +394,7 @@ export default async function ServiceCityPage({ params }) {
   };
 
   const productOffer = buildServiceCityOfferSchema(serviceData, canonicalUrl, cityName, true);
-  const productJsonLd = productOffer ? {
+  const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": `${serviceName} Package in ${cityName}, GA`,
@@ -409,7 +409,7 @@ export default async function ServiceCityPage({ params }) {
       "@type": "Brand",
       "name": "Foresight Home Inspections"
     },
-    "offers": productOffer,
+    ...(productOffer ? { "offers": productOffer } : {}),
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -453,12 +453,10 @@ export default async function ServiceCityPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      {productJsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
-        />
-      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
