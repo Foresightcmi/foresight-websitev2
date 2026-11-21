@@ -238,5 +238,45 @@
     "messageId": "<09536569-2f34-8906-c4b7-fab4915ae327@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7864650.html",
     "sentAt": "2026-11-20T21:45:56.664Z"
+  },
+  {
+    "recordId": "NC-7862180",
+    "address": "3996 Lockaby Way, Lawrenceville, GA 30044",
+    "recipient": "alayer@mckinleyhomes.com",
+    "messageId": "<2d7a4835-01a4-1aad-244c-c10d7f18890c@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862180.html",
+    "sentAt": "2026-11-21T20:30:26.625Z"
+  },
+  {
+    "recordId": "NC-7865312",
+    "address": "782 Woodlake Court, Canton, GA 30114",
+    "recipient": "lpotts@jwcsales.com",
+    "messageId": "<dbc3e9e7-b0b0-7f50-9d9d-7b6bbe5efd8e@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7865312.html",
+    "sentAt": "2026-11-21T20:30:30.072Z"
+  },
+  {
+    "recordId": "NC-7865094",
+    "address": "9 Fothergilla Way, Dallas, GA 30132",
+    "recipient": "nataliemoutos@gmail.com",
+    "messageId": "<398bfda0-f9f9-8bc9-0e00-25001b41cc0d@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7865094.html",
+    "sentAt": "2026-11-21T20:30:31.313Z"
+  },
+  {
+    "recordId": "NC-7862175",
+    "address": "191 Merwood Lane, Jefferson, GA 30549",
+    "recipient": "info@alphapropgroup.com",
+    "messageId": "<5afcd838-7740-75bf-0e26-15177da229f3@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862175.html",
+    "sentAt": "2026-11-21T20:30:34.624Z"
+  },
+  {
+    "recordId": "NC-7862165",
+    "address": "226 Oakdale Road, Jefferson, GA 30549",
+    "recipient": "info@alphapropgroup.com",
+    "messageId": "<6cabc656-a275-1792-841e-59353bddec15@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862165.html",
+    "sentAt": "2026-11-21T20:30:38.053Z"
   }
 ]
