@@ -19708,5 +19708,383 @@
     "city": "Dacula",
     "email": "azizazeerak@gmail.com",
     "timestamp": "2026-11-22T20:41:23.002Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_7aa89f0de2_ecobbrealty@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Sheri Hardy",
+    "brokerage": "Harry Norman Realtors",
+    "address": "3520 Westbury Park Circle",
+    "city": "Marietta",
+    "email": "ecobbrealty@gmail.com",
+    "phone": "4043684888",
+    "date": "2026-11-22",
+    "timestamp": "2026-11-22T22:30:34.685Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_f5be2c8c1b_brittane@atlcommunities.net",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Brittane Payne",
+    "brokerage": "Atlanta Communities",
+    "address": "8780 Churchill Place",
+    "city": "Jonesboro",
+    "email": "brittane@atlcommunities.net",
+    "phone": "4702132701",
+    "date": "2026-11-22",
+    "timestamp": "2026-11-22T22:30:54.974Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_9a4fc8f20a_james.toth@compass.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "James Toth",
+    "brokerage": "Compass",
+    "address": "2577 Wenatchee Drive",
+    "city": "Marietta",
+    "email": "james.toth@compass.com",
+    "phone": "4046603076",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-22T22:31:14.408Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_c80801b800_mandyfolesrealtor@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Mandy Foles",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "address": "61 Majestic Oak Circle",
+    "city": "Dallas",
+    "email": "mandyfolesrealtor@gmail.com",
+    "phone": "6784162979",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-22T22:31:33.829Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_ebaa521b92_angelanunezrealty@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "LIST_AGENT",
+    "targetName": "Angela Nunez",
+    "brokerage": "Maximum One Greater Atlanta Realtors",
+    "address": "2577 Wenatchee Drive",
+    "city": "Marietta",
+    "email": "angelanunezrealty@gmail.com",
+    "phone": "4044359079",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-22T22:31:53.258Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_991ee451a4_rhonda.cheek@harrynorman.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "LIST_AGENT",
+    "targetName": "Rhonda Cheek",
+    "brokerage": "Harry Norman Realtors",
+    "address": "61 Majestic Oak Circle",
+    "city": "Dallas",
+    "email": "rhonda.cheek@harrynorman.com",
+    "phone": "6784520030",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-22T22:32:13.526Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7851084_jacqui@homegeorgia.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Jacqueline Carlyle",
+    "brokerage": "HOME Luxury Real Estate",
+    "address": "6928 Union Hill Road",
+    "city": "Canton",
+    "email": "jacqui@homegeorgia.com",
+    "timestamp": "2026-11-22T22:32:41.885Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7867691_mona@launchpadinvestments.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "MONA CARTER",
+    "brokerage": "LoKation Real Estate, LLC",
+    "address": "45 Ridgewood Way",
+    "city": "Dallas",
+    "email": "mona@launchpadinvestments.com",
+    "timestamp": "2026-11-22T22:33:01.317Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7838974_kim.meisen@bhhsgeorgia.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Kimberly Meisen",
+    "brokerage": "Berkshire Hathaway HomeServices Georgia Properties",
+    "address": "239 Park Place",
+    "city": "Woodstock",
+    "email": "kim.meisen@bhhsgeorgia.com",
+    "timestamp": "2026-11-22T22:33:20.743Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7841822_realtorkarenfarmer@gmail.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Karen Farmer",
+    "brokerage": "Magnolia Realty Co LLC",
+    "address": "410 Wynfield Drive",
+    "city": "Tyrone",
+    "email": "realtorkarenfarmer@gmail.com",
+    "timestamp": "2026-11-22T22:33:40.227Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7846515_wzl9047@gmail.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Wen Zheng Liu",
+    "brokerage": "Atlanta Home Estate Realty, Inc.",
+    "address": "1414 Cumberland Creek Lane SW",
+    "city": "Marietta",
+    "email": "wzl9047@gmail.com",
+    "timestamp": "2026-11-22T22:33:59.643Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7863378_christiane.zeh@harrynorman.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "CHRISTIANE ZEH",
+    "brokerage": "Harry Norman Realtors",
+    "address": "8280 Riverbirch Drive",
+    "city": "Roswell",
+    "email": "christiane.zeh@harrynorman.com",
+    "timestamp": "2026-11-22T22:34:19.889Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_7871272_findatlanta@gmail.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "Joshua Bazzetta",
+    "brokerage": "Christopher Scott Realty Group, LLC.",
+    "address": "363 Irwin Street NE",
+    "city": "Atlanta",
+    "email": "findatlanta@gmail.com",
+    "timestamp": "2026-11-22T22:34:39.388Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_exchange_1031_10885806_melbaileyrealty@gmail.com",
+    "type": "FMLS_EXCHANGE_1031",
+    "targetName": "Melissa Bailey",
+    "brokerage": "RE/MAX Town & Country",
+    "address": "300 Evening Rain CRST",
+    "city": "Canton",
+    "email": "melbaileyrealty@gmail.com",
+    "timestamp": "2026-11-22T22:34:58.824Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_exchange_1031_10809154_cvanvliet@kfhrealty.com",
+    "type": "FMLS_EXCHANGE_1031",
+    "targetName": "Colleen Van Vliet",
+    "brokerage": "KFH Realty",
+    "address": "5885 Ford RD",
+    "city": "Acworth",
+    "email": "cvanvliet@kfhrealty.com",
+    "timestamp": "2026-11-22T22:35:18.246Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_exchange_1031_10869020_jeffmohler@kw.com",
+    "type": "FMLS_EXCHANGE_1031",
+    "targetName": "Jeff Mohler",
+    "brokerage": "Keller Williams Community Partners",
+    "address": "129 Holiday RD E 64",
+    "city": "Buford",
+    "email": "jeffmohler@kw.com",
+    "timestamp": "2026-11-22T22:35:37.653Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_10881492_realtorbrittanyh@gmail.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "Brittany Henry",
+    "brokerage": "Maximum One Realty Partners",
+    "address": "2995 Katherine Valley RD",
+    "city": "Decatur",
+    "email": "realtorbrittanyh@gmail.com",
+    "timestamp": "2026-11-22T22:35:57.085Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_10890526_bruno@simplyhomesatl.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "Tuyen Luong",
+    "brokerage": "Simply Homes ATL",
+    "address": "1629 Whippoorwill DR SW",
+    "city": "Marietta",
+    "email": "bruno@simplyhomesatl.com",
+    "timestamp": "2026-11-22T22:36:16.579Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7607541_melodyunger@kw.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Melody Unger",
+    "brokerage": "Keller Williams Realty Cityside",
+    "address": "134 Marina Parc Drive",
+    "city": "Waleska",
+    "email": "melodyunger@kw.com",
+    "timestamp": "2026-11-22T22:36:36.181Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7592276_oumoubarry0331@gmail.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Oumaymatou Barry",
+    "brokerage": "Maximum One Realtor Partners",
+    "address": "508 Amethyst Way",
+    "city": "Stockbridge",
+    "email": "oumoubarry0331@gmail.com",
+    "timestamp": "2026-11-22T22:36:55.656Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7638951_deadric@hollinscompany.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Deadric J Hollins",
+    "brokerage": "The Hollins Company",
+    "address": "215 Pickens Bluff Lane",
+    "city": "Hiram",
+    "email": "deadric@hollinscompany.com",
+    "timestamp": "2026-11-22T22:37:15.122Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7487554_dat.realtorga@gmail.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Dat Nguyen",
+    "brokerage": "Virtual Properties Realty.com",
+    "address": "58 Hampton Ridge Way",
+    "city": "Jefferson",
+    "email": "dat.realtorga@gmail.com",
+    "timestamp": "2026-11-22T22:37:34.559Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7628883_addisonhill.realtor@gmail.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Addison Hill",
+    "brokerage": "Atlanta Communities",
+    "address": "959 Lost Creek Parkway",
+    "city": "Dallas",
+    "email": "addisonhill.realtor@gmail.com",
+    "timestamp": "2026-11-22T22:37:53.970Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7538708_chad@totalatlantagroup.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "CHAD SCHERNIKAU",
+    "brokerage": "Keller Williams Realty Cityside",
+    "address": "102 Red Cloud Walk",
+    "city": "Waleska",
+    "email": "chad@totalatlantagroup.com",
+    "timestamp": "2026-11-22T22:38:13.409Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7642434_lucretiaramsey@gmail.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "LUCRETIA RAMSEY",
+    "brokerage": "Ramsey Realty Services",
+    "address": "11554 Kimberly Way 44",
+    "city": "Hampton",
+    "email": "lucretiaramsey@gmail.com",
+    "timestamp": "2026-11-22T22:38:32.914Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7662098_antonio.merkerson@bhhsgeorgia.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Antonio Merkerson",
+    "brokerage": "Berkshire Hathaway HomeServices Georgia Properties",
+    "address": "252 Tulip Drive",
+    "city": "Covington",
+    "email": "antonio.merkerson@bhhsgeorgia.com",
+    "timestamp": "2026-11-22T22:38:53.680Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7606272_shatejahjbk@yahoo.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Shatejah Berry-Kirkland",
+    "brokerage": "HomeSmart",
+    "address": "322 Sound Circle",
+    "city": "Stockbridge",
+    "email": "shatejahjbk@yahoo.com",
+    "timestamp": "2026-11-22T22:39:13.951Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7656066_info@sarahpickellhomes.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Sarah Pickell",
+    "brokerage": "EXP Realty, LLC.",
+    "address": "116 Cottage Gate Lane",
+    "city": "Roswell",
+    "email": "info@sarahpickellhomes.com",
+    "timestamp": "2026-11-22T22:39:33.414Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7540932_amylee@realtoruscom.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Amy Lee",
+    "brokerage": "US Realty Investment Group, LLC",
+    "address": "3196 Eastham Run Drive",
+    "city": "Dacula",
+    "email": "amylee@realtoruscom.com",
+    "timestamp": "2026-11-22T22:39:52.832Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7572057_zacharyareb@gmail.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Zachary Barnes",
+    "brokerage": "Atlantic Real Estate Brokers, LLC",
+    "address": "515 Motivation Circle NW",
+    "city": "Atlanta",
+    "email": "zacharyareb@gmail.com",
+    "timestamp": "2026-11-22T22:40:13.115Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7595461_germanmarrufo94@gmail.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "German Marrufo",
+    "brokerage": "LPT Realty, LLC",
+    "address": "6698 Corryton Street",
+    "city": "Flowery Branch",
+    "email": "germanmarrufo94@gmail.com",
+    "timestamp": "2026-11-22T22:40:32.518Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7657639_team@400homes.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Gabby Turner",
+    "brokerage": "HomeSmart",
+    "address": "64 Hughes Place Drive 60",
+    "city": "Dawsonville",
+    "email": "team@400homes.com",
+    "timestamp": "2026-11-22T22:40:52.023Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7653365_aneetras@jorjapeachrealty.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "ANEETRA SHERRELL",
+    "brokerage": "Jorja Peach Realty & Property Management, LLC.",
+    "address": "22 Jacobs Farm Lane 11",
+    "city": "Lawrenceville",
+    "email": "aneetras@jorjapeachrealty.com",
+    "timestamp": "2026-11-22T22:41:11.434Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7599249_royalrealtor143@gmail.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "RAMESH VENNELAKANTI",
+    "brokerage": "Keller Williams Rlty Consultants",
+    "address": "271 Sandy Oak Drive",
+    "city": "Loganville",
+    "email": "royalrealtor143@gmail.com",
+    "timestamp": "2026-11-22T22:41:32.563Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7498043_teresa@teresasellsatl.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Teresa Lynne",
+    "brokerage": "Keller Williams Realty Peachtree Rd.",
+    "address": "6101 Marigold Way",
+    "city": "Atlanta",
+    "email": "teresa@teresasellsatl.com",
+    "timestamp": "2026-11-22T22:41:52.809Z"
+  },
+  {
+    "key": "WARRANTY11M_fmls_11m_7597588_sivan@chapmanhallrealtors.com",
+    "type": "WARRANTY_11M_DRIP",
+    "targetName": "Sivan Amrani",
+    "brokerage": "Chapman Hall Realtors",
+    "address": "430 Lanier Circle",
+    "city": "Woodstock",
+    "email": "sivan@chapmanhallrealtors.com",
+    "timestamp": "2026-11-22T22:42:12.309Z"
   }
 ]
