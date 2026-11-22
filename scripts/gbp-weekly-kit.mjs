@@ -39,31 +39,80 @@ const REPORT = {
 const ROTATION = ['buyer-inspection', 'radon-testing', 'buyer-inspection', 'sewer-scope-inspection', 'buyer-inspection', 'termite-inspection',
   'buyer-inspection', 'mold-testing', 'buyer-inspection', 'pre-listing-inspection', 'buyer-inspection', '11-month-warranty-inspection'];
 
-function isoWeek(d = new Date()) {
+function isoWeekInfo(d = new Date()) {
   const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
   t.setUTCDate(t.getUTCDate() + 4 - (t.getUTCDay() || 7));
-  return Math.ceil(((t - Date.UTC(t.getUTCFullYear(), 0, 1)) / 86400000 + 1) / 7);
+  const year = t.getUTCFullYear();
+  const week = Math.ceil(((t - Date.UTC(year, 0, 1)) / 86400000 + 1) / 7);
+  return { year, week, key: `${year}-W${String(week).padStart(2, '0')}` };
 }
 
-const week = isoWeek();
+function selectHomeRingCity(ring, weekInfo) {
+  const histPath = path.join(ROOT, 'data', 'gbp-rotation-history.json');
+  let hist = {};
+  if (fs.existsSync(histPath)) {
+    try { hist = JSON.parse(fs.readFileSync(histPath, 'utf8')) || {}; } catch {}
+  }
+  if (hist[weekInfo.key]) {
+    const locked = ring.find((c) => c.Slug === hist[weekInfo.key]);
+    if (locked) return locked;
+  }
+  const recentSlugs = new Set(Object.entries(hist).sort((a, b) => b[0].localeCompare(a[0])).slice(0, 4).map(([, v]) => v));
+  const hotSlugs = new Set();
+  for (const rel of ['.analytics/governor_brief.json', 'data/striking-distance-queue.json']) {
+    const fp = path.join(ROOT, rel);
+    if (!fs.existsSync(fp)) continue;
+    try {
+      const j = JSON.parse(fs.readFileSync(fp, 'utf8'));
+      const urls = [
+        ...(j.safe_topic_gaps || []).map((x) => x.url),
+        ...(j.priority_internal_link_targets || []).map((x) => x.url),
+        ...(j.url_intent_mismatches || []).map((x) => x.expected_url),
+        ...(j.opportunities || []).map((x) => x.targetPage),
+      ];
+      urls.forEach((u) => {
+        const seg = String(u || '').split('/').filter(Boolean).pop();
+        if (seg) hotSlugs.add(seg.toLowerCase());
+      });
+    } catch {}
+  }
+  const chosen =
+    ring.find((c) => hotSlugs.has(String(c.Slug || '').toLowerCase()) && !recentSlugs.has(c.Slug)) ||
+    ring.find((c) => !recentSlugs.has(c.Slug)) ||
+    ring[weekInfo.week % ring.length];
+  hist[weekInfo.key] = chosen.Slug;
+  fs.writeFileSync(histPath, JSON.stringify(hist, null, 2) + '\n', 'utf8');
+  return chosen;
+}
+
+const weekInfo = isoWeekInfo();
+const week = weekInfo.week;
 const svc = services.find((s) => s.slug === ROTATION[week % ROTATION.length]);
 const ring = HOME_RING.map((n) => cities.find((c) => c['City Name'] === n)).filter(Boolean);
-const city = ring[week % ring.length];
+const city = selectHomeRingCity(ring, weekInfo);
 const name = city['City Name'];
 const fill = (s) => String(s || '').replaceAll('{city}', name).replace(/\*/g, '');
 const url = `https://www.fhinspectionsatl.com/services/${svc.slug}/${city.Slug}?utm_source=gbp&utm_medium=post&utm_campaign=wk${week}`;
 const faq = svc.faqs?.[0];
 
-const post = [
+const scrubGbpBody = (txt) =>
+  String(txt || '')
+    .replace(/https?:\/\/\S+/gi, 'our online booking page')
+    .replace(/\(?\b\d{3}\)?[-.\s]*\d{3}[-.\s]*\d{4}\b/g, 'the Book button below')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+
+const rawPost = [
   `${svc.name} in ${name}, GA`,
   '',
-  fill(svc.heroSub),
+  scrubGbpBody(fill(svc.heroSub)),
   '',
-  `Two certified inspectors on every job, led by Christopher Boykin, Certified Master Inspector. ${REPORT[svc.slug] || 'Infrared thermal imaging included, same-day digital report'}, ${PRICE[svc.slug] || svc.price}.`,
-  faq ? `\n${fill(faq.q)}\n${fill(faq.a).split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.')}` : '',
+  `Two certified inspectors on every job, led by Christopher Boykin, Certified Master Inspector. ${REPORT[svc.slug] || 'Calibrated infrared thermal imaging included, same-day interactive digital report'}, ${PRICE[svc.slug] || svc.price}.`,
+  faq ? `\n${scrubGbpBody(fill(faq.q))}\n${scrubGbpBody(fill(faq.a).split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.'))}` : '',
   '',
-  'Call 678-480-2110 or book online.'
+  'Tap the Book button below to schedule online.'
 ].join('\n').replace(/\n{3,}/g, '\n\n').trim();
+const post = rawPost;
 
 const md = `# GBP Weekly Kit — Week ${week} (${new Date().toISOString().slice(0, 10)})
 

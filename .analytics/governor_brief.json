@@ -1,0 +1,877 @@
+{
+  "generated_at": "2026-11-22T21:40:49.836854+00:00",
+  "retrieved_on": "2026-11-22",
+  "venture_slug": "foresight-home-inspections",
+  "core_update_gate": {
+    "edit_mode": "FREEZE",
+    "active_rollout": true,
+    "blocking_updates": [
+      {
+        "id": "WLxcJyC6jMWMfryxsKMc",
+        "title": "November 2026 core update",
+        "begin": "2026-11-10T18:06:00+00:00",
+        "end": null,
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22",
+        "reason": "ACTIVE_ROLLOUT_IN_PROGRESS"
+      }
+    ],
+    "recent_ranking_updates": [
+      {
+        "id": "WLxcJyC6jMWMfryxsKMc",
+        "title": "November 2026 core update",
+        "begin": "2026-11-10T18:06:00+00:00",
+        "end": null,
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      },
+      {
+        "id": "XhUDXP7A67iHCD2kmbVu",
+        "title": "September 2026 spam update",
+        "begin": "2026-09-24T16:15:00+00:00",
+        "end": "2026-10-08T08:00:00+00:00",
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      },
+      {
+        "id": "LEubPCm2octf2uMqCFKE",
+        "title": "August 2026 spam update",
+        "begin": "2026-08-18T16:27:00+00:00",
+        "end": "2026-08-21T08:49:00+00:00",
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      },
+      {
+        "id": "YUX1peHev5a4fkxLDiUQ",
+        "title": "June 2026 spam update",
+        "begin": "2026-06-24T16:00:00+00:00",
+        "end": "2026-06-26T17:00:00+00:00",
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      },
+      {
+        "id": "wdAXJk6LRRihEjpzEeWE",
+        "title": "May 2026 core update",
+        "begin": "2026-05-21T15:40:00+00:00",
+        "end": "2026-06-02T12:40:00+00:00",
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      },
+      {
+        "id": "7eTbAa2jWdToLkraZj5y",
+        "title": "March 2026 core update",
+        "begin": "2026-03-27T09:00:00+00:00",
+        "end": "2026-04-08T13:00:00+00:00",
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      },
+      {
+        "id": "VbnSXAH4SmEcxPtx4YSD",
+        "title": "March 2026 spam update",
+        "begin": "2026-03-24T19:00:00+00:00",
+        "end": "2026-03-25T14:30:00+00:00",
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      },
+      {
+        "id": "mYbNTqV1ytDc2fA8hUz4",
+        "title": "February 2026 Discover update",
+        "begin": "2026-02-05T17:00:00+00:00",
+        "end": "2026-02-27T10:00:00+00:00",
+        "source_url": "https://status.search.google.com/incidents.json",
+        "retrieved_on": "2026-11-22"
+      }
+    ],
+    "source_url": "https://status.search.google.com/incidents.json",
+    "retrieved_on": "2026-11-22"
+  },
+  "allow_existing_page_rewrites": false,
+  "sync_summary": {
+    "window": [
+      "2026-11-13",
+      "2026-11-20"
+    ],
+    "git_deploys_indexed": 0,
+    "auth_source": "service_account:ga4-key.json",
+    "gsc_rows": 8417,
+    "ga4_rows": 138,
+    "could_not_see": [],
+    "resolved_gsc_site": "https://www.fhinspectionsatl.com/",
+    "fallback_snapshot_rows": 0
+  },
+  "protected_top_urls": [
+    "/",
+    "/about",
+    "/blog",
+    "/compare/foresight-vs-scott-home-services",
+    "/defects/stucco-eifs-moisture-inspection",
+    "/service-areas/berkeley-lake",
+    "/service-areas/chattahoochee-hills",
+    "/services",
+    "/services/11-month-warranty-inspection/acworth",
+    "/services/11-month-warranty-inspection/alpharetta",
+    "/services/11-month-warranty-inspection/atlanta",
+    "/services/11-month-warranty-inspection/austell",
+    "/services/11-month-warranty-inspection/cartersville",
+    "/services/11-month-warranty-inspection/marietta",
+    "/services/11-month-warranty-inspection/sandy-springs",
+    "/services/11-month-warranty-inspection/smyrna",
+    "/services/11-month-warranty-inspection/woodstock",
+    "/services/buyer-inspection/austell",
+    "/services/buyer-inspection/grayson",
+    "/services/buyer-inspection/morrow",
+    "/services/buyer-inspection/norcross",
+    "/services/buyer-inspection/tyrone",
+    "/services/commercial-property-inspection/alpharetta",
+    "/services/commercial-property-inspection/doraville",
+    "/services/commercial-property-inspection/duluth",
+    "/services/commercial-property-inspection/gainesville",
+    "/services/commercial-property-inspection/lilburn",
+    "/services/commercial-property-inspection/norcross",
+    "/services/commercial-property-inspection/peachtree-corners",
+    "/services/new-construction-inspection/smyrna",
+    "/services/new-construction-inspection/woolsey",
+    "/services/pool-inspection/dunwoody",
+    "/services/pool-inspection/powder-springs",
+    "/services/pool-inspection/smyrna",
+    "/services/pool-inspection/woodstock",
+    "/services/pre-drywall-inspection/acworth",
+    "/services/pre-listing-inspection/acworth",
+    "/services/pre-listing-inspection/canton",
+    "/services/pre-listing-inspection/kennesaw",
+    "/services/pre-listing-inspection/sandy-springs",
+    "/services/pre-listing-inspection/smyrna",
+    "/services/pre-listing-inspection/woodstock",
+    "/services/radon-testing",
+    "/services/sewer-scope-inspection/austell",
+    "/services/sewer-scope-inspection/griffin",
+    "/services/sewer-scope-inspection/peachtree-city",
+    "/services/sewer-scope-inspection/stockbridge"
+  ],
+  "priority_internal_link_targets": [
+    {
+      "url": "/quote",
+      "sessions": 11,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 100.0,
+      "intent_events": 16.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 397.0,
+      "avg_position": 47.73
+    },
+    {
+      "url": "/services",
+      "sessions": 13,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 46.15,
+      "intent_events": 6.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 1258.0,
+      "avg_position": 52.08
+    },
+    {
+      "url": "/services/mold-testing/stockbridge",
+      "sessions": 3,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 100.0,
+      "intent_events": 6.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 61.0,
+      "avg_position": 17.3
+    },
+    {
+      "url": "/services/new-construction-inspection/kennesaw",
+      "sessions": 4,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 100.0,
+      "intent_events": 5.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 10.0,
+      "avg_position": 8.6
+    },
+    {
+      "url": "/due-diligence",
+      "sessions": 6,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 66.67,
+      "intent_events": 4.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 3.0,
+      "avg_position": 1.0
+    },
+    {
+      "url": "/services/mold-testing/acworth",
+      "sessions": 3,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 100.0,
+      "intent_events": 3.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 6.0,
+      "avg_position": 6.0
+    },
+    {
+      "url": "/service-areas/cumming",
+      "sessions": 3,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 100.0,
+      "intent_events": 3.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 0.0,
+      "avg_position": 0.0
+    },
+    {
+      "url": "/defects/stucco-eifs-moisture-inspection",
+      "sessions": 3,
+      "revenue": 0.0,
+      "revenue_per_session": 0.0,
+      "conversion_rate_pct": 33.33,
+      "intent_events": 1.0,
+      "gsc_clicks": 0.0,
+      "gsc_impressions": 347.0,
+      "avg_position": 14.55
+    }
+  ],
+  "safe_topic_gaps": [
+    {
+      "query": "mold inspection sandy springs",
+      "url": "/services/mold-testing/sandy-springs",
+      "impressions": 70.0,
+      "clicks": 0.0,
+      "avg_position": 5.51,
+      "est_click_upside": 7.7
+    },
+    {
+      "query": "digital inspection reports georgia",
+      "url": "/samples",
+      "impressions": 62.0,
+      "clicks": 0.0,
+      "avg_position": 3.9,
+      "est_click_upside": 6.8
+    },
+    {
+      "query": "certified home inspectors woodstock, ga",
+      "url": "/services/buyer-inspection/woodstock",
+      "impressions": 55.0,
+      "clicks": 0.0,
+      "avg_position": 8.98,
+      "est_click_upside": 6.0
+    },
+    {
+      "query": "air quality testing atlanta",
+      "url": "/blog/mold-testing-atlanta-indoor-air-quality-inspection-guide",
+      "impressions": 98.0,
+      "clicks": 0.0,
+      "avg_position": 14.63,
+      "est_click_upside": 5.9
+    },
+    {
+      "query": "home inspection services sugar hill, ga",
+      "url": "/services/buyer-inspection/sugar-hill",
+      "impressions": 53.0,
+      "clicks": 0.0,
+      "avg_position": 8.83,
+      "est_click_upside": 5.8
+    },
+    {
+      "query": "dallas pre drywall inspection",
+      "url": "/services/pre-drywall-inspection/dallas",
+      "impressions": 52.0,
+      "clicks": 0.0,
+      "avg_position": 9.12,
+      "est_click_upside": 5.7
+    },
+    {
+      "query": "commercial inspections douglasville, ga",
+      "url": "/services/commercial-property-inspection/douglasville",
+      "impressions": 47.0,
+      "clicks": 0.0,
+      "avg_position": 6.51,
+      "est_click_upside": 5.2
+    },
+    {
+      "query": "home inspection norcross ga",
+      "url": "/services/buyer-inspection/norcross",
+      "impressions": 46.0,
+      "clicks": 0.0,
+      "avg_position": 3.63,
+      "est_click_upside": 5.1
+    },
+    {
+      "query": "home inspection services powder springs, ga",
+      "url": "/services/buyer-inspection/powder-springs",
+      "impressions": 45.0,
+      "clicks": 0.0,
+      "avg_position": 8.8,
+      "est_click_upside": 5.0
+    },
+    {
+      "query": "home inspections sugar hill, ga",
+      "url": "/services/buyer-inspection/sugar-hill",
+      "impressions": 45.0,
+      "clicks": 0.0,
+      "avg_position": 9.04,
+      "est_click_upside": 5.0
+    },
+    {
+      "query": "home inspectors sugar hill, ga",
+      "url": "/services/buyer-inspection/sugar-hill",
+      "impressions": 45.0,
+      "clicks": 0.0,
+      "avg_position": 9.64,
+      "est_click_upside": 5.0
+    },
+    {
+      "query": "home inspection acworth ga",
+      "url": "/services/buyer-inspection/acworth",
+      "impressions": 81.0,
+      "clicks": 0.0,
+      "avg_position": 13.93,
+      "est_click_upside": 4.9
+    },
+    {
+      "query": "indoor air quality testing in cumming ga",
+      "url": "/services/mold-testing/cumming",
+      "impressions": 44.0,
+      "clicks": 0.0,
+      "avg_position": 8.3,
+      "est_click_upside": 4.8
+    },
+    {
+      "query": "sewer video inspection alpharetta",
+      "url": "/services/sewer-scope-inspection/suwanee",
+      "impressions": 44.0,
+      "clicks": 0.0,
+      "avg_position": 9.39,
+      "est_click_upside": 4.8
+    }
+  ],
+  "url_intent_mismatches": [
+    {
+      "query": "home inspection fairburn ga",
+      "ranking_url": "/service-areas/fairburn",
+      "expected_url": "/services/buyer-inspection/fairburn",
+      "impressions": 104.0,
+      "clicks": 0.0,
+      "avg_position": 7.89
+    },
+    {
+      "query": "sewer video inspection atlanta",
+      "ranking_url": "/services/sewer-scope-inspection/suwanee",
+      "expected_url": "/services/sewer-scope-inspection/atlanta",
+      "impressions": 89.0,
+      "clicks": 0.0,
+      "avg_position": 10.7
+    },
+    {
+      "query": "home inspections buford ga",
+      "ranking_url": "/",
+      "expected_url": "/services/buyer-inspection/buford",
+      "impressions": 80.0,
+      "clicks": 0.0,
+      "avg_position": 22.09
+    },
+    {
+      "query": "home inspection kennesaw ga",
+      "ranking_url": "/services/11-month-warranty-inspection/kennesaw",
+      "expected_url": "/services/buyer-inspection/kennesaw",
+      "impressions": 75.0,
+      "clicks": 1.0,
+      "avg_position": 18.08
+    },
+    {
+      "query": "home inspection roswell ga",
+      "ranking_url": "/",
+      "expected_url": "/services/buyer-inspection/roswell",
+      "impressions": 71.0,
+      "clicks": 0.0,
+      "avg_position": 30.15
+    },
+    {
+      "query": "home inspection braselton ga",
+      "ranking_url": "/",
+      "expected_url": "/services/buyer-inspection/braselton",
+      "impressions": 70.0,
+      "clicks": 0.0,
+      "avg_position": 24.87
+    },
+    {
+      "query": "home inspection johns creek ga",
+      "ranking_url": "/services/buyer-inspection/alpharetta",
+      "expected_url": "/services/buyer-inspection/johns-creek",
+      "impressions": 68.0,
+      "clicks": 0.0,
+      "avg_position": 22.51
+    },
+    {
+      "query": "home inspection buford ga",
+      "ranking_url": "/services/mold-testing/buford",
+      "expected_url": "/services/buyer-inspection/buford",
+      "impressions": 63.0,
+      "clicks": 0.0,
+      "avg_position": 19.49
+    },
+    {
+      "query": "home inspection gainesville ga",
+      "ranking_url": "/services/commercial-property-inspection/gainesville",
+      "expected_url": "/services/buyer-inspection/gainesville",
+      "impressions": 63.0,
+      "clicks": 0.0,
+      "avg_position": 18.59
+    },
+    {
+      "query": "home inspector buford ga",
+      "ranking_url": "/",
+      "expected_url": "/services/buyer-inspection/buford",
+      "impressions": 58.0,
+      "clicks": 0.0,
+      "avg_position": 28.69
+    },
+    {
+      "query": "home inspections buford ga",
+      "ranking_url": "/services/mold-testing/buford",
+      "expected_url": "/services/buyer-inspection/buford",
+      "impressions": 57.0,
+      "clicks": 0.0,
+      "avg_position": 26.79
+    },
+    {
+      "query": "home inspections chattahoochee hills ga",
+      "ranking_url": "/service-areas/chattahoochee-hills",
+      "expected_url": "/services/buyer-inspection/chattahoochee-hills",
+      "impressions": 57.0,
+      "clicks": 0.0,
+      "avg_position": 3.18
+    },
+    {
+      "query": "home inspection fairburn ga",
+      "ranking_url": "/services/buyer-inspection/lilburn",
+      "expected_url": "/services/buyer-inspection/fairburn",
+      "impressions": 56.0,
+      "clicks": 0.0,
+      "avg_position": 11.54
+    },
+    {
+      "query": "home inspection cumming ga",
+      "ranking_url": "/services/11-month-warranty-inspection/cumming",
+      "expected_url": "/services/buyer-inspection/cumming",
+      "impressions": 55.0,
+      "clicks": 0.0,
+      "avg_position": 18.44
+    },
+    {
+      "query": "home inspection smyrna ga",
+      "ranking_url": "/services/termite-inspection/smyrna",
+      "expected_url": "/services/buyer-inspection/smyrna",
+      "impressions": 53.0,
+      "clicks": 0.0,
+      "avg_position": 12.25
+    }
+  ],
+  "leaky_funnel_pages": [],
+  "cannibalization_alerts": [
+    {
+      "query": "commercial real estate due diligence inspection services",
+      "competing_pages": 5,
+      "recommended_owner": "/services/commercial-property-inspection/alpharetta",
+      "pages": [
+        {
+          "url": "/services/commercial-property-inspection/alpharetta",
+          "clicks": 0.0,
+          "impressions": 505.0,
+          "avg_position": 26.81
+        },
+        {
+          "url": "/services/commercial-property-inspection/decatur",
+          "clicks": 0.0,
+          "impressions": 253.0,
+          "avg_position": 19.19
+        },
+        {
+          "url": "/services/commercial-property-inspection/marietta",
+          "clicks": 0.0,
+          "impressions": 252.0,
+          "avg_position": 24.71
+        },
+        {
+          "url": "/services/commercial-property-inspection/between",
+          "clicks": 0.0,
+          "impressions": 248.0,
+          "avg_position": 23.63
+        },
+        {
+          "url": "/services/commercial-property-inspection/lilburn",
+          "clicks": 0.0,
+          "impressions": 221.0,
+          "avg_position": 26.67
+        }
+      ]
+    },
+    {
+      "query": "commercial inspections milton, ga",
+      "competing_pages": 9,
+      "recommended_owner": "/services/commercial-property-inspection/alpharetta",
+      "pages": [
+        {
+          "url": "/services/commercial-property-inspection/alpharetta",
+          "clicks": 0.0,
+          "impressions": 45.0,
+          "avg_position": 8.11
+        },
+        {
+          "url": "/services/commercial-property-inspection/tucker",
+          "clicks": 0.0,
+          "impressions": 24.0,
+          "avg_position": 28.21
+        },
+        {
+          "url": "/services/commercial-property-inspection/decatur",
+          "clicks": 0.0,
+          "impressions": 23.0,
+          "avg_position": 6.78
+        },
+        {
+          "url": "/services/commercial-property-inspection/conyers",
+          "clicks": 0.0,
+          "impressions": 23.0,
+          "avg_position": 21.57
+        },
+        {
+          "url": "/services/commercial-property-inspection/doraville",
+          "clicks": 0.0,
+          "impressions": 21.0,
+          "avg_position": 2.76
+        },
+        {
+          "url": "/services/commercial-property-inspection/oxford",
+          "clicks": 0.0,
+          "impressions": 20.0,
+          "avg_position": 30.35
+        },
+        {
+          "url": "/services/commercial-property-inspection/douglasville",
+          "clicks": 0.0,
+          "impressions": 18.0,
+          "avg_position": 19.94
+        },
+        {
+          "url": "/services/commercial-property-inspection/canton",
+          "clicks": 0.0,
+          "impressions": 17.0,
+          "avg_position": 8.88
+        },
+        {
+          "url": "/services/commercial-property-inspection/carrollton",
+          "clicks": 0.0,
+          "impressions": 16.0,
+          "avg_position": 27.56
+        }
+      ]
+    },
+    {
+      "query": "eleven month warranty home inspection cherokee county, ga",
+      "competing_pages": 7,
+      "recommended_owner": "/services/11-month-warranty-inspection/kennesaw",
+      "pages": [
+        {
+          "url": "/services/11-month-warranty-inspection/kennesaw",
+          "clicks": 0.0,
+          "impressions": 41.0,
+          "avg_position": 25.68
+        },
+        {
+          "url": "/services/11-month-warranty-inspection/conyers",
+          "clicks": 0.0,
+          "impressions": 34.0,
+          "avg_position": 14.97
+        },
+        {
+          "url": "/compare/truth-about-100k-home-inspection-warranties",
+          "clicks": 0.0,
+          "impressions": 28.0,
+          "avg_position": 21.29
+        },
+        {
+          "url": "/services/11-month-warranty-inspection/sugar-hill",
+          "clicks": 0.0,
+          "impressions": 27.0,
+          "avg_position": 15.85
+        },
+        {
+          "url": "/services/11-month-warranty-inspection/canton",
+          "clicks": 0.0,
+          "impressions": 25.0,
+          "avg_position": 6.36
+        },
+        {
+          "url": "/services/11-month-warranty-inspection/austell",
+          "clicks": 0.0,
+          "impressions": 22.0,
+          "avg_position": 2.86
+        },
+        {
+          "url": "/services/11-month-warranty-inspection/berkeley-lake",
+          "clicks": 0.0,
+          "impressions": 16.0,
+          "avg_position": 21.75
+        }
+      ]
+    },
+    {
+      "query": "home inspection fairburn ga",
+      "competing_pages": 3,
+      "recommended_owner": "/service-areas/fairburn",
+      "pages": [
+        {
+          "url": "/service-areas/fairburn",
+          "clicks": 0.0,
+          "impressions": 104.0,
+          "avg_position": 7.89
+        },
+        {
+          "url": "/services/buyer-inspection/lilburn",
+          "clicks": 0.0,
+          "impressions": 56.0,
+          "avg_position": 11.54
+        },
+        {
+          "url": "/services/commercial-property-inspection/fairburn",
+          "clicks": 0.0,
+          "impressions": 26.0,
+          "avg_position": 26.77
+        }
+      ]
+    },
+    {
+      "query": "commercial inspections dekalb county",
+      "competing_pages": 6,
+      "recommended_owner": "/services/commercial-property-inspection/decatur",
+      "pages": [
+        {
+          "url": "/services/commercial-property-inspection/decatur",
+          "clicks": 0.0,
+          "impressions": 41.0,
+          "avg_position": 5.95
+        },
+        {
+          "url": "/services/commercial-property-inspection/stone-mountain",
+          "clicks": 0.0,
+          "impressions": 37.0,
+          "avg_position": 18.19
+        },
+        {
+          "url": "/services/commercial-property-inspection/lilburn",
+          "clicks": 0.0,
+          "impressions": 26.0,
+          "avg_position": 23.35
+        },
+        {
+          "url": "/services/commercial-property-inspection/conyers",
+          "clicks": 0.0,
+          "impressions": 23.0,
+          "avg_position": 31.61
+        },
+        {
+          "url": "/services/commercial-property-inspection/alpharetta",
+          "clicks": 0.0,
+          "impressions": 22.0,
+          "avg_position": 5.32
+        },
+        {
+          "url": "/services/commercial-property-inspection/gainesville",
+          "clicks": 0.0,
+          "impressions": 21.0,
+          "avg_position": 33.29
+        }
+      ]
+    },
+    {
+      "query": "buyer home inspections duluth, ga",
+      "competing_pages": 7,
+      "recommended_owner": "/services/buyer-inspection/norcross",
+      "pages": [
+        {
+          "url": "/services/buyer-inspection/norcross",
+          "clicks": 0.0,
+          "impressions": 38.0,
+          "avg_position": 22.47
+        },
+        {
+          "url": "/services/buyer-inspection/duluth",
+          "clicks": 0.0,
+          "impressions": 35.0,
+          "avg_position": 6.29
+        },
+        {
+          "url": "/services/buyer-inspection/good-hope",
+          "clicks": 0.0,
+          "impressions": 21.0,
+          "avg_position": 29.9
+        },
+        {
+          "url": "/services/buyer-inspection/johns-creek",
+          "clicks": 0.0,
+          "impressions": 18.0,
+          "avg_position": 17.94
+        },
+        {
+          "url": "/services/buyer-inspection/smyrna",
+          "clicks": 0.0,
+          "impressions": 18.0,
+          "avg_position": 27.94
+        },
+        {
+          "url": "/services/buyer-inspection/woodstock",
+          "clicks": 0.0,
+          "impressions": 18.0,
+          "avg_position": 29.61
+        },
+        {
+          "url": "/services/buyer-inspection/acworth",
+          "clicks": 0.0,
+          "impressions": 15.0,
+          "avg_position": 27.6
+        }
+      ]
+    },
+    {
+      "query": "commercial inspection cumming ga",
+      "competing_pages": 4,
+      "recommended_owner": "/services/commercial-property-inspection/morrow",
+      "pages": [
+        {
+          "url": "/services/commercial-property-inspection/morrow",
+          "clicks": 0.0,
+          "impressions": 70.0,
+          "avg_position": 7.73
+        },
+        {
+          "url": "/services/11-month-warranty-inspection/cumming",
+          "clicks": 0.0,
+          "impressions": 39.0,
+          "avg_position": 17.79
+        },
+        {
+          "url": "/services/commercial-property-inspection/locust-grove",
+          "clicks": 0.0,
+          "impressions": 23.0,
+          "avg_position": 11.48
+        },
+        {
+          "url": "/services/commercial-property-inspection/lilburn",
+          "clicks": 0.0,
+          "impressions": 21.0,
+          "avg_position": 15.19
+        }
+      ]
+    },
+    {
+      "query": "home inspector fairburn ga",
+      "competing_pages": 5,
+      "recommended_owner": "/service-areas/fairburn",
+      "pages": [
+        {
+          "url": "/service-areas/fairburn",
+          "clicks": 0.0,
+          "impressions": 43.0,
+          "avg_position": 5.93
+        },
+        {
+          "url": "/services/buyer-inspection/mcdonough",
+          "clicks": 0.0,
+          "impressions": 39.0,
+          "avg_position": 13.64
+        },
+        {
+          "url": "/services/buyer-inspection/lilburn",
+          "clicks": 0.0,
+          "impressions": 27.0,
+          "avg_position": 15.63
+        },
+        {
+          "url": "/services/commercial-property-inspection/fairburn",
+          "clicks": 0.0,
+          "impressions": 25.0,
+          "avg_position": 25.28
+        },
+        {
+          "url": "/services/buyer-inspection/south-fulton",
+          "clicks": 0.0,
+          "impressions": 16.0,
+          "avg_position": 9.31
+        }
+      ]
+    },
+    {
+      "query": "commercial inspections duluth, ga",
+      "competing_pages": 5,
+      "recommended_owner": "/services/commercial-property-inspection/duluth",
+      "pages": [
+        {
+          "url": "/services/commercial-property-inspection/duluth",
+          "clicks": 0.0,
+          "impressions": 45.0,
+          "avg_position": 6.67
+        },
+        {
+          "url": "/services/commercial-property-inspection/alpharetta",
+          "clicks": 0.0,
+          "impressions": 29.0,
+          "avg_position": 3.28
+        },
+        {
+          "url": "/services/commercial-property-inspection/doraville",
+          "clicks": 0.0,
+          "impressions": 28.0,
+          "avg_position": 8.25
+        },
+        {
+          "url": "/services/commercial-property-inspection/conyers",
+          "clicks": 0.0,
+          "impressions": 26.0,
+          "avg_position": 29.0
+        },
+        {
+          "url": "/services/commercial-property-inspection/cartersville",
+          "clicks": 0.0,
+          "impressions": 21.0,
+          "avg_position": 28.0
+        }
+      ]
+    },
+    {
+      "query": "home inspection lilburn ga",
+      "competing_pages": 3,
+      "recommended_owner": "/services/buyer-inspection/lilburn",
+      "pages": [
+        {
+          "url": "/services/buyer-inspection/lilburn",
+          "clicks": 0.0,
+          "impressions": 82.0,
+          "avg_position": 5.45
+        },
+        {
+          "url": "/",
+          "clicks": 0.0,
+          "impressions": 49.0,
+          "avg_position": 27.73
+        },
+        {
+          "url": "/services/mold-testing/lilburn",
+          "clicks": 0.0,
+          "impressions": 15.0,
+          "avg_position": 31.8
+        }
+      ]
+    }
+  ],
+  "aio_ctr_compressed_queries": [],
+  "experiment_did_verifications": [],
+  "staged_human_triage": "[CORE UPDATE FREEZE ACTIVE \u2014 DIAGNOSTICS ONLY; HOLD LIVE TITLE/H1 REWRITES]\n[1] /: $0.0 rev (73.05% CVR) on 16.0 GSC clicks (pos 33.64) -> Stage internal links only (freeze)\n[2] /quote: $0.0 rev (100.0% CVR) on 0.0 GSC clicks (pos 47.73) -> Stage internal links only (freeze)\n[3] Query 'commercial real estate due diligence inspection services': 5 URLs competing -> Consolidate/canonical to /services/commercial-property-inspection/alpharetta\n\nReply shorthand: e.g. '1 approve, 2 skip'"
+}

@@ -15,6 +15,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { resolveGeminiTextModels } from '../lib/gemini-model-resolver.mjs';
+import { loadGovernorBrief, appendExperimentLedger } from './lib/seo-ledger-and-gate.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -418,19 +419,26 @@ export function syncLlmsFiles(newPost, totalPostsCount) {
   }
 }
 
-async function generatePostWithGemini(existingTitles, targetCorridor) {
+async function generatePostWithGemini(existingTitles, targetCorridor, keywordBrief = null, moneyTargets = []) {
   if (!GEMINI_API_KEY) return null;
+
+  const kwDirective = keywordBrief?.targetKeyword
+    ? `\nPrimary Buyer Search Topic (from live GSC + Keyword Discovery): "${keywordBrief.targetKeyword}"\nSupporting Questions/Terms: ${(keywordBrief.relatedKeywords || []).slice(0, 4).join(', ')}`
+    : '';
+  const moneyLinkDirective = moneyTargets.length > 0
+    ? `\nPriority High-Converting Service Pages (weave 1-2 natural descriptive links if topically aligned): ${moneyTargets.slice(0, 4).join(', ')}`
+    : '';
 
   const prompt = `You are Christopher Boykin, Certified Master Inspector (CMI) and founder of Foresight Home Inspections in Metro Atlanta, GA (https://www.fhinspectionsatl.com, phone: (678) 480-2110).
 Write ONE net-new, deeply technical, homeowner-friendly educational blog post (850-1,150 words) focused on this Metro Atlanta corridor:
-${targetCorridor}
+${targetCorridor}${kwDirective}${moneyLinkDirective}
 
 Already published titles (DO NOT repeat these topics):
 ${existingTitles.slice(0, 25).map((t) => `- ${t}`).join('\n')}
 
 STRICT CANONICAL TRUTH & STYLE RULES:
-1. Open with a 2-3 sentence BLUF summary in the first paragraph answering the homeowner's core question and linking 2-3 corridor city pages (/service-areas/[city-slug]).
-2. Include internal HTML links to /quote, /realtors, /free-utility-setup, and /repair-credit-calculator (4-7 total links; NEVER link to /concierge).
+1. Open with a 2-3 sentence BLUF summary in the first paragraph answering the homeowner's core question and linking 2-3 corridor city pages (/service-areas/[city-slug]) plus 1 relevant /services/[service]/[city-slug] page.
+2. Include 1 verified external non-competing .gov authority link (e.g. https://www.epa.gov/mold/mold-course-chapter-2, https://www.epa.gov/radon/radon-zone-map, or https://www.hud.gov/topics/buying_a_home) AND internal HTML links to /quote, /realtors, /free-utility-setup, and /repair-credit-calculator (<= 14 total internal links; NEVER link to /concierge; NEVER use generic "click here"/"learn more" anchors).
 3. Pricing truth: Single-Family/Pre-Listing/11-Month Warranty From $345, Condo & Townhome From $295, Pre-Drywall From $275, New Construction From $400, Re-Inspection $200, -$25 Realtor-only partner client discount, $35,000 combined protection ($10,000 Elite Master Inspection Warranty + $25,000 InterNACHI Honor Guarantee). For Radon, Mold, Sewer Scope, Pool, Termite, DeKalb Low-Flow, or Commercial, ALWAYS write "Call (678) 480-2110 for Quote" with zero dollar figures near them.
 4. Observational inspector voice: use "What this could mean:" (NEVER "What this means") and "Have a licensed [trade] contractor evaluate further and repair as needed."
 5. End with <h2>Frequently Asked Questions</h2> containing 3 <h3> question-and-answer pairs.
@@ -450,6 +458,9 @@ Respond ONLY in valid JSON:
   for (const model of geminiModels) {
     try {
       console.log(`🤖 Calling Gemini model ${model}...`);
+      const genConfig = /^gemini-4/i.test(model)
+        ? { responseMimeType: 'application/json' }
+        : { temperature: 0.65, responseMimeType: 'application/json' };
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`,
         {
@@ -457,7 +468,7 @@ Respond ONLY in valid JSON:
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.65, responseMimeType: 'application/json' }
+            generationConfig: genConfig
           })
         }
       );
@@ -485,8 +496,16 @@ async function run() {
   const existingTitles = posts.map((p) => p.title);
   const existingSlugs = new Set(posts.map((p) => p.slug));
 
+  const kwBriefPath = path.join(ROOT, 'data', 'keyword-brief.json');
+  const keywordBrief = fs.existsSync(kwBriefPath) ? JSON.parse(fs.readFileSync(kwBriefPath, 'utf8')) : null;
+  const govBrief = loadGovernorBrief(ROOT);
+  const moneyTargets = [
+    ...(govBrief?.priority_internal_link_targets || []).map((t) => t.url),
+    ...(keywordBrief?.priorityInternalLinkTargets || []).map((t) => t.url),
+  ].filter((u, idx, arr) => u && (u.startsWith('/services/') || u.startsWith('/defects/') || u === '/due-diligence') && arr.indexOf(u) === idx);
+
   const targetCorridor = SEVEN_CORRIDORS[posts.length % SEVEN_CORRIDORS.length];
-  let candidateRaw = await generatePostWithGemini(existingTitles, targetCorridor);
+  let candidateRaw = await generatePostWithGemini(existingTitles, targetCorridor, keywordBrief, moneyTargets);
   let candidateResult = candidateRaw ? sanitizeAndValidatePost(candidateRaw, existingSlugs) : { valid: false };
 
   if (!candidateResult.valid) {
@@ -516,6 +535,12 @@ async function run() {
   posts.unshift(finalPost);
   fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + '\n', 'utf8');
   syncLlmsFiles(finalPost, posts.length);
+  appendExperimentLedger(ROOT, {
+    url: `/blog/${finalPost.slug}`,
+    template: '/blog/*',
+    deployedAt: finalPost.date,
+    hypothesis: `New SEO Governor targeted article (${keywordBrief?.targetKeyword || 'corridor rotation'}): ${finalPost.title}`,
+  });
 
   console.log(`🎉 Published "${finalPost.title}" (/blog/${finalPost.slug}) — Total posts: ${posts.length}`);
   await sendNtfyAlert(

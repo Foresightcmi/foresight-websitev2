@@ -12,10 +12,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { resolveGeminiTextModels } from '../lib/gemini-model-resolver.mjs';
+import { evaluateLiveCoreUpdateGate, appendExperimentLedger } from './lib/seo-ledger-and-gate.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CITIES_FILE = path.join(__dirname, '..', 'data', 'cities.json');
-const REFRESH_LOG = path.join(__dirname, '..', 'data', 'refresh-log.json');
+const ROOT = path.join(__dirname, '..');
+const CITIES_FILE = path.join(ROOT, 'data', 'cities.json');
+const REFRESH_LOG = path.join(ROOT, 'data', 'refresh-log.json');
 
 // Automatically load .env.local if present
 const envPath = path.join(__dirname, '..', '.env.local');
@@ -85,6 +87,9 @@ Return ONLY valid JSON:
   for (const model of modelsToTry) {
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
+        const genConfig = /^gemini-4/i.test(model)
+          ? { maxOutputTokens: 1024 }
+          : { temperature: 0.7, maxOutputTokens: 1024 };
         const response = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`,
           {
@@ -92,7 +97,7 @@ Return ONLY valid JSON:
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               contents: [{ role: 'user', parts: [{ text: prompt }] }],
-              generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
+              generationConfig: genConfig
             })
           }
         );
@@ -126,6 +131,13 @@ Return ONLY valid JSON:
 async function main() {
   console.log('🗺️  Foresight City Page Refresher — Starting...\n');
 
+  const gate = await evaluateLiveCoreUpdateGate(ROOT, 7);
+  const govState = gate.brief || {};
+  if (gate.editMode === 'FREEZE' && !process.argv.includes('--force')) {
+    console.log(`🛡️  [CORE UPDATE FREEZE ACTIVE — Rule 11.10 (${gate.source})] Active/recent Google Ranking rollout detected. Skipping live city page rewrites cleanly.`);
+    return;
+  }
+
   if (!fs.existsSync(CITIES_FILE)) {
     console.error(`ERROR: ${CITIES_FILE} does not exist.`);
     process.exit(1);
@@ -144,7 +156,22 @@ async function main() {
     }
   }
 
+  const prioritySlugs = new Set(
+    [
+      ...(govState?.priority_internal_link_targets || []).map((x) => x.url),
+      ...(govState?.safe_topic_gaps || []).map((x) => x.url),
+      ...(govState?.url_intent_mismatches || []).map((x) => x.expected_url),
+    ]
+      .map((u) => String(u || '').split('/').filter(Boolean).pop() || '')
+      .filter(Boolean)
+  );
+
   const sortedCities = [...cities].sort((a, b) => {
+    const aSlug = String(a['City Name'] || '').toLowerCase().replace(/\s+/g, '-');
+    const bSlug = String(b['City Name'] || '').toLowerCase().replace(/\s+/g, '-');
+    const aPrio = prioritySlugs.has(aSlug) ? 0 : 1;
+    const bPrio = prioritySlugs.has(bSlug) ? 0 : 1;
+    if (aPrio !== bPrio) return aPrio - bPrio;
     const aDate = refreshLog[a['City Name']] || '2000-01-01';
     const bDate = refreshLog[b['City Name']] || '2000-01-01';
     return aDate.localeCompare(bDate);
@@ -168,9 +195,17 @@ async function main() {
       
       const originalCity = cities.find(c => c['City Name'] === cityName);
       if (originalCity) {
+        const todayIso = new Date().toISOString().split('T')[0];
+        const citySlug = originalCity.Slug || cityName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
         originalCity['Seasonal Tip'] = seasonalPrefix;
-        originalCity['Last Refreshed'] = new Date().toISOString().split('T')[0];
-        refreshLog[cityName] = new Date().toISOString().split('T')[0];
+        originalCity['Last Refreshed'] = todayIso;
+        refreshLog[cityName] = todayIso;
+        appendExperimentLedger(ROOT, {
+          url: `/service-areas/${citySlug}`,
+          template: '/service-areas/*',
+          deployedAt: todayIso,
+          hypothesis: `Seasonal ${season} city tip refresh for ${cityName}`,
+        });
         updatedCount++;
         console.log(`  ✅ ${cityName} — updated`);
       }

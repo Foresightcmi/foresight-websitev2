@@ -32,6 +32,17 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
+    - name: Refresh Closed-Loop SEO Governor Brief Before Keyword Discovery
+      env:
+        GCP_SA_JSON: ${{ secrets.GCP_ANALYTICS_SA_JSON }}
+      run: |
+        python3 -m pip install --quiet --break-system-packages google-auth httpx || pip install --quiet google-auth httpx
+        if [ -n "$GCP_SA_JSON" ]; then
+          printf '%s' "$GCP_SA_JSON" > .analytics/service-account.json
+        fi
+        python3 .agents/skills/traffic-intelligence/scripts/autonomous_seo_governor.py --workspace . govern
+        rm -f .analytics/service-account.json
+
     - name: Run Keyword Discovery Agent
       run: node scripts/discover-keywords.mjs
 

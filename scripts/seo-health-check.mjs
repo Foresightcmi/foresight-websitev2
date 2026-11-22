@@ -56,29 +56,28 @@ console.log(`📊 Loaded Databases: ${cities.length} Service Area Cities, ${post
 // 2. Validate Radon Pricing Across Databases & Files
 console.log('\n💲 Validating Radon & Core Service Pricing Consistency...');
 
-// Check blog content
+// Check blog content (GEMINI.md Rule 1: Radon is Call for Quote — never legacy $200/$250 flat-rate pricing)
 posts.forEach(post => {
   const contentLower = post.content.toLowerCase();
   const titleLower = post.title.toLowerCase();
   
   if (contentLower.includes('radon') || titleLower.includes('radon')) {
-    // Radon testing price must be $250
-    const pricingMatch = contentLower.match(/radon\s+(?:gas\s+)?testing[^$]{0,40}\$(\d+)/) || titleLower.match(/radon\s+(?:gas\s+)?testing[^$]{0,40}\$(\d+)/);
-    if (pricingMatch && pricingMatch[1] !== '250') {
-      reportIssue(`Blog post "${post.title}" contains suspicious Radon testing pricing: $${pricingMatch[1]} (Expected: $250)`);
+    const legacyRadonMatch = contentLower.match(/radon\s+(?:gas\s+)?testing\s*(?:is|at|for|:|\()\s*\$(150|175|200|225|250)\b/);
+    if (legacyRadonMatch) {
+      reportIssue(`Blog post "${post.title}" contains legacy flat-rate Radon pricing: $${legacyRadonMatch[1]} (Expected: Call for Quote)`);
     } else {
       console.log(`✅ Blog Post "${post.title.substring(0, 30)}..." Radon pricing looks correct.`);
     }
   }
 });
 
-// Check city pages for Radon pricing discrepancies
+// Check city pages for legacy Radon flat-rate pricing discrepancies
 cities.forEach(city => {
   const servicesLower = (city['Services HTML'] || '').toLowerCase();
   if (servicesLower.includes('radon')) {
-    const radonPriceMatch = servicesLower.match(/radon\s+(?:gas\s+)?testing[^<]*?\$(\d+)/);
-    if (radonPriceMatch && radonPriceMatch[1] !== '250') {
-      reportIssue(`City page "${city['City Name']}" has discrepant Radon pricing: $${radonPriceMatch[1]} (Expected: $250)`);
+    const legacyCityRadon = servicesLower.match(/radon\s+(?:gas\s+)?testing[^<]{0,25}\$(150|175|200|225)\b/);
+    if (legacyCityRadon) {
+      reportIssue(`City page "${city['City Name']}" has legacy flat-rate Radon pricing: $${legacyCityRadon[1]}`);
     }
   }
 });

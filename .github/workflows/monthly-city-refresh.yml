@@ -30,6 +30,17 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Refresh Closed-Loop SEO Governor Gate & Priority Cities
+        env:
+          GCP_SA_JSON: ${{ secrets.GCP_ANALYTICS_SA_JSON }}
+        run: |
+          if [ -n "$GCP_SA_JSON" ]; then
+            python3 -m pip install --quiet --break-system-packages google-auth httpx || pip install --quiet google-auth httpx
+            printf '%s' "$GCP_SA_JSON" > .analytics/service-account.json
+            python3 .agents/skills/traffic-intelligence/scripts/autonomous_seo_governor.py --workspace . govern
+            rm -f .analytics/service-account.json
+          fi
+
       - name: Refresh city pages
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -39,7 +50,7 @@ jobs:
         run: |
           git config user.name "Foresight City Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/cities.json data/refresh-log.json
+          git add data/cities.json data/refresh-log.json .analytics/governor_brief.json .analytics/experiments_ledger.jsonl
           if ! git diff --cached --quiet; then
             git commit -m "refresh: city updates $(date +%Y-%m-%d) [skip ci]"
             git pull --rebase -X theirs origin main

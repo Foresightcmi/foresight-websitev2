@@ -1,0 +1,38 @@
+{
+  "venture_slug": "foresight-home-inspections",
+  "public_base_url": "https://www.fhinspectionsatl.com",
+  "gsc_site_url": "auto",
+  "ga4_property_id": "342062426",
+  "service_account_path": "secrets/ga4-key.json",
+  "call_event_names": [
+    "phone_call_click",
+    "click_to_call"
+  ],
+  "key_conversion_events": [
+    "quote_calculated",
+    "schedule_click"
+  ],
+  "legacy_gsc_snapshot_path": "data/analytics/gsc-query-page-latest.json",
+  "export_legacy_gsc_json": "data/analytics/gsc-query-page-latest.json",
+  "protected_top_positions_max": 3.5,
+  "min_striking_impressions": 15,
+  "min_cannibal_impressions": 15,
+  "min_cannibal_clicks": 0,
+  "brand_terms": [
+    "foresight",
+    "fhinspections",
+    "boykin"
+  ],
+  "intent_routing_rules": [
+    {
+      "query_regex": "^(?:best\\s+)?home\\s+inspect(?:ion|ions|or|ors)\\s+(?:in\\s+)?([a-z]+(?:\\s+(?!ga\\b|georgia\\b)[a-z]+)?)(?:,?\\s+(?:ga|georgia))?$",
+      "expected_url_template": "/services/buyer-inspection/{1}",
+      "exclude_query_regex": "\\b(mold|radon|sewer|termite|pool|commercial|warranty|pre-drywall|cost|price|checklist|near me|atlanta|georgia)\\b"
+    },
+    {
+      "query_regex": "\\bsewer\\s+(?:scope|video|camera)\\s+inspection\\s+(?:in\\s+)?([a-z]+(?:\\s+(?!ga\\b|georgia\\b)[a-z]+)?)(?:,?\\s+(?:ga|georgia))?$",
+      "expected_url_template": "/services/sewer-scope-inspection/{1}",
+      "exclude_query_regex": "\\b(cost|price|near me)\\b"
+    }
+  ]
+}

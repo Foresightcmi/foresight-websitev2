@@ -1,0 +1,101 @@
+{
+  "analyzedAt": "2026-11-21T10:35:27.658Z",
+  "source_url": "https://www.fhinspectionsatl.com",
+  "retrieved_on": "2026-11-21",
+  "storeCode": "264545",
+  "primaryCategoryLocked": "Home inspector",
+  "recommendedSecondaryCategories": [
+    "Commercial real estate inspector",
+    "Environmental health service"
+  ],
+  "aiAgentReadiness": {
+    "privacyPolicyPresent": true,
+    "termsOfServicePresent": true,
+    "sabStreetHiddenInVisibleCopy": true,
+    "nameStuffingCheckPassed": true,
+    "readyToEnableGbpAiAgent": true
+  },
+  "gbpServiceCards": [
+    {
+      "slug": "radon-testing",
+      "serviceName": "Radon Gas Testing",
+      "priceDisplay": "Call for Quote",
+      "gbpPasteReadyDescription": "Radon Gas Testing across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (Call for Quote). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/radon-testing"
+    },
+    {
+      "slug": "termite-inspection",
+      "serviceName": "Termite & WDO Inspection",
+      "priceDisplay": "Call for Quote",
+      "gbpPasteReadyDescription": "Termite & WDO Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (Call for Quote). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/termite-inspection"
+    },
+    {
+      "slug": "sewer-scope-inspection",
+      "serviceName": "Sewer Scope Inspection",
+      "priceDisplay": "Call for Quote",
+      "gbpPasteReadyDescription": "Sewer Scope Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (Call for Quote). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection"
+    },
+    {
+      "slug": "new-construction-inspection",
+      "serviceName": "New Construction Inspection",
+      "priceDisplay": "From $400",
+      "gbpPasteReadyDescription": "New Construction Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (From $400). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/new-construction-inspection"
+    },
+    {
+      "slug": "pool-inspection",
+      "serviceName": "Pool & Spa Inspection",
+      "priceDisplay": "Call for Quote",
+      "gbpPasteReadyDescription": "Pool & Spa Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (Call for Quote). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/pool-inspection"
+    },
+    {
+      "slug": "pre-listing-inspection",
+      "serviceName": "Pre-Listing Seller Inspection",
+      "priceDisplay": "From $345",
+      "gbpPasteReadyDescription": "Pre-Listing Seller Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (From $345). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/pre-listing-inspection"
+    },
+    {
+      "slug": "buyer-inspection",
+      "serviceName": "Buyer Home Inspection",
+      "priceDisplay": "From $345 ($295 condos)",
+      "gbpPasteReadyDescription": "Buyer Home Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (From $345 ($295 condos)). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/buyer-inspection"
+    },
+    {
+      "slug": "commercial-property-inspection",
+      "serviceName": "Commercial Property Inspection",
+      "priceDisplay": "Call for Quote",
+      "gbpPasteReadyDescription": "Commercial Property Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (Call for Quote). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/commercial-property-inspection"
+    },
+    {
+      "slug": "pre-drywall-inspection",
+      "serviceName": "Pre-Drywall Framing Inspection",
+      "priceDisplay": "From $275",
+      "gbpPasteReadyDescription": "Pre-Drywall Framing Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (From $275). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/pre-drywall-inspection"
+    },
+    {
+      "slug": "11-month-warranty-inspection",
+      "serviceName": "11-Month Builder Warranty Inspection",
+      "priceDisplay": "From $345",
+      "gbpPasteReadyDescription": "11-Month Builder Warranty Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (From $345). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection"
+    },
+    {
+      "slug": "mold-testing",
+      "serviceName": "Mold & Air Quality Inspection",
+      "priceDisplay": "Call for Quote",
+      "gbpPasteReadyDescription": "Mold & Air Quality Inspection across Metro Atlanta by two certified inspectors led by Christopher Boykin, CMI (Call for Quote). Calibrated infrared thermal imaging and same-day interactive digital report included.",
+      "landingUrl": "https://www.fhinspectionsatl.com/services/mold-testing"
+    }
+  ],
+  "uncoveredRivalServices": [
+    "thermal",
+    "infrared"
+  ]
+}

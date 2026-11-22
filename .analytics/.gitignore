@@ -1,0 +1,10 @@
+# Track config.json, governor_brief.json, and experiments_ledger.jsonl only
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*token*.json
+*service-account*.json
+*secret*.json
+*.lock
+*.log

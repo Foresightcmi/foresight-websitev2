@@ -34,6 +34,7 @@ export default async function sitemap() {
     { loc: '/compare', changefreq: 'weekly', priority: 0.9 },
     { loc: '/risk-scanner', changefreq: 'weekly', priority: 0.85 },
     { loc: '/repair-credit-calculator', changefreq: 'weekly', priority: 0.85 },
+    { loc: '/home-system-lifespan-calculator', changefreq: 'weekly', priority: 0.85 },
     { loc: '/defects', changefreq: 'monthly', priority: 0.85 },
     { loc: '/homebuyer-red-flags', changefreq: 'weekly', priority: 0.9 },
     { loc: '/homeowner-care', changefreq: 'monthly', priority: 0.85 },

@@ -108,21 +108,56 @@ async function fetchSuggestions(query) {
   }
 }
 
+const CITIES_FILE = path.join(__dirname, '..', 'data', 'cities.json');
+const ALL_CITY_NAMES = fs.existsSync(CITIES_FILE)
+  ? JSON.parse(fs.readFileSync(CITIES_FILE, 'utf8')).map((c) => String(c['City Name'] || '').toLowerCase()).filter(Boolean)
+  : ['atlanta', 'lithonia', 'decatur'];
+
+const NON_BUYER_BLOCKLIST_RX =
+  /\b(nursing home|assisted living|daycare|restaurant|health department|food|car\b|vehicle|auto\b|emissions|osha|elevator|fire marshal|become a|how to become|get into home inspection|license|licensing|exam|nhie|training|course|school|salary|how much do.*make|start a|start home inspection|how to price a|software|homegauge|spectora|jobs|hiring)\b/i;
+
+const INFORMATIONAL_MODIFIER_RX =
+  /\b(how|what|why|when|should|do i|is it|worth|cost|checklist|tips|guide|due diligence|issues|problems|risks|red flags|before|vs|checklist|negotiate|credit|granite|clay|crawlspace|moisture|stucco|truss)\b/i;
+
+function hasMetroCityMatch(kwLower) {
+  if (/\b(georgia|atlanta|ga)\b/.test(kwLower)) return true;
+  return ALL_CITY_NAMES.some((city) => {
+    const escaped = city.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\b${escaped}\\b`, 'i').test(kwLower);
+  });
+}
+
+function isBareServiceCityHeadTerm(kwLower) {
+  // GEMINI.md Section 5: Any city-modified buyer/service head term without an informational/question/defect angle belongs strictly to /services/[service]/[city]
+  if ((hasMetroCityMatch(kwLower) || /\bsandy spgs\b/.test(kwLower)) && !INFORMATIONAL_MODIFIER_RX.test(kwLower)) {
+    if (!/\b(georgia|atlanta|\bga\b)\b/.test(kwLower) || /\b(home|buyer|certified|best|services?)\s+inspect(ion|ions|or|ors)\b/.test(kwLower)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 /**
- * Score a keyword based on relevance to home inspections
+ * Score a keyword based on buyer intent, Metro Atlanta location, and empirical GSC impressions
  */
-function scoreKeyword(keyword) {
+function scoreKeyword(keyword, gscImpressions = 0) {
+  const kw = keyword.toLowerCase().trim();
+  if (NON_BUYER_BLOCKLIST_RX.test(kw) || isBareServiceCityHeadTerm(kw)) {
+    return -100;
+  }
   let score = 0;
-  const kw = keyword.toLowerCase();
-  
+  if (gscImpressions > 0) {
+    score += Math.min(30, 15 + Math.round(gscImpressions / 20));
+  }
+
   // High relevance terms
   if (kw.includes('inspection')) score += 10;
   if (kw.includes('inspector')) score += 10;
   if (kw.includes('home')) score += 5;
   if (kw.includes('house')) score += 5;
-  
-  // Location relevance
-  if (kw.includes('georgia') || kw.includes('atlanta') || kw.includes(' ga') || kw.includes('lithonia') || kw.includes('decatur')) score += 8;
+
+  // Location relevance (word-boundary safe across all 87 cities; never matches "garage" on " ga")
+  if (hasMetroCityMatch(kw)) score += 8;
   
   // Question format (great for FAQ/AIO)
   if (kw.startsWith('how') || kw.startsWith('what') || kw.startsWith('why') || kw.startsWith('when') || kw.startsWith('do i') || kw.startsWith('should') || kw.startsWith('is it')) score += 7;
@@ -186,9 +221,24 @@ async function main() {
   }
   console.log(`📚 ${existingPosts.length} existing posts loaded\n`);
 
-  // Phase 1: Gather suggestions from seed queries
+  // Phase 1: Gather suggestions from seed queries + Closed-Loop SEO Governor gaps
   console.log('Phase 1: Gathering search suggestions...');
   const allSuggestions = new Set();
+  const gscGapImpressions = new Map();
+  const govBriefPath = path.join(__dirname, '..', '.analytics', 'governor_brief.json');
+  let govBrief = null;
+  if (fs.existsSync(govBriefPath)) {
+    try {
+      govBrief = JSON.parse(fs.readFileSync(govBriefPath, 'utf8'));
+      for (const gap of (govBrief.safe_topic_gaps || []).slice(0, 15)) {
+        if (gap.query) {
+          allSuggestions.add(gap.query);
+          gscGapImpressions.set(String(gap.query).toLowerCase().trim(), Number(gap.impressions || 0));
+        }
+      }
+      console.log(`  Injected ${gscGapImpressions.size} live GSC non-cannibalized topic gaps from SEO Governor`);
+    } catch {}
+  }
 
   // Pick a random subset of seeds to avoid hitting rate limits
   const shuffledSeeds = [...SEED_QUERIES].sort(() => Math.random() - 0.5).slice(0, 15);
@@ -210,7 +260,10 @@ async function main() {
   // Phase 2: Score and rank keywords
   console.log('Phase 2: Scoring keywords by relevance and value...');
   const scored = [...allSuggestions]
-    .map(kw => ({ keyword: kw, score: scoreKeyword(kw) }))
+    .map(kw => ({
+      keyword: kw,
+      score: scoreKeyword(kw, gscGapImpressions.get(String(kw).toLowerCase().trim()) || 0),
+    }))
     .filter(item => item.score >= 10) // Minimum relevance threshold
     .filter(item => !isAlreadyCovered(item.keyword, existingPosts))
     .sort((a, b) => b.score - a.score);
@@ -240,14 +293,19 @@ async function main() {
     console.log(`  ${i + 1}. [${item.score}] "${item.keyword}"`);
   });
 
-  // Phase 4: Save the keyword brief
+  // Phase 4: Save the keyword brief (including starving money pages for contextual links)
   const brief = {
     targetKeyword: topKeyword.keyword,
     relatedKeywords,
     score: topKeyword.score,
+    priorityInternalLinkTargets: (govBrief?.priority_internal_link_targets || []).slice(0, 5).map(p => ({
+      url: p.url,
+      conversionRatePct: p.conversion_rate_pct,
+      gscClicks: p.gsc_clicks
+    })),
     allOpportunities: scored.slice(0, 20).map(s => ({ keyword: s.keyword, score: s.score })),
     discoveredAt: new Date().toISOString(),
-    source: "google-suggest"
+    source: govBrief ? "seo-governor+google-suggest" : "google-suggest"
   };
 
   fs.writeFileSync(KEYWORD_BRIEF_FILE, JSON.stringify(brief, null, 2), 'utf8');

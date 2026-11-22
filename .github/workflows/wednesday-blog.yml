@@ -31,7 +31,9 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          node scripts/discover-keywords.mjs
           node scripts/generate-blog-post.mjs
+          node scripts/heytony-interlink-and-citation-enricher.mjs
           node scripts/firstindex-truth-guard.mjs --fix
           node scripts/firstindex-truth-guard.mjs
           node scripts/seo-health-check.mjs
@@ -40,7 +42,7 @@ jobs:
         run: |
           git config user.name "Foresight Blog Writer"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/posts.json public/llms.txt public/llms-full.txt
+          git add data/posts.json data/keyword-brief.json public/llms.txt public/llms-full.txt .analytics/experiments_ledger.jsonl
           if ! git diff --cached --quiet; then
             git commit -m "blog: new post $(date +%Y-%m-%d) [skip ci]"
             git pull --rebase -X theirs origin main

@@ -32,6 +32,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run Closed-Loop Autonomous SEO Governor (GSC + GA4 + Core Update Gate)
+        env:
+          GCP_SA_JSON: ${{ secrets.GCP_ANALYTICS_SA_JSON }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || 'fores-antigravity-alerts-77' }}
+        run: |
+          python3 -m pip install --quiet --break-system-packages google-auth httpx || pip install --quiet google-auth httpx
+          if [ -n "$GCP_SA_JSON" ]; then
+            printf '%s' "$GCP_SA_JSON" > .analytics/service-account.json
+          fi
+          python3 .agents/skills/traffic-intelligence/scripts/autonomous_seo_governor.py --workspace . govern --ntfy-topic "$NTFY_TOPIC"
+          rm -f .analytics/service-account.json
+
       - name: Run FirstIndex Truth Document Guard & Auto-Healer
         run: node scripts/firstindex-truth-guard.mjs --fix
 
@@ -45,6 +57,8 @@ jobs:
         run: |
           node scripts/gsc-leak-hunter-engine.mjs
           node scripts/striking-distance-engine.mjs
+          node scripts/heytony-competitor-watchdog.mjs
+          node scripts/gbp-gap-and-ai-agent-audit.mjs
           node scripts/chameleonic-competitor-matrix.mjs
           node scripts/foresight-seo-social-agency.mjs
           node scripts/audit-youtube-growth-system.mjs
@@ -54,5 +68,5 @@ jobs:
         run: |
           git config user.name "Foresight SEO Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/ public/ docs/youtube-growth-swarm/
-          git diff --cached --quiet || (git commit -m "chore(seo): weekly automated SearchAgent OS & truth sync [skip ci]" && git pull --rebase -X theirs origin main && git push origin main) || echo "SEO records clean or push bypassed."
+          git add data/ public/ docs/youtube-growth-swarm/ .analytics/governor_brief.json .analytics/experiments_ledger.jsonl
+          git diff --cached --quiet || (git commit -m "chore(seo): weekly automated SearchAgent OS, SEO Governor & truth sync [skip ci]" && git pull --rebase origin main && git push origin main) || echo "SEO records clean or push bypassed."

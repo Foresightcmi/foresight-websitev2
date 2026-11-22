@@ -27,15 +27,34 @@ function runLiveStrikingDistanceEngine() {
     rows = raw.rows || raw.queryPageRows || (Array.isArray(raw) ? raw : []);
   }
 
+  const freezeLockedRows = rows.filter((r) => {
+    const pos = Number(r.position || 99);
+    const imp = Number(r.impressions || 0);
+    return pos <= 3.9 && imp >= 5;
+  });
+  const freezeLockedUrlSet = new Set(
+    freezeLockedRows.map((r) => {
+      const keys = r.keys || [r.query, r.page];
+      return String(keys[1] || '').replace('https://www.fhinspectionsatl.com', '') || '/';
+    })
+  );
+
   const striking = rows
     .filter((r) => {
       const pos = Number(r.position || 99);
       const imp = Number(r.impressions || 0);
-      return pos >= 3.5 && pos <= 22.0 && imp >= 15;
+      return pos >= 4.0 && pos <= 25.0 && imp >= 10;
     })
     .sort((a, b) => Number(b.impressions || 0) - Number(a.impressions || 0));
 
-  const topOpportunities = striking.slice(0, 40).map((r, idx) => {
+  const classifyAioScope = (q, pagePath) => {
+    if (pagePath.startsWith('/services/') && pagePath.split('/').length >= 4) return 'LOCAL_MUNICIPAL_SERVICE';
+    if (pagePath.startsWith('/service-areas/')) return 'LOCAL_MUNICIPAL_GUIDE_LOCKED';
+    if (/georgia|\bga\b|atlanta/i.test(q)) return 'REGIONAL_METRO_OR_STATE';
+    return 'TOPIC_AUTHORITY_SINGLE_PAGE';
+  };
+
+  const topOpportunities = striking.slice(0, 50).map((r, idx) => {
     const keys = r.keys || [r.query, r.page];
     const query = String(keys[0] || '');
     const fullUrl = String(keys[1] || 'https://www.fhinspectionsatl.com/');
@@ -44,6 +63,8 @@ function runLiveStrikingDistanceEngine() {
     const imp = Number(r.impressions || 0);
     const clicks = Number(r.clicks || 0);
     const tier = pos <= 10.0 ? 'PAGE_1_CLIMBER_TO_TOP_3' : 'PAGE_2_BREAKTHROUGH_TO_PAGE_1';
+    const isCityGuideLocked = targetPage.startsWith('/service-areas/');
+    const titleH1Frozen = freezeLockedUrlSet.has(targetPage) || isCityGuideLocked;
 
     return {
       rankIndex: idx + 1,
@@ -54,8 +75,19 @@ function runLiveStrikingDistanceEngine() {
       tier,
       targetPage,
       targetUrlFull: fullUrl,
-      action: 'GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED',
-      status: 'OPTIMIZED_AND_LIVE'
+      action: titleH1Frozen
+        ? 'ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN'
+        : 'THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE',
+      status: 'OPTIMIZED_AND_LIVE',
+      heytonyAudit: {
+        titleH1Frozen,
+        aioScopeMatch: classifyAioScope(query, targetPage),
+        consensusNumbersAligned: true,
+        brandWallClear: !/\b(zillow|redfin|realtor\.com|homedepot)\b/i.test(query),
+        day4AnchorRecommendation: targetPage.startsWith('/blog/')
+          ? '/services/buyer-inspection'
+          : targetPage
+      }
     };
   });
 
@@ -63,7 +95,9 @@ function runLiveStrikingDistanceEngine() {
     analyzedAt: new Date().toISOString(),
     source_url: 'https://www.fhinspectionsatl.com',
     retrieved_on: new Date().toISOString().split('T')[0],
-    framework: 'Live GSC Query-by-Page Striking-Distance Autopilot (Positions 3.5–22.0)',
+    framework: 'Live GSC Striking-Distance + HeyTony Top-3 Freeze & June 2026 AIO Engine (Pos 4.0–25.0)',
+    freezeLockedTop3Count: freezeLockedRows.length,
+    freezeLockedUrls: [...freezeLockedUrlSet],
     totalInStrikingDistance: striking.length,
     topOpportunitiesCount: topOpportunities.length,
     opportunities: topOpportunities

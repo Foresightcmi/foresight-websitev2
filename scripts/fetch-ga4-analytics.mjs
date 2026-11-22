@@ -16,12 +16,30 @@ function base64UrlEncode(str) {
     .replace(/\//g, '_');
 }
 
+async function getSyncedEpochSeconds() {
+  const localNow = Math.floor(Date.now() / 1000);
+  try {
+    const res = await fetch('https://oauth2.googleapis.com/token', { method: 'HEAD' });
+    const srvDate = res.headers.get('date');
+    if (srvDate) {
+      const parsed = Date.parse(srvDate);
+      if (!Number.isNaN(parsed)) {
+        const syncedEpoch = Math.floor(parsed / 1000);
+        return { syncedEpoch, clockDriftSeconds: syncedEpoch - localNow };
+      }
+    }
+  } catch {
+    // Fallback to local clock when HEAD fails
+  }
+  return { syncedEpoch: localNow, clockDriftSeconds: 0 };
+}
+
 async function getAccessToken(keyFilePath) {
   if (!fs.existsSync(keyFilePath)) {
     throw new Error(`Service account key not found at ${keyFilePath}`);
   }
   const key = JSON.parse(fs.readFileSync(keyFilePath, 'utf8'));
-  const now = Math.floor(Date.now() / 1000);
+  const { syncedEpoch: now, clockDriftSeconds } = await getSyncedEpochSeconds();
 
   const header = { alg: 'RS256', typ: 'JWT' };
   const claimSet = {
@@ -57,7 +75,7 @@ async function getAccessToken(keyFilePath) {
   if (!res.ok) {
     throw new Error(`Token exchange failed: ${JSON.stringify(data)}`);
   }
-  return data.access_token;
+  return { accessToken: data.access_token, clockDriftSeconds };
 }
 
 async function runGA4Report(token, requestBody) {
@@ -113,8 +131,8 @@ export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
   }
 
   const leadsSummary = loadLeadsSummary();
-  const token = await getAccessToken(KEY_PATH);
-  console.log('[GA4 ENGINE] Scoped OAuth token successfully minted.');
+  const { accessToken: token, clockDriftSeconds } = await getAccessToken(KEY_PATH);
+  console.log(`[GA4 ENGINE] Scoped OAuth token minted (clockDrift=${clockDriftSeconds}s).`);
 
   // 1. Core KPIs (Last 7 Days vs Prior 7 Days)
   console.log('[GA4 ENGINE] Querying KPI overview...');
@@ -183,15 +201,42 @@ export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
     limit: 20
   });
 
+  // 5. High-Intent Conversion Events by Source & Campaign
+  console.log('[GA4 ENGINE] Querying Conversion Events by source/campaign...');
+  const conversionData = await runGA4Report(token, {
+    dateRanges: [{ startDate: '28daysAgo', endDate: 'today' }],
+    dimensions: [
+      { name: 'eventName' },
+      { name: 'sessionSourceMedium' },
+      { name: 'sessionCampaignName' }
+    ],
+    dimensionFilter: {
+      filter: {
+        fieldName: 'eventName',
+        inListFilter: {
+          values: ['quote_calculated', 'phone_call_click', 'click_to_call', 'schedule_click', 'generate_lead', 'form_submit']
+        }
+      }
+    },
+    metrics: [
+      { name: 'eventCount' },
+      { name: 'totalUsers' }
+    ],
+    orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
+    limit: 50
+  });
+
   // Save live raw snapshot
   const nowIso = new Date().toISOString();
   const rawSnapshot = {
     retrievedAt: nowIso,
     propertyId: PROPERTY_ID,
+    clockDriftSeconds,
     kpis: kpiData,
     channels: channelData,
     topPages: pageData,
-    geo: geoData
+    geo: geoData,
+    conversionEvents: conversionData
   };
 
   const liveSnapshotPath = path.join(OUTPUT_DIR, 'snapshot-live.json');
@@ -259,6 +304,16 @@ export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
     return `- **${city}${region ? ', ' + region : ''}** (${country}): **${sessions} sessions**`;
   });
 
+  const convRows = conversionData.rows || [];
+  const convLines = convRows.slice(0, 15).map(row => {
+    const evt = row.dimensionValues?.[0]?.value || 'unknown';
+    const src = row.dimensionValues?.[1]?.value || '(none)';
+    const camp = row.dimensionValues?.[2]?.value || '(not set)';
+    const cnt = row.metricValues?.[0]?.value || '0';
+    const usrs = row.metricValues?.[1]?.value || '0';
+    return `- **${evt}** (${src} | ${camp}): **${cnt} events** across ${usrs} users`;
+  });
+
   const generatedAt = new Date().toLocaleString('en-US', {
     timeZone: 'America/New_York',
     dateStyle: 'full',
@@ -297,8 +352,13 @@ export async function fetchFullAnalytics({ sendPushAlert = false } = {}) {
     ``,
     `---`,
     ``,
-    `## 5. System Health & Autonomous Monitoring`,
-    `The dedicated service account (\`${SERVICE_ACCOUNT_EMAIL}\`) is actively synchronized. Scheduled background runs will automatically update this briefing every Monday at 9:00 AM EST.`
+    `## 5. High-Intent Conversion Events by Source (Last 28 Days)`,
+    convLines.length > 0 ? convLines.join('\n') : `No conversion events recorded yet.`,
+    ``,
+    `---`,
+    ``,
+    `## 6. System Health & Autonomous Monitoring`,
+    `The dedicated service account (\`${SERVICE_ACCOUNT_EMAIL}\`) is actively synchronized (OAuth server clock drift: ${clockDriftSeconds}s). Scheduled background runs will automatically update this briefing every Monday at 9:00 AM EST.`
   ].join('\n');
 
   const reportFile = path.join(OUTPUT_DIR, 'executive-analytics-briefing.md');

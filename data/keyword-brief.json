@@ -1,20 +1,51 @@
 {
   "targetKeyword": "thermal imaging home inspection near me",
   "relatedKeywords": [
-    "how to price a home inspection",
+    "commercial inspections douglasville, ga",
+    "pre listing home inspection near me",
     "new construction inspection near me",
-    "roof inspection near me",
-    "what do home inspections cost",
-    "should i get a home inspection before buying"
+    "mold inspection near me",
+    "home inspector near me"
   ],
   "score": 41,
+  "priorityInternalLinkTargets": [
+    {
+      "url": "/quote",
+      "conversionRatePct": 100,
+      "gscClicks": 0
+    },
+    {
+      "url": "/services",
+      "conversionRatePct": 46.15,
+      "gscClicks": 0
+    },
+    {
+      "url": "/services/mold-testing/stockbridge",
+      "conversionRatePct": 100,
+      "gscClicks": 0
+    },
+    {
+      "url": "/services/new-construction-inspection/kennesaw",
+      "conversionRatePct": 100,
+      "gscClicks": 0
+    },
+    {
+      "url": "/due-diligence",
+      "conversionRatePct": 66.67,
+      "gscClicks": 0
+    }
+  ],
   "allOpportunities": [
     {
       "keyword": "thermal imaging home inspection near me",
       "score": 41
     },
     {
-      "keyword": "how to price a home inspection",
+      "keyword": "commercial inspections douglasville, ga",
+      "score": 37
+    },
+    {
+      "keyword": "pre listing home inspection near me",
       "score": 35
     },
     {
@@ -22,19 +53,27 @@
       "score": 34
     },
     {
-      "keyword": "roof inspection near me",
+      "keyword": "mold inspection near me",
+      "score": 34
+    },
+    {
+      "keyword": "home inspector near me",
       "score": 33
     },
     {
-      "keyword": "what do home inspections cost",
+      "keyword": "home inspection near me",
       "score": 33
     },
     {
-      "keyword": "should i get a home inspection before buying",
+      "keyword": "pool inspection near me",
       "score": 32
     },
     {
-      "keyword": "should i get a home inspection before selling my house",
+      "keyword": "pool inspection companies near me",
+      "score": 32
+    },
+    {
+      "keyword": "why do i need home inspection",
       "score": 32
     },
     {
@@ -42,23 +81,31 @@
       "score": 31
     },
     {
-      "keyword": "plumbing inspection near me",
+      "keyword": "pre listing inspection near me",
       "score": 28
+    },
+    {
+      "keyword": "pool inspections for home buyers",
+      "score": 27
     },
     {
       "keyword": "new construction inspection cost",
       "score": 27
     },
     {
-      "keyword": "should i get a home inspection before selling",
+      "keyword": "when should home inspection be done",
       "score": 27
     },
     {
-      "keyword": "should i get a home inspection before making an offer",
+      "keyword": "when should the home inspection agreement not be signed by the client",
       "score": 27
     },
     {
-      "keyword": "should i get a home inspection every year",
+      "keyword": "when should you waive a home inspection",
+      "score": 27
+    },
+    {
+      "keyword": "when should i schedule a home inspection",
       "score": 27
     },
     {
@@ -66,30 +113,10 @@
       "score": 27
     },
     {
-      "keyword": "what do home inspections check for",
-      "score": 27
-    },
-    {
-      "keyword": "what do home inspections consist of",
-      "score": 27
-    },
-    {
-      "keyword": "how to get home inspection license",
-      "score": 27
-    },
-    {
-      "keyword": "how to start home inspection business",
-      "score": 27
-    },
-    {
-      "keyword": "how to find nursing home inspection reports",
-      "score": 27
-    },
-    {
-      "keyword": "how to get into home inspection",
+      "keyword": "why do insurance companies do home inspections",
       "score": 27
     }
   ],
-  "discoveredAt": "2026-11-15T08:48:14.945Z",
-  "source": "google-suggest"
+  "discoveredAt": "2026-11-22T21:37:42.603Z",
+  "source": "seo-governor+google-suggest"
 }

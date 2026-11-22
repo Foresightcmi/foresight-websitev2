@@ -1,0 +1,69 @@
+{
+  "analyzedAt": "2026-11-21T10:35:27.487Z",
+  "retrieved_on": "2026-11-21",
+  "totalWatched": 5,
+  "changesDetected": 0,
+  "diffs": [],
+  "competitors": [
+    {
+      "name": "BPG Inspections Atlanta",
+      "source_url": "https://www.bpginspections.com/ga/atlanta-home-inspections/",
+      "http_status": 405,
+      "retrieved_on": "2026-11-21",
+      "title": "",
+      "h1": "",
+      "h2Count": 0,
+      "titleHash": "e3b0c44298fc1c14",
+      "h1Hash": "e3b0c44298fc1c14",
+      "changedSinceLastRun": false
+    },
+    {
+      "name": "Home-Probe Inc",
+      "source_url": "https://www.home-probe.com/",
+      "http_status": 200,
+      "retrieved_on": "2026-11-21",
+      "title": "Home-Probe, Inc. - Professional Home Inspections",
+      "h1": "A Home-Probe Inspection",
+      "h2Count": 7,
+      "titleHash": "0893c7cb6f7b082b",
+      "h1Hash": "c55fee3eefcd3c59",
+      "changedSinceLastRun": false
+    },
+    {
+      "name": "Champia Real Estate Inspections",
+      "source_url": "https://www.champia.com/",
+      "http_status": 403,
+      "retrieved_on": "2026-11-21",
+      "title": "",
+      "h1": "",
+      "h2Count": 0,
+      "titleHash": "e3b0c44298fc1c14",
+      "h1Hash": "e3b0c44298fc1c14",
+      "changedSinceLastRun": false
+    },
+    {
+      "name": "Residential Inspector of America",
+      "source_url": "https://www.residentialinspector.com/",
+      "http_status": 200,
+      "retrieved_on": "2026-11-21",
+      "title": "Residential Inspector of America | Professional Home Inspections",
+      "h1": "Residential Inspector of America",
+      "h2Count": 0,
+      "titleHash": "471d892d5f920d2a",
+      "h1Hash": "863c7a6ec89ce812",
+      "changedSinceLastRun": false
+    },
+    {
+      "name": "Pillar To Post",
+      "source_url": "https://pillartopost.com/",
+      "http_status": 444,
+      "retrieved_on": "2026-11-21",
+      "title": "",
+      "h1": "",
+      "h2Count": 0,
+      "titleHash": "e3b0c44298fc1c14",
+      "h1Hash": "e3b0c44298fc1c14",
+      "changedSinceLastRun": false
+    }
+  ]
+}

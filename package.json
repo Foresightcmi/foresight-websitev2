@@ -37,7 +37,9 @@
     "youtube:audit": "node scripts/audit-youtube-growth-system.mjs",
     "social:render": "node scripts/render-omnichannel-pack.mjs",
     "social:failover:status": "node scripts/pc2-social-failover-publisher.mjs --status",
-    "social:failover:login": "node scripts/pc2-social-failover-publisher.mjs --login"
+    "social:failover:login": "node scripts/pc2-social-failover-publisher.mjs --login",
+    "heytony:run": "node scripts/heytony-interlink-and-citation-enricher.mjs && node scripts/striking-distance-engine.mjs && node scripts/heytony-competitor-watchdog.mjs --no-alert && node scripts/gbp-gap-and-ai-agent-audit.mjs && node scripts/heytony-linkgap-pr-stager.mjs",
+    "test:heytony": "node --test scripts/__tests__/heytony-harmony-suite.test.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.21.0",

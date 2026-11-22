@@ -1,10 +1,91 @@
 {
-  "analyzedAt": "2026-11-16T23:47:56.819Z",
+  "analyzedAt": "2026-11-21T10:35:25.522Z",
   "source_url": "https://www.fhinspectionsatl.com",
-  "retrieved_on": "2026-11-16",
-  "framework": "Live GSC Query-by-Page Striking-Distance Autopilot (Positions 3.5–22.0)",
-  "totalInStrikingDistance": 490,
-  "topOpportunitiesCount": 40,
+  "retrieved_on": "2026-11-21",
+  "framework": "Live GSC Striking-Distance + HeyTony Top-3 Freeze & June 2026 AIO Engine (Pos 4.0–25.0)",
+  "freezeLockedTop3Count": 109,
+  "freezeLockedUrls": [
+    "/",
+    "/services/11-month-warranty-inspection/acworth",
+    "/services/11-month-warranty-inspection/alpharetta",
+    "/services/11-month-warranty-inspection/atlanta",
+    "/services/11-month-warranty-inspection/canton",
+    "/services/11-month-warranty-inspection/cartersville",
+    "/services/11-month-warranty-inspection/cumming",
+    "/services/11-month-warranty-inspection/dallas",
+    "/services/11-month-warranty-inspection/kennesaw",
+    "/services/11-month-warranty-inspection/marietta",
+    "/services/11-month-warranty-inspection/sandy-springs",
+    "/services/11-month-warranty-inspection/smyrna",
+    "/services/11-month-warranty-inspection/woodstock",
+    "/services/buyer-inspection/dunwoody",
+    "/services/buyer-inspection/suwanee",
+    "/services/commercial-property-inspection/johns-creek",
+    "/services/commercial-property-inspection/between",
+    "/services/commercial-property-inspection/chattahoochee-hills",
+    "/services/commercial-property-inspection/stonecrest",
+    "/services/commercial-property-inspection/decatur",
+    "/services/commercial-property-inspection/milton",
+    "/services/commercial-property-inspection/peachtree-corners",
+    "/services/commercial-property-inspection/suwanee",
+    "/services/commercial-property-inspection/alpharetta",
+    "/services/commercial-property-inspection/norcross",
+    "/services/sewer-scope-inspection/brooks",
+    "/services/pool-inspection/dunwoody",
+    "/about",
+    "/blog",
+    "/concierge",
+    "/contact",
+    "/realtors",
+    "/services",
+    "/services/buyer-inspection/chamblee",
+    "/service-areas/chattahoochee-hills",
+    "/service-areas/forest-park",
+    "/services/buyer-inspection/forest-park",
+    "/services/buyer-inspection/mansfield",
+    "/services/buyer-inspection/norcross",
+    "/services/buyer-inspection/sharpsburg",
+    "/services/buyer-inspection/woolsey",
+    "/services/buyer-inspection/brooks",
+    "/services/buyer-inspection/chattahoochee-hills",
+    "/services/buyer-inspection/grayson",
+    "/services/buyer-inspection/hapeville",
+    "/services/buyer-inspection/turin",
+    "/services/buyer-inspection/avondale-estates",
+    "/services/pre-drywall-inspection/chattahoochee-hills",
+    "/services/buyer-inspection/grantville",
+    "/service-areas/palmetto",
+    "/service-areas/walnut-grove",
+    "/services/buyer-inspection/walnut-grove",
+    "/services/buyer-inspection/morrow",
+    "/services/commercial-property-inspection/clarkston",
+    "/services/mold-testing/acworth",
+    "/services/mold-testing/duluth",
+    "/services/new-construction-inspection/smyrna",
+    "/services/buyer-inspection/acworth",
+    "/services/pre-listing-inspection/acworth",
+    "/services/pre-listing-inspection/kennesaw",
+    "/services/pre-listing-inspection/sandy-springs",
+    "/services/pre-listing-inspection/smyrna",
+    "/services/pre-drywall-inspection/alpharetta",
+    "/services/termite-inspection/austell",
+    "/services/pre-listing-inspection/powder-springs",
+    "/services/sewer-scope-inspection/austell",
+    "/services/sewer-scope-inspection/lawrenceville",
+    "/services/sewer-scope-inspection/newnan",
+    "/services/sewer-scope-inspection/peachtree-city",
+    "/services/sewer-scope-inspection/stockbridge",
+    "/services/sewer-scope-inspection/alpharetta",
+    "/services/pool-inspection/smyrna",
+    "/services/pool-inspection/acworth",
+    "/services/pool-inspection/haralson",
+    "/services/pool-inspection/carrollton",
+    "/services/termite-inspection/woodstock",
+    "/quote",
+    "/services/sewer-scope-inspection"
+  ],
+  "totalInStrikingDistance": 836,
+  "topOpportunitiesCount": 50,
   "opportunities": [
     {
       "rankIndex": 1,
@@ -15,8 +96,15 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/commercial-property-inspection/cumming",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/cumming",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/commercial-property-inspection/cumming"
+      }
     },
     {
       "rankIndex": 2,
@@ -27,8 +115,15 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/buyer-inspection/lilburn",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/lilburn",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/lilburn"
+      }
     },
     {
       "rankIndex": 3,
@@ -39,23 +134,18 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/buyer-inspection/snellville",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/snellville",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/snellville"
+      }
     },
     {
       "rankIndex": 4,
-      "query": "home inspection norcross ga",
-      "currentPosition": 3.9,
-      "impressions": 88,
-      "clicks": 0,
-      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
-      "targetPage": "/services/buyer-inspection/norcross",
-      "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/norcross",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
-    },
-    {
-      "rankIndex": 5,
       "query": "dallas pre drywall inspection",
       "currentPosition": 8.4,
       "impressions": 85,
@@ -63,11 +153,18 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/pre-drywall-inspection/dallas",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/pre-drywall-inspection/dallas",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/pre-drywall-inspection/dallas"
+      }
     },
     {
-      "rankIndex": 6,
+      "rankIndex": 5,
       "query": "home inspection austell ga",
       "currentPosition": 4.6,
       "impressions": 85,
@@ -75,11 +172,18 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/buyer-inspection/austell",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/austell",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/austell"
+      }
     },
     {
-      "rankIndex": 7,
+      "rankIndex": 6,
       "query": "home inspector in acworth, ga",
       "currentPosition": 18.1,
       "impressions": 84,
@@ -87,11 +191,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/acworth",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/acworth",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/acworth"
+      }
     },
     {
-      "rankIndex": 8,
+      "rankIndex": 7,
       "query": "home inspections in acworth, ga",
       "currentPosition": 16.6,
       "impressions": 77,
@@ -99,11 +210,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/acworth",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/acworth",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/acworth"
+      }
     },
     {
-      "rankIndex": 9,
+      "rankIndex": 8,
       "query": "home inspection acworth ga",
       "currentPosition": 15.3,
       "impressions": 74,
@@ -111,11 +229,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/acworth",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/acworth",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/acworth"
+      }
     },
     {
-      "rankIndex": 10,
+      "rankIndex": 9,
       "query": "home inspection kennesaw ga",
       "currentPosition": 20.8,
       "impressions": 72,
@@ -123,11 +248,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/11-month-warranty-inspection/kennesaw",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/kennesaw",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/11-month-warranty-inspection/kennesaw"
+      }
     },
     {
-      "rankIndex": 11,
+      "rankIndex": 10,
       "query": "home inspection fairburn ga",
       "currentPosition": 10,
       "impressions": 71,
@@ -135,11 +267,18 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/service-areas/fairburn",
       "targetUrlFull": "https://www.fhinspectionsatl.com/service-areas/fairburn",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_GUIDE_LOCKED",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/service-areas/fairburn"
+      }
     },
     {
-      "rankIndex": 12,
+      "rankIndex": 11,
       "query": "home inspection woodstock ga",
       "currentPosition": 17.6,
       "impressions": 66,
@@ -147,23 +286,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/woodstock",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/woodstock",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/woodstock"
+      }
     },
     {
-      "rankIndex": 13,
-      "query": "commercial inspections peachtree corners ga",
-      "currentPosition": 3.6,
-      "impressions": 64,
-      "clicks": 0,
-      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
-      "targetPage": "/services/commercial-property-inspection/peachtree-corners",
-      "targetUrlFull": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/peachtree-corners",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
-    },
-    {
-      "rankIndex": 14,
+      "rankIndex": 12,
       "query": "home inspection johns creek ga",
       "currentPosition": 14.4,
       "impressions": 60,
@@ -171,11 +305,37 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/johns-creek",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/johns-creek",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/johns-creek"
+      }
     },
     {
-      "rankIndex": 15,
+      "rankIndex": 13,
+      "query": "home inspection peachtree city ga",
+      "currentPosition": 23.8,
+      "impressions": 60,
+      "clicks": 0,
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/services/11-month-warranty-inspection/peachtree-city",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/peachtree-city",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/11-month-warranty-inspection/peachtree-city"
+      }
+    },
+    {
+      "rankIndex": 14,
       "query": "home inspection buford ga",
       "currentPosition": 14.7,
       "impressions": 56,
@@ -183,11 +343,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/buford",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/buford",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/buford"
+      }
     },
     {
-      "rankIndex": 16,
+      "rankIndex": 15,
       "query": "home inspection stone mountain ga",
       "currentPosition": 11,
       "impressions": 56,
@@ -195,11 +362,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/stone-mountain",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/stone-mountain",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/stone-mountain"
+      }
     },
     {
-      "rankIndex": 17,
+      "rankIndex": 16,
       "query": "home inspector woodstock ga",
       "currentPosition": 18.2,
       "impressions": 56,
@@ -207,11 +381,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/woodstock",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/woodstock",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/woodstock"
+      }
     },
     {
-      "rankIndex": 18,
+      "rankIndex": 17,
       "query": "sewer video inspection atlanta",
       "currentPosition": 9.9,
       "impressions": 55,
@@ -219,11 +400,18 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/sewer-scope-inspection/suwanee",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/sewer-scope-inspection/suwanee",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/sewer-scope-inspection/suwanee"
+      }
     },
     {
-      "rankIndex": 19,
+      "rankIndex": 18,
       "query": "home inspection smyrna ga",
       "currentPosition": 19.4,
       "impressions": 54,
@@ -231,8 +419,34 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/smyrna",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/smyrna",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/smyrna"
+      }
+    },
+    {
+      "rankIndex": 19,
+      "query": "home inspections buford ga",
+      "currentPosition": 24.4,
+      "impressions": 54,
+      "clicks": 0,
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/",
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "REGIONAL_METRO_OR_STATE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/"
+      }
     },
     {
       "rankIndex": 20,
@@ -243,20 +457,34 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/powder-springs",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/powder-springs",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/powder-springs"
+      }
     },
     {
       "rankIndex": 21,
-      "query": "home eleven month warranty inspections in marietta, ga",
-      "currentPosition": 3.9,
-      "impressions": 53,
+      "query": "home inspections buford ga",
+      "currentPosition": 22.7,
+      "impressions": 52,
       "clicks": 0,
-      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
-      "targetPage": "/services/11-month-warranty-inspection/marietta",
-      "targetUrlFull": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/marietta",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/services/buyer-inspection/buford",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/buford",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/buford"
+      }
     },
     {
       "rankIndex": 22,
@@ -267,23 +495,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/chattahoochee-hills",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/chattahoochee-hills",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/chattahoochee-hills"
+      }
     },
     {
       "rankIndex": 23,
-      "query": "eleventh month home inspection cherokee county, ga",
-      "currentPosition": 3.6,
-      "impressions": 50,
-      "clicks": 0,
-      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
-      "targetPage": "/services/11-month-warranty-inspection/canton",
-      "targetUrlFull": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/canton",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
-    },
-    {
-      "rankIndex": 24,
       "query": "home inspection austell ga",
       "currentPosition": 17.8,
       "impressions": 49,
@@ -291,11 +514,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/new-construction-inspection/austell",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/new-construction-inspection/austell",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/new-construction-inspection/austell"
+      }
     },
     {
-      "rankIndex": 25,
+      "rankIndex": 24,
       "query": "home inspectors tyrone ga",
       "currentPosition": 9.9,
       "impressions": 49,
@@ -303,11 +533,18 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/pre-drywall-inspection/tyrone",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/pre-drywall-inspection/tyrone",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/pre-drywall-inspection/tyrone"
+      }
     },
     {
-      "rankIndex": 26,
+      "rankIndex": 25,
       "query": "home inspection fairburn ga",
       "currentPosition": 18.8,
       "impressions": 48,
@@ -315,11 +552,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/commercial-property-inspection/fairburn",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/fairburn",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/commercial-property-inspection/fairburn"
+      }
     },
     {
-      "rankIndex": 27,
+      "rankIndex": 26,
       "query": "home inspection fayetteville ga",
       "currentPosition": 18.1,
       "impressions": 48,
@@ -327,11 +571,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/fayetteville",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/fayetteville",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/fayetteville"
+      }
     },
     {
-      "rankIndex": 28,
+      "rankIndex": 27,
       "query": "home inspection powder springs ga",
       "currentPosition": 11.4,
       "impressions": 48,
@@ -339,11 +590,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/powder-springs",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/powder-springs",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/powder-springs"
+      }
     },
     {
-      "rankIndex": 29,
+      "rankIndex": 28,
       "query": "home inspector mcdonough ga",
       "currentPosition": 18.8,
       "impressions": 48,
@@ -351,11 +609,18 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/mcdonough",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/mcdonough",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/mcdonough"
+      }
     },
     {
-      "rankIndex": 30,
+      "rankIndex": 29,
       "query": "eleven month warranty home inspection cherokee county, ga",
       "currentPosition": 5.5,
       "impressions": 47,
@@ -363,11 +628,18 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/11-month-warranty-inspection/canton",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/canton",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/11-month-warranty-inspection/canton"
+      }
     },
     {
-      "rankIndex": 31,
+      "rankIndex": 30,
       "query": "home inspection mcdonough ga",
       "currentPosition": 17.7,
       "impressions": 47,
@@ -375,8 +647,34 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/mcdonough",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/mcdonough",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/mcdonough"
+      }
+    },
+    {
+      "rankIndex": 31,
+      "query": "home inspection smyrna ga",
+      "currentPosition": 24.1,
+      "impressions": 47,
+      "clicks": 0,
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/services/termite-inspection/smyrna",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/termite-inspection/smyrna",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/termite-inspection/smyrna"
+      }
     },
     {
       "rankIndex": 32,
@@ -387,8 +685,15 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/mold-testing/buford",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/mold-testing/buford",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/mold-testing/buford"
+      }
     },
     {
       "rankIndex": 33,
@@ -399,8 +704,15 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/new-construction-inspection/palmetto",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/new-construction-inspection/palmetto",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/new-construction-inspection/palmetto"
+      }
     },
     {
       "rankIndex": 34,
@@ -411,8 +723,15 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/suwanee",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/suwanee",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/suwanee"
+      }
     },
     {
       "rankIndex": 35,
@@ -423,8 +742,15 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/woodstock",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/woodstock",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/woodstock"
+      }
     },
     {
       "rankIndex": 36,
@@ -435,8 +761,15 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance",
       "targetUrlFull": "https://www.fhinspectionsatl.com/blog/understanding-your-georgia-home-inspection-report-red-flags-vs-maintenance",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "REGIONAL_METRO_OR_STATE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection"
+      }
     },
     {
       "rankIndex": 37,
@@ -447,8 +780,15 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/acworth",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/acworth",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/acworth"
+      }
     },
     {
       "rankIndex": 38,
@@ -459,8 +799,15 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/buyer-inspection/brookhaven",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/brookhaven",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/brookhaven"
+      }
     },
     {
       "rankIndex": 39,
@@ -471,8 +818,15 @@
       "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
       "targetPage": "/services/buyer-inspection/duluth",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/duluth",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/duluth"
+      }
     },
     {
       "rankIndex": 40,
@@ -483,8 +837,205 @@
       "tier": "PAGE_1_CLIMBER_TO_TOP_3",
       "targetPage": "/services/new-construction-inspection/duluth",
       "targetUrlFull": "https://www.fhinspectionsatl.com/services/new-construction-inspection/duluth",
-      "action": "GSC_EXACT_ENTITY_AND_INTERNAL_ANCHOR_ENRICHED",
-      "status": "OPTIMIZED_AND_LIVE"
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/new-construction-inspection/duluth"
+      }
+    },
+    {
+      "rankIndex": 41,
+      "query": "commercial real estate due diligence inspection services",
+      "currentPosition": 23.6,
+      "impressions": 43,
+      "clicks": 0,
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/services/commercial-property-inspection/smyrna",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/smyrna",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/commercial-property-inspection/smyrna"
+      }
+    },
+    {
+      "rankIndex": 42,
+      "query": "home inspection clarkston ga",
+      "currentPosition": 6.2,
+      "impressions": 43,
+      "clicks": 0,
+      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
+      "targetPage": "/services/buyer-inspection/clarkston",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/clarkston",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/clarkston"
+      }
+    },
+    {
+      "rankIndex": 43,
+      "query": "home inspectors mcdonough ga",
+      "currentPosition": 18.5,
+      "impressions": 43,
+      "clicks": 0,
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/services/buyer-inspection/mcdonough",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/buyer-inspection/mcdonough",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/buyer-inspection/mcdonough"
+      }
+    },
+    {
+      "rankIndex": 44,
+      "query": "mold inspection woodstock",
+      "currentPosition": 8.2,
+      "impressions": 43,
+      "clicks": 0,
+      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
+      "targetPage": "/services/mold-testing/woodstock",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/mold-testing/woodstock",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/mold-testing/woodstock"
+      }
+    },
+    {
+      "rankIndex": 45,
+      "query": "commercial inspections carrollton, ga",
+      "currentPosition": 5.1,
+      "impressions": 42,
+      "clicks": 0,
+      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
+      "targetPage": "/services/commercial-property-inspection/carrollton",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/carrollton",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/commercial-property-inspection/carrollton"
+      }
+    },
+    {
+      "rankIndex": 46,
+      "query": "home inspection avondale estates ga",
+      "currentPosition": 11.1,
+      "impressions": 41,
+      "clicks": 0,
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/services/pre-listing-inspection/avondale-estates",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/pre-listing-inspection/avondale-estates",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/pre-listing-inspection/avondale-estates"
+      }
+    },
+    {
+      "rankIndex": 47,
+      "query": "home inspection redan ga",
+      "currentPosition": 7.4,
+      "impressions": 41,
+      "clicks": 0,
+      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
+      "targetPage": "/service-areas/redan",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/service-areas/redan",
+      "action": "ADDITIVE_INTERNAL_ANCHOR_AND_FAQ_ONLY_TITLE_FROZEN",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": true,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_GUIDE_LOCKED",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/service-areas/redan"
+      }
+    },
+    {
+      "rankIndex": 48,
+      "query": "home inspectors fairburn ga",
+      "currentPosition": 8.8,
+      "impressions": 41,
+      "clicks": 0,
+      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
+      "targetPage": "/services/commercial-property-inspection/fairburn",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/fairburn",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/commercial-property-inspection/fairburn"
+      }
+    },
+    {
+      "rankIndex": 49,
+      "query": "commercial inspections duluth, ga",
+      "currentPosition": 6.9,
+      "impressions": 40,
+      "clicks": 0,
+      "tier": "PAGE_1_CLIMBER_TO_TOP_3",
+      "targetPage": "/services/commercial-property-inspection/duluth",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/commercial-property-inspection/duluth",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/commercial-property-inspection/duluth"
+      }
+    },
+    {
+      "rankIndex": 50,
+      "query": "home inspectors fairburn ga",
+      "currentPosition": 23.7,
+      "impressions": 40,
+      "clicks": 0,
+      "tier": "PAGE_2_BREAKTHROUGH_TO_PAGE_1",
+      "targetPage": "/services/11-month-warranty-inspection/fairburn",
+      "targetUrlFull": "https://www.fhinspectionsatl.com/services/11-month-warranty-inspection/fairburn",
+      "action": "THREE_KINGS_INTRO_BLUF_AND_CONTEXTUAL_ANCHOR_UPGRADE",
+      "status": "OPTIMIZED_AND_LIVE",
+      "heytonyAudit": {
+        "titleH1Frozen": false,
+        "aioScopeMatch": "LOCAL_MUNICIPAL_SERVICE",
+        "consensusNumbersAligned": true,
+        "brandWallClear": true,
+        "day4AnchorRecommendation": "/services/11-month-warranty-inspection/fairburn"
+      }
     }
   ]
 }
