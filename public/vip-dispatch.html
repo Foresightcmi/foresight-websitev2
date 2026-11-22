@@ -502,7 +502,7 @@
       <div class="stats-row">
         <span class="stat-label">Due Diligence Agent Outreach:</span>
         <span class="stat-numbers">
-          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">4</span> Contacted
+          <span class="highlight" id="sentCountDisplay">0</span> / <span id="totalCountDisplay">6</span> Contacted
         </span>
       </div>
       <div class="progress-track">
@@ -521,7 +521,7 @@
           <option value="name_asc">👤 Agent Name (A to Z)</option>
         </select>
         <select class="select-ctrl" id="citySelect" onchange="setCity(this.value)">
-          <option value="ALL">📍 All Cities (4)</option>
+          <option value="ALL">📍 All Cities (6)</option>
         </select>
       </div>
     </div>
@@ -547,7 +547,7 @@
   <div id="cardsContainer"></div>
 
   <script>
-    const underContractFilers = [{"id":"fmls_pending_7101a71c32","role":"LIST_AGENT","name":"MIKE TERRY","first":"MIKE","phone":"(770) 309-4490","clean_phone":"7703094490","brokerage":"Atlanta Intown Real Estate Services","city":"Decatur","quadrant":"EAST","mlsFeed":"FMLS","address":"2812 Laurel Ridge Drive","price":"$397,000","raw_price":397000,"date":"2026-11-21"},{"id":"fmls_pending_5045b3881a","role":"LIST_AGENT","name":"Priscilla Storie","first":"Priscilla","phone":"(843) 735-0510","clean_phone":"8437350510","brokerage":"Joe Stockdale Real Estate, LLC","city":"Buford","quadrant":"NORTHEAST","mlsFeed":"FMLS","address":"2070 Holland Park Drive","price":"$369,900","raw_price":369900,"date":"2026-11-21"},{"id":"fmls_pending_f073fc87e6","role":"BUYER_AGENT","name":"WILLIAM R BORDEN","first":"WILLIAM","phone":"(770) 405-0445","clean_phone":"7704050445","brokerage":"High Caliber Realty","city":"Atlanta","quadrant":"NORTHWEST","mlsFeed":"FMLS","address":"4464 Woodland Brook Drive SE","price":"$1,145,000","raw_price":1145000,"date":"2026-11-21"},{"id":"fmls_pending_20b815f07c","role":"LIST_AGENT","name":"David Kronawitter","first":"David","phone":"(404) 642-5861","clean_phone":"4046425861","brokerage":"Mendoza Realty, LLC","city":"Marietta","quadrant":"NORTHWEST","mlsFeed":"FMLS","address":"1840 Trophy Drive","price":"$385,000","raw_price":385000,"date":"2026-11-21"}];
+    const underContractFilers = [{"id":"fmls_pending_7101a71c32","role":"LIST_AGENT","name":"MIKE TERRY","first":"MIKE","phone":"(770) 309-4490","clean_phone":"7703094490","brokerage":"Atlanta Intown Real Estate Services","city":"Decatur","quadrant":"EAST","mlsFeed":"FMLS","address":"2812 Laurel Ridge Drive","price":"$397,000","raw_price":397000,"date":"2026-11-21"},{"id":"fmls_pending_890e52272c","role":"LIST_AGENT","name":"Wesley Sumpter","first":"Wesley","phone":"(404) 537-5200","clean_phone":"4045375200","brokerage":"Berkshire Hathaway HomeServices Georgia Properties","city":"Mcdonough","quadrant":"SOUTH","mlsFeed":"FMLS","address":"129 Coldwater Creek Drive","price":"$389,900","raw_price":389900,"date":"2026-11-22"},{"id":"fmls_pending_5045b3881a","role":"LIST_AGENT","name":"Priscilla Storie","first":"Priscilla","phone":"(843) 735-0510","clean_phone":"8437350510","brokerage":"Joe Stockdale Real Estate, LLC","city":"Buford","quadrant":"NORTHEAST","mlsFeed":"FMLS","address":"2070 Holland Park Drive","price":"$369,900","raw_price":369900,"date":"2026-11-21"},{"id":"fmls_pending_f073fc87e6","role":"BUYER_AGENT","name":"WILLIAM R BORDEN","first":"WILLIAM","phone":"(770) 405-0445","clean_phone":"7704050445","brokerage":"High Caliber Realty","city":"Atlanta","quadrant":"NORTHWEST","mlsFeed":"FMLS","address":"4464 Woodland Brook Drive SE","price":"$1,145,000","raw_price":1145000,"date":"2026-11-21"},{"id":"fmls_pending_75d9fe4887","role":"BUYER_AGENT","name":"Niki Faith","first":"Niki","phone":"(404) 281-4722","clean_phone":"4042814722","brokerage":"Atlanta Communities","city":"Dallas","quadrant":"NORTHWEST","mlsFeed":"FMLS","address":"49 Windsor Way","price":"$299,900","raw_price":299900,"date":"2026-11-21"},{"id":"fmls_pending_20b815f07c","role":"LIST_AGENT","name":"David Kronawitter","first":"David","phone":"(404) 642-5861","clean_phone":"4046425861","brokerage":"Mendoza Realty, LLC","city":"Marietta","quadrant":"NORTHWEST","mlsFeed":"FMLS","address":"1840 Trophy Drive","price":"$385,000","raw_price":385000,"date":"2026-11-21"}];
 
     // State Persistence across localStorage
     const STORAGE_KEY = 'foresight_due_diligence_sent_v1';
