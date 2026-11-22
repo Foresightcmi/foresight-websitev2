@@ -278,5 +278,45 @@
     "messageId": "<6cabc656-a275-1792-841e-59353bddec15@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862165.html",
     "sentAt": "2026-11-21T20:30:38.053Z"
+  },
+  {
+    "recordId": "NC-7845500",
+    "address": "1040 Gilbert St SE, Atlanta, GA 30316",
+    "recipient": "tristain.odonnell@evrealestate.com",
+    "messageId": "<098d90ea-1f1e-0184-323f-30b0e6cd051d@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7845500.html",
+    "sentAt": "2026-11-22T20:40:02.035Z"
+  },
+  {
+    "recordId": "NC-7862182",
+    "address": "3946 Lockaby Way, Lawrenceville, GA 30044",
+    "recipient": "alayer@mckinleyhomes.com",
+    "messageId": "<35dc07f4-0ed7-bcd5-1010-6378786a5120@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862182.html",
+    "sentAt": "2026-11-22T20:40:05.765Z"
+  },
+  {
+    "recordId": "NC-7862158",
+    "address": "2031 Orchid Lane, Lithia Springs, GA 30122",
+    "recipient": "cevans@mckinleyhomes.com",
+    "messageId": "<64228e6d-a1f3-1466-cfe7-8f3ea3d14fa8@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862158.html",
+    "sentAt": "2026-11-22T20:40:09.455Z"
+  },
+  {
+    "recordId": "NC-7861307",
+    "address": "7060 Bells Way, Fairburn, GA 30213",
+    "recipient": "caprice.little@hotmail.com",
+    "messageId": "<1f346abf-2792-6f89-29ae-427f5e98dc70@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861307.html",
+    "sentAt": "2026-11-22T20:40:13.156Z"
+  },
+  {
+    "recordId": "NC-7862157",
+    "address": "2032 Orchid Lane, Lithia Springs, GA 30122",
+    "recipient": "cevans@mckinleyhomes.com",
+    "messageId": "<bf8228cd-007d-c0aa-7966-95358d8e434d@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862157.html",
+    "sentAt": "2026-11-22T20:40:15.622Z"
   }
 ]
