@@ -62,15 +62,15 @@
     "timestamp": "2026-10-04T00:56:14.271Z"
   },
   {
-    "key": "PRE_DD_card_96acbbce8e_robin.blass@harrynorman.com",
-    "type": "PRE_DUE_DILIGENCE_RESERVATION",
+    "key": "CONTRACT_card_96acbbce8e_robin.blass@harrynorman.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "targetName": "Robin Blass",
     "brokerage": "Harry Norman Realtors",
     "address": "565 Old Lathemtown Road",
     "city": "Atlanta",
     "email": "robin.blass@harrynorman.com",
     "date": "2026-10-02",
-    "timestamp": "2026-10-04T00:56:19.547Z"
+    "timestamp": "2026-10-15T12:01:23.250Z"
   },
   {
     "key": "PRE_DD_card_b37afc0a67_loganfitts@icloud.com",
@@ -413,15 +413,17 @@
     "timestamp": "2026-10-11T22:35:22.510Z"
   },
   {
-    "key": "CONTRACT_card_7e81c22235_mdorsey@davidsonhomes.com",
+    "key": "CONTRACT_fmls_pending_321599df25_mdorsey@davidsonhomes.com",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "targetName": "Matrina Dorsey",
     "brokerage": "Davidson Realty GA, LLC",
     "address": "123 Park Ridge Circle",
     "city": "Emerson",
     "email": "mdorsey@davidsonhomes.com",
-    "date": "2026-10-03",
-    "timestamp": "2026-10-11T22:35:28.532Z"
+    "date": "2026-11-22",
+    "timestamp": "2026-11-22T18:32:55.716Z",
+    "role": "LIST_AGENT",
+    "phone": "6787191798"
   },
   {
     "key": "CONTRACT_card_5e4d38b414_aracely.pieceofcelyhomes@gmail.com",
@@ -752,17 +754,6 @@
     "email": "doug.s@mainstay.io",
     "date": "2026-10-02",
     "timestamp": "2026-10-15T12:01:17.722Z"
-  },
-  {
-    "key": "CONTRACT_card_96acbbce8e_robin.blass@harrynorman.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "targetName": "Robin Blass",
-    "brokerage": "Harry Norman Realtors",
-    "address": "565 Old Lathemtown Road",
-    "city": "Atlanta",
-    "email": "robin.blass@harrynorman.com",
-    "date": "2026-10-02",
-    "timestamp": "2026-10-15T12:01:23.250Z"
   },
   {
     "key": "SMS_card_88a8924a48_4044085567",
@@ -4836,8 +4827,8 @@
     "timestamp": "2026-10-24T21:53:06.920Z"
   },
   {
-    "key": "CONTRACT_card_8ce5766dc1_findahomewithcandy@gmail.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "key": "PRICEDROP_fmls_drop_7839886_findahomewithcandy@gmail.com",
+    "type": "FMLS_PRICE_DROP",
     "role": "LIST_AGENT",
     "targetName": "Candace McClung",
     "brokerage": "NorthGroup Real Estate",
@@ -4846,7 +4837,7 @@
     "email": "findahomewithcandy@gmail.com",
     "phone": "6159728995",
     "date": "2026-10-23",
-    "timestamp": "2026-10-24T21:53:27.752Z"
+    "timestamp": "2026-11-20T22:36:26.695Z"
   },
   {
     "key": "CONTRACT_card_3e913cea2e_brokerofhope@gmail.com",
@@ -15161,16 +15152,6 @@
     "timestamp": "2026-11-20T22:36:07.141Z"
   },
   {
-    "key": "PRICEDROP_fmls_drop_7839886_findahomewithcandy@gmail.com",
-    "type": "FMLS_PRICE_DROP",
-    "targetName": "Candace McClung",
-    "brokerage": "NorthGroup Real Estate",
-    "address": "10436 Tara Pointe Drive",
-    "city": "Jonesboro",
-    "email": "findahomewithcandy@gmail.com",
-    "timestamp": "2026-11-20T22:36:26.695Z"
-  },
-  {
     "key": "PRICEDROP_fmls_drop_7847926_pharris@mckinleyhomes.com",
     "type": "FMLS_PRICE_DROP",
     "targetName": "Paulette Harris",
@@ -15461,30 +15442,30 @@
     "timestamp": "2026-11-20T22:46:05.784Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_b40db2fd97_kelli@adamsreinc.com",
+    "key": "CONTRACT_fmls_pending_73d06c5e16_s.beckwith@redfin.com",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "role": "BUYER_AGENT",
-    "targetName": "Kelli Adams",
-    "brokerage": "Coldwell Banker Realty",
-    "address": "5829 Schelton Place SE",
-    "city": "Mableton",
-    "email": "kelli@adamsreinc.com",
-    "phone": "4049381675",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T14:06:06.632Z"
+    "targetName": "Stephanie Beckwith",
+    "brokerage": "Redfin Corporation",
+    "address": "4022 Southbrook Court NW",
+    "city": "Kennesaw",
+    "email": "s.beckwith@redfin.com",
+    "phone": "4044298321",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21T16:21:28.270Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_bfc260ad79_dana.lyons@kw.com",
+    "key": "CONTRACT_fmls_pending_f2dce63e67_thriverealestateservices@gmail.com",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "role": "BUYER_AGENT",
-    "targetName": "DANA LYONS",
-    "brokerage": "Keller Williams Buckhead",
-    "address": "860 Peachtree Street NE 2801",
-    "city": "Atlanta",
-    "email": "dana.lyons@kw.com",
-    "phone": "4045523786",
+    "targetName": "Elizabeth Assem",
+    "brokerage": "RE/MAX Advantage",
+    "address": "199 Memory Lane",
+    "city": "Stockbridge",
+    "email": "thriverealestateservices@gmail.com",
+    "phone": "4702622327",
     "date": "2026-11-20",
-    "timestamp": "2026-11-21T14:06:26.160Z"
+    "timestamp": "2026-11-21T16:21:47.709Z"
   },
   {
     "key": "CONTRACT_fmls_pending_a7f9218328_mstfleur@drbgroup.com",
@@ -15500,43 +15481,17 @@
     "timestamp": "2026-11-21T14:06:45.626Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_4989c6ac6d_philip@caldwellproperties.net",
+    "key": "CONTRACT_fmls_pending_c1f2172938_allycia.dreyer@bhhsga.com",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "role": "LIST_AGENT",
-    "targetName": "Philip Caldwell",
-    "brokerage": "RB Realty",
-    "address": "537 N Gilmer Street",
-    "city": "Cartersville",
-    "email": "philip@caldwellproperties.net",
-    "phone": "7706559254",
+    "targetName": "Allycia Dreyer",
+    "brokerage": "Berkshire Hathaway HomeServices Georgia Properties",
+    "address": "4022 Southbrook Court NW",
+    "city": "Kennesaw",
+    "email": "allycia.dreyer@bhhsga.com",
+    "phone": "4047138534",
     "date": "2026-11-21",
-    "timestamp": "2026-11-21T14:07:05.226Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_8be64a829a_beauty@discoversolist.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "BEAUTY JOSEPH",
-    "brokerage": "Compass",
-    "address": "1445 E Mcintosh Road",
-    "city": "Griffin",
-    "email": "beauty@discoversolist.com",
-    "phone": "4704189102",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T14:07:25.923Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_0b2ab13e38_sherilamb@mariasimsgroup.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "Sheri Lamb",
-    "brokerage": "Keller Williams Realty Partners",
-    "address": "508 Black Horse Circle",
-    "city": "Canton",
-    "email": "sherilamb@mariasimsgroup.com",
-    "phone": "4047022662",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T14:07:45.493Z"
+    "timestamp": "2026-11-21T16:22:08.714Z"
   },
   {
     "key": "CONTRACT_fmls_pending_138a544d90_jarmonrealty@gmail.com",
@@ -15552,43 +15507,69 @@
     "timestamp": "2026-11-21T14:08:06.919Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_a1a515faa3_khicks@palmerhouseproperties.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "LIST_AGENT",
-    "targetName": "Katherine Hicks",
-    "brokerage": "HomeSmart",
-    "address": "1212 Ida woods",
-    "city": "Lawrenceville",
-    "email": "khicks@palmerhouseproperties.com",
-    "phone": "6466711550",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T14:08:27.342Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_a7745e12e1_info@gahometown.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "LIST_AGENT",
-    "targetName": "Gary LaClair",
-    "brokerage": "Atlanta Communities",
-    "address": "4410 Meadow Trail",
-    "city": "Cumming",
-    "email": "info@gahometown.com",
-    "phone": "7069749856",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T14:08:46.850Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_c970f7994e_jsok@bwalkrealty.com",
+    "key": "CONTRACT_fmls_pending_431e80ea12_itzrealtyatl@gmail.com",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "role": "BUYER_AGENT",
-    "targetName": "Jearlly Sok",
-    "brokerage": "Boardwalk Realty Associates, Inc.",
-    "address": "232 Black Walnut Way",
-    "city": "Canton",
-    "email": "jsok@bwalkrealty.com",
-    "phone": "4046642108",
+    "targetName": "Itzel Puga Hernandez",
+    "brokerage": "Virtual Properties Realty.com",
+    "address": "42 Jacobs Farm Lane 19",
+    "city": "Lawrenceville",
+    "email": "itzrealtyatl@gmail.com",
+    "phone": "6787580137",
     "date": "2026-11-20",
-    "timestamp": "2026-11-21T14:09:06.342Z"
+    "timestamp": "2026-11-21T16:22:28.193Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_0b2ab13e38_sherilamb@mariasimsgroup.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Sheri Lamb",
+    "brokerage": "Keller Williams Realty Partners",
+    "address": "508 Black Horse Circle",
+    "city": "Canton",
+    "email": "sherilamb@mariasimsgroup.com",
+    "phone": "4047022662",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T14:07:45.493Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_bed581c4ff_harvey.simmons@communitywiderealty.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "HARVEY SIMMONS",
+    "brokerage": "Community-Wide Realty Group, LLC.",
+    "address": "3039 Sherbourne Drive",
+    "city": "Lithonia",
+    "email": "harvey.simmons@communitywiderealty.com",
+    "phone": "4049928519",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T20:41:31.033Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_0937163dc6_mackenzie.crabtree@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "LIST_AGENT",
+    "targetName": "Mackenzie Crabtree",
+    "brokerage": "Mackenzie Crabtree Real Estate, LLC",
+    "address": "1350 Westmont Road SW",
+    "city": "Atlanta",
+    "email": "mackenzie.crabtree@gmail.com",
+    "phone": "4044587401",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T16:22:48.624Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_17da21c826_erinbowenrealtor@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Erin Bowen",
+    "brokerage": "Keller Williams Realty ATL Part",
+    "address": "30 Birds Crossing",
+    "city": "Covington",
+    "email": "erinbowenrealtor@gmail.com",
+    "phone": "6784094515",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T16:23:08.955Z"
   },
   {
     "key": "LO_lo-denise-walters-alcorn_denise.alcorn@ccm.com",
@@ -15653,6 +15634,440 @@
     "email": "tara.winslow@kw.com",
     "city": "Decatur, GA",
     "timestamp": "2026-11-21T14:11:37.320Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7860545_contracts@breg.homes",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Bell Real Estate Group",
+    "brokerage": "Keller Williams Realty Atlanta Partners",
+    "address": "1274 Six Sisters Street",
+    "city": "Dacula",
+    "email": "contracts@breg.homes",
+    "timestamp": "2026-11-21T20:44:53.187Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7833461_ffenno@mckinleyhomes.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "FLIP FENNO",
+    "brokerage": "McKinley Properties, LLC.",
+    "address": "7424 Rocklin Lane",
+    "city": "Flowery Branch",
+    "email": "ffenno@mckinleyhomes.com",
+    "timestamp": "2026-11-21T20:45:12.748Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7820588_lindseyfryant@kw.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Lindsey Fryant",
+    "brokerage": "Keller Williams Realty Atlanta Partners",
+    "address": "1105 Secret Cove Drive",
+    "city": "Buford",
+    "email": "lindseyfryant@kw.com",
+    "timestamp": "2026-11-21T20:45:32.307Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7756775_mia@miawelsh.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "MIA WELSH",
+    "brokerage": "L.H. King Enterprises, Inc.",
+    "address": "1720 Rugby Avenue",
+    "city": "College Park",
+    "email": "mia@miawelsh.com",
+    "timestamp": "2026-11-21T20:45:51.879Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7779491_homes@markspain.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "MARK SPAIN",
+    "brokerage": "Mark Spain Real Estate",
+    "address": "5177 Arran Lane",
+    "city": "Douglasville",
+    "email": "homes@markspain.com",
+    "timestamp": "2026-11-21T20:46:11.433Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7827289_cmcthadden@mckinleyhomes.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Cedas McThadden",
+    "brokerage": "McKinley Properties, LLC.",
+    "address": "5975 Spring Way",
+    "city": "Stonecrest",
+    "email": "cmcthadden@mckinleyhomes.com",
+    "timestamp": "2026-11-21T20:46:31.227Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_back_on_market_7848998_dautreyrealtor@gmail.com",
+    "type": "FMLS_BACK_ON_MARKET",
+    "targetName": "DAVID AUTREY",
+    "brokerage": "Hometown Realty Brokerage Partners, LLC",
+    "address": "145 Walraven Place",
+    "city": "Dallas",
+    "email": "dautreyrealtor@gmail.com",
+    "timestamp": "2026-11-21T20:46:50.776Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_exchange_1031_7871199_hsolis@hsolgroup.com",
+    "type": "FMLS_EXCHANGE_1031",
+    "targetName": "Helen Solis",
+    "brokerage": "Maximum One Realtor Partners",
+    "address": "4805 Central Church Road",
+    "city": "Douglasville",
+    "email": "hsolis@hsolgroup.com",
+    "timestamp": "2026-11-21T20:47:10.322Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_exchange_1031_7856679_listings@tamrawaderealestate.com",
+    "type": "FMLS_EXCHANGE_1031",
+    "targetName": "TAMRA WADE",
+    "brokerage": "RE/MAX Tru",
+    "address": "9155 Greenway Court",
+    "city": "Gainesville",
+    "email": "listings@tamrawaderealestate.com",
+    "timestamp": "2026-11-21T20:47:30.328Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_7808869_matthew@syntropyteam.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "Matthew Schneider",
+    "brokerage": "Real Broker, LLC.",
+    "address": "964 Byron Drive SW",
+    "city": "Atlanta",
+    "email": "matthew@syntropyteam.com",
+    "timestamp": "2026-11-21T20:47:50.049Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_back_on_market_7863222_jerryslay2000@yahoo.com",
+    "type": "FMLS_BACK_ON_MARKET",
+    "targetName": "JERRY SLAY",
+    "brokerage": "Main Street Property Shoppe",
+    "address": "4130 Feather Drive",
+    "city": "Douglasville",
+    "email": "jerryslay2000@yahoo.com",
+    "timestamp": "2026-11-21T20:48:09.644Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_7870931_courtney@courtneynewton.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "COURTNEY NEWTON",
+    "brokerage": "The Rezerve, LLC",
+    "address": "417 Edwards Drive NE",
+    "city": "Marietta",
+    "email": "courtney@courtneynewton.com",
+    "timestamp": "2026-11-21T20:48:29.202Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_99247b7a1a_zach.khashan@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Zachary Khashan",
+    "brokerage": "HomeSmart",
+    "address": "1172 Blueberry Trail",
+    "city": "Decatur",
+    "email": "zach.khashan@gmail.com",
+    "phone": "6789380513",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21T22:25:41.889Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_a21fda1ef6_chrissylwoodsellshomes@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Chrissy Leatherwood",
+    "brokerage": "Coldwell Banker Bullard Realty",
+    "address": "11 Tallulah Court",
+    "city": "Jonesboro",
+    "email": "chrissylwoodsellshomes@gmail.com",
+    "phone": "6786547684",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-22T20:49:19.854Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_319140f5e2_zinvhomes@gmail.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Zinaida Vugdalic",
+    "brokerage": "EXP Realty, LLC.",
+    "address": "2250 Boone Place",
+    "city": "Snellville",
+    "email": "zinvhomes@gmail.com",
+    "phone": "6786652330",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-22T16:20:53.041Z"
+  },
+  {
+    "key": "LO_lo-scott-mcqueen_scott.mcqueen@guildmortgage.net",
+    "type": "LOAN_OFFICER",
+    "targetName": "Scott McQueen",
+    "company": "Guild Mortgage",
+    "email": "scott.mcqueen@guildmortgage.net",
+    "city": "Alpharetta",
+    "timestamp": "2026-11-21T16:24:37.489Z"
+  },
+  {
+    "key": "LO_lo-nedra-white-shaw_nwhite-shaw@guildmortgage.net",
+    "type": "LOAN_OFFICER",
+    "targetName": "Nedra White Shaw",
+    "company": "Guild Mortgage",
+    "email": "nwhite-shaw@guildmortgage.net",
+    "city": "Atlanta",
+    "timestamp": "2026-11-21T16:24:57.041Z"
+  },
+  {
+    "key": "LO_lo-rachanta-wallace_rachanta.wallace@guildmortgage.net",
+    "type": "LOAN_OFFICER",
+    "targetName": "Rachanta Wallace",
+    "company": "Guild Mortgage",
+    "email": "rachanta.wallace@guildmortgage.net",
+    "city": "Atlanta",
+    "timestamp": "2026-11-21T16:25:16.592Z"
+  },
+  {
+    "key": "B2B_b2b_wave2_58_realtortimt@gmail.com",
+    "type": "B2B_PARTNER",
+    "category": "realtor_youtube_relocation",
+    "targetName": "Tim Trevathan",
+    "company": "Tim Trevathan Homes (Moving to Atlanta YouTube Team)",
+    "email": "realtortimt@gmail.com",
+    "city": "Suwanee",
+    "timestamp": "2026-11-22T20:31:24.124Z"
+  },
+  {
+    "key": "B2B_b2b-pm-terminus-smyrna_hello@pmiterminus.com",
+    "type": "B2B_PARTNER",
+    "category": "property_management_sfr",
+    "company": "PMI Terminus",
+    "email": "hello@pmiterminus.com",
+    "city": "Smyrna, GA",
+    "timestamp": "2026-11-21T16:25:36.169Z"
+  },
+  {
+    "key": "B2B_b2b-qi-ade1031-marietta_rraitz@ade1031.com",
+    "type": "B2B_PARTNER",
+    "category": "qi_1031_exchange",
+    "company": "Atlanta Deferred Exchange (ADE 1031)",
+    "email": "rraitz@ade1031.com",
+    "city": "Marietta, GA",
+    "timestamp": "2026-11-21T16:25:55.639Z"
+  },
+  {
+    "key": "B2B_b2b-pm-psa-marietta_reception@psatlanta.com",
+    "type": "B2B_PARTNER",
+    "category": "property_management_sfr",
+    "company": "Property Services of Atlanta, Inc.",
+    "email": "reception@psatlanta.com",
+    "city": "Marietta, GA",
+    "timestamp": "2026-11-21T16:26:16.013Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7776213_sam@samluskrealestate.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Samantha Lusk",
+    "brokerage": "Samantha Lusk & Associates Realty, Inc.",
+    "address": "687 Johnson Lake Road SE",
+    "city": "Adairsville",
+    "email": "sam@samluskrealestate.com",
+    "timestamp": "2026-11-22T20:52:38.255Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7820249_listings@enterarealty.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Robert Salmons",
+    "brokerage": "Entera Realty, LLC",
+    "address": "2993 Carrollton Court",
+    "city": "Marietta",
+    "email": "listings@enterarealty.com",
+    "timestamp": "2026-11-22T20:52:59.851Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7837196_naruna.rangel@gmail.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Naruna Rangel",
+    "brokerage": "Keller Williams Realty Metro Atlanta",
+    "address": "2178 Bicknell Street NW",
+    "city": "Atlanta",
+    "email": "naruna.rangel@gmail.com",
+    "timestamp": "2026-11-22T20:53:20.938Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7726821_margot@realestateinthegate.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Margot Weatherford",
+    "brokerage": "EXP Realty, LLC.",
+    "address": "1033 Quail Cove Drive",
+    "city": "Jasper",
+    "email": "margot@realestateinthegate.com",
+    "timestamp": "2026-11-22T20:53:42.477Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7851088_kathy@cootsteam.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Kathy Coots",
+    "brokerage": "Keller Williams Realty Atl Partners",
+    "address": "1686 Ember Way",
+    "city": "Snellville",
+    "email": "kathy@cootsteam.com",
+    "timestamp": "2026-11-22T20:54:04.001Z"
+  },
+  {
+    "key": "PRICEDROP_fmls_drop_7748611_iris.jaimes@c21connectrealty.com",
+    "type": "FMLS_PRICE_DROP",
+    "targetName": "Jovaniris Jaimes",
+    "brokerage": "Century 21 Connect Realty",
+    "address": "41 Terrace Court",
+    "city": "Chatsworth",
+    "email": "iris.jaimes@c21connectrealty.com",
+    "timestamp": "2026-11-22T20:54:25.541Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_7831711_jennysellsga@gmail.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "JENNIFER CADWELL",
+    "brokerage": "Sky High Realty",
+    "address": "65 W Meadowcliff Circle",
+    "city": "Carrollton",
+    "email": "jennysellsga@gmail.com",
+    "timestamp": "2026-11-22T20:54:46.038Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_7870156_wrturne1@gmail.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "William Turner",
+    "brokerage": "HOME Luxury Real Estate",
+    "address": "1736 Monroe Drive NE",
+    "city": "Atlanta",
+    "email": "wrturne1@gmail.com",
+    "timestamp": "2026-11-22T20:55:07.561Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_7839596_andy@andymacatl.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "Andrew McKeegan",
+    "brokerage": "Bolst",
+    "address": "4117 Ashford Dunwoody Road NE",
+    "city": "Atlanta",
+    "email": "andy@andymacatl.com",
+    "timestamp": "2026-11-22T20:55:29.043Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_tenant_or_multifamily_7814601_toddjilot@gmail.com",
+    "type": "FMLS_TENANT_OR_MULTIFAMILY",
+    "targetName": "TODD JILOT",
+    "brokerage": "Chapman Hall Premier, REALTORS",
+    "address": "5223 Ridge Forest Drive",
+    "city": "Stone Mountain",
+    "email": "toddjilot@gmail.com",
+    "timestamp": "2026-11-22T20:55:50.528Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_tenant_or_multifamily_7637426_michelle.phagan@cbrealty.com",
+    "type": "FMLS_TENANT_OR_MULTIFAMILY",
+    "targetName": "Michelle Phagan",
+    "brokerage": "Coldwell Banker Realty",
+    "address": "47 CRIPPLE CREEK Lane",
+    "city": "Tiger",
+    "email": "michelle.phagan@cbrealty.com",
+    "timestamp": "2026-11-22T20:56:11.993Z"
+  },
+  {
+    "key": "MICRO_fmls_micro_diagnostic_vintage_sewer_10871206_josh.robinson@compass.com",
+    "type": "FMLS_DIAGNOSTIC_VINTAGE_SEWER",
+    "targetName": "Josh Robinson",
+    "brokerage": "Compass",
+    "address": "2050 Jordan TER NE",
+    "city": "Atlanta",
+    "email": "josh.robinson@compass.com",
+    "timestamp": "2026-11-22T20:56:33.527Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_b40db2fd97_kelli@adamsreinc.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Kelli Adams",
+    "brokerage": "Coldwell Banker Realty",
+    "address": "5829 Schelton Place SE",
+    "city": "Mableton",
+    "email": "kelli@adamsreinc.com",
+    "phone": "4049381675",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T14:06:06.632Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_bfc260ad79_dana.lyons@kw.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "DANA LYONS",
+    "brokerage": "Keller Williams Buckhead",
+    "address": "860 Peachtree Street NE 2801",
+    "city": "Atlanta",
+    "email": "dana.lyons@kw.com",
+    "phone": "4045523786",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T14:06:26.160Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_4989c6ac6d_philip@caldwellproperties.net",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "LIST_AGENT",
+    "targetName": "Philip Caldwell",
+    "brokerage": "RB Realty",
+    "address": "537 N Gilmer Street",
+    "city": "Cartersville",
+    "email": "philip@caldwellproperties.net",
+    "phone": "7706559254",
+    "date": "2026-11-21",
+    "timestamp": "2026-11-21T14:07:05.226Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_8be64a829a_beauty@discoversolist.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "BEAUTY JOSEPH",
+    "brokerage": "Compass",
+    "address": "1445 E Mcintosh Road",
+    "city": "Griffin",
+    "email": "beauty@discoversolist.com",
+    "phone": "4704189102",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T14:07:25.923Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_a1a515faa3_khicks@palmerhouseproperties.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "LIST_AGENT",
+    "targetName": "Katherine Hicks",
+    "brokerage": "HomeSmart",
+    "address": "1212 Ida woods",
+    "city": "Lawrenceville",
+    "email": "khicks@palmerhouseproperties.com",
+    "phone": "6466711550",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T14:08:27.342Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_a7745e12e1_info@gahometown.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "LIST_AGENT",
+    "targetName": "Gary LaClair",
+    "brokerage": "Atlanta Communities",
+    "address": "4410 Meadow Trail",
+    "city": "Cumming",
+    "email": "info@gahometown.com",
+    "phone": "7069749856",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T14:08:46.850Z"
+  },
+  {
+    "key": "CONTRACT_fmls_pending_c970f7994e_jsok@bwalkrealty.com",
+    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
+    "role": "BUYER_AGENT",
+    "targetName": "Jearlly Sok",
+    "brokerage": "Boardwalk Realty Associates, Inc.",
+    "address": "232 Black Walnut Way",
+    "city": "Canton",
+    "email": "jsok@bwalkrealty.com",
+    "phone": "4046642108",
+    "date": "2026-11-20",
+    "timestamp": "2026-11-21T14:09:06.342Z"
   },
   {
     "key": "PRICEDROP_fmls_drop_7815341_jewellmichaelsales@gmail.com",
@@ -15968,84 +16383,6 @@
     "timestamp": "2026-11-21T16:21:08.751Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_73d06c5e16_s.beckwith@redfin.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "Stephanie Beckwith",
-    "brokerage": "Redfin Corporation",
-    "address": "4022 Southbrook Court NW",
-    "city": "Kennesaw",
-    "email": "s.beckwith@redfin.com",
-    "phone": "4044298321",
-    "date": "2026-11-21",
-    "timestamp": "2026-11-21T16:21:28.270Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_f2dce63e67_thriverealestateservices@gmail.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "Elizabeth Assem",
-    "brokerage": "RE/MAX Advantage",
-    "address": "199 Memory Lane",
-    "city": "Stockbridge",
-    "email": "thriverealestateservices@gmail.com",
-    "phone": "4702622327",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T16:21:47.709Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_c1f2172938_allycia.dreyer@bhhsga.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "LIST_AGENT",
-    "targetName": "Allycia Dreyer",
-    "brokerage": "Berkshire Hathaway HomeServices Georgia Properties",
-    "address": "4022 Southbrook Court NW",
-    "city": "Kennesaw",
-    "email": "allycia.dreyer@bhhsga.com",
-    "phone": "4047138534",
-    "date": "2026-11-21",
-    "timestamp": "2026-11-21T16:22:08.714Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_431e80ea12_itzrealtyatl@gmail.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "Itzel Puga Hernandez",
-    "brokerage": "Virtual Properties Realty.com",
-    "address": "42 Jacobs Farm Lane 19",
-    "city": "Lawrenceville",
-    "email": "itzrealtyatl@gmail.com",
-    "phone": "6787580137",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T16:22:28.193Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_0937163dc6_mackenzie.crabtree@gmail.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "LIST_AGENT",
-    "targetName": "Mackenzie Crabtree",
-    "brokerage": "Mackenzie Crabtree Real Estate, LLC",
-    "address": "1350 Westmont Road SW",
-    "city": "Atlanta",
-    "email": "mackenzie.crabtree@gmail.com",
-    "phone": "4044587401",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T16:22:48.624Z"
-  },
-  {
-    "key": "CONTRACT_fmls_pending_17da21c826_erinbowenrealtor@gmail.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "Erin Bowen",
-    "brokerage": "Keller Williams Realty ATL Part",
-    "address": "30 Birds Crossing",
-    "city": "Covington",
-    "email": "erinbowenrealtor@gmail.com",
-    "phone": "6784094515",
-    "date": "2026-11-20",
-    "timestamp": "2026-11-21T16:23:08.955Z"
-  },
-  {
     "key": "CONTRACT_fmls_pending_5f2243eca2_brian.h@mainstay.io",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "role": "LIST_AGENT",
@@ -16083,60 +16420,6 @@
     "phone": "5852859447",
     "date": "2026-11-20",
     "timestamp": "2026-11-21T16:24:07.544Z"
-  },
-  {
-    "key": "LO_lo-scott-mcqueen_scott.mcqueen@guildmortgage.net",
-    "type": "LOAN_OFFICER",
-    "targetName": "Scott McQueen",
-    "company": "Guild Mortgage",
-    "email": "scott.mcqueen@guildmortgage.net",
-    "city": "Alpharetta",
-    "timestamp": "2026-11-21T16:24:37.489Z"
-  },
-  {
-    "key": "LO_lo-nedra-white-shaw_nwhite-shaw@guildmortgage.net",
-    "type": "LOAN_OFFICER",
-    "targetName": "Nedra White Shaw",
-    "company": "Guild Mortgage",
-    "email": "nwhite-shaw@guildmortgage.net",
-    "city": "Atlanta",
-    "timestamp": "2026-11-21T16:24:57.041Z"
-  },
-  {
-    "key": "LO_lo-rachanta-wallace_rachanta.wallace@guildmortgage.net",
-    "type": "LOAN_OFFICER",
-    "targetName": "Rachanta Wallace",
-    "company": "Guild Mortgage",
-    "email": "rachanta.wallace@guildmortgage.net",
-    "city": "Atlanta",
-    "timestamp": "2026-11-21T16:25:16.592Z"
-  },
-  {
-    "key": "B2B_b2b-pm-terminus-smyrna_hello@pmiterminus.com",
-    "type": "B2B_PARTNER",
-    "category": "property_management_sfr",
-    "company": "PMI Terminus",
-    "email": "hello@pmiterminus.com",
-    "city": "Smyrna, GA",
-    "timestamp": "2026-11-21T16:25:36.169Z"
-  },
-  {
-    "key": "B2B_b2b-qi-ade1031-marietta_rraitz@ade1031.com",
-    "type": "B2B_PARTNER",
-    "category": "qi_1031_exchange",
-    "company": "Atlanta Deferred Exchange (ADE 1031)",
-    "email": "rraitz@ade1031.com",
-    "city": "Marietta, GA",
-    "timestamp": "2026-11-21T16:25:55.639Z"
-  },
-  {
-    "key": "B2B_b2b-pm-psa-marietta_reception@psatlanta.com",
-    "type": "B2B_PARTNER",
-    "category": "property_management_sfr",
-    "company": "Property Services of Atlanta, Inc.",
-    "email": "reception@psatlanta.com",
-    "city": "Marietta, GA",
-    "timestamp": "2026-11-21T16:26:16.013Z"
   },
   {
     "key": "B2B_b2b-relo-trilith-tonya-jones_tonya@tonyajonesgroup.com",
@@ -17441,19 +17724,6 @@
     "timestamp": "2026-11-21T20:46:06.439Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_99247b7a1a_zach.khashan@gmail.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "Zachary Khashan",
-    "brokerage": "HomeSmart",
-    "address": "1172 Blueberry Trail",
-    "city": "Decatur",
-    "email": "zach.khashan@gmail.com",
-    "phone": "6789380513",
-    "date": "2026-11-21",
-    "timestamp": "2026-11-21T22:25:41.889Z"
-  },
-  {
     "key": "CONTRACT_fmls_pending_f15fb6905b_jarhmanirealestate@gmail.com",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "role": "BUYER_AGENT",
@@ -18330,19 +18600,6 @@
     "timestamp": "2026-11-22T16:20:32.309Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_319140f5e2_zinvhomes@gmail.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "BUYER_AGENT",
-    "targetName": "Zinaida Vugdalic",
-    "brokerage": "EXP Realty, LLC.",
-    "address": "2250 Boone Place",
-    "city": "Snellville",
-    "email": "zinvhomes@gmail.com",
-    "phone": "6786652330",
-    "date": "2026-11-21",
-    "timestamp": "2026-11-22T16:20:53.041Z"
-  },
-  {
     "key": "CONTRACT_fmls_pending_135b1d71f3_kissane@kw.com",
     "type": "UNDER_CONTRACT_DUE_DILIGENCE",
     "role": "LIST_AGENT",
@@ -18787,19 +19044,6 @@
     "timestamp": "2026-11-22T18:32:36.235Z"
   },
   {
-    "key": "CONTRACT_fmls_pending_321599df25_mdorsey@davidsonhomes.com",
-    "type": "UNDER_CONTRACT_DUE_DILIGENCE",
-    "role": "LIST_AGENT",
-    "targetName": "Matrina Dorsey",
-    "brokerage": "Davidson Realty GA, LLC",
-    "address": "123 Park Ridge Circle",
-    "city": "Emerson",
-    "email": "mdorsey@davidsonhomes.com",
-    "phone": "6787191798",
-    "date": "2026-11-22",
-    "timestamp": "2026-11-22T18:32:55.716Z"
-  },
-  {
     "key": "B2B_team-s-n-team-surabhi-arora_surabhiarora@kw.com",
     "type": "B2B_PARTNER",
     "category": "buyer_lead_team",
@@ -19164,16 +19408,6 @@
     "phone": "7706167953",
     "date": "2026-11-21",
     "timestamp": "2026-11-22T20:30:54.718Z"
-  },
-  {
-    "key": "B2B_b2b_wave2_58_realtortimt@gmail.com",
-    "type": "B2B_PARTNER",
-    "category": "realtor_youtube_relocation",
-    "targetName": "Tim Trevathan",
-    "company": "Tim Trevathan Homes (Moving to Atlanta YouTube Team)",
-    "email": "realtortimt@gmail.com",
-    "city": "Suwanee",
-    "timestamp": "2026-11-22T20:31:24.124Z"
   },
   {
     "key": "PRICEDROP_fmls_drop_7792672_bpowers@rockhavenga.com",

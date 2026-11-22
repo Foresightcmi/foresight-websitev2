@@ -12,9 +12,58 @@
     "radon@cutcliffradonservices.com|RE: SCHEDULED RADON TEST: 23 BLUE HERON POINT ACWORTH, GA",
     "tiffany@willowandwest.living|Re: Your Client's Inspection Has Been Scheduled",
     "nspire@spgroupusa.com|Re: Weekly Bulletin - NSPIRED Podcast - November 16, 2026",
-    "fmann@tratonhomes.com|RE: FW: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW,"
+    "fmann@tratonhomes.com|RE: FW: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW,",
+    "radon@cutcliffradonservices.com|Re: radon test - Christopher Boykin - 1955 Deco Dr Kennesaw",
+    "fmann@tratonhomes.com|Re: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW, GA",
+    "thomas.sobeck@gmail.com|Re: 11-month warranty inspection quote, 1074 Fleming St SE, Smyrna",
+    "transactional@e.pnc.com|=?UTF-8?B?V2XigJlyZSB1cGRhdGluZyBvdXIgRGlnaXRhbCBTZXJ2aWNlcyBB?=",
+    "jeff.kirves@yahoo.com|Re: Keeping your Cumming deals together during due diligence",
+    "james.ward@n2co.com|Re: Open to growing in Laurel Springs?",
+    "dfloyd01@aol.com|=?utf-8?Q?Re:_Quick_question_on_0_Union_Grove_Church_Road_SE_=28$7?="
   ],
   "recentReplies": [
+    {
+      "email": "dfloyd01@aol.com",
+      "subject": "=?utf-8?Q?Re:_Quick_question_on_0_Union_Grove_Church_Road_SE_=28$7?=",
+      "snippet": "_Union_Grove_Church_Road_SE_=28$7?= =?utf-8?Q?5,000_adjustment=29_=E2=80=94_Foresight_CMI_Team?= Message-Id: <893D4A40-F656-46BE-8694-93AA9EFDF83A@aol.com> ) A4 OK Success",
+      "detectedAt": "2026-11-21T04:00:08.644Z"
+    },
+    {
+      "email": "james.ward@n2co.com",
+      "subject": "Re: Open to growing in Laurel Springs?",
+      "snippet": "3} From: James Ward <james.ward@n2co.com> Message-ID: <CACJUzUo3tLvZd=HRxVEf+6WugcOoWOA214OSvdfmuH8J5r7mdw@mail.gmail.com> Subject: Re: Open to growing in Laurel Springs? )",
+      "detectedAt": "2026-11-21T04:00:08.635Z"
+    },
+    {
+      "email": "jeff.kirves@yahoo.com",
+      "subject": "Re: Keeping your Cumming deals together during due diligence",
+      "snippet": "From: Jeff Kirves <jeff.kirves@yahoo.com> Message-ID: <112506110.288589.1795132484400@mail.yahoo.com> Subject: Re: Keeping your Cumming deals together during due diligence )",
+      "detectedAt": "2026-11-21T04:00:08.626Z"
+    },
+    {
+      "email": "transactional@e.pnc.com",
+      "subject": "=?UTF-8?B?V2XigJlyZSB1cGRhdGluZyBvdXIgRGlnaXRhbCBTZXJ2aWNlcyBB?=",
+      "snippet": "ject: =?UTF-8?B?V2XigJlyZSB1cGRhdGluZyBvdXIgRGlnaXRhbCBTZXJ2aWNlcyBB?= =?UTF-8?B?Z3JlZW1lbnQ=?= Message-ID: <eb89ee55-cedc-4f48-8ec7-8de44a903329@las1s04mta0149.xt.local> )",
+      "detectedAt": "2026-11-21T04:00:08.616Z"
+    },
+    {
+      "email": "thomas.sobeck@gmail.com",
+      "subject": "Re: 11-month warranty inspection quote, 1074 Fleming St SE, Smyrna",
+      "snippet": "eck@gmail.com> Message-ID: <CABF45j4kByeum97pAsT+NTbKxoOtFNMaifZt5eLcfcvKVxihnQ@mail.gmail.com> Subject: Re: 11-month warranty inspection quote, 1074 Fleming St SE, Smyrna )",
+      "detectedAt": "2026-11-21T04:00:08.607Z"
+    },
+    {
+      "email": "fmann@tratonhomes.com",
+      "subject": "Re: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW, GA",
+      "snippet": "ect: Re: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW, GA 30144 Message-ID: <DM4PR18MB4269E449F402682ACDD023C9B17B2@DM4PR18MB4269.namprd18.prod.outlook.com> )",
+      "detectedAt": "2026-11-21T04:00:08.576Z"
+    },
+    {
+      "email": "radon@cutcliffradonservices.com",
+      "subject": "Re: radon test - Christopher Boykin - 1955 Deco Dr Kennesaw",
+      "snippet": "ices.com> Subject: Re: radon test - Christopher Boykin - 1955 Deco Dr Kennesaw Message-ID: <BYAPR14MB287220D021FCAE274B32D51CBF7B2@BYAPR14MB2872.namprd14.prod.outlook.com> )",
+      "detectedAt": "2026-11-21T04:00:08.437Z"
+    },
     {
       "email": "fmann@tratonhomes.com",
       "subject": "RE: FW: HOME INSPECTOR CREDENTIALS: 1955 DECO DR (LOT 27) KENNESAW,",
