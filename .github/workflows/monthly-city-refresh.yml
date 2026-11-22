@@ -50,9 +50,9 @@ jobs:
         run: |
           git config user.name "Foresight City Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/cities.json data/refresh-log.json .analytics/governor_brief.json .analytics/experiments_ledger.jsonl
+          git add data/cities.json data/refresh-log.json .analytics/experiments_ledger.jsonl
           if ! git diff --cached --quiet; then
-            git commit -m "refresh: city updates $(date +%Y-%m-%d) [skip ci]"
+            git commit -m "refresh: city updates $(date +%Y-%m-%d) [skip actions]"
             git pull --rebase -X theirs origin main
             git push origin main
             node scripts/ping-indexnow.mjs

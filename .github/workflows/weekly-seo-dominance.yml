@@ -57,16 +57,19 @@ jobs:
         run: |
           node scripts/gsc-leak-hunter-engine.mjs
           node scripts/striking-distance-engine.mjs
+          node scripts/auto-heal-intent-mismatches.mjs
           node scripts/heytony-competitor-watchdog.mjs
           node scripts/gbp-gap-and-ai-agent-audit.mjs
           node scripts/chameleonic-competitor-matrix.mjs
           node scripts/foresight-seo-social-agency.mjs
           node scripts/audit-youtube-growth-system.mjs
+          node scripts/firstindex-truth-guard.mjs --fix
+          node scripts/seo-health-check.mjs
           python3 scripts/page1-guard.py
 
       - name: Commit and Push SEO Moat Refinements
         run: |
           git config user.name "Foresight SEO Bot"
           git config user.email "bot@fhinspectionsatl.com"
-          git add data/ public/ docs/youtube-growth-swarm/ .analytics/governor_brief.json .analytics/experiments_ledger.jsonl
-          git diff --cached --quiet || (git commit -m "chore(seo): weekly automated SearchAgent OS, SEO Governor & truth sync [skip ci]" && git pull --rebase origin main && git push origin main) || echo "SEO records clean or push bypassed."
+          git add data/ public/ docs/youtube-growth-swarm/ .analytics/experiments_ledger.jsonl
+          git diff --cached --quiet || (git commit -m "chore(seo): weekly automated SearchAgent OS, SEO Governor & truth sync [skip actions]" && git pull --rebase -X theirs origin main && git push origin main) || echo "SEO records clean or push bypassed."

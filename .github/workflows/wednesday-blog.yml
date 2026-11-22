@@ -34,6 +34,7 @@ jobs:
           node scripts/discover-keywords.mjs
           node scripts/generate-blog-post.mjs
           node scripts/heytony-interlink-and-citation-enricher.mjs
+          node scripts/auto-heal-intent-mismatches.mjs
           node scripts/firstindex-truth-guard.mjs --fix
           node scripts/firstindex-truth-guard.mjs
           node scripts/seo-health-check.mjs
@@ -44,7 +45,7 @@ jobs:
           git config user.email "bot@fhinspectionsatl.com"
           git add data/posts.json data/keyword-brief.json public/llms.txt public/llms-full.txt .analytics/experiments_ledger.jsonl
           if ! git diff --cached --quiet; then
-            git commit -m "blog: new post $(date +%Y-%m-%d) [skip ci]"
+            git commit -m "blog: new post $(date +%Y-%m-%d) [skip actions]"
             git pull --rebase -X theirs origin main
             git push origin main
             node scripts/ping-indexnow.mjs
