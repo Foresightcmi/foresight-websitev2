@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import nodemailer from 'nodemailer';
 import { routePermitLead, buildConstructionEmail, buildSTREmail, LIST_UNSUBSCRIBE_HEADER } from './permit-email-templates.mjs';
+import { syncNetworkClock, readGovernorCeiling } from './lib/network-clock.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,11 +18,11 @@ const UNSUBSCRIBED_FILE = fs.existsSync(LOCAL_UNSUB_FILE) ? LOCAL_UNSUB_FILE : L
 const PERMIT_SUPPRESSION_FILE = path.join(ROOT_DIR, 'data', 'permit-suppression.json');
 const LOCK_FILE = path.join(ROOT_DIR, 'data', 'permit_outreach_dispatch.lock');
 
-function acquireLock() {
+function acquireLock(nowMs = Date.now()) {
   if (fs.existsSync(LOCK_FILE)) {
     try {
       const raw = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
-      const ageMs = Date.now() - (raw.timestamp || 0);
+      const ageMs = nowMs - (raw.timestamp || 0);
       if (ageMs < 30 * 60 * 1000) {
         console.log(`🔒 [Outreach Engine] Active lock held by PID ${raw.pid} (${Math.round(ageMs / 1000)}s old). Exiting cleanly to prevent duplicate sends.`);
         return false;
@@ -29,7 +30,7 @@ function acquireLock() {
     } catch (_) {}
   }
   try {
-    fs.writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, timestamp: Date.now() }), 'utf8');
+    fs.writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, timestamp: nowMs }), 'utf8');
     return true;
   } catch (_) {
     return false;
@@ -137,22 +138,22 @@ async function dispatchSmartphoneAlert(lead, emailData) {
 
 const SHARED_COOLDOWN_FILE = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'smtp_cooldown_state.json');
 
-function getSharedCooldown() {
+function getSharedCooldown(nowMs = Date.now()) {
   try {
     if (!fs.existsSync(SHARED_COOLDOWN_FILE)) return { active: false };
     const d = JSON.parse(fs.readFileSync(SHARED_COOLDOWN_FILE, 'utf8'));
-    if (d && d.cooldownUntil && new Date(d.cooldownUntil).getTime() > Date.now()) {
+    if (d && d.cooldownUntil && new Date(d.cooldownUntil).getTime() > nowMs) {
       return { active: true, cooldownUntil: d.cooldownUntil };
     }
   } catch {}
   return { active: false };
 }
 
-function setSharedCooldown(reason) {
+function setSharedCooldown(reason, nowMs = Date.now()) {
   try {
     fs.writeFileSync(SHARED_COOLDOWN_FILE, JSON.stringify({
-      triggeredAt: new Date().toISOString(),
-      cooldownUntil: new Date(Date.now() + 24.25 * 3600 * 1000).toISOString(),
+      triggeredAt: new Date(nowMs).toISOString(),
+      cooldownUntil: new Date(nowMs + 24.25 * 3600 * 1000).toISOString(),
       reason
     }, null, 2), 'utf8');
   } catch {}
@@ -160,9 +161,27 @@ function setSharedCooldown(reason) {
 
 async function main() {
   console.log('🚀 [Outreach Engine] Initializing Municipal Lead Outreach Engine...');
-  if (!acquireLock()) return;
+  const netClock = await syncNetworkClock();
+  const localStartMs = Date.now();
+  const liveNowMs = () => (netClock.ok ? netClock.nowMs + (Date.now() - localStartMs) : Date.now());
+  const liveIso = () => new Date(liveNowMs()).toISOString();
 
-  const smtpCooldown = getSharedCooldown();
+  if (!netClock.ok) {
+    console.log('🛡️ [Outreach Engine] Network clock unavailable. Fail-closed: skipping SMTP sends.');
+    return;
+  }
+  if (!netClock.isDaytimeWindow) {
+    console.log(`🛡️ [Outreach Engine] Outside 9:00 AM - 6:00 PM ET window (Real ET Hour: ${netClock.easternHour}). Skipping SMTP sends.`);
+    return;
+  }
+  const govCap = readGovernorCeiling(ROOT_DIR, 1200);
+  if (!govCap.allowSend) {
+    console.log(`🛡️ [Outreach Engine] Governor Safety Gate blocked sends (${govCap.reason}). Skipping SMTP sends.`);
+    return;
+  }
+  if (!acquireLock(liveNowMs())) return;
+
+  const smtpCooldown = getSharedCooldown(liveNowMs());
   if (smtpCooldown.active) {
     console.log(`🛡️ [Outreach Engine] Shared SMTP Circuit Breaker active until ${smtpCooldown.cooldownUntil}. Skipping SMTP to protect 24h reset.`);
     releaseLock();
@@ -193,7 +212,7 @@ async function main() {
   } catch (verifyErr) {
     console.warn('⚠️ [Outreach Engine] SMTP temporarily in Gmail rolling 24-hr cooldown:', verifyErr.message);
     if (verifyErr.message.includes('454') || verifyErr.message.includes('550')) {
-      setSharedCooldown(`Permit Outreach Verify Error: ${verifyErr.message}`);
+      setSharedCooldown(`Permit Outreach Verify Error: ${verifyErr.message}`, liveNowMs());
     }
     transporter.close();
     releaseLock();
@@ -351,7 +370,7 @@ async function main() {
         dossierUrl: emailData.dossierUrl,
         messageId: info.messageId,
         status: 'SENT',
-        dispatchedAt: new Date().toISOString(),
+        dispatchedAt: liveIso(),
         inspectionTarget
       };
 
@@ -368,7 +387,7 @@ async function main() {
     } catch (sendErr) {
       console.error(`❌ [Outreach Engine] Failed to send email to ${lead.ownerEmail}:`, sendErr.message);
       if (sendErr.message.includes('550') || sendErr.message.includes('454') || sendErr.message.includes('Daily user sending limit exceeded')) {
-        setSharedCooldown(`Permit Outreach 550/454 limit reached (${lead.ownerEmail}): ${sendErr.message}`);
+        setSharedCooldown(`Permit Outreach 550/454 limit reached (${lead.ownerEmail}): ${sendErr.message}`, liveNowMs());
         console.warn('\n⚠️ [Outreach Engine] Google SMTP daily quota reached. Locked shared 24h circuit breaker and halting immediately.');
         break;
       }
