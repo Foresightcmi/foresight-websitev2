@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import nodemailer from 'nodemailer';
 import { harvestLiveDueDiligence } from './harvest-live-due-diligence.mjs';
 import { discoverLocalOpenSmsPhone, sendOpenSmsWithDhcpFallback } from './lib/opensms-fallback.mjs';
+import { syncNetworkClock, readGovernorCeiling } from './lib/network-clock.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -346,10 +347,15 @@ function releaseLock() {
 }
 
 async function main() {
+  const netClock = await syncNetworkClock();
+  const localStartMs = Date.now();
+  const liveNowMs = () => (netClock.ok ? netClock.nowMs + (Date.now() - localStartMs) : Date.now());
+  const liveIso = () => new Date(liveNowMs()).toISOString();
+
   if (fs.existsSync(LOCK_FILE)) {
     try {
       const lockData = JSON.parse(fs.readFileSync(LOCK_FILE, 'utf8'));
-      const lockAgeMs = Date.now() - (lockData.timestamp || 0);
+      const lockAgeMs = liveNowMs() - (lockData.timestamp || 0);
       if (lockData.pid && isProcessRunning(lockData.pid) && lockAgeMs < 30 * 60 * 1000) {
         console.log(`🛡️ [Concurrency Guard] Another Due Diligence Scout instance is actively running (PID ${lockData.pid}). Exiting cleanly to prevent duplicate sends.`);
         return;
@@ -359,7 +365,7 @@ async function main() {
       try { fs.unlinkSync(LOCK_FILE); } catch {}
     }
   }
-  fs.writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, timestamp: Date.now() }), 'utf8');
+  fs.writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, timestamp: liveNowMs() }), 'utf8');
   process.on('exit', releaseLock);
 
   console.log('⚡ [Due Diligence Engine] Initializing Autonomous Scout, Email & OpenSMS Transmission...');
@@ -381,7 +387,7 @@ async function main() {
     try {
       if (!fs.existsSync(SHARED_COOLDOWN_FILE)) return { active: false };
       const d = JSON.parse(fs.readFileSync(SHARED_COOLDOWN_FILE, 'utf8'));
-      if (d && d.cooldownUntil && new Date(d.cooldownUntil).getTime() > Date.now()) {
+      if (d && d.cooldownUntil && new Date(d.cooldownUntil).getTime() > liveNowMs()) {
         return { active: true, cooldownUntil: d.cooldownUntil, reason: d.reason };
       }
     } catch {}
@@ -390,21 +396,21 @@ async function main() {
   function setSharedCooldown(reason, hours = 24.25) {
     try {
       const payload = {
-        triggeredAt: new Date().toISOString(),
-        cooldownUntil: new Date(Date.now() + hours * 3600 * 1000).toISOString(),
+        triggeredAt: liveIso(),
+        cooldownUntil: new Date(liveNowMs() + hours * 3600 * 1000).toISOString(),
         reason
       };
       fs.writeFileSync(SHARED_COOLDOWN_FILE, JSON.stringify(payload, null, 2), 'utf8');
     } catch {}
   }
 
-  const easternHour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(new Date()));
-  const easternDateStr = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-  const isDaytimeWindow = easternHour >= 9 && easternHour < 18;
+  const easternHour = netClock.ok ? netClock.easternHour : null;
+  const easternDateStr = netClock.ok ? netClock.easternDateStr : liveIso().slice(0, 10);
+  const isDaytimeWindow = netClock.ok && netClock.isDaytimeWindow;
   const isHolidayBlackout = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDateStr);
 
-  const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
-  const fourteenDaysAgoMs = Date.now() - 14 * 24 * 3600 * 1000;
+  const oneDayAgoMs = liveNowMs() - 24 * 3600 * 1000;
+  const fourteenDaysAgoMs = liveNowMs() - 14 * 24 * 3600 * 1000;
   let rolling24hSent = 0;
   const recentlyContactedEmails14d = new Set();
   const masterDbPath = path.resolve(ROOT_DIR, '..', 'email-campaign-engine', 'master_realtor_database.json');
@@ -464,7 +470,9 @@ async function main() {
       }
     } catch {}
   }
-  let remaining24hBudget = Math.max(0, 1200 - rolling24hSent);
+  const govCap = readGovernorCeiling(ROOT_DIR, 1200);
+  const max24hCap = govCap.max24h;
+  let remaining24hBudget = govCap.allowSend ? Math.max(0, max24hCap - rolling24hSent) : 0;
 
   const { user, pass } = getEmailCredentials();
   const { apiKey: openSmsKey, gatewayUrl: configuredSmsUrl } = getOpenSmsConfig();
@@ -472,10 +480,14 @@ async function main() {
   let canSendEmail = false;
   const smtpCooldown = getSharedCooldown();
 
-  if (!isDaytimeWindow) {
-    console.log(`🛡️ [Due Diligence Engine] Outside 9:00 AM - 6:00 PM ET window (Hour: ${easternHour}). Harvest synced; SMTP/SMS deferred to daytime.`);
+  if (!netClock.ok) {
+    console.log('🛡️ [Due Diligence Engine] Network clock unavailable. Fail-closed: harvest synced; SMTP/SMS deferred.');
+  } else if (!govCap.allowSend) {
+    console.log(`🛡️ [Due Diligence Engine] Governor Safety Gate blocked sends (${govCap.reason}). Deferring SMTP.`);
+  } else if (!isDaytimeWindow) {
+    console.log(`🛡️ [Due Diligence Engine] Outside 9:00 AM - 6:00 PM ET window (Real ET Hour: ${easternHour}). Harvest synced; SMTP/SMS deferred to daytime.`);
   } else if (remaining24hBudget <= 0) {
-    console.log(`🛡️ [Due Diligence Engine] Rolling 24h cap reached (${rolling24hSent}/1200). Preserving 800-email Workspace buffer.`);
+    console.log(`🛡️ [Due Diligence Engine] Rolling 24h cap reached (${rolling24hSent}/${max24hCap}). Preserving 800-email Workspace buffer.`);
   } else if (smtpCooldown.active) {
     console.log(`🛡️ [Due Diligence Engine] Shared SMTP Circuit Breaker active until ${smtpCooldown.cooldownUntil}. Skipping SMTP.`);
   } else if (!pass) {
@@ -633,7 +645,7 @@ async function main() {
         if (r.closed || r.close_date) continue;
         if ((r.raw_price || 0) < 75000 || /^0\s+/i.test(r.address || '') || /non-mls/i.test(r.name || '') || r.clean_phone === '0000000000') continue;
         const dealTimestamp = new Date(r.pending_timestamp || r.date || 0).getTime();
-        const dealAgeDays = (Date.now() - dealTimestamp) / (1000 * 60 * 60 * 24);
+        const dealAgeDays = (liveNowMs() - dealTimestamp) / (1000 * 60 * 60 * 24);
         if (isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
         const normEmail = String(r.email).trim().toLowerCase();
         const normName = String(r.name || '').trim().toLowerCase();
@@ -679,7 +691,7 @@ async function main() {
             email: r.email,
             phone: cleanPhone,
             date: r.date,
-            timestamp: new Date().toISOString()
+            timestamp: liveIso()
           });
         
           fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
@@ -707,7 +719,7 @@ async function main() {
         // Strict Freshness Gate: ONLY contracts signed in the last 48 hours (active 2-day due diligence window)
         if (!r.date) continue;
         if ((r.raw_price || 0) < 75000 || /^0\s+/i.test(r.address || '') || /non-mls/i.test(r.name || '') || r.clean_phone === '0000000000') continue;
-        const dealAgeDays = (Date.now() - new Date(r.date).getTime()) / (1000 * 60 * 60 * 24);
+        const dealAgeDays = (liveNowMs() - new Date(r.date).getTime()) / (1000 * 60 * 60 * 24);
         if (r.closed || r.close_date || isNaN(dealAgeDays) || dealAgeDays < 0 || dealAgeDays > 2.0) continue;
 
         const cleanPhone = String(r.clean_phone || r.raw_phone || r.phone || '').replace(/\D/g, '').slice(-10);
@@ -743,7 +755,7 @@ async function main() {
           if (normName) contactedNames.add(normName);
           if (normEmail) contactedEmails.add(normEmail);
           openSmsLog.push({
-            id: smsData.id || `sms_${Date.now()}`,
+            id: smsData.id || `sms_${liveNowMs()}`,
             leadId: r.id,
             to: `+1${cleanPhone}`,
             targetName: r.name,
@@ -752,7 +764,7 @@ async function main() {
             role: r.role || 'LIST_AGENT',
             gateway: isLocalDasLearning ? 'DasLearning-Local-9292' : 'OpenSMS-Cloud',
             status: smsData.stat === true ? 'sent' : (smsData.status || 'pending'),
-            timestamp: new Date().toISOString()
+            timestamp: liveIso()
           });
           fs.writeFileSync(OPENSMS_LOG_FILE, JSON.stringify(openSmsLog, null, 2), 'utf8');
           sentOpenSmsCount++;
@@ -805,7 +817,7 @@ async function main() {
           if (normName) contactedNames.add(normName);
           outreachLog.push({
             key, type: 'LOAN_OFFICER', targetName: lo.name, company: lo.company,
-            email: lo.email, city: lo.city, timestamp: new Date().toISOString()
+            email: lo.email, city: lo.city, timestamp: liveIso()
           });
           fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
 
@@ -878,7 +890,7 @@ async function main() {
         try {
           await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: p.email, subject, html });
           contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
-          outreachLog.push({ key, type: 'B2B_PARTNER', category: p.category, targetName: p.name, company: p.company, email: p.email, city: p.city, timestamp: new Date().toISOString() });
+          outreachLog.push({ key, type: 'B2B_PARTNER', category: p.category, targetName: p.name, company: p.company, email: p.email, city: p.city, timestamp: liveIso() });
           fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
           sentB2bPartnersCount++;
           await sleep(18500);
@@ -908,7 +920,7 @@ async function main() {
       try {
         await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: pd.email, subject: pd.subject, text: pd.pitch_body, html });
         contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
-        outreachLog.push({ key, type: 'FMLS_PRICE_DROP', targetName: pd.name, brokerage: pd.brokerage, address: pd.address, city: pd.city, email: pd.email, timestamp: new Date().toISOString() });
+        outreachLog.push({ key, type: 'FMLS_PRICE_DROP', targetName: pd.name, brokerage: pd.brokerage, address: pd.address, city: pd.city, email: pd.email, timestamp: liveIso() });
         fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
         sentPriceDropCount++;
         await sleep(18500);
@@ -937,7 +949,7 @@ async function main() {
       try {
         await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: ml.email, subject: ml.subject, text: ml.pitch_body, html });
         contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
-        outreachLog.push({ key, type: `FMLS_${ml.trigger_type}`, targetName: ml.name, brokerage: ml.brokerage, address: ml.address, city: ml.city, email: ml.email, timestamp: new Date().toISOString() });
+        outreachLog.push({ key, type: `FMLS_${ml.trigger_type}`, targetName: ml.name, brokerage: ml.brokerage, address: ml.address, city: ml.city, email: ml.email, timestamp: liveIso() });
         fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
         sentMicroTriggerCount++;
         await sleep(18500);
@@ -970,7 +982,7 @@ async function main() {
       try {
         await transporter.sendMail({ from: `"Christopher Boykin, CMI - Foresight Home Inspections" <${user}>`, to: w.buyerAgentEmail, subject, html });
         contactedKeys.add(key); contactedEmails.add(normEmail); consumeBudget(normEmail); if (normName) contactedNames.add(normName);
-        outreachLog.push({ key, type: 'WARRANTY_11M_DRIP', targetName: w.buyerAgentName, brokerage: w.buyerOfficeName, address: w.address, city: w.city, email: w.buyerAgentEmail, timestamp: new Date().toISOString() });
+        outreachLog.push({ key, type: 'WARRANTY_11M_DRIP', targetName: w.buyerAgentName, brokerage: w.buyerOfficeName, address: w.address, city: w.city, email: w.buyerAgentEmail, timestamp: liveIso() });
         fs.writeFileSync(OUTREACH_LOG_FILE, JSON.stringify(outreachLog, null, 2), 'utf8');
         sentWarranty11mCount++;
         await sleep(18500);
@@ -989,7 +1001,7 @@ async function main() {
     execSync('git add public/vip-dispatch.html data/under-contract-realtors.json data/archive-under-contract-realtors.json data/due-diligence-outreach-log.json', { cwd: ROOT_DIR, stdio: 'ignore' });
     const diffStatus = execSync('git diff --cached --name-only', { cwd: ROOT_DIR, encoding: 'utf8' }).trim();
     if (diffStatus) {
-      const todayIso = new Date().toISOString().split('T')[0];
+      const todayIso = netClock.ok ? netClock.easternDateStr : liveIso().slice(0, 10);
       execSync(`git commit -m "chore(dispatch): auto-sync ${todayIso} FMLS due diligence harvest & vip-dispatch.html"`, { cwd: ROOT_DIR, stdio: 'ignore' });
       execSync('git pull --ff-only origin main', { cwd: ROOT_DIR, stdio: 'ignore' });
       execSync('git push origin main', { cwd: ROOT_DIR, stdio: 'ignore' });

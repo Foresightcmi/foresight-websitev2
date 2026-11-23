@@ -19,6 +19,7 @@ import {
 import { ingestHomeGaugeJobs, mergeCancellations, pollReviewOptOutReplies } from './lib/homegauge-intake.mjs';
 import { sendOpenSmsWithDhcpFallback } from './lib/opensms-fallback.mjs';
 import { scanAllHistoricalHr5Reports, mineWarmWarrantyAndFinalCohorts, buildWarrantyCheckinEmail, fourKeySet } from './lib/warranty-checkin.mjs';
+import { syncNetworkClock, readGovernorCeiling } from './lib/network-clock.mjs';
 
 const ROOT = process.cwd();
 const PRIV = path.join(ROOT, 'data', 'private');
@@ -156,14 +157,21 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
     return { added, sent: [], revoked, newCancelCount: hg.newCancelCount };
   }
 
-  const easternDateRun = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const netClock = await syncNetworkClock();
+  if (!netClock.ok && !forceWindow) {
+    console.log('[Review Engine] Network clock unavailable; fail-closed deferring sends.');
+    return { added, sent: [], revoked, newWarrantyCount: hg.newWarrantyCount };
+  }
+  const now = netClock.ok ? netClock.nowDate : new Date();
+  const nowMs = now.getTime();
+  const easternDateRun = netClock.ok ? netClock.easternDateStr : new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
   const isHolidayRun = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDateRun);
-  const easternHour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(new Date()));
+  const easternHour = netClock.ok ? netClock.easternHour : Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(now));
   if (!forceWindow && (isHolidayRun || easternHour < 9 || easternHour >= 18)) {
     console.log(`[Review Engine] Outside 9 AM-6 PM ET window or holiday blackout. Queued ${added.length} viewed report(s); Revoked ${revoked.length}; sends deferred.`);
     return { added, sent: [], revoked, newWarrantyCount: hg.newWarrantyCount };
   }
-  const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
+  const oneDayAgoMs = nowMs - 24 * 3600 * 1000;
   let crossSent24h = 0;
   const masterDb = readJson(path.resolve(ROOT, '..', 'email-campaign-engine', 'master_realtor_database.json'), { contacts: {} });
   for (const c of Object.values(masterDb.contacts || {})) {
@@ -187,13 +195,14 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
       if (t?.at && Array.isArray(t.channels) && t.channels.includes('email') && new Date(t.at).getTime() >= oneDayAgoMs) crossSent24h++;
     }
   }
-  let remainingEmailQuota = Math.max(0, 1200 - crossSent24h);
+  const { max24h: max24hCap, allowSend: govAllow } = readGovernorCeiling(ROOT, 1200);
+  let remainingEmailQuota = govAllow ? Math.max(0, max24hCap - crossSent24h) : 0;
   const cool = readJson(COOLDOWN, {});
-  const emailOk = remainingEmailQuota > 0 && !(cool.cooldownUntil && new Date(cool.cooldownUntil) > new Date());
+  const emailOk = remainingEmailQuota > 0 && !(cool.cooldownUntil && new Date(cool.cooldownUntil) > now);
   const transporter = emailOk && pass ? nodemailer.createTransport({ service: 'gmail', auth: { user, pass } }) : null;
   const sent = [];
-  for (const { entry, kind } of dueActions(queue, new Date(), suppressed(), canceledIndex, ledger).slice(0, MAX_AUTO_BATCH)) {
-    const gate = canContactClient(ledger, entry, kind, new Date(), suppressed());
+  for (const { entry, kind } of dueActions(queue, now, suppressed(), canceledIndex, ledger).slice(0, MAX_AUTO_BATCH)) {
+    const gate = canContactClient(ledger, entry, kind, now, suppressed());
     if (!gate.allowed) continue;
     const emailField = kind === 'initial' ? 'emailSentAt' : 'reminderEmailSentAt';
     const smsField = kind === 'initial' ? 'smsSentAt' : 'reminderSmsSentAt';
@@ -203,17 +212,17 @@ async function run(cfg, queue, dryRun = false, forceWindow = false) {
       try {
         const m = buildEmail(entry, REVIEW_LINK, kind);
         await transporter.sendMail({ from: `"Christopher Boykin, CMI" <${user}>`, to: entry.email, subject: m.subject, text: m.text, html: m.html });
-        entry[emailField] = new Date().toISOString();
+        entry[emailField] = now.toISOString();
         remainingEmailQuota--;
         didSendEmail = true;
       } catch (e) { console.warn('[Review Engine] Email dispatch failed:', e.message); }
     }
     if (entry.phone && !entry[smsField] && (await sendSms(entry.phone, buildSms(entry, REVIEW_LINK, kind)))) {
-      entry[smsField] = new Date().toISOString();
+      entry[smsField] = now.toISOString();
       didSendSms = true;
     }
     if (didSendEmail || didSendSms) {
-      const nowIso = new Date().toISOString();
+      const nowIso = now.toISOString();
       const channels = [...(didSendEmail ? ['email'] : []), ...(didSendSms ? ['sms'] : [])];
       if (kind === 'initial' && !entry.sentAt) entry.sentAt = nowIso;
       else if (kind === 'reminder') entry.reminderSentAt = entry.reminderSentAt || nowIso;
@@ -233,12 +242,13 @@ async function reactivatePastClients(args, queue, cancels) {
   const forceWindow = args.includes('--force-window');
   const limitArg = args.find((a) => a.startsWith('--limit='))?.split('=')[1] || (args.indexOf('--limit') >= 0 ? args[args.indexOf('--limit') + 1] : '8');
   const limit = Math.min(10, Math.max(1, parseInt(limitArg, 10) || 8));
-  const now = new Date();
-  const easternDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  const netClock = await syncNetworkClock();
+  const now = netClock.ok ? netClock.nowDate : new Date();
+  const easternDate = netClock.ok ? netClock.easternDateStr : new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
   const isHoliday = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDate);
-  const day = now.getDay();
-  const mins = now.getHours() * 60 + now.getMinutes();
-  const inWeekdayWindow = !isHoliday && day >= 1 && day <= 5 && mins >= 600 && mins <= 990;
+  const day = netClock.ok ? netClock.easternWeekdayNum : now.getDay();
+  const mins = netClock.ok ? netClock.easternMinutes : now.getHours() * 60 + now.getMinutes();
+  const inWeekdayWindow = netClock.ok && !isHoliday && day >= 1 && day <= 5 && mins >= 600 && mins <= 990;
   const statePath = path.join(PRIV, 'past-client-reactivation.json');
   const state = readJson(statePath, { updatedAt: now.toISOString(), totalReactivated: 0, sentIds: [], sentPhones: [], sentAddresses: [] });
   const pastClients = readJson(path.join(ROOT, 'data', 'past-clients.json'), []);
@@ -279,10 +289,10 @@ async function reactivatePastClients(args, queue, cancels) {
     const ph = digits10(c.phone || c.raw_phone);
     const em = String(c.email || '').toLowerCase().trim();
     const candidate = { id: String(c.id || ''), name: c.first || c.name, city: c.city, address: c.address, phone: ph, email: em };
-    if (!canContactClient(ledger, candidate, 'initial', new Date(), sup).allowed) continue;
+    if (!canContactClient(ledger, candidate, 'initial', now, sup).allowed) continue;
     const msg = `Hi ${c.first || c.name || 'there'}, Chris with Foresight Home Inspections checking in. Completely optional & zero pressure (no follow-ups will follow): an honest Google review helps local buyers find us: ${REVIEW_LINK} Reply STOP anytime to opt out.`;
     if (await sendSms(ph, msg)) {
-      const sentIso = new Date().toISOString();
+      const sentIso = now.toISOString();
       sentCount++;
       state.sentIds.push(String(c.id || ''));
       state.sentPhones.push(ph);
@@ -308,11 +318,13 @@ async function runWarrantyCheckin(args, queue, cancels) {
   const forceWindow = args.includes('--force-window');
   const limitArg = args.find((a) => a.startsWith('--limit='))?.split('=')[1] || '4';
   const limit = Math.min(8, Math.max(1, parseInt(limitArg, 10) || 4));
-  const now = new Date();
-  const easternDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
-  const easternHour = Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(now));
+  const netClock = await syncNetworkClock();
+  const now = netClock.ok ? netClock.nowDate : new Date();
+  const easternDate = netClock.ok ? netClock.easternDateStr : new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  const easternHour = netClock.ok ? netClock.easternHour : Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(now));
+  const weekdayNum = netClock.ok ? netClock.easternWeekdayNum : now.getDay();
   const isHoliday = new Set(['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01']).has(easternDate);
-  const inWindow = !isHoliday && now.getDay() >= 1 && now.getDay() <= 5 && easternHour >= 9 && easternHour < 18;
+  const inWindow = netClock.ok && !isHoliday && weekdayNum >= 1 && weekdayNum <= 5 && easternHour >= 9 && easternHour < 18;
 
   const warrantyFile = path.join(PRIV, 'homegauge-warranty-clients.json');
   const statePath = path.join(PRIV, 'warranty-checkin-state.json');
@@ -354,7 +366,7 @@ async function runWarrantyCheckin(args, queue, cancels) {
     console.log('[Warranty & Final Check-In] Missing credentials or SMTP cooldown active; deferring.');
     return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun: false };
   }
-  const oneDayAgoMs = Date.now() - 24 * 3600 * 1000;
+  const oneDayAgoMs = now.getTime() - 24 * 3600 * 1000;
   let crossSent24h = 0;
   const masterDb = readJson(path.resolve(ROOT, '..', 'email-campaign-engine', 'master_realtor_database.json'), { contacts: {} });
   for (const c of Object.values(masterDb.contacts || {})) {
@@ -379,7 +391,8 @@ async function runWarrantyCheckin(args, queue, cancels) {
       if (t?.at && Array.isArray(t.channels) && t.channels.some((ch) => String(ch).startsWith('email')) && new Date(t.at).getTime() >= oneDayAgoMs) crossSent24h++;
     }
   }
-  if (crossSent24h >= 1200) return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun: false };
+  const { max24h: max24hCap, allowSend: govAllow } = readGovernorCeiling(ROOT, 1200);
+  if (!govAllow || crossSent24h >= max24hCap) return { cohort11MonthCount: cohort11Month.length, cohortFinalCount: cohortFinal.length, sentCount: 0, isDryRun: false };
 
   const transporter = nodemailer.createTransport({ service: 'gmail', auth: { user, pass } });
   let sentCount = 0;
@@ -387,7 +400,7 @@ async function runWarrantyCheckin(args, queue, cancels) {
     const mail = buildWarrantyCheckinEmail(rec, rec.cohort);
     try {
       await transporter.sendMail({ from: `"Christopher Boykin, CMI" <${user}>`, to: rec.email, subject: mail.subject, text: mail.text, html: mail.html });
-      const sentIso = new Date().toISOString();
+      const sentIso = now.toISOString();
       for (const k of fourKeySet(rec)) { if (!sentKeySet.has(k)) { sentKeySet.add(k); state.sentKeys.push(k); } }
       state.totalSent = (state.totalSent || 0) + 1;
       state.updatedAt = sentIso;
