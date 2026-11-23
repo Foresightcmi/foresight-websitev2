@@ -130,8 +130,8 @@ async function main() {
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
         host: 'www.fhinspectionsatl.com',
-        key: 'f4c8e2a1b9d04f3e8a7c6b5d4e3f2a1b',
-        keyLocation: 'https://www.fhinspectionsatl.com/f4c8e2a1b9d04f3e8a7c6b5d4e3f2a1b.txt',
+        key: 'foresighthomeinspections2026',
+        keyLocation: 'https://www.fhinspectionsatl.com/foresighthomeinspections2026.txt',
         urlList
       })
     });

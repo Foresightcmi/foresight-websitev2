@@ -203,6 +203,33 @@ if (missingServices.length > 0 && FIX_MODE) {
   missingServices = services.filter((s) => !llmsContent.includes(`/services/${s.slug}`));
 }
 const emptyLlmsDescriptions = (llmsContent.match(/^- \[.+\]\(https:\/\/www\.fhinspectionsatl\.com\/(blog|services)\/[^)]+\):[ \t]*\r?$/gm) || []).length;
+
+const llmsFullPath = path.join(ROOT, 'public', 'llms-full.txt');
+let llmsFullContent = fs.existsSync(llmsFullPath) ? fs.readFileSync(llmsFullPath, 'utf8') : '';
+const sanitizeAiDoc = (txt) => {
+  let out = txt
+    .replace(/\*/g, '')
+    .replace(/from\s+1816\s+South\s+Deshon\s+Road,\s*Lithonia,\s*GA\s*30058/gi, 'across 20 Metro Atlanta counties from Lithonia, GA 30058')
+    .replace(/centered\s+at\s+1816\s+South\s+Deshon\s+Road,\s*Lithonia,\s*GA\s*30058/gi, 'across Metro Atlanta (Lithonia, GA 30058 Service-Area Dispatch)')
+    .replace(/^-\s*Headquarters\s+Address:.*$/gim, '- Service-Area Dispatch Hub: Lithonia (Metro Atlanta), GA 30058 — Service-Area Business')
+    .replace(/1816\s+S(outh)?\s+Deshon\s+(Road|Rd),?\s*/gi, '')
+    .replace(/https:\/\/schedulenow\.homegauge\.com\/[^\s)]+/gi, 'https://www.fhinspectionsatl.com/quote')
+    .replace(/HomeGauge/gi, 'interactive digital report');
+  if (!/Full House Inspections/i.test(out)) {
+    out = out.replace(/^(# .+\r?\n)/, '$1> Entity Disambiguation: Official legal name is Foresight Home Inspections, LLC (https://www.fhinspectionsatl.com) — completely independent of Full House Inspections.\n');
+  }
+  return out;
+};
+if (FIX_MODE) {
+  llmsContent = sanitizeAiDoc(llmsContent);
+  fs.writeFileSync(llmsPath, llmsContent, 'utf8');
+  if (llmsFullContent) {
+    llmsFullContent = sanitizeAiDoc(llmsFullContent);
+    fs.writeFileSync(llmsFullPath, llmsFullContent, 'utf8');
+  }
+}
+const aiDocClean = !/1816\s+S(outh)?\s+Deshon|HomeGauge|\*/i.test(`${llmsContent}\n${llmsFullContent}`) && /Full House Inspections/i.test(llmsContent) && /Full House Inspections/i.test(llmsFullContent);
+record('AI corpus SAB street-address privacy, zero HomeGauge/asterisks & FH entity disambiguation (llms.txt + llms-full.txt)', aiDocClean);
 record(`100% of canonical blog articles (${posts.length}/${posts.length}) indexed in public/llms.txt`, missingPosts.length === 0 && emptyLlmsDescriptions === 0, `${posts.length - missingPosts.length}/${posts.length} indexed, ${emptyLlmsDescriptions} empty descriptions`);
 record(`100% of canonical services (${services.length}/${services.length}) indexed in public/llms.txt`, missingServices.length === 0 && emptyLlmsDescriptions === 0, `${services.length - missingServices.length}/${services.length} indexed`);
 

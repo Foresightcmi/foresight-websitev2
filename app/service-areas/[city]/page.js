@@ -196,7 +196,9 @@ export default async function CityPage({ params }) {
       "sameAs": [
         "https://maps.google.com/?cid=10862078652033010531",
         "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-        "https://www.linkedin.com/company/107206117/"
+        "https://certifiedmasterinspector.org/",
+        "https://www.youtube.com/@fhinspectionsatl",
+        "https://www.linkedin.com/company/foresight-home-inspections-llc/"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -322,43 +324,7 @@ export default async function CityPage({ params }) {
       "validThrough": "2027-12-31",
       "validFrom": "2026-01-01",
       "availability": "https://schema.org/InStock",
-      "url": "https://www.fhinspectionsatl.com/quote",
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingRate": {
-          "@type": "MonetaryAmount",
-          "value": "0",
-          "currency": "USD"
-        },
-        "shippingDestination": {
-          "@type": "DefinedRegion",
-          "addressCountry": "US",
-          "addressRegion": "GA"
-        },
-        "deliveryTime": {
-          "@type": "ShippingDeliveryTime",
-          "handlingTime": {
-            "@type": "QuantitativeValue",
-            "minValue": 0,
-            "maxValue": 0,
-            "unitCode": "DAY"
-          },
-          "transitTime": {
-            "@type": "QuantitativeValue",
-            "minValue": 0,
-            "maxValue": 0,
-            "unitCode": "DAY"
-          }
-        }
-      },
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 30,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/FreeReturn"
-      }
+      "url": `${SITE_URL}/services/buyer-inspection/${slug}`
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -366,16 +332,7 @@ export default async function CityPage({ params }) {
       "reviewCount": "53",
       "bestRating": "5",
       "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Marcus Vance" },
-        "datePublished": "2026-06-15",
-        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-      }
-    ]
+    }
   };
 
   // ── JSON-LD: LocalBusiness from cities.json ──────────────────────────

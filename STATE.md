@@ -1,26 +1,21 @@
-# STATE.md — Foresight Home Inspections (`foresight-websitev2`)
-**Last Updated**: 2026-11-16T22:50:00-05:00
+# STATE.md — Foresight Home Inspections (`foresight-website`)
+**Last Updated**: 2026-11-23T17:30:00-05:00
 **Active Branch**: `main`
 
-## 1. Completed Milestones (Autonomous SEO & Social Growth Agency + Full YouTube Growth System)
-- **Dedicated Foresight SEO, AEO & Social Media Research Agency (`scripts/foresight-seo-social-agency.mjs`, `.agents/skills/foresight-seo-social-agency/SKILL.md`, `sidecar://dashboard`)**:
-  - Built and verified the unified **Foresight SEO & Social Growth Agency** skill, scheduled Antigravity background agent (`Foresight SEO & Social Growth Agency` — Mondays & Thursdays 9:15 AM `America/New_York`), 3 live Windows OS Scheduled Tasks (`Foresight_SEO_Social_Agency_Daily`, `Foresight_Weekly_SEO_Dominance`, `Foresight_AgentReach_Omni_Radar`), and upgraded 24/7 GitHub Cloud Actions (`foresight-agency-cloud-pulse.yml`, `weekly-seo-dominance.yml`, `firstindex-daily-engine.yml`, `performance-guard.yml`).
-  - Built and executed `scripts/chameleonic-competitor-matrix.mjs` (`16` Metro Atlanta competitors benchmarked in `data/chameleonic-map-pack-scorecard.json` & `docs/youtube-growth-swarm/metro-atlanta-chameleonic-scorecard.md`: Foresight `100/100` vs `19/100` market average) and authored `docs/youtube-growth-swarm/ready-to-paste-omnichannel-pack.md`.
-- **High-ROI Page-1 CTR Acceleration, Concentric Batch 2 (`22 -> 28`) & Flagship 3:00 AM Buyer Study (`44 -> 45` Posts)**:
-  - Upgraded all `11` service `metaTitle` templates in `data/services-pseo.json` (`957` service-city routes) with `4.8★` + exact query modifiers (`Video`, `Mold Inspection`, `ASTM PCA`, `From $345` / `From $275` / `From $400`) and healed the `>62`-char `generateMetadata` fallback in `app/services/[service]/[city]/page.js`.
-  - Expanded `data/neighborhoods-pseo.json` to **`28` concentric neighborhood hubs** (adding high-impression GSC Page-2 clusters: `woodstock-towne-lake-eagle-watch`, `acworth-brookstone-lake-acworth`, `powder-springs-lost-mountain-seven-springs`, `peachtree-corners-amberfield-river-station`, `lawrenceville-tribble-mill-collins-hill`, `brookhaven-ashford-park-historic-club`) and published Blog Study #45 (`atlanta-homebuyer-3am-red-flags-musty-smell-brick-cracks-cost`).
-  - Eliminated the Next.js 16 Turbopack dynamic filesystem warning in `app/api/studio/route.js` and healed all legacy `foresight-website` script paths.
-- **Core YouTube Growth System & Free Benefits Hub**:
-  - Live `/about/christopher-boykin`, `/homebuyer-red-flags`, `/homeowner-care`, `/neighborhoods`, homepage Mall-Entrance Quick-Router + **6 Free Included Inspection Benefits (`$0` Extra Charge)** + **5 Free Metro Atlanta Self-Serve Tools**.
+## 1. Completed Milestones (`2026-11-23` — 87-City pSEO Live Analytics Unison, FTC Schema & SAB/GEO Hardening)
+- **Live GSC + GA4 Analytics -> 87-City pSEO Unison Engine (`scripts/live-analytics-pseo-sync.mjs`)**:
+  - Replaced 78-city duplicate boilerplate tips with 87/87 unique GPS/corridor/ZIP/county-geotech & live Search Console demand blocks (`86/87` cities matched live GSC queries), purged legacy `$750` commercial / `$335` warranty / `$250` radon flat rates, injected YouTube `@fhinspectionsatl` + MICB `sameAs` across all 87 city schemas, and enforced canonical `/services/buyer-inspection/{city}` anchors.
+  - Wired daily unison execution (`striking-distance-engine.mjs` -> `live-analytics-pseo-sync.mjs` -> `auto-heal-intent-mismatches.mjs` -> `firstindex-truth-guard.mjs --fix` -> `sync-ecosystem-harmony.mjs` -> `sync-email-campaign-bridge.mjs` -> `autonomous-pr-citation-dispatcher.mjs`) into `Antigravity_Autonomous_SEO_Governor` (`9:20 AM ET` Windows Task Scheduler), `weekly-seo-dominance.yml`, `foresight-agency-cloud-pulse.yml`, and 5x/day `Foresight_Constant_Daily_Health_Monitor`.
+- **GEO SAB Privacy, FH Entity Disambiguation, RSL 1.0, CSP-Report-Only & FTC 16 CFR § 465.2 Schema Compliance**:
+  - Scrubbed `1816 South Deshon Road`, `"HomeGauge"`, and markdown asterisks from `public/llms.txt`, `public/llms-full.txt`, and `app/faq/page.js`, adding explicit entity disambiguation (`Foresight Home Inspections, LLC — independent of Full House Inspections`).
+  - Added `#aeo-direct-answer` BLUF blocks and `<=60`-char absolute titles (`From $345`) on `/quote`, `/repair-credit-calculator`, `/compare`, `/faq`, and `/about/christopher-boykin` (respecting `117` Core Update Top-3 frozen URLs).
+  - Deployed `public/rsl.xml` (RSL 1.0), `Content-Security-Policy-Report-Only` + `rel="license"` HTTP headers in `next.config.mjs`, fixed IndexNow key `foresighthomeinspections2026`, removed synthetic `Marcus Vance` reviews & physical shipping schema under FTC 16 CFR § 465.2, and added Tri-Logo email fallback to `review-request-engine.mjs` when OpenSMS `:9292` is offline.
 
-## 2. Prior Completed Milestones (SearchAgent OS 5-Bot AEO Architecture — 100/100 On-Site Parity)
-- All 10 core route families pass `BLUF:True | FAQPage:True | Speakable:True | JSON-LD:True` with `<40-word` `#aeo-direct-answer`, Question-in-H2, `SpeakableSpecification`, `26` `/faq/[slug]` pages, `18` `/compare/[slug]` pages, `87` municipal hubs, and Web MCP (`/api/mcp`).
-
-## 3. Verification Status
-- `node scripts/firstindex-truth-guard.mjs`: **13/13 PASS (100%)**
+## 2. Verification Status (`2026-11-23`)
+- `node scripts/firstindex-truth-guard.mjs`: **14/14 PASS (100%)**
 - `python scripts/page1-guard.py`: **100% PASS**
 - `node scripts/audit-ai-citations.mjs`: **27/27 PASS (100%)**
-- `node scripts/test-search-agent-os.mjs`: **11/11 PASS (100%)**
+- `node scripts/sync-ecosystem-harmony.mjs`: **0 Drift Issues Across All Connected Engines**
 - `node scripts/seo-health-check.mjs`: **0 Errors, 0 Warnings**
 - `node scripts/performance-guard.mjs`: **8/8 PASS (100%)**
-- `node scripts/audit-youtube-growth-system.mjs`: **13/13 PASS (100%)**
+- `node --test scripts/__tests__/*.test.mjs`: **11/11 PASS (100%)**

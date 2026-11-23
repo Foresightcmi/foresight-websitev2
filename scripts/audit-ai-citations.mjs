@@ -39,8 +39,8 @@ if (fs.existsSync(llmsPath)) {
     content.includes('ASTM E2110') && content.includes('CPSC Publication #516') && content.includes('NJIT/IEEE') && content.includes('Cox v. Shell Oil'));
   check('llms.txt documents Web MCP endpoint and tools',
     content.includes('/api/mcp') && content.includes('calculate_quote') && content.includes('get_service_pricing'));
-  check('llms.txt has strict pricing ($450 sewer scope, $250 radon, $300 pool, $345 homes)',
-    content.includes('$345') && content.includes('$295') && content.includes('$275') && content.includes('$400'));
+  check('llms.txt has strict pricing (From $345 homes, From $295 condos, From $275 pre-drywall, Call for Quote add-ons)',
+    content.includes('$345') && content.includes('$295') && content.includes('$275') && content.includes('$400') && content.includes('Call (678) 480-2110 for Quote'));
 }
 
 if (fs.existsSync(llmsFullPath)) {

@@ -124,6 +124,7 @@ export default function RootLayout({ children }) {
           "https://maps.google.com/?cid=10862078652033010531",
           "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
           "https://certifiedmasterinspector.org/",
+          "https://www.youtube.com/@fhinspectionsatl",
           "https://www.yelp.com/biz/foresight-home-inspections-lithonia-2",
           "https://nextdoor.com/pages/foresight-home-inspections-llc-lithonia-ga/",
           "https://www.linkedin.com/company/foresight-home-inspections-llc/",

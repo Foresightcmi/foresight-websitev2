@@ -259,7 +259,9 @@ export function auditAndSyncEcosystemHarmony() {
   if (fs.existsSync(watchdogPath) && fs.existsSync(loopPath)) {
     const wRaw = fs.readFileSync(watchdogPath, 'utf8');
     const lRaw = fs.readFileSync(loopPath, 'utf8');
-    if (!wRaw.includes('MAX_24H_GLOBAL_LIMIT = 1200') || !lRaw.includes('MAX_24H_GLOBAL_LIMIT = 1200')) {
+    const validWatchdogCap = wRaw.includes('MAX_24H_GLOBAL_LIMIT = 1200') || wRaw.includes('capCfg.effective24hCeiling');
+    const validLoopCap = lRaw.includes('MAX_24H_GLOBAL_LIMIT = 1200') || lRaw.includes('capCfg.effective24hCeiling');
+    if (!validWatchdogCap || !validLoopCap) {
       issues += 1;
       console.error('  ❌ [DRIFT] email-campaign-engine MAX_24H_GLOBAL_LIMIT drifted from 1200/day!');
     } else {

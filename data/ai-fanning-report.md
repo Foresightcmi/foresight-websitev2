@@ -1,8 +1,8 @@
 # 🌐 Cody Schneider AI Fanning & GEO Surface Area Evaluation
 
-**Generated**: November 16, 2026  
+**Generated**: November 23, 2026  
 **Framework**: Generative Engine Optimization (GEO) & AI Fan-Out Modeling  
-**Overall Surface Area Score**: **100%** (37/37 Subqueries Covered)
+**Overall Surface Area Score**: **95%** (35/37 Subqueries Covered)
 
 ---
 
@@ -48,18 +48,18 @@ Foresight Home Inspections' 727-route matrix was evaluated against the top 5 hom
 ---
 
 ### 📡 Fan Cluster: "How much does a home inspection cost in Metro Atlanta?"
-- **Coverage**: **100%** (8/8 nodes)
+- **Coverage**: **75%** (6/8 nodes)
 - **Cluster ID**: `pricing-transparency`
 
 | Derivative Subquery | Target URL | Coverage Type | Status |
 | :--- | :--- | :--- | :---: |
 | **home inspection cost Atlanta 2026 guide** | [/blog/home-inspection-cost-atlanta-2026-guide](https://www.fhinspectionsatl.com/blog/home-inspection-cost-atlanta-2026-guide) | Dynamic Blog | ✅ COVERED |
 | **instant home inspection quote calculator Atlanta** | [/quote](https://www.fhinspectionsatl.com/quote) | Static Page | ✅ COVERED |
-| **sewer scope inspection cost Atlanta $450 flat rate** | [/services/sewer-scope-inspection](https://www.fhinspectionsatl.com/services/sewer-scope-inspection) | Dynamic Service | ✅ COVERED |
-| **radon testing cost Atlanta $250** | [/services/radon-testing](https://www.fhinspectionsatl.com/services/radon-testing) | Dynamic Service | ✅ COVERED |
-| **pool and spa inspection cost Atlanta $300** | [/services/pool-spa-inspection](https://www.fhinspectionsatl.com/services/pool-spa-inspection) | Dynamic Service | ✅ COVERED |
-| **termite letter cost Georgia $125 crawlspace $165** | [/services/termite-wdo-inspection](https://www.fhinspectionsatl.com/services/termite-wdo-inspection) | Dynamic Service | ✅ COVERED |
-| **DeKalb County low-flow toilet certificate $100** | [/service-areas/dekalb-county-compliance](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance) | Static Page | ✅ COVERED |
+| **sewer scope inspection cost Atlanta Call for Quote** | [/services/sewer-scope-inspection](https://www.fhinspectionsatl.com/services/sewer-scope-inspection) | Dynamic Service | ✅ COVERED |
+| **radon testing cost Atlanta Call for Quote** | [/services/radon-testing](https://www.fhinspectionsatl.com/services/radon-testing) | Dynamic Service | ✅ COVERED |
+| **pool and spa inspection cost Atlanta Call for Quote** | [/services/pool-inspection](https://www.fhinspectionsatl.com/services/pool-inspection) | None | ⚠️ GAP |
+| **termite letter WDO inspection Georgia Call for Quote** | [/services/termite-inspection](https://www.fhinspectionsatl.com/services/termite-inspection) | None | ⚠️ GAP |
+| **DeKalb County low-flow toilet certificate Call for Quote** | [/service-areas/dekalb-county-compliance](https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance) | Static Page | ✅ COVERED |
 | **condo inspection cost Atlanta starting $295** | [/quote](https://www.fhinspectionsatl.com/quote) | Static Page | ✅ COVERED |
 
 ---

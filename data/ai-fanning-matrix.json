@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-16T22:59:22.931Z",
+  "generatedAt": "2026-11-23T22:19:47.171Z",
   "framework": "Cody Schneider AI Fanning & GEO Surface Area Model",
-  "overallSurfaceAreaScore": "100%",
+  "overallSurfaceAreaScore": "95%",
   "totalSubqueriesFanned": 37,
-  "coveredSubqueries": 37,
+  "coveredSubqueries": 35,
   "fanClusters": [
     {
       "clusterId": "cmi-authority",
@@ -131,9 +131,9 @@
     {
       "clusterId": "pricing-transparency",
       "rootIntent": "How much does a home inspection cost in Metro Atlanta?",
-      "clusterCoverage": "100%",
+      "clusterCoverage": "75%",
       "subqueriesCount": 8,
-      "coveredCount": 8,
+      "coveredCount": 6,
       "subqueries": [
         {
           "query": "home inspection cost Atlanta 2026 guide",
@@ -150,35 +150,35 @@
           "surfaceAreaScore": 100
         },
         {
-          "query": "sewer scope inspection cost Atlanta $450 flat rate",
+          "query": "sewer scope inspection cost Atlanta Call for Quote",
           "targetUrl": "/services/sewer-scope-inspection",
           "status": "COVERED",
           "coverageType": "Dynamic Service",
           "surfaceAreaScore": 100
         },
         {
-          "query": "radon testing cost Atlanta $250",
+          "query": "radon testing cost Atlanta Call for Quote",
           "targetUrl": "/services/radon-testing",
           "status": "COVERED",
           "coverageType": "Dynamic Service",
           "surfaceAreaScore": 100
         },
         {
-          "query": "pool and spa inspection cost Atlanta $300",
-          "targetUrl": "/services/pool-spa-inspection",
-          "status": "COVERED",
-          "coverageType": "Dynamic Service",
-          "surfaceAreaScore": 100
+          "query": "pool and spa inspection cost Atlanta Call for Quote",
+          "targetUrl": "/services/pool-inspection",
+          "status": "GAP",
+          "coverageType": "None",
+          "surfaceAreaScore": 0
         },
         {
-          "query": "termite letter cost Georgia $125 crawlspace $165",
-          "targetUrl": "/services/termite-wdo-inspection",
-          "status": "COVERED",
-          "coverageType": "Dynamic Service",
-          "surfaceAreaScore": 100
+          "query": "termite letter WDO inspection Georgia Call for Quote",
+          "targetUrl": "/services/termite-inspection",
+          "status": "GAP",
+          "coverageType": "None",
+          "surfaceAreaScore": 0
         },
         {
-          "query": "DeKalb County low-flow toilet certificate $100",
+          "query": "DeKalb County low-flow toilet certificate Call for Quote",
           "targetUrl": "/service-areas/dekalb-county-compliance",
           "status": "COVERED",
           "coverageType": "Static Page",

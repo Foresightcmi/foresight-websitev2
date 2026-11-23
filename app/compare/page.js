@@ -13,8 +13,10 @@ function loadComparisons() {
 }
 
 export const metadata = {
-  title: 'Best Home Inspectors in Atlanta (2026 Comparison Matrix)',
-  description: 'Compare Atlanta home inspection providers by inspector count, CMI credentials, thermal imaging, $35,000 warranty coverage, and transparent pricing ($345+).',
+  title: {
+    absolute: 'Best Home Inspectors in Atlanta (2026 Comparison)',
+  },
+  description: 'Compare Atlanta home inspection providers by inspector count, CMI credentials, thermal imaging, $35,000 warranty coverage, and transparent pricing (From $345).',
   keywords: [
     'best home inspector Atlanta',
     'best home inspection company Atlanta GA',
@@ -154,8 +156,8 @@ export default function CompareHubPage() {
             <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.75rem' }}>
               How Metro Atlanta Home Inspection Providers Compare (2026)
             </h2>
-            <p style={{ color: '#475569', fontSize: '1.05rem', maxWidth: '780px', margin: '0 auto' }}>
-              Foresight Home Inspections, LLC is evaluated below against standard multi-inspector franchises, solo operators, and builder walkthroughs across seven empirical due diligence criteria.
+            <p id="aeo-direct-answer" style={{ color: '#475569', fontSize: '1.05rem', maxWidth: '780px', margin: '0 auto' }}>
+              Foresight Home Inspections, LLC (fhinspectionsatl.com, independent of Full House Inspections) is evaluated below against multi-inspector franchises, solo operators, and builder walkthroughs across two-inspector CMI deployment, free infrared thermal and 4K drone scans, $35,000 zero-deductible protection, and rates From $345.
             </p>
           </div>
 

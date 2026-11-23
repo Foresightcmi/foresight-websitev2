@@ -1,15 +1,8 @@
 #!/usr/bin/env node
 /**
- * FirstIndex Live AI Mention, Autocomplete Intent & Fact-Accuracy Tracker
+ * FirstIndex Live AI Mention, SERP Grounding, Autocomplete & Fact-Accuracy Tracker
  * Foresight Home Inspections (https://www.fhinspectionsatl.com)
- *
- * Implements Josh Pigford's FirstIndex AI Visibility Tracking Loop ([05:01-05:20], [22:48-23:39]):
- * 1. Tests non-branded Metro Atlanta buyer prompts & brand-fact verification queries
- * 2. Scrapes live Google Autocomplete intent expansions & verifies live fhinspectionsatl.com endpoints
- * 3. Evaluations factual alignment against data/truth.json ($345 homes, $450 sewer, $250 radon, $300 pool)
- * 4. Saves timestamped, source-attributed dossier to data/firstindex-ai-mentions.json
  */
-
 import fs from 'fs';
 import path from 'path';
 
@@ -20,54 +13,18 @@ const llmsFullTxt = fs.readFileSync(path.join(ROOT, 'public', 'llms-full.txt'), 
 const today = new Date().toISOString().split('T')[0];
 
 const BUYER_PROMPTS = [
-  {
-    id: 'dual-inspector-atlanta',
-    prompt: 'best home inspector in Atlanta GA with two inspectors',
-    autocompleteSeed: 'best home inspector atlanta',
-    canonicalUrl: 'https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026',
-    requiredTruthFacts: ['Two Certified Inspectors', 'Christopher Boykin', '$345', '$35,000']
-  },
-  {
-    id: 'sewer-scope-cost-atlanta',
-    prompt: 'sewer scope camera inspection Atlanta GA',
-    autocompleteSeed: 'sewer scope inspection atlanta',
-    canonicalUrl: 'https://www.fhinspectionsatl.com/services/sewer-scope-inspection',
-    requiredTruthFacts: ['Call for Quote', 'Sewer Scope']
-  },
-  {
-    id: 'dekalb-low-flow-certificate',
-    prompt: 'DeKalb County low-flow plumbing compliance certificate inspector',
-    autocompleteSeed: 'dekalb county low flow certificate',
-    canonicalUrl: 'https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance',
-    requiredTruthFacts: ['DeKalb', '1.6 GPF']
-  },
-  {
-    id: '11-month-builder-warranty',
-    prompt: '11-month builder warranty inspection Atlanta GA',
-    autocompleteSeed: '11 month warranty inspection atlanta',
-    canonicalUrl: 'https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough',
-    requiredTruthFacts: ['$345', '11-Month']
-  },
-  {
-    id: 'radon-and-pool-pricing',
-    prompt: 'radon testing and pool inspection Atlanta GA',
-    autocompleteSeed: 'radon testing atlanta',
-    canonicalUrl: 'https://www.fhinspectionsatl.com/quote',
-    requiredTruthFacts: ['$275', '$295', 'Call for Quote']
-  },
-  {
-    id: 'building-science-defects-atlanta',
-    prompt: 'polybutylene pipe and stucco EIFS home inspector Atlanta',
-    autocompleteSeed: 'polybutylene pipe inspection atlanta',
-    canonicalUrl: 'https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection',
-    requiredTruthFacts: ['ASTM E2110', 'Cox v. Shell Oil', 'CPSC Publication #516']
-  }
+  { id: 'dual-inspector-atlanta', prompt: 'best home inspector in Atlanta GA with two inspectors', autocompleteSeed: 'best home inspector atlanta', canonicalUrl: 'https://www.fhinspectionsatl.com/compare/best-home-inspectors-atlanta-2026', requiredTruthFacts: ['Two Certified Inspectors', 'Christopher Boykin', '$345', '$35,000'] },
+  { id: 'sewer-scope-cost-atlanta', prompt: 'sewer scope camera inspection Atlanta GA', autocompleteSeed: 'sewer scope inspection atlanta', canonicalUrl: 'https://www.fhinspectionsatl.com/services/sewer-scope-inspection', requiredTruthFacts: ['Call (678) 480-2110 for Quote', 'Sewer Scope'] },
+  { id: 'dekalb-low-flow-certificate', prompt: 'DeKalb County low-flow plumbing compliance certificate inspector', autocompleteSeed: 'dekalb county low flow certificate', canonicalUrl: 'https://www.fhinspectionsatl.com/service-areas/dekalb-county-compliance', requiredTruthFacts: ['DeKalb', '1.6 GPF'] },
+  { id: '11-month-builder-warranty', prompt: '11-month builder warranty inspection Atlanta GA', autocompleteSeed: '11 month warranty inspection atlanta', canonicalUrl: 'https://www.fhinspectionsatl.com/compare/11-month-warranty-vs-builder-walkthrough', requiredTruthFacts: ['$345', '11-Month'] },
+  { id: 'radon-and-pool-pricing', prompt: 'radon testing and pool inspection Atlanta GA', autocompleteSeed: 'radon testing atlanta', canonicalUrl: 'https://www.fhinspectionsatl.com/quote', requiredTruthFacts: ['$275', '$295', 'Call (678) 480-2110 for Quote'] },
+  { id: 'building-science-defects-atlanta', prompt: 'polybutylene pipe and stucco EIFS home inspector Atlanta', autocompleteSeed: 'polybutylene pipe inspection atlanta', canonicalUrl: 'https://www.fhinspectionsatl.com/defects/polybutylene-pipe-plumbing-defect-inspection', requiredTruthFacts: ['ASTM E2110', 'Cox v. Shell Oil', 'CPSC Publication #516'] }
 ];
 
 async function fetchAutocomplete(seed) {
   const sourceUrl = `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(seed)}`;
   try {
-    const res = await fetch(sourceUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+    const res = await fetch(sourceUrl, { headers: { 'User-Agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(8000) });
     const data = await res.json();
     return { source_url: sourceUrl, retrieved_on: today, suggestions: Array.isArray(data[1]) ? data[1] : [] };
   } catch (err) {
@@ -76,35 +33,61 @@ async function fetchAutocomplete(seed) {
 }
 
 async function checkLiveUrl(url) {
+  const t0 = Date.now();
   try {
-    const res = await fetch(url, { method: 'GET', headers: { 'User-Agent': 'FirstIndexBot/1.0' } });
+    const res = await fetch(url, { method: 'GET', headers: { 'User-Agent': 'FirstIndexBot/2.0' }, signal: AbortSignal.timeout(10000) });
     const html = await res.text();
-    const hasJsonLd = html.includes('application/ld+json');
-    return { source_url: url, retrieved_on: today, http_status: res.status, has_json_ld: hasJsonLd };
+    const visible = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ');
+    return {
+      source_url: url,
+      retrieved_on: today,
+      http_status: res.status,
+      ttfb_ms: Date.now() - t0,
+      has_json_ld: html.includes('application/ld+json'),
+      has_aeo_answer: html.includes('aeo-direct-answer'),
+      sab_clean: !/1816\s+s(outh)?\s+deshon/i.test(visible)
+    };
   } catch (err) {
     return { source_url: url, retrieved_on: today, http_status: 0, error: err.message };
   }
 }
 
+async function checkPublicSerpCitation(query) {
+  const ddgUrl = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
+  try {
+    const res = await fetch(ddgUrl, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }, signal: AbortSignal.timeout(8000) });
+    const html = await res.text();
+    const citedDomain = /fhinspectionsatl\.com/i.test(html);
+    const citedBrand = /Foresight Home Inspections/i.test(html);
+    const misnamedFullHouse = /Full House Inspections/i.test(html) && citedDomain && !citedBrand;
+    return { source_url: ddgUrl, retrieved_on: today, http_status: res.status, citedDomain, citedBrand, misnamedFullHouse };
+  } catch (err) {
+    return { source_url: ddgUrl, retrieved_on: today, http_status: 0, citedDomain: false, citedBrand: false, error: err.message };
+  }
+}
+
 async function main() {
   console.log('\n════════════════════════════════════════════════════════════════════');
-  console.log('  FIRSTINDEX LIVE AI MENTION & FACTUAL ACCURACY TRACKER');
+  console.log('  FIRSTINDEX LIVE AI MENTION, SERP CITATION & ACCURACY TRACKER');
   console.log('════════════════════════════════════════════════════════════════════\n');
 
   const combinedAiCorpus = `${llmsTxt}\n${llmsFullTxt}`;
+  const rslCheck = await checkLiveUrl('https://www.fhinspectionsatl.com/rsl.xml');
   const results = [];
   let verifiedCount = 0;
 
   for (const item of BUYER_PROMPTS) {
-    const ac = await fetchAutocomplete(item.autocompleteSeed);
-    const liveCheck = await checkLiveUrl(item.canonicalUrl);
+    const [ac, liveCheck, serp] = await Promise.all([
+      fetchAutocomplete(item.autocompleteSeed),
+      checkLiveUrl(item.canonicalUrl),
+      checkPublicSerpCitation(item.prompt)
+    ]);
     const missingFacts = item.requiredTruthFacts.filter((f) => !combinedAiCorpus.includes(f));
     const urlIndexedInLlms = combinedAiCorpus.includes(item.canonicalUrl);
-    const status = missingFacts.length === 0 && urlIndexedInLlms && liveCheck.http_status === 200 ? 'VERIFIED_READY' : 'NEEDS_ATTENTION';
-
+    const status = missingFacts.length === 0 && urlIndexedInLlms && liveCheck.http_status === 200 && liveCheck.sab_clean ? 'VERIFIED_READY' : 'NEEDS_ATTENTION';
     if (status === 'VERIFIED_READY') verifiedCount++;
-    console.log(`  ${status === 'VERIFIED_READY' ? '✅' : '⚠️'} [${item.id}] HTTP ${liveCheck.http_status} | LLMs.txt Indexed: ${urlIndexedInLlms} | Facts Verified: ${item.requiredTruthFacts.length - missingFacts.length}/${item.requiredTruthFacts.length}`);
 
+    console.log(`  ${status === 'VERIFIED_READY' ? '✅' : '⚠️'} [${item.id}] HTTP ${liveCheck.http_status} (${liveCheck.ttfb_ms || 0}ms) | SERP Cited: ${serp.citedDomain} | Misnamed FH: ${serp.misnamedFullHouse}`);
     results.push({
       id: item.id,
       buyerPrompt: item.prompt,
@@ -112,6 +95,7 @@ async function main() {
       source_url: item.canonicalUrl,
       retrieved_on: today,
       liveEndpoint: liveCheck,
+      publicSerpCitation: serp,
       autocompleteIntent: ac,
       urlIndexedInLlmsTxt: urlIndexedInLlms,
       requiredTruthFacts: item.requiredTruthFacts,
@@ -124,24 +108,18 @@ async function main() {
     generatedAt: new Date().toISOString(),
     retrieved_on: today,
     source_url: truth.business.domain,
+    rslLicenseLiveStatus: rslCheck.http_status,
     readinessScore: `${Math.round((verifiedCount / BUYER_PROMPTS.length) * 100)}%`,
     verifiedPrompts: verifiedCount,
     totalPrompts: BUYER_PROMPTS.length,
-    communityEntityMentions: (() => {
-      const p = path.join(ROOT, 'data', 'agent-reach-intel.json');
-      if (!fs.existsSync(p)) return { totalThreadsScanned: 0, foresightOrganicMentions: 0, gapThreadsWithCmiDrafts: 0, threads: [] };
-      try {
-        const threads = JSON.parse(fs.readFileSync(p, 'utf8')).buyerIntentThreads || [];
-        const mentioned = threads.filter((t) => t.mentions_foresight).length;
-        return { totalThreadsScanned: threads.length, foresightOrganicMentions: mentioned, gapThreadsWithCmiDrafts: threads.length - mentioned, threads: threads.map((t) => ({ platform: t.platform, title: t.title, source_url: t.source_url, retrieved_on: t.retrieved_on, mentions_foresight: t.mentions_foresight })) };
-      } catch { return { totalThreadsScanned: 0, foresightOrganicMentions: 0, gapThreadsWithCmiDrafts: 0, threads: [] }; }
-    })(),
+    liveSerpDomainCitations: results.filter((r) => r.publicSerpCitation?.citedDomain).length,
+    misnamedFullHouseCount: results.filter((r) => r.publicSerpCitation?.misnamedFullHouse).length,
     prompts: results
   };
 
-  const outPath = path.join(ROOT, 'data', 'firstindex-ai-mentions.json');
-  fs.writeFileSync(outPath, JSON.stringify(output, null, 2), 'utf8');
-  console.log(`\n[SAVED] ${outPath} (${output.readinessScore} Verified Readiness)\n`);
+  fs.writeFileSync(path.join(ROOT, 'data', 'firstindex-ai-mentions.json'), JSON.stringify(output, null, 2), 'utf8');
+  fs.writeFileSync(path.join(ROOT, 'data', 'ai-mention-ledger.json'), JSON.stringify(output, null, 2), 'utf8');
+  console.log(`\n[SAVED] data/firstindex-ai-mentions.json & data/ai-mention-ledger.json (${output.readinessScore})\n`);
 }
 
 main().catch((err) => {

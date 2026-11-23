@@ -125,8 +125,12 @@ const nextConfig = {
             value: 'Accept',
           },
           {
+            key: 'Content-Security-Policy-Report-Only',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://js.stripe.com https://www.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://api.stripe.com https://ntfy.sh; frame-src 'self' https://js.stripe.com https://hooks.stripe.com https://www.youtube.com https://www.youtube-nocookie.com https://maps.google.com https://www.google.com; frame-ancestors 'self'",
+          },
+          {
             key: 'Link',
-            value: '</llms.txt>; rel="llms-txt", </.well-known/mcp.json>; rel="mcp-manifest", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </developers>; rel="service-doc"; type="text/html", </.well-known/api-catalog>; rel="api-catalog"',
+            value: '</llms.txt>; rel="llms-txt", </rsl.xml>; rel="license"; type="application/rsl+xml", </.well-known/mcp.json>; rel="mcp-manifest", </openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </developers>; rel="service-doc"; type="text/html", </.well-known/api-catalog>; rel="api-catalog"',
           },
           {
             key: 'CDN-Cache-Control',

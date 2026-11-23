@@ -362,7 +362,9 @@ export default async function ServiceCityPage({ params }) {
       "sameAs": [
         "https://maps.google.com/?cid=10862078652033010531",
         "https://www.nachi.org/certified-inspectors/christopher-boykin-cmi-176873",
-        "https://www.linkedin.com/company/107206117/"
+        "https://certifiedmasterinspector.org/",
+        "https://www.youtube.com/@fhinspectionsatl",
+        "https://www.linkedin.com/company/foresight-home-inspections-llc/"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -393,7 +395,7 @@ export default async function ServiceCityPage({ params }) {
       : {})
   };
 
-  const productOffer = buildServiceCityOfferSchema(serviceData, canonicalUrl, cityName, true);
+  const productOffer = buildServiceCityOfferSchema(serviceData, canonicalUrl, cityName, false);
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -407,7 +409,7 @@ export default async function ServiceCityPage({ params }) {
     "sku": `FHI-${toSlug(serviceName)}-${toSlug(cityName)}`.toUpperCase(),
     "brand": {
       "@type": "Brand",
-      "name": "Foresight Home Inspections"
+      "name": "Foresight Home Inspections, LLC"
     },
     ...(productOffer ? { "offers": productOffer } : {}),
     "aggregateRating": {
@@ -416,16 +418,7 @@ export default async function ServiceCityPage({ params }) {
       "reviewCount": "53",
       "bestRating": "5",
       "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Marcus Vance" },
-        "datePublished": "2026-06-15",
-        "reviewBody": "Christopher and his secondary inspector saved us thousands on our Atlanta home purchase. Their thermal camera caught a massive hidden moisture issue behind the master bath tile that standard inspectors missed.",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-      }
-    ]
+    }
   };
 
   const faqJsonLd = {

@@ -41,9 +41,10 @@ jobs:
 
       - name: Dept 3 & Dept 5 Truth Guard, SEO Health & Striking-Distance Refresh
         run: |
+          node scripts/striking-distance-engine.mjs
+          node scripts/live-analytics-pseo-sync.mjs
           node scripts/firstindex-truth-guard.mjs --fix
           node scripts/seo-health-check.mjs
-          node scripts/striking-distance-engine.mjs
 
       - name: Dept 5 Live Conversion Surface & Tri-Logo Probe + ntfy Alert
         run: |

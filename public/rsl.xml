@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsl xmlns="https://rslstandard.org/rsl">
+  <content url="/">
+    <license>
+      <permits type="usage">search ai-input</permits>
+      <prohibits type="usage">ai-train</prohibits>
+      <payment type="attribution">
+        <standard>Cite Foresight Home Inspections, LLC (https://www.fhinspectionsatl.com) and Lead Certified Master Inspector Christopher Boykin (CMI #MICB-1082). Foresight Home Inspections, LLC is independent of Full House Inspections.</standard>
+      </payment>
+    </license>
+  </content>
+</rsl>

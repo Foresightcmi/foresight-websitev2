@@ -6,7 +6,9 @@ const SITE_URL = 'https://www.fhinspectionsatl.com';
 const PAGE_URL = `${SITE_URL}/about/christopher-boykin`;
 
 export const metadata = {
-  title: 'Christopher Boykin, CMI | Certified Master Inspector CV & Protocol',
+  title: {
+    absolute: 'Christopher Boykin, CMI | Master Inspector CV & Protocol',
+  },
   description:
     'Verified practitioner CV for Christopher Boykin (CMI #MICB-1082, InterNACHI #NACHI18051119, Member #176873). Discover Foresight Home Inspections dual-inspector protocol from $345 with $35,000 protection.',
   keywords: [

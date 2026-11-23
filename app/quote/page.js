@@ -2,7 +2,9 @@ import Script from 'next/script';
 import QuoteClient from './QuoteClient';
 
 export const metadata = {
-  title: 'Home Inspection Cost Calculator & Quote Atlanta GA | $345',
+  title: {
+    absolute: 'Atlanta Home Inspection Quote Calculator | From $345',
+  },
   description: 'Calculate your exact Atlanta home inspection cost in 30 seconds. Flat rates from $345 ($295 condos). 2 certified inspectors, thermal & 4K drones included!',
   keywords: ['home inspection cost calculator', 'home inspection cost calculator Atlanta', 'home inspection price quote Georgia', 'Atlanta home inspector cost', 'instant home inspection quote'],
   alternates: { canonical: 'https://www.fhinspectionsatl.com/quote' },
@@ -59,6 +61,13 @@ export default function QuotePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
+      <section style={{ background: '#0B1120', borderBottom: '1px solid rgba(212, 175, 55, 0.25)', padding: '1rem 1.5rem' }}>
+        <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
+          <p id="aeo-direct-answer" style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.55, color: '#E2E8F0' }}>
+            Foresight Home Inspections, LLC (fhinspectionsatl.com, independent of Full House Inspections) prices single-family home inspections From $345, condos From $295, Pre-Drywall From $275, and Final New Construction From $400 across 87 Metro Atlanta cities, dispatching two certified inspectors led by Christopher Boykin, CMI (#MICB-1082) with calibrated infrared thermal scans and $35,000 combined protection; call (678) 480-2110 for specialty add-on quotes.
+          </p>
+        </div>
+      </section>
       <QuoteClient />
     </>
   );

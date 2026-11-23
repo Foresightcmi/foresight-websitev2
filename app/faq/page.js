@@ -4,7 +4,9 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Atlanta Home Inspection FAQs & Costs | From $345',
+  title: {
+    absolute: 'Atlanta Home Inspection FAQs & Costs | From $345',
+  },
   description: 'Get direct answers on Atlanta home inspection costs, our InterNACHI 2-inspector process, up to $35,000 in warranty & guarantee protection, and Sunday appointments. Pricing from $345!',
   alternates: {
     canonical: 'https://www.fhinspectionsatl.com/faq',
@@ -35,7 +37,7 @@ export default function FAQPage() {
       category: 'Pricing & Booking',
       questions: [
         { q: 'How much does a home inspection cost in Atlanta?', a: 'Single-family home inspections start at $345+ and condos/townhomes start at $295+ based on square footage. Call (678) 480-2110 for a quote on specialty add-on services (sewer scope, radon, pool, termite, mold/air quality).' },
-        { q: 'How do I book an inspection?', a: '24/7 online booking at schedulenow.homegauge.com, or call 678-480-2110.' },
+        { q: 'How do I book an inspection?', a: 'Calculate an instant quote and schedule 24/7 online at https://www.fhinspectionsatl.com/quote, or call (678) 480-2110.' },
         { q: 'Do you offer flat-rate pricing?', a: 'Yes, transparent flat-rate base inspection pricing based on sq ft and property age. Use our /quote calculator for an instant quote.' },
         { q: 'Can I get an itemized contractor repair cost estimate for my inspection report?', a: 'Standard Georgia home inspections are strictly diagnostic evaluations per InterNACHI Standards of Practice (inspectors do not provide repair pricing by default). However, if you choose, Foresight provides an optional Itemized Contractor Repair Cost Estimate calibrated using regional Metro Atlanta contractor trade data and formatted for standard Georgia repair amendment negotiations. Call (678) 480-2110 for a quote.' },
         { q: 'What are your business hours?', a: 'Mon, Tue, Thu, Fri, Sat: 8AM-8PM. Wednesday: 8AM-7PM. Sunday: By Appointment. 24/7 online booking.' },
@@ -91,8 +93,8 @@ export default function FAQPage() {
       <section style={{ backgroundColor: 'var(--color-dark)', color: 'var(--color-white)', padding: '6rem 2rem', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '3rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>Frequently Asked Questions</h1>
-          <p style={{ fontSize: '1.25rem', color: 'var(--color-gray-light)', lineHeight: '1.6' }}>
-            Get quick answers to common questions about our inspection process, pricing, and services.
+          <p id="aeo-direct-answer" style={{ fontSize: '1.15rem', color: 'var(--color-gray-light)', lineHeight: '1.6' }}>
+            Foresight Home Inspections, LLC (fhinspectionsatl.com, independent of Full House Inspections) dispatches two certified inspectors led by Certified Master Inspector Christopher Boykin (CMI #MICB-1082) across 87 Metro Atlanta cities starting From $345 ($295 condos, From $275 Pre-Drywall, From $400 New Construction) with calibrated infrared thermal scans and $35,000 combined protection.
           </p>
         </div>
       </section>

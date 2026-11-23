@@ -6,7 +6,9 @@ import DueDiligenceCalculator from '../components/DueDiligenceCalculator';
 const SITE_URL = 'https://www.fhinspectionsatl.com';
 
 export const metadata = {
-  title: 'Home Inspection Repair Credit Calculator Atlanta GA',
+  title: {
+    absolute: 'Atlanta Home Inspection Repair Credit Calculator',
+  },
   description: 'Calculate home inspection repair costs with regional contractor trade benchmarks. Model Georgia seller closing credit requests and generate sample repair amendment wording.',
   keywords: [
     'home inspection repair credit calculator',
@@ -52,7 +54,7 @@ const calculatorFaqSchema = {
       name: 'Can I get an official repair cost evaluation if I hired another home inspector?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Foresight Home Inspections offers a standalone $99 Due Diligence Repair Cost Evaluation online. You can upload an inspection report from any outside inspection company (or paste findings), and our Certified Master Inspector team extracts regional contractor repair ranges and delivers a structured REPAIR AMENDMENT EXHIBIT within 4 hours.',
+        text: 'Yes. Foresight Home Inspections offers an optional Due Diligence Repair Cost Evaluation (Call (678) 480-2110 for Quote). You can submit an inspection report from any outside inspection company, and our Certified Master Inspector team extracts regional contractor repair ranges formatted for standard Georgia repair amendment negotiations.',
       },
     },
     {
@@ -143,8 +145,8 @@ export default function RepairCreditCalculatorPage() {
             </span>
           </h1>
 
-          <p style={{ fontSize: '1.05rem', color: '#CBD5E1', maxWidth: '820px', lineHeight: 1.6, margin: '0 0 1.5rem' }}>
-            Under contract on an Atlanta home with an inspection report full of defect findings? Quantify contractor repair outlays using regional trade indices, formulate your optimal cash-in-lieu settlement, and generate sample repair request wording compatible with standard Georgia contracts (such as Georgia repair amendment) before your contingency deadline expires.
+          <p id="aeo-direct-answer" style={{ fontSize: '1.05rem', color: '#CBD5E1', maxWidth: '820px', lineHeight: '1.6', margin: '0 0 1.5rem' }}>
+            Foresight Home Inspections, LLC quantifies Metro Atlanta home inspection defect repair ranges ($1,250 to $14,200+ across roof, HVAC, plumbing, electrical, and structural trades) so Georgia homebuyers and Realtors can negotiate seller closing credits before due diligence expires.
           </p>
 
           <GooglePreferredSource

@@ -259,8 +259,10 @@ async function reactivatePastClients(args, queue, cancels) {
   const queueAddrs = new Set(queue.map((q) => normalizeAddressKey(q.address)).filter(Boolean));
   const ledger = seedLedgerFromQueue(readJson(LEDGER, { byKey: {} }), queue);
   const reactivatedPhones = new Set(state.sentPhones || []);
+  const reactivatedEmails = new Set((state.sentEmails || []).map((x) => String(x || '').toLowerCase()));
   const reactivatedAddrs = new Set(state.sentAddresses || []);
   const reactivatedIds = new Set(state.sentIds || []);
+  const blockedDomRx = /@(ansleyre\.com|ansleyatlanta\.com|metrobrokers\.com|cbcmetrobrokers\.com|peachtreetc\.com)$/i;
   const maxAgeMs = 540 * 24 * 3600 * 1000;
   const eligible = pastClients.filter((c) => {
     if (!c || c.initial_sent === true || c.reviewedAt) return false;
@@ -270,45 +272,77 @@ async function reactivatePastClients(args, queue, cancels) {
     if (isNaN(dtMs) || dtMs > now.getTime() || (now.getTime() - dtMs) > maxAgeMs) return false;
     const ph = digits10(c.phone || c.raw_phone);
     const em = String(c.email || '').toLowerCase().trim();
+    const validEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em) && !blockedDomRx.test(em);
     const addrKey = normalizeAddressKey(c.address);
-    if (ph.length !== 10) return false;
-    if (sup.has(ph) || (em && sup.has(em))) return false;
-    if (queuePhones.has(ph) || (em && queueEmails.has(em)) || (addrKey && queueAddrs.has(addrKey))) return false;
-    if (reactivatedPhones.has(ph) || (addrKey && reactivatedAddrs.has(addrKey)) || (c.id && reactivatedIds.has(String(c.id)))) return false;
-    if (canceledIdx.byPhone.get(ph) || (em && canceledIdx.byEmail.get(em)) || (addrKey && canceledIdx.byAddress.get(addrKey))) return false;
+    if (ph.length !== 10 && !validEmail) return false;
+    if ((ph.length === 10 && sup.has(ph)) || (em && sup.has(em))) return false;
+    if ((ph.length === 10 && queuePhones.has(ph)) || (em && queueEmails.has(em)) || (addrKey && queueAddrs.has(addrKey))) return false;
+    if ((ph.length === 10 && reactivatedPhones.has(ph)) || (em && reactivatedEmails.has(em)) || (addrKey && reactivatedAddrs.has(addrKey)) || (c.id && reactivatedIds.has(String(c.id)))) return false;
+    if ((ph.length === 10 && canceledIdx.byPhone.get(ph)) || (em && canceledIdx.byEmail.get(em)) || (addrKey && canceledIdx.byAddress.get(addrKey))) return false;
     return canContactClient(ledger, { ...c, phone: ph, email: em }, 'initial', now, sup).allowed;
   });
-  const batch = eligible.slice(0, limit);
+  const batch = eligible.slice(0, Math.min(limit, 8));
   if (isDryRun || (!inWeekdayWindow && !forceWindow)) {
     if (!fs.existsSync(statePath)) writeJson(statePath, state);
-    console.log(`[Past-Client Reactivation ${isDryRun ? 'Dry-Run' : 'Deferred Outside Mon-Fri 10:00-16:30'}] Historical: ${pastClients.length} | Eligible: ${eligible.length} | Batch (limit <= 10): ${batch.length} | InWindow(Mon-Fri 10:00-16:30): ${inWeekdayWindow}`);
+    console.log(`[Past-Client Reactivation ${isDryRun ? 'Dry-Run' : 'Deferred Outside Mon-Fri 10:00-16:30'}] Historical: ${pastClients.length} | Eligible: ${eligible.length} | Batch (limit <= 8): ${batch.length} | InWindow(Mon-Fri 10:00-16:30): ${inWeekdayWindow}`);
     return { eligibleCount: eligible.length, batchCount: batch.length, sentCount: 0, isDryRun };
   }
+  const user = env('EMAIL_USER') || 'inspect@foresightcmi.com'; // ggignore
+  const pass = env('EMAIL_PASSWORD'); // ggignore
+  const cool = readJson(COOLDOWN, {});
+  const { max24h: max24hCap, allowSend: govAllow } = readGovernorCeiling(ROOT, 1200);
+  const canEmailFallback = Boolean(pass && govAllow && !(cool.cooldownUntil && new Date(cool.cooldownUntil) > now));
+  const transporter = canEmailFallback ? nodemailer.createTransport({ service: 'gmail', auth: { user, pass } }) : null;
   let sentCount = 0;
+  let smsOffline = false;
+  state.sentEmails = state.sentEmails || [];
   for (const c of batch) {
     const ph = digits10(c.phone || c.raw_phone);
     const em = String(c.email || '').toLowerCase().trim();
+    const validEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em) && !blockedDomRx.test(em);
     const candidate = { id: String(c.id || ''), name: c.first || c.name, city: c.city, address: c.address, phone: ph, email: em };
     if (!canContactClient(ledger, candidate, 'initial', now, sup).allowed) continue;
     const msg = `Hi ${c.first || c.name || 'there'}, Chris with Foresight Home Inspections checking in. Completely optional & zero pressure (no follow-ups will follow): an honest Google review helps local buyers find us: ${REVIEW_LINK} Reply STOP anytime to opt out.`;
-    if (await sendSms(ph, msg)) {
+    let channelUsed = null;
+    if (!smsOffline && ph.length === 10 && await sendSms(ph, msg)) {
+      channelUsed = 'sms';
+    } else {
+      if (ph.length === 10) smsOffline = true;
+      if (validEmail && transporter) {
+        try {
+          const mail = buildEmail(candidate, 'initial', REVIEW_LINK);
+          await transporter.sendMail({
+            from: `"Christopher Boykin, CMI" <${user}>`,
+            to: em,
+            subject: mail.subject,
+            text: mail.text,
+            html: mail.html,
+            headers: { 'List-Unsubscribe': `<mailto:${user}?subject=unsubscribe>` }
+          });
+          channelUsed = 'email_past_client_fallback';
+        } catch (err) {
+          console.warn('[Past-Client Email Fallback] Send error:', err.message);
+          break;
+        }
+      }
+    }
+    if (channelUsed) {
       const sentIso = now.toISOString();
       sentCount++;
       state.sentIds.push(String(c.id || ''));
-      state.sentPhones.push(ph);
+      if (ph.length === 10) state.sentPhones.push(ph);
+      if (validEmail) state.sentEmails.push(em);
       if (normalizeAddressKey(c.address)) state.sentAddresses.push(normalizeAddressKey(c.address));
       state.totalReactivated = (state.totalReactivated || 0) + 1;
       state.updatedAt = sentIso;
-      recordLedgerTouch(ledger, candidate, 'initial', sentIso, ['sms']);
+      recordLedgerTouch(ledger, candidate, 'initial', sentIso, [channelUsed]);
       recordLedgerTouch(ledger, candidate, 'reminder', sentIso, ['single_touch_cap']);
       writeJson(LEDGER, ledger);
       writeJson(statePath, state);
-      await sleep(3000);
-    } else if (sentCount === 0) {
-      console.log('[Past-Client Reactivation] OpenSMS phone gateway currently unreachable on local Wi-Fi; deferring cleanly.');
-      break;
+      await sleep(channelUsed === 'sms' ? 3000 : 8000);
     }
   }
+  if (transporter) transporter.close();
   console.log(`[Past-Client Reactivation Live] Sent: ${sentCount}/${batch.length} | Remaining Eligible: ${eligible.length - sentCount}`);
   return { eligibleCount: eligible.length, batchCount: batch.length, sentCount, isDryRun: false };
 }

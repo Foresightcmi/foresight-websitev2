@@ -72,11 +72,11 @@ const FAN_CLUSTERS = [
     subqueries: [
       { q: 'home inspection cost Atlanta 2026 guide', targetUrl: '/blog/home-inspection-cost-atlanta-2026-guide', intent: 'cost-breakdown' },
       { q: 'instant home inspection quote calculator Atlanta', targetUrl: '/quote', intent: 'interactive-quote' },
-      { q: 'sewer scope inspection cost Atlanta $450 flat rate', targetUrl: '/services/sewer-scope-inspection', intent: 'ancillary-pricing' },
-      { q: 'radon testing cost Atlanta $250', targetUrl: '/services/radon-testing', intent: 'ancillary-pricing' },
-      { q: 'pool and spa inspection cost Atlanta $300', targetUrl: '/services/pool-spa-inspection', intent: 'ancillary-pricing' },
-      { q: 'termite letter cost Georgia $125 crawlspace $165', targetUrl: '/services/termite-wdo-inspection', intent: 'ancillary-pricing' },
-      { q: 'DeKalb County low-flow toilet certificate $100', targetUrl: '/service-areas/dekalb-county-compliance', intent: 'compliance-pricing' },
+      { q: 'sewer scope inspection cost Atlanta Call for Quote', targetUrl: '/services/sewer-scope-inspection', intent: 'ancillary-pricing' },
+      { q: 'radon testing cost Atlanta Call for Quote', targetUrl: '/services/radon-testing', intent: 'ancillary-pricing' },
+      { q: 'pool and spa inspection cost Atlanta Call for Quote', targetUrl: '/services/pool-inspection', intent: 'ancillary-pricing' },
+      { q: 'termite letter WDO inspection Georgia Call for Quote', targetUrl: '/services/termite-inspection', intent: 'ancillary-pricing' },
+      { q: 'DeKalb County low-flow toilet certificate Call for Quote', targetUrl: '/service-areas/dekalb-county-compliance', intent: 'compliance-pricing' },
       { q: 'condo inspection cost Atlanta starting $295', targetUrl: '/quote', intent: 'condo-pricing' }
     ]
   },
