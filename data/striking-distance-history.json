@@ -1,5 +1,22 @@
 [
   {
+    "timestamp": "2026-11-24T23:02:39.233Z",
+    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
+    "totalInStrikingDistance": 684,
+    "topTargets": [
+      "commercial real estate due diligence inspection services (Pos 19.2, 253 impr -> /services/commercial-property-inspection/decatur)",
+      "commercial real estate due diligence inspection services (Pos 24.7, 252 impr -> /services/commercial-property-inspection/marietta)",
+      "commercial real estate due diligence inspection services (Pos 23.6, 248 impr -> /services/commercial-property-inspection/between)",
+      "home inspection fairburn ga (Pos 7.9, 104 impr -> /service-areas/fairburn)",
+      "mold testing atlanta (Pos 21.1, 102 impr -> /services/mold-testing)",
+      "air quality testing atlanta (Pos 14.6, 98 impr -> /blog/mold-testing-atlanta-indoor-air-quality-inspection-guide)",
+      "sewer video inspection atlanta (Pos 10.7, 89 impr -> /services/sewer-scope-inspection/suwanee)",
+      "home inspection lilburn ga (Pos 5.5, 82 impr -> /services/buyer-inspection/lilburn)",
+      "home inspection acworth ga (Pos 13.9, 81 impr -> /services/buyer-inspection/acworth)",
+      "home inspections buford ga (Pos 22.1, 80 impr -> /)"
+    ]
+  },
+  {
     "timestamp": "2026-11-24T02:26:13.949Z",
     "action": "Live GSC Query-by-Page Striking-Distance Sweep",
     "totalInStrikingDistance": 684,
@@ -477,23 +494,6 @@
   },
   {
     "timestamp": "2026-11-12T03:50:11.643Z",
-    "action": "Live GSC Query-by-Page Striking-Distance Sweep",
-    "totalInStrikingDistance": 490,
-    "topTargets": [
-      "commercial inspection cumming ga (Pos 6.6, 123 impr -> /services/commercial-property-inspection/cumming)",
-      "home inspection lilburn ga (Pos 7.1, 100 impr -> /services/buyer-inspection/lilburn)",
-      "home inspection snellville ga (Pos 9.4, 99 impr -> /services/buyer-inspection/snellville)",
-      "home inspection norcross ga (Pos 3.9, 88 impr -> /services/buyer-inspection/norcross)",
-      "dallas pre drywall inspection (Pos 8.4, 85 impr -> /services/pre-drywall-inspection/dallas)",
-      "home inspection austell ga (Pos 4.6, 85 impr -> /services/buyer-inspection/austell)",
-      "home inspector in acworth, ga (Pos 18.1, 84 impr -> /services/buyer-inspection/acworth)",
-      "home inspections in acworth, ga (Pos 16.6, 77 impr -> /services/buyer-inspection/acworth)",
-      "home inspection acworth ga (Pos 15.3, 74 impr -> /services/buyer-inspection/acworth)",
-      "home inspection kennesaw ga (Pos 20.8, 72 impr -> /services/11-month-warranty-inspection/kennesaw)"
-    ]
-  },
-  {
-    "timestamp": "2026-11-11T20:18:11.813Z",
     "action": "Live GSC Query-by-Page Striking-Distance Sweep",
     "totalInStrikingDistance": 490,
     "topTargets": [
