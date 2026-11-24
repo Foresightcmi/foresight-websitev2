@@ -358,5 +358,45 @@
     "messageId": "<ce9f5efe-f8da-4682-3e0b-00234721fdc2@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7859727.html",
     "sentAt": "2026-11-24T01:37:13.496Z"
+  },
+  {
+    "recordId": "NC-7858578",
+    "address": "2017 Pienza Drive, Mcdonough, GA 30253",
+    "recipient": "shenell.dawson@starlighthomes.com",
+    "messageId": "<06753450-75de-39f7-1647-0a94c279f4ad@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7858578.html",
+    "sentAt": "2026-11-24T23:28:06.339Z"
+  },
+  {
+    "recordId": "NC-7862149",
+    "address": "499 Fundao Lane #43, Lawrenceville, GA 30046",
+    "recipient": "lrincon@mckinleyhomes.com",
+    "messageId": "<b9ba62f4-8cea-3f98-5fc6-851213eaaa9f@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862149.html",
+    "sentAt": "2026-11-24T23:28:07.673Z"
+  },
+  {
+    "recordId": "NC-7859324",
+    "address": "116 Waterview Court, Waleska, GA 30183",
+    "recipient": "alanc@lakearrowheadga.com",
+    "messageId": "<df3827bc-c32d-3829-ffb3-15aca2e8f615@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7859324.html",
+    "sentAt": "2026-11-24T23:28:09.025Z"
+  },
+  {
+    "recordId": "NC-7860061",
+    "address": "4817 Batiste Lane NW, Acworth, GA 30101",
+    "recipient": "claire@c21connectrealty.com",
+    "messageId": "<05e803b8-0bb2-4658-47b6-eec48b7a9632@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7860061.html",
+    "sentAt": "2026-11-24T23:28:10.459Z"
+  },
+  {
+    "recordId": "NC-7861218",
+    "address": "2710 Sandy Road 194, Conyers, GA 30013",
+    "recipient": "devmckenzie11@gmail.com",
+    "messageId": "<ba52879f-5b12-68e3-9806-a5930ed12e81@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861218.html",
+    "sentAt": "2026-11-24T23:28:11.900Z"
   }
 ]
