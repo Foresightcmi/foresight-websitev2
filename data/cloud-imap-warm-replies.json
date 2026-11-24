@@ -19,9 +19,23 @@
     "transactional@e.pnc.com|=?UTF-8?B?V2XigJlyZSB1cGRhdGluZyBvdXIgRGlnaXRhbCBTZXJ2aWNlcyBB?=",
     "jeff.kirves@yahoo.com|Re: Keeping your Cumming deals together during due diligence",
     "james.ward@n2co.com|Re: Open to growing in Laurel Springs?",
-    "dfloyd01@aol.com|=?utf-8?Q?Re:_Quick_question_on_0_Union_Grove_Church_Road_SE_=28$7?="
+    "dfloyd01@aol.com|=?utf-8?Q?Re:_Quick_question_on_0_Union_Grove_Church_Road_SE_=28$7?=",
+    "aws-marketing-email-replies@amazon.com|Stream re:Invent free: labs, advanced sessions, and keynotes",
+    "no-reply@updates.email.nextdoor.com|If you're disabled and no family support..."
   ],
   "recentReplies": [
+    {
+      "email": "no-reply@updates.email.nextdoor.com",
+      "subject": "If you're disabled and no family support...",
+      "snippet": "tdoor <no-reply@updates.email.nextdoor.com> Message-ID: <yf7iNZUcQKyFCFVdA5DpeQ@geopod-ismtpd-canary-0> Subject: If you're disabled and no family support... ) A4 OK Success",
+      "detectedAt": "2026-11-24T00:54:21.911Z"
+    },
+    {
+      "email": "aws-marketing-email-replies@amazon.com",
+      "subject": "Stream re:Invent free: labs, advanced sessions, and keynotes",
+      "snippet": "n.com> Message-ID: <010001a209786f31-b2d3a579-f047-4b75-9a37-f2cd376393c2-000000@email.amazonses.com> Subject: Stream re:Invent free: labs, advanced sessions, and keynotes )",
+      "detectedAt": "2026-11-24T00:54:21.645Z"
+    },
     {
       "email": "dfloyd01@aol.com",
       "subject": "=?utf-8?Q?Re:_Quick_question_on_0_Union_Grove_Church_Road_SE_=28$7?=",
