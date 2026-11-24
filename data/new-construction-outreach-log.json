@@ -318,5 +318,45 @@
     "messageId": "<bf8228cd-007d-c0aa-7966-95358d8e434d@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862157.html",
     "sentAt": "2026-11-22T20:40:15.622Z"
+  },
+  {
+    "recordId": "NC-7862147",
+    "address": "501 Fundao Lane 42, Lawrenceville, GA 30046",
+    "recipient": "lrincon@mckinleyhomes.com",
+    "messageId": "<8e21eb50-ecb6-cc75-ac42-dc6be46ceb30@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7862147.html",
+    "sentAt": "2026-11-24T01:37:06.635Z"
+  },
+  {
+    "recordId": "NC-7861896",
+    "address": "3976 Lockaby Way, Lawrenceville, GA 30044",
+    "recipient": "alayer@mckinleyhomes.com",
+    "messageId": "<2530dc51-65b0-f525-e1f6-feea27fa4167@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861896.html",
+    "sentAt": "2026-11-24T01:37:07.884Z"
+  },
+  {
+    "recordId": "NC-7861150",
+    "address": "2714 Sandy Road 196, Conyers, GA 30013",
+    "recipient": "devmckenzie11@gmail.com",
+    "messageId": "<3e5241f8-645c-994c-8efa-e6a99cf9d905@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861150.html",
+    "sentAt": "2026-11-24T01:37:10.436Z"
+  },
+  {
+    "recordId": "NC-7859526",
+    "address": "1953 Flying Scotsman Drive 25, Kennesaw, GA 30144",
+    "recipient": "lcollie@jwcsales.com",
+    "messageId": "<85318771-2444-55e1-7b6a-e793570a22a4@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7859526.html",
+    "sentAt": "2026-11-24T01:37:12.099Z"
+  },
+  {
+    "recordId": "NC-7859727",
+    "address": "129 Morse Elm Loop, Waleska, GA 30183",
+    "recipient": "carolinem@lakearrowheadga.com",
+    "messageId": "<ce9f5efe-f8da-4682-3e0b-00234721fdc2@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7859727.html",
+    "sentAt": "2026-11-24T01:37:13.496Z"
   }
 ]
