@@ -398,5 +398,45 @@
     "messageId": "<ba52879f-5b12-68e3-9806-a5930ed12e81@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861218.html",
     "sentAt": "2026-11-24T23:28:11.900Z"
+  },
+  {
+    "recordId": "NC-7861459",
+    "address": "215 Willow Bend Road, Hiram, GA 30141",
+    "recipient": "lovelessdecuir@gmail.com",
+    "messageId": "<8b4b009c-efcb-55c2-2df8-f17e2f93d27b@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861459.html",
+    "sentAt": "2026-11-25T23:02:33.533Z"
+  },
+  {
+    "recordId": "NC-7859352",
+    "address": "176 Cherokee Drive S, Waleska, GA 30183",
+    "recipient": "alanc@lakearrowheadga.com",
+    "messageId": "<40732097-c803-ad58-fa0f-f3ae42e69479@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7859352.html",
+    "sentAt": "2026-11-25T23:02:37.689Z"
+  },
+  {
+    "recordId": "NC-7855190",
+    "address": "113 Maison Drive, Mcdonough, GA 30253",
+    "recipient": "shenell.dawson@starlighthomes.com",
+    "messageId": "<3eefdcb2-2d91-8499-cb9d-4ca5f82ebb67@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7855190.html",
+    "sentAt": "2026-11-25T23:02:41.206Z"
+  },
+  {
+    "recordId": "NC-7855212",
+    "address": "604 Lipari Court, Mcdonough, GA 30253",
+    "recipient": "shenell.dawson@starlighthomes.com",
+    "messageId": "<5eb7fb3c-477b-9abe-00c4-4f528cedf929@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7855212.html",
+    "sentAt": "2026-11-25T23:02:44.665Z"
+  },
+  {
+    "recordId": "NC-7861891",
+    "address": "3925 Cordano Lane, Lawrenceville, GA 30044",
+    "recipient": "alayer@mckinleyhomes.com",
+    "messageId": "<8376b00a-60af-73d8-0bc7-9d1e2454d688@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861891.html",
+    "sentAt": "2026-11-25T23:02:46.037Z"
   }
 ]
