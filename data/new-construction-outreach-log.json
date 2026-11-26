@@ -438,5 +438,45 @@
     "messageId": "<8376b00a-60af-73d8-0bc7-9d1e2454d688@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7861891.html",
     "sentAt": "2026-11-25T23:02:46.037Z"
+  },
+  {
+    "recordId": "NC-7849125",
+    "address": "208 Mission Way, Atlanta, GA 30315",
+    "recipient": "sldunson@gmail.com",
+    "messageId": "<aa79f8bb-8633-174b-2d73-255cbbc716c6@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7849125.html",
+    "sentAt": "2026-11-26T22:56:08.155Z"
+  },
+  {
+    "recordId": "NC-7859423",
+    "address": "1704 Wildwood Rd, Atlanta, GA 30306",
+    "recipient": "jared@jaredsapp.com",
+    "messageId": "<a967e4ee-c8cd-a4d0-3429-ae8c51369eb5@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7859423.html",
+    "sentAt": "2026-11-26T22:56:09.221Z"
+  },
+  {
+    "recordId": "NC-7854881",
+    "address": "112 Maison Drive, Mcdonough, GA 30253",
+    "recipient": "shenell.dawson@starlighthomes.com",
+    "messageId": "<4f01e088-4f89-73a3-7c4e-ab3ea4b320c3@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7854881.html",
+    "sentAt": "2026-11-26T22:56:10.268Z"
+  },
+  {
+    "recordId": "NC-7856516",
+    "address": "202 Birch Way, Fairburn, GA 30213",
+    "recipient": "imani.frith@directresidentialrealty.com",
+    "messageId": "<858d859d-1c70-acda-eb20-d3620b446169@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7856516.html",
+    "sentAt": "2026-11-26T22:56:11.701Z"
+  },
+  {
+    "recordId": "NC-7858366",
+    "address": "5604 Transfer Trail, Ellenwood, GA 30294",
+    "recipient": "constancebaynard@gmail.com",
+    "messageId": "<6a1b6b8f-ec49-3fec-26e4-31342e68e781@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7858366.html",
+    "sentAt": "2026-11-26T22:56:12.935Z"
   }
 ]
