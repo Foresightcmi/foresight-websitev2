@@ -250,5 +250,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/homebuyer-red-flags"
+  },
+  {
+    "postId": 1,
+    "title": "The Two-Inspector Standard vs Solo Operators",
+    "publishedAt": "2026-11-26T00:35:54.598Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]
