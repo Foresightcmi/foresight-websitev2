@@ -260,5 +260,15 @@
       "reason": "no_webhook_configured"
     },
     "link": "https://www.fhinspectionsatl.com/quote"
+  },
+  {
+    "postId": 2,
+    "title": "Concealed Moisture Detection via High-Resolution Infrared Thermal Imaging",
+    "publishedAt": "2026-11-27T00:44:49.312Z",
+    "webhookResult": {
+      "status": "skipped",
+      "reason": "no_webhook_configured"
+    },
+    "link": "https://www.fhinspectionsatl.com/quote"
   }
 ]
