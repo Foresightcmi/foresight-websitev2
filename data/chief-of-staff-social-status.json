@@ -1,60 +1,41 @@
 {
-  "lastRunAt": "2026-11-24T15:38:00.276107+00:00",
-  "topic": "Why Metro Atlanta Chooses Foresight Home Inspections",
-  "commercial": "FINAL_Foresight Features.mp4",
+  "lastRunAt": "2026-11-27T17:37:15.238737+00:00",
+  "topic": "Georgia Due Diligence Counts Calendar Days \u2014 Even Holidays (Realtor Briefing)",
+  "commercial": "FINAL_Realtor_Due_Diligence_Clock.mp4",
   "jobsCreated": 1,
-  "firstJobId": "job-comm-20261124-153008-dbaa",
+  "firstJobId": "job-comm-20261127-173008-be18",
   "livePublish": true,
   "publishedPlatforms": [
-    "linkedin",
     "tiktok",
     "facebook_reels",
     "instagram_reels",
     "youtube",
-    "google_business_profile",
+    "nextdoor",
     "threads",
     "pinterest"
   ],
   "authChallenges": [],
   "dispatch": {
-    "linkedin": {
-      "ok": true,
-      "platform": "linkedin",
-      "published": true,
-      "personal": {
-        "published": true,
-        "uploaded_video": true,
-        "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\linkedin_personal_after_post.png",
-        "url": "https://www.linkedin.com/feed/foryou/"
-      },
-      "company": {
-        "published": true,
-        "uploaded_video": true,
-        "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\linkedin_company_after_post.png",
-        "url": "https://www.linkedin.com/company/107206117/admin/page-posts/published/"
-      },
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\linkedin_personal_after_post.png"
-    },
     "tiktok": {
       "ok": true,
       "platform": "tiktok",
       "published": true,
       "confirmed_redirect": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\tiktok_after_post.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\tiktok_after_post.png",
       "url": "https://www.tiktok.com/tiktokstudio/content"
     },
     "facebook_reels": {
       "ok": true,
       "platform": "meta_reels_fb_ig",
       "published": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\meta_reels_after_share.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\meta_reels_after_share.png",
       "url": "https://business.facebook.com/latest/reels_composer?asset_id=1988493077836707&business_id=301890663979294&ir_qe_exposed=1"
     },
     "instagram_reels": {
       "ok": true,
       "platform": "meta_reels_fb_ig",
       "published": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\meta_reels_after_share.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\meta_reels_after_share.png",
       "url": "https://business.facebook.com/latest/reels_composer?asset_id=1988493077836707&business_id=301890663979294&ir_qe_exposed=1"
     },
     "youtube": {
@@ -62,17 +43,17 @@
       "platform": "youtube",
       "published": true,
       "clicked_done": true,
-      "video_url": "https://youtube.com/shorts/1DuN0Jam6TE",
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\youtube_after_done.png",
+      "video_url": "https://youtube.com/shorts/c7otEEUdv6w",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\youtube_after_done.png",
       "url": "https://studio.youtube.com/channel/UC1XFbPYDJ5uJYhjY4w3D1iw/videos/upload?d=ud&filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D"
     },
-    "google_business_profile": {
+    "nextdoor": {
       "ok": true,
-      "platform": "google_business_profile",
+      "platform": "nextdoor",
       "published": true,
       "uploaded_media": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\gbp_after_upload.png",
-      "url": "https://business.google.com/local/business/13295917577711269956/promote/updates?hl=en&dcs=0&ih=gmbweb&origin=https%3A%2F%2Fbusiness.google.com"
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\nextdoor_after_post.png",
+      "url": "https://nextdoor.com/page-admin/feed/?profile_id=164000702"
     },
     "threads": {
       "ok": true,
@@ -80,15 +61,26 @@
       "published": true,
       "uploaded_media": true,
       "text_verified": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\threads_after_post.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\threads_after_post.png",
       "url": "https://www.threads.com/"
     },
     "pinterest": {
       "ok": true,
       "platform": "pinterest",
       "published": true,
-      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261124-153008-dbaa\\pinterest_after_publish.png",
+      "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\pinterest_after_publish.png",
       "url": "https://www.pinterest.com/pin-creation-tool/"
+    },
+    "google_business_profile_real_hg_companion": {
+      "story_file": "FINAL_HG_Inspection_Day_82_Saved_3200_11200.mp4",
+      "gbp_result": {
+        "ok": true,
+        "platform": "google_business_profile",
+        "published": true,
+        "uploaded_media": true,
+        "screenshot": "C:\\Users\\fores\\.gemini\\antigravity\\scratch\\omni-video-publisher\\data\\commercial_screenshots\\job-comm-20261127-173008-be18\\gbp_after_upload.png",
+        "url": "https://business.google.com/local/business/13295917577711269956/promote/updates?hl=en&dcs=0&ih=gmbweb&origin=https%3A%2F%2Fbusiness.google.com"
+      }
     }
   }
 }
