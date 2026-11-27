@@ -23,9 +23,16 @@
     "aws-marketing-email-replies@amazon.com|Stream re:Invent free: labs, advanced sessions, and keynotes",
     "no-reply@updates.email.nextdoor.com|If you're disabled and no family support...",
     "gfellove3@gmail.com|=?UTF-8?Q?Re=3A_Homeowner_Rehabilitation_Program_=E2=80=93_Inspection_?=",
-    "thomas.sobeck@gmail.com|Re: Home Inspection: 1074 Fleming St from FORESIGHT HOME INSPECTIONS,"
+    "thomas.sobeck@gmail.com|Re: Home Inspection: 1074 Fleming St from FORESIGHT HOME INSPECTIONS,",
+    "auricpbasmund@gmail.com|Re: Google Analytics"
   ],
   "recentReplies": [
+    {
+      "email": "auricpbasmund@gmail.com",
+      "subject": "Re: Google Analytics",
+      "snippet": "From: Auric Asmund <auricpbasmund@gmail.com> Message-ID: <CAM4JpcGkHTHVoxqOB6u8tehu6Gsg3ZcbH8_yL89-nepgZ7g_Sg@mail.gmail.com> Subject: Re: Google Analytics ) A4 OK Success",
+      "detectedAt": "2026-11-27T21:59:36.690Z"
+    },
     {
       "email": "thomas.sobeck@gmail.com",
       "subject": "Re: Home Inspection: 1074 Fleming St from FORESIGHT HOME INSPECTIONS,",
