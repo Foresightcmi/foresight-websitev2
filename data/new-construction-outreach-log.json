@@ -478,5 +478,45 @@
     "messageId": "<6a1b6b8f-ec49-3fec-26e4-31342e68e781@foresightcmi.com>",
     "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7858366.html",
     "sentAt": "2026-11-26T22:56:12.935Z"
+  },
+  {
+    "recordId": "NC-7852039",
+    "address": "1515 Northridge Rd, Sandy Springs, GA 30350",
+    "recipient": "jodi.mekyten@bhhsgeorgia.com",
+    "messageId": "<43d38788-12a7-9e26-4924-3bac95e45984@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7852039.html",
+    "sentAt": "2026-11-27T22:38:27.101Z"
+  },
+  {
+    "recordId": "NC-7857021",
+    "address": "245 White Street NW, Marietta, GA 30060",
+    "recipient": "becky@bercherhomes.com",
+    "messageId": "<f2850141-c1f4-540f-1145-283787a3ee87@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7857021.html",
+    "sentAt": "2026-11-27T22:38:28.363Z"
+  },
+  {
+    "recordId": "NC-7855397",
+    "address": "2575 Riverside Road 42, Conyers, GA 30013",
+    "recipient": "devmckenzie11@gmail.com",
+    "messageId": "<9431cadd-e2f6-e1f9-2d72-e69e76178b0e@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7855397.html",
+    "sentAt": "2026-11-27T22:38:30.812Z"
+  },
+  {
+    "recordId": "NC-7855819",
+    "address": "150 Ft Gibson Court, Waleska, GA 30183",
+    "recipient": "alanc@lakearrowheadga.com",
+    "messageId": "<982f606a-6ea4-26d3-cb66-169930bd9b4b@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7855819.html",
+    "sentAt": "2026-11-27T22:38:32.077Z"
+  },
+  {
+    "recordId": "NC-7856199",
+    "address": "232 Lower Dogwood Court, Canton, GA 30114",
+    "recipient": "tavamurphy@gmail.com",
+    "messageId": "<4d92349c-51d0-9fd8-526d-06cb3ce8db13@foresightcmi.com>",
+    "dossierUrl": "https://www.fhinspectionsatl.com/dossiers/NC-7856199.html",
+    "sentAt": "2026-11-27T22:38:34.587Z"
   }
 ]
