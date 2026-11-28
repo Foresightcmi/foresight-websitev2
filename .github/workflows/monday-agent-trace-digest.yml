@@ -1,0 +1,29 @@
+name: Monday — Agentic Endpoint & Scrubbed Trace Digest
+
+on:
+  schedule:
+    # 14:15 UTC = 9:15 AM EST (Strictly inside 9:00 AM - 6:00 PM local business hours)
+    - cron: '15 14 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  agent-trace-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (Read-Only — Zero SEO/Data Git Commits)
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run Weekly Agentic Health & Scrubbed Trace Digest
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || 'fores-antigravity-alerts-77' }}
+          APPS_SCRIPT_WEBHOOK_URL: ${{ secrets.APPS_SCRIPT_WEBHOOK_URL }}
+          PUBLIC_SITE_URL: https://www.fhinspectionsatl.com
+        run: node scripts/weekly-agent-trace-digest.mjs

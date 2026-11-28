@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { recordLead } from '../../../lib/leads';
 import { detectAgentSource } from '../../../lib/agentAttribution';
+import { emitAgentTrace } from '../../../lib/agentTraces.js';
 import citiesData from '../../../data/cities.json';
 import truthData from '../../../data/truth.json';
 
@@ -459,9 +460,21 @@ export async function POST(req) {
     // Call Tool
     if (method === 'tools/call') {
       const { name, arguments: toolArgs } = params || {};
-      const toolOutput = await handleToolCall(name, toolArgs || {}, {
-        userAgent: req.headers.get('user-agent') || '',
-        referer: req.headers.get('referer') || '',
+      const safeArgs = toolArgs || {};
+      const ua = req.headers.get('user-agent') || '';
+      const ref = req.headers.get('referer') || '';
+      const toolOutput = await handleToolCall(name, safeArgs, {
+        userAgent: ua,
+        referer: ref,
+      });
+      emitAgentTrace({
+        channel: 'mcp',
+        detectedAgent: detectAgentSource({ clientName: safeArgs.agentName || '', userAgent: ua, referrer: ref }) || ua.slice(0, 48),
+        toolCalled: name,
+        city: safeArgs.query || safeArgs.propertyAddress || '',
+        sqft: safeArgs.sqft || null,
+        serviceType: safeArgs.serviceType || safeArgs.serviceKey || '',
+        converted: name === 'book_inspection_slot',
       });
       return NextResponse.json({
         jsonrpc: '2.0',

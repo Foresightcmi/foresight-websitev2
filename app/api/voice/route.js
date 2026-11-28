@@ -4,6 +4,8 @@ import { recordLead } from '../../../lib/leads';
 import { CHRIS_SYSTEM_INSTRUCTION, JORDAN_SYSTEM_INSTRUCTION, getChrisKnowledgeFallback } from '../../../lib/chris-brain-prompt';
 import { resolveGeminiTextModels } from '../../../lib/gemini-model-resolver.mjs';
 import { calculateQuoteDetails } from '../../../lib/pricing';
+import { enforceApiSecurity, detectPromptInjection } from '../../../lib/apiSecurity.js';
+import { emitAgentTrace } from '../../../lib/agentTraces.js';
 
 // Lead & appointment persistence helper
 async function persistBooking({ name, phone, email, address, preferredDate, addons = [], estimatedTotal, notes = '' }) {
@@ -70,34 +72,16 @@ async function synthesizeHumanVoice(text, voice = 'en-US-JennyNeural', persona =
     const sentences = rawClean.match(/[^.!?]+[.!?]+(\s+|$)/g) || [rawClean];
     const cleanText = sentences.slice(0, 2).join(' ').trim() || rawClean;
 
-    // Fast, reliable Python edge-tts synthesis (100% matched to receptionist audio)
-    const { execFile } = await import('child_process');
-    const fs = await import('fs');
-    const path = await import('path');
-    const os = await import('os');
-
-    const result = await new Promise((resolve) => {
-      const tmpFile = path.join(os.tmpdir(), `receptionist-${Date.now()}-${Math.random().toString(36).substring(7)}.mp3`);
-      execFile('python', ['-m', 'edge_tts', '--voice', voice, '--text', cleanText, '--write-media', tmpFile], (err) => {
-        if (err) {
-          console.warn('[VOICE] Python edge-tts warning:', err.message);
-          return resolve(null);
-        }
-        try {
-          if (fs.existsSync(tmpFile)) {
-            const buf = fs.readFileSync(tmpFile);
-            fs.unlinkSync(tmpFile);
-            return resolve(`data:audio/mp3;base64,${buf.toString('base64')}`);
-          }
-          resolve(null);
-        } catch (readErr) {
-          console.warn('[VOICE] Read temp audio error:', readErr.message);
-          resolve(null);
-        }
-      });
-    });
-
-    if (result) return result;
+    // Pure Node.js/Serverless voice synthesis via edge-tts-universal (zero Python dependency on Vercel)
+    const { EdgeTTS } = await import('edge-tts-universal');
+    const tts = new EdgeTTS(cleanText, voice);
+    const synthesized = await tts.synthesize();
+    if (synthesized && synthesized.audio) {
+      const ab = await synthesized.audio.arrayBuffer();
+      if (ab && ab.byteLength > 0) {
+        return `data:audio/mp3;base64,${Buffer.from(ab).toString('base64')}`;
+      }
+    }
   } catch (err) {
     console.error('[VOICE] Voice synthesis error:', err);
   }
@@ -309,7 +293,7 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // Certified Mold & Indoor Air Quality Testing
   if (matchesAny(['mold', 'air quality', 'spore', 'black mold', 'fungus', 'mold test', 'mold testing', 'air sampling'])) {
     return {
-      text: "Yes, we provide certified mold testing and indoor air quality assessments across Metro Atlanta starting at 450 dollars. That baseline includes calibrated spore-trap air sampling with two indoor zones compared against an outdoor baseline, analyzed by an independent accredited microbiology lab with certified reports in 24 to 48 hours. If additional surface swabs or extra room air samples are taken, additional lab fees apply. In addition, our included 10,000 dollar warranty covers up to 2,250 dollars in mold remediation. Would you like to add mold testing to your inspection?",
+      text: "Yes, we provide certified mold testing and indoor air quality assessments across Metro Atlanta. Baseline testing includes calibrated spore-trap air sampling with two indoor zones compared against an outdoor baseline, analyzed by an independent accredited microbiology lab with certified reports in 24 to 48 hours. Call our office at 678-480-2110 for a custom quote! In addition, our included 10,000 dollar warranty covers up to 2,250 dollars in mold remediation.",
       preAudio: null
     };
   }
@@ -482,39 +466,39 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
   // Older Homes Contextual Sewer Scope Recommendation
   if (matchesAny(['older home', 'historic home', 'pre-1990', '1960', '1970', '1980', 'cast iron pipe', 'clay pipe', 'tree roots', 'root intrusion'])) {
     return {
-      text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we often suggest our high-definition sewer scope camera for 450 dollars. Would you like us to include that, or keep it strictly to the standard home inspection?",
-      preAudio: '/audio/receptionist-upsell-sewer.mp3'
+      text: "Because older homes frequently have clay or cast iron sewer lines vulnerable to root intrusion or bellies, we recommend adding a high-definition sewer scope camera inspection—call 678-480-2110 for a custom quote alongside your home inspection.",
+      preAudio: null
     };
   }
 
   // Radon (Contextual Upsell & Info)
   if (matchesAny(['radon'])) {
     return {
-      text: "Since the property features a crawlspace or basement and Georgia has high granite bedrock, we frequently recommend our 48-hour continuous radon monitor test for 250 dollars. Would you like to add that to your estimate, or keep it as is?",
-      preAudio: '/audio/receptionist-upsell-radon.mp3'
+      text: "Since Georgia has high granite bedrock, we recommend professional 48-hour continuous radon monitor testing—call our office at 678-480-2110 for a custom quote alongside your primary home inspection.",
+      preAudio: null
     };
   }
 
   // Termite (Contextual Upsell & Info)
   if (matchesAny(['termite', 'termites', 'bug', 'bugs', 'pest', 'wdo', 'infestation', 'wood destroying'])) {
     return {
-      text: "Because Georgia is in the termite belt and most lenders require an official clearance letter, we can bundle your official Georgia termite letter starting at 125 dollars. Would you like that included, or do you already have that covered?",
-      preAudio: '/audio/receptionist-upsell-termite.mp3'
+      text: "Because Georgia is in the termite belt and many lenders require an official Wood-Destroying Organism clearance letter, our office can coordinate that alongside your inspection—call 678-480-2110 for a custom quote.",
+      preAudio: null
     };
   }
 
-  // Sewer Scope (Instant Audio)
+  // Sewer Scope
   if (matchesAny(['sewer', 'sewer scope', 'drain line', 'pipe camera'])) {
     return {
-      text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes for 450 dollars to inspect the underground line all the way to the municipal main. It is one of the smartest investments you can make during due diligence. Shall I reserve a slot for your sewer scope?",
-      preAudio: '/audio/receptionist-upsell-sewer.mp3'
+      text: "Replacing a collapsed sewer lateral can cost eight to fifteen thousand dollars! We perform high-definition camera sewer scopes all the way to the municipal main—call 678-480-2110 for a custom quote during your due diligence window.",
+      preAudio: null
     };
   }
 
   if (matchesAny(['pool', 'pools', 'spa', 'spas', 'swimming'])) {
     return {
-      text: "We provide comprehensive pool and spa inspections for 300 dollars flat, evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding. We coordinate this alongside your primary inspection so you have zero hassle. Would you like us to include pool inspection for the property?",
-      preAudio: '/audio/receptionist-pool.mp3'
+      text: "We provide comprehensive pool and spa inspections evaluating pumps, heaters, shell integrity, filtration, and critical GFCI safety bonding—call 678-480-2110 for a custom quote alongside your primary inspection.",
+      preAudio: null
     };
   }
 
@@ -532,16 +516,16 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
     };
   }
 
-  if (matchesAny(['when report', 'report delivered', 'sample report', 'crl'])) {
+  if (matchesAny(['when report', 'report delivered', 'sample report'])) {
     return {
-      text: "Our detailed digital reports with HD photos, video clips, and our interactive Create Request List tool are delivered within 24 hours, and often the same evening! That gives you maximum time for your due diligence. Shall we hold a date for your inspection?",
+      text: "Our detailed interactive digital reports with HD photos, video clips, and our Digital Repair Request Builder are delivered within 24 hours, and often the same evening! That gives you maximum time for your Georgia Repair Amendment. Shall we hold a date for your inspection?",
       preAudio: null
     };
   }
 
   if (matchesAny(['str', 'airbnb', 'vrbo', 'dekalb', 'compliance', 'short term', 'short-term'])) {
     return {
-      text: "We offer complete Short-Term Rental safety compliance inspections for starting at 395 dollars to ensure your Airbnb or Vrbo passes city and county guidelines with flying colors. Can I get that scheduled for your rental?",
+      text: "We offer Short-Term Rental safety compliance inspections across Metro Atlanta—call our office at 678-480-2110 for a custom quote tailored to your municipality and layout.",
       preAudio: null
     };
   }
@@ -593,11 +577,20 @@ function generateChrisDialogueTurn(messages, lastUserMessage, currentQuote = nul
 }
 
 export async function POST(request) {
+  const sec = enforceApiSecurity(request, { routeKey: 'api-voice', maxRequests: 25, windowMs: 60_000 });
+  if (!sec.ok) return sec.response;
+
   try {
     const { messages = [], currentQuote = null, persona = 'receptionist' } = await request.json();
     const voiceName = 'en-US-JennyNeural';
-    const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || '';
+    const lastUserMessage = String(messages.filter(m => m.role === 'user').pop()?.content || '').slice(0, 2000);
     const lastUserTextLower = lastUserMessage.toLowerCase();
+
+    const injection = detectPromptInjection(lastUserMessage);
+    if (injection.blocked) {
+      emitAgentTrace({ channel: 'voice', sanitizedTopic: lastUserMessage, blockedReason: 'prompt_injection' });
+      return NextResponse.json({ response: injection.safeReply, audio: '/audio/receptionist-pricing.mp3', action: 'message' });
+    }
 
     // 1. Direct quote calculation intent (e.g., user mentions square footage)
     const sqftMatch = lastUserMessage.match(/(\b\d{3,5}\b)\s*(?:sq|square|sqft|ft)/i) || lastUserMessage.match(/(?:sqft|size|footage)\s*(?:is|of)?\s*(\b\d{3,5}\b)/i);
@@ -613,7 +606,7 @@ export async function POST(request) {
           propertyType: isCondo ? 'condo' : 'single-family',
           sqft: parsedSqft,
           foundation: isCrawl ? 'crawlspace' : isBasement ? 'basement' : 'slab',
-          ageTier: isOlder ? '25-49' : 'under-25',
+          ageTier: isOlder ? 'over-50' : 'under-50',
           addons: {
             radon: lastUserTextLower.includes('radon'),
             termite: lastUserTextLower.includes('termite') || lastUserTextLower.includes('wdo'),
@@ -624,7 +617,15 @@ export async function POST(request) {
 
         const quoteResult = calculateQuoteDetails(quoteArgs);
         const deposit = Math.round(quoteResult.total / 2);
-        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` That includes ${quoteResult.addonBreakdown.map(a => `${a.name} for ${a.price} dollars`).join(' and ')}.` : ''} That includes drone roof scans and thermal imaging at no extra charge. To solidify your appointment on our master calendar, the 50 percent deposit of ${deposit} dollars along with your signed inspection agreements are completed after our office sends your appointment confirmation, and the remaining 50 percent balance is paid after on-site completion before your report is released. Would you prefer a morning or afternoon slot?`;
+        emitAgentTrace({
+          channel: 'voice',
+          toolCalled: 'calculate_quote',
+          sqft: parsedSqft,
+          serviceType: quoteArgs.propertyType,
+          addonsRequested: quoteResult.addonBreakdown.map((a) => a.name),
+          sanitizedTopic: lastUserMessage,
+        });
+        const speechResponse = `For a ${quoteResult.sqft.toLocaleString()} square foot ${quoteResult.propertyType === 'condo' ? 'condo' : 'home'}${quoteResult.foundation === 'crawlspace' ? ' with a crawlspace' : quoteResult.foundation === 'basement' ? ' with a basement' : ''}, your base inspection total is ${quoteResult.total} dollars with our two-person Certified Master Inspector team.${quoteResult.addonBreakdown.length > 0 ? ` Auxiliary ${quoteResult.addonBreakdown.map(a => a.name).join(' and ')} services are custom-quoted directly at 678-480-2110.` : ''} That includes drone roof scans and calibrated infrared thermal imaging at no extra charge. To solidify your appointment on our master calendar, the 50 percent deposit of ${deposit} dollars along with your signed inspection agreements are completed after our office sends your appointment confirmation. Would you prefer a morning or afternoon slot?`;
 
         const audio = (await synthesizeHumanVoice(speechResponse, voiceName, 'receptionist')) || '/audio/receptionist-pricing.mp3';
         return NextResponse.json({

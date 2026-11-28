@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { headers, cookies } from 'next/headers';
 import DashboardClient from './DashboardClient';
+import { isAuthorizedAdminRequest } from '../../lib/apiSecurity';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Foresight SEO & Rankings Command Center | Loop Engineering',
@@ -11,7 +15,12 @@ export const metadata = {
   }
 };
 
-export default function DashboardPage() {
+export default async function DashboardPage({ searchParams }) {
+  const isAdmin = isAuthorizedAdminRequest({
+    headers: await headers(),
+    cookies: await cookies(),
+    searchParams: await searchParams,
+  });
   const postsFilePath = path.join(process.cwd(), 'data', 'posts.json');
   const citiesFilePath = path.join(process.cwd(), 'data', 'cities.json');
   const countiesFilePath = path.join(process.cwd(), 'data', 'counties-pseo.json');
@@ -64,16 +73,16 @@ export default function DashboardPage() {
     if (fs.existsSync(citationsFilePath)) {
       citationsData = JSON.parse(fs.readFileSync(citationsFilePath, 'utf8'));
     }
-    if (fs.existsSync(realtorFilePath)) {
+    if (isAdmin && fs.existsSync(realtorFilePath)) {
       realtorData = JSON.parse(fs.readFileSync(realtorFilePath, 'utf8'));
     }
-    if (fs.existsSync(ga4FilePath)) {
+    if (isAdmin && fs.existsSync(ga4FilePath)) {
       ga4Data = JSON.parse(fs.readFileSync(ga4FilePath, 'utf8'));
     }
-    if (fs.existsSync(gscFilePath)) {
+    if (isAdmin && fs.existsSync(gscFilePath)) {
       gscData = JSON.parse(fs.readFileSync(gscFilePath, 'utf8'));
     }
-    if (fs.existsSync(leadsFilePath)) {
+    if (isAdmin && fs.existsSync(leadsFilePath)) {
       leadsData = JSON.parse(fs.readFileSync(leadsFilePath, 'utf8'));
     }
     if (fs.existsSync(rankMathFilePath)) {

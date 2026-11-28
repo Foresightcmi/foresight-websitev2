@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'node:fs';
 import path from 'node:path';
 import { FORESIGHT_UNIFIED_PERSONA } from '../../../lib/foresight-persona.mjs';
+import { enforceApiSecurity, isAuthorizedAdminRequest } from '../../../lib/apiSecurity.js';
 
 // Vercel Pro Extended Serverless Execution (up to 300s / 800s)
 export const maxDuration = 300;
@@ -17,7 +18,12 @@ function readDataJsonSafe(fileName, fallback = []) {
   return fallback;
 }
 
-export async function GET() {
+export async function GET(request) {
+  const url = new URL(request.url);
+  const isAdmin = isAuthorizedAdminRequest({
+    headers: request.headers,
+    searchParams: url.searchParams,
+  });
   const truth = readDataJsonSafe('truth.json', {});
   const underContract = readDataJsonSafe('under-contract-realtors.json', []);
   const cloudQueue = readDataJsonSafe('cloud-realtor-nurture-queue.json', []);
@@ -48,13 +54,15 @@ export async function GET() {
       socialQueueOmnichannelCount: Array.isArray(socialQueue) ? socialQueue.length : 0
     },
     socialQueue: Array.isArray(socialQueue) ? socialQueue : [],
-    recentUnderContract: underContract.slice(0, 12),
+    recentUnderContract: isAdmin ? underContract.slice(0, 12) : [],
     studioPackets: Array.isArray(studioPackets) ? studioPackets.slice(0, 12) : [],
     linkedInPosts: (Array.isArray(linkedInPosts) ? linkedInPosts : (linkedInPosts.posts || [])).slice(0, 8)
   });
 }
 
 export async function POST(request) {
+  const sec = enforceApiSecurity(request, { routeKey: 'api-studio', maxRequests: 15, windowMs: 60_000 });
+  if (!sec.ok) return sec.response;
   try {
     const body = await request.json().catch(() => ({}));
     const topic = String(body.topic || 'Phase 1 Pre-Drywall & New Construction Inspections').trim().slice(0, 140);

@@ -1,4 +1,6 @@
 import { API_DISCOVERY_HEADERS, apiJsonResponse, apiProblemResponse, methodNotAllowed } from '../../../../lib/apiProblem.js';
+import { emitAgentTrace } from '../../../../lib/agentTraces.js';
+import { detectAgentSource } from '../../../../lib/agentAttribution.js';
 
 const VALID_PROPERTY = ['single-family', 'condo', 'townhome'];
 const VALID_SERVICE = ['buyer', 'seller', 'new-construction', 'warranty', 'str', 'drywall'];
@@ -71,6 +73,14 @@ export async function GET(req) {
   if (ageTier === 'over-50') extra += 75;
   if (propertyType === 'single-family' && (foundation === 'crawlspace' || foundation === 'basement')) extra += 75;
   const total = base + extra;
+
+  emitAgentTrace({
+    channel: 'rest-v1-quote',
+    detectedAgent: detectAgentSource({ userAgent: req.headers.get('user-agent') || '', referrer: req.headers.get('referer') || '' }),
+    toolCalled: 'calculateInspectionQuoteV1',
+    sqft: Math.round(sqft),
+    serviceType,
+  });
 
   return apiJsonResponse({
     isCustomQuote: false,
